@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.2.2.1 Líneas arrendadas</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.2.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Elección de una tecnología WAN</h1>
+        <h2>Infraestructuras WAN privadas</h2>
+      </div>
+      <div id="content">
+<p>Cuando se requieren conexiones dedicadas permanentes, se utiliza un enlace punto a punto para proporcionar una ruta de comunicaciones WAN preestablecida desde las instalaciones del cliente hasta la red del proveedor. Por lo general, un proveedor de servicios arrienda las líneas punto a punto, que se llaman “líneas arrendadas”. </p>
+<p></p>
+<p>Las líneas arrendadas existen desde comienzos de los años cincuenta y, por este motivo, se las conoce con nombres diferentes como circuito arrendado, enlace serial, línea serial, enlace punto a punto y línea T1/E1 o T3/E3. El término “línea arrendada” hace referencia al hecho de que la organización paga una tarifa mensual de arrendamiento a un proveedor de servicios para usar la línea. Hay líneas arrendadas disponibles con diferentes capacidades y, generalmente, el precio se basa en el ancho de banda requerido y en la distancia entre los dos puntos conectados. </p>
+<p></p>
+<p>En América del Norte, los proveedores de servicios usan el sistema de portadora T para definir la capacidad de transmisión digital de un enlace serial de medios de cobre, mientras que en Europa se usa el sistema de portadora E, como se muestra en la ilustración. Por ejemplo, un enlace T1 admite 1,544 Mb/s, un E1admite 2,048 Mb/s, un T3 admite 43,7 Mb/s y una conexión E3 admite 34,368 Mb/s. Para definir la capacidad de transmisión digital de una red de fibra óptica, se utilizan las velocidades de transmisión de la portadora óptica (OC).</p>
+<p></p>
+<p>Las ventajas de las líneas arrendadas incluyen las siguientes:</p>
+<p>
+<ul>
+<li>
+<b>Simplicidad:</b> los enlaces de comunicación punto a punto requieren conocimientos mínimos de instalación y mantenimiento.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Calidad:</b> los enlaces de comunicación punto a punto generalmente ofrecen una alta calidad de servicio si tienen un ancho de banda adecuado. La capacidad dedicada quita latencia o vibración entre las terminales. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Disponibilidad:</b> la disponibilidad constante es esencial para algunas aplicaciones, como el comercio electrónico. Los enlaces de comunicación punto a punto proporcionan la capacidad dedicada permanente que se necesita para VoIP o para video sobre IP.</li>
+</ul>
+</p>
+<p></p>
+<p>Las desventajas de las líneas arrendadas incluyen lo siguiente:</p>
+<p>
+<ul>
+<li>
+<b>Costo:</b> en general, los enlaces punto a punto son el tipo de acceso WAN más costoso. Cuando se usan para conectar varios sitios a través de distancias cada vez mayores, el costo de las soluciones de línea arrendada puede ser significativo. Además, cada terminal requiere una interfaz en el router, lo que aumenta los costos de los equipos.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Flexibilidad limitada: </b>el tráfico WAN suele ser variable, y las líneas arrendadas tienen una capacidad fija, de modo que el ancho de banda de la línea rara vez coincide con la necesidad de forma precisa. Por lo general, cualquier cambio en la línea arrendada requiere que el personal del ISP visite el sitio para ajustar la capacidad.</li>
+</ul>
+</p>
+<p></p>
+<p>Generalmente, el protocolo de capa 2 es HDLC o PPP.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

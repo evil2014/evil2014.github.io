@@ -1,0 +1,75 @@
+﻿<textcomponents>
+
+<component id="ID_title">
+<text><![CDATA[<b>Protocolo punto a punto</b>]]></text>
+</component>
+
+<component id="ID_txt13">
+<text><![CDATA[Un protocolo de enlace de datos común para las redes WAN]]></text> 
+</component>
+
+<component id="ID_txt14">
+<text><![CDATA[<b>Trama</b>]]></text> 
+</component>
+
+<component id="ID_txt15">
+<text><![CDATA[<b>Nombre de campo</b>]]></text> 
+</component>
+
+<component id="ID_txt16">
+<text><![CDATA[<b>Tamaño</b>]]></text> 
+</component>
+
+<component id="ID_txt17">
+<text><![CDATA[<b>Indicador:</b> un único byte que indica el inicio y el final de una trama. El campo Indicador está formado por la secuencia binaria 01111110.<br/><b>Dirección:</b> un único byte que contiene la dirección de broadcast PPP estándar. El protocolo PPP no asigna direcciones de estaciones individuales.<br/><b>Control:</b> un único byte formado por la secuencia binaria 00000011, que requiere la transmisión de datos de usuario en una trama no secuencial.<br/><b>Protocolo:</b> dos bytes que identifican el protocolo encapsulado en el campo de datos de la trama. Los valores más actualizados del campo Protocolo se especifican en la Solicitud de comentarios (RFC) de números asignados más reciente.<br/><b>Datos:</b> cero o más bytes que contienen el datagrama para el protocolo especificado en el campo Protocolo.<br/><b>Secuencia de verificación de trama (FCS)<b>:</b></b> normalmente, tiene 16&nbsp;bits (2&nbsp;bytes). Mediante un acuerdo previo, con la aceptación de las implementaciones PPP se puede utilizar una FCS de 32 bits (4 bytes) para una mayor detección de errores.]]></text> 
+</component>
+
+<component id="ID_txt01">
+<text><![CDATA[Señaliza-<br/>dor]]></text> 
+</component>
+
+<component id="ID_txt02">
+<text><![CDATA[Dirección]]></text> 
+</component>
+
+<component id="ID_txt03">
+<text><![CDATA[Control]]></text> 
+</component>
+
+<component id="ID_txt04">
+<text><![CDATA[Protocolo]]></text> 
+</component>
+
+<component id="ID_txt05">
+<text><![CDATA[Datos]]></text> 
+</component>
+
+<component id="ID_txt06">
+<text><![CDATA[FCS]]></text> 
+</component>
+
+<component id="ID_txt07">
+<text><![CDATA[1 byte]]></text> 
+</component>
+
+<component id="ID_txt08">
+<text><![CDATA[1 byte]]></text> 
+</component>
+
+<component id="ID_txt09">
+<text><![CDATA[1 byte]]></text> 
+</component>
+
+<component id="ID_txt10">
+<text><![CDATA[2&nbsp;bytes]]></text> 
+</component>
+
+<component id="ID_txt11">
+<text><![CDATA[variable]]></text> 
+</component>
+
+<component id="ID_txt12">
+<text><![CDATA[2 o 4&nbsp;bytes]]></text> 
+</component>
+
+</textcomponents>

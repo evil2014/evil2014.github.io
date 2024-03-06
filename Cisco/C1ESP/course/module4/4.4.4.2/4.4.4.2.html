@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.4.4.2 El encabezado</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.4.4.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Control de acceso al medio</h1>
+        <h2>Trama de enlace de datos</h2>
+      </div>
+      <div id="content">
+<p>El encabezado de la trama contiene la información de control que especifica el protocolo de capa de enlace de datos para la topología lógica y los medios específicos utilizados.</p>
+<p></p>
+<p>La información de control de trama es única para cada tipo de protocolo. Es utilizada por el protocolo de la Capa 2 para proporcionar las características demandadas por el entorno de comunicación. </p>
+<p></p>
+<p>En la ilustración, se muestran los campos de encabezado de la trama de Ethernet:</p>
+<p>
+<ul>
+<li>
+<b>Campo Inicio de trama:</b> indica el comienzo de la trama.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Campos Dirección de origen y Dirección de destino:</b> indican los nodos de origen y destino en los medios.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Campo Tipo:</b> indica el servicio de capa superior que se incluye en la trama.</li>
+</ul>
+</p>
+<p></p>
+<p>Los distintos protocolos de capa de enlace de datos pueden utilizar campos diferentes de los mencionados. Por ejemplo, otros campos de encabezado de trama de protocolo de capa 2 podrían incluir los siguientes:</p>
+<p>
+<ul>
+<li>
+<b>Campo Prioridad/Calidad de servicio:</b> indica un tipo específico de servicio de comunicación para el procesamiento.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Campo Control de conexión lógica:</b> se utiliza para establecer una conexión lógica entre nodos.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Campo Control de enlace físico:</b> se utiliza para establecer el enlace con los medios. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Campo Control del flujo:</b> se utiliza para iniciar y detener el tráfico a través de los medios.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Campo Control de congestión:</b> indica si hay congestión en los medios.</li>
+</ul>
+</p>
+<p></p>
+<p>Debido a que los propósitos y las funciones de los protocolos de capa de enlace de datos se relacionan con las topologías y los medios específicos, se debe examinar cada protocolo para comprender en detalle la estructura de la trama. Como los protocolos se analizan en este curso, se explicará más información acerca de la estructura de la trama.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

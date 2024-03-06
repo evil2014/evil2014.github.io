@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.2.3.1 Configuración de PAT: conjunto de direcciones</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.2.3.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de NAT</h1>
+        <h2>Configuración de la traducción de la dirección del puerto (PAT)</h2>
+      </div>
+      <div id="content">
+<p>PAT (también denominada “NAT con sobrecarga”) conserva las direcciones del conjunto de direcciones globales internas al permitir que el router use una dirección global interna para muchas direcciones locales internas. En otras palabras, se puede utilizar una única dirección IPv4 pública para cientos, incluso miles de direcciones IPv4 privadas internas. Cuando se configura este tipo de traducción, el router mantiene suficiente información acerca de los protocolos de nivel superior, de los números de puerto TCP o UDP, por ejemplo, para volver a traducir la dirección global interna a la dirección local interna correcta. Cuando se asignan varias direcciones locales internas a una dirección global interna, los números de puerto TCP o UDP de cada host interno distinguen entre las direcciones locales.</p>
+<p></p>
+<p>
+<b>Nota:</b> la cantidad total de direcciones internas que se pueden traducir a una dirección externa teóricamente podría ser de hasta 65 536 por dirección IP. Sin embargo, la cantidad de direcciones internas a las que se puede asignar una única dirección IP es aproximadamente 4000.</p>
+<p></p>
+<p>Existen dos formas de configurar PAT, según cómo el ISP asigna las direcciones IPv4 públicas. En primer lugar, el ISP asigna más de una dirección IPv4 pública a la organización y, en segundo lugar, asigna una única dirección IPv4 pública que se requiere para que la organización se conecte al ISP.</p>
+<p></p>
+<p>
+<b>Configuración de PAT para un conjunto de direcciones IP públicas</b>
+</p>
+<p></p>
+<p>Si se emitió más de una dirección IPv4 pública para un sitio, estas direcciones pueden ser parte de un conjunto utilizado por PAT. Esto es similar a la NAT dinámica, con la excepción de que no existen suficientes direcciones públicas para realizar una asignación uno a uno entre direcciones internas y externas. Una gran cantidad de dispositivos comparte el pequeño conjunto de direcciones. </p>
+<p></p>
+<p>En la figura 1, se muestran los pasos para configurar PAT a fin de que utilice un conjunto de direcciones. La diferencia principal entre esta configuración y la configuración para NAT dinámica uno a uno es que se utiliza la palabra clave <span class="cmd"><b>overload</b></span>. La palabra clave <span class="cmd"><b>overload</b></span> habilita PAT.</p>
+<p></p>
+<p>La configuración de ejemplo que se muestra en la figura 2 establece la traducción de sobrecarga para el conjunto de NAT denominado NAT-POOL2. NAT-POOL2 contiene las direcciones de 209.165.200.226 a 209.165.200.240. Los hosts en la red 192.168.0.0/16 están sujetos a traducción. La interfaz S0/0/0 se identifica como interfaz interna, y la interfaz S0/1/0 se identifica como interfaz externa.</p>
+<p></p>
+<p>Utilice el verificador de sintaxis de la figura 3 para configurar PAT con un conjunto de direcciones en el R2.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

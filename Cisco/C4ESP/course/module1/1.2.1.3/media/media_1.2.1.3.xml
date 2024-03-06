@@ -1,0 +1,72 @@
+﻿<textcomponents>
+
+<component id='ID_inst'>
+	<text><![CDATA[<b>Actividad: Identificar los módulos en un diseño de red</b><br><br>Arrastre los nombres de los módulos de diseño de red hasta las ubicaciones correspondientes en la topología.]]></text>
+</component>
+
+<component id='ID_txt01'>
+	<text><![CDATA[<b>Nombres de los módulos de diseño de red</b>]]></text>
+</component>
+
+<component id='ID_txt02'>
+	<text><![CDATA[<b>Bloque de servicios</b>]]></text>
+</component>
+
+<component id='ID_txt03'>
+	<text><![CDATA[<b>Centro de datos</b>]]></text>
+</component>
+
+<component id='ID_txt04'>
+	<text><![CDATA[MetroE]]></text>
+</component>
+
+<component id='ID_txt05'>
+	<text><![CDATA[HDLC]]></text>
+</component> <!--Drag and Drop-->
+<component id='ID_drag01'>
+	<text><![CDATA[<font color="#393536">Perímetro de <br>WAN</font>]]></text>
+</component>
+
+<component id='ID_drag02'>
+	<text><![CDATA[<font color="#393536">Acceso</font>]]></text>
+</component>
+
+<component id='ID_drag03'>
+	<text><![CDATA[<font color="#393536">Distribución</font>]]></text>
+</component>
+
+<component id='ID_drag04'>
+	<text><![CDATA[<font color="#393536">Núcleo</font>]]></text>
+</component>
+
+<component id='ID_drag05'>
+	<text><![CDATA[<font color="#393536">Internet <br>perimetral</font>]]></text>
+</component>
+
+
+
+<component id='ID_s1_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id='ID_s1_CORRECT_BODY'>
+	<text><![CDATA[Identificó correctamente las ubicaciones de los módulos de diseño de red en la topología.]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_BODY'>
+	<text><![CDATA[No identificó correctamente las ubicaciones de los módulos de diseño de red en la topología. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_CHECK'>
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id='ID_RESET'>
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component>
+
+</textcomponents>

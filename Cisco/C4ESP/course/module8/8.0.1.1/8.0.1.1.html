@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.0.1.1 Introducción</title>
+    <!--  -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.0.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Supervisión de la red</h1>
+        <h2>Introducción</h2>
+      </div>
+      <div id="content">
+<p>Supervisar una red en funcionamiento puede proporcionar información a un administrador de red para administrar la red de forma proactiva e informar estadísticas de uso de la red a otros. La actividad de los enlaces, las tasas de error y el estado de los enlaces son algunos de los factores que contribuyen a que un administrador de red determine el estado y el uso de una red. Recopilar y revisar esta información en el transcurso del tiempo permite que un administrador de red vea y proyecte el crecimiento, y puede contribuir a que el administrador detecte y reemplace una parte defectuosa antes de que falle por completo.</p>
+<p></p>
+<p>En este capítulo, se abarcan tres protocolos que puede usar un administrador de red para controlar la red. Syslog, SNMP y NetFlow son protocolos populares con diferentes puntos fuertes y débiles. Juntos proporcionan un buen conjunto de herramientas para comprender qué sucede en una red. El protocolo NTP se utiliza para sincronizar la hora a través de los dispositivos, lo cual es especialmente importante al intentar comparar los archivos de registro de distintos dispositivos.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

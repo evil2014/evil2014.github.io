@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.2.3.6 Comandos show básicos del switch</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.2.3.6_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Selección de dispositivos de red</h1>
+        <h2>Administración de dispositivos</h2>
+      </div>
+      <div id="content">
+<p>Los switches emplean comandos comunes de IOS para realizar la configuración, controlar la conectividad y visualizar el estado actual del switch. Haga clic en los botones 1 a 4 para ver resultados de ejemplo de los comandos y los datos importantes que puede reunir el administrador a partir de esa información. </p>
+<p></p>
+<p>En relación con el puerto / la interfaz:</p>
+<p>
+<ul>
+<li>
+<span class="cmd">
+<b>show port-security:</b>
+</span>
+<b></b>muestra los puertos que tienen activada la seguridad. Para examinar una interfaz específica, incluya la ID de la interfaz. La información que se incluye en el resultado es la siguiente: la cantidad máxima de direcciones permitidas, el conteo actual, el conteo de infracciones de seguridad y la acción que se debe realizar (figura 1).</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<span class="cmd">
+<b>show port-security address:</b>
+</span>
+<b></b>muestra todas las direcciones MAC seguras configuradas en todas las interfaces del switch (figura 2).</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<span class="cmd">
+<b>show interfaces:</b>
+</span>
+<b></b>muestra una o todas las interfaces con estado (del protocolo) de línea, ancho de banda, retraso, confiabilidad, encapsulación, dúplex y estadísticas de E/S (figura 3).</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<span class="cmd">
+<b>show mac-address-table:</b>
+</span>
+<b></b>muestra todas las direcciones MAC que descubrió el switch, cómo se descubrieron esas direcciones (de forma dinámica o estática), el número de puerto y la VLAN asignada al puerto (figura 4).</li>
+</ul>
+</p>
+<p></p>
+<p>Al igual que los routers, los switches también admiten el comando <span class="cmd"><b>show cdp neighbors</b></span>.</p>
+<p></p>
+<p>Las mismas técnicas de administración dentro y fuera de banda utilizadas para los routers también se utilizan para configurar el switch.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>3.2.1.1 Pautas para la configuración</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_3.2.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración del agregado de enlaces</h1>
+        <h2>Configuración de EtherChannel</h2>
+      </div>
+      <div id="content">
+<p>Las siguientes pautas y restricciones son útiles para configurar EtherChannel:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Soporte de EtherChannel:</b> todas las interfaces Ethernet en todos los módulos deben admitir EtherChannel, sin necesidad de que las interfaces sean físicamente contiguas o estén en el mismo módulo.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Velocidad y dúplex:</b> configure todas las interfaces en un EtherChannel para que funcionen a la misma velocidad y en el mismo modo dúplex, como se muestra en la ilustración.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Coincidencia de VLAN:</b> todas las interfaces en el grupo EtherChannel se deben asignar a la misma VLAN o se deben configurar como enlace troncal, lo que también se muestra en la ilustración.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Rango de VLAN:</b> un EtherChannel admite el mismo rango permitido de VLAN en todas las interfaces de un EtherChannel de enlace troncal. Si el rango permitido de VLAN no es el mismo, las interfaces no forman un EtherChannel, incluso si se establecen en modo <span class="cmd"><b>automático</b></span> o <span class="cmd"><b>deseado</b></span>.</li>
+</ul>
+</p>
+<p></p>
+<p>Si se deben modificar estos parámetros, configúrelos en el modo de configuración de interfaz de canal de puertos. Después de configurar la interfaz de canal de puertos, cualquier configuración que se aplique a esta interfaz también afecta a las interfaces individuales. Sin embargo, las configuraciones que se aplican a las interfaces individuales no afectan a la interfaz de canal de puertos. Por ello, realizar cambios de configuración a una interfaz que forma parte de un enlace EtherChannel puede causar problemas de compatibilidad de interfaces. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

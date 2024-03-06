@@ -1,0 +1,110 @@
+﻿<textcomponents>
+<component id="ID_s1_inst">
+	<text><![CDATA[<b>Actividad: Identificar la terminología de OSPF multiárea (parte&nbsp;1)</b><br/>Identifique las áreas OSPF multiárea y arrastre el nombre de los tipos de áreas a los campos proporcionados en la topología. Haga clic en la parte&nbsp;2 para continuar la actividad.]]></text>
+	</component>
+   <component id="ID_s1_txt01">
+  <text><![CDATA[<b>Área 33</b>]]></text> 
+  </component>
+  <component id="ID_s1_txt02">
+  <text><![CDATA[<b>Área 0</b>]]></text> 
+  </component>
+  <component id="ID_s1_txt03">
+  <text><![CDATA[<b>Área&nbsp;1</b>]]></text> 
+  </component>
+  <component id="ID_s1_txt04">
+  <text><![CDATA[Internet]]></text> 
+  </component>
+  <component id="ID_s1_txt05">
+  <text><![CDATA[<b>Tipos de OSPF multiárea</b>]]></text> 
+  </component>
+  <component id="ID_s1_txt06">
+  <text><![CDATA[Área de red troncal]]></text> 
+  </component>
+    <component id="ID_s1_txt07">
+  <text><![CDATA[Área común]]></text> 
+  </component>
+    <component id="ID_s1_txt08">
+  <text><![CDATA[Tipo 2]]></text> 
+  </component>
+  <component id='ID_s1_CHECK'>
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id='ID_s1_RESET'>
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component>
+
+<component id='ID_s1_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id='ID_s1_CORRECT_BODY'>
+	<text><![CDATA[Unió correctamente el tipo de OSPF multiárea con la topología. Haga clic en el botón&nbsp;2 para continuar.]]></text>
+</component>
+
+
+<component id='ID_s1_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_BODY'>
+	<text><![CDATA[No unió correctamente el tipo de OSPF multiárea con la topología. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id="ID_s2_inst">
+	<text><![CDATA[<b>Actividad: Identificar la terminología de OSPF multiárea (parte&nbsp;2)</b><br/>Identifique los tipos de routers OSPF multiárea y arrastre el nombre de los tipos de routers a los campos proporcionados en la topología.]]></text>
+	</component>
+   <component id="ID_s2_txt01">
+  <text><![CDATA[<b>Área 33</b>]]></text> 
+  </component>
+  <component id="ID_s2_txt02">
+  <text><![CDATA[<b>Área 0</b>]]></text> 
+  </component>
+  <component id="ID_s2_txt03">
+  <text><![CDATA[<b>Área&nbsp;1</b>]]></text> 
+  </component>
+  <component id="ID_s2_txt04">
+  <text><![CDATA[Internet]]></text> 
+  </component>
+  <component id="ID_s2_txt05">
+  <text><![CDATA[<b>Tipos de routers OSPF multiárea</b>]]></text> 
+  </component>
+  <component id="ID_s2_txt06">
+  <text><![CDATA[<span style="padding-left:5px;">Router de frontera de sistema autónomo (ASBR)</span>]]></text> 
+  </component>
+    <component id="ID_s2_txt07">
+  <text><![CDATA[Router de respaldo (BR)]]></text> 
+  </component>
+    <component id="ID_s2_txt08">
+  <text><![CDATA[Router de área perimetral (ABR)]]></text> 
+  </component>
+      <component id="ID_s2_txt09">
+  <text><![CDATA[Router interno]]></text> 
+  </component>
+    
+  <component id='ID_s2_CHECK'>
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id='ID_s2_RESET'>
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component>
+
+<component id='ID_s2_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id='ID_s2_CORRECT_BODY'>
+	<text><![CDATA[Unió correctamente el tipo de router OSPF multiárea con la topología.]]></text>
+</component>
+
+
+<component id='ID_s2_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_s2_INCORRECT_BODY'>
+	<text><![CDATA[No unió correctamente el tipo de router OSPF multiárea con la topología. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+</textcomponents>

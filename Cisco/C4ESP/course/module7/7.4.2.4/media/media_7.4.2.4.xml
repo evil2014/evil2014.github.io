@@ -1,0 +1,48 @@
+﻿<textcomponents>
+	<component id="ID_title">
+		<text><![CDATA[<b>Comparación de IPsec y SSL</b>]]></text>
+	</component>
+	
+	<component id="ID_table">
+  	<text><![CDATA[<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4' class="mtable">
+	<tr><td colspan='3' bgcolor='#0E6360' class="mtable_top"><font size='1' color='#0E6360'><span style="color:#98D3D1">.</span></font></td>
+	</tr>
+	
+	<tr colspan='3'>
+		<td width="100" bgcolor='#077A77'   valign="top"><font color='#ffffff' size="11"></font></td>
+		<td bgcolor='#077A77'  valign="top" id="tdspace"><font color='#ffffff' size="11"><b>SSL</b></font></td>
+		<td bgcolor='#077A77'  valign="top"><font color='#ffffff' size="11"><b>IPsec</b></font></td>
+	</tr>
+
+	<tr>
+		<td bgcolor='#EFF8F7' valign="top"><font color='#393536' size="11">Aplicaciones</font></td>
+		<td bgcolor='#EFF8F7' valign="top"><font color='#393536' size="11">Aplicaciones habilitadas para Web, uso compartido de archivos, correo electrónico</font></td>
+		<td bgcolor='#EFF8F7' valign="top"><font color='#393536' size="11">Todas las aplicaciones basadas en IP</font></td>	
+	</tr>
+
+	<tr>
+		<td bgcolor='#FFFFFF' valign="top"><font color='#393536' size="11">Cifrado</font></td>
+		<td bgcolor='#FFFFFF' valign="top"><font color='#393536' size="11"><b>Moderado a seguro</b><br/>Longitudes de clave de 40&nbsp;bits a 256&nbsp;bits</font></td>
+		<td bgcolor='#FFFFFF' valign="top"><font color='#393536' size="11"><b>Seguro</b><br/>Longitudes de clave de 56&nbsp;bits a 256&nbsp;bits</font></td>
+	</tr>
+
+	<tr>
+		<td bgcolor='#EFF8F7' valign="top"><font color='#393536' size="11">Autenticación</font></td>
+		<td bgcolor='#EFF8F7' valign="top"><font color='#393536' size="11"><b>Moderada</b><br/>Autenticación unidireccional o bidireccional</font></td>
+		<td bgcolor='#EFF8F7' valign="top"><font color='#393536' size="11"><b>Segura</b><br/>Autenticación bidireccional mediante secretos compartidos o certificados digitales</font></td>
+	</tr>
+
+	<tr>
+		<td bgcolor='#FFFFFF' valign="top"><font color='#393536' size="11">Complejidad de conexión</font></td>
+		<td bgcolor='#FFFFFF' valign="top"><font color='#393536' size="11"><b>Baja</b><br/>Solo se requiere un navegador web.</font></td>
+		<td bgcolor='#FFFFFF' valign="top"><font color='#393536' size="11"><b>Media</b><br/>Puede resultar difícil para usuarios sin conocimientos técnicos.</font></td>
+	</tr>
+
+	<tr>
+		<td bgcolor='#EFF8F7' valign="top"><font color='#393536' size="11">Opciones de conexión</font></td>
+		<td bgcolor='#EFF8F7' valign="top"><font color='#393536' size="11">Cualquier dispositivo se puede conectar.</font></td>
+		<td bgcolor='#EFF8F7' valign="top"><font color='#393536' size="11">Solo se pueden conectar dispositivos específicos con una configuración específica.</font></td>
+	</tr>
+	</table>]]></text>
+  </component>
+</textcomponents>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>3.1.1.2 Beneficios de las redes VLAN</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_3.1.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Segmentación de VLAN</h1>
+        <h2>Descripción general de las VLAN</h2>
+      </div>
+      <div id="content">
+<p>La productividad de los usuarios y la adaptabilidad de la red son importantes para el crecimiento y el éxito de las empresas. Las redes VLAN facilitan el diseño de una red para dar soporte a los objetivos de una organización. Los principales beneficios de utilizar las VLAN son los siguientes:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Seguridad</b>: los grupos que tienen datos sensibles se separan del resto de la red, lo que disminuye las posibilidades de que ocurran violaciones de información confidencial. Como se muestra en la ilustración, las computadoras del cuerpo docente están en la VLAN 10 y separadas por completo del tráfico de datos de los estudiantes y los Invitados.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Reducción de costos:</b> el ahorro de costos se debe a la poca necesidad de actualizaciones de red costosas y al uso más eficaz de los enlaces y del ancho de banda existentes.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Mejor rendimiento:</b> la división de las redes planas de capa 2 en varios grupos de trabajo lógicos (dominios de difusión) reduce el tráfico innecesario en la red y mejora el rendimiento. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Dominios de difusión reducidos:</b> la división de una red en redes VLAN reduce la cantidad de dispositivos en el dominio de difusión. Como se muestra en la ilustración, existen seis computadoras en esta red, pero hay tres dominios de difusión: Cuerpo docente, Estudiantes e Invitados. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Mayor eficiencia del personal de TI</b>: las VLAN facilitan el manejo de la red debido a que los usuarios con requerimientos similares de red comparten la misma VLAN. Cuando se dispone de un switch nuevo, se implementan todas las políticas y los procedimientos que ya se configuraron para la VLAN específica cuando se asignan los puertos. También es fácil para el personal de TI identificar la función de una VLAN proporcionándole un nombre. En la ilustración, para facilitar la identificación, se denominó “Cuerpo Docente” a la VLAN 10, “Estudiantes” a la VLAN 20 e “Invitados” a la VLAN 30. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Administración más simple de aplicaciones y proyectos:</b> las VLAN agregan dispositivos de red y usuarios para admitir los requisitos geográficos o comerciales. Al tener características diferentes, se facilita la administración de un proyecto o el trabajo con una aplicación especializada; un ejemplo de este tipo de aplicación es una plataforma de desarrollo de aprendizaje por medios electrónicos para el cuerpo docente.</li>
+</ul>
+</p>
+<p></p>
+<p>Cada VLAN en una red conmutada corresponde a una red IP; por lo tanto, al diseñar la VLAN, se debe tener en cuenta la implementación de un esquema de direccionamiento de red jerárquico. El direccionamiento jerárquico de la red significa que los números de red IP se aplican a los segmentos de red o a las VLAN de manera ordenada, lo que permite que la red se tome en cuenta como conjunto. Los bloques de direcciones de red contiguas se reservan para los dispositivos en un área específica de la red y se configuran en estos, como se muestra en la ilustración. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

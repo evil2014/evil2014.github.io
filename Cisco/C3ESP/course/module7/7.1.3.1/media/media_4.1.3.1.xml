@@ -1,0 +1,78 @@
+﻿<textcomponents>
+
+
+<component id="ID_s1_title">
+  <text><![CDATA[<b>Encabezado de la trama de Ethernet de enlace de datos</b>]]></text> 
+</component>
+<component id="ID_s2_title">
+  <text><![CDATA[<b>Encabezado de paquete IP</b>]]></text> 
+</component>
+<component id="ID_s3_title">
+  <text><![CDATA[<b>Encabezado de paquete EIGRP</b>]]></text> 
+</component>
+<component id="ID_s4_title">
+  <text><![CDATA[<b>Tipo/longitud/tipos de valores</b>]]></text> 
+</component>
+
+
+
+
+
+<component id="ID_heading1">
+  <text><![CDATA[Encabezado de trama de enlace de datos]]></text> 
+</component>
+<component id="ID_heading2">
+  <text><![CDATA[Encabezado de paquete IP]]></text> 
+</component>
+<component id="ID_heading3">
+  <text><![CDATA[Encabezado de paquete EIGRP]]></text> 
+</component>
+<component id="ID_heading4">
+  <text><![CDATA[Tipos de TLV]]></text> 
+</component>
+
+
+<component id="ID_s1_txt01">
+<text><![CDATA[<b>Trama de enlace de datos</b><br/>Dirección MAC de origen = dirección de la interfaz emisora<br/>Dirección MAC de destino = multidifusión: 01-00-5E-00-00-0A]]></text>
+</component>
+
+<component id="ID_s2_txt01">
+<text><![CDATA[<b>Trama de enlace de datos</b><br/>Dirección MAC de origen = dirección de la interfaz emisora<br/>Dirección MAC de destino = multidifusión: 01-00-5E-00-00-0A]]></text>
+</component>
+
+<component id="ID_s2_txt02">
+<text><![CDATA[<b>Paquete IP</b><br/>Dirección IPv4 de origen = dirección de la interfaz emisora<br/>Dirección IPv4 de destino = multidifusión: 224.0.0.10<br/>Campo de protocolo = 88 para EIGRP]]></text>
+</component>
+
+
+<component id="ID_s3_txt01">
+<text><![CDATA[<b>Trama de enlace de datos</b><br/>Dirección MAC de origen = dirección de la interfaz emisora<br/>Dirección MAC de destino = multidifusión: 01-00-5E-00-00-0A]]></text>
+</component>
+
+<component id="ID_s3_txt02">
+<text><![CDATA[<b>Paquete IP</b><br/>Dirección IPv4 de origen = dirección de la interfaz emisora<br/>Dirección IPv4 de destino = multidifusión: 224.0.0.10<br/>Campo de protocolo = 88 para EIGRP]]></text>
+</component>
+
+<component id="ID_s3_txt03">
+<text><![CDATA[<b>Encabezado de paquete EIGRP</b><br/>Código de operación del tipo de paquete EIGRP<br/>Número de sistema autónomo]]></text>
+</component>
+
+
+
+<component id="ID_s4_txt01">
+<text><![CDATA[<b>Trama de enlace de datos</b><br/>Dirección MAC de origen = dirección de la interfaz emisora<br/>Dirección MAC de destino = multidifusión: 01-00-5E-00-00-0A]]></text>
+</component>
+
+<component id="ID_s4_txt02">
+<text><![CDATA[<b>Paquete IP</b><br/>Dirección IPv4 de origen = dirección de la interfaz emisora<br/>Dirección IPv4 de destino = multidifusión: 224.0.0.10<br/>Campo de protocolo = 88 para EIGRP]]></text>
+</component>
+
+<component id="ID_s4_txt03">
+<text><![CDATA[<b>Encabezado de paquete EIGRP</b><br/>Código de operación<br/>del tipo de paquete EIGRP Número de sistema autónomo]]></text>
+</component>
+
+<component id="ID_s4_txt04">
+<text><![CDATA[<b>Tipos de TLV<br/>Algunos tipos incluyen:</b><br/>0x0001: Parámetros EIGRP<br/>0x0102: Rutas IP internas<br/>0x0103: Rutas IP externas]]></text>
+</component>
+
+</textcomponents>

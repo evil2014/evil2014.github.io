@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.2.4.1 Reenvío de puertos</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.2.4.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de NAT</h1>
+        <h2>Reenvío de puertos</h2>
+      </div>
+      <div id="content">
+<p>El reenvío de puertos (a veces, denominado “tunneling”) consiste en reenviar el tráfico dirigido a un puerto de red específico desde un nodo de red hacia otro. Esta técnica permite que un usuario externo alcance un puerto en una dirección IPv4 privada (dentro de una LAN) desde el exterior a través de un router con NAT habilitada. </p>
+<p></p>
+<p>En general, las operaciones y los programas peer-to-peer para compartir archivos, como las aplicaciones de servidores web y los FTP salientes, requieren que los puertos de router se reenvíen o se abran para permitir que estas aplicaciones funcionen, como se muestra en la figura 1. Debido a que NAT oculta las direcciones internas, la comunicación peer-to-peer solo funciona desde adentro hacia fuera donde NAT puede asignar las solicitudes salientes a las respuestas entrantes. </p>
+<p></p>
+<p>El problema es que NAT no permite las solicitudes iniciadas desde el exterior. Esta situación se puede resolver de forma manual. El reenvío de puertos se puede configurar para identificar los puertos específicos que se pueden reenviar a los hosts internos.</p>
+<p></p>
+<p>Recuerde que las aplicaciones de software de Internet interactúan con los puertos de usuario que necesitan estar abiertos o disponibles para dichas aplicaciones. Las distintas aplicaciones usan puertos diferentes. Esto hace que las aplicaciones y los routers identifiquen los servicios de red de manera predecible. Por ejemplo, HTTP funciona a través del puerto bien conocido 80. Cuando alguien introduce la dirección <b>http://cisco.com</b>, el explorador muestra el sitio web de Cisco Systems, Inc. Tenga en cuenta que no es necesario especificar el número de puerto HTTP para la solicitud de página, ya que la aplicación asume que se trata del puerto 80. </p>
+<p></p>
+<p>Si se requiere un número de puerto diferente, se puede agregar al URL separado por dos puntos (:). Por ejemplo, si el servidor web escuchara en el puerto 8080, el usuario escribiría <b>http://www.ejemplo.com:8080</b>.</p>
+<p></p>
+<p>El reenvío de puertos permite que los usuarios en Internet accedan a los servidores internos mediante el uso de la dirección de puerto de WAN del router y del número de puerto externo que coincida. En general, los servidores internos se configuran con direcciones IPv4 privadas definidas en RFC 1918. Cuando se envía una solicitud a la dirección IPv4 del puerto de WAN a través de Internet, el router reenvía la solicitud al servidor correspondiente en la LAN. Por motivos de seguridad, los routers de banda ancha no permiten que se reenvíe ninguna solicitud de redes externas a un host interno de manera predeterminada. </p>
+<p></p>
+<p>En la figura 2, se muestra al propietario de una pequeña empresa que utiliza un servidor del punto de venta (PoS) para hacer un seguimiento de las ventas y los inventarios en la tienda. Se puede acceder al servidor desde la tienda pero, debido a que tiene una dirección IPv4 privada, no es posible acceder a este de manera pública desde Internet. Habilitar el router local para el reenvío de puertos permitiría que el propietario acceda al servidor del punto de venta en cualquier lugar desde Internet. El reenvío de puertos en el router se configura con el número de puerto de destino y la dirección IPv4 privada del servidor del punto de venta. Para acceder al servidor, el software de cliente utilizaría la dirección IPv4 pública del router y el puerto de destino del servidor.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

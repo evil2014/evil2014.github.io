@@ -1,0 +1,26 @@
+﻿<textcomponents>
+	<component id="ID_title">
+		<text><![CDATA[<b>Proceso FTP</b>]]></text>
+	</component>
+	<component id="ID_txt01">
+		<text><![CDATA[Servidor]]></text>
+	</component>
+	<component id="ID_txt02">
+		<text><![CDATA[Cliente]]></text>
+	</component>
+	<component id="ID_txt03">
+		<text><![CDATA[Red]]></text>
+	</component>
+	<component id="ID_txt04">
+		<text><![CDATA[<b>1. Conexión de control:</b><br/>El cliente abre la primera conexión al servidor para el tráfico de control.]]></text>
+	</component>
+	<component id="ID_txt05">
+		<text><![CDATA[<b>2. Conexión de datos:</b><br/>El cliente abre la segunda conexión para el tráfico de datos.]]></text>
+	</component>
+	<component id="ID_txt06">
+		<text><![CDATA[Obtener datos]]></text>
+	</component>
+	<component id="ID_txt07">
+		<text><![CDATA[De acuerdo con los comandos enviados a través de la conexión de control, los datos pueden descargarse desde el servidor o cargarse desde el cliente.]]></text>
+	</component>
+</textcomponents>

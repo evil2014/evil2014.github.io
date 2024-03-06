@@ -1,0 +1,81 @@
+﻿<textcomponents>
+
+<component id='ID_inst'>
+	<text><![CDATA[<b>Actividad: identificar ataques de seguridad frecuentes  </b><br><br>Una el nombre del ataque de seguridad frecuente con la descripción.]]></text>
+</component>
+
+<component id='ID_txt01'>
+	<text><![CDATA[Permite que el atacante vea la información acerca de las direcciones IP, de las versiones de software y de la VLAN nativa del entorno para llevar a cabo un ataque DoS.]]></text>
+</component>
+
+<component id='ID_txt02'>
+	<text><![CDATA[Satura el servidor de DHCP con solicitudes de DHCP para usar todas las direcciones disponibles; simula un ataque DoS en el switch.]]></text>
+</component>
+
+<component id='ID_txt03'>
+	<text><![CDATA[Usa un “diccionario” para buscar contraseñas comunes; intenta iniciar una sesión de Telnet con lo que el “diccionario” sugiere como contraseña.]]></text>
+</component>
+
+<component id='ID_txt04'>
+	<text><![CDATA[Usa direcciones MAC falsas para desbordar la tabla de direcciones MAC.]]></text>
+</component>
+
+<component id='ID_txt05'>
+	<text><![CDATA[Permite que un atacante configure un servidor de DHCP falso en la red para emitir direcciones DHCP para los clientes.]]></text>
+</component>
+
+   <component id="ID_txt06">
+   <text><![CDATA[<b>Tipo de ataque de seguridad  </b>]]></text>
+   </component>
+
+<component id="ID_txt07">
+   <text><![CDATA[<b>Descripción de los ataques de seguridad frecuentes  </b>]]></text>
+   </component> <!--Drag and Drop-->
+
+
+<component id='ID_drag01'>
+	<text><![CDATA[<font color="#393536">Saturación de direcciones MAC</font>]]></text>
+</component>
+
+<component id='ID_drag02'>
+	<text><![CDATA[<font color="#393536">Detección de DHCP</font>]]></text>
+</component>
+
+<component id='ID_drag03'>
+	<text><![CDATA[<font color="#393536">CDP</font>]]></text>
+</component>
+
+<component id='ID_drag04'>
+	<text><![CDATA[<font color="#393536">Inanición DHCP</font>]]></text>
+</component>
+
+<component id='ID_drag05'>
+	<text><![CDATA[<font color="#393536">Fuerza bruta</font>]]></text>
+</component>
+
+
+<component id='ID_s1_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto  </b>]]></text>
+</component>
+
+<component id='ID_s1_CORRECT_BODY'>
+	<text><![CDATA[Unió correctamente cada descripción de ataque de seguridad frecuente con su tipo.]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto  </b>]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_BODY'>
+	<text><![CDATA[No unió correctamente cada descripción de ataque de seguridad frecuente con su tipo. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_CHECK'>
+	<text><![CDATA[<b>Verificar  </b>]]></text>
+</component>
+
+<component id='ID_RESET'>
+	<text><![CDATA[<b>Restablecer  </b>]]></text>
+</component>
+
+</textcomponents>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.1.3.1 Propagación de una ruta estática predeterminada </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.1.3.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuraciones avanzadas de EIGRP</h1>
+        <h2>Propagación de rutas predeterminadas</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Propagación de una ruta estática predeterminada</b>
+</p>
+<p></p>
+<p>El uso de una ruta estática a 0.0.0.0/0 como ruta predeterminada no constituye routing dependiente de protocolo. La ruta estática predeterminada "quad zero" se puede utilizar con cualquier protocolo de enrutamiento actualmente admitido. En general, la ruta estática predeterminada se configura en el router que tiene una conexión a una red fuera del dominio de routing EIGRP; por ejemplo, a un ISP.</p>
+<p></p>
+<p>En la figura 1, el R2 es el router de gateway que conecta el dominio de routing EIGRP a Internet. Cuando se configura la ruta estática predeterminada, es necesario propagar esa ruta en todo el dominio EIGRP, como se muestra en la figura 2.</p>
+<p></p>
+<p>Un método para propagar una ruta estática predeterminada dentro del dominio de routing EIGRP es mediante el comando <span class="cmd"><b>redistribute static</b></span>. El comando <span class="cmd"><b>redistribute static</b></span> le indica a EIGRP que incluya rutas estáticas en sus actualizaciones de EIGRP a otros routers. En la figura 3, se muestra la configuración de la ruta estática predeterminada y el comando <span class="cmd"><b>redistribute static</b></span> en el router R2. </p>
+<p></p>
+<p>En la figura 4, se verifica que el router R2 recibió la ruta predeterminada y la instaló en su tabla de routing IPv4.</p>
+<p></p>
+<p>En la figura 5, el comando <span class="cmd"><b>show ip protocols</b></span> verifica que el R2 redistribuye las rutas estáticas dentro del dominio de routing EIGRP.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

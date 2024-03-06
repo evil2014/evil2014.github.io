@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.2.2.1 Acceso múltiple por detección de portadora y prevención de colisiones </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.2.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Operaciones de LAN inalámbrica</h1>
+        <h2>Operación inalámbrica</h2>
+      </div>
+      <div id="content">
+<p>Recuerde que el método de contienda de los medios es el método mediante el cual los dispositivos determinan cómo y cuándo acceder a los medios cuando se debe reenviar el tráfico a través de la red. Las WLAN IEEE 802.11 usan el protocolo MAC CSMA/CA. Si bien el nombre es similar al del método CSMA/CD de Ethernet, el concepto operativo es completamente diferente.</p>
+<p></p>
+<p>Los sistemas Wi-Fi son configuraciones de medios compartidos half-duplex; por lo tanto, los clientes inalámbricos pueden transmitir y recibir en el mismo canal de radio. Esto crea un problema, ya que un cliente inalámbrico no puede oír mientras envía; por lo tanto, no es posible detectar una colisión. Para abordar este problema, el IEEE desarrolló un mecanismo adicional para la prevención de colisiones denominado “función de coordinación distribuida” (DCF). Mediante DCF, un cliente inalámbrico transmite solo si el canal está libre. Todas las transmisiones se confirman; por ello, si un cliente inalámbrico no recibe un acuse de recibo, supone que ocurrió una colisión y lo vuelve a intentar después de un intervalo de espera aleatorio.</p>
+<p></p>
+<p>Los clientes inalámbricos y los AP usan las tramas de control RTS y CTS para facilitar la transferencia de datos propiamente dicha. </p>
+<p></p>
+<p>Como se muestra en la figura 1, cuando un cliente inalámbrico envía datos, primero evalúa los medios para determinar si otros dispositivos los están usando para transmitir. De lo contrario, envía una trama RTS al AP. Esta trama se usa para solicitar acceso dedicado al medio de RF durante un período específico. El AP recibe la trama y, si está disponible, otorga al cliente inalámbrico acceso al medio de RF mediante el envío de una trama CTS de la misma duración. Todos los demás dispositivos inalámbricos que observan la trama CTS ceden los medios al nodo transmisor para la transmisión.</p>
+<p></p>
+<p>La trama de control CTS incluye el período durante el que se le permite transmitir al nodo transmisor. Otros clientes inalámbricos retienen las transmisiones durante, por lo menos, el período especificado.</p>
+<p></p>
+<p>En la figura 2, se muestra un diagrama de flujo que detalla el proceso CSMA/CA.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>11.0.1.1 Introducción</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_11.0.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Introducción</h1>
+        <h2>Introducción</h2>
+      </div>
+      <div id="content">
+<p>Todas las direcciones IPv4 públicas que se usan en Internet deben registrarse en un registro regional de Internet (RIR). Las organizaciones pueden arrendar direcciones públicas de un SP, pero solo el titular registrado de una dirección pública de Internet puede asignar esa dirección a un dispositivo de red. Sin embargo, con un máximo teórico de 4300 millones de direcciones, el espacio de direcciones IPv4 es muy limitado. Cuando Bob Kahn y Vint Cerf desarrollaron por primera vez la suite de protocolos TCP/IP que incluía IPv4 en 1981, nunca imaginaron en qué podría llegar a convertirse Internet. En aquel entonces, la computadora personal era, en la mayoría de los casos, una curiosidad para los aficionados, y todavía faltaba más de una década para la aparición de la World Wide Web. </p>
+<p></p>
+<p>Con la proliferación de los dispositivos informáticos personales y la llegada de la World Wide Web, pronto resultó evidente que las 4300 millones de direcciones IPv4 no serían suficientes. La solución a largo plazo era el protocolo IPv6, pero se necesitaban soluciones más inmediatas para abordar el agotamiento. A corto plazo, el IETF implementó varias soluciones, entre las que se incluía la traducción de direcciones de red (NAT) y las direcciones IPv4 privadas definidas en RFC 1918. En este capítulo, se analiza cómo se utiliza NAT combinada con el espacio de direcciones privadas para conservar y usar de forma más eficaz las direcciones IPv4, a fin de proporcionar acceso a Internet para las redes de todos los tamaños. En este capítulo, se abarcan los siguientes temas:</p>
+<p>
+<ul>
+<li>Las características, la terminología y las operaciones generales de NAT</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Los diferentes tipos de NAT, incluidas la NAT estática, la NAT dinámica y la NAT con sobrecarga</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Las ventajas y las desventajas de NAT</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>La configuración, la verificación y el análisis de la NAT estática, la NAT dinámica y la NAT con sobrecarga</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>La forma en que se puede usar el reenvío de puertos para acceder a los dispositivos internos desde Internet</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>La resolución de problemas de NAT mediante los comandos <span class="cmd"><b>show</b></span> y <span class="cmd"><b>debug</b></span></li>
+</ul>
+</p>
+<p>
+<ul>
+<li>La forma en que se utiliza NAT para IPv6 para traducir entre direcciones IPv6 y direcciones IPv4</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

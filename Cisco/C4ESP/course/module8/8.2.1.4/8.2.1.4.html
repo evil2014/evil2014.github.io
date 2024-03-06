@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.2.1.4 Versiones de SNMP</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.2.1.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>SNMP</h1>
+        <h2>Funcionamiento de SNMP</h2>
+      </div>
+      <div id="content">
+<p>Existen varias versiones de SNMP, incluidas las siguientes:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>SNMPv1:</b> el protocolo simple de administración de red, un estándar de Internet completo, se define en RFC 1157.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>SNMPv2c:</b> se define en las RFC 1901 a 1908; utiliza el marco administrativo basado en cadenas de comunidad.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>SNMPv3:</b> protocolo interoperable basado en estándares definido originalmente en las RFC 2273 a 2275; proporciona acceso seguro mediante la autenticación y el cifrado de paquetes a través de la red. Incluye estas características de seguridad: integridad del mensaje para asegurar que no se alteró un paquete en tránsito, autenticación para determinar que el mensaje proviene de un origen válido, y cifrado para evitar que un origen no autorizado lea el contenido de un mensaje.</li>
+</ul>
+</p>
+<p></p>
+<p>Todas las versiones usan administradores de SNMP, agentes SNMP y MIB. El software IOS de Cisco admite las tres versiones mencionadas anteriormente. La versión 1 es una solución antigua y no se suele encontrar en las redes actuales; por lo tanto, este curso se centra en las versiones 2c y 3. </p>
+<p></p>
+<p>SNMPv1 y SNMPv2c usan una forma de seguridad basada en comunidades. Una ACL y una contraseña definen la comunidad de administradores que pueden acceder a la MIB del agente.</p>
+<p></p>
+<p>A diferencia de SNMPv1, SNMPv2c incluye un mecanismo de recuperación masiva e informes de mensajes de error más detallados para las estaciones de administración. El mecanismo de recuperación masiva recupera tablas y grandes cantidades de información, lo que minimiza la cantidad de idas y vueltas requeridas. El manejo de errores mejorado de SNMPv2c incluye códigos de error ampliados que distinguen diferentes tipos de condiciones de error. Estas condiciones se informan mediante un único código de error en SNMPv1. Los códigos de devolución de error en SNMPv2c incluyen el tipo de error.</p>
+<p></p>
+<p>
+<b>Nota:</b> SNMPv1 y SNMPv2c ofrecen características de seguridad mínima. Específicamente, SNMPv1 y SNMPv2c no pueden autenticar el origen de un mensaje de administración ni proporcionar cifrado. La descripción más actualizada de SNMPv3 se encuentra en las RFC 3410 a 3415. Agrega métodos para garantizar la transmisión segura de datos importantes entre los dispositivos administrados.</p>
+<p></p>
+<p>SNMPv3 proporciona tanto modelos como niveles de seguridad. Un modelo de seguridad es una estrategia de autenticación configurada para un usuario y el grupo dentro del que reside el usuario. Un nivel de seguridad es el nivel de seguridad permitido dentro de un modelo de seguridad. La combinación del nivel de seguridad y el modelo de seguridad determina qué mecanismo de seguridad se utiliza al manejar un paquete SNMP. Los modelos de seguridad disponibles son SNMPv1, SNMPv2c y SNMPv3. </p>
+<p></p>
+<p>En la ilustración, se identifican las características de las distintas combinaciones de modelos y niveles de seguridad.</p>
+<p></p>
+<p>Un administrador de red debe configurar el agente SNMP para que use la versión de SNMP que admite la estación de administración. Debido a que un agente puede comunicarse con varios administradores de SNMP, es posible configurar el software para admitir comunicaciones mediante SNMPv1, SNMPv2c o SNMPv3.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

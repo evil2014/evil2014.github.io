@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.1.1.1 La necesidad de escalar la red</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.1.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Implementación de un diseño de red</h1>
+        <h2>Diseño jerárquico de la red</h2>
+      </div>
+      <div id="content">
+<p>Las empresas recurren cada vez más a su infraestructura de red para proporcionar servicios de misión crítica. A medida que las empresas crecen y evolucionan, contratan más empleados, abren sucursales y se expanden a los mercados globales. Estos cambios afectan directamente los requisitos de la red. Un entorno comercial de gran tamaño que cuenta con muchos usuarios, ubicaciones y sistemas se conoce como “empresa”. La red que se utiliza para respaldar las actividades comerciales de la empresa se denomina red empresarial.</p>
+<p></p>
+<p>Haga clic en el botón Reproducir de la ilustración para ver una animación de cómo una red pequeña se convierte en una red empresarial.</p>
+<p></p>
+<p>Una red empresarial debe admitir el intercambio de diversos tipos de tráfico de red, entre ellos archivos de datos, correo electrónico, telefonía IP y aplicaciones de video para varias unidades empresariales. Todas las redes empresariales deben cumplir los siguientes requisitos:</p>
+<p>
+<ul>
+<li>Admitir aplicaciones fundamentales. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Admitir el tráfico de redes convergentes.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Admitir las diversas necesidades comerciales.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Proporcionar un control administrativo centralizado.</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

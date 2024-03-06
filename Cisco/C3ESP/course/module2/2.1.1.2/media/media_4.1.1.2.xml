@@ -1,0 +1,128 @@
+﻿<textcomponents>
+<component id="ID_txt01">
+	<text><![CDATA[<b>Bucles de la Capa 2</b>]]></text>
+</component>
+
+<component id="ID_txt03">
+  <text><![CDATA[<b>Enlace troncal2</b>]]></text> 
+  </component>
+  <component id="ID_txt04">
+  <text><![CDATA[<b>Enlace troncal3</b>]]></text> 
+  </component>
+  <component id="ID_txt05">
+  <text><![CDATA[<b>Enlace troncal1</b>]]></text> 
+  </component>
+  <component id="ID_txt05B">
+  <text><![CDATA[La PC1 envía una difusión.]]></text> 
+  </component>
+<component id="ID_txt06">
+  <text><![CDATA[El S2 actualiza la tabla de direcciones MAC. La dirección MAC de la PC1 se asigna a F0/11.]]></text> 
+  </component>
+  <component id="ID_txt07">
+  <text><![CDATA[El S2 reenvía la difusión por todos los puertos, excepto el puerto en el que la recibió.]]></text> 
+  </component>
+  <component id="ID_txt08">
+  <text><![CDATA[El S3 y el S1 actualizan sus tablas de direcciones MAC con la información de la PC1.]]></text> 
+  </component>
+  <component id="ID_txt09">
+  <text><![CDATA[El S3 y el S1 reenvían la difusión por todos los puertos, excepto el puerto en el que la recibieron.]]></text> 
+  </component>
+  <component id="ID_txt10">
+  <text><![CDATA[El S1 y el S3 reciben un paquete de la PC1 en un nuevo puerto. Estos actualizan su tabla de direcciones MAC según corresponda.]]></text>
+  </component>
+  <component id="ID_txt10B">
+  <text><![CDATA[El S1 y el S3 reenvían la difusión por todos los puertos, excepto el puerto en el que la recibieron.]]></text>
+  </component>
+  <component id="ID_txt10C">
+  <text><![CDATA[El S2 actualiza su tabla de direcciones MAC para la PC1 con el último puerto en el que recibió la trama de difusión.]]></text>
+  </component>
+  <component id="ID_txt10D">
+  <text><![CDATA[El S2 reenvía la trama de difusión por todos los puertos, excepto el último puerto en el que la recibió. El ciclo vuelve a empezar.]]></text>
+  </component>
+  <component id="ID_txt11a">
+  <text><![CDATA[<b>Tabla MAC de S3</b>]]></text>
+  </component>
+  <component id="ID_txt12a">
+  <text><![CDATA[<b>Tabla MAC de S1</b>]]></text>
+  </component>
+  <component id="ID_txt13a">
+  <text><![CDATA[<b>Tabla MAC de S2</b>]]></text>
+  </component>
+  <component id="ID_txt11">
+  <text><![CDATA[<b>Tabla MAC de S3</b>]]></text>
+  </component>
+  <component id="ID_txt12">
+  <text><![CDATA[<b>Tabla MAC de S1</b>]]></text>
+  </component>
+  <component id="ID_txt13">
+  <text><![CDATA[<b>Tabla MAC del S2</b><br /><font color="#F68026"><b>PC1 = F0/11</b></font>]]></text>
+  </component>
+  <component id="ID_txt14">
+  <text><![CDATA[<b>Tabla MAC del S3</b><br /><font color="#F68026"><b>PC1 = F0/2</b></font>]]></text>
+  </component>
+  <component id="ID_txt15">
+  <text><![CDATA[<b>Tabla MAC del S1</b><br /><font color="#F68026"><b>PC1 = F0/1</b></font>]]></text>
+  </component>
+  <component id="ID_txt16">
+  <text><![CDATA[<b>Tabla MAC de S2</b><br />PC1 = F0/11]]></text>
+  </component>
+  <component id="ID_txt17">
+  <text><![CDATA[<b>Tabla MAC del S3</b><br /><font color="#F68026"><b>PC1 = F0/1</b></font>]]></text>
+  </component>
+  <component id="ID_txt18">
+  <text><![CDATA[<b>Tabla MAC del S1</b><br /><font color="#F68026"><b>PC1 = F0/2</b></font>]]></text>
+  </component>
+  <component id="ID_txt19">
+  <text><![CDATA[<b>Tabla MAC de S2</b><br />PC1 = F0/11]]></text>
+  </component>
+  <component id="ID_txt20">
+  <text><![CDATA[<b>Tabla MAC del S3</b><br />PC1 = F0/1]]></text>
+  </component>
+  <component id="ID_txt21">
+  <text><![CDATA[<b>Tabla MAC del S1</b><br />PC1 = F0/2]]></text>
+  </component>
+  <component id="ID_txt22">
+  <text><![CDATA[<b>Tabla MAC del S2</b><br /><font color="#F68026"><b>PC1 = F0/1</b></font>]]></text>
+  </component>
+  <component id="ID_txt23">
+  <text><![CDATA[<b>Tabla MAC del S3</b><br /><font color="#F68026"><b>PC1 = F0/2</b></font>]]></text>
+  </component>
+  <component id="ID_txt24">
+  <text><![CDATA[<b>Tabla MAC del S1</b><br /><font color="#F68026"><b>PC1 = F0/1</b></font>]]></text>
+  </component>
+  <component id="ID_txt25">
+  <text><![CDATA[<b>Tabla MAC del S2</b><br />PC1 = F0/1]]></text>
+  </component>
+  
+  
+	<component id="end">
+		<text><![CDATA[End]]></text>
+	</component>
+
+	<component id="fforward">
+		<text><![CDATA[Adelantar]]></text>
+	</component>
+
+	<component id="pause">
+		<text><![CDATA[Pausa]]></text>
+	</component>
+
+	<component id="play">
+		<text><![CDATA[Reproducir]]></text>
+	</component>
+
+	<component id="rewind">
+		<text><![CDATA[Regresar]]></text>
+	</component>
+
+	<component id="start">
+		<text><![CDATA[Inicio]]></text>
+	</component>
+
+	<component id="ID_cont">
+		<text><![CDATA[Haga clic en Reproducir para continuar.]]></text>
+	</component>
+
+
+
+</textcomponents>

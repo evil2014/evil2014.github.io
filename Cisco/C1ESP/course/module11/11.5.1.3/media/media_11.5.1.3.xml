@@ -1,0 +1,36 @@
+﻿<textcomponents>
+<component id="ID_title01">
+	<text><![CDATA[<b>Modo de red</b>]]></text>
+</component>
+<component id="ID_title02">
+	<text><![CDATA[<b>SSID</b>]]></text>
+</component>
+<component id="ID_title03">
+	<text><![CDATA[<b>Canal estándar</b>]]></text>
+</component>
+<component id="ID_title04">
+	<text><![CDATA[<b>Transmisión del SSID</b>]]></text>
+</component>
+
+
+<component id="ID_txt01">
+<text><![CDATA[Determina el tipo de tecnología que debe admitirse. Por ejemplo, <b>802.11b, 802.11g, 802.11n</b> o <b>modo mixto</b>.]]></text>
+</component>
+<component id="ID_txt02">
+<text><![CDATA[Utilizado para identificar la WLAN. Todos los dispositivos que deseen participar en la WLAN deben tener el mismo SSID.]]></text>
+</component>
+<component id="ID_txt03">
+<text><![CDATA[Especifica el canal en el que se llevará a cabo la comunicación. La configuración predeterminada está establecida en <b>Auto</b> (Automático) para permitir que el AP determine el canal óptimo para usar.]]></text>
+</component>
+
+<component id="ID_txt04">
+<text><![CDATA[Determina si el SSID se transmitirá a todos los dispositivos dentro del alcance. Establecido en <b>Enabled</b> (Habilitado) de manera predeterminada.]]></text>
+</component>
+
+
+
+<component id="ID_inst">
+<text><![CDATA[Haga clic en cada configuración inalámbrica para obtener más información.]]></text>
+</component>
+
+</textcomponents>

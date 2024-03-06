@@ -1,0 +1,71 @@
+﻿<textcomponents>
+
+<component id='ID_s1_title'>
+	<text><![CDATA[<b>Comandos para la recolección de datos</b>]]></text>
+</component>
+
+<component id="ID_table02">
+<text><![CDATA[<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4'>
+
+<tr class="mtable_top">
+<td colspan='2' bgcolor='#0E6360' class="mtable_top"><font size='1' color='#434321'><span style="color:#DAE17A">.</span></font></td>
+</tr>
+
+<tr>
+<td bgcolor='#077A77' width='200' valign="top" class="mtitle"><font color='#ffffff'><b>Comando</b></font></td>
+<td bgcolor='#077A77' valign="top" class="mtitle"><font color='#ffffff'><b>Descripción</b></font></td>
+</tr>
+
+<tr>
+<td bgcolor='#eff8f7' valign="top"><font face="_typewriter"><b>show version</b></font></td>
+<td bgcolor='#eff8f7' valign="top">Muestra el tiempo de actividad, información sobre la versión del software y del hardware del dispositivo.</td>
+</tr>
+
+<tr>
+<td bgcolor='#ffffff' valign="top"><font face="_typewriter"><b>show ip interface</b>[<i>brief</i>]<br/><b>show ipv6 interface</b>[<i>brief</i>]</font></td>
+<td bgcolor='#ffffff' valign="top">Muestra todas las opciones de configuración establecidas en una interfaz. Use la palabra clave brief para mostrar sólo el estado de actividad/inactividad de las interfaces IP y de la dirección IP de cada una de ellas.</td>
+</tr>
+
+<tr>
+<td bgcolor='#eff8f7' valign="top"><font face="_typewriter"><b>show interfaces  </b>[<i>interface_type interface_num</i>]</font></td>
+<td bgcolor='#eff8f7' valign="top">Muestra la salida detallada de cada interfaz. Para mostrar el resultado detallado de una sola interfaz, incluya el tipo y el número de interfaz en el comando (por ejemplo, gigabitethernet 0/0).</td>
+</tr>
+
+<tr>
+<td bgcolor='#ffffff' valign="top"><font face="_typewriter"><b>show ip route<br/>show ipv6 route</b></font></td>
+<td bgcolor='#ffffff' valign="top">Muestra el contenido de la tabla de enrutamiento.</td> 
+</tr>
+
+<tr>
+<td bgcolor='#eff8f7' valign="top"><font face="_typewriter"><b>show arp<br/>show ipv6 neighbors</b></font></td>
+<td bgcolor='#eff8f7' valign="top">Muestra el contenido de la tabla ARP (IPv4) y la tabla de vecinos (IPv6).</td> 
+</tr>
+
+<tr>
+<td bgcolor='#ffffff' valign="top"><font face="_typewriter"><b>show running-config</b></font></td>
+<td bgcolor='#ffffff' valign="top">Muestra la configuración actual.</td> 
+</tr>
+
+<tr>
+<td bgcolor='#eff8f7' valign="top"><font face="_typewriter"><b>show port</b></font></td>
+<td bgcolor='#eff8f7' valign="top">Muestra el estado de los puertos en un switch.</td> 
+</tr>
+
+<tr>
+<td bgcolor='#ffffff' valign="top"><font face="_typewriter"><b>show vlan</b></font></td>
+<td bgcolor='#ffffff' valign="top">Muestra el estado de las VLAN en un switch.</td> 
+</tr>
+
+<tr>
+<td bgcolor='#eff8f7' valign="top"><font face="_typewriter"><b>show tech-support</b></font></td>
+<td bgcolor='#eff8f7' valign="top">Este comando es útil para recopilar una gran cantidad de información sobre el dispositivo para propósitos de resolución de problemas. Ejecuta varios comandos <font face="_typewriter"><b>show </b></font> que se pueden proporcionar a los representantes de soporte técnico al informar un problema.</td> 
+</tr>
+<tr>
+<td bgcolor='#ffffff' valign="top"><font face="_typewriter"><b>show ip cache flow</b></font></td>
+<td bgcolor='#ffffff' valign="top">Muestra un resumen de las estadísticas de contabilidad de NetFlow.</td> 
+</tr>
+ 
+</table>]]></text> 
+</component>
+
+</textcomponents>

@@ -1,0 +1,30 @@
+﻿<textcomponents> <!--Slide 1-->
+   
+<component id="ID_s1_title">
+<text><![CDATA[<b>ipconfig</b>]]></text>
+</component>
+<component id="ID_s1_txt01">
+   <text><![CDATA[Resultado de <b><font face="_typewriter" class="new">ipconfig</font></b> de muestra que indica la dirección de gateway predeterminado.]]></text>
+   </component>
+
+<component id="ID_s1_txt02">
+	<text><![CDATA[<b>Leyenda</b>]]></text>
+</component>
+
+<component id="ID_s1_sub01">
+   <text><![CDATA[Dirección IP para este equipo host]]></text>
+</component>
+
+<component id="ID_s1_sub02">
+   <text><![CDATA[Máscara de subred de la red local]]></text>
+</component>
+
+<component id="ID_s1_sub03">
+   <text><![CDATA[Dirección de gateway predeterminado para este equipo host]]></text>
+</component> <!--Slide 2-->
+<component id="ID_s2_title">
+<text><![CDATA[<b>ipconfig /all</b>]]></text>
+</component>
+
+
+</textcomponents>

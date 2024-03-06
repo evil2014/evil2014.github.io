@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>3.2.1.2 Protocolos de red</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_3.2.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolos y estándares de red</h1>
+        <h2>Protocolos</h2>
+      </div>
+      <div id="content">
+<p>A nivel humano, algunas reglas de comunicación son formales y otras simplemente se sobreentienden, según los usos y costumbres. Para que los dispositivos se puedan comunicar en forma exitosa, un nuevo conjunto de aplicaciones de protocolos debe describir los requerimientos e interacciones precisos. Los protocolos de red definen un formato y un conjunto de reglas comunes para intercambiar mensajes entre dispositivos. Algunos protocolos de red comunes son IP, HTTP y DHCP. </p>
+<p></p>
+<p>En las ilustraciones, se muestran los protocolos de red que describen los siguientes procesos:</p>
+<p>
+<ul>
+<li>La manera en que se da formato o se estructura el mensaje, como se muestra en la figura 1.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>El proceso por el cual los dispositivos de red comparten información sobre rutas con otras redes, como se muestra en la figura 2.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>La manera y el momento en que se transmiten mensajes de error y del sistema entre los dispositivos, como se muestra en la figura 3.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>La configuración y la terminación de sesiones de transferencia de datos, como se muestra en la figura 4</li>
+</ul>
+</p>
+<p></p>
+<p>Por ejemplo, IP define la forma en que un paquete de datos se entrega dentro de una red o a una red remota. La información del protocolo IPv4 se transmite en un formato específico de modo que el receptor pueda interpretarlo correctamente. Esto no difiere mucho del protocolo utilizado para escribir la dirección en un sobre al enviar una carta. La información debe respetar un determinado formato, ya que, de lo contrario, la oficina de correos no puede entregar la carta en el destino.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

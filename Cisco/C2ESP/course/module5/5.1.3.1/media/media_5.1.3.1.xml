@@ -1,0 +1,97 @@
+﻿<textcomponents>
+
+<component id="ID_s1_title">
+	<text><![CDATA[<b>Subinterfaces del router y enrutamiento entre VLAN</b>]]></text>
+</component>
+<component id="ID_txt01">
+	<text><![CDATA[G0/0.10]]></text>
+</component>
+<component id="ID_txt02">
+	<text><![CDATA[G0/0.30]]></text> 
+</component>
+<component id="ID_txt03">
+	<text><![CDATA[<b>Subinterfaces del R1</b><br/>G0/0.10: 172.17.10.1<br/>G0/0.20: 172.17.20.1<br/>G0/0.30: 172.17.30.1]]></text> 
+</component>
+<component id="ID_txt04">
+	<text><![CDATA[Enlace troncal]]></text> 
+</component>
+<component id="ID_txt05">
+	<text><![CDATA[Enlace troncal]]></text>
+</component>
+<component id="ID_txt06">
+	<text><![CDATA[Enlace troncal]]></text> 
+</component>
+<component id="ID_txt07">
+  <text><![CDATA[Enlace troncal]]></text> 
+</component>
+
+<component id="ID_txt08">
+	<text><![CDATA[<b>Trama de unicast</b>]]></text>
+</component>
+<component id="ID_txt09">
+	<text><![CDATA[<b>Trama de unidifusión de VLAN 10</b>]]></text>
+</component>
+<component id="ID_txt10">
+	<text><![CDATA[<b>Trama de unidifusión de VLAN 30</b>]]></text>
+</component>
+<component id="ID_txt11">
+	<text><![CDATA[<b>Trama de unicast</b> ]]></text>
+</component>
+<component id="ID_txt12">
+	<text><![CDATA[Trama etiquetada de VLAN]]></text>
+</component>
+<component id="ID_txt13">
+	<text><![CDATA[Trama etiquetada de VLAN]]></text>
+</component> <!--PURPLE TEXT BOXES-->
+<component id="ID_tbox01">
+  <text><![CDATA[La PC1 envía una trama de unidifusión a la PC3.]]></text>
+</component>
+<component id="ID_tbox02">
+  <text><![CDATA[El S2 recibe la trama en la VLAN 10 y procede a su etiquetado antes de enviarla al S1. ]]></text>
+</component>
+<component id="ID_tbox03">
+  <text><![CDATA[El S1 mantiene la etiqueta VLAN y reenvía la trama al R1.]]></text>
+</component>
+<component id="ID_tbox04">
+  <text><![CDATA[La etiqueta VLAN informa al R1 que se recibió la trama en G0/0.10.]]></text>
+</component>
+<component id="ID_tbox05">
+  <text><![CDATA[El R1 examina la tabla de rutas. La red de destino está conectada directamente a G0/0.30 del R1.]]></text>
+</component>
+<component id="ID_tbox06">
+  <text><![CDATA[El R1 reenvía el paquete de G0/0.10 a G0/0.30.]]></text>
+</component>
+<component id="ID_tbox07">
+  <text><![CDATA[El R1 reenvía la trama fuera de la interfaz física, etiquetada con VLAN 30.]]></text>
+</component>
+<component id="ID_tbox08">
+  <text><![CDATA[El S1 mantiene la etiqueta VLAN y reenvía la trama al S2.]]></text>
+</component>
+<component id="ID_tbox09">
+  <text><![CDATA[El S2 quita la etiqueta VLAN y reenvía la trama a la PC3.]]></text>
+</component> <!--ANIMATION CONTROLLER-->
+	<component id="end">
+		<text><![CDATA[Finalizar]]></text>
+	</component>
+	
+	<component id="fforward">
+		<text><![CDATA[Adelantar]]></text>
+	</component>
+	
+	<component id="pause">
+		<text><![CDATA[Pausa]]></text>
+	</component>
+	
+	<component id="play">
+		<text><![CDATA[Reproducir]]></text>
+	</component>
+	
+	<component id="rewind">
+		<text><![CDATA[Regresar]]></text>
+	</component>
+	
+	<component id="start">
+		<text><![CDATA[Inicio]]></text>
+	</component>
+	
+</textcomponents>

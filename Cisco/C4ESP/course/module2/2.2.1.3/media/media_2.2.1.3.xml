@@ -1,0 +1,89 @@
+﻿<textcomponents>
+	<component id='ID_s1_inst'>
+	<text><![CDATA[<b>Actividad: Clasificar las opciones de acceso WAN</b><br/>Clasifique cada opción de acceso WAN y arrástrela al espacio correspondiente en el diagrama.]]></text>
+	</component> <!--Drag and Drop-->
+	<component id='ID_s1_drag01'>
+		<text><![CDATA[DSL, cable,<br> Inalámbrico]]></text>
+	</component>
+
+	<component id='ID_s1_drag02'>
+		<text><![CDATA[Privada]]></text>
+	</component>
+
+	<component id='ID_s1_drag03'>
+		<text><![CDATA[T1/E1, T3/E3]]></text>
+	</component>
+
+	<component id='ID_s1_drag04'>
+		<text><![CDATA[PSTN, ISDN]]></text>
+	</component>
+
+	<component id='ID_s1_drag05'>
+		<text><![CDATA[Líneas arrendadas]]></text>
+	</component>
+
+	<component id='ID_s1_drag06'>
+		<text><![CDATA[Conmutado por circuitos]]></text>
+	</component>
+
+	<component id='ID_s1_drag07'>
+		<text><![CDATA[Dedicada]]></text>
+	</component>
+
+	<component id='ID_s1_drag08'>
+		<text><![CDATA[Pública]]></text>
+	</component>
+
+	<component id='ID_s1_drag09'>
+		<text><![CDATA[Banda ancha, VPN]]></text>
+	</component>
+
+	<component id='ID_s1_drag10'>
+
+		<text><![CDATA[Ethernet metropolitana<br> MPLS, Frame<br> Relay, ATM]]></text>
+	</component>
+
+
+	<component id='ID_s1_CORRECT_TITLE'>
+		<text><![CDATA[<b>Correcto</b>]]></text>
+	</component>
+
+	<component id='ID_s1_CORRECT_BODY'>
+		<text><![CDATA[Clasificó correctamente las opciones de acceso WAN según sus tipos.]]></text>
+	</component>
+
+	<component id='ID_s1_INCORRECT_TITLE'>
+		<text><![CDATA[<b>Incorrecto</b>]]></text>
+	</component>
+
+	<component id='ID_s1_INCORRECT_BODY'>
+		<text><![CDATA[No clasificó correctamente las opciones de acceso WAN según sus tipos. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+	</component>
+
+	<component id='ID_s1_CHECK'>
+		<text><![CDATA[<b>Verificar</b>]]></text>
+	</component>
+
+	<component id='ID_s1_RESET'>
+		<text><![CDATA[<b>Restablecer</b>]]></text>
+	</component>
+
+
+	<component id="ID_s1_txt01">
+		<text><![CDATA[WAN]]></text>
+	</component>
+
+	<component id="ID_s1_txt02">
+	  <text><![CDATA[Conmutado]]></text> 
+	</component>
+
+	<component id="ID_s1_txt03">
+	  <text><![CDATA[Internet]]></text> 
+	</component>
+	
+	<component id="ID_s1_txt04">
+	  <text><![CDATA[Conmutado por paquetes]]></text> 
+	</component>
+
+
+</textcomponents>

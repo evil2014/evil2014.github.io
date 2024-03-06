@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.2.2.3 Prácticas recomendadas de seguridad</title>
+    <!--  -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.2.2.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>SNMP</h1>
+        <h2>Configuración de SNMP</h2>
+      </div>
+      <div id="content">
+<p>Si bien SNMP es muy útil para el monitoreo y la resolución de problemas, como se muestra en la ilustración, también puede crear vulnerabilidades de seguridad. Por este motivo, antes de implementar SNMP, tenga en cuenta las prácticas recomendadas de seguridad. </p>
+<p></p>
+<p>SNMPv1 y SNMPv2c dependen de las cadenas de comunidad SNMP en texto no cifrado para autenticar el acceso a los objetos de la MIB. Estas cadenas de comunidad, al igual que todas las contraseñas, se deben elegir cuidadosamente para asegurar que no sean demasiado fáciles de descifrar. Además, las cadenas de comunidad se deben cambiar a intervalos regulares y de acuerdo con las políticas de seguridad de la red. Por ejemplo, se deben cambiar las cadenas cuando un administrador de red cambia de función o deja la empresa. Si SNMP se utiliza solo para monitorear los dispositivos, use comunidades de solo lectura. </p>
+<p></p>
+<p>Asegúrese de que los mensajes de SNMP no se propaguen más allá de las consolas de administración. Se deben usar ACL para evitar que los mensajes de SNMP se envíen más allá de los dispositivos requeridos. También se deben usar ACL en los dispositivos monitoreados para limitar el acceso solamente a los sistemas de administración. </p>
+<p></p>
+<p>Se recomienda SNMPv3 porque proporciona autenticación y cifrado de seguridad. Existen otros comandos del modo de configuración global que puede implementar un administrador de red para aprovechar la autenticación y el cifrado en SNMPv3:</p>
+<p></p>
+<p>
+<ul>
+<li>El comando <span class="cmd"><b>snmp-server group </b></span><span class="cmd"><i>nombre-grupo</i></span><span class="cmd"> {</span><span class="cmd"><b>v1 </b></span><span class="cmd">|</span><span class="cmd"><b> v2c </b></span><span class="cmd">|</span><span class="cmd"><b> v3 </b></span><span class="cmd">{</span><span class="cmd"><b>auth </b></span><span class="cmd">|</span><span class="cmd"><b> noauth </b></span><span class="cmd">|</span><span class="cmd"><b> priv</b></span><span class="cmd">}}</span> crea un nuevo grupo SNMP en el dispositivo. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>El comando <span class="cmd"><b>snmp-server user </b></span><span class="cmd"><i>nombre-usuario nombre-grupo </i></span><span class="cmd"><b>v3 </b></span><span class="cmd">[</span><span class="cmd"><b>encrypted</b></span><span class="cmd">] </span><span class="cmd">[</span><span class="cmd"><b>auth</b></span><span class="cmd"> {</span><span class="cmd"><b>md5</b></span><span class="cmd"> | </span><span class="cmd"><b>sha</b></span><span class="cmd">} </span><span class="cmd">contraseña-aut</span><span class="cmd">] [</span><span class="cmd"><b><i>priv</i></b></span><span class="cmd"> {</span><span class="cmd"><b>des</b></span><span class="cmd"> | </span><span class="cmd"><b>3des</b></span><span class="cmd"> | </span><span class="cmd"><b>aes</b></span><span class="cmd"> {</span><span class="cmd"><b>128</b></span><span class="cmd"> | </span><span class="cmd"><b>192</b></span><span class="cmd"> | </span><span class="cmd"><b>256</b></span><span class="cmd">}} </span><span class="cmd">contraseña-priv</span><span class="cmd">]</span> se usa para agregar un nuevo usuario al grupo SNMP especificado en el comando <span class="cmd"><b>snmp-server group </b></span><span class="cmd"><i>nombre-grupo</i></span>.</li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Nota:</b> la configuración de SNMPv3 excede el ámbito de los currículos de CCNA.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

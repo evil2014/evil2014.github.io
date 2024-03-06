@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.3.3.3 Tipos de interfaces de capa 3</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.3.3.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Switches LAN</h1>
+        <h2>Conmutación de capa 3</h2>
+      </div>
+      <div id="content">
+<p>Los dispositivos de red Cisco admiten varios tipos de interfaces de capa 3 diferentes. Las interfaces de capa 3 son aquellas que admiten el reenvío de paquetes IP a un destino final sobre la base de la dirección IP.</p>
+<p></p>
+<p>Los principales tipos de interfaces de capa 3 son los siguientes:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Interfaz virtual de switch (SVI):</b> interfaz lógica en un switch asociado a una red de área local virtual (VLAN).</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Puerto enrutado:</b> puerto físico en un switch de capa 3 configurado para funcionar como puerto de router.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>EtherChannel de capa 3:</b> interfaz lógica en dispositivos Cisco asociada a un conjunto de puertos enrutados.</li>
+</ul>
+</p>
+<p></p>
+<p>Como se mostró anteriormente, se debe habilitar una SVI para la VLAN predeterminada (VLAN1) a fin de proporcionar conectividad de host IP al switch y permitir la administración remota del switch. También se deben configurar SVI para permitir el enrutamiento entre redes VLAN. Como ya se mencionó, las SVI son interfaces lógicas configuradas para VLAN específicas; para crear una ruta entre dos o más redes VLAN, cada VLAN debe tener habilitada una SVI independiente. </p>
+<p></p>
+<p>Los puertos enrutados permiten que los switches Cisco (de capa 3) funcionen como routers de manera eficaz. Cada puerto de un switch tal se puede configurar como puerto en una red IP independiente.</p>
+<p></p>
+<p>Los EtherChannels de capa 3 se utilizan para agrupar enlaces de Ethernet de capa 3 entre dispositivos Cisco para agregar ancho de banda, por lo general en uplinks.</p>
+<p></p>
+<p>
+<b>Nota:</b> además de las SVI y los EtherChannels de capa 3, existen otras interfaces lógicas en los dispositivos Cisco, que incluyen interfaces loopback e interfaces de túnel.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,224 @@
+﻿<textcomponents> <!-- Slide 01-->
+	<component id='ID_s1_inst'>
+		<text><![CDATA[<b>Actividad: identificar las partes de una entrada de la tabla de routing IPv6 (parte&nbsp;1)  </b><br/><br/>Analice la tabla de routing IPv6 para determinar el origen de la ruta, la distancia administrativa y la interfaz de salida para la red especificada. Arrastre cada valor al campo correspondiente en la tabla. Haga clic en el botón&nbsp;2 para continuar la actividad.]]></text>
+	</component> <!--Drag and Drop-->
+	<component id='ID_s1_drag01'>
+		<text><![CDATA[<font color="#393536">Conectada</font>]]></text>
+	</component>
+
+	<component id='ID_s1_drag02'>
+		<text><![CDATA[<font color="#393536">Serial 0/0/0</font>]]></text>
+	</component>
+
+	<component id='ID_s1_drag03'>
+		<text><![CDATA[<font color="#393536">90</font>]]></text>
+	</component>
+	<component id='ID_s1_drag04'>
+		<text><![CDATA[<font color="#393536">Ruta local</font>]]></text>
+	</component>
+	<component id='ID_s1_drag05'>
+		<text><![CDATA[<font color="#393536">0</font>]]></text>
+	</component>
+	<component id='ID_s1_drag06'>
+		<text><![CDATA[<font color="#393536">EIGRP</font>]]></text>
+	</component>
+	<component id='ID_s1_drag07'>
+		<text><![CDATA[<font color="#393536">3523840</font>]]></text>
+	</component>
+	<component id='ID_s1_drag08'>
+		<text><![CDATA[<font color="#393536">Gigabit<br/>Ethernet 0/0</font>]]></text>
+	</component>
+	<component id='ID_s1_drag09'>
+		<text><![CDATA[<font color="#393536">Gigabit<br/>Ethernet 0/1</font>]]></text>
+	</component>
+
+	<component id='ID_s1_CORRECT_TITLE'>
+		<text><![CDATA[<b>Correcto  </b>]]></text>
+	</component>
+
+	<component id='ID_s1_CORRECT_BODY'>
+		<text><![CDATA[Identificó correctamente el origen de la ruta, la distancia administrativa y la interfaz de salida para la red especificada. Haga clic en la parte&nbsp;2 para continuar la actividad.]]></text>
+	</component>
+
+	<component id='ID_s1_INCORRECT_TITLE'>
+		<text><![CDATA[<b>Incorrecto  </b>]]></text>
+	</component>
+
+	<component id='ID_s1_INCORRECT_BODY'>
+		<text><![CDATA[No identificó correctamente el origen de la ruta, la distancia administrativa o la interfaz de salida para la red especificada. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+	</component>
+
+	<component id='ID_s1_CHECK'>
+		<text><![CDATA[<b>Verificar  </b>]]></text>
+	</component>
+
+	<component id='ID_s1_RESET'>
+		<text><![CDATA[<b>Restablecer  </b>]]></text>
+	</component>
+
+	<component id='ID_s1_txt01'>
+		<text><![CDATA[<b>Red especificada: 2001:DB8:CAFE:A001::/64  </b>]]></text>
+	</component> 
+	
+	<component id='ID_s1_txt02'>
+		<text><![CDATA[Origen de la ruta]]></text>
+	</component> 
+	<component id='ID_s1_txt03'>
+		<text><![CDATA[Distancia administrativa]]></text>
+	</component> 
+	<component id='ID_s1_txt04'>
+		<text><![CDATA[Interfaz de salida]]></text>
+	</component> 
+	
+	<component id='ID_s1_txt05'>
+		<text><![CDATA[&lt;resultado omitido&gt;]]></text>
+	</component> <!-- Slide 02-->
+	<component id='ID_s2_inst'>
+		<text><![CDATA[<b>Actividad: identificar las partes de una entrada de la tabla de routing IPv6 (parte&nbsp;2)  </b><br/><br/>Analice la tabla de routing IPv6 para determinar el origen de la ruta, la distancia administrativa y la interfaz de salida para la red especificada. Arrastre cada valor al campo correspondiente en la tabla. Haga clic en el botón&nbsp;3 para continuar la actividad.]]></text>
+	</component> <!--Drag and Drop-->
+	<component id='ID_s2_drag01'>
+		<text><![CDATA[<font color="#393536">Conectada</font>]]></text>
+	</component>
+
+	<component id='ID_s2_drag02'>
+		<text><![CDATA[<font color="#393536">Serial 0/0/1</font>]]></text>
+	</component>
+
+	<component id='ID_s2_drag03'>
+		<text><![CDATA[<font color="#393536">90</font>]]></text>
+	</component>
+	<component id='ID_s2_drag04'>
+		<text><![CDATA[<font color="#393536">Ruta local</font>]]></text>
+	</component>
+	<component id='ID_s2_drag05'>
+		<text><![CDATA[<font color="#393536">0</font>]]></text>
+	</component>
+	<component id='ID_s2_drag06'>
+		<text><![CDATA[<font color="#393536">EIGRP</font>]]></text>
+	</component>
+	<component id='ID_s2_drag07'>
+		<text><![CDATA[<font color="#393536">3523840</font>]]></text>
+	</component>
+	<component id='ID_s2_drag08'>
+		<text><![CDATA[<font color="#393536">OSPF</font>]]></text>
+	</component>
+	<component id='ID_s2_drag09'>
+		<text><![CDATA[<font color="#393536">Gigabit<br/>Ethernet 0/1</font>]]></text>
+	</component>
+
+	<component id='ID_s2_CORRECT_TITLE'>
+		<text><![CDATA[<b>Correcto  </b>]]></text>
+	</component>
+
+	<component id='ID_s2_CORRECT_BODY'>
+		<text><![CDATA[Identificó correctamente el origen de la ruta, la distancia administrativa y la interfaz de salida para la red especificada. Haga clic en la parte&nbsp;3 para continuar la actividad.]]></text>
+	</component>
+
+	<component id='ID_s2_INCORRECT_TITLE'>
+		<text><![CDATA[<b>Incorrecto  </b>]]></text>
+	</component>
+
+	<component id='ID_s2_INCORRECT_BODY'>
+		<text><![CDATA[No identificó correctamente el origen de la ruta, la distancia administrativa o la interfaz de salida para la red especificada. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+	</component>
+
+	<component id='ID_s2_CHECK'>
+		<text><![CDATA[<b>Verificar  </b>]]></text>
+	</component>
+
+	<component id='ID_s2_RESET'>
+		<text><![CDATA[<b>Restablecer  </b>]]></text>
+	</component>
+
+	<component id='ID_s2_txt01'>
+		<text><![CDATA[<b>Red especificada: 2001:DB8:CAFE:2::/64<b>]]></text>
+	</component> 
+	
+	<component id='ID_s2_txt02'>
+		<text><![CDATA[Origen de la ruta]]></text>
+	</component> 
+	<component id='ID_s2_txt03'>
+		<text><![CDATA[Distancia administrativa]]></text>
+	</component> 
+	<component id='ID_s2_txt04'>
+		<text><![CDATA[Interfaz de salida]]></text>
+	</component> 
+	
+	<component id='ID_s2_txt05'>
+		<text><![CDATA[&lt;resultado omitido&gt;]]></text>
+	</component> <!-- Slide 03-->
+	<component id='ID_s3_inst'>
+		<text><![CDATA[<b>Actividad: identificar las partes de una entrada de la tabla de routing IPv6 (parte&nbsp;3)  </b><br/><br/>Analice la tabla de routing IPv6 para determinar el origen de la ruta, la distancia administrativa y la interfaz de salida para la red especificada. Arrastre cada valor al campo correspondiente en la tabla.]]></text>
+	</component> <!--Drag and Drop-->
+	<component id='ID_s3_drag01'>
+		<text><![CDATA[<font color="#393536">Conectada</font>]]></text>
+	</component>
+
+	<component id='ID_s3_drag02'>
+		<text><![CDATA[<font color="#393536">Serial 0/0/0</font>]]></text>
+	</component>
+
+	<component id='ID_s3_drag03'>
+		<text><![CDATA[<font color="#393536">90</font>]]></text>
+	</component>
+	<component id='ID_s3_drag04'>
+		<text><![CDATA[<font color="#393536">Ruta local</font>]]></text>
+	</component>
+	<component id='ID_s3_drag05'>
+		<text><![CDATA[<font color="#393536">0</font>]]></text>
+	</component>
+	<component id='ID_s3_drag06'>
+		<text><![CDATA[<font color="#393536">EIGRP</font>]]></text>
+	</component>
+	<component id='ID_s3_drag07'>
+		<text><![CDATA[<font color="#393536">3523840</font>]]></text>
+	</component>
+	<component id='ID_s3_drag08'>
+		<text><![CDATA[<font color="#393536">OSPF</font>]]></text>
+	</component>
+	<component id='ID_s3_drag09'>
+		<text><![CDATA[<font color="#393536">Gigabit<br/>Ethernet 0/0</font>]]></text>
+	</component>
+
+	<component id='ID_s3_CORRECT_TITLE'>
+		<text><![CDATA[<b>Correcto  </b>]]></text>
+	</component>
+
+	<component id='ID_s3_CORRECT_BODY'>
+		<text><![CDATA[Identificó correctamente el origen de la ruta, la distancia administrativa y la interfaz de salida para la red especificada.]]></text>
+	</component>
+
+	<component id='ID_s3_INCORRECT_TITLE'>
+		<text><![CDATA[<b>Incorrecto  </b>]]></text>
+	</component>
+
+	<component id='ID_s3_INCORRECT_BODY'>
+		<text><![CDATA[No identificó correctamente el origen de la ruta, la distancia administrativa o la interfaz de salida para la red especificada. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+	</component>
+
+	<component id='ID_s3_CHECK'>
+		<text><![CDATA[<b>Verificar  </b>]]></text>
+	</component>
+
+	<component id='ID_s3_RESET'>
+		<text><![CDATA[<b>Restablecer  </b>]]></text>
+	</component>
+
+	<component id='ID_s3_txt01'>
+		<text><![CDATA[<b>Red especificada: 2001:DB8:CAFE:1::1/128  </b>]]></text>
+	</component> 
+	
+	<component id='ID_s3_txt02'>
+		<text><![CDATA[Origen de la ruta]]></text>
+	</component> 
+	<component id='ID_s3_txt03'>
+		<text><![CDATA[Distancia administrativa]]></text>
+	</component> 
+	<component id='ID_s3_txt04'>
+		<text><![CDATA[Interfaz de salida]]></text>
+	</component> 
+	
+	<component id='ID_s3_txt05'>
+		<text><![CDATA[&lt;resultado omitido&gt;]]></text>
+	</component> 	
+</textcomponents>

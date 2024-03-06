@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.1.4.6 Protocolos de enrutamiento sin clase</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.1.4.6_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolos de enrutamiento dinámico</h1>
+        <h2>Tipos de protocolos de routing</h2>
+      </div>
+      <div id="content">
+<p>Las redes modernas ya no utilizan el direccionamiento IP con clase, y la máscara de subred no se puede determinar mediante el valor del primer octeto. Los protocolos de routing IPv4 sin clase (RIPv2, EIGRP, OSPF e IS-IS) incluyen la información de la máscara de subred con la dirección de red en las actualizaciones de routing. Los protocolos de routing sin clase admiten VLSM y CIDR. </p>
+<p></p>
+<p>Los protocolos de routing IPv6 son protocolos sin clase. Por lo general, la distinción entre los protocolos de routing con clase y sin clase se aplica únicamente a los protocolos de routing IPv4. Se considera que todos los protocolos de routing IPv6 son protocolos sin clase, dado que incluyen la duración de prefijo con la dirección IPv6. </p>
+<p></p>
+<p>En las figuras 1 a 5, se ilustra la forma en que el routing sin clase resuelve los problemas que se generan con el routing con clase:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Figura 1:</b> en este diseño de red no contigua, se implementó el protocolo sin clase RIPv2 en los tres routers. Cuando el R1 reenvía una actualización al R2, RIPv2 incluye la información de la máscara de subred con la actualización 172.16.1.0/24. </li>
+</ul>
+</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Figura 2:</b> el R2 recibe, procesa y agrega dos entradas en la tabla de routing. En la primera línea, se muestra la dirección de red con clase 172.16.0.0 con la máscara de subred /24 de la actualización. Esto se conoce como “ruta principal”. En la segunda entrada, se muestra la dirección de red VLSM 172.16.1.0, con la dirección del siguiente salto y la salida. Esto se conoce como “ruta secundaria”. Las rutas principales nunca incluyen una interfaz de salida ni la dirección IP del siguiente salto. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Figura 3:</b> cuando el R3 reenvía una actualización al R2, RIPv2 incluye la información de la máscara de subred con la actualización 172.16.2.0/24.</li>
+</ul>
+</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Figura 4:</b> el R2 recibe, procesa y agrega otra entrada de ruta secundaria 172.16.2.0/24 debajo de la entrada de la ruta principal 172.16.0.0. </li>
+</ul>
+</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Figura 5:</b> ahora el R2 tiene información acerca de las redes divididas en subredes. </li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

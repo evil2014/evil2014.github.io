@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.5.1.3 Resumen</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.5.1.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resumen</h1>
+        <h2>Resumen</h2>
+      </div>
+      <div id="content">
+<p>La capa de red, o la capa 3 de OSI, proporciona servicios que permiten que los dispositivos finales intercambien datos a través de la red. Para lograr este transporte de extremo a extremo, la capa de red utiliza cuatro procesos básicos: el direccionamiento IP para dispositivos finales, la encapsulación, el enrutamiento y la desencapsulación.</p>
+<p></p>
+<p>Internet se basa en gran medida en IPv4, que continua siendo el protocolo de capa de red que más se utiliza. Un paquete IPV4 contiene el encabezado IP y el contenido. Sin embargo, IPv4 dispone de una cantidad limitada de direcciones IP públicas exclusivas. Esto condujo al desarrollo de IP versión 6 (IPv6). El encabezado de IPv6 simplificado ofrece varias ventajas respecto de IPv4, como una mayor eficacia de enrutamiento, encabezados de extensión simplificados y capacidad de proceso por flujo. Además, las direcciones IPv6 se basan en un direccionamiento jerárquico de 128 bits, mientras que en IPv4 es de 32 bits. El número de direcciones IP disponibles aumenta drásticamente.</p>
+<p></p>
+<p>Además del direccionamiento jerárquico, la capa de red también es responsable del enrutamiento.</p>
+<p></p>
+<p>Los hosts requieren una tabla de enrutamiento local para asegurarse de que los paquetes se dirijan a la red de destino correcta. Por lo general, la tabla local de un host contiene la conexión directa, la ruta de red local y la ruta predeterminada local. La ruta predeterminada local es la ruta al gateway predeterminado.</p>
+<p></p>
+<p>El gateway predeterminado es la dirección IP de una interfaz de router conectado a la red local. Cuando un host necesita reenviar un paquete a una dirección de destino que no está en la misma red que el host, el paquete se envía al gateway predeterminado para su procesamiento posterior. </p>
+<p></p>
+<p>Cuando un router, como el gateway predeterminado, recibe un paquete, examina la dirección IP de destino para determinar la red de destino. En la tabla de enrutamiento de un router se almacena información sobre las rutas conectadas directamente y las rutas remotas a redes IP. Si el router tiene una entrada para la red de destino en la tabla de enrutamiento, reenvía el paquete. Si no existe ninguna entrada de enrutamiento, es posible que el router reenvíe el paquete a su propia ruta predeterminada, si hay una configurada. En caso contrario, descartará el paquete.</p>
+<p></p>
+<p>Las entradas de la tabla de enrutamiento se pueden configurar manualmente en cada router para proporcionar enrutamiento estático, o los routers pueden comunicar la información de la ruta de manera dinámica entre ellos utilizando un protocolo de enrutamiento.</p>
+<p></p>
+<p>Para que los routers se puedan alcanzar, se debe configurar la interfaz del router. Para habilitar una interfaz específica, ingrese al modo de configuración de interfaz con el comando del modo de configuración global <span class="cmd"><b>interface </b></span><span class="cmd"><i>tipo-y-número</i></span>.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

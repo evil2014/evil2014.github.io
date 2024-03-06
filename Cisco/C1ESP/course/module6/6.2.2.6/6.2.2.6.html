@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.2.2.6 Tabla de enrutamiento de router IPv4 de muestra</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.2.2.6_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Enrutamiento</h1>
+        <h2>Tablas de enrutamiento de router</h2>
+      </div>
+      <div id="content">
+<p>Suponga que la PC1 con la dirección IP 192.168.10.10 desea enviar un paquete a otro host en la misma red. La PC1 revisaría la tabla de rutas IPv4 según la dirección IP de destino. Luego, la PC1 descubriría que el host está en la misma red y, simplemente, lo enviaría por su interfaz (En enlace).</p>
+<p></p>
+<p>
+<b>Nota:</b> el R1 no participa en la transferencia del paquete. Si la PC1 reenvía un paquete a cualquier red que no sea su red local, debe utilizar los servicios del router R1 y reenviar el paquete a su ruta predeterminada local (192.168.10.1).</p>
+<p></p>
+<p>Los siguientes ejemplos muestran cómo un host y un router toman decisiones de enrutamiento de paquetes consultando sus respectivas tablas de enrutamiento:</p>
+<p></p>
+<p>Ejemplo 1: la PC1 desea verificar la conectividad a su gateway predeterminado local en 192.168.10.1 (la interfaz del router). </p>
+<p>1. La PC1 consulta la tabla de rutas IPv4 sobre la base de la dirección IP de destino.</p>
+<p>2. La PC1 descubre que el host está en la misma red y simplemente envía un paquete ping por la interfaz (En enlace).</p>
+<p>3. El R1 recibe el paquete en su interfaz Gigabit Ethernet 0/0 (G0/0) y examina la dirección IP de destino.</p>
+<p>4. El R1 consulta la tabla de enrutamiento.</p>
+<p>5. El R1 busca en esa tabla la entrada que coincide con la dirección IP de destino, la entrada <b>L 192.168.10.1/32</b>, y descubre que esta corresponde a su propia interfaz local, como se muestra en la figura 1.</p>
+<p>6. El R1 abre el resto del paquete IP y responde en consecuencia.</p>
+<p></p>
+<p>Ejemplo 2: la PC1 desea enviar un paquete a la PC2 (192.168.11.10). </p>
+<p>1. La PC1 consulta la tabla de rutas IPv4 y descubre que no hay una coincidencia exacta.</p>
+<p>2. Por lo tanto, la PC1 utiliza la red de todas las rutas (0.0.0.0) y envía el paquete mediante la ruta predeterminada local (192.168.10.1).</p>
+<p>3. El R1 recibe el paquete en su interfaz Gigabit Ethernet 0/0 (G0/0) y examina la dirección IP de destino (192.168.11.10).</p>
+<p>4. El R1 consulta la tabla de enrutamiento y busca la entrada que coincide con la dirección IP de destino, la entrada <b>C 192.168.11.0/24</b>, como se muestra en la figura 2.</p>
+<p>5. El R1 reenvía el paquete por la interfaz Gigabit Ethernet 0/1 (G0/1) conectada directamente.</p>
+<p>6. La PC2 recibe el paquete y consulta la tabla de enrutamiento IPv4 de host.</p>
+<p>7. La PC2 descubre que el paquete está dirigido a ella, abre el resto del paquete y responde en consecuencia.</p>
+<p></p>
+<p>Ejemplo 3: la PC1 desea enviar un paquete a 209.165.200.226. </p>
+<p>1. La PC1 consulta la tabla de rutas IPv4 y descubre que no hay una coincidencia exacta.</p>
+<p>2. Por lo tanto, la PC1 utiliza la ruta predeterminada (0.0.0.0/0) y envía el paquete mediante el gateway predeterminado (192.168.10.1).</p>
+<p>3. El R1 recibe el paquete en su interfaz Gigabit Ethernet 0/0 (G0/0) y examina la dirección IP de destino (209.165.200.226).</p>
+<p>4. El R1 consulta la tabla de enrutamiento y busca la entrada que coincide con la dirección IP de destino, la entrada <b>C 209.165.200.224/30</b>, como se muestra en la figura 3.</p>
+<p>5. La R1 reenvía el paquete por la interfaz serial 0/0/0 (S0/0/0) conectada directamente.</p>
+<p></p>
+<p>Ejemplo 4: la PC1 desea enviar un paquete al host con la dirección IP 10.1.1.10. </p>
+<p>1. La PC1 consulta la tabla de rutas IPv4 y descubre que no hay una coincidencia exacta.</p>
+<p>2. Por lo tanto, la PC1 utiliza la red de todas las rutas (0.0.0.0) y envía el paquete a su ruta predeterminada local (192.168.10.1).</p>
+<p>3. El R1 recibe el paquete en la interfaz Gigabit Ethernet 0/0 (G0/0) y examina la dirección IP de destino (10.1.1.10).</p>
+<p>4. El R1 consulta la tabla de enrutamiento y busca la entrada que coincide con la dirección IP de destino, la entrada <b>D 10.1.1.0/24</b>, como se muestra en la figura 4.</p>
+<p>5. El R1 descubre que debe enviar el paquete a la dirección de siguiente salto 209.165.200.226.</p>
+<p>6. Nuevamente, el R1 consulta la tabla de enrutamiento y busca la entrada que coincide con la dirección IP de destino, la entrada <b>C 209.165.200.224/30</b>, como se muestra en la figura 4.</p>
+<p>7. La R1 reenvía el paquete por la interfaz serial 0/0/0 (S0/0/0) conectada directamente.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

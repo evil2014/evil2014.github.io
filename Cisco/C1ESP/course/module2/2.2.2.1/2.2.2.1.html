@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.2.2.1 Protección del acceso a los dispositivos</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.2.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Información básica</h1>
+        <h2>Limitación del acceso a las configuraciones de los dispositivos</h2>
+      </div>
+      <div id="content">
+<p>La limitación física del acceso a los dispositivos de red mediante su colocación en armarios y bastidores bajo llave es aconsejable; sin embargo, las contraseñas son la principal defensa contra el acceso no autorizado a los dispositivos de red. Todos los dispositivos, incluso los routers domésticos, deben tener contraseñas configuradas en forma local para limitar el acceso. Más adelante, se presentará la forma de reforzar la seguridad mediante la solicitud de un nombre de usuario junto con una contraseña. Por ahora, presentaremos precauciones de seguridad básicas mediante el uso de contraseñas únicamente.</p>
+<p></p>
+<p>Como se comentó anteriormente, el IOS usa modos jerárquicos para colaborar con la seguridad del dispositivo. Como parte de este cumplimiento de seguridad, el IOS puede aceptar diversas contraseñas para permitir diferentes privilegios de acceso al dispositivo.</p>
+<p></p>
+<p>Las contraseñas ingresadas aquí son:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Contraseña de enable:</b> limita el acceso al modo EXEC privilegiado.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Contraseña secreta de enable:</b> es una contraseña encriptada que limita el acceso al modo EXEC privilegiado. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Contraseña de consola:</b> limita el acceso a los dispositivos mediante la conexión de consola.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Contraseña de VTY:</b> limita el acceso a los dispositivos a través de Telnet.</li>
+</ul>
+</p>
+<p></p>
+<p></p>
+<p>Siempre conviene utilizar contraseñas de autenticación diferentes para cada uno de estos niveles de acceso. Si bien no es práctico iniciar sesión con varias contraseñas diferentes, es una precaución necesaria para proteger adecuadamente la infraestructura de la red ante accesos no autorizados. </p>
+<p></p>
+<p>Además, utilice contraseñas seguras que no se descubran fácilmente El uso de contraseñas simples o fáciles de adivinar continúa siendo un problema de seguridad en muchas facetas del mundo empresarial. </p>
+<p></p>
+<p>Considere estos puntos clave cuando elija contraseñas:</p>
+<p></p>
+<p>
+<ul>
+<li>Use contraseñas que tengan más de 8 caracteres.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Utilice una combinación de letras mayúsculas y minúsculas, números, caracteres especiales o secuencias numéricas en las contraseñas.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Evite el uso de la misma contraseña para todos los dispositivos.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Evite el uso de palabras comunes como contraseña o administrador, porque se descubren fácilmente.</li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Nota:</b> en la mayoría de las prácticas de laboratorio de este curso, se utilizan contraseñas simples como <b>cisco</b> o <b>class</b>. Estas contraseñas se consideran no seguras y fáciles de adivinar, y deben evitarse en un entorno laboral. Estas contraseñas solo se utilizan por comodidad en el aula o para ilustrar ejemplos de configuración.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

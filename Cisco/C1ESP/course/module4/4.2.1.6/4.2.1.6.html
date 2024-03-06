@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.2.1.6 Seguridad de los medios de cobre</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.2.1.6_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Medios de red</h1>
+        <h2>Cableado de cobre</h2>
+      </div>
+      <div id="content">
+<p>Los tres tipos de medios de cobre son vulnerables a peligros eléctricos y de incendio.</p>
+<p></p>
+<p>Los peligros de incendio se deben a que el revestimiento y el aislamiento de los cables pueden ser inflamables o producir emanaciones tóxicas cuando se calientan o se queman. Las organizaciones o autoridades edilicias pueden estipular estándares de seguridad relacionados para las instalaciones de hardware y cableado.</p>
+<p></p>
+<p>Los peligros eléctricos son un problema potencial, dado que los hilos de cobre podrían conducir electricidad en formas no deseadas. Esto puede exponer al personal y el equipo a una variedad de peligros eléctricos. Por ejemplo, un dispositivo de red defectuoso podría conducir corriente al bastidor de otros dispositivos de red. Además, el cableado de red podría representar niveles de voltaje no deseados cuando se utiliza para conectar dispositivos que incluyen fuentes de energía con diferentes potenciales de conexión a tierra. Estos casos son posibles cuando el cableado de cobre se utiliza para conectar redes en diferentes edificios o pisos que utilizan distintas instalaciones de energía. Finalmente, el cableado de cobre puede conducir los voltajes provocados por descargas eléctricas a los dispositivos de red.</p>
+<p></p>
+<p>Como consecuencia, las corrientes y los voltajes no deseados pueden generar un daño a los dispositivos de red y a las computadoras conectadas o bien provocar lesiones al personal. Para prevenir situaciones potencialmente peligrosas y perjudiciales, es importante instalar correctamente el cableado de cobre según las especificaciones relevantes y los códigos de edificación.</p>
+<p></p>
+<p>En la ilustración, se muestran prácticas de cableado adecuadas para evitar posibles peligros eléctricos y de incendio.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

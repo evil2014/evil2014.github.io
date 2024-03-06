@@ -1,0 +1,17 @@
+﻿<textcomponents>
+<component id="ID_title">
+<text><![CDATA[<b>ACL de entrada y salida</b>]]></text>
+</component>
+<component id="ID_txt01">
+<text><![CDATA[ACL de entrada]]></text>
+</component>
+<component id="ID_txt02">
+  <text><![CDATA[ACL de salida]]></text> 
+  </component>
+<component id="ID_txt03">
+  <text><![CDATA[Las ACL de entrada filtran los paquetes que ingresan a una interfaz específica y lo hacen antes de que se enruten a la interfaz de salida.]]></text> 
+  </component>
+<component id="ID_txt04">
+  <text><![CDATA[Las ACL de salida filtran los paquetes después de que se enrutan, independientemente de la interfaz de entrada.]]></text> 
+  </component>
+</textcomponents>

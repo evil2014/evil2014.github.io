@@ -1,0 +1,84 @@
+﻿<textcomponents>
+
+
+<component id="ID_inst">
+	<text><![CDATA[<b>Actividad: Tipos de paquetes EIGRP</b><br/>Arrastre el tipo de paquete EIGRP a la definición correspondiente.]]></text>
+</component>
+
+<component id="ID_txt01">
+	<text><![CDATA[<b>Definición de paquete EIGRP</b>]]></text>
+</component>
+
+<component id="ID_txt02">
+	<text><![CDATA[<b>Tipo de paquete</b>]]></text>
+</component>
+
+<component id="ID_txt03">
+	<text><![CDATA[Utilizado para crear adyacencias con los vecinos.]]></text>
+</component>
+
+<component id="ID_txt04">
+	<text><![CDATA[Indica la recepción de un paquete cuando se utiliza el protocolo de transporte en tiempo real (RTP).]]></text>
+</component>
+
+<component id="ID_txt05">
+	<text><![CDATA[Enviado a vecinos cuando el DUAL coloca una ruta en estado activo.]]></text>
+</component>
+
+<component id="ID_txt06">
+	<text><![CDATA[Utilizado para darle información a DUAL acerca del destino.<br>.]]></text>
+</component>
+
+<component id="ID_txt07">
+	<text><![CDATA[Envía en unicast información sobre la red a un nuevo vecino.]]></text>
+</component>
+
+
+
+<component id='ID_drag01'>
+	<text><![CDATA[Acuse de recibo<br>Paquete]]></text>
+</component>
+
+<component id='ID_drag02'>
+	<text><![CDATA[Paquete de saludo]]></text>
+</component>
+
+<component id='ID_drag03'>
+	<text><![CDATA[Paquete de actualización]]></text>
+</component>
+
+<component id='ID_drag04'>
+	<text><![CDATA[Paquete de respuesta]]></text>
+</component>
+
+<component id='ID_drag05'>
+	<text><![CDATA[Paquete de consulta]]></text>
+</component>
+
+
+<component id='ID_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id='ID_CORRECT_BODY'>
+	<text><![CDATA[Unió correctamente cada tipo de paquete EIGRP con su definición.]]></text>
+</component>
+
+
+<component id='ID_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_INCORRECT_BODY'>
+	<text><![CDATA[No unió correctamente cada tipo de paquete EIGRP con su definición. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_CHECK'>
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id='ID_RESET'>
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component>
+
+</textcomponents>

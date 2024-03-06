@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.3.1.3 Resumen</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.3.1.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resumen</h1>
+        <h2>Resumen</h2>
+      </div>
+      <div id="content">
+<p>EIGRP es uno de los protocolos de routing comúnmente utilizados en redes empresariales grandes. La modificación de características de EIGRP y la resolución de problemas son algunas de las habilidades más indispensables para un ingeniero de red dedicado a la implementación y el mantenimiento de grandes redes empresariales enrutadas que usan EIGRP.</p>
+<p></p>
+<p>La sumarización disminuye la cantidad de entradas en las actualizaciones de enrutamiento y reduce la cantidad de entradas en las tablas de enrutamiento locales. Reduce, además, el uso del ancho de banda para las actualizaciones de enrutamiento y acelera las búsquedas en las tablas de enrutamiento. La sumarización automática de EIGRP para IPv4 está deshabilitada de manera predeterminada a partir de las versiones 15.0(1)M y 12.2(33) del IOS de Cisco. Antes de esto, la sumarización automática estaba habilitada de manera predeterminada. Para habilitar la sumarización automática de EIGRP, use el comando <span class="cmd"><b>auto-summary</b></span> en el modo de configuración del router. Utilice el comando <span class="cmd"><b>show ip protocols</b></span> para verificar el estado de la sumarización automática. Examine la tabla de routing para verificar que la sumarización automática funcione.</p>
+<p></p>
+<p>EIGRP incluye automáticamente rutas resumidas a Null0 para evitar bucles de routing a destinos que se incluyen en el resumen, pero que no existen realmente en la tabla de routing. La interfaz Null0 es una interfaz virtual del IOS que constituye una ruta hacia ninguna parte, comúnmente conocida como “el limbo electrónico”. Los paquetes que vinculan una ruta con una interfaz de salida Null0 se descartan. </p>
+<p></p>
+<p>Para establecer la sumarización manual EIGRP en una interfaz EIGRP específica, utilice el siguiente comando del modo de configuración de interfaz: </p>
+<p></p>
+<p>
+<span class="cmd">Router(config-if)#</span>
+<span class="cmd">
+<b>ip summary-address eigrp </b>
+</span>
+<span class="cmd">
+<i>as-number network-address subnet-mask</i>
+</span>
+</p>
+<p></p>
+<p>Para configurar la sumarización manual de EIGRP para IPv6 en una interfaz EIGRP específica, utilice el siguiente comando del modo de configuración de interfaz: </p>
+<p></p>
+<p>
+<span class="cmd">Router(config-if)#</span>
+<span class="cmd">
+<b>ipv6 summary-address eigrp</b>
+</span>
+<span class="cmd"></span>
+<span class="cmd">
+<i>as-number prefix/prefix-length</i>
+</span>
+</p>
+<p></p>
+<p>Un método para propagar una ruta predeterminada dentro del dominio de routing EIGRP es mediante el comando <span class="cmd"><b>redistribute static</b></span>. Este comando le indica a EIGRP que incluya esta ruta estática en las actualizaciones de EIGRP a otros routers. El comando <span class="cmd"><b>show ip protocols</b></span> verifica que se redistribuyan las rutas estáticas dentro del dominio de routing EIGRP.</p>
+<p></p>
+<p>Use el comando <span class="cmd"><b>ip bandwidth-percent eigrp</b></span> <span class="cmd"><i>número-as porcentaje</i></span> del modo de configuración de interfaz para configurar el porcentaje del ancho de banda que EIGRP puede utilizar en una interfaz.</p>
+<p></p>
+<p>Para configurar el porcentaje del ancho de banda que puede utilizar EIGRP para IPv6 en una interfaz, utilice el comando <span class="cmd"><b>ipv6 bandwidth-percent eigrp</b></span> en el modo de configuración de interfaz. Para restaurar el valor predeterminado, utilice la versión <span class="cmd"><b>no</b></span> de este comando.</p>
+<p></p>
+<p>En EIGRP, los intervalos de saludo y los tiempos de espera se pueden configurar por interfaz y no tienen que coincidir con otros routers EIGRP para establecer o mantener adyacencias.</p>
+<p></p>
+<p>En el caso de IP en EIGRP, el software IOS de Cisco aplica de manera predeterminada el balanceo de carga con hasta cuatro rutas de igual costo. Con el comando <span class="cmd"><b>maximum-paths</b></span> del modo de configuración del router, pueden mantenerse hasta 32 rutas de igual costo en la tabla de routing. </p>
+<p></p>
+<p>EIGRP admite la autenticación de protocolos de routing mediante MD5. Los algoritmos y la configuración para autenticar mensajes EIGRP para IPv4 son los mismos que los correspondientes a EIGRP para IPv6. La única diferencia es que en los comandos del modo de configuración de interfaz se usa <span class="cmd"><b>ip</b></span> en lugar de <span class="cmd"><b>ipv6</b></span>.</p>
+<p></p>
+<p>
+<span class="cmd">Router(config-if)#</span>
+<span class="cmd">
+<b>ipv6 authentication mode eigrp </b>
+</span>
+<span class="cmd">
+<i>número-as </i>
+</span>
+<span class="cmd">
+<b>md5</b>
+</span>
+</p>
+<p>
+<span class="cmd">Router(config-if)#</span>
+<span class="cmd">
+<b>ipv6 authentication key-chain eigrp</b>
+</span>
+<span class="cmd"></span>
+<span class="cmd">
+<i>número-as nombre-de-llavero</i>
+</span>
+</p>
+<p></p>
+<p>Para verificar que se hayan formado las adyacencias EIGRP correctas después de configurarlas para la autenticación, utilice el comando <span class="cmd"><b>show ip eigrp neighbors</b></span> en cada router.</p>
+<p></p>
+<p>El comando <span class="cmd"><b>show ip route</b></span> verifica que el router haya descubierto rutas EIGRP. El comando <span class="cmd"><b>show ip protocols</b></span> se usa para verificar que EIGRP muestre los valores configurados actualmente.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

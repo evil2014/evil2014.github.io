@@ -1,0 +1,38 @@
+﻿<textcomponents>
+<component id="ID_txt01">
+<text><![CDATA[<b>Formato del mensaje DNS</b>]]></text>
+</component>
+	<component id="ID_title_txt">
+		<text><![CDATA[<b>DNS utiliza el mismo formato de mensaje para:</b>]]></text>
+	</component>
+<component id="ID_body01">
+  <text><![CDATA[<textformat blockindent='-14'><LI>Todo tipo de consultas de clientes y respuestas de servidores</LI><LI>Mensajes de error</LI><LI>Transferencia de información de registro de recursos entre servidores</LI></textformat>]]></text> 
+  </component>
+  <component id="ID_txt02">
+<text><![CDATA[<b>Encabezado</b>]]></text>
+</component>
+<component id="ID_txt03">
+<text><![CDATA[<b>Pregunta</b>]]></text>
+</component>
+<component id="ID_txt04">
+<text><![CDATA[<b>Respuesta</b>]]></text>
+</component>
+<component id="ID_txt05">
+<text><![CDATA[<b>Autoridad</b>]]></text>
+</component>
+<component id="ID_txt06">
+<text><![CDATA[<b>Adicional</b>]]></text>
+</component>
+  <component id="ID_txt07">
+<text><![CDATA[La pregunta para el servidor de nombres]]></text>
+</component>
+<component id="ID_txt08">
+<text><![CDATA[Registros de recursos que responden la pregunta]]></text>
+</component>
+<component id="ID_txt09">
+<text><![CDATA[Registros de recursos que apuntan a una autoridad]]></text>
+</component>
+<component id="ID_txt10">
+<text><![CDATA[Registros de recursos que poseen información adicional]]></text>
+</component>
+</textcomponents>

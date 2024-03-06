@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.1.4.4 Direccionamiento con clase antigua</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.1.4.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Direcciones de red IPv4</h1>
+        <h2>Tipos de direcciones IPv4</h2>
+      </div>
+      <div id="content">
+<p>Históricamente, RFC1700, Assigned Numbers (Números asignados), agrupaba rangos unicast en tamaños específicos llamados “direcciones de clase A, de clase B y de clase C”. También definía a las direcciones de clase D (multicast) y de clase E (experimental), anteriormente tratadas. Las direcciones unicast de clases A, B y C definían redes de tamaños específicos y bloques de direcciones específicos para estas redes. Se asignó a una compañía u organización todo un bloque de direcciones de clase A, clase B o clase C. Este uso de espacio de dirección se denomina direccionamiento con clase. </p>
+<p></p>
+<p>
+<b>Bloques de clase A</b>
+</p>
+<p>Se diseñó un bloque de direcciones de clase A para admitir redes extremadamente grandes con más de 16 millones de direcciones host. Las direcciones IPv4 de clase A usaban un prefijo /8 fijo, donde el primer octeto indicaba la dirección de red. Los tres octetos restantes se usaban para las direcciones host. Todas las direcciones de clase A requerían que el bit más significativo del octeto de orden superior fuera un cero. Esto significaba que había solo 128 redes de clase A posibles, 0.0.0.0/8 a 127.0.0.0/8. A pesar de que las direcciones de clase A reservaban la mitad del espacio de direcciones, debido al límite de 128 redes, sólo podían ser asignadas a aproximadamente 120 compañías u organizaciones. </p>
+<p></p>
+<p>
+<b>Bloques de clase B</b>
+</p>
+<p>El espacio de direcciones de clase B fue diseñado para admitir las necesidades de redes de tamaño moderado a grande con hasta aproximadamente 65 000 hosts. Una dirección IP de clase B usaba los dos octetos de orden superior para indicar la dirección de red. Los dos octetos restantes especificaban las direcciones host. Al igual que con la clase A, debía reservarse espacio de direcciones para las clases de direcciones restantes. Con las direcciones de clase B, los dos bits más significativos del octeto de orden superior eran 10. Esto restringía el bloque de direcciones para la clase B a 128.0.0.0/16 hasta 191.255.0.0/16. La clase B tenía una asignación de direcciones ligeramente más eficaz que la clase A, debido a que dividía equitativamente el 25% del total del espacio total de direcciones IPv4 entre alrededor de 16 000 redes.</p>
+<p></p>
+<p>
+<b>Bloques de clase C</b>
+</p>
+<p>El espacio de direcciones de clase C era la clase de direcciones antiguas más comúnmente disponible. Este espacio de direcciones tenía el propósito de proporcionar direcciones para redes pequeñas con un máximo de 254 hosts. Los bloques de direcciones de clase C utilizaban el prefijo /24. Esto significaba que una red de clase C usaba sólo el último octeto como direcciones host, con los tres octetos de orden superior para indicar la dirección de red. Los bloques de direcciones de clase C reservaban espacio de dirección utilizando un valor fijo de 110 para los tres bits más significativos del octeto de orden superior. Esto restringía el bloque de direcciones para la clase C a 192.0.0.0/24 hasta 223.255.255.0/24. A pesar de que ocupaba solo el 12,5% del total del espacio de direcciones IPv4, podía proporcionar direcciones a dos millones de redes.</p>
+<p></p>
+<p>En la figura 1, se ilustra cómo se dividen estas clases de direcciones.</p>
+<p></p>
+<p>
+<b>Limitaciones del sistema basado en clases</b>
+</p>
+<p>No todos los requisitos de las organizaciones se ajustaban a una de estas tres clases. La asignación con clase de espacio de direcciones a menudo desperdiciaba muchas direcciones, lo cual agotaba la disponibilidad de direcciones IPv4. Por ejemplo: una compañía con una red con 260 hosts necesitaría que se le otorgue una dirección de clase B con más de 65.000 direcciones. </p>
+<p></p>
+<p>A pesar de que este sistema con clase no fue abandonado hasta finales de la década del 90, es posible ver restos de estas redes en la actualidad. Por ejemplo, cuando asigna una dirección IPv4 a una PC, el sistema operativo examina la dirección que se asigna, a fin de determinar si esta dirección es una dirección de clase A, de clase B o de clase C. A continuación, el sistema operativo supone el prefijo utilizado por esa clase y lleva a cabo la asignación de la máscara de subred predeterminada. </p>
+<p></p>
+<p>
+<b>Direccionamiento sin clase</b>
+</p>
+<p>El sistema que se utiliza en la actualidad se denomina “direccionamiento sin clase”. El nombre formal es “enrutamiento entre dominios sin clase” (CIDR, pronunciado “cider”). La asignación con clase de direcciones IPv4 era muy ineficaz, y permitía solo las duraciones de prefijo /8, /16 o /24, cada una de un espacio de dirección distinto. En 1993, el IETF creó un nuevo conjunto de estándares que permitía que los proveedores de servicios asignaran direcciones IPv4 en cualquier límite de bits de dirección (duración de prefijo) en lugar de solo con una dirección de clase A, B o C. </p>
+<p></p>
+<p>El IETF sabía que el CIDR era solo una solución temporal y que sería necesario desarrollar un nuevo protocolo IP para admitir el rápido crecimiento de la cantidad de usuarios de Internet. En 1994, el IETF comenzó a trabajar para encontrar un sucesor de IPv4, que finalmente fue IPv6.</p>
+<p></p>
+<p>En la figura 2, se muestran los rangos de direcciones con clase.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

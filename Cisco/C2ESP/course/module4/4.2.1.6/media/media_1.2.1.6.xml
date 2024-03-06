@@ -1,0 +1,211 @@
+﻿<textcomponents>
+
+
+
+<component id="ID_s1_inst">
+<text><![CDATA[<b>Actividad </b><br/>En esta actividad, se le proporciona una trama en blanco para que la arme según la situación. Determine las direcciones MAC de destino y de origen, así como las direcciones IP de origen y de destino, con las que se armaría la trama en forma correcta según lo especificado. Para introducir las respuestas, arrastre las direcciones MAC e IP a los campos correspondientes.<br/><br/><b>Situación&nbsp;1: </b> la PC1 envía datos a la PC2; en todos los dispositivos se completó el proceso ARP. En esta trama, indique el comienzo del tráfico de datos para el armado de la trama. No se utilizan todas las respuestas. 
+]]></text>
+</component>
+
+<component id="ID_s1_txt01">
+<text><![CDATA[Trama de enlace de datos de capa&nbsp;2]]></text>
+</component>
+
+<component id="ID_s1_txt02">
+<text><![CDATA[Paquete de datos de capa&nbsp;3]]></text>
+</component>
+
+<component id="ID_s1_txt03">
+<text><![CDATA[<b>MAC de<br/>destino  </b>]]></text>
+</component>
+
+<component id="ID_s1_txt04">
+<text><![CDATA[<b>MAC de<br/>origen  </b>]]></text>
+</component>
+
+<component id="ID_s1_txt05">
+<text><![CDATA[Tipo<br/>0x800]]></text>
+</component>
+
+<component id="ID_s1_txt06">
+<text><![CDATA[<b>IP origen  </b>]]></text>
+</component>
+
+<component id="ID_s1_txt07">
+<text><![CDATA[<b>IP de<br/>destino  </b>]]></text>
+</component>
+
+<component id="ID_s1_txt08">
+<text><![CDATA[Campos de IP]]></text>
+</component>
+
+<component id="ID_s1_txt09">
+<text><![CDATA[Datos]]></text>
+</component>
+
+<component id="ID_s1_txt10">
+<text><![CDATA[Tráiler]]></text>
+</component>
+
+<component id="ID_s1_drag01">
+<text><![CDATA[192.168.4.10]]></text>
+</component>
+
+<component id="ID_s1_drag02">
+<text><![CDATA[192.168.1.10]]></text>
+</component>
+
+<component id="ID_s1_drag03">
+<text><![CDATA[192.168.1.20]]></text>
+</component>
+
+<component id="ID_s1_drag04">
+<text><![CDATA[192.168.1.1]]></text>
+</component>
+
+<component id="ID_s1_drag05">
+<text><![CDATA[0B:02]]></text>
+</component>
+
+<component id="ID_s1_drag06">
+<text><![CDATA[0C:03]]></text>
+</component>
+
+<component id="ID_s1_drag07">
+<text><![CDATA[0A:10]]></text>
+</component>
+
+<component id="ID_s1_drag08">
+<text><![CDATA[0F:08]]></text>
+</component>
+
+<component id='ID_s1_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto]]></text>
+</component>
+
+<component id='ID_s1_CORRECT_BODY'>
+	<text><![CDATA[Determinó correctamente las direcciones MAC e IP de origen y destino para armar la trama según la topología. Haga clic en el botón 2 para continuar. ]]></text>
+</component>
+
+
+<component id='ID_s1_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_BODY'>
+	<text><![CDATA[No determinó correctamente las direcciones MAC e IP de origen y destino para armar la trama según la topología. Haga clic en el botón 2 para continuar. ]]></text>
+</component>
+
+<component id='ID_s1_CHECK'>
+	<text><![CDATA[Verificar]]></text>
+</component>
+
+<component id='ID_s1_RESET'>
+	<text><![CDATA[Restablecer]]></text>
+</component>
+
+
+
+<component id="ID_s2_inst">
+<text><![CDATA[<b>Actividad </b><br/>En esta actividad, se le proporciona una trama en blanco para que la arme según la situación. Determine las direcciones MAC de destino y de origen, así como las direcciones IP de origen y de destino, con las que se armaría la trama en forma correcta según lo especificado. Para introducir las respuestas, arrastre las direcciones MAC e IP a los campos correspondientes.<br/><br/><b>Situación&nbsp;2 </b>: el R2 recibió la trama de la PC1 y ahora necesita enviarla a la PC2. Todos los dispositivos siguen teniendo el ARP completo. En esta trama, arme la trama para transferir los datos del R2 a la PC2. No se utilizan todas las respuestas.]]></text>
+</component>
+
+<component id="ID_s2_txt01">
+<text><![CDATA[Trama de enlace de datos de capa&nbsp;2]]></text>
+</component>
+
+<component id="ID_s2_txt02">
+<text><![CDATA[Paquete de datos de capa&nbsp;3]]></text>
+</component>
+
+<component id="ID_s2_txt03">
+<text><![CDATA[<b>MAC de<br/>destino  </b>]]></text>
+</component>
+
+<component id="ID_s2_txt04">
+<text><![CDATA[<b>MAC de<br/>origen  </b>]]></text>
+</component>
+
+<component id="ID_s2_txt05">
+<text><![CDATA[Tipo<br/>0x800]]></text>
+</component>
+
+<component id="ID_s2_txt06">
+<text><![CDATA[<b>IP origen  </b>]]></text>
+</component>
+
+<component id="ID_s2_txt07">
+<text><![CDATA[<b>IP de<br/>destino  </b>]]></text>
+</component>
+
+<component id="ID_s2_txt08">
+<text><![CDATA[Campos de IP]]></text>
+</component>
+
+<component id="ID_s2_txt09">
+<text><![CDATA[Datos]]></text>
+</component>
+
+<component id="ID_s2_txt10">
+<text><![CDATA[Tráiler]]></text>
+</component>
+
+<component id="ID_s2_drag01">
+<text><![CDATA[192.168.4.10]]></text>
+</component>
+
+<component id="ID_s2_drag02">
+<text><![CDATA[192.168.1.10]]></text>
+</component>
+
+<component id="ID_s2_drag03">
+<text><![CDATA[192.168.4.20]]></text>
+</component>
+
+<component id="ID_s2_drag04">
+<text><![CDATA[192.168.3.2]]></text>
+</component>
+
+<component id="ID_s2_drag05">
+<text><![CDATA[0E:07]]></text>
+</component>
+
+<component id="ID_s2_drag06">
+<text><![CDATA[0D:05]]></text>
+</component>
+
+<component id="ID_s2_drag07">
+<text><![CDATA[0A:10]]></text>
+</component>
+
+<component id="ID_s2_drag08">
+<text><![CDATA[0F:08]]></text>
+</component>
+
+<component id='ID_s2_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto]]></text>
+</component>
+
+<component id='ID_s2_CORRECT_BODY'>
+	<text><![CDATA[Determinó correctamente las direcciones MAC e IP de origen y destino para armar la trama según la topología. Haga clic en el botón 2 para continuar. ]]></text>
+</component>
+
+
+<component id='ID_s2_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto]]></text>
+</component>
+
+<component id='ID_s2_INCORRECT_BODY'>
+	<text><![CDATA[No determinó correctamente las direcciones MAC e IP de origen y destino para armar la trama según la topología. Haga clic en el botón 2 para continuar. ]]></text>
+</component>
+
+<component id='ID_s2_CHECK'>
+	<text><![CDATA[Verificar]]></text>
+</component>
+
+<component id='ID_s2_RESET'>
+	<text><![CDATA[Restablecer]]></text>
+</component>
+
+
+</textcomponents>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.1.1.4 Dirección MAC: identidad de Ethernet</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.1.1.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolo Ethernet</h1>
+        <h2>Funcionamiento de Ethernet</h2>
+      </div>
+      <div id="content">
+<p>Como se indicó anteriormente, la topología lógica subyacente de Ethernet es de bus de multiacceso. Cada dispositivo de red está conectado a los mismos medios compartidos, y todos los nodos reciben todas las tramas que se transmiten. El problema es que si todos los dispositivos reciben cada trama, ¿cómo puede determinar cada dispositivo si es el receptor previsto sin la sobrecarga de tener que procesar y desencapsular la trama para obtener la dirección IP? Esta cuestión se vuelve aún más problemática en redes con alto volumen de tráfico donde se reenvían muchas tramas. </p>
+<p></p>
+<p>Para evitar la sobrecarga excesiva relacionada con el procesamiento de cada trama, se creó un identificador único denominado “dirección MAC” que identifica los nodos de origen y de destino reales dentro de una red Ethernet. Sin importar qué variedad de Ethernet se utilice, el direccionamiento MAC proporciona un método para la identificación de dispositivos en el nivel inferior del modelo OSI. Como recordará, el direccionamiento MAC se agrega como parte de una PDU de capa 2. Una dirección MAC de Ethernet es un valor binario de 48 bits expresado como 12 dígitos hexadecimales (4 bits por dígito hexadecimal).</p>
+<p></p>
+<p>
+<b>Estructura de la dirección MAC</b>
+</p>
+<p>Las direcciones MAC deben ser únicas en el mundo. El valor de la dirección MAC es el resultado directo de las normas implementadas por el IEEE para proveedores con el objetivo de garantizar direcciones únicas para cada dispositivo Ethernet. Las normas establecidas por el IEEE obligan a los proveedores de dispositivos Ethernet a registrarse en el IEEE. El IEEE le asigna al proveedor un código de 3 bytes (24 bits), denominado “Identificador único de organización” (OUI). </p>
+<p></p>
+<p>El IEEE requiere que un proveedor siga dos reglas sencillas, como se muestra en la ilustración: </p>
+<p></p>
+<p>
+<ul>
+<li>Todas las direcciones MAC asignadas a una NIC u otro dispositivo Ethernet deben utilizar el OUI que se le asignó a dicho proveedor como los 3 primeros bytes.</li>
+</ul>
+</p>
+<p>Se les debe asignar un valor exclusivo (código del fabricante o número de serie) a todas las direcciones MAC con el mismo OUI (Identificador exclusivo de organización) en los últimos 3 bytes.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

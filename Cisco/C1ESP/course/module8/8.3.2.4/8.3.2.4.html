@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.3.2.4 Traceroute, prueba de la ruta</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.3.2.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Verificación de conectividad</h1>
+        <h2>Prueba y verificación</h2>
+      </div>
+      <div id="content">
+<p>Ping se utiliza para probar la conectividad entre dos hosts, pero no proporciona información sobre los detalles de los dispositivos entre los hosts. Traceroute (tracert) es una utilidad que genera una lista de saltos que se alcanzaron correctamente a lo largo de la ruta. Esta lista puede proporcionar información importante sobre la verificación y la resolución de problemas. Si los datos llegan al destino, el rastreo indica la interfaz de cada router que aparece en la ruta entre los hosts. Si los datos fallan en algún salto a lo largo del camino, la dirección del último router que respondió al rastreo puede indicar dónde se encuentra el problema o las restricciones de seguridad.</p>
+<p></p>
+<p>
+<b>Tiempo de ida y vuelta (RTT)</b>
+</p>
+<p>El uso de traceroute proporciona el tiempo de ida y vuelta para cada salto a lo largo de la ruta e indica si se produce una falla en la respuesta del salto. El tiempo de ida y vuelta es el tiempo que le lleva a un paquete llegar al host remoto y el tiempo que la respuesta del host demora en regresar. Se utiliza un asterisco (*) para indicar un paquete perdido o sin respuesta. </p>
+<p></p>
+<p>Esta información puede ser utilizada para ubicar un router problemático en el camino. Si en la pantalla se muestran tiempos de respuesta elevados o pérdidas de datos de un salto particular, esto constituye un indicio de que los recursos del router o sus conexiones pueden estar sobrecargados.</p>
+<p></p>
+<p>
+<b>Tiempo de vida (TTL) de IPv4 y Límite de saltos de IPv6</b>
+</p>
+<p>Traceroute utiliza una función del campo TTL en IPv4 y del campo Límite de saltos en IPv6 en los encabezados de capa 3, junto con el mensaje de tiempo superado de ICMP. </p>
+<p></p>
+<p>Reproduzca la animación en la figura para ver cómo Traceroute aprovecha el TTL. </p>
+<p></p>
+<p>La primera secuencia de mensajes enviados desde traceroute tiene un valor de 1 en el campo TTL. Esto hace que el TTL agote el tiempo de espera del paquete IPv4 en el primer router. Este router luego responde con un mensaje de ICMPv4. Traceroute ahora posee la dirección del primer salto.</p>
+<p></p>
+<p>A continuación, Traceroute incrementa progresivamente el campo TTL (2, 3, 4...) para cada secuencia de mensajes. De esta manera se proporciona al rastreo la dirección de cada salto a medida que los paquetes expiran el límite de tiempo a lo largo del camino. El campo TTL continúa aumentando hasta que se llega a destino o hasta un máximo predefinido.</p>
+<p></p>
+<p>Una vez que se llega al destino final, el host responde con un mensaje de puerto inalcanzable de ICMP o un mensaje de respuesta de eco de ICMP, en lugar de hacerlo con un mensaje de tiempo superado de ICMP.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.3.1.5 Configuración de rutas estáticas en un switch Catalyst 2960</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.3.1.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Conmutación de capa 3</h1>
+        <h2>Funcionamiento y configuración del switching de capa 3</h2>
+      </div>
+      <div id="content">
+<p>Un switch Catalyst 2960 puede funcionar como un dispositivo de capa 3 y realizar enrutamiento entre VLAN y una cantidad limitada de rutas estáticas. </p>
+<p></p>
+<p>Switch Database Manager (SDM) de Cisco proporciona varias plantillas para el switch 2960. Las plantillas pueden habilitarse para admitir funciones específicas según el modo en que se utilice el switch en la red. Por ejemplo, la plantilla lanbase-routing de SDM se puede habilitar para permitir que el switch realice enrutamiento entre VLAN y admita el routing estático. </p>
+<p></p>
+<p>En la figura 1, se introduce el comando <span class="cmd"><b>show sdm prefer</b></span> en el switch S1 y se aplica la plantilla predeterminada. La plantilla predeterminada es la configuración predeterminada de fábrica de los switches Catalyst 2960. La plantilla predeterminada no admite routing estático. Si se habilitó el direccionamiento IPv6, la plantilla será dual-ipv4-and-ipv6 default.</p>
+<p></p>
+<p>La plantilla SDM se puede cambiar en el modo de configuración global con el comando <span class="cmd"><b>sdm prefer</b></span>. </p>
+<p></p>
+<p>
+<b>Nota</b>: en las figuras 2, 4, 6 y 7, el comando <span class="cmd"><b>do</b></span> se utiliza para ejecutar comandos de los modos EXEC del usuario o EXEC privilegiado desde otros modos de configuración del router.</p>
+<p></p>
+<p>En la figura 2, las opciones de plantillas SDM se muestran con el comando <span class="cmd"><b>sdm prefer ? </b></span>.  La plantilla SDM cambia a lanbase-routing. El switch se debe volver a cargar para que la nueva plantilla tenga efecto.</p>
+<p></p>
+<p>En la figura 3, la plantilla lanbase-routing está activa en el S1. Con esa plantilla, se admite el routing estático para un máximo de 750 rutas estáticas. </p>
+<p></p>
+<p>En la figura 4, la interfaz F0/6 en el S1 está asignada a la VLAN 2. Las SVI para las VLAN 1 y 2 también se configuraron con las direcciones IP 192.168.1.1/24 y 192.168.2.1/24, respectivamente. El routing IP se habilita con el comando <span class="cmd"><b>ip routing</b></span> del modo de configuración global.</p>
+<p></p>
+<p>
+<b>Nota</b>: el comando <span class="cmd"><b>ip routing</b></span> se habilita de manera automática en los routers Cisco. Sin embargo, el comando correspondiente para IPv6, <span class="cmd"><b>ipv6 unicast-routing</b></span>, está deshabilitado de manera predeterminada en los routers y los switches Cisco.</p>
+<p></p>
+<p>En la figura 5, el router R1 tiene dos redes IPv4 configuradas: la interfaz G0/1 tiene la dirección IP 192.168.1.10/24, y la interfaz loopback Lo0 tiene la dirección IP 209.165.200.225/27. Se muestra el resultado del comando <span class="cmd"><b>show ip route</b></span>.</p>
+<p></p>
+<p>En la figura 6, se muestra una ruta predeterminada configurada en el S1. Se muestra el resultado del comando <span class="cmd"><b>show ip route</b></span>.</p>
+<p></p>
+<p>En la figura 7, se muestra una ruta estática a la red remota 192.168.2.0/24 (VLAN 2) configurada en el R1. Se muestra el resultado del comando <span class="cmd"><b>show ip route</b></span>.</p>
+<p></p>
+<p>En la Figura 8, la PC-A está configurada con la dirección IP 192.168.2.2/24 en la VLAN 2, y la PC-B está configurada con la dirección IP 192.168.1.2/24 en la VLAN 1. La PC-B puede hacer ping a la PC-B y la interfaz loopback en el R1.</p>
+<p></p>
+<p>En la figura 9, utilice el verificador de sintaxis para configurar el routing estático en el S1.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

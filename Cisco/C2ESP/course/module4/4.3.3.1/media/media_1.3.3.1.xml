@@ -1,0 +1,18 @@
+﻿<textcomponents>
+<component id="ID_title">
+<text><![CDATA[<b>Situación de rutas estáticas y predeterminadas</b>]]></text>
+</component>
+<component id="ID_txt01">
+  <text><![CDATA[Internet]]></text> 
+  </component>
+<component id="ID_txt02">
+  <text><![CDATA[El R2 funciona como el siguiente salto para todas las redes, incluso Internet, que no están conectadas directamente al R1; por lo tanto, el R1 debe tener configurada una ruta predeterminada dirigida al R2.]]></text> 
+  </component>
+
+  <component id="ID_txt03">
+  <text><![CDATA[El R1 solo tiene dos redes conectadas directamente que el R2 debe conocer. Se pueden configurar dos entradas de rutas estáticas en el R2 para permitir que las rutas se agreguen a la tabla de rutas.]]></text> 
+  </component>
+<component id="transcript">
+  <text><![CDATA[<b>transcript goes here</b>]]></text> 
+  </component>
+</textcomponents>

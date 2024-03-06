@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.2.3.6 Paso 4: Verificar el gateway predeterminado</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.2.3.6_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resolución de problemas de red</h1>
+        <h2>Resolución de problemas de conectividad IP</h2>
+      </div>
+      <div id="content">
+<p>Si no hay una ruta detallada en el router o si el host está configurado con el gateway predeterminado incorrecto, la comunicación entre dos terminales en redes distintas no funciona. En la figura 1, se muestra que la PC1 usa el R1 como gateway predeterminado. De manera similar, el R1 usa al R2 como gateway predeterminado o como gateway de último recurso.</p>
+<p></p>
+<p>Si un host necesita acceso a recursos que se encuentran más allá de la red local, se debe configurar el gateway predeterminado. El gateway predeterminado es el primer router en la ruta a los destinos que se encuentran más allá de la red local. </p>
+<p></p>
+<p>
+<b>Ejemplo de resolución de problemas 1</b>
+</p>
+<p>En la figura 2, se muestran el comando <span class="cmd"><b>show ip route</b></span> del IOS de Cisco y el comando <span class="cmd"><b>route print</b></span> de Windows para verificar la presencia del gateway predeterminado IPv4.</p>
+<p></p>
+<p>En este ejemplo, el router R1 tiene el gateway predeterminado correcto, que es la dirección IPv4 del router R2. Sin embargo, la PC1 tiene el gateway predeterminado incorrecto. La PC1 debería tener el gateway predeterminado 10.1.10.1 del router R1. Si la información de direccionamiento IPv4 se configuró en forma manual en la PC1, esto se debe configurar manualmente. Si la información de direccionamiento IPv4 se obtuvo automáticamente de un servidor de DHCPv4, se debe examinar la configuración en el servidor de DHCP. Por lo general, un problema de configuración en un servidor de DHCP puede ser detectado por varios clientes.</p>
+<p></p>
+<p>
+<b>Ejemplo de resolución de problemas 2</b>
+</p>
+<p>En IPv6, el gateway predeterminado se puede configurar manualmente o mediante la configuración automática sin estado (SLAAC) o DHCPv6. Con SLAAC, el router anuncia el gateway predeterminado a los hosts mediante los mensajes de anuncio de router (RA) ICMPv6. El gateway predeterminado en el mensaje RA es la dirección IPv6 link-local de una interfaz del router. Si el gateway predeterminado se configura manualmente en el host, lo que es muy poco probable, se puede establecer el gateway predeterminado en la dirección IPv6 global o en la dirección IPv6 link-local.</p>
+<p></p>
+<p>Como se muestra en la figura 3, el comando <span class="cmd"><b>show ipv6 route</b></span> del IOS de Cisco muestra la ruta predeterminada IPv6 en el R1, y el comando <span class="cmd"><b>ipconfig</b></span> de Windows se usa para verificar la presencia del gateway predeterminado IPv6. </p>
+<p></p>
+<p>El R1 tiene una ruta predeterminada a través del router R2, pero observe que el comando <span class="cmd"><b>ipconfig</b></span> revela la ausencia de una dirección IPv6 de unidifusión global y un gateway predeterminado IPv6. La PC1 está habilitada para IPv6 debido a que tiene una dirección IPv6 link-local. El dispositivo crea automáticamente la dirección link-local. Al revisar la documentación de red, el administrador de red confirma que los hosts en esta LAN deberían recibir la información de dirección IPv6 del router que usa SLAAC. </p>
+<p></p>
+<p>
+<b>Nota:</b> en este ejemplo, otros dispositivos que usen SLAAC en la misma LAN también experimentarían el mismo problema al recibir la información de dirección IPv6.</p>
+<p></p>
+<p>Mediante el comando <span class="cmd"><b>show ipv6 interface GigabitEthernet 0/0</b></span> en la figura 4, se puede observar que, si bien la interfaz tiene una dirección IPv6, no forma parte del grupo de multidifusión de todos los routers IPv6, FF02::2. Esto significa que el router no envía mensajes RA ICMPv6 por esta interfaz. En la figura 5, el R1 se habilita como router IPv6 mediante el comando <span class="cmd"><b>ipv6 unicast-routing</b></span>. Ahora, el comando <span class="cmd"><b>show ipv6 interface GigabitEthernet 0/0</b></span> revela que el R1 forma parte de FF02::2, el grupo de multidifusión de todos los routers IPv6.</p>
+<p></p>
+<p>Para verificar que la PC1 tenga establecido el gateway predeterminado, use el comando <span class="cmd"><b>ipconfig</b></span> en una computadora con Microsoft Windows o el comando <span class="cmd"><b>ifconfig</b></span> en los sistemas operativos Linux y Mac OS X. En la figura 6, la PC1 tiene una dirección IPv6 de unidifusión global y un gateway predeterminado IPv6. El gateway predeterminado se establece en la dirección link-local del router R1, FE80::1. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

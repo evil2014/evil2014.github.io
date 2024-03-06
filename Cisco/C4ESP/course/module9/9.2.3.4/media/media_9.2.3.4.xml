@@ -1,0 +1,33 @@
+﻿<textcomponents>
+<component id="ID_s1_title">
+		<text><![CDATA[]]></text>
+	</component>
+	
+		<component id="ID_bodyTitle01">
+		<text><![CDATA[<b>Pautas de configuración de dúplex:</b>]]></text> 
+	</component>
+	
+	<component id="ID_bodyText01">
+		<text><![CDATA[<textformat blockindent="-14"><li>Los enlaces Ethernet de punto a punto siempre se deben ejecutar en modo full-duplex.</li><li>Half-duplex ya no es frecuente y se utiliza principalmente si se usan hubs.</li><li>Se recomienda la autonegociación de velocidad y dúplex.</li><li>Si la autonegociación no funciona, establezca manualmente la velocidad y el dúplex en ambos extremos.</li><li>La presencia de half-duplex en ambos extremos funciona mejor que una incompatibilidad de dúplex.</li></textformat>]]></text> 
+	</component>
+	<component id="ID_s2_title">
+		<text><![CDATA[<b>Incompatibilidad de dúplex</b>]]></text>
+	</component>
+	<component id="ID_s2_txt01">
+		<text><![CDATA[Experimento importantes problemas de rendimiento al comunicarme con el SRV2.]]></text>
+	</component>
+	
+		<component id="ID_s3_title">
+		<text><![CDATA[<b>Funcionamiento del puerto del S1 en full-duplex</b>]]></text>
+	</component>
+		<component id="ID_s3_txt01">
+		<text><![CDATA[&lt;resultado omitido&gt;]]></text>
+	</component>
+		<component id="ID_s4_title">
+		<text><![CDATA[<b>Funcionamiento del puerto del S2 en half-duplex</b>]]></text>
+	</component>
+			<component id="ID_s4_txt01">
+		<text><![CDATA[&lt;resultado omitido&gt;]]></text>
+	</component>
+	
+</textcomponents>

@@ -1,0 +1,77 @@
+﻿<textcomponents> <!--slide01-->
+<component id='ID_inst'>
+	<text><![CDATA[<b>Actividad: Tipos de protocolos de árbol de expansión</b><br><br>Arrastre el tipo de protocolo de árbol de expansión hasta la descripción correspondiente.]]></text>
+</component>
+
+<component id='ID_txt01'>
+	<text><![CDATA[Es una mejora de Cisco de STP. Proporciona una instancia de árbol de expansión 802.1D distinta para cada VLAN.]]></text>
+</component>
+
+<component id='ID_txt02'>
+	<text><![CDATA[Es una mejora de Cisco de RSTP.]]></text>
+</component>
+
+<component id="ID_txt03">
+   <text><![CDATA[Utiliza una instancia de árbol de expansión IEEE 802.1D para toda la red enlazada, independientemente de la cantidad de VLAN.]]></text>
+   </component>
+
+<component id="ID_txt04">
+   <text><![CDATA[Es una evolución de STP que proporciona una convergencia más rápida de STP.]]></text>
+   </component>
+   
+<component id="ID_txt05">
+   <text><![CDATA[Asigna varias VLAN que tienen los mismos requisitos de flujo de tráfico a la misma instancia de árbol de expansión.]]></text>
+   </component> <!--Drag and Drop-->
+<component id='ID_drag01'>
+	<text><![CDATA[PVST+ rápido]]></text>
+</component>
+
+<component id='ID_drag02'>
+	<text><![CDATA[STP]]></text>
+</component>
+
+<component id='ID_drag03'>
+	<text><![CDATA[RSTP]]></text>
+</component>
+
+<component id='ID_drag04'>
+	<text><![CDATA[PVST+]]></text>
+</component>
+
+<component id='ID_drag05'>
+	<text><![CDATA[MSTP]]></text>
+</component>
+
+
+
+
+
+
+<component id='ID_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id='ID_CORRECT_BODY'>
+	<text><![CDATA[Unió correctamente los tipos de STP con las descripciones.]]></text>
+</component>
+
+
+<component id='ID_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_INCORRECT_BODY'>
+	<text><![CDATA[No unió correctamente los tipos de STP con las descripciones. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_CHECK'>
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id='ID_RESET'>
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component>
+
+
+
+</textcomponents>

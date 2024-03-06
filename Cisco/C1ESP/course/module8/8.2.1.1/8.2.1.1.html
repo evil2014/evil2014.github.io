@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.2.1.1 Necesidad de utilizar IPv6</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.2.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Direcciones de red IPv6</h1>
+        <h2>Problemas de IPv4</h2>
+      </div>
+      <div id="content">
+<p>IPv6 está diseñado para ser el sucesor de IPv4. IPv6 tiene un mayor espacio de direcciones de 128 bits, lo que proporciona 340 sextillones de direcciones. (Eso es el número 340 seguido de 36 ceros). Sin embargo, IPv6 es mucho más que una mera dirección más extensa. Cuando el IETF comenzó el desarrollo de una sucesora de IPv4, utilizó esta oportunidad para corregir las limitaciones de IPv4 e incluir mejoras adicionales. Un ejemplo es el protocolo de mensajes de control de Internet versión 6 (ICPMv6), que incluye la resolución de direcciones y la configuración automática de direcciones, las cuales no se encuentran en ICMP para IPv4 (ICMPv4). ICMPv4 e ICMPv6 se analizarán más adelante en este capítulo.</p>
+<p></p>
+<p>
+<b>Necesidad de utilizar IPv6</b>
+</p>
+<p>El agotamiento del espacio de direcciones IPv4 fue el factor que motivó la migración a IPv6. Debido al aumento de la conexión a Internet en África, Asia y otras áreas del mundo, las direcciones IPv4 ya no son suficientes para admitir este crecimiento. El lunes 31 de enero de 2011, la IANA asignó los últimos dos bloques de direcciones IPv4 /8 a los registros regionales de Internet (RIR). Diversas proyecciones indican que entre 2015 y 2020 se habrán acabado las direcciones IPv4 en los cinco RIR. En ese momento, las direcciones IPv4 restantes se habrán asignado a los ISP.</p>
+<p></p>
+<p>IPv4 tiene un máximo teórico de 4300 millones de direcciones. Las direcciones privadas definidas en RFC 1918 junto con la traducción de direcciones de red (NAT) fueron un factor determinante para retardar el agotamiento del espacio de direcciones IPv4. La NAT tiene limitaciones que obstaculizan gravemente las comunicaciones punto a punto.</p>
+<p></p>
+<p>
+<b>Internet de las cosas</b>
+</p>
+<p>En la actualidad, Internet es significativamente distinta de como era en las últimas décadas. Hoy en día, Internet es más que correo electrónico, páginas Web y transferencia de archivos entre PC. Internet evoluciona y se está convirtiendo en una Internet de las cosas. Los dispositivos que acceden a Internet ya no serán solamente PC, tablet PC y smartphones. Los dispositivos del futuro preparados para acceder a Internet y equipados con sensores incluirán desde automóviles y dispositivos biomédicos hasta electrodomésticos y ecosistemas naturales. Imagine una reunión en la ubicación de un cliente que se programa en forma automática en la aplicación de calendario para que comience una hora antes de la hora en que normalmente comienza a trabajar. Esto podría ser un problema importante, en especial si olvida revisar el calendario o ajustar el despertador según corresponda. Ahora imagine que la aplicación de calendario comunica esta información directamente al despertador para usted y su automóvil. El automóvil calienta automáticamente para derretir el hielo del limpiaparabrisas antes de que usted ingrese y cambia la ruta hacia el lugar de la reunión.</p>
+<p></p>
+<p>Con una creciente población de Internet, un espacio limitado de direcciones IPv4, problemas con la NAT y con Internet de las cosas, llegó el momento de iniciar la transición a IPv6.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

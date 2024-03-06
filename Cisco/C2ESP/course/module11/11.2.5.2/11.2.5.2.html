@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>11.2.5.2 Direcciones IPv6 locales únicas</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_11.2.5.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de NAT</h1>
+        <h2>Configuración de NAT e IPv6</h2>
+      </div>
+      <div id="content">
+<p>Las direcciones IPv6 locales únicas (ULA) se asemejan a las direcciones privadas en IPv4 definidas en RFC 1918, pero también existen diferencias considerables. El objetivo de las ULA es proporcionar espacio de direcciones IPv6 para las comunicaciones dentro de un sitio local, no tienen el propósito de proporcionar espacio adicional de direcciones IPv6 ni un nivel de seguridad.</p>
+<p></p>
+<p>Como se muestra en la ilustración, las ULA tienen el prefijo FC00::/7, lo que produce un rango de primer hexteto que va desde FC00 hasta FDFF. El bit siguiente se establece en 1 si el prefijo se asigna localmente. Es posible que en el futuro se pueda establecer en 0. Los 40 bits siguientes corresponden a una ID global seguida de una ID de subred de 16 bits. Estos primeros 64 bits se combinan para crear el prefijo de la ULA. Esto permite que los 64 bits restantes se utilicen para la ID de interfaz o, en términos de IPv4, la porción de host de la dirección.</p>
+<p></p>
+<p>Las direcciones locales únicas se definen en RFC 4193. Las ULA también se conocen como “direcciones IPv6 locales” (no se deben confundir con las direcciones IPv6 link-local) y tienen varias características, incluidas las siguientes: </p>
+<p>
+<ul>
+<li>Permiten que los sitios se combinen o se interconecten de manera privada, sin generar conflictos entre direcciones y sin necesidad de volver a numerar las interfaces que usan estos prefijos.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Son independientes de cualquier ISP y se pueden usar para las comunicaciones dentro de un sitio sin tener conectividad a Internet.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>No se pueden enrutar a través de Internet; sin embargo, si se filtran por routing o DNS, no existe conflicto con otras direcciones.</li>
+</ul>
+</p>
+<p></p>
+<p>Las ULA no son tan sencillas como las direcciones definidas en RFC 1918. A diferencia de las direcciones IPv4 privadas, el IETF no tenía la intención de utilizar una forma de NAT para traducir entre las direcciones locales únicas y las direcciones IPv6 de unidifusión global. </p>
+<p></p>
+<p>La comunidad de Internet continúa analizando la implementación y los posibles usos de las direcciones IPv6 locales únicas. Por ejemplo, el IETF considera permitir la opción de crear el prefijo de la ULA de forma local con FC00::/8, o de que lo asigne un tercero de forma automática y que empiece con FD00::/8. </p>
+<p></p>
+<p>
+<b>Nota:</b> la especificación original de IPv6 asignaba el espacio de direcciones para las direcciones locales de sitio, definidas en RFC 3513. El IETF dejó en desuso las direcciones locales de sitio en RFC 3879 porque el término “sitio” resultaba algo ambiguo. Las direcciones locales de sitio tenían el rango de prefijos FEC0::/10 y todavía pueden encontrarse en documentos antiguos de IPv6.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

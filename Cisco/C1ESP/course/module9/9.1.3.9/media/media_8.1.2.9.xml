@@ -1,0 +1,46 @@
+﻿	<textcomponents>
+	<component id="ID_inst">
+		<text><![CDATA[<b>Actividad: Cálculo básico de máscara de subred</b><br/><br/>En esta actividad, se le proporciona una máscara de subred en formato decimal.<br/><br/>Introduzca la representación binaria de la máscara de subred en los campos de octetos proporcionados.<br/><br/>Además, convierta la máscara al formato de notación de prefijo (/x) en el campo Notación de prefijo.]]></text>
+	</component>
+		
+	<component id="txt_correct">
+		<text><![CDATA[<b>Correcto</b>]]></text>
+	</component>
+	
+	<component id="txt_incorrect">
+		<text><![CDATA[<b>Incorrecto</b>]]></text>
+	</component>
+	
+	<component id="txt_body_correct">
+		<text><![CDATA[Convirtió correctamente la máscara de subred al formato binario y de notación de prefijo. Haga clic en Nuevo número para continuar.]]></text>
+	</component>
+	
+	<component id="txt_body_incorrect">
+		<text><![CDATA[No convirtió correctamente la máscara de subred al formato binario y de notación de prefijo. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+	</component>
+	
+	<component id="ID_txt01">
+	<text><![CDATA[<b>Máscara de subred</b>]]></text>
+	</component>
+	
+	<component id="ID_txt02">
+	<text><![CDATA[<b>Máscara de subred en forma binaria</b>]]></text>
+	</component>
+	
+	<component id="ID_txt03">
+	<text><![CDATA[<b>Notación de prefijo</b>]]></text>
+	</component>
+	
+	<component id="txt_check">
+	<text><![CDATA[<b>Verificar</b>]]></text>
+	</component>
+	
+	<component id="txt_reset">
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+	</component>
+	
+	<component id="txt_newnumber">
+	<text><![CDATA[<b>Nuevo número</b>]]></text>
+	</component>
+
+</textcomponents>

@@ -1,0 +1,109 @@
+﻿<textcomponents> <!--SLIDE 1--> 
+<component id="ID_s1_title">
+<text><![CDATA[<b>Redes OSPF punto a punto</b>]]></text>
+</component>
+<component id="ID_s1_txt01">
+<text><![CDATA[Internet]]></text>
+</component>
+<component id="ID_s1_txt02">
+  <text><![CDATA[Punto a Punto]]></text> 
+  </component>
+<component id="ID_s1_txt03">
+  <text><![CDATA[Punto a Punto]]></text> 
+  </component> <!--SLIDE 2--> 
+<component id="ID_s2_title">
+<text><![CDATA[<b>Red OSPF de accesos múltiples</b>]]></text>
+</component>
+  <component id="ID_s2_txt01">
+  <text><![CDATA[Internet]]></text> 
+  </component>
+    <component id="ID_s2_txt02">
+  <text><![CDATA[Punto a Punto]]></text> 
+  </component>
+    <component id="ID_s2_txt03">
+  <text><![CDATA[Difusiones]]></text> 
+  </component>
+    <component id="ID_s2_txt04">
+  <text><![CDATA[Difusiones]]></text> 
+  </component>
+    <component id="ID_s2_txt05">
+  <text><![CDATA[Difusiones]]></text> 
+  </component>
+    <component id="ID_s2_txt06">
+  <text><![CDATA[Difusiones]]></text> 
+  </component> <!--SLIDE 3-->  
+  <component id="ID_s3_title">
+<text><![CDATA[<b>Red OSPF multiacceso sin difusión</b>]]></text>
+</component>
+  <component id="ID_s3_txt01">
+  <text><![CDATA[Internet]]></text> 
+  </component>
+    <component id="ID_s3_txt02">
+  <text><![CDATA[Punto a Punto]]></text> 
+  </component>
+    <component id="ID_s3_txt03">
+  <text><![CDATA[Frame Relay]]></text> 
+  </component>
+    <component id="ID_s3_txt04">
+  <text><![CDATA[Transmisiones de unidifusión]]></text> 
+  </component>
+      <component id="ID_s3_txt05">
+  <text><![CDATA[Transmisiones de unidifusión]]></text> 
+  </component>
+      <component id="ID_s3_txt06">
+  <text><![CDATA[Transmisiones de unidifusión]]></text> 
+  </component>
+  
+  <component id="ID_s3_title_txt">
+		<text><![CDATA[]]></text>
+	</component>
+	
+<component id="ID_s3_body01">
+  <text><![CDATA[<textformat blockindent='-14'><ul><li>En esta situación, el R1, el R2 y el R3 se interconectan mediante una red Frame Relay.</li><li>Frame relay no permite las difusiones.</li><li>OSPF se debe configurar según corresponda para crear adyacencias de vecinos.</li></ul></textformat>]]></text> 
+  </component> <!--SLIDE 4--> 
+<component id="ID_s4_title">
+<text><![CDATA[<b>Red OSPF punto a multipunto</b>]]></text>
+</component>
+<component id="ID_s4_txt01">
+  <text><![CDATA[Internet]]></text> 
+  </component>
+    <component id="ID_s4_txt02">
+  <text><![CDATA[Punto a Punto]]></text> 
+  </component>
+    <component id="ID_s4_txt03">
+  <text><![CDATA[Frame Relay]]></text> 
+  </component>
+
+  <component id="ID_s4_txt04">
+     <text><![CDATA[Punto a multipunto]]></text>
+  </component>
+<component id="ID_s4_txt05">
+   <text><![CDATA[Punto a multipunto]]></text>
+</component>
+
+    <component id="ID_s4_title_txt">
+		<text><![CDATA[]]></text>
+	</component>
+<component id="ID_s4_body01">
+  <text><![CDATA[<textformat blockindent='-14'><ul><li>En esta situación, el R1, el R2 y el R3 se interconectan mediante una red Frame Relay.</li><li>Frame relay no permite las difusiones.</li><li>OSPF se debe configurar según corresponda para crear adyacencias de vecinos.</li></ul></textformat>]]></text> 
+  </component> <!--SLIDE 5--> 
+<component id="ID_s5_title">
+<text><![CDATA[<b>Red OSPF de enlace virtual</b>]]></text>
+</component>
+<component id="ID_s5_txt01">
+  <text><![CDATA[Área 0]]></text> 
+  </component>
+    <component id="ID_s5_txt02">
+  <text><![CDATA[Área&nbsp;1]]></text> 
+  </component>
+    <component id="ID_s5_txt03">
+  <text><![CDATA[Área&nbsp;51]]></text> 
+  </component>
+  
+   <component id="ID_s5_title_txt">
+		<text><![CDATA[]]></text>
+	</component>
+<component id="ID_s5_body01">
+  <text><![CDATA[<textformat blockindent='-14'><ul><li>En esta situación, el área 51 no puede conectarse directamente al área 0.</li><li>Debe configurarse un área OSPF especial para conectar el área 51 al área 0.</li><li>El área 1 del R2 y el R1 debe configurarse como un enlace virtual.</li></ul></textformat>]]></text> 
+  </component>
+</textcomponents>

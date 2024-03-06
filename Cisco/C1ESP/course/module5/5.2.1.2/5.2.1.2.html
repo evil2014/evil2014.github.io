@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.2.1.2 Funciones del protocolo ARP</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.2.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolo de resolución de direcciones</h1>
+        <h2>ARP</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Resolución de direcciones IPv4 a direcciones MAC</b>
+</p>
+<p>Para que una trama se coloque en los medios de la LAN, debe contar con una dirección MAC de destino. Cuando se envía un paquete a la capa de enlace de datos para que se encapsule en una trama, el nodo consulta una tabla en su memoria para encontrar la dirección de la capa de enlace de datos asignada a la dirección IPv4 de destino. Esta tabla se denomina tabla ARP o caché ARP. La tabla ARP se almacena en la RAM del dispositivo. </p>
+<p></p>
+<p>Cada entrada o fila de la tabla ARP vincula una dirección IP a una dirección MAC. La relación entre los dos valores se denomina mapa, que simplemente significa que usted puede localizar una dirección IP en la tabla y descubrir la dirección MAC correspondiente. En la tabla ARP, se guardan temporalmente (en caché) las asignaciones de los dispositivos en la LAN local. </p>
+<p></p>
+<p>Para comenzar el proceso, un nodo transmisor intenta localizar la dirección MAC asignada a un destino IPv4. Si se encuentra este mapa en la tabla, el nodo utiliza la dirección MAC como MAC de destino en la trama que encapsula el paquete IPv4. La trama se codifica entonces en los medios de la red. </p>
+<p></p>
+<p>
+<b>Mantenimiento de la tabla ARP</b>
+</p>
+<p>La tabla ARP se mantiene dinámicamente. Existen dos maneras en las que un dispositivo puede reunir direcciones MAC. Una es monitorear el tráfico que se produce en el segmento de la red local. A medida que un nodo recibe tramas de los medios, puede registrar las direcciones IP y MAC de origen como mapeos en la tabla ARP. A medida que las tramas se transmiten en la red, el dispositivo completa la tabla ARP con los pares de direcciones. </p>
+<p></p>
+<p>Un dispositivo también puede obtener pares de direcciones mediante el envío de una solicitud de ARP, como se muestra en la ilustración. Una solicitud de ARP es un broadcast de capa 2 que se transmite a todos los dispositivos en la LAN Ethernet. La solicitud de ARP contiene la dirección IP del host de destino y la dirección MAC de broadcast, FFFF.FFFF.FFFF. Dado que se trata de un broadcast, todos los nodos en la LAN Ethernet reciben y examinan el contenido. El nodo cuya dirección IP coincide con la dirección IP en la solicitud de ARP responde. La respuesta es una trama de unicast que incluye la dirección MAC que corresponde a la dirección IP en la solicitud. Esta respuesta se utiliza para crear una entrada nueva en la tabla ARP del nodo de envío.</p>
+<p></p>
+<p>Las entradas en la tabla ARP tienen una marca de hora similar a la de las entradas de la tabla MAC en los switches. Si un dispositivo no recibe una trama de un dispositivo determinado antes de que caduque la marca horaria, la entrada para ese dispositivo se elimina de la tabla ARP.</p>
+<p></p>
+<p>Además, pueden ingresarse entradas estáticas de asignaciones en una tabla ARP, pero esto no sucede con frecuencia. Las entradas estáticas de la tabla ARP no caducan con el tiempo y deben eliminarse en forma manual.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

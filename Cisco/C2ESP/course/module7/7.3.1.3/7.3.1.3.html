@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.3.1.3 Análisis de la configuración predeterminada de RIP</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.3.1.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Routing RIP y RIPng</h1>
+        <h2>Configuración del protocolo RIP</h2>
+      </div>
+      <div id="content">
+<p>El comando <span class="cmd"><b>show ip protocols</b></span> muestra los parámetros del protocolo de routing IPv4 configurados actualmente en el router. Este resultado que se muestra en la figura 1 confirma la mayoría de los parámetros de RIP, incluido lo siguiente:</p>
+<p></p>
+<p>1. El routing RIP está configurado y en ejecución en el router R1.</p>
+<p>2. Los valores de diversos temporizadores; por ejemplo, el R1 envía la siguiente actualización de routing en 16 segundos.</p>
+<p>3. La versión de RIP configurada actualmente es RIPv1.</p>
+<p>4. El R1 realiza la sumarización en el límite de la red con clase.</p>
+<p>5. El R1 anuncia las redes con clase. Estas son las redes que el R1 incluye en sus actualizaciones RIP.</p>
+<p>6. Los vecinos RIP se indican mediante la inclusión de la dirección IP del siguiente salto, la AD asociada que el R2 utiliza para las actualizaciones enviadas por ese vecino y el momento en que dicho vecino recibió la última actualización.</p>
+<p></p>
+<p>
+<b>Nota:</b> este comando también resulta muy útil para verificar las operaciones de otros protocolos de routing (es decir, EIGRP y OSPF). </p>
+<p></p>
+<p>El comando <span class="cmd"><b>show ip route</b></span> muestra las rutas RIP instaladas en la tabla de routing. En la figura 2, el R1 ahora tiene información acerca de las redes resaltadas. </p>
+<p></p>
+<p>Utilice el verificador de sintaxis de la figura 3 para verificar las rutas RIP y la configuración de RIP del R2 y del R3.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

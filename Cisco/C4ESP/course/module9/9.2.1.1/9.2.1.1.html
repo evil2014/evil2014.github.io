@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.2.1.1 Herramientas para la solución de problemas de software</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.2.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resolución de problemas de red</h1>
+        <h2>Herramientas para la resolución de problemas</h2>
+      </div>
+      <div id="content">
+<p>Para facilitar la resolución de problemas, hay disponible una amplia variedad de herramientas de hardware y software. Estas herramientas se pueden usar para recolectar y analizar los síntomas de los problemas de red. Con frecuencia, proporcionan funciones de monitoreo y generación de informes que se pueden usar para establecer la línea de base de red.</p>
+<p></p>
+<p>Algunas herramientas para la solución de problemas de software incluyen las siguientes:</p>
+<p></p>
+<p>
+<b>Herramientas del sistema de administración de red (NMS)</b>
+</p>
+<p>Las herramientas del sistema de administración de red (NMS) incluyen herramientas de monitoreo en el nivel de los dispositivos, de configuración y de administración de fallas. En la figura 1, se muestra un ejemplo del software NMS “WhatsUp Gold”. Estas herramientas se pueden usar para investigar y corregir los problemas de red. El software de supervisión de red muestra de manera gráfica una vista física de los dispositivos de red, lo que permite a los administradores supervisar los dispositivos remotos sin revisarlos físicamente. El software de administración de dispositivos proporciona datos dinámicos sobre el estado, las estadísticas y la información de configuración de productos conmutados. Algunas otras herramientas de administración de red que se usan frecuentemente son CiscoView, HPBTO Software (antes OpenView) y SolarWinds. </p>
+<p></p>
+<p>
+<b>Base de conocimientos</b>
+</p>
+<p>Las bases de conocimientos en línea de los proveedores de dispositivos de red se volvieron fuentes de información indispensables. Cuando las bases de conocimientos de los proveedores se combinan con motores de búsqueda de Internet como Google, los administradores de red tienen acceso a una vasta fuente de información fundada en la experiencia. </p>
+<p></p>
+<p>En la figura 2, se muestra la página <b>Tools & Resources</b> (Herramientas y recursos) de Cisco, que se encuentra en <a href="http://www.cisco.com/" target="_blank">http://www.cisco.com</a>. Esta es una herramienta gratuita que proporciona información sobre el hardware y el software relacionados con Cisco. Incluye procedimientos de resolución de problemas, guías de implementación y notas de producto originales sobre la mayoría de los aspectos de la tecnología de red.</p>
+<p></p>
+<p>
+<b>Herramientas de línea de base</b>
+</p>
+<p>Hay numerosas herramientas disponibles para automatizar la documentación de red y el proceso de línea de base. Estas herramientas están disponibles para los sistemas operativos Windows, Linux y AUX. En la figura 3, se muestra una captura de pantalla de los softwares SolarWinds LANsurveyor y CyberGauge. Las herramientas de establecimiento de línea de base ayudan con las tareas de registro frecuentes. Por ejemplo, pueden generar diagramas de red, ayudar a conservar actualizado el registro del software y el hardware de una red y ayudar a medir de forma rentable la línea de base de uso de ancho de banda de la red.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

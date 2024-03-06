@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>10.2.1.3 HTTP y HTTPS</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_10.2.1.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolos y servicios de capa de aplicación reconocidos</h1>
+        <h2>Protocolos de capa de aplicación comunes </h2>
+      </div>
+      <div id="content">
+<p>HTTP se utiliza a través de la World Wide Web para transferencia de datos y es uno de los protocolos de aplicación más utilizados hoy en día. Originalmente, este protocolo se desarrolló solo para publicar y recuperar páginas HTML. Sin embargo, la flexibilidad de HTTP lo convirtió en una aplicación fundamental de los sistemas de información distribuidos y cooperativos. </p>
+<p></p>
+<p>HTTP es un protocolo de solicitud/respuesta. Cuando un cliente, por lo general un explorador Web, envía una solicitud a un servidor Web, HTTP especifica los tipos de mensaje que se utilizan para esa comunicación. Los tres tipos de mensajes comunes son GET, POST y PUT (consulte la ilustración).</p>
+<p></p>
+<p>GET es una solicitud de datos por parte del cliente. Un cliente (explorador Web) envía el mensaje GET al servidor Web para solicitar las páginas HTML. Cuando el servidor recibe la solicitud GET, este responde con una línea de estado, como HTTP/1.1 200 OK, y un mensaje propio. El mensaje del servidor puede incluir el archivo HTML solicitado, si está disponible, o puede contener un mensaje de error o de información, como “Se modificó la ubicación del archivo solicitado”.</p>
+<p></p>
+<p>Los mensajes POST y PUT se utilizan para subir datos al servidor Web. Por ejemplo, cuando el usuario introduce datos en un formulario que está integrado en una página Web (p. ej., cuando se completa una solicitud de pedido), el mensaje POST se envía al servidor Web. En el mensaje POST, se incluyen los datos que el usuario introdujo en el formulario.</p>
+<p></p>
+<p>PUT carga los recursos o el contenido en el servidor Web. Por ejemplo, si un usuario intenta subir un archivo o una imagen a un sitio Web, el cliente envía un mensaje PUT al servidor con la imagen o el archivo adjunto.</p>
+<p></p>
+<p>Aunque HTTP es sumamente flexible, no es un protocolo seguro. Los mensajes de solicitud envían información al servidor en un texto sin formato que puede ser interceptado y leído. De forma similar, las respuestas del servidor, generalmente páginas HTML, también se descifran. </p>
+<p></p>
+<p>Para una comunicación segura a través de Internet, se utiliza el protocolo HTTP seguro (HTTPS) para acceder o subir información al servidor Web. El HTTPS puede utilizar autenticación y encriptación para asegurar los datos mientras viajan entre el cliente y el servidor. HTTPS especifica reglas adicionales para pasar datos entre la capa de aplicación y la capa de transporte. El protocolo HTTPS utiliza el mismo proceso de solicitud del cliente-respuesta del servidor que HTTP, pero el stream de datos se encripta con capa de sockets seguros (SSL) antes de transportarse a través de la red. El HTTPS crea una carga y un tiempo de procesamiento adicionales en el servidor debido a la encriptación y el descifrado de tráfico.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

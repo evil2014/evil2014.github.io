@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.1.5.3 Ejemplo de autenticación de EIGRP</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.1.5.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuraciones avanzadas de EIGRP</h1>
+        <h2>EIGRP segura</h2>
+      </div>
+      <div id="content">
+<p>Para autenticar las actualizaciones de routing, todas las interfaces con EIGRP habilitado deben estar configuradas para admitir la autenticación. En la figura 1, se muestra la topología IPv4 y las interfaces que tienen autenticación configurada. </p>
+<p></p>
+<p>En la figura 2, se muestra la configuración para el router R1 con el llavero <span class="cmd"><b>EIGRP_KEY</b></span> y la cadena de clave <span class="cmd"><b>cisco123</b></span>. Una vez que el R1 está configurado, los otros routers reciben actualizaciones de routing autenticadas. Las adyacencias se pierden hasta que se configura la autenticación del protocolo de routing en los vecinos.</p>
+<p></p>
+<p>En la figura 3, se muestra una configuración parecida para el router R2. Observe que la misma cadena de clave, <span class="cmd"><b>cisco123</b></span>, se usa para autenticar información con el R1 y, finalmente, el R3. </p>
+<p></p>
+<p>Utilice el verificador de sintaxis de la figura 4 para configurar la autenticación de EIGRP para el R3.</p>
+<p></p>
+<p>
+<b>Configuración de la autenticación de EIGRP para IPv6</b>
+</p>
+<p></p>
+<p>Los algoritmos y la configuración para autenticar mensajes EIGRP para IPv6 son los mismos que los correspondientes a EIGRP para IPv4. La única diferencia es que en los comandos del modo de configuración de interfaz se usa <span class="cmd"><b>ipv6</b></span> en lugar de <span class="cmd"><b>ip</b></span>.</p>
+<p></p>
+<p>
+<span class="cmd">Router(config-if)# </span>
+<span class="cmd">
+<b>ipv6 authentication mode eigrp</b>
+</span>
+<span class="cmd"></span>
+<span class="cmd">
+<i>número-as</i>
+</span>
+<span class="cmd"></span>
+<span class="cmd">
+<b>md5</b>
+</span>
+</p>
+<p>
+<span class="cmd">Router(config-if)# </span>
+<span class="cmd">
+<b>ipv6 authentication key-chain eigrp</b>
+</span>
+<span class="cmd"></span>
+<span class="cmd">
+<i>número-as nombre-de-llavero</i>
+</span>
+</p>
+<p></p>
+<p>En la figura 5, se muestran los comandos para configurar la autenticación de EIGRP para IPv6 en el router R1 por medio del llavero <span class="cmd"><b>EIGRP_IPV6_KEY</b></span> y la cadena de clave <span class="cmd"><b>cisco123</b></span>. En el R2 y el R3 se introducen configuraciones parecidas.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

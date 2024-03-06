@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.3.2.5 Modificación de una ID de router OSPFv3</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.3.2.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de OSPFv3 de área única</h1>
+        <h2>Configuración de OSPFv3</h2>
+      </div>
+      <div id="content">
+<p>En ocasiones, se deben cambiar las ID de router, por ejemplo, si el administrador de red estableció un nuevo esquema de identificación de ID de router. Sin embargo, después de que un router OSPFv3 establece una ID de router, esta no se puede cambiar hasta que se vuelva a cargar el router o se borre el proceso OSPF.</p>
+<p></p>
+<p>En la figura 1, observe que la ID del router actual es 10.1.1.1. La ID del router OSPFv3 debería ser 1.1.1.1. </p>
+<p></p>
+<p>En la figura 2, se asigna la ID de router 1.1.1.1 al R1. </p>
+<p></p>
+<p>
+<b>Nota:</b> el método preferido para restablecer la ID del router es borrar el proceso OSPF. </p>
+<p></p>
+<p>En la figura 3, se borra el proceso de routing de OSPF con el comando <span class="cmd"><b>clear ipv6 ospf process</b></span> del modo EXEC privilegiado. Hacer esto obliga al protocolo OSPF en el R1 a volver a negociar las adyacencias de vecinos con la nueva ID del router.</p>
+<p></p>
+<p>El comando <span class="cmd"><b>show ipv6 protocols</b></span> verifica que se haya cambiado la ID del router.</p>
+<p></p>
+<p>Utilice el verificador de sintaxis de la figura 4 para modificar la ID del router para el R1.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

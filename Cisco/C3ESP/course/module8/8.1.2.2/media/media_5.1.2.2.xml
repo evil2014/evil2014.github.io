@@ -1,0 +1,68 @@
+﻿<textcomponents>
+<component id="ID_s1_title">
+<text><![CDATA[<b>Topología EIGRP para IPv4</b>]]></text>
+</component>
+<component id="ID_s1_txt01">
+  <text><![CDATA[<b>Dominio de routing EIGRP</b>]]></text> 
+  </component>
+<component id="ID_s1_txt02">
+  <text><![CDATA[Internet]]></text> 
+  </component>
+
+
+<component id="ID_s2_title">
+  <text><![CDATA[<b>Cálculo de una ruta resumida</b>]]></text> 
+  </component>
+<component id="ID_s2_txt01">
+  <text><![CDATA[22&nbsp;bits coincidentes]]></text> 
+  </component>
+<component id="ID_s2_txt02">
+  <text><![CDATA[22&nbsp;bits coincidentes&nbsp;=&nbsp;una máscara de subred /22 o 255.255.252.0]]></text> 
+</component>
+
+<component id="ID_s2_txt03">
+<text><![CDATA[Configure la ruta resumida en todas las interfaces que envían paquetes EIGRP.]]></text>
+</component>
+
+<component id="ID_s3_title">
+	<text><![CDATA[<b>Configuración de una ruta resumida manual en el R3</b>]]></text>		
+	</component>
+
+<component id="ID_sc_reset">
+		<text><![CDATA[Restablecer]]></text>
+	</component>
+	<component id="ID_sc_showme">
+		<text><![CDATA[Mostrar]]></text>
+	</component>
+	<component id="ID_sc_showall">
+		<text><![CDATA[Mostrar todo]]></text>
+	</component>
+
+	<component id="ID_SC3" fontFace='Courier New' fontSize="10">
+		<feedback id="fb"><![CDATA[<pre><b>***</b><font size = '10' face="Arial" color="#0000FF" >Debe ingresar el comando exacto y completo.</font><b>***</b></pre> ]]></feedback>		
+		<existingcommands><![CDATA[<pre><font face="Arial" fontSize="10" ><b>Configure una ruta resumida EIGRP para resumir las siguientes redes en la interfaz serial 0/0/1 del R3 para EIGRP AS 1<ul><li> 192.168.1.0/24</li><li> 192.168.2.0/24</li><li> 192.168.3.0/24</li></ul>Vuelva al modo EXEC privilegiado.</b></font></pre>]]></existingcommands>
+		<command  prompt="R3(config)#">
+		    <correctresponse><![CDATA[interface serial 0/0/1]]></correctresponse>
+		</command>
+		<command  prompt="R3(config-if)#">
+	<correctresponse><![CDATA[ip summary-address eigrp 1 192.168.0.0 255.255.252.0]]></correctresponse>
+		</command>
+		<command  prompt="R3(config-if)#">
+		    <correctresponse><![CDATA[end]]></correctresponse>
+			<instruction><![CDATA[<pre><font  face="Arial" fontSize="10" ><b>Muestre la tabla de enrutamiento en el R1 para ver el resumen manual del R3.</b></pre>]]></instruction>
+		</command>
+		<command  prompt="R1#">
+		    <correctresponse><![CDATA[show ip route]]></correctresponse>
+				<deviceresponse><![CDATA[<pre><font face="Courier New" fontSize="10" ><font face="_sans">&lt;resultado omitido&gt;</font><br><br>D  192.168.0.0/22 [90/2170112] via 192.168.10.6, 01:53:19, <br>Serial0/0/1<br>R1#</font></pre>]]></deviceresponse> 
+			<instruction><![CDATA[<pre><font face="Arial"><b>Muestre la tabla de enrutamiento en el R2 para ver el resumen manual del R3.</b></pre>]]></instruction>
+		</command>
+		<command  prompt="R2#">
+		    <correctresponse><![CDATA[show ip route]]></correctresponse>
+				<deviceresponse><![CDATA[<pre><font face="_sans">&lt;resultado omitido&gt;</font><font face="Courier New" fontSize="10" ><br><br>D  192.168.0.0/22 [90/3012096] via 192.168.10.10, 01:53:33, <br>Serial0/0/1<br>R2#</font></pre>]]></deviceresponse> 
+			<instruction><![CDATA[<font face="Arial" class="syntaxBottomLine"><b>Configuró correctamente una ruta resumida manual en el R3.</b>]]></instruction>
+		</command>
+		<command prompt=""/>
+	</component>
+
+
+</textcomponents>

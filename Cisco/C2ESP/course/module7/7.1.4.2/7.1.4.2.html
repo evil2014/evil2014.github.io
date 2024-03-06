@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.1.4.2 Protocolos de routing IGP y EGP</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.1.4.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolos de enrutamiento dinámico</h1>
+        <h2>Tipos de protocolos de routing</h2>
+      </div>
+      <div id="content">
+<p>Un sistema autónomo (AS) es un conjunto de routers bajo una administración común, como una empresa o una organización. Los AS también se conocen como “dominios de routing”. Los ejemplos típicos de AS son la red interna de una empresa y la red de un ISP. </p>
+<p></p>
+<p>Debido a que Internet se basa en el concepto de AS, se requieren dos tipos de protocolos de routing: </p>
+<p>
+<ul>
+<li>
+<b>Protocolo de gateway interior (IGP):</b> se utiliza para el routing dentro de un AS. También se lo denomina “routing interno de AS”. Las empresas, las organizaciones e incluso los proveedores de servicios utilizan un IGP en sus redes internas. Los IGP incluyen RIP, EIGRP, OSPF e IS-IS. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Protocolo de gateway exterior (EGP):</b> se utiliza para el routing entre AS. Los proveedores de servicios y las empresas grandes pueden interconectarse mediante un EGP. El protocolo de gateway fronterizo (BGP) es el único EGP viable actualmente y es el protocolo de routing oficial utilizado por Internet. </li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Nota:</b> dado que BGP es el único EGP disponible, no se suele utilizar el término EGP. En cambio, la mayoría de los ingenieros simplemente hacen referencia a BGP. </p>
+<p></p>
+<p>En el ejemplo de la ilustración, se proporcionan situaciones simples en las que se destaca la implementación de IGP, de BGP y del routing estático: </p>
+<p>
+<ul>
+<li>
+<b>ISP-1:</b> es un AS que utiliza IS-IS como IGP. Se interconecta con otros sistemas autónomos y proveedores de servicios que utilizan BGP para controlar explícitamente el modo en que se enruta el tráfico. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>ISP-2:</b> es un AS que utiliza OSPF como IGP. Se interconecta con otros sistemas autónomos y proveedores de servicios que utilizan BGP para controlar explícitamente el modo en que se enruta el tráfico. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>AS-1:</b> se trata de una organización grande que utiliza EIGRP como IGP. Dado que es un entorno de host múltiples (es decir, se conecta a dos proveedores de servicios distintos), utiliza BGP para controlar explícitamente la forma en que el tráfico ingresa al AS y sale de él. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>AS-2:</b> se trata de una organización mediana y utiliza OSPF como IGP. También es un entorno de host múltiples, por lo que utiliza BGP para controlar explícitamente la forma en que el tráfico ingresa al AS y sale de él. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>AS-3:</b> se trata de una organización pequeña con routers más antiguos dentro del AS y utiliza RIP como IGP. Dado que tiene conexión simple (es decir, conecta a solo un proveedor de servicios), no se requiere BGP. En cambio, se implementa routing estático entre el AS y el proveedor de servicios. </li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Nota:</b> BGP excede el ámbito de este curso, motivo por el cual no se lo describe en detalle. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

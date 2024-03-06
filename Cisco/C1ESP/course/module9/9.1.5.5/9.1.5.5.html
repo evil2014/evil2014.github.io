@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.1.5.5 Cuadro de VLSM</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.1.5.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>División de una red IPv4 en subredes</h1>
+        <h2>Beneficios de la máscara de subred de longitud variable</h2>
+      </div>
+      <div id="content">
+<p>También se puede realizar la planificación de direcciones utilizando diversas herramientas. Un método es utilizar un cuadro de VLSM para identificar los bloques de direcciones disponibles para su uso y los que ya están asignados. Este método ayuda a evitar la asignación de direcciones que ya han sido asignadas. Con la red del ejemplo anterior, se puede utilizar el cuadro de VLSM para planificar la asignación de direcciones. </p>
+<p></p>
+<p>
+<b>Análisis de las subredes /27</b>
+</p>
+<p></p>
+<p>Como se muestra en la figura 1, al utilizar la división en subredes tradicional, los primeros siete bloques de direcciones se asignaron a las LAN y WAN. Recuerde que este esquema dio como resultado 8 subredes con 30 direcciones utilizables cada una (/27). Si bien este esquema funcionó para los segmentos LAN, se desperdiciaron muchas direcciones en los segmentos WAN. </p>
+<p></p>
+<p>Al diseñar el esquema de direccionamiento de una red nueva, los bloques de direcciones pueden asignarse de manera tal que se minimice el desperdicio y que los bloques de direcciones sin utilizar sean contiguos.</p>
+<p></p>
+<p>
+<b>Asignación de bloques de direcciones VLSM</b>
+</p>
+<p></p>
+<p>Como se muestra en la figura 2, para utilizar el espacio de direcciones de manera más eficaz, se crean subredes /30 para los enlaces WAN. A fin de mantener juntos los bloques de direcciones sin utilizar, la última subred /27 se volvió a dividir en subredes para crear subredes /30. Las primeras 3 subredes se asignaron a enlaces WAN.</p>
+<p></p>
+<p>
+<ul>
+<li>.224 /30, rango de direcciones de host 225 a 226: enlace WAN entre R1 y R2</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>.228 /30, rango de direcciones de host 229 a 230: enlace WAN entre R2 y R3</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>.232 /30, rango de direcciones de host 233 a 234: enlace WAN entre R3 y R4</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>.236 /30, rango de direcciones de host 237 a 238: disponible para utilizar</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>.240 /30, rango de direcciones de host 241 a 242: disponible para utilizar</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>.244 /30, rango de direcciones de host 245 a 246: disponible para utilizar</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>.248 /30, rango de direcciones de host 249 a 250: disponible para utilizar</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>.252 /30, rango de direcciones de host 253 a 254: disponible para utilizar</li>
+</ul>
+</p>
+<p></p>
+<p>Si se diseña el esquema de direccionamiento de esta manera, quedan 3 subredes /27 y 5 subredes /30 sin utilizar.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

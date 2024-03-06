@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>11.2.3.4 Seguridad de terminales</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_11.2.3.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Cómo mantener la seguridad de la red</h1>
+        <h2>Mitigación de ataques de red</h2>
+      </div>
+      <div id="content">
+<p>Una red es apenas tan segura como su enlace más débil. Las amenazas destacadas que más se analizan en los medios de comunicación son las amenazas externas, como los gusanos de Internet y los ataques DoS. Pero la protección de la red interna es tan importante como la protección del perímetro de una red. La red interna consta de terminales de red, algunas de las cuales se muestran en la ilustración. Una terminal, o un host, es un sistema de computación o un dispositivo individual que actúa como cliente de red. Las terminales comunes son computadoras portátiles, computadoras de escritorio, servidores, smartphones y tablet PC. Si los usuarios no aplican seguridad a los dispositivos terminales, ninguna precaución de seguridad garantizará una red segura.</p>
+<p></p>
+<p>La seguridad de los dispositivos terminales es uno de los trabajos más desafiantes para un administrador de red, ya que incluye a la naturaleza humana. Las compañías deben aplicar políticas bien documentadas, y los empleados deben estar al tanto de estas reglas. Se debe capacitar a los empleados sobre el uso correcto de la red. En general, estas políticas incluyen el uso de software antivirus y la prevención de intrusión de hosts. Las soluciones más integrales de seguridad de terminales dependen del control de acceso a la red. </p>
+<p></p>
+<p>La seguridad de terminales también requiere la protección de los dispositivos de capa 2 en la infraestructura de la red, a fin de evitar ataques de capa 2, como los ataques de suplantación de direcciones MAC, los de desbordamiento de la tabla de direcciones MAC y los ataques de saturación de LAN. Esto se conoce como “mitigación de ataques”.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

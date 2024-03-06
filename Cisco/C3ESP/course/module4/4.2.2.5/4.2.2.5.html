@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.2.2.5 Autenticación </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.2.2.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Operaciones de LAN inalámbrica</h1>
+        <h2>Operación inalámbrica</h2>
+      </div>
+      <div id="content">
+<p>El estándar 802.11 se desarrolló originariamente con dos mecanismos de autenticación:</p>
+<p>
+<ul>
+<li>
+<b>Autenticación abierta:</b> fundamentalmente, una autenticación NULA donde el cliente inalámbrico dice “autentíqueme” y el AP responde “sí”. La autenticación abierta proporciona conectividad inalámbrica a cualquier dispositivo inalámbrico y se debe usar solo en situaciones donde la seguridad no es un motivo de preocupación. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Autenticación de clave compartida:</b> es una técnica que se basa en una clave previamente compartida entre el cliente y el AP. </li>
+</ul>
+</p>
+<p></p>
+<p>En la figura 1, se proporciona una descripción general simple del proceso de autenticación. Sin embargo, en la mayoría de las instalaciones con autenticación mediante clave compartida, el intercambio es el siguiente:</p>
+<p>1. El cliente inalámbrico envía una trama de autenticación al AP. </p>
+<p>2. El AP responde con un texto de desafío al cliente.</p>
+<p>3. El cliente cifra el mensaje mediante la clave compartida y devuelve el texto cifrado al AP. </p>
+<p>4. A continuación, el AP descifra el texto cifrado mediante la clave compartida. </p>
+<p>5. Si el texto descifrado coincide con el texto de desafío, el AP autentica el cliente. Si los mensajes no coinciden con el texto de desafío, no se autentica el cliente inalámbrico y se deniega el acceso inalámbrico.</p>
+<p></p>
+<p>Una vez que se autenticó un cliente inalámbrico, el AP continúa con la etapa de asociación. Como se muestra en la figura 2, la etapa de asociación finaliza la configuración y establece el enlace de datos entre el cliente inalámbrico y el AP. </p>
+<p></p>
+<p>Como parte de esta etapa:</p>
+<p>
+<ul>
+<li>El cliente inalámbrico reenvía una trama de solicitud de asociación que incluye su dirección MAC.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>El AP responde con una respuesta de asociación que incluye el BSSID del AP, que es la dirección MAC del AP.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>El AP asigna un puerto lógico conocido como “identificador de asociación” (AID) al cliente inalámbrico. El AID equivale a un puerto en un switch y permite que el switch de infraestructura mantenga un registro de las tramas destinadas a que el cliente inalámbrico las reenvíe. </li>
+</ul>
+</p>
+<p></p>
+<p>Una vez que un cliente inalámbrico se asocia a un AP, el tráfico entre el cliente y el AP puede fluir.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

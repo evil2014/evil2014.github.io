@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.2.3.3 Auditorías de seguridad de red</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.2.3.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Seguridad de switches: administración e implementación</h1>
+        <h2>Prácticas recomendadas de seguridad</h2>
+      </div>
+      <div id="content">
+<p>Las herramientas de seguridad de red permiten que los administradores de red realicen auditorías de seguridad en una red. Una auditoría de seguridad revela el tipo de información que puede recopilar un atacante con un simple monitoreo del tráfico de la red. </p>
+<p></p>
+<p>Por ejemplo, las herramientas de auditoría de seguridad de red permiten que un administrador sature la tabla de direcciones MAC con direcciones MAC ficticias. A esto le sigue una auditoría de los puertos del switch a medida que este satura con tráfico todos los puertos. Durante la auditoría, las asignaciones de direcciones MAC legítimas vencen y se reemplazan por las asignaciones de direcciones MAC ficticias. Esto determina qué puertos están comprometidos y no están configurados correctamente para evitar este tipo de ataque.</p>
+<p></p>
+<p>El tiempo es un factor importante para realizar la auditoría de manera correcta. Los diferentes switches admiten distintas cantidades de direcciones MAC en sus tablas MAC. Puede resultar difícil determinar el número ideal de direcciones MAC suplantadas que se deben enviar al switch. Los administradores de red también deben enfrentar el período de vencimiento de la tabla de direcciones MAC. Si las direcciones MAC suplantadas comienzan a vencerse en el momento en que se realiza la auditoría de red, las direcciones MAC válidas comienzan a completar la tabla de direcciones MAC, lo que limita la cantidad de datos que pueden monitorearse con una herramienta de auditoría de red.</p>
+<p></p>
+<p>Las herramientas de seguridad de red también se pueden usar para realizar pruebas de penetración en la red. La prueba de penetración es un ataque simulado contra la red para determinar qué tan vulnerable sería en un ataque real. Esto permite que un administrador de red identifique debilidades en la configuración de los dispositivos de red y realice cambios para que los dispositivos sean más resistentes a los ataques. Los administradores pueden llevar a cabo una gran cantidad de ataques, y la mayoría de los conjuntos de herramientas vienen acompañados por documentación completa que detalla la sintaxis necesaria para ejecutar el ataque deseado. </p>
+<p></p>
+<p>Debido a que las pruebas de penetración pueden tener efectos adversos en la red, se llevan a cabo bajo condiciones muy controladas, respetando los procedimientos registrados que se detallan en una política de seguridad de red completa. Lo ideal es una red sin conexión que imite la red de producción real y funcione como banco de pruebas. El personal de redes puede usar la red del banco de pruebas para realizar pruebas de penetración en la red.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

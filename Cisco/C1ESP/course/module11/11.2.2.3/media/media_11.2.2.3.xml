@@ -1,0 +1,164 @@
+﻿<textcomponents> <!--Slide 1-->
+<component id="ID_s1_title">
+<text><![CDATA[<b>Ataque a la contraseña</b>]]></text>
+</component>
+
+<component id='ID_s1_TB_header'>
+<text><![CDATA[]]></text>
+</component>
+<component id='ID_s1_TB_body'>
+<text><![CDATA[Los atacantes pueden implementar ataques a contraseñas mediante diversos métodos:<textformat blockindent="-18"><li>Ataques por fuerza bruta</li><li>Programas de caballos de Troya</li><li>Programas detectores de paquetes</li></textformat>]]></text>
+</component> <!--Slide 2-->
+<component id="ID_s2_title">
+<text><![CDATA[<b>Explotación de confianza</b>]]></text>
+</component>
+
+<component id='ID_s2_table'>
+<text><![CDATA[
+				<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' 
+
+cellpadding='4'>
+							<tr>
+					<td colspan='2' bgcolor='#0E6360' class="mtable_top"><font size='1' color='#434321'><span 
+
+style="color:#DAE17A">.</span></font></td>
+				</tr>				
+				<tr>
+					<td bgcolor='#077A77' width='180' valign="top"><font size='11' color='#ffffff'><b>SO de la red</b></font></td>
+					<td bgcolor='#077A77'  valign="top"><font size='11' color='#ffffff'><b>Modelos de confianza</b></font></td>
+					
+				</tr>
+				<tr>
+					<td bgcolor='#EFF8F7' valign="top"><font size='11'color='#393536'>Windows</font></td>
+					<td bgcolor='#EFF8F7' valign="top"><font size='11' color='#393536'>Dominios Active Directory (AD)</font></td>
+					
+				</tr>
+				<tr>
+					<td bgcolor='#FFFFFF' valign="top"><font size='11' color='#393536'>Linux y UNIX</font></td>
+					<td bgcolor='#FFFFFF' valign="top"><font size='11' color='#393536'>Sistema de archivos de red (NFS, Network File System) Servicio de información de red Plus (NIS+, Network Information Service Plus)</font></td>
+				
+				</tr>	
+			</table>]]>
+		</text>
+</component>
+
+<component id="ID_s2_txt01">
+<text><![CDATA[El sistema A confía en el sistema B]]></text>
+</component>
+
+<component id="ID_s2_txt02">
+<text><![CDATA[Sistema A]]></text>
+</component>
+
+<component id="ID_s2_txt03">
+<text><![CDATA[El sistema B confía en todos]]></text>
+</component>
+
+<component id="ID_s2_txt04">
+<text><![CDATA[Sistema B]]></text>
+</component>
+
+<component id="ID_s2_txt05">
+<text><![CDATA[Comprometido por atacante<br/>usuario=psmith; Pat Smith]]></text>
+</component>
+
+<component id="ID_s2_txt06">
+<text><![CDATA[El atacante obtiene el acceso al sistema A]]></text>
+</component>
+
+<component id="ID_s2_txt07">
+<text><![CDATA[usuario=psmith;<br/>Pat Smith]]></text>
+</component>
+
+<component id="ID_s2_txt08">
+<text><![CDATA[Atacante]]></text>
+</component>
+
+<component id="ID_s2_txt09">
+<text><![CDATA[Objetivo:<br/>un atacante quiere obtener acceso al sistema A.]]></text>
+</component>
+
+<component id="ID_s2_txt10">
+<text><![CDATA[No puedo obtener acceso al sistema A, pero el sistema B está abierto.]]></text>
+</component>
+
+<component id="ID_s2_txt11">
+<text><![CDATA[usuario=psmith; Pat Smith]]></text>
+</component>
+
+<component id="ID_s2_txt12">
+<text><![CDATA[Soy dueño del sistema B y ahora tengo acceso al sistema A.]]></text>
+</component> <!--Slide 3-->
+<component id="ID_s3_title">
+<text><![CDATA[<b>Redirección de puertos</b>]]></text>
+</component>
+
+<component id='ID_s3_TB_body'>
+<text><![CDATA[La redirección de puertos es un tipo de ataque de explotación de confianza que utiliza un host comprometido para pasar tráfico que de otra manera se descartaría a través un firewall. Se mitiga principalmente con el uso de modelos de confianza adecuados. Los softwares antivirus y los IDS basados en host pueden ayudar a detectar si un atacante instala utilidades de redirección de puertos en el host y a evitar que esto suceda.]]>
+		</text>
+</component>
+
+
+<component id="ID_s3_txt01">
+<text><![CDATA[<b>Atacante</b>]]></text>
+</component>
+
+<component id="ID_s3_txt02">
+<text><![CDATA[<b>Origen: atacante<br/>Destino: A<br/>Puerto: 22</b>]]></text>
+</component>
+
+<component id="ID_s3_txt03">
+<text><![CDATA[<b>Origen: atacante<br/>Destino: B<br/>Puerto: 23</b>]]></text>
+</component>
+
+<component id="ID_s3_txt04">
+<text><![CDATA[<b>Host A comprometido</b>]]></text>
+</component>
+
+<component id="ID_s3_txt05">
+<text><![CDATA[<b>Origen: A<br/>Destino: B<br/>Puerto: 23</b>]]></text>
+</component>
+
+<component id="ID_s3_txt06">
+<text><![CDATA[<b>Host B</b>]]></text>
+</component> <!--Slide 4-->
+<component id="ID_s4_title">
+<text><![CDATA[<b>Ataque man-in-the-middle</b>]]></text>
+</component>
+
+<component id="ID_s4_txt01">
+<text><![CDATA[Víctima]]></text>
+</component>
+
+<component id="ID_s4_txt02">
+<text><![CDATA[La víctima hace clic en el enlace del correo electrónico de suplantación de identidad.]]></text>
+</component>
+
+<component id="ID_s4_txt03">
+<text><![CDATA[Servidor Web]]></text>
+</component> !--ANIMATION CONTROLLER--&gt;
+	<component id="end">
+		<text><![CDATA[Finalizar]]></text>
+	</component>
+	
+	<component id="fforward">
+		<text><![CDATA[Adelantar]]></text>
+	</component>
+	
+	<component id="pause">
+		<text><![CDATA[Pausa]]></text>
+	</component>
+	
+	<component id="play">
+		<text><![CDATA[Reproducir]]></text>
+	</component>
+	
+	<component id="rewind">
+		<text><![CDATA[Regresar]]></text>
+	</component>
+	
+	<component id="start">
+		<text><![CDATA[Inicio]]></text>
+	</component>
+
+</textcomponents>

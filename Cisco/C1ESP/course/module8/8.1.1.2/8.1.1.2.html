@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.1.1.2 Sistema de numeración binario</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.1.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Direcciones de red IPv4</h1>
+        <h2>Estructura de la dirección IPv4</h2>
+      </div>
+      <div id="content">
+<p>En IPv4, las direcciones son números binarios de 32 bits. Sin embargo, para facilitar el uso por parte de las personas, los patrones binarios que representan direcciones IPv4 se expresan en formato decimal punteado. Esto primero se logra separando cada byte (8 bits) del patrón binario de 32 bits, llamado “octeto”, con un punto. Se le llama octeto debido a que cada número decimal representa un byte u 8 bits.</p>
+<p></p>
+<p>La dirección binaria:</p>
+<p>
+<span class="cmd">11000000 10101000 00001010 00001010</span>
+</p>
+<p></p>
+<p>se expresa como decimal punteada de la siguiente manera:</p>
+<p>192.168.10.10</p>
+<p></p>
+<p>En la figura 1, seleccione cada botón para ver cómo se representa la dirección binaria de 32 bits en octetos decimales punteados.</p>
+<p></p>
+<p>¿Pero de qué forma se determinan los equivalentes decimales reales?</p>
+<p></p>
+<p>
+<b>Sistema de numeración binaria</b>
+</p>
+<p>En el sistema de numeración binaria la raíz es 2. Por lo tanto, cada posición representa aumentos en potencias de 2. En números binarios de 8 bits, las posiciones representan estas cantidades:</p>
+<p></p>
+<p>2^7 2^6 2^5 2^4 2^3 2^2 2^1 2^0</p>
+<p></p>
+<p>128 64 32 16 8 4 2 1</p>
+<p></p>
+<p>El sistema de numeración de base 2 solo tiene dos dígitos: 0 y 1. </p>
+<p></p>
+<p>Cuando se interpreta un byte como un número decimal, se obtiene la cantidad que esa posición representa si el dígito es 1, y no se obtiene la cantidad si el dígito es 0, como se muestra en la figura 1. </p>
+<p></p>
+<p>En la figura 2, se ilustra la representación del número decimal 192 en sistema binario. Un 1 en una determinada posición significa que se agrega ese valor al total. Un 0 significa que no se agrega ese valor. El número binario 11000000 tiene un 1 en la posición 2^7 (valor decimal 128) y un 1 en la posición 2^6 (valor decimal 64). Los bits restantes son todos 0, de modo que no se agregan los valores decimales correspondientes. El resultado de agregar 128 + 64 es 192, el equivalente decimal de 11000000.</p>
+<p></p>
+<p>A continuación, se proporcionan dos ejemplos más:</p>
+<p></p>
+<p>
+<b>Ejemplo 1: un octeto compuesto solo por unos, 11111111</b>
+</p>
+<p></p>
+<p>Un 1 en cada posición significa que sumamos el valor para esa posición al total. Todos 1 significa que se incluyen los valores de cada posición en el total; por lo tanto, el valor de todos 1 en un octeto es 255.</p>
+<p></p>
+<p>128 + 64 + 32 + 16 + 8 + 4 + 2 + 1 = 255</p>
+<p></p>
+<p>
+<b>Ejemplo 2: un octeto compuesto solo por ceros, 00000000 </b>
+</p>
+<p>Un 0 en cada posición indica que no se incluye el valor para esa posición en el total. Un 0 en cada posición produce un total de 0.</p>
+<p></p>
+<p>0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 = 0</p>
+<p></p>
+<p>Una combinación distinta de unos y ceros arroja un valor decimal diferente.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

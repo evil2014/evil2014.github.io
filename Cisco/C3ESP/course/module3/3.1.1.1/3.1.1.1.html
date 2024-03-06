@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>3.1.1.1 Introducción a la agregación de enlaces</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_3.1.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Conceptos del agregado de enlaces</h1>
+        <h2>Agregación de enlaces</h2>
+      </div>
+      <div id="content">
+<p>En la ilustración, el tráfico proveniente de varios enlaces (normalmente, 100 Mb/s o 1000 Mb/s) se agrega en el switch de acceso y se debe enviar a los switches de distribución. Debido a la agregación de tráfico, debe haber enlaces con un ancho de banda superior entre los switches de acceso y de distribución.</p>
+<p></p>
+<p>Tal vez sea posible usar enlaces más rápidos (por ejemplo, de 10 Gb/s) en el enlace agregado entre los switches de capa de acceso y de distribución. Sin embargo, agregar enlaces más rápidos es costoso. Además, como la velocidad aumenta en los enlaces de acceso, ni siquiera el puerto más rápido posible en el enlace agregado es lo suficientemente rápido para agregar el tráfico proveniente de todos los enlaces de acceso.</p>
+<p></p>
+<p>También es posible multiplicar la cantidad de enlaces físicos entre los switches para aumentar la velocidad general de la comunicación switch a switch. Sin embargo, STP está habilitado de manera predeterminada en los dispositivos de switch. STP bloquea los enlaces redundantes para evitar los bucles de routing. </p>
+<p></p>
+<p>Por estos motivos, la mejor solución es implementar una configuración de EtherChannel.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html class="module-index" dir="ltr">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta charset="UTF-8"/>
+    <title>Principios básicos de routing y switching</title>
+    <link rel="stylesheet" type="text/css" href="../common-ext/styles/index.css"/>
+    <script type="text/javascript" src="../common-ext/scripts/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="../common-ext/scripts/index.js"></script>
+  </head>
+  <body>
+    <div id="header">
+      <div id="header-logo" title="Cisco Systems, Inc. - Cisco Networking Academy"></div>
+      <a id="home-btn" href="../../index.html" title="Inicio">Inicio</a>
+      <h1>Capítulo 7: Routing dinámico <span id="title"></span></h1>
+    </div>
+    <div id="nav">
+      <ul class="sections"><li><span class="icon"></span><span class="section-title">7.0 Routing dinámico</span><ul class="topics"><li><span class="icon"></span><span class="topic-title">7.0.1 Introducción</span><ul class="pages"><li><a data-ident="7.0.1.1" class="page-title" href="7.0.1.1/7.0.1.1.html" target="frame">7.0.1.1 Introducción</a></li>
+<li><a data-ident="7.0.1.2" class="page-title" href="7.0.1.2/7.0.1.2.html" target="frame">7.0.1.2 ¿Cuánto cuesta?</a></li>
+</ul></li>
+</ul></li>
+<li><span class="icon"></span><span class="section-title">7.1 Protocolos de enrutamiento dinámico</span><ul class="topics"><li><span class="icon"></span><span class="topic-title">7.1.1 Funcionamiento del protocolo de enrutamiento dinámico</span><ul class="pages"><li><a data-ident="7.1.1.1" class="page-title" href="7.1.1.1/7.1.1.1.html" target="frame">7.1.1.1 La evolución de los protocolos de enrutamiento dinámico</a></li>
+<li><a data-ident="7.1.1.2" class="page-title" href="7.1.1.2/7.1.1.2.html" target="frame">7.1.1.2 Propósito de los protocolos de routing dinámico</a></li>
+<li><a data-ident="7.1.1.3" class="page-title" href="7.1.1.3/7.1.1.3.html" target="frame">7.1.1.3 Función de los protocolos de routing dinámico</a></li>
+<li><a data-ident="7.1.1.4" class="page-title" href="7.1.1.4/7.1.1.4.html" target="frame">7.1.1.4 Actividad: identificar los componentes de un protocolo de routing</a></li>
+</ul></li>
+<li><span class="icon"></span><span class="topic-title">7.1.2 Comparación entre routing dinámico y estático</span><ul class="pages"><li><a data-ident="7.1.2.1" class="page-title" href="7.1.2.1/7.1.2.1.html" target="frame">7.1.2.1 Uso del routing estático </a></li>
+<li><a data-ident="7.1.2.2" class="page-title" href="7.1.2.2/7.1.2.2.html" target="frame">7.1.2.2 Ventajas y desventajas del routing estático</a></li>
+<li><a data-ident="7.1.2.3" class="page-title" href="7.1.2.3/7.1.2.3.html" target="frame">7.1.2.3 Uso de los protocolos de routing dinámico</a></li>
+<li><a data-ident="7.1.2.4" class="page-title" href="7.1.2.4/7.1.2.4.html" target="frame">7.1.2.4 Ventajas y desventajas del routing dinámico</a></li>
+<li><a data-ident="7.1.2.5" class="page-title" href="7.1.2.5/7.1.2.5.html" target="frame">7.1.2.5 Actividad: comparar el routing estático con el dinámico</a></li>
+</ul></li>
+<li><span class="icon"></span><span class="topic-title">7.1.3 Aspectos básicos de la operación de los protocolos de routing</span><ul class="pages"><li><a data-ident="7.1.3.1" class="page-title" href="7.1.3.1/7.1.3.1.html" target="frame">7.1.3.1 Funcionamiento del protocolo de enrutamiento dinámico</a></li>
+<li><a data-ident="7.1.3.2" class="page-title" href="7.1.3.2/7.1.3.2.html" target="frame">7.1.3.2 Arranque en frío</a></li>
+<li><a data-ident="7.1.3.3" class="page-title" href="7.1.3.3/7.1.3.3.html" target="frame">7.1.3.3 Detección de redes</a></li>
+<li><a data-ident="7.1.3.4" class="page-title" href="7.1.3.4/7.1.3.4.html" target="frame">7.1.3.4 Intercambio de información de routing</a></li>
+<li><a data-ident="7.1.3.5" class="page-title" href="7.1.3.5/7.1.3.5.html" target="frame">7.1.3.5 Cómo se logra la convergencia</a></li>
+<li><a data-ident="7.1.3.6" class="page-title" href="7.1.3.6/7.1.3.6.html" target="frame">7.1.3.6 Packet Tracer: investigación de la convergencia</a></li>
+</ul></li>
+<li><span class="icon"></span><span class="topic-title">7.1.4 Tipos de protocolos de routing</span><ul class="pages"><li><a data-ident="7.1.4.1" class="page-title" href="7.1.4.1/7.1.4.1.html" target="frame">7.1.4.1 Clasificación de los protocolos de routing</a></li>
+<li><a data-ident="7.1.4.2" class="page-title" href="7.1.4.2/7.1.4.2.html" target="frame">7.1.4.2 Protocolos de routing IGP y EGP</a></li>
+<li><a data-ident="7.1.4.3" class="page-title" href="7.1.4.3/7.1.4.3.html" target="frame">7.1.4.3 Protocolos de enrutamiento vector distancia</a></li>
+<li><a data-ident="7.1.4.4" class="page-title" href="7.1.4.4/7.1.4.4.html" target="frame">7.1.4.4 Protocolos de enrutamiento de link-state</a></li>
+<li><a data-ident="7.1.4.5" class="page-title" href="7.1.4.5/7.1.4.5.html" target="frame">7.1.4.5 Protocolos de enrutamiento con clase</a></li>
+<li><a data-ident="7.1.4.6" class="page-title" href="7.1.4.6/7.1.4.6.html" target="frame">7.1.4.6 Protocolos de enrutamiento sin clase</a></li>
+<li><a data-ident="7.1.4.7" class="page-title" href="7.1.4.7/7.1.4.7.html" target="frame">7.1.4.7 Características de los protocolos de enrutamiento</a></li>
+<li><a data-ident="7.1.4.8" class="page-title" href="7.1.4.8/7.1.4.8.html" target="frame">7.1.4.8 Métricas de los protocolos de routing</a></li>
+<li><a data-ident="7.1.4.9" class="page-title" href="7.1.4.9/7.1.4.9.html" target="frame">7.1.4.9 Actividad: clasificar los protocolos de routing dinámico</a></li>
+<li><a data-ident="7.1.4.10" class="page-title" href="7.1.4.10/7.1.4.10.html" target="frame">7.1.4.10 Actividad: comparar los protocolos de routing</a></li>
+<li><a data-ident="7.1.4.11" class="page-title" href="7.1.4.11/7.1.4.11.html" target="frame">7.1.4.11 Actividad: unir la métrica con el protocolo</a></li>
+</ul></li>
+</ul></li>
+<li><span class="icon"></span><span class="section-title">7.2 Routing dinámico vector distancia</span><ul class="topics"><li><span class="icon"></span><span class="topic-title">7.2.1 Funcionamiento del protocolo de enrutamiento vector distancia</span><ul class="pages"><li><a data-ident="7.2.1.1" class="page-title" href="7.2.1.1/7.2.1.1.html" target="frame">7.2.1.1 Tecnologías vector distancia</a></li>
+<li><a data-ident="7.2.1.2" class="page-title" href="7.2.1.2/7.2.1.2.html" target="frame">7.2.1.2 Algoritmo vector distancia</a></li>
+<li><a data-ident="7.2.1.3" class="page-title" href="7.2.1.3/7.2.1.3.html" target="frame">7.2.1.3 Actividad: identificar la terminología relacionada con vector distancia </a></li>
+</ul></li>
+<li><span class="icon"></span><span class="topic-title">7.2.2 Tipos de protocolos de routing vector distancia</span><ul class="pages"><li><a data-ident="7.2.2.1" class="page-title" href="7.2.2.1/7.2.2.1.html" target="frame">7.2.2.1 Protocolo de información de enrutamiento</a></li>
+<li><a data-ident="7.2.2.2" class="page-title" href="7.2.2.2/7.2.2.2.html" target="frame">7.2.2.2 Protocolo de routing de gateway interior mejorado</a></li>
+<li><a data-ident="7.2.2.3" class="page-title" href="7.2.2.3/7.2.2.3.html" target="frame">7.2.2.3 Actividad: comparar RIP y EIGRP </a></li>
+<li><a data-ident="7.2.2.4" class="page-title" href="7.2.2.4/7.2.2.4.html" target="frame">7.2.2.4 Packet Tracer: comparación de la selección de rutas RIP y EIGRP</a></li>
+</ul></li>
+</ul></li>
+<li><span class="icon"></span><span class="section-title">7.3 Routing RIP y RIPng</span><ul class="topics"><li><span class="icon"></span><span class="topic-title">7.3.1 Configuración del protocolo RIP</span><ul class="pages"><li><a data-ident="7.3.1.1" class="page-title" href="7.3.1.1/7.3.1.1.html" target="frame">7.3.1.1 Modo de configuración de RIP en el router</a></li>
+<li><a data-ident="7.3.1.2" class="page-title" href="7.3.1.2/7.3.1.2.html" target="frame">7.3.1.2 Anuncio de las redes</a></li>
+<li><a data-ident="7.3.1.3" class="page-title" href="7.3.1.3/7.3.1.3.html" target="frame">7.3.1.3 Análisis de la configuración predeterminada de RIP</a></li>
+<li><a data-ident="7.3.1.4" class="page-title" href="7.3.1.4/7.3.1.4.html" target="frame">7.3.1.4 Habilitación de RIPv2</a></li>
+<li><a data-ident="7.3.1.5" class="page-title" href="7.3.1.5/7.3.1.5.html" target="frame">7.3.1.5 Deshabilitación de la sumarización automática</a></li>
+<li><a data-ident="7.3.1.6" class="page-title" href="7.3.1.6/7.3.1.6.html" target="frame">7.3.1.6 Configuración de interfaces pasivas</a></li>
+<li><a data-ident="7.3.1.7" class="page-title" href="7.3.1.7/7.3.1.7.html" target="frame">7.3.1.7 Propagación de rutas predeterminadas</a></li>
+<li><a data-ident="7.3.1.8" class="page-title" href="7.3.1.8/7.3.1.8.html" target="frame">7.3.1.8 Packet Tracer: configuración de RIPv2</a></li>
+</ul></li>
+<li><span class="icon"></span><span class="topic-title">7.3.2 Configuración del protocolo RIPng</span><ul class="pages"><li><a data-ident="7.3.2.1" class="page-title" href="7.3.2.1/7.3.2.1.html" target="frame">7.3.2.1 Anuncio de redes IPv6</a></li>
+<li><a data-ident="7.3.2.2" class="page-title" href="7.3.2.2/7.3.2.2.html" target="frame">7.3.2.2 Análisis de la configuración de RIPng</a></li>
+<li><a data-ident="7.3.2.3" class="page-title" href="7.3.2.3/7.3.2.3.html" target="frame">7.3.2.3 Packet Tracer: configuración de RIPng</a></li>
+<li><a data-ident="7.3.2.4" class="page-title" href="7.3.2.4/7.3.2.4.html" target="frame">7.3.2.4 Práctica de laboratorio: configuración de RIPv2 </a></li>
+</ul></li>
+</ul></li>
+<li><span class="icon"></span><span class="section-title">7.4 Routing dinámico de estado de enlace</span><ul class="topics"><li><span class="icon"></span><span class="topic-title">7.4.1 Funcionamiento del protocolo de routing de estado de enlace</span><ul class="pages"><li><a data-ident="7.4.1.1" class="page-title" href="7.4.1.1/7.4.1.1.html" target="frame">7.4.1.1 Protocolos Shortest Path First</a></li>
+<li><a data-ident="7.4.1.2" class="page-title" href="7.4.1.2/7.4.1.2.html" target="frame">7.4.1.2 Algoritmo de Dijkstra</a></li>
+<li><a data-ident="7.4.1.3" class="page-title" href="7.4.1.3/7.4.1.3.html" target="frame">7.4.1.3 Ejemplo de SPF</a></li>
+</ul></li>
+<li><span class="icon"></span><span class="topic-title">7.4.2 Actualizaciones de estado de enlace</span><ul class="pages"><li><a data-ident="7.4.2.1" class="page-title" href="7.4.2.1/7.4.2.1.html" target="frame">7.4.2.1 Proceso del enrutamiento de link-state</a></li>
+<li><a data-ident="7.4.2.2" class="page-title" href="7.4.2.2/7.4.2.2.html" target="frame">7.4.2.2 Enlace y estado de enlace</a></li>
+<li><a data-ident="7.4.2.3" class="page-title" href="7.4.2.3/7.4.2.3.html" target="frame">7.4.2.3 Saludo</a></li>
+<li><a data-ident="7.4.2.4" class="page-title" href="7.4.2.4/7.4.2.4.html" target="frame">7.4.2.4 Armado del paquete de estado de enlace</a></li>
+<li><a data-ident="7.4.2.5" class="page-title" href="7.4.2.5/7.4.2.5.html" target="frame">7.4.2.5 Saturación con LSP</a></li>
+<li><a data-ident="7.4.2.6" class="page-title" href="7.4.2.6/7.4.2.6.html" target="frame">7.4.2.6 Armado de la base de datos de estado de enlace</a></li>
+<li><a data-ident="7.4.2.7" class="page-title" href="7.4.2.7/7.4.2.7.html" target="frame">7.4.2.7 Armado del árbol SPF</a></li>
+<li><a data-ident="7.4.2.8" class="page-title" href="7.4.2.8/7.4.2.8.html" target="frame">7.4.2.8 Agregado de rutas OSPF a la tabla de routing</a></li>
+<li><a data-ident="7.4.2.9" class="page-title" href="7.4.2.9/7.4.2.9.html" target="frame">7.4.2.9 Actividad: armar la base de datos de estado de enlace y el árbol SPF</a></li>
+</ul></li>
+<li><span class="icon"></span><span class="topic-title">7.4.3 Razones para utilizar protocolos de routing de estado de enlace</span><ul class="pages"><li><a data-ident="7.4.3.1" class="page-title" href="7.4.3.1/7.4.3.1.html" target="frame">7.4.3.1 ¿Por qué utilizar protocolos de estado de enlace?</a></li>
+<li><a data-ident="7.4.3.2" class="page-title" href="7.4.3.2/7.4.3.2.html" target="frame">7.4.3.2 Desventajas de los protocolos de estado de enlace</a></li>
+<li><a data-ident="7.4.3.3" class="page-title" href="7.4.3.3/7.4.3.3.html" target="frame">7.4.3.3 Protocolos que utilizan estado de enlace</a></li>
+</ul></li>
+</ul></li>
+<li><span class="icon"></span><span class="section-title">7.5 La tabla de routing</span><ul class="topics"><li><span class="icon"></span><span class="topic-title">7.5.1 Partes de una entrada de ruta IPv4</span><ul class="pages"><li><a data-ident="7.5.1.1" class="page-title" href="7.5.1.1/7.5.1.1.html" target="frame">7.5.1.1 Entradas de la tabla de enrutamiento</a></li>
+<li><a data-ident="7.5.1.2" class="page-title" href="7.5.1.2/7.5.1.2.html" target="frame">7.5.1.2 Entradas conectadas directamente</a></li>
+<li><a data-ident="7.5.1.3" class="page-title" href="7.5.1.3/7.5.1.3.html" target="frame">7.5.1.3 Entradas de red remota</a></li>
+<li><a data-ident="7.5.1.4" class="page-title" href="7.5.1.4/7.5.1.4.html" target="frame">7.5.1.4 Actividad: identificar las partes de una entrada de la tabla de routing IPv4</a></li>
+</ul></li>
+<li><span class="icon"></span><span class="topic-title">7.5.2 Rutas IPv4 descubiertas en forma dinámica</span><ul class="pages"><li><a data-ident="7.5.2.1" class="page-title" href="7.5.2.1/7.5.2.1.html" target="frame">7.5.2.1 Términos de la tabla de routing</a></li>
+<li><a data-ident="7.5.2.2" class="page-title" href="7.5.2.2/7.5.2.2.html" target="frame">7.5.2.2 Ruta final</a></li>
+<li><a data-ident="7.5.2.3" class="page-title" href="7.5.2.3/7.5.2.3.html" target="frame">7.5.2.3 Ruta de nivel 1</a></li>
+<li><a data-ident="7.5.2.4" class="page-title" href="7.5.2.4/7.5.2.4.html" target="frame">7.5.2.4 Ruta primaria de nivel 1</a></li>
+<li><a data-ident="7.5.2.5" class="page-title" href="7.5.2.5/7.5.2.5.html" target="frame">7.5.2.5 Ruta secundaria de nivel 2</a></li>
+<li><a data-ident="7.5.2.6" class="page-title" href="7.5.2.6/7.5.2.6.html" target="frame">7.5.2.6 Actividad: identificar rutas IPv4 principales y secundarias</a></li>
+</ul></li>
+<li><span class="icon"></span><span class="topic-title">7.5.3 Proceso de búsqueda de rutas IPv4</span><ul class="pages"><li><a data-ident="7.5.3.1" class="page-title" href="7.5.3.1/7.5.3.1.html" target="frame">7.5.3.1 Proceso de búsqueda de rutas</a></li>
+<li><a data-ident="7.5.3.2" class="page-title" href="7.5.3.2/7.5.3.2.html" target="frame">7.5.3.2 Mejor ruta = coincidencia más larga</a></li>
+<li><a data-ident="7.5.3.3" class="page-title" href="7.5.3.3/7.5.3.3.html" target="frame">7.5.3.3 Actividad: determinar la ruta con la coincidencia más larga</a></li>
+</ul></li>
+<li><span class="icon"></span><span class="topic-title">7.5.4 Análisis de una tabla de routing IPv6</span><ul class="pages"><li><a data-ident="7.5.4.1" class="page-title" href="7.5.4.1/7.5.4.1.html" target="frame">7.5.4.1 Entradas de la tabla de routing IPv6</a></li>
+<li><a data-ident="7.5.4.2" class="page-title" href="7.5.4.2/7.5.4.2.html" target="frame">7.5.4.2 Entradas conectadas directamente</a></li>
+<li><a data-ident="7.5.4.3" class="page-title" href="7.5.4.3/7.5.4.3.html" target="frame">7.5.4.3 Entradas de redes IPv6 remotas</a></li>
+<li><a data-ident="7.5.4.4" class="page-title" href="7.5.4.4/7.5.4.4.html" target="frame">7.5.4.4 Actividad: identificar las partes de una entrada de la tabla de routing IPv6</a></li>
+</ul></li>
+</ul></li>
+<li><span class="icon"></span><span class="section-title">7.6 Resumen</span><ul class="topics"><li><span class="icon"></span><span class="topic-title">7.6.1 Resumen</span><ul class="pages"><li><a data-ident="7.6.1.1" class="page-title" href="7.6.1.1/7.6.1.1.html" target="frame">7.6.1.1 IPv6: detalles y más detalles</a></li>
+<li><a data-ident="7.6.1.2" class="page-title" href="7.6.1.2/7.6.1.2.html" target="frame">7.6.1.2 Resumen</a></li>
+</ul></li>
+</ul></li>
+</ul>
+    </div>
+    <ul id="nav-menu" class="contextmenu">
+      <li id="nav-menu-expand">Expandir todo</li>
+      <li id="nav-menu-collapse">Contraer todo</li>
+    </ul>
+    <div id="content">
+      <div id="container"></div>
+      <button id="prev-btn" type="button" title="Anterior" disabled><span class="icon">Anterior</span></button>
+      <input id="jump-box" type="text" value=""/>
+      <button id="next-btn" type="button" title="Siguiente" disabled><span class="icon">Siguiente</span></button>
+      <button id="mini-btn" type="button" title="Alternar"><span class="icon">Alternar</span></button>
+    </div>
+  </body>
+</html>
+

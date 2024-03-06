@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.3.2.1 Configurar las ACL extendidas</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.3.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>ACL de IPv4 extendidas</h1>
+        <h2>Configuración de ACL de IPv4 extendidas</h2>
+      </div>
+      <div id="content">
+<p>Los pasos del procedimiento para configurar ACL extendidas son los mismos que para las ACL estándar. Primero se configura la ACL extendida y, a continuación, se activa en una interfaz. Sin embargo, la sintaxis de los comandos y los parámetros son más complejos, a fin de admitir las funciones adicionales proporcionadas por las ACL extendidas. </p>
+<p></p>
+<p>
+<b>Nota:</b> la lógica interna aplicada al ordenamiento de las instrucciones de las ACL estándar no se aplica a las ACL extendidas. El orden en que se introducen las instrucciones durante la configuración es el orden en que se muestran y se procesan.</p>
+<p></p>
+<p>En la figura 1, se muestra la sintaxis frecuente de los comandos para las ACL de IPv4 extendidas. Observe que hay muchas palabras clave y parámetros para las ACL extendidas. No es necesario utilizar todas las palabras clave y todos los parámetros al configurar una ACL extendida. Recuerde que puede utilizar el símbolo<span class="cmd"><b>?</b></span> para obtener ayuda al introducir comandos complejos. </p>
+<p></p>
+<p>En la figura 2, se muestra un ejemplo de una ACL extendida. En este ejemplo, el administrador de red configuró las ACL para restringir el acceso de red a fin de permitir la navegación de sitios web solo desde la LAN conectada a la interfaz G0/0 a cualquier red externa. La ACL 103 permite que el tráfico proveniente de cualquier dirección en la red 192.168.10.0 vaya a cualquier destino, sujeto a la limitación de que el tráfico utilice solo los puertos 80 (HTTP) y 443 (HTTPS).</p>
+<p></p>
+<p>La naturaleza de HTTP requiere que el tráfico fluya nuevamente hacia la red desde los sitios web a los que se accede mediante clientes internos. El administrador de red desea restringir ese tráfico de retorno a los intercambios HTTP de los sitios web solicitados y denegar el resto del tráfico. La ACL 104 logra esto mediante el bloqueo de todo el tráfico entrante, excepto las conexiones establecidas previamente. La instrucción permit en la ACL 104 permite el tráfico entrante con el parámetro <span class="cmd"><b>established</b></span>.</p>
+<p></p>
+<p>El parámetro <span class="cmd"><b>established</b></span> permite que solo las respuestas al tráfico procedente de la red 192.168.10.0/24 vuelvan a esa red. Si el segmento TCP que regresa tiene los bits ACK o de restablecimiento (RST) establecidos, que indican que el paquete pertenece a una conexión existente, se produce una coincidencia. Sin el parámetro <span class="cmd"><b>established</b></span> en la instrucción de ACL, los clientes pueden enviar tráfico a un servidor web, pero no recibir el tráfico que vuelve de dicho servidor.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

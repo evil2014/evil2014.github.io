@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.4.3.2 Falla de conexión de un cliente inalámbrico </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.4.3.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de LAN inalámbricas</h1>
+        <h2>Resolución de problemas de WLAN</h2>
+      </div>
+      <div id="content">
+<p>Cuando se realiza la resolución de problemas de una WLAN, se recomienda un proceso de eliminación. </p>
+<p></p>
+<p>En la ilustración, un cliente inalámbrico no se conecta a la WLAN. Si no hay conectividad, compruebe lo siguiente:</p>
+<p>
+<ul>
+<li>Confirme la configuración de red en la computadora mediante el comando <span class="cmd"><b>ipconfig</b></span>. Verifique que la PC recibió una dirección IP a través de DHCP o está configurada con una dirección IP estática.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Confirme que el dispositivo puede conectarse a una red conectada por cable. Conecte el dispositivo a la LAN conectada por cable y haga <span class="cmd"><b>ping</b></span> a una dirección IP conocida.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Si es necesario, vuelva a cargar los controladores para el cliente, según corresponda. Puede ser necesario intentar una NIC inalámbrica diferente. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Si la NIC inalámbrica del cliente funciona, compruebe el modo seguridad y la configuración de encriptación en el cliente. Si la configuración de seguridad no coincide, el cliente no puede acceder a la WLAN.</li>
+</ul>
+</p>
+<p></p>
+<p>Si la computadora funciona pero la conexión inalámbrica funciona de manera deficiente, revise lo siguiente:</p>
+<p>
+<ul>
+<li>¿A qué distancia se encuentra la computadora del AP? ¿La computadora está fuera del área de cobertura planificada (BSA)?</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Revise la configuración de canales en el cliente inalámbrico. El software cliente debe detectar el canal apropiado siempre y cuando el SSID sea correcto.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Revise la presencia de otros dispositivos en el área que puedan interferir en la banda de 2,4 GHz. Ejemplos de estos dispositivos son los teléfonos inalámbricos, los monitores para bebés, los hornos de microondas, los sistemas de seguridad inalámbrica y los AP potencialmente no autorizados. Los datos de estos dispositivos pueden causar interferencia en la WLAN y problemas de conexión intermitente entre el cliente inalámbrico y el AP.</li>
+</ul>
+</p>
+<p></p>
+<p>A continuación, asegúrese de que todos los dispositivos estén realmente en su lugar. Considere un posible problema de seguridad física. ¿Hay alimentación para todos los dispositivos, y estos están encendidos?</p>
+<p></p>
+<p>Por último, inspeccione los enlaces entre los dispositivos conectados por cable para detectar conectores defectuosos o dañados o cables faltantes. Si la planta física está en su lugar, haga ping a los dispositivos, incluido el AP, para verificar la LAN conectada por cable. Si la conectividad sigue fallando en este momento, tal vez haya algún error en el AP o en su configuración.</p>
+<p></p>
+<p>Cuando se descarte la computadora del usuario como origen del problema y se confirme el estado físico de los dispositivos, comience a investigar el rendimiento del AP. Revise el estado de la alimentación del AP.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

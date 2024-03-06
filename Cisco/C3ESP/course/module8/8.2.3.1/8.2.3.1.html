@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.2.3.1 Interfaz pasiva</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.2.3.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resolución de problemas de EIGRP</h1>
+        <h2>Resolver problemas de tabla de routing EIGRP</h2>
+      </div>
+      <div id="content">
+<p>Una razón por la que es posible que en las tablas de rutas no se muestren las rutas correctas es el comando <span class="cmd"><b>passive-interface</b></span>. Con EIGRP en ejecución en una red, el comando <span class="cmd"><b>passive-interface</b></span> detiene las actualizaciones de routing salientes y entrantes. Por esa razón, los routers no se convierten en vecinos.</p>
+<p></p>
+<p>Para verificar si alguna interfaz en un router está configurada como pasiva, use el comando <span class="cmd"><b>show ip protocols</b></span> en el modo EXEC privilegiado. En la figura 1, se muestra que la interfaz GigabitEthernet 0/0 del R2 está configurada como interfaz pasiva, porque no hay vecinos en ese enlace.</p>
+<p></p>
+<p>Además de estar configurada en interfaces que no tienen vecinos, una interfaz pasiva puede habilitarse en interfaces por motivos de seguridad. En la figura 2, observe que el sombreado del dominio de routing EIGRP es diferente de las topologías anteriores. La red 209.165.200.224/27 ahora está incluida en las actualizaciones de EIGRP del R2. Sin embargo, por motivos de seguridad, el administrador de red no desea que el R2 forme una adyacencia de vecino EIGRP con el router ISP.</p>
+<p></p>
+<p>En la figura 3, se muestra la incorporación del comando <span class="cmd"><b>network</b></span> 209.165.200.224/27 en el R2. El R2 ahora anuncia esta red a los otros routers en el dominio de routing EIGRP. </p>
+<p></p>
+<p>El comando <span class="cmd"><b>passive-interface</b></span> del modo de configuración del router está configurado en Serial 0/1/0 para evitar que se envíen actualizaciones de EIGRP del R2 al router ISP. El comando <span class="cmd"><b>show ip eigrp neighbors</b></span> en el R2 verifica que ese router no haya establecido una adyacencia de vecino con ISP.</p>
+<p></p>
+<p>En la figura 4, se muestra que el R1 tiene una ruta EIGRP a la red 209.165.200.224/27 en su tabla de routing IPv4 (el R3 también tiene una ruta EIGRP a esa red en la tabla de routing IPv4). Sin embargo, el R2 no tiene una adyacencia de vecino con el router ISP. </p>
+<p></p>
+<p>
+<b>EIGRP para IPv6</b>
+</p>
+<p></p>
+<p>También se aplican comandos y criterios de resolución de problemas similares en EIGRP para IPv6.</p>
+<p></p>
+<p>Los siguientes son los comandos equivalentes que se utilizan con EIGRP para IPv6:</p>
+<p>
+<ul>
+<li>
+<span class="cmd">Router# </span>
+<span class="cmd">
+<b>show ipv6 protocols </b>
+</span>
+</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<span class="cmd">Router(config-rtr)# </span>
+<span class="cmd">
+<b>passive-interface </b>
+</span>
+<span class="cmd">
+<i>tipo número</i>
+</span>
+</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

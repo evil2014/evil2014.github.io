@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.0.1.2 Actividad: todos de pie</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.0.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración y conceptos básicos de switching</h1>
+        <h2>Introducción</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Todos de pie</b>
+</p>
+<p></p>
+<p>
+<b>Situación </b>
+<br/>Cuando llegó a la clase de hoy, el instructor le dio un número para usar en esta actividad introductoria.</p>
+<p></p>
+<p>Cuando comience la clase, el instructor solicitará que los estudiantes que posean ciertos números se pongan de pie. Su trabajo es registrar los números de los estudiantes que están de pie en cada situación.</p>
+<p></p>
+<p>
+<b>Situación 1</b>
+<br/>Los estudiantes con números que <b><u>comiencen</u></b> con <b><u>5</u></b> deben ponerse de pie. Registre los números de los estudiantes que estén de pie.</p>
+<p></p>
+<p>
+<b>Situación 2</b>
+<br/>Los estudiantes con números que <b><u>terminen</u></b> en <b><u>B</u></b> deben ponerse de pie. Registre los números de los estudiantes que estén de pie. </p>
+<p></p>
+<p>
+<b>Situación 3</b>
+<br/>Los estudiantes con el número <b><u>505C</u></b> deben ponerse de pie. Registre el número del estudiante que esté de pie.</p>
+<p></p>
+<p>Al final de esta actividad, divídanse en grupos pequeños y registren las respuestas a las preguntas de reflexión del PDF de esta actividad.</p>
+<p></p>
+<p>Guarde su trabajo y esté preparado para compartirlo con otro estudiante o con toda la clase.</p>
+<p></p>
+<p>
+<a href="../../files/2.0.1.2%20Stand%20By%20Me%20Instructions.pdf" target="_blank">Actividad de clase: todos de pie (instrucciones)</a>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

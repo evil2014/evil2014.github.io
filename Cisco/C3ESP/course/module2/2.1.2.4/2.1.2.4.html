@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.1.2.4 Algoritmo de árbol de expansión: costo de la ruta</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.1.2.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Conceptos de árbol de expansión</h1>
+        <h2>Funcionamiento de STP</h2>
+      </div>
+      <div id="content">
+<p>Una vez que se eligió el puente raíz para la instancia de árbol de expansión, el STA comienza el proceso para determinar las mejores rutas hacia el puente raíz desde todos los destinos en el dominio de difusión. La información de ruta se determina mediante la suma de los costos individuales de los puertos que atraviesa la ruta desde el destino al puente raíz. Cada “destino” es, en realidad, un puerto de switch.</p>
+<p></p>
+<p>Los costos de los puertos predeterminados se definen por la velocidad a la que funcionan los mismos. Como se muestra en la figura 1, el costo de puerto de los puertos Ethernet de 10 Gb/s es 2, el de los puertos Ethernet de 1 Gb/s es 4, el de los puertos Ethernet de 100 Mb/s es 19 y el de los puertos Ethernet de 10 Mb/s es 100. </p>
+<p></p>
+<p>
+<b>Nota:</b> a medida que se introducen tecnologías Ethernet más modernas y veloces en el mercado, es posible que se modifiquen los valores de costo de ruta para admitir las distintas velocidades disponibles. Los números no lineales de la tabla incluyen algunas mejoras del antiguo estándar Ethernet. Los valores ya se modificaron para admitir el estándar Ethernet de 10 Gb/s. Para ilustrar el cambio continuo relacionado con la tecnología de redes de alta velocidad, los switches Catalyst 4500 y 6500 admiten un método de costo de ruta mayor; por ejemplo, el costo de la ruta de 10 Gb/s es 2000, el de 100 Gb/s es 200 y el de 1 Tb/s es 20.</p>
+<p></p>
+<p>Pese a que los puertos de switch cuentan con un costo de puerto predeterminado asociado a los mismos, tal costo puede configurarse. La capacidad de configurar costos de puerto individuales le da al administrador la flexibilidad para controlar de forma manual las rutas de árbol de expansión hacia el puente raíz.</p>
+<p></p>
+<p>Para configurar el costo de puerto de una interfaz (figura 2), introduzca el comando <span class="cmd"><b>spanning-tree cost </b></span><span class="cmd"><i>valor</i></span> en el modo de configuración de interfaz. El valor puede variar entre 1 y 200 000 000.</p>
+<p></p>
+<p>En el ejemplo, el puerto de switch F0/1 se configuró con el costo de puerto 25 mediante el comando <span class="cmd"><b>spanning-tree cost 25</b></span> del modo de configuración de interfaz en la interfaz F0/1.</p>
+<p></p>
+<p>Para restaurar el costo de puerto al valor predeterminado 19, introduzca el comando <span class="cmd"><b>no spanning-tree cost</b></span> del modo de configuración de interfaz.</p>
+<p></p>
+<p>El costo de la ruta es igual a la suma de todos los costos de puerto a lo largo de la ruta hacia el puente raíz (figura 3). Las rutas con el costo más bajo se convierten en las preferidas, y el resto de las rutas redundantes se bloquean. En el ejemplo, el costo de la ruta del S2 al puente raíz S1 a través de la ruta 1 es 19 (según el costo de puerto individual especificado por el IEEE), mientras que el costo de la ruta a través de la ruta 2 es 38. Dado que la ruta 1 tiene un menor costo de ruta general hacia el puente raíz, es la ruta preferida. Luego, STP configura la ruta redundante que debe bloquearse y evita así la generación de bucles.</p>
+<p></p>
+<p>Para verificar los costos de puerto y de ruta hacia el puente raíz, introduzca el comando <span class="cmd"><b>show spanning-tree</b></span> (figura 4). El campo Cost cerca de la parte superior del resultado es el costo de la ruta total hacia el puente raíz. Este valor varía según la cantidad de puertos de switch que se deban atravesar para llegar al puente raíz. En el resultado, cada interfaz también se identifica con un costo de puerto individual de 19. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

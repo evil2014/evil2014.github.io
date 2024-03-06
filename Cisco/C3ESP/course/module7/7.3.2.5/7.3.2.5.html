@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.3.2.5 Como calcular la métrica de EIGRP</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.3.2.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1> Funcionamiento de EIGRP</h1>
+        <h2>Métricas</h2>
+      </div>
+      <div id="content">
+<p>Si bien EIGRP calcula automáticamente la métrica de la tabla de routing utilizada para elegir la mejor ruta, es importante que el administrador de red comprenda cómo se determinaron estas métricas.</p>
+<p></p>
+<p>La figura muestra la métrica compuesta utilizada por EIGRP. Mediante el uso de los valores predeterminados para K1 y K3, el cálculo puede simplificarse al ancho de banda más lento (o ancho de banda mínimo), más la suma de todos los retrasos. </p>
+<p></p>
+<p>En otras palabras, al analizar los valores de ancho de banda y de retraso para todas las interfaces de salida de la ruta, podemos determinar la métrica de EIGRP de la siguiente manera: </p>
+<p>
+<b>Paso 1. </b>Determine el enlace con el ancho de banda más lento. Utilice ese valor para calcular el ancho de banda (10 000 000/ancho de banda).</p>
+<p>
+<b>Paso 2. </b>Determine el valor de retraso para cada interfaz de salida en el camino al destino. Sume los valores de retraso y divida por 10 (suma de los retrasos/10). </p>
+<p>
+<b>Paso 3. </b>Sume los valores de ancho de banda y de retraso calculados y multiplique la suma por 256 para obtener la métrica de EIGRP.</p>
+<p></p>
+<p>El resultado de la tabla de routing para el R2 muestra que la ruta a 192.168.1.0/24 tiene una métrica de EIGRP de 3 012 096. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

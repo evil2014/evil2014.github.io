@@ -1,0 +1,13 @@
+﻿<textcomponents>
+	<component id="ID_title">
+		<text><![CDATA[<b>Protocolo TCP de enlace de tres vías (SYN)</b>]]></text>
+	</component>
+	
+	<component id="ID_title_txt">
+		<text><![CDATA[<font size='11'><b class="textboxheader">Un analizador de protocolos muestra la solicitud del cliente inicial para la sesión en la trama 10</b></font>]]></text>
+	</component>
+	<component id="ID_body_txt">
+		<text><![CDATA[<font size='11'><span class="ulclass">En el segmento TCP de esta trama se muestra lo siguiente:</span><textformat blockindent="-14"><li>El indicador SYN está establecido para validar un número de secuencia inicial.</li><li>El número de secuencia seleccionado aleatoriamente es válido (el valor relativo es 0).</li><li>El puerto de origen aleatorio es 1061.</li><li>El puerto de destino bien conocido es 80 (puerto HTTP); indica el servidor Web (httpd).</li></textformat></font>]]></text>
+	</component>
+	
+</textcomponents>

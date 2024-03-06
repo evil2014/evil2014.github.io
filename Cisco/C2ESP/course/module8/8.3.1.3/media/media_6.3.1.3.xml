@@ -1,0 +1,64 @@
+﻿<textcomponents>
+
+<component id="ID_title">
+<text><![CDATA[<b>Diferencias entre OSPFv2 y OSPFv3</b>]]></text>
+</component>
+
+<component id="ID_table01">
+<text><![CDATA[<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4'>
+<tr class="liner">
+<td colspan='3' bgcolor='#0E6360' class="liner_top"><font size='1' color='#434321'><span style="color:#DAE17A">.</span></font></td>
+</tr>
+
+<tr>
+<td width="90" bgcolor='#077A77' valign="top"><font color='#ffffff'><b>  </b></font></td>
+<td width="175" bgcolor='#077A77' valign="top"><font color='#ffffff'><b>OSPFv2</b></font></td>
+<td width="175" bgcolor='#077A77' valign="top"><font color='#ffffff'><b>OSPFv3</b></font></td>	
+</tr>
+
+<tr>
+<td bgcolor='#eff8f7' valign="top"><font color='#393536'>Anuncios</font></td>
+<td bgcolor='#eff8f7' valign="top"><font color='#393536'>Redes IPv4</font></td>
+<td bgcolor='#eff8f7' valign="top"><font color='#393536'>Prefijos IPv6</font></td>	
+</tr>
+
+<tr>
+<td bgcolor='#ffffff' valign="top"><font color='#393536'>Dirección de origen</font></td>
+<td bgcolor='#ffffff' valign="top"><font color='#393536'>Dirección IPv4 de origen</font></td>
+<td bgcolor='#ffffff' valign="top"><font color='#393536'>Dirección IPv6 link-local</font></td>	
+</tr>
+
+<tr>
+<td bgcolor='#eff8f7' valign="top"><font color='#393536'>Dirección de destino</font></td>
+<td bgcolor='#eff8f7' valign="top"><font color='#393536'>Opción de:<textformat blockindent='-14'>
+<li>Dirección IPv4 de unidifusión de vecino</li>
+<li>Dirección de multidifusión 224.0.0.5 de todos los routers OSPF</li>
+<li>Dirección de multidifusión 224.0.0.6 del DR/DBR</li></textformat> </font></td>
+<td bgcolor='#eff8f7' valign="top"><font color='#393536'>Opción de:<textformat blockindent='-14'><li>Dirección IPv6 link-local de vecino</li>
+<li>Dirección de multidifusión FF02::5 de todos los routers OSPFv3</li>
+<li>Dirección de multidifusión FF02::6 del DR/BDR</li></textformat> </font></td>	
+</tr>	
+
+<tr>
+<td bgcolor='#ffffff' valign="top"><font color='#393536'>Anuncio de redes</font></td>
+<td bgcolor='#ffffff' valign="top"><font color='#393536'>Configurado con el comando de configuración de router <font face='_typewriter'><b>network  </b></font></font></td>
+<td bgcolor='#ffffff' valign="top"><font color='#393536'>Configurado con el comando de configuración de interfaz <font face='_typewriter'><b>ipv6 ospf   </b><i>id-proceso  </i><b>area   </b><i>id-área </i></font></font></td>	
+</tr>
+
+<tr>
+<td bgcolor='#eff8f7' valign="top"><font color='#393536'>Routing de unidifusión IP</font></td>
+<td bgcolor='#eff8f7' valign="top"><font color='#393536'>El routing de unidifusión IPv4 está habilitado de manera predeterminada.</font></td>
+<td bgcolor='#eff8f7' valign="top"><font color='#393536'>El reenvío de unidifusión IPv6 no está habilitado de manera predeterminada. Se debe configurar el comando de configuración global <font face='_typewriter'><b>ipv6 unicast-routing  </b></font>.</font></td>	
+</tr>
+
+<tr>
+<td bgcolor='#ffffff' valign="top"><font color='#393536'>Autenticación</font></td>
+<td bgcolor='#ffffff' valign="top"><font color='#393536'>Texto no cifrado y MD5</font></td>
+<td bgcolor='#ffffff' valign="top"><font color='#393536'>Autenticación IPv6</font></td>	
+</tr>
+
+
+</table>]]></text> 
+</component>
+
+</textcomponents>

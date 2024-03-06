@@ -1,0 +1,72 @@
+﻿<textcomponents>
+
+<component id='ID_inst'>
+	<text><![CDATA[<b>Actividad: identificar los pasos del funcionamiento de DHCPv6  </b><br><br>Ordene los pasos para ilustrar el origen de una concesión DHCPv6.<br/>Arrastre cada uno de los pasos del origen de la concesión DHCPv6 hacia el campo correspondiente, según los números encerrados con un círculo en el gráfico.]]></text>
+</component>
+
+<component id='ID_txt01'>
+	<text><![CDATA[<b>Operaciones de SLAAC  </b>]]></text>
+</component>
+
+<component id='ID_txt02'>
+	<text><![CDATA[Cliente DHCPv6]]></text>
+</component>
+
+<component id='ID_txt03'>
+	<text><![CDATA[Servidor de DHCPv6]]></text>
+</component>
+
+<component id='ID_txt04'>
+	<text><![CDATA[Solicitud de router]]></text>
+</component>
+
+<component id='ID_txt05'>
+	<text><![CDATA[Anuncio de router]]></text>
+</component>
+
+<component id='ID_txt06'>
+	<text><![CDATA[<b>Operaciones de DHCPv6 con estado  </b>]]></text>
+</component> <!--Drag and Drop-->
+<component id='ID_ip1_DS'>
+	<text><![CDATA[<font color="#393536">REQUEST</font>]]></text>
+</component>
+
+<component id='ID_ip2_DS'>
+	<text><![CDATA[<font color="#393536">REPLY</font>]]></text>
+</component>
+
+<component id='ID_ip3_DS'>
+	<text><![CDATA[<font color="#393536">ADVERTISE</font>]]></text>
+</component>
+
+<component id='ID_ip4_DS'>
+	<text><![CDATA[<font color="#393536">SOLICIT</font>]]></text>
+</component>
+
+
+<component id='ID_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto  </b>]]></text>
+</component>
+
+<component id='ID_CORRECT_BODY'>
+	<text><![CDATA[Ordenó correctamente los pasos para originar una concesión DHCPv6 con estado.]]></text>
+</component>
+
+
+<component id='ID_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto  </b>]]></text>
+</component>
+
+<component id='ID_INCORRECT_BODY'>
+	<text><![CDATA[No ordenó correctamente los pasos para originar una concesión DHCPv6 con estado. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_CHECK'>
+	<text><![CDATA[<b>Verificar  </b>]]></text>
+</component>
+
+<component id='ID_RESET'>
+	<text><![CDATA[<b>Restablecer  </b>]]></text>
+</component>
+
+</textcomponents>

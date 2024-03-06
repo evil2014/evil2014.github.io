@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.1.2.3 Paquetes de actualización y acuse de recibo EIGRP</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.1.2.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Características de EIGRP</h1>
+        <h2>Tipos de paquetes EIGRP</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Paquetes de actualización EIGRP</b>
+</p>
+<p>EIGRP envía paquetes de actualización para propagar información de routing. Los paquetes de actualización se envían sólo cuando es necesario. Las actualizaciones de EIGRP sólo contienen la información de enrutamiento necesaria y sólo se envían a los routers que la requieren. </p>
+<p></p>
+<p>A diferencia de RIP, EIGRP (otro protocolo de routing vector distancia) no envía actualizaciones periódicas, y las entradas de ruta no vencen. En cambio, EIGRP envía actualizaciones incrementales solo cuando se modifica el estado de un destino. Esto puede incluir cuando una nueva red está disponible, cuando una red existente deja de estar disponible, o cuando ocurre un cambio en la métrica de routing de una red existente. </p>
+<p></p>
+<p>En lo que respecta a sus actualizaciones, en EIGRP se utilizan los términos <i>parcial</i> y <i>limitada</i>. El término parcial significa que la actualización sólo envía información acerca de los cambios de ruta. El término “limitada” se refiere a la propagación de las actualizaciones parciales que se envían solo a aquellos routers que se ven afectados por el cambio. </p>
+<p></p>
+<p>Al enviar solo la información de routing necesaria únicamente a los routers que la necesitan, EIGRP minimiza el ancho de banda que se requiere para enviar actualizaciones EIGRP.</p>
+<p></p>
+<p>Los paquetes de actualización EIGRP usan entrega confiable, lo que significa que el router emisor requiere un acuse de recibo. Los paquetes de actualización se envían como multicast cuando son requeridos por múltiples routers, o como unicast cuando son requeridos por sólo un router. En la figura, debido a que los enlaces son punto a punto, las actualizaciones se envían como unicast.</p>
+<p></p>
+<p>
+<b>Paquetes de acuse de recibo EIGRP</b>
+</p>
+<p></p>
+<p>EIGRP envía paquetes de acuse de recibo (ACK) cuando se usa el método de entrega confiable. Un acuse de recibo EIGRP es un paquete de saludo EIGRP sin ningún dato. RTP utiliza una entrega confiable para los paquetes EIGRP de actualización, consulta y respuesta. Los paquetes de acuse de recibo EIGRP se envían siempre como transmisiones de unidifusión poco confiables. El sentido de la entrega poco confiable es que, de otra manera, habría un bucle interminable de acuses de recibo.</p>
+<p></p>
+<p>En la ilustración, el R2 perdió la conectividad a la LAN conectada a su interfaz Gigabit Ethernet. El R2 envía inmediatamente una actualización al R1 y al R3, donde se señala la ruta fuera de servicio. El R1 y el R3 responden con un acuse de recibo para que el R2 sepa que recibieron la actualización.</p>
+<p>
+<b>Nota:</b> en algunos documentos, se hace referencia al saludo y al acuse de recibo como un único tipo de paquete EIGRP. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

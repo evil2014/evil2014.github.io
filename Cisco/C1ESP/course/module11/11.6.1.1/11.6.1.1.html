@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>11.6.1.1 Proyecto final: Diseño y armado de una red de pequeña empresa</title>
+    <!--  -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_11.6.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resumen</h1>
+        <h2>Resumen</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Proyecto final</b>
+</p>
+<p>
+<b>Diseño y armado de una red de pequeña empresa</b>
+</p>
+<p></p>
+<p>Utilice Packet Tracer y una aplicación de procesamiento de texto para completar esta actividad (de dos a tres estudiantes por grupo).</p>
+<p></p>
+<p>Diseñe y arme una red desde cero. </p>
+<p>
+<ul>
+<li>El diseño debe incluir, como mínimo, un router, un switch y una PC. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Configure completamente la red y utilice IPv4 o IPv6 (se debe incluir la división en subredes como parte del esquema de direccionamiento).</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Revise la red mediante, por lo menos, cinco comandos<span class="cmd"><b> show</b></span>.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Proteja la red con SSH, contraseñas seguras y contraseñas de consola (como mínimo).</li>
+</ul>
+</p>
+<p></p>
+<p>Cree una rúbrica para la clasificación de pares, o bien el instructor puede elegir usar la rúbrica proporcionada en esta actividad. </p>
+<p></p>
+<p>Presente su proyecto final a la clase y esté preparado para responder las preguntas de sus pares y del instructor.</p>
+<p></p>
+<p></p>
+<p>
+<a href="../../files/11.6.1.1%20Class%20Activity%20-%20%20Design%20and%20Build%20a%20Small%20Network%20Instructions.pdf" target="_blank">Actividad de clase: Diseño y armado de una red de pequeña empresa (instrucciones)</a>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+﻿<textcomponents>
+<component id="ID_title">
+<text><![CDATA[<b>Mensajes de solicitud y de anuncio de router</b>]]></text>
+</component>
+
+<component id="ID_txt01">
+<text><![CDATA[Servidor de DHCPv6]]></text>
+</component>
+
+<component id="ID_txt02">
+<text><![CDATA[<b>Solicitud de router a todos los routers IPv6</b><br/>“Necesito información de direccionamiento del router”.]]></text>
+</component>
+
+<component id="ID_txt03">
+<text><![CDATA[<b>Anuncio de router: a todos los nodos IPv6</b><br/>Opción 1 (SLAAC solamente): “Aquí está la información del prefijo, de la longitud del prefijo y del gateway predeterminado”.]]></text>
+</component>
+
+<component id="ID_titleTxt01">
+<text><![CDATA[<b>Opciones de anuncio de router</b>]]></text>
+</component>
+
+<component id="ID_bodyTxt01">
+<text><![CDATA[<b>Opción 1 (SLAAC solamente)</b>: “Soy todo lo que necesita (prefijo, longitud de prefijo, gateway predeterminado)”.<br/><b>Opción 2 (SLAAC y DHCPv6)</b>: “Aquí está mi información, pero necesita más datos, como las direcciones DNS de un servidor de DHCPv6”.<br/><b>Opción 3 (DHCPv6 solamente)</b>: “No puedo ayudarlo. Solicite toda la información a un servidor de DHCPv6”.]]></text>
+</component>
+
+</textcomponents>

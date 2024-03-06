@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.2.1.5 Aplicación de ACL estándar a las interfaces</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.2.1.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>ACL de IPv4 estándar </h1>
+        <h2>Configuración de ACL de IPv4 estándar</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Procedimientos de configuración de ACL estándar</b>
+</p>
+<p></p>
+<p>Después de que se configura una ACL estándar, se vincula a una interfaz mediante el comando <span class="cmd"><b>ip access-group</b></span> del modo de configuración de interfaz: </p>
+<p></p>
+<p>
+<span class="cmd">Router(config-if)# </span>
+<span class="cmd">
+<b>ip access-group </b>
+</span>
+<span class="cmd">{</span>
+<span class="cmd">
+<i>access-list-number </i>
+</span>
+<span class="cmd">|</span>
+<span class="cmd">
+<i> nombre-lista-acceso</i>
+</span>
+<span class="cmd">} {</span>
+<span class="cmd">
+<b>pre </b>
+</span>
+<span class="cmd">|</span>
+<span class="cmd">
+<b> out</b>
+</span>
+<span class="cmd">}</span>
+</p>
+<p></p>
+<p>Para eliminar una ACL de una interfaz, primero introduzca el comando <span class="cmd"><b>no ip access-group</b></span> en la interfaz y, a continuación, introduzca el comando global <span class="cmd"><b>no access-list</b></span> para eliminar la ACL completa.</p>
+<p></p>
+<p>En la figura 1, se enumeran los pasos y la sintaxis para configurar y aplicar una ACL estándar numerada en un router. </p>
+<p></p>
+<p>En la figura 2, se muestra un ejemplo de una ACL para permitir una sola red.</p>
+<p></p>
+<p>Esta ACL solo permite que se reenvíe mediante la interfaz S0/0/0 el tráfico de la red de origen 192.168.10.0. El tráfico proveniente de redes distintas de la red 192.168.10.0 se bloquea.</p>
+<p></p>
+<p>En la primera línea, se identifica la ACL como lista de acceso 1. Esta lista permite el tráfico que coincide con los parámetros seleccionados. En este caso, la dirección IPv4 y la máscara wildcard que identifican a la red de origen son 192.168.10.0 0.0.0.255. Recuerde que existe una denegación implícita de todas las instrucciones que equivale a agregar la línea<span class="cmd"><b> access-list 1 deny 0.0.0.0 255.255.255.255</b></span>. </p>
+<p></p>
+<p>El comando de configuración de interfaz <span class="cmd"><b>ip access-group 1 out</b></span> vincula la ACL 1 a la interfaz Serial 0/0/0 como filtro de salida.</p>
+<p></p>
+<p>Por lo tanto, la ACL 1 solo permite que los hosts de la red 192.168.10.0/24 salgan por el router R1. Esta lista deniega cualquier otra red, incluida la red 192.168.11.0. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

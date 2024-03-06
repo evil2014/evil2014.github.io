@@ -1,0 +1,110 @@
+﻿<textcomponents>
+
+
+<component id="ID_s1_title">
+<text><![CDATA[<b>Orden de prioridad de ID del router  </b>]]></text>
+</component>
+<component id="ID_s1_txt01">
+<text><![CDATA[¿ID del router de 32&nbsp;bits configurada explícitamente?]]></text>
+</component>
+<component id="ID_s1_txt02">
+<text><![CDATA[¿Interfaz loopback habilitada con dirección IPv4?]]></text>
+</component>
+<component id="ID_s1_txt03">
+<text><![CDATA[¿Interfaz habilitada con dirección IPv4?]]></text>
+</component>
+<component id="ID_s1_txt04">
+<text><![CDATA[Usarla como ID del router. Si hay varias interfaces activas, usar la dirección más alta.]]></text>
+</component>
+<component id="ID_s1_txt05">
+<text><![CDATA[<b>Se muestra el mensaje de consola:  </b><br/>%OSPFv3-4-NORTRID: OSPFv3 process 1 could not pick a router ID, please configure manually.]]></text>
+</component>
+<component id="ID_s1_txt06">
+<text><![CDATA[Sí]]></text>
+</component>
+<component id="ID_s1_txt07">
+<text><![CDATA[No]]></text>
+</component>
+<component id="ID_s1_txt08">
+<text><![CDATA[Sí]]></text>
+</component>
+<component id="ID_s1_txt09">
+<text><![CDATA[No]]></text>
+</component>
+<component id="ID_s1_txt10">
+<text><![CDATA[Sí]]></text>
+</component>
+<component id="ID_s1_txt11">
+<text><![CDATA[No]]></text>
+</component>
+
+
+
+<component id="ID_s2_title">
+<text><![CDATA[<b>Topología OSPFv3  </b>]]></text>
+</component>
+<component id="ID_s2_txt01">
+<text><![CDATA[<b>Área 0  </b>]]></text>
+</component>
+
+<component id="ID_s3_title">
+<text><![CDATA[<b>Asignación de una ID de router al R1  </b>]]></text>
+</component>
+
+<component id="ID_s4_title">
+<text><![CDATA[<b>Asignación de una ID de router  </b>]]></text>
+</component> <!--Syntax checker -->
+
+<component id="ID_sc_reset">
+		<text><![CDATA[Restablecer]]></text>
+	</component>
+	<component id="ID_sc_showme">
+		<text><![CDATA[Mostrar]]></text>
+	</component>
+	<component id="ID_sc_showall">
+		<text><![CDATA[Mostrar todo]]></text>
+	</component>
+
+
+<component id="ID_SC4" fontFace='Courier New' fontSize="10">
+		<feedback id="fb"><![CDATA[<b>***  </b><font  face="Arial" color="#0000FF">Debe introducir el comando exacto y completo.</font><b>***  </b> 
+		]]></feedback>		
+		<existingcommands><![CDATA[<font  face="Arial"><b><ul><li>Ingrese al modo de configuración de router OSPF IPv6 con la ID de proceso 10.<li>Asigne la ID de router 2.2.2.2.<li>Vuelva al modo EXEC privilegiado.</ul>  </b></font>]]></existingcommands>
+		<command prompt="R2(config)#">
+		    <correctresponse><![CDATA[ipv6 router ospf 10]]></correctresponse>
+				<deviceresponse><![CDATA[<font Face="Courier New">*Mar 29 11:24:53.739: %OSPFv3-4-NORTRID: Process OSPFv3-1-IPv6 could not pick a router-id, please configure manually</font>]]></deviceresponse> 
+		</command>
+		<command prompt="R2(config-rtr)#">
+		    <correctresponse><![CDATA[router-id 2.2.2.2]]></correctresponse>
+		</command>
+		<command prompt="R2(config-rtr)#">
+		    <correctresponse><![CDATA[end]]></correctresponse>
+						<deviceresponse><![CDATA[<font Face="Courier New">R2#<br>*Mar 25 20:03:56.863: %SYS-5-CONFIG_I: Configured from console by console<br>R2#</font>]]></deviceresponse> 
+			<instruction><![CDATA[<font  face="Arial"><b>Verifique la ID del router dentro de la configuración del protocolo OSPF IPv6 en el R2.  </b>]]></instruction>			
+		</command>
+		<command prompt="R2#">
+		    <correctresponse><![CDATA[show ipv6 protocols]]></correctresponse>
+						<deviceresponse><![CDATA[<font Face="Courier New">IPv6 Routing Protocol is "connected" <br>IPv6 Routing Protocol is "ND" <br>IPv6 Routing Protocol is "ospf 10" <br>  Router ID 2.2.2.2 <br>  Number of areas: 0 normal, 0 stub, 0 nssa <br>  Redistribution: <br>    None <br>R2#</font>]]></deviceresponse> 
+		<instruction><![CDATA[<font  face="Arial"><b>Ahora configure el R3:<ul><li>Ingrese al modo de configuración de router OSPF con la ID de proceso 10.<li>Asigne la ID de router 3.3.3.3.<li>Vuelva al modo EXEC privilegiado.</ul>  </b></font>]]></instruction>
+		</command>
+		<command prompt="R3(config)#">
+		    <correctresponse><![CDATA[ipv6 router ospf 10]]></correctresponse>
+				<deviceresponse><![CDATA[<font Face="Courier New">*Mar 29 11:24:53.739: %OSPFv3-4-NORTRID: Process OSPFv3-1-IPv6 could not pick a router-id, please configure manually</font>]]></deviceresponse> 
+		</command>
+		<command prompt="R3(config-rtr)#">
+		    <correctresponse><![CDATA[router-id 3.3.3.3]]></correctresponse>
+		</command>
+		<command prompt="R3(config-rtr)#">
+		    <correctresponse><![CDATA[end]]></correctresponse>
+						<deviceresponse><![CDATA[<font Face="Courier New">R3#<br>*Mar 25 20:11:05.415: %SYS-5-CONFIG_I: Configured from console by console<br>R3#</font>]]></deviceresponse> 
+			<instruction><![CDATA[<font  face="Arial"><b>Verifique la ID del router dentro de la configuración del protocolo OSPF en el R3.  </b>]]></instruction>			
+		</command>
+		<command prompt="R3#">
+		    <correctresponse><![CDATA[show ipv6 protocols]]></correctresponse>
+						<deviceresponse><![CDATA[<font Face="Courier New">IPv6 Routing Protocol is "connected" <br>IPv6 Routing Protocol is "ND" <br>IPv6 Routing Protocol is "ospf 10" <br>  Router ID 3.3.3.3 <br>  Number of areas: 0 normal, 0 stub, 0 nssa <br>  Redistribution: <br>    None <br>R3#</font>]]></deviceresponse> 			
+						<instruction><![CDATA[<font  face="Arial" class="syntaxBottomLine"><b>Asignó correctamente la ID del router.  </b>]]></instruction>
+		</command>
+		<command prompt=""/>
+	</component>
+
+</textcomponents>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.1.1.1 Subcapas LLC y MAC</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.1.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolo Ethernet</h1>
+        <h2>Funcionamiento de Ethernet</h2>
+      </div>
+      <div id="content">
+<p>Ethernet es la tecnología LAN más ampliamente utilizada en la actualidad. </p>
+<p></p>
+<p>Ethernet funciona en la capa de enlace de datos y en la capa física. Se trata de una familia de tecnologías de red que se definen en los estándares IEEE 802.2 y 802.3. Ethernet admite los anchos de banda de datos siguientes:</p>
+<p>
+<ul>
+<li>10 Mb/s</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>100 Mb/s</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>1000 Mb/s (1 Gb/s)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>10.000 Mb/s (10 Gb/s)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>40.000 Mb/s (40 Gb/s)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>100.000 Mb/s (100 Gb/s)</li>
+</ul>
+</p>
+<p></p>
+<p>Como se muestra en la figura 1, los estándares de Ethernet definen tanto los protocolos de capa 2 como las tecnologías de capa 1. En lo que respecta a los protocolos de capa 2, al igual que sucede con todos los estándares IEEE 802, Ethernet depende de las dos subcapas separadas de la capa de enlace de datos para funcionar: la subcapa de control de enlace lógico (LLC) y la subcapa MAC.</p>
+<p></p>
+<p>
+<b>Subcapa LLC</b>
+</p>
+<p>La subcapa LLC de Ethernet se ocupa de la comunicación entre las capas superiores y las capas inferiores. Generalmente, esta comunicación se produce entre el software de red y el hardware del dispositivo. La subcapa LLC toma los datos del protocolo de la red, que generalmente son un paquete IPv4, y agrega información de control para ayudar a entregar el paquete al nodo de destino. El LLC se utiliza para comunicarse con las capas superiores de la aplicación y para la transición del paquete a las capas inferiores para su entrega.</p>
+<p></p>
+<p>El LLC se implementa en software, y su implementación no depende del hardware. En una PC, el LLC se puede considerar el controlador de la NIC. El controlador de la NIC es un programa que interactúa directamente con el hardware de la NIC para transmitir los datos entre la subcapa MAC y los medios físicos.</p>
+<p></p>
+<p>
+<b>Subcapa MAC</b>
+</p>
+<p>La MAC constituye la subcapa inferior de la capa de enlace de datos. La MAC se implementa mediante hardware, por lo general, en la NIC de la PC. Los detalles se especifican en los estándares IEEE 802.3. En la figura 2, se enumeran los estándares IEEE de Ethernet comunes. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

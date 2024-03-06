@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.3.1.1 Protección de redes inalámbricas</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.3.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Seguridad de una LAN inalámbrica</h1>
+        <h2>Amenazas de WLAN</h2>
+      </div>
+      <div id="content">
+<p>Las dificultades para mantener segura una red conectada por cable se multiplican con una red inalámbrica. La seguridad debe ser una prioridad para cualquiera que utilice o administre redes. </p>
+<p></p>
+<p>Una WLAN está abierta a cualquier persona dentro del alcance de un AP con las credenciales correspondientes para asociarse a él. Con una NIC inalámbrica y conocimientos de técnicas de decodificación, un atacante no tendrá que entrar físicamente al espacio de trabajo para obtener acceso a una WLAN. </p>
+<p></p>
+<p>Las preocupaciones de seguridad son aún más importantes cuando se lidia con redes empresariales, ya que el sustento de la empresa depende de la protección de su información. En estos casos, las violaciones a la seguridad pueden tener graves repercusiones, sobre todo si la empresa guarda información financiera relacionada con sus clientes. Cada vez se implementan más redes inalámbricas en las empresas y, en muchos casos, estas redes evolucionaron de ser una conveniencia a ser una parte de la red imprescindible para cumplir con los objetivos. Si bien las WLAN siempre fueron un blanco de los ataques, debido al aumento constante de su popularidad, ahora son un blanco principal. </p>
+<p></p>
+<p>Las personas ajenas a la empresa, los empleados insatisfechos e incluso otros empleados, involuntariamente, pueden generar los ataques. Las redes inalámbricas son específicamente vulnerables a varias amenazas, incluido lo siguiente:</p>
+<p>
+<ul>
+<li>Intrusos inalámbricos</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Aplicaciones no autorizadas</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Intercepción de datos</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Ataques DoS</li>
+</ul>
+</p>
+<p></p>
+<p>En la ilustración, haga clic en cada amenaza para obtener más información. </p>
+<p></p>
+<p>
+<b>Nota:</b> otras amenazas, como los ataques de suplantación de direcciones MAC de un AP o un cliente inalámbrico, los ataques de decodificación y los ataques de infraestructura están fuera del ámbito de este capítulo.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

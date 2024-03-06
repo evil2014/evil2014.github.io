@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.2.1.5 Llegar al destino </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.2.1.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Decisiones de routing</h1>
+        <h2>Switching de paquetes entre redes</h2>
+      </div>
+      <div id="content">
+<p>Los siguientes procesos ocurren cuando la trama llega al R3:</p>
+<p></p>
+<p>1. El R3 copia la trama PPP de enlace de datos en su búfer.</p>
+<p>2. El R3 desencapsula la trama PPP de enlace de datos.</p>
+<p>3. El R3 busca la dirección IPv4 de destino del paquete en la tabla de routing. La tabla de routing tiene una ruta a una red conectada directamente en el R3. Esto significa que el paquete puede enviarse directamente al dispositivo de destino y no es necesario enviarlo a otro router.</p>
+<p></p>
+<p>Dado que la interfaz de salida es una red Ethernet conectada directamente, el R3 debe resolver la dirección IPv4 de destino del paquete con una dirección MAC de destino:</p>
+<p></p>
+<p>1. El R3 busca la dirección IPv4 de destino del paquete en la caché del protocolo de resolución de direcciones (ARP). Si la entrada no aparece en la caché ARP, el R3 envía una solicitud de ARP por la interfaz FastEthernet 0/0. La PC2 envía a cambio una respuesta ARP con su dirección MAC. A continuación, el R3 actualiza su caché ARP con una entrada para 192.168.4.10 y la dirección MAC que se devolvió en la respuesta de ARP.</p>
+<p>2. El paquete IPv4 se encapsula en una nueva trama de enlace de datos de Ethernet y se envía por la interfaz FastEthernet 0/0 del R3.</p>
+<p>3. Cuando la PC2 recibe la trama, examina la dirección MAC de destino, que coincide con la dirección MAC de la interfaz receptora, la tarjeta de interfaz de red (NIC) Ethernet. Por lo tanto, la PC2 copia el resto de la trama en su búfer.</p>
+<p>4. La PC2 distingue que el campo tipo de Ethernet es 0x800, lo que significa que la trama de Ethernet contiene un paquete IPv4 en la porción de datos de la trama. </p>
+<p>5. La PC2 desencapsula la trama de Ethernet y envía el paquete IPv4 al proceso IPv4 de su sistema operativo.</p>
+<p></p>
+<p>En la animación de la ilustración, se muestra cómo el R3 reenvía el paquete a la PC2.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

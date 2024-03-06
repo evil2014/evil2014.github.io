@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.1.1.3 Jerarquía de área de OSPF de dos capas</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.1.1.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Funcionamiento de OSPF multiárea</h1>
+        <h2>¿Por qué OSPF de diversas áreas?</h2>
+      </div>
+      <div id="content">
+<p>El OSPF de diversas áreas se implementa con una jerarquía de área de dos capas:</p>
+<p>
+<ul>
+<li>
+<b>Área de red troncal (de tránsito):</b> un área OSPF cuya función principal es la transmisión rápida y eficaz de los paquetes IP. Las áreas de red troncal se interconectan con otros tipos de área de OSPF. En general, los usuarios finales no se encuentran en un área de red troncal. El área de red troncal también se denomina “área OSPF 0”. En las redes jerárquicas, se define al área 0 como el núcleo al que se conectan directamente todas las demás áreas (figura 1).</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Área común (no de red troncal):</b> conecta usuarios y recursos. Las áreas regulares se configuran generalmente en grupos funcionales o geográficos. De manera predeterminada, un área regular no permite que el tráfico de otra área utilice sus enlaces para alcanzar otras áreas. Todo el tráfico de otras áreas debe atravesar un área de tránsito (figura 2).</li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Nota:</b> las áreas comunes pueden tener una variedad de subtipos, incluidas un área estándar, un área de rutas internas, un área exclusiva de rutas internas y un área no exclusiva de rutas internas (NSSA). Las áreas de rutas internas, las áreas exclusivas de rutas internas y las áreas NSSA exceden el ámbito de este capítulo. </p>
+<p></p>
+<p>OSPF aplica esta rígida jerarquía de área de dos capas. La conectividad física subyacente de la red se debe asignar a la estructura del área de dos capas, con solo áreas que no son de red troncal conectadas directamente al área 0. Todo el tráfico que se transfiere de un área a la otra debe atravesar el área de red troncal. Este tráfico se denomina “tráfico interárea”. </p>
+<p></p>
+<p>La cantidad óptima de routers por área depende de factores como la estabilidad de la red, pero Cisco recomienda tener en cuenta las siguientes pautas:</p>
+<p>
+<ul>
+<li>Un área no debe tener más de 50 routers.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Un router no debe estar en más de tres áreas.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Ningún router debe tener más de 60 vecinos.</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

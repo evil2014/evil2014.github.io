@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>3.1.2.5 Etiquetado de VLAN de voz</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_3.1.2.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Segmentación de VLAN</h1>
+        <h2>Redes VLAN en un entorno conmutado múltiple</h2>
+      </div>
+      <div id="content">
+<p>Recuerde que, para admitir VoIP, se requiere una VLAN de voz separada. </p>
+<p></p>
+<p>Un puerto de acceso que se usa para conectar un teléfono IP de Cisco se puede configurar para usar dos VLAN separadas: una VLAN para el tráfico de voz y otra VLAN para el tráfico de datos desde un dispositivo conectado al teléfono. El enlace entre el switch y el teléfono IP funciona como un enlace troncal para transportar tanto el tráfico de la VLAN de voz como el tráfico de la VLAN de datos.</p>
+<p></p>
+<p>El teléfono IP Cisco contiene un switch integrado 10/100 de tres puertos. Los puertos proporcionan conexiones dedicadas para estos dispositivos:</p>
+<p>
+<ul>
+<li>El puerto 1 se conecta al switch o a otro dispositivo VoIP.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>El puerto 2 es una interfaz interna 10/100 que envía el tráfico del teléfono IP.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>El puerto 3 (puerto de acceso) se conecta a una PC u otro dispositivo.</li>
+</ul>
+</p>
+<p></p>
+<p>En el switch, el acceso está configurado para enviar paquetes del protocolo de descubrimiento de Cisco (CDP) que instruyen a un teléfono IP conectado para que envíe el tráfico de voz al switch en una de tres formas posibles, según el tipo de tráfico:</p>
+<p>
+<ul>
+<li>En una VLAN de voz con una etiqueta de valor de prioridad de clase de servicio (CoS) de capa 2.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>En una VLAN de acceso con una etiqueta de valor de prioridad de CoS de capa 2.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>En una VLAN de acceso sin etiqueta (sin valor de prioridad de CoS de capa 2).</li>
+</ul>
+</p>
+<p></p>
+<p>En la figura 1, la computadora del estudiante PC5 está conectada a un teléfono IP de Cisco, y el teléfono está conectado al switch S3. La VLAN 150 está diseñada para transportar tráfico de voz, mientras que la PC5 está en la VLAN 20, que se usa para los datos de los estudiantes.</p>
+<p></p>
+<p>
+<b>Ejemplo de configuración</b>
+</p>
+<p></p>
+<p>En la figura 2, se muestra un resultado de ejemplo. El análisis de los comandos de voz de IOS de Cisco exceden el ámbito de este curso, pero las áreas resaltadas en el resultado de ejemplo muestran que la interfaz F0/18 se configuró con una VLAN configurada para datos (VLAN 20) y una VLAN configurada para voz (VLAN 150).</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

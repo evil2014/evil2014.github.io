@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.2.1.1 Cómo ingresar sentencias de criterios</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.2.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>ACL de IPv4 estándar </h1>
+        <h2>Configuración de ACL de IPv4 estándar</h2>
+      </div>
+      <div id="content">
+<p>Cuando el tráfico ingresa al router, se compara con todas las ACE en el orden en que las entradas se encuentran en la ACL. El router continúa procesando las ACE hasta que encuentra una coincidencia. El router procesa el paquete según la primera coincidencia y no se examinan más ACE.</p>
+<p></p>
+<p>Si no se encuentran coincidencias cuando el router llega al final de la lista, se deniega el tráfico. Esto se debe a que, de manera predeterminada, hay una denegación implícita al final de todas las ACL para el tráfico sin coincidencias con una entrada configurada. Una ACL de entrada única con solo una entrada de denegación tiene el efecto de denegar todo el tráfico. Se debe configurar al menos una ACE permit en una ACL. En caso contario, se bloquea todo el tráfico. </p>
+<p></p>
+<p>Para la red en la ilustración, si se aplica la ACL 1 o la ACL 2 a la interfaz S0/0/0 del R1 en el sentido de salida, se obtiene el mismo resultado. A la red 192.168.10.0 se le permite acceder a las redes a las que puede llegar mediante S0/0/0, mientras que a 192.168.11.0 no se le permite acceder a esas redes.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

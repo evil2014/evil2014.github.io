@@ -1,0 +1,30 @@
+﻿<textcomponents>
+<component id="ID_title">
+<text><![CDATA[<b>Creación de áreas para minimizar el uso de recursos del router</b>]]></text>
+</component>
+<component id="ID_txt01">
+  <text><![CDATA[<b>Área 0</b>]]></text> 
+  </component>
+
+  <component id="ID_txt02">
+  <text><![CDATA[<b>Área&nbsp;51</b>]]></text> 
+  </component>
+
+  <component id="ID_txt03">
+  <text><![CDATA[<b>Área&nbsp;1</b>]]></text> 
+  </component>
+
+    <component id="ID_txt04">
+  <text><![CDATA[No se saturaron estas áreas con LSP. No debe volverse a ejecutar el algoritmo SPF en estas áreas.]]></text> 
+  </component>
+
+ <component id="ID_txt05">
+  <text><![CDATA[Se saturó con LSP solamente esta área.]]></text> 
+  </component>
+
+   <component id="ID_txt06">
+  <text><![CDATA[Volver a ejecutar el algoritmo SPF.]]></text> 
+  </component>
+
+
+</textcomponents>

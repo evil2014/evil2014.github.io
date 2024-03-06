@@ -1,0 +1,45 @@
+﻿<textcomponents>
+
+<component id="ID_s1_title">
+<text><![CDATA[<b>Actividad: Diagramas de pines de los cables </b><br/><br/>Alinee correctamente los colores de los hilos para armar el diagrama de pines de un cable directo UTP 568B.<br/><br/>Arrastre cada color de hilo a la ubicación correcta en la imagen del conector RJ-45 del gráfico.]]></text>
+</component>
+
+<component id="ID_fig_title">
+<text><![CDATA[Vista de la base de un conector RJ-45]]></text>
+</component>
+
+<component id="ID_txt01">
+  <text><![CDATA[Diagrama de pines de un cable directo 568B]]></text> 
+  </component>
+
+
+
+  
+<component id="ID_s1_CORRECT_TITLE">
+  <text><![CDATA[<b>Correcto</b>]]></text> 
+  </component> 
+<component id="ID_s1_CORRECT_BODY">
+  <text><![CDATA[Seleccionó correctamente el orden del diagrama de pines para un cable directo UTP 568.]]></text>
+  
+
+  </component>   
+<component id="ID_s1_INCORRECT_TITLE">
+  <text><![CDATA[<b>Incorrecto</b>]]></text> 
+  </component> 
+<component id="ID_s1_INCORRECT_BODY">
+  <text><![CDATA[No seleccionó correctamente el orden del diagrama de pines para un cable directo UTP 568. Haga clic en Restablecer y vuelva a intentarlo.]]></text> 
+  </component>     
+  
+<component id="transcript">
+  <text><![CDATA[<b>transcript goes here</b>]]></text> 
+  </component>
+
+  <component id='ID_CHECK'>
+	<text><![CDATA[Verificar]]></text>
+</component>
+
+<component id='ID_RESET'>
+	<text><![CDATA[Restablecer]]></text>
+</component>
+  
+</textcomponents>

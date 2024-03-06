@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.2.1.2 Características de GRE</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.2.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Túneles GRE de Site-to-Site</h1>
+        <h2>Aspectos básicos de la encapsulación de routing genérico</h2>
+      </div>
+      <div id="content">
+<p>GRE es un protocolo de tunneling desarrollado por Cisco que puede encapsular una amplia variedad de tipos de paquete de protocolo dentro de túneles IP, lo que crea un enlace punto a punto virtual a los routers Cisco en puntos remotos a través de una internetwork IP. El tunneling IP que utiliza GRE habilita la expansión de la red a través de un entorno de backbone de protocolo único. Esto se logra mediante la conexión de subredes multiprotocolo en un entorno de backbone de protocolo único.</p>
+<p></p>
+<p>Las características de GRE son las siguientes:</p>
+<p></p>
+<p>
+<ul>
+<li>GRE se define como un estándar IETF (RFC 2784).</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>En el encabezado IP externo, se utiliza el número 47 en el campo de protocolo para indicar que lo que sigue es un encabezado GRE.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>La encapsulación de GRE utiliza un campo de tipo de protocolo en el encabezado GRE para admitir la encapsulación de cualquier protocolo de capa 3 del modelo OSI. Los tipos de protocolo se definen en RFC 1700 como “EtherTypes”.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>GRE en sí misma no tiene estado; de manera predeterminada, no incluye ningún mecanismo de control de flujo.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>GRE no incluye ningún mecanismo de seguridad sólido para proteger su contenido.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>El encabezado GRE, junto con el encabezado de tunneling IP que se indica en la ilustración, crea por lo menos 24 bytes de sobrecarga adicional para los paquetes que se envían por túnel.</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

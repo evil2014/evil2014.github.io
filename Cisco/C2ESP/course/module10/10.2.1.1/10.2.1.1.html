@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>10.2.1.1 Configuración automática de dirección sin estado (SLAAC)</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_10.2.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolo de configuración dinámica de host v6</h1>
+        <h2>SLAAC y DHCPv6</h2>
+      </div>
+      <div id="content">
+<p>De manera similar a lo que ocurre con IPv4, las direcciones IPv6 de unidifusión global pueden configurarse manualmente o de forma dinámica. Sin embargo, existen dos métodos en los que las direcciones IPv6 de unidifusión global pueden asignarse dinámicamente:</p>
+<p></p>
+<p>
+<ul>
+<li>Configuración automática de dirección sin estado (SLAAC), como se muestra en la ilustración</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Protocolo de configuración dinámica de host para IPv6 (DHCPv6 con estado)</li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Introducción a SLAAC</b>
+</p>
+<p></p>
+<p>SLAAC es un método en el cual un dispositivo puede obtener una dirección IPv6 de unidifusión global sin los servicios de un servidor de DHCPv6. ICMPv6 se encuentra en el centro de SLAAC. ICMPv6 es similar a ICMPv4, pero incluye funcionalidad adicional y es un protocolo mucho más sólido. SLAAC utiliza mensajes de solicitud y de anuncio de router ICMPv6 para proporcionar direccionamiento y otra información de configuración que normalmente proporcionaría un servidor de DHCP:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Mensaje de solicitud de router (RS):</b> cuando un cliente está configurado para obtener la información de direccionamiento de forma automática mediante SLAAC, el cliente envía un mensaje RS al router. El mensaje RS se envía a la dirección IPv6 de multidifusión de todos los routers, FF02::2.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Mensaje de anuncio de router (RA):</b> los routers envían mensajes RA para proporcionar información de direccionamiento a los clientes configurados para obtener sus direcciones IPv6 de forma automática. El mensaje RA incluye el prefijo y la longitud de prefijo del segmento local. Un cliente utiliza esta información para crear su propia dirección IPv6 de unidifusión global. Los routers envían mensajes RA de forma periódica o en respuesta a un mensaje RS. De manera predeterminada, los routers Cisco envían mensajes de RA cada 200 segundos. Los mensajes RA siempre se envían a la dirección IPv6 de multidifusión de todos los nodos, FF02::1. </li>
+</ul>
+</p>
+<p></p>
+<p>Como lo indica el nombre, SLAAC quiere decir “sin estado”. Un servicio sin estado significa que no hay ningún servidor que mantenga la información de la dirección de red. A diferencia de DHCP, no hay servidor de SLAAC que tenga información acerca de cuáles son las direcciones IPv6 que están en uso y cuáles son las que se encuentran disponibles.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

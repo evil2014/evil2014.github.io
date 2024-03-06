@@ -1,0 +1,173 @@
+﻿<textcomponents>  
+
+<component id="ID_title">
+	<text><![CDATA[<b></b>]]></text>
+</component>
+
+<component id="ID_s1_txt01">
+	<text><![CDATA[<b>EIGRP AS 100</b>]]></text>
+</component>
+
+<component id="ID_s1_inst">
+	<text><![CDATA[<b>Topología</b><br/>Use este diagrama de topología como referencia para las situaciones 1 a 3. Haga clic en el botón&nbsp;2 para continuar.]]></text>
+</component>
+
+
+
+
+<component id="ID_s2_inst">
+	<text><![CDATA[<b>Actividad: resolver problemas de la tabla de routing EIGRP (situación&nbsp;1)</b><br/>El&nbsp;R1 no puede llegar a la red 172.17.0.0. Utilice el diagrama de topología y la tabla de routing para determinar la causa más probable de este problema. Arrastre el motivo más probable de este problema de la tabla de routing EIGRP hasta el campo junto al Router1 (R1). Haga clic en el botón&nbsp;3 para continuar.]]></text>
+</component>
+
+
+
+<component id='ID_s2_drag01'>
+	<text><![CDATA[El R3 no anuncia 172.17.0.0.]]></text>
+</component>
+
+<component id='ID_s2_drag02'>
+	<text><![CDATA[La ruta estática 172.17.0.0 es incorrecta.]]></text>
+</component>
+
+<component id='ID_s2_drag03'>
+	<text><![CDATA[La interfaz loopback 172.17.0.1 es incorrecta.]]></text>
+</component>
+
+<component id='ID_s2_drag04'>
+	<text><![CDATA[El R2 no anuncia 172.17.0.0.]]></text>
+</component>
+
+
+<component id='ID_s2_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id='ID_s2_CORRECT_BODY'>
+	<text><![CDATA[Identificó correctamente la causa más probable del problema de la tabla de routing EIGRP para esta situación. Haga clic en el botón&nbsp;3 para continuar.]]></text>
+</component>
+
+
+<component id='ID_s2_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_s2_INCORRECT_BODY'>
+	<text><![CDATA[No identificó correctamente la causa más probable del problema de la tabla de routing EIGRP para esta situación. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component> 
+
+<component id='ID_s2_CHECK'>
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id='ID_s2_RESET'>
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component>
+
+
+
+
+
+<component id="ID_s3_inst">
+	<text><![CDATA[<b>Actividad: resolver problemas de la tabla de routing EIGRP (situación&nbsp;2)</b><br/>El&nbsp;R1 no puede llegar a la red 172.17.0.0. Utilice el diagrama de topología y la tabla de routing para determinar la causa más probable de este problema. Arrastre el motivo más probable de este problema de la tabla de routing EIGRP hasta el campo junto al Router1 (R1). Haga clic en el botón 4 para continuar.]]></text>
+</component>
+
+
+
+
+<component id='ID_s3_drag01'>
+	<text><![CDATA[El R3 no anuncia 172.17.0.0.]]></text>
+</component>
+
+<component id='ID_s3_drag02'>
+	<text><![CDATA[La ruta estática 172.17.0.0 es incorrecta.]]></text>
+</component>
+
+<component id='ID_s3_drag03'>
+	<text><![CDATA[La interfaz loopback 172.17.0.1 es incorrecta. ]]></text>
+</component>
+
+<component id='ID_s3_drag04'>
+	<text><![CDATA[El R2 no anuncia 172.17.0.0.]]></text>
+</component>
+
+
+<component id='ID_s3_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id='ID_s3_CORRECT_BODY'>
+	<text><![CDATA[Identificó correctamente la causa más probable del problema de la tabla de routing EIGRP para esta situación. Haga clic en el botón 4 para continuar.]]></text>
+</component>
+
+
+<component id='ID_s3_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_s3_INCORRECT_BODY'>
+	<text><![CDATA[No identificó correctamente la causa más probable del problema de la tabla de routing EIGRP para esta situación. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_s3_CHECK'>
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id='ID_s3_RESET'>
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component>
+
+
+
+
+<component id="ID_s4_inst">
+	<text><![CDATA[<b>Actividad: resolver problemas de la tabla de routing EIGRP (situación&nbsp;3)</b><br/>El&nbsp;R1 no puede llegar a la red 172.17.0.0. Utilice el diagrama de topología y la tabla de routing para determinar la causa más probable de este problema. Arrastre el motivo más probable de este problema de la tabla de routing EIGRP hasta el campo junto al Router1 (R1).]]></text>
+</component>
+
+
+
+
+<component id='ID_s4_drag01'>
+	<text><![CDATA[El R3 no anuncia 172.17.0.0.]]></text>
+</component>
+
+<component id='ID_s4_drag02'>
+	<text><![CDATA[La ruta estática 172.17.0.0 es incorrecta.]]></text>
+</component>
+
+<component id='ID_s4_drag03'>
+	<text><![CDATA[La interfaz loopback 172.17.0.1 es incorrecta. ]]></text>
+</component>
+
+<component id='ID_s4_drag04'>
+	<text><![CDATA[El R2 no anuncia 172.17.0.0.]]></text>
+</component>
+
+
+<component id='ID_s4_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id='ID_s4_CORRECT_BODY'>
+	<text><![CDATA[Identificó correctamente la causa más probable del problema de la tabla de routing EIGRP para esta situación.]]></text>
+</component>
+
+
+<component id='ID_s4_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_s4_INCORRECT_BODY'>
+	<text><![CDATA[No identificó correctamente la causa más probable del problema de la tabla de routing EIGRP para esta situación. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_s4_CHECK'>
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id='ID_s4_RESET'>
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component>
+
+
+
+</textcomponents>

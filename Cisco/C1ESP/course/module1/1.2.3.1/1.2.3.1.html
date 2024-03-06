@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.2.3.1 Internet</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.2.3.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>LAN, WAN e Internet</h1>
+        <h2>Internet</h2>
+      </div>
+      <div id="content">
+<p>Aunque el uso de redes LAN o WAN tiene ventajas, la mayoría de las personas necesitan comunicarse con un recurso ubicado en otra red, fuera de la red local del hogar, el campus o la organización. Esto se logra mediante el uso de Internet.</p>
+<p></p>
+<p>Como se muestra en la ilustración, Internet es una colección mundial de redes interconectadas (abreviado: internetworks o internet), que colaboran para intercambiar información sobre la base de estándares comunes. A través de cables telefónicos, cables de fibra óptica, transmisiones inalámbricas y enlaces satelitales, los usuarios de Internet pueden intercambiar información de diversas formas. </p>
+<p></p>
+<p>Internet es un conglomerado de redes que no es propiedad de ninguna persona ni de ningún grupo. Para garantizar una comunicación eficaz en esta infraestructura heterogénea, se requiere la aplicación de tecnologías y estándares coherentes y comúnmente reconocidos, así como la cooperación de muchas entidades de administración de redes. Existen organizaciones que se desarrollaron con el fin de ayudar a mantener la estructura y la estandarización de los protocolos y los procesos de Internet. Entre estas organizaciones, se encuentran Internet Engineering Task Force (IETF), Internet Corporation for Assigned Names and Numbers (ICANN) e Internet Architecture Board (IAB), entre muchas otras.</p>
+<p></p>
+<p>
+<b>Nota:</b> el término “internet” (con “i” minúscula) se utiliza para describir un conjunto de redes interconectadas. Para referirse al sistema global de redes de computadoras interconectadas, o World Wide Web, se utiliza el término “Internet” (con “I” mayúscula).</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+﻿<textcomponents>
+<component id="ID_title">
+<text><![CDATA[<b>Conmutación de paquetes en una red de datos</b>]]></text>
+</component>
+<component id="ID_txt01">
+  <text><![CDATA[Pueden usarse muchas rutas para una sola comunicación mientras los paquetes individuales se enrutan a un destino.]]></text> 
+  </component>
+<component id="ID_txt02">
+  <text><![CDATA[No hay ninguna ruta fija establecida. Los paquetes se enrutan según el mejor camino disponible en ese momento.]]></text> 
+  </component>
+<component id="ID_txt03">
+  <text><![CDATA[Antes de la transmisión, cada comunicación se divide en paquetes que se direccionan y numeran.]]></text> 
+  </component>
+<component id="ID_txt04">
+  <text><![CDATA[Durante los períodos de demanda pico, la comunicación puede demorarse, pero no denegarse.]]></text> 
+  </component>
+<component id="ID_txt05">
+  <text><![CDATA[<b>Internet</b>]]></text> 
+  </component>
+<component id="ID_txt06">
+  <text><![CDATA[En el destino, los paquetes pueden volver a armarse según su número de secuencia.]]></text> 
+  </component>
+<component id="ID_box1">
+  <text><![CDATA[Dirección de origen]]></text> 
+  </component>
+<component id="ID_box2">
+  <text><![CDATA[Dirección de destino]]></text> 
+  </component>
+<component id="ID_box3">
+  <text><![CDATA[Número de secuencia]]></text>
+  </component>
+  
+  <component id="ID_footer">
+  <text><![CDATA[<i><b>La capa de red utiliza cuatro procesos básicos:</b><br/><br/><li>Direccionamiento de dispositivos finales</li><li>Encapsulación</li><li>Enrutamiento</li><li>Desencapsulación</li></i>]]></text>
+  </component>
+</textcomponents>

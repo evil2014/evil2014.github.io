@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>3.2.4.1 Beneficios del uso de un modelo en capas</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_3.2.4.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolos y estándares de red</h1>
+        <h2>Modelos de referencia</h2>
+      </div>
+      <div id="content">
+<p>Los modelos en capas, como el modelo TCP/IP, con frecuencia se utilizan para ayudar a visualizar la interacción entre diversos protocolos. Un modelo en capas describe el funcionamiento de los protocolos que se produce en cada capa y la interacción de los protocolos con las capas que se encuentran por encima y por debajo de ellas.</p>
+<p></p>
+<p>Hay beneficios por el uso de un modelo en capas para describir protocolos de red y operaciones. Uso de un modelo en capas:</p>
+<p>
+<ul>
+<li>Ayuda en el diseño de protocolos, ya que los protocolos que operan en una capa específica tienen información definida según la cual actúan, y una interfaz definida para las capas superiores e inferiores. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Fomenta la competencia, ya que los productos de distintos proveedores pueden trabajar en conjunto. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Evita que los cambios en la tecnología o en las capacidades de una capa afecten otras capas superiores e inferiores. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Proporciona un lenguaje común para describir las funciones y capacidades de redes.</li>
+</ul>
+</p>
+<p></p>
+<p>Existen dos tipos básicos de modelos de redes: </p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Modelo de protocolo:</b> este modelo coincide con precisión con la estructura de una suite de protocolos determinada. El conjunto jerárquico de protocolos relacionados en una suite representa típicamente toda la funcionalidad requerida para interconectar la red humana con la red de datos. El modelo TCP/IP es un modelo de protocolo, porque describe las funciones que tienen lugar en cada capa de protocolos dentro de una suite TCP/IP. </li>
+</ul>
+</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Modelo de referencia:</b> este modelo es coherente con todos los tipos de servicios y protocolos de red al describir qué es lo que se debe hacer en una capa determinada, pero sin regir la forma en que se debe lograr. Un modelo de referencia no está pensado para ser una especificación de implementación ni para proporcionar un nivel de detalle suficiente para definir de forma precisa los servicios de la arquitectura de red. El objetivo principal de un modelo de referencia es ayudar a lograr un mejor entendimiento de las funciones y procesos involucrados.</li>
+</ul>
+</p>
+<p></p>
+<p>El modelo OSI es el modelo de referencia de internetwork más conocido. Se usa para diseño de redes de datos, especificaciones de funcionamiento y resolución de problemas. </p>
+<p></p>
+<p>Como se muestra en la ilustración, los modelos TCP/IP y OSI son los modelos principales que se utilizan al hablar de funcionalidad de red. Los diseñadores de protocolos, servicios o dispositivos de red pueden crear sus propios modelos para representar sus productos. Por último, se solicita a los diseñadores que se comuniquen con la industria asociando sus productos o servicios con el modelo OSI, el modelo TCP/IP o ambos.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

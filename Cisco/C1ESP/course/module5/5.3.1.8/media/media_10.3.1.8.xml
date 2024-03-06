@@ -1,0 +1,28 @@
+﻿<textcomponents>
+
+	<component id="ID_title">
+		<text><![CDATA[<b>Búfer de memoria basado en puerto y búfer de memoria compartida</b>]]></text>
+	</component>
+	
+	<component id='ID_table'>
+		<text><![CDATA[
+						<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4' class="mtable">
+							<tr class="mtable_top">
+								<td colspan='2' bgcolor='#0E6360' class="mtable_top"><font size='1' color='#434321'><span style="color:#DAE17A">.</span></font></td>
+							</tr>
+							
+							<tr>
+								<td bgcolor="#EFF8F7" valign="top" class="wider" width="135"><font color='#393536'>Memoria basada en puerto</font></td>
+								<td bgcolor="#EFF8F7" valign="top"><font color='#393536'>En el búfer de memoria basado en puerto, las tramas se almacenan en colas conectadas a puertos de entrada y de salida específicos.</font></td>
+							</tr>
+							<tr>
+								<td bgcolor='#FFFFFF' valign="top"><font color='#393536'>Memoria compartida</font></td>
+								<td bgcolor='#FFFFFF' valign="top"><font color='#393536'>El búfer de memoria compartida deposita todas las tramas en un búfer de memoria común que comparten todos los puertos del switch.</font></td>
+							</tr>
+						</table>
+					]]>
+		</text>
+	</component>
+
+
+</textcomponents>

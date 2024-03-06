@@ -1,0 +1,180 @@
+﻿<textcomponents> <!--slide 1-->
+<component id="ID_s1_title">
+<text><![CDATA[<b>Campos BPDU</b>]]></text>
+</component> <!--slide 1 table-->
+
+<component id='ID_s1_table'>
+<text><![CDATA[<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4'>
+	<tr>
+		<td colspan='3' bgcolor='#0E6360' class="mtable_top"><font size='2' color='#0E6360'>.</font></td>
+	</tr>
+	<tr class="br">
+		<td bgcolor='#077A77' width='90'><font color='#FFFFFF'><b><span class="br_fl">Número de campo</span></b></font></td>
+		<td bgcolor='#077A77' width='90'><font color='#FFFFFF'><b><span class="br_fl">Bytes</span></b></font></td>
+		<td bgcolor='#077A77'><font color='#FFFFFF'><b>Campo</b></font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#EFF8F7' rowspan='4' style="border-bottom:3px solid #98D3D1 !important;"><span class="spacer">1-4</span></td>
+		<td bgcolor='#FFFFFF' style="border-bottom:3px solid #98D3D1 !important; border-right:3px solid #98D3D1 !important;border-left:3px solid #98D3D1 !important;">2</td>
+		<td bgcolor='' glow='true' glowcolor='#00A1E3' id="td1" class="tdOver">ID de protocolo</td>
+	</tr>
+	<tr>
+		<td bgcolor='#FFFFFF' style="border-bottom:3px solid #98D3D1 !important; border-right:3px solid #98D3D1 !important;border-left:3px solid #98D3D1 !important;">1</td>
+		<td bgcolor='#99D5EF' glow='true' glowcolor='#00A1E3' id="td2" class="tdFill">Versión</td>
+	</tr>
+	<tr>
+		<td bgcolor='#FFFFFF' style="border-bottom:3px solid #98D3D1 !important; border-right:3px solid #98D3D1 !important;border-left:3px solid #98D3D1 !important;">1</td>
+		<td bgcolor='#99D5EF' glow='true' glowcolor='#00A1E3' id="td3" class="tdFill">Tipo de mensaje</td>
+	</tr>
+	<tr>
+		<td bgcolor='#FFFFFF' style="border-bottom:3px solid #98D3D1 !important; border-right:3px solid #98D3D1 !important;border-left:3px solid #98D3D1 !important;">1</td>
+		<td bgcolor='#99D5EF' glow='true' glowcolor='#00A1E3' id="td4" class="tdFill">Indicadores</td>
+	</tr>
+	<tr>
+		<td bgcolor='#EFF8F7' rowspan='4' style="border-bottom:3px solid #98D3D1 !important;"><span class="spacer">5 a 8</span></td>
+		<td bgcolor='#FFFFFF' style="border-bottom:3px solid #98D3D1 !important; border-right:3px solid #98D3D1 !important;border-left:3px solid #98D3D1 !important;">8</td>
+		<td bgcolor='#99D5EF' glow='true' glowcolor='#00A1E3' id="td5" class="tdFill">ID de raíz</td>
+	</tr>
+	<tr>
+		<td bgcolor='#FFFFFF' style="border-bottom:3px solid #98D3D1 !important; border-right:3px solid #98D3D1 !important;border-left:3px solid #98D3D1 !important;">4</td>
+		<td bgcolor='#99D5EF' glow='true' glowcolor='#00A1E3' id="td6" class="tdFill">Costo de la ruta</td>
+	</tr>
+	<tr>
+		<td bgcolor='#FFFFFF' style="border-bottom:3px solid #98D3D1 !important; border-right:3px solid #98D3D1 !important;border-left:3px solid #98D3D1 !important;">8</td>
+		<td bgcolor='#99D5EF' glow='true' glowcolor='#00A1E3' id="td7" class="tdFill">ID de puente</td>
+	</tr>
+	<tr>
+		<td bgcolor='#FFFFFF' style="border-bottom:3px solid #98D3D1 !important; border-right:3px solid #98D3D1 !important;border-left:3px solid #98D3D1 !important;">2</td>
+		<td bgcolor='#99D5EF' glow='true' glowcolor='#00A1E3' id="td8" class="tdFill">ID de puerto</td>
+	</tr>
+	<tr>
+		<td bgcolor='#EFF8F7' rowspan='4'><span class="spacer">9 a 12</span></td>
+		<td bgcolor='#FFFFFF' style="border-bottom:3px solid #98D3D1 !important; border-right:3px solid #98D3D1 !important;border-left:3px solid #98D3D1 !important;">2</td>
+		<td bgcolor='#99D5EF' glow='true' glowcolor='#00A1E3' id="td9" class="tdFill">Antigüedad del mensaje</td>
+	</tr>
+	<tr>
+		<td bgcolor='#FFFFFF' style="border-bottom:3px solid #98D3D1 !important; border-right:3px solid #98D3D1 !important;border-left:3px solid #98D3D1 !important;">2</td>
+		<td bgcolor='#99D5EF' glow='true' glowcolor='#00A1E3' id="td10" class="tdFill">Antigüedad máxima</td>
+	</tr>
+	<tr>
+		<td bgcolor='#FFFFFF' style="border-bottom:3px solid #98D3D1 !important; border-right:3px solid #98D3D1 !important;border-left:3px solid #98D3D1 !important;">2</td>
+		<td bgcolor='#99D5EF' glow='true' glowcolor='#00A1E3' id="td11" class="tdFill">Tiempo de saludo</td>
+	</tr>
+	<tr>
+		<td bgcolor='#FFFFFF' style="border-bottom:3px solid #98D3D1 !important; border-right:3px solid #98D3D1 !important;border-left:3px solid #98D3D1 !important;">2</td>
+		<td bgcolor='#99D5EF' glow='true' glowcolor='#00A1E3' id="td12" class="tdFill">Retraso de envío</td>
+	</tr>
+</table>]]></text>
+</component> <!--end slide 1 table-->
+
+<component id="ID_btn01_title">
+<text><![CDATA[<b>ID de protocolo</b>]]></text>
+</component>
+
+<component id="ID_btn01_body">
+<text><![CDATA[El campo ID de protocolo indica el tipo de protocolo que se utiliza. Este campo contiene el valor cero.]]></text>
+</component>
+
+
+<component id="ID_btn02_title">
+<text><![CDATA[<b>Versión</b>]]></text>
+</component>
+
+<component id="ID_btn02_body">
+<text><![CDATA[El campo Versión indica la versión del protocolo. Este campo contiene el valor cero.]]></text>
+</component>
+
+
+<component id="ID_btn03_title">
+<text><![CDATA[<b>Tipo de mensaje</b>]]></text>
+</component>
+
+<component id="ID_btn03_body">
+<text><![CDATA[El campo Tipo de mensaje indica el tipo de mensaje. Este campo contiene el valor cero.]]></text>
+</component>
+
+
+<component id="ID_btn04_title">
+<text><![CDATA[<b>Indicadores</b>]]></text>
+</component>
+
+<component id="ID_btn04_body">
+<text><![CDATA[El campo Indicadores incluye uno de los siguientes:<br/><textformat blockindent='-14'><ul><li>Bit de cambio de topología (TC), que indica una modificación en la topología en caso de que se haya interrumpido una ruta al puente raíz.</li><li>Bit de acuse de recibo de cambio de topología (TCA), que se establece para confirmar la recepción de un mensaje de configuración con el conjunto de bits de TC.</li></ul><textformat>]]></text>
+</component>
+
+
+<component id="ID_btn05_title">
+<text><![CDATA[<b>ID de raíz</b>]]></text>
+</component>
+
+<component id="ID_btn05_body">
+<text><![CDATA[El campo ID de raíz señala el puente raíz indicando su prioridad de 2&nbsp;bytes seguida de la ID de dirección MAC de 6&nbsp;bytes. Cuando un switch arranca, la ID de raíz es la misma que la ID de puente. Sin embargo, a medida que se lleva a cabo el proceso de elección, la ID de puente más baja reemplaza la ID de raíz local para identificar el switch de puente raíz.]]></text>
+</component>
+
+
+<component id="ID_btn06_title">
+<text><![CDATA[<b>Costo de la ruta</b>]]></text>
+</component>
+
+<component id="ID_btn06_body">
+<text><![CDATA[El campo Costo de la ruta indica el costo de la ruta desde el puente que envía el mensaje de configuración al puente raíz. El campo costo de la ruta es actualizado por cada switch de la ruta al puente raíz.]]></text>
+</component>
+
+
+<component id="ID_btn07_title">
+<text><![CDATA[<b>ID de puente</b>]]></text>
+</component>
+
+<component id="ID_btn07_body">
+<text><![CDATA[El campo ID de puente indica el ID de dirección MAC y de prioridad del puente que envía el mensaje. Esta etiqueta permite que el puente raíz identifique dónde se originó el BPDU, así como las rutas múltiples desde el switch hasta el puente raíz. Cuando el puente raíz recibe más de un BPDU de un switch con distintos costos de ruta, reconoce que existen dos rutas diferentes y utiliza aquella ruta con el menor costo.]]></text>
+</component>
+
+
+<component id="ID_btn08_title">
+<text><![CDATA[<b>ID de puerto</b>]]></text>
+</component>
+
+<component id="ID_btn08_body">
+<text><![CDATA[El campo ID de puerto indica el número de puerto desde el cual se envía el mensaje de configuración. Este campo permite que los bucles generados por puentes múltiples conectados sean detectados y corregidos.]]></text>
+</component>
+
+
+<component id="ID_btn09_title">
+<text><![CDATA[<b>Antigüedad del mensaje</b>]]></text>
+</component>
+
+<component id="ID_btn09_body">
+<text><![CDATA[El campo Antigüedad del mensaje indica la cantidad de tiempo que ha transcurrido desde que la raíz envió el mensaje de configuración en el cual se basa el mensaje de configuración actual.]]></text>
+</component>
+
+
+<component id="ID_btn10_title">
+<text><![CDATA[<b>Antigüedad máxima</b>]]></text>
+</component>
+
+<component id="ID_btn10_body">
+<text><![CDATA[El campo Antigüedad máxima indica el momento en que el mensaje de configuración actual debe ser eliminado. Una vez que la antigüedad del mensaje alcanza la antigüedad máxima, el switch elimina la configuración actual e inicia una nueva elección para determinar un puente raíz nuevo, ya que asume que ha sido desconectado del mismo. Este valor está predeterminado en 20 segundos, pero puede ajustarse a intervalos entre 6 y 40 segundos.]]></text>
+</component>
+
+
+<component id="ID_btn11_title">
+<text><![CDATA[<b>Tiempo de saludo</b>]]></text>
+</component>
+
+<component id="ID_btn11_body">
+<text><![CDATA[El campo Tiempo de saludo indica el tiempo entre los mensajes de configuración del puente raíz. El intervalo define la cantidad de tiempo que el puente raíz espera para enviar BPDU de mensajes de configuración. Este valor está predeterminado en 2 segundos pero puede ajustarse a intervalos entre 1 y 10 segundos.]]></text>
+</component>
+
+
+<component id="ID_btn12_title">
+<text><![CDATA[<b>Retraso de envío</b>]]></text>
+</component>
+
+<component id="ID_btn12_body">
+<text><![CDATA[El campo Retraso de envío indica la cantidad de tiempo que los puentes deben esperar antes de sufrir la transición a un nuevo estado luego de un cambio en la topología. Si la transición de un puente es muy repentina, es posible que no todos los enlaces de la red estén preparados para cambiar su estado, lo que puede generar bucles. Este valor es igual a 15 segundos de manera predeterminada para cada estado pero puede ajustarse a intervalos entre 4 y 30 segundos.]]></text>
+</component> <!--slide 2-->
+<component id="ID_s2_title">
+<text><![CDATA[<b>BPDU de ejemplo</b>]]></text>
+</component>
+
+</textcomponents>

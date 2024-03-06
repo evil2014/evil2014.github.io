@@ -1,0 +1,43 @@
+﻿<textcomponents>
+
+<component id="ID_title">
+  <text><![CDATA[<b><font face='_typewriter'>debug ppp</font> Parámetros de comandos</b>]]></text> 
+</component>
+
+<component id="ID_table">
+<text><![CDATA[<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4' class="mtable">
+	<tr>
+		<td colspan='2' bgcolor='#0E6360' class="mtable_top"><font size='1' color='#0E6360'><span style="color:#98D3D1">.</span></font></td>
+	</tr>	
+	<tr>
+<td bgcolor='#077A77' class="mtitle width"><font color='#ffffff'><b>Parámetro</b></font></td>
+<td bgcolor='#077A77' class="mtitle"><font color='#ffffff'><b>Uso</b></font></td>
+</tr>
+
+	<tr>
+		<td bgcolor='#EFF8F7' glow='false' glowcolor='#FCA92E' valign='top' type='dynamic'><font face='_typewriter'><b>Paquete</b></font></td>
+		<td bgcolor='#EFF8F7' glow='false' glowcolor='#FCA92E' valign='top' type='dynamic'>Muestra los paquetes PPP enviados y recibidos. (Este comando muestra las descargas de los paquetes de bajo nivel).</td>
+	</tr>
+	<tr>
+		<td bgcolor='#ffffff' glow='false' glowcolor='#FCA92E' valign='top' type='dynamic'><font face='_typewriter'><b>negociación</b></font></td>
+		<td bgcolor='#ffffff' glow='false' glowcolor='#FCA92E' valign='top' type='dynamic'>Muestra los paquetes PPP enviados durante el inicio de PPP, cuando se negocian las opciones de PPP.</td>
+	</tr>
+	<tr>
+		<td bgcolor='#EFF8F7' glow='false' glowcolor='#FCA92E' valign='top' type='dynamic'><font face='_typewriter'><b>error</b></font></td>
+		<td bgcolor='#EFF8F7' glow='false' glowcolor='#FCA92E' valign='top' type='dynamic'>Muestra los errores de protocolo y las estadísticas de error relacionadas con la negociación y operación de la conexión PPP.</td>
+	</tr>
+	<tr>
+		<td bgcolor='#ffffff' glow='false' glowcolor='#FCA92E' valign='top' type='dynamic'><font face='_typewriter'><b>Autenticación</b></font></td>
+		<td bgcolor='#ffffff' glow='false' glowcolor='#FCA92E' valign='top' type='dynamic'>Muestra mensajes de protocolo de autenticación, incluidos los intercambios de paquetes del protocolo de autenticación de señales (CHAP, Challenge Authentication Protocol) y del protocolo de autenticación de contraseña (PAP, Password Authentication Protocol).</td>
+	</tr>
+	<tr>
+		<td bgcolor='#EFF8F7' glow='false' glowcolor='#FCA92E' valign='top' type='dynamic'><font face='_typewriter'><b>Compresión</b></font></td>
+		<td bgcolor='#EFF8F7' glow='false' glowcolor='#FCA92E' valign='top' type='dynamic'>Muestra información específica para el intercambio de conexiones PPP mediante MPPC. Este comando es útil para obtener información sobre los números de secuencias de los paquetes incorrectos cuando la compresión MPPC se encuentra habilitada.</td>
+	</tr>
+	<tr>
+		<td bgcolor='#ffffff' glow='false' glowcolor='#FCA92E' valign='top' type='dynamic'><font face='_typewriter'><b>cbcp</b></font></td>
+		<td bgcolor='#ffffff' glow='false' glowcolor='#FCA92E' valign='top' type='dynamic'>Muestra los errores de protocolo y las estadísticas relacionadas con las negociaciones de conexión PPP mediante el uso de MSCB.</td>
+	</tr>
+</table>]]></text>
+</component>
+</textcomponents>

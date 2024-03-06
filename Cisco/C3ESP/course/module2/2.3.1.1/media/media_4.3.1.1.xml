@@ -1,0 +1,54 @@
+﻿<textcomponents>
+<component id="ID_title">
+<text><![CDATA[<b>Configuración de un switch de manera predeterminada</b>]]></text>
+</component>
+
+<component id="ID_table">
+  <text><![CDATA[<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4'>
+	<tr>
+		<td colspan='2' bgcolor='#0E6360' class="mtable_top"><font size='1' color='#0E6360'><span style="color:#98D3D1">.</span></font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#077A77'  valign="top"><font color='#ffffff'><b>Característica</b></font></td>
+		<td bgcolor='#077A77'  valign="top"><font color='#ffffff'><b>Configuración predeterminada</b></font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#EFF8F7' valign="top"><font color='#393536'>Estado habilitado</font></td>
+		<td bgcolor='#EFF8F7' valign="top"><font color='#393536'>Habilitado en la VLAN 1</font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#ffffff' valign="top"><font color='#393536'>Modo de árbol de expansión</font></td>
+		<td bgcolor='#ffffff' valign="top"><font color='#393536'>PVST+ <br/>(PVST+ rápido y MSTP están deshabilitados)</font>
+		</td>
+	</tr>
+	<tr>
+	    <td bgcolor='#EFF8F7' valign="top"><font color='#393536'>Prioridad de switch</font></td>
+		<td bgcolor='#EFF8F7' valign="top"><font color='#393536'>32768</font></td>
+	</tr>
+	
+		<tr>
+	    <td bgcolor='#ffffff' valign="top"><font color='#393536'>Prioridad de puerto de árbol de expansión <br/>(configurable por interfaz)</font></td>
+		<td bgcolor='#ffffff' valign="top"><font color='#393536'>128</font></td>
+	</tr>
+	<tr>
+	    <td bgcolor='#EFF8F7' valign="top"><font color='#393536'>Costo de puerto de árbol de expansión <br/>(configurable por interfaz)</font></td>
+		<td bgcolor='#EFF8F7' valign="top"><font color='#393536'>1000 Mb/s: 4<br/>100 Mb/s: 19<br/>10 Mb/s: 100</font></td>
+	</tr>
+	<tr>
+	    <td bgcolor='#ffffff' valign="top"><font color='#393536'>Prioridad de puerto de VLAN de árbol de expansión <br/>(configurable por VLAN)</font></td>
+		<td bgcolor='#ffffff' valign="top"><font color='#393536'>128</font></td>
+	</tr>
+	<tr>
+	    <td bgcolor='#EFF8F7' valign="top"><font color='#393536'>Costo de puerto de VLAN de árbol de expansión <br/>(configurable por VLAN)</font></td>
+		<td bgcolor='#EFF8F7' valign="top"><font color='#393536'>1000 Mb/s: 4<br/>100 Mb/s: 19<br/>10 Mb/s: 100</font></td>
+	</tr>
+	<tr>
+	    <td bgcolor='#ffffff' valign="top"><font color='#393536'>Temporizadores de árbol de expansión</font></td>
+		<td bgcolor='#ffffff' valign="top"><font color='#393536'>Tiempo de saludo: 2&nbsp;segundos<br/>Tiempo de retraso de reenvío: 15&nbsp;segundos<br/>Tiempo máximo de vencimiento: 20&nbsp;segundos<br/>Conteo de espera de transmisión: 6&nbsp;BPDU</font></td>
+	</tr>
+	
+	
+	</table>]]></text>
+  </component>  
+  
+</textcomponents>

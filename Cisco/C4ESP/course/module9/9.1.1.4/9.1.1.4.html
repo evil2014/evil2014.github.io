@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.1.1.4 Establecimiento de una línea de base de red (cont.)</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.1.1.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resolución de problemas mediante un enfoque sistemático</h1>
+        <h2>Documentación de red</h2>
+      </div>
+      <div id="content">
+<p>Es importante planificar cuidadosamente la línea de base de rendimiento de la red inicial, ya que establece el marco para medir los efectos de los cambios de la red y los esfuerzos posteriores para resolver problemas. </p>
+<p></p>
+<p>Para planificar la primera línea de base, siga estos pasos:</p>
+<p></p>
+<p>
+<b>Paso 1. </b>Determine qué tipos de datos se deben reunir.</p>
+<p></p>
+<p>Al establecer la línea de base inicial, comience por seleccionar algunas variables que representen a las políticas definidas. Si se seleccionan demasiados puntos de datos, la cantidad de datos puede ser abrumadora, lo que dificulta el análisis de los datos reunidos. Comience de manera simple y realice ajustes a lo largo del proceso. Para comenzar, algunas medidas útiles son el uso de interfaz y el uso de CPU. En la figura 1, se muestran capturas de pantalla de los datos de uso de CPU, según los muestra el software de servicios de aplicaciones de área amplia (WAAS) de Cisco.</p>
+<p></p>
+<p>
+<b>Paso 2. </b>Identifique los dispositivos y los puertos de interés.</p>
+<p></p>
+<p>Use la topología de la red para identificar aquellos dispositivos y puertos para los que se deben medir los datos de rendimiento. Los dispositivos y los puertos de interés incluyen:</p>
+<p>
+<ul>
+<li>Puertos de dispositivos de red que se conectan a otros dispositivos de red</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Servidores</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Usuarios principales</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Cualquier otro elemento que se considere fundamental para las operaciones</li>
+</ul>
+</p>
+<p></p>
+<p>Un diagrama de topología lógica de la red puede ser útil en la identificación de los dispositivos y los puertos principales que se van a supervisar. Por ejemplo, en la figura 2, el administrador de red resaltó los dispositivos y los puertos de interés que se supervisarán durante la prueba de la línea de base. Los dispositivos de interés incluyen la PC1 (la terminal de administración) y el SRV1 (el servidor web/TFTP). Los puertos de interés incluyen aquellos puertos en los routers R1, R2 y R3 que se conectan a otros routers o a los switches y, en el R2, el puerto que se conecta al SRV1 (G0/0). </p>
+<p></p>
+<p>Al reducir la lista de puertos que se sondean, los resultados son concisos, y se minimiza la carga de administración de la red. Recuerde que una interfaz en un router o un switch puede ser una interfaz virtual, como una interfaz virtual de switch (SVI).</p>
+<p></p>
+<p>
+<b>Paso 3. </b>Determine la duración de la línea de base.</p>
+<p></p>
+<p>Para establecer una imagen típica de la red, la duración y la información de la línea de base que se reúne deben ser suficientes. Es importante que se monitoreen las tendencias diarias del tráfico de la red. También es importante monitorear las tendencias que se producen durante un período más prolongado, como semanas o meses. Por este motivo, al capturar datos para su análisis, el período especificado debe tener, como mínimo, una duración de siete días.</p>
+<p></p>
+<p>En la figura 3, se muestran ejemplos de varias capturas de pantalla de las tendencias del uso de CPU obtenidas durante un día, una semana, un mes o un año. En este ejemplo, observe que las tendencias de la semana de trabajo son demasiado cortas para revelar el pico de uso recurrente que se produce el sábado por la noche, cada fin de semana, cuando una operación de copia de seguridad de la base de datos consume ancho de banda de la red. Este patrón recurrente se revela en la tendencia mensual. Una tendencia anual, como la que se muestra en el ejemplo, puede ser demasiado prolongada para proporcionar detalles significativos sobre el rendimiento de línea de base. Sin embargo, puede ayudar a identificar patrones a largo plazo que se deben analizar en profundidad. Generalmente, las líneas de base no se deben extender durante más de seis semanas, salvo que se deban medir tendencias específicas a largo plazo. Por lo general, una línea de base de dos a cuatro semanas es adecuada.</p>
+<p></p>
+<p>Las mediciones de una línea de base no se deben realizar durante momentos de patrones de tráfico únicos, dado que los datos proporcionarían una representación imprecisa de las operaciones normales de la red. El análisis de línea de base de la red se debe realizar periódicamente. De manera rotativa, realice un análisis anual de toda la red o analice la línea de base de diferentes secciones de la red. Para entender la forma en que el crecimiento y otros cambios afectan la red, el análisis se debe realizar periódicamente.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

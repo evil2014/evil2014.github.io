@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.2.2.5 Control del flujo de TCP: prevención de congestiones</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.2.2.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>TCP y UDP</h1>
+        <h2>Confiabilidad y control del flujo</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Reducción del tamaño de la ventana</b>
+</p>
+<p>Otra forma de controlar el flujo de datos es utilizar tamaños de ventana dinámicos. Cuando los recursos de la red son limitados, TCP puede reducir el tamaño de la ventana para lograr que los segmentos recibidos sean reconocidos con mayor frecuencia. Esto reduce de forma efectiva la velocidad de transmisión porque el origen espera que se de acuse de recibo de los datos con más frecuencia.</p>
+<p></p>
+<p>El host receptor envía el valor del tamaño de la ventana al host emisor para indicar la cantidad de bytes que puede recibir. Si el destino necesita disminuir la velocidad de comunicación debido, por ejemplo, a una memoria de búfer limitada, puede enviar un valor más pequeño del tamaño de la ventana al origen como parte del acuse de recibo.</p>
+<p></p>
+<p>Como se muestra en la ilustración, si un host receptor está congestionado, puede responder al host emisor con un segmento que especifique un tamaño reducido de la ventana. En esta ilustración, se muestra que se produjo la pérdida de uno de los segmentos. El receptor cambió el campo de la ventana en el encabezado TCP de los segmentos devueltos en esta conversación de 3000 a 1500. Esto hizo que el emisor redujera el tamaño de la ventana a 1500. </p>
+<p></p>
+<p>Después de un período de transmisión sin pérdidas de datos ni recursos limitados, el receptor comienza a aumentar el campo de la ventana, lo que reduce la sobrecarga en la red, ya que se deben enviar menos acuses de recibo. El tamaño de la ventana sigue aumentando hasta que se produce la pérdida de datos, lo que provoca que disminuya el tamaño de la ventana.</p>
+<p></p>
+<p>Este aumento y disminución dinámicos del tamaño de la ventana es un proceso continuo en TCP. En redes altamente eficaces, los tamaños de la ventana pueden ser muy grandes, porque no se pierden datos. En redes en las que la infraestructura subyacente está bajo presión, es probable que el tamaño de la ventana se mantenga pequeño.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

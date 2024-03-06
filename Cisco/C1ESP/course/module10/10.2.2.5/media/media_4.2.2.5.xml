@@ -1,0 +1,77 @@
+﻿<textcomponents>
+
+<component id="ID_SC_title">
+<text><![CDATA[<b>Uso del comando nslookup <font face="_typewriter">nslookup</font></b>]]></text>
+</component>
+
+
+<!--Syntax Checker Button Text-->
+<component id="ID_sc_reset">
+<text><![CDATA[Restablecer]]></text>
+</component>
+
+<component id="ID_sc_showme">
+<text><![CDATA[Mostrar]]></text>
+</component>
+
+<component id="ID_sc_showall">
+<text><![CDATA[Mostrar todo]]></text>
+</component>
+<!--End Syntax Checker Button Text-->
+
+
+<!--Syntax Checker Body Text-->
+<component id="ID_SC" fontFace='Courier New' fontSize="10">
+
+<feedback id="fb"><![CDATA[<span><b><font size = '10' face="Arial" color="#0000FF" class="font9px">***Debe introducir el comando exacto y completo.***</font></b></span>]]></feedback>		
+
+<existingcommands style="padding-bottom:0px !important;"><![CDATA[<font size = '10' face="Arial"><b>Introduzca el comando “nslookup” para iniciar una consulta manual de los servidores de nombres.</b></font><br><br><dnt>Microsoft Windows [Version 6.1.7601]<br>Copyright (c) 2009 Microsoft Corporation.  All rights reserved.</dnt><br>]]></existingcommands>
+
+<command prompt="c:\&gt;" id="cmd1" node="start">
+<correctresponse id="cr1" ignoreCase = 'true'><![CDATA[nslookup]]></correctresponse>
+<deviceresponse id="dr1"><![CDATA[<font size='10'>Default Server:  UnKnown<br>Address:  10.10.10.1<br><br></font>]]></deviceresponse>
+<instruction id="ins1"><![CDATA[<font size = '10' face="Arial"><b>El resultado muestra el nombre y la dirección IP del servidor de nombres más cercano. En este caso, el usuario está en una red doméstica detrás de un firewall de router. La dirección es el router.<br> Ahora está en el modo nslookup. Introduzca el nombre de dominio “www.cisco.com”.</b></font>]]></instruction> 
+</command>
+
+<command prompt="&gt;" id="cmd2">
+<correctresponse id="cr2" ignoreCase = 'true'><![CDATA[www.cisco.com]]></correctresponse>
+<deviceresponse id="dr2"><![CDATA[<font size='10'>Server:  e144.dscb.akamaiedge.net<br>Addresses:  2600:1400:1:1:8500::90<br>          2600:1400:1:1:8200::90<br>          2600:1400:1:1:8100::90<br>          23.67.208.170<br>Aliases:  www.cisco.com<br>          www.cisco.com.akadns.net<br>          wwwds.cisco.com.edgekey.net<br>          wwwds.cisco.com.edgekey.net.globalredir.akadns.net<br><br><br></font>]]></deviceresponse>
+<instruction id="ins2"><![CDATA[<font size = '10' face="Arial"><b>El resultado enumera todas las direcciones que hay actualmente en la base de datos del servidor “e144”. Observe que también se enumeran las direcciones IPv6. Además, se muestran varios alias que resolverán en “www.cisco.com”.<br> Introduzca el comando 'exit' para salir del modo nslookup y volver a la línea de comandos de Windows.</b></font>]]></instruction> 
+</command>
+
+<command prompt="&gt;" id="cmd3">
+<correctresponse id="cr3" ignoreCase = 'true'><![CDATA[exit]]></correctresponse>
+<deviceresponse id="dr3"><![CDATA[<span></span>]]></deviceresponse>
+<instruction id="ins3"><![CDATA[<font size = '10' face="Arial"><b>Puede consultar directamente los servidores DNS con solo agregar el nombre de dominio al comando 'nslookup'. Introduzca “nslookup www.google.com”.</b></font>]]></instruction> 
+</command>
+
+<command prompt="c:\&gt;" id="cmd4">
+<correctresponse id="cr4" ignoreCase = 'true'><![CDATA[nslookup www.google.com]]></correctresponse>
+<deviceresponse id="dr4"><![CDATA[<font size='10'>Server:  UnKnown<br>Address:  10.10.10.1<br><br>Non-authoritative answer:<br>Name:    www.google.com<br>Addresses:  2001:4860:4002:802::1014<br>          74.125.227.80<br>          74.125.227.84<br>          74.125.227.83<br>          74.125.227.82<br>          74.125.227.81<br><br><br>c:\&gt;</font>]]></deviceresponse>
+<instruction id="ins4"><![CDATA[<font size = '10' face="Arial"><b>-------------------------------<br>Ahora está en una ubicación diferente en un equipo Linux. El comando nslookup es el mismo.<br>Introduzca el comando “nslookup” para iniciar una consulta manual de los servidores de nombres.</b></font>]]></instruction> 
+</command>
+
+<command prompt="user@cisconetacad$" id="cmd5">
+<correctresponse id="cr5" ignoreCase = 'true'><![CDATA[nslookup]]></correctresponse>
+<deviceresponse id="dr5"><![CDATA[<font size='10'>Server:        127.0.1.1<br>Address:    127.0.1.1#53<br><br>Non-authoritative answer:<br>www.cisco.com    canonical name = www.cisco.com.akadns.net.<br>www.cisco.com.akadns.net    canonical name = wwwds.cisco.com.edgekey.net.<br>wwwds.cisco.com.edgekey.net    canonical name = wwwds.cisco.com.edgekey.net.globalredir.akadns.net.<br>wwwds.cisco.com.edgekey.net.globalredir.akadns.net    canonical name = e144.dscb.akamaiedge.net.<br>Name:    e144.dscb.akamaiedge.net<br>Address: 23.60.112.170<br></font>]]></deviceresponse>
+<instruction id="ins5"><![CDATA[<font size = '10' face="Arial"><b>Observe que el resultado es similar al que se obtuvo de la línea de comandos de Windows.<br> Introduzca el comando 'exit' para salir del modo nslookup y volver a la línea de comandos de Linux.<br></b></font>]]></instruction> 
+</command>
+
+<command prompt="&gt;" id="cmd6">
+<correctresponse id="cr6" ignoreCase = 'true'><![CDATA[exit]]></correctresponse>
+<deviceresponse id="dr6"><![CDATA[<span></span>]]></deviceresponse>
+<instruction id="ins6"><![CDATA[<font size = '10' face="Arial"><b><br>Como sucede en Windows, puede consultar directamente los servidores DNS con solo agregar el nombre de dominio al comando 'nslookup'. Introduzca “nslookup www.google.com”.</b></font>]]></instruction> 
+</command>
+
+<command prompt="user@cisconetacad$" id="cmd7" node="end">
+<correctresponse id="cr7" ignoreCase = 'true'><![CDATA[nslookup www.google.com]]></correctresponse>
+<deviceresponse id="dr7"><![CDATA[<font size='10'>Server:        127.0.1.1<br>Address:    127.0.1.1#53<br><br>Non-authoritative answer:<br>Name:    www.google.com<br>Address: 74.125.225.209<br>Name:    www.google.com<br>Address: 74.125.225.210<br>Name:    www.google.com<br>Address: 74.125.225.211<br>Name:    www.google.com<br>Address: 74.125.225.212<br>Name:    www.google.com<br>Address: 74.125.225.208<br><br>user@cisconetacad$<br></font>]]></deviceresponse>
+<instruction id="last"><![CDATA[<font size = '10' face="Arial"><b>Utilizó correctamente el comando nslookup para verificar el estado de los nombres de dominio.</b></font>]]></instruction> 
+</command>
+
+<command prompt=""/>
+
+</component>
+<!--End Syntax Checker Body Text-->
+
+</textcomponents> 

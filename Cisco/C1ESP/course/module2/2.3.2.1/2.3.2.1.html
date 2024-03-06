@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.3.2.1 Configuración de una interfaz virtual de switch</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.3.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Esquemas de direcciones</h1>
+        <h2>Direccionamiento de dispositivos</h2>
+      </div>
+      <div id="content">
+<p>Para acceder al switch de manera remota, se deben configurar una dirección IP y una máscara de subred en la SVI:</p>
+<p>
+<ul>
+<li>
+<b>Dirección IP:</b> junto con la máscara de subred, identifica el dispositivo final en la internetwork de manera exclusiva.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Máscara de subred:</b> determina qué parte de una red más grande utiliza una dirección IP.</li>
+</ul>
+</p>
+<p></p>
+<p>Por el momento, se mantendrá el enfoque en IPv4; más adelante, se explorará IPv6. </p>
+<p></p>
+<p>Pronto aprenderá el sentido detrás de todas estas direcciones IP; por el momento, el objetivo es configurar rápidamente el switch para admitir el acceso remoto. En la ilustración, se muestra el comando para habilitar la conectividad IP del S1 mediante la dirección IP 192.168.10.2:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<span class="cmd">
+<b>interface vlan 1:</b>
+</span> se utiliza para navegar hasta el modo de configuración de interfaz desde el modo de configuración global.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<span class="cmd">
+<b>ip address 192.168.10.2 255.255.255.0:</b>
+</span> configura la dirección IP y la máscara de subred del switch (esta es solo una de muchas combinaciones posibles de una dirección IP y una máscara de subred).</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<span class="cmd">
+<b>no shutdown:</b>
+</span> habilita administrativamente el estado activo de la interfaz.</li>
+</ul>
+</p>
+<p></p>
+<p>Una vez que se configuran estos comandos, el switch tiene todos los elementos IP listos para la comunicación a través de la red. </p>
+<p></p>
+<p>
+<b>Nota:</b> todavía se deben configurar uno o más puertos físicos en el switch, así como las líneas VTY, para completar la configuración que permite la administración remota del switch.</p>
+<p></p>
+<p>Practique la configuración de una interfaz virtual de switch introduciendo comandos en la ilustración.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

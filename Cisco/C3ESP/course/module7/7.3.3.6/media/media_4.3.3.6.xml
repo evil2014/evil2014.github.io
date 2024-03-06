@@ -1,0 +1,59 @@
+﻿<textcomponents> <!--slide 1-->
+	<component id="ID_s1_title">
+		<text><![CDATA[<b>Análisis de una entrada de la tabla de topología</b>]]></text>
+	</component>
+	<component id="ID_s1_txt01">
+	  <text><![CDATA[&lt;resultado omitido&gt;]]></text> 
+	</component>
+	  
+	<component id="ID_s1_txt02">
+	  <text><![CDATA[Indicación de estado pasivo o activo]]></text> 
+	</component>
+	<component id="ID_s1_txt03">
+	  <text><![CDATA[Red destino]]></text> 
+	</component>
+	<component id="ID_s1_txt04">
+	  <text><![CDATA[Cantidad de sucesores]]></text> 
+	</component>
+	<component id="ID_s1_txt05">
+	  <text><![CDATA[Distancia factible]]></text> 
+	</component> <!--slide 2-->	
+	<component id="ID_s2_title">
+		<text><![CDATA[<b>Análisis de una entrada de la tabla de topología</b>]]></text>
+	</component>
+	<component id="ID_s2_txt01">
+	  <text><![CDATA[&lt;resultado omitido&gt;]]></text> 
+	</component>
+	  
+	<component id="ID_s2_txt02">
+	  <text><![CDATA[Dirección del siguiente salto del sucesor]]></text> 
+	</component>
+	<component id="ID_s2_txt03">
+	  <text><![CDATA[Distancia factible]]></text> 
+	</component>
+	<component id="ID_s2_txt04">
+	  <text><![CDATA[Distancia notificada del sucesor (R3)]]></text> 
+	</component>
+	<component id="ID_s2_txt05">
+	  <text><![CDATA[Interfaz de salida para llegar a esta red]]></text> 
+	</component> <!--slide 3-->	
+	<component id="ID_s3_title">
+		<text><![CDATA[<b>Análisis de una entrada de la tabla de topología</b>]]></text>
+	</component>
+	<component id="ID_s3_txt01">
+	  <text><![CDATA[&lt;resultado omitido&gt;]]></text> 
+	</component>
+	  
+	<component id="ID_s3_txt02">
+	  <text><![CDATA[Dirección del siguiente salto del sucesor factible (R1)]]></text> 
+	</component>
+	<component id="ID_s3_txt03">
+	  <text><![CDATA[Distancia factible en caso de que el sucesor factible (R1) fuera el sucesor]]></text> 
+	</component>
+	<component id="ID_s3_txt04">
+	  <text><![CDATA[Distancia notificada del sucesor factible (R1)]]></text> 
+	</component>
+	<component id="ID_s3_txt05">
+	  <text><![CDATA[Interfaz de salida para llegar a esta red]]></text> 
+	</component>
+</textcomponents>

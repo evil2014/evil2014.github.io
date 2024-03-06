@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>3.1.1.1 Puertos serie y paralelos</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_3.1.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Descripción general de conexión serial punto a punto</h1>
+        <h2>Comunicaciones seriales</h2>
+      </div>
+      <div id="content">
+<p>Uno de los tipos de conexiones WAN más comunes es la conexión punto a punto. Como se muestra en la figura 1, las conexiones punto a punto se utilizan para conectar redes LAN a redes WAN de un proveedor de servicios, así como para conectar segmentos LAN dentro de una red empresarial. </p>
+<p></p>
+<p>Una conexión punto a punto de LAN a WAN también se denomina “conexión serial” o “conexión de línea arrendada”. Esto se debe a que las líneas se arriendan de una prestadora de servicios (generalmente, una compañía telefónica) y se las dedica para que las utilice la empresa que arrienda las líneas. Las empresas pagan una conexión continua entre dos sitios remotos, y la línea está continuamente activa y disponible. Las líneas arrendadas son un tipo de acceso WAN que se usa con frecuencia y, generalmente, el precio se basa en el ancho de banda requerido y en la distancia entre los dos puntos conectados.</p>
+<p></p>
+<p>Es importante comprender cómo funciona la comunicación serial punto a punto a través de una línea arrendada para tener un concepto general de cómo funcionan las WAN. </p>
+<p></p>
+<p>Las comunicaciones a través de una conexión serial son un método de transmisión de datos en el que los bits se transmiten en forma secuencial por un único canal. Esto equivale a una tubería con un ancho suficiente para que pase de a una pelota por vez. Pueden entrar varias pelotas en la tubería, pero de a una sola, y solo tienen un punto de salida (el otro extremo de la tubería). Los puertos serie son bidireccionales y a menudo se los denomina “puertos bidireccionales” o “puertos de comunicaciones”. </p>
+<p></p>
+<p>Esto es distinto de las comunicaciones paralelas, en las que los bits se pueden transmitir simultáneamente por varios cables. Como se muestra en la figura 2, en teoría, una conexión paralela transfiere datos ocho veces más rápido que una conexión serial. De acuerdo con esta teoría, una conexión paralela envía 1 byte (8 bits) en el tiempo en que una conexión serial envía un único bit. Sin embargo, las comunicaciones paralelas tienen problemas con el crosstalk a través de los cables, especialmente a medida que la longitud de estos aumenta. El sesgo de reloj también es un problema con las comunicaciones paralelas. El sesgo de reloj ocurre cuando los datos no llegan al mismo tiempo a través de los diferentes cables, lo que crea problemas de sincronización. Por último, la mayoría de las comunicaciones paralelas solo admiten un único sentido: la comunicación saliente del disco duro.</p>
+<p></p>
+<p>En una época, la mayoría de las computadoras incluían puertos serie y paralelos. Los puertos paralelos se utilizaban para conectar impresoras, computadoras y otros dispositivos que requerían un ancho de banda relativamente alto. Los puertos paralelos también se utilizaban entre los componentes internos. Para las comunicaciones externas, los buses serie se utilizaban principalmente para la conversión de señales. Debido a su capacidad bidireccional, la implementación de las comunicaciones seriales es mucho menos costosa. Las comunicaciones seriales usan menos hilos, cables más económicos y menos pines de los conectores.</p>
+<p></p>
+<p>En la mayoría de las computadoras, los puertos paralelos y los puertos serie RS-232 se reemplazaron por las interfaces de bus serial universal (USB), de mayor velocidad. Sin embargo, para las comunicaciones de larga distancia, muchas WAN siguen utilizando la transmisión serial. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

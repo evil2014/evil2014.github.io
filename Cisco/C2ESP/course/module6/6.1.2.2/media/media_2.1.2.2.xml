@@ -1,0 +1,18 @@
+﻿<textcomponents>
+<component id="ID_title">
+<text><![CDATA[<b>Conexión a una red de rutas internas</b>]]></text>
+</component>
+<component id="ID_txt01">
+<text><![CDATA[Red stub]]></text>
+</component>
+<component id="ID_txt02">
+  <text><![CDATA[Red]]></text> 
+  </component>
+<component id="ID_txt03">
+  <text><![CDATA[Router de conexión única]]></text> 
+  </component>
+<component id="ID_txt04">
+  <text><![CDATA[No es necesario utilizar un protocolo de routing dinámico con el R1 para llegar a 172.16.3.0/24.<br/><br/>Simplemente puedo utilizar una ruta estática para alcanzar la red de rutas internas.]]></text> 
+  </component>
+
+</textcomponents>

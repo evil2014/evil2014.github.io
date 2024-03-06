@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>11.1.1.2 Selección de dispositivos para redes pequeñas</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_11.1.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Crear y crecer</h1>
+        <h2>Dispositivos de una red pequeña</h2>
+      </div>
+      <div id="content">
+<p>Para cumplir con los requisitos de los usuarios, incluso las redes pequeñas requieren planificación y diseño. La planificación asegura que se consideren debidamente todos los requisitos, factores de costo y opciones de implementación. </p>
+<p></p>
+<p>Una de las primeras consideraciones de diseño al implementar una red pequeña es el tipo de dispositivos intermediarios que se utilizarán para dar soporte a la red. Al elegir el tipo de dispositivos intermediarios, se deben tener en cuenta varios factores, como se muestra en la ilustración. </p>
+<p></p>
+<p>
+<b>Costo</b>
+</p>
+<p></p>
+<p>Generalmente, el costo es uno de los factores más importantes al seleccionar equipos para la red de una pequeña empresa. El costo de un switch o un router se determina sobre la base de sus capacidades y características. La capacidad del dispositivo incluye la cantidad y los tipos de puertos disponibles, además de la velocidad de backplane. Otros factores que afectan el costo son las capacidades de administración de red, las tecnologías de seguridad incorporadas y las tecnologías de conmutación avanzadas optativas. También se debe tener en cuenta el costo del tendido de cable necesario para conectar cada dispositivo de la red. Otro elemento clave que afecta la consideración del costo es la cantidad de redundancia que se debe incorporar a la red; esto incluye los dispositivos, los puertos por dispositivo y el cableado de cobre o fibra óptica.</p>
+<p></p>
+<p>
+<b>Velocidad y tipos de puertos e interfaces</b>
+</p>
+<p></p>
+<p>Elegir la cantidad y el tipo de puertos en un router o un switch es una decisión fundamental. Las preguntas que se deben hacer incluyen las siguientes: “¿Pedimos los puertos suficientes para satisfacer las necesidades actuales o tenemos en cuenta los requisitos de crecimiento?”, “¿necesitamos una mezcla de velocidades UTP?” y “¿necesitamos puertos UTP y de fibra?”. </p>
+<p></p>
+<p>Las PC más modernas tienen NIC de 1 Gbps incorporadas. Algunos servidores y estaciones de trabajo ya vienen con puertos de 10 Gbps incorporados. Si bien es más costoso, elegir dispositivos de capa 2 que puedan admitir velocidades mayores permite que la red evolucione sin reemplazar los dispositivos centrales. </p>
+<p>
+<b>Capacidad de expansión</b>
+</p>
+<p></p>
+<p>Los dispositivos de red incluyen configuraciones físicas modulares y fijas. Las configuraciones fijas tienen un tipo y una cantidad específica de puertos o interfaces. Los dispositivos modulares tienen ranuras de expansión que proporcionan la flexibilidad necesaria para agregar nuevos módulos a medida que aumentan los requisitos. La mayoría de estos dispositivos incluyen una cantidad básica de puertos fijos además de ranuras de expansión. Existen switches con puertos adicionales especiales para uplinks de alta velocidad optativos. Asimismo, se debe tener el cuidado de seleccionar las interfaces y los módulos adecuados para los medios específicos, ya que los routers pueden utilizarse para conectar diferentes cantidades y tipos de redes. Las preguntas que se deben tener en cuenta incluyen las siguientes: “¿Pedimos dispositivos con módulos que se puedan actualizar?” y “¿qué tipos de interfaces WAN se requieren en los routers (si son necesarias)?”.</p>
+<p></p>
+<p>
+<b>Características y servicios de los sistemas operativos</b>
+</p>
+<p>Según la versión del sistema operativo, los dispositivos de red pueden admitir determinados servicios y características, por ejemplo:</p>
+<p>
+<ul>
+<li>Seguridad</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>QoS</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>VoIP</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Conmutación de Capa 3</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>NAT</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>DHCP</li>
+</ul>
+</p>
+<p></p>
+<p>Los routers pueden ser costosos según las interfaces y las características necesarias. Los módulos adicionales, como la fibra óptica, aumentan el costo de los dispositivos de red.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

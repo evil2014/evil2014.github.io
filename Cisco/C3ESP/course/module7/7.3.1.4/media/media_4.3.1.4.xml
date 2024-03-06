@@ -1,0 +1,43 @@
+﻿<textcomponents>
+<component id="ID_inst">
+  <text><![CDATA[<b>Actividad: Identificar los pasos para establecer adyacencias de vecinos EIGRP</b><br/><br/>El router&nbsp;1 (R1) y el router&nbsp;2 (R2) establecen adyacencias de vecinos. Ordene los mensajes EIGRP arrastrándolos a los campos correctos proporcionados.]]></text> 
+</component>
+<component id="ID_drag01">
+  <text><![CDATA[<span style="padding-left:5px;">Routing del R2 <br>Información</span>]]></text> 
+</component>
+<component id="ID_drag02">
+  <text><![CDATA[<span style="padding-left:5px;">Hola, soy R2.</span>]]></text> 
+</component>
+<component id="ID_drag03">
+  <text><![CDATA[Hola, soy R1.]]></text> 
+</component>
+<component id="ID_drag04">
+  <text><![CDATA[<span style="padding-left:5px;">Routing del R1 <br>Información</span>]]></text> 
+</component>
+
+<component id='ID_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id='ID_CORRECT_BODY'>
+	<text><![CDATA[Colocó correctamente los mensajes de adyacencia de vecinos EIGRP en el orden apropiado.]]></text>
+</component>
+
+
+<component id='ID_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_INCORRECT_BODY'>
+	<text><![CDATA[No colocó correctamente los mensajes de adyacencia de vecinos EIGRP en el orden apropiado. Haga clic en Restablecer y vuelva a intentarlo.
+]]></text>
+</component>
+
+<component id='ID_CHECK'>
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id='ID_RESET'>
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component>
+</textcomponents>

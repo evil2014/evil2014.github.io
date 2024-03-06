@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.3.2.4 Configuración de la ID del router OSPFv3</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.3.2.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de OSPFv3 de área única</h1>
+        <h2>Configuración de OSPFv3</h2>
+      </div>
+      <div id="content">
+<p>Utilice el comando <span class="cmd"><b>ipv6 router ospf </b></span><span class="cmd"><i>id-proceso</i></span> del modo de configuración global para ingresar al modo de configuración del router. La petición de entrada del modo de configuración del router IPv6 es distinta de la petición de entrada del modo de configuración del router IPv4. Utilice el modo de confirmación del router IPv6 para configurar los parámetros globales de OSPFv3, como la asignación de la ID del router OSPF de 32 bits y del ancho de banda de referencia. </p>
+<p></p>
+<p>Los protocolos de routing IPv6 se habilitan en una interfaz, no desde el modo de configuración del router, como sus equivalentes de IPv4. El comando <span class="cmd"><b>network</b></span> del modo de configuración del router IPv4 no existe en IPv6.</p>
+<p></p>
+<p>Al igual que en OSPFv2, el valor <span class="cmd"><i>id-proceso</i></span> es un número entre 1 y 65 535, y lo elige el administrador de red. El valor <span class="cmd"><i>id-proceso</i></span> tiene importancia en el ámbito local, lo que significa que no hace falta que coincida con otros routers OSPF para establecer adyacencias con esos vecinos. </p>
+<p></p>
+<p>OSPFv3 requiere que se asigne una ID de router de 32 bits antes de que se pueda habilitar OSPF en una interfaz. En el diagrama de lógica de la figura 1, se muestra cómo se elige una ID de router. Al igual que OSPFv2, OSPFv3 utiliza lo siguiente:</p>
+<p>
+<ul>
+<li>En primer lugar, una ID de router configurada explícitamente. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Si no se configuró ninguna, el router usa la dirección IPv4 configurada más alta de una interfaz loopback. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Si no se configuró ninguna, el router usa la dirección IPv4 configurada más alta de una interfaz activa. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Si un router no tiene ningún origen de direcciones IPv4, este muestra un mensaje de consola para configurar la ID del router de forma manual.</li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Nota:</b> para mantener la coherencia, los tres routers usan la ID de proceso 10.</p>
+<p></p>
+<p>Como se muestra en la topología de la figura 2, se deben asignar las ID de router indicadas a los routers R1, R2 y R3. El comando <span class="cmd"><b>router-id </b></span><span class="cmd"><i>id-router</i></span> utilizado para asignar una ID de router en OSPFv2 es el mismo comando que se utiliza en OSPFv3. </p>
+<p></p>
+<p>En el ejemplo de la figura 3, se realiza lo siguiente:</p>
+<p>
+<ul>
+<li>Se ingresa al modo de configuración de OSPFv3 del router. Observe que la petición de entrada del router es distinta de la petición de entrada predeterminada del router del modo de protocolo de routing IPv4. Además, observe que apareció un mensaje informativo de consola cuando se accedió al modo de configuración de router OSPFv3. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Se asigna la ID de router 1.1.1.1. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Se ajusta el ancho de banda de referencia a 1 000 000 000 bps (1 Gb/s), debido a que hay enlaces Gigabit Ethernet en la red. Observe el mensaje informativo de consola que indica que se debe configurar este comando en todos los routers en el dominio de routing.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>El comando <span class="cmd"><b>show ipv6 protocols</b></span> se usa para verificar que la ID de proceso OSPFv3 10 utiliza la ID de router 1.1.1.1.</li>
+</ul>
+</p>
+<p></p>
+<p>Utilice el verificador de sintaxis de la figura 4 para configurar los parámetros globales de OSPFv3 en el R2 y el R3.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

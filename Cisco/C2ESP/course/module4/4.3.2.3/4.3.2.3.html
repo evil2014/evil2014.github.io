@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.3.2.3 Ejemplos de interfaces conectadas directamente</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.3.2.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Funcionamiento del router</h1>
+        <h2>Rutas conectadas directamente</h2>
+      </div>
+      <div id="content">
+<p>En los ejemplos de las figuras 1 a 3, se muestran los pasos para configurar y activar las interfaces conectadas al R1. Observe los mensajes informativos de capa 1 y 2 que se generan a medida que se activa cada interfaz.</p>
+<p></p>
+<p>A medida que se agregan interfaces, la tabla de routing agrega automáticamente las entradas conectadas (“<span class="cmd">C</span>”) y locales (“<span class="cmd">L</span>”). En la figura 4, se proporciona un ejemplo de la tabla de routing con las interfaces del R1 conectadas directamente configuradas y activadas.</p>
+<p></p>
+<p>Utilice el verificador de sintaxis de la figura 5 para configurar y activar las interfaces conectadas al R2. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

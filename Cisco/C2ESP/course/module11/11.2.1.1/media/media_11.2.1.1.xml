@@ -1,0 +1,185 @@
+﻿<textcomponents> <!--screen1-->
+<component id="ID_s1_title">
+<text><![CDATA[<b>Topología de NAT estática</b>]]></text>
+</component>
+<component id="ID_s1_txt01">
+<text><![CDATA[<b>Red interna</b>]]></text>
+</component>
+<component id="ID_s1_txt02">
+  <text><![CDATA[<b>Red externa</b>]]></text> 
+  </component>
+<component id="ID_s1_txt03">
+  <text><![CDATA[Servidor Web]]></text> 
+  </component>
+<component id="ID_s1_txt04">
+  <text><![CDATA[Internet]]></text> 
+  </component>
+  <component id="ID_s1_txt05">
+  <text><![CDATA[Cliente]]></text> 
+  </component>
+    <component id="ID_s1_txt06">
+  <text><![CDATA[<b>Traducción de NAT estática</b>]]></text> 
+  </component>
+    <component id="ID_s1_txt07">
+  <text><![CDATA[http://209.165.201.5]]></text> 
+  </component> <!--screen 1 table -->
+
+<component id="ID_s1_table01">
+<text><![CDATA[<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4'>
+
+<tr class="mtitle">
+<td colspan='2' bgcolor='#98D3D1' class="mtitle"><font size='11' color='#1C3635'><b>Tabla de NAT estática</b></font></td>
+</tr>
+
+<tr class="mtable_top">
+<td colspan='2' bgcolor='#0E6360' class="mtable_top"><font size='1' color='#434321'><span style="color:#DAE17A">.</span></font></td>
+</tr>
+
+<tr>
+<td bgcolor='#077A77' valign="top"><font bgcolor='#097A76' color='#EFF8F7'><b>Dirección global interna</b></font></td>
+<td bgcolor='#077A77' valign="top"><font bgcolor='#097A76' color='#EFF8F7'><b>Dirección local interna</b></font></td>
+</tr>
+
+<tr>
+<td bgcolor='#ffffff' valign="top">209.165.201.5</td>
+<td bgcolor='#ffffff' valign="top">192.168.10.254</td>
+</tr>
+
+</table>]]></text>
+</component> <!--screen2-->  
+<component id="ID_s2_title">
+<text><![CDATA[<b>Configuración de NAT estática</b>]]></text>
+</component> <!--screen 2 table -->
+<component id="ID_s2_table">
+<text><![CDATA[<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4'  cellspacing="2">
+	<tr class="mtable_top">
+		<td colspan='3' bgcolor='#0E6360' class="mtable_top"><font size='1' color='#434321'><span style="color:#DAE17A">.</span></font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#077A77' valign="top" width="40"><font bgcolor='#097A76' color='#EFF8F7'><b>Revise</b></font></td>
+		<td bgcolor='#077A77' valign="top"><font bgcolor='#097A76' color='#EFF8F7'><b>Acción</b></font></td>
+		<td bgcolor='#077A77' valign="top"><font bgcolor='#097A76' color='#EFF8F7'><b>Notas</b></font></td>
+	</tr>
+	<tr>
+    <td bgcolor='#EFF8F7'>1</td>
+    <td bgcolor='#EFF8F7'>Se establece la traducción estática entre una dirección local interna y una dirección global interna. <font face='_typewriter'><br/>Router(config)# <b>ip nat inside source static   </b><i> ip-local ip-global</i></font></td>
+    <td bgcolor='#EFF8F7'>Introduzca el comando <font face='_typewriter'><b>no ip nat inside source static  </b></font> del modo de configuración global para eliminar la traducción dinámica de origen.</td>
+  </tr>
+   <tr>
+    <td bgcolor='#FFFFFF'>2</td>
+    <td bgcolor='#FFFFFF'>Especificar la interfaz interna.<br/> <font face='_typewriter'>Router(config)# <b>interface   </b><i>tipo número</i></font></td>
+    <td bgcolor='#FFFFFF'>Introduzca el comando <font face='_typewriter'><b>interface  </b></font>. La petición de entrada de la CLI cambia de <font face='_typewriter'>(config)# </font> a <font face='_typewriter'>(config-if)#</font>.</td>
+  </tr>
+  <tr>
+    <td bgcolor='#EFF8F7'>3</td>
+    <td bgcolor='#EFF8F7'>Marque la interfaz como conectada al interior.<br/> <font face='_typewriter'>Router(config-if)# <b>ip nat inside</b></font></td>
+    <td bgcolor='#EFF8F7'>&nbsp;</td>
+  </tr>
+  
+    <tr>
+    <td bgcolor='#FFFFFF'>4</td>
+    <td bgcolor='#FFFFFF'>Salga del modo de configuración de interfaz.<br/> <font face='_typewriter'>Router(config-if)# <b>exit   </b></font></td>
+    <td bgcolor='#FFFFFF'>&nbsp;</td>
+  </tr>
+  <tr>
+    <td bgcolor='#EFF8F7'>5</td>
+    <td bgcolor='#EFF8F7'>Especificar la interfaz externa.<br/> <font face='_typewriter'>Router(config)# <b>interface   </b><i>tipo número</i></font></td>
+    <td bgcolor='#EFF8F7'>&nbsp;</td>
+  </tr>
+  <tr>
+    <td bgcolor='#FFFFFF'>6</td>
+    <td bgcolor='#FFFFFF'>Marque la interfaz como conectada al exterior.<br/><font face='_typewriter'>Router(config-if)# <b>ip nat outside</b></font></td>
+    <td bgcolor='#FFFFFF'>&nbsp;</td>
+  </tr>
+
+</table>]]></text>
+</component> <!--screen 3-->
+
+<component id="ID_s3_title">
+<text><![CDATA[<b>Configuración NAT estática de ejemplo</b>]]></text>
+</component>
+<component id="ID_s3_txt01">
+<text><![CDATA[<b>Red interna</b>]]></text>
+</component>
+<component id="ID_s3_txt02">
+  <text><![CDATA[<b>Red externa</b>]]></text> 
+</component>
+<component id="ID_s3_txt03">
+  <text><![CDATA[Servidor Web]]></text> 
+</component>
+<component id="ID_s3_txt04">
+  <text><![CDATA[Internet]]></text> 
+</component>
+<component id="ID_s3_txt05">
+  <text><![CDATA[Cliente]]></text> 
+</component>
+<component id="ID_s3_txt06">
+  <text><![CDATA[<b>Traducción de NAT estática</b>]]></text> 
+</component>
+<component id="ID_s3_txt07">
+  <text><![CDATA[http://209.165.201.5]]></text> 
+  </component> <!--screen 4-->  
+  
+    <component id="ID_s4_title">
+<text><![CDATA[<b>  </b>]]></text>
+</component>
+<component id="ID_s4_txt01">
+<text><![CDATA[<b>Red interna</b>]]></text>
+</component>
+<component id="ID_s4_txt02">
+  <text><![CDATA[<b>Red externa</b>]]></text> 
+  </component>
+<component id="ID_s4_txt03">
+  <text><![CDATA[Servidor Web]]></text> 
+  </component>
+<component id="ID_s4_txt04">
+  <text><![CDATA[Internet]]></text> 
+  </component>
+  <component id="ID_s4_txt05">
+  <text><![CDATA[Cliente]]></text> 
+  </component>
+    <component id="ID_s4_txt06">
+  <text><![CDATA[<b>Traducción de NAT estática</b>]]></text> 
+  </component>
+  <component id="ID_s4_txt07">
+  <text><![CDATA[http://209.165.201.5]]></text> 
+  </component> <!-- syntax checker -->
+
+<component id="ID_sc_reset">
+<text><![CDATA[Restablecer]]></text>
+</component>
+
+<component id="ID_sc_showme">
+<text><![CDATA[Mostrar]]></text>
+</component>
+
+<component id="ID_sc_showall">
+<text><![CDATA[Mostrar todo]]></text>
+</component>
+<component id="ID_SC5" fontFace='Courier New' fontSize="10">
+		<feedback id="fb"><![CDATA[<b><font size='10' class="font10px" face="Arial" color="#0000FF">***Debe introducir el comando exacto y completo. Los comandos que incluyen un nombre o una contraseña distinguen mayúsculas de minúsculas.***</font>  </b>
+		]]></feedback>
+		<existingcommands><![CDATA[<font size='10' class="font10px" face="Arial"><b>Configure la traducción estática con una dirección local interna 192.168.11.99 y una dirección global interna 201.165.201.15.  </b></font>]]></existingcommands>
+		<command prompt="R2(config)#">
+			<correctresponse><![CDATA[ip nat inside source static 192.168.11.99 209.165.201.15]]></correctresponse>
+			<instruction><![CDATA[<font size='10' class="font10px" face="Arial"><b>Configure la interfaz NAT interna adecuada.</font>]]></instruction>
+		</command>
+		<command prompt="R2(config)#">
+			<correctresponse><![CDATA[interface Serial0/0/0]]></correctresponse>
+		</command>	
+		<command prompt="R2(config-if)#">
+			<correctresponse><![CDATA[ip nat inside]]></correctresponse>
+			<instruction><![CDATA[<font size='10' class="font10px" face="Arial"><b>Configure la interfaz NAT externa adecuada.  </b></font>]]></instruction>
+		</command>
+		<command prompt="R2(config)#">
+			<correctresponse><![CDATA[interface Serial0/1/0]]></correctresponse>
+		</command>	
+		<command prompt="R2(config-if)#">
+			<correctresponse><![CDATA[ip nat outside]]></correctresponse>
+			<instruction><![CDATA[<font size='10' class="font10px" face="Arial"><b>Configuró correctamente la NAT estática.</font>]]></instruction>
+		</command>
+		<command prompt=""/>
+	</component>
+
+
+</textcomponents>

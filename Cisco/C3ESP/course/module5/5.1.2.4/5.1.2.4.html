@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.1.2.4 Verificación de las funciones del DR/BDR</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.1.2.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuraciones avanzadas de OSPF de área única </h1>
+        <h2>OSPF en redes de accesos múltiples</h2>
+      </div>
+      <div id="content">
+<p>En la topología de accesos múltiples que se muestra en la figura 1, hay tres routers interconectados por medio de una red de accesos múltiples Ethernet común, 192.168.1.0/28. Cada router está configurado con la dirección IP indicada en la interfaz Gigabit Ethernet 0/0. </p>
+<p></p>
+<p>Debido a que los routers están conectados por medio de una red multiacceso con difusión común, OSPF seleccionó automáticamente un DR y un BDR. En este ejemplo, se eligió al R3 como el DR porque la ID del router es 3.3.3.3, que es la más alta en la red. El R2 es el BDR porque tiene la segunda ID del router más alta en la red.</p>
+<p></p>
+<p>Para verificar las funciones del router, utilice el comando <span class="cmd"><b>show ip ospf interface</b></span> (figura 2). El resultado que genera el R1 confirma lo siguiente:</p>
+<p>
+<ul>
+<li>El R1 no es el DR ni el BDR, sino un DROther con una prioridad predeterminada de 1. (1) </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>El DR es el R3 con la ID de router 3.3.3.3 en la dirección IP 192.168.1.3, mientras que el BDR es el R2 con la ID de router 2.2.2.2 en la dirección IP 192.168.1.2. (2)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>El R1 tiene dos adyacencias: una con el BDR y otra con el DR. (3)</li>
+</ul>
+</p>
+<p></p>
+<p>El resultado que genera el R2, en la figura 3, confirma lo siguiente:</p>
+<p>
+<ul>
+<li>El R2 es el BDR, con una prioridad predeterminada de 1. (1) </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>El DR es el R3 con la ID de router 3.3.3.3 en la dirección IP 192.168.1.3, mientras que el BDR es el R2 con la ID de router 2.2.2.2 en la dirección IP 192.168.1.2. (2)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>El R2 tiene dos adyacencias, una con un vecino que tiene la ID de router 1.1.1.1 (R1) y la otra con el DR. (3)</li>
+</ul>
+</p>
+<p></p>
+<p>El resultado que genera el R3, en la figura 4, confirma lo siguiente:</p>
+<p>
+<ul>
+<li>El R3 es el DR, con una prioridad predeterminada de 1. (1)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>El DR es el R3 con la ID de router 3.3.3.3 en la dirección IP 192.168.1.3, mientras que el BDR es el R2 con la ID de router 2.2.2.2 en la dirección IP 192.168.1.2. (2)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>El R3 tiene dos adyacencias, una con un vecino que tiene la ID de router 1.1.1.1 (R1) y la otra con el BDR. (3)</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

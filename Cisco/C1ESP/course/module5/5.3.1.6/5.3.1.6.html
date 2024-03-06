@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.3.1.6 Conmutación por método de corte</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.3.1.6_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Switches LAN</h1>
+        <h2>Conmutación</h2>
+      </div>
+      <div id="content">
+<p>En este tipo de conmutación, el switch actúa sobre los datos apenas los recibe, incluso si la transmisión aún no se ha completado. El switch recopila en el búfer sólo la información suficiente de la trama como para leer la dirección MAC de destino y así determinar a qué puerto debe reenviar los datos. La dirección MAC de destino se encuentra en los primeros 6 bytes de la trama después del preámbulo. El switch busca la dirección MAC de destino en su tabla de conmutación, determina el puerto de la interfaz de salida y reenvía la trama a su destino mediante el puerto de switch designado. El switch no lleva a cabo ninguna verificación de errores en la trama. Dado que el switch no tiene que esperar que la trama se almacene de manera completa en el búfer y que no realiza ninguna verificación de errores, la conmutación por método de corte es más rápida que la de almacenamiento y envío. No obstante, al no llevar a cabo ninguna verificación de errores, el switch reenvía tramas dañadas a través de la red. Las tramas dañadas consumen ancho de banda mientras se reenvían. Al final, la NIC de destino descarta las tramas dañadas. </p>
+<p></p>
+<p>Reproduzca la animación para ver una demostración del proceso de conmutación por método de corte.</p>
+<p></p>
+<p>A continuación, se presentan dos variantes de la conmutación por método de corte:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Conmutación por envío rápido:</b> este tipo de conmutación ofrece el nivel más bajo de latencia. La conmutación por envío rápido reenvía el paquete inmediatamente después de leer la dirección de destino. Como la conmutación por envío rápido comienza a reenviar el paquete antes de haberlo recibido en forma completa, es probable que a veces los paquetes se entreguen con errores. Esto ocurre con poca frecuencia y el adaptador de red de destino descarta los paquetes defectuosos en el momento de su recepción. En el modo de envío rápido, la latencia se mide desde el primer bit recibido hasta el primer bit transmitido. La conmutación por envío rápido es el típico método de corte.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Conmutación libre de fragmentos:</b> en este método, el switch almacena los primeros 64 bytes de la trama antes de hacer el reenvío. Este tipo de conmutación se puede definir como un punto intermedio entre la conmutación por almacenamiento y envío y la conmutación por método de corte. El motivo por el cual la conmutación libre de fragmentos almacena sólo los primeros 64 bytes de la trama es que la mayoría de los errores y las colisiones de la red se producen en esos primeros 64 bytes. El método de conmutación libre de fragmentos intenta mejorar la conmutación por envío rápido mediante una pequeña verificación de errores en los primeros 64 bytes de la trama, a fin de asegurar que no se hayan producido colisiones antes de reenviar la trama. La conmutación libre de fragmentos es un punto intermedio entre el alto nivel de latencia y la gran integridad que ofrece la conmutación por almacenamiento y envío, y el bajo nivel de latencia y la integridad reducida que brinda la conmutación por envío rápido.</li>
+</ul>
+</p>
+<p></p>
+<p>En la ilustración, se muestra un ejemplo de conmutación por método de corte.</p>
+<p></p>
+<p>Algunos switches se configuran para realizar una conmutación por método de corte por puerto hasta llegar a un umbral de error definido por el usuario y luego cambian la conmutación al modo de almacenamiento y envío. Si el índice de error está por debajo del umbral, el puerto vuelve automáticamente a la conmutación por método de corte.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

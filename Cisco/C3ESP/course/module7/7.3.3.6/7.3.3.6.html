@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.3.3.6 Tabla de topología: comando show ip eigrp topology (cont.)</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.3.3.6_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1> Funcionamiento de EIGRP</h1>
+        <h2>DUAL y la tabla de topología</h2>
+      </div>
+      <div id="content">
+<p>Como se muestra en la figura 1, la primera línea en la tabla de topología muestra lo siguiente:</p>
+<p>
+<ul>
+<li>
+<b>P:</b> ruta en estado pasivo. Cuando DUAL no realiza sus cómputos por difusión para determinar la ruta para una red, la ruta se encuentra en modo estable, conocido como “estado pasivo”. Si DUAL recalcula o busca una nueva ruta, la ruta está en estado activo, y se muestra una “A”. Todas la rutas en la tabla de topología deberían estar en el estado pasivo para un dominio de enrutamiento estable. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>192.168.1.0/24:</b> red de destino, que también se encuentra en la tabla de routing.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>1 successors:</b> muestra el número de sucesores para esta red. Si hay varias rutas del mismo costo a esta red, hay varios sucesores.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>FD is 3012096:</b> FD es la métrica de EIGRP para llegar a la red de destino. Esta es la métrica que se muestra en la tabla de routing IP.</li>
+</ul>
+</p>
+<p></p>
+<p>Como se muestra en la figura 2, la primera subentrada en el resultado muestra el sucesor:</p>
+<p>
+<ul>
+<li>
+<b>via 192.168.10.10:</b> dirección del siguiente salto del sucesor, el R3. Esta dirección se muestra en la tabla de enrutamiento.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>3012096:</b> FD a 192.168.1.0/24. Es la métrica que se muestra en la tabla de routing IP.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>2816:</b> RD del sucesor; es el costo del R3 para llegar a esta red.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Serial 0/0/1:</b> interfaz de salida usada para llegar a esta red, que también se muestra en la tabla de routing.</li>
+</ul>
+</p>
+<p></p>
+<p>Como se ve en la figura 3, en la segunda subentrada se muestra el FS, el R1 (si no hay una segunda entrada, entonces no hay FS):</p>
+<p>
+<ul>
+<li>
+<b>via 172.16.3.1:</b> dirección del siguiente salto del FS, el R1.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>41024256:</b> la nueva FD del R2 a 192.168.1.0/24, en caso de que el R1 se convierta en el nuevo sucesor y sea la nueva métrica mostrada en la tabla de routing IP. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>2170112:</b> RD del FS, o la métrica del R1 para llegar a esta red. Para cumplir la FC, la RD debe ser inferior a la FD actual de 3 012 096.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Serial 0/0/0:</b> la interfaz de salida que se usa para llegar al FS, si este router se convierte en el sucesor.</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.1.4.7 Características de los protocolos de enrutamiento</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.1.4.7_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolos de enrutamiento dinámico</h1>
+        <h2>Tipos de protocolos de routing</h2>
+      </div>
+      <div id="content">
+<p>Los protocolos de enrutamiento se pueden comparar según las siguientes características:</p>
+<p>
+<ul>
+<li>
+<b>Velocidad de convergencia</b>: define cuán rápido comparten información de routing y alcanzan un estado de conocimiento coherente los routers de la topología de la red. Cuanto más rápida sea la convergencia, más preferible será el protocolo. Los loops de enrutamiento pueden ser el resultado de tablas de enrutamiento incongruentes que no se han actualizado debido a la lenta convergencia de una red sujeta a cambios. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Escalabilidad</b>: define cuán grande puede ser una red, según el protocolo de routing implementado. Cuanto más grande sea la red, más escalable debe ser el protocolo de enrutamiento. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Con clase o sin clase (uso de VLSM):</b> los protocolos de routing con clase no incluyen la máscara de subred y no admiten VLSM. Los protocolos de routing sin clase incluyen la máscara de subred en las actualizaciones. Los protocolos de routing sin clase admiten VLSM y una mejor sumarización de ruta. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Uso de recursos</b>: incluye los requisitos de un protocolo de routing, como el espacio de memoria (RAM), la utilización de la CPU y el uso del ancho de banda del enlace. Una mayor cantidad de requisitos de recursos exige hardware más potente para admitir la operación del protocolo de routing además de los procesos de reenvío de paquetes. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Implementación y mantenimiento</b>: describen el nivel de conocimiento necesario para que un administrador de red ponga en funcionamiento y mantenga la red según el protocolo de routing implementado. </li>
+</ul>
+</p>
+<p></p>
+<p>En la tabla de la ilustración, se resumen las características de cada protocolo de routing. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

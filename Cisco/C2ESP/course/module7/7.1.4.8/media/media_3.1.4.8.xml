@@ -1,0 +1,65 @@
+﻿<textcomponents>
+<component id="ID_s1_title">
+<text><![CDATA[<b>Protocolos de routing y sus métricas</b>]]></text>
+</component>
+<component id="ID_s2_title">
+  <text><![CDATA[<b>Comparación entre conteo de saltos y ancho de banda</b>]]></text> 
+</component>
+<component id="ID_txt01">
+  <text><![CDATA[RIP selecciona la mejor ruta sobre la base del conteo de saltos.<br/>OSPF selecciona la mejor ruta sobre la base del ancho de banda.]]></text> 
+</component> <!--ANIMATION CONTROLLER-->
+	<component id="end">
+		<text><![CDATA[Finalizar]]></text>
+	</component>
+	
+	<component id="fforward">
+		<text><![CDATA[Adelantar]]></text>
+	</component>
+	
+	<component id="pause">
+		<text><![CDATA[Pausa]]></text>
+	</component>
+	
+	<component id="play">
+		<text><![CDATA[Reproducir]]></text>
+	</component>
+	
+	<component id="rewind">
+		<text><![CDATA[Regresar]]></text>
+	</component>
+	
+	<component id="start">
+		<text><![CDATA[Inicio]]></text>
+	</component> <!--Table-->
+   <component id="ID_table">
+  <text><![CDATA[<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4'>
+	<tr>
+		<td colspan='3' bgcolor='#0E6360' class="liner_top"><font size='1' color='#0E6360'><span style="color:#98D3D1">.</span></font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#077A77'  valign="top" width="100"><font color='#ffffff' size="11"><b>Protocolo de enrutamiento</b></font></td>
+		<td bgcolor='#077A77'  valign="top" width="100"><font color='#ffffff' size="11"><b>Métrica predeterminada</b></font></td>
+		<td bgcolor='#077A77'  valign="top"><font color='#ffffff' size="11"><b>Descripción</b></font></td>
+	</tr>
+	<tr>
+	<td bgcolor='#FFFFFF'><font color='#393536'><b>RIP</b></font></td>
+	<td bgcolor='#FFFFFF'><font color='#393536'><b>Conteo de saltos</b></font></td>
+	<td bgcolor='#FFFFFF'><font color='#393536'><textformat blockindent='-18'>Métrica simple que cuenta la cantidad de routers que tiene que atravesar un paquete.</textformat></font></td>
+	</tr>
+	<tr>
+	<td bgcolor='#EFF8F7'><font color='#393536'><b>EIGRP</b></font></td>
+	<td bgcolor='#EFF8F7'><font color='#393536'><b>Ancho de banda y retraso</b></font></td>
+	<td bgcolor='#EFF8F7'><font color='#393536'><textformat blockindent='-18'>
+					<li>El ancho de banda es uno de los factores determinantes de la selección de rutas. </li>
+					<li>El retraso considera el tiempo que tarda un paquete en atravesar una ruta. </li>
+					<li>En forma optativa, la carga (la utilización de un enlace determinado por parte del tráfico) y la confiabilidad (la probabilidad de que se produzca una falla en un enlace) también se pueden incluir en el cálculo de la métrica. </li>			
+				</textformat></font></td>
+	</tr>
+	<tr>
+	<td bgcolor='#FFFFFF'><font color='#393536'><b>OSPF</b></font></td>
+	<td bgcolor='#FFFFFF'><font color='#393536'><b>Costo</b></font></td>
+	<td bgcolor='#FFFFFF'> 				<font color='#393536'> 					Valor basado en los anchos de banda de enlace acumulativos.</font></td>
+	</tr>
+</table>]]></text>
+  </component>
+</textcomponents>

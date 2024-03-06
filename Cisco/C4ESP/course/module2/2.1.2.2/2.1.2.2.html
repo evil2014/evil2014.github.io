@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.1.2.2 Terminología común de WAN</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.1.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Descripción general de las tecnologías WAN</h1>
+        <h2>Operaciones WAN</h2>
+      </div>
+      <div id="content">
+<p>Una diferencia principal entre una WAN y una LAN es que, para usar los servicios de red de una prestadora de servicios WAN, una empresa u organización se debe suscribir a un proveedor de servicios WAN externo. Una WAN usa los enlaces de datos proporcionados por una prestadora de servicios para acceder a Internet y conectar las diferentes ubicaciones de una organización entre sí, a las ubicaciones de otras organizaciones, a los servicios externos y a los usuarios remotos. </p>
+<p></p>
+<p>La capa física de una WAN describe las conexiones físicas entre la red de la empresa y la red del proveedor de servicios. En la ilustración, se muestra la terminología que normalmente se usa para describir las conexiones WAN, entre otros:</p>
+<p>
+<ul>
+<li>
+<b>Equipo local del cliente (CPE):</b> cables internos y dispositivos ubicados en el perímetro empresarial que se conectan a un enlace de una prestadora de servicios. El suscriptor es dueño del CPE o lo alquila al proveedor de servicios. En este contexto, un suscriptor es una empresa que obtiene los servicios WAN de un proveedor de servicios. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Equipo de comunicación de datos (DCE):</b> también llamado “equipo de terminación de circuito de datos”, el DCE consta de dispositivos que colocan los datos en el bucle local. Principalmente, el DCE proporciona una interfaz para conectar a los suscriptores a un enlace de comunicación en la nube WAN. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Equipo terminal de datos (DTE):</b> dispositivos del cliente que transmiten los datos desde un equipo host o la red de un cliente para la transmisión a través de la WAN. El DTE se conecta al bucle local a través del DCE.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Punto de demarcación:</b> un punto establecido en un edificio o un complejo para separar el equipo del cliente del equipo del proveedor de servicios. En términos físicos, el punto de demarcación es la caja de conexiones del cableado, ubicada en las instalaciones del cliente, que conecta los cables del CPE al bucle local. Por lo general, se coloca de modo que sea de fácil acceso para un técnico. El punto de demarcación es el lugar donde la responsabilidad de la conexión pasa del usuario al proveedor de servicios. Cuando surgen problemas, es necesario determinar si el usuario o el proveedor de servicios es responsable de la resolución o la reparación.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Bucle local:</b> cable de cobre o fibra propiamente dicho que conecta el CPE a la CO del proveedor de servicios. A veces, el bucle local también se denomina “última milla”. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Oficina central (CO):</b> la CO es la instalación o el edificio del proveedor de servicios local que conecta el CPE a la red del proveedor. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Red interurbana:</b> consta de líneas de comunicación, switches, routers y otros equipos digitales, de largo alcance y de fibra óptica dentro de la red del proveedor de servicios WAN. </li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

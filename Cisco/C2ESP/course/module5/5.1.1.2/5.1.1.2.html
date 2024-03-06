@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.1.1.2 Routing entre VLAN antiguo</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.1.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración del routing entre VLAN</h1>
+        <h2>Funcionamiento del routing entre VLAN</h2>
+      </div>
+      <div id="content">
+<p>Históricamente, la primera solución para el routing entre VLAN se valía de routers con varias interfaces físicas. Era necesario conectar cada interfaz a una red separada y configurarla para una subred diferente. </p>
+<p></p>
+<p>En este enfoque antiguo, el routing entre VLAN se realiza mediante la conexión de diferentes interfaces físicas del router a diferentes puertos físicos de switch. Los puertos de switch conectados al router se colocan en modo de acceso, y cada interfaz física se asigna a una VLAN diferente. Cada interfaz del router puede entonces aceptar el tráfico desde la VLAN asociada a la interfaz del switch que se encuentra conectada y el tráfico puede enrutarse a otras VLAN conectadas a otras interfaces.</p>
+<p></p>
+<p>
+<b>Nota:</b> la topología utiliza enlaces paralelos para establecer los enlaces troncales entre los switches a fin de obtener agregación de enlaces y redundancia. Sin embargo, los enlaces redundantes hacen que la topología sea más compleja y pueden introducir problemas de conectividad si no se administran de la manera adecuada. Deben implementarse protocolos y técnicas, tales como árbol de expansión y EtherChannel, para administrar los enlaces redundantes. Estas técnicas exceden el ámbito de este capítulo. </p>
+<p></p>
+<p>Haga clic en el botón Reproducir de la ilustración para ver una animación del routing entre VLAN antiguo.</p>
+<p></p>
+<p>Tal como se observa en la animación:</p>
+<p></p>
+<p>1. La PC1 en la VLAN 10 se comunica con la PC3 en la VLAN 30 a través del router R1.</p>
+<p></p>
+<p>2. PC1 y PC3 están en VLAN diferentes y tienen direcciones IP en subredes diferentes. </p>
+<p></p>
+<p>3. El router R1 tiene una interfaz separada configurada para cada una de las VLAN.</p>
+<p></p>
+<p>4. La PC1 envía el tráfico de unidifusión destinado a la PC3 al switch S2 en la VLAN 10, desde el cual luego se reenvía por la interfaz troncal al switch S1. </p>
+<p></p>
+<p>5. Después, el switch S1 reenvía el tráfico de unidifusión al router R1 en la interfaz G0/0. </p>
+<p></p>
+<p>6. El router enruta el tráfico de unidifusión a través de la interfaz G0/1, que está conectada a la VLAN 30. </p>
+<p></p>
+<p>7. El router reenvía el tráfico unicast al switch S1 en la VLAN 30. </p>
+<p></p>
+<p>8. El switch S1 luego reenvía el tráfico de unidifusión al switch S2 a través del enlace troncal activo, tras lo cual el switch S2 puede reenviar el tráfico de unidifusión a la PC3 en la VLAN 30.</p>
+<p></p>
+<p>En este ejemplo el router se configuró con dos interfaces físicas separadas para interactuar con las distintas VLAN y realizar el enrutamiento.</p>
+<p></p>
+<p>
+<b>Nota:</b> este método de routing entre VLAN no es eficaz y, por lo general, ya no se implementa en las redes conmutadas. Se muestra en este curso solo con fines explicativos.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

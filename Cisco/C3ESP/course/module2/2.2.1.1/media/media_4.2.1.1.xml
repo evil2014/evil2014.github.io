@@ -1,0 +1,12 @@
+﻿<textcomponents>
+<component id="ID_title">
+<text><![CDATA[]]></text>
+</component>
+   
+<component id="ID_txt01">
+<text><![CDATA[<br/><b>Tipos de protocolos de árbol de expansión</b><br/><br/><textformat blockindent='-14'><ul><li><b>802.1D-1998:</b> es el estándar antiguo de puentes y STP.</li><textformat blockindent='31'><span><b> - CST:</b> asume una instancia de árbol de expansión para toda la red enlazada, independientemente de la cantidad de VLAN.</span></textformat><li><b>PVST+:</b> es una mejora de Cisco de STP que proporciona una instancia de árbol de expansión 802.1D distinta para cada VLAN configurada en la red.</li><li><b>802.1D-2004:</b> es un estándar de puentes y STP actualizado.</li><li><b>802.1w (RSTP):</b> mejora la convergencia de STP 1998 al agregar funciones a los puertos y mejorar los intercambios de BPDU.</li><li><b>PVST+ rápido:</b> es una mejora de Cisco de RSTP que utiliza PVST+.</li><li><b>802.1s (MSTP):</b> asigna varias VLAN a la misma instancia de árbol de expansión.</li></ul></textformat><br/>]]></text>
+</component>
+
+
+
+</textcomponents>

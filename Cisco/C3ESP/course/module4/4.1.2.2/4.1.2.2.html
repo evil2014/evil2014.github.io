@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.1.2.2 Router doméstico inalámbrico</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.1.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Conceptos de tecnología inalámbrica</h1>
+        <h2>Componentes de WLANs</h2>
+      </div>
+      <div id="content">
+<p>El tipo de dispositivo de infraestructura al que se asocia una terminal y con el que se autentica varía según el tamaño y los requisitos de la WLAN. </p>
+<p></p>
+<p>Por ejemplo, un usuario doméstico normalmente interconecta dispositivos inalámbricos mediante un pequeño router inalámbrico integrado. Estos routers integrados más pequeños funcionan como lo siguiente:</p>
+<p>
+<ul>
+<li>
+<b>Punto de acceso:</b> proporciona acceso inalámbrico 802.11a/b/g/n/ac. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Switch:</b> proporciona un switch Ethernet 10/100/1000, full-duplex, de cuatro puertos para conectar dispositivos por cable. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Router:</b> proporciona un gateway predeterminado para la conexión a otras infraestructuras de la red.</li>
+</ul>
+</p>
+<p></p>
+<p>Por ejemplo, el router Cisco Linksys EA6500, que se muestra en la figura 1, se suele implementar como dispositivo de acceso inalámbrico residencial o de una pequeña empresa. El router inalámbrico se conecta al módem DLS del ISP y anuncia sus servicios mediante el envío de señales que contienen su identificador de conjunto de servicios compartidos (SSID). Los dispositivos internos detectan de manera inalámbrica el SSID del router e intentan asociarse y autenticarse con él para acceder a Internet. </p>
+<p></p>
+<p>La carga esperada en el router Linksys EA6500, en este entorno, es lo suficientemente baja como para que el router pueda administrar la disposición de WLAN y Ethernet 802.3, y para conectarse a un ISP. También proporciona características avanzadas, como el acceso de alta velocidad, un diseño óptimo para la transmisión de video, compatibilidad con IPv6, QoS, fácil configuración mediante Wi-Fi WPS y puertos USB para conectar impresoras o unidades portátiles. </p>
+<p></p>
+<p>Además, para los usuarios domésticos que desean ampliar los servicios de su red, tanto inalámbricos como conectados por cable, se pueden implementar adaptadores de línea eléctrica inalámbricos. Con estos dispositivos, se puede conectar un dispositivo directamente a la red por medio de tomacorrientes eléctricos, lo que es ideal para la transmisión de video en HD y los juegos en línea. Son fáciles de instalar: simplemente enchúfelo en un tomacorriente de pared o una toma múltiple y conecte el dispositivo con solo presionar un botón.</p>
+<p></p>
+<p>Haga clic en el botón Reproducir de la figura 2 para ver una descripción general de los adaptadores de línea eléctrica Linksys.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

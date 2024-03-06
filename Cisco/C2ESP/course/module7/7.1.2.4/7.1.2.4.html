@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.1.2.4 Ventajas y desventajas del routing dinámico</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.1.2.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolos de enrutamiento dinámico</h1>
+        <h2>Comparación entre routing dinámico y estático</h2>
+      </div>
+      <div id="content">
+<p>En la tabla de la ilustración, se destacan las ventajas y las desventajas del routing dinámico. Los protocolos de routing dinámico funcionan bien en cualquier tipo de red conformada por varios routers. Son escalables y determinan automáticamente las mejores rutas si se produce un cambio en la topología. Si bien existen otros aspectos para tener en cuenta respecto de la configuración de los protocolos de routing dinámico, son más simples de configurar en redes grandes. </p>
+<p></p>
+<p>El routing dinámico presenta desventajas. Esta clase de routing requiere conocer comandos adicionales. Además, es menos seguro que el routing estático, porque las interfaces identificadas por el protocolo de routing envían actualizaciones de routing fuera de la red. Las rutas tomadas pueden variar entre paquetes. El algoritmo de routing utiliza CPU, RAM y ancho de banda de enlace adicionales. </p>
+<p></p>
+<p>Observe la forma en que el routing dinámico aborda las desventajas del routing estático. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

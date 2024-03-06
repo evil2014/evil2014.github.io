@@ -1,0 +1,71 @@
+﻿<textcomponents>
+
+<component id="ID_title">
+<text><![CDATA[<b>Protocolo de resolución de direcciones</b>]]></text>
+</component>
+
+<component id="ID_bubble01">
+<text><![CDATA[Quien tenga la dirección IP 192.168.1.9, necesito su dirección MAC de enlace de datos.]]></text>
+</component>
+
+<component id="ID_bubble02">
+<text><![CDATA[Tengo la dirección IP 192.168.1.9. Mi dirección MAC es CC-CC-CC-CC-CC-CC.]]></text>
+</component>
+
+<component id="ID_txt01">
+<text><![CDATA[<b>S1</b>]]></text>
+</component>
+
+<component id="ID_txt02">
+<text><![CDATA[<b>R1</b>]]></text>
+</component>
+
+<component id="ID_txt03">
+<text><![CDATA[PC1<br/>192.168.1.110<br/>AA-AA-AA-AA-AA-AA]]></text>
+</component>
+
+<component id="ID_txt04">
+<text><![CDATA[PC2<br/>192.168.1.111<br/>BB-BB-BB-BB-BB-BB]]></text>
+</component>
+
+<component id="ID_txt05">
+<text><![CDATA[Servidor FTP<br/>192.168.1.9<br/>CC-CC-CC-CC-CC-CC]]></text>
+</component>
+
+<component id="ID_txt06">
+<text><![CDATA[R1<br/>192.168.1.1<br/>11-11-11-11-11-11]]></text>
+</component>
+
+<component id="ID_txt07">
+<text><![CDATA[<b>Solicitud de ARP</b>]]></text>
+</component>
+
+<component id="ID_txt08">
+<text><![CDATA[<b>Respuesta de ARP</b>]]></text>
+</component> <!-- controller -->
+
+<component id="end">
+<text><![CDATA[Finalizar]]></text>
+</component>
+
+<component id="fforward">
+<text><![CDATA[Adelantar]]></text>
+</component>
+
+<component id="pause">
+<text><![CDATA[Pausa]]></text>
+</component>
+
+<component id="play">
+<text><![CDATA[Reproducir]]></text>
+</component>
+
+<component id="rewind">
+<text><![CDATA[Regresar]]></text>
+</component>
+
+<component id="start">
+<text><![CDATA[Inicio]]></text>
+</component>
+
+</textcomponents>

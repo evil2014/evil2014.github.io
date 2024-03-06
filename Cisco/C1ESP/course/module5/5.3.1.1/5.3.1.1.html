@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.3.1.1 Aspectos básicos de los puertos de switch</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.3.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Switches LAN</h1>
+        <h2>Conmutación</h2>
+      </div>
+      <div id="content">
+<p>Recuerde que la topología lógica de una red Ethernet es un bus de multiacceso en el que todos los dispositivos comparten el acceso al mismo medio. Esta topología lógica determina la forma en que los hosts de la red ven y procesan las tramas enviadas y recibidas en la red. Sin embargo, en la actualidad, la topología física de la mayor parte de las redes Ethernet es en estrella y en estrella extendida. Esto significa que, en la mayoría de las redes Ethernet, los dispositivos finales se suelen conectar a un switch LAN de capa 2 de forma punto a punto.</p>
+<p></p>
+<p>Los switches LAN de capa 2 llevan a cabo los procesos de conmutación y filtrado basándose solamente en la dirección MAC de la capa de enlace de datos (capa 2) del modelo OSI. El switch es completamente transparente para los protocolos de red y las aplicaciones de usuario. Los switches de capa 2 crean una tabla de direcciones MAC que utilizan para tomar decisiones de reenvío. Los switches de capa 2 dependen de los routers para pasar datos entre subredes IP independientes.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

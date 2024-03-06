@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>11.2.1.2 Análisis de NAT estática</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_11.2.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de NAT</h1>
+        <h2>Configuración de NAT estática</h2>
+      </div>
+      <div id="content">
+<p>Con la configuración anterior, en la ilustración se muestra el proceso de traducción de NAT estática entre el cliente y el servidor web. En general, las traducciones estáticas se utilizan cuando los clientes en la red externa (Internet) necesitan llegar a los servidores en la red interna.</p>
+<p></p>
+<p>1. El cliente desea establecer una conexión al servidor web. El cliente envía un paquete al servidor web con la dirección IPv4 pública de destino 209.165.201.5. Esta es la dirección global interna del servidor web.</p>
+<p>2. El primer paquete que recibe del cliente en su interfaz NAT externa ocasiona que el R2 revise su tabla de NAT. Una vez que se encuentra la dirección IPv4 de destino en la tabla de NAT, se traduce.</p>
+<p>3. El R2 reemplaza la dirección global interna 209.165.201.5 por la dirección local interna 192.168.10.254. Luego, el R2 reenvía el paquete hacia el servidor web.</p>
+<p>4. El servidor web recibe el paquete y responde al cliente con la dirección local interna, 192.168.10.254.</p>
+<p>5a. El R2 recibe el paquete del servidor web en su interfaz NAT interna con la dirección de origen de la dirección local interna del servidor web, 192.168.10.254. </p>
+<p>5b. El R2 busca una traducción para la dirección local interna en la tabla de NAT. La dirección se encuentra en esa tabla. El R2 traduce la dirección de origen a la dirección global interna 209.165.201.5 y reenvía el paquete por su interfaz serial 0/1/0 hacia el cliente.</p>
+<p>6. El cliente recibe el paquete y continúa la conversación. El router NAT lleva a cabo los pasos 2 a 5b para cada paquete. (El paso 6 no aparece en la ilustración).</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

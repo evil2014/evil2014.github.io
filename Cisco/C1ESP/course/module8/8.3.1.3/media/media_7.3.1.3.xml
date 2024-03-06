@@ -1,0 +1,31 @@
+﻿<textcomponents>
+
+<component id='ID_title'>
+	<text><![CDATA[<b>Protocolo de descubrimiento de vecinos de ICMPv6</b>]]></text>
+</component>
+
+<component id="ID_txt01">
+<text><![CDATA[<b>Resolución de direcciones</b><br/>Para: <font color='#F26200'>FF02:0:0:0:0:FF00</font>::<font color='#5FBC21'>20</font>]]></text>
+</component>
+
+<component id="ID_txt02">
+<text><![CDATA[Necesito la dirección MAC de Ethernet del dispositivo que tiene<br/>esta dirección unicast.<br/>Dirección IPv6 de destino: 2001:DB8:ACAD:1::<font color='#5FBC21'>20</font>]]></text>
+</component>
+
+<component id="ID_txt03">
+<text><![CDATA[<b>2001:DB8:ACAD:1::10/64</b>]]></text>
+</component>
+
+<component id="ID_txt04">
+<text><![CDATA[<b>2001:DB8:ACAD:1::30/64</b>]]></text>
+</component>
+
+<component id="ID_txt05">
+<text><![CDATA[<b>Detección de direcciones duplicadas (DAD)</b><br/>Para: <font color='#F26200'>FF02:0:0:0:0:FF00</font>::<font color='#5FBC21'>30</font>]]></text>
+</component>
+
+<component id="ID_txt06">
+<text><![CDATA[Antes de que utilice esta dirección, ¿hay alguien más en este enlace que esté utilizando esta dirección unicast global?<br/>Dirección IPv6 de destino: 2001:DB8:ACAD:1::<font color='#5FBC21'>30</font>]]></text>
+</component>
+
+</textcomponents>

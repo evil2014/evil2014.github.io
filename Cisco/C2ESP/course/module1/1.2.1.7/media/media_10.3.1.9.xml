@@ -1,0 +1,119 @@
+﻿<textcomponents>
+
+<component id="ID_inst">
+<text><![CDATA[<b>Actividad</b><br/>Determine de qué forma el switch reenvía una trama sobre la base de las direcciones MAC de origen y destino y la información en la tabla MAC del switch.<br/><b>Responda las siguientes preguntas con la información suministrada.  </b>]]></text> 
+</component>
+
+<component id="ID_HELP_TITLE">
+<text><![CDATA[<b>Ayuda</b>]]></text> 
+</component>
+
+<component id="ID_HELP_BODY">
+<text><![CDATA[En esta actividad, se pone a prueba su conocimiento sobre la manera en que se reenvía una trama en un switch.<br /><br />Haga clic en el botón Verificar para comprobar su respuesta. Haga clic en el botón "Nuevo problema de práctica" para iniciar una nueva actividad de práctica generada por la computadora.<br /><br />Se le brindarán la topología física y la tabla de direcciones MAC del switch. También se le ofrece una trama que consta de una dirección MAC de origen y de destino. Las actividades generadas por la computadora tendrán un par de origen y destino que utiliza una de las direcciones mostradas en la topología. Las actividades personalizadas pueden usar cualquier dirección tanto de la tabla MAC como de la trama.<br /><br />1.<textformat blockindent="20"> El objetivo es determinar cómo manejará esa trama el switch dada la tabla de direcciones MAC que se muestra.</textformat><br />2. <textformat blockindent="20">Para la primera pregunta, revise los números de puerto para indicar adónde reenviará esta trama el switch (si corresponde).</textformat><br />3. <textformat blockindent="20">Para la segunda pregunta, marque las opciones correspondientes para indicar la forma en que el switch manejará la trama.</textformat><br />4. <textformat blockindent="20">Haga clic en el botón Verificar para ver si su respuesta es correcta.</textformat><br /><br /><b>Ayuda adicional:  </b><br />“FF” es una dirección MAC de difusión y se reenvía a todos los puertos, excepto al puerto de origen.<br /><br />Todos los puertos (excepto el de origen) se <b>saturan</b> con una trama solo si el switch no tiene el destino MAC en la tabla MAC.<br /><br />El switch solo agrega una nueva dirección MAC a la tabla sobre la base de la dirección MAC de origen. Si la dirección MAC de origen ya existe en la tabla, no se agrega ni se aprende nada. Si la dirección MAC de origen no está en la tabla, se agrega.<br /><br />El switch descarta una trama si los dispositivos de destino y de origen están conectados al mismo puerto y el switch tiene la dirección MAC de destino en la tabla MAC. En esta actividad, esto sucede en el único puerto conectado al hub con dos dispositivos host.<br />]]></text> 
+</component>
+
+<component id="ID_CHECK">
+<text><![CDATA[<b>Verificar</b>]]></text> 
+</component>
+
+<component id="ID_NEW">
+<text><![CDATA[<b>Nuevo problema de práctica</b>]]></text> 
+</component>
+
+<component id="ID_HELP">
+<text><![CDATA[<b>Ayuda</b>]]></text> 
+</component>
+
+<component id="ID_hub">
+<text><![CDATA[Hub]]></text> 
+</component> <!--Frame Table-->
+
+<component id="ID_table1_title">
+<text><![CDATA[<b>Trama</b>]]></text> 
+</component>
+
+<component id="ID_table1_txt01">
+<text><![CDATA[Preámbulo]]></text> 
+</component>
+
+<component id="ID_table1_txt02">
+<text><![CDATA[MAC de destino]]></text> 
+</component>
+
+<component id="ID_table1_txt03">
+<text><![CDATA[MAC de origen.]]></text> 
+</component>
+
+<component id="ID_table1_txt04">
+<text><![CDATA[Tipo de longitud]]></text> 
+</component>
+
+<component id="ID_table1_txt05">
+<text><![CDATA[Datos encapsulados]]></text> 
+</component>
+
+<component id="ID_table1_txt06">
+<text><![CDATA[Fin de la trama]]></text> 
+</component> <!--MAC Table-->
+
+<component id="ID_table2_title">
+<text><![CDATA[<b>Tabla MAC</b>]]></text> 
+</component> <!--Questions-->
+
+<component id="ID_question1">
+<text><![CDATA[<b>Pregunta&nbsp;1.  </b> Adónde reenviará la trama el switch?]]></text> 
+</component>
+
+<component id="ID_question2">
+<text><![CDATA[<b>Pregunta&nbsp;2.   </b>Cuáles de estas afirmaciones sobre el reenvío de una trama por parte del switch son verdaderas?]]></text> 
+</component>
+
+<component id="ID_Q2_choice1">
+<text><![CDATA[El switch agrega la dirección MAC de origen a la tabla MAC.]]></text> 
+</component>
+
+<component id="ID_Q2_choice2">
+<text><![CDATA[La trama es una trama de broadcast y se reenvía a todos los puertos.]]></text> 
+</component>
+
+<component id="ID_Q2_choice3">
+<text><![CDATA[La trama es una trama de unicast y se envía sólo a un puerto específico.]]></text> 
+</component>
+
+<component id="ID_Q2_choice4">
+<text><![CDATA[La trama es una trama de unicast y se distribuye por saturación a todos los puertos.]]></text> 
+</component>
+
+<component id="ID_Q2_choice5">
+<text><![CDATA[La trama es una trama de unicast, pero se descarta en el switch.]]></text> 
+</component> <!--Feedback text-->
+<component id="ID_correctHeader">
+<text><![CDATA[<b>Correcto</b>]]></text> 
+</component>
+<component id="ID_correct">
+<text><![CDATA[Ha respondido correctamente todas las preguntas a partir de la información de la trama y la tabla MAC.]]></text> 
+</component>
+
+<component id="ID_feedback1Header">
+<text><![CDATA[<b>Incorrecto</b>]]></text> 
+</component>
+<component id="ID_feedback1">
+<text><![CDATA[En la pregunta 1, los puertos seleccionados no son correctos.]]></text> 
+</component>
+
+<component id="ID_feedback2Header">
+<text><![CDATA[<b>Incorrecto</b>]]></text> 
+</component>
+<component id="ID_feedback2">
+<text><![CDATA[En la pregunta&nbsp;2, su respuesta sobre la forma en que el switch maneja la dirección MAC de origen no es correcta.]]></text> 
+</component>
+
+<component id="ID_feedback3Header">
+<text><![CDATA[<b>Incorrecto</b>]]></text> 
+</component>
+<component id="ID_feedback3">
+<text><![CDATA[En la pregunta&nbsp;2, su respuesta sobre la forma en que el switch maneja la trama según la dirección de destino no es correcta.]]></text> 
+</component>
+
+
+</textcomponents>

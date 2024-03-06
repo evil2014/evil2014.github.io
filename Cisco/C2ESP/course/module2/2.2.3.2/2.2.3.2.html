@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.2.3.2 Herramientas y pruebas de seguridad de red</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.2.3.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Seguridad de switches: administración e implementación</h1>
+        <h2>Prácticas recomendadas de seguridad</h2>
+      </div>
+      <div id="content">
+<p>Las herramientas de seguridad de red ayudan al administrador de red a probar una red para detectar debilidades. Algunas herramientas permiten que el administrador asuma el rol de atacante. Mediante una de estas herramientas, el administrador puede iniciar un ataque contra la red y analizar los resultados para determinar cómo ajustar las políticas de seguridad a fin de mitigar esos tipos de ataques. Las auditorías de seguridad y los pruebas de penetración son dos funciones básicas que llevan a cabo las herramientas de seguridad de red.</p>
+<p></p>
+<p>El administrador puede iniciar manualmente las técnicas de prueba de seguridad de red. Otras pruebas están automatizadas en gran medida. Sin importar el tipo de prueba, el personal que configura y lleva a cabo las pruebas de seguridad debe tener un amplio conocimiento de seguridad y de redes. Esto incluye conocimientos en las siguientes áreas: </p>
+<p>
+<ul>
+<li>Seguridad de la red</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Firewalls</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Sistemas de prevención de intrusiones</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Sistemas operativos</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Programación</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Protocolos de red (como TCP/IP)</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.2.2.3 Análisis de NAT dinámica</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.2.2.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de NAT</h1>
+        <h2>Configuración de NAT dinámica</h2>
+      </div>
+      <div id="content">
+<p>Con la configuración anterior, en las ilustraciones se muestra el proceso de traducción de NAT dinámica entre dos clientes y el servidor web:</p>
+<p></p>
+<p>En la figura 1, se muestra el flujo de tráfico desde adentro hacia fuera:</p>
+<p></p>
+<p>1. Los hosts con las direcciones IPv4 de origen (192.168.10.10 [PC1] y 192.168.11.10 [PC2]) envían paquetes para solicitar la conexión al servidor en la dirección IPv4 pública (209.165.200.254).</p>
+<p>2. El R2 recibe el primer paquete del host 192.168.10.10. Debido a que este paquete se recibió en una interfaz configurada como interfaz NAT interna, el R2 verifica la configuración NAT para determinar si este paquete debe traducirse. Como la ACL permite este paquete, el R2 lo traduce. El R2 consulta su tabla de NAT. Debido a que no hay entrada de traducción para esta dirección IP, el R2 determina que la dirección de origen 192.168.10.10 se debe traducir de manera dinámica. El R2 selecciona una dirección global disponible del conjunto de direcciones dinámicas y crea una entrada de traducción, 209.165.200.226. La dirección IPv4 de origen inicial (192.168.10.10) es la dirección local interna, y la dirección traducida es la dirección global interna (209.165.200.226) en la tabla de NAT. </p>
+<p></p>
+<p>Para el segundo host, 192.168.11.10, el R2 repite el procedimiento, selecciona la siguiente dirección global disponible del conjunto de direcciones dinámicas y crea una segunda entrada de traducción, 209.165.200.227.</p>
+<p></p>
+<p>3. El R2 reemplaza la dirección de origen local interna de la PC1, 192.168.10.10, por la dirección global interna traducida 209.165.200.226 y reenvía el paquete. El mismo proceso se lleva a cabo para el paquete de la PC2 con la dirección traducida para esta computadora (209.165.200.227).</p>
+<p></p>
+<p>En la figura 2, se muestra el flujo de tráfico desde adentro hacia fuera:</p>
+<p></p>
+<p>4. El servidor recibe el paquete de la PC1 y responde con la dirección IPv4 de destino 209.165.200.226. Cuando el servidor recibe el segundo paquete, responde a la PC2 con la dirección IPv4 de destino 209.165.200.227.</p>
+<p>5a. Cuando el R2 recibe el paquete con la dirección IPv4 de destino 209.165.200.226, realiza una búsqueda en la tabla de NAT. Con la asignación de la tabla, el R2 vuelve a traducir la dirección a la dirección local interna (192.168.10.10) y reenvía el paquete hacia la PC1. </p>
+<p>5b. Cuando el R2 recibe el paquete con la dirección IPv4 de destino 209.165.200.227, realiza una búsqueda en la tabla de NAT. Con la asignación de la tabla, el R2 vuelve a traducir la dirección a la dirección local interna (192.168.11.10) y reenvía el paquete hacia la PC2.</p>
+<p>6. La PC1 en 192.168.10.10 y la PC2 en 192.168.11.10 reciben los paquetes y continúan la conversación. El router lleva a cabo los pasos 2 a 5 para cada paquete. (El paso 6 no aparece en las ilustraciones).</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

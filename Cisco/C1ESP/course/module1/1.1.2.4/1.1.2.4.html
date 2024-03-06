@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.1.2.4 Punto a punto</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.1.2.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Conectados globalmente</h1>
+        <h2>Provisión de recursos en una red</h2>
+      </div>
+      <div id="content">
+<p>El software de servidor y el de cliente normalmente se ejecutan en computadoras distintas, pero también es posible que una misma computadora cumpla las dos funciones a la vez. En pequeñas empresas y hogares, muchas computadoras funcionan como servidores y clientes en la red. Este tipo de red se denomina red entre pares (peer-to-peer). </p>
+<p></p>
+<p>La red punto a punto más sencilla consiste en dos computadoras conectadas directamente mediante una conexión por cable o inalámbrica. </p>
+<p></p>
+<p>También es posible conectar varias PC para crear una red punto a punto más grande, pero para hacerlo se necesita un dispositivo de red, como un hub, para interconectar las computadoras.</p>
+<p></p>
+<p>La principal desventaja de un entorno punto a punto es que el rendimiento de un host puede verse afectado si éste actúa como cliente y servidor a la vez.</p>
+<p></p>
+<p>En empresas más grandes, en las que el tráfico de red puede ser intenso, con frecuencia es necesario tener servidores dedicados para poder responder a la gran cantidad de solicitudes de servicio.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

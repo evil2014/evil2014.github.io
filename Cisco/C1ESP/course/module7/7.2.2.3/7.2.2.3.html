@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.2.2.3 Confiabilidad de TCP: pérdida y retransmisión de datos</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.2.2.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>TCP y UDP</h1>
+        <h2>Confiabilidad y control del flujo</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Manejo de segmentos perdidos</b>
+</p>
+<p></p>
+<p>La pérdida de datos se produce en ocasiones, sin importar qué tan bien diseñada esté la red; por lo tanto, TCP proporciona métodos para administrar estas pérdidas de segmentos. Entre estos está un mecanismo para retransmitir segmentos con datos sin acuse de recibo.</p>
+<p></p>
+<p>Un servicio de host de destino que utiliza TCP generalmente sólo da acuse de recibo de datos para bytes de secuencia continuos. Si faltan uno o más segmentos, solo se hace acuse de recibo de los datos en la primera secuencia contigua de bytes. Por ejemplo, si se reciben segmentos con números de secuencia de 1500 a 3000 y de 3400 a 3500, el número de ACK sería 3001. Esto se debe a que hay segmentos con números de SEQ de 3001 a 3399 que no se recibieron.</p>
+<p></p>
+<p>Cuando el TCP en el host de origen no recibe un acuse de recibo después de una cantidad de tiempo predeterminada, este vuelve al último número de ACK recibido y vuelve a transmitir los datos desde ese punto en adelante. La solicitud de comentarios (RFC) no especifica el proceso de retransmisión, pero se deja a criterio de la implementación particular del TCP. </p>
+<p></p>
+<p>Para una implementación de TCP típica, un host puede transmitir un segmento, colocar una copia del segmento en una cola de retransmisión e iniciar un temporizador. Cuando se recibe el acuse de recibo de los datos, se elimina el segmento de la cola. Si no se recibe el acuse de recibo antes de que el temporizador venza, el segmento es retransmitido. </p>
+<p></p>
+<p>Haga clic en el botón Reproducir en la ilustración para ver una animación de la retransmisión de segmentos perdidos.</p>
+<p></p>
+<p>En la actualidad, los hosts pueden emplear también una característica optativa llamada “acuses de recibo selectivos” (SACK). Si ambos hosts admiten los SACK, es posible que el destino acuse recibo de los bytes de segmentos discontinuos, y el host solo necesitará volver a transmitir los datos perdidos.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

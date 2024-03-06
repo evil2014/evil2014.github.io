@@ -1,0 +1,87 @@
+﻿<textcomponents>
+
+<component id="ID_title">
+<text><![CDATA[<b>Congestión y control del flujo de TCP</b>]]></text>
+</component>
+
+<component id="ID_txt01">
+<text><![CDATA[Emisor]]></text>
+</component>
+
+<component id="ID_txt02">
+  <text><![CDATA[Número de secuencia: 1]]></text> 
+  </component>
+  
+<component id="ID_txt03">
+  <text><![CDATA[Número de secuencia&nbsp;1501]]></text> 
+  </component>
+  
+<component id="ID_txt04">
+  <text><![CDATA[Recibir acuse de recibo]]></text> 
+  </component>
+  
+<component id="ID_txt05">
+  <text><![CDATA[Número de secuencia&nbsp;3001]]></text> 
+  </component>
+  
+<component id="ID_txt06">
+    <text><![CDATA[Número de secuencia&nbsp;4501]]></text> 
+  </component>
+  
+<component id="ID_txt07">
+<text><![CDATA[Recibir acuse de recibo]]></text>
+</component>
+
+<component id="ID_txt08">
+  <text><![CDATA[<b>Tamaño de la ventana&nbsp;=&nbsp;3000</b>]]></text> 
+  </component>
+  
+<component id="ID_txt09">
+  <text><![CDATA[1500&nbsp;bytes]]></text> 
+  </component>
+  
+<component id="ID_txt10">
+  <text><![CDATA[1500&nbsp;bytes]]></text> 
+  </component>
+  
+<component id="ID_txt11">
+  <text><![CDATA[1500&nbsp;bytes]]></text> 
+  </component>
+  
+<component id="ID_txt12">
+    <text><![CDATA[1500&nbsp;bytes]]></text> 
+  </component>
+  
+<component id="ID_txt13">
+<text><![CDATA[Receptor]]></text>
+</component>
+
+<component id="ID_txt14">
+  <text><![CDATA[Recibir&nbsp;1&nbsp;-&nbsp;1500]]></text> 
+  </component>
+  
+<component id="ID_txt15">
+  <text><![CDATA[Recibir&nbsp;1501&nbsp;-&nbsp;3000]]></text> 
+  </component>
+  
+<component id="ID_txt16">
+  <text><![CDATA[Número de acuse de recibo&nbsp;3001]]></text> 
+  </component>
+  
+<component id="ID_txt17">
+  <text><![CDATA[Se perdió el segmento tres debido a la congestión en el receptor.]]></text> 
+  </component>
+  
+<component id="ID_txt18">
+    <text><![CDATA[Recibir&nbsp;4501&nbsp;-&nbsp;6000]]></text> 
+  </component>
+  
+<component id="ID_txt19">
+  <text><![CDATA[Número de acuse de recibo&nbsp;3001<br>Tamaño de la ventana&nbsp;=&nbsp;1500]]></text> 
+  </component>
+  
+<component id="ID_txt20">
+    <text><![CDATA[Si se pierden los segmentos debido a la congestión, el receptor acusará recibo del último segmento secuencial recibido y responderá con un tamaño de ventana reducido.]]></text> 
+  </component>
+  
+</textcomponents>

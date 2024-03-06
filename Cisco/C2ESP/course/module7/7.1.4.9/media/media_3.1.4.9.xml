@@ -1,0 +1,228 @@
+﻿<textcomponents>  
+
+<component id="ID_title">
+	<text><![CDATA[<b>3.1.4 IA - D Clasificar los protocolos de routing dinámico]]></text>
+</component> <!-- slide01 content-->
+
+<component id="ID_s1_inst">
+	<text><![CDATA[<b>Actividad: clasificar los protocolos de routing dinámico (parte&nbsp;1)</b><br/>Arrastre los protocolos adecuados a los campos del protocolo de routing vector distancia proporcionados.]]></text>
+</component>
+
+<component id="ID_s1_txt01">
+	<text><![CDATA[Categorías de protocolos de routing dinámico]]></text>
+</component>
+
+<component id="ID_s1_txt02">
+	<text><![CDATA[Protocolos de gateway interior (IGP)]]></text>
+</component>
+
+<component id="ID_s1_txt03">
+	<text><![CDATA[Protocolos de routing vector distancia]]></text>
+</component>
+
+<component id="ID_s1_txt04">
+	<text><![CDATA[IGRP]]></text>
+</component>
+
+
+<component id='ID_s1_drag01'>
+	<text><![CDATA[BGP]]></text>
+</component>
+
+<component id='ID_s1_drag02'>
+	<text><![CDATA[RIPv2]]></text>
+</component>
+
+<component id='ID_s1_drag03'>
+	<text><![CDATA[IS-IS]]></text>
+</component>
+
+<component id='ID_s1_drag04'>
+	<text><![CDATA[EIGRP]]></text>
+</component>
+
+<component id='ID_s1_drag05'>
+	<text><![CDATA[RIPv1]]></text>
+</component>
+
+<component id='ID_s1_drag06'>
+	<text><![CDATA[OSPF]]></text>
+</component>
+
+
+<component id='ID_s1_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id='ID_s1_CORRECT_BODY'>
+	<text><![CDATA[Seleccionó correctamente los protocolos de routing vector distancia. Haga clic en la parte&nbsp;2 para continuar.]]></text>
+</component>
+
+
+<component id='ID_s1_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_BODY'>
+	<text><![CDATA[No seleccionó correctamente los protocolos de routing vector distancia. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_s1_CHECK'>
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id='ID_s1_RESET'>
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component> <!-- slide02 content-->
+
+
+
+<component id="ID_s2_inst">
+	<text><![CDATA[<b>Actividad: clasificar los protocolos de routing dinámico (parte&nbsp;2)</b><br/>Arrastre los protocolos adecuados a los campos del protocolo de routing de estado de enlace proporcionados.]]></text>
+</component>
+
+<component id="ID_s2_txt01">
+	<text><![CDATA[Categorías de protocolos de routing dinámico]]></text>
+</component>
+
+<component id="ID_s2_txt02">
+	<text><![CDATA[Protocolos de gateway interior (IGP)]]></text>
+</component>
+
+<component id="ID_s2_txt03">
+	<text><![CDATA[Protocolos de enrutamiento de link-state]]></text>
+</component>
+
+
+<component id='ID_s2_drag01'>
+	<text><![CDATA[RIPv1]]></text>
+</component>
+
+<component id='ID_s2_drag02'>
+	<text><![CDATA[EIGRP]]></text>
+</component>
+
+<component id='ID_s2_drag03'>
+	<text><![CDATA[IS-IS]]></text>
+</component>
+
+<component id='ID_s2_drag04'>
+	<text><![CDATA[RIPv2]]></text>
+</component>
+
+<component id='ID_s2_drag05'>
+	<text><![CDATA[BGP]]></text>
+</component>
+
+<component id='ID_s2_drag06'>
+	<text><![CDATA[IGRP]]></text>
+</component>
+
+<component id='ID_s2_drag07'>
+	<text><![CDATA[OSPF]]></text>
+</component>
+
+
+
+
+<component id='ID_s2_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id='ID_s2_CORRECT_BODY'>
+	<text><![CDATA[Seleccionó correctamente los protocolos de routing de estado de enlace. Haga clic en la parte&nbsp;3 para continuar.]]></text>
+</component>
+
+
+<component id='ID_s2_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_s2_INCORRECT_BODY'>
+	<text><![CDATA[No seleccionó correctamente los protocolos de routing de estado de enlace. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_s2_CHECK'>
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id='ID_s2_RESET'>
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component> <!-- slide03 content-->
+
+
+
+<component id="ID_s3_inst">
+	<text><![CDATA[<b>Actividad: clasificar los protocolos de routing dinámico (parte&nbsp;3)</b><br/>Arrastre los protocolos adecuados a los campos del protocolo de routing vector ruta proporcionados.]]></text>
+</component>
+
+<component id="ID_s3_txt01">
+	<text><![CDATA[Categorías de protocolos de routing dinámico]]></text>
+</component>
+
+<component id="ID_s3_txt02">
+	<text><![CDATA[Protocolos de gateway exterior (EGP)]]></text>
+</component>
+
+<component id="ID_s3_txt03">
+	<text><![CDATA[Protocolo de routing vector ruta]]></text>
+</component>
+
+
+<component id='ID_s3_drag01'>
+	<text><![CDATA[RIPv1]]></text>
+</component>
+
+<component id='ID_s3_drag02'>
+	<text><![CDATA[EIGRP]]></text>
+</component>
+
+<component id='ID_s3_drag03'>
+	<text><![CDATA[IS-IS]]></text>
+</component>
+
+<component id='ID_s3_drag04'>
+	<text><![CDATA[RIPv2]]></text>
+</component>
+
+<component id='ID_s3_drag05'>
+	<text><![CDATA[BGP]]></text>
+</component>
+
+<component id='ID_s3_drag06'>
+	<text><![CDATA[IGRP]]></text>
+</component>
+
+<component id='ID_s3_drag07'>
+	<text><![CDATA[OSPF]]></text>
+</component>
+
+
+
+
+<component id='ID_s3_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id='ID_s3_CORRECT_BODY'>
+	<text><![CDATA[Seleccionó correctamente los protocolos de routing vector ruta.]]></text>
+</component>
+
+
+<component id='ID_s3_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_s3_INCORRECT_BODY'>
+	<text><![CDATA[No seleccionó correctamente los protocolos de routing vector ruta. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_s3_CHECK'>
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id='ID_s3_RESET'>
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component>
+
+</textcomponents>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html class="module-index" dir="ltr">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta charset="UTF-8"/>
+    <title>Conexión de redes</title>
+    <link rel="stylesheet" type="text/css" href="../common-ext/styles/index.css"/>
+    <script type="text/javascript" src="../common-ext/scripts/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="../common-ext/scripts/index.js"></script>
+  </head>
+  <body>
+    <div id="header">
+      <div id="header-logo" title="Cisco Systems, Inc. - Cisco Networking Academy"></div>
+      <a id="home-btn" href="../../index.html" title="Inicio">Inicio</a>
+      <h1>Capítulo 5: Traducción de direcciones de red para IPv4 <span id="title"></span></h1>
+    </div>
+    <div id="nav">
+      <ul class="sections">
+        <li>
+          <span class="icon"></span>
+          <span class="section-title">5.0 Introducción</span>
+          <ul class="topics">
+            <li>
+              <span class="icon"></span>
+              <span class="topic-title">5.0.1 Introducción</span>
+              <ul class="pages">
+                <li>
+                  <a data-ident="5.0.1.1" class="page-title" href="5.0.1.1/5.0.1.1.html" target="frame">5.0.1.1 Introducción</a>
+                </li>
+                <li>
+                  <a data-ident="5.0.1.2" class="page-title" href="5.0.1.2/5.0.1.2.html" target="frame">5.0.1.2 Actividad de clase: NAT conceptual</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <span class="icon"></span>
+          <span class="section-title">5.1 Funcionamiento de NAT</span>
+          <ul class="topics">
+            <li>
+              <span class="icon"></span>
+              <span class="topic-title">5.1.1 Características de NAT</span>
+              <ul class="pages">
+                <li>
+                  <a data-ident="5.1.1.1" class="page-title" href="5.1.1.1/5.1.1.1.html" target="frame">5.1.1.1 Espacio de direcciones IPv4 privadas</a>
+                </li>
+                <li>
+                  <a data-ident="5.1.1.2" class="page-title" href="5.1.1.2/5.1.1.2.html" target="frame">5.1.1.2 ¿Qué es NAT?</a>
+                </li>
+                <li>
+                  <a data-ident="5.1.1.3" class="page-title" href="5.1.1.3/5.1.1.3.html" target="frame">5.1.1.3 Terminología de NAT</a>
+                </li>
+                <li>
+                  <a data-ident="5.1.1.4" class="page-title" href="5.1.1.4/5.1.1.4.html" target="frame">5.1.1.4 Terminología de NAT (cont.)</a>
+                </li>
+                <li>
+                  <a data-ident="5.1.1.5" class="page-title" href="5.1.1.5/5.1.1.5.html" target="frame">5.1.1.5 ¿Cómo funciona NAT?</a>
+                </li>
+                <li>
+                  <a data-ident="5.1.1.6" class="page-title" href="5.1.1.6/5.1.1.6.html" target="frame">5.1.1.6 Actividad: identificar la terminología de NAT</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <span class="icon"></span>
+              <span class="topic-title">5.1.2 Tipos de NAT</span>
+              <ul class="pages">
+                <li>
+                  <a data-ident="5.1.2.1" class="page-title" href="5.1.2.1/5.1.2.1.html" target="frame">5.1.2.1 NAT estática</a>
+                </li>
+                <li>
+                  <a data-ident="5.1.2.2" class="page-title" href="5.1.2.2/5.1.2.2.html" target="frame">5.1.2.2 NAT dinámica</a>
+                </li>
+                <li>
+                  <a data-ident="5.1.2.3" class="page-title" href="5.1.2.3/5.1.2.3.html" target="frame">5.1.2.3 Traducción de la dirección del puerto (PAT)</a>
+                </li>
+                <li>
+                  <a data-ident="5.1.2.4" class="page-title" href="5.1.2.4/5.1.2.4.html" target="frame">5.1.2.4 Siguiente puerto disponible</a>
+                </li>
+                <li>
+                  <a data-ident="5.1.2.5" class="page-title" href="5.1.2.5/5.1.2.5.html" target="frame">5.1.2.5 Comparación entre NAT y PAT</a>
+                </li>
+                <li>
+                  <a data-ident="5.1.2.6" class="page-title" href="5.1.2.6/5.1.2.6.html" target="frame">5.1.2.6 Packet Tracer: investigación del funcionamiento de NAT</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <span class="icon"></span>
+              <span class="topic-title">5.1.3 Beneficios de NAT</span>
+              <ul class="pages">
+                <li>
+                  <a data-ident="5.1.3.1" class="page-title" href="5.1.3.1/5.1.3.1.html" target="frame">5.1.3.1 Beneficios de NAT</a>
+                </li>
+                <li>
+                  <a data-ident="5.1.3.2" class="page-title" href="5.1.3.2/5.1.3.2.html" target="frame">5.1.3.2 Desventajas de la NAT</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <span class="icon"></span>
+          <span class="section-title">5.2 Configuración de NAT</span>
+          <ul class="topics">
+            <li>
+              <span class="icon"></span>
+              <span class="topic-title">5.2.1 Configuración de NAT estática</span>
+              <ul class="pages">
+                <li>
+                  <a data-ident="5.2.1.1" class="page-title" href="5.2.1.1/5.2.1.1.html" target="frame">5.2.1.1 Configuración de NAT estática</a>
+                </li>
+                <li>
+                  <a data-ident="5.2.1.2" class="page-title" href="5.2.1.2/5.2.1.2.html" target="frame">5.2.1.2 Análisis de NAT estática</a>
+                </li>
+                <li>
+                  <a data-ident="5.2.1.3" class="page-title" href="5.2.1.3/5.2.1.3.html" target="frame">5.2.1.3 Verificación de NAT estática</a>
+                </li>
+                <li>
+                  <a data-ident="5.2.1.4" class="page-title" href="5.2.1.4/5.2.1.4.html" target="frame">5.2.1.4 Packet Tracer: configuración de NAT estática</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <span class="icon"></span>
+              <span class="topic-title">5.2.2 Configuración de NAT dinámica</span>
+              <ul class="pages">
+                <li>
+                  <a data-ident="5.2.2.1" class="page-title" href="5.2.2.1/5.2.2.1.html" target="frame">5.2.2.1 Funcionamiento de NAT dinámica</a>
+                </li>
+                <li>
+                  <a data-ident="5.2.2.2" class="page-title" href="5.2.2.2/5.2.2.2.html" target="frame">5.2.2.2 Configuración de NAT dinámica</a>
+                </li>
+                <li>
+                  <a data-ident="5.2.2.3" class="page-title" href="5.2.2.3/5.2.2.3.html" target="frame">5.2.2.3 Análisis de NAT dinámica</a>
+                </li>
+                <li>
+                  <a data-ident="5.2.2.4" class="page-title" href="5.2.2.4/5.2.2.4.html" target="frame">5.2.2.4 Verificación de NAT dinámica</a>
+                </li>
+                <li>
+                  <a data-ident="5.2.2.5" class="page-title" href="5.2.2.5/5.2.2.5.html" target="frame">5.2.2.5 Packet Tracer: configuración de NAT dinámica</a>
+                </li>
+                <li>
+                  <a data-ident="5.2.2.6" class="page-title" href="5.2.2.6/5.2.2.6.html" target="frame">5.2.2.6 Práctica de laboratorio: configuración de NAT dinámica y estática</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <span class="icon"></span>
+              <span class="topic-title">5.2.3 Configuración de la traducción de la dirección del puerto (PAT)</span>
+              <ul class="pages">
+                <li>
+                  <a data-ident="5.2.3.1" class="page-title" href="5.2.3.1/5.2.3.1.html" target="frame">5.2.3.1 Configuración de PAT: conjunto de direcciones</a>
+                </li>
+                <li>
+                  <a data-ident="5.2.3.2" class="page-title" href="5.2.3.2/5.2.3.2.html" target="frame">5.2.3.2 Configuración de PAT: dirección única</a>
+                </li>
+                <li>
+                  <a data-ident="5.2.3.3" class="page-title" href="5.2.3.3/5.2.3.3.html" target="frame">5.2.3.3 Análisis de PAT</a>
+                </li>
+                <li>
+                  <a data-ident="5.2.3.4" class="page-title" href="5.2.3.4/5.2.3.4.html" target="frame">5.2.3.4 Verificación de una PAT</a>
+                </li>
+                <li>
+                  <a data-ident="5.2.3.5" class="page-title" href="5.2.3.5/5.2.3.5.html" target="frame">5.2.3.5 Actividad: identificar la información de dirección en cada salto</a>
+                </li>
+                <li>
+                  <a data-ident="5.2.3.6" class="page-title" href="5.2.3.6/5.2.3.6.html" target="frame">5.2.3.6 Packet Tracer: implementación de NAT estática y dinámica</a>
+                </li>
+                <li>
+                  <a data-ident="5.2.3.7" class="page-title" href="5.2.3.7/5.2.3.7.html" target="frame">5.2.3.7 Práctica de laboratorio: Configuración de la traducción de la dirección del puerto (PAT)</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <span class="icon"></span>
+              <span class="topic-title">5.2.4 Reenvío de puertos</span>
+              <ul class="pages">
+                <li>
+                  <a data-ident="5.2.4.1" class="page-title" href="5.2.4.1/5.2.4.1.html" target="frame">5.2.4.1 Reenvío de puertos</a>
+                </li>
+                <li>
+                  <a data-ident="5.2.4.2" class="page-title" href="5.2.4.2/5.2.4.2.html" target="frame">5.2.4.2 Ejemplo de SOHO </a>
+                </li>
+                <li>
+                  <a data-ident="5.2.4.3" class="page-title" href="5.2.4.3/5.2.4.3.html" target="frame">5.2.4.3 Configuración de reenvío de puertos con IOS</a>
+                </li>
+                <li>
+                  <a data-ident="5.2.4.4" class="page-title" href="5.2.4.4/5.2.4.4.html" target="frame">5.2.4.4 Packet Tracer: configuración del reenvío de puertos en un router Linksys</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <span class="icon"></span>
+              <span class="topic-title">5.2.5 Configuración de NAT e IPv6</span>
+              <ul class="pages">
+                <li>
+                  <a data-ident="5.2.5.1" class="page-title" href="5.2.5.1/5.2.5.1.html" target="frame">5.2.5.1 ¿NAT para IPv6?</a>
+                </li>
+                <li>
+                  <a data-ident="5.2.5.2" class="page-title" href="5.2.5.2/5.2.5.2.html" target="frame">5.2.5.2 Direcciones IPv6 locales únicas</a>
+                </li>
+                <li>
+                  <a data-ident="5.2.5.3" class="page-title" href="5.2.5.3/5.2.5.3.html" target="frame">5.2.5.3 NAT para IPv6</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <span class="icon"></span>
+          <span class="section-title">5.3 Resolución de problemas de NAT</span>
+          <ul class="topics">
+            <li>
+              <span class="icon"></span>
+              <span class="topic-title">5.3.1 Resolución de problemas de NAT</span>
+              <ul class="pages">
+                <li>
+                  <a data-ident="5.3.1.1" class="page-title" href="5.3.1.1/5.3.1.1.html" target="frame">5.3.1.1 Resolución de problemas de NAT: comandos show</a>
+                </li>
+                <li>
+                  <a data-ident="5.3.1.2" class="page-title" href="5.3.1.2/5.3.1.2.html" target="frame">5.3.1.2 Resolución de problemas de NAT: comando debug</a>
+                </li>
+                <li>
+                  <a data-ident="5.3.1.3" class="page-title" href="5.3.1.3/5.3.1.3.html" target="frame">5.3.1.3 Caso práctico</a>
+                </li>
+                <li>
+                  <a data-ident="5.3.1.4" class="page-title" href="5.3.1.4/5.3.1.4.html" target="frame">5.3.1.4 Packet Tracer: verificación y resolución de problemas de configuración NAT</a>
+                </li>
+                <li>
+                  <a data-ident="5.3.1.5" class="page-title" href="5.3.1.5/5.3.1.5.html" target="frame">5.3.1.5 Práctica de laboratorio: resolución de problemas de configuración NAT</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <span class="icon"></span>
+          <span class="section-title">5.4 Resumen</span>
+          <ul class="topics">
+            <li>
+              <span class="icon"></span>
+              <span class="topic-title">5.4.1 Resumen</span>
+              <ul class="pages">
+                <li>
+                  <a data-ident="5.4.1.1" class="page-title" href="5.4.1.1/5.4.1.1.html" target="frame">5.4.1.1 Actividad de clase: Revisión de NAT</a>
+                </li>
+                <li>
+                  <a data-ident="5.4.1.2" class="page-title" href="5.4.1.2/5.4.1.2.html" target="frame">5.4.1.2 Packet Tracer: desafío de integración de habilidades</a>
+                </li>
+                <li>
+                  <a data-ident="5.4.1.3" class="page-title" href="5.4.1.3/5.4.1.3.html" target="frame">5.4.1.3 Resumen</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <ul id="nav-menu" class="contextmenu">
+      <li id="nav-menu-expand">Expandir todo</li>
+      <li id="nav-menu-collapse">Contraer todo</li>
+    </ul>
+    <div id="content">
+      <div id="container"></div>
+      <button id="prev-btn" type="button" title="Anterior" disabled><span class="icon">Anterior</span></button>
+      <input id="jump-box" type="text" value=""/>
+      <button id="next-btn" type="button" title="Siguiente" disabled><span class="icon">Siguiente</span></button>
+      <button id="mini-btn" type="button" title="Alternar"><span class="icon">Alternar</span></button>
+    </div>
+  </body>
+</html>
+

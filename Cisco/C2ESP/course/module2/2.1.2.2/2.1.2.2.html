@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.1.2.2 Configuración de puertos de switch en la capa física</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.1.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración básica del switch</h1>
+        <h2>Configuración de puertos de un switch</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Dúplex y velocidad</b>
+</p>
+<p></p>
+<p>Los puertos de switch se pueden configurar manualmente con parámetros específicos de dúplex y de velocidad. Use el comando <span class="cmd"><b>duplex</b></span> del modo de configuración de interfaz para especificar manualmente el modo dúplex de un puerto de switch. Use el comando <span class="cmd"><b>speed</b></span> del modo de configuración de interfaz para especificar manualmente la velocidad de un puerto de switch. En la figura 1, el puerto F0/1 de los switches S1 y S2 se configura manualmente con la palabra clave <span class="cmd"><b>full</b></span> para el comando <span class="cmd"><b>duplex</b></span> y la palabra clave <span class="cmd"><b>100</b></span> para el comando <span class="cmd"><b>speed</b></span>. </p>
+<p></p>
+<p>La configuración predeterminada de dúplex y velocidad para los puertos de switch en los switches Cisco Catalyst 2960 y 3560 es automática. Los puertos 10/100/1000 funcionan en el modo half-duplex o full-duplex cuando se establecen en 10 Mb/s o 100 Mb/s, pero solo funcionan en el modo full-duplex cuando se establecen en 1000 Mb/s (1 Gb/s). La autonegociación es útil cuando se desconoce la configuración de dúplex y de velocidad del dispositivo que se conecta al puerto o cuando es posible que dicha configuración cambie. Al conectarse a dispositivos conocidos, como servidores, estaciones de trabajo dedicadas o dispositivos de red, se recomienda establecer manualmente la configuración de dúplex y de velocidad.</p>
+<p></p>
+<p>Cuando se realiza la resolución de problemas de puertos de switch, se debe verificar la configuración de dúplex y de velocidad.</p>
+<p></p>
+<p>
+<b>Nota:</b> si la configuración para el modo dúplex y la velocidad de puertos del switch presenta incompatibilidades, se pueden producir problemas de conectividad. Una falla de autonegociación provoca incompatibilidades en la configuración.</p>
+<p></p>
+<p>Todos los puertos de fibra óptica, como los puertos 100BASE-FX, solo funcionan a una velocidad predefinida y siempre son full-duplex. </p>
+<p></p>
+<p>Use el verificador de sintaxis de la figura 2 para configurar el puerto F0/1 del switch S1.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

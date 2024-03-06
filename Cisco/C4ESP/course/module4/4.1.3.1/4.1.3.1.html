@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.1.3.1 Velocidad de acceso y velocidad de información comprometida</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.1.3.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Introducción a Frame Relay</h1>
+        <h2>Conceptos avanzados de Frame Relay</h2>
+      </div>
+      <div id="content">
+<p>Los proveedores de servicios arman las redes Frame Relay con switches muy grandes y potentes, pero los dispositivos solo ven la interfaz del switch del proveedor de servicios. En general, los clientes no están expuestos al funcionamiento interno de la red, que se puede armar con tecnologías de muy alta velocidad, como SONET o SDH. </p>
+<p></p>
+<p>Desde el punto de vista de un cliente, Frame Relay es una interfaz única configurada con uno o más PVC. Los clientes adquieren los servicios de Frame Relay de un proveedor de servicios. Antes de considerar cómo pagar los servicios de Frame Relay, se deben aprender algunos términos y conceptos, como los que se muestra en la ilustración:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Velocidad de acceso:</b> la velocidad de acceso se refiere a la velocidad del puerto. Desde el punto de vista de un cliente, el proveedor de servicios proporciona una conexión serial o un enlace de acceso a la red Frame Relay a través de una línea arrendada. La velocidad de acceso es la velocidad a la que sus circuitos de acceso se unen a la red Frame Relay. Estos pueden ser de 56 kb/s, T1 (1544 Mb/s) o T1 fraccionada (un múltiplo de 56 kb/s o de 64 kb/s). Las velocidades de acceso se miden en el switch Frame Relay. No es posible enviar datos a mayor velocidad que la velocidad de acceso.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Velocidad de información comprometida (CIR):</b> los clientes negocian las CIR con los proveedores de servicios para cada PVC. La CIR es la cantidad de datos que la red recibe del circuito de acceso. El proveedor de servicios garantiza que el cliente pueda enviar datos a la CIR. Todas las tramas recibidas a la CIR o por debajo de esta se aceptan. </li>
+</ul>
+</p>
+<p></p>
+<p>La CIR especifica la velocidad de datos máxima promedio que la red se compromete a entregar en condiciones normales. Al suscribirse a un servicio de Frame Relay, se especifica la velocidad de acceso local, por ejemplo, 56 kb/s o T1. Normalmente, el proveedor solicita que el cliente especifique una CIR para cada DLCI. </p>
+<p></p>
+<p>Si el cliente envía la información más rápido que la CIR en un DLCI determinado, la red marca algunas tramas con un bit de elegibilidad de descarte (DE). La red hace lo mejor para entregar todos los paquetes; sin embargo, descarta primero los paquetes DE si hay congestión. </p>
+<p></p>
+<p>
+<b>Nota:</b> muchos servicios Frame Relay económicos se basan en una CIR de cero (0). Una CIR de cero significa que cada trama es una trama DE, y la red descarta cualquier trama cuando lo necesita. El bit DE forma parte del campo de dirección en el encabezado de la trama Frame Relay.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

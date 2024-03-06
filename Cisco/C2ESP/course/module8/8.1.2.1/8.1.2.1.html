@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.1.2.1 Encapsulación de mensajes OSPF</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.1.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Características de OSPF</h1>
+        <h2>Mensajes OSPF</h2>
+      </div>
+      <div id="content">
+<p>Los mensajes OSPF que se transmiten a través de un enlace Ethernet contienen la siguiente información:</p>
+<p>
+<ul>
+<li>
+<b>Encabezado de la trama de Ethernet de enlace de datos:</b> identifica las direcciones MAC de multidifusión de destino 01-00-5E-00-00-05 o 01-00-5E-00-00-06. (figura 1)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Encabezado del paquete IP:</b> identifica el campo 89 del protocolo IPv4, que indica que se trata de un paquete OSPF. También identifica una de dos direcciones OSPF de multidifusión, 224.0.0.5 o 224.0.0.6. (Figura 2)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Encabezado del paquete OSPF:</b> identifica el tipo de paquete OSPF, la ID del router y la ID del área. (Figura 3)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Datos específicos del tipo de paquete OSPF:</b> contiene información del tipo de paquete OSPF. El contenido varía según el tipo de paquete. En este caso, se trata de un encabezado de IPv4. (figura 4)</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

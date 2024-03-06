@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>11.5.1.3 Capacidad inalámbrica</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_11.5.1.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Servicios de enrutamiento integrados</h1>
+        <h2>Router integrado</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Modo inalámbrico</b>
+</p>
+<p>El modo inalámbrico se refiere a la configuración del estándar inalámbrico IEEE 802.11 que utilizará la red. Existen cuatro enmiendas al estándar IEEE 802.11, que describen distintas características para las comunicaciones inalámbricas; estas son 802.11a, 802.11b, 802.11g y 802.11n. En la figura 1, se muestra más información sobre cada estándar. </p>
+<p></p>
+<p>La mayoría de los routers inalámbricos integrados son compatibles con las versiones 802.11b, 802.11g y 802.11n. Las tres tecnologías son compatibles, pero todos los dispositivos en la red deben funcionar en el mismo estándar común a todos los dispositivos. Por ejemplo: si un router 802.11n está conectado a una computadora portátil con 802.11n, la red funciona en un estándar 802.11n. Sin embargo, si se agrega una impresora inalámbrica 802.11b a la red, el router y la computadora portátil revierten al estándar 802.11b, que es más lento, para todas las comunicaciones. Por lo tanto, mantener dispositivos inalámbricos más antiguos en la red provoca que toda la red funcione más despacio. Es importante tener esto en cuenta al decidir si se mantienen dispositivos inalámbricos más antiguos o no.</p>
+<p></p>
+<p>
+<b>Identificador de conjunto de servicios (SSID)</b>
+</p>
+<p>Puede haber muchas otras redes inalámbricas en su zona. Es importante que los dispositivos inalámbricos se conecten a la red WLAN correcta. Esto se realiza mediante un identificador del servicio (SSID, Service Set Identifier). </p>
+<p></p>
+<p>El SSID es un nombre alfanumérico que distingue mayúsculas de minúsculas para su red inalámbrica doméstica. El nombre puede tener hasta 32 caracteres de longitud. El SSID se utiliza para comunicar a los dispositivos inalámbricos a qué WLAN pertenecen y con qué otros dispositivos pueden comunicarse. Independientemente del tipo de instalación WLAN, todos los dispositivos inalámbricos en una WLAN pueden configurarse con el mismo SSID a fin de poder realizar la comunicación.</p>
+<p></p>
+<p>
+<b>Canal inalámbrico</b>
+</p>
+<p>Los canales se crean al dividir el espectro de RF disponible. Cada canal puede transportar una conversación diferente. Esto es similar a la manera en que los distintos canales de televisión se transmiten por un único medio. Varios AP pueden funcionar muy cerca unos de otros siempre que utilicen diferentes canales para la comunicación.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.1.2.3 Soluciones inalámbricas para empresas </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.1.2.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Conceptos de tecnología inalámbrica</h1>
+        <h2>Componentes de WLANs</h2>
+      </div>
+      <div id="content">
+<p>Las organizaciones que proporcionan conectividad inalámbrica a sus usuarios requieren una infraestructura WLAN para proporcionar opciones adicionales de conectividad. </p>
+<p></p>
+<p>
+<b>Nota:</b> IEEE 802.11 denomina “estación” (STA) a un cliente inalámbrico. En este capítulo, el término “cliente inalámbrico” se utiliza para describir cualquier dispositivo con capacidad inalámbrica.</p>
+<p></p>
+<p>La red de una pequeña empresa que se muestra en la figura 1 es una LAN Ethernet 802.3. Cada cliente (es decir, la PC1 y la PC2) se conecta a un switch mediante un cable de red. El switch es el punto donde los clientes acceden a la red. Observe que el AP inalámbrico también se conecta al switch. En este ejemplo, se puede usar tanto el AP Cisco WAP4410N como el AP WAP131 para proporcionar conectividad de red inalámbrica.</p>
+<p></p>
+<p>Los clientes inalámbricos usan la NIC inalámbrica para detectar los AP cercanos que anuncian su SSID. Los clientes después intentan asociarse y autenticarse con un AP, como se muestra en la figura 2. Después de la autenticación, los usuarios inalámbricos tienen acceso a los recursos de la red.</p>
+<p></p>
+<p>
+<b>Nota:</b> las necesidades inalámbricas de una pequeña organización difieren de las de una organización grande. Las implementaciones inalámbricas a gran escala requieren hardware inalámbrico adicional para simplificar la instalación y la administración de la red inalámbrica.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

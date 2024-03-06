@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.2.1.5 Configuración de una ruta estática completamente especificada</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.2.1.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de rutas estáticas y predeterminadas</h1>
+        <h2>Configuración de rutas estáticas IPv4</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Ruta estática completamente especificada</b>
+</p>
+<p>Una ruta estática completamente especificada tiene determinadas tanto la interfaz de salida como la dirección IP del siguiente salto. Este es otro tipo de ruta estática que se utiliza en versiones más antiguas de IOS, antes de CEF. Esta forma de ruta estática se utiliza cuando la interfaz de salida es una interfaz de accesos múltiples y se debe identificar explícitamente el siguiente salto. El siguiente salto debe estar conectado directamente a la interfaz de salida especificada.</p>
+<p></p>
+<p>Suponga que el enlace de red entre el R1 y el R2 es un enlace Ethernet y que la interfaz GigabitEthernet 0/1 del R1 está conectada a dicha red, como se muestra en la figura 1. CEF no está habilitado. Para eliminar la búsqueda recursiva, se puede implementar una ruta estática conectada directamente utilizando el siguiente comando:</p>
+<p></p>
+<p>
+<span class="cmd">R1(config)# </span>
+<span class="cmd">
+<b>ip route 192.168.2.0 255.255.255.0 GigabitEthernet 0/1</b>
+</span>
+</p>
+<p></p>
+<p>Sin embargo, esto puede causar resultados incongruentes o inesperados. La diferencia entre una red Ethernet de accesos múltiples y una red serial punto a punto es que esta última solo tiene un dispositivo más en esa red, el router que se encuentra en el otro extremo del enlace. Con las redes Ethernet, es posible que existan muchos dispositivos diferentes que comparten la misma red de accesos múltiples, incluyendo hosts y hasta routers múltiples. La designación de la interfaz de salida Ethernet en la ruta estática por sí sola no provee al router información suficiente para determinar qué dispositivo es el dispositivo del siguiente salto. </p>
+<p></p>
+<p>El R1 sabe que el paquete se debe encapsular en una trama de Ethernet y que se debe enviar desde la interfaz GigabitEthernet 0/1. Sin embargo, el R1 no conoce la dirección IPv4 del siguiente salto; por lo tanto, no puede determinar la dirección MAC de destino para la trama de Ethernet.</p>
+<p></p>
+<p>Según la topología y las configuraciones de otros routers, esta ruta estática puede funcionar o no. Cuando la interfaz de salida sea una red Ethernet, se recomienda utilizar una ruta estática completamente especificada que incluya la interfaz de salida y la dirección del siguiente salto. </p>
+<p></p>
+<p>Como se muestra en la figura 2, al reenviar paquetes al R2, la interfaz de salida es GigabitEthernet 0/1 y la dirección IPv4 del siguiente salto es 172.16.2.2.</p>
+<p></p>
+<p>
+<b>Nota</b>: si se utiliza CEF, ya no se necesita una ruta estática completamente especificada. Debe utilizarse una ruta estática con una dirección del siguiente salto.</p>
+<p></p>
+<p>Utilice el verificador de sintaxis en las figuras 3 y 4 para configurar y verificar las rutas estáticas completamente especificadas en el R2 y el R3.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

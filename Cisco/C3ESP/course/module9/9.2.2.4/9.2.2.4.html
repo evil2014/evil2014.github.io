@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.2.2.4 Desinstalación de la licencia</title>
+    <!--  -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.2.2.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Licencias del IOS</h1>
+        <h2>Verificación y administración de licencias</h2>
+      </div>
+      <div id="content">
+<p>Para borrar una licencia permanente activa de los routers Cisco de las series 1900, 2900 y 3900, realice los siguientes pasos:</p>
+<p></p>
+<p>
+<b>Paso 1. Deshabilitar el paquete de tecnología.</b>
+</p>
+<p></p>
+<p>
+<ul>
+<li>Deshabilite la licencia activa mediante el comando:</li>
+</ul>
+</p>
+<p></p>
+<p>
+<span class="cmd">Router(config)# </span>
+<span class="cmd">
+<b>license boot module</b>
+</span>
+
+<span class="cmd"></span>
+<span class="cmd">
+<i>nombre-módulo</i>
+</span>
+
+<span class="cmd"></span>
+<span class="cmd">
+<b>technology-package</b>
+</span>
+
+<span class="cmd"></span>
+<span class="cmd">
+<i>nombre-paquete </i>
+</span>
+<span class="cmd">
+<b>disable</b>
+</span>
+</p>
+<p></p>
+<p>
+<ul>
+<li>Vuelva a cargar el router mediante el comando <span class="cmd"><b>reload</b></span>. Se requiere volver a cargarlo para que el paquete de software esté inactivo.</li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Paso 2. Borrar la licencia.</b>
+</p>
+<p></p>
+<p>
+<ul>
+<li>Borre la licencia de paquete de tecnología del almacenamiento de licencias.</li>
+</ul>
+</p>
+<p></p>
+<p>
+<span class="cmd">Router# </span>
+<span class="cmd">
+<b>license clear</b>
+</span>
+<span class="cmd"></span>
+<span class="cmd">
+<i>nombre-característica</i>
+</span>
+</p>
+<p></p>
+<p>
+<ul>
+<li>Borre el comando <span class="cmd"><b>license boot module </b></span><span class="cmd"><i>nombre-módulo</i></span><span class="cmd"><b> technology-package </b></span><span class="cmd"><i>nombre-paquete</i></span><span class="cmd"><b> disable</b></span> que se utiliza para deshabilitar la licencia activa:</li>
+</ul>
+</p>
+<p></p>
+<p>
+<span class="cmd">Router(config)# </span>
+<span class="cmd">
+<b>no license boot module </b>
+</span>
+<span class="cmd">
+<i>nombre-módulo</i>
+</span>
+<span class="cmd">
+<b> technology-package </b>
+</span>
+<span class="cmd">
+<i>nombre-paquete</i>
+</span>
+<span class="cmd">
+<b> disable</b>
+</span>
+</p>
+<p></p>
+<p>
+<b>Nota:</b> algunas licencias, como las licencias incorporadas, no pueden borrarse. Solo se eliminan las licencias que se agregaron mediante el comando <span class="cmd"><b>license install</b></span>. Las licencias de evaluación no se eliminan.</p>
+<p></p>
+<p>En la figura 1, se muestra un ejemplo de eliminación de una licencia activa. </p>
+<p></p>
+<p>Utilice el verificador de sintaxis de la figura 2 para desinstalar la licencia de seguridad en el router R2.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

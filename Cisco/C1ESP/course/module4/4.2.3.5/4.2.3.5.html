@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.2.3.5 Prueba de cables de fibra óptica</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.2.3.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Medios de red</h1>
+        <h2>Cableado de fibra óptica</h2>
+      </div>
+      <div id="content">
+<p>La terminación y el empalme del cableado de fibra óptica requiere de equipo y capacitación especiales. La terminación incorrecta de los medios de fibra óptica produce una disminución de las distancias de señalización o una falla total de la transmisión. </p>
+<p></p>
+<p>Tres tipos comunes de errores de empalme y terminación de fibra óptica son:</p>
+<p>
+<ul>
+<li>
+<b>Desalineación:</b> los medios de fibra óptica no se alinean con precisión al unirlos.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Separación de los extremos:</b> no hay contacto completo de los medios en el empalme o la conexión.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Acabado de los extremos:</b> los extremos de los medios no se encuentran bien pulidos o puede verse suciedad en la terminación.</li>
+</ul>
+</p>
+<p></p>
+<p>Se puede realizar una prueba de campo rápida y sencilla que consiste en iluminar un extremo de la fibra con una linterna potente mientras se observa el otro extremo. Si la luz es visible, entonces la fibra es capaz de transmitir luz. Si bien esta prueba no garantiza el funcionamiento de la fibra, es una forma rápida y económica de detectar una fibra deteriorada.</p>
+<p></p>
+<p>Se recomienda utilizar un comprobador óptico como el que se muestra en la ilustración para probar los cables de fibra óptica. Se puede utilizar un reflectómetro óptico de dominio de tiempo (OTDR) para probar cada segmento del cable de fibra óptica. Este dispositivo introduce un impulso de luz de prueba en el cable y mide la retrodispersión y el reflejo de la luz detectados en función del tiempo. El OTDR calculará la distancia aproximada en la que se detectan estas fallas en toda la longitud del cable.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

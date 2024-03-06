@@ -1,0 +1,49 @@
+﻿<textcomponents>
+<component id="ID_textbox">
+<text><![CDATA[<b>Encapsulación de datos</b><textformat blockindent='-16'><LI>Delimitación de tramas</LI><LI>Direccionamiento</LI><LI>Detección de errores</LI></textformat><br/><b>Control de acceso al medio</b><textformat blockindent='-16'><LI>Control de la ubicación y la remoción de tramas en los medios</LI><LI>Recuperación de medios</LI></textformat>]]></text>
+</component>
+
+<component id="ID_txt01">
+<text><![CDATA[<b>Capa física</b>]]></text>
+</component>
+<component id="ID_txt02">
+  <text><![CDATA[Subcapa de control de enlace lógico]]></text> 
+  </component>
+<component id="ID_txt03">
+  <text><![CDATA[802.3: Control de acceso al medio]]></text> 
+  </component>
+<component id="ID_txt04">
+  <text><![CDATA[Subcapa de señalización física]]></text> 
+  </component>
+<component id="ID_txt05">
+  <text><![CDATA[Medio físico]]></text> 
+  </component>
+<component id="ID_txt06">
+  <text><![CDATA[10BASE-5 (500&nbsp;m)<span style="margin-left:2px"> 50</span> <span style="margin-left:3px">Ohm</span><br/>Coaxial tipo N]]></text> 
+  </component>
+<component id="ID_txt07">
+  <text><![CDATA[10BASE-2 (185&nbsp;m)<span style="margin-left:2px"> 50</span> <span style="margin-left:3px">Ohm</span><br/>Coaxial BNC]]></text> 
+  </component>
+<component id="ID_txt08">
+  <text><![CDATA[10BASE-T (100&nbsp;m)<span style="margin-left:2px"> 100</span> <span style="margin-left:3px">Ohm</span><br/>UTP RJ-45]]></text> 
+  </component>
+<component id="ID_txt09">
+  <text><![CDATA[100BASE-TX (100&nbsp;m)<span style="margin-left:2px"> 100</span> <span style="margin-left:3px">Ohm</span><br/>UTP RJ-45]]></text> 
+  </component>
+<component id="ID_txt10">
+  <text><![CDATA[1000BASE-CX (25&nbsp;m)<span style="margin-left:2px"> 150  </span><span style="margin-left:3px">Ohm</span><br/>STP mini-DB-9]]></text>
+  </component>
+<component id="ID_txt11">
+  <text><![CDATA[1000BASE-T (100&nbsp;m)<span style="margin-left:2px"> 100  </span><span style="margin-left:5px">Ohm</span><br/>UTP RJ-45]]></text>
+  </component>
+<component id="ID_txt12">
+  <text><![CDATA[SC de fibra MM<br/> 1000BASE-ST (220 a 550 m)]]></text>
+  </component>
+<component id="ID_txt13">
+  <text><![CDATA[SC de fibra MM<br/> o SM 1000BASE-LX (550 a 5000 m)]]></text>
+  </component>
+
+  <component id="ID_txt14">
+     <text><![CDATA[<b>Capa de Enlace de datos</b>]]></text>
+     </component>
+</textcomponents>

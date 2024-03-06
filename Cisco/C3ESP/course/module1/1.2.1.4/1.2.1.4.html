@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.2.1.4 Alimentación por Ethernet</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.2.1.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Selección de dispositivos de red</h1>
+        <h2>Hardware del switch</h2>
+      </div>
+      <div id="content">
+<p>La alimentación por Ethernet (PoE) permite que un switch suministre alimentación a un dispositivo a través del cableado Ethernet existente. Esta característica se puede utilizar en teléfonos IP y algunos puntos de acceso inalámbrico. Haga clic en los íconos resaltados en la figura 1 para ver los puertos PoE en cada dispositivo.</p>
+<p></p>
+<p>PoE brinda una mayor flexibilidad al instalar puntos de acceso inalámbrico y teléfonos IP, lo que permite que se puedan instalar en cualquier lugar que tenga un cable Ethernet. El administrador de red debe asegurarse de que se requieran las características de PoE, debido a que los switches que admiten PoE son costosos.</p>
+<p></p>
+<p>Los switches compactos relativamente nuevos de Cisco de las series Catalyst 2960-C y 3560-C admiten paso a través de PoE. El paso a través de PoE permite que el administrador de red alimente los dispositivos PoE conectados al switch, así como al switch mismo, por medio de energía obtenida de ciertos switches ascendentes. Haga clic en el ícono resaltado en la figura 2 para ver un switch Catalyst 2960-C de Cisco.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

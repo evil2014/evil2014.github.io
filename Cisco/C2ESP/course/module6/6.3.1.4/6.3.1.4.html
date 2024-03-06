@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.3.1.4 Desperdicio de direccionamiento con clase</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.3.1.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Revisión de CIDR y VLSM</h1>
+        <h2>Direccionamiento con clase</h2>
+      </div>
+      <div id="content">
+<p>El direccionamiento con clase especificado en las RFC 790 y 791 generaba un enorme desperdicio de espacio de direcciones. En los albores de Internet, se asignó a las organizaciones una dirección de red con clase completa de clase A, B o C. </p>
+<p></p>
+<p>Como se muestra en la ilustración:</p>
+<p>
+<ul>
+<li>La clase A tenía el 50% del espacio de direcciones total. Sin embargo, solo podía asignarse una dirección de red de clase A a 126 organizaciones. Lo ridículo era que cada una de estas organizaciones podía proporcionar direcciones para un máximo de 16 millones de hosts. A las organizaciones muy grandes se les asignaban bloques de direcciones enteros de clase A. Algunas empresas y organizaciones gubernamentales aún tienen direcciones de clase A. Por ejemplo, General Electric posee 3.0.0.0/8, Apple Computer, 17.0.0.0/8, y el servicio postal de los Estados Unidos, 56.0.0.0/8. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>La clase B tenía el 25% del espacio de direcciones total. Hasta 16 384 organizaciones podían tener asignada una dirección de red de clase B, y cada una de estas redes podía admitir hasta 65 534 hosts. Sólo las organizaciones más grandes y los gobiernos podían llegar a usar alguna vez las 65 000 direcciones. Al igual que las redes de clase A, muchas direcciones IP en el espacio de direcciones de clase B se perdían.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>La clase C tenía el 12,5% del espacio de direcciones total. Muchas más organizaciones podían obtener las redes de clase C, pero estaban limitadas en el número total de hosts que podían conectar. De hecho, en muchos casos, las direcciones de clase C eran a menudo demasiado pequeñas para la mayoría de las organizaciones medianas.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Las clases D y E se utilizan para direcciones de multidifusión y reservadas.</li>
+</ul>
+</p>
+<p></p>
+<p>El resultado general fue que el direccionamiento con clase era un esquema de direccionamiento que generaba mucho desperdicio. Debía desarrollarse una mejor solución para el direccionamiento de red. Por este motivo, en 1993, se introdujo el routing entre dominios sin clase (CIDR).</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

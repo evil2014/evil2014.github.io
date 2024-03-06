@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.3.2.2 Opciones de módulos para ranuras de switches Cisco</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.3.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Switches LAN</h1>
+        <h2>Fija o modular</h2>
+      </div>
+      <div id="content">
+<p>Las líneas de productos de switches Cisco se utilizan a gran escala en todo el mundo, en gran parte debido a la flexibilidad que proporcionan para opciones complementarias. Cisco IOS no solo tiene el conjunto más completo de características disponibles en relación con cualquier otro sistema operativo de red, sino que además el IOS está diseñado a la medida de cada dispositivo de red de Cisco, en especial, los switches. </p>
+<p></p>
+<p>Para ilustrar las opciones disponibles, que son realmente demasiadas para enumerarlas aquí, nos enfocamos en los switches Catalyst 3560. Los switches Catalyst 3560 tienen puertos de factor de forma conectable pequeño (SFP) que admiten una cantidad de módulos de transceptor SFP. Aquí se presenta una lista de los módulos SFP admitidos en uno o más tipos de switches 3560:</p>
+<p></p>
+<p>
+<b>Módulos SFP Fast Ethernet:</b> </p>
+<p>
+<ul>
+<li>100BASE-FX (fibra óptica multimodo [MMF]) para 2 km</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>100BASE-LX10 (fibra óptica monomodo [SMF]) para 2 km</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>100BASE-BX10 (SMF) para 10 km</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>100BASE-EX (SMF) para 40 km</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>100BASE-ZX (SMF) para 80 km</li>
+</ul>
+</p>
+<p>
+<b>Módulos SFP Gigabit Ethernet:</b> </p>
+<p>
+<ul>
+<li>1000BASE-SX de 50/62,5 μm (MMF), hasta 550/220 m</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>1000BASE-LX/LH (SMF/MMF), hasta 10 km/0,550 km, respectivamente</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>1000BASE-ZX (SMF), hasta 70 km</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>1000BASE-BX10-D y 1000BASE-BX10-U (SMF), hasta 10 km</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>1000BASE-T (transceptor de hilos de cobre)</li>
+</ul>
+</p>
+<p>
+<b>Módulos SFP de 10 Gigabit Ethernet:</b> </p>
+<p>
+<ul>
+<li>10G-SR (MMF), hasta 400 m</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>10G-SR-X (MMF), hasta 400 m (admiten un intervalo de temperatura extendido)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>10G-LRM (MMF), hasta 220 m</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>FET-10G (MMF), hasta 100 m (para uplinks de estructura Nexus)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>10G-LR (SMF), hasta 10 km</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>10G-LR-X (SMF), hasta 10 km (admiten un intervalo de temperatura extendido) </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>10G-ER (SMF), hasta 40 km</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>10G-ZR (SMF), hasta 80 km</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Cable de conductores axiales retorcidos (transceptor de hilos de cobre), hasta 10 m</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Fibra óptica activa, hasta 10 m (para conexiones entre bastidores e intrabastidor) </li>
+</ul>
+</p>
+<p></p>
+<p>Los módulos 40 Gigabit Ethernet y 100 Gigabit Ethernet son compatibles con los dispositivos Cisco de alta gama, como Catalyst 6500, el router CRS, el router de la serie ASR 9000 y el switch de la serie Nexus 7000.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

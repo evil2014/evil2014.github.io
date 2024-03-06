@@ -1,0 +1,70 @@
+﻿<textcomponents>
+
+
+<component id="ID_s1_title">
+  <text><![CDATA[<b>Encabezado de la trama de Ethernet de enlace de datos</b>]]></text> 
+</component>
+<component id="ID_s2_title">
+  <text><![CDATA[<b>Encabezado de paquete IP</b>]]></text> 
+</component>
+<component id="ID_s3_title">
+  <text><![CDATA[<b>Encabezado del paquete OSPF</b>]]></text> 
+</component>
+<component id="ID_s4_title">
+  <text><![CDATA[<b>Campos del encabezado de IPv4 OSPF</b>]]></text> 
+</component>
+
+
+<component id="ID_heading1">
+  <text><![CDATA[Encabezado de trama de enlace de datos]]></text> 
+</component>
+<component id="ID_heading2">
+  <text><![CDATA[Encabezado de paquete IP]]></text> 
+</component>
+<component id="ID_heading3">
+  <text><![CDATA[Encabezado del paquete OSPF]]></text> 
+</component>
+<component id="ID_heading4">
+  <text><![CDATA[Base de datos específicos del tipo de paquete OSPF]]></text> 
+</component>
+
+
+<component id="ID_s1_txt01">
+<text><![CDATA[<b>Trama de enlace de datos (aquí se muestran los campos de Ethernet)  </b><br/>Dirección MAC de destino = multidifusión: 01-00-5E-00-00-05 o 01-00-5E-00-00-06<br/>Dirección MAC de origen = dirección de la interfaz emisora]]></text>
+</component>
+
+
+<component id="ID_s2_txt01">
+<text><![CDATA[<b>Trama de enlace de datos (aquí se muestran los campos de Ethernet)  </b><br/>Dirección MAC de destino = multidifusión: 01-00-5E-00-00-05 o 01-00-5E-00-00-06<br/>Dirección MAC de origen = dirección de la interfaz emisora]]></text>
+</component>
+
+<component id="ID_s2_txt02">
+<text><![CDATA[<b>Paquete IP</b><br/>Dirección IP de origen = dirección de la interfaz emisora<br/>Dirección IP de destino = multidifusión: 224.0.0.5 o 224.0.0.6<br/>Campo Protocolo = 89 para OSPF]]></text>
+</component>
+
+
+<component id="ID_s3_txt01">
+<text><![CDATA[<b>Trama de enlace de datos (aquí se muestran los campos de Ethernet)  </b><br/>Dirección MAC de destino = multidifusión: 01-00-5E-00-00-05 o 01-00-5E-00-00-06<br/>Dirección MAC de origen = dirección de la interfaz emisora]]></text>
+</component>
+<component id="ID_s3_txt02">
+<text><![CDATA[<b>Paquete IP</b><br/>Dirección IP de origen = dirección de la interfaz emisora<br/>Dirección IP de destino = multidifusión: 224.0.0.5 o 224.0.0.6<br/>Campo Protocolo = 89 para OSPF]]></text>
+</component>
+<component id="ID_s3_txt03">
+<text><![CDATA[<b>Encabezado del paquete OSPF</b><br/>Código de tipo para el tipo de paquete OSPF<br/>ID del router e ID del área]]></text>
+</component>
+
+
+<component id="ID_s4_txt01">
+<text><![CDATA[<b>Trama de enlace de datos (aquí se muestran los campos de Ethernet)  </b><br/>Dirección MAC de destino = multidifusión: 01-00-5E-00-00-05 o 01-00-5E-00-00-06<br/>Dirección MAC de origen = dirección de la interfaz emisora]]></text>
+</component>
+<component id="ID_s4_txt02">
+<text><![CDATA[<b>Paquete IP</b><br/>Dirección IP de origen = dirección de la interfaz emisora<br/>Dirección IP de destino = multidifusión: 224.0.0.5 o 224.0.0.6<br/>Campo Protocolo = 89 para OSPF]]></text>
+</component>
+<component id="ID_s4_txt03">
+<text><![CDATA[<b>Encabezado del paquete OSPF</b><br/>Código de tipo para el tipo de paquete OSPF<br/>ID del router e ID del área]]></text>
+</component>
+<component id="ID_s4_txt04">
+<text><![CDATA[<b>Tipos de paquetes OSPF</b><br/>0x01 Saludo<br/>0x02 Descripción de la base de datos (DD)<br/>0X03 Solicitud de estado de enlace<br/>0X04 Actualización de estado de enlace<br/>0X05 Acuse de recibo de estado de enlace]]></text>
+</component>
+
+</textcomponents>

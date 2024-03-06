@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.4.1.1 Lógica de ACL de entrada y salida</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.4.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resolución de problemas de ACL</h1>
+        <h2>Procesamiento de paquetes con ACL</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Lógica de ACL de entrada</b>
+</p>
+<p></p>
+<p>En la figura 1, se muestra la lógica para una ACL de entrada. Si hay una coincidencia entre la información en un encabezado de paquete y una instrucción de ACL, el resto de las instrucciones de la lista se omiten y se permite o se deniega el paquete según lo especificado por la instrucción de la coincidencia. Si no existe una coincidencia entre un encabezado de paquete y una instrucción de ACL, el paquete se prueba en relación con la siguiente instrucción de la lista. Este proceso de búsqueda de coincidencias continúa hasta que se llega al final de la lista.</p>
+<p></p>
+<p>Al final de cada ACL, hay una instrucción deny any implícita. Esta instrucción no se muestra en el resultado. Esta instrucción implícita final se aplica a todos los paquetes cuyas condiciones no se probaron como verdaderas. Esta condición de prueba final coincide con el resto de los paquetes y da como resultado una acción de denegación. En lugar de avanzar en el sentido de entrada o de salida de una interfaz, el router descarta todos los paquetes restantes. A esta instrucción final se la suele conocer como instrucción “deny any implícita” o “denegación de todo el tráfico”. Debido a esta instrucción, una ACL debería incluir, por lo menos, una instrucción permit. De lo contrario, la ACL bloquea todo el tráfico.</p>
+<p>
+<b>Lógica de ACL de salida</b>
+</p>
+<p></p>
+<p>En la figura 2, se muestra la lógica para una ACL de salida. Antes de que se reenvíe un paquete a una interfaz de salida, el router revisa la tabla de routing para ver si el paquete es enrutable. Si no lo es, se descarta y no se prueba en relación con las ACE. A continuación, el router revisa si la interfaz de salida está agrupada en una ACL. Si la interfaz de salida no está agrupada en una ACL, el paquete se puede enviar al búfer de salida. A continuación, se indican algunos ejemplos de la operación de la ACL de salida: </p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Ninguna ACL aplicada a la interfaz:</b> si la interfaz de salida no está agrupada en una ACL de salida, el paquete se envía directamente a la interfaz de salida. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>ACL aplicada a la interfaz:</b> si la interfaz de salida está agrupada en una ACL de salida, el paquete no se envía por la interfaz de salida hasta que se lo prueba mediante la combinación de ACE relacionadas con esa interfaz. Según las pruebas de ACL, el paquete se permite o se deniega.</li>
+</ul>
+</p>
+<p></p>
+<p>Para las listas de salida, “permit” (permitir) significa enviar el paquete al búfer de salida y “deny” (denegar) significa descartar el paquete.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

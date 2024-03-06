@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.1.1.1 Introducción al trabajo a distancia</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.1.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Trabajo a distancia</h1>
+        <h2>Beneficios del trabajo a distancia</h2>
+      </div>
+      <div id="content">
+<p>El trabajo a distancia consiste en trabajar fuera del lugar de trabajo tradicional, por ejemplo, desde una oficina doméstica. Los motivos para elegir el trabajo a distancia son diversos e incluyen desde cuestiones de conveniencia personal hasta permitir que los empleados tengan la oportunidad de continuar trabajando cuando están enfermos o tienen una discapacidad. </p>
+<p></p>
+<p>El término “trabajo a distancia” es amplio y se refiere a desempeñar una tarea mediante la conexión a un lugar de trabajo desde una ubicación remota, con ayuda de las telecomunicaciones. El trabajo a distancia se realiza de forma eficaz gracias a las conexiones a Internet de banda ancha, las redes privadas virtuales (VPN), voz sobre IP (VoIP) y las videoconferencias. </p>
+<p></p>
+<p>Muchas empresas modernas ofrecen oportunidades de empleo para las personas que no pueden trasladarse al trabajo todos los días o para aquellas a las que les resulta más práctico trabajar desde una oficina doméstica. Estas personas, denominadas “trabajadores a distancia”, se deben conectar a la red de la empresa para poder trabajar y compartir información desde las oficinas domésticas. </p>
+<p></p>
+<p>Las soluciones de banda ancha son esenciales para que el trabajo a distancia se desarrolle correctamente. En este capítulo, se detallan los beneficios del trabajo a distancia y la forma en que las soluciones de banda ancha hacen que el trabajo a distancia sea la forma más inteligente de hacer negocios.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

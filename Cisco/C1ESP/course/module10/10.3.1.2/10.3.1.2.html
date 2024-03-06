@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>10.3.1.2 El mensaje viaja a través de una red</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_10.3.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>El mensaje se escucha en todo el mundo</h1>
+        <h2>Póngase en movimiento</h2>
+      </div>
+      <div id="content">
+<p>La explosión masiva de aplicaciones se debe, en gran medida, al genio del enfoque en capas para el procesamiento de datos a través de una red. Concretamente, si se mantiene la funcionalidad de la capa de aplicación separada de la funcionalidad del transporte de datos, los protocolos de capa de aplicación se pueden modificar, y se pueden desarrollar nuevas aplicaciones, sin que el desarrollador deba preocuparse por el procedimiento de obtención de datos a través de la red. Esa es la funcionalidad de otras capas y, por lo tanto, de otros desarrolladores.</p>
+<p></p>
+<p>Como se muestra en la ilustración, cuando una aplicación envía una solicitud a una aplicación de servidor, la capa de aplicación construye el mensaje, pero después se pasa por las diversas funcionalidades de la capa en el cliente para entregarse. Mientras se traslada por el stack, cada capa inferior encapsula los datos con un encabezado que contiene los protocolos de comunicación para esa capa. Estos protocolos, que se implementan en los hosts emisores y receptores, interactúan para proporcionar una entrega extremo a extremo de las aplicaciones a través de la red.</p>
+<p></p>
+<p>Por ejemplo, los protocolos como el HTTP, admiten el envío de páginas Web a dispositivos finales. Ahora que conocemos todas las diversas capas y sus funcionalidades, podemos seguir la solicitud de una página Web de un cliente desde el servidor Web para ver cómo funciona cada una de estas funcionalidades individuales en forma completa y conjunta.</p>
+<p></p>
+<p>Si se utiliza el modelo TCP/IP, un proceso completo de comunicación incluye los siguientes seis pasos:</p>
+<p></p>
+<p>
+<b>Creación de los datos</b>
+</p>
+<p>El primer paso es la creación de datos en la capa de aplicación del dispositivo final de origen que inicia la comunicación. En este caso, después de crear la solicitud del cliente Web, conocida como HTTP GET, esos datos se codifican, comprimen y encriptan, si es necesario. De esto se encarga el protocolo de capa de aplicación del modelo TCP/IP, pero incluye la funcionalidad descrita por las capas de aplicación, presentación y sesión del modelo OSI. La capa de aplicación envía estos datos como un stream a la capa de transporte.</p>
+<p></p>
+<p>
+<b>Segmentación y encapsulación inicial</b>
+</p>
+<p>El siguiente paso es la segmentación y la encapsulación de los datos a medida que pasan por el stack de protocolos. En la capa de transporte, el mensaje HTTP GET se divide en partes más pequeñas y fáciles de manejar. A cada parte del mensaje se le agrega un encabezado de capa de transporte. Dentro del encabezado de la capa de transporte, hay indicadores que establecen cómo reconstruir el mensaje. También se incluye un identificador, el número de puerto 80. Este se utiliza para avisar al servidor de destino que se quiere enviar el mensaje a su aplicación de servidor Web. También se agrega un puerto de origen generado aleatoriamente para asegurarse de que el cliente pueda seguir la comunicación de retorno y reenviarla a la aplicación cliente correcta. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

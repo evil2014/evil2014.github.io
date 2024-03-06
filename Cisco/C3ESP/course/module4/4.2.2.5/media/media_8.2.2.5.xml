@@ -1,0 +1,56 @@
+﻿<textcomponents>
+<component id="ID_s1_title">
+<text><![CDATA[<b>El cliente y el AP se autentican</b>]]></text>
+</component>
+<component id="ID_s1_txt01">
+<text><![CDATA[Emisor]]></text>
+</component>
+<component id="ID_s1_txt02">
+<text><![CDATA[Receptor]]></text>
+</component>
+
+
+<component id="ID_s1_txt03">
+<text><![CDATA[<b>Trama de autenticación (0x0B)</b><textformat blockindent="-14"><ul><li>Tipo (abierta o mediante clave compartida)</li><li>Clave (si es compartida)</li></ul></textformat>]]></text>
+</component>
+
+
+<component id="ID_s1_txt04">
+<text><![CDATA[<b>Trama de autenticación (0x0B)</b><textformat blockindent="-14"><ul><li>Tipo</li><li>Tecla</li><li>Correcta o incorrecta</li></ul></textformat>]]></text>
+</component>
+
+
+
+
+
+
+
+<component id="ID_s2_title">
+<text><![CDATA[<b>El cliente y el AP se asocian</b>]]></text>
+</component>
+<component id="ID_s2_txt01">
+<text><![CDATA[Emisor]]></text>
+</component>
+<component id="ID_s2_txt02">
+<text><![CDATA[Receptor]]></text>
+</component>
+
+
+<component id="ID_s2_txt03">
+<text><![CDATA[<b>Trama de solicitud de asociación (0x00)</b><textformat blockindent="-14"><br/>Dirección MAC del cliente</textformat>]]></text>
+</component>
+
+
+<component id="ID_s2_txt04">
+<text><![CDATA[<b>Trama de respuesta de asociación (0x01)</b><br/>Dirección MAC del AP (BSSID)]]></text>
+</component>
+
+
+<component id="ID_s2_txt05">
+<text><![CDATA[El AP asigna un identificador de asociación (AID) al cliente.]]></text>
+</component>
+
+<component id="ID_s2_txt06">
+<text><![CDATA[El AP anuncia el AID al switch de infraestructura.]]></text>
+</component>
+</textcomponents>

@@ -1,0 +1,106 @@
+﻿<textcomponents>
+	<component id="ID_s1_title">
+		<text><![CDATA[<b>Verificar que la interfaz de tunel esté activa</b>]]></text>
+	</component>
+	<component id="ID_sc_reset">
+		<text><![CDATA[Restablecer]]></text>
+	</component>
+	<component id="ID_sc_showme">
+		<text><![CDATA[Muéstreme]]></text>
+	</component>
+	<component id="ID_sc_showall">
+		<text><![CDATA[Mostrar todo]]></text>
+	</component>
+	<component id="ID_s2_title">
+		<text><![CDATA[<b>Verificar la adyacencia de OSPF a través del tunel GRE</b>]]></text>
+	</component>
+		<component id="ID_s3_title">
+		<text><![CDATA[<b>Configurar y verificar GRE</b>]]></text>
+	</component>
+	
+	<component id="ID_s1_txt01">
+		<text><![CDATA[&lt;se omite el resultado&gt;]]></text>
+	</component>
+		<component id="ID_s3_txt01">
+		<text><![CDATA[Tunnel0]]></text>
+	</component>
+		<component id="ID_s3_txt02">
+		<text><![CDATA[Internet]]></text>
+	</component>
+		<component id="ID_s3_txt03">
+		<text><![CDATA[Túnel GRE]]></text>
+	</component>
+		<component id="ID_s3_txt04">
+		<text><![CDATA[Tunnel0]]></text>
+	</component>
+		
+	<component id="ID_SC" fontFace="_typewriter" fontSize="10">
+		<feedback id="fb"><![CDATA[<b><font size = '10' face="_sans" color="#0000FF">***Debe ingresar el comando exacto y completo. Los comandos que incluyen un nombre o una contraseña distinguen las mayúsculas y minúsculas.***</font></b>
+		]]></feedback>
+		<existingcommands><![CDATA[<font size = '10' face="Arial"><b>Configurar R2 con los siguientes pasos:<ul><li>Crear interfaz de túnel 0.</li><li>Configurar modo de túnel a GRE con IP como protocolo de entrega.</li><li>Asignar la dirección IP 192.168.2.2/24.</li><li>Configurar la fuente del túnel como 209.165.201.2.</li><li>Configurar el destino del túnel como 209.165.201.1.</li><li>Configurar OSPF con la Id. del proceso 1.</li><li>Anunciar la red 192.168.2.0/24 para el área 0.</li></ul></b></font>]]></existingcommands>
+		<command prompt="R2(config)#">
+		<correctresponse><![CDATA[interface tunnel 0]]></correctresponse>
+		</command>
+		<command prompt="R2(config-if)#">
+		<correctresponse><![CDATA[tunnel mode gre ip]]></correctresponse>
+		</command>
+		<command prompt="R2(config-if)#">
+		<correctresponse><![CDATA[ip address 192.168.2.2 255.255.255.0]]></correctresponse>
+		</command>
+		<command prompt="R2(config-if)#">
+		<correctresponse><![CDATA[tunnel source 209.165.201.2]]></correctresponse>
+		</command>
+		<command prompt="R2(config-if)#">
+		<correctresponse><![CDATA[tunnel destination 209.165.201.1]]></correctresponse>
+		</command>
+		<command prompt="R2(config-if)#">
+		<correctresponse><![CDATA[router ospf 1]]></correctresponse>
+		</command>
+		<command prompt="R2(config-router)#">
+		<correctresponse><![CDATA[network 192.168.2.0 0.0.0.255 area 0]]></correctresponse>
+		<instruction><![CDATA[<font size = '10' face="_sans"><b>Configurar R1 con los siguientes pasos:<ul><li>Crear interfaz de túnel 0.</li><li>Configurar modo de túnel a GRE con IP como protocolo de entrega.</li><li>Asignar la dirección IP 192.168.2.1/24.</li><li>Configurar la fuente del túnel como 209.165.201.1.</li><li>Configurar el destino del túnel como 209.165.201.2. </li><li>Configurar OSPF con la Id. del proceso 1.</li><li>Anunciar la red 192.168.2.0/24 para el área 0.</li></ul></b></font>]]></instruction>
+		</command>
+		<command prompt="R1(config)#">
+		<correctresponse><![CDATA[interface tunnel 0]]></correctresponse>
+		</command>
+		<command prompt="R1(config-if)#">
+		<correctresponse><![CDATA[tunnel mode gre ip]]></correctresponse>
+		</command>
+		<command prompt="R1(config-if)#">
+		<correctresponse><![CDATA[ip address 192.168.2.1 255.255.255.0]]></correctresponse>
+		</command>
+		<command prompt="R1(config-if)#">
+		<correctresponse><![CDATA[tunnel source 209.165.201.1]]></correctresponse>
+		</command>
+		<command prompt="R1(config-if)#">
+		<correctresponse><![CDATA[tunnel destination 209.165.201.2 ]]></correctresponse>
+		</command>
+		<command prompt="R1(config-if)#">
+		<correctresponse><![CDATA[router ospf 1]]></correctresponse>
+		</command>
+		<command prompt="R1(config-router)#">
+		<correctresponse><![CDATA[network 192.168.2.0 0.0.0.255 area 0]]></correctresponse>
+		<instruction><![CDATA[<font size = '10' face="_sans"><b>Vuelva directamente al modo EXEC privilegiado. Muestre la lista breve de interfaces filtradas para que incluyan la palabra "Túnel".</b></font>]]></instruction>
+		</command>
+		<command prompt="R1(config-router)#">
+		<correctresponse><![CDATA[end]]></correctresponse>
+		</command>
+		<command prompt="R1#">
+		<correctresponse><![CDATA[show ip interface brief | incluir túnel]]></correctresponse>
+		<deviceresponse><![CDATA[<font size='10'>Tunnel0              192.168.2.1     YES manual up       up</font>]]></deviceresponse>
+		<instruction><![CDATA[<font size = '10' face="_sans"><b>Mostrar la información de interfaz de túnel 0.</b></font>]]></instruction>
+		</command>
+		<command prompt="R1#">
+		<correctresponse><![CDATA[show interface Tunnel 0]]></correctresponse>
+		<deviceresponse><![CDATA[<font size = '10'>Tunnel0 está activo, el protocolo de línea está activo <br> Hardware es túnel <br> La dirección de Internet es 192.168.2.1/24 <br> MTU 17916 bytes, BW 100 Kbit/sec, DLY 50000 usec, <br> fiabilidad 255/255, txload 1/255, rxload 1/255 <br> Encapsulación TUNNEL, bucle invertido no configurado <br> Keepalive no configurado <br> Fuente de túnel 209.165.201.1, destino 209.165.201.2  <br> Protocolo de túnel/transporte GRE/IP <br> Clave inhabilitada, secuencia inhabilitada <br> Suma de verificación de paquetes inhabilitada <br> Túnel TTL 255, Fast tunneling activado<br> Transporte de túnel MTU 1476 bytes <br> Ancho de banda de transmisión de túnel 8000 (kbps) <br> Ancho de banda de recepción de túnel 8000 (kbps) <br> Última entrada 00:00:07, salida 00:00:09, salida hang never <br> Última explicación de contadores "show interface" 00:34:58 <br> Cola de entrada: 0/75/0/0 (size/max/drops/flushes); Total output<br>   drops: 0 <br> Queueing strategy: fifo <br> Output queue: 0/0 (size/max) <br> 5 minute input rate 0 bits/sec, 0 packets/sec <br> 5 minute output rate 0 bits/sec, 0 packets/sec <br> 161 packets input, 16704 bytes, 0 no buffer <br> Received 0 broadcasts (0 IP multicasts) <br> 0 runts, 0 giants, 0 throttles <br> 0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored, 0 abort <br> 178 packets output, 18316 bytes, 0 underruns <br> 0 output errors, 0 collisions, 0 interface resets <br> 0 unknown protocol drops <br> 0 output buffer failures, 0 output buffers swapped out</font>]]></deviceresponse>
+		<instruction><![CDATA[<font size = '10' face="_sans"><b>Muestre los vecinos de OSPF.</b></font>]]></instruction>
+		</command>
+		<command prompt="R1#">
+		<correctresponse><![CDATA[show ip ospf neighbor]]></correctresponse>
+		<deviceresponse><![CDATA[<br>Neighbor ID     Pri  State   Dead Time  Address      Interface<br>209.165.201.2   0    FULL/ - 00:00:36   192.168.2.2  Tunnel0]]></deviceresponse>
+		<instruction><![CDATA[<font size = '10' face="_sans"><b>You successfully configured and verified GRE.</font>]]></instruction>
+		</command>
+		<command prompt=""/>
+</component>
+
+</textcomponents>

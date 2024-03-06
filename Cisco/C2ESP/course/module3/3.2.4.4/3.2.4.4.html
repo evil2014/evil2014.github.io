@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>3.2.4.4 Problemas comunes con enlaces troncales</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_3.2.4.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Implementaciones de VLAN</h1>
+        <h2>Resolución de problemas de VLAN y enlaces troncales</h2>
+      </div>
+      <div id="content">
+<p>En general, los problemas de enlaces troncales se deben a una configuración incorrecta. Al configurar las VLAN y los enlaces troncales en una infraestructura conmutada, los errores de configuración más frecuentes son los siguientes:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Incompatibilidad de VLAN nativa:</b> los puertos de enlace troncal se configuraron con VLAN nativas diferentes. Este error de configuración genera notificaciones de consola y provoca que el tráfico de control y administración se dirija erróneamente. Esto representa un riesgo de seguridad. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Incompatibilidades de modo de enlace troncal:</b> un puerto de enlace troncal está configurado en un modo que no es compatible para enlaces troncales en el puerto peer correspondiente. Estos errores de configuración hacen que el vínculo de enlace troncal deje de funcionar.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>VLAN permitidas en enlaces troncales:</b> no se actualizó la lista de VLAN permitidas en un enlace troncal con los requisitos de enlace troncal de VLAN actuales. En este caso, se envía tráfico inesperado o ningún tráfico al enlace troncal.</li>
+</ul>
+</p>
+<p></p>
+<p>Si se detecta un problema con un enlace troncal y se desconoce la causa, comience la resolución de problemas con un examen de los enlaces troncales para determinar si hay una incompatibilidad de VLAN nativa. Si esa no es la causa, verifique si hay una incompatibilidad de modo de enlace troncal y, por último, revise la lista de VLAN permitidas en el enlace troncal. En las dos páginas siguientes, se analiza cómo solucionar problemas frecuentes de los enlaces troncales. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

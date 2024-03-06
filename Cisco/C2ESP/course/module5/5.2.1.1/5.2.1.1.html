@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.2.1.1 Problemas en los puertos de switch</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.2.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resolución de problemas de routing entre VLAN</h1>
+        <h2>Problemas de configuración entre VLAN</h2>
+      </div>
+      <div id="content">
+<p>Hay varias configuraciones de switch incorrectas comunes que puede producirse al configurar el routing entre varias VLAN.</p>
+<p></p>
+<p>Al utilizar el modelo de routing antiguo para routing entre VLAN, asegúrese de que los puertos del switch que se conectan a las interfaces del router estén configurados en las VLAN correctas. Si un puerto de switch no está configurado para la VLAN adecuada, los dispositivos configurados en esa VLAN no se pueden conectar a la interfaz del router, por lo que dichos dispositivos no pueden enviar datos a las demás VLAN.</p>
+<p></p>
+<p>Como se puede ver en la topología de la figura 1, la PC1 y la interfaz G0/0 del router R1 están configuradas en la misma subred lógica, como lo indica su asignación de dirección IP. Sin embargo, el puerto de switch F0/4 que se conecta a la interfaz G0/0 del router R1 no está configurado y permanece en la VLAN predeterminada. Dado que el router R1 está en una VLAN diferente que PC1, no pueden comunicarse.</p>
+<p></p>
+<p>Para corregir este problema, ejecute el comando <span class="cmd"><b>switchport access vlan 10</b></span> en el modo de configuración de interfaz para el puerto de switch F0/4 en el switch S1. Cuando el puerto del switch se configura para la VLAN correcta, la PC1 puede comunicarse con la interfaz G0/0 del router R1, que le permite acceder a las otras VLAN conectadas al router R1.</p>
+<p></p>
+<p>La topología de la figura 2 muestra el modelo de routing router-on-a-stick. Sin embargo, la interfaz F0/5 en el switch S1 no está configurada como enlace troncal y queda en la VLAN predeterminada para el puerto. Como resultado, el router no puede realizar enrutamiento entre las VLAN, porque cada una de las subinterfaces configuradas no puede enviar ni recibir el tráfico con etiquetas de VLAN. </p>
+<p></p>
+<p>Para corregir este problema, emita el comando <span class="cmd"><b>switchport mode trunk</b></span> en el modo de configuración de interfaz para el puerto del switch F0/5 en el switch S1. Esto convierte a la interfaz en un puerto de enlace troncal, lo que permite que se establezca un enlace troncal entre el R1 y el S1. Una vez que el enlace troncal se establece correctamente, los dispositivos conectados a cada una de las VLAN pueden comunicarse con la subinterfaz asignada a su VLAN, lo que permite el routing entre VLAN.</p>
+<p></p>
+<p>En la topología de la figura 3 se muestra que el enlace troncal entre el S1 y S2 está inactivo. Dado que no hay una conexión o ruta redundante entre los dispositivos, ninguno de los dispositivos conectados al S2 puede llegar al router R1. Como resultado, ninguno de los dispositivos conectados al S2 puede realizar enrutamiento a otras VLAN a través del R1.</p>
+<p></p>
+<p>Para reducir el riesgo de una falla en el enlace entre switches que interrumpa el routing entre VLAN, se deben tener en cuenta enlaces redundantes y rutas alternativas en el diseño de red.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

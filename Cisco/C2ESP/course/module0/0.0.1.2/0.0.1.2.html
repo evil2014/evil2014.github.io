@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>0.0.1.2 Una comunidad global</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_0.0.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Bienvenido a Principios básicos de routing y switching</h1>
+        <h2>Mensaje para el estudiante</h2>
+      </div>
+      <div id="content">
+<p>Cuando participa en Networking Academy, se suma a una comunidad global conectada por tecnologías y objetivos en común. En el programa, participan escuelas, institutos de enseñanza superior, universidades y otras entidades de más de 160 países. En <a href="https://www.academynetspace.com/index_flash.php" target="_blank">http://www.academynetspace.com</a>, puede acceder a una visualización de la comunidad global de Networking Academy.</p>
+<p></p>
+<p>Busque el sitio oficial de Cisco Networking Academy en Facebook© y LinkedIn©. En el sitio de Facebook, puede encontrarse y relacionarse con otros estudiantes de Networking Academy de todo el mundo. El sitio de LinkedIn de Cisco Networking Academy lo conecta con ofertas de empleo, y puede ver la manera en que otras personas comunican sus aptitudes con eficacia.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

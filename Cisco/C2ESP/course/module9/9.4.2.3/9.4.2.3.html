@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.4.2.3 Resolución de problemas de errores comunes de ACL, ejemplo 3</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.4.2.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resolución de problemas de ACL</h1>
+        <h2>Errores comunes de ACL </h2>
+      </div>
+      <div id="content">
+<p>
+<b>Ejemplo de error 3</b>
+</p>
+<p></p>
+<p>En la ilustración, la red 192.168.11.0/24 puede utilizar Telnet para conectarse a 192.168.30.0/24, pero según la política de la empresa, esta conexión no debería permitirse. Los resultados del comando <span class="cmd"><b>show access-lists 130</b></span> indican que se encontró una coincidencia para la instrucción permit.</p>
+<p></p>
+<p>
+<b>Solución:</b> la red 192.168.11.0/24 puede utilizar Telnet para conectarse a la red 192.168.30.0/24, porque el número de puerto Telnet en la instrucción 10 de la lista de acceso 130 aparece en una posición incorrecta en la instrucción de ACL. Actualmente, la instrucción 10 deniega cualquier paquete de origen con un número de puerto que equivalga a Telnet. Para denegar el tráfico entrante de Telnet en G0/1, deniegue el número de puerto de destino que equivale a Telnet, por ejemplo, <span class="cmd"><b>deny tcp any any eq telnet</b></span>.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,90 @@
+﻿
+<textcomponents>
+
+<component id="ID_inst">
+	<text><![CDATA[<b>Actividad: predecir el comportamiento del protocolo de enlace troncal dinámico (DTP)</b><br/>¿Cuáles son las combinaciones de modo de DTP entre dos switches que se convertirán en enlaces troncales y cuáles son las que se convertirán en enlaces de acceso? Arrastre cada una de las etiquetas de enlace hacia los campos proporcionados en la topología. No utilizará todas las etiquetas.]]></text>
+</component>
+
+<component id="ID_txt01">
+	<text><![CDATA[<b>REFERENCIA DE ABREVIATURAS</b><br/>TR = troncal<br/>AC = acceso<br/>DA = dinámico automático<br/>DD = dinámico deseado]]></text>
+</component>
+<component id="ID_txt02">
+	<text><![CDATA[DD]]></text>
+</component>
+<component id="ID_txt03">
+	<text><![CDATA[DA]]></text>
+</component>
+
+<component id="ID_txt04">
+	<text><![CDATA[DD]]></text>
+</component>
+
+<component id="ID_txt05">
+	<text><![CDATA[DD]]></text>
+</component>
+
+<component id="ID_txt06">
+	<text><![CDATA[DA]]></text>
+</component>
+
+<component id="ID_txt07">
+	<text><![CDATA[TR]]></text>
+</component>
+
+
+<component id="ID_txt08">
+	<text><![CDATA[DA]]></text>
+</component>
+
+<component id="ID_txt09">
+	<text><![CDATA[TR]]></text>
+</component>
+
+<component id="ID_txt10">
+	<text><![CDATA[DD]]></text>
+</component>
+
+<component id="ID_txt11">
+	<text><![CDATA[DA]]></text>
+</component>
+
+
+<component id='ID_drag01'>
+	<text><![CDATA[TRONCAL]]></text>
+</component>
+
+<component id='ID_drag02'>
+	<text><![CDATA[ACCESO]]></text>
+</component>
+
+
+
+
+
+<component id='ID_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id='ID_CORRECT_BODY'>
+	<text><![CDATA[Identificó correctamente la condición de enlace resultante para cada combinación de modo de DTP.]]></text>
+</component>
+
+
+<component id='ID_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_INCORRECT_BODY'>
+	<text><![CDATA[No identificó correctamente la condición de enlace resultante para cada combinación de modo de DTP. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_CHECK'>
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id='ID_RESET'>
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component>
+
+
+</textcomponents>

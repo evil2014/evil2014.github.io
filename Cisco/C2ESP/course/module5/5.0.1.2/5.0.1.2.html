@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.0.1.2 Switching a canales de la red local</title>
+    <!--  -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.0.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Enrutamiento entre VLAN</h1>
+        <h2>Introducción</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Switching a canales de la red local</b>
+</p>
+<p></p>
+<p>Usted trabaja para una pequeña a mediana empresa. Como administrador de red, es responsable de asegurar que la red funcione de manera eficaz y segura.</p>
+<p></p>
+<p>Hace varios años, creó redes VLAN en un único switch para dos departamentos: Contabilidad y Ventas. Con el crecimiento de la empresa, se comprobó que, en ocasiones, estos dos departamentos deben compartir recursos de red y archivos corporativos.</p>
+<p></p>
+<p>Usted analiza esta situación con los administradores de red de algunas sucursales de la empresa, que le sugieren que considere la opción de utilizar routing entre VLAN. </p>
+<p></p>
+<p>Investigue el concepto de routing entre VLAN. </p>
+<p></p>
+<p>Diseñe una presentación simple para mostrarle a su gerente cómo utilizaría el routing entre VLAN para permitir que los departamentos de Contabilidad y Ventas permanezcan separados y, a la vez, compartan archivos corporativos y recursos de red.</p>
+<p></p>
+<p>
+<a href="../../files/5.0.1.2%20Switching%20to%20Local%20Network%20Channels%20Instructions.pdf" target="_blank">Actividad de clase: switching a canales de la red local (instrucciones)</a>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

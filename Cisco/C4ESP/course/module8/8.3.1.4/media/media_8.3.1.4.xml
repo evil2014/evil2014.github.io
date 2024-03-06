@@ -1,0 +1,88 @@
+﻿<textcomponents> <!--Slide 1-->
+
+<component id='ID_s1_inst'>
+	<text><![CDATA[<b>Actividad:Comparar SNMP y NetFlow</b><br/>Haga clic en el campo correspondiente para clasificar cada característica de las herramientas de monitoreo de red como SNMP o NetFlow.]]></text>
+</component> <!--Number of rows in the table-->
+<component id="txt_numrows">
+	<text><![CDATA[6]]></text>
+</component> <!--Number of columns for the answers in the table. Do not count the question column-->
+<component id="txt_numcols">
+	<text><![CDATA[2]]></text>
+</component> <!--Answer column headers-->
+<component id='txt_col1'>
+	<text><![CDATA[<b>SNMP</b>]]></text>
+</component>
+
+<component id='txt_col2'>
+	<text><![CDATA[<b>NetFlow</b>]]></text>
+</component> <!--Question text - blockindent code moves the text away from the left edge a bit--> <!--Question text - If questions are numbered, use blockindent for hanging indents-->
+<component id="txt_q1">
+	<text><![CDATA[1. Los errores de interfaz, el uso de la CPU y el uso de la memoria no se registran.]]></text>
+</component>
+
+<component id="txt_q2">
+	<text><![CDATA[2. Se utiliza una base de información de administración (MIB) para registrar los eventos monitoreados en la red.]]></text>
+</component>
+
+<component id="txt_q3">
+	<text><![CDATA[3. Recopila datos IP para registrar quién usó recursos de red, y con qué propósito se utilizaron esos recursos.]]></text>
+</component>
+
+<component id="txt_q4">
+	<text><![CDATA[4. Los agentes pueden enviar traps a un sistema de administración de red cuando se producen los eventos definidos.]]></text>
+</component>
+
+<component id="txt_q5">
+	<text><![CDATA[5. El acceso a la MIB se controla por medio de la configuración de cadenas de comunidad.]]></text>
+</component>
+
+<component id="txt_q6">
+	<text><![CDATA[6. Se utiliza un servidor externo (recopilador) para registrar los cambios en la caché monitoreados en la red IP.]]></text>
+</component> <!--Answers - Give the column number(s), column numbering start with 1 not 0--> <!--Answers - For MCMA separate the correct answers with commas [2, 4, 5] -->
+<component id="txt_a1">
+	<text><![CDATA[2]]></text>
+</component>
+
+<component id="txt_a2">
+	<text><![CDATA[1]]></text>
+</component>
+
+<component id="txt_a3">
+	<text><![CDATA[2]]></text>
+</component>
+
+<component id="txt_a4">
+	<text><![CDATA[1]]></text>
+</component>
+
+<component id="txt_a5">
+	<text><![CDATA[1]]></text>
+</component>
+
+<component id="txt_a6">
+	<text><![CDATA[2]]></text>
+</component> <!--buttons-->
+<component id='ID_s1_check'>
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id='ID_s1_reset'>
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component> <!--feedback-->
+<component id='ID_s1_titleCorrect'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id='ID_s1_correctText'>
+	<text><![CDATA[Clasificó correctamente cada característica de las herramientas de monitoreo de red como SNMP o NetFlow.]]></text>
+</component>
+
+<component id='ID_s1_titleIncorrect'>
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_s1_incorrectText'>
+	<text><![CDATA[No clasificó correctamente cada característica de las herramientas de monitoreo de red como SNMP o NetFlow. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+</textcomponents>

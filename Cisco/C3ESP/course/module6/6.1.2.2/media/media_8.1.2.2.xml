@@ -1,0 +1,46 @@
+﻿<textcomponents> 
+
+<component id="ID_title">
+	<text><![CDATA[<b>Propagación de mensaje de LSA de tipo 1</b>]]></text>
+</component>
+<component id="ID_txt01">
+  <text><![CDATA[<b>Área&nbsp;1</b>]]></text> 
+</component>
+<component id="ID_txt02">
+  <text><![CDATA[<b>Área 0</b>]]></text> 
+</component>
+<component id="ID_txt03">
+  <text><![CDATA[<b>Área 2</b>]]></text> 
+</component>
+<component id="ID_txt04">
+  <text><![CDATA[Internet]]></text> 
+</component>
+<component id="ID_txt05">
+  <text><![CDATA[]]></text> 
+</component>
+<component id="ID_txt06">
+  <text><![CDATA[]]></text> 
+</component>
+<component id="ID_txt07">
+  <text><![CDATA[Tipo 1]]></text> 
+</component>
+<component id="ID_txt08">
+  <text><![CDATA[Tipo 1]]></text> 
+</component>
+<component id="ID_txt09">
+  <text><![CDATA[Tipo 1]]></text> 
+</component>
+<component id="ID_txt10">
+  <text><![CDATA[Tipo 1]]></text> 
+</component>
+  
+  
+<component id="ID_Title_txt01">
+<text><![CDATA[<b></b>]]></text>
+</component>
+
+<component id="ID_Body_txt01">
+<text><![CDATA[<textformat blockindent='-14'><ul><li>Las LSA de tipo 1 incluyen una lista de prefijos de redes conectadas directamente y de los tipos de enlaces.</li><li>Todo router genera LSA de tipo 1.</li><li>El área se satura con LSA de tipo 1, y estas no se propagan más allá del ABR.</li><li>La ID del router de origen identifica la ID de estado de enlace de una LSA de tipo 1.</li></ul></textformat>]]></text>
+</component>
+
+</textcomponents>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.2.4.4 Seguridad de puertos: modos de violación de seguridad</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.2.4.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Seguridad de switches: administración e implementación</h1>
+        <h2>Seguridad de puertos de switch</h2>
+      </div>
+      <div id="content">
+<p>Existe una violación de seguridad cuando se produce cualquiera de estas situaciones: </p>
+<p></p>
+<p>
+<ul>
+<li>Se agregó la cantidad máxima de direcciones MAC seguras a la tabla de direcciones para esa interfaz, y una estación cuya dirección MAC no figura en la tabla de direcciones intenta acceder a la interfaz. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Una dirección aprendida o configurada en una interfaz segura puede verse en otra interfaz segura de la misma VLAN.</li>
+</ul>
+</p>
+<p></p>
+<p>Se puede configurar una interfaz para uno de tres modos de violación, con la acción específica que se debe realizar si se produce una violación. La figura muestra los tipos de tráficos de datos que se envían cuando se configura en el puerto uno de los siguientes modos de violación de seguridad. </p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Protect (Proteger):</b> cuando la cantidad de direcciones MAC seguras alcanza el límite permitido para el puerto, los paquetes con direcciones de origen desconocidas se descartan hasta que se elimine una cantidad suficiente de direcciones MAC seguras o se aumente la cantidad máxima de direcciones permitidas. No hay ninguna notificación de que se produjo una violación de seguridad. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Restrict (Restringir):</b> cuando la cantidad de direcciones MAC seguras alcanza el límite permitido para el puerto, los paquetes con direcciones de origen desconocidas se descartan hasta que se elimine una cantidad suficiente de direcciones MAC seguras o se aumente la cantidad máxima de direcciones permitidas. En este modo, hay una notificación de que se produjo una violación de seguridad.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Shutdown (Desactivar):</b> en este modo de violación (predeterminado), una violación de seguridad de puerto produce que la interfaz se inhabilite de inmediato por errores y que se apague el LED del puerto. Aumenta el contador de violaciones. Cuando hay un puerto seguro en estado inhabilitado por errores, se lo puede sacar de dicho estado mediante la introducción de los comandos <span class="cmd"><b>shutdown</b></span> y <span class="cmd"><b>no shutdown</b></span> del modo de configuración de interfaz. </li>
+</ul>
+</p>
+<p></p>
+<p>Para cambiar el modo de violación en un puerto de switch, use el comando del modo de configuración de interfaz <span class="cmd"><b>switchport port-security violation </b></span><span class="cmd">{</span><span class="cmd"><b>protect </b></span><span class="cmd">|</span><span class="cmd"><b> restrict </b></span><span class="cmd">|</span><span class="cmd"><b> shutdown</b></span><span class="cmd">}</span>.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

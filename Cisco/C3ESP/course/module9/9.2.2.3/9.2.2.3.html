@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.2.2.3 Realización de copias de seguridad de la licencia</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.2.2.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Licencias del IOS</h1>
+        <h2>Verificación y administración de licencias</h2>
+      </div>
+      <div id="content">
+<p>El comando <span class="cmd"><b>license save</b></span> se utiliza para copiar todas las licencias en un dispositivo y almacenarlas en un formato requerido por la ubicación de almacenamiento especificada. Las licencias guardadas se restablecen mediante el comando <span class="cmd"><b>license install</b></span>.</p>
+<p></p>
+<p>El comando para realizar una copia de seguridad de las licencias en un dispositivo es el siguiente:</p>
+<p></p>
+<p>
+<span class="cmd">Router#</span>
+<span class="cmd">
+<b> license save </b>
+</span>
+<span class="cmd">
+<i>file-sys://lic-location</i>
+</span>
+<span class="cmd"></span>
+</p>
+<p></p>
+<p>Utilice el comando <span class="cmd"><b>show flash0:</b></span> para verificar que las licencias se hayan guardado (figura 1).</p>
+<p></p>
+<p>La ubicación de almacenamiento de licencias puede ser un directorio o un URL que corresponda a un sistema de archivos. Utilice el comando <span class="cmd"><b>? </b></span>para ver las ubicaciones de almacenamiento que admite un dispositivo. </p>
+<p></p>
+<p>Utilice el verificador de sintaxis de la figura 2 para guardar todos los archivos de licencia en el router R2.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

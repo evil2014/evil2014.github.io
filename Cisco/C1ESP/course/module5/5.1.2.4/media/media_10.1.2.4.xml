@@ -1,0 +1,186 @@
+﻿<textcomponents>
+
+<component id='ID_s1_inst'>
+	<text><![CDATA[<b>Actividad</b><br><br>Arrastre el nombre del campo de la trama de Ethernet hasta su descripción.
+
+]]></text>
+</component>
+
+<component id='ID_s1_txt01'>
+	<text><![CDATA[Utiliza relleno para aumentar este campo de la trama a, por lo menos, 64&nbsp;bytes.]]></text>
+</component>
+
+<component id='ID_s1_txt02'>
+	<text><![CDATA[Describe qué protocolo de nivel superior se utilizó.]]></text>
+</component>
+
+<component id='ID_s1_txt03'>
+	<text><![CDATA[NIC o dirección MAC de la interfaz de origen de la trama.]]></text>
+</component>
+
+<component id='ID_s1_txt04'>
+	<text><![CDATA[Ayuda a un host a determinar si la trama recibida está dirigida a él.]]></text>
+</component>
+
+<component id='ID_s1_txt05'>
+	<text><![CDATA[Notifica a los destinos para que se preparen para recibir una nueva trama.]]></text>
+</component>
+<component id='ID_s1_txt06'>
+	<text><![CDATA[Sincroniza los dispositivos emisores y receptores para la entrega de tramas.]]></text>
+</component>
+
+<component id='ID_s1_txt07'>
+	<text><![CDATA[Detecta errores en una trama de Ethernet.]]></text>
+</component>
+
+<component id='ID_s1_txt08'>
+	<text><![CDATA[<b>Nombre de campo</b>]]></text>
+</component>
+
+<component id='ID_s1_txt09'>
+	<text><![CDATA[<b>Descripciones de los campos de la trama de Ethernet 802.3</b>]]></text>
+</component> <!--Drag and Drop-->
+<component id='ID_s1_traget01'>
+	<text><![CDATA[<font color="#393536">Encabezado y datos 802.2</font>]]></text>
+</component>
+
+<component id='ID_s1_traget02'>
+	<text><![CDATA[<font color="#393536">Secuencia de verificación de trama</font>]]></text>
+</component>
+
+<component id='ID_s1_traget03'>
+	<text><![CDATA[<font color="#393536">Tipo</font>]]></text>
+</component>
+
+<component id='ID_s1_traget04'>
+	<text><![CDATA[<font color="#393536">Delimitador de inicio de trama  </font>]]></text>
+</component>
+
+<component id='ID_s1_traget05'>
+	<text><![CDATA[<font color="#393536">Dirección de destino</font>]]></text>
+</component>
+
+<component id='ID_s1_traget06'>
+	<text><![CDATA[<font color="#393536">Preámbulo</font>]]></text>
+</component>
+
+<component id='ID_s1_traget07'>
+	<text><![CDATA[<font color="#393536">Dirección de origen</font>]]></text>
+</component>
+
+ 
+
+<component id='ID_s1_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto]]></text>
+</component>
+
+<component id='ID_s1_CORRECT_BODY'>
+	<text><![CDATA[Unió correctamente los nombres de los campos de la trama de Ethernet con sus descripciones.]]></text>
+</component>
+
+
+<component id='ID_s1_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_BODY'>
+	<text><![CDATA[No unió correctamente los nombres de los campos de la trama de Ethernet con sus descripciones. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_s1_CHECK'>
+	<text><![CDATA[Verificar]]></text>
+</component>
+
+<component id='ID_s1_RESET'>
+	<text><![CDATA[Restablecer]]></text>
+</component> <!--slide02-->
+<component id='ID_s2_inst'>
+	<text><![CDATA[<b>Actividad</b><br><br>Arrastre el nombre del campo de la trama de Ethernet hasta la ubicación correspondiente en el diagrama.]]></text>
+</component>
+
+<component id='ID_s2_txt01'>
+	<text><![CDATA[<b>Campos de la trama de Ethernet IEEE 802.3</b>]]></text>
+</component>
+
+<component id='ID_s2_txt02'>
+	<text><![CDATA[<b>7&nbsp;bytes</b>]]></text>
+</component>
+
+<component id='ID_s2_txt03'>
+	<text><![CDATA[<b>1 byte</b>]]></text>
+</component>
+
+<component id='ID_s2_txt04'>
+	<text><![CDATA[<b>6&nbsp;bytes</b>]]></text>
+</component>
+
+<component id='ID_s2_txt05'>
+	<text><![CDATA[<b>6&nbsp;bytes</b>]]></text>
+</component>
+
+<component id='ID_s2_txt06'>
+	<text><![CDATA[<b>2&nbsp;bytes</b>]]></text>
+</component>
+
+<component id='ID_s2_txt07'>
+	<text><![CDATA[<b>46 a1500&nbsp;bytes</b>]]></text>
+</component>
+
+<component id='ID_s2_txt08'>
+	<text><![CDATA[<b>4&nbsp;bytes</b>]]></text>
+</component> <!--Drag and Drop-->
+<component id='ID_s2_traget01'>
+	<text><![CDATA[<font color="#393536">Dirección de origen</font>]]></text>
+</component>
+
+<component id='ID_s2_traget02'>
+	<text><![CDATA[<font color="#393536">Secuencia de verificación de trama</font>]]></text>
+</component>
+
+<component id='ID_s2_traget03'>
+	<text><![CDATA[<font color="#393536">Delimitador de inicio de trama</font>]]></text>
+</component>
+
+<component id='ID_s2_traget04'>
+	<text><![CDATA[<font color="#393536">Preámbulo</font>]]></text>
+</component>
+
+<component id='ID_s2_traget05'>
+	<text><![CDATA[<font color="#393536">Encabezado y datos 802.2</font>]]></text>
+</component>
+
+<component id='ID_s2_traget06'>
+	<text><![CDATA[<font color="#393536">Longitud</font>]]></text>
+</component>
+
+<component id='ID_s2_traget07'>
+	<text><![CDATA[<font color="#393536">Dirección de destino</font>]]></text>
+</component>
+
+
+<component id='ID_s2_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto]]></text>
+</component>
+
+<component id='ID_s2_CORRECT_BODY'>
+	<text><![CDATA[Unió correctamente los campos de la trama de Ethernet con las ubicaciones.]]></text>
+</component>
+
+
+<component id='ID_s2_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto]]></text>
+</component>
+
+<component id='ID_s2_INCORRECT_BODY'>
+	<text><![CDATA[No unió correctamente los campos de la trama de Ethernet con las ubicaciones. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_s2_CHECK'>
+	<text><![CDATA[Verificar]]></text>
+</component>
+
+<component id='ID_s2_RESET'>
+	<text><![CDATA[Restablecer]]></text>
+</component>
+
+</textcomponents>

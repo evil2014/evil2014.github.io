@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.1.1.5 Trenes M y T del IOS de Cisco 15.0 </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.1.1.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Administración de archivos del sistema IOS</h1>
+        <h2>Convenciones de nomenclatura</h2>
+      </div>
+      <div id="content">
+<p>Después de la versión 12.4(24)T del IOS de Cisco, la siguiente versión del software IOS de Cisco fue 15.0. </p>
+<p></p>
+<p>IOS 15.0 proporciona varias mejoras al sistema operativo, por ejemplo:</p>
+<p>
+<ul>
+<li>Nueva compatibilidad de hardware y de características </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Mayor coherencia de características con otras versiones principales del IOS</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Versión de nuevas características y programas de recopilación más predecibles</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Políticas de compatibilidad de versiones individuales proactivas</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Numeración de versión simplificada</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Pautas de migración e implementación de software más claras</li>
+</ul>
+</p>
+<p></p>
+<p>Como se muestra en la ilustración, el IOS de Cisco 15.0 utiliza un modelo de versión distinto de los trenes T y de línea principal independientes de 12.4 tradicionales. En lugar de dividirse en trenes independientes, los trenes T y de línea principal del software IOS de Cisco 15 tendrán versión de mantenimiento extendido (versión de EM) y versión de mantenimiento estándar (versión T). Con el nuevo modelo de versión del IOS, las versiones de línea principal del IOS de Cisco 15 se denominan “trenes M”.</p>
+<p></p>
+<p>Comenzando por 15.0, las nuevas versiones en la forma de un tren T se encuentran disponibles aproximadamente de dos a tres veces por año. Las versiones de EM están disponibles aproximadamente cada 16 a 20 meses. Las versiones T permiten recibir la característica de Cisco más rápidamente, antes de que la siguiente versión de EM esté disponible. </p>
+<p></p>
+<p>Una versión de EM incorpora la compatibilidad de características y de hardware de todas las versiones T anteriores. Esto hace que las últimas versiones de EM contengan la funcionalidad total del tren en el momento del lanzamiento.</p>
+<p></p>
+<p>En resumen, entre los beneficios del nuevo modelo de versión del IOS de Cisco se incluyen los siguientes:</p>
+<p>
+<ul>
+<li>Legado de características de las versiones 12.4T y 12.4 de línea principal del software IOS de Cisco</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Nuevas versiones de características aproximadamente cada dos a tres veces por año que se entregan en forma secuencial desde un único tren</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Versiones de EM aproximadamente cada 16 a 20 meses e inclusión de nuevas características</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Versiones T para las características más recientes y compatibilidad de hardware antes de que la siguiente versión de EM se encuentre disponible en Cisco.com</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Las recopilaciones de mantenimiento de versiones T y M solo contienen correcciones de errores.</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

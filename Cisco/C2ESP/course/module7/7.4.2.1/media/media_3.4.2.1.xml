@@ -1,0 +1,14 @@
+﻿<textcomponents>
+	<component id="ID_title">
+		<text><![CDATA[<b>Proceso del enrutamiento de link-state</b>]]></text>
+	</component>
+	
+	<component id="ID_bodyTitle01">
+		<text><![CDATA[<b>Proceso del enrutamiento de link-state</b>]]></text> 
+	</component>
+	
+	<component id="ID_bodyText01">
+		<text><![CDATA[<textformat blockindent="-14"><li>Cada router obtiene información sobre cada una de sus propias redes conectadas directamente. </li><li>Cada router tiene la responsabilidad de "saludar" a sus vecinos en redes conectadas directamente. </li><li>Cada router crea un Paquete de link-state (LSP) que incluye el estado de cada enlace directamente conectado. </li><li>Cada router satura con el LSP a todos los vecinos, que luego almacenan todos los LSP recibidos en una base de datos.</li><li>Cada router utiliza la base de datos para construir un mapa completo de la topología y calcula el mejor camino hacia cada red de destino. </li></textformat>]]></text> 
+	</component>
+
+</textcomponents>

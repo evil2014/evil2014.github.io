@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.2.1.4 Resolución de problemas con un servidor de syslog</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.2.1.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resolución de problemas de red</h1>
+        <h2>Herramientas para la resolución de problemas</h2>
+      </div>
+      <div id="content">
+<p>Syslog es un protocolo simple que un dispositivo IP, conocido como “cliente syslog”, usa para enviar mensajes de registro basados en texto a otro dispositivo IP, el servidor de syslog. Actualmente, Syslog se define en RFC 5424. </p>
+<p></p>
+<p>Implementar una instalación de registro es una parte importante de la seguridad y la resolución de problemas de red. Los dispositivos de Cisco pueden registrar información relacionada con cambios de configuración, infracciones de ACL, estado de interfaces y muchos otros tipos de eventos. Los dispositivos de Cisco pueden enviar mensajes de registro a varias instalaciones. Los mensajes de eventos se pueden enviar a uno o varios de los siguientes componentes:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Consola:</b> el registro de la consola está activado de manera predeterminada. Los mensajes se registran en la consola y se pueden ver al modificar o probar el router o el switch mediante el software de emulación de terminal, mientras se esté conectado al puerto de consola del router.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Líneas de las terminales:</b> las sesiones de EXEC habilitadas se pueden configurar para recibir mensajes de registro en cualquiera de las líneas de las terminales. De manera similar al registro de la consola, el router no almacena este tipo de registro y, por lo tanto, solo es valioso para el usuario en esa línea.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Registro almacenado en búfer:</b>
+<i></i>este registro es un poco más útil como herramienta de resolución de problemas porque los mensajes de registro se almacenan en la memoria durante cierto tiempo. Sin embargo, cuando se reinicia el dispositivo, se borran los mensajes de registro.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Traps de SNMP:</b> ciertos umbrales se pueden configurar previamente en los routers y otros dispositivos. El router puede procesar los eventos de router, como superar un umbral, y reenviarlos como traps de SNMP a un servidor SNMP externo. Las traps de SNMP son una instalación de registro de seguridad viable, pero requieren la configuración y el mantenimiento de un sistema SNMP.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Syslog:</b> los routers y los switches Cisco se pueden configurar para reenviar mensajes de registro a un servicio de syslog externo. Este servicio puede residir en cualquier número de servidores o estaciones de trabajo, incluidos los sistemas basados en Microsoft Windows y Linux. Syslog es la instalación de registro de mensajes más popular, ya que proporciona capacidades de almacenamiento de registro a largo plazo y una ubicación central para todos los mensajes del router.</li>
+</ul>
+</p>
+<p></p>
+<p>Los mensajes de registro del IOS de Cisco se ubican en uno de ocho niveles, como se muestra en la figura 1. Cuanto menor es el número del nivel, mayor es el nivel de gravedad. De manera predeterminada, todos los mensajes del nivel 0 al 7 se registran en la consola. Si bien la capacidad para ver los registros en un servidor central de syslog es útil para resolver problemas, examinar una gran cantidad de datos puede ser una tarea abrumadora. El comando <span class="cmd"><b>logging trap</b></span> <span class="cmd"><i>level</i></span> limita los mensajes registrados en el servidor de syslog según la gravedad. El nivel es el nombre o el número del <span class="cmd"><i>level</i></span> de gravedad. Solo se registran los mensajes iguales o numéricamente inferiores al <span class="cmd"><i>level</i></span> especificado.</p>
+<p></p>
+<p>En el ejemplo de la figura 2, los mensajes de sistema del nivel 0 (emergencias) al 5 (notificaciones) se envían al servidor de syslog en 209.165.200.225.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+﻿<textcomponents> <!--Slide 1-->
+<component id="ID_title">
+<text><![CDATA[<b>Configurar dúplex y velocidad</b>]]></text>
+</component>
+
+<component id="ID_txt01">
+<text><![CDATA[Modo full-duplex<br/>100&nbsp;Mb/s]]></text>
+</component>
+
+<component id="ID_txt02">
+<text><![CDATA[Modo full-duplex<br/>100&nbsp;Mb/s]]></text>
+</component>
+
+<component id="ID_table01">
+<text><![CDATA[<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' class="mtable" glowcolor='#808080' cellpadding='4'>
+
+<tr>
+<td colspan='2' bgcolor='#98D3D1' class="mtitle"><font size='12' color='#0E6360'><b>Comandos de IOS de un switch Cisco</b></font></td>
+</tr>
+
+<tr class="mtable_top">
+<td colspan='2' bgcolor='#0E6360' class="mtable_top"><font size='1' color='#0E6360'><span style="color:#98D3D1">.</span></font></td>
+</tr>
+
+<tr>
+<td bgcolor='#EFF8F7' valign="top">Ingrese al modo de configuración global.</td>
+<td bgcolor='#EFF8F7' valign="top"><font face="_typewriter">S1# <b class="command">configure terminal</b></font></td>
+</tr>
+
+<tr>
+<td bgcolor='#ffffff' valign="top">Ingrese el modo de configuración de interfaz.</td>
+<td bgcolor='#ffffff' valign="top"><font face="_typewriter">S1(config)# <b class="command">interface FastEthernet 0/1</b></font></td>
+</tr>
+
+<tr>
+<td bgcolor='#EFF8F7' valign="top">Configura el modo dúplex de la interfaz.</td>
+<td bgcolor='#EFF8F7' valign="top"><font face="_typewriter">S1(config-if)# <b class="command">duplex full</b></font></td>
+</tr>
+
+<tr>
+<td bgcolor='#ffffff' valign="top">Configura la velocidad de la interfaz.</td>
+<td bgcolor='#ffffff' valign="top"><font face="_typewriter">S1(config-if)# <b class="command">speed 100</b></font></td>
+</tr>
+
+<tr>
+<td bgcolor='#EFF8F7' valign="top">Vuelve al modo EXEC privilegiado.</td>
+<td bgcolor='#EFF8F7' valign="top"><font face="_typewriter">S1(config-if)# <b class="command">end</b></font></td>
+</tr>
+
+<tr>
+<td bgcolor='#ffffff' valign="top">Guarda la configuración en ejecución en la configuración de inicio.</td>
+<td bgcolor='#ffffff' valign="top"><font face="_typewriter">S1# <b class="command">copy running-config startup-config</b></font></td>
+</tr>
+</table>]]></text>
+</component>
+
+
+
+
+</textcomponents>

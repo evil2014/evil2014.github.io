@@ -1,0 +1,130 @@
+﻿<textcomponents> <!-- Slide 1-->
+	<component id="ID_s1_inst">
+	<text><![CDATA[<b>Actividad: Determinar los comandos de ajuste de EIGRP (situación 1)</b><br/><br/>La convergencia de EIGRP demora mucho en el enlace serial congestionado entre el router&nbsp;1 (R1) y el router&nbsp;2 (R2). Ajuste el ancho de banda de enlace máximo disponible para EIGRP en un 80% de utilización. Arrastre el comando hasta el campo correspondiente junto a cada router. No se utilizan todos los comandos. Haga clic en el botón&nbsp;2 para continuar.]]></text>
+	</component> <!-- Drag and Drop -->  
+
+	<component id='ID_s1_drag01'>
+		<text><![CDATA[<font color="#393536" face="Courier New"><span>interface s0/0/0<br />ip bandwidth-percent eigrp 1 80</span></font>]]></text>
+	</component>
+	<component id='ID_s1_drag02'>
+		<text><![CDATA[<font color="#393536" face="Courier New">interface s0/0/1<br />ip bandwidth-percent eigrp 80 1</font>]]></text>
+	</component>
+	<component id='ID_s1_drag03'>
+		<text><![CDATA[<font color="#393536" face="Courier New">interface s0/0/0<br />ip bandwidth-percent eigrp 80 1</font>]]></text>
+	</component>
+	<component id='ID_s1_drag04'>
+		<text><![CDATA[<font color="#393536" face="Courier New">interface s0/0/1<br />ip bandwidth-percent eigrp 1 80</font>]]></text>
+	</component>
+
+
+	<component id='ID_s1_CORRECT_TITLE'>
+		<text><![CDATA[<b>Correcto</b>]]></text>
+	</component>
+
+	<component id='ID_s1_CORRECT_BODY'>
+		<text><![CDATA[Identificó correctamente los comandos de ajuste de EIGRP para esta situación. Haga clic en el botón&nbsp;2 para continuar.]]></text>
+	</component>
+
+
+	<component id='ID_s1_INCORRECT_TITLE'>
+		<text><![CDATA[<b>Incorrecto</b>]]></text>
+	</component>
+
+	<component id='ID_s1_INCORRECT_BODY'>
+		<text><![CDATA[No identificó correctamente los comandos de ajuste de EIGRP para esta situación. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+	</component>
+
+	<component id='ID_s1_CHECK'>
+		<text><![CDATA[<b>Verificar</b>]]></text>
+	</component>
+
+	<component id='ID_s1_RESET'>
+		<text><![CDATA[<b>Restablecer</b>]]></text>
+	</component> <!-- Slide 2-->
+
+	<component id="ID_s2_inst">
+	<text><![CDATA[<b>Actividad: Determinar los comandos de ajuste de EIGRP (situación 2)</b><br/><br/>El enlace serial entre el router&nbsp;1 (R1) y el router&nbsp;2 (R2) presenta un alto índice de errores, y EIGRP está perdiendo su adyacencia de vecino. Ajuste el intervalo de saludo máximo para EIGRP en 120&nbsp;segundos y el temporizador de espera máximo para EIGRP en 240&nbsp;segundos. Arrastre el comando hasta el campo correspondiente junto a cada router. No se utilizan todos los comandos. Haga clic en el botón&nbsp;3 para continuar.]]></text>
+	</component> <!-- Drag and Drop -->  
+
+	<component id='ID_s2_drag01'>
+		<text><![CDATA[<font color="#393536" face="Courier New">interface s0/0/0<br />ip hello-interval eigrp 120 1<br />ip hold-time eigrp 240 1</font>]]></text>
+	</component>
+	<component id='ID_s2_drag02'>
+		<text><![CDATA[<font color="#393536" face="Courier New">interface s0/0/0<br />ip hello-interval eigrp 1 120<br />ip hold-time eigrp 1 240</font>]]></text>
+	</component>
+	<component id='ID_s2_drag03'>
+		<text><![CDATA[<font color="#393536" face="Courier New">interface s0/0/1<br />ip hello-interval eigrp 1 120<br />ip hold-time eigrp 1 240</font>]]></text>
+	</component>
+	<component id='ID_s2_drag04'>
+		<text><![CDATA[<font color="#393536" face="Courier New">interface s0/0/1<br />ip hello-interval eigrp 120 1<br />ip hold-time eigrp 240 1</font>]]></text>
+	</component>
+
+
+	<component id='ID_s2_CORRECT_TITLE'>
+		<text><![CDATA[<b>Correcto</b>]]></text>
+	</component>
+
+	<component id='ID_s2_CORRECT_BODY'>
+		<text><![CDATA[Identificó correctamente los comandos de ajuste de EIGRP para esta situación. Haga clic en el botón&nbsp;3 para continuar.]]></text>
+	</component>
+
+
+	<component id='ID_s2_INCORRECT_TITLE'>
+		<text><![CDATA[<b>Incorrecto</b>]]></text>
+	</component>
+
+	<component id='ID_s2_INCORRECT_BODY'>
+		<text><![CDATA[No identificó correctamente los comandos de ajuste de EIGRP para esta situación. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+	</component>
+
+	<component id='ID_s2_CHECK'>
+		<text><![CDATA[<b>Verificar</b>]]></text>
+	</component>
+
+	<component id='ID_s2_RESET'>
+		<text><![CDATA[<b>Restablecer</b>]]></text>
+	</component> <!-- Slide 3-->
+
+	<component id="ID_s3_inst">
+		<text><![CDATA[<b>Actividad: Determinar los comandos de ajuste de EIGRP (situación&nbsp;3)</b><br/><br/>El enlace serial entre el router&nbsp;1 (R1) y el router&nbsp;2 (R2) recientemente se actualizó a un enlace IPv6 de 2&nbsp;gigabit. Ajuste el ancho de banda de enlace máximo disponible para EIGRP en un 5% de utilización. Arrastre el comando hasta el campo correspondiente junto a cada router. No se utilizan todos los comandos.]]></text>
+	</component> <!-- Drag and Drop -->  
+
+	<component id='ID_s3_drag01'>
+		<text><![CDATA[<font color="#393536" face="Courier New">interface s0/0/0<br />ipv6 bandwidth-percent eigrp 1 5</font>]]></text>
+	</component>
+	<component id='ID_s3_drag02'>
+		<text><![CDATA[<font color="#393536" face="Courier New">interface s0/0/1<br />ip bandwidth-percent eigrp 1 5</font>]]></text>
+	</component>
+	<component id='ID_s3_drag03'>
+		<text><![CDATA[<font color="#393536" face="Courier New">interface s0/0/0<br />ip bandwidth-percent eigrp 1 5</font>]]></text>
+	</component>
+	<component id='ID_s3_drag04'>
+		<text><![CDATA[<font color="#393536" face="Courier New">interface s0/0/1<br />ipv6 bandwidth-percent eigrp 1 5</font>]]></text>
+	</component>
+
+
+	<component id='ID_s3_CORRECT_TITLE'>
+		<text><![CDATA[<b>Correcto</b>]]></text>
+	</component>
+
+	<component id='ID_s3_CORRECT_BODY'>
+		<text><![CDATA[Identificó correctamente los comandos de ajuste de EIGRP para esta situación.]]></text>
+	</component>
+
+
+	<component id='ID_s3_INCORRECT_TITLE'>
+		<text><![CDATA[<b>Incorrecto</b>]]></text>
+	</component>
+
+	<component id='ID_s3_INCORRECT_BODY'>
+		<text><![CDATA[No identificó correctamente los comandos de ajuste de EIGRP para esta situación. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+	</component>
+
+	<component id='ID_s3_CHECK'>
+		<text><![CDATA[<b>Verificar</b>]]></text>
+	</component>
+
+	<component id='ID_s3_RESET'>
+		<text><![CDATA[<b>Restablecer</b>]]></text>
+	</component>
+</textcomponents>

@@ -1,0 +1,104 @@
+﻿<textcomponents>
+<component id="ID_s1_header">
+<text><![CDATA[<b>Topología OSPFv3 multiárea</b>]]></text>
+</component>
+
+<component id="ID_s1_txt01">
+<text><![CDATA[<b>Area 0</b>]]></text>
+</component>
+
+<component id="ID_s1_txt02">
+<text><![CDATA[<b>Área&nbsp;1</b>]]></text>
+</component>
+
+<component id="ID_s1_txt03">
+<text><![CDATA[<b>Area 2</b>]]></text>
+</component>
+
+<component id="ID_s2_header">
+  <text><![CDATA[<b>Configuración de OSPFv3 multiárea en el R1</b>]]></text> 
+  </component>
+<component id="ID_s3_header">
+  <text><![CDATA[<b>Configuración de OSPFv3 multiárea en el R2 y el R3</b>]]></text> 
+  </component>
+
+	<component id="ID_sc_reset">
+		<text><![CDATA[Restablecer]]></text>
+	</component>
+	<component id="ID_sc_showme">
+		<text><![CDATA[Mostrar]]></text>
+	</component>
+	<component id="ID_sc_showall">
+		<text><![CDATA[Mostrar todo]]></text>
+	</component>
+
+
+	<component id="ID_s3_SC3" fontFace='Courier New' fontSize="10">
+		<feedback id="fb"><![CDATA[<b>***</b><font size='10' face="Arial" color="#0000FF">Debe introducir el comando exacto y completo.</font><b>***</b> 
+		]]></feedback>		
+		<existingcommands><![CDATA[<font size='10' face="Arial"><b>Ingrese al modo de configuración del router OSPFv3 en el R2 con la ID de proceso 10.<ul><li>Configure la ID de router 2.2.2.2.<li>Vuelva al modo de configuración global.</ul></b></font>]]></existingcommands>
+		<command prompt="R2(config)#">
+		    <correctresponse><![CDATA[ipv6 router ospf 10]]></correctresponse>
+				<deviceresponse><![CDATA[<font size='10' face="Courier New">*Apr 24 14:18:10.463: %OSPFv3-4-NORTRID: Process OSPFv3-10-IPv6 <br>could not pick a router-id, please configure manually]]></deviceresponse> 
+		</command>
+		<command prompt="R2(config-rtr)#">
+		    <correctresponse><![CDATA[router-id 2.2.2.2]]></correctresponse>
+		</command>
+		<command prompt="R2(config-rtr)#">
+		    <correctresponse><![CDATA[exit]]></correctresponse>
+			<instruction><![CDATA[<font size='10' face="Arial"><b>Configure OSPFv3 para la ID de proceso 10 en cada una de las interfaces en el siguiente orden:<ul><li>Interfaz g0/0 para el área 0<li>Interfaz s0/0/0 para el área 0<li>Interfaz S0/0/1 para el área 0<li>Vuelva al modo EXEC privilegiado.</ul></b>]]></instruction>
+		</command>
+		<command prompt="R2(config)#">
+		    <correctresponse><![CDATA[interfaz g0/0]]></correctresponse>
+		</command>
+		<command prompt="R2(config-if)#">
+		    <correctresponse><![CDATA[ipv6 ospf 10 area 0]]></correctresponse>
+		</command>
+		<command prompt="R2(config-if)#">
+		    <correctresponse><![CDATA[interfaz S0/0/0]]></correctresponse>
+		</command>
+		<command prompt="R2(config-if)#">
+		    <correctresponse><![CDATA[ipv6 ospf 10 area 0]]></correctresponse>
+		</command>
+		<command prompt="R2(config-if)#">
+		    <correctresponse><![CDATA[interfaz S0/0/1]]></correctresponse>
+		</command>
+		<command prompt="R2(config-if)#">
+		    <correctresponse><![CDATA[ipv6 ospf 10 area 0]]></correctresponse>
+		</command>
+		<command prompt="R2(config-if)#">
+		    <correctresponse><![CDATA[end]]></correctresponse>
+				<deviceresponse><![CDATA[<font size='10' face="Courier New">*Apr 24 14:18:35.135: %OSPFv3-5-ADJCHG: Process 10, Nbr 1.1.1.1 on <br>Serial0/0/0 from LOADING to FULL, Loading Done<br>R2#]]></deviceresponse> 
+			<instruction><![CDATA[<font size='10' face="Arial"><b>Ahora configure el R3. Ingrese al modo de configuración del router OSPFv3 en el R3 con la ID de proceso 10.<ul><li>Configure la ID de router 3.3.3.3.<li>Vuelva al modo de configuración global.</ul></b>]]></instruction>
+		</command>
+		<command prompt="R3(config)#">
+		    <correctresponse><![CDATA[ipv6 router ospf 10]]></correctresponse>
+				<deviceresponse><![CDATA[<font size='10' face="Courier New">*Apr 24 14:20:42.463: %OSPFv3-4-NORTRID: Process OSPFv3-10-IPv6 <br>could not pick a router-id, please configure manually]]></deviceresponse> 
+		</command>
+		<command prompt="R3(config-rtr)#">
+		    <correctresponse><![CDATA[router-id 3.3.3.3]]></correctresponse>
+		</command>
+		<command prompt="R3(config-rtr)#">
+		    <correctresponse><![CDATA[exit]]></correctresponse>
+			<instruction><![CDATA[<font size='10' face="Arial"><b>Configure OSPFv3 para la ID de proceso 10 en cada una de las interfaces en el siguiente orden:<ul><li>Interfaz g0/0 para el área 2<li>Interfaz S0/0/1 para el área 0<li>Vuelva al modo EXEC privilegiado.</ul></b>]]></instruction>
+		</command>
+		<command prompt="R3(config)#">
+		    <correctresponse><![CDATA[interfaz g0/0]]></correctresponse>
+		</command>
+		<command prompt="R3(config-if)#">
+		    <correctresponse><![CDATA[ipv6 ospf 10 area 2]]></correctresponse>
+		</command>
+		<command prompt="R3(config-if)#">
+		    <correctresponse><![CDATA[interfaz S0/0/1]]></correctresponse>
+		</command>
+		<command prompt="R3(config-if)#">
+		    <correctresponse><![CDATA[ipv6 ospf 10 area 0]]></correctresponse>
+		</command>
+		<command prompt="R3(config-if)#">
+		    <correctresponse><![CDATA[end]]></correctresponse>
+				<deviceresponse><![CDATA[<font size='10' face="Courier New">*Apr 24 14:21:01.439: %OSPFv3-5-ADJCHG: Process 10, Nbr 2.2.2.2 on <br>Serial0/0/1 from LOADING to FULL, Loading Done<br>R3#]]></deviceresponse> 
+			<instruction><![CDATA[<font size='10' face="Arial"><b>Configuró correctamente OSPFv3 multiárea en los routers R2 y R3.</b>]]></instruction>
+		</command>
+		<command prompt=""/>
+	</component>
+</textcomponents>

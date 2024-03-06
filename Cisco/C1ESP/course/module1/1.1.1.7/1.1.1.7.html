@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.1.1.7 Las redes respaldan la forma en que jugamos</title>
+    <!-- Activity -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.1.1.7_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Conectados globalmente</h1>
+        <h2>Las redes en la actualidad</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Cambio en la forma en que jugamos</b>
+</p>
+<p>La adopción generalizada de Internet por las industrias de viaje y entretenimiento mejora la posibilidad de disfrutar y compartir diferentes formas de recreación, sin importar la ubicación. Es posible explorar lugares, en forma interactiva, que antes soñábamos visitar, así como también ver con anticipación los destinos reales antes de realizar un viaje. Los viajeros pueden publicar en línea detalles y fotografías de sus experiencias para que los vean otras personas. </p>
+<p></p>
+<p>Además, Internet se utiliza para formas tradicionales de entretenimiento. Escuchamos a artistas de sellos discográficos, vemos avances y películas, leemos libros completos y descargamos material para acceder sin conexión en otro momento. Los eventos deportivos y conciertos en vivo se pueden sentir en el momento en que ocurren, o se pueden grabar y ver en cualquier momento.</p>
+<p></p>
+<p>Las redes permiten la creación de nuevas formas de entretenimiento, tales como juegos en línea. Los jugadores participan en cualquier clase de competencia en línea que los diseñadores de juegos puedan imaginar. Competimos contra amigos y enemigos de todo el mundo como si estuviéramos en la misma habitación.</p>
+<p></p>
+<p>Incluso las actividades fuera de línea se fortalecen con el uso de servicios de colaboración de red. Las comunidades mundiales de interés han crecido rápidamente. Compartimos experiencias comunes y hobbies fuera de nuestro vecindario, ciudad o región. Los fanáticos del deporte comparten opiniones y hechos sobre sus equipos favoritos. Los coleccionistas muestran valiosas colecciones y reciben comentarios de expertos. </p>
+<p></p>
+<p>Los mercados y los sitios de subastas en línea permiten comprar, vender y comercializar todo tipo de mercancía.</p>
+<p></p>
+<p>Las redes mejoran nuestra experiencia, independientemente de la forma de diversión que disfrutemos en la red humana.</p>
+<p></p>
+<p>¿Cómo se juega en Internet?</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

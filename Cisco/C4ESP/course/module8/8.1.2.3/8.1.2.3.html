@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.1.2.3 Comandos de router y switch para los clientes syslog</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.1.2.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Syslog</h1>
+        <h2>Configuración de syslog</h2>
+      </div>
+      <div id="content">
+<p>Existen tres pasos para configurar el router para que envíe los mensajes del sistema a un servidor de syslog donde se puedan almacenar, filtrar y analizar:</p>
+<p></p>
+<p>
+<b>Paso 1. </b>Configure el nombre del host de destino o la dirección IP del servidor de syslog en el modo de configuración global:</p>
+<p>
+<span class="cmd"></span>
+<span class="cmd">R1(config)# </span>
+<span class="cmd">
+<b>logging 192.168.1.3</b>
+</span>
+</p>
+<p></p>
+<p></p>
+<p>
+<b>Paso 2. </b>Controle los mensajes que se envían al servidor de syslog con el comando del modo de configuración global <span class="cmd"><b>logging trap </b></span><span class="cmd"><i>nivel</i></span>. Por ejemplo, para limitar los mensajes a los niveles 4 e inferiores (0 a 4), utilice uno de los dos comandos equivalentes:</p>
+<p>
+<span class="cmd">R1(config)#</span>
+<span class="cmd">
+<b> logging trap 4</b>
+</span>
+</p>
+<p>
+<span class="cmd"> R1(config)#</span>
+<span class="cmd">
+<b> logging trap warning</b>
+</span>
+</p>
+<p></p>
+<p>
+<b>Paso 3. </b>De manera optativa, configure la interfaz de origen con el comando del modo de configuración global <span class="cmd"><b>logging source-interface </b></span><span class="cmd"><i>tipo-interfaz número interfaz</i></span>. Esto especifica que los paquetes de syslog incluyen la dirección IPv4 o IPv6 de una interfaz específica, independientemente de la interfaz que use el paquete para salir del router. Por ejemplo, para establecer la interfaz de origen en g0/0, utilice el siguiente comando:</p>
+<p>
+<span class="cmd">R1(config)#</span>
+<span class="cmd">
+<b> logging source-interface g0/0</b>
+</span>
+</p>
+<p></p>
+<p>En la figura 1, el R1 se configuró para enviar mensajes de registro de los niveles 4 e inferiores al servidor de syslog en 192.168.1.3. La interfaz de origen se estableció en la interfaz G0/0. Se crea una interfaz loopback, se desactiva y se vuelve a activar. El resultado de la consola refleja estas acciones.</p>
+<p></p>
+<p>Como se muestra en la figura 2, se configuró el servidor de syslog Tftpd32 en una máquina con Windows 7 con la dirección IP 192.168.1.3. Como puede observar, los únicos mensajes que aparecen en el servidor de syslog son aquellos con un nivel de gravedad de 4 o menos (más graves). Los mensajes con un nivel de gravedad de 5 o más (menos graves) aparecen en el resultado de la consola del router, pero no aparecen en el resultado del servidor de syslog, porque el comando <span class="cmd"><b>logging trap</b></span> limita los mensajes de syslog que se envían al servidor de syslog según el nivel de gravedad.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

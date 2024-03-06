@@ -1,0 +1,121 @@
+﻿<textcomponents> <!--Slide 1-->
+<component id="ID_s1_title">
+<text><![CDATA[<b>Reenvío de puertos con IOS</b>]]></text>
+</component> <!--screen 1 table -->
+
+<component id="ID_s1_table01">
+<text><![CDATA[<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4'  cellspacing="2" class="mtable">
+<tr class="mtable_top">
+<td colspan='2' bgcolor='#0E6360' class="mtable_top"><font size='1' color='#434321'><span style="color:#DAE17A">.</span></font></td>
+</tr>
+
+<tr>
+<td bgcolor='#077A77' valign="top" width="100" class="mtitle"><font bgcolor='#097A76' color='#EFF8F7'><b>Parámetro</b></font></td>
+<td bgcolor='#077A77' valign="top" class="mtitle"><font bgcolor='#097A76' color='#EFF8F7'><b>Descripción</b></font></td>
+</tr>
+
+<tr>
+<td bgcolor='#ffffff' valign="top"><font face="_typewriter"><b>tcp </b></font> o <font face="_typewriter"><b>udp</b></font></td>
+<td bgcolor='#ffffff' valign="top">Indica si este es un número de puerto TCP o UDP.</td>
+</tr>
+
+<tr>
+<td bgcolor='#EFF8F7' valign="top"><font face="_typewriter"><i>ip-local</i></font></td>
+<td bgcolor='#EFF8F7' valign="top">Esta es la dirección IPv4 asignada al host en la red interna, generalmente, del espacio de direcciones privadas definido en RFC 1918.</td>
+</tr>
+
+<tr>
+<td bgcolor='#ffffff' valign="top"><font face="_typewriter"><i>puerto-local</i></font></td>
+<td bgcolor='#ffffff' valign="top">Establece el puerto local TCP/UDP en un rango de 1 a 65&nbsp;535. Este es el número de puerto en el que escucha el servidor.</td>
+</tr>
+
+<tr>
+<td bgcolor='#EFF8F7' valign="top"><font face="_typewriter"><i>ip-global</i></font></td>
+<td bgcolor='#EFF8F7' valign="top">Esta es la dirección IPv4 globalmente única de un host interno. Esta es la dirección IP que utilizan los clientes externos para llegar al servidor interno.</td>
+</tr>
+
+
+
+
+<tr>
+<td bgcolor='#ffffff' valign="top"><font face="_typewriter"><i>puerto-global</i></font></td>
+<td bgcolor='#ffffff' valign="top">Establece el puerto global TCP/UDP en un rango de 1 a 65&nbsp;535. Este es el número de puerto que utilizan los clientes externos para llegar al servidor interno.</td>
+</tr>
+
+   
+
+<tr>
+<td bgcolor='#EFF8F7' valign="top"><font face="_typewriter"><b class="command">extendable</b></font></td>
+<td bgcolor='#EFF8F7' valign="top">La opción <font face="_typewriter"><b class="command">extendable </b></font> se aplica de forma automática. La palabra clave <font face="_typewriter"><b class="command">extendable </b></font> permite que el usuario configure varias traducciones estáticas ambiguas, es decir, traducciones con la misma dirección local o global. Permite que el router extienda la traducción a más de un puerto, en caso de ser necesario.</td>
+</tr>
+</table>]]></text>
+</component> <!--slide 2-->
+<component id="ID_s2_title">
+<text><![CDATA[<b>Ejemplo de reenvío de puertos con IOS</b>]]></text>
+</component>
+
+<component id="ID_s2_txt01">
+<text><![CDATA[Red interna]]></text>
+</component>
+
+<component id="ID_s2_txt02">
+<text><![CDATA[Red externa]]></text>
+</component>
+
+<component id="ID_s2_txt03">
+<text><![CDATA[Servidor web]]></text>
+</component>
+
+<component id="ID_s2_txt04">
+<text><![CDATA[Internet]]></text>
+</component>
+
+<component id="ID_s2_txt05">
+<text><![CDATA[Cliente]]></text>
+</component>
+
+<component id='ID_s2_txt06'>
+	<text><![CDATA[http://www.ejemplo.com:<font color="#F26200"><b>8080</b></font>]]></text>
+</component>
+
+<component id="ID_s2_txt07">
+<text><![CDATA[Establece la traducción estática entre una dirección local interna y un puerto local, y entre una dirección global interna y un puerto global.]]></text>
+</component>
+
+<component id='ID_s2_txt08'>
+	<text><![CDATA[Identifica la interfaz serial 0/0/0 como interfaz NAT interna.]]></text>
+</component>
+
+<component id='ID_s2_txt09'>
+	<text><![CDATA[Identifica la interfaz serial 0/1/0 como interfaz NAT externa.]]></text>
+</component> <!--slide 3-->
+<component id="ID_s3_title">
+<text><![CDATA[<b>Verificación del reenvío de puertos</b>]]></text>
+</component>
+
+<component id="ID_s3_txt01">
+<text><![CDATA[Red interna]]></text>
+</component>
+
+<component id="ID_s3_txt02">
+<text><![CDATA[Red externa]]></text>
+</component>
+
+<component id="ID_s3_txt03">
+<text><![CDATA[Servidor web]]></text>
+</component>
+
+<component id="ID_s3_txt04">
+<text><![CDATA[Internet]]></text>
+</component>
+
+<component id="ID_s3_txt05">
+<text><![CDATA[Cliente]]></text>
+</component>
+
+<component id='ID_s3_txt06'>
+	<text><![CDATA[http://www.ejemplo.com:<font color="#F26200"><b>8080</b></font>]]></text>
+</component>
+
+
+</textcomponents>

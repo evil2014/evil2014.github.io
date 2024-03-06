@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.2.1.1 Función de switching del router</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.2.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Decisiones de routing</h1>
+        <h2>Switching de paquetes entre redes</h2>
+      </div>
+      <div id="content">
+<p>Una de las funciones principales de un router es reenviar paquetes hacia su destino. Esto se logra mediante una función de switching, que es el proceso que utiliza un router para aceptar un paquete en una interfaz y reenviarlo por otra interfaz. Una responsabilidad clave de la función de conmutación es la de encapsular los paquetes en el tipo de trama de enlace de datos correcto para el enlace de datos de salida. </p>
+<p></p>
+<p>
+<b>Nota:</b> en este contexto, el término “switching” significa literalmente mover paquetes de origen a destino y no se lo debe confundir con la función de un switch de capa 2.</p>
+<p></p>
+<p>Una vez que el router determinó la interfaz de salida mediante la función de determinación de rutas, el router debe encapsular el paquete en la trama de enlace de datos de la interfaz de salida.</p>
+<p></p>
+<p>¿Qué hace un router cuando recibe un paquete desde una red que está destinado a otra red? El router ejecuta los siguientes tres pasos principales:</p>
+<p></p>
+<p>
+<b>Paso 1.</b> Desencapsula el paquete de capa 3 eliminando el encabezado y el tráiler de la trama de capa 2.</p>
+<p>
+<b>Paso 2.</b> Examina la dirección IP de destino del paquete IP para encontrar el mejor camino en la tabla de enrutamiento.</p>
+<p>
+<b>Paso 3.</b> Si el router encuentra una ruta hacia el destino, encapsula el paquete de capa 3 en una nueva trama de capa 2 y reenvía la trama por la interfaz de salida.</p>
+<p></p>
+<p>Como se muestra en la ilustración, los dispositivos tienen direcciones IPv4 de capa 3, y las interfaces Ethernet tienen direcciones de enlace de datos de capa 2. Por ejemplo, la PC1 se configuró con la dirección IPv4 192.168.1.10 y una dirección MAC de ejemplo 0A-10. A medida que un paquete se desplaza desde el dispositivo de origen hacia el dispositivo de destino final, las direcciones IP de capa 3 no se modifican. Sin embargo, las direcciones de enlace de datos de capa 2 cambian en cada salto cuando cada router desencapsula y vuelve a encapsular el paquete en una nueva trama. Es muy probable que el paquete se encapsule en un tipo de trama de capa 2 diferente de la trama en la que se recibió. Por ejemplo, el router puede recibir una trama de Ethernet encapsulada en una interfaz FastEthernet y, a continuación, procesarla para reenviarla por una interfaz serial como trama encapsulada de protocolo punto a punto (PPP). </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

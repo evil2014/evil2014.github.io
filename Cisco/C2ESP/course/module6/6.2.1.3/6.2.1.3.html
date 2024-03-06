@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.2.1.3 Configuración de una ruta estática de siguiente salto</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.2.1.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de rutas estáticas y predeterminadas</h1>
+        <h2>Configuración de rutas estáticas IPv4</h2>
+      </div>
+      <div id="content">
+<p>En una ruta estática de siguiente salto, solo se especifica la dirección IP del siguiente salto. La interfaz de salida se deriva del siguiente salto. Por ejemplo, en la figura 1, se configuran tres rutas estáticas de siguiente salto en el R1 con la dirección IP del siguiente salto, el R2.</p>
+<p></p>
+<p>Antes de que un router reenvíe un paquete, el proceso de la tabla de enrutamiento debe determinar qué interfaz de salida utilizará para reenviar el paquete. A esto se lo conoce como resolución de rutas. El proceso de resolución de la ruta varía en función del tipo de mecanismo de reenvío que utiliza el router. CEF (Cisco Express Forwarding) es el comportamiento predeterminado en la mayoría de las plataformas que ejecutan el IOS 12.0 o posterior. </p>
+<p></p>
+<p>En la figura 2, se detalla el proceso básico de reenvío de paquetes en la tabla de routing para el R1 sin el uso de CEF. Cuando un paquete está destinado a la red 192.168.2.0/24, el R1:</p>
+<p></p>
+<p>1. Busca una coincidencia en la tabla de routing y encuentra que debe reenviar paquetes a la dirección IPv4 172.16.2.2 del siguiente salto, tal como lo indica la etiqueta 1 en la ilustración. Todas las rutas que hacen referencia solo a la dirección IPv4 del siguiente salto y que no hacen referencia a una interfaz de salida deben resolver la dirección IPv4 del siguiente salto con otra ruta de la tabla de routing que tenga una interfaz de salida.</p>
+<p></p>
+<p>2. En esta instancia, el R1 debe determinar cómo alcanzar la dirección 172.16.2.2. Por lo tanto, busca por segunda vez si existe una coincidencia para 172.16.2.2. En este caso, la dirección IPv4 hace coincidir la ruta de la red conectada directamente 172.16.2.0/24 con la interfaz de salida Serial 0/0/0, tal como lo indica la etiqueta 2 en la ilustración. Esta búsqueda le comunica al proceso de la tabla de routing que este paquete se reenvía fuera de esa interfaz. </p>
+<p></p>
+<p>En realidad, se requieren dos procesos de búsqueda en la tabla de routing para reenviar cualquier paquete a la red 192.168.2.0/24. Cuando el router realiza varias búsquedas en la tabla de routing antes de reenviar un paquete, lleva a cabo un proceso que se conoce como “búsqueda recursiva”. Debido a que las búsquedas recursivas consumen recursos del router, deben evitarse siempre que sea posible.</p>
+<p></p>
+<p>Una ruta estática recursiva es válida (es decir, es candidata para agregarse a la tabla de routing) solo cuando el siguiente salto especificado resuelve a una interfaz de salida válida, ya sea de forma directa o indirecta.</p>
+<p></p>
+<p>
+<b>Nota</b>: CEF proporciona búsquedas optimizadas para el reenvío de paquetes eficaz mediante dos estructuras de datos principales almacenadas en el plano de datos: una base de información de reenvío (FIB), que es una copia de la tabla de routing y la tabla de adyacencia que incluye información de direccionamiento de la capa 2. La información combinada en estas dos tablas trabaja en conjunto de manera que no sea necesario realizar una búsqueda recursiva para encontrar direcciones IP del siguiente salto. Es decir, una ruta estática que utiliza una IP del siguiente salto solo requiere una única búsqueda cuando CEF está habilitado en el router. </p>
+<p></p>
+<p>Utilice el verificador de sintaxis en las figuras 3 y 4 para configurar y verificar las rutas estáticas del siguiente salto en el R2 y el R3.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

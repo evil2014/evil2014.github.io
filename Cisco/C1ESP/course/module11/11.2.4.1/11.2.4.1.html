@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>11.2.4.1 Introducción a la protección de dispositivos</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_11.2.4.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Cómo mantener la seguridad de la red</h1>
+        <h2>Protección de dispositivos</h2>
+      </div>
+      <div id="content">
+<p>Una parte de la seguridad de la red consiste en proteger los dispositivos propiamente dichos, incluidos los dispositivos finales y los intermediarios, como los dispositivos de red. </p>
+<p></p>
+<p>Cuando se instala un nuevo sistema operativo en un dispositivo, la configuración de seguridad está establecida en los valores predeterminados. En la mayoría de los casos, ese nivel de seguridad es insuficiente. En los routers Cisco, se puede utilizar la característica Cisco AutoSecure para proteger el sistema, como se describe en la ilustración. Existen algunos pasos simples que se deben seguir y que se aplican a la mayoría de los sistemas operativos:</p>
+<p>
+<ul>
+<li>Se deben cambiar de inmediato los nombres de usuario y las contraseñas predeterminados. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Se debe restringir el acceso a los recursos del sistema solamente a las personas que están autorizadas a utilizar dichos recursos. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Siempre que sea posible, se deben desactivar y desinstalar todos los servicios y las aplicaciones innecesarios.</li>
+</ul>
+</p>
+<p></p>
+<p>Se deben actualizar todos los dispositivos con parches de seguridad a medida que estén disponibles. A menudo, los dispositivos enviados por el fabricante pasaron cierto tiempo en un depósito y no tienen los parches más actualizados instalados. Antes de la implementación, es importante actualizar cualquier software e instalar los parches de seguridad. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

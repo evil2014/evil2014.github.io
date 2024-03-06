@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.2.2.2 Solución de problemas relacionados a la posibilidad de conexión</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.2.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configurar Frame Relay</h1>
+        <h2>Configuración de subinterfaces</h2>
+      </div>
+      <div id="content">
+<p>Existen varias maneras de resolver el problema de conexión de routing:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Deshabilitar el horizonte dividido:</b> un método para resolver los problemas de conexión que produce el horizonte dividido puede ser desactivar el horizonte dividido. Sin embargo, deshabilitar el horizonte dividido aumenta las posibilidades de que se formen bucles de routing en la red. Además, solo IP permite deshabilitar el horizonte dividido; IPX y AppleTalk no lo permiten.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Topología de malla completa:</b> otro método es utilizar una topología de malla completa; sin embargo, esta topología aumenta los costos.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Subinterfaces:</b> en una topología hub-and-spoke de Frame Relay, el router hub se puede configurar con interfaces asignadas lógicamente denominadas “subinterfaces”.</li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Subinterfaces Frame Relay</b>
+</p>
+<p>Frame Relay puede dividir una interfaz física en varias interfaces virtuales denominadas “subinterfaces”, como se muestra en la figura 1. Una subinterfaz es simplemente una interfaz lógica que se asocia directamente a una interfaz física. Por lo tanto, se puede configurar una subinterfaz de Frame Relay para cada uno de los PVC que ingresan a una interfaz serial física.</p>
+<p></p>
+<p>Para habilitar el reenvío de las actualizaciones de routing de difusión en una red Frame Relay, puede configurar el router con subinterfaces asignadas lógicamente. Al utilizar una configuración de subinterfaz, cada VC se puede configurar como una conexión punto a punto. Una red de malla parcial se puede dividir en varias redes punto a punto más pequeñas, de malla completa. Se puede asignar una dirección de red única a cada subred punto a punto. Esto permite que cada subinterfaz funcione de manera similar a una línea arrendada. Mediante una subinterfaz de Frame Relay punto a punto, cada par de los routers punto a punto se encuentra en su propia subred. Esto permite que los paquetes recibidos en una subinterfaz se envíen por otra subinterfaz, aunque los paquetes se reenvíen por la misma interfaz física.</p>
+<p></p>
+<p>Las subinterfaces de Frame Relay se pueden configurar en modo punto a punto o multipunto:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Punto a punto (figura 2):</b> una única subinterfaz punto a punto establece una conexión de PVC a otra interfaz física o subinterfaz en un router remoto. En este caso, cada par de los routers punto a punto está en su propia subred, y cada subinterfaz punto a punto tiene un único DLCI. En un entorno punto a punto, cada subinterfaz funciona como una interfaz punto a punto. Para cada VC punto a punto, hay una subred distinta. Por lo tanto, el tráfico de actualización de routing no está sujeto a la regla del horizonte dividido. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Multipunto (figura 3):</b> una única subinterfaz multipunto establece varias conexiones de PVC a varias interfaces físicas o subinterfaces en los routers remotos. Todas las interfaces que participan están en la misma subred. La subinterfaz funciona como una interfaz de Frame Relay NBMA, de modo que el tráfico de actualización de routing está sujeto a la regla del horizonte dividido. Todos los VC multipunto pertenecen a la misma subred.</li>
+</ul>
+</p>
+<p></p>
+<p>Al configurar subinterfaces, se asigna el comando <span class="cmd"><b>encapsulation frame-relay</b></span> a la interfaz física. Todos los demás elementos de la configuración, como la dirección de capa de red y los DLCI, se asignan a la subinterfaz. </p>
+<p></p>
+<p>Las configuraciones de la subinterfaz multipunto se pueden utilizar para conservar direcciones. Esto puede ser especialmente útil si no se utiliza la máscara de subred de longitud variable (VLSM). Sin embargo, es posible que las configuraciones multipunto no funcionen correctamente, dadas las consideraciones del tráfico de difusión y el horizonte dividido. La opción de subinterfaz punto a punto se creó para evitar estos problemas.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

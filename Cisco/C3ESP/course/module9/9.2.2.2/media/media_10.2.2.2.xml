@@ -1,0 +1,51 @@
+﻿<textcomponents>
+<component id="ID_s1_header">
+<text><![CDATA[<b>Instalación de la licencia de evaluación</b>]]></text>
+</component>
+<component id="ID_s2_header">
+<text><![CDATA[<b>Verificación de la licencia de evaluación</b>]]></text>
+</component>
+
+<component id="ID_s1_txt01">
+<text><![CDATA[&lt; Se omiten detalles del Acuerdo de licencia para el usuario final  &gt;]]></text>
+</component>
+
+
+<component id="ID_s2_txt01">
+<text><![CDATA[&lt;resultado omitido&gt;]]></text>
+</component>
+
+<component id="ID_sc_reset">
+		<text><![CDATA[Restablecer]]></text>
+	</component>
+	<component id="ID_sc_showme">
+		<text><![CDATA[Mostrar]]></text>
+	</component>
+	<component id="ID_sc_showall">
+		<text><![CDATA[Mostrar todo]]></text>
+	</component>
+
+
+<component id="ID_s3_SC1" fontFace='Courier New' fontSize="10">
+		<feedback id="fb"><![CDATA[<b>***</b><font  face="Arial" color="#0000FF">Debe introducir el comando exacto y completo.</font><b>***</b> ]]></feedback>		
+		<existingcommands><![CDATA[<font  face="Arial"><b>En el router R2, realice las siguientes tareas:<ul><li>Acepte el Contrato de licencia para el usuario final.<li>Instale el paquete de tecnología de Datos para la evaluación: “datak9”.<li>Vuelva al modo EXEC privilegiado.</ul></b></font>]]></existingcommands>
+		<command  prompt="R2(config)#">
+		    <correctresponse><![CDATA[license accept end user agreement]]></correctresponse>
+		</command>
+		<command  prompt="R2(config)#">
+		    <correctresponse><![CDATA[license boot module c1900 technology-package datak9]]></correctresponse>
+				<deviceresponse><![CDATA[<font Face="Courier New">% use 'write' command to make license boot config take effect on next boot <br>*Apr 27 01:27:01.703: %IOS_LICENSE_IMAGE_APPLICATION-6-LICENSE_LEVEL: Module name = c1900 Next reboot level = datak9 and License = datak9 <br>*Apr 27 01:27:02.331: %LICENSE-6-EULA_ACCEPTED: EULA for feature datak9 1.0 has been accepted. UDI=CISCO1941/K9:FTX16368491; StoreIndex=1:Built-In License Storage</font>]]></deviceresponse> 
+		</command>
+		<command  prompt="R2(config)#">
+		    <correctresponse><![CDATA[end]]></correctresponse>
+				<deviceresponse><![CDATA[<font Face="Courier New">R2#<br>*Apr 27 01:27:20.811: %SYS-5-CONFIG_I: Configured from console by console</font>]]></deviceresponse> 
+			<instruction><![CDATA[<font  face="Arial"><b>Verifique la instalación del paquete.</b>]]></instruction>
+		</command>
+		<command  prompt="R2#">
+		    <correctresponse><![CDATA[show license]]></correctresponse>
+				<deviceresponse><![CDATA[<font Face="Courier New">Index 1 Feature: ipbasek9<br>        Period left: Life time <br>        License Type: Permanent <br>        License State: Active, In Use <br>        License Count: Non-Counted <br>        License Priority: Medium <br>Index 2 Feature: securityk9                     <br>        Period left: Not Activated <br>        Period Used: 0  minute  0  second  <br>        License Type: EvalRightToUse <br>        License State: Not in Use, EULA not accepted <br>        License Count: Non-Counted <br>        License Priority: None <br>Index 3 Feature: datak9                         <br>        Period left: 8  weeks 4  days <br>        Period Used: 0  minute  0  second  <br>        License Type: EvalRightToUse <br>        License State: Active, Not in Use, EULA accepted <br>        License Count: Non-Counted <br>        License Priority: Low <br>Index 4 Feature: SSL_VPN                        <br>        Period left: Not Activated <br>        Period Used: 0  minute  0  second  <br>          <br>R2#</font>]]></deviceresponse> 
+			<instruction><![CDATA[<font  face="Arial" class="syntaxBottomLine"><b>Activó correctamente una licencia de Right-to-Use de evaluación.</b>]]></instruction>
+		</command>
+		<command prompt=""/>
+	</component>
+</textcomponents>

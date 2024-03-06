@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.1.4.5 Teclas de acceso rápido y métodos abreviados</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.1.4.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Entrenamiento intensivo sobre IOS</h1>
+        <h2>Estructura de los comandos</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Teclas de acceso rápido y métodos abreviados</b>
+</p>
+<p></p>
+<p>La interfaz de línea de comandos IOS proporciona teclas de acceso rápido y métodos abreviados que facilitan la configuración, el monitoreo y la resolución de problemas. </p>
+<p></p>
+<p>En la ilustración se muestran la mayoría de los métodos abreviados. Merece la pena tener en cuenta de manera especial los siguientes:</p>
+<p>
+<ul>
+<li>
+<b>Flecha abajo:</b> permite al usuario desplazarse hacia delante a través de los comandos anteriores.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Flecha arriba:</b> permite al usuario desplazarse hacia atrás a través de los comandos anteriores.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Tabulación:</b> completa el resto de un comando o de una palabra clave que se escribió parcialmente.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Ctrl-A:</b> se traslada al comienzo de la línea.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Ctrl-E:</b> se traslada al final de la línea.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Ctrl-R</b>: vuelve a mostrar una línea</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Ctrl-Z:</b> sale del modo de configuración y vuelve al modo EXEC del usuario.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Ctrl-C:</b> sale del modo de configuración o cancela el comando actual.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Ctrl-Mayús-6:</b> permite al usuario interrumpir un proceso de IOS, como ping o traceroute.</li>
+</ul>
+</p>
+<p></p>
+<p>Análisis más detallado de algunos de ellos:</p>
+<p></p>
+<p>
+<b>Tabulación</b>
+</p>
+<p>La tecla de tabulación se utiliza para completar el resto de los comandos y los parámetros abreviados, siempre que la abreviatura contenga suficientes letras para diferenciarse de cualquier otro comando o parámetro actualmente disponible. Cuando se ha ingresado una parte suficiente del comando o la palabra clave como para que sean únicos, presione la tecla <b>Tab</b> y la CLI mostrará el resto del comando o palabra clave.</p>
+<p></p>
+<p>Esta es una buena técnica para usar cuando se está aprendiendo porque permite ver la palabra completa utilizada para el comando o palabra clave.</p>
+<p></p>
+<p>
+<b>Ctrl-R</b>
+</p>
+<p>La función de volver a mostrar la línea actualiza la línea que se acaba de escribir. Use <b>Ctrl-R</b> para volver a mostrar la línea. Por ejemplo, puede ocurrir que el IOS esté reenviando un mensaje a la CLI justo cuando se está escribiendo una línea. Puede usar <b>Ctrl-R</b> para actualizar la línea y evitar tener que volver a escribirla.</p>
+<p></p>
+<p>En este ejemplo, aparece en medio de un comando un mensaje sobre una falla en una interfaz.</p>
+<p></p>
+<p>
+<span class="cmd">Switch#</span>
+<span class="cmd">
+<b>show mac-</b>
+</span>
+</p>
+<p>
+<span class="cmd">16w4d: %LINK-5-CHANGED: Interface FastEthernet0/10, changed state to down</span>
+</p>
+<p>
+<span class="cmd">16w4d: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/10, changed state to down</span>
+</p>
+<p></p>
+<p>Para volver a mostrar la línea que estaba escribiendo, utilice <b>Ctrl-R</b>:</p>
+<p></p>
+<p>
+<span class="cmd">Switch#</span>
+<span class="cmd">
+<b>show mac </b>
+</span>
+</p>
+<p></p>
+<p>
+<b>Ctrl-Z</b>
+</p>
+<p>Esta combinación de teclas permite salir de cualquier modo de configuración y volver al modo EXEC privilegiado. Dado que el IOS tiene una estructura de modos jerárquica, el usuario puede encontrarse varios niveles hacia abajo. En lugar de salir de cada modo en forma individual, utilice <b>Ctrl-Z</b> para volver directamente a la petición de entrada de EXEC privilegiado en el nivel superior.</p>
+<p></p>
+<p>
+<b>Flechas arriba y abajo</b>
+</p>
+<p>Las teclas de comandos anteriores recuerdan el historial de comandos introducidos. El software IOS de Cisco almacena temporalmente varios caracteres y comandos anteriores de manera tal que las entradas puedan recuperarse. El búfer es útil para volver a introducir comandos sin tener que volver a escribirlos.</p>
+<p></p>
+<p>Existen secuencias clave para desplazarse a través de estos comandos almacenados en el búfer. Use la tecla <b>flecha arriba</b> (<b>Ctrl-P</b>) para mostrar los comandos introducidos anteriormente. Cada vez que se presiona esta tecla, se mostrará el siguiente comando sucesivo anterior. Use la tecla <b>flecha abajo</b> (<b>Ctrl-N</b>) para desplazarse hacia delante en el historial y mostrar los comandos más recientes.</p>
+<p></p>
+<p>
+<b>Ctrl-Mayús-6</b>
+</p>
+<p>La secuencia de escape interrumpe cualquier proceso en ejecución. Cuando se inicia un proceso del IOS desde la CLI, como un ping o traceroute, el comando se ejecuta hasta que se termina o interrumpe. Mientras el proceso está en ejecución, la CLI no responde. Para interrumpir el resultado e interactuar con la CLI, presione <b>Ctrl-Mayús-6</b>.</p>
+<p></p>
+<p>
+<b>Ctrl-C</b>
+</p>
+<p>Interrumpe la entrada de un comando y sale del modo de configuración, lo que resulta útil después de introducir un comando que se necesita cancelar.</p>
+<p></p>
+<p>
+<b>Abreviación de comandos o palabras clave</b>
+</p>
+<p>Los comandos y las palabras clave pueden abreviarse a la cantidad mínima de caracteres que identifiquen una selección única. Por ejemplo, el comando <span class="cmd"><b>configure</b></span> puede abreviarse en <span class="cmd"><b>conf</b></span> ya que <span class="cmd"><b>configure</b></span> es el único comando que empieza con <span class="cmd"><b>conf</b></span>. La abreviatura <span class="cmd"><b>con</b></span> no dará resultado ya que hay más de un comando que empieza con <span class="cmd"><b>con</b></span>.</p>
+<p></p>
+<p>Las palabras clave también pueden abreviarse. </p>
+<p></p>
+<p>Otro ejemplo podría ser <span class="cmd"><b>show interfaces</b></span>, que se puede abreviar de la siguiente manera:</p>
+<p></p>
+<p>
+<span class="cmd">Switch#</span>
+<span class="cmd">
+<b>show interfaces</b>
+</span>
+</p>
+<p>
+<span class="cmd">Switch#</span>
+<span class="cmd">
+<b>show int</b>
+</span>
+</p>
+<p></p>
+<p>Se puede abreviar tanto el comando como las palabras clave, por ejemplo:</p>
+<p></p>
+<p>
+<span class="cmd">Switch#</span>
+<span class="cmd">
+<b>sh int</b>
+</span>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

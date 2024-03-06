@@ -1,0 +1,89 @@
+﻿<textcomponents>
+
+<component id="ID_s1_title">
+<text><![CDATA[<b>Modos de interfaz negociados de DTP  </b>]]></text>
+</component>
+
+<component id="ID_s2_title">
+<text><![CDATA[<b>Verificación del modo de DTP  </b>]]></text>
+</component>
+
+<component id="ID_s3_title">
+<text><![CDATA[<b>Verificación del modo de DTP  </b>]]></text>
+</component>
+
+<component id="ID_s2_txt01">
+<text><![CDATA[&lt;resultado omitido&gt;]]></text>
+</component>
+<component id="ID_table01">
+<text><![CDATA[<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4'>
+<tr class="mtable_top">
+<td colspan='5' bgcolor='#0E6360' class="mtable_top"><font size='1' color='#434321'><span style="color:#DAE17A">.</span></font></td>
+</tr>
+
+<tr>
+<td width="80" bgcolor='#077A77' valign="top"><font color='#ffffff'><b>  </b></font></td>
+<td width="80" bgcolor='#077A77' valign="top" class="mtable"><font color='#ffffff'><b>Dinámico automático  </b></font></td>
+<td width="80" bgcolor='#077A77' valign="top" class="mtable"><font color='#ffffff'><b>Dinámico deseado  </b></font></td>
+<td width="80" bgcolor='#077A77' valign="top" class="mtable"><font color='#ffffff'><b>Enlace troncal  </b></font></td>
+<td width="80" bgcolor='#077A77' valign="top" class="mtable"><font color='#ffffff'><b>Acceso  </b></font></td>
+</tr>
+
+<tr>
+<td bgcolor='#eff8f7' valign="top"><font color='#393536'><b>Dinámico automático  </b></font></td>
+<td bgcolor='#eff8f7' valign="top"><font color='#393536'>Acceso</font></td>
+<td bgcolor='#eff8f7' valign="top"><font color='#393536'>Enlace troncal</font></td>
+<td bgcolor='#eff8f7' valign="top"><font color='#393536'>Enlace troncal</font></td>
+<td bgcolor='#eff8f7' valign="top"><font color='#393536'>Acceso</font></td>
+</tr>
+
+<tr>
+<td bgcolor='#ffffff' valign="top"><font color='#393536'><b>Dinámico deseado  </b></font></td>
+<td bgcolor='#ffffff' valign="top"><font color='#393536'>Enlace troncal</font></td>
+<td bgcolor='#ffffff' valign="top"><font color='#393536'>Enlace troncal</font></td>
+<td bgcolor='#ffffff' valign="top"><font color='#393536'>Enlace troncal</font></td>
+<td bgcolor='#ffffff' valign="top"><font color='#393536'>Acceso</font></td>
+</tr>
+
+<tr>
+<td bgcolor='#eff8f7' valign="top"><font color='#393536'><b>Enlace troncal  </b></font></td>
+<td bgcolor='#eff8f7' valign="top"><font color='#393536'>Enlace troncal</font></td>
+<td bgcolor='#eff8f7' valign="top"><font color='#393536'>Enlace troncal</font></td>
+<td bgcolor='#eff8f7' valign="top"><font color='#393536'>Enlace troncal</font></td>
+<td bgcolor='#eff8f7' valign="top"><font color='#393536'>Conectividad limitada</font></td>
+</tr>
+
+<tr>
+<td bgcolor='#ffffff' valign="top"><font color='#393536'><b>Acceso  </b></font></td>
+<td bgcolor='#ffffff' valign="top"><font color='#393536'>Acceso</font></td>
+<td bgcolor='#ffffff' valign="top"><font color='#393536'>Acceso</font></td>
+<td bgcolor='#ffffff' valign="top"><font color='#393536'>Conectividad limitada</font></td>
+<td bgcolor='#ffffff' valign="top"><font color='#393536'>Acceso</font></td>
+</tr>
+</table>]]></text> 
+</component>
+
+<component id="ID_sc_reset">
+		<text><![CDATA[Restablecer]]></text>
+	</component>
+	<component id="ID_sc_showme">
+		<text><![CDATA[Mostrar]]></text>
+	</component>
+	<component id="ID_sc_showall">
+		<text><![CDATA[Mostrar todo]]></text>
+	</component>
+<component id="ID_SC" fontFace='Courier New' fontSize="10">
+		<feedback id="fb"><![CDATA[<b><font  face="Arial" color="#0000FF">***Debe introducir el comando exacto y completo. Los comandos que incluyen un nombre o una contraseña distinguen mayúsculas de minúsculas.***</font>  </b>
+		]]></feedback>
+		<existingcommands><![CDATA[<font  face="Arial"><b>La interfaz f0/1 está configurada como enlace troncal. Verifique el modo de DTP en la interfaz f0/1.  </b></font>]]></existingcommands>
+		<command prompt="S1#">
+			<correctresponse><![CDATA[show dtp interface f0/1]]></correctresponse>
+				<deviceresponse><![CDATA[DTP information for FastEthernet0/1: <br><pre>  TOS/TAS/TNS:                              TRUNK/ON/TRUNK <br>  TOT/TAT/TNT:                              802.1Q/802.1Q/802.1Q <br>  Neighbor address 1:                       0CD996D23F81 <br>  Neighbor address 2:                       000000000000 <br>  Hello timer expiration (sec/state):       12/RUNNING <br>  Access timer expiration (sec/state):      never/STOPPED <br>  Negotiation timer expiration (sec/state): never/STOPPED <br>  Multidrop timer expiration (sec/state):   never/STOPPED <br>  FSM state:                                S6:TRUNK <br>  # times multi & trunk                     0 <br>  Enabled:                                  yes <br>  In STP:                                   no </pre><br><br> Estadísticas <br>  ---------- <br>  640 packets received (640 good) <br>  0 packets dropped <br>      0 nonegotiate, 0 bad version, 0 domain mismatches, <br>      0 bad TLVs, 0 bad TAS, 0 bad TAT, 0 bad TOT, 0 other <br>  646 packets output (646 good) <br>      640 native, 6 software encap isl, 0 isl hardware native <br>  0 output errors <br>  0 trunk timeouts <br>  1 link ups, last link up on Mon Mar 01 1993, 00:00:56 <br>  0 link downs]]></deviceresponse>
+			<instruction><![CDATA[<font  face="Arial"><b>Verificó correctamente el modo de DTP.</font>]]></instruction>
+		</command>
+		<command prompt=""/>
+	</component>
+
+
+
+</textcomponents>

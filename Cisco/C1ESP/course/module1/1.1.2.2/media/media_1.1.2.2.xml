@@ -1,0 +1,53 @@
+﻿<textcomponents>
+<component id="ID_txt01">
+<text><![CDATA[Cliente Web]]></text>
+</component>
+<component id="ID_txt02">
+  <text><![CDATA[Cliente de correo electrónico]]></text> 
+  </component>
+<component id="ID_txt03">
+  <text><![CDATA[Servidor de correo electrónico]]></text> 
+  </component>
+
+  <component id="ID_txt04">
+     <text><![CDATA[Servidor Web]]></text>
+     </component>
+<component id="ID_txt05">
+   <text><![CDATA[Servidor de archivos]]></text>
+   </component>
+<component id="ID_txt06">
+   <text><![CDATA[Cliente de archivos]]></text>
+   </component>
+
+   <component id="ID_txt07">
+   <text><![CDATA[Switch]]></text>
+   </component>
+
+
+
+
+
+<component id="ID_set03_header">
+   <text><![CDATA[<b>Servidor y cliente de correo electrónico</b>]]></text>
+   </component>
+<component id="ID_set03_body">
+   <text><![CDATA[El servidor de correo electrónico ejecuta software de servidor, mientras que los clientes utilizan software cliente de correo electrónico, como Microsoft Outlook, para obtener acceso a los mensajes de correo electrónico que se encuentran en el servidor.]]></text>
+   </component>
+<component id="ID_set02_header">
+   <text><![CDATA[<b>Servidor y cliente Web</b>]]></text>
+   </component>
+<component id="ID_set02_body">
+   <text><![CDATA[El servidor Web ejecuta software de servidor, mientras que los clientes utilizan software de explorador, como Windows Internet Explorer, para obtener acceso a las páginas Web que se encuentran en el servidor.]]></text>
+   </component>
+<component id="ID_set01_header">
+   <text><![CDATA[<b>Servidor y cliente de archivos</b>]]></text>
+   </component>
+<component id="ID_set01_body">
+   <text><![CDATA[El servidor de archivos almacena los archivos, mientras que el dispositivo cliente obtiene acceso a ellos mediante software cliente, como el Explorador de Windows.]]></text>
+   </component>
+   
+    <component id="ID_instructions"><text><![CDATA[Haga clic en los diferentes clientes y servicios de servidor para ver una descripción breve.]]></text>
+	</component>
+
+  
+</textcomponents>

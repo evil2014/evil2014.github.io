@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.2.2.2 Estándares de cableado UTP</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.2.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Medios de red</h1>
+        <h2>Cableado UTP</h2>
+      </div>
+      <div id="content">
+<p>El cableado UTP cumple con los estándares establecidos en conjunto por la TIA/EIA. Específicamente, TIA/EIA-568A estipula los estándares comerciales de cableado para las instalaciones de LAN y es el estándar más utilizado en los entornos de cableado LAN. Algunos de los elementos definidos son: </p>
+<p>
+<ul>
+<li>Tipos de cables</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Longitudes del cable </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Conectores</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Terminación de los cables </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Métodos para realizar pruebas de cable </li>
+</ul>
+</p>
+<p></p>
+<p>El Instituto de Ingenieros en Electricidad y Electrónica (IEEE) define las características eléctricas del cableado de cobre. IEEE califica el cableado UTP según su rendimiento. Los cables se dividen en categorías según su capacidad para transportar datos de ancho de banda a velocidades mayores. Por ejemplo, el cable de Categoría 5 (Cat5) se utiliza comúnmente en las instalaciones de FastEthernet 100BASE-TX. Otras categorías incluyen el cable de categoría 5 mejorada (Cat5e), la categoría 6 (Cat6) y la categoría 6a.</p>
+<p></p>
+<p>Los cables de categorías superiores se diseñan y fabrican para admitir velocidades superiores de transmisión de datos. A medida que se desarrollan y adoptan nuevas tecnologías Ethernet de velocidades en gigabits, Cat5e es el tipo de cable mínimamente aceptable en la actualidad. Cat6 es el tipo de cable recomendado para nuevas instalaciones edilicias. </p>
+<p></p>
+<p>En la ilustración, se destacan las distintas categorías de cableado UTP.</p>
+<p></p>
+<p>
+<b>Nota:</b> algunos fabricantes producen cables que exceden las especificaciones de la categoría 6a de la TIA/EIA y se refieren a estos como cables de “categoría 7”. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

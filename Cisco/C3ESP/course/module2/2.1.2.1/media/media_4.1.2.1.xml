@@ -1,0 +1,121 @@
+﻿<textcomponents> <!-- s1    -->
+<component id="ID_s1_title">
+<text><![CDATA[<b>Funcionamiento normal de STP</b>]]></text>
+</component>
+
+
+<component id="ID_s1_txt03">
+<text><![CDATA[<b>Enlace troncal2</font></b>]]></text> 
+</component>
+<component id="ID_s1_txt04">
+<text><![CDATA[<b>Enlace troncal3</font></b>]]></text> 
+</component>
+<component id="ID_s1_txt05">
+<text><![CDATA[<b>Enlace troncal1</font></b>]]></text> 
+</component>
+
+
+<component id="ID_s1_txt09">
+<text><![CDATA[La PC1 envía una trama de difusión.]]></text> 
+</component>
+<component id="ID_s1_txt10">
+<text><![CDATA[El S2 reenvía la difusión por todos los puertos, excepto el puerto de origen y el puerto bloqueado.]]></text> 
+</component>
+<component id="ID_s1_txt11">
+<text><![CDATA[El S1 reenvía la difusión por todos los puertos, excepto el puerto de origen.]]></text> 
+</component>
+<component id="ID_s1_txt12">
+<text><![CDATA[El S3 recibe la trama y la reenvía al S2.]]></text> 
+</component>
+<component id="ID_s1_txt13">
+<text><![CDATA[El S2 descarta la trama, ya que la recibió en un puerto bloqueado.]]></text> 
+</component> <!-- s2    -->
+
+<component id="ID_s2_title">
+<text><![CDATA[<b>STP compensa una falla de red</b>]]></text>
+</component>
+<component id="ID_s2_txt10">
+<text><![CDATA[<b>Enlace troncal3</font></b>]]></text> 
+</component>
+<component id="ID_s2_txt09">
+<text><![CDATA[<b>Enlace troncal2</font></b>]]></text> 
+</component>
+
+<component id="ID_s2_txt08">
+<text><![CDATA[<b>Enlace troncal1</font></b>]]></text> 
+</component>
+
+<component id="ID_s2_txt01">
+<text><![CDATA[El enlace troncal entre el S2 y el S1 falló.]]></text> 
+</component>
+<component id="ID_s2_txt02">
+<text><![CDATA[El S2 desbloquea el puerto para Enlace_troncal2.]]></text> 
+</component>
+<component id="ID_s2_txt04">
+<text><![CDATA[La PC1 envía una trama de difusión al S2.]]></text> 
+</component>
+<component id="ID_s2_txt05">
+<text><![CDATA[El S2 reenvía la difusión por todos los puertos del switch, excepto el puerto de origen y el enlace que falló para Enlace_troncal1.]]></text>
+</component>
+<component id="ID_s2_txt06">
+<text><![CDATA[El S3 reenvía la difusión por todos los puertos de switch disponibles, excepto el puerto de origen.]]></text> 
+</component>
+<component id="ID_s2_txt07">
+<text><![CDATA[El S1 reenvía la difusión solo por F0/3.]]></text> 
+</component>
+
+
+
+
+<component id="end">
+<text><![CDATA[End]]></text>
+</component>
+
+<component id="fforward">
+<text><![CDATA[Adelantar]]></text>
+</component>
+
+<component id="pause">
+<text><![CDATA[Pausa]]></text>
+</component>
+
+<component id="play">
+<text><![CDATA[Reproducir]]></text>
+</component>
+
+<component id="rewind">
+<text><![CDATA[Regresar]]></text>
+</component>
+
+<component id="start">
+<text><![CDATA[Inicio]]></text>
+</component>
+
+
+<component id="s2_end">
+<text><![CDATA[End]]></text>
+</component>
+
+<component id="s2_fforward">
+<text><![CDATA[Adelantar]]></text>
+</component>
+
+<component id="s2_pause">
+<text><![CDATA[Pausa]]></text>
+</component>
+
+<component id="s2_play">
+<text><![CDATA[Reproducir]]></text>
+</component>
+
+<component id="s2_rewind">
+<text><![CDATA[Regresar]]></text>
+</component>
+
+<component id="s2_start">
+<text><![CDATA[Inicio]]></text>
+</component>
+
+
+
+</textcomponents>

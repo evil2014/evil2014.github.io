@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.2.3.1 Administración de licencias y archivos del IOS</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.2.3.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Selección de dispositivos de red</h1>
+        <h2>Administración de dispositivos</h2>
+      </div>
+      <div id="content">
+<p>Con una selección tan amplia de dispositivos de red para elegir en la línea de productos de Cisco, una organización puede seleccionar con detenimiento la combinación ideal para satisfacer las necesidades de los empleados y los clientes.</p>
+<p></p>
+<p>Al seleccionar o actualizar un dispositivo con IOS de Cisco, es importante elegir la imagen del IOS adecuada con el conjunto de características y la versión correctos. “IOS” se refiere al paquete de routing, switching, seguridad y otras tecnologías de internetworking integradas en un único sistema operativo multitarea. Cuando se envía un nuevo dispositivo, este tiene preinstalada la imagen del software y las licencias permanentes correspondientes para los paquetes y las características especificados por el cliente.</p>
+<p></p>
+<p>En cuanto a los routers, a partir de la versión 15.0 del software IOS de Cisco la compañía modificó el proceso para permitir nuevas tecnologías dentro de los conjuntos de características del IOS, como se muestra en la ilustración. </p>
+<p></p>
+<p>En el capítulo “Imágenes y licencias del IOS”, se proporciona más información acerca de la administración y el mantenimiento de las licencias del IOS de Cisco. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

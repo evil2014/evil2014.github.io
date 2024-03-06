@@ -1,0 +1,18 @@
+﻿<textcomponents>
+<component id="ID_s1_title">
+<text><![CDATA[<b>Seguridad del puerto</b>]]></text>
+</component>
+<component id="ID_s2_title">
+  <text><![CDATA[<b>Direcciones seguras persistentes</b>]]></text> 
+  </component>
+   <component id="ID_Body_title01">
+  <text><![CDATA[<b>Implemente medidas de seguridad en todos los puertos del switch para lograr lo siguiente:  </b>]]></text> 
+  </component>
+<component id="ID_Body_txt01">
+		<text><![CDATA[<textformat blockindent='-14'><li>Especificar una única dirección MAC o un grupo de direcciones MAC válidas permitidas en un puerto. </li><li>Especificar que un puerto se desactive automáticamente si se detectan direcciones MAC no autorizadas. </li></textformat>]]></text>
+	</component>	
+ 
+  <component id="ID_Body_txt02">
+ <text><![CDATA[<textformat blockindent='-14'><li>Las direcciones MAC seguras persistentes descubiertas de forma dinámica se almacenan en el archivo running-config. </li><li>Se eliminan del archivo running-config si se inhabilita la seguridad de puertos. </li><li>Se pierden cuando se reinicia el switch (se apaga y se enciende).  </li><li>Si se guardan las direcciones MAC seguras persistentes en el archivo startup-config, se vuelven permanentes, y el switch las conserva después de un reinicio. </li><li>Si se inhabilita el aprendizaje por persistencia, las direcciones MAC persistentes se convierten en direcciones dinámicas seguras y se las elimina del archivo running-config. </li></textformat>]]></text>
+  </component>
+</textcomponents>

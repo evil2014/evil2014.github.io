@@ -1,0 +1,74 @@
+﻿<textcomponents>
+
+<component id='ID_inst'>
+	<text><![CDATA[<b>Actividad: Identificar las características del acceso remoto por IPsec y SSL</b><br><br>Clasifique las características de acceso remoto con SSL o IPsec.]]></text>
+</component>
+
+<component id='ID_txt01'>
+	<text><![CDATA[<b>SSL</b>]]></text>
+</component>
+
+<component id='ID_txt02'>
+	<text><![CDATA[<b>IPsec</b>]]></text>
+</component> <!--Drag and Drop-->
+<component id='ID_drag01'>
+	<text><![CDATA[<font color="#393536">Autenticación unidireccional o bidireccional.</font>]]></text>
+</component>
+
+<component id='ID_drag02'>
+	<text><![CDATA[<font color="#393536">Cifrado con una longitud de clave de 40&nbsp;bits a 256&nbsp;bits.</font>]]></text>
+</component>
+
+<component id='ID_drag03'>
+	<text><![CDATA[<font color="#393536">Se pueden conectar dispositivos configurados específicamente.</font>]]></text>
+</component>
+
+<component id='ID_drag04'>
+	<text><![CDATA[<font color="#393536">Todas las aplicaciones basadas en IP</font>]]></text>
+</component>
+
+<component id='ID_drag05'>
+	<text><![CDATA[<font color="#393536">Cifrado con una longitud de clave de 56&nbsp;bits a 256&nbsp;bits.</font>]]></text>
+</component>
+
+<component id='ID_drag06'>
+	<text><![CDATA[<font color="#393536">Cualquier dispositivo se puede conectar.</font>]]></text>
+</component>
+
+<component id='ID_drag07'>
+	<text><![CDATA[<font color="#393536">Aplicaciones web y uso compartido de archivos.</font>]]></text>
+</component>
+
+<component id='ID_drag08'>
+	<text><![CDATA[<font color="#393536">Autenticación con secretos compartidos o certificados digitales.</font>]]></text>
+</component>
+
+
+
+
+
+<component id='ID_s1_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id='ID_s1_CORRECT_BODY'>
+	<text><![CDATA[Clasificó correctamente las características de acceso remoto con SSL o IPsec.]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_BODY'>
+	<text><![CDATA[No clasificó correctamente las características de acceso remoto con SSL o IPsec. Haga clic en <b>Restablecer</b> y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_CHECK'>
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id='ID_RESET'>
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component>
+
+</textcomponents>

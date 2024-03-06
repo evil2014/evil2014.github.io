@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.2.3.4 Comandos show básicos del router</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.2.3.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Selección de dispositivos de red</h1>
+        <h2>Administración de dispositivos</h2>
+      </div>
+      <div id="content">
+<p>A continuación, se muestran algunos de los comandos de IOS más utilizados para visualizar y verificar el estado operativo del router y la funcionalidad de la red relacionada con este estado. Estos comandos se clasifican en varias categorías. </p>
+<p></p>
+<p>En relación con el enrutamiento:</p>
+<p>
+<ul>
+<li>
+<span class="cmd">
+<b>show ip protocols:</b>
+</span>
+<b></b>muestra información acerca de los protocolos de routing configurados. Si OSPF está configurado, en la información se incluye la ID del proceso OSPF, la ID del router, las redes que anuncia el router, los vecinos de los que el router recibe actualizaciones y la distancia administrativa predeterminada, que para OSPF es 110 (figura 1).</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<span class="cmd">
+<b>show ip route:</b>
+</span>
+<b></b>muestra la información de la tabla de routing, que incluye los códigos de routing, las redes conocidas, la distancia administrativa y las métricas, la forma en que se descubrieron las rutas, el siguiente salto, las rutas estáticas y las rutas predeterminadas (figura 2).</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<span class="cmd">
+<b>show ip ospf neighbor:</b>
+</span>
+<b></b>muestra información acerca de los vecinos OSPF que se descubrieron, incluidos la ID del router del vecino, la prioridad, el estado (Full = se formó la adyacencia), la dirección IP y la interfaz local se que descubrió del vecino (figura 3).</li>
+</ul>
+</p>
+<p></p>
+<p>En relación con la interfaz:</p>
+<p>
+<ul>
+<li>
+<span class="cmd">
+<b>show interfaces: </b>
+</span>muestra las interfaces con estado (del protocolo) de línea, ancho de banda, retraso, confiabilidad, encapsulación, dúplex y estadísticas de E/S. Se muestran todas las interfaces si están especificadas sin una designación de interfaz específica. Si se especifica una interfaz después del comando, solo se mostrará la información sobre esa interfaz. (figura 4). </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<span class="cmd">
+<b>show ip interfaces:</b>
+</span>
+<b></b>muestra información de la interfaz, incluidos el estado del protocolo, la dirección IP, si hay una dirección de ayuda configurada y si hay una ACL habilitada en la interfaz. Se muestran todas las interfaces si están especificadas sin una designación de interfaz específica. Si se especifica una interfaz después del comando, solo se mostrará la información sobre esa interfaz (figura 5).</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<span class="cmd">
+<b>show ip interface brief:</b>
+</span>
+<b></b>muestra todas las interfaces con información de direccionamiento IP y los estados de interfaz y de protocolo de línea (figura 6).</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<span class="cmd">
+<b>show protocols: </b>
+</span>muestra información acerca del protocolo de routing que está habilitado y el estado del protocolo de las interfaces (figura 7).</li>
+</ul>
+</p>
+<p></p>
+<p>Otros comandos relacionados con la conectividad incluyen el comando <span class="cmd"><b>show cdp neighbors</b></span> (figura 8). Este comando muestra información acerca de los dispositivos conectados directamente, incluidos la ID del dispositivo, la interfaz local a la que está conectado el dispositivo, la capacidad (R = router, S = switch), la plataforma y la ID del puerto del dispositivo remoto. La opción de detalles incluye información de direccionamiento IP y la versión del IOS.<span class="cmd"><b></b></span></p>
+<p></p>
+<p>Utilice el verificador de sintaxis en la figura 9 para verificar la configuración del router con estos comandos <span class="cmd"><b>show</b></span>. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

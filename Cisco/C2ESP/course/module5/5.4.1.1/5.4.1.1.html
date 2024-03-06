@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.4.1.1 Una posición ventajosa</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.4.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resumen</h1>
+        <h2>Resumen</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Una posición ventajosa</b>
+</p>
+<p></p>
+<p>Su empresa acaba de comprar un edificio de tres pisos. Usted es el administrador de red y debe diseñar el esquema de red de routing entre VLAN de la empresa para permitir el acceso de algunos empleados en cada piso. </p>
+<p></p>
+<p>En el primer piso, se encuentra el departamento de Recursos Humanos; en el segundo piso, el departamento de TI; y en el tercer piso, el departamento de Ventas. Si bien todos los departamentos deben poder comunicarse entre sí, sus respectivas redes de trabajo se deben mantener separadas.</p>
+<p></p>
+<p>Usted trajo tres switches Cisco 2960 y un router Cisco de la serie 1941 de la sede anterior para brindar conectividad de red en el nuevo edificio. No pueden adquirirse nuevos equipos.</p>
+<p></p>
+<p>Consulte el PDF correspondiente a esta actividad para obtener instrucciones adicionales.</p>
+<p></p>
+<p>
+<a href="../../files/5.4.1.1%20The%20Inside%20Track%20Instructions.pdf" target="_blank">Actividad de clase: una posición ventajosa (instrucciones)</a>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

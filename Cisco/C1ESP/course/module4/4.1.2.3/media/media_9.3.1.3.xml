@@ -1,0 +1,73 @@
+﻿<textcomponents> <!--slide 1--> <!--OSI Model-->
+<component id='ID_osi_header'>
+	<text><![CDATA[<font size="14"><b>Modelo OSI</b></font>]]></text>
+</component>
+
+<component id='ID_osi_txt07'>
+	<text><![CDATA[Aplicación]]></text>
+</component>
+
+<component id='ID_osi_txt06'>
+	<text><![CDATA[Presentación]]></text>
+</component>
+
+<component id='ID_osi_txt05'>
+	<text><![CDATA[Sesión]]></text>
+</component>
+
+<component id='ID_osi_txt04'>
+	<text><![CDATA[Transporte]]></text>
+</component>
+
+<component id='ID_osi_txt03'>
+	<text><![CDATA[Red]]></text>
+</component>
+
+<component id='ID_osi_txt02'>
+	<text><![CDATA[Enlace de datos ]]></text>
+</component>
+
+<component id='ID_osi_txt01'>
+	<text><![CDATA[Física]]></text>
+</component>
+
+<component id='ID_s1_txt01'>
+	<text><![CDATA[Los estándares TCP/IP se implementan en software, y los rige la IETF.]]></text>
+</component>
+
+<component id='ID_s1_txt02'>
+	<text><![CDATA[Los estándares de la capa física se implementan en hardware, y los rigen diversos organismos, incluidos los siguientes:<br><textformat blockindent='-18'><li>ISO</li><li>EIA/TIA</li><li>ITU-T</li><li>ANSI</li><li>IEEE</li></textformat>]]></text>
+</component> <!--slide 2-->
+<component id='ID_s2_table'>
+<text><![CDATA[<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4'>
+	<tr>
+		<td colspan='2' bgcolor='#0E6360' class="mtable_top"><font size='2' color='#0E6360'>.</font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#077A77' width="110"><font color="#FFFFFF"><b>Organismo de estandarización</b></font></td>
+		<td bgcolor='#077A77'><font color="#FFFFFF"><b>Estándares de red</b></font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#EFF8F7'>ISO</td>
+		<td bgcolor='#EFF8F7'><textformat blockindent='-18'><li>ISO 8877: adoptó oficialmente los conectores RJ (p. ej., RJ-11, RJ-45).</li><li>ISO 11801: Estándar de cableado de red similar a EIA/TIA 568.</li></textformat></td>
+	</tr>
+	<tr>
+		<td bgcolor='#FFFFFF'>EIA/TIA</td>
+		<td bgcolor='#FFFFFF'><textformat blockindent='-18'><li>TIA-568-C: estándares de cableado de telecomunicaciones, utilizados en casi todas las redes de datos, voz y video.</li><li>TIA-569-B: estándares de construcción comercial para rutas y espacios de telecomunicaciones.</li><li>TIA-598-C: código de colores para fibra óptica.</li><li>TIA-942: estándar de infraestructura de telecomunicaciones para centros de datos.</li></textformat></td>
+	</tr>
+	<tr>
+		<td bgcolor='#EFF8F7'>ANSI</td>
+		<td bgcolor='#EFF8F7'>568-C: Diagrama de pines RJ-45. Desarrollado conjuntamente con EIA/TIA.</td>
+	</tr>
+	<tr>
+		<td bgcolor='#FFFFFF'>ITU-T</td>
+		<td bgcolor='#FFFFFF'>G.992: ADSL</td>
+	</tr>
+	<tr>
+		<td bgcolor='#EFF8F7'>IEEE</td>
+		<td bgcolor='#EFF8F7'><textformat blockindent='-18'><li>802.3: Ethernet</li><li>802.11: LAN inalámbrica (WLAN) y malla (certificación Wi-Fi)</li><li>802.15: Bluetooth</li></textformat></td>
+	</tr>
+</table>]]></text>
+</component>
+
+</textcomponents>

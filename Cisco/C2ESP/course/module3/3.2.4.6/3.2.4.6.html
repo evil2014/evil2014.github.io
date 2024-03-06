@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>3.2.4.6 Lista de VLAN incorrectas</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_3.2.4.6_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Implementaciones de VLAN</h1>
+        <h2>Resolución de problemas de VLAN y enlaces troncales</h2>
+      </div>
+      <div id="content">
+<p>Para que el tráfico de una VLAN se transmita a través de un enlace troncal, debe estar permitido en dicho enlace. Para hacerlo, utilice el comando <span class="cmd"><b>switchport trunk allowed vlan </b></span><span class="cmd"><i>id-vlan</i></span>. </p>
+<p></p>
+<p>En la figura 1, se agregaron la VLAN 20 (Estudiantes) y la PC5 a la red. La documentación se ha actualizado para mostrar que las VLAN permitidas en el enlace troncal son las 10, 20 y 99. En esta situación, la PC5 no puede conectarse al servidor de correo electrónico para estudiantes. </p>
+<p></p>
+<p>Verifique los puertos de enlace troncal del switch S1 con el comando <span class="cmd"><b>show interfaces trunk</b></span>, como se muestra en la figura 2. El comando revela que la interfaz F0/3 del switch S3 se configuró correctamente para permitir las VLAN 10, 20 y 99. Si se examina la interfaz F0/3 del switch S1, se descubre que las interfaces F0/1 y F0/3 permiten solo las VLAN 10 y 99. Alguien actualizó el registro pero olvidó volver a configurar los puertos del switch S1.</p>
+<p></p>
+<p>Vuelva a configurar los puertos F0/1 y F0/3 del switch S1 con el comando <span class="cmd"><b>switchport trunk allowed vlan 10,20,99</b></span>, como se muestra en la figura 3. El resultado muestra que ya se agregaron las VLAN 10, 20 y 99 a los puertos F0/1 y F0/3 del switch S1. El comando <span class="cmd"><b>show interfaces trunk</b></span> es una excelente herramienta para revelar problemas frecuentes de enlace troncal. La PC5 recuperó la conectividad al servidor de correo electrónico para estudiantes que se encuentra en la dirección IP 172.17.20.10.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+﻿<textcomponents>
+<component id="ID_title">
+<text><![CDATA[<b>Ubicación de la ACL estándar</b>]]></text>
+</component>
+<component id="ID_txt01">
+<text><![CDATA[Bloquear todo el tráfico de 192.168.10.0/24 a 192.168.30.0/24]]></text>
+</component>
+<component id="ID_txt02">
+  <text><![CDATA[Filtra el tráfico de 192.168.10.0/24 solo a 192.168.30.0/24.]]></text> 
+  </component>
+  <component id="ID_txt03">
+  <text><![CDATA[Filtra el tráfico de 192.168.10.0/24 a todos los destinos a los que puede llegar el R3.]]></text> 
+  </component>
+   <component id="ID_txt04">
+  <text><![CDATA[<b>Sitio A</b>]]></text> 
+  </component>
+   <component id="ID_txt05">
+  <text><![CDATA[<b>Sitio B</b>]]></text> 
+  </component>
+</textcomponents>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>10.2.2.4 nslookup</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_10.2.2.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolos y servicios de capa de aplicación reconocidos</h1>
+        <h2>Provisión de servicios de direccionamiento IP</h2>
+      </div>
+      <div id="content">
+<p>DNS es un servicio cliente/servidor. Sin embargo, difiere de los otros servicios cliente/servidor. Mientras otros servicios utilizan un cliente que es una aplicación (como un explorador Web o un cliente de correo electrónico), el cliente DNS ejecuta un servicio por sí mismo. El cliente DNS, a veces denominado “resolución DNS”, admite la resolución de nombres para otras aplicaciones de red y otros servicios que lo necesiten. </p>
+<p></p>
+<p>Al configurar un dispositivo de red, generalmente proporcionamos una o más direcciones del servidor DNS  que el cliente DNS puede utilizar para la resolución de nombres. En general, el proveedor de servicios de Internet (ISP) suministra las direcciones para utilizar con los servidores DNS. Cuando la aplicación del usuario pide conectarse a un dispositivo remoto por nombre, el cliente DNS solicitante consulta a uno de estos servidores de nombres para resolver el nombre para una dirección numérica.</p>
+<p></p>
+<p>Los sistemas operativos de las PC también cuentan con una utilidad llamada “nslookup” que permite que el usuario consulte los servidores de nombres de forma manual para resolver un nombre de host determinado. Esta utilidad también puede utilizarse para solucionar los problemas de resolución de nombres y verificar el estado actual de los servidores de nombres. </p>
+<p></p>
+<p>En la ilustración, cuando se ejecuta el comando <span class="cmd"><b>nslookup</b></span>, se muestra el servidor DNS predeterminado configurado para su host. En este ejemplo, el servidor DNS es dns-sj.cisco.com, que tiene la dirección 171.70.168.183. </p>
+<p></p>
+<p>El nombre de un host o de un dominio se puede introducir en la petición de entrada de <span class="cmd"><b>nslookup</b></span>. En la primera consulta de la ilustración, se hace una consulta para <span class="cmd">www.cisco.com</span>. El servidor de nombre que responde proporciona la dirección <span class="cmd">198.133.219.25</span>. </p>
+<p></p>
+<p>Las consultas mostradas en la figura son sólo pruebas simples. La utilidad nslookup tiene muchas opciones disponibles para realizar una prueba y una verificación exhaustivas del proceso DNS. Al finalizar, escriba <span class="cmd"><b>exit</b></span> para salir de la utilidad nslookup.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

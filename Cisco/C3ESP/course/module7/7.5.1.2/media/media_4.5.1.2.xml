@@ -1,0 +1,68 @@
+﻿<textcomponents>
+<component id="ID_title">
+<text><![CDATA[<b>Parámetros EIGRP</b>]]></text>
+</component>
+
+
+<component id="ID_txt01">
+<text><![CDATA[Encabezado de trama de enlace de datos]]></text>
+</component>
+
+<component id="ID_txt02">
+<text><![CDATA[Encabezado de paquete IP]]></text>
+</component>
+
+<component id="ID_txt03">
+<text><![CDATA[Encabezado de paquete EIGRP]]></text>
+</component>
+
+
+<component id="ID_txt04">
+<text><![CDATA[Tipos de TLV<br/><font color="#f26200"><b>TLV de parámetros de EIGRP</b></font>]]></text>
+</component>
+
+<component id="ID_txt05">
+<text><![CDATA[Bit]]></text>
+</component>
+
+
+<component id="ID_txt06">
+<text><![CDATA[Tipo = 0x0001]]></text>
+</component>
+
+<component id="ID_txt07">
+<text><![CDATA[Longitud]]></text>
+</component>
+
+<component id="ID_txt08">
+<text><![CDATA[Valores]]></text>
+</component>
+
+<component id="ID_txt09">
+<text><![CDATA[K1]]></text>
+</component>
+<component id="ID_txt10">
+<text><![CDATA[K2]]></text>
+</component>
+<component id="ID_txt11">
+<text><![CDATA[K3]]></text>
+</component>
+<component id="ID_txt12">
+<text><![CDATA[K4]]></text>
+</component>
+<component id="ID_txt13">
+<text><![CDATA[K5]]></text>
+</component>
+<component id="ID_txt14">
+<text><![CDATA[Reservado]]></text>
+</component>
+<component id="ID_txt15">
+<text><![CDATA[Tiempo en espera]]></text>
+</component>
+
+
+<component id="ID_txt16">
+<text><![CDATA[<font size="10" class="font10px"><textformat blockindent="-14"><li><b>K1</b> y <b>K3:</b> evalúa el ancho de banda y el retraso; se establece en 1.</li><li><b>Tiempo de espera:</b> tiempo máximo que debe esperar el router al siguiente saludo.</li></textformat></font>]]></text></component>
+
+
+</textcomponents>

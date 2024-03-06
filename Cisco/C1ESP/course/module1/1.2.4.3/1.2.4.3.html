@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.2.4.3 Conexión de empresas a Internet</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.2.4.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>LAN, WAN e Internet</h1>
+        <h2>Conexión a Internet</h2>
+      </div>
+      <div id="content">
+<p>Las opciones de conexión corporativas difieren de las opciones que tienen los usuarios domésticos. Es posible que las empresas requieran un ancho de banda mayor y dedicado, además de servicios administrados. Las opciones de conexión disponibles varían según la cantidad de proveedores de servicios que haya en las cercanías. </p>
+<p></p>
+<p>En la ilustración, se muestran las opciones de conexión comunes para las organizaciones, que incluyen las siguientes:</p>
+<p>
+<ul>
+<li>
+<b>Línea arrendada dedicada:</b> se trata de una conexión dedicada que va del proveedor de servicios a las instalaciones del cliente. Las líneas arrendadas son circuitos reservados reales que conectan oficinas que están separadas geográficamente para propósitos de comunicaciones por voz o redes de datos privados. Normalmente, los circuitos se alquilan por una tarifa mensual o anual, por lo que suele ser una opción costosa. En Norteamérica, los circuitos comunes de línea arrendada incluyen las opciones T1 (1,54 Mb/s) y T3 (44,7 Mb/s), mientras que, en otras partes del mundo, están disponibles las opciones E1 (2 Mb/s) y E3 (34 Mb/s). </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Red Metro Ethernet:</b> normalmente, Metro Ethernet es un servicio disponible desde el proveedor a las instalaciones del cliente mediante una conexión dedicada de cable de cobre o de fibra óptica que proporciona velocidades de ancho de banda de 10 Mb/s a 10 Gb/s. En muchos casos, la opción de Ethernet por cobre (EoC, Ethernet over Copper) es más económica que el servicio de Ethernet por fibra óptica, es de amplia disponibilidad y alcanza velocidades de hasta 40 Mbps. Sin embargo, el servicio de Ethernet por cobre se ve limitado por la distancia. El servicio de Ethernet por fibra óptica ofrece las conexiones más rápidas que hay disponibles por un precio por megabit económico. Desafortunadamente, todavía hay muchas áreas donde el servicio no está disponible. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>DSL:</b> el servicio de DSL empresarial está disponible en diversos formatos. Una opción muy utilizada es la línea de suscriptor digital simétrica (SDSL, Symmetric Digital Subscriber Lines), que es similar a la DSL asimétrica (ADSL, Asymmetric Digital Subscriber Line), pero proporciona las mismas velocidades de subida y descarga. El servicio ADSL está diseñado para proporcionar un ancho de banda con velocidades descendentes y ascendentes diferentes. Por ejemplo, un cliente con acceso a Internet puede tener velocidades descendentes de 1,5 Mbps a 9 Mbps, mientras que el ancho de banda ascendente varía de 16 kbps a 640 kbps. Las transmisiones por ADSL funcionan a distancias de hasta 18 000 pies (5488 metros) a través de un único par trenzado de cobre.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Satelital:</b> el servicio satelital puede proporcionar una conexión cuando no hay soluciones de conexión por cable disponibles. Las antenas parabólicas requieren una línea de vista despejada al satélite. Los costos de equipos e instalación pueden ser elevados y luego se paga una tarifa mensual módica. Las conexiones suelen ser más lentas y menos confiables que las de vía terrestre, lo que la convierte en una alternativa menos atractiva. </li>
+</ul>
+</p>
+<p></p>
+<p>La oferta de opciones de conexión varía según la ubicación geográfica y la disponibilidad de proveedores de servicios.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.1.4.4 Verificación de la sintaxis del comando</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.1.4.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Entrenamiento intensivo sobre IOS</h1>
+        <h2>Estructura de los comandos</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Verificación de la sintaxis del comando</b>
+</p>
+<p></p>
+<p>Cuando se emite un comando presionando la tecla Entrar, el intérprete de la línea de comandos analiza la sintaxis del comando de izquierda a derecha para determinar qué acción se solicitó. En general, el IOS solo proporciona comentarios negativos, como se muestra en la figura 1. Si el intérprete comprende el comando, la acción requerida se ejecuta y la CLI vuelve a la petición de entrada correspondiente. Sin embargo, si el intérprete no puede comprender el comando que se ingresa, mostrará un comentario que describe el error del comando.</p>
+<p></p>
+<p>En la figura 2, se muestran tres tipos distintos de mensajes de error:</p>
+<p></p>
+<p>
+<ul>
+<li>Ambiguous command (comando ambiguo)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Incomplete command (comando incompleto)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Incorrect command (comando incorrecto) </li>
+</ul>
+</p>
+<p></p>
+<p>El comando de IOS <span class="cmd"><b>clock set</b></span> es ideal para experimentar con los distintos mensajes de ayuda de la revisión de sintaxis de comandos, como se muestra en la figura 1. En la figura 2, se proporciona ayuda sobre los tres tipos de mensajes de error.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.1.2.2 Rol del TCP</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.1.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolos de la capa de transporte</h1>
+        <h2>Introducción a TCP y UDP</h2>
+      </div>
+      <div id="content">
+<p>Una vez que TCP establece una sesión, puede hacer un seguimiento de la conversación dentro de esa sesión. Debido a la capacidad de TCP de hacer un seguimiento de conversaciones reales, se lo considera un protocolo con estado. Un protocolo con estado es un protocolo que realiza el seguimiento del estado de la sesión de comunicación. Por ejemplo, cuando se transmiten datos mediante TCP, el emisor espera que el destino acuse recibo de los datos. TCP hace un seguimiento de la información que se envió y de la que se acusó de recibo. Si no se acusa recibo de los datos, el emisor supone que no llegaron y los vuelve a enviar. La sesión con estado comienza con el establecimiento de sesión y finaliza cuando se cierra la sesión con terminación de sesión.</p>
+<p></p>
+<p>
+<b>Nota:</b> el mantenimiento de esta información de estado requiere recursos que no son necesarios para un protocolo sin estado, como UDP.</p>
+<p></p>
+<p>TCP genera sobrecarga adicional para obtener estas funciones. Como se muestra en la ilustración, cada segmento TCP tiene 20 bytes de sobrecarga en el encabezado que encapsula los datos de la capa de aplicación. Este tipo de segmento es mucho más largo que un segmento UDP, que solo tiene 8 bytes de sobrecarga. La sobrecarga adicional incluye lo siguiente:</p>
+<p>
+<ul>
+<li>
+<b>Número de secuencia (32 bits):</b> se utiliza para rearmar datos.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Número de acuse de recibo (32 bits):</b> indica los datos que se recibieron.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Longitud del encabezado (4 bits):</b> conocido como “desplazamiento de datos”. Indica la longitud del encabezado del segmento TCP.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Reservado (6 bits):</b> este campo está reservado para el futuro.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Bits de control (6 bits):</b> incluye códigos de bit, o indicadores, que indican el propósito y la función del segmento TCP.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Tamaño de la ventana (16 bits):</b> indica la cantidad de segmentos que se puedan aceptar por vez.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Checksum (16 bits):</b> se utiliza para la verificación de errores en el encabezado y los datos del segmento.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Urgente (16 bits):</b> indica si la información es urgente.</li>
+</ul>
+</p>
+<p></p>
+<p>Algunos ejemplos de aplicaciones que utilizan TCP son los exploradores Web, el correo electrónico y las transferencias de archivos.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

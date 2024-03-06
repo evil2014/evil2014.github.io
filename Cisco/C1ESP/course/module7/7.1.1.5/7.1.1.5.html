@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.1.1.5 TCP</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.1.1.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolos de la capa de transporte</h1>
+        <h2>Transporte de datos</h2>
+      </div>
+      <div id="content">
+<p>Como se indicó anteriormente, TCP se considera un protocolo de transporte confiable, lo que significa que incluye procesos para garantizar la entrega confiable entre aplicaciones mediante el uso de entrega con acuse de recibo. La función del protocolo de transporte TCP es similar al envío de paquetes de los que se hace un seguimiento de origen a destino. Si se divide un pedido de FedEx en varios envíos, el cliente puede revisar en línea el orden de la entrega. </p>
+<p></p>
+<p>Con TCP, las tres operaciones básicas de confiabilidad son las siguientes:</p>
+<p>
+<ul>
+<li>Seguimiento de segmentos de datos transmitidos</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Acuse de recibo de datos</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Retransmisión de cualquier dato sin acuse de recibo </li>
+</ul>
+</p>
+<p></p>
+<p>TCP divide el mensaje en partes pequeñas, conocidas como segmentos. Los segmentos se numeran en secuencia y se pasan al proceso IP para armarse en paquetes. TCP realiza un seguimiento del número de segmentos que se enviaron a un host específico desde una aplicación específica. Si el emisor no recibe un acuse de recibo antes del transcurso de un período determinado, supone que los segmentos se perdieron y los vuelve a transmitir. Sólo se vuelve a enviar la parte del mensaje que se perdió, no todo el mensaje. En el host receptor, TCP se encarga de rearmar los segmentos del mensaje y de pasarlos a la aplicación. El protocolo de transferencia de archivos (FTP) y el protocolo de transferencia de hipertexto (HTTP) son ejemplos de las aplicaciones que utilizan TCP para garantizar la entrega de datos.</p>
+<p></p>
+<p>Haga clic en el botón Reproducir en la ilustración para ver una animación de los segmentos TCP que se transmiten del emisor al receptor.</p>
+<p></p>
+<p>Estos procesos de confiabilidad generan una sobrecarga adicional en los recursos de la red debido a los procesos de acuse de recibo, rastreo y retransmisión. Para admitir estos procesos de confiabilidad, se intercambian más datos de control entre los hosts emisores y receptores. Esta información de control está incluida en un encabezado TCP.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

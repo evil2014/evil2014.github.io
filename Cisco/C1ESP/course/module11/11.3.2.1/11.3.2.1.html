@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>11.3.2.1 Interpretación de mensajes de tracert</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_11.3.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Rendimiento básico de la red</h1>
+        <h2>Tracert</h2>
+      </div>
+      <div id="content">
+<p>Un rastreo proporciona una lista de saltos cuando un paquete se enruta a través de una red. La forma del comando depende de dónde se emita el comando. Cuando lleve a cabo el rastreo desde un equipo Windows, utilice <span class="cmd"><b>tracert</b></span>. Cuando lleve a cabo el rastreo desde la CLI de un router, utilice <span class="cmd"><b>traceroute</b></span>, como se muestra en la figura 1.</p>
+<p></p>
+<p>Al igual que los comandos <span class="cmd"><b>ping</b></span>, los comandos <span class="cmd"><b>trace</b></span> se introducen en la línea de comandos y llevan una dirección IP como argumento.</p>
+<p></p>
+<p>Aquí, sobre la base de que el comando se emite desde un equipo Windows, se utiliza la forma <span class="cmd"><b>tracert</b></span>:</p>
+<p></p>
+<p>
+<span class="cmd">C:\> </span>
+<span class="cmd">
+<b>tracert 10.1.0.2</b>
+</span>
+</p>
+<p>
+<span class="cmd">Traza a 10.1.0.2 sobre caminos de 30 saltos como máximo</span>
+</p>
+<p>
+<span class="cmd">1 2 ms 2 ms 2 ms 10.0.0.254 </span>
+</p>
+<p>
+<span class="cmd">2 * * * Tiempo de espera agotado.</span>
+</p>
+<p>
+<span class="cmd">3 * * * Tiempo de espera agotado.</span>
+</p>
+<p>
+<span class="cmd">4 ^C</span>
+</p>
+<p></p>
+<p>La única respuesta correcta fue la del gateway del router A. El tiempo de espera para las solicitudes de trace se agotó, lo que significa que el router de siguiente salto no respondió. Los resultados del comando trace indican que la falla entonces se encuentra en la internetwork más allá de la LAN.</p>
+<p></p>
+<p>La captura del resultado del comando traceroute también se puede realizar desde la petición de entrada del router, como se muestra en la figura 2.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

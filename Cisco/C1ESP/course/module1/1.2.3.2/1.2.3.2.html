@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.2.3.2 Intranets y extranets</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.2.3.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>LAN, WAN e Internet</h1>
+        <h2>Internet</h2>
+      </div>
+      <div id="content">
+<p>Hay otros dos términos que son similares al término “Internet”:</p>
+<p>
+<ul>
+<li>Intranet</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Extranet</li>
+</ul>
+</p>
+<p></p>
+<p>El término “intranet” se suele utilizar para hacer referencia a una conexión privada de redes LAN y WAN que pertenece a una organización y que está diseñada para que solo accedan a ella los miembros y los empleados de la organización u otras personas autorizadas. Básicamente, las intranets son internets a la que solamente se puede acceder desde dentro de la organización. </p>
+<p></p>
+<p>Las organizaciones pueden publicar en una intranet páginas Web sobre eventos internos, políticas de higiene y seguridad, boletines de personal y directorios telefónicos del personal. Por ejemplo, los lugares de estudios pueden tener intranets que incluyan información sobre los programas de clases, currículos en línea y foros de discusión. Generalmente, las intranets ayudan a eliminar el papeleo y aceleran los flujos de trabajo. El personal que trabaja fuera de la organización puede tener acceso a la intranet mediante conexiones seguras a la red interna.</p>
+<p></p>
+<p>Es posible que una organización utilice una extranet para proporcionar acceso seguro a las personas que trabajan para otra organización, pero requieren datos de la compañía. Entre los ejemplos de extranets, se incluyen los siguientes:</p>
+<p>
+<ul>
+<li>Una compañía que proporciona acceso a proveedores y contratistas externos.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Un hospital que cuenta con un sistema de registro para que los médicos puedan cargar citas con sus pacientes.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Una secretaría de educación local que proporciona información sobre presupuesto y personal a las escuelas del distrito. </li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

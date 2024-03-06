@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.1.5.3 VLSM básico</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.1.5.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>División de una red IPv4 en subredes</h1>
+        <h2>Beneficios de la máscara de subred de longitud variable</h2>
+      </div>
+      <div id="content">
+<p>Para comprender mejor el proceso de VLSM, vuelva al ejemplo anterior.</p>
+<p></p>
+<p>En el ejemplo anterior, que se muestra en la figura 1, la red 192.168.20.0/24 se dividió en ocho subredes de igual tamaño, de las cuales se asignaron siete. Cuatro subredes se utilizaron para las LAN, y tres subredes se utilizaron para las conexiones WAN entre los routers. Recuerde que el espacio de direcciones desperdiciado estaba en las subredes utilizadas para las conexiones WAN, dado que esas subredes requerían solo dos direcciones utilizables: una para cada interfaz del router. Para evitar este desperdicio, se puede utilizar VLSM para crear subredes más pequeñas para las conexiones WAN.</p>
+<p></p>
+<p>Para crear subredes más pequeñas para los enlaces WAN, se divide una de las subredes. En la figura 2, la última subred, 192.168.20.224/27, se vuelve a dividir en subredes.</p>
+<p></p>
+<p>Recuerde que cuando se conoce la cantidad de direcciones de host necesarias, puede utilizarse la fórmula 2^n-2 (donde “n” es igual a la cantidad de bits de host restantes). Para proporcionar dos direcciones utilizables, se deben dejar 2 bits de host en la porción de host.</p>
+<p></p>
+<p>2^2 - 2 = 2 </p>
+<p></p>
+<p>Debido a que hay 5 bits de host en el espacio de direcciones 192.168.20.224/27, se pueden tomar prestados 3 bits y dejar 2 bits en la porción de host.</p>
+<p></p>
+<p>Los cálculos que se realizan llegado este punto son exactamente los mismos que se utilizan para la división en subredes tradicional: se toman prestados los bits y se determinan los rangos de subred.</p>
+<p></p>
+<p>Como se muestra en la figura 2, este esquema de división en subredes VLSM reduce el número de direcciones por subred a un tamaño apropiado para las WAN. La subdivisión de la subred 7 para las WAN permite que las subredes 4, 5, y 6 estén disponibles para redes futuras y que haya varias subredes más disponibles para las WAN.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

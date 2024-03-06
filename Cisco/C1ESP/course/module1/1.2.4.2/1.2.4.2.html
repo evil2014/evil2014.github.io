@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.2.4.2 Conexión de usuarios remotos a Internet</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.2.4.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>LAN, WAN e Internet</h1>
+        <h2>Conexión a Internet</h2>
+      </div>
+      <div id="content">
+<p>En la ilustración, se muestran opciones de conexión comunes para los usuarios de oficinas pequeñas y oficinas domésticas, que incluyen las siguientes:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Cable:</b> por lo general, es un servicio ofrecido por proveedores de servicios de televisión por cable. La señal de datos de Internet se transmite a través del mismo cable coaxial que transporta la señal de televisión por cable. Esta opción proporciona una conexión a Internet permanente y de un ancho de banda elevado. Se utiliza un módem por cable especial que separa la señal de datos de Internet de las otras señales que transporta el cable y proporciona una conexión Ethernet a un equipo host o a una LAN.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>DSL:</b> proporciona una conexión a Internet permanente y de un ancho de banda elevado. Requiere un módem de alta velocidad especial que separa la señal DSL de la señal telefónica y proporciona una conexión Ethernet a un equipo host o a una LAN. La señal DSL se transmite a través de una línea telefónica, que está dividida en tres canales. Uno de los canales se utiliza para llamadas telefónicas de voz. Este canal permite que una persona reciba llamadas telefónicas sin desconectarse de Internet. El segundo es un canal de descarga más rápido y se utiliza para recibir información de Internet. El tercer canal se utiliza para enviar o subir información. Por lo general, este canal es un poco más lento que el canal de descarga. La calidad y la velocidad de la conexión DSL dependen principalmente de la calidad de la línea telefónica y de la distancia a la que se encuentra la oficina central de la compañía telefónica. Cuanto más lejos esté de la oficina central, más lenta será la conexión. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Datos móviles:</b> el acceso a Internet por datos móviles se logra mediante una red de telefonía celular. Puede obtener acceso a Internet por datos móviles en cualquier lugar donde tenga cobertura de telefonía móvil. El rendimiento se verá limitado por las capacidades del teléfono y la torre de telefonía móvil a la que se conecte. La disponibilidad del acceso a Internet por datos móviles es una gran ventaja para las áreas que no tienen acceso a otro tipo de conectividad a Internet, o para personas que van de un lado a otro. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Satelital:</b> el servicio satelital es una buena opción para los hogares o las oficinas que no tienen acceso a DSL o cable. Las antenas parabólicas requieren una línea de vista despejada al satélite, por lo que no son adecuadas para zonas muy boscosas o lugares que posean algún otro tipo de obstrucción aérea. Las velocidades varían según el contrato, pero suelen ser buenas. Los costos de equipos e instalación pueden ser elevados (consulte con el proveedor para conocer las ofertas especiales) y luego se paga una tarifa mensual módica. La disponibilidad de acceso a Internet satelital es una gran ventaja para las áreas que no tienen acceso a otro tipo de conectividad a Internet.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Telefónica por dial-up:</b> es una opción de bajo costo que funciona con cualquier línea telefónica y un módem. Para conectar al ISP, el usuario llama al número telefónico de acceso del ISP. El ancho de banda que proporciona una conexión por módem dial-up es bajo y, por lo general, no es suficiente para trasferencias de datos masivas, si bien es útil para acceso móvil durante viajes. La opción de conexión por módem dial-up solo se debe considerar cuando no haya opciones de conexión más veloces disponibles.</li>
+</ul>
+</p>
+<p></p>
+<p>Cada vez es más común que los hogares y las oficinas pequeñas se conecten directamente mediante cables de fibra óptica. Esto permite que los proveedores de servicios de Internet proporcionen velocidades de ancho de banda más elevadas y admitan más servicios, como Internet, teléfono y TV. </p>
+<p></p>
+<p>La oferta de opciones de conexión varía según la ubicación geográfica y la disponibilidad de proveedores de servicios.</p>
+<p></p>
+<p>¿Con qué opciones cuenta para conectarse a Internet?</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

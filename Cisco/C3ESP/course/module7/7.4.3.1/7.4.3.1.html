@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.4.3.1 Verificación de EIGRP para IPv6: análisis de vecinos</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.4.3.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de EIGRP para IPv6</h1>
+        <h2>Verificación de EIGRP para IPv6</h2>
+      </div>
+      <div id="content">
+<p>De manera similar a lo que sucede en EIGRP para IPv4, antes de que se puedan enviar actualizaciones de EIGRP para IPv6, los routers deben establecer adyacencias con sus vecinos, como se muestra en la figura 1. </p>
+<p></p>
+<p>Utilice el comando <span class="cmd"><b>show ipv6 eigrp neighbors</b></span> para ver la tabla de vecinos y verificar que EIGRP para IPv6 haya establecido una adyacencia con sus vecinos. El resultado que se ve en la figura 2 muestra la dirección IPv6 link-local del vecino adyacente y la interfaz que utiliza el router para llegar a ese vecino EIGRP. Al utilizar direcciones link-local detalladas, resulta más fácil reconocer a los vecinos R2 en FE80::2 y R3 en FE80::3.</p>
+<p></p>
+<p>El resultado del comando <span class="cmd"><b>show ipv6 eigrp neighbors</b></span> incluye lo siguiente:</p>
+<p>
+<ul>
+<li>
+<b>Columna H:</b> enumera los vecinos en el orden en que fueron descubiertos.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Address:</b> dirección IPv6 link-local del vecino.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Interface:</b> la interfaz local en la cual se recibió este paquete de saludo.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Hold:</b> el tiempo de espera actual. Cuando se recibe un paquete de saludo, este valor se restablece al tiempo de espera máximo para esa interfaz y, luego, se realiza una cuenta regresiva hasta cero. Si se llega a cero, el vecino se considera inactivo.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Uptime:</b> la cantidad de tiempo desde que se agregó este vecino a la tabla de vecinos.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>SRTT</b> y <b>RTO:</b> utilizados por RTP para administrar paquetes EIGRP confiables. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Q Cnt (conteo de cola):</b> siempre debe ser cero. Si es más que cero, hay paquetes EIGRP que esperan ser enviados. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Seq Num (número de secuencia):</b> se utiliza para rastrear paquetes de actualización, de consulta y de respuesta. </li>
+</ul>
+</p>
+<p></p>
+<p>El comando <span class="cmd"><b>show ipv6 eigrp neighbors</b></span> es útil para verificar y resolver problemas de EIGRP para IPv6. Si un vecino esperado no se encuentra en la lista, asegúrese de que ambos extremos del enlace tengan estado up/up mediante el comando <span class="cmd"><b>show ipv6 interface brief</b></span>. En EIGRP para IPv6, existen los mismos requisitos para establecer adyacencias de vecinos que en EIGRP para IPv4. Si ambos lados del enlace tienen interfaces activas, verifique lo siguiente:</p>
+<p>
+<ul>
+<li>¿Ambos routers están configurados con el mismo número de sistema autónomo de EIGRP?</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>¿La interfaz está habilitada para EIGRP para IPv6 con el número de sistema autónomo correcto?</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

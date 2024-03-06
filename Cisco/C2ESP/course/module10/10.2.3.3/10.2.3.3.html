@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>10.2.3.3 Verificación de DHCPv6 con estado </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_10.2.3.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolo de configuración dinámica de host v6</h1>
+        <h2>Servidor de DHCPv6 con estado</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Verificación del servidor de DHCPv6 con estado</b>
+</p>
+<p></p>
+<p>En la figura 1, el comando <span class="cmd"><b>show ipv6 dhcp pool</b></span> verifica el nombre del pool de DHCPv6 y sus parámetros. La cantidad de clientes activos es 1, lo que refleja que el R3 cliente recibe su dirección IPv6 de unidifusión global de este servidor.</p>
+<p></p>
+<p>El comando <span class="cmd"><b>show ipv6 dhcp binding</b></span>, como se muestra en la figura 2, muestra la vinculación automática entre la dirección link-local del cliente y la dirección asignada por el servidor. FE80::32F7:DFF:FE25:2DE1 es la dirección link-local del cliente. En este ejemplo, esta es la interfaz G0/1 del R3. Esta dirección está vinculada a la dirección IPv6 de unidifusión global, 2001:DB8:CAFE:1:5844:47B2:2603:C171, la cual fue asignada por el R1, el servidor de DHCPv6. Esta información la mantiene un servidor de DHCPv6 con estado, y no un servidor de DHCPv6 sin estado.</p>
+<p></p>
+<p>
+<b>Verificación del cliente DHCPv6 con estado</b>
+</p>
+<p></p>
+<p>El resultado del comando <span class="cmd"><b>show ipv6 interface</b></span> que se muestra en la figura 3 verifica la dirección IPv6 de unidifusión global en el R3 cliente DHCPv6 que asignó el servidor de DHCPv6. La información de router predeterminado no proviene del servidor de DHCPv6, sino que se determinó mediante el uso de la dirección IPv6 de origen del mensaje RA. Si bien el cliente no utiliza la información contenida en el mensaje RA, puede utilizar la dirección IPv6 de origen para obtener la información del gateway predeterminado.</p>
+<p></p>
+<p>Utilice el verificador de sintaxis de la figura 4 para configurar y verificar DHCPv6 sin estado.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

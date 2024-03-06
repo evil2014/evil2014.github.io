@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.3.1.1 Adyacencia de vecinos EIGRP</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.3.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1> Funcionamiento de EIGRP</h1>
+        <h2>Detección inicial de rutas EIGRP</h2>
+      </div>
+      <div id="content">
+<p>El objetivo de cualquier protocolo de routing dinámico es descubrir redes remotas de otros routers y lograr la convergencia en el dominio de routing. Antes de que se pueda intercambiar cualquier paquete de actualización EIGRP entre routers, EIGRP debe descubrir a sus vecinos. Los EIGRP vecinos son otros routers que ejecutan EIGRP en redes conectadas directamente.</p>
+<p></p>
+<p>EIGRP utiliza paquetes de saludo para establecer y mantener las adyacencias de vecinos. Para que dos routers EIGRP se conviertan en vecinos, deben coincidir varios parámetros entre ambos. Por ejemplo, dos routers EIGRP deben usar los mismos parámetros de métrica de EIGRP y ambos deben estar configurados con el mismo número de sistema autónomo.</p>
+<p></p>
+<p>Cada router EIGRP mantiene una tabla de vecinos, que contiene una lista de los routers en los enlaces compartidos que tienen una adyacencia EIGRP con ese router. La tabla de vecinos se usa para rastrear el estado de estos vecinos EIGRP. </p>
+<p></p>
+<p>En la ilustración se muestran dos routers EIGRP que intercambian paquetes de saludo EIGRP iniciales. Cuando un router con EIGRP habilitado recibe un paquete de saludo en una interfaz, agrega a ese router a su tabla de vecinos.</p>
+<p></p>
+<p>1. Un nuevo router (R1) aparece en el enlace y envía un paquete de saludo EIGRP a través de todas sus interfaces EIGRP configuradas.</p>
+<p></p>
+<p>2. El router R2 recibe el paquete de saludo en una interfaz con EIGRP habilitado. El R2 responde con un paquete de actualización EIGRP que contiene todas las rutas incluidas en su tabla de routing, excepto aquellas descubiertas por medio de esa interfaz (horizonte dividido). Sin embargo, la adyacencia de vecino no se establece hasta que el R2 también envía un paquete de saludo EIGRP al R1.</p>
+<p></p>
+<p>3. Una vez que ambos routers intercambian saludos, se establece la adyacencia de vecino. El R1 y el R2 actualizan sus tablas de vecinos EIGRP y agregan el router adyacente como vecino.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.2.3.3 Planificación de una implementación de WLAN</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.2.3.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Operaciones de LAN inalámbrica</h1>
+        <h2>Administración de canales</h2>
+      </div>
+      <div id="content">
+<p>Implementar una WLAN que saque el mejor provecho de los recursos y entregue el mejor servicio puede requerir de una planificación cuidadosa. Las WLAN pueden abarcar desde instalaciones relativamente simples a diseños intrincados y muy complejos. Antes de que se pueda implementar una red inalámbrica, debe existir un plan bien documentado.</p>
+<p></p>
+<p>El número de usuarios que una WLAN puede admitir no es un cálculo simple. El número de usuarios depende de la disposición geográfica de la instalación, incluidos el número de personas y dispositivos que pueden caber en un espacio, las velocidades de datos que esperan los usuarios, el uso de canales no superpuestos por parte de varios AP en un ESS y la configuración de energía de transmisión.</p>
+<p></p>
+<p>Consulte el plano de planta de la figura 1. Cuando se planifica la ubicación de los AP, el administrador no puede simplemente dibujar círculos del área de cobertura y arrojarlos sobre un plano. El área de cobertura circular aproximada es importante, pero existen algunas recomendaciones adicionales:</p>
+<p>
+<ul>
+<li>Si los AP deben usar un cableado existente o si hay ubicaciones en las que no se pueden colocar los AP, señale estas ubicaciones en el mapa.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Posicione los AP por encima de las obstrucciones.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>De ser posible, posicione los AP en forma vertical, cerca del techo, en el centro de cada área de cobertura.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Coloque los AP en las ubicaciones en las que se espera que estén los usuarios. Por ejemplo, las salas de conferencias son, en general, una mejor ubicación para los AP que un pasillo.</li>
+</ul>
+</p>
+<p></p>
+<p>Una vez que se aborden estos puntos, calcule el área de cobertura esperada de un AP. Este valor varía según el estándar de WLAN o la combinación de estándares que se implementen, la naturaleza de la instalación, la energía de transmisión que se configure en el AP, y así sucesivamente. Siempre consulte las especificaciones para el AP cuando planifique las áreas de cobertura.</p>
+<p></p>
+<p>Las BSA representan el área de cobertura proporcionada por un único canal. En un ESS, debe haber una superposición del 10 % al 15 % entre las BSA. Con una superposición del 15 % entre las BSA, un SSID y canales no superpuestos (es decir, una celda en el canal 1 y la otra en el canal 6), se puede crear capacidad móvil.</p>
+<p></p>
+<p>En la figura 2, se proporciona un ejemplo de cómo se podrían superponer las BSA.</p>
+<p></p>
+<p>Otros factores incluyen relevamientos del sitio, que son análisis detallados de dónde ubicar los distintos AP.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

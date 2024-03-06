@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.2.3.2 Diseño del cable de medios de fibra</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.2.3.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Medios de red</h1>
+        <h2>Cableado de fibra óptica</h2>
+      </div>
+      <div id="content">
+<p>Si bien la fibra óptica es muy delgada, consta de dos tipos de vidrio y de un blindaje externo de protección. Específicamente, estos componentes conforman lo siguiente: </p>
+<p>
+<ul>
+<li>
+<b>Núcleo:</b> consta de vidrio puro y es la parte de la fibra por la que se transporta la luz. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Cubierta:</b> el vidrio que rodea al núcleo y actúa como espejo. Los pulsos de luz se propagan por el núcleo mientras la cubierta los refleja. Esto ayuda a contener los pulsos de luz en el núcleo de la fibra, un fenómeno conocido como “reflexión interna total”. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Revestimiento:</b> generalmente, es un revestimiento de PVC que protege el núcleo y la cubierta. También puede incluir material de refuerzo y un recubrimiento de protección cuyo objetivo es proteger el vidrio contra rayones y humedad. </li>
+</ul>
+</p>
+<p></p>
+<p>Si bien es vulnerable a los dobleces pronunciados, las propiedades del núcleo y la cubierta se modificaron en el nivel molecular para hacerla muy resistente. La fibra óptica se prueba a través de un riguroso proceso de fabricación para que tenga una resistencia mínima de 100 000 lb/pulg2). La fibra óptica es lo suficientemente duradera para soportar el manejo durante la instalación y la implementación en redes en condiciones ambientales adversas en todo el mundo.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

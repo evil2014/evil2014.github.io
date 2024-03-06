@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.2.1.5 Switching multicapa</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.2.1.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Selección de dispositivos de red</h1>
+        <h2>Hardware del switch</h2>
+      </div>
+      <div id="content">
+<p>Generalmente, los switches multicapa se implementan en las capas de núcleo y de distribución de la red conmutada de una organización. Los switches multicapa se caracterizan por la capacidad de crear una tabla de routing, por admitir algunos protocolos de routing y por reenviar los paquetes IP a una velocidad similar a la de reenvío de capa 2. Los switches multicapa suelen admitir hardware especializado, como los circuitos integrados de aplicación específica (ASIC). Los ASIC, junto con estructuras de datos de software dedicadas, pueden simplificar el reenvío de paquetes IP en forma independiente de la CPU.</p>
+<p></p>
+<p>En el ámbito de la tecnología de redes, hay una tendencia hacia un entorno conmutado puramente de capa 3. Cuando se comenzaron a utilizar switches en las redes, ninguno de ellos admitía routing. Hoy en día, casi todos los switches lo hacen. Es probable que pronto todos los switches incorporen un procesador de ruta, dado que el costo de hacerlo es cada vez menor en relación con otras limitaciones. Finalmente, el término “switch multicapa” será redundante.</p>
+<p></p>
+<p>Los switches Catalyst 2960, que se muestran en la ilustración, representan la migración a un entorno puramente de capa 3. Con las versiones de IOS anteriores a 15.x, estos switches admitían solo una interfaz virtual conmutada (SVI) activa. Con la versión 15.x del IOS, estos switches ahora admiten varias SVI activas. Esto significa que se puede acceder al switch de forma remota mediante varias direcciones IP en diferentes redes.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.5.2.3 Packet Tracer: resolución de problemas de rutas estáticas</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.5.2.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resolución de problemas de rutas estáticas y predeterminadas</h1>
+        <h2>Resolución de problemas de configuración de rutas estáticas y predeterminadas IPv4</h2>
+      </div>
+      <div id="content">
+<p>En esta actividad, la PC1 informa que no se puede acceder a los recursos en el servidor. Encuentre el problema, determine una solución apropiada y resuélvalo.</p>
+<p></p>
+<p>
+<a href="../../files/6.5.2.3%20Packet%20Tracer%20-%20Troubleshooting%20Static%20Routes%20Instructions.pdf" target="_blank">Packet Tracer: resolución de problemas de rutas estáticas (instrucciones)</a>
+</p>
+<p></p>
+<p>
+<a href="../../files/6.5.2.3%20Packet%20Tracer%20-%20Troubleshooting%20Static%20Routes.pka" target="_blank">Packet Tracer: resolución de problemas de rutas estáticas (PKA)</a>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

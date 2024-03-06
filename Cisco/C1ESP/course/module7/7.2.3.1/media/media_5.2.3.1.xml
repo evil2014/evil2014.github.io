@@ -1,0 +1,23 @@
+﻿<textcomponents>
+<component id="ID_title">
+<text><![CDATA[<b>Transporte de datos con baja sobrecarga de UDP</b>]]></text>
+</component>
+<component id="ID_txt01">
+<text><![CDATA[Red]]></text>
+</component>
+<component id="ID_txt02">
+  <text><![CDATA[Emisor]]></text> 
+  </component>
+<component id="ID_txt03">
+  <text><![CDATA[Receptor]]></text> 
+  </component>
+<component id="ID_txt04">
+  <text><![CDATA[<b>UDP no establece ninguna conexión antes de enviar datos.</b>]]></text> 
+  </component>
+<component id="ID_txt05">
+  <text><![CDATA[UDP proporciona transporte de datos con baja sobrecarga, debido a que posee un encabezado de datagrama pequeño sin tráfico de administración de red.]]></text> 
+  </component>
+<component id="ID_txt06">
+    <text><![CDATA[Datos]]></text> 
+  </component>
+</textcomponents>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.1.2.1 WAN en el modelo OSI</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.1.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Descripción general de las tecnologías WAN</h1>
+        <h2>Operaciones WAN</h2>
+      </div>
+      <div id="content">
+<p>Las operaciones WAN se centran principalmente en la capa física (capa 1 del modelo OSI) y en la capa de enlace de datos (capa 2 del modelo OSI). Los estándares de acceso WAN por lo general describen los métodos de entrega de la capa física y los requisitos de la capa de enlace de datos, incluidos el direccionamiento físico, el control del flujo y la encapsulación. </p>
+<p></p>
+<p>Varias autoridades reconocidas definen y administran los estándares de acceso WAN, incluidas las siguientes:</p>
+<p>
+<ul>
+<li>Asociación de la Industria de Telecomunicaciones y Alianza de Industrias Electrónicas (TIA/EIA)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Organización Internacional para la Estandarización (ISO)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Instituto de Ingenieros en Electricidad y Electrónica (IEEE)</li>
+</ul>
+</p>
+<p></p>
+<p>Los protocolos de capa 1 describen la manera de proporcionar conexiones eléctricas, mecánicas, operativas y funcionales a los servicios de un proveedor de servicios de comunicación.</p>
+<p></p>
+<p>Los protocolos de capa 2 definen la forma en que se encapsulan los datos para la transmisión a una ubicación remota, así como los mecanismos para transferir las tramas resultantes. Se usa una variedad de tecnologías diferentes, como el protocolo punto a punto (PPP), Frame Relay y ATM. Algunos de estos protocolos usan el mismo entramado básico o un subconjunto del mecanismo de control de enlace de datos de alto nivel (HDLC).</p>
+<p></p>
+<p>La mayoría de los enlaces WAN son punto a punto. Por este motivo, no se suele utilizar el campo de dirección de la trama de capa 2.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

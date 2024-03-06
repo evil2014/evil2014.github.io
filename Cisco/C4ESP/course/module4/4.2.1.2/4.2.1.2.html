@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.2.1.2 Configuración de un mapa estático Frame Relay</title>
+    <!--  -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.2.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configurar Frame Relay</h1>
+        <h2>Configuración básica de Frame Relay</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Configuración de un mapa estático Frame Relay</b>
+</p>
+<p></p>
+<p>Los routers Cisco admiten todos los protocolos de capa de red mediante Frame Relay, como IPv4, IPv6, IPX y AppleTalk. La asignación de dirección a DLCI se logra mediante la asignación de direcciones dinámica o estática. </p>
+<p></p>
+<p>La asignación dinámica la realiza la característica de ARP inverso. Debido a que ARP inverso está habilitado de manera predeterminada, no se requiere ningún comando adicional para configurar la asignación dinámica en una interfaz. En la figura 1, se muestra la topología que se usa para este tema.</p>
+<p></p>
+<p>La asignación estática se configura manualmente en un router. El establecimiento de la asignación estática depende de las necesidades de la red. Para asignar entre una dirección de protocolo de siguiente salto y una dirección de destino DLCI, utilice el comando <span class="cmd"><b>frame-relay map </b></span><span class="cmd"><i>protocol protocol-address dlci </i></span><span class="cmd">[</span><span class="cmd"><b>broadcast</b></span><span class="cmd">]</span>, como se muestra en la figura 2. Observe la palabra clave <span class="cmd"><b>broadcast</b></span> al final del comando. </p>
+<p></p>
+<p>Frame Relay, ATM y X.25 son redes multiacceso sin difusión (NBMA). Las redes NBMA solo permiten la transferencia de datos de una computadora a otra a través de un VC o de un dispositivo de switching. Las redes NBMA no admiten el tráfico de multidifusión y de difusión, por lo que un paquete individual no puede llegar a todos los destinos. Esto requiere que reproduzca los paquetes manualmente a todos los destinos. El uso de la palabra clave <span class="cmd"><b>broadcast</b></span> es una forma simplificada de reenviar las actualizaciones de routing. La palabra clave <span class="cmd"><b>broadcast</b></span> permite que las difusiones y las multidifusiones de IPv4 se propaguen a todos los nodos. También permite las multidifusiones de IPv6 a través del PVC. Cuando se habilita la palabra clave, el router convierte el tráfico de difusión y de multidifusión en tráfico de unidifusión para que otros nodos reciban las actualizaciones de routing.</p>
+<p></p>
+<p>En la figura 3, se muestra cómo utilizar las palabras clave al configurar asignaciones de direcciones estáticas. Observe que la primera asignación de Frame Relay IPv6 a una dirección de unidifusión global no incluye la palabra clave <span class="cmd"><b>broadcast</b></span>. Sin embargo, la palabra clave <span class="cmd"><b>broadcast</b></span> se utiliza en la asignación a la dirección link-local. Los protocolos de routing IPv6 utilizan direcciones link-local para las actualizaciones de routing de multidifusión. Por lo tanto, solo el mapa de direcciones link-local requiere la palabra clave<span class="cmd"><b> broadcast</b></span> para reenviar paquetes de multidifusión. </p>
+<p></p>
+<p>En el ejemplo, se muestran solo las configuraciones para asignar los VC entre el R1 y el R2.</p>
+<p></p>
+<p>
+<b>Nota:</b> algunos protocolos de routing pueden requerir opciones de configuración adicionales. Por ejemplo, RIP, EIGRP y OSPF requieren configuraciones adicionales para que se los admita en las redes NBMA.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

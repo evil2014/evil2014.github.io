@@ -1,0 +1,36 @@
+﻿<textcomponents>
+<component id="ID_s1_title">
+<text><![CDATA[<b>Verificación de NAT dinámica con <font face="_typewriter">show ip nat translations</font></b>]]></text>
+</component>
+<component id="ID_s2_title">
+<text><![CDATA[<b>Despejar traducciones NAT</b>]]></text>
+</component>
+<component id="ID_s3_title">
+<text><![CDATA[<b>Verificación de NAT dinámica con <font face="_typewriter">show ip nat statistics</font></b>]]></text>
+</component>
+
+  <component id="ID_table">
+		<text><![CDATA[<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='2'>
+		
+		<tr class="mtable_top">
+			<td colspan='2' bgcolor='#0E6360' class="mtable_top"><font size='1' color='#434321'><span style="color:#DAE17A">.</span></font></td>
+		</tr>
+		<tr>
+			<td  width="216" bgcolor="#077A77" valign="top" class="mtitle"><font color='#ffffff'><b>Comando</b></font></td>
+			<td  width="214" bgcolor="#077A77" valign="top" class="mtitle"><font color='#ffffff'><b>Descripción</b></font></td>			
+		</tr>
+		<tr>		
+			<td  bgcolor="#EFF8F7" valign="top"><font color='#393536' face="_typewriter"><b>clear ip nat translation *</b></font></td>
+			<td  bgcolor="#EFF8F7" valign="top"><font color='#393536'>Elimina todas las entradas de traducción dinámica de direcciones de la tabla de traducción NAT.</font></td>
+		</tr>
+		<tr>	
+			<td  bgcolor="#FFFFFF" valign="top"><font color='#393536' face="_typewriter"><b>clear ip nat translation inside  </b> <i>ip-global ip-local  </i>[<b>outside  </b> <i>ip-local ip-global</i>]</font></td>
+			<td  bgcolor="#FFFFFF" valign="top"><font color='#393536'>Elimina una entrada de traducción dinámica simple que contiene una traducción interna o una traducción interna y una externa.</font></td>
+		</tr>
+		<tr>		
+			<td  bgcolor="#EFF8F7" valign="top"><font color='#393536' face="_typewriter"><b>clear ip nat translation  </b><i>protocolo  </i> <b> inside  </b> <i>ip-global puerto-global ip-local puerto-local  </i>[<b>outside  </b><i> ip-local puerto local ip-global puerto-global</i>]</font></td>
+			<td  bgcolor="#EFF8F7" valign="top"><font color='#393536'>Elimina una entrada de traducción dinámica extendida.</font></td>
+		</tr>
+	</table>]]></text> 
+	</component>
+</textcomponents>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>10.2.1.7 SMTP, POP y IMAP (cont.)</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_10.2.1.7_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolos y servicios de capa de aplicación reconocidos</h1>
+        <h2>Protocolos de capa de aplicación comunes </h2>
+      </div>
+      <div id="content">
+<p>El Protocolo de acceso a mensajes de Internet (IMAP, Internet Message Access Protocol) es otro protocolo que describe un método para recuperar mensajes de correo electrónico. Sin embargo, a diferencia del POP, cuando el usuario se conecta a un servidor para IMAP, se descargan copias de los mensajes a la aplicación del cliente. Los mensajes originales se mantienen en el servidor hasta que se eliminen manualmente. Los usuarios ven copias de los mensajes en su software de cliente de correo electrónico. </p>
+<p></p>
+<p>Los usuarios pueden crear una jerarquía de archivos en el servidor para organizar y guardar el correo. Dicha estructura de archivos se duplica también en el cliente de correo electrónico. Cuando un usuario decide eliminar un mensaje, el servidor sincroniza esa acción y elimina el mensaje del servidor. </p>
+<p></p>
+<p>Para pequeñas o medianas empresas, son muchas las ventajas al utilizar el protocolo IMAP. El IMAP puede realizar un almacenamiento a largo plazo de mensajes de correo electrónico en servidores de correo y permitir el respaldo centralizado. También les permite a los empleados acceder a mensajes de correo electrónico desde distintas ubicaciones, utilizando dispositivos o software de cliente diferentes. La estructura de carpetas del buzón que un usuario espera ver se encuentra disponible para visualizarla, independientemente del modo en que el usuario obtenga acceso al buzón. </p>
+<p></p>
+<p>Para un ISP, el IMAP puede no ser el protocolo elegido. El espacio de disco para admitir la gran cantidad de mensajes de correo electrónico almacenados puede ser costoso de comprar y mantener. Además, si los clientes esperan que se realicen copias de respaldo a sus buzones periódicamente, esto puede aumentar aún más los costos para el ISP.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

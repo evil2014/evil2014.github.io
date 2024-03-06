@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.2.2.3 Resolución de problemas de la capa de red</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.2.2.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resolución de problemas de red</h1>
+        <h2>Síntomas y causas de la resolución de problemas de red</h2>
+      </div>
+      <div id="content">
+<p>Los problemas de la capa de red incluyen cualquier problema que comprenda a un protocolo de capa 3, ya sea un protocolo de routing (como IPv4 o IPv6) o un protocolo de routing (como EIGRP, OSPF, entre otros). </p>
+<p></p>
+<p>Los síntomas frecuentes de los problemas de red en la capa de red incluyen los siguientes:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Falla de red:</b> una falla de red se produce cuando esta no funciona o funciona parcialmente, lo que afecta a todos los usuarios y a todas las aplicaciones en la red. Los usuarios y los administradores de red normalmente detectan estas fallas en seguida, las que sin dudas son fundamentales para la productividad de la empresa.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Rendimiento por debajo del nivel óptimo:</b> los problemas de optimización de la red por lo general comprenden a un subconjunto de usuarios, aplicaciones, destinos o un determinado tipo de tráfico. Es difícil detectar los problemas de optimización, y es incluso más difícil aislarlos y diagnosticarlos. Esto generalmente se debe a que estos problemas abarcan varias capas o, incluso, al equipo host. Puede llevar tiempo determinar que el problema se encuentra en la capa de red.</li>
+</ul>
+</p>
+<p></p>
+<p>En la mayoría de las redes, se usan rutas estáticas junto con protocolos de routing dinámico. La configuración incorrecta de las rutas estáticas puede provocar un routing deficiente. En algunos casos, las rutas estáticas configuradas incorrectamente pueden generar bucles de routing que hacen que algunas partes de la red se vuelvan inalcanzables.</p>
+<p></p>
+<p>La resolución de problemas de protocolos de routing dinámico requiere una comprensión profunda de cómo funciona el protocolo de routing específico. Algunos problemas son comunes a todos los protocolos de routing, mientras que otros son específicos de un protocolo de routing particular.</p>
+<p></p>
+<p>No existe una única plantilla para resolver problemas de capa 3. Los problemas de routing se resuelven con un proceso metódico, por medio de una serie de comandos para aislar y diagnosticar el problema. </p>
+<p></p>
+<p>Las siguientes son algunas áreas que se deben explorar al diagnosticar un posible problema que involucre protocolos de routing:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Problemas de red generales:</b> con frecuencia, un cambio en la topología, como un enlace inactivo, puede tener efectos en otras áreas de la red que tal vez no sean evidentes en ese momento. Esto puede implicar instalar nuevas rutas, estáticas o dinámicas, o eliminar otras. Determine si algún elemento de la red cambió de manera reciente y si hay alguna persona trabajando en la infraestructura de la red en ese momento.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Problemas de conectividad:</b> revise si existe algún problema de conectividad o en los equipos, incluidos problemas de alimentación como cortes de energía y problemas ambientales (por ejemplo, recalentamiento). También revise si hay problemas de capa 1, como problemas de cableado, puertos defectuosos y problemas del ISP. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Problemas de vecinos:</b> si el protocolo de routing establece una adyacencia con un vecino, revise si hay algún problema con los routers en lo que respecta a la formación de adyacencias de vecinos.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Base de datos de topología:</b> si el protocolo de routing usa una tabla o base de datos de topología, revíselas para ver si existe algo inesperado, como entradas faltantes o imprevistas.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Tabla de routing:</b> revise la tabla de routing para ver si existe algo inesperado, como rutas faltantes o imprevistas. Use los comandos <span class="cmd"><b>debug</b></span> para ver las actualizaciones de routing y el mantenimiento de la tabla de routing.</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

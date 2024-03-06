@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.2.1.7 El comando network y la máscara wildcard</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.2.1.7_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de EIGRP para IPv4</h1>
+        <h2>Configuración de EIGRP con IPv4</h2>
+      </div>
+      <div id="content">
+<p>De manera predeterminada, cuando se usan el comando <span class="cmd"><b>network</b></span> y una dirección de red IPv4, como 172.16.0.0, todas las interfaces en el router que pertenecen a esa dirección de red con clase se habilitan para EIGRP. Sin embargo, puede haber ocasiones en las que el administrador de red no desee incluir a todas las interfaces dentro de una red al habilitar EIGRP. Por ejemplo, en la figura 1, suponga que un administrador desea habilitar EIGRP en el R2, pero solo para la subred 192.168.10.8 255.255.255.252, en la interfaz S0/0/1.</p>
+<p></p>
+<p>Para configurar EIGRP para que anuncie únicamente subredes específicas, utilice la opción <span class="cmd"><i>máscara-wildcard</i></span> con el comando network:</p>
+<p></p>
+<p>
+<span class="cmd">Router(config-router)# </span>
+<span class="cmd">
+<b>network</b>
+</span>
+<span class="cmd">
+<i>dirección de red</i>
+</span>
+<span class="cmd">
+<b></b>
+</span>[<span class="cmd"><i>máscara-wildcard</i></span>]</p>
+<p></p>
+<p>Piense en la máscara wildcard como lo inverso a una máscara de subred. Lo inverso a una máscara de subred 255.255.255.252 es 0.0.0.3. Para calcular el valor inverso de la máscara de subred, reste la máscara de subred de 255.255.255.255 de la siguiente manera:</p>
+<p></p>
+          <p>         <span class="cmd">255.255.255.255 </span></p>
+          <p>
+            <span class="cmd"> - 255.255.255.252  </span>
+          </p>
+          <p>
+            <span class="cmd">   ---------------</span>
+          </p>
+          <p>
+            <span class="cmd">     0.  0.  0.  3</span>máscara wildcard</p>
+<p></p>
+<p>En la figura 2, continúa la configuración de red EIGRP del R2. El comando <span class="cmd"><b>network 192.168.10.8 0.0.0.3</b></span> habilita específicamente EIGRP en la interfaz S0/0/1, un miembro de la subred 192.168.10.8 255.255.255.252. </p>
+<p></p>
+<p>Algunas versiones de IOS también le permiten introducir la máscara de subred en lugar de una máscara wildcard. En la figura 3, se muestra un ejemplo de configuración de la misma interfaz S0/0/1 en el R2, solo que en este caso se utiliza una máscara de subred en el comando <span class="cmd"><b>network</b></span>. Sin embargo, si se utiliza la máscara de subred, el IOS convierte el comando al formato <span class="cmd"><i>máscara-wildcard</i></span> dentro de la configuración. Esto se verifica en el resultado de <span class="cmd"><b>show running-config</b></span> en la figura 3.</p>
+<p></p>
+<p>Utilice el verificador de sintaxis de la figura 4 para configurar los comandos <span class="cmd"><b>network</b></span> de EIGRP para el router R3.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.4.2.4 Comparación de IPsec y SSL</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.4.2.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Acceso remoto</h1>
+        <h2>VPN de acceso remoto con IPsec</h2>
+      </div>
+      <div id="content">
+<p>Tanto la tecnología de VPN con SSL como la de IPsec ofrecen acceso a prácticamente cualquier aplicación o recurso de red, como se muestra en la ilustración. Las VPN con SSL ofrecen características como una fácil conectividad desde las computadoras de escritorio que no administra la empresa, un escaso o nulo mantenimiento del software de escritorio y portales web personalizados por el usuario al iniciar sesión. </p>
+<p></p>
+<p>IPsec supera a SSL en muchas formas importantes: </p>
+<p></p>
+<p>
+<ul>
+<li>La cantidad de aplicaciones que admite</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>La solidez del cifrado</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>La solidez de la autenticación</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>La seguridad general</li>
+</ul>
+</p>
+<p></p>
+<p>Cuando la seguridad representa un problema, IPsec es la mejor opción. Si el soporte y la facilidad de implementación son los principales problemas, considere utilizar SSL.</p>
+<p></p>
+<p>IPsec y las VPN con SSL se complementan porque resuelven diferentes problemas. Según las necesidades, una organización puede implementar una o ambas. Este enfoque complementario permite que un único dispositivo, como un router ISR o un dispositivo de firewall ASA, pueda satisfacer todos los requisitos de los usuarios de acceso remoto. Si bien muchas soluciones ofrecen IPsec o SSL, las soluciones de VPN de acceso remoto de Cisco ofrecen ambas tecnologías integradas en una única plataforma con administración unificada. Si se ofrece tanto la tecnología IPsec como SSL, las organizaciones pueden personalizar su VPN de acceso remoto sin ningún hardware adicional ni complejidad de administración.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

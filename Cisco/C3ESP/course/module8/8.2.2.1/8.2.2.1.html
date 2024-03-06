@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.2.2.1 Conectividad de capa 3</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.2.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resolución de problemas de EIGRP</h1>
+        <h2>Resolver problemas de vecinos de EIGRP</h2>
+      </div>
+      <div id="content">
+<p>Un requisito para que se forme una adyacencia de vecinos entre dos routers conectados directamente es la conectividad de capa 3. Mediante el análisis del resultado del comando <span class="cmd"><b>show ip interface brief</b></span>, un administrador de red puede verificar que el estado de las interfaces de conexión y del protocolo de dichas interfaces sea activo. Un ping de un router a otro router conectado directamente debería confirmar la conectividad IPv4 entre los dispositivos. En la ilustración, se muestra el resultado del comando <span class="cmd"><b>show ip interface brief</b></span> para el R1. El R1 muestra conectividad al R2, y los pings se realizan correctamente. </p>
+<p></p>
+<p>Si el ping no es correcto, revise el cableado y verifique que las interfaces de los dispositivos conectados estén en una subred común. Un mensaje de registro <span class="cmd">not on common subnet</span>, que informa que los vecinos EIGRP no están en una subred común, indica que hay una dirección IPv4 incorrecta en una de las dos interfaces EIGRP vecinas.</p>
+<p></p>
+<p>
+<b>EIGRP para IPv6</b>
+</p>
+<p></p>
+<p>También se aplican comandos y criterios de resolución de problemas similares en EIGRP para IPv6.</p>
+<p></p>
+<p>El comando equivalente que se usa con EIGRP para IPv6 es <span class="cmd"><b>show ipv6 interface brief</b></span>.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

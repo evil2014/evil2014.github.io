@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.2.4.2 Configuración estática de una dirección unicast global</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.2.4.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Direcciones de red IPv6</h1>
+        <h2>Direcciones IPv6 unicast</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Configuración del router</b>
+</p>
+<p>La mayoría de los comandos de configuración y verificación IPv6 de Cisco IOS son similares a sus equivalentes de IPv4. En muchos casos, la única diferencia es el uso de <span class="cmd"><b>ipv6</b></span> en lugar de <span class="cmd"><b>ip</b></span> dentro de los comandos. </p>
+<p></p>
+<p>El comando <span class="cmd"><b>interface</b></span> que se utiliza para configurar una dirección IPv6 unicast global en una interfaz es <b>ipv6 address </b><i>dirección ipv6/duración de prefijo</i>. </p>
+<p></p>
+<p>Advierta que no hay un espacio entre <i>dirección ipv6</i> y <i>duración de prefijo</i>.</p>
+<p></p>
+<p>En la configuración de ejemplo, se utiliza la topología que se muestra en la figura 1 y estas subredes IPv6: </p>
+<p>
+<ul>
+<li>2001:0DB8:ACAD:0001:/64 (<i>o</i> 2001:DB8:ACAD:1::/64)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>2001:0DB8:ACAD:0002:/64 (<i>o</i> 2001:DB8:ACAD:2::/64)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>2001:0DB8:ACAD:0003:/64 (<i>o</i> 2001:DB8:ACAD:3::/64)</li>
+</ul>
+</p>
+<p></p>
+<p>Como se muestra en la figura 2, los comandos requeridos para configurar la dirección IPv6 unicast global en la interfaz GigabitEthernet 0/0 de R1 serían los siguientes:</p>
+<p></p>
+<p>
+<span class="cmd">
+<b>Router(config)#interface GigabitEthernet 0/0 </b>
+</span>
+</p>
+<p>
+<span class="cmd">
+<b>Router(config-if)#ipv6 address 2001:db8:acad:1::1/64</b>
+</span>
+</p>
+<p>
+<span class="cmd">
+<b>Router(config-if)#no shutdown</b>
+</span>
+</p>
+<p></p>
+<p>
+<b>Configuración de host</b>
+</p>
+<p>Configurar la dirección IPv6 en un host de forma manual es similar a configurar una dirección IPv4.</p>
+<p></p>
+<p>Como se muestra en la figura 3, la dirección de gateway predeterminado configurada para PC1 es 2001:DB8:ACAD:1::1, la dirección unicast global de la interfaz GigabitEthernet de R1 en la misma red. </p>
+<p></p>
+<p>Utilice el verificador de sintaxis de la figura 4 para configurar la dirección IPv6 unicast global.</p>
+<p></p>
+<p>Al igual que con IPv4, la configuración de direcciones estáticas en clientes no se extiende a entornos más grandes. Por este motivo, la mayoría de los administradores de red en una red IPv6 habilitan la asignación dinámica de direcciones IPv6. </p>
+<p></p>
+<p>Los dispositivos pueden obtener automáticamente una dirección IPv6 unicast global de dos maneras:</p>
+<p>
+<ul>
+<li>Configuración automática de dirección sin estado (SLAAC)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>DHCPv6</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

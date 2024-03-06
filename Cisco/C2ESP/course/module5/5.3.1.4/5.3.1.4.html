@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.3.1.4 Routing entre VLAN con puertos enrutados</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.3.1.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Conmutación de capa 3</h1>
+        <h2>Funcionamiento y configuración del switching de capa 3</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Puertos enrutados y puertos de acceso en switches</b>
+</p>
+<p></p>
+<p>Un puerto enrutado es un puerto físico que funciona de manera similar a una interfaz en un router. A diferencia de los puertos de acceso, los puertos enrutados no se asocian a una VLAN determinada. Los puertos enrutados se comportan como una interfaz del router normal. Además, debido a la eliminación de la funcionalidad de capa 2, los protocolos de capa 2 (tales como STP), no funcionan en interfaces enrutadas. Sin embargo, algunos protocolos, como LACP y EtherChannel, funcionan en la capa 3.</p>
+<p></p>
+<p>A diferencia de los routers IOS de Cisco, los puertos enrutados en un switch IOS de Cisco no admiten subinterfaces.</p>
+<p></p>
+<p>Los puertos enrutados se utilizan para enlaces punto a punto. Las conexiones de routers WAN y dispositivos de seguridad son ejemplos del uso de puertos enrutados. En una red conmutada, los puertos enrutados se suelen configurar entre los switches de las capas de núcleo y de distribución. En la ilustración, se muestra un ejemplo de puertos enrutados en una red conmutada de campus.</p>
+<p></p>
+<p>Para configurar los puertos enrutados, utilice el comando <span class="cmd"><b>no switchport</b></span> del modo de configuración de interfaz en los puertos adecuados. Por ejemplo, la configuración predeterminada de las interfaces en los switches Catalyst 3560 es de interfaces de capa 2, por lo que se deben configurar de forma manual como puertos enrutados. Además, asigne una dirección IP y otros parámetros de capa 3, según sea necesario. Después de asignar la dirección IP, verifique que el routing IP esté habilitado de manera global y que los protocolos de routing aplicables estén configurados. </p>
+<p></p>
+<p>A continuación, se detallan algunas de las ventajas de los puertos enrutados:</p>
+<p></p>
+<p>
+<ul>
+<li>Los switches multicapa puede tener tanto una SVI como puertos enrutados en un mismo switch.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Los switches multicapa reenvían el tráfico de capa 2 o capa 3 mediante hardware, lo que contribuye a un routing más veloz.</li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Nota</b>: los switches de la serie Catalyst 2960 no admiten puertos enrutados.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>0.0.1.11 Descripción general del curso</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_0.0.1.11_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Bienvenido a Principios básicos de routing y switching</h1>
+        <h2>Mensaje para el estudiante</h2>
+      </div>
+      <div id="content">
+<p>Tal como indica el título, este curso se centra en el aprendizaje de la arquitectura, los componentes y el funcionamiento de los routers y switches en una red pequeña. En este curso, aprenderá a configurar un router y un switch para obtener funcionalidad básica. En este curso: </p>
+<p>
+<ul>
+<li>Describirá las tecnologías de switching mejoradas, como las VLAN, el protocolo de enlace troncal de VLAN (VTP), el protocolo de árbol de expansión rápido (RSTP), el protocolo de árbol de expansión por VLAN (PVSTP) y 802.1q.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Configurará las operaciones básicas de una red conmutada pequeña y resolverá problemas relacionados.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Configurará y verificará el routing estático y el routing predeterminado. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Configurará las operaciones básicas de los routers en una red enrutada pequeña, y resolverá problemas relacionados. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Configurará VLAN y el routing entre VLAN, y resolverá problemas relacionados. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Configurará y controlará ACL para IPv4 e IPv6, y resolverá problemas relacionados.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Configurará y controlará ACL para IPv4 e IPv6, y resolverá problemas relacionados.</li>
+</ul>
+</p>
+<p></p>
+<p>Al final de este curso, podrá configurar routers y switches, y resolver problemas relacionados, así como solucionar problemas frecuentes de RIPv1, de RIPv2, de OSPF de área única y OSPF multiárea, de LAN virtuales y de routing entre VLAN en redes IPv4 e IPv6.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

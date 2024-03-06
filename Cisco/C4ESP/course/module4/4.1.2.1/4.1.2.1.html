@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.1.2.1 Circuitos virtuales</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.1.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Introducción a Frame Relay</h1>
+        <h2>Operación de Frame Relay</h2>
+      </div>
+      <div id="content">
+<p>La conexión a través de una red Frame Relay entre dos DTE es un VC. Los circuitos son virtuales porque no hay una conexión eléctrica directa de extremo a extremo. La conexión es lógica, y los datos se transfieren de extremo a extremo sin un circuito eléctrico directo. Con los VC, Frame Relay comparte el ancho de banda entre varios usuarios, y cualquier sitio individual puede comunicarse con cualquier otro sitio individual sin utilizar varias líneas físicas dedicadas.</p>
+<p></p>
+<p>Hay dos formas de establecer VC:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Circuitos virtuales conmutados (SVC):</b> se establecen en forma dinámica mediante el envío de mensajes de señalización a la red (CALL SETUP, DATA TRANSFER, IDLE, CALL TERMINATION).</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Circuitos virtuales permanentes (PVC):</b> los preconfigura la prestadora de servicios y, una vez establecidos, solo funcionan en los modos IDLE y DATA TRANSFER. Tenga en cuenta que, en algunas publicaciones, los PVC se denominan “VC privados”.</li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Nota:</b> los PVC se implementan con más frecuencia que los SVC.</p>
+<p></p>
+<p>Haga clic en Reproducir en la figura 1 para ver una animación acerca de un VC entre el nodo emisor y el nodo receptor. El VC sigue la ruta A, B, C y D. Frame Relay crea un VC almacenando asignaciones de puerto de entrada a puerto de salida en la memoria de cada switch y, de esta manera, enlaza un switch con otro hasta que se identifica una ruta continua de un extremo del circuito a otro. Un VC puede pasar a través de cualquier cantidad de dispositivos intermedios (switches) ubicados dentro de la red Frame Relay.</p>
+<p></p>
+<p>Los VC proporcionan una ruta de comunicación bidireccional desde un dispositivo hasta otro. Los VC se identifican mediante los DLCI, como se muestra en la figura 2. Por lo general, el proveedor de servicios de Frame Relay asigna los valores de DLCI. Los DLCI de Frame Relay tienen importancia local, lo que significa que los valores propiamente dichos no son exclusivos en la WAN de Frame Relay. Un DLCI identifica un VC ante el equipo en una terminal. Un DLCI no tiene importancia más allá del enlace único. Dos dispositivos conectados mediante un VC pueden utilizar un valor diferente de DLCI para referirse a la misma conexión.</p>
+<p></p>
+<p>Los DLCI con importancia local se convirtieron en el método principal de direccionamiento, porque se puede usar la misma dirección en varias ubicaciones diferentes y aún así referirse a diferentes conexiones. El direccionamiento local evita que un cliente se quede sin DLCI a medida que crece la red.</p>
+<p></p>
+<p>Haga clic en Reproducir en la figura 3. Esta es la misma red que se presentó en la ilustración anterior, pero esta vez, cuando se transfiere la trama a través de la red, Frame Relay etiqueta cada VC con un DLCI. El DLCI se almacena en el campo de dirección de cada trama transmitida para informar a la red cómo se debe enrutar la trama. El proveedor de servicios de Frame Relay asigna números de DLCI. Generalmente, los DLCI de 0 a 15 y de 1008 a 1023 están reservados. Por lo tanto, los proveedores de servicios suelen asignar los DLCI en el intervalo de 16 a 1007. </p>
+<p></p>
+<p>En este ejemplo, la trama utiliza el DLCI 102. Sale del router (R1) mediante el puerto 0 y el VC 102. En el switch A, la trama sale del puerto 1 mediante el VC 432. Este proceso de asignación de puertos y VC continúa a través de la WAN hasta que la trama llegue a su destino en el DLCI 201. El DLCI se almacena en el campo de direcciones de cada trama transmitida.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

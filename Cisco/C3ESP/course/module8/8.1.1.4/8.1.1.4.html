@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.1.1.4 Verificación de la sumarización automática: show ip protocols</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.1.1.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuraciones avanzadas de EIGRP</h1>
+        <h2>Sumarización automática </h2>
+      </div>
+      <div id="content">
+<p>En la figura 1, observe que el dominio de routing EIGRP tiene tres redes con clase:</p>
+<p>
+<ul>
+<li>La red de clase B 172.16.0.0/16, que consta de las subredes 172.16.1.0/24, 172.16.2.0/24 y 172.16.3.0/30.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>La red de clase C 192.168.10.0/24, que consta de las subredes 192.168.10.4/30 y 192.168.10.8/30.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>La red de clase C 192.168.1.0/24, que no está dividida en subredes.</li>
+</ul>
+</p>
+<p></p>
+<p>El resultado del comando <span class="cmd"><b>show ip protocols</b></span> en el R1, que aparece en la figura 2, muestra que la sumarización automática ahora está habilitada. El resultado también indica cuáles redes están resumidas y en qué interfaces. Observe que el R1 resume dos redes en las actualizaciones de routing EIGRP:</p>
+<p>
+<ul>
+<li>192.168.10.0/24 enviada por las interfaces GigabitEthernet 0/0 y Serial 0/0/0</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>172.16.0.0/16 enviada por la interfaz Serial 0/0/1</li>
+</ul>
+</p>
+<p></p>
+<p>El R1 tiene las subredes 192.168.10.4/30 y 192.168.10.8/30 en la tabla de routing IPv4. </p>
+<p></p>
+<p>Como se indica en la figura 3, el R1 resume las subredes 192.168.10.4/30 y 192.168.10.8/30 y reenvía la dirección resumida 192.168.10.0/24 a los vecinos en las interfaces Serial 0/0/0 y GigabitEthernet 0/0. Debido a que el R1 no tiene vecinos EIGRP en la interfaz GigabitEthernet 0/0, solo el R2 recibe la actualización de routing resumida. </p>
+<p></p>
+<p>Como se indica en la figura 4, el R1 también tiene las subredes 172.16.1.0/24, 172.16.2.0/24 y 172.16.3.0/30 en la tabla de routing IPv4. El R3 selecciona al R1 como el sucesor a 172.16.0.0/16, porque tiene una distancia factible menor. La interfaz S0/0/0 del R3 que se conecta al R1 usa un ancho de banda predeterminado de 1544 kb/s. El enlace del R3 al R2 tiene una distancia factible más alta, debido a que la interfaz S0/0/1 del R3 se configuró con un ancho de banda inferior a 1024 kb/s.</p>
+<p></p>
+<p>Observe que la actualización resumida de 172.16.0.0/16 no se envía por las interfaces GigabitEthernet 0/0 ni Serial 0/0/0 del R1. Esto se debe a que estas dos interfaces son miembros de la misma red de clase B 172.16.0.0/16. El R1 envía la actualización de routing no resumida de 172.16.1.0/24 al R2. Las actualizaciones resumidas solo se envían por interfaces en diferentes redes principales con clase. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

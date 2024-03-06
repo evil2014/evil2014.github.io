@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>11.2.1.3 Tipos de vulnerabilidades de seguridad</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_11.2.1.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Cómo mantener la seguridad de la red</h1>
+        <h2>Medidas de seguridad para dispositivos de red</h2>
+      </div>
+      <div id="content">
+<p>Tres factores de seguridad de red son la vulnerabilidad, las amenazas y los ataques. </p>
+<p></p>
+<p>La vulnerabilidad es el grado de debilidad inherente a cada red y dispositivo. Esto incluye routers, switches, computadoras de escritorio, servidores e, incluso, dispositivos de seguridad. </p>
+<p></p>
+<p>Las amenazas incluyen a las personas interesadas en aprovechar cada debilidad de seguridad y capacitadas para hacerlo. Es de esperarse que estas personas busquen continuamente nuevas vulnerabilidades y debilidades de seguridad. </p>
+<p></p>
+<p>Las amenazas se llevan a cabo con una variedad de herramientas, secuencias de comandos y programas para iniciar ataques contra las redes y los dispositivos de red. Por lo general, los dispositivos de red que sufren ataques son las terminales, como los servidores y las computadoras de escritorio.</p>
+<p></p>
+<p>Existen tres vulnerabilidades o debilidades principales: </p>
+<p></p>
+<p>
+<ul>
+<li>Tecnológicas, como las que se muestran en la figura 1.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>De configuración, como las que se muestran en la figura 2.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>De política de seguridad, como las que se muestran en la figura 3.</li>
+</ul>
+</p>
+<p></p>
+<p>Todas estas vulnerabilidades o debilidades pueden dar origen a diversos ataques, incluidos los ataques de código malintencionado y los ataques de red.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

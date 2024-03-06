@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.0.1.2 Actividad: Llámame</title>
+    <!-- Activity -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.0.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>División de redes IP en subredes</h1>
+        <h2>Introducción</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Llámame</b>
+</p>
+<p></p>
+<p>En este capítulo, aprenderá cómo se pueden agrupar los dispositivos de una red grande en subredes o grupos de redes más pequeños. </p>
+<p></p>
+<p>En esta actividad de creación de modelos, deberá pensar en un número que probablemente utilice a diario, como su número de teléfono. A medida que complete la actividad, piense en qué forma su número de teléfono es comparable con las estrategias que los administradores de red pueden utilizar para identificar hosts a fin de lograr una comunicación eficaz de datos.</p>
+<p></p>
+<p>Complete las dos preguntas que se indican a continuación y registre sus respuestas. Conserve una copia impresa o electrónica de las dos secciones para analizarlas más adelante en clase.</p>
+<p></p>
+<p>
+<ul>
+<li>Explique la forma en que su número de teléfono móvil o fijo se divide en grupos para su identificación. ¿Su número de teléfono posee código de área, identificador ISP o prefijo de ciudad, estado o país?</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>¿De qué manera la separación del número de teléfono en partes organizadas ayuda a contactarse y comunicarse con otras personas?</li>
+</ul>
+</p>
+<p></p>
+<p>
+<a href="../../files/9.0.1.2%20Call%20Me!%20Instructions.pdf" target="_blank">Actividad de clase: Llámame Instrucciones</a>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.2.2.1 Edición de ACL estándar numeradas</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.2.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>ACL de IPv4 estándar </h1>
+        <h2>Modificación de ACL de IPv4</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Edición de ACL numeradas</b>
+</p>
+<p></p>
+<p>Cuando se configura una ACL estándar, las instrucciones se agregan a la configuración en ejecución. Sin embargo, no hay una característica de edición incorporada que permita realizar cambios en una ACL. </p>
+<p></p>
+<p>Existen dos maneras de editar una ACL estándar numerada. </p>
+<p></p>
+<p>
+<b>Método 1: uso de un editor de texto</b>
+</p>
+<p></p>
+<p>Después de familiarizarse con el proceso de creación y edición de ACL, puede ser más fácil generar la ACL mediante un editor de texto como el Bloc de notas de Microsoft. Esto permite crear o editar la ACL y luego pegarla en el router. Para una ACL existente, puede utilizar el comando <span class="cmd"><b>show running-config</b></span> para mostrar la ACL, copiarla y pegarla en el editor de texto, realizar los cambios necesarios y pegarla nuevamente en el router. </p>
+<p></p>
+<p>
+<b>Configuración.</b> Suponga, por ejemplo, que la dirección host IPv4 de la ilustración se introdujo incorrectamente. En lugar del host 192.168.10.99, debería ser el host 192.168.10.10. Los pasos para editar y corregir la ACL 1 son los siguientes:</p>
+<p></p>
+<p>
+<b>Paso 1. </b>Muestre la ACL mediante el comando <span class="cmd"><b>show running-config</b></span>. En el ejemplo de la ilustración, se utiliza la palabra clave <span class="cmd"><b>include</b></span> para mostrar solamente las ACE.</p>
+<p></p>
+<p>
+<b>Paso 2. </b>Seleccione la ACL, cópiela y, luego, péguela en el Bloc de notas de Microsoft. Edite la lista según sea necesario. Una vez que la ACL se muestre correctamente en el Bloc de notas de Microsoft, selecciónela y cópiela.</p>
+<p></p>
+<p>
+<b>Paso 3. </b>En el modo de configuración global, elimine la lista de acceso con el comando <span class="cmd"><b>no access-list 1</b></span>. De lo contrario, las nuevas instrucciones se agregarán a la ACL existente. A continuación, pegue la nueva ACL en la configuración del router.</p>
+<p></p>
+<p>
+<b>Paso 4. </b>Verifique los cambios mediante el comando <span class="cmd"><b>show running-config</b></span>.</p>
+<p></p>
+<p>Es necesario recordar que, al utilizar el comando <span class="cmd"><b>no access-list</b></span>, las distintas versiones del software IOS actúan de forma diferente. Si la ACL que se eliminó sigue estando aplicada a una interfaz, algunas versiones del IOS actúan como si no hubiera ninguna ACL que proteja la red, mientras que otras deniegan todo el tráfico. Por esta razón, es aconsejable eliminar la referencia a la lista de acceso de la interfaz antes de modificar la lista. Además, tenga en cuenta que si hay un error en la nueva lista, debe deshabilitarla y solucionar el problema. En ese caso, la red no tiene ninguna ACL durante el proceso de corrección.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

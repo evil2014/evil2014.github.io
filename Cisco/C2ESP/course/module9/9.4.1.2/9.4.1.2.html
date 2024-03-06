@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.4.1.2 Operaciones lógicas de ACL</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.4.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resolución de problemas de ACL</h1>
+        <h2>Procesamiento de paquetes con ACL</h2>
+      </div>
+      <div id="content">
+<p>
+<b>ACL y routing, y procesos de ACL en un router</b>
+</p>
+<p></p>
+<p>En la ilustración, se muestra la lógica de los procesos de routing y ACL. Cuando un paquete llega a una interfaz del router, el proceso del router es el mismo, ya sea si se utilizan ACL o no. Cuando una trama ingresa a una interfaz, el router revisa si la dirección de capa 2 de destino coincide con la dirección de capa 2 de la interfaz, o si dicha trama es una trama de difusión. </p>
+<p></p>
+<p></p>
+<p>Si se acepta la dirección de la trama, se desmonta la información de la trama y el router revisa si hay una ACL en la interfaz de entrada. Si existe una ACL, el paquete se prueba en relación con las instrucciones de la lista. </p>
+<p></p>
+<p>Si el paquete coincide con una instrucción, se permite o se deniega. Si se acepta el paquete, se compara con las entradas en la tabla de routing para determinar la interfaz de destino. Si existe una entrada para el destino en la tabla de routing, el paquete se conmuta a la interfaz de salida. De lo contrario, se descarta. </p>
+<p></p>
+<p>A continuación, el router revisa si la interfaz de salida tiene una ACL. Si existe una ACL, el paquete se prueba en relación con las instrucciones de la lista. </p>
+<p></p>
+<p>Si el paquete coincide con una instrucción, se permite o se deniega.</p>
+<p></p>
+<p>Si no hay una ACL o si se permite el paquete, este se encapsula en el nuevo protocolo de capa 2 y se reenvía por la interfaz al siguiente dispositivo.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>3.0.1.2 Actividad de clase: estación vacacional</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_3.0.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>VLAN</h1>
+        <h2>Introducción</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Estación vacacional</b>
+</p>
+<p></p>
+<p>
+<b>Situación</b>
+</p>
+<p></p>
+<p> Compró una casa de vacaciones de tres pisos en la playa con intenciones de alquilarla. El plano de planta es idéntico en todos los pisos. Cada piso tiene un televisor digital para uso de los inquilinos. </p>
+<p></p>
+<p>Según el proveedor de servicios de Internet local, solo se pueden ofrecer tres canales en un paquete de televisión. Su trabajo es decidir qué paquetes de televisión ofrecerá a sus huéspedes.</p>
+<p>
+<ul>
+<li>Divida la clase en grupos de tres estudiantes por grupo.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Elija tres canales diferentes para conformar un paquete de suscripción para cada piso de la casa en alquiler.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Complete el PDF de esta actividad.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Comparta las respuestas de reflexión de su grupo con la clase.</li>
+</ul>
+</p>
+<p></p>
+<p>
+<a href="../../files/3.0.1.2%20Vacation%20Station%20Instructions.pdf" target="_blank">Actividad de clase: estación vacacional</a>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

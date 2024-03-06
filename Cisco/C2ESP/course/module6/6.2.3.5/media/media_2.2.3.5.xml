@@ -1,0 +1,56 @@
+﻿<textcomponents>
+<component id="ID_s1_title">
+<text><![CDATA[<b>Configuración de rutas estáticas IPv6 completamente especificadas en el R1  </b>]]></text>
+</component>
+<component id="ID_s2_title">
+<text><![CDATA[<b>Verificación de la tabla de routing del R1  </b>]]></text>
+</component>
+<component id="ID_s3_title">
+<text><![CDATA[<b>Configuración de una ruta estática IPv6 completamente especificada en el R2  </b>]]></text>
+</component> <!-- SLIDE 3 -->
+
+<component id="ID_s1_txt01">
+	<text><![CDATA[<b>Direcciones IPv6 link-local  </b>]]></text>
+</component>
+
+	<component id="ID_sc_reset">
+		<text><![CDATA[Restablecer]]></text>
+	</component>
+	<component id="ID_sc_showme">
+		<text><![CDATA[Mostrar]]></text>
+	</component>
+	<component id="ID_sc_showall">
+		<text><![CDATA[Mostrar todo]]></text>
+	</component>
+
+
+	<component id="ID_sc1_reset">
+		<text><![CDATA[Restablecer]]></text>
+	</component>
+	<component id="ID_sc1_showme">
+		<text><![CDATA[Mostrar]]></text>
+	</component>
+	<component id="ID_sc1_showall">
+		<text><![CDATA[Mostrar todo]]></text>
+	</component>
+
+	<component id="ID_s3_SC01" fontFace='Courier New' fontSize="10">
+		<text></text>		
+		<feedback id="fb"><![CDATA[<font size='10' face="Arial" color="#0000FF"><b>***Debe introducir el comando exacto y completo.</font>***  </b> 
+		]]></feedback>		
+		<existingcommands><![CDATA[<font size='10' face="Arial"><b>Configure una ruta estática IPv6 completamente especificada a la LAN del R1 utilizando la dirección link-local del R1 como dirección del siguiente salto.  </b></font>]]></existingcommands>
+		<command prompt="R2(config)#">
+		    <correctresponse><![CDATA[ipv6 route 2001:DB8:ACAD:1::/64 s0/0/0 FE80::1]]></correctresponse>
+			<instruction><![CDATA[<font size='10' face="Arial"><b>Salga del modo de configuración y muestre la tabla de routing IPv6.  </b>]]></instruction>
+		</command>
+		<command prompt="R2(config)#">
+		    <correctresponse><![CDATA[exit]]></correctresponse>
+		</command>
+		<command prompt="R2#">
+		    <correctresponse><![CDATA[show ipv6 route]]></correctresponse>
+		    <deviceresponse><![CDATA[<font size='8'>IPv6 Routing Table - default - 9 entries <br>Codes: C - Connected, L - Local, S - Static, U - Per-user Static route <br>       B - BGP, R - RIP, I1 - ISIS L1, I2 - ISIS L2 <br>       IA - ISIS interarea, IS - ISIS summary, D - EIGRP, EX - EIGRP external <br>       ND - ND Default, NDp - ND Prefix, DCE - Destination, NDr - Redirect <br>       O - OSPF Intra, OI - OSPF Inter, OE1 - OSPF ext 1, OE2 - OSPF ext 2 <br>       ON1 - OSPF NSSA ext 1, ON2 - OSPF NSSA ext 2 <br></font>S 2001:DB8:ACAD:1::/64 [1/0]<br>     via FE80::1, Serial0/0/0<br>&lt;otro resultado omitido&gt;<br>R2#]]></deviceresponse>			
+			<instruction><![CDATA[<font size='10' face="Arial"><b>Configuró correctamente las rutas estáticas IPv6 completamente especificadas en el R2.  </b>]]></instruction>
+		</command>
+		<command prompt=""/>
+	</component>
+</textcomponents>

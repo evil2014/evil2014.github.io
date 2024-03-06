@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.2.2.1 ¿Qué es DSL?</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.2.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Comparación de las soluciones de banda ancha</h1>
+        <h2>DSL</h2>
+      </div>
+      <div id="content">
+<p>DSL es un medio para proporcionar conexiones de alta velocidad a través de cables de cobre instalados. DSL es una de las soluciones clave disponibles para los trabajadores a distancia.</p>
+<p></p>
+<p>Hace varios años, Bell Labs identificó que una conversación de voz típica a través de un bucle local solo requería de 300 Hz a 3 kHz de ancho de banda. Durante muchos años, las redes telefónicas no utilizaron el ancho de banda superior a 3 kHz. Los avances tecnológicos permitieron que DSL utilizara el ancho de banda adicional desde 3 kHz hasta 1 MHz para proporcionar servicios de datos de alta velocidad mediante líneas de cobre comunes. </p>
+<p></p>
+<p>Como ejemplo, DSL asimétrico (ADSL) utiliza una banda de frecuencia de aproximadamente 20 kHz a 1 MHz. Afortunadamente, solo se requieren pequeños cambios en la infraestructura existente de la compañía telefónica para brindar velocidades de datos de ancho de banda elevado a los suscriptores. En la ilustración, se muestra una representación de la asignación de espacio de ancho de banda en un cable de cobre para ADSL. El área denominada POTS identifica la banda de frecuencia que utiliza el servicio de calidad telefónica. El área denominada ADSL representa el espacio de frecuencia que utilizan las señales DSL ascendentes y descendentes. El área que abarca tanto el área POTS como el área ADSL representa la totalidad de la banda de frecuencia admitida por el par de hilos de cobre.</p>
+<p></p>
+<p>DSL simétrico (SDSL) es otra forma de tecnología DSL. Todas las formas del servicio DSL se categorizan como ADSL o SDSL, y hay diferentes variedades de cada tipo. ADSL proporciona al usuario un ancho de banda descendente superior al ancho de banda de carga. SDSL proporciona la misma capacidad en ambas direcciones. </p>
+<p></p>
+<p>Las distintas variedades de DSL proporcionan diferentes anchos de banda, algunos con capacidades que exceden los 40 Mb/s. Las velocidades de transferencia dependen de la extensión real del bucle local (que conecta el suscriptor a la oficina central) y del tipo y la condición del cableado. Para lograr un servicio de ADSL satisfactorio, el bucle debe ser inferior a 3,39 mi (5,46 km).</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

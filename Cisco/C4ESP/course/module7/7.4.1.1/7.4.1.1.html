@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.4.1.1 Tipos de VPN de acceso remoto</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.4.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Acceso remoto</h1>
+        <h2>Soluciones VPN de acceso remoto</h2>
+      </div>
+      <div id="content">
+<p>Las VPN se convirtieron en la solución lógica para la conectividad de acceso remoto por muchos motivos. Las VPN proporcionan comunicaciones seguras con derechos de acceso hechos a la medida de los usuarios individuales, como empleados, contratistas y socios. También aumentan la productividad mediante la extensión de la red y las aplicaciones empresariales de forma segura, a la vez que reducen los costos de comunicación y aumentan la flexibilidad. </p>
+<p></p>
+<p>Básicamente, con la tecnología VPN, los empleados pueden llevar la oficina con ellos, incluido el acceso al correo electrónico y las aplicaciones de red. Las VPN también permiten que los contratistas y socios tengan acceso limitado a los servidores, a las páginas web o a los archivos específicos requeridos. Este acceso de red les permite contribuir a la productividad de la empresa sin comprometer la seguridad de la red.</p>
+<p></p>
+<p>Existen dos métodos principales para implementar VPN de acceso remoto:</p>
+<p></p>
+<p>
+<ul>
+<li>Capa de sockets seguros (SSL)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Seguridad IP (IPsec)</li>
+</ul>
+</p>
+<p></p>
+<p>El tipo de método VPN implementado se basa en los requisitos de acceso de los usuarios y en los procesos de TI de la organización.</p>
+<p></p>
+<p>Tanto la tecnología de VPN con SSL como la de VPN con IPsec ofrecen acceso a prácticamente cualquier aplicación o recurso de red. Las VPN con SSL ofrecen características como una fácil conectividad desde las computadoras de escritorio que no administra la empresa, un escaso o nulo mantenimiento del software de escritorio y portales web personalizados por el usuario al iniciar sesión.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.1.2.2 Creación de copias de seguridad de la imagen del IOS de Cisco</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.1.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Administración de archivos del sistema IOS</h1>
+        <h2>Administración de imágenes del IOS de Cisco</h2>
+      </div>
+      <div id="content">
+<p>Para mantener las operaciones de red con el mínimo tiempo de inactividad, es necesario implementar procedimientos para realizar copias de seguridad de las imágenes del IOS de Cisco. Esto permite que el administrador de red copie rápidamente una imagen a un router en caso de que la imagen esté dañada o borrada.</p>
+<p></p>
+<p>En la figura 1, el administrador de red desea realizar una copia de seguridad del archivo de imagen actual en el router (c1900-universalk9-mz.SPA.152-4.M3.bin) en el servidor TFTP en 172.16.1.100.</p>
+<p></p>
+<p>Para realizar una copia de seguridad de la imagen del IOS de Cisco en un servidor TFTP, siga estos tres pasos:</p>
+<p></p>
+<p>
+<b>Paso 1. </b>Asegúrese de que haya acceso al servidor TFTP de red. Haga ping en el servidor TFTP para probar la conectividad, como se muestra en la figura 2.</p>
+<p></p>
+<p>
+<b>Paso 2. </b>Verifique que el servidor TFTP tenga suficiente espacio en disco para admitir la imagen del software IOS de Cisco. Utilice el comando <span class="cmd"><b>show flash0:</b></span> en el router para determinar el tamaño del archivo de imagen del IOS de Cisco. El archivo del ejemplo tiene 68831808 bytes de longitud.</p>
+<p></p>
+<p>
+<b>Paso 3. </b>Copie la imagen en el servidor TFTP mediante el comando<span class="cmd"><b> copy </b></span><span class="cmd"><i>url-origen url-destino</i></span>, como se muestra en la figura 3.</p>
+<p></p>
+<p>Después de emitir el comando utilizando los URL de origen y de destino especificados, se solicita al usuario que introduzca el nombre del archivo de origen, la dirección IP del host remoto y el nombre del archivo de destino. A continuación, se inicia la transferencia.</p>
+<p></p>
+<p>Utilice el verificador de sintaxis de la figura 4 en el R2 para copiar el IOS en un servidor TFTP.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

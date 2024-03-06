@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<textcomponents>
+<component id="ID_title">
+<text><![CDATA[<b>Comparación entre WLAN y LAN</b>]]></text>
+</component>
+<component id="ID_table">
+<text><![CDATA[
+	<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4'>
+<tr><td colspan='3' bgcolor='#0E6360' class="mtable_top"><font size='1' color='#0E6360'><span style="color:#98D3D1">.</span></font></td>
+	</tr>
+	
+	<tr>
+	 	 		
+	 	 	<td bgcolor='#077A77' valign='top' class="mtitle"><font color="#FFFFFF"><b>Característica</b></font></td>
+	 	 	<td valign='top' bgcolor='#077A77' class="mtitle"><font color="#FFFFFF"><b>LAN inalámbrica 802.11</b></font></td>
+			<td valign='top' bgcolor='#077A77' class="mtitle"><font color="#FFFFFF"><b>Redes LAN Ethernet 802.3</b></font></td>
+	 	</tr>
+	<tr>
+		<td bgcolor='#EFF8F7' valign='top'>Capa física</td>
+		<td valign='top' bgcolor='#EFF8F7'>Radiofrecuencia (RF)</td>
+		<td valign='top' bgcolor='#EFF8F7'>Cable</td>
+	</tr>
+	<tr>
+		<td bgcolor='#FFFFFF' valign='top'>Acceso a medios</td>
+		<td valign='top' bgcolor='#FFFFFF'>Prevención de colisiones</td>
+		<td valign='top' bgcolor='#FFFFFF'>Detección de colisiones</td>
+	</tr>
+	
+	<tr>
+			
+		<td bgcolor='#EFF8F7' valign='top'>Disponibilidad</td>
+		<td valign='top' bgcolor='#EFF8F7'>Cualquiera con una radio NIC en el rango de un punto de acceso</td>
+		<td valign='top' bgcolor='#EFF8F7'>Se requiere conexión por cable</td>
+	</tr>
+	<tr>
+		<td bgcolor='#FFFFFF' valign='top'>Interferencia en la señal</td>
+		<td valign='top' bgcolor='#FFFFFF'>Sí</td>
+		<td valign='top' bgcolor='#FFFFFF'>Irrelevante</td>
+	</tr>
+	
+	<tr>
+			
+		<td bgcolor='#EFF8F7' valign='top'>Regulación</td>
+		<td valign='top' bgcolor='#EFF8F7'>Normas adicionales emitidas por las autoridades de cada país</td>
+		<td valign='top' bgcolor='#EFF8F7'>El estándar IEEE dictamina</td>
+	</tr>
+
+	
+	</table>]]></text>
+</component>
+</textcomponents>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.4.3.4 Actualización de firmware </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.4.3.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de LAN inalámbricas</h1>
+        <h2>Resolución de problemas de WLAN</h2>
+      </div>
+      <div id="content">
+<p>El IOS del router Linksys EA6500 se denomina “firmware”. Es probable que se necesite actualizar el firmware si existe un problema con el dispositivo o si se incluye una nueva característica en la nueva actualización de firmware. Independientemente del motivo, la mayoría de los routers domésticos inalámbricos modernos ofrecen firmware actualizable. </p>
+<p></p>
+<p>Puede actualizar fácilmente el firmware de router Linksys EA6500 Smart Wi-Fi mediante los siguientes pasos:</p>
+<p></p>
+<p>
+<b>Paso 1.</b> Acceda a la página de inicio de Linksys Smart Wi-Fi. </p>
+<p></p>
+<p>
+<b>Paso 2.</b> Haga clic en el ícono <b>Connectivity</b> (Conectividad) para abrir la ventana de Connectivity (figura 1). </p>
+<p></p>
+<p>
+<b>Paso 3.</b> Bajo la etiqueta Firmware Update (Actualización de firmware), haga clic en <b>Check for Updates</b> (Buscar actualizaciones). </p>
+<p></p>
+<p>El router responde <span class="cmd">No updates found</span> (No se encontraron actualizaciones) o solicita que se descargue e instale el nuevo firmware.</p>
+<p></p>
+<p>
+<b>Nota:</b> algunos routers requieren que el archivo del firmware se descargue antes y que después se cargue manualmente. Para esto, elija <b>Choose File</b> (Seleccionar archivo). Si una actualización de firmware falla o empeora la situación, el router puede cargar el firmware anterior al hacer clic en <b>Troubleshooting</b>, <b>Diagnostics</b> y, a continuación, <b>Restore previous firmware</b> (Restaurar firmware anterior, figura 2). </p>
+<p></p>
+<p>
+<b>Precaución:</b> no actualice el firmware a menos que existan problemas con el AP o que el nuevo firmware tenga una característica que desee.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

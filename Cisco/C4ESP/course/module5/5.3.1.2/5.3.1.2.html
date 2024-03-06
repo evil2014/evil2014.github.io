@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.3.1.2 Resolución de problemas de NAT: comando debug</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.3.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resolución de problemas de NAT</h1>
+        <h2>Resolución de problemas de NAT</h2>
+      </div>
+      <div id="content">
+<p>Para verificar el funcionamiento de la característica de NAT, utilice el comando <span class="cmd"><b>debug ip nat</b></span>, que muestra información sobre cada paquete que traduce el router. El comando <span class="cmd"><b>debug ip nat detailed</b></span> genera una descripción de cada paquete que se tiene en cuenta para traducir. Este comando también proporciona información sobre determinados errores o condiciones de excepción, como la falla para asignar una dirección global. El comando <span class="cmd"><b>debug ip nat detailed</b></span> genera más sobrecarga que el comando <span class="cmd"><b>debug ip nat</b></span>, pero puede proporcionar el detalle necesario para resolver el problema de NAT. Desactive siempre la depuración al finalizar.</p>
+<p></p>
+<p>En la figura 1, se muestra un resultado de ejemplo de <span class="cmd"><b>debug ip nat</b></span>. Este resultado muestra que el host interno (192.168.10.10) inició el tráfico hacia el host externo (209.165.201.1) y que la dirección de origen se tradujo a la dirección 209.165.200.226. </p>
+<p></p>
+<p>Cuando decodifique el resultado de este comando, observe los significados de los siguientes símbolos y valores: </p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>* (asterisco):</b> el asterisco junto a NAT indica que la traducción se realiza en la ruta de switching rápido. Al primer paquete en una conversación siempre se aplica el switching de procesos, que es más lento. Si existe una entrada de caché, el resto de los paquetes atraviesan la ruta de switching rápido. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>s=:</b> este símbolo se refiere a la dirección IP de origen. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>a.b.c.d</b>---><b>w.x.y.z:</b> este valor indica que la dirección de origen a.b.c.d se traduce a w.x.y.z. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>d=:</b> este símbolo se refiere a la dirección IP de destino. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>[xxxx]:</b> el valor entre corchetes es el número de identificación IP. Esta información puede ser útil para la depuración, ya que habilita la correlación con otros seguimientos de paquetes realizados por los analizadores de protocolos. </li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Nota:</b> verifique que la ACL mencionada en la referencia de comandos de NAT permita todas las redes necesarias. En la figura 2, solo las direcciones 192.168.0.0/16 se pueden traducir. El R2 no traduce los paquetes de la red interna destinados a Internet con direcciones de origen que la ACL 1 no permita de forma explícita.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

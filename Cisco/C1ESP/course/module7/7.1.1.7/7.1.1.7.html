@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.1.1.7 Protocolo de la capa de transporte correcto para la aplicación adecuada</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.1.1.7_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolos de la capa de transporte</h1>
+        <h2>Transporte de datos</h2>
+      </div>
+      <div id="content">
+<p>Tanto TCP como UDP son protocolos de transporte válidos. Según los requisitos de la aplicación, se puede utilizar uno de estos protocolos de transporte y, en ocasiones, se pueden utilizar ambos. Los desarrolladores de aplicaciones deben elegir qué tipo de protocolo de transporte es adecuado según los requisitos de las aplicaciones.</p>
+<p></p>
+<p>Para algunas aplicaciones, los segmentos deben llegar en una secuencia muy específica para que se puedan procesar correctamente. Con otras aplicaciones, todos los datos se deben recibir en forma completa para poder considerarse útiles. En ambos casos, se utiliza TCP como protocolo de transporte. Por ejemplo, las aplicaciones, como las bases de datos, los exploradores Web y los clientes de correo electrónico, requieren que todos los datos que se envían lleguen a destino en su formato original. Todos los datos perdidos pueden corromper una comunicación y dejarla incompleta o ilegible. Por lo tanto, estas aplicaciones están diseñadas para utilizar TCP. Los gastos de red adicionales se consideran necesarios para estas aplicaciones.</p>
+<p></p>
+<p>En otros casos, una aplicación puede tolerar cierta pérdida de datos durante la transmisión a través de la red, pero no se admiten retrasos en la transmisión. UDP es la mejor opción para estas aplicaciones, ya que se requiere menos sobrecarga de red. Con aplicaciones como streaming audio, video y voz sobre IP (VoIP), es preferible utilizar UDP. Los acuses de recibo reducirían la velocidad de la entrega, y las retransmisiones no son recomendables. </p>
+<p></p>
+<p>Por ejemplo, si uno o dos segmentos de un stream de video no llegan al destino, se interrumpe momentáneamente el stream. Esto puede representar distorsión en la imagen, pero quizá ni el usuario lo note. Por otro lado, la imagen en un streaming video se degradaría en gran medida si el dispositivo de destino tuviera que dar cuenta de los datos perdidos y demorar el stream mientras espera las retransmisiones. En este caso, es mejor producir el mejor video posible con los segmentos recibidos y prescindir de la confiabilidad.</p>
+<p></p>
+<p>La radio a través de Internet es otro ejemplo de aplicación que utiliza UDP. Si parte del mensaje se pierde durante su transmisión por la red, no se vuelve a transmitir. Si se pierden algunos paquetes, el oyente podrá escuchar una breve interrupción en el sonido. Si se utilizara TCP y se volvieran a enviar los paquetes perdidos, la transmisión haría una pausa para recibirlos, y la interrupción sería más notoria. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

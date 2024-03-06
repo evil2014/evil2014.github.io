@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.2.1.2 Herramientas para la solución de problemas de software (cont.)</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.2.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resolución de problemas de red</h1>
+        <h2>Herramientas para la resolución de problemas</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Analizadores de protocolos basados en host</b>
+</p>
+<p>Un analizador de protocolos decodifica las diversas capas del protocolo en una trama registrada y presenta esa información en un formato relativamente fácil de usar. En la ilustración, se muestra una captura de pantalla del analizador de protocolos Wireshark. Los analizadores de protocolos muestran información sobre los componentes físicos, los enlaces de datos y el protocolo, así como descripciones para cada trama. La mayoría de los analizadores de protocolos pueden filtrar el tráfico que cumple con ciertos criterios, por ejemplo, se puede captar todo el tráfico hacia y desde un dispositivo determinado. Los analizadores de protocolos como Wireshark pueden ayudar a resolver problemas de rendimiento de la red. Es importante tener un buen nivel de conocimiento sobre cómo usar el analizador de protocolos y TCP/IP. Para adquirir más conocimientos y habilidades relacionados con el uso de Wireshark, un excelente recurso es <a href="http://www.wiresharkbook.com/" target="_blank">http://www.wiresharkbook.com</a>.</p>
+<p></p>
+<p>
+<b>Captura de paquetes integrada del IOS de Cisco</b>
+</p>
+<p>La captura de paquetes integrada (EPC) del IOS de Cisco constituye una potente herramienta de rastreo y resolución de problemas. Esta característica permite que los administradores de red capturen los paquetes IPv4 e IPv6 que circulan hacia y desde un router Cisco, así como a través de él. La característica EPC del IOS de Cisco se usa principalmente en situaciones de resolución de problemas en las que es útil ver los datos que se envían desde o hacia el dispositivo de red, o a través de él.</p>
+<p></p>
+<p>Por ejemplo, el personal de soporte técnico necesita establecer por qué un dispositivo determinado no puede acceder a la red o a alguna aplicación. Para detectar el problema, es probable que sea necesario realizar capturas de los paquetes de datos IP y examinarlos. Otro ejemplo consistiría en determinar la firma del atacante en una amenaza de red o una infracción de seguridad del sistema de servidores. EPC del IOS de Cisco puede ayudar a capturar los paquetes que circulan hacia la red en el origen o en el perímetro.</p>
+<p></p>
+<p>EPC del IOS de Cisco es útil siempre que se puede usar un analizador de protocolos de red para depurar un problema pero no resulta práctico instalar un dispositivo tal.</p>
+<p></p>
+<p>Para obtener más información sobre el uso y la configuración de EPC de Cisco, consulte la <a href="http://www.cisco.com/en/US/docs/ios-xml/ios/epc/configuration/15-mt/nm-packet-capture.html" target="_blank">Guía de configuración de la captura de paquetes integrada</a>. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

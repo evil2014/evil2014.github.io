@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.3.1.2 Similitudes entre OSPFv2 y OSPFv3</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.3.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de OSPFv3 de área única</h1>
+        <h2>Comparación de los protocolos OSPFv2 y OSPFv3</h2>
+      </div>
+      <div id="content">
+<p>Como se muestra en la ilustración, las similitudes entre OSPFv2 y OSPFv3 son las siguientes:</p>
+<p>
+<ul>
+<li>
+<b>Estado de enlace:</b> OSPFv2 y OSPFv3 son protocolos de routing de estado de enlace sin clase.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Algoritmo de routing:</b> OSPFv2 y OSPFv3 usan el algoritmo SPF para tomar decisiones de routing.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Métrica:</b> las RFC para OSPFv2 y OSPFv3 definen la métrica como el costo del envío de paquetes por la interfaz. OSPFv2 y OSPFv3 pueden modificarse mediante el comando del modo de configuración del router <span class="cmd"><b>auto-cost reference-bandwidth </b></span><span class="cmd"><i>ancho-banda-referencia</i></span>. El comando solo afecta la métrica de OSPF donde se configuró. Por ejemplo, si se introdujo este comando para OSPFv3, no afecta las métricas de routing de OSPFv2.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Áreas:</b> el concepto de varias áreas en OSPFv3 es el mismo que en OSPFv2. Varias áreas que minimizan la saturación de estado de enlace y proporcionan mejor estabilidad con el dominio OSPF. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Tipos de paquetes OSPF:</b> OSPFv3 usa los mismos cinco tipos de paquetes básicos que OSPFv2 (saludo, DBD, LSR, LSU y LSAck).</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Mecanismo de descubrimiento de vecinos:</b> la máquina de estado de vecinos, incluida la lista de estados y eventos de vecinos OSPF, no se modifica. OSPFv2 y OSPFv3 utilizan el mecanismo de saludo para obtener información sobre los routers vecinos y formar adyacencias. Sin embargo, en OSPFv3, no existe ningún requisito con respecto a la coincidencia de subredes para formar adyacencias de vecinos. Esto se debe a que las adyacencias de vecinos se forman mediante direcciones link-local, no direcciones de unidifusión global.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Proceso de elección del DR/BDR:</b> el proceso de elección del DR/BDR no se modifica en OSPFv3.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>ID del router:</b> tanto OSPFv2 como OSPFv3 usan un número de 32 bits para la ID del router representada en notación decimal con puntos. Por lo general, se trata de una dirección IPv4. Se debe utilizar el comando de OSPF <span class="cmd"><b>router-id</b></span> para configurar la ID del router. El proceso para determinar la ID del router de 32 bits es el mismo en ambos protocolos. Utilice una ID de router configurada explícitamente; de lo contrario, la dirección IPv4 de loopback más alta se convierte en la ID del router.</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

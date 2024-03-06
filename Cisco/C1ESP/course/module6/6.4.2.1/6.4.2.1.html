@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.4.2.1 Configure las interfaces de LAN.</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.4.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de un router Cisco</h1>
+        <h2>Configuración de interfaces</h2>
+      </div>
+      <div id="content">
+<p>Para que los routers sean accesibles, se deben configurar sus interfaces. Por lo tanto, para habilitar una interfaz específica, ingrese al modo de configuración de interfaz con el comando del modo de configuración global <span class="cmd"><b>interface </b></span><span class="cmd"><i>tipo-y-número</i></span>. </p>
+<p></p>
+<p>Existen varios tipos de interfaces diferentes disponibles en los routers Cisco. En este ejemplo, el router Cisco 1941 cuenta con dos interfaces Gigabit Ethernet y una tarjeta de interfaz WAN (WIC) serial que consta de dos interfaces. Las interfaces se denominan de la siguiente manera:</p>
+<p>
+<ul>
+<li>Gigabit Ethernet 0/0 (G0/0)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Gigabit Ethernet 0/1 (G0/1)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Serial 0/0/0 (S0/0/0)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Serial 0/0/1 (S0/0/1)</li>
+</ul>
+</p>
+<p></p>
+<p>Para habilitar una interfaz del router, configure lo siguiente:</p>
+<p>
+<ul>
+<li>
+<b>Dirección IPv4 y máscara de subred:</b> configura la dirección IP y la máscara de subred mediante el comando del modo de configuración de interfaz <span class="cmd"><b>ip address </b></span><span class="cmd"><i>dirección máscara-de-subred</i></span>.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Active la interfaz:</b> de manera predeterminada, las interfaces LAN y WAN no están activadas. La interfaz se debe activar mediante el comando <span class="cmd"><b>no shutdown</b></span>. Es como encender la interfaz. La interfaz también debe estar conectada a otro dispositivo (un hub, un switch u otro router) para que la capa física esté activa.</li>
+</ul>
+</p>
+<p></p>
+<p>Si bien no es necesario, es aconsejable configurar una descripción en cada interfaz para ayudar a registrar la información de la red. El texto de la descripción tiene un límite de 240 caracteres. En las redes de producción, una descripción puede ser útil para la resolución de problemas, dado que suministra información con respecto al tipo de red a la que está conectada la interfaz y si hay otros routers en esa red. Si la interfaz se conecta a un ISP o un proveedor de servicios de telefonía móvil, resulta útil introducir la información de contacto y de conexión de dichos terceros.</p>
+<p></p>
+<p>En la figura 1, se muestra la configuración de las interfaces LAN conectadas al R1. En la figura 2, practique la configuración de una interfaz LAN.</p>
+<p></p>
+<p>
+<b>Nota:</b> para la configuración de Gigabit Ethernet 0/1 se utilizan abreviaturas de comandos.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

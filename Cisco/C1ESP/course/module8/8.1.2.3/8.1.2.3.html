@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.1.2.3 Direcciones de red, de host y de broadcast IPv4</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.1.2.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Direcciones de red IPv4</h1>
+        <h2>Máscara de subred IPv4</h2>
+      </div>
+      <div id="content">
+<p>Hay tres tipos de direcciones dentro del rango de direcciones de cada red IPv4:</p>
+<p>
+<ul>
+<li>Dirección de red</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Dirección de host</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Dirección de broadcast</li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Dirección de red</b>
+</p>
+<p>La dirección de red es una manera estándar de hacer referencia a una red. Al referirse a la dirección de red, también es posible utilizar la máscara de subred o la duración de prefijo. Por ejemplo, la red que se muestra en la figura 1 podría indicarse como la red 10.1.1.0, la red 10.1.1.0 255.255.255.0 o la red 10.1.1.0/24. Todos los hosts en la red 10.1.1.0/24 tendrán los mismos bits de porción de red.</p>
+<p></p>
+<p>Como se muestra en la figura 2, dentro del rango de direcciones IPv4 de una red, la primera dirección se reserva para la dirección de red. Esta dirección tiene un 0 para cada bit de host en la porción de host de la dirección. Todos los hosts dentro de la red comparten la misma dirección de red.</p>
+<p></p>
+<p>
+<b>Dirección de host</b>
+</p>
+<p>Cada dispositivo final requiere una dirección única para comunicarse en la red. En direcciones IPv4, los valores entre la dirección de red y la dirección de broadcast se pueden asignar a los dispositivos finales en una red. Como se muestra en la figura 3, esta dirección tiene cualquier combinación de bits 0 y bits 1 en la porción de host de la dirección, pero no puede contener todos bits 0 o todos bits 1.</p>
+<p></p>
+<p>
+<b>Dirección de broadcast</b>
+</p>
+<p>La dirección de broadcast IPv4 es una dirección especial para cada red que permite la comunicación a todos los host en esa red. Para enviar datos a todos los hosts en una red a la vez, un host puede enviar un único paquete dirigido a la dirección de broadcast de la red, y cada host en la red que recibe este paquete procesa su contenido. </p>
+<p></p>
+<p>La dirección de broadcast utiliza la dirección más alta en el rango de la red. Ésta es la dirección en la cual los bits de la porción de host son todos 1. Todos 1 en un octeto en forma binaria es igual al número 255 en forma decimal. Por lo tanto, como se muestra en la figura 4, para la red 10.1.1.0/24, en la cual se utiliza el último octeto para la porción de host, la dirección de broadcast sería 10.1.1.255. Observe que la porción de host no siempre es un octeto entero. A esta dirección se la conoce como broadcast dirigido.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

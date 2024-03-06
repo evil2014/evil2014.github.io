@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.2.2.2 Verificación de EIGRP: comando show ip protocols</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.2.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de EIGRP para IPv4</h1>
+        <h2>Verificación de EIGRP con IPv4</h2>
+      </div>
+      <div id="content">
+<p>El comando <span class="cmd"><b>show ip protocols</b></span> muestra los parámetros y otra información acerca del estado actual de cualquier proceso activo de protocolo de routing IPv4 configurado en el router. El comando <span class="cmd"><b>show ip protocols</b></span> muestra distintos tipos de resultados específicos de cada protocolo de routing. </p>
+<p></p>
+<p>El resultado en la figura 1 indica varios parámetros EIGRP, incluido lo siguiente:</p>
+<p></p>
+<p>1. EIGRP es un protocolo de routing dinámico activo en el R1, configurado con el número de sistema autónomo 1.</p>
+<p>2. La ID de router EIGRP del R1 es 1.1.1.1. </p>
+<p>3. Las distancias administrativas de EIGRP en el R1 son AD interna de 90 y externa de 170 (valores predeterminados). </p>
+<p>4. De manera predeterminada, EIGRP no resume redes automáticamente. Las subredes se incluyen en las actualizaciones de routing. </p>
+<p>5. Las adyacencias de vecinos EIGRP que el R1 tiene con otros routers utilizados para recibir actualizaciones de routing EIGRP.</p>
+<p></p>
+<p>
+<b>Nota:</b> con anterioridad al IOS 15, la sumarización automática de EIGRP estaba habilitada de manera predeterminada. </p>
+<p></p>
+<p>El resultado del comando <span class="cmd"><b>show ip protocols</b></span> es útil para depurar operaciones de routing. La información en el campo Routing Information Sources (Orígenes de información de routing) puede ayudar a identificar a un router sospechado de entregar información de routing defectuosa. El campo Routing Information Sources enumera todos los orígenes de routing EIGRP que el software IOS de Cisco utiliza para armar su tabla de routing IPv4. Para cada origen, observe lo siguiente:</p>
+<p>
+<ul>
+<li>Dirección IPv4 </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Distancia administrativa </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Momento en que se recibió la última actualización de este origen</li>
+</ul>
+</p>
+<p></p>
+<p>Como se muestra en la figura 2, EIGRP tiene una AD predeterminada de 90 para las rutas internas y de 170 para las rutas importadas de un origen externo, como las rutas predeterminadas. En comparación con otros IGP, EIGRP es el preferido por el IOS de Cisco, porque tiene la distancia administrativa más baja. EIGRP tiene un tercer valor de AD de 5, para las rutas resumidas. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

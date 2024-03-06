@@ -1,0 +1,65 @@
+﻿<textcomponents>
+   <component id="ID_title">
+      <text><![CDATA[<b>Estados de los puertos</b>]]></text>
+      </component>
+<component id="ID_table">
+  <text><![CDATA[<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4' class="mtable">
+	<tr>
+		<td colspan='6' bgcolor='#0E6360' class="mtable_top"><font size='1' color='#0E6360'><span style="color:#98D3D1">.</span></font></td>
+	</tr>
+		<tr>
+		<td bgcolor='#077A77' width="110"><font color='#ffffff'><b>  </b></font></td>
+		<td colspan='5' bgcolor='#077A77'><font color='#ffffff'><p align='center'><b>Estado del puerto</b></p></font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#077A77' width="110"><font color='#ffffff'><b>Operación permitida</b></font></td>
+		<td bgcolor='#077A77' width="60"><font color='#ffffff'><b>Bloquear</b></font></td>
+		<td bgcolor='#077A77' width="65"><font color='#ffffff'><b>Escuchar</b></font></td>
+		<td bgcolor='#077A77' width="75"><font color='#ffffff'><b>Aprendizaje</b></font></td>
+		<td bgcolor='#077A77' width="65"><font color='#ffffff'><b>Reenvío</b></font></td>
+		<td bgcolor='#077A77'><font color='#ffffff'><b>Deshabilitado</b></font></td>
+	</tr>
+
+	<tr>
+		<td bgcolor='#EFF8F7'>Puede recibir y procesar BPDU.</td>
+		<td bgcolor='#EFF8F7'>SÍ</td>
+		<td bgcolor='#EFF8F7'>SÍ</td>
+		<td bgcolor='#EFF8F7'>SÍ</td>
+		<td bgcolor='#EFF8F7'>SÍ</td>
+		<td bgcolor='#EFF8F7'>NO</td>
+		
+	</tr>
+
+	   <tr>
+		<td bgcolor='#FFFFFF'>Puede reenviar tramas de datos recibidas en la interfaz.</td>
+		<td bgcolor='#FFFFFF'>NO</td>
+		<td bgcolor='#FFFFFF'>NO</td>
+		<td bgcolor='#FFFFFF'>NO</td>
+		<td bgcolor='#FFFFFF'>SÍ</td>
+		<td bgcolor='#FFFFFF'>NO</td>
+	</tr>
+
+	   <tr>
+		<td bgcolor='#EFF8F7'>Puede reenviar tramas de datos conmutadas desde otra interfaz.</td>
+		<td bgcolor='#EFF8F7'>NO</td>
+		<td bgcolor='#EFF8F7'>NO</td>
+		<td bgcolor='#EFF8F7'>NO</td>
+		<td bgcolor='#EFF8F7'>SÍ</td>
+		<td bgcolor='#EFF8F7'>NO</td>
+		
+	</tr>
+
+
+	      <tr>
+		<td bgcolor='#FFFFFF'>Puede descubrir las direcciones MAC.</td>
+		<td bgcolor='#FFFFFF'>NO</td>
+		<td bgcolor='#FFFFFF'>NO</td>
+		<td bgcolor='#FFFFFF'>SÍ</td>
+		<td bgcolor='#FFFFFF'>SÍ</td>
+		<td bgcolor='#FFFFFF'>NO</td>
+	</tr>
+	
+	
+	</table>]]></text>
+  </component>
+</textcomponents>

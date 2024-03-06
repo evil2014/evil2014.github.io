@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>11.2.2.1 Virus, gusanos y caballos de Troya</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_11.2.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Cómo mantener la seguridad de la red</h1>
+        <h2>Vulnerabilidades y ataques de red</h2>
+      </div>
+      <div id="content">
+<p>Los ataques de código malintencionado incluyen diversos tipos de programas de PC que se crearon con la intención de causar pérdida de datos o daños a estos. Los tres tipos principales de ataques de código malintencionado son los virus, los caballos de Troya y los gusanos.</p>
+<p></p>
+<p>Un virus es un tipo de software malintencionado que se asocia a otro programa para ejecutar una función no deseada específica en una estación de trabajo. Un ejemplo es un programa que se asocia a command.com (el intérprete principal para los sistemas Windows), elimina determinados archivos e infecta cualquier otra versión de command.com que pueda encontrar.</p>
+<p></p>
+<p>Un caballo de Troya solo se diferencia en que toda la aplicación se creó con el fin de que aparente ser otra cosa, cuando en realidad es una herramienta de ataque. Un ejemplo de un caballo de Troya es una aplicación de software que ejecuta un juego simple en una estación de trabajo. Mientras el usuario se entretiene con el juego, el caballo de Troya envía una copia de sí mismo por correo electrónico a cada dirección de la libreta de direcciones del usuario. Los demás usuarios reciben el juego y lo utilizan, por lo que el caballo de Troya se propaga a las direcciones de cada libreta de direcciones.</p>
+<p></p>
+<p>En general, los virus requieren un mecanismo de entrega, un vector, como un archivo zip o algún otro archivo ejecutable adjunto a un correo electrónico, para transportar el código del virus de un sistema a otro. El elemento clave que distingue a un gusano de PC de un virus de computadora es que se requiere interacción humana para facilitar la propagación de un virus.</p>
+<p></p>
+<p>Los gusanos son programas autónomos que atacan un sistema e intentan explotar una vulnerabilidad específica del objetivo. Una vez que logra explotar dicha vulnerabilidad, el gusano copia su programa del host atacante al sistema atacado recientemente para volver a iniciar el ciclo. La anatomía de un ataque de gusano es la siguiente:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Vulnerabilidad habilitadora:</b> el gusano se instala mediante la explotación de las vulnerabilidades conocidas de los sistemas, como usuarios finales ingenuos que abren archivos adjuntos ejecutables sin verificar en los correos electrónicos.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Mecanismo de propagación:</b> después de obtener acceso a un host, el gusano se copia a dicho host y luego selecciona nuevos objetivos. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Contenido:</b> una vez que se infectó un host con el gusano, el atacante tiene acceso al host, a menudo como usuario privilegiado. Los atacantes pueden utilizar una vulnerabilidad local para elevar su nivel de privilegio al de administrador. </li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

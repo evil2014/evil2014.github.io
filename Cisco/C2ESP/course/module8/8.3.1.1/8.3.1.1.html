@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.3.1.1 OSPFv3</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.3.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de OSPFv3 de área única</h1>
+        <h2>Comparación de los protocolos OSPFv2 y OSPFv3</h2>
+      </div>
+      <div id="content">
+<p>OSPFv3 es el equivalente a OSPFv2 para intercambiar prefijos IPv6. Recuerde que, en IPv6, la dirección de red se denomina “prefijo” y la máscara de subred se denomina “longitud de prefijo”.</p>
+<p></p>
+<p>De manera similar a su equivalente de IPv4, OSPFv3 intercambia la información de routing para completar la tabla de routing IPv6 con prefijos remotos, como se muestra en la ilustración. </p>
+<p></p>
+<p>
+<b>Nota:</b> con la característica de familias de direcciones de OSPFv3, esta versión del protocolo es compatible con IPv4 e IPv6. </p>
+<p></p>
+<p>OSPFv2 se ejecuta a través de la capa de red IPv4, por lo que se comunica con otros peers IPv4 OSPF y solo anuncia rutas IPv4. </p>
+<p></p>
+<p>OSPFv3 tiene la misma funcionalidad que OSPFv2, pero utiliza IPv6 como transporte de la capa de red, por lo que se comunica con peers OSPFv3 y anuncia rutas IPv6. OSPFv3 también utiliza el algoritmo SPF como motor de cómputo para determinar las mejores rutas a lo largo del dominio de routing.</p>
+<p></p>
+<p>Al igual que con todos los protocolos de routing IPv6, OSPFv3 tiene procesos diferentes de los de su equivalente de IPv4. Los procesos y las operaciones son básicamente los mismos que en el protocolo de routing IPv4, pero se ejecutan de forma independiente. OSPFv2 y OSPFv3 tienen tablas de adyacencia, tablas de topología OSPF y tablas de routing IP independientes, como se muestra en la ilustración. </p>
+<p></p>
+<p>Los comandos de configuración y verificación de OSPFv3 son similares a los que se utilizan en OSPFv2. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

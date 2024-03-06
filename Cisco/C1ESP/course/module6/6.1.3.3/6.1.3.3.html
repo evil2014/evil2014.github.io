@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.1.3.3 Encabezados de IPv4 de muestra</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.1.3.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolos de la capa de red</h1>
+        <h2>Paquete IPv4</h2>
+      </div>
+      <div id="content">
+<p>Wireshark es una herramienta de control de red útil para cualquier persona que trabaje con redes y se puede utilizar con la mayoría de las prácticas de laboratorio en los cursos de Cisco Certified Network Associate (CCNA) para tareas de análisis de datos y resolución de problemas. Puede utilizarse para ver los valores de muestra contenidos en los campos del encabezado IP. </p>
+<p></p>
+<p>En las tres ilustraciones, se incluyen capturas de muestra de varios paquetes IP:</p>
+<p>
+<ul>
+<li>En la captura de muestra de la figura 1, se muestra el contenido del paquete número 2. Observe que la dirección de origen (Source) figura como 192.168.1.109, y la de destino (Destination) figura como 192.168.1.1. La ventana del centro contiene información sobre el encabezado de IPv4, como la longitud del encabezado (header length), la longitud total (total length) y cualquier indicador (flags) que se establezca. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>En la captura de muestra de la figura 2, se muestra el contenido del paquete número 8. Este es un paquete HTTP. Observe además la presencia de información más allá de la sección TCP.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Por último, en la captura de muestra de la figura 3, se muestra el contenido del paquete número 16. El paquete de muestra es una petición ping del host 192.168.1.109 al host 192.168.1.1. Observe la ausencia de información de TCP o UDP, debido a que este es un paquete de protocolo de mensajes de control de Internet (ICMP). </li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

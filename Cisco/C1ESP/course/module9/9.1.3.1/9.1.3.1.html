@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.1.3.1 División básica en subredes</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.1.3.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>División de una red IPv4 en subredes</h1>
+        <h2>División de una red IPv4 en subredes</h2>
+      </div>
+      <div id="content">
+<p>Cada dirección de red tiene un rango válido de direcciones de host. Todos los dispositivos conectados a la misma red tendrán una dirección de host IPv4 para esa red y una máscara de subred o un prefijo de red común. </p>
+<p></p>
+<p>El prefijo y la máscara de subred son diferentes formas de representar lo mismo, la porción de red de una dirección.</p>
+<p></p>
+<p>Las subredes IPv4 se crean utilizando uno o más de los bits de host como bits de red. Esto se hace ampliando la máscara para tomar prestado algunos de los bits de la porción de host de la dirección, a fin de crear bits de red adicionales. Cuantos más bits de host se tomen prestados, mayor será la cantidad de subredes que puedan definirse. Por cada bit que se toma prestado, se duplica la cantidad de subredes disponibles. Por ejemplo, si se toma prestado 1 bit, se pueden crear 2 subredes. Si se toman prestados 2 bits, se crean 4 subredes; si se toman prestados 3 bits, se crean 8 subredes, y así sucesivamente. Sin embargo, con cada bit que se toma prestado, se dispone de menos direcciones de host por subred.</p>
+<p></p>
+<p>Los bits solo se pueden tomar prestados de la porción de host de la dirección. El proveedor de servicios determina la porción de red de la dirección, la que no puede modificarse.</p>
+<p></p>
+<p>
+<b>Nota:</b> en los ejemplos de las ilustraciones, solo se muestra el último octeto en formato binario debido a que únicamente se pueden tomar prestados bits de la porción de host.</p>
+<p></p>
+<p>Como se muestra en la figura 1, la red 192.168.1.0/24 tiene 24 bits en la porción de red y 8 bits en la porción de host, lo que se indica con la máscara de subred 255.255.255.0 o la notación /24. Sin división en subredes, esta red admite una única interfaz LAN. Si se necesitara otra LAN, sería necesario dividir la red en subredes.</p>
+<p></p>
+<p>En la figura 2, se toma prestado 1 bit del bit más significativo (el bit que se encuentra más a la izquierda) en la porción de host, lo que extiende la porción de red a 25 bits. Esto crea 2 subredes que se identifican mediante un 0 en el bit que se tomó prestado para la primera red y un 1 en el bit que se tomó prestado para la segunda red. La máscara de subred para ambas redes utiliza un 1 en la posición del bit que se tomó prestado para indicar que ahora este bit es parte de la porción de red.</p>
+<p></p>
+<p>Como se muestra en la figura 3, cuando convertimos el octeto binario al sistema decimal, advertimos que la dirección de la primera subred es 192.168.1.0 y la dirección de la segunda subred es 192.168.1.128. Dado que se tomó prestado un bit, la máscara de subred de cada subred es 255.255.255.128 o /25.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

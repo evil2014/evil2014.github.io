@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.4.1.2 Cálculo de una ruta resumida</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.4.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de rutas resumidas y estáticas flotantes</h1>
+        <h2>Configuración de rutas resumidas IPv4</h2>
+      </div>
+      <div id="content">
+<p>La sumarización de redes en una única dirección y máscara se puede realizar en tres pasos:</p>
+<p></p>
+<p>
+<b>Paso 1. </b>Enumere las redes en formato binario. En la figura 1 se indican las redes 172.20.0.0/16 a 172.23.0.0/16 en formato binario.</p>
+<p></p>
+<p>
+<b>Paso 2. </b>Cuente el número de bits coincidentes que se encuentran en el extremo izquierdo para determinar la máscara de la ruta resumida. En la figura 2, se destacan los 14 bits coincidentes que se encuentran en el extremo izquierdo. Este es el prefijo, o la máscara de subred, para la ruta resumida: /14 o 255.252.0.0.</p>
+<p></p>
+<p>
+<b>Paso 3. </b>Copie los bits coincidentes y luego agregue los bits 0 para determinar la dirección de red resumida. En la figura 3, se muestra que los bits coincidentes con ceros al final producen la dirección de red 172.20.0.0. Las cuatro redes (172.20.0.0/16, 172.21.0.0/16, 172.22.0.0/16 y 172.23.0.0/16) pueden sumarizar en una única dirección de red y prefijo 172.20.0.0/14.</p>
+<p></p>
+<p>En la figura 4, se muestra el R1 configurado con una ruta estática resumida para alcanzar las redes 172.20.0.0/16 a 172.23.0.0/16.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.4.1.5 Computación en la nube</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.4.1.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>El cambiante entorno de red</h1>
+        <h2>Tendencias de red</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Computación en la nube</b>
+</p>
+<p></p>
+<p>La computación en la nube consiste en el uso de recursos informáticos (hardware y software) que se proveen como servicio a través de una red. Una compañía utiliza el hardware y software de la nube y se le cobra un precio por el servicio.</p>
+<p></p>
+<p>Las PC locales ya no tienen que hacer el “trabajo pesado” cuando se trata de ejecutar aplicaciones de red. En cambio, la red de PC que componen la nube es la que ocupa de ejecutarlas. Esto disminuye los requisitos de hardware y software del usuario. La PC del usuario debe interactuar con la nube mediante software, que puede ser un explorador Web, mientras que la red de la nube se encarga del resto.</p>
+<p></p>
+<p>La computación en la nube es otra tendencia global que cambia el modo en que accedemos a los datos y los almacenamos. Esta tendencia abarca todos los servicios de suscripción o de pago según el uso en tiempo real en Internet. Este sistema nos permite almacenar archivos personales e incluso crear copias de seguridad de nuestra unidad de disco duro completa en servidores a través de Internet. Mediante la nube, se puede acceder a aplicaciones de procesamiento de texto y edición de fotografías, entre otras. </p>
+<p></p>
+<p>Para las empresas, la computación en la nube expande las capacidades de TI sin necesidad de invertir en infraestructura nueva, en capacitación de personal nuevo ni en licencias de software nuevo. Estos servicios están disponibles a petición y se proporcionan de forma económica a cualquier dispositivo en cualquier lugar del mundo, sin comprometer la seguridad ni el funcionamiento. </p>
+<p></p>
+<p>El término “computación en la nube” se refiere concretamente a computación basada en la Web. Los servicios bancarios, las tiendas de venta minorista y la descarga de música en línea son ejemplos de computación en la nube. Generalmente, los usuarios pueden acceder a las aplicaciones en la nube a través de un explorador Web y no necesitan instalar ningún tipo de software en su dispositivo final. Esto permite que se puedan conectar muchos tipos de dispositivos diferentes a la nube.</p>
+<p></p>
+<p>La computación en la nube ofrece los siguientes beneficios potenciales:</p>
+<p>
+<ul>
+<li>
+<b>Flexibilidad en la organización:</b> los usuarios pueden acceder a la información en cualquier momento y lugar mediante un explorador Web. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Agilidad e implementación rápida:</b> el departamento de TI puede concentrarse en la provisión de herramientas para extraer, analizar y compartir información y conocimientos de bases de datos, archivos y personas.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Menor costo de infraestructura:</b> la tecnología pasa de estar en el sitio a estar en un proveedor en la nube, lo que elimina el costo de hardware y aplicaciones. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Nuevo enfoque de los recursos de TI:</b> lo que se ahorra en costos de hardware y de aplicaciones se puede utilizar para otro fin.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Creación de nuevos modelos empresariales:</b> se puede acceder a las aplicaciones y los recursos fácilmente, para que las empresas puedan reaccionar rápidamente a las necesidades de los clientes. Esto les permite establecer estrategias para promover la innovación al entrar potencialmente en nuevos mercados.</li>
+</ul>
+</p>
+<p></p>
+<p>Existen cuatro tipos principales de nubes, como se muestra en la figura 2. Haga clic en cada nube para obtener más información.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

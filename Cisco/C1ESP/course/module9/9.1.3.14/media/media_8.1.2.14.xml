@@ -1,0 +1,43 @@
+﻿<textcomponents>
+	<component id="txt_instructions">
+		<text><![CDATA[<b>Actividad: Cálculo avanzado de cantidad de hosts</b><br/><br/>En esta actividad, se le proporcionan la dirección de red, la máscara de subred, la dirección de red en formato binario y la máscara de subred en formato binario.<br><br>Introduzca la cantidad de hosts disponibles para el direccionamiento en el campo Cantidad de hosts válidos.]]></text>
+	</component>
+	
+	<component id="txt_incorrect">
+		<text><![CDATA[<b>Incorrecto]]></text>
+	</component>
+	<component id="txt_correct">
+		<text><![CDATA[<b>Correcto]]></text>
+	</component>
+	<component id="txt_body_incorrect">
+		<text><![CDATA[No calculó correctamente la cantidad de hosts sobre la base de la dirección de red y la máscara de subred. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+	</component>
+	<component id="txt_body_correct">
+		<text><![CDATA[Calculó correctamente la cantidad de hosts sobre la base de la dirección de red y la máscara de subred. Haga clic en Nuevo número para continuar.]]></text>
+	</component>
+	<component id="txt_hostaddress">
+		<text><![CDATA[Dirección de red]]></text>
+	</component>
+	<component id="txt_subnetmask">
+		<text><![CDATA[Máscara de subred]]></text>
+	</component>
+	<component id="txt_hostaddrbin">
+		<text><![CDATA[Dirección de red binaria]]></text>
+	</component>
+	<component id="txt_subnetbin">
+		<text><![CDATA[Máscara de subred en forma binaria]]></text>
+	</component>
+	<component id="txt_nhost">
+		<text><![CDATA[Cantidad de hosts válidos]]></text>
+	</component>
+	<component id="txt_check">
+		<text><![CDATA[Verificar]]></text>
+	</component>
+	<component id="txt_reset">
+		<text><![CDATA[Restablecer]]></text>
+	</component>
+	<component id="txt_newnumber">
+		<text><![CDATA[Nuevo número]]></text>
+	</component>
+
+</textcomponents>

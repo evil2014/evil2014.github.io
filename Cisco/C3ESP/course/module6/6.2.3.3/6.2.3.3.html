@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.2.3.3 Verificación de rutas OSPF</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.2.3.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de OSPF de diversas áreas</h1>
+        <h2>Verificación de OSPF de diversas áreas</h2>
+      </div>
+      <div id="content">
+<p>El comando que más se utiliza para verificar una configuración OSPF multiárea es el comando <span class="cmd"><b>show ip route</b></span>. Agregue el parámetro <span class="cmd"><b>ospf</b></span> para mostrar solo la información relacionada con OSPF.</p>
+<p></p>
+<p>En la figura 1, se muestra la tabla de routing del R1. Observe que las entradas <b>IA O</b> en la tabla de routing identifican redes descubiertas a partir de otras áreas. Específicamente, la <b>O</b> representa las rutas OSPF, e <b>IA</b> significa “interárea”, lo que quiere decir que la ruta se originó en otra área. Recuerde que el R1 está en el área 0 y que las subredes 192.168.1.0 y 192.168.2.0 se conectan al R3 en el área 2. La entrada [110/1295] de la tabla de routing representa la distancia administrativa que se asigna a OSPF (<span class="cmd">110</span>) y el costo total de las rutas (costo de <span class="cmd">1295</span>).</p>
+<p></p>
+<p>Utilice el verificador de sintaxis de la figura 2 para verificar la tabla de routing del R2 y el R3 mediante el comando <span class="cmd"><b>show ip route ospf</b></span>.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

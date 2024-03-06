@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.1.3.5 Navegación entre los modos de IOS (cont.)</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.1.3.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Entrenamiento intensivo sobre IOS</h1>
+        <h2>Navegación de IOS</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Cómo alternar entre el modo y los submodos de configuración global</b>
+</p>
+<p></p>
+<p>Para salir del modo de configuración global y volver al modo EXEC privilegiado, introduzca el comando <span class="cmd"><b>exit</b></span>. </p>
+<p></p>
+<p>Tenga en cuenta que, al introducir el comando <span class="cmd"><b>exit</b></span> en el modo EXEC privilegiado, la sesión de consola finaliza. Es decir que, al introducir <span class="cmd"><b>exit</b></span> en el modo EXEC privilegiado, aparece la pantalla que se ve cuando se inicia una sesión de consola. En esta pantalla, se debe presionar la tecla Entrar para ingresar al modo EXEC del usuario.</p>
+<p></p>
+<p>Para pasar de cualquier submodo del modo de configuración global al modo que se encuentra un nivel más arriba en la jerarquía de modos, introduzca el comando <span class="cmd"><b>exit</b></span>. En la figura 1, se muestra cómo pasar del modo EXEC del usuario al modo EXEC privilegiado, cómo ingresar luego al modo de configuración global y al modo de configuración de interfaz, cómo volver al modo de configuración global y cómo regresar al modo EXEC privilegiado utilizando el comando <span class="cmd"><b>exit</b></span>. </p>
+<p></p>
+<p>Para pasar de cualquier submodo del modo EXEC privilegiado al modo EXEC privilegiado, introduzca el comando <span class="cmd"><b>end</b></span> o presione la combinación de teclas <b>Ctrl+Z</b>. En la figura 2, se muestra cómo pasar del modo de configuración de VLAN al modo EXEC privilegiado utilizando el comando <span class="cmd"><b>end</b></span>.</p>
+<p></p>
+<p>Para pasar de cualquier submodo del modo de configuración global a otro submodo “inmediato” de dicho modo, solo debe introducir el comando correspondiente que normalmente se introduce en el modo de configuración global. En la ilustración 3, se muestra cómo pasar del modo de configuración de línea, <span class="cmd">Switch(config-line)#</span>, al modo de configuración de interfaz, <span class="cmd">Switch(config-if)#</span>, sin tener que salir del modo de configuración de línea.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

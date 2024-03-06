@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.3.2.2 Configuración manual de dirección IP para dispositivos finales</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.3.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Esquemas de direcciones</h1>
+        <h2>Direccionamiento de dispositivos</h2>
+      </div>
+      <div id="content">
+<p>Para que un dispositivo final se comunique a través de la red, se debe configurar con la información de dirección IP correcta. De modo similar al de una SVI, el dispositivo final se debe configurar con una dirección IP y una máscara de subred. Esta información se configura en los parámetros de la PC. </p>
+<p></p>
+<p>Para que un dispositivo final se conecte correctamente a la red, se deben configurar todos estos parámetros. Esta información se configura en los parámetros de red de la PC. Además de la información de dirección IP y máscara de subred, es posible configurar la información del gateway predeterminado y del servidor DNS, como se muestra en la ilustración. </p>
+<p></p>
+<p>La dirección de gateway predeterminado es la dirección IP de la interfaz del router que se utiliza para que el tráfico de la red salga de la red local. El gateway predeterminado es una dirección IP que, por lo general, asigna el administrador de red y se utiliza cuando se debe enrutar tráfico a otra red.</p>
+<p></p>
+<p>La dirección del servidor DNS es la dirección IP del servidor del Sistema de nombres de dominios (DNS, Domain Name System), que se utiliza para traducir direcciones IP a direcciones Web, como <a href="http://www.cisco.com/" target="_blank">www.cisco.com</a>. A todos los dispositivos de Internet se les asigna una dirección IP, mediante la cual se accede a ellos. Sin embargo, resulta más fácil recordar nombres que números. Por lo tanto, los sitios Web tienen nombres para simplificar el proceso. El servidor DNS se utiliza para mantener la asignación entre las direcciones IP y los nombres de los diversos dispositivos. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

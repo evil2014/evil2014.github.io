@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.2.1.2 Medios de cobre</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.2.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Medios de red</h1>
+        <h2>Cableado de cobre</h2>
+      </div>
+      <div id="content">
+<p>Existen tres tipos principales de medios de cobre que se utilizan en las redes:</p>
+<p>
+<ul>
+<li>
+<b>Par trenzado no blindado (UTP)</b>
+</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Par trenzado blindado (STP)</b>
+</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Coaxial</b>
+</li>
+</ul>
+</p>
+<p></p>
+<p>Estos cables se utilizan para interconectar los nodos en una LAN y los dispositivos de infraestructura, como switches, routers y puntos de acceso inalámbrico. Cada tipo de conexión y sus dispositivos complementarios tienen requisitos de cableado estipulados por los estándares de la capa física.</p>
+<p></p>
+<p>Los diferentes estándares de la capa física especifican el uso de distintos conectores. Estos estándares especifican las dimensiones mecánicas de los conectores y las propiedades eléctricas aceptables de cada tipo. Los medios de red utilizan conectores modulares para facilitar la conexión y la desconexión. Además, puede utilizarse un único tipo de conector físico para diferentes tipos de conexiones. Por ejemplo, el conector RJ-45 se utiliza ampliamente en las LAN con un tipo de medio y en algunas WAN con otro tipo de medio.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

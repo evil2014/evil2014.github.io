@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.1.1.5 Desventajas del trabajo a distancia</title>
+    <!--  -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.1.1.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Trabajo a distancia</h1>
+        <h2>Beneficios del trabajo a distancia</h2>
+      </div>
+      <div id="content">
+<p>Si bien los beneficios del trabajo a distancia son muchos, existen algunas desventajas que también se deben tener en cuenta:</p>
+<p></p>
+<p>Desde el punto de vista del empleador:</p>
+<p>
+<ul>
+<li>
+<b>Seguimiento del progreso de los empleados:</b> para algunos gerentes, puede resultar difícil hacer un seguimiento de los logros de trabajo de los empleados que trabajan a distancia. Es necesario acordar evaluaciones de control y validar el progreso de tareas de diferente manera con los empleados que trabajan desde el hogar.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Necesidad de implementar un nuevo estilo de administración:</b> los gerentes que supervisan a los empleados dentro de una oficina pueden mantener un contacto personal con todos ellos. Esto significa que, si surge un problema o hay un malentendido con las tareas asignadas, se puede llevar a cabo una reunión cara a cara no programada, lo que suele resolver el problema rápidamente. En el entorno del trabajo a distancia, los gerentes deben establecer procesos para validar la comprensión y tienen que mantenerse flexibles a las diversas necesidades de los empleados a distancia. </li>
+</ul>
+</p>
+<p></p>
+<p>Desde el punto de vista de los empleados:</p>
+<p>
+<ul>
+<li>
+<b>Sensación de aislamiento:</b> a muchas personas, trabajar desde el hogar las hace sentirse solas. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Conexiones más lentas:</b> por lo general, en las áreas residenciales y rurales no se obtiene el tipo de soporte y de servicios tecnológicos que reciben las oficinas ubicadas en centros urbanos, y estos servicios pueden ser costosos. Si se requiere un ancho de banda alto para trabajar, piense con detenimiento si la oficina doméstica es la opción adecuada. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Distracciones:</b> ya sea un vecino, un cónyuge, un niño, cortar el césped, lavar la ropa, la TV o el refrigerador, en la oficina doméstica se presentan distracciones. Además, muchas personas consideran que si se trabaja a distancia, no hay necesidad de contratar servicios de cuidado de niños, pero esto no es del todo cierto. Especialmente con los niños pequeños, a veces es importante planificar su cuidado cuando es necesario concentrarse por completo en el trabajo.</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

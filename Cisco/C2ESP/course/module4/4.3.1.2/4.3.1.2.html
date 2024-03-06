@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.3.1.2 Orígenes de la tabla de routing</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.3.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Funcionamiento del router</h1>
+        <h2>Análisis de la tabla de routing</h2>
+      </div>
+      <div id="content">
+<p>En los routers Cisco IOS, se puede utilizar el comando <span class="cmd"><b>show ip route</b></span> para mostrar la tabla de routing IPv4 de un router. Los routers proporcionan información adicional de la ruta, incluso la forma en que se descubrió la ruta, cuánto tiempo estuvo la ruta en la tabla de routing y qué interfaz específica se debe utilizar para llegar a un destino predefinido.</p>
+<p></p>
+<p>Las entradas en la tabla de routing se pueden agregar como lo siguiente:</p>
+<p>
+<ul>
+<li>
+<b>Interfaces de ruta local:</b> se agregan cuando la interfaz está configurada y activa. Esta entrada solo se muestra en la versión IOS 15 o más reciente para las rutas IPv4, y en todas las versiones de IOS para las rutas IPv6.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Interfaces conectadas directamente:</b> se agregan a la tabla de routing cuando la interfaz está configurada y activa.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Rutas estáticas:</b> se agregan cuando una ruta se configura manualmente y la interfaz de salida está activa. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Protocolo de routing dinámico:</b> se agrega cuando se implementan protocolos de routing que descubren la red de manera dinámica, como EIGRP u OSPF, y cuando se identifican las redes.</li>
+</ul>
+</p>
+<p></p>
+<p>Los orígenes de las entradas de la tabla de routing se identifican con un código. El código identifica la forma en que se descubrió la ruta. Por ejemplo, los códigos frecuentes incluyen lo siguiente:</p>
+<p>
+<ul>
+<li>
+<b>L:</b> identifica la dirección asignada a la interfaz de un router. Esto permite que el router determine de forma eficaz si recibe un paquete para la interfaz o para reenviar. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>C:</b> identifica una red conectada directamente. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>S:</b> identifica una ruta estática creada para llegar a una red específica. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>D:</b> identifica una red que se descubre de forma dinámica de otro router con EIGRP.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>O:</b> indica una red que se descubre de forma dinámica de otro router con el protocolo de routing OSPF.</li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Nota:</b> otros códigos exceden el ámbito de este capítulo.</p>
+<p></p>
+<p>En la ilustración, se muestra la tabla de enrutamiento del R1 en una red simple. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

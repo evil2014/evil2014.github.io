@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.3.2.4 Autenticación de un usuario doméstico</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.3.2.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Seguridad de una LAN inalámbrica</h1>
+        <h2>Protección de WLAN</h2>
+      </div>
+      <div id="content">
+<p>En la ilustración, se muestran las opciones del modo de seguridad del router inalámbrico Linksys EA6500. Observe cómo el <b>Security mode (Modo de seguridad)</b> para la red de 2,4 GHz usa autenticación abierta (es decir, None [Ninguna]) y no requiere una contraseña, mientras que la opción de <b>Security mode</b> para la red de 5 GHz usa una autenticación WPA2/WPA Mixed Personal (WPA2/WPA personal combinado) y requiere una contraseña.</p>
+<p></p>
+<p>
+<b>Nota:</b> normalmente, las redes de 2,4 GHz y 5 GHz se configurarían con los mismos modos de seguridad. El ejemplo de la ilustración se usa solo con fines de demostración.</p>
+<p></p>
+<p>En la lista desplegable de <b>Security mode</b> de la red de 2,4 GHz, se muestran los métodos de seguridad disponibles en el router Linksys EA6500. Se indica desde el método más débil (es decir, None) al más seguro (es decir, WPA2/WPA Mixed Enterprise [WPA2/WPA empresarial combinado]). La red de 5 GHz incluye la misma lista desplegable.</p>
+<p></p>
+<p>WPA y WPA2 admiten dos tipos de autenticación:</p>
+<p>
+<ul>
+<li>
+<b>Personal:</b> diseñada para las redes domésticas o de oficinas pequeñas; los usuarios se autentican mediante una clave previamente compartida (PSK). Los clientes inalámbricos se autentican con el AP mediante una contraseña previamente compartida. No se requiere ningún servidor de autenticación especial.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Enterprise (Empresarial):</b> diseñada para las redes empresariales, pero requiere un servidor de servicio de autenticación remota telefónica de usuario (RADIUS). Si bien su configuración es más complicada, proporciona seguridad adicional. El servidor RADIUS debe autenticar el dispositivo y, a continuación, se deben autenticar los usuarios mediante el estándar 802.1X, que usa el protocolo de autenticación extensible (EAP). </li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

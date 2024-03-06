@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.1.1.2 Beneficios de la tecnología WAN de Frame Relay</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.1.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Introducción a Frame Relay</h1>
+        <h2>Beneficios de Frame Relay</h2>
+      </div>
+      <div id="content">
+<p>Con la llegada de los servicios de banda ancha como DSL y cable módem, WAN Ethernet (servicio Ethernet punto a punto a través de cable de fibra óptica), VPN y conmutación de etiquetas multiprotocolo (MPLS), Frame Relay se convirtió en una solución menos adecuada para acceder a la WAN. Sin embargo, todavía hay sitios en el mundo que confían en Frame Relay para obtener conectividad a la WAN.</p>
+<p></p>
+<p>Frame Relay proporciona más ancho de banda, confiabilidad y resistencia que las líneas privadas o arrendadas. </p>
+<p></p>
+<p>Usar un ejemplo de una red empresarial grande ayuda a ilustrar los beneficios de utilizar una WAN de Frame Relay. En el ejemplo que se muestra en la ilustración, la empresa SPAN Ingeniería tiene cinco campus en toda América del Norte. Como la mayoría de las organizaciones, SPAN tiene diversos requisitos de ancho de banda. </p>
+<p></p>
+<p>Lo primero que se debe tener en cuenta es el requisito de ancho de banda de cada sitio. Al trabajar en la oficina central, la conexión de Chicago a Nueva York requiere una velocidad máxima de 256 kb/s. Otros tres sitios necesitan una velocidad máxima de 48 kb/s para conectarse a la oficina central, mientras que la conexión entre las sucursales de Nueva York y Dallas requiere solo 12 kb/s.</p>
+<p></p>
+<p>Antes de que Frame Relay estuviera disponible, la empresa SPAN Ingeniería arrendaba líneas dedicadas.</p>
+<p></p>
+<p>
+<b>Nota:</b> los valores de ancho de banda utilizados en los ejemplos de línea arrendada y Frame Relay en este capítulo no necesariamente reflejan los anchos de banda que utilizan muchos clientes en la actualidad. Los valores de ancho de banda utilizados en este capítulo son solamente con fines de comparación.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

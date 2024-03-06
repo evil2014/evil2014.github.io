@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>11.3.3.1 Repaso de comandos show comunes</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_11.3.3.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Rendimiento básico de la red</h1>
+        <h2>Comandos Show</h2>
+      </div>
+      <div id="content">
+<p>Los comandos <span class="cmd"><b>show</b></span> de la CLI de Cisco IOS muestran información importante sobre la configuración y el funcionamiento del dispositivo.</p>
+<p></p>
+<p>Los técnicos de red utilizan los comandos <span class="cmd"><b>show</b></span> con frecuencia para ver los archivos de configuración, revisar el estado de los procesos y las interfaces del dispositivo, y verificar el estado de funcionamiento del dispositivo. Los comandos <span class="cmd"><b>show</b></span> están disponibles independientemente de si el dispositivo se configuró utilizando la CLI o Cisco Configuration Professional.</p>
+<p></p>
+<p>Se puede mostrar el estado de casi todos los procesos o funciones del router mediante un comando <span class="cmd"><b>show</b></span>. Algunos de los comandos show más conocidos son:</p>
+<p>
+<ul>
+<li>
+<span class="cmd">
+<b>show running-config</b>
+</span>
+<b></b>(figura 1).</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<span class="cmd">
+<b>show interfaces</b>
+</span>
+<b></b>(figura 2).</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<span class="cmd">
+<b>show arp</b>
+</span> (figura 3).</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<span class="cmd">
+<b>show ip route</b>
+</span> (figura 4).</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<span class="cmd">
+<b>show protocols</b>
+</span> (figura 5)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<span class="cmd">
+<b>show version</b>
+</span>
+<b></b>(figura 6)</li>
+</ul>
+</p>
+<p></p>
+<p>Haga clic en los botones de la ilustración para obtener más información sobre los comandos <span class="cmd"><b>show</b></span>.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.0.1.2 Actividad de clase: Tenemos que hablar (juego) </title>
+    <!--  -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.0.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Capa de transporte</h1>
+        <h2>Introducción</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Tenemos que hablar</b>
+</p>
+<p></p>
+<p>
+<b>Nota: </b>conviene realizar esta actividad en grupos medianos de seis a ocho estudiantes cada uno. </p>
+<p></p>
+<p>El instructor susurrará un mensaje complejo al primer estudiante de un grupo. Por ejemplo, el mensaje puede ser: “El examen final se tomará el próximo martes 5 de febrero a las 14h en el aula 1151”.</p>
+<p>Ese estudiante le susurrará el mensaje al siguiente estudiante del grupo. Todos los grupos siguen este proceso hasta que todos los miembros de cada grupo hayan oído el mensaje susurrado. Las reglas que debe seguir son las siguientes:</p>
+<p></p>
+<p>
+<ul>
+<li>Puede susurrarle el mensaje al compañero junto a usted solo una vez. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>El mensaje se debe transmitir de una persona a otra sin saltear participantes. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>El instructor debe solicitarle a un estudiante que registre el tiempo total de transmisión del mensaje, desde el primero hasta el último participante. Se recomienda que tome el tiempo la primera o la última persona en recibir el mensaje.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>El último estudiante dirá en voz alta exactamente lo que escuchó.</li>
+</ul>
+</p>
+<p></p>
+<p>A continuación, el instructor repetirá el mensaje original de modo que el grupo pueda compararlo con el mensaje provisto por el último estudiante del grupo. </p>
+<p></p>
+<p>
+<a href="../../files/7.0.1.2%20Class%20Activity%20-%20We%20Need%20to%20Talk%20Instructions.pdf" target="_blank">Actividad de clase: Tenemos que hablar (instrucciones)</a>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

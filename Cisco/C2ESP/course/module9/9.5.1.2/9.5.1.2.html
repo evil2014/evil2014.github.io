@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.5.1.2 Comparación entre ACL de IPv4 y de IPv6</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.5.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>ACL de IPv6</h1>
+        <h2>Creación de ACL de IPv6</h2>
+      </div>
+      <div id="content">
+<p>Aunque las ACL de IPv4 y de IPv6 son muy similares, hay tres diferencias fundamentales entre ellas. </p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Aplicación de una ACL de IPv6</b>
+</li>
+</ul>
+</p>
+<p></p>
+<p>La primera diferencia es el comando que se utiliza para aplicar una ACL de IPv6 a una interfaz. IPv4 utiliza el comando <span class="cmd"><b>ip access-group</b></span> para aplicar una ACL de IPv4 a una interfaz IPv4. IPv6 utiliza el comando <span class="cmd"><b>ipv6 traffic-filter</b></span> para realizar la misma función para las interfaces IPv6. </p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Ausencia de máscaras wildcard</b>
+</li>
+</ul>
+</p>
+<p></p>
+<p>A diferencia de las ACL de IPv4, las ACL de IPv6 no utilizan máscaras wildcard. En cambio, se utiliza la longitud de prefijo para indicar cuánto de una dirección IPv6 de origen o destino debe coincidir.</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Instrucciones predeterminadas adicionales</b>
+</li>
+</ul>
+</p>
+<p></p>
+<p>La última diferencia principal tiene que ver con la inclusión de dos instrucciones permit implícitas al final de cada lista de acceso de IPv6. Al final de todas las ACL de IPv4 estándar o extendidas, hay una instrucción <span class="cmd"><b>deny any</b></span> o <span class="cmd"><b>deny any any</b></span> implícita. En IPv6 se incluye una instrucción <span class="cmd"><b>deny ipv6 any any</b></span> similar al final de cada ACL de IPv6. La diferencia es que en IPv6 también se incluyen otras dos instrucciones implícitas de manera predeterminada:</p>
+<p>
+<ul>
+<li>
+<span class="cmd">
+<b>permit icmp any any nd-na</b>
+</span>
+</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<span class="cmd">
+<b>permit icmp any any nd-ns</b>
+</span>
+</li>
+</ul>
+</p>
+<p></p>
+<p>Estas dos instrucciones permiten que el router participe en el equivalente de ARP para IPv4 en IPv6. Recuerde que ARP se utiliza en IPv4 para resolver las direcciones de capa 3 a direcciones MAC de capa 2. Como se muestra en la ilustración, en IPv6 se utilizan mensajes ICMP de descubrimiento de vecinos (ND) para lograr el mismo propósito. ND utiliza mensajes de solicitud de vecino (NS) y de anuncio de vecino (NA). </p>
+<p></p>
+<p>Los mensajes ND se encapsulan en paquetes IPv6 y requieren los servicios de la capa de red IPv6, mientras que ARP para IPv4 no utiliza la capa 3. Dado que IPv6 utiliza el servicio de la capa 3 para el descubrimiento de vecinos, las ACL de IPv6 deben permitir implícitamente que los paquetes ND se envíen y reciban por una interfaz. Específicamente, se permiten tanto los mensajes de descubrimiento de vecinos-anuncio de vecino (nd-na) como los de descubrimiento de vecinos-solicitud de vecino (nd-ns).</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.1.2.8 Antenas inalámbricas</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.1.2.8_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Conceptos de tecnología inalámbrica</h1>
+        <h2>Componentes de WLANs</h2>
+      </div>
+      <div id="content">
+<p>La mayoría de los AP de clase empresarial requieren el uso de antenas externas para convertirlas en unidades de funcionamiento pleno. Cisco desarrolló antenas diseñadas específicamente para usar con AP 802.11 y que admiten condiciones de implementación específicas, incluidas la disposición física, la distancia y la estética. </p>
+<p></p>
+<p>Los AP Cisco Aironet pueden usar lo siguiente:</p>
+<p>
+<ul>
+<li>
+<b>Antenas Wi-Fi omnidireccionales:</b> con frecuencia, el engranaje Wi-Fi de fábrica usa antenas dipolos básicas, conocidas como “antenas de goma”, similares a aquellas usadas en las radios walkie-talkie. Las antenas omnidireccionales proporcionan cobertura de 360° y son ideales para áreas de oficinas abiertas, pasillos, salas de conferencias y exteriores.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Antenas Wi-Fi direccionales:</b> las antenas direccionales concentran la señal de radio en un sentido determinado. Esto mejora la señal desde y hasta el AP en el sentido que apunta la antena, lo que proporciona una mayor potencia de señal en un sentido, así como una menor potencia de señal en todos los demás sentidos.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Antenas Yagi:</b> son un tipo de antena de radio direccional que se puede usar para las redes Wi-Fi de larga distancia. Normalmente, estas antenas se usan para extender el alcance de las zonas de cobertura exteriores en un sentido específico o para llegar a un edificio externo. </li>
+</ul>
+</p>
+<p></p>
+<p>En la ilustración, se muestran diversas antenas Cisco de interiores y exteriores. </p>
+<p></p>
+<p>Los estándares IEEE 802.11n/ac/ad usan la tecnología MIMO para aumentar el ancho de banda disponible. Específicamente, MIMO usa varias antenas para intercambiar más datos de los que sería posible intercambiar mediante una única antena. Se pueden usar hasta cuatro antenas para aumentar el rendimiento. </p>
+<p></p>
+<p>
+<b>Nota:</b> no todos los routers inalámbricos son iguales. Por ejemplo, los routers 802.11n básicos admiten un ancho de banda de 150 Mb/s mediante el alcance Wi-Fi y una antena conectada a la unidad. Para admitir velocidades de datos superiores, los routers 802.11n requieren más radios y antenas para administrar más canales de datos en paralelo. Por ejemplo, dos radios y dos antenas en un router 802.11n admiten hasta 300 Mb/s, mientras que para las velocidades de 450 Mb/s y 600 Mb/s se requieren tres y cuatro radios y antenas, respectivamente.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

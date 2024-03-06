@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.2.3.3 Análisis de PAT</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.2.3.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de NAT</h1>
+        <h2>Configuración de la traducción de la dirección del puerto (PAT)</h2>
+      </div>
+      <div id="content">
+<p>El proceso de NAT con sobrecarga es el mismo, ya sea que se utilice un conjunto de direcciones o una única dirección. En el ejemplo anterior de PAT, la PC1 desea comunicarse con el servidor web Svr1 por medio de una única dirección IPv4 pública. Al mismo tiempo, otro cliente, la PC2, desea establecer una sesión similar con el servidor web Svr2. Tanto la PC1 como la PC2 se configuraron con direcciones IPv4 privadas, con el R2 habilitado para PAT.</p>
+<p></p>
+<p>
+<b>Proceso de la computadora al servidor</b>
+</p>
+<p></p>
+<p>1. En la figura 1, se muestra que la PC1 y la PC2 envían paquetes a los servidores Svr1 y Svr2, respectivamente. La PC1 tiene la dirección IPv4 de origen 192.168.10.10 y utiliza el puerto de origen TCP 1444. La PC2 tiene la dirección IPv4 de origen 192.168.10.11 y, por casualidad, se le asigna el mismo puerto de origen 1444.</p>
+<p>2. El paquete de la PC1 llega primero al R2. Mediante el uso de PAT, el R2 modifica la dirección IPv4 de origen a 209.165.200.225 (dirección global interna). En la tabla de NAT, no hay ningún otro dispositivo que use el puerto 1444, de modo que PAT mantiene el mismo número de puerto. El paquete luego se reenvía hacia el Svr1 en 209.165.201.1.</p>
+<p>3. A continuación, llega el paquete de la PC2 al R2. PAT está configurada para utilizar una única dirección IPv4 global interna para todas las traducciones, 209.165.200.225. Al igual que con el proceso de traducción para la PC1, PAT cambia la dirección IPv4 de origen de la PC2 a la dirección global interna 209.165.200.225. Sin embargo, la PC2 tiene el mismo número de puerto de origen que una entrada actual de PAT, la traducción para la PC1. PAT aumenta el número de puerto de origen hasta que sea un valor único en su tabla. En este caso, la entrada del puerto de origen en la tabla de NAT y el paquete de la PC2 reciben el número 1445.</p>
+<p></p>
+<p>Si bien la PC1 y la PC2 usan la misma dirección traducida, la dirección global interna 209.165.200.225, y el mismo número de puerto de origen 1444, el número de puerto modificado para la PC2 (1445) hace que cada entrada en la tabla de NAT sea única. Esto se torna evidente cuando los paquetes se devuelven desde los servidores hacia los clientes.</p>
+<p></p>
+<p>
+<b>Proceso del servidor a la computadora</b>
+</p>
+<p></p>
+<p>4. Como se muestra en la figura 2, en un intercambio típico entre cliente y servidor, los servidores Svr1 y Svr2 responden a las solicitudes recibidas de la PC1 y la PC2, respectivamente. Los servidores usan el puerto de origen del paquete recibido como puerto de destino y la dirección de origen como dirección de destino para el tráfico de retorno. Al parecer, los servidores se comunican con el mismo host en 209.165.200.225, pero no es así.</p>
+<p>5. A medida que llegan los paquetes, el R2 ubica una única entrada en su tabla de NAT mediante la dirección de destino y el puerto de destino de cada paquete. En el caso del paquete del Svr1, la dirección IPv4 de destino 209.165.200.225 tiene varias entradas, pero solo una con el puerto de destino 1444. Mediante la entrada de su tabla, el R2 cambia la dirección IPv4 de destino del paquete a 192.168.10.10, sin necesidad de modificar el puerto de destino. Luego, el paquete se reenvía hacia la PC1.</p>
+<p>6. Cuando llega el paquete del Svr2, el R2 realiza una traducción similar. La dirección IPv4 de destino 209.165.200.225 vuelve a aparecer en varias entradas. Sin embargo, con el puerto de destino 1445, el R2 puede identificar una única entrada de traducción. La dirección IPv4 de destino se modifica a 192.168.10.11. En este caso, el puerto de destino también se debe volver a modificar a su valor original de 1444, que está almacenado en la tabla de NAT. Luego, el paquete se reenvía hacia la PC2.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>3.4.1.1 Actividad de clase: Funcionamiento garantizado</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_3.4.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resumen</h1>
+        <h2>Resumen</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Funcionamiento garantizado</b>
+</p>
+<p></p>
+<p>Acaba de completar el contenido del capítulo 3 con respecto a los protocolos y estándares de red.</p>
+<p></p>
+<p>Suponiendo que resolvió la actividad de creación de modelos que se encuentra al comienzo de este capítulo, ¿cómo compararía los siguientes pasos para diseñar un sistema de comunicaciones con los modelos de redes utilizados para las comunicaciones?</p>
+<p></p>
+<p>
+<ul>
+<li>Establecimiento de un idioma para comunicarse.</li>
+</ul>
+</p>
+<p></p>
+<p>
+<ul>
+<li>División del mensaje en pequeños pasos, entregados poco a poco, para facilitar la comprensión del problema.</li>
+</ul>
+</p>
+<p></p>
+<p>
+<ul>
+<li>Comprobación de la entrega correcta y completa de los datos.</li>
+</ul>
+</p>
+<p></p>
+<p>
+<ul>
+<li>Temporización necesaria para asegurar la comunicación y entrega correcta de los datos.</li>
+</ul>
+</p>
+<p></p>
+<p>
+<a href="../../files/3.4.1.1_Class_Activity_Guaranteed_to_Work_Instructor_Planning_Document.pdf" target="_blank">Actividad de clase: Funcionamiento garantizado Instrucciones</a>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

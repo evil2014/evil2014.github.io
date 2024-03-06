@@ -1,0 +1,48 @@
+﻿<textcomponents>
+<component id="ID_s1_title">
+	<text><![CDATA[<b>Topología OSPF de referencia  </b>]]></text>		
+</component>
+
+<component id="ID_s2_title">
+<text><![CDATA[<b>Verificación de los vecinos OSPF del R1  </b>]]></text>
+</component>
+
+<component id="ID_s3_title">
+<text><![CDATA[<b>Verificación de vecinos OSPF  </b>]]></text>
+</component> <!--SLIDE 1-->
+<component id="ID_s1_txt01">
+	<text><![CDATA[<b>Área 0  </b>]]></text>		
+</component>
+<component id="ID_s1_txt02">
+	<text><![CDATA[<b>Internet  </b>]]></text>		
+</component>
+
+<component id="ID_sc_reset">
+		<text><![CDATA[Restablecer]]></text>
+	</component>
+	<component id="ID_sc_showme">
+		<text><![CDATA[Mostrar]]></text>
+	</component>
+	<component id="ID_sc_showall">
+		<text><![CDATA[Mostrar todo]]></text>
+	</component>
+	
+
+
+<component id="ID_SC2" fontFace='Courier New' fontSize="10">
+		<feedback id="fb"><![CDATA[<b>***  </b><font size='10' face="Arial" color="#0000FF">Debe introducir el comando exacto y completo.</font><b>***  </b> 
+		]]></feedback>		
+		<existingcommands><![CDATA[<font size='10' face="Arial"><b>Muestre la tabla de vecinos OSPF para el R2.  </b></font>]]></existingcommands>
+		<command prompt="R2#">
+		    <correctresponse><![CDATA[show ip ospf neighbor]]></correctresponse>
+			<deviceresponse><![CDATA[<font size='9' face="Courier New"><br>Neighbor ID Pri State Dead Time Address Interface <br>3.3.3.3 0 FULL/ - 00:00:32 192.168.10.10 Serial0/0/1 <br>1.1.1.1 0 FULL/ - 00:00:38 172.16.3.1 Serial0/0/0 <br>R2#</font>]]></deviceresponse> 
+			<instruction><![CDATA[<font size='10' face="Arial"><b>Ahora configure el R3. Muestre la tabla de vecinos OSPF para el R3.  </b>]]></instruction>			
+		</command>
+		<command prompt="R3#">
+		    <correctresponse><![CDATA[show ip ospf neighbor]]></correctresponse>
+			<deviceresponse><![CDATA[<font size='9' face="Courier New"><br>Neighbor ID Pri State Dead Time Address Interface <br>2.2.2.2 0 FULL/ - 00:00:37 192.168.10.9 Serial0/0/1 <br>1.1.1.1 0 FULL/ - 00:00:37 192.168.10.5 Serial0/0/0 <br>R3#</font>]]></deviceresponse> 
+			<instruction><![CDATA[<font size='10' face="Arial" class="syntaxBottomLine"><b>Verificó correctamente los vecinos OSPF.  </b>]]></instruction>
+		</command>
+		<command prompt=""/>
+	</component>
+</textcomponents>

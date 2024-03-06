@@ -1,0 +1,278 @@
+﻿<textcomponents>
+	
+	<component id="ID_s2_title">
+	<text><![CDATA[<b>Terminación de la sesión TCP (FIN)</b>]]></text>
+	</component>
+	
+	<component id="ID_s3_title">
+	<text><![CDATA[<b>Terminación de la sesión TCP (ACK)</b>]]></text>
+	</component>
+	
+	<component id="ID_s2_text01">
+	<text><![CDATA[<textformat blockindent="-14"><li>Un analizador de protocolo muestra los detalles de la trama 16, solicitud TCP FIN.</li></textformat>]]></text>
+	</component>
+	
+	
+	<component id="ID_s3_text01">
+	<text><![CDATA[<textformat blockindent="-12"><li>Un analizador de protocolo muestra los detalles de la trama 17, respuesta TCP ACK.</li></textformat>]]></text>
+	</component>
+	
+	
+
+<component id="ID_title">
+<text><![CDATA[<b>Establecimiento y finalización de la conexión TCP</b>]]></text> 
+</component>
+<component id="ID_btn01">
+<text><![CDATA[Restablecer]]></text>
+</component>
+<component id="ID_btn02">
+  <text><![CDATA[1]]></text> 
+  </component>
+<component id="ID_btn03">
+  <text><![CDATA[2]]></text> 
+  </component>
+  
+  <component id="ID_btn04">
+<text><![CDATA[3]]></text>
+</component>
+<component id="ID_btn05">
+  <text><![CDATA[1]]></text> 
+  </component>
+  
+  <component id="ID_btn06">
+  <text><![CDATA[2]]></text> 
+  </component>
+  
+  <component id="ID_btn07">
+  <text><![CDATA[3]]></text> 
+  </component>
+  
+  <component id="ID_btn08">
+  <text><![CDATA[4]]></text> 
+  </component>
+  
+  <component id="ID_btn09">
+  <text><![CDATA[Finalizar]]></text> 
+  </component>
+  
+  <component id="ID_txt01">
+<text><![CDATA[SYN ACK]]></text> 
+</component>
+
+<component id="ID_txt02">
+<text><![CDATA[FIN ACK]]></text> 
+</component> 
+
+ <component id="ID_txt03">
+<text><![CDATA[<b>A</b>]]></text> 
+</component>
+
+<component id="ID_txt04">
+<text><![CDATA[<b>B</b>]]></text> 
+</component> <!-- slide 1 -->
+<component id="ID_s1_txt02">
+<text><![CDATA[Enviar SYN]]></text> 
+</component>
+
+<component id="ID_s1_txt03">
+<text><![CDATA[(SEC=100 CTL=SYN)]]></text> 
+</component>
+
+<component id="ID_s1_txt04">
+<text><![CDATA[SYN recibido]]></text> 
+</component>
+
+<component id="ID_s1_txt05">
+<text><![CDATA[CTL&nbsp;=&nbsp;Bits de control establecidos en 1 en el encabezado TCP<br/>A envía una solicitud SYN a B.]]></text> 
+</component> <!-- slide 2 -->
+<component id="ID_s2_txt02">
+<text><![CDATA[Enviar SYN]]></text> 
+</component>
+
+<component id="ID_s2_txt03">
+<text><![CDATA[(SEC=100 CTL=SYN)]]></text> 
+</component>
+
+<component id="ID_s2_txt04">
+<text><![CDATA[SYN recibido]]></text> 
+</component>
+
+<component id="ID_s2_txt05">
+<text><![CDATA[SYN, ACK recibidos]]></text> 
+</component>
+
+<component id="ID_s2_txt06">
+<text><![CDATA[Enviar SYN, ACK]]></text> 
+</component>
+
+
+<component id="ID_s2_txt08">
+<text><![CDATA[(SEC=300 ACK=101 CTL=SYN, ACK)]]></text> 
+</component>
+
+<component id="ID_s2_txt09">
+<text><![CDATA[CTL&nbsp;=&nbsp;Bits de control establecidos en 1 en el encabezado TCP<br/>B envía una respuesta ACK y una solicitud SYN a A.]]></text> 
+</component> <!-- slide 3 -->
+
+<component id="ID_s3_txt02">
+<text><![CDATA[Enviar SYN]]></text> 
+</component>
+
+<component id="ID_s3_txt03">
+<text><![CDATA[(SEC=100 CTL=SYN)]]></text> 
+</component>
+
+<component id="ID_s3_txt04">
+<text><![CDATA[ʺSYN, ACK recibidos]]></text> 
+</component>
+
+<component id="ID_s3_txt05">
+<text><![CDATA[3]]></text> 
+</component>
+
+<component id="ID_s3_txt06">
+<text><![CDATA[Establecido]]></text> 
+</component>
+
+<component id="ID_s3_txt07">
+<text><![CDATA[(SEC=101 ACK=301 CTL=ACK)]]></text> 
+</component>
+
+<component id="ID_s3_txt08">
+<text><![CDATA[SYN recibido]]></text> 
+</component>
+
+<component id="ID_s3_txt09">
+<text><![CDATA[Enviar SYN, ACK]]></text> 
+</component>
+
+<component id="ID_s3_txt10">
+<text><![CDATA[2]]></text> 
+</component>
+
+<component id="ID_s3_txt11">
+<text><![CDATA[(SEC=300 ACK=101 CTL=SYN, ACK)]]></text> 
+</component>
+
+<component id="ID_s3_txt12">
+<text><![CDATA[CTL&nbsp;=&nbsp;Bits de control establecidos en 1 en el encabezado TCP<br/>A envía una respuesta ACK a B.]]></text> 
+</component> <!-- slide 4 -->
+
+<component id="ID_s4_txt02">
+<text><![CDATA[Enviar FIN]]></text> 
+</component>
+
+<component id="ID_s4_txt03">
+<text><![CDATA[FIN recibido]]></text> 
+</component>
+
+<component id="ID_s4_txt04">
+<text><![CDATA[A envía una solicitud FIN a B.]]></text> 
+</component> <!-- slide 5 -->
+
+
+<component id="ID_s5_txt02">
+<text><![CDATA[Enviar FIN]]></text> 
+</component>
+
+<component id="ID_s5_txt03">
+<text><![CDATA[ACK recibido]]></text> 
+</component>
+
+<component id="ID_s5_txt04">
+<text><![CDATA[FIN recibido]]></text> 
+</component>
+
+<component id="ID_s5_txt05">
+<text><![CDATA[Enviar ACK]]></text> 
+</component>
+
+<component id="ID_s5_txt06">
+<text><![CDATA[2]]></text> 
+</component>
+
+<component id="ID_s5_txt07">
+<text><![CDATA[B envía una respuesta ACK a A.]]></text> 
+</component> <!-- slide 6 -->
+
+<component id="ID_s6_txt02">
+<text><![CDATA[Enviar FIN]]></text> 
+</component>
+
+<component id="ID_s6_txt03">
+<text><![CDATA[ACK recibido]]></text> 
+</component>
+
+<component id="ID_s6_txt04">
+<text><![CDATA[FIN recibido]]></text> 
+</component>
+
+<component id="ID_s6_txt05">
+<text><![CDATA[FIN recibido]]></text> 
+</component>
+
+<component id="ID_s6_txt06">
+<text><![CDATA[Enviar ACK]]></text> 
+</component>
+
+
+<component id="ID_s6_txt08">
+<text><![CDATA[Enviar FIN]]></text> 
+</component>
+
+<component id="ID_s6_txt09">
+<text><![CDATA[3]]></text> 
+</component>
+
+<component id="ID_s6_txt10">
+<text><![CDATA[B envía FIN a A.]]></text> 
+</component> <!-- slide 7 -->
+
+
+<component id="ID_s7_txt02">
+<text><![CDATA[Enviar FIN]]></text> 
+</component>
+
+<component id="ID_s7_txt03">
+<text><![CDATA[ACK recibido]]></text> 
+</component>
+
+<component id="ID_s7_txt04">
+<text><![CDATA[FIN recibido]]></text> 
+</component>
+
+
+
+<component id="ID_s7_txt06">
+<text><![CDATA[Enviar ACK]]></text> 
+</component>
+
+<component id="ID_s7_txt07">
+<text><![CDATA[FIN recibido]]></text> 
+</component>
+
+<component id="ID_s7_txt08">
+<text><![CDATA[Enviar ACK]]></text> 
+</component>
+
+
+
+<component id="ID_s7_txt10">
+<text><![CDATA[Enviar FIN]]></text> 
+</component>
+
+
+
+<component id="ID_s7_txt12">
+<text><![CDATA[ACK recibido]]></text> 
+</component>
+
+<component id="ID_s7_txt13">
+<text><![CDATA[A envía una respuesta ACK a B.]]></text> 
+</component> <!-- slide 8 -->
+
+<component id="ID_s8_txt01">
+<text><![CDATA[Sesión finalizada]]></text> 
+</component>
+
+</textcomponents>

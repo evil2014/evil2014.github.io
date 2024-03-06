@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.1.2.1 Procedimientos generales de resolución de problemas</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.1.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resolución de problemas mediante un enfoque sistemático</h1>
+        <h2>Proceso de resolución de problemas</h2>
+      </div>
+      <div id="content">
+<p>La resolución de problemas ocupa gran parte del tiempo de los administradores de red y del personal de soporte. Al trabajar en un entorno de producción, el uso de técnicas eficaces de resolución de problemas reduce el tiempo total dedicado a esta tarea. Hay tres etapas principales en el proceso de resolución de problemas: </p>
+<p></p>
+<p>
+<b>Etapa 1. Recolección de síntomas:</b> la resolución de problemas comienza con la recolección y el registro de los síntomas de la red, los sistemas finales y los usuarios. Además, el administrador de red determina qué componentes de la red se vieron afectados y de qué forma cambió la funcionalidad de la red en comparación con la línea de base. Los síntomas pueden aparecer de distintas maneras, que incluyen alertas del sistema de administración de red, mensajes de la consola y quejas de los usuarios. Mientras se recolectan los síntomas, es importante que el administrador de red realice preguntas e investigue el problema para restringirlo a una variedad de posibilidades más reducida. Por ejemplo, ¿el problema se limita a un único dispositivo, un grupo de dispositivos, una subred completa o una red de dispositivos?</p>
+<p></p>
+<p>
+<b>Etapa 2. Aislamiento del problema:</b> el aislamiento es el proceso mediante el que se eliminan variables hasta que se identifica como la causa a un único problema o a un conjunto de problemas relacionados. Para realizar esto, el administrador de red examina las características de los problemas en las capas lógicas de la red para poder seleccionar la causa más probable. En esta etapa, el administrador de red puede recopilar y registrar más síntomas, según las características que se identifiquen.</p>
+<p></p>
+<p>
+<b>Etapa 3. Implementación de la medida correctiva:</b> una vez que se identificó la causa del problema, el administrador de red trabaja para corregir el problema mediante la implementación, la puesta a prueba y el registro de posibles soluciones. Después de encontrar el problema y determinar una solución, es posible que el administrador de red deba decidir si la solución se puede implementar inmediatamente o si se debe posponer. Esto depende del impacto de los cambios en los usuarios y en la red. La gravedad del problema se debe ponderar en comparación con el impacto de la solución. Por ejemplo, si un servidor o un router fundamentales deben permanecer sin conexión durante una cantidad significativa de tiempo, tal vez sea mejor esperar hasta el final del día de trabajo para implementar la solución. A veces, se puede crear una solución alternativa hasta que se resuelva el problema real. Por lo general, esto forma parte de los procedimientos de control de cambios de una red.</p>
+<p></p>
+<p>Si la medida correctiva no soluciona el problema o genera otro nuevo, se registra la solución probada, se eliminan los cambios y el administrador de red vuelve a recolectar síntomas y a aislar el problema.</p>
+<p></p>
+<p>Estas etapas no son mutuamente excluyentes. En cualquier parte del proceso, es posible que sea necesario volver a las etapas anteriores. Por ejemplo, es posible que el administrador de red necesite recolectar más síntomas mientras aísla un problema. Además, cuando se intenta corregir un problema, se puede generar otro. En este caso, se deben eliminar los cambios y comenzar la resolución de problemas nuevamente. </p>
+<p></p>
+<p>Para cada etapa, se debe establecer una política de resolución de problemas que incluya procedimientos de control de cambios. Una política proporciona una forma coherente de llevar a cabo cada etapa. Parte de la política debe incluir el registro de cada dato importante. </p>
+<p></p>
+<p>
+<b>Nota:</b> comunique que el problema se resolvió a los usuarios y a cualquier persona involucrada en el proceso de resolución de problemas. La solución se debe informar a los otros miembros del equipo de TI. El registro adecuado de la causa y la solución ayudan a otros técnicos de soporte a prevenir y resolver problemas similares en el futuro.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

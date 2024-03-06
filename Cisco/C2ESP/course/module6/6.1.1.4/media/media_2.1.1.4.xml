@@ -1,0 +1,86 @@
+﻿<textcomponents> <!-- instructions -->
+<component id="ID_inst">
+	<text><![CDATA[<b>Actividad: identificar las ventajas y desventajas del routing estático  </b><br><br>Determine si los descriptores de routing estático son ventajas o desventajas de este tipo de routing. <br><br>Haga clic en el campo apropiado junto a cada descriptor para indicar las respuestas.]]></text>
+</component> <!-- buttons -->
+<component id="ID_Button01">
+	<text><![CDATA[<b>Verificar  </b>]]></text>
+</component>
+
+<component id="ID_Button02">
+	<text><![CDATA[<b>Restablecer  </b>]]></text>
+</component> <!--Number of rows in the table-->
+<component id="txt_numrows">
+	<text><![CDATA[6]]></text>
+</component> <!--Number of columns for the answers in the table. Do not count the question column-->
+<component id="txt_numcols">
+	<text><![CDATA[2]]></text>
+</component> <!--Answer column headers-->
+<component id="txt_col1">
+	<text><![CDATA[<b>Beneficios  </b>]]></text>
+</component>
+
+<component id="txt_col2">
+	<text><![CDATA[<b>Desventajas  </b>]]></text>
+</component> <!--Question text - blockindent code moves the text away from the left edge a bit--> <!--Question text - If questions are numbered, use blockindent for hanging indents-->
+<component id="txt_q1">
+	<text><![CDATA[La complejidad de la configuración aumenta con el tamaño de la red.]]></text>
+</component>
+
+<component id="txt_q2">
+	<text><![CDATA[No se necesitan recursos adicionales (CPU, ancho de banda, etc.).]]></text>
+</component>
+
+<component id="txt_q3">
+	<text><![CDATA[Los cambios en la topología afectan la configuración.]]></text>
+</component>
+
+<component id="txt_q4">
+	<text><![CDATA[La ruta al destino siempre es la misma.]]></text>
+</component>
+
+<component id="txt_q5">
+	<text><![CDATA[Las tablas de routing son pequeñas y el mantenimiento es mínimo.]]></text>
+</component>
+
+<component id="txt_q6">
+	<text><![CDATA[No se realizarán actualizaciones automáticas a la tabla de routing si la topología se modifica.]]></text>
+</component> <!--Answers - Give the column number(s), column numbering start with 1 not 0--> <!--Answers - For MCMA separate the correct answers with commas [2, 4, 5] -->
+<component id="txt_a1">
+	<text><![CDATA[2]]></text>
+</component>
+
+<component id="txt_a2">
+	<text><![CDATA[1]]></text>
+</component>
+
+<component id="txt_a3">
+	<text><![CDATA[2]]></text>
+</component>
+
+<component id="txt_a4">
+	<text><![CDATA[1]]></text>
+</component>
+
+<component id="txt_a5">
+	<text><![CDATA[1]]></text>
+</component>
+
+<component id="txt_a6">
+	<text><![CDATA[2]]></text>
+</component> <!-- Correct Feedback -->
+<component id="ID_titleCorrect">
+	<text><![CDATA[<b>Correcto  </b>]]></text>
+</component>
+
+<component id="ID_correctText">
+	<text><![CDATA[Identificó correctamente las ventajas y desventajas del routing estático.]]></text>
+</component> <!-- Incorrect Feedback -->
+<component id="ID_titleIncorrect">
+	<text><![CDATA[<b>Incorrecto  </b>]]></text>
+</component>
+
+<component id="ID_IncorrectText">
+	<text><![CDATA[No identificó correctamente las ventajas y desventajas del routing estático. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+</textcomponents>

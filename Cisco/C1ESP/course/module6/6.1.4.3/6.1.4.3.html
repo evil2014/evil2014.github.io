@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.1.4.3 Encapsulación de IPv6</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.1.4.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolos de la capa de red</h1>
+        <h2>Paquete de IPv6</h2>
+      </div>
+      <div id="content">
+<p>Una de las principales mejoras de diseño de IPv6 con respecto a IPv4 es el encabezado de IPv6 simplificado. </p>
+<p></p>
+<p>El encabezado de IPv4 consta de 20 octetos (hasta 60 bytes si se utiliza el campo Opciones) y 12 campos de encabezado básicos, sin incluir los campos Opciones y Relleno.</p>
+<p></p>
+<p>El encabezado de IPv6 consta de 40 octetos (en gran medida, debido a la longitud de las direcciones IPv6 de origen y de destino) y 8 campos de encabezado (3 campos de encabezado IPv4 básicos y 5 campos de encabezado adicionales).</p>
+<p></p>
+<p>En la figura 1, se muestra la estructura del encabezado de IPv4. Como se muestra en la ilustración, en IPv6 algunos campos permanecen iguales, algunos campos del encabezado de IPv4 no se utilizan, y algunos campos tienen nombres y posiciones diferentes. </p>
+<p></p>
+<p>Además, se agregó un nuevo campo a IPv6 que no se utiliza en IPv4. El encabezado de IPv6 simplificado se muestra en la figura 2.</p>
+<p></p>
+<p>El encabezado de IPv6 simplificado ofrece varias ventajas respecto de IPv4: </p>
+<p>
+<ul>
+<li>Mayor eficacia de enrutamiento para un buen rendimiento y una buena escalabilidad de velocidad de reenvío.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Sin requisito de procesamiento de checksums.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Mecanismos de encabezado de extensión simplificados y más eficaces (en comparación con el campo Opciones de IPv4).</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Un campo Identificador de flujo para procesamiento por flujo, sin necesidad de abrir el paquete interno de transporte para identificar los distintos flujos de tráfico.</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

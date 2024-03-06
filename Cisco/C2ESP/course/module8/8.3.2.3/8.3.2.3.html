@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.3.2.3 Asignación de direcciones link-local</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.3.2.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de OSPFv3 de área única</h1>
+        <h2>Configuración de OSPFv3</h2>
+      </div>
+      <div id="content">
+<p>Las direcciones link-local creadas con el formato EUI-64 o, en algunos casos, con ID de interfaz aleatorias hacen que resulte difícil reconocer y recordar esas direcciones. Debido a que los protocolos de routing IPv6 utilizan direcciones IPv6 link-local para el direccionamiento de unidifusión y la información de dirección de siguiente salto en la tabla de routing, es habitual hacer que sea una dirección fácil de reconocer. </p>
+<p></p>
+<p>Configurar la dirección link-local de forma manual permite crear una dirección reconocible y más fácil de recordar. Además, un router con varias interfaces puede asignar la misma dirección link-local a cada interfaz IPv6. Esto se debe a que la dirección link-local solo se requiere para las comunicaciones locales. </p>
+<p></p>
+<p>Las direcciones link-local pueden configurarse de forma manual con el mismo comando de interfaz que se usa para crear direcciones IPv6 de unidifusión global, pero agregando la palabra clave <span class="cmd"><b>link-local</b></span> al comando <span class="cmd"><b>ipv6 address</b></span>. </p>
+<p></p>
+<p>Una dirección link-local tiene un prefijo dentro del rango FE80 a FEBF. Cuando una dirección comienza con este hexteto (segmento de 16 bits), la palabra clave <span class="cmd"><b>link-local</b></span> debe seguir la dirección. </p>
+<p></p>
+<p>En el ejemplo de la figura 1, se configura la misma dirección link-local FE80::1 en las tres interfaces del R1. Se eligió FE80::1 para que las direcciones link-local del R1 sean fáciles de recordar. </p>
+<p></p>
+<p>Con una vista rápida de las interfaces como se muestran en la figura 2, se confirma que las direcciones link-local de las interfaces del R1 se cambiaron a FE80::1.</p>
+<p></p>
+<p>Utilice el verificador de sintaxis de la figura 3 para configurar y verificar la dirección link-local FE80::2 en el R2 y la dirección link-local FE80::3 en el R3.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

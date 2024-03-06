@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.1.1.1 Redundancia en las capas 1 y 2 del modelo OSI</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.1.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Conceptos de árbol de expansión</h1>
+        <h2>Propósito del árbol de expansión</h2>
+      </div>
+      <div id="content">
+<p>El diseño de red jerárquico de tres niveles, que utiliza las capas de núcleo, de distribución y de acceso con redundancia, intenta eliminar un único punto de falla en la red. Varias rutas conectadas por cables entre switches proporcionan redundancia física en una red conmutada. Esto mejora la confiabilidad y la disponibilidad de la red. Tener rutas físicas alternativas para que los datos atraviesen la red permite que los usuarios accedan a los recursos de red, a pesar de las interrupciones de la ruta.</p>
+<p></p>
+<p>Haga clic en el botón Reproducir de la figura 1 para ver una animación acerca de la redundancia. </p>
+<p></p>
+<p>1. La PC1 se comunica con la PC4 a través de una topología de red redundante.</p>
+<p></p>
+<p>2. Cuando se interrumpe el enlace de red entre el S1 y el S2, la ruta entre la PC1 y la PC4 se ajusta automáticamente para compensar la interrupción. </p>
+<p></p>
+<p>3. Cuando se restaura la conexión de red entre el S1 y el S2, la ruta se vuelve a ajustar para enrutar el tráfico directamente del S2 al S1 para llegar a la PC4.</p>
+<p></p>
+<p>Para la mayoría de las organizaciones, la disponibilidad de la red es fundamental para cumplir con las necesidades empresariales; por lo tanto, el diseño de la infraestructura de red es un elemento crucial para empresas. La redundancia de rutas es una solución para proporcionar la disponibilidad necesaria de varios servicios de red mediante la eliminación de la posibilidad de un único punto de falla.</p>
+<p></p>
+<p>
+<b>Nota:</b> la redundancia en la capa 1 del modelo OSI se representa mediante el uso de varios enlaces y dispositivos, pero se necesita más que solo la planificación física para completar la configuración de la red. Para que la redundancia funcione de forma sistemática, también se deben utilizar protocolos de capa 2 del modelo OSI, como STP.</p>
+<p></p>
+<p>La redundancia es una parte importante del diseño jerárquico para evitar que se interrumpa la entrega de los servicios de red a los usuarios. Las redes redundantes requieren la adición de rutas físicas, pero la redundancia lógica también debe formar parte del diseño. Sin embargo, las rutas redundantes en una red Ethernet conmutada pueden causar bucles físicos y lógicos en la capa 2. </p>
+<p></p>
+<p>Los bucles físicos en la capa 2 pueden ocurrir como consecuencia del funcionamiento normal de los switches, en especial, del proceso de descubrimiento y reenvío. Cuando existen varias rutas entre dos dispositivos en una red y no se implementan protocolos de árbol de expansión en los switches, ocurre un bucle en la capa 2. Un bucle en la capa 2 puede provocar tres problemas principales, como se indica en la figura 2. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

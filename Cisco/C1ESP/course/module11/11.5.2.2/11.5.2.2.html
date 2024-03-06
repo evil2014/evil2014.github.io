@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>11.5.2.2 Habilitación de la conectividad inalámbrica</title>
+    <!--  -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_11.5.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Servicios de enrutamiento integrados</h1>
+        <h2>Configuración del router integrado</h2>
+      </div>
+      <div id="content">
+<p>Para habilitar la conectividad inalámbrica, se debe configurar el modo inalámbrico, el SSID, el canal de RF y cualquier mecanismo de encriptación de seguridad deseado.</p>
+<p></p>
+<p>Primero, seleccione el modo inalámbrico correcto, como se muestra en la ilustración. Al seleccionar el modo, o el estándar inalámbrico, cada modo incluye una sobrecarga determinada. Si todos los dispositivos en la red utilizan el mismo estándar, seleccionar el modo asociado a ese estándar limita la cantidad de sobrecarga que se genera. También aumenta la seguridad, dado que no permite que se conecten dispositivos con estándares diferentes. No obstante, si necesitan acceder a la red dispositivos que utilizan estándares diferentes, se debe seleccionar el modo mixto. El rendimiento de la red disminuirá debido a la sobrecarga adicional ocasionada por admitir todos los modos. </p>
+<p></p>
+<p>A continuación, establezca el SSID. Todos los dispositivos que deseen participar en la WLAN deben tener el mismo SSID. Por cuestiones de seguridad, se debe modificar el SSID predeterminado. Para permitir que los clientes detecten la WLAN fácilmente, se transmite el SSID de manera predeterminada. Se puede deshabilitar la característica de transmisión del SSID. Si no se transmite el SSID, los clientes inalámbricos necesitarán configurar este valor manualmente.</p>
+<p></p>
+<p>El canal de RF utilizado para el router integrado se debe elegir teniendo en cuenta las demás redes inalámbricas que se encuentren alrededor.</p>
+<p>Las redes inalámbricas adyacentes deben utilizar canales que no se superpongan, a fin de optimizar el rendimiento. La mayoría de los puntos de acceso ahora ofrecen una opción para permitir que el router localice automáticamente el canal menos congestionado.</p>
+<p></p>
+<p>Por último, seleccione el mecanismo de encriptación que prefiera e introduzca una clave o una frase de contraseña.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

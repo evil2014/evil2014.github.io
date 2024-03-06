@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.3.1.2 Tabla de topología de EIGRP</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.3.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1> Funcionamiento de EIGRP</h1>
+        <h2>Detección inicial de rutas EIGRP</h2>
+      </div>
+      <div id="content">
+<p>Las actualizaciones de EIGRP contienen redes a las que se puede llegar desde el router que envía la actualización. A medida que se intercambian actualizaciones EIGRP entre vecinos, el router receptor agrega esas entradas a su tabla de topología de EIGRP. </p>
+<p></p>
+<p>Cada router EIGRP mantiene una tabla de topología para cada protocolo de routing configurado, como IPv4 e IPv6. La tabla de topología incluye las entradas de ruta para cada destino que el router descubre de sus vecinos EIGRP conectados directamente. </p>
+<p></p>
+<p>En la ilustración, se muestra la continuación del proceso inicial de descubrimiento de rutas de la página anterior. Ahora, se muestra la actualización de la tabla de topología. </p>
+<p></p>
+<p>Cuando un router recibe una actualización de routing EIGRP, agrega la información de routing a su tabla de topología de EIGRP y responde con un acuse de recibo EIGRP. </p>
+<p></p>
+<p>1. El R1 recibe la actualización de EIGRP del vecino R2 e incluye información acerca de las rutas que anuncia el vecino, incluida la métrica a cada destino. El R1 agrega todas las entradas de actualización a su tabla de topología. La tabla de topología incluye todos los destinos anunciados por los routers vecinos (adyacentes) y el costo (métrica) para llegar a cada red.</p>
+<p></p>
+<p>2. Los paquetes de actualización EIGRP utilizan entrega confiable; por lo tanto, el R1 responde con un paquete de acuse de recibo EIGRP que informa al R2 que recibió la actualización.</p>
+<p></p>
+<p>3. El R1 envía una actualización de EIGRP al R2 en la que anuncia las redes que conoce, excepto aquellas descubiertas del R2 (horizonte dividido).</p>
+<p></p>
+<p>4. El R2 recibe la actualización de EIGRP del vecino R1 y agrega esta información a su propia tabla de topología.</p>
+<p></p>
+<p>5. El R2 responde al paquete de actualización EIGRP del R1 con un acuse de recibo EIGRP. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

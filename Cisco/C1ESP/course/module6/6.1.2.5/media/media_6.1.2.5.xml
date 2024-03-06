@@ -1,0 +1,65 @@
+﻿<textcomponents>		
+	<component id="ID_title">
+		<text><![CDATA[<b>Generación de paquetes IP</b>]]></text> 
+	</component>	
+	<component id="ID_txt01">
+		<text><![CDATA[Encapsulación de la capa de transporte]]></text>
+	</component>	
+	<component id="ID_txt02">
+		<text><![CDATA[Encabezado<br/>del segmento]]></text> 
+	</component>	
+	<component id="ID_txt03">
+		<text><![CDATA[Datos]]></text> 
+	</component>	
+	<component id="ID_txt04">
+		<text><![CDATA[PDU de la capa de transporte]]></text> 
+	</component>	
+	<component id="ID_txt05">
+		<text><![CDATA[La capa de transporte agrega un encabezado para que los segmentos puedan volver a armarse en el destino.]]></text> 
+	</component>	
+	<component id="ID_txt06">
+		<text><![CDATA[Encapsulación de la capa de transporte]]></text> 
+	</component>	
+	<component id="ID_txt07">
+		<text><![CDATA[Encabezado del segmento]]></text> 
+	</component>	
+	<component id="ID_txt08">
+		<text><![CDATA[Datos]]></text> 
+	</component>	
+	<component id="ID_txt09">
+		<text><![CDATA[Encapsulación de la capa de red]]></text> 
+	</component>	
+	<component id="ID_txt10">
+		<text><![CDATA[Encabezado IP]]></text> 
+	</component>	
+	<component id="ID_txt11">
+		<text><![CDATA[PDU de la capa de transporte]]></text> 
+	</component>	
+	<component id="ID_txt12">
+		<text><![CDATA[PDU de la capa de red]]></text> 
+	</component>	
+	<component id="ID_txt13">
+		<text><![CDATA[La capa de red agrega un encabezado para que los paquetes puedan enrutarse a través de redes complejas y lleguen al destino. En las redes basadas en TCP/IP, la PDU de la capa de red es el paquete IP.]]></text> 
+	</component>	
+	<component id="ID_txt14">
+		<text><![CDATA[Encapsulación de la capa de transporte]]></text> 
+	</component>	
+	<component id="ID_txt15">
+		<text><![CDATA[Encabezado del segmento]]></text> 
+	</component>	
+	<component id="ID_txt16">
+		<text><![CDATA[Datos]]></text> 
+	</component>	
+	<component id="ID_txt17">
+		<text><![CDATA[Encapsulación de la capa de red]]></text> 
+	</component>	
+	<component id="ID_txt18">
+		<text><![CDATA[Encabezado IP]]></text> 
+	</component>	
+	<component id="ID_txt19">
+		<text><![CDATA[PDU de la capa de transporte]]></text> 
+	</component>	
+	<component id="ID_txt20">
+		<text><![CDATA[Paquete IP]]></text> 
+	</component>
+</textcomponents>

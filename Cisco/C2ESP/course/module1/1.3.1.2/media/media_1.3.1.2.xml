@@ -1,0 +1,82 @@
+﻿<textcomponents> <!--Slide 1-->
+	<component id="ID_title">
+		<text><![CDATA[<b>Configuración básica del switch  </b>]]></text>
+	</component>
+
+
+	<component id="ID_sc_reset">
+		<text><![CDATA[<b>Restablecer  </b>]]></text>
+	</component>
+	
+	<component id="ID_sc_showme">
+		<text><![CDATA[<b>Mostrar  </b>]]></text>
+	</component>
+	
+	<component id="ID_sc_showall">
+		<text><![CDATA[<b>Mostrar todo  </b>]]></text>
+	</component>
+
+	
+	<component id="ID_SC5" fontFace='Courier New' fontSize="10">
+		<feedback id="fb"><![CDATA[<b><font size='10' face="Arial" color="#0000FF">***Debe introducir el comando exacto y completo. Los comandos que incluyen un nombre o una contraseña distinguen mayúsculas de minúsculas.***</font>  </b>
+		]]></feedback>
+		<existingcommands><![CDATA[<font size='10' face="Arial"><b>En esta actividad con verificador de sintaxis, se revisa la configuración básica del switch del primer curso. <br>Configure el switch con el nombre de host “HQSw1”.  </b></font>]]></existingcommands>
+		<command prompt="Switch#">
+		    <correctresponse><![CDATA[configure terminal]]></correctresponse>
+		</command>
+		<command prompt="Switch(config)#">
+		    <correctresponse><![CDATA[hostname HQSw1]]></correctresponse>
+			<instruction><![CDATA[<font size='10' face="Arial"><b>Configure la contraseña cifrada “class” para el modo EXEC privilegiado.  </b></font>]]></instruction>
+		</command>
+		<command prompt="HQSw1(config)#">
+		    <correctresponse><![CDATA[enable secret class]]></correctresponse>
+			<instruction><![CDATA[<font size='10' face="Arial"><b>Establezca la contraseña “cisco” para todas las líneas, de modo que se requiera iniciar sesión, comenzando por la línea de consola. Establezca las líneas vty de 0 a 15.  </b></font>]]></instruction>
+		</command>
+		<command prompt="HQSw1(config)#">
+		    <correctresponse><![CDATA[line console 0]]></correctresponse>
+		</command>
+		<command prompt="HQSw1(config-line)#">
+		    <correctresponse><![CDATA[password cisco]]></correctresponse>
+		</command>
+		<command prompt="HQSw1(config-line)#">
+		    <correctresponse><![CDATA[login]]></correctresponse>
+		</command>
+		<command prompt="HQSw1(config-line)#">
+		    <correctresponse><![CDATA[line vty 0 15]]></correctresponse>
+		</command>
+		<command prompt="HQSw1(config-line)#">
+		    <correctresponse><![CDATA[password cisco]]></correctresponse>
+		</command>
+		<command prompt="HQSw1(config-line)#">
+		    <correctresponse><![CDATA[login]]></correctresponse>
+			<instruction><![CDATA[<font size='10' face="Arial"><b>Introduzca el comando para encriptar las contraseñas de texto no cifrado.  </b></font>]]></instruction>
+		</command>
+		<command prompt="HQSw1(config-line)#">
+  <correctresponse><![CDATA[exit]]></correctresponse>
+		</command>
+		<command prompt="HQSw1(config)#">
+		    <correctresponse><![CDATA[service password-encryption]]></correctresponse>
+			<instruction><![CDATA[<font size='10' face="Arial"><b>Configure la VLAN 1 con la dirección IP 192.168.10.2/24 y active la interfaz.  </b></font>]]></instruction>
+		</command>
+		<command prompt="HQSw1(config)#">
+		    <correctresponse><![CDATA[interface vlan 1:]]></correctresponse>
+		</command>
+		<command prompt="HQSw1(config-if)#">
+		    <correctresponse><![CDATA[ip address 192.168.10.2 255.255.255.0:]]></correctresponse>
+		</command>
+		<command prompt="HQSw1(config-if)#">
+		    <correctresponse><![CDATA[no shutdown:]]></correctresponse>
+			<deviceresponse><![CDATA[%LINK-5-CHANGED: Interface Vlan1, changed state to up]]></deviceresponse>
+			<instruction><![CDATA[<font size='10' face="Arial"><b>Vuelva directamente al modo EXEC privilegiado y muestre la configuración actual.  </b></font>]]></instruction>
+		</command>
+		<command prompt="HQSw1(config-if)#">
+		    <correctresponse><![CDATA[end]]></correctresponse>
+		</command>
+		<command prompt="HQSw1#">
+		    <correctresponse><![CDATA[show running-configuration]]></correctresponse>
+			<deviceresponse><![CDATA[Building configuration...  <br> <br>Current configuration : 1178&nbsp;bytes <br>!  <br>version 12.2 <br>no service timestamps log datetime msec <br>no service timestamps debug datetime msec <br>service password-encryption <br>!  <br>hostname HQSw1 <br>!  <br>enable secret 5 $1$mERr$9cTjUIEqNGurQiFU.ZeCi1 <br>!  <br>!  <br>&lt; resultado omitido &gt;<br>!  <br>!  <br>interface Vlan1 <br> ip address 192.168.10.2 255.255.255.0: <br>!  <br>!  <br>line con 0 <br> password 7 0822455D0A16 <br> login <br>!  <br>line vty 0 4 <br> password 7 0822455D0A16 <br> login <br>line vty 5 15 <br> password 7 0822455D0A16 <br> login <br>!  <br>!  <br>end<br>HQSw1#]]></deviceresponse>
+			<instruction><![CDATA[<font size='10' face="Arial"  class="syntaxBottomLine"><b>Completó correctamente la configuración básica del switch HQSw1.  </b></font>]]></instruction>
+		</command>
+		<command prompt=""/>
+	</component>
+</textcomponents>

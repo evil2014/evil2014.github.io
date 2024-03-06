@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.3.2.5 Provisión de QoS</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.3.2.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>La red como plataforma</h1>
+        <h2>Red confiable</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Calidad de servicio</b>
+</p>
+<p></p>
+<p>La calidad de servicio (QoS, Quality of Service) también es un requisito cada vez más importante para las redes hoy en día. Las nuevas aplicaciones disponibles para los usuarios en internetworks, como las transmisiones de voz y de video en vivo, que se muestran en la figura 1, generan expectativas más altas sobre la calidad de los servicios que se proporcionan. ¿Alguna vez intentó mirar un video con interrupciones y pausas constantes?</p>
+<p></p>
+<p>Las redes deben proporcionar servicios predecibles, mensurables y, en ocasiones, garantizados. La arquitectura de red conmutada por paquetes no garantiza que todos los paquetes que conforman un mensaje en particular lleguen a tiempo y en el orden correcto, ni tampoco garantiza la llegada. </p>
+<p></p>
+<p>Las redes también necesitan mecanismos para administrar el tráfico de redes congestionado. El ancho de banda es la medida de la capacidad de transmisión de datos de la red. En otras palabras, ¿cuánta información se puede transmitir en un lapso determinado? El ancho de banda de la red es la medida de la cantidad de bits que se pueden transmitir en un segundo, es decir, bits por segundo (bps). Cuando se producen intentos de comunicaciones simultáneas a través de la red, la demanda de ancho de banda puede exceder su disponibilidad, lo que provoca congestión en la red. Simplemente, la red tiene más bits para transmitir que lo que el ancho de banda del canal de comunicación puede entregar. </p>
+<p></p>
+<p>En la mayoría de los casos, cuando el volumen de los paquetes es mayor que lo que se puede transportar a través de la red, los dispositivos colocan los paquetes en cola, o en espera, en la memoria hasta que haya recursos disponibles para transmitirlos, como se muestra en la figura 2. Los paquetes en cola causan retrasos, dado que los nuevos paquetes no se pueden transmitir hasta que no se hayan procesado los anteriores. Si el número de paquetes en cola continúa aumentando, las colas de la memoria se llenan y los paquetes se descartan. </p>
+<p></p>
+<p>El secreto para ofrecer una solución de calidad de aplicación de extremo a extremo exitosa es lograr la QoS necesaria mediante la administración de los parámetros de retraso y de pérdida de paquetes en una red. Una de las formas en que esto se puede lograr es mediante la clasificación. Para crear clasificaciones de QoS de datos, utilizamos una combinación de características de comunicación y la importancia relativa que se asigna a la aplicación, como se muestra en la figura 3. Luego, incluimos todos los datos en la misma clasificación sobre la base de las mismas reglas. Por ejemplo, el tipo de comunicaciones en las que el tiempo es un factor importante, como las transmisiones de voz, se clasificaría de forma distinta que las comunicaciones que pueden tolerar retrasos, como la transferencia de archivos. </p>
+<p></p>
+<p>Algunas de las decisiones prioritarias para una organización pueden ser:</p>
+<p>
+<ul>
+<li>
+<b>Comunicaciones dependientes del factor tiempo:</b> aumento de la prioridad para servicios como la telefonía o la distribución de videos.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Comunicaciones independientes del factor tiempo:</b> disminución de la prioridad para la recuperación de páginas Web o correos electrónicos.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Suma importancia a la organización:</b> aumento de la prioridad de los datos de control de producción o transacciones comerciales.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Comunicaciones no deseadas</b>: disminución de la prioridad o bloqueo de la actividad no deseada, como intercambio de archivos punto a punto o entretenimiento en vivo.</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

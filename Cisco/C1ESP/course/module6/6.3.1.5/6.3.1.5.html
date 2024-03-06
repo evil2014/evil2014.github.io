@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.3.1.5 Backplane del router</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.3.1.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Routers</h1>
+        <h2>Anatomía de un router</h2>
+      </div>
+      <div id="content">
+<p>Los routers Cisco 1941 incluyen las siguientes conexiones:</p>
+<p>
+<ul>
+<li>
+<b>Puertos de consola:</b> dos puertos de consola para acceder a la administración de la configuración inicial y de la interfaz de línea de comandos (CLI) mediante un puerto RJ-45 común y un nuevo conector USB de tipo B (USB mini-B).</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Puerto auxiliar:</b> un puerto RJ-45 para el acceso a la administración remota; es similar al puerto de consola.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Dos interfaces LAN:</b> dos interfaces Gigabit Ethernet para obtener acceso a LAN.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Ranuras para tarjetas de interfaz WAN de alta velocidad mejoradas (EHWIC):</b> dos ranuras que proporcionan modularidad y flexibilidad al permitir que el router admita distintos tipos de módulos de interfaz, incluidos serial, línea de suscriptor digital (DSL), puerto de switch y tecnología inalámbrica.</li>
+</ul>
+</p>
+<p></p>
+<p>El ISR Cisco 1941 también tiene ranuras de almacenamiento para admitir capacidades expandidas. Las ranuras para memoria Compact Flash doble admiten tarjetas Compact Flash de 4 GB cada una para aumentar el espacio de almacenamiento. Se incluyen dos puertos de host USB para obtener espacio de almacenamiento adicional y proteger la capacidad de token. </p>
+<p></p>
+<p>La memoria Compact Flash puede almacenar la imagen del software Cisco IOS, archivos de registro, archivos de configuración de voz, archivos HTML, configuraciones de respaldo o cualquier otro archivo necesario para el sistema. De manera predeterminada, solo la ranura 0 está ocupada con una tarjeta Compact Flash de fábrica y es la ubicación de arranque predeterminada. </p>
+<p></p>
+<p>En la ilustración, se identifica la ubicación de estas conexiones y ranuras.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

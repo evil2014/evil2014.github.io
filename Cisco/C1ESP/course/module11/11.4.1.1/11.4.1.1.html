@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>11.4.1.1 Sistemas de archivos del router</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_11.4.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Administración de los archivos de configuración de IOS</h1>
+        <h2>Sistemas de archivos del router y del switch</h2>
+      </div>
+      <div id="content">
+<p>Además de implementar y proteger una red pequeña, el administrador de red también debe administrar los archivos de configuración. La administración de los archivos de configuración es importante para la realización de copias de seguridad y la recuperación en caso de falla del dispositivo.</p>
+<p></p>
+<p>El sistema de archivos de Cisco IOS (IFS) proporciona una única interfaz a todos los sistemas de archivos que utiliza un router, incluidos los siguientes: </p>
+<p>
+<ul>
+<li>Sistemas de archivos de memoria flash </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Sistemas de archivos de red (TFTP y FTP) </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Cualquier otra terminal para leer o escribir datos, como la memoria NVRAM, la configuración en ejecución y la memoria ROM, entre otras</li>
+</ul>
+</p>
+<p></p>
+<p>Con Cisco IFS, se pueden ver y clasificar todos los archivos (imagen, archivo de texto, etcétera), incluidos los archivos en servidores remotos. Por ejemplo, es posible ver un archivo de configuración en un servidor remoto para verificar que sea el archivo de configuración correcto antes de cargarlo en el router.</p>
+<p></p>
+<p>Cisco IFS permite que el administrador se desplace por distintos directorios, enumere los archivos en uno de ellos y cree subdirectorios en la memoria flash o en un disco. Los directorios disponibles dependen del dispositivo.</p>
+<p></p>
+<p>En la figura 1, se muestra el resultado del comando <span class="cmd"><b>show file systems</b></span>. En este ejemplo, enumera todos los sistemas de archivos disponibles en un router Cisco 1941. Este comando proporciona información útil, como la cantidad de memoria disponible y libre, el tipo de sistema de archivos y los permisos. Los permisos incluyen solo lectura (ro), solo escritura (wo) y lectura y escritura (rw), los cuales se muestran en la columna Flags (Indicadores) del resultado del comando.</p>
+<p></p>
+<p>Si bien se enumeran varios sistemas de archivos, nos enfocaremos en los sistemas de archivos TFTP, flash y NVRAM. </p>
+<p></p>
+<p>Observe que el sistema de archivos flash también tiene un asterisco que lo precede. Esto indica que el sistema de archivos predeterminado actual es flash. El IOS de arranque está ubicado en la memoria flash; por lo tanto, se agrega el símbolo de almohadilla (#) a la entrada de flash para indicar que es un disco de arranque.</p>
+<p></p>
+<p>
+<b>El sistema de archivos flash</b>
+</p>
+<p></p>
+<p>En la figura 2, se muestra el contenido del sistema de archivos predeterminado actual, que en este caso es flash, tal como indicaba el asterisco que precedía la entrada en la ilustración anterior. Hay varios archivos ubicados en la memoria flash, pero el de mayor interés específicamente es el último de la lista: se trata del nombre del archivo de imagen de Cisco IOS actual que se ejecuta en la memoria RAM.</p>
+<p></p>
+<p>
+<b>El sistema de archivos NVRAM</b>
+</p>
+<p></p>
+<p>Para ver el contenido de la memoria NVRAM, se debe cambiar el sistema de archivos predeterminado actual con el comando <span class="cmd"><b>cd</b></span> (cambiar directorio), como se muestra en la figura 3. El comando <span class="cmd"><b>pwd</b></span> (directorio de trabajo actual) verifica que estemos viendo el directorio NVRAM. Finalmente, el comando <span class="cmd"><b>dir</b></span> (directorio) enumera el contenido de la memoria NVRAM. Si bien se enumeran varios archivos de configuración, el de mayor interés específicamente es el archivo de configuración de inicio. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

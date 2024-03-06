@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.3.1.4 Provisión de acceso a los medios</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.3.1.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolos de la capa de enlace de datos</h1>
+        <h2>Propósito de la capa de enlace de datos</h2>
+      </div>
+      <div id="content">
+<p>Durante una misma comunicación, pueden ser necesarios distintos métodos de control de acceso al medio. Cada entorno de red que los paquetes encuentran cuando viajan desde un host local hasta un host remoto puede tener características diferentes. Por ejemplo, una LAN Ethernet consta de muchos hosts que compiten por acceder al medio de red de forma ad hoc. Los enlaces seriales constan de una conexión directa entre dos dispositivos únicamente a través de la cual los datos fluyen en forma de bits de manera secuencial y ordenada. </p>
+<p></p>
+<p>Las interfaces del router encapsulan el paquete en la trama correspondiente, y se utiliza un método de control de acceso al medio adecuado para acceder a cada enlace. En cualquier intercambio de paquetes de capas de red, puede haber muchas transiciones de medios y de capa de enlace de datos. En cada salto a lo largo de la ruta, los routers realizan lo siguiente:</p>
+<p>
+<ul>
+<li>Aceptan una trama proveniente de un medio.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Desencapsulan la trama.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Vuelven a encapsular el paquete en una trama nueva.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Reenvían la nueva trama adecuada al medio de ese segmento de la red física.</li>
+</ul>
+</p>
+<p></p>
+<p>El router de la figura tiene una interfaz Ethernet para conectarse a la LAN y una interfaz serial para conectarse a la WAN. A medida que el router procesa las tramas, utiliza los servicios de la capa de enlace de datos para recibir la trama de un medio, desencapsularla en la PDU de la capa 3, volver a encapsular la PDU en una trama nueva y colocar la trama en el medio del siguiente enlace de la red.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

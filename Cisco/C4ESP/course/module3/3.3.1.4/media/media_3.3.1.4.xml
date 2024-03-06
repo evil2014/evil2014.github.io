@@ -1,0 +1,62 @@
+﻿<textcomponents>
+	<component id="ID_s1_title">
+		<text><![CDATA[<b>Control de calidad del enlace PPP</b>]]></text>
+	</component>  
+	<component id="ID_s1_txt01">
+		<text><![CDATA[<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4'>
+<tr class="mtable_top"><td colspan='2' bgcolor='#0E6360' class="mtable_top"><font size='1' color='#0E6360'><span style="color:#98D3D1">.</span></font></td>
+	</tr>
+	<tr colspan='2'>
+		<td bgcolor='#077A77'  valign="top"><font color='#ffffff' size="11"><b>Palabra clave</b></font></td>
+		<td bgcolor='#077A77'  valign="top"><font color='#ffffff' size="11"><b>Descripción</b></font></td>
+		
+	</tr>
+	<tr>
+		<td bgcolor='#EFF8F7' valign="top" width="160"><font face="_typewriter" color='#393536' size="11"><i>percentage</i></font></td>
+		<td bgcolor='#EFF8F7' valign="top"><font color='#393536' size="11">Especifica el umbral de calidad del enlace. El rango es de 1 a 100.</font></td>
+	</tr>	
+	</table>]]></text> 
+	</component>
+
+
+
+	<component id="ID_s2_title">
+		<text><![CDATA[<b>Comando de control de calidad del enlace PPP</b>]]></text>
+	</component>
+
+	<component id="ID_s2_SC5" fontFace='Courier New' fontSize="10">
+		<feedback id="fb"><![CDATA[<b><font size='10' face="Arial" color="#0000FF">***Debe introducir el comando exacto y completo. Los comandos que incluyen un nombre o una contraseña distinguen mayúsculas de minúsculas.***</font></b>
+		]]></feedback>
+		<existingcommands><![CDATA[<font size='10' face="Arial"><b>En la interfaz S0/0/1 del R1, configure la encapsulación PPP con compresión y LQM. Realice las tareas en el siguiente orden:<ul><li>Configure la dirección IPv4 10.0.1.5/30.<li>Configure la dirección IPv6 2001:DB8:CAFE:3::1/64.<li>Configurar la encapsulación de PPP<li>Configure la compresión de PPP con predictor<li>Configure LQM de PPP con un porcentaje del 90&nbsp;%.</b></font>]]></existingcommands>
+		<command prompt="R1(config)#">
+			<correctresponse><![CDATA[interface S0/0/1]]></correctresponse>
+		</command>
+		<command prompt="R1(config-if)#">
+			<correctresponse><![CDATA[ip address 10.0.1.5 255.255.255.252]]></correctresponse>
+		</command>
+		<command prompt="R1(config-if)#">
+			<correctresponse><![CDATA[ipv6 address 2001:db8:cafe:3::1/64]]></correctresponse>
+		</command>
+		<command prompt="R1(config-if)#">
+			<correctresponse><![CDATA[encapsulation ppp]]></correctresponse>
+		</command>
+		<command prompt="R1(config-if)#">
+			<correctresponse><![CDATA[compress predictor]]></correctresponse>
+		</command>
+		<command prompt="R1(config-if)#">
+			<correctresponse><![CDATA[ppp quality 90]]></correctresponse>
+			<instruction><![CDATA[<font size='10' face="Arial"><b>Configuró correctamente el control de calidad del enlace PPP.</font>]]></instruction>
+		</command>
+		<command prompt=""/>
+	</component>
+
+	<component id="ID_sc2_reset">
+		<text><![CDATA[Restablecer]]></text>
+	</component>
+	<component id="ID_sc2_showme">
+		<text><![CDATA[Mostrar]]></text>
+	</component>
+	<component id="ID_sc2_showall">
+		<text><![CDATA[Mostrar todo]]></text>
+	</component>
+</textcomponents>

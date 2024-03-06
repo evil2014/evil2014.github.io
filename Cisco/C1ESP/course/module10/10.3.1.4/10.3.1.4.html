@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>10.3.1.4 Transporte de datos a través de internetwork</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_10.3.1.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>El mensaje se escucha en todo el mundo</h1>
+        <h2>Póngase en movimiento</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Preparación para el transporte</b>
+</p>
+<p>Después de agregar el direccionamiento IP, el paquete se traslada a la capa de acceso a la red para generar datos en los medios, como se muestra en la ilustración. Para que esto ocurra, la capa de acceso a la red primero debe preparar el paquete para la transmisión; para eso, lo coloca en una trama con un encabezado y un tráiler. Esta trama incluye la dirección física del host de origen y la dirección física del salto siguiente en la ruta al destino final. Esto equivale a la funcionalidad de la capa 2, o la capa de enlace de datos, del modelo OSI. La Capa 2 está relacionada con la entrega de los mensajes en una red local única. La dirección de la Capa 2 es exclusiva en la red local y representa la dirección del dispositivo final en el medio físico. En una LAN que utiliza Ethernet, esta dirección se denomina dirección de Control de acceso a los medios (MAC). Una vez que la capa de acceso a la red preparó la trama con las direcciones de origen y de destino, codifica la trama en bits y luego en impulsos eléctricos o en destellos de luz que se envían a través de los medios de red. </p>
+<p></p>
+<p>
+<b>Transporte de datos</b>
+</p>
+<p>Los datos se transportan mediante la internetwork, que está compuesta por medios y por cualquier dispositivo intermedio. Como el mensaje encapsulado se transmite a través de la red, puede viajar a través de diferentes medios y tipos de red. La capa de acceso a la red especifica las técnicas para colocar la trama en los medios y quitarla de ellos, lo que se conoce también como “método de control de acceso al medio”. </p>
+<p></p>
+<p>Si el host de destino está en la misma red que el host de origen, el paquete se envía entre dos hosts en el medio local sin la necesidad de un router. Sin embargo, si el host de destino y el host de origen no están en la misma red, el paquete se puede transportar a través de muchas redes, en muchos tipos diferentes de medios y a través de muchos routers. Cuando pasa por la red, la información contenida en la trama no se modifica. </p>
+<p></p>
+<p>En los límites de cada red local, un dispositivo de red intermedio, por lo general, un router, desencapsula la trama para leer la dirección de host de destino incluida en el encabezado del paquete. Los routers utilizan la porción del identificador de red de esta dirección para determinar qué ruta utilizar para llegar al host de destino. Una vez que se determina la ruta, el router encapsula el paquete en una nueva trama y lo envía al siguiente salto del trayecto hacia el dispositivo final de destino.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

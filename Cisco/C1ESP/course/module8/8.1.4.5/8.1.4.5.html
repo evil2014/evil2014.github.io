@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.1.4.5 Asignación de direcciones IP</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.1.4.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Direcciones de red IPv4</h1>
+        <h2>Tipos de direcciones IPv4</h2>
+      </div>
+      <div id="content">
+<p>Para que una compañía u organización tenga hosts de red, como servidores Web, a los que se pueda acceder desde Internet, dicha organización debe tener un bloque de direcciones públicas asignado. Se debe tener en cuenta que las direcciones públicas deben ser únicas, y el uso de estas direcciones públicas se regula y se asigna a cada organización de forma independiente. Esto es válido para las direcciones IPv4 e IPv6. </p>
+<p></p>
+<p>
+<b>IANA y RIR</b>
+</p>
+<p>La Internet Assigned Numbers Authority (IANA) (<a href="http://www.iana.org/" target="_blank">http://www.iana.org</a>) administra la asignación de direcciones IPv4 e IPv6. Hasta mediados de los años noventa, todo el espacio de direcciones IPv4 era directamente administrado por la IANA. En ese entonces, se asignó el resto del espacio de direcciones IPv4 a otros diversos registros para que realicen la administración de áreas regionales o con propósitos particulares. Estas compañías de registro se llaman registros regionales de Internet (RIR), como se muestra en la figura.</p>
+<p></p>
+<p>Los principales registros son:</p>
+<p>
+<ul>
+<li>AfriNIC (African Network Information Centre), región África <a href="http://www.afrinic.net/" target="_blank">http://www.afrinic.net</a></li>
+</ul>
+</p>
+<p>
+<ul>
+<li>APNIC (Asia Pacific Network Information Centre), región Asia/Pacífico <a href="http://www.apnic.net/" target="_blank">http://www.apnic.net</a></li>
+</ul>
+</p>
+<p>
+<ul>
+<li>ARIN (American Registry for Internet Numbers), región América del Norte <a href="http://www.arin.net/" target="_blank">http://www.arin.net</a></li>
+</ul>
+</p>
+<p>
+<ul>
+<li>LACNIC (Regional Latin-American and Caribbean IP Address Registry), América Latina y algunas islas del Caribe <a href="http://www.lacnic.net/" target="_blank">http://www.lacnic.net</a></li>
+</ul>
+</p>
+<p>
+<ul>
+<li>RIPE NCC (Reseaux IP Europeans), Europa, Medio Oriente y Asia Central <a href="http://www.ripe.net/" target="_blank">http://www.ripe.net</a></li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Proveedores de servicios de Internet (ISP)</b>
+</p>
+<p>Los RIR se encargan de asignar direcciones IP a los proveedores de servicios de Internet (ISP). La mayoría de las compañías u organizaciones obtiene sus bloques de direcciones IPv4 de un ISP. Un ISP generalmente suministrará una pequeña cantidad de direcciones IPv4 utilizables (6 ó 14) a sus clientes como parte de los servicios. Se pueden obtener bloques mayores de direcciones de acuerdo con la justificación de las necesidades y con un costo adicional por el servicio. </p>
+<p></p>
+<p>En cierto sentido, el ISP presta o alquila estas direcciones a la organización. Si se elige cambiar la conectividad de Internet a otro ISP, el nuevo ISP suministrará direcciones de los bloques de direcciones que ellos poseen, y el ISP anterior devuelve los bloques prestados a su asignación para prestarlos nuevamente a otro cliente.</p>
+<p></p>
+<p>Las direcciones IPv6 se pueden obtener del ISP o, en algunos casos, directamente del RIR. Las direcciones IPv6 y los tamaños típicos de los bloques de direcciones se analizarán más adelante en este capítulo.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

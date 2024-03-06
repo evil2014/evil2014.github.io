@@ -1,0 +1,39 @@
+﻿<textcomponents>
+<component id="ID_s1_title">
+<text><![CDATA[<b>Estructuras de datos OSPF  </b>]]></text> 
+</component>
+<component id="ID_s2_title">
+<text><![CDATA[<b>Los routers OSPF intercambian paquetes  </b>]]></text> 
+</component>
+<component id="ID_s2_txt01">
+<text><![CDATA[Paquetes de saludo<br/>Paquetes de descripción de la base de datos<br/>Paquetes de solicitud de estado de enlace<br/>Paquetes de actualización de estado de enlace<br/>Paquetes de acuse de recibo de estado de enlace]]></text> 
+</component>
+
+<component id="ID_s1_table">
+<text><![CDATA[<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4'  cellspacing="2">
+	<tr class="liner_top">
+		<td colspan='3' bgcolor='#0E6360' class="liner_top"><font size='1' color='#434321'><span style="color:#DAE17A">.</span></font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#077A77' valign="top" width='80'><font bgcolor='#097A76' color='#EFF8F7'><b>Base de datos  </b></font></td>
+		<td bgcolor='#077A77' valign="top" width='80'><font bgcolor='#097A76' color='#EFF8F7'><b>Tabla  </b></font></td>
+		<td bgcolor='#077A77' valign="top" width='267'><font bgcolor='#097A76' color='#EFF8F7'><b>Descripción  </b></font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#EFF8F7'>Base de datos de adyacencia</td>
+		<td bgcolor='#EFF8F7'>Tabla de vecinos</td>
+		<td bgcolor='#EFF8F7'><textformat blockindent="-14"><ul class="bulletIndent20"><li>Lista de todos los routers vecinos con los que un router estableció comunicación bidireccional.  </li><li>Esta tabla es única para cada router.  </li><li>Se puede ver con el comando <font face="_typewriter"><b>show ip ospf neighbor</b></font>.  </li></ul></textformat></td>
+	</tr>
+	<tr>
+		<td bgcolor='#FFFFFF'>Base de datos de estado de enlace<br/>(LSDB)</td>
+		<td bgcolor='#FFFFFF'>Tabla de topología</td>
+		<td bgcolor='#FFFFFF'><textformat blockindent="-14"><ul class="bulletIndent20"><li>Muestra información sobre todos los otros routers en la red.  </li><li>Esta base de datos representa la topología de la red.  </li><li>Todos los routers dentro de un área tienen LSDB idénticas.  </li><li>Se puede ver con el comando <font face='_typewriter'><b>show ip ospf database</b></font>.  </li></ul></textformat></td>
+	</tr>
+	<tr>
+		<td bgcolor='#EFF8F7'>Base de datos de reenvío</td>
+		<td bgcolor='#EFF8F7'>Tabla de enrutamiento</td>
+		<td bgcolor='#EFF8F7'><textformat blockindent="-14"><ul class="bulletIndent20"><li>Lista de rutas generada cuando se ejecuta un algoritmo en la base de datos de estado de enlace.  </li><li>La tabla de routing de cada router es única y contiene información sobre cómo y dónde enviar paquetes para otros routers.  </li><li>Se puede ver con el comando <b><font face='_typewriter'>show ip route</font></b>.  </li></ul></textformat></td>
+	</tr>
+</table>]]></text>
+</component>
+</textcomponents>

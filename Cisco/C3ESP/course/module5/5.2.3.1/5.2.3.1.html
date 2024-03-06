@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.2.3.1 Comandos para la resolución de problemas de OSPFv3</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.2.3.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resolución de problemas de implementaciones de OSPF de área única</h1>
+        <h2>Resolución de problemas de routing de OSPFv3 de área única</h2>
+      </div>
+      <div id="content">
+<p>Consulte la figura 1 para ver la topología de referencia OSPFv3.</p>
+<p></p>
+<p>La resolución de problemas de OSPFv3 es casi idéntica a la de OSPFv2; por eso, muchos comandos y criterios de resolución de problemas de OSPFv3 también se aplican a OSPFv3.</p>
+<p></p>
+<p>Por ejemplo, los siguientes son los comandos equivalentes que se utilizan con OSPFv3:</p>
+<p>
+<ul>
+<li>
+<span class="cmd">
+<b>show ipv6 protocols </b>
+</span>(figura 2): este comando se utiliza para verificar información fundamental de configuración de OSPFv3, incluidas la ID del proceso OSPFv3, la ID del router y las interfaces de las que el router recibe actualizaciones.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<span class="cmd">
+<b>show ipv6 ospf neighbor </b>
+</span>(figura 3): se usa para verificar que el router formó una adyacencia con los routers vecinos. Este resultado muestra la ID del router vecino, la prioridad del vecino, el estado de OSPFv3, el temporizador de tiempo muerto, la ID de la interfaz vecina y la interfaz mediante la cual se puede acceder al vecino. Si no se muestra la ID del router vecino o este no se muestra en el estado <span class="cmd"><b>FULL</b></span> o <span class="cmd"><b>2WAY</b></span>, los dos routers no formaron una adyacencia OSPFv3. Si dos routers no establecieron adyacencia, no se intercambiará la información de link-state. Las bases de datos de link-state incompletas pueden crear árboles SPF y tablas de enrutamiento imprecisos. Es posible que no existan rutas hacia las redes de destino o que estas no constituyan las mejores rutas.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<span class="cmd">
+<b>show ipv6 ospf interface </b>
+</span>(figura 4): se usa para mostrar los parámetros de OSPFv3 que se configuraron en una interfaz, como la ID del proceso OSPFv3 a la que se asignó la interfaz, el área en la que están las interfaces, el costo de la interfaz y los intervalos de saludo y muerto. Si se agrega el nombre y el número de interfaz al comando, se muestra el resultado para una interfaz específica. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<span class="cmd">
+<b>show ipv6 ospf </b>
+</span>(figura 5): se usa para examinar la ID del proceso OSPF y la ID del router, así como la información sobre las transmisiones de LSA.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<span class="cmd">
+<b>show ipv6 route ospf </b>
+</span>(figura 6): se utiliza para mostrar solo las rutas OSPFv3 descubiertas en la tabla de routing. El resultado muestra que el R1 descubrió alrededor de cuatro redes remotas mediante OSPFv3.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<span class="cmd">
+<b>clear ipv6 ospf </b>
+</span>
+<span class="cmd">[</span>
+<span class="cmd">
+<i>id-proceso</i>
+</span>
+<span class="cmd">]</span>
+<span class="cmd">
+<i></i>
+</span>
+<span class="cmd">
+<b>process: </b>
+</span>se usa para restablecer las adyacencias de vecinos OSPFv3. </li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

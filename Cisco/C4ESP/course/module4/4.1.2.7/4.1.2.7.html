@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.1.2.7 Interfaz de administración local (LMI)</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.1.2.7_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Introducción a Frame Relay</h1>
+        <h2>Operación de Frame Relay</h2>
+      </div>
+      <div id="content">
+<p>Otro concepto importante en Frame Relay es la interfaz de administración local (LMI). El diseño de Frame Relay proporciona la transferencia de datos conmutada por paquetes con retrasos mínimos de extremo a extremo. El diseño original omite cualquier cosa que pudiera ocasionar un retraso. </p>
+<p></p>
+<p>Cuando los proveedores implementaron Frame Relay como una tecnología independiente y no como un componente de ISDN, decidieron que los DTE debían adquirir dinámicamente la información sobre el estado de la red. Sin embargo, el diseño original no incluía esta característica. Un consorcio de Cisco, Digital Equipment Corporation (DEC), Northern Telecom y StrataCom amplió el protocolo Frame Relay a fin de proporcionar capacidades adicionales para los entornos complejos de internetworking. Estas ampliaciones se conocen colectivamente como la LMI. </p>
+<p></p>
+<p>Consulte la topología de Frame Relay de la figura 1. Básicamente, la LMI es un mecanismo keepalive que proporciona información acerca del estado de las conexiones Frame Relay entre el router (DTE) y el switch Frame Relay (DCE). Aproximadamente cada 10 segundos, la terminal sondea la red, ya sea para solicitar una respuesta muda secuencial o información del estado del canal. Si la red no responde con la información solicitada, el dispositivo del usuario puede considerar que la conexión está inactiva. Cuando la red responde con una respuesta de FULL STATUS, incluye información sobre el estado de los DLCI que se asignan a esa línea. La terminal puede utilizar esta información para determinar si las conexiones lógicas pueden pasar datos.</p>
+<p></p>
+<p>En la figura 2, se muestra el resultado del comando <span class="cmd"><b>show frame-relay lmi</b></span>. El resultado muestra el tipo de LMI que usa la interfaz de Frame Relay y los contadores para la secuencia de intercambio del estado de LMI, incluidos los errores como los tiempos de espera de LMI.</p>
+<p></p>
+<p>Es fácil confundir la LMI y la encapsulación. La LMI es una definición de los mensajes que se usan entre el DTE (el R1) y el DCE (el switch Frame Relay que pertenece al proveedor de servicios). La encapsulación define los encabezados que utiliza un DTE para comunicar información al DTE en el otro extremo de un VC. Al switch y al router conectado a él les interesa utilizar el mismo LMI. Al switch no le interesa la encapsulación. A los routers terminales (DTE) sí les interesa la encapsulación.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

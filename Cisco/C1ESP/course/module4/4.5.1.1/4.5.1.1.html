@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.5.1.1 Actividad en clase: conexiones</title>
+    <!-- Activity -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.5.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resumen</h1>
+        <h2>Resumen</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Conectados</b>
+</p>
+<p>
+<b>Nota:</b> conviene realizar esta actividad en grupos de dos a tres estudiantes.</p>
+<p></p>
+<p>Su pequeña empresa se traslada a una nueva ubicación. El edificio es completamente nuevo, y usted es el encargado de presentar un modelo físico para que pueda comenzar la instalación del puerto de red.</p>
+<p></p>
+<p>Utilice el plano incluido para esta actividad (<u>el instructor le proporcionará una copia de la Guía de planificación para el instructor</u>). El área indicada con el número 1 es la recepción, y el área indicada con las letras “RR” es el área de los baños. </p>
+<p></p>
+<p>Todas las salas están dentro de la categoría 6 de las especificaciones UTP (100 m), por lo que no debe preocuparse por adaptar el cableado del edificio al código. Cada sala del diagrama debe tener, al menos, una conexión de red disponible para usuarios o dispositivos intermediarios.</p>
+<p></p>
+<p>Junto con sus compañeros de equipo, indique lo siguiente en el plano:</p>
+<p>
+<ul>
+<li>El emplazamiento de la instalación de distribución principal de la red, teniendo en cuenta la seguridad.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>El número de dispositivos intermediarios que usaría y dónde los colocaría.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>El tipo de cableado que se utilizaría (UTP, STP, tecnología inalámbrica, fibra óptica, etcétera) y dónde se ubicarían los puertos.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Los tipos de dispositivos finales que se utilizarían (conectados por cable, inalámbricos, computadoras portátiles o de escritorio, tablet PC, etcétera).</li>
+</ul>
+</p>
+<p>No se entusiasme demasiado con el diseño: simplemente utilice el contenido del capítulo para poder justificar sus decisiones ante la clase.</p>
+<p></p>
+<p>
+<a href="../../files/4.5.1.1%20Class%20Activity%20-%20Linked%20In!%20Instructions.pdf" target="_blank">Actividad en clase: conexiones Instrucciones</a>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

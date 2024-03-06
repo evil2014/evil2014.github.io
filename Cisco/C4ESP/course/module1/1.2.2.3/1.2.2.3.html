@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.2.2.3 Perímetro empresarial de Cisco </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.2.2.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Arquitectura empresarial de Cisco</h1>
+        <h2>Modelo de arquitectura empresarial de Cisco</h2>
+      </div>
+      <div id="content">
+<p>El módulo de perímetro empresarial proporciona conectividad para los servicios de voz, video y datos fuera de la empresa. A menudo, este módulo funciona como vínculo entre el módulo de campus empresarial y los otros módulos. </p>
+<p></p>
+<p>El módulo de perímetro empresarial consta de los siguientes submódulos:</p>
+<p>
+<ul>
+<li>
+<b>Redes y servidores de comercio electrónico:</b> el submódulo de comercio electrónico permite que las empresas admitan aplicaciones de comercio electrónico a través de Internet. Utiliza los diseños de alta disponibilidad del módulo de centro de datos. Los dispositivos ubicados en el submódulo de comercio electrónico incluyen los servidores web, de aplicaciones y de bases de datos, el firewall y los routers de firewall, y los sistemas de prevención de intrusiones (IPS) en la red.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Conectividad a Internet y zona perimetral (DMZ):</b> el submódulo de Internet del perímetro empresarial proporciona a los usuarios internos una conectividad segura a los servicios de Internet, como los servidores públicos, el correo electrónico y DNS. También se proporciona la conectividad a uno o varios proveedores de servicios de Internet (ISP). Los componentes de este submódulo incluyen el firewall y los routers de firewall, los routers perimetrales de Internet, los servidores FTP y HTTP, los servidores de retransmisión de SMTP y los servidores DNS.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Acceso remoto y VPN:</b> el submódulo de acceso remoto y VPN del perímetro empresarial proporciona servicios de terminación de acceso remoto, incluida la autenticación para usuarios y sitios remotos. Los componentes de este submódulo incluyen los firewalls, los concentradores de acceso telefónico, los dispositivos de seguridad adaptables (ASA) de Cisco y las aplicaciones de sistema de prevención de intrusiones (IPS) en la red.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>WAN:</b> el submódulo WAN utiliza diversas tecnologías WAN para enrutar el tráfico entre los sitios remotos y el sitio central. Los enlaces de redes WAN empresariales incluyen tecnologías como la conmutación de etiquetas multiprotocolo (MPLS), Ethernet metropolitana, las líneas arrendadas, la red óptica síncrona (SONET) y la jerarquía digital síncrona (SDH), PPP, Frame Relay, ATM, el cable, la línea de suscriptor digital (DSL) y la tecnología inalámbrica.</li>
+</ul>
+</p>
+<p></p>
+<p>Haga clic en el módulo de perímetro empresarial de la ilustración para obtener más información. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

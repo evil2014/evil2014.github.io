@@ -1,0 +1,168 @@
+﻿<textcomponents>
+<component id="ID_s1_txt01">
+<text><![CDATA[<b>Actividad: Topología</b><br>Use la topología de esta página para determinar la ID de cada router para la parte&nbsp;1 y el router designado para la parte&nbsp;2. Haga clic en el botón&nbsp;2 para continuar la actividad.]]></text>
+</component>
+<component id="ID_s2_txt01">
+  <text><![CDATA[<b>Actividad (parte&nbsp;1): Seleccionar la ID del router  </b><br>Arrastre el número de ID del router hasta el campo junto al nombre de host del router adecuado. Haga clic en el botón&nbsp;1 para consultar la topología. Haga clic en el botón&nbsp;3 para continuar la actividad. ]]></text> 
+  </component>
+
+<component id="ID_s2_txt02">
+  <text><![CDATA[<b>Nombre de host del router</b>]]></text> 
+</component>
+  
+<component id="ID_s2_txt03">
+  <text><![CDATA[<b>Id. de router</b>]]></text> 
+</component>
+
+<component id="ID_s2_txt04">
+  <text><![CDATA[<b>Números de ID del router</b>]]></text> 
+</component>
+  
+
+<component id='ID_s2_drag01'>
+	<text><![CDATA[10.1.16.2]]></text>
+</component>
+
+<component id='ID_s2_drag02'>
+	<text><![CDATA[10.1.13.1]]></text>
+</component>
+
+<component id='ID_s2_drag03'>
+	<text><![CDATA[209.165.201.2]]></text>
+</component>
+
+<component id='ID_s2_drag04'>
+	<text><![CDATA[10.1.10.1]]></text>
+</component>
+
+<component id='ID_s2_drag05'>
+	<text><![CDATA[10.1.19.1]]></text>
+</component>
+
+<component id='ID_s2_drag06'>
+	<text><![CDATA[192.168.10.3]]></text>
+</component>
+
+<component id='ID_s2_drag07'>
+	<text><![CDATA[192.168.10.5]]></text>
+</component>
+
+<component id='ID_s2_drag08'>
+	<text><![CDATA[192.168.10.1]]></text>
+</component>
+
+<component id='ID_s2_drag09'>
+	<text><![CDATA[10.1.13.2]]></text>
+</component>
+
+<component id='ID_s2_drag10'>
+	<text><![CDATA[10.1.10.4]]></text>
+</component>
+
+<component id='ID_s2_drag11'>
+	<text><![CDATA[209.165.201.1]]></text>
+</component>
+
+<component id='ID_s2_drag12'>
+	<text><![CDATA[10.1.10.3]]></text>
+</component>
+
+
+<component id='ID_s2_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id='ID_s2_CORRECT_BODY'>
+	<text><![CDATA[Seleccionó correctamente la ID del router para cada nombre de host del router. Haga clic en el botón&nbsp;3 para continuar.]]></text>
+</component>
+
+
+<component id='ID_s2_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_s2_INCORRECT_BODY'>
+	<text><![CDATA[No seleccionó correctamente las ID del router para cada nombre de host. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_s2_CHECK'>
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id='ID_s2_RESET'>
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component>
+
+
+
+
+
+
+<component id="ID_s3_txt01">
+  <text><![CDATA[<b>Actividad (parte&nbsp;2): Seleccionar el router designado  </b><br>En la actividad&nbsp;1, identificó la ID del router para los nombres de host incluidos en el diagrama de la topología. En esta actividad, usará el mismo diagrama de topología y las mismas ID de los routers y reglas para la selección del router designado por OSPF.<br><br>Determine el router designado para las redes especificadas. Arrastre el router designado hasta el campo junto a la ID de la red adecuada. Las respuestas se pueden usar más de una vez. Haga clic en el botón&nbsp;1 para consultar la topología.]]></text> 
+  </component>
+  
+  <component id="ID_s3_txt02">
+  <text><![CDATA[<b>Identificación de red</b>]]></text> 
+</component>
+  
+<component id="ID_s3_txt03">
+  <text><![CDATA[<b>Nombre de host</b>]]></text> 
+</component>
+
+<component id="ID_s3_txt04">
+  <text><![CDATA[<b>Routers designados</b>]]></text> 
+</component>
+
+<component id='ID_s3_drag01'>
+	<text><![CDATA[Router A]]></text>
+</component>
+
+<component id='ID_s3_drag02'>
+	<text><![CDATA[Router B]]></text>
+</component>
+
+<component id='ID_s3_drag03'>
+	<text><![CDATA[Router C]]></text>
+</component>
+
+<component id='ID_s3_drag04'>
+	<text><![CDATA[Router D]]></text>
+</component>
+
+<component id='ID_s3_drag05'>
+	<text><![CDATA[Router E]]></text>
+</component>
+
+<component id='ID_s3_drag06'>
+	<text><![CDATA[Ninguno]]></text>
+</component>
+
+
+<component id='ID_s3_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id='ID_s3_CORRECT_BODY'>
+	<text><![CDATA[Seleccionó correctamente los routers designados para cada red. ]]></text>
+</component>
+
+
+<component id='ID_s3_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_s3_INCORRECT_BODY'>
+	<text><![CDATA[No seleccionó correctamente los routers designados para cada red. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_s3_CHECK'>
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id='ID_s3_RESET'>
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component>
+
+
+</textcomponents>

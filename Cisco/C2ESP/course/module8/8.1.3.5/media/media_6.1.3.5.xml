@@ -1,0 +1,160 @@
+﻿<textcomponents>
+
+    
+
+<component id='ID_s1_inst'>
+	<text><![CDATA[<b>Actividad: identificar los estados de OSPF para establecer una adyacencia, parte&nbsp;1   </b><br><br>Arrastre los estados de identificación hacia las instrucciones de adyacencia OSPF correspondientes. No se utilizan todos los estados de identificación. Haga clic en el botón&nbsp;2 para continuar la actividad.]]></text>
+</component>
+
+<component id='ID_s1_txt01'>
+	<text><![CDATA[En los enlaces Ethernet, se elige un router designado (DR) y un router designado de respaldo (BDR).]]></text>
+</component>
+
+<component id='ID_s1_txt02'>
+	<text><![CDATA[Los routers intercambian paquetes DBD.]]></text>
+</component>
+
+<component id='ID_s1_txt03'>
+	<text><![CDATA[Se reciben los paquetes de saludo de los vecinos con la ID del router emisor.]]></text>
+</component>
+
+<component id='ID_s1_txt04'>
+	<text><![CDATA[Se inicia el intercambio de paquetes DBD.]]></text>
+</component>
+
+<component id='ID_s1_txt05'>
+	<text><![CDATA[<b>Instrucciones de adyacencia OSPF  </b>]]></text>
+</component> <!--Drag and Drop-->
+<component id='ID_s1_traget01'>
+	<text><![CDATA[<font color="#393536">Estado Down</font>]]></text>
+</component>
+
+<component id='ID_s1_traget02'>
+	<text><![CDATA[<font color="#393536">Estado Init</font>]]></text>
+</component>
+
+<component id='ID_s1_traget03'>
+	<text><![CDATA[<font color="#393536">Estado <br/>Two-Way</font>]]></text>
+</component>
+
+<component id='ID_s1_traget04'>
+	<text><![CDATA[<font color="#393536">Estado <br/>Ex-Start</font>]]></text>
+</component>
+
+<component id='ID_s1_traget05'>
+	<text><![CDATA[<font color="#393536">Estado <br/>Exchange</font>]]></text>
+</component>
+
+<component id='ID_s1_traget06'>
+	<text><![CDATA[<font color="#393536">Estado Loading</font>]]></text>
+</component>
+
+<component id='ID_s1_traget07'>
+	<text><![CDATA[<font color="#393536">Estado Full</font>]]></text>
+</component>
+
+ 
+
+<component id='ID_s1_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto]]></text>
+</component>
+
+<component id='ID_s1_CORRECT_BODY'>
+	<text><![CDATA[Unió correctamente cada estado de OSPF con la instrucción de adyacencia correspondiente. Haga clic en el botón&nbsp;2 para continuar la actividad. ]]></text>
+</component>
+
+
+<component id='ID_s1_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_BODY'>
+	<text><![CDATA[No unió correctamente los estados de OSPF con las instrucciones de adyacencia correspondientes. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_s1_CHECK'>
+	<text><![CDATA[<b>Verificar  </b>]]></text>
+</component>
+
+<component id='ID_s1_RESET'>
+	<text><![CDATA[<b>Restablecer  </b>]]></text>
+</component> <!--slide02-->
+<component id='ID_s2_inst'>
+	<text><![CDATA[<b>Actividad: identificar los estados de OSPF para establecer la adyacencia, parte&nbsp;2  </b><br><br>Arrastre los estados de identificación hacia las instrucciones de adyacencia OSPF correspondientes. No se utilizan todos los estados de identificación.]]></text>
+</component>
+
+<component id='ID_s2_txt01'>
+	<text><![CDATA[Los routers convergieron.]]></text>
+</component>
+
+<component id='ID_s2_txt02'>
+	<text><![CDATA[No se recibió ningún paquete de saludo.]]></text>
+</component>
+
+<component id='ID_s2_txt03'>
+	<text><![CDATA[Se negocia la relación de maestro/esclavo y el número de secuencia del paquete DBD.]]></text>
+</component>
+
+<component id='ID_s2_txt04'>
+	<text><![CDATA[Las rutas se procesan mediante el algoritmo SPF.]]></text>
+</component>
+
+<component id='ID_s2_txt05'>
+	<text><![CDATA[<b>Instrucciones de adyacencia OSPF  </b>]]></text>
+</component> <!--Drag and Drop-->
+<component id='ID_s2_traget01'>
+	<text><![CDATA[<font color="#393536">Estado Down</font>]]></text>
+</component>
+
+<component id='ID_s2_traget02'>
+	<text><![CDATA[<font color="#393536">Estado Init</font>]]></text>
+</component>
+
+<component id='ID_s2_traget03'>
+	<text><![CDATA[<font color="#393536">Estado <br/>Two-Way</font>]]></text>
+</component>
+
+<component id='ID_s2_traget04'>
+	<text><![CDATA[<font color="#393536">Estado <br/>Ex-Start</font>]]></text>
+</component>
+
+<component id='ID_s2_traget05'>
+	<text><![CDATA[<font color="#393536">Estado <br/>Exchange</font>]]></text>
+</component>
+
+<component id='ID_s2_traget06'>
+	<text><![CDATA[<font color="#393536">Estado Loading</font>]]></text>
+</component>
+
+<component id='ID_s2_traget07'>
+	<text><![CDATA[<font color="#393536">Estado Full</font>]]></text>
+</component>
+
+ 
+
+<component id='ID_s2_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto]]></text>
+</component>
+
+<component id='ID_s2_CORRECT_BODY'>
+	<text><![CDATA[Unió correctamente los estados de OSPF con las instrucciones de adyacencia correspondientes.]]></text>
+</component>
+
+
+<component id='ID_s2_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto]]></text>
+</component>
+
+<component id='ID_s2_INCORRECT_BODY'>
+	<text><![CDATA[No unió correctamente los estados de OSPF con las instrucciones de adyacencia correspondientes. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_s2_CHECK'>
+	<text><![CDATA[<b>Verificar  </b>]]></text>
+</component>
+
+<component id='ID_s2_RESET'>
+	<text><![CDATA[<b>Restablecer  </b>]]></text>
+</component>
+
+</textcomponents>

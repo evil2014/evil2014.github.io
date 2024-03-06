@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>3.1.1.2 Comunicación serial</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_3.1.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Descripción general de conexión serial punto a punto</h1>
+        <h2>Comunicaciones seriales</h2>
+      </div>
+      <div id="content">
+<p>En la ilustración, se muestra una representación simple de una comunicación serial a través de una WAN. El protocolo de comunicaciones que usa el router emisor encapsula los datos. La trama encapsulada se envía a la WAN por un medio físico. Existen varias formas de atravesar la WAN, pero el router receptor usa el mismo protocolo de comunicaciones para desencapsular la trama cuando esta llega.</p>
+<p></p>
+<p>Existen diferentes estándares de comunicación serial, y cada una usa un método de señalización diferente. Existen tres estándares importantes de comunicación serial que afectan las conexiones de LAN a WAN:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>RS-232:</b> la mayoría de los puertos serie en las computadoras personales cumplen con el estándar RS-232C o los estándares RS-422 y RS-423 más recientes. Se utilizan conectores tanto de 9 pines como de 25 pines. Un puerto serie es una interfaz de uso general que se puede utilizar para casi cualquier tipo de dispositivo, incluidos los módems, los mouses y las impresoras. Los nuevos estándares más rápidos como USB reemplazaron a estos tipos de dispositivos periféricos para las computadoras, pero muchos dispositivos de red utilizan conectores RJ-45 que cumplen con el estándar RS-232 original. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>V.35:</b> este estándar de la ITU para el intercambio de datos síncrono de alta velocidad combina el ancho de banda de varios circuitos telefónicos y, en general, se usa para la comunicación de módem a multiplexor. En los EE. UU., el estándar de interfaz V.35 es el que utiliza la mayoría de los routers y las DSU que se conectan a las portadoras T1. Los cables V.35 son conjuntos seriales de alta velocidad diseñados para admitir una conectividad y velocidades de datos superiores entre los DTE y los DCE a través de líneas digitales. Se proporcionan más detalles sobre los DTE y los DCE más adelante en esta sección.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Interfaz serial de alta velocidad (HSSI):</b> una HSSI admite velocidades de transmisión de hasta 52 Mb/s. Los ingenieros usan HSSI para conectar los routers en las LAN a las WAN a través de líneas de alta velocidad, como las líneas T3. Además, los ingenieros usan HSSI para proporcionar conectividad de alta velocidad entre redes LAN mediante Token Ring o Ethernet. HSSI es una interfaz DTE/DCE desarrollada por Cisco Systems y T3 plus Networking para satisfacer la necesidad de comunicación de alta velocidad a través de enlaces WAN.</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

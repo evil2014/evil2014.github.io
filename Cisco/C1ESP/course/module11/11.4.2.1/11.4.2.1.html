@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>11.4.2.1 Creación de copias de seguridad y restauración mediante archivos de texto</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_11.4.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Administración de los archivos de configuración de IOS</h1>
+        <h2>Creación de copias de seguridad y restauración de archivos de configuración</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Copia de seguridad de las configuraciones con captura de texto (Tera Term)</b>
+</p>
+<p></p>
+<p>Los archivos de configuración se pueden guardar o archivar en un archivo de texto mediante Tera Term. </p>
+<p></p>
+<p>Como se muestra en la figura, los pasos son:</p>
+<p></p>
+<p>
+<b>Paso 1.</b> En el menú File, haga clic en <b>Log</b>.</p>
+<p></p>
+<p>
+<b>Paso 2.</b> Elija la ubicación para guardar el archivo. Tera Term comenzará a capturar texto. </p>
+<p></p>
+<p>
+<b>Paso 3.</b> Una vez que comienza la captura, ejecute el comando <span class="cmd"><b>show running-config</b></span> o <span class="cmd"><b>show startup-config</b></span> en la petición de entrada de EXEC privilegiado. El texto que aparece en la ventana de la terminal se colocará en el archivo elegido.</p>
+<p></p>
+<p>
+<b>Paso 4.</b> Cuando la captura haya finalizado, seleccione <b>Close</b> (Cerrar) en la ventana Log (Registro) de TeraTerm.</p>
+<p></p>
+<p>
+<b>Paso 5.</b> Observe el archivo para verificar que no esté dañado.</p>
+<p></p>
+<p></p>
+<p>
+<b>Restauración de las configuraciones de texto</b>
+</p>
+<p>Una configuración se puede copiar de un archivo a un dispositivo. Cuando se copia desde un archivo de texto y se pega en la ventana de una terminal, el IOS ejecuta cada línea del texto de configuración como si fuera un comando. Esto significa que el archivo necesitará edición para asegurar que las contraseñas encriptadas estén en forma de texto y que se eliminen los mensajes de IOS y el texto de no comando, como "--More--". Este proceso se analiza en la práctica de laboratorio. </p>
+<p></p>
+<p>A su vez, en la CLI, el dispositivo debe establecerse en el modo de configuración global para recibir los comandos del archivo de texto que se pegan en la ventana de la terminal.</p>
+<p></p>
+<p>Cuando se usa Tera Term, los pasos son los siguientes:</p>
+<p></p>
+<p>
+<b>Paso 1.</b> En el menú File (Archivo), haga clic en <b>Send</b> (Enviar) para enviar el archivo.</p>
+<p></p>
+<p>
+<b>Paso 2.</b> Ubique el archivo que debe copiar en el dispositivo y haga clic en <b>Open</b>.</p>
+<p></p>
+<p>
+<b>Paso 3.</b> Tera Term pegará el archivo en el dispositivo.</p>
+<p></p>
+<p>El texto en el archivo estará aplicado como comandos en la CLI y pasará a ser la configuración en ejecución en el dispositivo. Éste es un método conveniente para configurar manualmente un router.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

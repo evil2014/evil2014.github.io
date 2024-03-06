@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.2.4.8 Verificación de la configuración de la dirección IPv6</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.2.4.8_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Direcciones de red IPv6</h1>
+        <h2>Direcciones IPv6 unicast</h2>
+      </div>
+      <div id="content">
+<p>Como se muestra en la figura 1, el comando para verificar la configuración de la interfaz IPv6 es similar al comando que se utiliza para IPv4. </p>
+<p></p>
+<p>El comando <span class="cmd"><b>show interface</b></span> muestra la dirección MAC de las interfaces Ethernet. EUI-64 utiliza esta dirección MAC para generar la ID de interfaz para la dirección link-local. Además, el comando <span class="cmd"><b>show ipv6 interface brief</b></span> muestra un resultado abreviado para cada una de las interfaces. El resultado <span class="cmd">[up/up]</span> en la misma línea que la interfaz indica el estado de interfaz de capa 1/capa 2. Esto es lo mismo que las columnas Status (Estado) y Protocol (Protocolo) en el comando IPv4 equivalente. </p>
+<p></p>
+<p>Advierta que cada interfaz tiene dos direcciones IPv6. La segunda dirección para cada interfaz es la dirección unicast global que se configuró. La primera dirección, la que comienza con FE80, es la dirección unicast link-local para la interfaz. Recuerde que la dirección link-local se agrega automáticamente a la interfaz cuando se asigna una dirección unicast global. </p>
+<p></p>
+<p>Además, advierta que la dirección link-local serial 0/0/0 de R1 es igual a la interfaz GigabitEthernet 0/0. Las interfaces seriales no tienen una dirección MAC de Ethernet, de modo que Cisco IOS utiliza la dirección MAC de la primera interfaz Ethernet disponible. Esto es posible porque las interfaces link-local solo deben ser únicas en ese enlace. </p>
+<p></p>
+<p>La dirección link-local de la interfaz del router suele ser la dirección de gateway predeterminado para los dispositivos en ese enlace o red.</p>
+<p></p>
+<p>Como se muestra en la figura 2, el comando <span class="cmd"><b>show ipv6 route</b></span> puede utilizarse para verificar si las redes IPv6 y las direcciones específicas de la interfaz IPv6 se instalaron en la tabla de enrutamiento IPv6. El comando <span class="cmd"><b>show ipv6 route</b></span> muestra solamente redes IPv6, no redes IPv4. </p>
+<p></p>
+<p>Dentro de la tabla de la ruta, una C junto a una ruta indica que se trata de una red conectada directamente. Cuando la interfaz del router se configura con una dirección unicast global y su estado es “up/up”, se agrega el prefijo y la duración de prefijo IPv6 a la tabla de enrutamiento IPv6 como una ruta conectada. </p>
+<p></p>
+<p>La dirección IPv6 unicast global configurada en la interfaz también se instala en la tabla de enrutamiento como una ruta local. La ruta local tiene un prefijo /128. La tabla de enrutamiento utiliza las rutas locales para procesar eficazmente paquetes cuya dirección de destino es la dirección de la interfaz del router. </p>
+<p></p>
+<p>El comando <span class="cmd"><b>ping</b></span> para IPv6 es idéntico al comando que se utiliza con IPv4, excepto que se usa una dirección IPv6. Como se muestra en la figura 3, el comando se utiliza para verificar la conectividad de capa 3 entre R1 y PC1. Al hacer ping a una dirección link-local desde un router, Cisco IOS solicita al usuario la interfaz de salida. Dado que la dirección link-local de destino puede estar en uno o más de los enlaces o redes, el router debe saber qué interfaz utilizar para enviar el ping. </p>
+<p></p>
+<p>Utilice el verificador de sintaxis de la figura 4 para verificar la configuración de la dirección IPv6.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

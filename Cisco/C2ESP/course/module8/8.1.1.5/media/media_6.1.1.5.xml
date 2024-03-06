@@ -1,0 +1,72 @@
+﻿<textcomponents>
+<component id="ID_s1_title">
+<text><![CDATA[<b>OSPF de área única</b>]]></text>
+</component>
+<component id="ID_s2_title">
+  <text><![CDATA[<b>OSPF multiárea</b>]]></text> 
+  </component>
+<component id="ID_s3_title">
+  <text><![CDATA[<b>El cambio de enlace afecta solo el área local</b>]]></text> 
+  </component>	
+  
+   <component id="ID_s1_txt01">
+  <text><![CDATA[<b>Área OSPF 0</b>]]></text> 
+  </component>	
+    <component id="ID_Title_txt01">
+		<text><![CDATA[<b>  </b>]]></text>
+	</component>
+	
+	<component id="ID_Body_txt01">
+		<text><![CDATA[<textformat blockindent='-14'><ul><li>El área 0 también se denomina “área backbone”. </li><li>OSPF de área única es útil en redes más pequeñas con pocos routers. </li></ul></textformat>]]></text>
+	</component>
+  
+  
+  
+  <component id="ID_s2_txt01">
+  <text><![CDATA[<b>Área&nbsp;1</b>]]></text> 
+  </component>	
+  
+  <component id="ID_s2_txt02">
+  <text><![CDATA[<b>Área 0</b>]]></text> 
+  </component>
+  
+  <component id="ID_s2_txt03">
+  <text><![CDATA[<b>Área&nbsp;51</b>]]></text> 
+  </component>
+  
+  <component id="ID_Title_txt01">
+	<text><![CDATA[<b>  </b>]]></text>
+  </component>
+	
+	<component id="ID_s3_txt01">
+	<text><![CDATA[<b>Área&nbsp;1</b>]]></text> 
+	</component>	
+  
+	<component id="ID_s3_txt02">
+	  <text><![CDATA[<b>Área 0</b>]]></text> 
+	</component>
+  
+    <component id="ID_s3_txt03">
+    <text><![CDATA[<b>Área&nbsp;51</b>]]></text> 
+    </component>
+
+  
+  
+    <component id="ID_Title_txt02">
+		<text><![CDATA[<b>  </b>]]></text>
+	</component>
+	
+	<component id="ID_Body_txt02">
+		<text><![CDATA[<textformat blockindent='-14'><ul><li>Implementado mediante una jerarquía de área de dos capas, dado que todas las áreas se deben conectar al área backbone (área 0).  </li><li>Los routers que interconectan áreas se denominan “routers fronterizos de área” (ABR).  </li><li>Útil en implementaciones de redes más grandes para reducir la sobrecarga de procesamiento y memoria. </li></ul></textformat>]]></text>
+	</component>
+	
+	  <component id="ID_Title_txt03">
+		<text><![CDATA[<b>  </b>]]></text>
+	</component>
+	
+	<component id="ID_Body_txt03">
+		<text><![CDATA[<textformat blockindent='-14'><ul><li>La falla del enlace afecta solo el área local (área 51).  </li><li>El ABR (R2) aísla la falla solo al área 51. </li><li>Los routers en las áreas 0 y 1 no necesitan ejecutar el algoritmo SPF. </li></ul></textformat>]]></text>
+	</component>
+  
+
+</textcomponents>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.3.1.2 Configuración y verificación de la ID de puente</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.3.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de árbol de expansión</h1>
+        <h2>Configuración de PVST+</h2>
+      </div>
+      <div id="content">
+<p>Cuando un administrador desea seleccionar un switch específico como puente raíz, se debe ajustar el valor de prioridad del puente para asegurarse de que sea inferior a los valores de prioridad del puente del resto de los switches en la red. Existen dos métodos diferentes para configurar el valor de prioridad del puente en un switch Cisco Catalyst.</p>
+<p></p>
+<p>
+<b>Método 1</b>
+</p>
+<p>Para asegurar que un switch tenga el valor de prioridad de puente más bajo, utilice el comando <span class="cmd"><b>spanning-tree vlan </b></span><span class="cmd"><i>id-vlan</i></span><span class="cmd"><b> root primary</b></span> en el modo de configuración global. La prioridad para el switch está establecida en el valor predefinido 24576 o en el múltiplo más alto de 4096, menos que la prioridad del puente más baja detectada en la red.</p>
+<p></p>
+<p>Si se desea otro puente raíz, utilice el comando <span class="cmd"><b>spanning-tree vlan </b></span><span class="cmd"><i>id-vlan</i></span><span class="cmd"><b> root secondary</b></span> del modo de configuración global. Este comando establece la prioridad para el switch en el valor predeterminado 28672. Esto asegura que el switch alternativo se convierta en el puente raíz si falla el puente raíz principal. Se supone que el resto de los switches en la red tienen definido el valor de prioridad predeterminado 32768.</p>
+<p></p>
+<p>En la figura 1, el S1 se asignó como puente raíz principal mediante el comando <span class="cmd"><b>spanning-tree vlan 1 root primary</b></span>, y el S2 se configuró como puente raíz secundario mediante el comando <span class="cmd"><b>spanning-tree vlan 1 root secondary</b></span>.</p>
+<p></p>
+<p>
+<b>Método 2</b>
+</p>
+<p>Otro método para configurar el valor de prioridad del puente es utilizar el comando <span class="cmd"><b>spanning-tree vlan </b></span><span class="cmd"><i>id-vlan</i></span><span class="cmd"><b> priority </b></span><span class="cmd"><i>valor</i></span> del modo de configuración global. Este comando da un control más detallado del valor de prioridad del puente. El valor de prioridad se configura en incrementos de 4096 entre 0 y 61440. </p>
+<p></p>
+<p>En el ejemplo, se asignó el valor de prioridad de puente 24576 al S3 mediante el comando <span class="cmd"><b>spanning-tree vlan 1 priority 24576</b></span>.</p>
+<p></p>
+<p>Para verificar la prioridad del puente de un switch, utilice el comando <span class="cmd"><b>show spanning-tree</b></span>. En la figura 2, la prioridad del switch se estableció en 24576. Además, observe que el switch está designado como puente raíz para la instancia de árbol de expansión.</p>
+<p></p>
+<p>Utilice el verificador de sintaxis de la figura 3 para configurar los switches S1, S2 y S3. Mediante el método 2 descrito anteriormente, configure el S3 de forma manual y establezca el valor de prioridad en 24576 para la VLAN 1. Mediante el método 1, configure el S2 como raíz secundaria para la VLAN 1 y el S1 como raíz principal para la VLAN 1. Verifique la configuración con el comando <span class="cmd"><b>show spanning-tree</b></span> en el S1.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

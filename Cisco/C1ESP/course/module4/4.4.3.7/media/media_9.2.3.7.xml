@@ -1,0 +1,118 @@
+﻿<textcomponents> <!-- instructions -->
+<component id="ID_inst">
+	<text><![CDATA[<b>Actividad: Características de las topologías físicas y las topologías lógicas</b><br><br>En esta actividad, se proporcionan características de los métodos de control de acceso al medio de la capa de enlace de datos.<br><br>Clasifique cada método de control de acceso al medio como característica de la topología física o lógica haciendo clic en la columna correspondiente.]]></text>
+</component> <!-- buttons -->
+<component id="ID_Button01">
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id="ID_Button02">
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component> <!--Number of rows in the table-->
+<component id="txt_numrows">
+	<text><![CDATA[10]]></text>
+</component> <!--Number of columns for the answers in the table. Do not count the question column-->
+<component id="txt_numcols">
+	<text><![CDATA[2]]></text>
+</component> <!--Answer column headers-->
+<component id="txt_col1">
+	<text><![CDATA[<b>Topología física</b>]]></text>
+</component>
+
+<component id="txt_col2">
+	<text><![CDATA[<b>Topología lógica</b>]]></text>
+</component> <!--Question text - blockindent code moves the text away from the left edge a bit--> <!--Question text - If questions are numbered, use blockindent for hanging indents-->
+<component id="txt_q1">
+	<text><![CDATA[1. <textformat blockindent='13'>CSMA/CD</textformat>]]></text>
+</component>
+
+<component id="txt_q2">
+	<text><![CDATA[2. <textformat blockindent='13'>Estrella</textformat>]]></text>
+</component>
+
+<component id="txt_q3">
+	<text><![CDATA[3. <textformat blockindent='13'>Acceso por contienda</textformat>]]></text>
+</component>
+
+<component id="txt_q4">
+	<text><![CDATA[4. <textformat blockindent='13'>Bus</textformat>]]></text>
+</component>
+
+<component id="txt_q5">
+	<text><![CDATA[5. <textformat blockindent='13'>CSMA/CA</textformat>]]></text>
+</component>
+
+<component id="txt_q6">
+	<text><![CDATA[6. <textformat blockindent='13'>Acceso controlado</textformat>]]></text>
+</component>
+
+<component id="txt_q7">
+	<text><![CDATA[7. <textformat blockindent='13'>Punto a Punto</textformat>]]></text>
+</component>
+
+<component id="txt_q8">
+	<text><![CDATA[8. <textformat blockindent='13'>Anillo</textformat>]]></text>
+</component>
+
+<component id="txt_q9">
+	<text><![CDATA[9. <textformat blockindent='13'>Hub and Spoke</textformat>]]></text>
+</component>
+
+<component id="txt_q10">
+	<text><![CDATA[10. <textformat blockindent='21'>Malla</textformat>]]></text>
+</component> <!--Answers - Give the column number(s), column numbering start with 1 not 0--> <!--Answers - For MCMA separate the correct answers with commas [2, 4, 5] -->
+<component id="txt_a1">
+	<text><![CDATA[2]]></text>
+</component>
+
+<component id="txt_a2">
+	<text><![CDATA[1]]></text>
+</component>
+
+<component id="txt_a3">
+	<text><![CDATA[2]]></text>
+</component>
+
+<component id="txt_a4">
+	<text><![CDATA[1]]></text>
+</component>
+
+<component id="txt_a5">
+	<text><![CDATA[2]]></text>
+</component>
+
+<component id="txt_a6">
+	<text><![CDATA[2]]></text>
+</component>
+
+<component id="txt_a7">
+	<text><![CDATA[1]]></text>
+</component>
+
+<component id="txt_a8">
+	<text><![CDATA[1]]></text>
+</component>
+
+<component id="txt_a9">
+	<text><![CDATA[1]]></text>
+</component>
+
+<component id="txt_a10">
+	<text><![CDATA[1]]></text>
+</component> <!-- Correct Feedback -->
+<component id="ID_titleCorrect">
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id="ID_correctText">
+	<text><![CDATA[Clasificó correctamente las características de los métodos de control de acceso al medio como topologías físicas o topologías lógicas.]]></text>
+</component> <!-- Incorrect Feedback -->
+<component id="ID_titleIncorrect">
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id="ID_IncorrectText">
+	<text><![CDATA[No clasificó correctamente las características de los métodos de control de acceso al medio como topologías físicas o topologías lógicas. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+</textcomponents>

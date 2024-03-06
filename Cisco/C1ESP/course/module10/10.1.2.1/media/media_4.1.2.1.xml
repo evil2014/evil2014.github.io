@@ -1,0 +1,34 @@
+﻿<textcomponents>
+  <component id="ID_title">
+		<text><![CDATA[<b>Redes punto a punto  </b>]]></text> 
+	</component>
+	
+	<component id="ID_bubble_txt01">
+		<text><![CDATA[<p id="ID_bubble_txt01" class="ID_bubble_txt01">En el disco duro, tengo archivos que se comparten con el Punto2. También tengo que imprimir una página mediante el Punto2.</p>]]></text>
+	</component>
+	
+	<component id="ID_bubble_txt02">
+	  <text><![CDATA[<p id="ID_bubble_txt02" class="ID_bubble_txt02">Necesito acceder a un archivo del disco duro en el Punto1. También necesito imprimir un archivo que recibí del Punto1, con una solicitud de impresión.</p>]]></text> 
+	</component>
+	
+	<component id="ID_txt01">
+	  <text><![CDATA[Punto1<br/><br/><b>Cliente de impresión<br/>Servidor de archivos</b>]]></text> 
+	</component>
+	
+	<component id="ID_txt02">
+	  <text><![CDATA[Punto2<br/><br/><b>Servidor de impresión<br/>Cliente de archivos</b>]]></text> 
+	</component>
+	
+	<component id="ID_txt03">
+		<text><![CDATA[Impresora]]></text>
+	</component>
+		
+	<component id="ID_txt04">
+		<text><![CDATA[Impresora conectada <br/>directamente]]></text>
+	</component>
+		
+	<component id="ID_txt05">
+		<text><![CDATA[En un intercambio punto a punto, ambos dispositivos se consideran iguales en el proceso de comunicación.]]></text>
+	</component>
+	
+</textcomponents>

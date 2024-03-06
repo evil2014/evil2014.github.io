@@ -1,0 +1,64 @@
+﻿<textcomponents>
+<component id="ID_s1_title">
+<text><![CDATA[<b>Cálculo de un resumen de rutas</b>]]></text>
+</component>
+
+<component id="ID_s1_txt01">
+<text><![CDATA[<b>Paso 1: </b> enumerar las redes en formato binario.]]></text>
+</component>
+
+
+
+<component id="ID_s2_title">
+  <text><![CDATA[<b>Cálculo de un resumen de rutas</b>]]></text> 
+  </component>
+  
+<component id="ID_s2_txt01">
+<text><![CDATA[<b>Paso 1: </b> enumerar las redes en formato binario.]]></text>
+</component> 
+  
+<component id="ID_s2_txt02">
+<text><![CDATA[<b>Paso 2: </b> contar el número de bits coincidentes que se encuentran en el extremo izquierdo para determinar la máscara.]]></text>
+</component>
+  <component id="ID_s2_txt03">
+<text><![CDATA[<b>Respuesta: </b> 14&nbsp;bits coincidentes = /14 o 255.252.0.0]]></text>
+</component>
+
+
+
+<component id="ID_s3_title">
+  <text><![CDATA[<b>Cálculo de un resumen de rutas</b>]]></text> 
+  </component>
+
+ 
+ <component id="ID_s3_txt01">
+<text><![CDATA[<b>Paso 1: </b> enumerar las redes en formato binario.]]></text>
+</component> 
+  
+<component id="ID_s3_txt02">
+<text><![CDATA[<b>Paso 2: </b> contar el número de bits coincidentes que se encuentran en el extremo izquierdo para determinar la máscara.]]></text>
+</component>
+  <component id="ID_s3_txt03">
+<text><![CDATA[<b>Respuesta: </b> 14&nbsp;bits coincidentes = /14 o 255.252.0.0]]></text>
+</component>
+<component id="ID_s3_txt04">
+  <text><![CDATA[<b>Paso 3:  </b>copiar los bits coincidentes y luego agregar los bits 0 para determinar la dirección de red resumida.]]></text> 
+  </component>
+  
+ <component id="ID_s3_txt05">
+  <text><![CDATA[Copiar]]></text> 
+  </component>
+  <component id="ID_s3_txt06">
+  <text><![CDATA[Agregar bits cero]]></text> 
+  </component>
+  <component id="ID_s3_txt07">
+  <text><![CDATA[<b>Respuesta: </b> 172.20.0.0]]></text> 
+  </component>
+ 
+ 
+ 
+  <component id="ID_s4_title">
+  <text><![CDATA[<b>Una ruta estática resumida</b>]]></text> 
+  </component>
+  
+</textcomponents>

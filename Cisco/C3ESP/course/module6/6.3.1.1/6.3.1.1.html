@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.3.1.1 Actividad de clase: Tranvías digitales</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.3.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resumen</h1>
+        <h2>Resumen</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Tranvías digitales</b>
+</p>
+<p></p>
+<p>Su ciudad cuenta con un sistema de tranvías digitales antiguo basado en un diseño de área única. Todas las comunicaciones dentro de esta área tardan más en procesarse a medida que se agregan tranvías a las rutas que brindan servicios a la población de esta ciudad en crecimiento. Las salidas y llegadas de los tranvías también tardan un poco más, porque cada tranvía debe revisar grandes tablas de routing para determinar dónde suben y bajan los residentes en las calles de origen y destino.</p>
+<p></p>
+<p>A un ciudadano preocupado se le ocurrió la idea de dividir la ciudad en distintas áreas para tener una manera más eficaz de determinar la información de routing de los tranvías. Se cree que si los mapas de tranvías son más pequeños, el sistema se puede mejorar, ya que habría actualizaciones más rápidas y más pequeñas de las tablas de routing.</p>
+<p></p>
+<p>La comisión de la ciudad aprueba e implementa el nuevo sistema de tranvías digitales basado en áreas. Sin embargo, para asegurar que las nuevas rutas de área sean más eficaces, la comisión necesita información para demostrar los resultados en la próxima reunión pública de la comisión.</p>
+<p></p>
+<p>Complete las instrucciones que se encuentran en el PDF de esta actividad. Comparta sus respuestas con la clase.</p>
+<p></p>
+<p>
+<a href="../../files/6.3.1.1%20Digital%20Trolleys%20Instructions.pdf" target="_blank">Actividad de clase: Tranvías digitales</a>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.2.2.4 Verificar las ACL</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.2.2.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>ACL de IPv4 estándar </h1>
+        <h2>Modificación de ACL de IPv4</h2>
+      </div>
+      <div id="content">
+<p>Como se muestra en la figura 1, el comando <span class="cmd"><b>show ip interface</b></span> se utiliza para verificar la ACL en la interfaz El resultado de este comando incluye el número o el nombre de la lista de acceso y el sentido en el que se aplicó la ACL. El resultado muestra que la lista de acceso 1 se aplica a la interfaz de salida S0/0/0 del router R1 y que la lista de acceso NO_ACCESS se aplica a la interfaz g0/0, también en sentido de salida.</p>
+<p></p>
+<p>En el ejemplo de la figura 2, se muestra el resultado de emitir el comando <span class="cmd"><b>show access-lists</b></span> en el router R1. Para ver una lista de acceso individual, utilice el comando <span class="cmd"><b>show access-lists</b></span> seguido del número o el nombre de la lista de acceso. Es posible que las instrucciones de NO_ACCESS se vean extrañas. Observe que el número de secuencia 15 se muestra antes que el número de secuencia 10. Esto se debe al proceso interno del router y se analizará más adelante en esta sección.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

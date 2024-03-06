@@ -1,0 +1,27 @@
+﻿<textcomponents>
+
+<component id="ID_s1_title">
+<text><![CDATA[<b>Topología OSPFv3</b>]]></text>
+</component>
+<component id="ID_s1_txt01">
+<text><![CDATA[<b>Área 0</b>]]></text>
+</component>
+<component id="ID_s1_txt02">
+<text><![CDATA[La dirección FE80 representa la dirección link-local asignada a cada router.]]></text>
+</component>
+
+
+<component id="ID_s2_title">
+<text><![CDATA[<b>Configuración de direcciones de unidifusión global en el R1</b>]]></text>
+</component>
+
+<component id="ID_s3_title">
+<text><![CDATA[<b>Pasos para configurar OSPFv3</b>]]></text>
+</component>
+ 
+<component id="ID_s3_tx01">
+	   <text><![CDATA[<b>Paso 1:  </b>habilitar el routing de unidifusión IPv6 (<font face="Courier New" color="#393536"><b>ipv6 unicast-routing</b></font>).<br/><b>Paso 2:  </b>(optativo) configurar las direcciones link-local.<br/><b>Paso 3:  </b>configurar una ID del router de 32&nbsp;bits en el modo de configuración del router OSPFv3 con el comando <font face="Courier New" color="#393536"><b>router-id</b></font> <font face="Courier New">id-router</font>.<br/><b>Paso 4:  </b>configurar detalles de routing optativos, como ajustar el ancho de banda de referencia.<br/><b>Paso 5:  </b>(optativo) configurar parámetros específicos de interfaz OSPFv3. Por ejemplo, ajustar el ancho de banda de la interfaz.<br/><b> Paso&nbsp;6: </b> habilitar el routing IPv6 con el comando <font face="Courier New" color="#393536"><b>ipv6 ospf area</b></font>.]]></text>
+</component>
+
+
+</textcomponents>

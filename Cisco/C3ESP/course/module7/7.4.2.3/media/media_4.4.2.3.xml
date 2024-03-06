@@ -1,0 +1,49 @@
+﻿<textcomponents>
+<component id="ID_s1_title">
+<text><![CDATA[<b>Proceso de routing EIGRP para IPv6 en el R1</b>]]></text>
+</component>
+<component id="ID_s2_title">
+<text><![CDATA[<b>ID del router EIGRP para IPv6 en el R1</b>]]></text>
+</component>
+<component id="ID_s3_title">
+<text><![CDATA[<b>Comando <font face="Courier New">no shutdown </font> de EIGRP para IPv6 en el R1</b>]]></text>
+</component>
+<component id="ID_s4_title">
+<text><![CDATA[<b>Configuración del proceso de routing EIGRP para IPv6 en el R2</b>]]></text>
+</component>
+<component id="ID_s5_title">
+<text><![CDATA[<b>Proceso de consideraciones y requisitos</b>]]></text>
+</component>
+
+<component id="ID_sc_reset">
+		<text><![CDATA[Restablecer]]></text>
+	</component>
+	<component id="ID_sc_showme">
+		<text><![CDATA[Mostrar]]></text>
+	</component>
+	<component id="ID_sc_showall">
+		<text><![CDATA[Mostrar todo]]></text>
+	</component>
+
+<component id="ID_SC5" fontFace='Courier New' fontSize="10">
+		<feedback id="fb"><![CDATA[<b>***</b><font face="Arial" color="#0000FF">Debe introducir el comando exacto y completo.</font><b>***</b> 
+		]]></feedback>		
+		<existingcommands><![CDATA[<font face="Arial"><b>Habilitar EIGRP para IPv6 en el R3, realizando las tareas en el siguiente orden:<ul><li>Habilite el routing IPv6.<li>Habilite EIGRP para IPv6 usando 2 como AS.<li>Configure la ID del router 3.0.0.0.<li>Active el proceso EIGRP para IPv6.</b></font>]]></existingcommands>
+		<command prompt="R3(config)#">
+		    <correctresponse><![CDATA[ipv6 unicast-routing]]></correctresponse>
+		</command>
+		<command prompt="R3(config)#">
+		    <correctresponse><![CDATA[ipv6 router eigrp 2]]></correctresponse>
+		</command>
+		<command prompt="R3(config-rtr)#">
+		    <correctresponse><![CDATA[eigrp router-id 3.0.0.0]]></correctresponse>
+		</command>
+		<command prompt="R3(config-rtr)#">
+		    <correctresponse><![CDATA[no shutdown:]]></correctresponse>
+		    <deviceresponse><![CDATA[<font face="Courier New">R3(config-if) #</font>]]></deviceresponse>
+			<instruction><![CDATA[<font face="Arial" class="syntaxBottomLine"><b>Configuró correctamente el proceso de routing EIGRP para IPv6.</b>]]></instruction>
+		</command>
+		<command prompt=""/>
+	</component>
+
+</textcomponents>

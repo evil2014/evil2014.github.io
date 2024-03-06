@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.1.1.3 Formato de los mensajes de syslog</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.1.1.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Syslog</h1>
+        <h2>Funcionamiento de syslog</h2>
+      </div>
+      <div id="content">
+<p>Los dispositivos de Cisco generan mensajes de syslog como resultado de los eventos de red. Cada mensaje de syslog contiene un nivel de gravedad y una instalación. </p>
+<p></p>
+<p>Cuanto más bajos son los números de nivel, más fundamentales son las alarmas de syslog. El nivel de gravedad de los mensajes se puede establecer para controlar dónde se muestra cada tipo de mensaje (es decir, en la consola o los otros destinos). En la figura 1, se muestra la lista completa de los niveles de syslog.</p>
+<p>Cada nivel de syslog tiene su propio significado:</p>
+<p>
+<ul>
+<li>
+<b>Nivel de advertencia, nivel de emergencia:</b> estos son mensajes de error sobre software o hardware que funciona mal; estos tipos de mensajes significan que la funcionalidad del dispositivo se ve afectada. La gravedad del problema determina el nivel real de syslog que se aplica. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Nivel de depuración:</b> este nivel indica que los mensajes son resultados que se generan a partir de la emisión de varios comandos <span class="cmd"><b>debug</b></span>.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Nivel de notificación:</b> el nivel de notificación solo proporciona información, la funcionalidad del dispositivo no se ve afectada. Los mensajes de interfaz activa o inactiva, o de reinicio del sistema se muestran en el nivel de notificación. </li>
+</ul>
+</p>
+<p></p>
+<p>Además de especificar la gravedad, los mensajes de syslog también contienen información sobre la instalación. Las instalaciones de syslog son identificadores de servicios que identifican y categorizan los datos de estado del sistema para informar los mensajes de error y de eventos. Las opciones de instalación de registro disponibles son específicas del dispositivo de red. Por ejemplo, los switches Cisco de la serie 2960 que ejecutan el IOS de Cisco versión 15.0(2) y los routers Cisco 1941 que ejecutan el IOS de Cisco versión 15.2(4) admiten 24 opciones de instalación que se categorizan en 12 tipos de instalación. </p>
+<p></p>
+<p>Algunas instalaciones comunes de mensajes de syslog que se informan en los routers con IOS de Cisco incluyen lo siguiente:</p>
+<p>
+<ul>
+<li>IP</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Protocolo OSPF</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Sistema operativo SYS</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Seguridad IP (IPsec)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>IP de interfaz (IF)</li>
+</ul>
+</p>
+<p></p>
+<p>De manera predeterminada, el formato de los mensajes de syslog en el software IOS de Cisco es el siguiente:</p>
+<p></p>
+<p>
+<span class="cmd">seq no: timestamp: %facility-severity-MNEMONIC: description</span>
+</p>
+<p></p>
+<p>Los campos incluidos en el mensaje de syslog del software IOS de Cisco se explican en la figura 2. </p>
+<p></p>
+<p>Por ejemplo, el resultado de ejemplo de un switch Cisco para un enlace EtherChannel que cambia al estado activo es el siguiente:</p>
+<p></p>
+<p>
+<span class="cmd">00:00:46: %LINK-3-UPDOWN: Interface Port-channel1, changed state to up</span>
+</p>
+<p></p>
+<p>Aquí la instalación es LINK, y el nivel de gravedad es 3, con la MNEMOTÉCNICA UPDOWN. </p>
+<p></p>
+<p>Los mensajes más comunes son los de enlace activo y enlace inactivo, y los mensajes que produce un dispositivo cuando sale del modo de configuración. Si se configura el registro de ACL, el dispositivo genera mensajes de syslog cuando los paquetes coinciden con una condición de parámetros. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

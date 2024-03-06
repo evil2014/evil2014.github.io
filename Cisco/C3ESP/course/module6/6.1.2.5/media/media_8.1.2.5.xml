@@ -1,0 +1,32 @@
+﻿<textcomponents>
+<component id="ID_title">
+<text><![CDATA[<b>Propagación de mensajes de LSA de tipo 4</b>]]></text>
+</component>
+<component id="ID_txt01">
+<text><![CDATA[Internet]]></text>
+</component>
+<component id="ID_txt02">
+  <text><![CDATA[<b>Área&nbsp;1</b>]]></text> 
+  </component>
+<component id="ID_txt03">
+  <text><![CDATA[<b>Área 0</b>]]></text> 
+  </component>
+<component id="ID_txt04">
+  <text><![CDATA[<b>Área 2</b>]]></text> 
+  </component>
+  
+  <component id="ID_txt05">
+  <text><![CDATA[Tipo 1]]></text> 
+  </component>
+<component id="ID_txt06">
+  <text><![CDATA[Tipo 4]]></text> 
+  </component>
+<component id="ID_txt07">
+  <text><![CDATA[Tipo 4]]></text> 
+  </component>
+  
+<component id="ID_txt08">
+  <text><![CDATA[<textformat blockindent="-14"><ul><li>Las LSA de tipo 4 se utilizan para anunciar un ASBR a otras áreas y proporcionar una ruta al ASBR.</li><li>Los ABR generan LSA de tipo 4.</li><li>El ABR de origen genera la LSA de tipo 4, y otros ABR la vuelven a generar.</li><li>La ID del router ASBR identifica la ID de estado de enlace de una LSA de tipo 4.</li></ui></textformat>]]></text> 
+  </component>
+
+</textcomponents>

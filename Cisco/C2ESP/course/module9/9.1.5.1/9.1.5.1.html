@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.1.5.1 Dónde ubicar las ACL</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.1.5.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Funcionamiento de ACL de IP</h1>
+        <h2>Pautas para la colocación de ACL</h2>
+      </div>
+      <div id="content">
+<p>La correcta colocación de las ACL puede contribuir a que la red funcione de forma más eficaz. Se puede colocar una ACL para reducir el tráfico innecesario. Por ejemplo, el tráfico que se denegará en un destino remoto no se debe reenviar mediante recursos de red por la ruta hacia ese destino. </p>
+<p></p>
+<p>Cada ACL se debe colocar donde tenga más impacto en la eficiencia. Como se muestra en la ilustración, las reglas básicas son las siguientes:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>ACL extendidas:</b> coloque las ACL extendidas lo más cerca posible del origen del tráfico que se filtrará. De esta manera, el tráfico no deseado se deniega cerca de la red de origen, sin que cruce la infraestructura de red.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>ACL estándar:</b> debido a que en las ACL estándar no se especifican las direcciones de destino, colóquelas tan cerca del destino como sea posible. Si coloca una ACL estándar en el origen del tráfico, evitará de forma eficaz que ese tráfico llegue a cualquier otra red a través de la interfaz a la que se aplica la ACL. </li>
+</ul>
+</p>
+<p></p>
+<p>La colocación de la ACL y, por lo tanto, el tipo de ACL que se utiliza también puede depender de lo siguiente:</p>
+<p>
+<ul>
+<li>
+<b>Alcance del control del administrador de la red:</b> la colocación de la ACL puede depender de si el administrador de red controla tanto la red de origen como la de destino o no.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Ancho de banda de las redes involucradas:</b> el filtrado del tráfico no deseado en el origen impide la transmisión de ese tráfico antes de que consuma ancho de banda en la ruta hacia un destino. Esto es de especial importancia en redes con un ancho de banda bajo.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Facilidad de configuración:</b> si un administrador de red desea denegar el tráfico proveniente de varias redes, una opción es utilizar una única ACL estándar en el router más cercano al destino. La desventaja es que el tráfico de dichas redes utilizará ancho de banda de manera innecesaria. Se puede utilizar una ACL extendida en cada router donde se origina tráfico. Esto ahorra ancho de banda, ya que el tráfico se filtra en el origen, pero requiere la creación de ACL extendidas en varios routers.</li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Nota:</b> para la certificación CCNA, la regla general es que las ACL extendidas se coloquen lo más cerca posible del origen y que las ACL estándar se coloquen lo más cerca posible del destino.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

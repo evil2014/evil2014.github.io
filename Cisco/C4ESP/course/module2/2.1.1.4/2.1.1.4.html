@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.1.1.4 Oficina pequeña </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.1.1.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Descripción general de las tecnologías WAN</h1>
+        <h2>Propósito de los WANs</h2>
+      </div>
+      <div id="content">
+<p>SPAN Ingeniería, una empresa de consultoría ambiental, desarrolló un proceso especial para convertir los residuos domésticos en electricidad y trabaja en un pequeño proyecto piloto para el gobierno municipal en su área local. La empresa, que opera desde hace cuatro años, creció y cuenta con 15 empleados: seis ingenieros, cuatro diseñadores de dibujo asistido por computadora (CAD), una recepcionista, dos socios ejecutivos y dos asistentes administrativos. </p>
+<p></p>
+<p>La administración de SPAN Ingeniería está trabajando para obtener contratos a gran escala una vez que el proyecto piloto demuestre de manera satisfactoria la viabilidad del proceso. Hasta entonces, la empresa debe administrar los costos cuidadosamente.</p>
+<p></p>
+<p>Para su pequeña oficina, SPAN Ingeniería usa una única LAN para compartir la información entre las computadoras y para compartir los periféricos, como una impresora, un trazador de gran escala (para imprimir planos de ingeniería) y máquinas de fax. Recientemente, se actualizó la LAN para que proporcione un servicio económico de voz sobre IP (VoIP), a fin de ahorrar en los costos de líneas telefónicas separadas para los empleados. </p>
+<p></p>
+<p>La conexión a Internet se realiza a través de un servicio de banda ancha común denominado DSL, que suministra el proveedor de servicios de telefonía local. Con tan pocos empleados, el ancho de banda no es un problema significativo. </p>
+<p></p>
+<p>La empresa no puede costear personal interno de soporte de TI, por lo que usa los servicios de soporte del proveedor de DSL. La empresa también usa un servicio de alojamiento web, en lugar de comprar y operar sus propios servidores FTP y de correo electrónico. </p>
+<p></p>
+<p>En la ilustración, se muestra un ejemplo de una oficina pequeña y su red.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

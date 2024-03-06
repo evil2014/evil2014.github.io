@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.1.1.4 Routing entre VLAN con switch multicapa</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.1.1.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración del routing entre VLAN</h1>
+        <h2>Funcionamiento del routing entre VLAN</h2>
+      </div>
+      <div id="content">
+<p>La implementación de routing entre VLAN de router-on-a-stick requiere solamente una interfaz física en un router y una interfaz en un switch, lo que simplifica el cableado del router. Sin embargo, en otras implementaciones de routing entre VLAN, no se necesita un router dedicado.</p>
+<p></p>
+<p>Los switches multicapa pueden realizar funciones de capa 2 y de capa 3, lo que remplaza la necesidad de utilizar routers dedicados para realizar tareas de routing básico en una red. Los switches multicapa admiten routing dinámico y routing entre VLAN.</p>
+<p></p>
+<p>Haga clic en el botón Reproducir de la ilustración para ver una animación de la forma en que se realiza el routing entre VLAN basado en switch. </p>
+<p></p>
+<p>Tal como se observa en la animación:</p>
+<p></p>
+<p>1. La PC1 en la VLAN 10 se comunica con la PC3 en la VLAN 30 a través del switch S1 mediante las interfaces VLAN configuradas para cada VLAN.</p>
+<p></p>
+<p>2. PC1 envía el tráfico unicast al switch S2.</p>
+<p></p>
+<p>3. El switch S2 etiqueta el tráfico de unidifusión como originado en la VLAN 10 a medida que lo reenvía por el enlace troncal al switch S1.</p>
+<p></p>
+<p>4. El switch S1 elimina la etiqueta de VLAN y reenvía el tráfico de unidifusión a la interfaz de la VLAN 10.</p>
+<p></p>
+<p>5. El switch S1 enruta el tráfico de unidifusión a su interfaz de la VLAN 30.</p>
+<p></p>
+<p>6. El switch S1 luego vuelve a etiquetar el tráfico de unidifusión con la VLAN 30 y lo reenvía por el enlace troncal al switch S2.</p>
+<p></p>
+<p>7. El switch S2 elimina la etiqueta de la VLAN de la trama de unicast y reenvía la trama a PC3 en el puerto F0/6.</p>
+<p></p>
+<p>Para habilitar un switch multicapa para que realice funciones de routing, debe tener routing IP habilitado.</p>
+<p>El switching de multicapa es más escalable que cualquier otra implementación de routing entre VLAN. Esto se debe a que los routers tienen una cantidad limitada de puertos disponibles para conectarse a las redes. Además, en el caso de las interfaces que se configuran como una línea troncal, se puede admitir una cantidad limitada de tráfico en la línea al mismo tiempo.</p>
+<p></p>
+<p>Con un switch multicapa, el tráfico se enruta internamente al dispositivo de switch, lo que significa que los paquetes no se filtran por una única línea troncal para obtener nueva información de etiquetado de VLAN. Sin embargo, un switch multicapa no reemplaza totalmente la funcionalidad de un router. Los routers admiten una cantidad considerable de características adicionales, como la capacidad de implementar mayores controles de seguridad. En cambio, un switch multicapa se puede pensar como un dispositivo de capa 2 actualizado para tener algunas capacidades de routing. </p>
+<p></p>
+<p>
+<b>Nota:</b><b></b> en este curso, la configuración de routing entre VLAN en un switch se restringe a configurar rutas estáticas en un switch 2960, que es la única funcionalidad de routing admitida en los switches 2960. Los switches 2960 admiten hasta 16 rutas estáticas (entre las que se incluyen las rutas configuradas por el usuario y la ruta predeterminada) y todas las rutas conectadas directamente y las rutas predeterminadas para la interfaz de administración. Los switches 2960 pueden tener una dirección IP asignada a cada interfaz virtual de switch (SVI). En cuanto a switches multicapa relativamente económicos con todas las características, los switches de la serie Cisco Catalyst 3560 admiten los protocolos de routing EIGRP, OSPF y BGP.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.1.1.3 Routing entre VLAN con router-on-a-stick</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.1.1.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración del routing entre VLAN</h1>
+        <h2>Funcionamiento del routing entre VLAN</h2>
+      </div>
+      <div id="content">
+<p>A diferencia del routing entre VLAN antiguo, que requiere varias interfaces físicas, tanto en el router como en el switch, las implementaciones más comunes y actuales de routing entre VLAN no tienen esos requisitos. En cambio, algunos softwares de router permiten configurar una interfaz del router como enlace troncal, lo que significa que solo es necesaria una interfaz física en el router y en el switch para enrutar paquetes entre varias VLAN.</p>
+<p></p>
+<p>“Router-on-a-stick” es un tipo de configuración de router en la cual una única interfaz física enruta el tráfico entre varias VLAN en una red. Como puede verse en la ilustración, el router está conectado al switch S1 mediante una única conexión de red física (un enlace troncal). </p>
+<p>La interfaz del router se configura para funcionar como enlace troncal y se conecta a un puerto del switch configurado en modo de enlace troncal. Para realizar el routing entre VLAN, el router acepta en la interfaz troncal el tráfico con etiquetas de VLAN proveniente del switch adyacente y luego lo enruta en forma interna entre las VLAN, mediante subinterfaces. El router reenvía el tráfico enrutado con etiquetas de VLAN para la VLAN de destino a través de la misma interfaz física utilizada para recibir el tráfico.</p>
+<p></p>
+<p>Las subinterfaces son interfaces virtuales basadas en software, asociadas con una única interfaz física. Las subinterfaces se configuran en software en un router, y cada subinterfaz se configura de manera independiente con una dirección IP y una asignación de VLAN. Las subinterfaces se configuran para subredes diferentes que corresponden a su asignación de VLAN para facilitar el routing lógico. Después de que se toma una decisión de routing según la VLAN de destino, las tramas de datos reciben etiquetas de VLAN y se envían de vuelta por la interfaz física. </p>
+<p></p>
+<p>Haga clic en el botón Reproducir de la ilustración para ver una animación de la forma en que un router-on-a-stick desempeña su función de routing.</p>
+<p></p>
+<p>Tal como se observa en la animación:</p>
+<p></p>
+<p>1. La PC1 en la VLAN 10 se comunica con la PC3 en la VLAN 30 a través del router R1 mediante una única interfaz física del router.</p>
+<p></p>
+<p>2. PC1 envía el tráfico unicast al switch S2.</p>
+<p></p>
+<p>3. Luego, el switch S2 etiqueta el tráfico de unidifusión como originado en la VLAN 10 y lo reenvía por el enlace troncal al switch S1.</p>
+<p></p>
+<p>4. El switch S1 reenvía el tráfico etiquetado por la otra interfaz troncal en el puerto F0/5 a la interfaz en el router R1.</p>
+<p></p>
+<p>5. El router R1 acepta el tráfico de unidifusión etiquetado en la VLAN 10 y lo enruta a la VLAN 30 mediante sus subinterfaces configuradas.</p>
+<p></p>
+<p>6. El tráfico de unidifusión se etiqueta con la VLAN 30 mientras se envía por la interfaz del router al switch S1.</p>
+<p></p>
+<p>7. El switch S1 reenvía el tráfico unicast etiquetado por el otro enlace troncal al switch S2.</p>
+<p></p>
+<p>8. El switch S2 elimina la etiqueta de la VLAN de la trama de unicast y reenvía la trama a PC3 en el puerto F0/6.</p>
+<p></p>
+<p>
+<b>Nota:</b> el método de routing entre VLAN de router-on-a-stick no es escalable más allá de las 50 VLAN.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

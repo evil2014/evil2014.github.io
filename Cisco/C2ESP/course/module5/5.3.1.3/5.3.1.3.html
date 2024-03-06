@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.3.1.3 Routing entre VLAN con interfaces virtuales de switch (cont.)</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.3.1.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Conmutación de capa 3</h1>
+        <h2>Funcionamiento y configuración del switching de capa 3</h2>
+      </div>
+      <div id="content">
+<p>Una SVI es una interfaz virtual configurada en un switch multicapa, como se muestra en la ilustración. Se puede crear una SVI para cualquier VLAN que exista en el switch. Una SVI se considera virtual porque no hay un puerto físico dedicado a la interfaz. Puede realizar las mismas funciones para la VLAN que una interfaz del router y puede configurarse de manera similar a una interfaz tal (es decir, dirección IP, ACL de entrada y de salida, etcétera). La SVI para la VLAN proporciona procesamiento de capa 3 para los paquetes que provienen de todos los puertos de switch asociados a dicha VLAN o que se dirigen a ella.</p>
+<p></p>
+<p>De manera predeterminada, se crea una SVI para la VLAN predeterminada (VLAN 10) a fin de permitir la administración remota del switch. Las SVI adicionales deben crearse de forma explícita. Las SVI se crean la primera vez que se ingresa al modo de configuración de interfaz de VLAN para una SVI de VLAN en particular, por ejemplo, cuando se introduce el comando <span class="cmd"><b>interface vlan 10</b></span>. El número de VLAN utilizado se corresponde con la etiqueta VLAN asociada con las tramas de datos en un enlace troncal encapsulado 802.1Q o bien con la ID de VLAN (VID) configurada para un puerto de acceso. Al crear una SVI como gateway para la VLAN 10, nombre “VLAN 10” a la interfaz SVI. Configure y asigne una dirección IP a cada SVI de VLAN.</p>
+<p></p>
+<p>Al crear una SVI, asegúrese de que esa VLAN en particular esté presente en la base de datos de VLAN. En la ilustración, el switch debe tener presentes las VLAN 10 y VLAN 20 en la base de datos de VLAN, de lo contrario, la interfaz SVI permanece desactivada.</p>
+<p></p>
+<p>A continuación se detallan algunos de los motivos para configurar una SVI:</p>
+<p></p>
+<p>
+<ul>
+<li>Para proporcionar un gateway a una VLAN a fin de poder enrutar el tráfico dentro o fuera de esa VLAN.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Para proporcionar conectividad IP de capa 3 al switch.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Para admitir las configuraciones de puente y de protocolo de routing.</li>
+</ul>
+</p>
+<p></p>
+<p>A continuación, se detallan algunas de las ventajas de las SVI (la única desventaja es que los switches multicapa son más costosos):</p>
+<p></p>
+<p>
+<ul>
+<li>Es mucho más veloz que router-on-a-stick, porque todo el switching y el routing se realizan por hardware.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>El routing no requiere enlaces externos del switch al router.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>No se limita a un solo enlace. Se pueden utilizar EtherChannels de capa 2 entre los switches para obtener más ancho de banda.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>La latencia es mucho menor, porque no hace falta que salga del switch.</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

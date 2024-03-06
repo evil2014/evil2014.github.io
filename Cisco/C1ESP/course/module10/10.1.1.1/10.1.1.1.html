@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>10.1.1.1 Modelos OSI y TCP/IP: nuevo análisis</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_10.1.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolos de la capa de aplicación.</h1>
+        <h2>Aplicación, sesión y presentación</h2>
+      </div>
+      <div id="content">
+<p>Como se muestra en la ilustración, los profesionales de redes utilizan los modelos OSI y TCP/IP para comunicarse tanto verbalmente como mediante documentación técnica escrita. Como tales, los profesionales de redes pueden utilizar estos modelos para describir el comportamiento de protocolos y aplicaciones. </p>
+<p></p>
+<p>En el modelo OSI, la información pasa de una capa a otra: de la capa de aplicación en el host de transmisión pasa por la jerarquía hacia la capa física y luego por el canal de comunicaciones hacia el host de destino, donde la información vuelve a la jerarquía y termina en la capa de aplicación.</p>
+<p></p>
+<p>La capa de aplicación es la capa superior de los modelos OSI y TCP/IP. La capa de aplicación de TCP/IP incluye un número de protocolos que proporciona funcionalidad específica a una variedad de aplicaciones de usuario final. La funcionalidad de los protocolos de capa de aplicación de TCP/IP se adapta aproximadamente al esquema de las tres capas superiores del modelo OSI: la de aplicación, la de presentación y la de sesión. Las capas 5, 6 y 7 del modelo OSI se utilizan como referencias para proveedores y desarrolladores de software de aplicación para fabricar productos, como exploradores Web, que necesitan acceder a las redes.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

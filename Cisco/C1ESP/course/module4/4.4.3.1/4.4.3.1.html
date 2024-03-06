@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.4.3.1 Topologías físicas de LAN</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.4.3.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Control de acceso al medio</h1>
+        <h2>Topologías de LAN</h2>
+      </div>
+      <div id="content">
+<p>La topología física define cómo se interconectan físicamente los sistemas finales. En las redes LAN de medios compartidos, los dispositivos finales se pueden interconectar mediante las siguientes topologías físicas:</p>
+<p>
+<ul>
+<li>
+<b>Estrella:</b> los dispositivos finales se conectan a un dispositivo intermediario central. Las primeras topologías en estrella interconectaban dispositivos finales mediante hubs. Sin embargo, en la actualidad estas topologías utilizan switches. La topología en estrella es la topología física de LAN más común, principalmente porque es fácil de instalar, muy escalable (es fácil agregar y quitar dispositivos finales) y de fácil resolución de problemas.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Estrella extendida o híbrida:</b> en una topología en estrella extendida, dispositivos intermediarios centrales interconectan otras topologías en estrella. En una topología híbrida, las redes en estrella se pueden interconectar mediante una topología de bus.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Bus:</b> todos los sistemas finales se encadenan entre sí y terminan de algún modo en cada extremo. No se requieren dispositivos de infraestructura, como switches, para interconectar los dispositivos finales. Las topologías de bus se utilizaban en las antiguas redes Ethernet, porque eran económicas y fáciles de configurar.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Anillo:</b> los sistemas finales se conectan a su respectivo vecino y forman un anillo. A diferencia de la topología de bus, la de anillo no necesita tener una terminación. Las topologías de anillo se utilizaban en las antiguas redes de interfaz de datos distribuida por fibra (FDDI). Específicamente, las redes FDDI emplean un segundo anillo para la tolerancia a fallas o para mejorar el rendimiento.</li>
+</ul>
+</p>
+<p></p>
+<p>En la ilustración, se muestra cómo se interconectan los dispositivos finales en las redes LAN.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

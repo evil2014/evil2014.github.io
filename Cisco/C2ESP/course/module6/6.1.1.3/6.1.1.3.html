@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.1.1.3 Cuándo usar rutas estáticas</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.1.1.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Implementación del routing estático</h1>
+        <h2>Enrutamiento estático</h2>
+      </div>
+      <div id="content">
+<p>El routing estático tiene tres usos principales: </p>
+<p>
+<ul>
+<li>Facilita el mantenimiento de la tabla de enrutamiento en redes más pequeñas en las cuales no está previsto que crezcan significativamente.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Proporciona routing hacia las redes de rutas internas y desde estas. Una red de rutas internas es aquella a la cual se accede a través un de una única ruta y cuyo router tiene solo un vecino.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Utiliza una única ruta predeterminada para representar una ruta hacia cualquier red que no tenga una coincidencia más específica con otra ruta en la tabla de routing. Las rutas predeterminadas se utilizan para enviar tráfico a cualquier destino que esté más allá del próximo router ascendente.</li>
+</ul>
+</p>
+<p></p>
+<p>En la ilustración, se muestra un ejemplo de la conexión de una red de rutas internas y de la conexión de una ruta predeterminada. En dicha ilustración, observe que cualquier red conectada al R1 solo tiene una manera de alcanzar otros destinos, ya sean redes conectadas al R2 o destinos más allá del R2. Por lo tanto, la red 172.16.3.0 es una red de rutas internas y el R1 es un router de rutas internas. Al ejecutar un protocolo de routing entre el R2 y el R1, se desperdician recursos. </p>
+<p></p>
+<p>En este ejemplo, se puede configurar una ruta estática en el R2 para alcanzar la LAN del R1. Además, como el R1 tiene solo una forma de enviar tráfico no local, se puede configurar una ruta estática predeterminada en el R1 para señalar al R2 como el siguiente salto para todas las otras redes. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

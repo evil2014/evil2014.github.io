@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.1.2.2 Planificación para la redundancia</title>
+    <!--  -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.1.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Implementación de un diseño de red</h1>
+        <h2>Expansión de la red</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Implementación de la redundancia </b>
+</p>
+<p></p>
+<p>Para la mayoría de las organizaciones, la disponibilidad de la red es fundamental para satisfacer las necesidades empresariales. La redundancia es una parte importante del diseño de la red para prevenir interrupciones de los servicios de la red al minimizar la posibilidad de un punto único de falla. Un método para implementar la redundancia consiste en instalar equipos duplicados y proporcionar servicios de conmutación por falla para los dispositivos esenciales. </p>
+<p></p>
+<p>Otro método para implementar la redundancia es mediante rutas redundantes, como se muestra en la ilustración. Las rutas redundantes ofrecen rutas físicas alternativas para que los datos atraviesen la red. En una red conmutada, las rutas redundantes admiten una alta disponibilidad. Sin embargo, debido al funcionamiento de los switches, es posible que las rutas redundantes en una red Ethernet conmutada causen bucles lógicos en la capa 2. Por esta razón, se necesita el protocolo de árbol de expansión (STP).</p>
+<p></p>
+<p>El protocolo STP permite la redundancia necesaria para proporcionar confiabilidad, pero elimina los bucles de switching. Para hacerlo, proporciona un mecanismo para deshabilitar rutas redundantes en una red conmutada hasta que la ruta se vuelva necesaria, por ejemplo, cuando ocurre una falla. Es un protocolo de estándares abiertos, que se utiliza en un entorno de conmutación para crear una topología lógica sin bucles. </p>
+<p></p>
+<p>En el capítulo “Redundancia de LAN”, se describen más detalles acerca de la redundancia LAN y el funcionamiento de STP.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

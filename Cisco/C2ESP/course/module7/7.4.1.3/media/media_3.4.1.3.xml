@@ -1,0 +1,221 @@
+﻿<textcomponents>
+<component id="ID_s1_title">
+<text><![CDATA[<b>Árbol SPF del R1</b>]]></text>
+</component>
+<component id="ID_s2_title">
+  <text><![CDATA[<b>Árbol SPF del R2</b>]]></text> 
+  </component>
+<component id="ID_s3_title">
+  <text><![CDATA[<b>Árbol SPF del R3</b>]]></text> 
+  </component>
+<component id="ID_s4_title">
+  <text><![CDATA[<b>Árbol SPF del R4</b>]]></text> 
+  </component>
+  <component id="ID_s5_title">
+  <text><![CDATA[<b>Árbol SPF del R5</b>]]></text> 
+  </component>
+  
+  
+  <component id='ID_s1_table'>
+		<text><![CDATA[
+				<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4'>
+				<tr class="mtable_top">
+					<td colspan='3' bgcolor='#98D3D1' valign="top" class="mtable_top"></td>					
+				</tr>
+				<tr class="mtable_top">
+					<td colspan='3' bgcolor='#0E6360' class="mtable_top"><font size='1' color='#434321'><span style="color:#DAE17A">.</span></font></td>
+				</tr>
+				<tr>
+					<td bgcolor='#077A77' valign="top" class="mtitle"><font size='11' color='#ffffff'><b>Destino</b></font></td>
+					<td bgcolor='#077A77' valign="top" class="mtitle"><font size='11' color='#ffffff'><b>Ruta más corta</b></font></td>
+					<td width="85" bgcolor='#077A77' valign="top" class="mtitle"><font size='11' color='#ffffff'><b>Costo</b></font></td>
+				</tr>
+				<tr>
+					<td bgcolor='#EFF8F7' valign="top"><font  color='#393536'>LAN del R2</font></td>	
+					<td bgcolor='#EFF8F7' valign="top"><font  color='#393536'>R1 a R2</font></td>
+					<td bgcolor='#EFF8F7' valign="top"><font  color='#393536'>22</font></td>			
+				</tr>
+				<tr>					
+					<td bgcolor='#FFFFFF' valign="top"><font  color='#393536'>LAN del R3</font></td>	
+					<td bgcolor='#FFFFFF' valign="top"><font  color='#393536'>R1 a R3</font></td>
+					<td bgcolor='#FFFFFF' valign="top"><font  color='#393536'>7</font></td>			
+				</tr>
+				<tr>
+					<td bgcolor='#EFF8F7' valign="top"><font  color='#393536'>LAN del R4</font></td>	
+					<td bgcolor='#EFF8F7' valign="top"><font  color='#393536'>Del R1 al R3 al R4</font></td>
+					<td bgcolor='#EFF8F7' valign="top"><font  color='#393536'>17</font></td>			
+				</tr>
+				<tr>					
+					<td bgcolor='#FFFFFF' valign="top"><font  color='#393536'>LAN del R5</font></td>	
+					<td bgcolor='#FFFFFF' valign="top"><font  color='#393536'>Del R1 al R3 al R4 al R5</font></td>
+					<td bgcolor='#FFFFFF' valign="top"><font  color='#393536'>27</font></td>			
+				</tr>
+				</table>]]>
+			
+		</text>
+		</component>
+		
+		
+		
+		<component id='ID_s2_table'>
+		<text><![CDATA[
+				<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4'>
+				<tr class="mtable_top">
+					<td colspan='3' bgcolor='#98D3D1' valign="top" class="mtable_top"></td>					
+				</tr>
+				<tr class="mtable_top">
+					<td colspan='3' bgcolor='#0E6360' class="mtable_top"><font size='1' color='#434321'><span style="color:#DAE17A">.</span></font></td>
+				</tr>
+				<tr>
+					<td bgcolor='#077A77' valign="top" class="mtitle"><font size='11' color='#ffffff'><b>Destino</b></font></td>
+					<td bgcolor='#077A77' valign="top" class="mtitle"><font size='11' color='#ffffff'><b>Ruta más corta</b></font></td>
+					<td width="85" bgcolor='#077A77' valign="top" class="mtitle"><font size='11' color='#ffffff'><b>Costo</b></font></td>
+				</tr>
+				<tr>
+					<td bgcolor='#EFF8F7' valign="top"><font  color='#393536'>LAN de R1</font></td>	
+					<td bgcolor='#EFF8F7' valign="top"><font  color='#393536'>Del R2 al R1</font></td>
+					<td bgcolor='#EFF8F7' valign="top"><font  color='#393536'>22</font></td>			
+				</tr>
+				<tr>					
+					<td bgcolor='#FFFFFF' valign="top"><font  color='#393536'>LAN del R3</font></td>	
+					<td bgcolor='#FFFFFF' valign="top"><font  color='#393536'>Del R2 al R1 al R3</font></td>
+					<td bgcolor='#FFFFFF' valign="top"><font  color='#393536'>27</font></td>			
+				</tr>
+				<tr>
+					<td bgcolor='#EFF8F7' valign="top"><font  color='#393536'>LAN del R4</font></td>	
+					<td bgcolor='#EFF8F7' valign="top"><font  color='#393536'>Del R2 al R5 al R4</font></td>
+					<td bgcolor='#EFF8F7' valign="top"><font  color='#393536'>22</font></td>			
+				</tr>
+				<tr>					
+					<td bgcolor='#FFFFFF' valign="top"><font  color='#393536'>LAN del R5</font></td>	
+					<td bgcolor='#FFFFFF' valign="top"><font  color='#393536'>Del R2 al R5</font></td>
+					<td bgcolor='#FFFFFF' valign="top"><font  color='#393536'>12</font></td>			
+				</tr>
+				</table>]]>
+			
+		</text>
+		</component>
+		
+		
+		
+		
+		<component id='ID_s3_table'>
+		<text><![CDATA[
+				<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4'>
+				<tr class="mtable_top">
+					<td colspan='3' bgcolor='#98D3D1' valign="top" class="mtable_top"></td>					
+				</tr>
+				<tr class="mtable_top">
+					<td colspan='3' bgcolor='#0E6360' class="mtable_top"><font size='1' color='#434321'><span style="color:#DAE17A">.</span></font></td>
+				</tr>
+				<tr>
+					<td bgcolor='#077A77' valign="top" class="mtitle"><font size='11' color='#ffffff'><b>Destino</b></font></td>
+					<td bgcolor='#077A77' valign="top" class="mtitle"><font size='11' color='#ffffff'><b>Ruta más corta</b></font></td>
+					<td width="85" bgcolor='#077A77' valign="top" class="mtitle"><font size='11' color='#ffffff'><b>Costo</b></font></td>
+				</tr>
+				<tr>
+					<td bgcolor='#EFF8F7' valign="top"><font  color='#393536'>LAN de R1</font></td>	
+					<td bgcolor='#EFF8F7' valign="top"><font  color='#393536'>Del R3 al R1</font></td>
+					<td bgcolor='#EFF8F7' valign="top"><font  color='#393536'>7</font></td>			
+				</tr>
+				<tr>					
+					<td bgcolor='#FFFFFF' valign="top"><font  color='#393536'>LAN del R2</font></td>	
+					<td bgcolor='#FFFFFF' valign="top"><font  color='#393536'>Del R3 al R1 al R2</font></td>
+					<td bgcolor='#FFFFFF' valign="top"><font  color='#393536'>27</font></td>			
+				</tr>
+				<tr>
+					<td bgcolor='#EFF8F7' valign="top"><font  color='#393536'>LAN del R4</font></td>	
+					<td bgcolor='#EFF8F7' valign="top"><font  color='#393536'>R3 a R4</font></td>
+					<td bgcolor='#EFF8F7' valign="top"><font  color='#393536'>12</font></td>			
+				</tr>
+				<tr>					
+					<td bgcolor='#FFFFFF' valign="top"><font  color='#393536'>LAN del R5</font></td>	
+					<td bgcolor='#FFFFFF' valign="top"><font  color='#393536'>Del R3 al R4 al R5</font></td>
+					<td bgcolor='#FFFFFF' valign="top"><font  color='#393536'>22</font></td>			
+				</tr>
+				</table>]]>
+			
+		</text>
+		</component>
+		
+		
+		
+		<component id='ID_s4_table'>
+		<text><![CDATA[
+				<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4'>
+				<tr class="mtable_top">
+					<td colspan='3' bgcolor='#98D3D1' valign="top" class="mtable_top"></td>					
+				</tr>
+				<tr class="mtable_top">
+					<td colspan='3' bgcolor='#0E6360' class="mtable_top"><font size='1' color='#434321'><span style="color:#DAE17A">.</span></font></td>
+				</tr>
+				<tr>
+					<td bgcolor='#077A77' valign="top" class="mtitle"><font size='11' color='#ffffff'><b>Destino</b></font></td>
+					<td bgcolor='#077A77' valign="top" class="mtitle"><font size='11' color='#ffffff'><b>Ruta más corta</b></font></td>
+					<td width="85" bgcolor='#077A77' valign="top" class="mtitle"><font size='11' color='#ffffff'><b>Costo</b></font></td>
+				</tr>
+				<tr>
+					<td bgcolor='#EFF8F7' valign="top"><font  color='#393536'>LAN de R1</font></td>	
+					<td bgcolor='#EFF8F7' valign="top"><font  color='#393536'>Del R4 al R3 al R1</font></td>
+					<td bgcolor='#EFF8F7' valign="top"><font  color='#393536'>17</font></td>			
+				</tr>
+				<tr>					
+					<td bgcolor='#FFFFFF' valign="top"><font  color='#393536'>LAN del R2</font></td>	
+					<td bgcolor='#FFFFFF' valign="top"><font  color='#393536'>Del R4 al R5 al R2</font></td>
+					<td bgcolor='#FFFFFF' valign="top"><font  color='#393536'>22</font></td>			
+				</tr>
+				<tr>
+					<td bgcolor='#EFF8F7' valign="top"><font  color='#393536'>LAN del R3</font></td>	
+					<td bgcolor='#EFF8F7' valign="top"><font  color='#393536'>Del R4 al R3</font></td>
+					<td bgcolor='#EFF8F7' valign="top"><font  color='#393536'>12</font></td>			
+				</tr>
+				<tr>					
+					<td bgcolor='#FFFFFF' valign="top"><font  color='#393536'>LAN del R5</font></td>	
+					<td bgcolor='#FFFFFF' valign="top"><font  color='#393536'>Del R4 al R5</font></td>
+					<td bgcolor='#FFFFFF' valign="top"><font  color='#393536'>12</font></td>			
+				</tr>
+				</table>]]>
+			
+		</text>
+		</component>
+		
+		
+		<component id='ID_s5_table'>
+		<text><![CDATA[
+				<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4'>
+				<tr class="mtable_top">
+					<td colspan='3' bgcolor='#98D3D1' valign="top" class="mtable_top"></td>					
+				</tr>
+				<tr class="mtable_top">
+					<td colspan='3' bgcolor='#0E6360' class="mtable_top"><font size='1' color='#434321'><span style="color:#DAE17A">.</span></font></td>
+				</tr>
+				<tr>
+					<td bgcolor='#077A77' valign="top" class="mtitle"><font size='11' color='#ffffff'><b>Destino</b></font></td>
+					<td bgcolor='#077A77' valign="top" class="mtitle"><font size='11' color='#ffffff'><b>Ruta más corta</b></font></td>
+					<td width="85" bgcolor='#077A77' valign="top" class="mtitle"><font size='11' color='#ffffff'><b>Costo</b></font></td>
+				</tr>
+				<tr>
+					<td bgcolor='#EFF8F7' valign="top"><font  color='#393536'>LAN de R1</font></td>	
+					<td bgcolor='#EFF8F7' valign="top"><font  color='#393536'>Del R5 al R4 al R3 al R1</font></td>
+					<td bgcolor='#EFF8F7' valign="top"><font  color='#393536'>27</font></td>			
+				</tr>
+				<tr>					
+					<td bgcolor='#FFFFFF' valign="top"><font  color='#393536'>LAN del R2</font></td>	
+					<td bgcolor='#FFFFFF' valign="top"><font  color='#393536'>Del R5 al R2</font></td>
+					<td bgcolor='#FFFFFF' valign="top"><font  color='#393536'>12</font></td>			
+				</tr>
+				<tr>
+					<td bgcolor='#EFF8F7' valign="top"><font  color='#393536'>LAN del R3</font></td>	
+					<td bgcolor='#EFF8F7' valign="top"><font  color='#393536'>Del R5 al R4 al R3</font></td>
+					<td bgcolor='#EFF8F7' valign="top"><font  color='#393536'>22</font></td>			
+				</tr>
+				<tr>					
+					<td bgcolor='#FFFFFF' valign="top"><font  color='#393536'>LAN del R4</font></td>	
+					<td bgcolor='#FFFFFF' valign="top"><font  color='#393536'>Del R5 al R4</font></td>
+					<td bgcolor='#FFFFFF' valign="top"><font  color='#393536'>12</font></td>			
+				</tr>
+				</table>]]>
+			
+		</text>
+		</component>
+</textcomponents>

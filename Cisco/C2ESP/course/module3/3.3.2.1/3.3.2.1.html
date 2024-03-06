@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>3.3.2.1 Pautas de diseño de VLAN</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_3.3.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Seguridad y diseño de redes VLAN</h1>
+        <h2>Prácticas recomendadas de diseño para las VLAN</h2>
+      </div>
+      <div id="content">
+<p>Los switches Cisco tienen una configuración de fábrica en la cual las VLAN predeterminadas se preconfiguran para admitir diversos tipos de medios y protocolos. La VLAN Ethernet predeterminada es la VLAN 1. Por seguridad, se recomienda configurar todos los puertos de todos los switches para que se asocien a VLAN distintas de la VLAN 1. Generalmente, esto se logra configurando todos los puertos sin utilizar en una VLAN de agujero negro que no se use para nada en la red. Todos los puertos utilizados se asocian a VLAN independientes de la VLAN 1 y de la VLAN de agujero negro. También se recomienda desactivar los puertos de switch sin utilizar para evitar el acceso no autorizado.</p>
+<p></p>
+<p>Una buena práctica de seguridad es separar el tráfico de administración y de datos de usuario. La VLAN de administración, que es la VLAN 1 de manera predeterminada, se debe cambiar a una VLAN diferente e independiente. Para comunicarse de manera remota con un switch Cisco con fines de administración, el switch debe tener una dirección IP configurada en la VLAN de administración. Los usuarios en otras VLAN no pueden establecer sesiones de acceso remoto al switch, a menos que se los enrute a la VLAN de administración, lo que proporciona una capa de seguridad adicional. Además, se debe configurar el switch para que solo acepte sesiones SSH cifradas para la administración remota.</p>
+<p></p>
+<p>Todo el tráfico de control se envía por la VLAN 1. Por lo tanto, cuando se cambia la VLAN nativa a una opción distinta de la VLAN 1, todo el tráfico de control se etiqueta en los enlaces troncales de VLAN IEEE 802.1Q (se etiqueta con la ID de VLAN 1). Por seguridad, se recomienda cambiar la VLAN nativa a una VLAN distinta de la VLAN 1. La VLAN nativa también debe ser distinta de todas las VLAN de usuarios. Asegúrese de que la VLAN nativa para un enlace troncal 802.1Q sea la misma en ambos extremos del enlace troncal. </p>
+<p></p>
+<p>DTP ofrece cuatro modos de puerto de switch: acceso, enlace troncal, dinámico automático y dinámico deseado. Una pauta general es inhabilitar la autonegociación. Una práctica recomendada de seguridad de puertos es no utilizar los modos de puerto de switch dinámico automático o dinámico deseado. </p>
+<p></p>
+<p>Por último, el tráfico de voz tiene requisitos de QoS estrictos. Si las computadoras y los teléfonos IP de los usuarios están en la misma VLAN, cada uno intenta usar el ancho de banda disponible sin tener en cuenta al otro dispositivo. Para evitar este conflicto, es aconsejable utilizar VLAN separadas para la telefonía IP y para el tráfico de datos. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

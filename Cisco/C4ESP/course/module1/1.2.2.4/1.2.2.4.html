@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.2.2.4 Extremo del proveedor de servicios </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.2.2.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Arquitectura empresarial de Cisco</h1>
+        <h2>Modelo de arquitectura empresarial de Cisco</h2>
+      </div>
+      <div id="content">
+<p>Las empresas utilizan proveedores de servicios (SP) para enlazarse con otros sitios. Como se muestra en la figura 1, el módulo de perímetro del SP puede incluir lo siguiente:</p>
+<p>
+<ul>
+<li>Proveedores de servicios de Internet (ISP)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Servicios WAN, como Frame Relay, ATM y MAN</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Servicios de red pública de telefonía conmutada (PSTN)</li>
+</ul>
+</p>
+<p></p>
+<p>El perímetro del SP proporciona conectividad entre el módulo de campus empresarial y los módulos remotos de centro de datos, de sucursales y de trabajadores a distancia de la empresa.</p>
+<p></p>
+<p>El módulo de perímetro del SP presenta las siguientes características:</p>
+<p>
+<ul>
+<li>Abarca amplias áreas geográficas de manera rentable.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Converge los servicios de voz, video y datos a través de una única red de comunicaciones IP.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Admite QoS y acuerdos del nivel de servicio.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Admite seguridad mediante VPN (IPsec y MPLS) a través de las WAN de capa 2 y capa 3.</li>
+</ul>
+</p>
+<p></p>
+<p>Haga clic en el perímetro del proveedor de servicios en la figura 1 para obtener más información. </p>
+<p></p>
+<p>Al adquirir servicios de Internet de un ISP, se debe tener en cuenta la redundancia o la conmutación por falla. Como se muestra en la figura 2, las conexiones redundantes a un único ISP pueden incluir lo siguiente: </p>
+<p>
+<ul>
+<li>
+<b>Conexión simple:</b> una única conexión a un ISP</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Conexión doble:</b> dos o más conexiones a un único ISP</li>
+</ul>
+</p>
+<p></p>
+<p>También se puede establecer la redundancia con varios ISP, como se muestra en la figura 3. Las opciones para conectarse a varios ISP incluyen lo siguiente:</p>
+<p>
+<ul>
+<li>
+<b>Conexión de hosts múltiples:</b> conexiones a dos o más ISP</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Conexión de hosts múltiples doble:</b> varias conexiones a dos o más ISP</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.2.1.1 ¿Qué es un sistema de cable?</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.2.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Comparación de las soluciones de banda ancha</h1>
+        <h2>Cable</h2>
+      </div>
+      <div id="content">
+<p>El acceso a Internet a través de una red de cable es una opción común que utilizan los trabajadores a distancia para acceder a su red empresarial. El sistema de cable utiliza un cable coaxial que transporta las señales de radiofrecuencia (RF) a través de la red. El cable coaxial es el principal medio que se utiliza para armar sistemas de TV por cable.</p>
+<p></p>
+<p>La televisión por cable comenzó en Pensilvania en el año 1948. John Walson, propietario de una tienda de electrodomésticos en un pequeño pueblo de montaña, necesitaba resolver los problemas de mala recepción por aire que experimentaban los clientes que deseaban recibir señales de televisión desde Filadelfia a través de las montañas. Walson colocó una antena en un poste de servicio público en la cima de una montaña local, lo que le permitió mostrar los televisores de su tienda con buenas señales de difusión provenientes de las tres estaciones de Filadelfia. Conectó la antena a la tienda a través de un cable y modificó los amplificadores de señal. A continuación, conectó a varios de los clientes que se encontraban en el trayecto del cable. Este fue el primer sistema de televisión por cable (CATV) en los Estados Unidos. </p>
+<p></p>
+<p>La empresa de Walson creció con el transcurso de los años, y se lo reconoce como el fundador de la industria de la televisión por cable. También fue el primer operador de cable en utilizar las microondas para importar las señales de estaciones de televisión distantes y el primero en utilizar el cable coaxial para mejorar la calidad de la imagen.</p>
+<p></p>
+<p>La mayoría de los operadores de cable utilizan antenas parabólicas para atraer las señales de televisión. Los primeros sistemas eran unidireccionales, en los que se colocaban amplificadores en cascada en serie a lo largo de la red para compensar la pérdida de señal. Estos sistemas utilizaban derivaciones para vincular señales de video desde las líneas principales hasta los hogares de los suscriptores mediante los cables de derivación. </p>
+<p></p>
+<p>Los sistemas de cable modernos proporcionan una comunicación bidireccional entre los suscriptores y el operador de cable. Hoy en día, los operadores de cable ofrecen servicios avanzados de telecomunicaciones a los clientes, incluidos el acceso a Internet de alta velocidad, la televisión por cable digital y el servicio telefónico residencial. Los operadores de cable suelen implementar redes de fibra coaxial híbrida (HFC) para habilitar la transmisión de datos de alta velocidad a los cable módems ubicados en una SOHO. </p>
+<p></p>
+<p>Haga clic en las áreas resaltadas en la ilustración para obtener más información sobre los componentes de un sistema de cable moderno típico.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

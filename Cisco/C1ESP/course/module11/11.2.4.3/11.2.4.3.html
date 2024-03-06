@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>11.2.4.3 Prácticas de seguridad básicas</title>
+    <!--  -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_11.2.4.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Cómo mantener la seguridad de la red</h1>
+        <h2>Protección de dispositivos</h2>
+      </div>
+      <div id="content">
+<p>Al implementar dispositivos, es importante seguir todas las pautas de seguridad establecidas por la organización. Esto incluye la denominación de dispositivos de tal manera que facilite las tareas de registro y seguimiento, pero que también mantenga algún tipo de seguridad. No se recomienda proporcionar demasiada información sobre el uso del dispositivo en el nombre de host. Existen muchas otras medidas básicas de seguridad que se deben implementar.</p>
+<p></p>
+<p>
+<b>Seguridad adicional de contraseñas</b>
+</p>
+<p>Las contraseñas seguras resultan útiles en la medida en que sean secretas. Se pueden tomar diversas medidas para asegurar que las contraseñas sigan siendo secretas. Mediante el comando de configuración global <span class="cmd"><b>service password-encryption</b></span>, se evita que las personas no autorizadas vean las contraseñas como texto no cifrado en el archivo de configuración, como se muestra en la ilustración. Este comando provoca la encriptación de todas las contraseñas sin encriptar. </p>
+<p></p>
+<p>Además, para asegurar que todas las contraseñas configuradas tengan una longitud mínima específica, utilice el comando <span class="cmd"><b>security passwords min-length</b></span> del modo de configuración global.</p>
+<p></p>
+<p>Otra forma en la que los piratas informáticos descubren las contraseñas es simplemente mediante ataques de fuerza bruta, es decir, probando varias contraseñas hasta que una funcione. Es posible evitar este tipo de ataques si se bloquean los intentos de inicio de sesión en el dispositivo cuando se produce una determinada cantidad de errores en un lapso específico. </p>
+<p></p>
+<p>
+<span class="cmd">Router(config)#</span>
+<span class="cmd">
+<b>login block-for 120 attempts 3 within 60</b>
+</span>
+</p>
+<p></p>
+<p>Este comando bloquea los intentos de inicio de sesión durante 120 segundos si hay tres intentos de inicio de sesión fallidos en 60 segundos. </p>
+<p></p>
+<p>
+<b>Mensajes</b>
+</p>
+<p>Los mensajes de aviso son similares a los avisos de prohibición de entrada. Son importantes para poder demandar en un tribunal a cualquiera que acceda al sistema de forma inapropiada. Asegúrese de que los mensajes de aviso cumplan con las políticas de seguridad de la organización. </p>
+<p></p>
+<p>
+<span class="cmd">Router(config)#</span>
+<span class="cmd">
+<b>banner motd #message#</b>
+</span>
+</p>
+<p></p>
+<p>
+<b>Exec Timeout</b>
+</p>
+<p>Otra recomendación es configurar tiempos de espera de ejecución. Al configurar el tiempo de espera de ejecución, le ordena al dispositivo Cisco que desconecte automáticamente a los usuarios en una línea después de que hayan estado inactivos durante el valor de tiempo de espera de ejecución. Los tiempos de espera de ejecución se pueden configurar en los puertos de consola, vty y auxiliares. </p>
+<p></p>
+<p>
+<span class="cmd">Router(config)#</span>
+<span class="cmd">
+<b>line vty 0 4</b>
+</span>
+<span class="cmd"></span>
+</p>
+<p>
+<span class="cmd">Router(config-vty)#</span>
+<span class="cmd">
+<b>exec-timeout 10 </b>
+</span>
+</p>
+<p></p>
+<p>Este comando desconecta a los usuarios después de 10 minutos.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+
+/*   load the main media CSS file    */
+
+@import url('../../../common/styles/media2.css');
+
+html, body {
+	margin:0;
+	height:100%;
+}
+#flashContent {
+	width:98%;
+	height:98%;
+}
+.orangeCallOut
+{
+padding:5px !important;	
+}
+
+#ID_s1_txt02
+{
+letter-spacing:-.4px !important;	
+}
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait) {
+  li{margin-left:5px}
+  #ID_s1_txt01,#ID_s2_txt01{margin-left:5px;}
+}
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:landscape) {
+  li{margin-left:5px}
+  #ID_s1_txt01,#ID_s2_txt01{margin-left:5px;}
+}

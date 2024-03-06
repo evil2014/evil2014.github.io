@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>3.2.3.1 Introducción a DTP</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_3.2.3.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Implementaciones de VLAN</h1>
+        <h2>Protocolo de enlace troncal dinámico</h2>
+      </div>
+      <div id="content">
+<p>Las interfaces troncales Ethernet admiten diferentes modos de enlace troncal. Una interfaz se puede establecer como troncal o no troncal, o esta puede negociar el enlace troncal con la interfaz vecina. La negociación de enlaces troncales entre dispositivos de red la maneja el protocolo de enlace troncal dinámico (DTP), que solo funciona de punto a punto.</p>
+<p></p>
+<p>DTP es un protocolo exclusivo de Cisco que se habilita de manera automática en los switches de las series Catalyst 2960 y Catalyst 3560. Los switches de otros proveedores no admiten el DTP. DTP maneja la negociación de enlaces troncales solo si el puerto del switch vecino está configurado en un modo de enlace troncal que admite DTP.</p>
+<p></p>
+<p>
+<b>Precaución:</b> algunos dispositivos de internetworking pueden reenviar tramas DTP de manera incorrecta, lo que puede causar errores de configuración. Para evitar esto, desactive DTP en las interfaces de los switches Cisco conectadas a dispositivos que no admiten DTP.</p>
+<p></p>
+<p>La configuración predeterminada de DTP para los switches Cisco Catalyst 2960 y 3560 es dynamic auto (dinámico automático), como se muestra en la figura 1, en la interfaz F0/3 de los switches S1 y S3. </p>
+<p></p>
+<p>Para habilitar los enlaces troncales desde un switch Cisco hacia un dispositivo que no admite DTP, utilice los comandos <span class="cmd"><b>switchport mode trunk</b></span> y <span class="cmd"><b>switchport nonegotiate</b></span> del modo de configuración de interfaz. Esto hace que la interfaz se convierta en un enlace troncal, pero sin que genere tramas DTP.</p>
+<p></p>
+<p>En la figura 2, el enlace entre los switches S1 y S2 se convierte en un enlace troncal porque los puertos F0/1 de los switches S1 y S2 se configuraron para omitir todos los anuncios de DTP, así como para aparecer y permanecer en modo de puerto de enlace troncal. Los puertos F0/3 de los switches S1 y S3 se establecieron en modo dinámico automático, de modo que el resultado de la negociación es el estado de modo de acceso. Esto genera un enlace troncal inactivo. Al configurar un puerto para que esté en modo de enlace troncal mediante el comando <span class="cmd"><b>switchport mode trunk</b></span>, no existe ambigüedad sobre el estado en que se encuentra el enlace troncal: este se encuentra siempre activo. Con esta configuración, es fácil recordar en qué estado están los puertos de enlace troncal: si se supone que el puerto es un enlace troncal, el modo se establece en enlace troncal.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

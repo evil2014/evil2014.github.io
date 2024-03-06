@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<data>
+	<slide type="MBUTTON" width="480">
+		<element type="IMAGE" src="5_2_1_2.jpg" width="470" height="400" x="0" y="0" /> 
+		<element type="TEXT" compId="ID_s1_txt08" x="80" y="256" width="60.3" expand="right" align="left" size="9" />
+		<element type="TEXT" compId="ID_s1_txt06" x="80" y="77" width="60.3" expand="right" align="left" size="9" />
+		<element type="TEXT" compId="ID_s1_txt07" x="80" y="168" width="60.3" expand="right" align="left" size="9" />
+		<element type="TEXT" compId="ID_s1_txt10" x="135" y="100" width="31.15" expand="right" align="left" size="9" />
+		<element type="TEXT" compId="ID_s1_txt11" x="135" y="197" width="31.1" expand="right" align="left" size="9" />
+		<element type="TEXT" compId="ID_s1_txt12" x="135" y="295" width="31.1" expand="right" align="left" size="9" />
+		<element type="TEXT" compId="ID_s1_txt09" x="80" y="349" width="60.3" expand="right" align="left" size="9" />
+		<element type="TEXT" compId="ID_s1_txt04" x="1" y="44" width="245.75" expand="right" align="center" size="9" class="seagreenCallOut"/>
+		<element type="TEXT" compId="ID_s1_txt05" x="1" y="369" width="150.7" expand="right" align="center" size="9" class="seagreenCallOut"/>
+		<element type="TEXT" compId="ID_s1_txt03" x="18" y="310" width="105.5" expand="up+down" align="center" size="9" />
+		<element type="TEXT" compId="ID_s1_txt02" x="22" y="210" width="94.5" expand="up+down" align="center" size="9" />
+		<element type="TEXT" compId="ID_s1_txt01" x="15" y="125" width="110.5" expand="up+down" align="center" size="9" />
+		<element type="TEXT" subType="TITLE" compId="ID_title"/>
+		<slide buttonType="BLUE" buttonX="160.15" buttonY="108.15" buttonWidth="96" buttonHeight="28" compId="ID_btn01">
+			<element type="TEXTBOX" width="205" height="190" x="265" y="71" titleId="ID_titleTxt01" bodyId="ID_bodyTxt01"/>
+		 </slide>
+		 <slide buttonType="BLUE" buttonX="160.15" buttonY="200.65" buttonWidth="96" buttonHeight="28" compId="ID_btn02">
+			<element type="TEXTBOX" width="205" height="215" x="265" y="71" titleId="ID_titleTxt02" bodyId="ID_bodyTxt02"/>
+		 </slide>
+		  <slide buttonType="BLUE" buttonX="160.15" buttonY="299.1" buttonWidth="96" buttonHeight="28" compId="ID_btn03">
+			<element type="TEXTBOX" width="205" height="108" x="265" y="71" titleId="ID_titleTxt03" bodyId="ID_bodyTxt03"/>
+		 </slide>
+	</slide>
+</data>

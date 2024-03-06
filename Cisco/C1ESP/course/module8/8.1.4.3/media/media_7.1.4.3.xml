@@ -1,0 +1,23 @@
+﻿<textcomponents>
+
+<component id="ID_title">
+<text><![CDATA[<b>Direcciones IPv4 especiales</b>]]></text>
+</component>
+
+<component id="ID_txt01">
+  <text><![CDATA[El router no reenvía direcciones TEST-NET ni direcciones link-local.]]></text> 
+  </component>
+  
+<component id="ID_txt02">
+  <text><![CDATA[Internet]]></text> 
+  </component>
+  
+<component id="ID_txt03">
+  <text><![CDATA[La red que utiliza direcciones TEST-NET 192.0.2.0/24 solo puede comunicarse dentro de la LAN local.]]></text> 
+  </component>
+  
+<component id="ID_txt04">
+  <text><![CDATA[La red link-local 169.254.0.0/16 solo puede comunicarse dentro de la LAN local.]]></text> 
+  </component>
+  
+</textcomponents>

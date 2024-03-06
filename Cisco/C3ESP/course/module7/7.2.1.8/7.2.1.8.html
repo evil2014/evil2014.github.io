@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.2.1.8 Interfaz pasiva</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.2.1.8_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de EIGRP para IPv4</h1>
+        <h2>Configuración de EIGRP con IPv4</h2>
+      </div>
+      <div id="content">
+<p>Tan pronto como se habilita una nueva interfaz dentro de la red EIGRP, EIGRP intenta formar una adyacencia de vecino con cualquier router vecino para enviar y recibir actualizaciones de EIGRP. </p>
+<p></p>
+<p>Cada tanto puede ser necesario, o ventajoso, incluir una red conectada directamente en la actualización de routing EIGRP, pero no permitir que se forme ninguna adyacencia de vecino fuera de esa interfaz. El comando <span class="cmd"><b>passive-interface</b></span> se puede utilizar para evitar que se formen adyacencias de vecino. Existen dos razones principales para habilitar el comando <span class="cmd"><b>passive-interface</b></span>:</p>
+<p>
+<ul>
+<li>Para suprimir tráfico de actualización innecesario, por ejemplo, cuando una interfaz es una interfaz LAN, sin otros routers conectados</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Para aumentar los controles de seguridad, por ejemplo, para evitar que dispositivos desconocidos de routing no autorizados reciban actualizaciones de EIGRP</li>
+</ul>
+</p>
+<p></p>
+<p>En la figura 1, se muestra que el R1, el R2 y el R3 no tienen vecinos en sus interfaces GigabitEthernet 0/0.</p>
+<p></p>
+<p>El comando <span class="cmd"><b>passive-interface</b></span> del modo de configuración del router inhabilita la transmisión y recepción de paquetes de saludo EIGRP en estas interfaces. </p>
+<p></p>
+<p>
+<span class="cmd">Router(config)# </span>
+<span class="cmd">
+<b>router eigrp</b>
+</span>
+<span class="cmd"></span>
+<span class="cmd">
+<i>número-as</i>
+</span>
+</p>
+<p>
+<span class="cmd">Router(config-router)# </span>
+<span class="cmd">
+<b>passive-interface</b>
+</span>
+<span class="cmd"></span>
+<span class="cmd">
+<i>tipo-interfaz número-interfaz</i>
+</span>
+</p>
+<p></p>
+<p>En la figura 2, se muestra el comando <span class="cmd"><b>passive-interface</b></span> configurado para suprimir los paquetes de saludo en las LAN para el R1 y el R3. El R2 se configura mediante el verificador de sintaxis.</p>
+<p></p>
+<p>Sin una adyacencia de vecino, EIGRP no puede intercambiar rutas con un vecino. Por lo tanto, el comando <span class="cmd"><b>passive-interface</b></span> evita el intercambio de rutas en la interfaz. Si bien EIGRP no envía ni recibe actualizaciones de routing mediante una interfaz configurada con el comando <span class="cmd"><b>passive-interface</b></span>, sí incluye la dirección de la interfaz en las actualizaciones de routing enviadas por otras interfaces no pasivas.</p>
+<p></p>
+<p>
+<b>Nota:</b> para configurar todas las interfaces como pasivas, utilice el comando<span class="cmd"><b> passive-interface default</b></span>. Para deshabilitar una interfaz como pasiva, utilice el comando <span class="cmd"><b>no passive-interface</b></span><span class="cmd"><i>tipo-interfaz número-interfaz</i></span>.</p>
+<p></p>
+<p>Un ejemplo del uso de la interfaz pasiva para aumentar los controles de seguridad es cuando una red se debe conectar a una organización externa, sobre la cual el administrador local no tiene ningún control, como cuando se conecta a una red ISP. En este caso, el administrador de red local necesitará anunciar el enlace de la interfaz a través de su propia red, pero no querrá que la organización externa reciba actualizaciones de routing del dispositivo local de routing, ni las envíe a dicho dispositivo, ya que esto es un riesgo de seguridad. </p>
+<p></p>
+<p>
+<b>Verificación de la interfaz pasiva</b>
+</p>
+<p></p>
+<p>Para verificar si cualquier interfaz en un router está configurada como pasiva, utilice el comando <span class="cmd"><b>show ip protocols</b></span> del modo EXEC privilegiado, como se muestra en la figura 3. Observe que, si bien la interfaz GigabitEthernet 0/0 del R3 es una interfaz pasiva, EIGRP aún incluye la dirección de red de la interfaz de la red 192.168.1.0 en sus actualizaciones de routing.</p>
+<p></p>
+<p>Utilice el verificador de sintaxis de la figura 4 para configurar el R2 a fin de que suprima los paquetes de saludo EIGRP en su interfaz GigabitEthernet 0/0.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

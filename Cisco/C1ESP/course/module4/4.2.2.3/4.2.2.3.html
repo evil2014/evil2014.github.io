@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.2.2.3 Conectores UTP</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.2.2.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Medios de red</h1>
+        <h2>Cableado UTP</h2>
+      </div>
+      <div id="content">
+<p>Los cables UTP se terminan generalmente con un conector RJ-45 especificado por el estándar ISO 8877. Este conector se utiliza para una variedad de especificaciones de capa física, una de las cuales es Ethernet. El estándar TIA/EIA 568 describe las asignaciones de los códigos de color de los hilos a los pines (diagrama de pines) de los cables Ethernet. </p>
+<p></p>
+<p>En el video de la figura 1, se muestra un cable UTP terminado con un conector RJ-45. </p>
+<p></p>
+<p>Como se muestra en la figura 2, el conector RJ-45 es el componente macho que está engarzado en el extremo del cable. El socket es el componente hembra en un dispositivo de red, una pared, una toma en el tabique divisorio de un cubículo o un panel de conexiones. </p>
+<p></p>
+<p>Cada vez que se realiza la terminación de un cableado de cobre, existe la posibilidad de que haya pérdida de señal y de que se introduzca ruido en el circuito de comunicación. Cuando las terminaciones se realizan de manera incorrecta, cada cable representa una posible fuente de merma del rendimiento de la capa física. Es fundamental que todas las terminaciones de medios de cobre sean de calidad superior para garantizar un funcionamiento óptimo con tecnologías de red actuales y futuras. </p>
+<p></p>
+<p>En la figura 3, se muestra un ejemplo de un cable UTP mal terminado y un cable UTP bien terminado.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.2.1.1 Trama 802.11 inalámbrica </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.2.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Operaciones de LAN inalámbrica</h1>
+        <h2>Estructura de tramas 802.11</h2>
+      </div>
+      <div id="content">
+<p>Todas las tramas de capa 2 constan de un encabezado, un contenido y una sección FCS, como se muestra en la figura 1. El formato de la trama 802.11 es similar al formato de la trama de Ethernet, con la excepción de que contiene más campos. </p>
+<p></p>
+<p>Como se muestra en la figura 2, todas las tramas 802.11 inalámbricas contienen los siguientes campos:</p>
+<p>
+<ul>
+<li>
+<b>Control de trama:</b> identifica el tipo de trama inalámbrica y contiene subcampos para la versión del protocolo, el tipo de trama, el tipo de dirección, la administración de energía y la configuración de seguridad. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Duración:</b> en general, se usa para indicar la duración restante necesaria para recibir la siguiente transmisión de tramas. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Dirección 1:</b> normalmente, contiene la dirección MAC del dispositivo o AP receptor inalámbrico. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Dirección 2:</b> normalmente, contiene la dirección MAC del dispositivo o AP transmisor inalámbrico.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Dirección 3:</b> en ocasiones, contiene la dirección MAC del destino, como la interfaz del router (gateway predeterminado) a la que se conecta el AP.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Control de secuencia:</b> contiene los subcampos Número de secuencia y Número de fragmento. El Número de secuencia indica el número de secuencia de cada trama. El Número de fragmento indica el número de cada trama que se envió de una trama fragmentada. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Dirección 4:</b> suele faltar, ya que se usa solo en el modo ad hoc.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Contenido:</b> contiene los datos para la transmisión.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>FCS:</b> es la Secuencia de verificación de trama, usada para el control de errores de capa 2.</li>
+</ul>
+</p>
+<p></p>
+<p>En la figura 3, se muestra una captura de Wireshark de una trama de señal WLAN. Observe que el campo Control de trama también se expandió para mostrar sus subcampos.</p>
+<p></p>
+<p>
+<b>Nota:</b> el contenido de los campos Dirección varía según la configuración en el campo Control de trama.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

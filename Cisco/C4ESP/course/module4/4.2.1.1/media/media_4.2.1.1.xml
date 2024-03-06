@@ -1,0 +1,96 @@
+﻿<textcomponents>
+
+<component id="ID_s1_title">
+<text><![CDATA[<b>Tareas de configuración de Frame Relay</b>]]></text>
+</component>
+
+<component id="ID_s1_txt01">
+  <text><![CDATA[Frame Relay]]></text> 
+  </component>
+
+
+
+<component id="ID_table01">
+<text><![CDATA[<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='2'>
+<tr>
+<td colspan='2' bgcolor='#0E6360' class="mtable_top"><font size='1' color='#434321'><span style="color:#DAE17A">.</span></font></td>
+</tr>
+	
+	<tr>
+		<td bgcolor='#077A77' valign="top"><font color='#ffffff'><b>Tareas requeridas</b></font></td>
+		<td bgcolor='#077A77' valign="top"><font color='#ffffff'><b>Tareas opcionales</b></font></td>
+	</tr>
+	
+	<tr>
+		<td bgcolor='#eff8f7' valign="top"><font color='#393536'>Habilitar la encapsulación de Frame Relay en una interfaz.</font></td>
+		<td bgcolor='#eff8f7' valign="top"><font color='#393536'>Configurar la LMI.</font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#ffffff' valign="top"><font color='#393536'>Configurar la asignación de direcciones dinámica o estática.</font></td>
+		<td bgcolor='#ffffff' valign="top"><font color='#393536'>Configurar SVC de Frame Relay.</font></td>
+	</tr>	
+	<tr>
+		<td bgcolor='#eff8f7' valign="top"><font color='#393536'></font></td>
+		<td bgcolor='#eff8f7' valign="top"><font color='#393536'>Configurar el modelado del tráfico de Frame Relay.</font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#ffffff' valign="top"><font color='#393536'></font></td>
+		<td bgcolor='#ffffff' valign="top"><font color='#393536'>Personalizar Frame Relay para la red.</font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#eff8f7' valign="top"><font color='#393536'></font></td>
+		<td bgcolor='#eff8f7' valign="top"><font color='#393536'>Controlar y mantener las conexiones de Frame Relay.</font></td>
+	</tr>
+			
+</table>]]></text> 
+</component>
+
+
+<component id="ID_s2_title">
+<text><![CDATA[<b>Topología de Frame Relay</b>]]></text>
+</component>
+
+<component id="ID_s2_txt01">
+  <text><![CDATA[Frame Relay]]></text> 
+  </component>
+
+
+<component id="ID_s2_txt02">
+  <text><![CDATA[DLCI 103]]></text> 
+  </component>
+
+  <component id="ID_s2_txt03">
+  <text><![CDATA[DLCI 301]]></text> 
+  </component>
+
+
+  <component id="ID_s2_txt04">
+  <text><![CDATA[DLCI 102]]></text> 
+  </component>
+
+  <component id="ID_s2_txt05">
+  <text><![CDATA[DLCI 201]]></text> 
+  </component>
+
+  <component id="ID_s2_txt06">
+  <text><![CDATA[DLCI 203]]></text> 
+  </component>
+
+  <component id="ID_s2_txt07">
+  <text><![CDATA[DLCI 302]]></text> 
+  </component>
+  
+  
+<component id="ID_s3_title">
+<text><![CDATA[<b>Configuración de interfaces de Frame Relay</b>]]></text>
+</component>
+
+<component id="ID_s4_title">
+<text><![CDATA[<b>Verificación de la configuración Frame Relay</b>]]></text>
+</component>
+
+
+
+
+
+</textcomponents>

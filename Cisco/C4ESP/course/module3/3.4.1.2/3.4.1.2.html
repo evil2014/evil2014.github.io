@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>3.4.1.2 Depuración de PPP</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_3.4.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resolver problemas de conectividad WAN</h1>
+        <h2>Resolución de problemas de PPP</h2>
+      </div>
+      <div id="content">
+<p>Además del comando <span class="cmd"><b>debug ppp</b></span>, existen otros comandos para la resolución de problemas de una conexión PPP.</p>
+<p></p>
+<p>Un buen comando para usar durante la resolución de problemas de encapsulación de interfaces seriales es el comando <span class="cmd"><b>debug ppp packet</b></span>, como se muestra en la figura 1. En el ejemplo de la ilustración, se representan intercambios de paquetes durante el funcionamiento normal de PPP, incluido el estado LCP, los procedimientos de LQM y el número mágico LCP. </p>
+<p></p>
+<p>En la figura 2, se muestra el resultado del comando <span class="cmd"><b>debug ppp negotiation</b></span> en una negociación normal, donde ambos lados acuerdan los parámetros de NCP. En este caso, se proponen y se confirman los tipos de protocolo IPv4 e IPv6. El comando <span class="cmd"><b>debug ppp negotiation</b></span> permite que el administrador de red vea las transacciones de negociación PPP, identifique el problema o la etapa en que se produce el error, y desarrolle una solución. El resultado incluye la negociación LCP, la autenticación, y la negociación NCP. </p>
+<p></p>
+<p>El comando <span class="cmd"><b>debug ppp error</b></span> se utiliza para mostrar los errores de protocolo y las estadísticas de errores con relación a la negociación y la operación de las conexiones PPP, como se muestra en la figura 3. Estos mensajes pueden aparecer cuando se habilita la opción de protocolo de calidad en una interfaz que ya ejecuta PPP.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

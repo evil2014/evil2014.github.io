@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.2.1.2 Asignación de direcciones a dispositivos</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.2.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Esquemas de direccionamiento</h1>
+        <h2>Diseño estructurado</h2>
+      </div>
+      <div id="content">
+<p>Un plan de direccionamiento de red puede incluir el uso de un rango de direcciones distinto dentro de cada subred, para cada tipo de dispositivo.</p>
+<p></p>
+<p>
+<b>Direcciones para clientes</b>
+</p>
+<p>Debido a los desafíos asociados con la administración de direcciones estáticas, los dispositivos para usuarios finales a menudo poseen direcciones asignadas en forma dinámica mediante el protocolo de configuración dinámica de host (DHCP). DHCP es generalmente el método preferido para asignar direcciones IP a los hosts de grandes redes, dado que reduce la carga para al personal de soporte de la red y prácticamente elimina los errores de entrada. </p>
+<p></p>
+<p>Otro de los beneficios del DHCP es que las direcciones no se asignan permanentemente a un host, sino que son arrendadas durante un período. Si necesitamos cambiar el esquema de división en subredes de nuestra red, no es necesario volver a asignar estáticamente las direcciones de host individuales. Con DHCP, solo debemos volver a configurar el servidor de DHCP con la nueva información de subred. Después de realizar esto, los hosts solo deben renovar automáticamente las direcciones IP.</p>
+<p></p>
+<p>
+<b>Direcciones para servidores y periféricos </b>
+</p>
+<p>Cualquier recurso de red, como un servidor o una impresora, debe tener una dirección IP estática, como se muestra en la ilustración. Los hosts clientes acceden a estos recursos utilizando las direcciones IP de estos dispositivos. Por lo tanto, se necesitan direcciones predecibles para cada uno de estos servidores y periféricos. </p>
+<p></p>
+<p>Los servidores y periféricos son un punto de concentración para el tráfico de red. Se envían muchos paquetes desde las direcciones IPv4 de estos dispositivos y hacia éstas. Al monitorear el tráfico de red con una herramienta como Wireshark, un administrador de red debe poder identificar rápidamente estos dispositivos. Utilizar un sistema de numeración consistente para estos dispositivos facilita la identificación. </p>
+<p></p>
+<p>
+<b>Direcciones para hosts accesibles desde Internet</b>
+</p>
+<p>En la mayoría de las internetworks, los hosts fuera de la empresa pueden acceder sólo a unos pocos dispositivos. En la mayoría de los casos, estos dispositivos son normalmente algún tipo de servidor. Al igual que todos los dispositivos en una red que proporciona recursos de red, las direcciones IP para estos dispositivos deben ser estáticas.</p>
+<p></p>
+<p>En el caso de los servidores a los que se puede acceder desde Internet, cada uno debe tener una dirección de espacio público asociada. Además, las variaciones en la dirección de uno de estos dispositivos hará que no se pueda acceder a éste desde Internet. En muchos casos, estos dispositivos se encuentran en una red numerada mediante direcciones privadas. Esto significa que el router o el firewall del perímetro de la red debe estar configurado para traducir la dirección interna del servidor en una dirección pública. Debido a esta configuración adicional del dispositivo que actúa como intermediario del perímetro, resulta aun más importante que estos dispositivos tengan una dirección predecible. </p>
+<p></p>
+<p>
+<b>Direcciones para dispositivos intermediarios</b>
+</p>
+<p>Los dispositivos intermediarios también son un punto de concentración para el tráfico de la red. Casi todo el tráfico dentro redes o entre ellas pasa por alguna forma de dispositivo intermediario. Por lo tanto, estos dispositivos de red ofrecen una ubicación oportuna para la administración, el monitoreo y la seguridad de red. </p>
+<p></p>
+<p>A la mayoría de los dispositivos intermediarios se les asignan direcciones de capa 3, ya sea para la administración del dispositivo o para su funcionamiento. Los dispositivos como hubs, switches y puntos de acceso inalámbrico no requieren direcciones IPv4 para funcionar como dispositivos intermediarios. Sin embargo, si es necesario acceder a estos dispositivos como hosts para configurar o controlar la red, o resolver problemas de funcionamiento de esta, estos dispositivos deben tener direcciones asignadas.</p>
+<p></p>
+<p>Debido a que es necesario saber cómo comunicarse con dispositivos intermediarios, estos deben tener direcciones predecibles. Por lo tanto, típicamente, las direcciones se asignan manualmente. Además, las direcciones de estos dispositivos deben estar en un rango diferente dentro del bloque de red que las direcciones de dispositivos de usuario. </p>
+<p></p>
+<p>
+<b>Dirección para el gateway (routers y firewalls)</b>
+</p>
+<p>A diferencia de otros dispositivos intermediarios mencionados, se asigna a los dispositivos de router y firewall un dirección IP para cada interfaz. Cada interfaz se encuentra en una red diferente y funciona como gateway para los hosts de esa red. Normalmente, la interfaz del router utiliza la dirección más baja o más alta de la red. Esta asignación debe ser uniforme en todas las redes de la empresa, de manera que el personal de red siempre conozca la gateway de la red, independientemente de cuál sea la red en la que están trabajando. </p>
+<p></p>
+<p>Las interfaces de router y firewall son el punto de concentración del tráfico que entra y sale de la red. Debido a que los hosts de cada red usan una interfaz de dispositivo router o firewall como gateway para salir de la red, existe un flujo abundante de paquetes en estas interfaces. Por lo tanto, estos dispositivos pueden cumplir una función importante en la seguridad de red al filtrar los paquetes según las direcciones IP de origen y destino. Agrupar los diferentes tipos de dispositivos en grupos de direccionamiento lógicos hace que la asignación y el funcionamiento del filtrado de paquetes sea más eficiente.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

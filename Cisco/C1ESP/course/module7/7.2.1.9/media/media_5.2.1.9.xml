@@ -1,0 +1,171 @@
+﻿<textcomponents>
+<component id="ID_s1_title">
+<text><![CDATA[<b>Actividad: Proceso de conexión y finalización de TCP (parte&nbsp;1)</b><br/><br/>Arrastre cada descriptor al lugar correspondiente en la imagen para ilustrar el protocolo de enlace de tres vías de una sesión de  <b>establecimiento </b> de TCP.]]></text>
+</component>
+
+<component id="ID_s1_drag_header">
+<text><![CDATA[<b>Descriptores</b>]]></text>
+</component>
+<component id="ID_s1_drop_header">
+<text><![CDATA[<b>Protocolo de enlace de tres vías de una sesión de establecimiento de TCP</b>]]></text>
+</component>
+
+<component id="ID_s1_txt01A">
+<text><![CDATA[Enviar SYN]]></text>
+</component>
+<component id="ID_s1_txt01B">
+<text><![CDATA[SEQ = 600]]></text>
+</component>
+<component id="ID_s1_txt01C">
+<text><![CDATA[CTL = SYN]]></text>
+</component>
+<component id="ID_s1_txt02">
+  <text><![CDATA[SYN recibido]]></text> 
+  </component>
+<component id="ID_s1_txt03A">
+  <text><![CDATA[Establecido]]></text> 
+  </component>
+<component id="ID_s1_txt03B">
+  <text><![CDATA[SEQ = 601]]></text> 
+  </component>
+<component id="ID_s1_txt03C">
+  <text><![CDATA[ACK = 401]]></text> 
+  </component>  
+  
+<component id="ID_s1_txt04">
+<text><![CDATA[Recibido]]></text>
+</component>
+<component id="ID_s1_txt05A">
+  <text><![CDATA[Enviar]]></text> 
+  </component>
+<component id="ID_s1_txt05B">
+  <text><![CDATA[SEQ =]]></text> 
+  </component>
+<component id="ID_s1_txt05C">
+  <text><![CDATA[ACK =]]></text> 
+  </component>
+<component id="ID_s1_txt05D">
+  <text><![CDATA[CTL =]]></text> 
+  </component>  
+  
+<component id="ID_s1_txt06">
+  <text><![CDATA[(CTL = los bits en el encabezado TCP están establecidos en&nbsp;1)]]></text> 
+  </component>  
+  
+<component id="ID_s1_drag01">
+  <text><![CDATA[SYN]]></text> 
+  </component> 
+<component id="ID_s1_drag02">
+  <text><![CDATA[SYN, ACK]]></text> 
+  </component> 
+<component id="ID_s1_drag03">
+  <text><![CDATA[400]]></text> 
+  </component> 
+<component id="ID_s1_drag04">
+  <text><![CDATA[601]]></text> 
+  </component> 
+<component id="ID_s1_drag05">
+  <text><![CDATA[SYN, ACK]]></text> 
+  </component> 
+  
+<component id="ID_s1_CORRECT_TITLE">
+<text><![CDATA[<b>Correcto</b>]]></text>
+</component>  
+<component id="ID_s1_CORRECT_BODY">
+<text><![CDATA[Ilustró correctamente los requisitos del protocolo de enlace de tres vías de una sesión de <b> establecimiento </b> de TCP.]]></text>
+</component>  
+  
+<component id="ID_s1_INCORRECT_TITLE">
+<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>  
+<component id="ID_s1_INCORRECT_BODY">
+<text><![CDATA[No ilustró correctamente los requisitos del protocolo de enlace de tres vías de una sesión de <b> establecimiento </b> de TCP. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>  
+
+<component id="ID_s1_CHECK">
+<text><![CDATA[<b>Verificar</b>]]></text>
+</component>  
+<component id="ID_s1_RESET">
+<text><![CDATA[<b>Restablecer</b>]]></text>
+</component>      
+  
+
+  
+  
+<component id="ID_s2_title">
+<text><![CDATA[<b>Actividad: Proceso de conexión y finalización de TCP (parte&nbsp;2)</b><br/><br/>Arrastre cada descriptor al lugar correspondiente en la imagen para ilustrar el proceso de cuatro pasos de una sesión de <b> terminación  </b>de TCP.]]></text>
+</component>
+
+<component id="ID_s2_drag_header">
+<text><![CDATA[<b>Descriptores</b>]]></text>
+</component>
+<component id="ID_s2_drop_header">
+<text><![CDATA[<b>Proceso de cuatro pasos de una sesión de terminación de TCP</b>]]></text>
+</component>
+
+<component id="ID_s2_txt01">
+<text><![CDATA[Enviar FIN]]></text>
+</component>
+<component id="ID_s2_txt02">
+<text><![CDATA[ACK recibido]]></text>
+</component>
+<component id="ID_s2_txt03">
+<text><![CDATA[FIN recibido]]></text>
+</component>
+<component id="ID_s2_txt04">
+  <text><![CDATA[Enviar ACK]]></text> 
+  </component>
+<component id="ID_s2_txt05">
+  <text><![CDATA[Recibido]]></text> 
+  </component>
+<component id="ID_s2_txt06">
+  <text><![CDATA[Enviar]]></text> 
+  </component>
+<component id="ID_s2_txt07">
+  <text><![CDATA[Enviar]]></text> 
+  </component>  
+<component id="ID_s2_txt08">
+<text><![CDATA[Recibido]]></text>
+</component>
+
+  
+<component id="ID_s2_drag01">
+  <text><![CDATA[FIN]]></text> 
+  </component> 
+<component id="ID_s2_drag02">
+  <text><![CDATA[ACK]]></text> 
+  </component> 
+<component id="ID_s2_drag03">
+  <text><![CDATA[FIN]]></text> 
+  </component> 
+<component id="ID_s2_drag04">
+  <text><![CDATA[ACK]]></text> 
+  </component> 
+  
+  
+<component id="ID_s2_CORRECT_TITLE">
+<text><![CDATA[<b>Correcto</b>]]></text>
+</component>  
+<component id="ID_s2_CORRECT_BODY">
+<text><![CDATA[Ilustró correctamente el proceso de cuatro pasos de una sesión de <b>terminación </b> de TCP.]]></text>
+</component>  
+  
+<component id="ID_s2_INCORRECT_TITLE">
+<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>  
+<component id="ID_s2_INCORRECT_BODY">
+<text><![CDATA[No ilustró correctamente el proceso de cuatro pasos de una sesión de <b>terminación </b> de TCP. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id="ID_s2_CHECK">
+<text><![CDATA[<b>Verificar</b>]]></text>
+</component>  
+<component id="ID_s2_RESET">
+<text><![CDATA[<b>Restablecer</b>]]></text>
+</component>  
+  
+
+<component id="transcript">
+  <text><![CDATA[<b>transcript goes here</b>]]></text> 
+  </component>
+</textcomponents>

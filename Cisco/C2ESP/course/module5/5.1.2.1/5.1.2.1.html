@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.1.2.1 Configuración del routing entre VLAN antiguo: preparación</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.1.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración del routing entre VLAN</h1>
+        <h2>Configuración de routing entre VLAN antiguo</h2>
+      </div>
+      <div id="content">
+<p>El routing entre VLAN antiguo requiere que los routers tengan varias interfaces físicas. El router realiza el enrutamiento al conectar cada una de sus interfaces físicas a una VLAN única. Además, cada interfaz se configura con una dirección IP para la subred asociada con la VLAN específica a la cual está conectada. Al configurar las direcciones IP en las interfaces físicas, los dispositivos de red conectados a cada una de las VLAN pueden comunicarse con el router mediante la interfaz física conectada a la misma VLAN. En esta configuración los dispositivos de red pueden utilizar el router como un gateway para acceder a los dispositivos conectados a las otras VLAN.</p>
+<p></p>
+<p>El proceso de enrutamiento requiere del dispositivo de origen para determinar si el dispositivo de destino es local o remoto con respecto a la subred local. El dispositivo de origen realiza esta determinación al comparar las direcciones IP de origen y de destino con la máscara de subred. Una vez que se determina que la dirección IP de destino está en una red remota, el dispositivo de origen debe identificar adónde necesita reenviar el paquete para llegar al dispositivo de destino. El dispositivo de origen examina la tabla de enrutamiento local para determinar dónde es necesario enviar los datos. Los dispositivos utilizan sus gateways predeterminados como destino de capa 2 para todo el tráfico que debe abandonar la subred local. El gateway predeterminado es la ruta que el dispositivo utiliza cuando no tiene otra ruta explícitamente definida hacia la red de destino. La dirección IP de la interfaz del router en la subred local actúa como gateway predeterminado para el dispositivo emisor.</p>
+<p></p>
+<p>Una vez que el dispositivo de origen determina que el paquete debe viajar a través de la interfaz del router local en la VLAN conectada, envía una solicitud de ARP para determinar la dirección MAC de la interfaz del router local. Una vez que el router envía su respuesta de ARP al dispositivo de origen, este puede utilizar la dirección MAC para finalizar el entramado del paquete antes de enviarlo a la red como tráfico de unidifusión.</p>
+<p></p>
+<p>Dado que la trama de Ethernet tiene la dirección MAC de destino de la interfaz del router, el switch sabe exactamente a qué puerto del switch reenviar el tráfico de unidifusión para llegar a la interfaz del router de dicha VLAN. Cuando la trama llega al router, el router elimina la información de la dirección MAC de origen y destino para examinar la dirección IP de destino del paquete. El router compara la dirección de destino con las entradas en la tabla de enrutamiento para determinar dónde es necesario reenviar los datos para alcanzar el destino final. Si el router determina que la red de destino es una red conectada en forma local, como sería el caso del routing entre VLAN, envía una solicitud de ARP por la interfaz conectada físicamente a la VLAN de destino. El dispositivo de destino responde al router con la dirección MAC, la cual luego utiliza el router para entramar el paquete. El router envía el tráfico unicast al switch, que lo reenvía por el puerto donde se encuentra conectado el dispositivo de destino.</p>
+<p></p>
+<p>Haga clic en el botón Reproducir de la ilustración para ver cómo se realiza el routing entre VLAN antiguo.</p>
+<p></p>
+<p>Aunque existen muchos pasos en el proceso de routing entre VLAN, cuando dos dispositivos en diferentes VLAN se comunican a través de un router, el proceso completo tiene lugar en una fracción de segundo.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

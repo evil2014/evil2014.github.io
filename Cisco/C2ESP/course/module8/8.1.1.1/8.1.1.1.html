@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.1.1.1 Evolución de OSPF</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.1.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Características de OSPF</h1>
+        <h2>Open Shortest Path First</h2>
+      </div>
+      <div id="content">
+<p>Como se muestra en la figura 1, OSPF versión 2 (OSPFv2) se encuentra disponible para IPv4, mientras que OSPF versión 3 (OSPFv3) se encuentra disponible para IPv6. </p>
+<p></p>
+<p>Haga clic en las fechas de la figura 2 para ver los acontecimientos históricos relacionados con OSPF. </p>
+<p></p>
+<p>El desarrollo inicial de OSPF comenzó en 1987 por parte del grupo de trabajo de OSPF, el Grupo de trabajo de ingeniería de Internet (IETF). En aquel momento, Internet era fundamentalmente una red académica y de investigación financiada por el gobierno de los EE. UU . </p>
+<p></p>
+<p>En 1989, se publicó la especificación para OSPFv1 en RFC 1131. Se escribieron dos implementaciones. Una implementación se desarrolló para ejecutarse en routers, y la otra se desarrolló para ejecutarse en estaciones de trabajo UNIX. Esta última implementación se convirtió en un proceso UNIX generalizado que se conoce como GATED. OSPFv1 era un protocolo de routing experimental y nunca se implementó.</p>
+<p></p>
+<p>En 1991, John Moy introdujo OSPFv2 en RFC 1247. OSPFv2 ofrecía significativas mejoras técnicas con respecto a OSPFv1. Por su diseño, es un protocolo sin clase, de modo que admite VLSM y CIDR.</p>
+<p></p>
+<p>Al mismo tiempo que se presentó OSPF, ISO trabajaba en un protocolo de routing de estado de enlace propio, Intermediate System-to-Intermediate System (IS-IS). El IETF eligió OSPF como protocolo de gateway interior (IGP) recomendado. </p>
+<p></p>
+<p>En 1998, se actualizó la especificación OSPFv2 en RFC 2328, que en la actualidad sigue siendo la RFC para OSPF. </p>
+<p></p>
+<p>En 1999, OSPFv3 para IPv6 se publicó en RFC 2740. OSPF para IPv6, creado por John Moy, Rob Coltun y Dennis Ferguson, no solo es una nueva implementación de protocolo para IPv6, sino también una importante reforma del funcionamiento del protocolo. </p>
+<p></p>
+<p>En 2008, se actualizó OSPFv3 en RFC 5340 como OSPF para IPv6. </p>
+<p></p>
+<p>
+<b>Nota:</b> en este capítulo, a menos que se identifique explícitamente como OSPFv2 u OSPFv3, el término OSPF se utiliza para indicar conceptos que comparten ambas versiones. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

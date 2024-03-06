@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.1.1.1 Características de EIGRP </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.1.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Características de EIGRP</h1>
+        <h2>Características básicas de EIGRP</h2>
+      </div>
+      <div id="content">
+<p>EIGRP se lanzó originalmente en 1992 como un protocolo exclusivo disponible solamente en los dispositivos de Cisco. En 2013, Cisco cedió una funcionalidad básica de EIGRP como estándar abierto al IETF, como una RFC informativa. Esto significa que otros proveedores de redes ahora pueden implementar EIGRP en sus equipos para que interoperen con routers que ejecuten EIGRP, ya sean de Cisco o de otros fabricantes. Sin embargo, las características avanzadas de EIGRP, como las rutas internas de EIGRP necesarias para la implementación de la red privada virtual dinámica multipunto (DMVPN), no se cederán al IETF. Como RFC informativa, Cisco mantendrá el control de EIGRP.</p>
+<p></p>
+<p>EIGRP incluye características de protocolos de routing de estado de enlace y vector distancia. Sin embargo, aún se basa en el principio clave del protocolo de routing vector distancia, según el cual la información acerca del resto de la red se obtiene a partir de vecinos conectados directamente.</p>
+<p></p>
+<p>EIGRP es un protocolo de routing vector distancia avanzado que incluye características que no se encuentran en otros protocolos de routing vector distancia, como RIP e IGRP. </p>
+<p></p>
+<p>
+<b>Algoritmo de actualización difusa </b>
+</p>
+<p>El algoritmo de actualización por difusión (DUAL), que es el motor de cómputo detrás del EIGRP, constituye el centro del protocolo de routing. DUAL garantiza rutas de respaldo y sin bucles en todo el dominio de routing. Al usar DUAL, EIGRP almacena todas las rutas de respaldo disponibles a los destinos, de manera que se puede adaptar rápidamente a rutas alternativas si es necesario. </p>
+<p></p>
+<p>
+<b>Establecimiento de adyacencias de vecinos</b>
+</p>
+<p>EIGRP establece relaciones con routers conectados directamente que también están habilitados para EIGRP. Las adyacencias de vecinos se usan para rastrear el estado de esos vecinos.</p>
+<p></p>
+<p>
+<b>Protocolo de transporte confiable </b>
+</p>
+<p>El protocolo de transporte confiable (RTP) es exclusivo de EIGRP y se encarga de la entrega de los paquetes EIGRP a los vecinos. RTP y el rastreo de las adyacencias de vecinos establecen el marco para DUAL. </p>
+<p></p>
+<p>
+<b>Actualizaciones parciales y limitadas</b>
+</p>
+<p>En lo que respecta a sus actualizaciones, en EIGRP se utilizan los términos “parcial” y “limitada”. A diferencia de RIP, EIGRP no envía actualizaciones periódicas, y las entradas de ruta no vencen. El término “parcial” significa que la actualización solo incluye información acerca de cambios de ruta, como un nuevo enlace o un enlace que deja de estar disponible. El término “limitada” se refiere a la propagación de las actualizaciones parciales que se envían solo a aquellos routers que se ven afectados por el cambio. Esto minimiza el ancho de banda que se requiere para enviar actualizaciones de EIGRP.</p>
+<p></p>
+<p>
+<b>Balanceo de carga de mismo costo o con distinto costo</b>
+</p>
+<p>EIGRP admite balanceo de carga de mismo costo y balanceo de carga con distinto costo, lo que permite a los administradores distribuir mejor el flujo de tráfico en sus redes. </p>
+<p></p>
+<p>
+<b>Nota:</b> en algunos documentos antiguos, se utiliza el término “protocolo de routing híbrido” para definir a EIGRP. Sin embargo, este término es engañoso, porque EIGRP no es un híbrido entre protocolos de routing vector distancia y protocolos de estado de enlace. EIGRP es únicamente un protocolo de routing vector distancia; por lo que Cisco ya no usa ese término para referirse a él.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

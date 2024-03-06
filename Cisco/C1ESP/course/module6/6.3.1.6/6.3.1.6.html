@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.3.1.6 Conexión al router</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.3.1.6_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Routers</h1>
+        <h2>Anatomía de un router</h2>
+      </div>
+      <div id="content">
+<p>Por lo general, los dispositivos, routers y switches Cisco interconectan numerosos dispositivos. Por esta razón, estos dispositivos tienen varios tipos de puertos e interfaces. Estos puertos e interfaces se utilizan para conectar cables al dispositivo. </p>
+<p></p>
+<p>Las conexiones de un router Cisco se pueden agrupar en dos categorías:</p>
+<p>
+<ul>
+<li>
+<b>Puertos de administración:</b> estos son los puertos de consola y los puertos auxiliares utilizados para configurar y administrar el router, así como para resolver problemas del dispositivo. A diferencia de las interfaces LAN y WAN, los puertos de administración no se utilizan para el reenvío de paquetes. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Interfaces del router en banda:</b> estas son las interfaces LAN y WAN configuradas con direccionamiento IP para transportar el tráfico de los usuarios. Las interfaces Ethernet son las conexiones LAN más frecuentes, mientras que las conexiones WAN comunes incluyen las interfaces seriales y DSL.</li>
+</ul>
+</p>
+<p></p>
+<p>En la ilustración, se destacan los puertos y las interfaces de un router ISR Cisco 1941 G2.</p>
+<p></p>
+<p>Al igual que muchos dispositivos de red, los dispositivos Cisco utilizan indicadores de diodos emisores de luz (LED) para proporcionar información de estado. Un LED de interfaz indica la actividad de la interfaz correspondiente. Si un LED está apagado cuando la interfaz está activa y la interfaz está conectada correctamente, puede ser señal de un problema en la interfaz. Si la interfaz está extremadamente ocupada, el LED permanece encendido. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

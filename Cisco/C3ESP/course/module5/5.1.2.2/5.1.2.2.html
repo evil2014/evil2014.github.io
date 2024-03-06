@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.1.2.2 Desafíos en redes de accesos múltiples</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.1.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuraciones avanzadas de OSPF de área única </h1>
+        <h2>OSPF en redes de accesos múltiples</h2>
+      </div>
+      <div id="content">
+<p>Las redes de accesos múltiples pueden crear dos retos para OSPF en relación con la saturación de las LSA:</p>
+<p>
+<ul>
+<li>
+<b>Creación de varias adyacencias:</b> las redes Ethernet podrían interconectar muchos routers OSPF con un enlace común. La creación de adyacencias con cada router es innecesaria y no se recomienda, ya que conduciría al intercambio de una cantidad excesiva de LSA entre routers en la misma red.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Saturación intensa con LSA:</b> los routers de estado de enlace saturan con sus paquetes de estado de enlace cuando se inicializa OSPF o cuando se produce un cambio en la topología. Esta saturación puede llegar a ser excesiva. </li>
+</ul>
+</p>
+<p></p>
+<p>Para calcular la cantidad de adyacencias requeridas, se puede usar la siguiente fórmula. La cantidad de adyacencias requeridas para cualquier cantidad de routers (designada como <i>n</i>) en una red de accesos múltiples es la siguiente:</p>
+<p></p>
+<p>
+<i>n</i> (<i>n</i> – 1) / 2 </p>
+<p></p>
+<p>En la figura 1, se muestra una topología simple de cuatro routers, los cuales están conectados a la misma red Ethernet de accesos múltiples. Sin algún tipo de mecanismo para reducir el número de adyacencias, colectivamente estos routers formarían seis adyacencias: 4 (4 - 1) / 2 = 6, como se muestra en la figura 2. En la figura 3, se muestra que, a medida que se agregan routers a la red, el número de adyacencias aumenta drásticamente.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

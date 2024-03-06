@@ -1,0 +1,69 @@
+﻿<textcomponents>
+<component id="ID_s1_title">
+<text><![CDATA[<b>Creación de copias de seguridad de la imagen del IOS de Cisco</b>]]></text>
+</component>
+<component id="ID_s1_txt01">
+<text><![CDATA[Flash]]></text>
+</component>
+<component id="ID_s1_txt02">
+<text><![CDATA[Servidor TFTP<br/>172.16.1.100]]></text>
+</component>
+<component id="ID_s1_txt03">
+<text><![CDATA[c1900-universalk9-mz.SPA.152-4.M3.bin]]></text>
+</component>
+
+<component id="ID_s2_title">
+<text><![CDATA[<b>Verificación de la conectividad y del tamaño de la imagen</b>]]></text>
+</component>
+<component id="ID_s2_txt01">
+<text><![CDATA[Verificación de la conectividad al servidor.]]></text>
+</component>
+<component id="ID_s2_txt02">
+<text><![CDATA[Verifique el tamaño de la imagen.]]></text>
+</component>
+<component id="ID_s2_txt03">
+<text><![CDATA[&lt;resultado omitido&gt;]]></text>
+</component>
+
+
+<component id="ID_s3_title">
+<text><![CDATA[<b><font face="Courier New">Comando  </font>copy</b>]]></text>
+</component> 
+<component id="ID_s3_txt01">
+<text><![CDATA[Copie la imagen en el servidor TFTP.]]></text>
+</component>
+<component id="ID_s3_txt02">
+<text><![CDATA[&lt;resultado omitido&gt;]]></text>
+</component>
+<component id="ID_s4_title">
+<text><![CDATA[<b>Realización de una copia de seguridad del IOS de Cisco en el servidor TFTP</b>]]></text>
+</component> 
+
+<component id="ID_sc_reset">
+		<text><![CDATA[Restablecer]]></text>
+	</component>
+	<component id="ID_sc_showme">
+		<text><![CDATA[Mostrar]]></text>
+	</component>
+	<component id="ID_sc_showall">
+		<text><![CDATA[Mostrar todo]]></text>
+	</component>
+
+
+<component id="ID_SC5" fontFace='Courier New' fontSize="10">
+		<feedback id="fb"><![CDATA[<b>***</b><font face="Arial" color="#0000FF">Debe introducir el comando exacto y completo. Todos los nombres de archivo y las contraseñas distinguen mayúsculas de minúsculas.</font><b>***</b> ]]></feedback>		
+		<existingcommands><![CDATA[<font face="Arial"><b>Copie la imagen del IOS c1900-universalk9-mz.SPA.152-4.M3.bin de la memoria flash0 en un servidor TFTP ubicado en 172.16.1.100. El nombre del archivo distingue mayúsculas de minúsculas.</b></font>]]></existingcommands>
+		<command  prompt="R2#">
+		    <correctresponse><![CDATA[copy flash0: tftp:]]></correctresponse>
+		</command>
+		<command prompt="Source filename []? ">
+		    <correctresponse ignorecase='false'><![CDATA[c1900-universalk9-mz.SPA.152-4.M3.bin]]></correctresponse>
+		</command>
+		<command prompt="Address or name of remote host []? ">
+		    <correctresponse><![CDATA[172.16.1.100]]></correctresponse>
+				<deviceresponse><![CDATA[<font Face='Courier New'>Destination filename [c1900-universalk9-mz.SPA.152-4.M3.bin]? <br>!!!!!!!!!!!!!!!!!!<br><font face="_sans">&lt;resultado omitido&gt;</font><br>68831808 bytes copied in 363.468 secs (269058 bytes/sec)<br>R2#</font>]]></deviceresponse> 
+			<instruction><![CDATA[<font face="Arial" class="syntaxBottomLine"><b>Realizó correctamente una copia de seguridad del IOS de Cisco en el servidor TFTP.</b>]]></instruction>
+		</command>
+		<command prompt=""/>
+	</component>
+</textcomponents>

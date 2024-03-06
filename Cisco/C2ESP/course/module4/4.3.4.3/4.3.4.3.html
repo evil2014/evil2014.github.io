@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.3.4.3 Ejemplos de routing dinámico IPv4 </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.3.4.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Funcionamiento del router</h1>
+        <h2>Protocolos de enrutamiento dinámico</h2>
+      </div>
+      <div id="content">
+<p>En este ejemplo de routing dinámico, suponga que el R1 y el R2 se configuraron para admitir el protocolo de routing dinámico EIGRP. Los routers también anuncian las redes conectadas directamente. El R2 anuncia que es el gateway predeterminado a otras redes. </p>
+<p></p>
+<p>En el resultado de la ilustración, se muestra la tabla de routing del R1 después del intercambio de actualizaciones y la convergencia de los routers. Además de la interfaz conectada y la interfaz link-local, hay tres entradas “<span class="cmd">D</span>” en la tabla de routing. </p>
+<p>
+<ul>
+<li>La entrada que comienza con “<span class="cmd">D*EX</span>” identifica que el origen de esta entrada fue EIGRP<span class="cmd"> (</span>“<span class="cmd">D</span>"<span class="cmd">)</span>. La ruta es candidata a ser una ruta predeterminada <span class="cmd">(</span>“<span class="cmd">*</span>”<span class="cmd">)</span> y es una ruta externa <span class="cmd">(</span>“<span class="cmd">*EX</span>”<span class="cmd">)</span> reenviada por EIGRP. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Las otras dos entradas “<span class="cmd">D</span>” son rutas instaladas en la tabla de routing según la actualización del R2 que anuncia sus LAN.</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

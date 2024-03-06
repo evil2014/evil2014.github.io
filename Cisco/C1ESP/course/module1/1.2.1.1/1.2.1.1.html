@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.2.1.1 Componentes de la red</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.2.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>LAN, WAN e Internet</h1>
+        <h2>Componentes de las redes</h2>
+      </div>
+      <div id="content">
+<p>La ruta que toma un mensaje desde el origen hasta el destino puede ser tan sencilla como un solo cable que conecta una computadora con otra o tan compleja como una red que literalmente abarca el mundo. Esta infraestructura de red es la plataforma que da soporte a la red. Proporciona el canal estable y confiable por el cual se producen las comunicaciones. </p>
+<p></p>
+<p>La infraestructura de red contiene tres categorías de componentes de red:</p>
+<p>
+<ul>
+<li>Dispositivos</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Medios</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Servicios</li>
+</ul>
+</p>
+<p></p>
+<p>Haga clic en cada botón en la ilustración para resaltar los componentes de red correspondientes.</p>
+<p></p>
+<p>Los dispositivos y los medios son los elementos físicos o el hardware, de la red. Por lo general, el hardware está compuesto por los componentes visibles de la plataforma de red, como una computadora portátil, una PC, un switch, un router, un punto de acceso inalámbrico o el cableado que se utiliza para conectar esos dispositivos. A veces, puede que algunos componentes no sean visibles. En el caso de los medios inalámbricos, los mensajes se transmiten a través del aire mediante radio frecuencias invisibles u ondas infrarojas.</p>
+<p></p>
+<p>Los componentes de red se utilizan para proporcionar servicios y procesos, que son los programas de comunicación, denominados “software”, que se ejecutan en los dispositivos conectados en red. Un servicio de red proporciona información en respuesta a una solicitud. Los servicios incluyen muchas de las aplicaciones de red comunes que utilizan las personas a diario, como los servicios de hosting de correo electrónico y web hosting. Los procesos proporcionan la funcionalidad que direcciona y traslada mensajes a través de la red. Los procesos son menos obvios para nosotros, pero son críticos para el funcionamiento de las redes.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

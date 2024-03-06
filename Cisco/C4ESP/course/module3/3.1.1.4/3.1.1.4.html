@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>3.1.1.4 Time-Division Multiplexing, multiplexación por división de tiempo</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_3.1.1.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Descripción general de conexión serial punto a punto</h1>
+        <h2>Comunicaciones seriales</h2>
+      </div>
+      <div id="content">
+<p>Con una línea arrendada, a pesar de que los clientes pagan servicios dedicados y de que se proporciona ancho de banda dedicado al cliente, la portadora sigue usando tecnologías de multiplexación dentro de la red. La multiplexación se refiere a un esquema que permite que varias señales lógicas compartan un único canal físico. Dos tipos comunes de multiplexación son la multiplexación por división de tiempo (TDM) y la multiplexación estadística por división de tiempo (STDM).</p>
+<p></p>
+<p>
+<b>TDM</b>
+</p>
+<p></p>
+<p>En los inicios, Bell Laboratories inventó TDM para maximizar la cantidad de tráfico de voz que se transportaba por un medio. Antes de la multiplexación, cada llamada telefónica requería su propio enlace físico. Esto era una solución costosa e imposible de escalar. TDM divide el ancho de banda de un único enlace en intervalos de tiempo separados. TDM transmite dos o más canales (flujo de datos) por el mismo enlace al asignar un intervalo de tiempo diferente para la transmisión de cada canal. En efecto, los canales se turnan para usar el enlace. </p>
+<p></p>
+<p>TDM es un concepto de capa física. No tiene en cuenta la naturaleza de la información que se multiplexa en el canal de salida. TDM es independiente del protocolo de capa 2 que usaron los canales de entrada.</p>
+<p></p>
+<p>TDM se puede explicar mediante una analogía con el tráfico de las autopistas. Para transportar el tráfico de cuatro caminos a otra ciudad, se puede enviar todo el tráfico por un carril si se atienden los caminos por igual y se sincroniza el tráfico. Si cada uno de los cuatro caminos coloca un automóvil en la autopista principal cada cuatro segundos, esta recibe un automóvil con una frecuencia de uno por segundo. Mientras la velocidad de todos los automóviles esté sincronizada, no hay colisiones. En el destino, sucede lo contrario, y los automóviles se sacan de la autopista y se colocan en los caminos locales mediante el mismo mecanismo sincrónico.</p>
+<p></p>
+<p>Este es el principio que se usa en TDM síncrona al enviar datos a través de un enlace. TDM aumenta la capacidad del enlace de transmisión al dividir el tiempo de transmisión en intervalos iguales más cortos, de modo que el enlace transporte los bits de varios orígenes de entrada. </p>
+<p></p>
+<p>En la ilustración, un multiplexor (MUX) en el transmisor acepta tres señales distintas. El MUX divide cada señal en segmentos. El MUX coloca cada segmento en un único canal insertando cada segmento en un intervalo de tiempo. </p>
+<p></p>
+<p>Un MUX en el extremo receptor vuelve a armar la transmisión TDM en tres flujos de datos distintos únicamente sobre la base del momento de llegada de cada bit. Una técnica denominada “entrelazado de bits” realiza un seguimiento del número y la secuencia de bits de cada transmisión específica para que se puedan volver a armar con rapidez y eficacia en la forma original de recepción. El entrelazado de bytes realiza las mismas funciones, pero debido a que hay 8 bits en cada byte, el proceso necesita un intervalo de tiempo más grande o más largo.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

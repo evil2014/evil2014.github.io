@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.0.1.1 Introducción</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.0.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Conceptos de routing</h1>
+        <h2>Introducción</h2>
+      </div>
+      <div id="content">
+<p>Las redes permiten que las personas se comuniquen, colaboren e interactúen de muchas maneras. Las redes se utilizan para acceder a páginas web, hablar mediante teléfonos IP, participar en videoconferencias, competir en juegos interactivos, realizar compras en Internet, completar trabajos de cursos en línea, y más. </p>
+<p></p>
+<p>Los switches Ethernet funcionan en la capa de enlace de datos, la capa 2, y se utilizan para reenviar tramas de Ethernet entre dispositivos dentro de una misma red. </p>
+<p>Sin embargo, cuando las direcciones IP de origen y destino están en distintas redes, la trama de Ethernet se debe enviar a un router. </p>
+<p></p>
+<p>Los routers conectan una red a otra red. El router es responsable de la entrega de paquetes a través de distintas redes. El destino de un paquete IP puede ser un servidor web en otro país o un servidor de correo electrónico en la red de área local. </p>
+<p></p>
+<p>El router usa su tabla de routing para encontrar la mejor ruta para reenviar un paquete. Es responsabilidad de los routers entregar esos paquetes a su debido tiempo. La efectividad de las comunicaciones de internetwork depende, en gran medida, de la capacidad de los routers de reenviar paquetes de la manera más eficiente posible. </p>
+<p></p>
+<p>Cuando un host envía un paquete a un dispositivo en una red IP diferente, el paquete se reenvía al gateway predeterminado, ya que los dispositivos host no pueden comunicarse directamente con los dispositivos que están fuera de la red local. El gateway predeterminado es el destino que enruta el tráfico desde la red local hacia los dispositivos en las redes remotas. Con frecuencia, se utiliza para conectar una red local a Internet. </p>
+<p></p>
+<p>En este capítulo, también se responde a la pregunta “¿Qué hace un router con los paquetes que recibe de una red y que están destinados a otra red?”. Se examinan los detalles de la tabla de routing, incluidas las rutas conectadas, estáticas y dinámicas.</p>
+<p></p>
+<p>Debido a que los routers pueden enrutar paquetes entre redes, los dispositivos que están en redes distintas se pueden comunicar. En este capítulo, se presentará el router, su función en las redes, sus principales componentes de hardware y software, y el proceso de routing. Se proporcionarán ejercicios que demuestran cómo acceder al router, cómo configurar los parámetros básicos del router y cómo verificar la configuración.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

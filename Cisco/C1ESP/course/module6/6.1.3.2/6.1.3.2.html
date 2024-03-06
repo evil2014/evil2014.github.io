@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.1.3.2 Campos del encabezado de IPv4</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.1.3.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolos de la capa de red</h1>
+        <h2>Paquete IPv4</h2>
+      </div>
+      <div id="content">
+<p>Los campos restantes se utilizan para identificar y validar el paquete, o para volver a ordenar un paquete fragmentado.</p>
+<p></p>
+<p>Los campos utilizados para identificar y validar el paquete incluyen los siguientes:</p>
+<p>
+<ul>
+<li>
+<b>Longitud del encabezado de Internet (IHL):</b> contiene un valor binario de 4 bits que identifica la cantidad de palabras de 32 bits en el encabezado. El valor de IHL varía según los campos Opciones y Relleno. El valor mínimo para este campo es 5 (es decir, 5×32 = 160 bits = 20 bytes), y el valor máximo es 15 (es decir, 15×32 = 480 bits = 60 bytes). </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Longitud total:</b> en ocasiones denominado “Longitud del paquete”, este campo de 16 bits define el tamaño total del paquete (fragmento), incluidos el encabezado y los datos, en bytes. La longitud mínima de paquete es de 20 bytes (encabezado de 20 bytes + datos de 0 bytes), y la máxima es de 65 535 bytes. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Checksum del encabezado:</b> este campo de 16 bits se utiliza para la verificación de errores del encabezado IP. El checksum del encabezado se vuelve a calcular y se compara con el valor en el campo checksum. Si los valores no coinciden, se descarta el paquete. </li>
+</ul>
+</p>
+<p></p>
+<p>Es posible que un router deba fragmentar un paquete cuando lo reenvía de un medio a otro que tiene una MTU más pequeña. Cuando esto sucede, se produce una fragmentación, y el paquete IPV4 utiliza los siguientes campos para llevar a cabo un seguimiento de los fragmentos: </p>
+<p>
+<ul>
+<li>
+<b>Identificación:</b> este campo de 16 bits identifica de forma exclusiva el fragmento de un paquete IP original.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Indicadores:</b> este campo de 3 bits identifica cómo se fragmenta el paquete. Se utiliza con los campos Desplazamiento de fragmentos e Identificación para ayudar a reconstruir el paquete original con el fragmento.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Desplazamiento de fragmentos:</b> este campo de 13 bits identifica el orden en que se debe colocar el fragmento del paquete en la reconstrucción del paquete original sin fragmentar. </li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Nota:</b> los campos Opciones y Relleno se utilizan con poca frecuencia y exceden el ámbito de este capítulo.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

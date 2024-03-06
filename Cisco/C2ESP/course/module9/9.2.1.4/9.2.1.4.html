@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.2.1.4 Lógica interna</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.2.1.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>ACL de IPv4 estándar </h1>
+        <h2>Configuración de ACL de IPv4 estándar</h2>
+      </div>
+      <div id="content">
+<p>El IOS de Cisco aplica una lógica interna al aceptar y procesar las ACE estándar. Como se mencionó anteriormente, las ACE se procesan en forma secuencial, por lo que el orden en que se introducen es importante.</p>
+<p></p>
+<p>Por ejemplo, en la figura 1, la ACL 3 contiene dos ACE. La primera ACE utiliza una máscara wildcard para denegar un rango de direcciones que incluye todos los hosts en la red 192.168.10.0/24. La segunda ACE es una instrucción de host que examina un host específico: 192.168.10.10. Este es un host dentro del rango de hosts que se configuró en la instrucción anterior. Es decir, 192.168.10.10 es un host en la red 192.168.10.0/24. La lógica interna del IOS para las listas de acceso estándar rechaza la segunda instrucción y envía un mensaje de error, porque es un subconjunto de la instrucción anterior. Observe que, en la ilustración, el router asigna automáticamente el número de secuencia 10 como número de secuencia asignado a la primera instrucción introducida en este ejemplo. El resultado del router incluye el mensaje “part of the existing rule at sequence num 10” en referencia a la regla (“parte de la regla existente en el número de secuencia 10”) y no acepta la instrucción.</p>
+<p></p>
+<p>
+<b>Nota:</b> actualmente, las ACL extendidas no producen errores similares.</p>
+<p></p>
+<p>La configuración en la figura 2 de la ACL 4 tiene las mismas dos instrucciones, pero en orden inverso. Esta es una secuencia válida de instrucciones, porque la primera instrucción se refiere a un host específico, no a un rango de hosts. </p>
+<p></p>
+<p>En la figura 3, la ACL 5 muestra que se puede configurar una instrucción de host después de una instrucción que denota un rango de hosts. El host no debe estar dentro del rango que abarca una instrucción anterior. La dirección host 192.168.11.10 no forma parte de la red 192.168.10.0/24, por lo que se trata de una instrucción válida.</p>
+<p></p>
+<p>
+<b>Nota:</b> es posible que el orden en que se introducen las ACE estándar no sea el orden en que se almacenen, se muestren o se procesen en el router. Esto se analizará en una sección posterior.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

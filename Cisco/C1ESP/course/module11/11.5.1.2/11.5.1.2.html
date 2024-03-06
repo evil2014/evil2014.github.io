@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>11.5.1.2 Tipos de routers integrados</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_11.5.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Servicios de enrutamiento integrados</h1>
+        <h2>Router integrado</h2>
+      </div>
+      <div id="content">
+<p>Los routers integrados pueden ser desde dispositivos pequeños, diseñados para aplicaciones de oficinas hogareñas y pequeñas empresas, hasta dispositivos más eficaces, que se pueden usar en sucursales de empresas.</p>
+<p></p>
+<p>Un ejemplo de este tipo de router integrado es un router inalámbrico Linksys, como el que se muestra en la ilustración. Este tipo de routers integrados tienen un diseño simple y, por lo general, no tiene componentes independientes, lo que reduce el costo del dispositivo. Sin embargo, si se produce una falla, no es posible reemplazar componentes individuales dañados. De este modo, crean un único punto de falla y no están optimizados para ninguna función en particular. </p>
+<p></p>
+<p>Otro ejemplo de router integrado es el router de servicio integrado (ISR) de Cisco. La familia de productos ISR de Cisco ofrece una amplia gama de productos, entre ellos los dispositivos diseñados para entornos de oficinas pequeñas y hogareñas o para redes más grandes. Muchos de los ISR ofrecen modularidad y tienen componentes individuales para cada función, por ejemplo un componente de switch y un componente de router. Esto permite agregar, reemplazar y actualizar componentes individuales según sea necesario.</p>
+<p></p>
+<p>Todos los routers integrados permiten opciones de configuración básicas como contraseñas y direcciones IP, y opciones de configuración de DHCP, que son las mismas independientemente de si el dispositivo se utiliza para conectar hosts por cable o inalámbricos. No obstante, si se utiliza la funcionalidad inalámbrica, se necesitan parámetros de configuración adicionales, como la configuración del modo inalámbrico, el SSID y el canal inalámbrico.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

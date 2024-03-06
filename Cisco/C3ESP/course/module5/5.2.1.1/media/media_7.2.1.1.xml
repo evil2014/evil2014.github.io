@@ -1,0 +1,14 @@
+﻿<textcomponents>
+<component id="ID_title">
+<text><![CDATA[<b>Adyacencias OSPF</b>]]></text>
+</component>
+
+	<component id="ID_Title_txt01">
+		<text><![CDATA[<b>Si ocurre lo siguiente, no se forman adyacencias OSPF:</b>]]></text>
+	</component>
+	
+	<component id="ID_Body_txt01">
+		<text><![CDATA[<textformat blockindent='-14'><li>Las interfaces no están en la misma red.</li><li>Los tipos de redes OSPF no coinciden.</li><li>Los temporizadores muerto y de saludo de OSPF no coinciden.</li><li>La interfaz al vecino está configurada incorrectamente como pasiva.</li><li>Hay un comando <font face="Courier New"><b>network</b></font> de OSPF faltante o incorrecto.</li><li>La autenticación está mal configurada.</li></textformat>]]></text>
+	</component>
+
+</textcomponents>

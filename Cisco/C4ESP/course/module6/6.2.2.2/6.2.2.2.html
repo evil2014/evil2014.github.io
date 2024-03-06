@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.2.2.2 Conexiones DSL</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.2.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Comparación de las soluciones de banda ancha</h1>
+        <h2>DSL</h2>
+      </div>
+      <div id="content">
+<p>Los proveedores de servicios implementan las conexiones DSL en el último paso de una red telefónica local, denominado “bucle local” o “última milla”. Se establece la conexión entre un par de módems en cualquiera de los extremos de un cable de cobre que se extiende entre el equipo local del cliente (CPE) y el multiplexor de acceso DSL (DSLAM). Un DSLAM es el dispositivo ubicado en la oficina central (CO) del proveedor y concentra las conexiones de varios suscriptores de DSL. Por lo general, un DSLAM está incorporado en un router de agregación.</p>
+<p></p>
+<p>En la figura 1, se muestra el equipo necesario para proporcionar una conexión DSL a una SOHO. Los dos componentes son el transceptor DSL y el DSLAM:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Transceptor:</b> conecta la computadora del trabajador a distancia al DSL. Generalmente, el transceptor es un módem DSL conectado a la computadora mediante un cable USB o Ethernet. Los transceptores DSL más modernos se pueden integrar a pequeños routers con varios puertos de switch 10/100 aptos para el uso en oficina doméstica. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>DSLAM:</b> ubicado en la CO de la prestadora de servicios, el DSLAM combina las conexiones DSL individuales de los usuarios en un enlace de gran capacidad a un ISP y, por lo tanto, a Internet.</li>
+</ul>
+</p>
+<p></p>
+<p>En la figura 2, se describen los routers DSL y los routers de agregación de banda ancha modernos. La ventaja que tiene DSL en comparación con la tecnología de cable es que DSL no es un medio compartido. Cada usuario tiene su propia conexión directa al DSLAM. El rendimiento no se ve afectado si se agregan usuarios, a menos que la conexión a Internet del DSLAM para el ISP o para Internet se sature.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

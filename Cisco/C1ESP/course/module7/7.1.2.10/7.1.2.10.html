@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.1.2.10 Segmentación TCP y UDP</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.1.2.10_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolos de la capa de transporte</h1>
+        <h2>Introducción a TCP y UDP</h2>
+      </div>
+      <div id="content">
+<p>En un capítulo anterior, se explicó la forma en que se construyen las unidades de datos del protocolo (PDU) mediante la transmisión de datos de una aplicación a través de los diversos protocolos para crear una PDU que después se transmita en el medio. En el host de destino, este proceso se revierte hasta que los datos se puedan transferir a la aplicación.</p>
+<p></p>
+<p>Algunas aplicaciones transmiten grandes cantidades de datos; en algunos casos, muchos gigabytes. Resultaría poco práctico enviar todos estos datos en una sola gran sección. No puede transmitirse ningún otro tráfico de red mientras se envían estos datos. Una gran sección de datos puede tardar minutos y hasta horas en enviarse. Además, si hubiese errores, se perdería el archivo de datos completo o habría que volver a enviarlo. Los dispositivos de red no cuentan con buffers de memoria lo suficientemente grandes como para almacenar esa cantidad de datos durante la transmisión o recepción. El límite varía según la tecnología de red y el medio físico específico en uso.</p>
+<p></p>
+<p>La división de datos de aplicación en segmentos asegura que estos se transmitan dentro de los límites de los medios y que los datos de diferentes aplicaciones se puedan multiplexar en los medios.</p>
+<p></p>
+<p>
+<b>TCP y UDP: manejo distinto de la segmentación</b>
+</p>
+<p></p>
+<p>Como se muestra en la ilustración, cada encabezado del segmento TCP contiene un número de secuencia que permite que las funciones de la capa de transporte en el host de destino vuelvan a armar segmentos en el orden en que se transmitieron. Esto asegura que la aplicación de destino tiene los datos en la misma forma que el emisor la planeó.</p>
+<p></p>
+<p>Aunque los servicios que utilizan UDP rastrean también las conversaciones entre las aplicaciones, no se encargan del orden en que se transmite la información ni de mantener una conexión. No existe número de secuencia en el encabezado UDP. UDP es un diseño simple y genera menos carga que TCP, lo que produce una transferencia de datos más rápida. </p>
+<p></p>
+<p>La información puede llegar en un orden distinto del de la transmisión, ya que los distintos paquetes pueden tomar diferentes rutas a través de la red. Una aplicación que utiliza UDP debe tolerar el hecho de que los datos no lleguen en el orden en el que fueron enviados.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

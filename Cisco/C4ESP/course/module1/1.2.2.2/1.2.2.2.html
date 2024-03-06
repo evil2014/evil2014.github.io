@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.2.2.2 Campus empresarial de Cisco </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.2.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Arquitectura empresarial de Cisco</h1>
+        <h2>Modelo de arquitectura empresarial de Cisco</h2>
+      </div>
+      <div id="content">
+<p>Una red de campus es un edificio o un grupo de edificios conectados a una red empresarial que consta de muchas LAN. Por lo general, un campus se limita a un área geográfica fija, pero puede abarcar varios edificios vecinos, por ejemplo, un complejo industrial o el entorno de un parque industrial. Es posible que las oficinas regionales, las SOHO y los trabajadores móviles necesiten conectarse al campus central para obtener datos e información. </p>
+<p></p>
+<p>El módulo de campus empresarial describe los métodos recomendados para crear una red escalable, a la vez que aborda las necesidades de las operaciones comerciales del tipo de campus. La arquitectura es modular y se puede expandir fácilmente para incluir edificios o pisos de campus adicionales a medida que la empresa crece. </p>
+<p></p>
+<p>El módulo de campus empresarial consta de los siguientes submódulos:</p>
+<p>
+<ul>
+<li>Acceso al edificio</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Distribución del edificio</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Núcleo del campus</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Centro de datos</li>
+</ul>
+</p>
+<p></p>
+<p>Juntos, estos submódulos realizan lo siguiente: </p>
+<p>
+<ul>
+<li>Proporcionan una alta disponibilidad mediante un diseño de red jerárquico resistente.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Integran las comunicaciones IP, la movilidad y la seguridad avanzada. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Utilizan el tráfico de multidifusión y QoS para optimizar el tráfico de la red.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Proporcionan una mayor seguridad y flexibilidad mediante la administración del acceso, las VLAN y las VPN con IPsec.</li>
+</ul>
+</p>
+<p></p>
+<p>La arquitectura del módulo de campus empresarial proporciona a la empresa una alta disponibilidad a través de un diseño multicapa resistente, características de hardware y software redundante, y procedimientos automáticos para volver a configurar las rutas de la red cuando ocurren fallas. La seguridad integrada protege contra el impacto de gusanos, virus y otros ataques a la red, además de mitigarlo, incluso en el nivel del puerto del switch. </p>
+<p></p>
+<p>Un módulo de centro de datos centralizado de gran capacidad puede proporcionar recursos de servidores internos a los usuarios. Por lo general, el módulo de centro de datos también admite servicios de administración de red para la empresa, incluidos el control, el registro, la resolución de problemas y otras características comunes de administración de extremo a extremo. El submódulo de centro de datos normalmente contiene servidores de correo electrónico y corporativos internos que proporcionan servicios de aplicación, de archivo, de impresión, de correo electrónico y de sistema de nombres de dominios (DNS) a los usuarios internos.</p>
+<p></p>
+<p>Haga clic en el módulo de campus empresarial de la ilustración para obtener más información.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

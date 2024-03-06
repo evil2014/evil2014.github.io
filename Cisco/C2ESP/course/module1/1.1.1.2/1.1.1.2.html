@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.1.1.2 Elementos de una red convergente</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.1.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Diseño de la LAN</h1>
+        <h2>Redes convergentes</h2>
+      </div>
+      <div id="content">
+<p>Para admitir la colaboración, las redes comerciales emplean soluciones convergentes mediante sistemas de voz, teléfonos IP, gateways de voz, soporte de video y videoconferencias (figura 1). Las redes convergentes con soporte de colaboración, incluidas las de servicio de datos, pueden incluir características como las siguientes:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Control de llamadas:</b> procesamiento de llamadas telefónicas, identificador de llamadas, transferencia de llamadas, llamadas en espera y conferencias.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Mensajería de voz:</b> correo de voz. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Movilidad:</b> recepción de llamadas importantes en cualquier lugar. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Contestador automático:</b> se atiende a los clientes con mayor rapidez, ya que las llamadas se enrutan directamente al departamento o a la persona que corresponde.</li>
+</ul>
+</p>
+<p></p>
+<p>Uno de los principales beneficios de la transición hacia una red convergente es que se debe instalar y administrar una sola red física. Esto permite ahorrar de manera considerable en la instalación y la administración de las redes de voz, de video y de datos independientes. Estas soluciones de redes convergentes integran la administración de TI para que cada movimiento, adición y modificación se complete con una interfaz de administración intuitiva. Además, las soluciones de redes convergentes admiten las aplicaciones de softphone para PC, así como de video punto a punto, de modo que los usuarios puedan disfrutar de las comunicaciones personales con la misma facilidad de administración y de uso de una llamada de voz. </p>
+<p></p>
+<p>La convergencia de servicios en la red dio lugar a una evolución de las redes, de la función tradicional de transporte de datos a una gran autopista para la comunicación de datos, voz y video. Esta red física se debe diseñar e implementar correctamente para permitir el manejo confiable de los diversos tipos de información que debe transportar. Para permitir la administración de este entorno complejo, se requiere un diseño estructurado.</p>
+<p></p>
+<p>En la figura 2, reproduzca el video para ver algunos de los servicios de colaboración en acción. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>10.1.2.1 Configuración de un servidor de DHCPv4 básico</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_10.1.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolo de configuración dinámica de host v4</h1>
+        <h2>Configuración de un servidor de DHCPv4 básico</h2>
+      </div>
+      <div id="content">
+<p>Un router Cisco que ejecuta el software IOS de Cisco puede configurarse para que funcione como servidor de DHCPv4. El servidor de DHCPv4 que utiliza IOS de Cisco asigna y administra direcciones IPv4 de conjuntos de direcciones especificados dentro del router para los clientes DHCPv4. La topología que se muestra en la figura 1 se utiliza para ilustrar esta funcionalidad.</p>
+<p></p>
+<p>
+<b>Paso 1. Excluir direcciones IPv4</b>
+</p>
+<p></p>
+<p>El router que funciona como servidor de DHCPv4 asigna todas las direcciones IPv4 en un conjunto de direcciones DHCPv4, a menos que esté configurado para excluir direcciones específicas. Generalmente, algunas direcciones IPv4 de un conjunto se asignan a dispositivos de red que requieren asignaciones de direcciones estáticas. Por lo tanto, estas direcciones IPv4 no deben asignarse a otros dispositivos. Para excluir direcciones específicas, utilice el comando <span class="cmd"><b>ip dhcp excluded-address</b></span>, como se muestra en la figura 2.</p>
+<p></p>
+<p>Se puede excluir una única dirección o un rango de direcciones especificando la dirección más baja y la dirección más alta del rango. Las direcciones excluidas deben incluir las direcciones asignadas a los routers, a los servidores, a las impresoras y a los demás dispositivos que se configuraron manualmente.</p>
+<p></p>
+<p>
+<b>Paso 2. Configurar un pool de DHCPv4</b>
+</p>
+<p></p>
+<p>La configuración de un servidor de DHCPv4 implica definir un conjunto de direcciones que se deben asignar. Como se muestra en la figura 3, el comando <span class="cmd"><b>ip dhcp pool </b></span><span class="cmd"><i>nombre-pool</i></span> crea un pool con el nombre especificado e ingresa el router en el modo de configuración DHCPv4, que se identifica por la petición de entrada <span class="cmd">Router(dhcp-config)#</span>.</p>
+<p></p>
+<p>
+<b>Paso 3. Configurar tareas específicas</b>
+</p>
+<p></p>
+<p>En la figura 4, se indican las tareas para finalizar la configuración del pool de DHCPv4. Algunas de ellas son optativas, mientras que otras deben configurarse. </p>
+<p></p>
+<p>El conjunto de direcciones y el router de gateway predeterminado deben estar configurados. Utilice la instrucción <span class="cmd"><b>network</b></span> para definir el rango de direcciones disponibles. </p>
+<p>Utilice el comando <span class="cmd"><b>default-router</b></span> para definir el router de gateway predeterminado. Normalmente, el gateway es la interfaz LAN del router más cercano a los dispositivos clientes. Se requiere un gateway, pero se pueden indicar hasta ocho direcciones si hay varios gateways.</p>
+<p></p>
+<p>Otros comandos del pool de DHCPv4 son optativos. Por ejemplo, la dirección IPv4 del servidor DNS que está disponible para un cliente DHCPv4 se configura mediante el comando <span class="cmd"><b>dns-server</b></span>. El comando <span class="cmd"><b>domain-name </b></span><span class="cmd"><i>dominio</i></span> se utiliza para definir el nombre de dominio. La duración del arrendamiento de DHCPv4 puede modificarse mediante el comando <span class="cmd"><b>lease</b></span>. El valor de arrendamiento predeterminado es un día. El comando <span class="cmd"><b>netbios-name-server</b></span> se utiliza para definir el servidor WINS con NetBIOS.</p>
+<p></p>
+<p>
+<b>Ejemplo de DHCPv4</b>
+</p>
+<p></p>
+<p>En la figura 5, se utiliza la topología de ejemplo de la figura 1 para mostrar una configuración de ejemplo con parámetros básicos de DHCPv4 configurados en el router R1, un servidor de DHCPv4 para la LAN 192.168.10.0/24.</p>
+<p></p>
+<p>
+<b>Deshabilitación de DHCPv4</b>
+</p>
+<p></p>
+<p>El servicio DHCPv4 está habilitado, de manera predeterminada, en versiones del software IOS de Cisco que lo admiten. Para deshabilitar el servicio, utilice el comando del modo de configuración global <span class="cmd"><b>no service dhcp</b></span>. Utilice el comando del modo de configuración global <span class="cmd"><b>service dhcp</b></span> para volver a habilitar el proceso del servidor de DHCPv4. Si los parámetros no se configuran, habilitar el servicio no tiene ningún efecto.</p>
+<p></p>
+<p>Utilice la actividad del verificador de sintaxis en la figura 6 para configurar parámetros de DHCPv4 similares en el R1 para la LAN 192.168.11.0/24.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,180 @@
+﻿<textcomponents> <!-- instructions -->
+<component id="ID_inst">
+	<text><![CDATA[<b>Actividad: Requisitos de arquitecturas de red</b><br>Seleccione la columna apropiada para identificar el requisito de la arquitectura de red a la que pertenece cada característica o función.]]></text>
+</component> <!-- buttons -->
+<component id="ID_Button01">
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id="ID_Button02">
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component> <!--Number of rows in the table-->
+<component id="txt_numrows">
+	<text><![CDATA[16]]></text>
+</component> <!--Number of columns for the answers in the table. Do not count the question column-->
+<component id="txt_numcols">
+	<text><![CDATA[4]]></text>
+</component> <!--Answer column headers-->
+
+
+<component id="txt_col1">
+	<text><![CDATA[<b>Tolerancia <br/>a fallas</b>]]></text>
+</component>
+
+<component id="txt_col2">
+	<text><![CDATA[<b>Escalabilidad</b>]]></text>
+</component>
+
+<component id="txt_col3">
+	<text><![CDATA[<b>Calidad <br/>de servicio</b>]]></text>
+</component>
+
+<component id="txt_col4">
+	<text><![CDATA[<b>Seguridad</b>]]></text>
+</component> <!--Question text - blockindent code moves the text away from the left edge a bit--> <!--Question text - If questions are numbered, use blockindent for hanging indents-->
+<component id="txt_q1">
+	<text><![CDATA[1. <textformat blockindent='13'>Las redes deben estar siempre disponibles.</textformat>]]></text>
+</component>
+
+<component id="txt_q2">
+	<text><![CDATA[2. <textformat blockindent='13'>Si las colas de la memoria están llenas, se deben descartar paquetes.</textformat>]]></text>
+</component>
+
+<component id="txt_q3">
+	<text><![CDATA[3. <textformat blockindent='13'>Se implementan colas de prioridad cuando la demanda de ancho de banda de red excede el suministro.</textformat>]]></text>
+</component>
+
+<component id="txt_q4">
+	<text><![CDATA[4. <textformat blockindent='13'>Se deben proteger los equipos de redes comerciales y personales.</textformat>]]></text>
+</component>
+
+<component id="txt_q5">
+	<text><![CDATA[5. <textformat blockindent='13'>El desarrollo de un plan de puesta en cola según prioridad es una estrategia para lograr una entrega de información de calidad. </textformat>]]></text>
+</component>
+
+<component id="txt_q6">
+	<text><![CDATA[6. <textformat blockindent='13'>Se deben proteger los datos comerciales y personales.</textformat>]]></text>
+</component>
+
+<component id="txt_q7">
+	<text><![CDATA[7. <textformat blockindent='13'>Los diferentes tipos de proveedores de servicios de Internet pueden afectar la calidad de la entrega de los datos de red.</textformat>]]></text>
+</component>
+
+<component id="txt_q8">
+	<text><![CDATA[8. <textformat blockindent='13'>Las redes pueden crecer o expandirse con un impacto mínimo en el rendimiento.</textformat>]]></text>
+</component>
+
+<component id="txt_q9">
+	<text><![CDATA[9. <textformat blockindent='13'>La prioridad de la puesta en cola de paquetes se basa en el tipo de datos que se envían y en la importancia que pueden tener.</textformat>]]></text>
+</component>
+
+<component id="txt_q10">
+	<text><![CDATA[10. <textformat blockindent='18'>Los datos pueden viajar a través de más de una ruta cuando se transmiten desde un origen remoto.</textformat>]]></text>
+</component>
+
+
+<component id="txt_q11">
+	<text><![CDATA[11. <textformat blockindent='21'>Los tipos de equipos de red, la forma en que se identifican (dirección IP o dirección MAC) y la forma en que se los denomina pueden afectar el crecimiento de una red.</textformat>]]></text>
+</component>
+
+<component id="txt_q12">
+	<text><![CDATA[12. <textformat blockindent='21'>Se implementan numerosos procedimientos y herramientas para abordar la necesidad de intercambiar información crítica de carácter confidencial y empresarial.</textformat>]]></text>
+</component>
+
+<component id="txt_q13">
+	<text><![CDATA[13. <textformat blockindent='21'>Se deben tener en cuenta la demora en el tráfico y la pérdida de datos al configurar la entrega a través de la puesta en cola según prioridad.</textformat>]]></text>
+</component>
+
+<component id="txt_q14">
+	<text><![CDATA[14. <textformat blockindent='21'>Poner en riesgo la integridad de activos comerciales y personales de gran importancia puede tener consecuencias graves.</textformat>]]></text>
+</component>
+
+<component id="txt_q15">
+	<text><![CDATA[15. <textformat blockindent='21'>Los estándares de red comunes permiten que los proveedores de hardware y software se enfoquen en mejorar sus productos y servicios.</textformat>]]></text>
+</component>
+
+<component id="txt_q16">
+	<text><![CDATA[16. <textformat blockindent='21'>Los tipos de conectividad de red pueden afectar la entrega de información.</textformat>]]></text>
+</component> <!--Answers - Give the column number(s), column numbering start with 1 not 0--> <!--Answers - For MCMA separate the correct answers with commas [2, 4, 5] -->
+<component id="txt_a1">
+	<text><![CDATA[1]]></text>
+</component>
+
+<component id="txt_a2">
+	<text><![CDATA[3]]></text>
+</component>
+
+<component id="txt_a3">
+	<text><![CDATA[3]]></text>
+</component>
+
+<component id="txt_a4">
+	<text><![CDATA[4]]></text>
+</component>
+
+<component id="txt_a5">
+	<text><![CDATA[3]]></text>
+</component>
+
+<component id="txt_a6">
+	<text><![CDATA[4]]></text>
+</component>
+
+<component id="txt_a7">
+	<text><![CDATA[1]]></text>
+</component>
+
+<component id="txt_a8">
+	<text><![CDATA[2]]></text>
+</component>
+
+<component id="txt_a9">
+	<text><![CDATA[3]]></text>
+</component>
+
+<component id="txt_a10">
+	<text><![CDATA[1]]></text>
+</component>
+
+<component id="txt_a11">
+	<text><![CDATA[2]]></text>
+</component>
+
+
+<component id="txt_a12">
+	<text><![CDATA[4]]></text>
+</component>
+
+
+<component id="txt_a13">
+	<text><![CDATA[3]]></text>
+</component>
+
+
+<component id="txt_a14">
+	<text><![CDATA[4]]></text>
+</component>
+
+<component id="txt_a15">
+	<text><![CDATA[2]]></text>
+</component>
+
+<component id="txt_a16">
+	<text><![CDATA[1]]></text>
+</component> <!-- Correct Feedback -->
+<component id="ID_titleCorrect">
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id="ID_correctText">
+	<text><![CDATA[Unió correctamente cada característica con el requisito de la arquitectura de red correspondiente.]]></text>
+</component> <!-- Incorrect Feedback -->
+<component id="ID_titleIncorrect">
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id="ID_IncorrectText">
+	<text><![CDATA[No unió correctamente cada característica con el requisito de la arquitectura de red correspondiente. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+</textcomponents>

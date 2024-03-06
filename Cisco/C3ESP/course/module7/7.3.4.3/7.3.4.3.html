@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.3.4.3 DUAL: ausencia de sucesor factible</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.3.4.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1> Funcionamiento de EIGRP</h1>
+        <h2>DUAL y la convergencia</h2>
+      </div>
+      <div id="content">
+<p>A veces, la ruta al sucesor falla y no hay ningún FS. En este caso, DUAL no tiene una ruta de respaldo a la red sin bucles garantizada, de manera que la ruta no está en la tabla de topología como un FS. Si no hay ningún FS en la tabla de topología, DUAL pone la red en estado activo. DUAL consulta activamente a sus vecinos en busca de un nuevo sucesor. </p>
+<p></p>
+<p>El R1 usa actualmente al R3 como el sucesor a 192.168.1.0/24, como se muestra en la figura 1. Sin embargo, el R1 no tiene al R2 incluido como un FS, porque el R2 no cumple la FC. Para comprender la manera en que DUAL busca un nuevo sucesor cuando no hay un FS, se simula una falla de enlace entre el R1 y el R3.</p>
+<p></p>
+<p>Antes de simular la falla de enlace, se habilita la depuración de DUAL con el comando <span class="cmd"><b>debug eigrp fsm</b></span> en el R1, como se muestra en la figura 2. La falla de enlace se simula mediante el comando <span class="cmd"><b>shutdown</b></span> en la interfaz Serial 0/0/1 del R1. </p>
+<p></p>
+<p>Cuando el sucesor deja de estar disponible y no hay un sucesor factible, DUAL pone la ruta en estado activo. DUAL envía consultas EIGRP en las que les pregunta a otros routers por una ruta a la red. Los otros routers devuelven respuestas EIGRP, que le permiten al emisor de la consulta EIGRP saber si tienen o no tienen una ruta a la red solicitada. Si ninguna de estas respuestas EIGRP incluye una ruta a esa red, el emisor de la consulta no tiene una ruta a esa red. </p>
+<p></p>
+<p>El resultado seleccionado de debug en la figura 2 muestra a la red 192.168.1.0/24 puesta en estado activo y las consultas EIGRP enviadas a otros vecinos. R2 responde con una ruta hacia esta red, la cual se convierte en el nuevo sucesor y se instala en la tabla de enrutamiento.</p>
+<p></p>
+<p>Si el emisor de las consultas EIGRP recibe respuestas EIGRP que incluyen una ruta hacia la red solicitada, la ruta preferida se agrega como nuevo sucesor y también a la tabla de enrutamiento. Este proceso lleva más tiempo que si DUAL tuviese un FS en su tabla de topología y pudiese agregar la nueva ruta a la tabla de routing rápidamente. Observe que en la figura 3 el R1 tiene una nueva ruta a la red 192.168.1.0/24. El nuevo sucesor EIGRP es el router R2.</p>
+<p></p>
+<p>En la figura 4, se muestra que la tabla de topología para el R1 ahora tiene al R2 como el sucesor, sin nuevos FS. Si el enlace entre el R1 y el R3 se activa nuevamente, el R3 vuelve a ser el sucesor. No obstante, el R2 aún no es el FS, porque no cumple la FC.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

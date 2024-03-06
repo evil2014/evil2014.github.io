@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.0.1.1 Introducción</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.0.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>División de redes IP en subredes</h1>
+        <h2>Introducción</h2>
+      </div>
+      <div id="content">
+<p>El diseño, la implementación y la administración de un plan de direccionamiento IP eficaz asegura que las redes puedan operar de manera eficaz y eficiente. Esto es así especialmente a medida que aumenta la cantidad de conexiones de host a una red. Comprender la estructura jerárquica de la dirección IP y cómo modificar esa jerarquía a fin de satisfacer con mayor eficacia los requisitos de enrutamiento constituye una parte importante de la planificación de un esquema de direccionamiento IP.</p>
+<p></p>
+<p>En la dirección IPv4 original, hay dos niveles de jerarquía: una red y un host. Estos dos niveles de direccionamiento permiten agrupaciones de red básicas que facilitan el enrutamiento de paquetes hacia una red de destino. El router reenvía paquetes sobre la base de la porción de red de una dirección IP. Una vez que se localiza la red, la porción de host de la dirección permite identificar el dispositivo de destino. </p>
+<p></p>
+<p>Sin embargo, a medida que las redes crecen y muchas organizaciones agregan cientos e incluso miles de hosts a su red, la jerarquía de dos niveles resulta insuficiente. </p>
+<p></p>
+<p>La subdivisión de redes agrega un nivel a la jerarquía de la red, lo cual básicamente crea tres niveles: una red, una subred y un host. La introducción de un nivel adicional a la jerarquía crea subgrupos adicionales dentro de una red IP, lo que facilita la entrega rápida de paquetes y proporciona un mayor filtrado al contribuir a minimizar el tráfico “local”. </p>
+<p></p>
+<p>En este capítulo, se analiza detalladamente la creación y la asignación de direcciones IP de red y de subred mediante el uso de la máscara de subred.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

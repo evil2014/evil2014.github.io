@@ -1,0 +1,133 @@
+﻿<textcomponents> 
+<component id="ID_title">
+	<text><![CDATA[<b>Teclas de acceso rápido y métodos abreviados de la CLI</b>]]></text>
+</component>
+
+<component id="ID_txt01">
+<text><![CDATA[(NOTA: los programas de emulación de terminal no reconocen la tecla “<b>Suprimir</b>”, que se utiliza para borrar los elementos que se encuentran a la derecha del cursor).]]></text>
+</component>
+
+<component id="ID_txt02">
+<text><![CDATA[NOTA. Teclas de <b>control</b>: mantenga presionada la tecla &lt;Ctrl&gt; y, luego, presione la tecla de letra específica.<br/>Secuencias de <b>escape</b>: presione y suelte la tecla &lt;Esc&gt; y, luego, presione la tecla de letra.]]></text>
+</component> 
+
+ <component id='ID_table01'>
+<text><![CDATA[<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4'>	 
+	<tr class="title">
+		<td bgcolor='#98D3D1' colspan='2' class="title"><font size='12' color='#1C3635'><b>Edición de líneas de la CLI</b></font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#0E6360' colspan='2' class="mtable_top"><font size='1' color='#0E6360'><span style="color:#0E6360">.</span></font></td>
+	</tr>  
+
+	<tr>
+		<td bgcolor='#EFF8F7' width='130'><b>Tabulación</b></td>
+		<td bgcolor='#EFF8F7'>Completa una entrada de nombre de comando parcial.</td>
+	</tr>
+	<tr>
+		<td bgcolor='#FFFFFF'><b>Retroceso</b></td>
+		<td bgcolor='#FFFFFF'>Borra el carácter a la izquierda del cursor.</td>
+	</tr>
+	<tr>
+		<td bgcolor='#EFF8F7'><b>Ctrl-D</b></td>
+		<td bgcolor='#EFF8F7'>Borra el carácter donde está el cursor.</td>
+	</tr>
+	<tr>
+		<td bgcolor='#FFFFFF'><b>Ctrl-K</b></td>
+		<td bgcolor='#FFFFFF'>Borra todos los caracteres desde el cursor hasta el final de la línea de comandos.</td>
+	</tr>
+	<tr>
+		<td bgcolor='#EFF8F7'><b>Esc D</b></td>
+		<td bgcolor='#EFF8F7'>Borra todos los caracteres desde el cursor hasta el final de la palabra.</td>
+	</tr>
+	<tr>
+		<td bgcolor='#FFFFFF'><b>Ctrl-U o Ctrl-X</b></td>
+		<td bgcolor='#FFFFFF'>Borra todos los caracteres desde el cursor hasta el comienzo de la línea de comandos.</td>
+	</tr>
+	<tr>
+		<td bgcolor='#EFF8F7'><b>Ctrl-W</b></td>
+		<td bgcolor='#EFF8F7'>Borra la palabra a la izquierda del cursor.</td>
+	</tr>
+	<tr>
+		<td bgcolor='#FFFFFF'><b>Ctrl-A</b></td>
+		<td bgcolor='#FFFFFF'>Desplaza el cursor hacia el principio de la línea.</td>
+	</tr>
+	<tr>
+		<td bgcolor='#EFF8F7'><b>Flecha izquierda o Ctrl-B</b></td>
+		<td bgcolor='#EFF8F7'>Desplaza el cursor un carácter hacia la izquierda.</td>
+	</tr>
+	<tr>
+		<td bgcolor='#FFFFFF'><b>Esc B</b></td>
+		<td bgcolor='#FFFFFF'>Desplaza el cursor una palabra hacia la izquierda.</td>
+	</tr>
+	<tr>
+		<td bgcolor='#EFF8F7'><b>Esc F</b></td>
+		<td bgcolor='#EFF8F7'>Desplaza el cursor una palabra hacia la derecha.</td>
+	</tr>
+	<tr>
+		<td bgcolor='#FFFFFF'><b>Flecha derecha o Ctrl-F</b></td>
+		<td bgcolor='#FFFFFF'>Desplaza el cursor un carácter hacia la derecha.</td>
+	</tr>
+	<tr>
+		<td bgcolor='#EFF8F7'><b>Ctrl-E</b></td>
+		<td bgcolor='#EFF8F7'>Desplaza el cursor hasta el final de la línea de comandos.</td>
+	</tr>
+	<tr>
+		<td bgcolor='#FFFFFF'><b>Flecha arriba o Ctrl-P</b></td>
+		<td bgcolor='#FFFFFF'>Vuelve a introducir el comando que se encuentra en el búfer del historial, a partir de los comandos más recientes.</td>
+	</tr>
+	<tr>
+		<td bgcolor='#EFF8F7'><b>Ctrl-R, Ctrl-I o Ctrl-L</b></td>
+		<td bgcolor='#EFF8F7'>Vuelve a mostrar la petición de entrada del sistema y la línea de comando después de que se recibe un mensaje de la consola.</td>
+	</tr>
+ 
+</table>]]></text>
+</component>
+<component id="ID_table02">
+<text><![CDATA[<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4'>	 
+	<tr class="title">
+		<td bgcolor='#98D3D1' colspan='2' class="title"><font size='12' color='#1C3635'><b>En la petición de entrada “-----More-----”</b></font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#0E6360' colspan='2' class="mtable_top"><font size='1' color='#0E6360'><span style="color:#0E6360">.</span></font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#EFF8F7'  width='120'><b>Tecla Entrar</b></td>
+		<td bgcolor='#EFF8F7'>Muestra la siguiente línea.</td>
+	</tr>
+	<tr>
+		<td bgcolor='#FFFFFF'><b>Barra espaciadora</b></td>
+		<td bgcolor='#FFFFFF'>Muestra la siguiente pantalla.</td>
+	</tr>
+	<tr>
+		<td bgcolor='#EFF8F7'><b>Cualquier tecla</b></td>
+		<td bgcolor='#EFF8F7'>Termina la cadena que se muestra y vuelve al modo EXEC privilegiado.</td>
+	</tr>
+</table>]]></text>
+</component>
+
+
+
+<component id="ID_table03">
+<text><![CDATA[<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4'>	 
+	<tr class="title">
+		<td bgcolor='#98D3D1' colspan='2' class="title"><font size='12' color='#1C3635'><b>Teclas de interrupción</b></font></td>
+	</tr>  
+	<tr>
+		<td bgcolor='#0E6360' colspan='2' class="mtable_top"><font size='1' color='#0E6360'><span style="color:#0E6360">.</span></font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#EFF8F7'  width='130'><b>Ctrl-C</b></td>
+		<td bgcolor='#EFF8F7'>Cuando está en cualquier modo de configuración, termina el modo de configuración y regresa al modo EXEC privilegiado. Cuando está en modo de configuración, interrumpe y regresa al indicador de comando.</td>
+	</tr>
+	<tr>
+		<td bgcolor='#FFFFFF'><b>Ctrl-Z</b></td>
+		<td bgcolor='#FFFFFF'>Cuando está en cualquier modo de configuración, termina el modo de configuración y regresa al modo EXEC privilegiado.</td>
+	</tr>
+	<tr>
+		<td bgcolor='#F3F5E7'><b>Ctrl-Mayús-6</b></td>
+		<td bgcolor='#F3F5E7'>Secuencia de pausa multiuso. Se la utiliza para interrumpir búsquedas DNS, traceroutes, pings.</td>
+	</tr>
+</table>]]></text>
+</component>
+</textcomponents>

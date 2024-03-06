@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.2.4.5 Seguridad de puertos: configuración</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.2.4.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Seguridad de switches: administración e implementación</h1>
+        <h2>Seguridad de puertos de switch</h2>
+      </div>
+      <div id="content">
+<p>En la figura 1, se resume la configuración predeterminada de seguridad de puerto en un switch Cisco Catalyst.</p>
+<p></p>
+<p>En la figura 2, se muestran los comandos de CLI de Cisco IOS necesarios para configurar la seguridad de puertos en el puerto Fast Ethernet F0/18 del switch S1. Observe que el ejemplo no especifica un modo de violación. En este ejemplo, el modo de violación es shutdown, el modo predeterminado.</p>
+<p></p>
+<p>En la figura 3, se muestra cómo habilitar las direcciones MAC seguras persistentes para la seguridad de puertos en el puerto Fast Ethernet 0/19 del switch S1. Como se mencionó anteriormente, la cantidad máxima de direcciones MAC seguras se puede configurar de forma manual. En este ejemplo, la sintaxis del comando de Cisco IOS se utiliza para establecer en 10 la cantidad máxima de direcciones MAC para el puerto 0/19. De manera predeterminada, el modo de violación se establece en shutdown.</p>
+<p></p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.1.1.1 OSPF de área única</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.1.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Funcionamiento de OSPF multiárea</h1>
+        <h2>¿Por qué OSPF de diversas áreas?</h2>
+      </div>
+      <div id="content">
+<p>OSPF de área única es útil en redes más pequeñas, donde la red de enlaces entre routers es simple y las rutas a los destinos individuales se deducen con facilidad.</p>
+<p></p>
+<p>No obstante, si un área crece demasiado, se deben resolver los siguientes problemas de inmediato (consulte la ilustración para obtener un ejemplo):</p>
+<p>
+<ul>
+<li>
+<b>Tablas de routing extensas:</b> OSPF no realiza la sumarización de rutas de manera predeterminada. Si las rutas no se resumen, la tabla de routing se vuelve muy extensa, según el tamaño de la red.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Bases de datos de estado de enlace (LSDB) muy grandes:</b> <b></b>debido a que la LSDB abarca la topología de toda la red, cada router debe mantener una entrada para cada red en el área, incluso aunque no se seleccionen todas las rutas para la tabla de routing.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Cálculos frecuentes del algoritmo SPF:</b> en las redes grandes, las modificaciones son inevitables, por lo que los routers pasan muchos ciclos de CPU volviendo a calcular el algoritmo SPF y actualizando la tabla de routing.</li>
+</ul>
+</p>
+<p></p>
+<p>Para que OSPF sea más eficaz y escalable, este protocolo admite el routing jerárquico mediante áreas. Un área de OSPF es un grupo de routers que comparten la misma información de estado de enlace en las bases de datos de estado de enlace. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

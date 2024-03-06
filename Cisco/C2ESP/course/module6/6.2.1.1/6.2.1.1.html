@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.2.1.1 Comando ip route</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.2.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de rutas estáticas y predeterminadas</h1>
+        <h2>Configuración de rutas estáticas IPv4</h2>
+      </div>
+      <div id="content">
+<p>Las rutas estáticas se configuran con el comando<span class="cmd"><b> ip route </b></span>de configuración global. La sintaxis del comando es la siguiente:</p>
+<p></p>
+<p>
+<span class="cmd">Router(config)# </span>
+<span class="cmd">
+<b>ip route </b>
+</span>
+<span class="cmd">
+<i>dirección-red máscara-subred </i>
+</span>
+<span class="cmd">{</span>
+<span class="cmd">
+<i>dirección-ip </i>
+</span>
+<span class="cmd">| </span>
+<span class="cmd">
+<i>tipo-interfaz número-interfaz  </i>
+</span>
+<span class="cmd">[</span>
+<span class="cmd">
+<i>dirección-ip</i>
+</span>
+<span class="cmd">]} [</span>
+<span class="cmd">
+<i>distancia</i>
+</span>
+<span class="cmd">] [</span>
+<span class="cmd">
+<b>name </b>
+</span>
+<span class="cmd">
+<i>name</i>
+</span>
+<span class="cmd">] [</span>
+<span class="cmd">
+<b>permanent</b>
+</span>
+<span class="cmd">] [</span>
+<span class="cmd">
+<b>tag </b>
+</span>
+<span class="cmd">
+<i>etiqueta</i>
+</span>
+<span class="cmd">]</span>
+</p>
+<p></p>
+<p>Se requieren los siguientes parámetros para configurar el routing estático:</p>
+<p>
+<ul>
+<li>
+<span class="cmd">
+<i>dirección-red</i>
+</span>
+<b></b>: dirección de red de destino de la red remota que se agrega a la tabla de routing, también llamada “prefijo”.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<span class="cmd">
+<i>máscara-subred</i>
+</span>
+<b></b>: máscara de subred, o simplemente máscara, de la red remota que se agrega a la tabla de routing. La máscara de subred puede modificarse para resumir un grupo de redes. </li>
+</ul>
+</p>
+<p></p>
+<p>Además, deberá utilizarse uno de los siguientes parámetros o ambos:</p>
+<p>
+<ul>
+<li>
+<span class="cmd">
+<i>dirección-ip</i>
+</span>
+<b></b>: dirección IP del router de conexión que se va a utilizar para reenviar el paquete a la red de destino remota. Se la suele denominar “siguiente salto”. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<span class="cmd">
+<i>interfaz-salida</i>
+</span>
+<b></b>: interfaz de salida que se va a utilizar para reenviar el paquete al siguiente salto.</li>
+</ul>
+</p>
+<p></p>
+<p>Como se muestra en la ilustración, la sintaxis del comando que suele utilizarse es<span class="cmd"><b> ip route </b></span><span class="cmd"><i>dirección-red máscara-subred </i></span><span class="cmd">{</span><span class="cmd"><i>dirección-ip </i></span><span class="cmd">|</span><span class="cmd"><i> interfaz-salida</i></span><span class="cmd">}</span>.</p>
+<p></p>
+<p>El parámetro <span class="cmd"><i>distancia</i></span> se utiliza para crear una ruta estática flotante al establecer una distancia administrativa mayor que la de una ruta descubierta de forma dinámica.</p>
+<p></p>
+<p>
+<b>Nota</b>: los parámetros restantes no son relevantes en este capítulo o para estudios de CCNA.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

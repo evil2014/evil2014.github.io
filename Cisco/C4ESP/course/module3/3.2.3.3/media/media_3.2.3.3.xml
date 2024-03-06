@@ -1,0 +1,148 @@
+﻿<textcomponents>
+
+<component id="ID_s1_title">
+  <text><![CDATA[<b>Códigos de paquete LCP</b>]]></text> 
+</component>
+
+<component id="ID_s1_txt01">
+<text><![CDATA[Longitud del campo, en bytes]]></text>
+</component>
+<component id="ID_s1_txt02">
+<text><![CDATA[Variable]]></text>
+</component>
+<component id="ID_s1_txt03">
+<text><![CDATA[2 o 4]]></text>
+</component>
+<component id="ID_s1_txt04">
+<text><![CDATA[Señalizador]]></text>
+</component>
+<component id="ID_s1_txt05">
+<text><![CDATA[Dirección]]></text>
+</component>
+<component id="ID_s1_txt06">
+<text><![CDATA[Control]]></text>
+</component>
+<component id="ID_s1_txt07">
+<text><![CDATA[Protocolo]]></text>
+</component>
+<component id="ID_s1_txt08">
+<text><![CDATA[Datos]]></text>
+</component>
+<component id="ID_s1_txt09">
+<text><![CDATA[FCS]]></text>
+</component>
+<component id="ID_s1_txt10">
+<text><![CDATA[<b>Paquete LCP</b>]]></text>
+</component>
+<component id="ID_s1_txt11">
+<text><![CDATA[Código]]></text>
+</component>
+<component id="ID_s1_txt12">
+<text><![CDATA[Identificador]]></text>
+</component>
+<component id="ID_s1_txt13">
+<text><![CDATA[Longitud]]></text>
+</component>
+<component id="ID_s1_txt14">
+<text><![CDATA[Datos<br/>(varias longitudes)]]></text>
+</component>
+
+
+<component id="ID_s1_txt15">
+<text><![CDATA[1]]></text>
+</component>
+
+
+<component id="ID_s1_txt16">
+<text><![CDATA[1]]></text>
+</component>
+
+
+<component id="ID_s1_txt17">
+<text><![CDATA[1]]></text>
+</component>
+
+
+<component id="ID_s1_txt18">
+<text><![CDATA[2]]></text>
+</component>
+
+
+
+
+
+
+
+<component id="ID_s2_title">
+<text><![CDATA[<b>Campos de paquete LCP</b>]]></text>
+</component>
+
+<component id="ID_s2_table">
+<text><![CDATA[<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4'>
+<tr class="mtable_top"><td colspan='3' bgcolor='#0E6360' class="mtable_top"><font size='1' color='#0E6360'><span style="color:#98D3D1">.</span></font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#077A77'  valign="top" class="mtitle"><font color='#ffffff' size="11"><b>Código LCP</b></font></td>
+		<td bgcolor='#077A77'  valign="top" class="mtitle"><font color='#ffffff' size="11"><b>Tipo de paquete LCP</b></font></td>
+		<td bgcolor='#077A77'  valign="top" class="mtitle"><font color='#ffffff' size="11"><b>Descripción</b></font></td>
+	</tr>
+	<tr>
+    <td width='60' bgcolor='#EFF8F7'>1</td>
+    <td width='130' bgcolor='#EFF8F7'>Solicitud de configuración</td>
+    <td bgcolor='#EFF8F7'>Se envía para abrir o restablecer una conexión PPP. El mensaje de solicitud de configuración contiene una lista de opciones LCP con cambios para los valores de las opciones predeterminadas.</td>
+  </tr>
+  <tr>
+    <td bgcolor='#ffffff'>2</td>
+    <td bgcolor='#ffffff'>Acuse de recibo de configuración</td>
+    <td bgcolor='#ffffff'>Se envía cuando todos los valores de todas las opciones LCP en la última solicitud de configuración recibida son reconocidos y aceptados. Cuando ambos pares PPP envían y reciben acuses de recibo de configuración, se completa la negociación LCP.</td>
+  </tr>
+  <tr>
+    <td bgcolor='#EFF8F7'>3</td>
+    <td bgcolor='#EFF8F7'>NAK de configuración</td>
+    <td bgcolor='#EFF8F7'>Se envía cuando se reconocen todas las opciones de LCP, pero los valores de algunas opciones no son aceptables. El mensaje de acuse de recibo negativo (NAK) de configuración incluye las opciones que presentan la incompatibilidad y los valores aceptables.</td>
+  </tr>
+  <tr>
+    <td bgcolor='#ffffff'>4</td>
+    <td bgcolor='#ffffff'>Rechazo de configuración</td>
+    <td bgcolor='#ffffff'>Enviado cuando las opciones de LCP no son reconocidas o aceptadas para la negociación. El mensaje de rechazo de configuración incluye las opciones no reconocidas o no negociables.</td>
+  </tr>
+  <tr>
+    <td bgcolor='#EFF8F7'>5</td>
+    <td bgcolor='#EFF8F7'>Solicitud de terminación</td>
+    <td bgcolor='#EFF8F7'>Se envía opcionalmente para cerrar la conexión PPP.</td>
+  </tr>
+  <tr>
+    <td bgcolor='#ffffff'>6</td>
+    <td bgcolor='#ffffff'>Acuse de recibo de terminación</td>
+    <td bgcolor='#ffffff'>Se envía en respuesta al mensaje de solicitud de terminación.</td>
+  </tr>
+  <tr>
+    <td bgcolor='#EFF8F7'>7</td>
+    <td bgcolor='#EFF8F7'>Rechazo de código</td>
+    <td bgcolor='#EFF8F7'>Se envía cuando se desconoce el código LCP. El mensaje de rechazo de código incluye el paquete LCP rechazado.</td>
+  </tr>
+  <tr>
+    <td bgcolor='#ffffff'>8</td>
+    <td bgcolor='#ffffff'>Rechazo de protocolo</td>
+    <td bgcolor='#ffffff'>Se envía cuando la trama PPP contiene una ID de protocolo desconocida. El mensaje de rechazo de protocolo incluye el paquete LCP rechazado. El mensaje de rechazo de protocolo es enviado normalmente por un par PPP en respuesta a un NCP de PPP para un protocolo de LAN no habilitado en el par PPP.</td>
+  </tr>
+  <tr>
+    <td bgcolor='#EFF8F7'>9</td>
+    <td bgcolor='#EFF8F7'>Solicitud de eco</td>
+    <td bgcolor='#EFF8F7'>Se envía opcionalmente para probar la conexión PPP.</td>
+  </tr>
+  <tr>
+    <td bgcolor='#ffffff'>10</td>
+    <td bgcolor='#ffffff'>Respuesta de eco</td>
+    <td bgcolor='#ffffff'>Se envía en respuesta a un mensaje de solicitud de eco. Los mensajes de solicitud de eco y de respuesta de eco de PPP no están relacionados con los mensajes del mismo nombre de ICMP.</td>
+  </tr>
+  <tr>
+    <td bgcolor='#EFF8F7'>11</td>
+    <td bgcolor='#EFF8F7'>Solicitud de descarte</td>
+    <td bgcolor='#EFF8F7'>Se envía opcionalmente para practicar el enlace en la dirección de salida.</td>
+  </tr>
+	</table>]]></text>
+</component>
+
+
+</textcomponents>

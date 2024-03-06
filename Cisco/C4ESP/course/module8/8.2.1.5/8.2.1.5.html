@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.2.1.5 Cadenas de comunidad</title>
+    <!--  -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.2.1.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>SNMP</h1>
+        <h2>Funcionamiento de SNMP</h2>
+      </div>
+      <div id="content">
+<p>Para que SNMP funcione, NMS debe tener acceso a la MIB. Para asegurar que las solicitudes de acceso sean válidas, debe haber cierta forma de autenticación.</p>
+<p></p>
+<p>SNMPv1 y SNMPv2c usan cadenas de comunidad que controlan el acceso a la MIB. Las cadenas de comunidad son contraseñas de texto no cifrado. Las cadenas de la comunidad de SNMP autentican el acceso a los objetos MIB.</p>
+<p></p>
+<p>Existen dos tipos de cadenas de comunidad: </p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Solo lectura (ro):</b> proporciona acceso a las variables de MIB, pero no permite realizar cambios a estas variables, solo leerlas. Debido a que la seguridad es mínima en la versión 2c, muchas organizaciones usan SNMPv2c en modo de solo lectura.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Lectura y escritura (rw):</b> proporciona acceso de lectura y escritura a todos los objetos de la MIB.</li>
+</ul>
+</p>
+<p></p>
+<p>Para ver o establecer variables de MIB, el usuario debe especificar la cadena de comunidad correspondiente para el acceso de lectura o escritura. Reproduzca la animación de la ilustración para ver cómo funciona SNMP con la cadena de comunidad.</p>
+<p></p>
+<p>
+<b>Nota:</b> las contraseñas de texto no cifrado no se consideran un mecanismo de seguridad. Esto se debe a que las contraseñas de texto no cifrado son sumamente vulnerables a los ataques man-in-the-middle (intermediario), en los que se ven comprometidas a través de la captura de paquetes. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

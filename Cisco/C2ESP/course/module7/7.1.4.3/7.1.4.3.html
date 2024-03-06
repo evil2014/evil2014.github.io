@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.1.4.3 Protocolos de enrutamiento vector distancia</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.1.4.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolos de enrutamiento dinámico</h1>
+        <h2>Tipos de protocolos de routing</h2>
+      </div>
+      <div id="content">
+<p>“Vector distancia” significa que las rutas se anuncian proporcionando dos características:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Distancia:</b> identifica la distancia hasta la red de destino. Se basa en una métrica como el conteo de saltos, el costo, el ancho de banda y el retraso, entre otros. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Vector:</b> especifica el sentido en que se encuentra el router de siguiente salto o la interfaz de salida para llegar al destino. </li>
+</ul>
+</p>
+<p></p>
+<p>Por ejemplo, en la ilustración, el R1 tiene información de que la distancia para llegar a la red 172.16.3.0/24 es de un salto y de que el sentido es a través de la interfaz S0/0/0 hacia el R2. </p>
+<p></p>
+<p>Un router que utiliza un protocolo de enrutamiento vector distancia no tiene la información de la ruta completa hasta la red de destino. Los protocolos vector distancia utilizan routers como letreros a lo largo de la ruta hacia el destino final. La única información que conoce el router sobre una red remota es la distancia o métrica para llegar a esa red y qué ruta o interfaz usar para alcanzarla. Los protocolos de enrutamiento vector distancia no tienen un mapa en sí de la topología de la red. </p>
+<p></p>
+<p>Hay cuatro IGP vector distancia IPv4:</p>
+<p>
+<ul>
+<li>
+<b>RIPv1:</b> protocolo antiguo de primera generación</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>RIPv2:</b> protocolo de routing vector distancia simple</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>IGRP:</b> protocolo exclusivo de Cisco de primera generación (obsoleto y reemplazado por EIGRP)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>EIGRP:</b> versión avanzada del routing vector distancia</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

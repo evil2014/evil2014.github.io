@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.1.3.3 EIGRP para IPv6: ruta predeterminada.</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.1.3.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuraciones avanzadas de EIGRP</h1>
+        <h2>Propagación de rutas predeterminadas</h2>
+      </div>
+      <div id="content">
+<p>Recuerde que EIGRP mantiene tablas independientes para IPv4 e IPv6, por lo tanto, una ruta predeterminada IPv6 debe propagarse por separado, como se muestra en la figura 1. De manera similar a lo que sucede en EIGRP para IPv4, se configura una ruta estática predeterminada en el router de gateway (R2), como se muestra en la figura 2: </p>
+<p></p>
+<p>
+<span class="cmd">R2(config)# </span>
+<span class="cmd">
+<b>ipv6 route ::/0 serial 0/1/0</b>
+</span>
+</p>
+<p></p>
+<p>El prefijo ::/0 y la longitud de prefijo equivalen a la dirección y máscara de subred 0.0.0.0 0.0.0.0 que se usan en IPv4. Ambas son direcciones compuestas totalmente de ceros y con una longitud de prefijo /0.</p>
+<p></p>
+<p>La ruta estática predeterminada IPv6 se redistribuye en el dominio EIGRP para IPv6 mediante el mismo comando <span class="cmd"><b>redistribute static</b></span> que se usó en EIGRP para IPv4.</p>
+<p></p>
+<p>
+<b>Nota:</b> es posible que en algunos IOS se requiera que el comando <span class="cmd"><b>redistribute static</b></span> incluya los parámetros de métricas de EIGRP para que se pueda redistribuir la ruta estática. </p>
+<p></p>
+<p>
+<b>Verificación de la propagación de una ruta predeterminada </b>
+</p>
+<p></p>
+<p>La propagación de la ruta estática predeterminada IPv6 se puede verificar mediante la revisión de la tabla de routing IPv6 del R1 con el comando <span class="cmd"><b>show ipv6 route</b></span>, como se muestra en la figura 3. Observe que el sucesor o la dirección del siguiente salto no es el R2, sino el R3. Esto se debe a que el R3 proporciona una mejor ruta al R2, con un costo de métrica menor que el R1.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

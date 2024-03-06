@@ -1,0 +1,166 @@
+﻿<textcomponents>
+
+<component id='ID_main_txt01'>
+	<text><![CDATA[Servidor]]></text>
+</component>
+
+<component id='ID_main_txt02'>
+	<text><![CDATA[Cliente]]></text>
+</component> <!-- Slide 1 -->
+<component id='ID_s1_title'>
+	<text><![CDATA[<b>Funcionamiento de DHCPv4</b>]]></text>
+</component>
+<component id="ID_s1_txt01">
+   <text><![CDATA[Puedo proporcionar direcciones IP a los clientes DHCP.]]></text>
+</component>
+<component id="ID_s1_txt02">
+   <text><![CDATA[Necesito arrendar una dirección IP del servidor de DHCP.]]></text>
+</component> <!-- Slide 2 -->
+<component id='ID_s2_title'>
+	<text><![CDATA[<b>Funcionamiento de DHCPv4</b>]]></text>
+</component>
+
+<component id='ID_s2_txt01'>
+	<text><![CDATA[<b>Origen del arrendamiento</b>]]></text>
+</component>
+
+<component id='ID_s2_txt02'>
+	<text><![CDATA[<b>DHCPDISCOVER</b><br/>Difusión]]></text>
+</component>
+
+<component id='ID_s2_txt03'>
+	<text><![CDATA[“Deseo solicitar una dirección”.]]></text>
+</component> <!-- Slide 3 -->
+<component id='ID_s3_title'>
+	<text><![CDATA[<b>Funcionamiento de DHCPv4</b>]]></text>
+</component>
+
+<component id='ID_s3_txt01'>
+	<text><![CDATA[<b>Origen del arrendamiento</b>]]></text>
+</component>
+
+<component id='ID_s3_txt02'>
+	<text><![CDATA[<b>DHCPDISCOVER</b><br/>Difusión]]></text>
+</component>
+
+<component id='ID_s3_txt03'>
+	<text><![CDATA[“Deseo solicitar una dirección”.]]></text>
+</component>
+
+<component id='ID_s3_txt04'>
+	<text><![CDATA[<b>DHCPOFFER</b><br/>Unidifusión]]></text>
+</component>
+
+<component id='ID_s3_txt05'>
+	<text><![CDATA[“Soy DHCPsvr1. Puedo ofrecer esta dirección”.]]></text>
+</component> <!-- Slide 4 -->
+<component id='ID_s4_title'>
+	<text><![CDATA[<b>Funcionamiento de DHCPv4</b>]]></text>
+</component>
+
+<component id='ID_s4_txt01'>
+	<text><![CDATA[<b>Origen del arrendamiento</b>]]></text>
+</component>
+
+<component id='ID_s4_txt02'>
+	<text><![CDATA[<b>DHCPDISCOVER</b><br/>Difusión]]></text>
+</component>
+
+<component id='ID_s4_txt03'>
+	<text><![CDATA[“Deseo solicitar una dirección”.]]></text>
+</component>
+
+<component id='ID_s4_txt04'>
+	<text><![CDATA[<b>DHCPOFFER</b><br/>Unidifusión]]></text>
+</component>
+
+<component id='ID_s4_txt05'>
+	<text><![CDATA[“Soy DHCPsvr1. Puedo ofrecer esta dirección”.]]></text>
+</component>
+
+<component id='ID_s4_txt06'>
+	<text><![CDATA[<b>DHCPREQUEST</b><br/>Difusión]]></text>
+</component>
+
+<component id='ID_s4_txt07'>
+	<text><![CDATA[“Acepto la oferta de la dirección IP”.]]></text>
+</component> <!-- Slide 5 -->
+<component id='ID_s5_title'>
+	<text><![CDATA[<b>Funcionamiento de DHCPv4</b>]]></text>
+</component>
+
+<component id='ID_s5_txt01'>
+	<text><![CDATA[<b>Origen del arrendamiento</b>]]></text>
+</component>
+
+<component id='ID_s5_txt02'>
+	<text><![CDATA[<b>DHCPDISCOVER</b><br/>Difusión]]></text>
+</component>
+
+<component id='ID_s5_txt03'>
+	<text><![CDATA[“Deseo solicitar una dirección”.]]></text>
+</component>
+
+<component id='ID_s5_txt04'>
+	<text><![CDATA[<b>DHCPOFFER</b><br/>Unidifusión]]></text>
+</component>
+
+<component id='ID_s5_txt05'>
+	<text><![CDATA[“Soy DHCPsvr1. Puedo ofrecer esta dirección”.]]></text>
+</component>
+
+<component id='ID_s5_txt06'>
+	<text><![CDATA[<b>DHCPREQUEST</b><br/>Difusión]]></text>
+</component>
+
+<component id='ID_s5_txt07'>
+	<text><![CDATA[“Acepto la oferta de la dirección IP”.]]></text>
+</component>
+
+<component id='ID_s5_txt08'>
+	<text><![CDATA[<b>DHCPACK</b><br/>Unidifusión]]></text>
+</component>
+
+<component id='ID_s5_txt09'>
+	<text><![CDATA[“Se hace acuse de recibo de su aceptación”.]]></text>
+</component> <!-- Slide 6 -->
+<component id='ID_s6_title'>
+	<text><![CDATA[<b>Funcionamiento de DHCPv4</b>]]></text>
+</component>
+
+<component id='ID_s6_txt01'>
+	<text><![CDATA[<b>Renovación del arrendamiento</b>]]></text>
+</component>
+
+<component id='ID_s6_txt02'>
+	<text><![CDATA[<b>DHCPREQUEST</b><br/>Unidifusión]]></text>
+</component>
+
+<component id='ID_s6_txt03'>
+	<text><![CDATA[“Deseo renovar mi arrendamiento”.]]></text>
+</component> <!-- Slide 7 -->
+<component id='ID_s7_title'>
+	<text><![CDATA[<b>Funcionamiento de DHCPv4</b>]]></text>
+</component>
+
+<component id='ID_s7_txt01'>
+	<text><![CDATA[<b>Renovación del arrendamiento</b>]]></text>
+</component>
+
+<component id='ID_s7_txt02'>
+	<text><![CDATA[<b>DHCPREQUEST</b><br/>Unidifusión]]></text>
+</component>
+
+<component id='ID_s7_txt03'>
+	<text><![CDATA[“Deseo renovar mi arrendamiento”.]]></text>
+</component>
+
+<component id='ID_s7_txt04'>
+	<text><![CDATA[<b>DHCPACK</b><br/>Unidifusión]]></text>
+</component>
+
+<component id='ID_s7_txt05'>
+	<text><![CDATA[“Se hace acuse de recibo de su solicitud”.]]></text>
+</component>
+
+</textcomponents>

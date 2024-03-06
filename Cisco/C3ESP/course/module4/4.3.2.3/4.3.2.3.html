@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.3.2.3 Métodos de cifrado</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.3.2.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Seguridad de una LAN inalámbrica</h1>
+        <h2>Protección de WLAN</h2>
+      </div>
+      <div id="content">
+<p>El cifrado se usa para proteger datos. Si un intruso captura datos cifrados, no podrá descifrarlos durante un período razonable.</p>
+<p></p>
+<p>El estándar IEEE 802.11i y los estándares WPA y WPA2 de Wi-Fi Alliance usan los siguientes protocolos de cifrado: </p>
+<p>
+<ul>
+<li>
+<b>Protocolo de integridad de clave temporal (TKIP):</b> es el método de cifrado que usa WPA. Provee apoyo para el equipo WLAN heredado que atiende las fallas originales asociadas con el método de encriptación WEP 802.11. Usa WEP, pero cifra el contenido de capa 2 mediante TKIP y realiza una comprobación de integridad de los mensajes (MIC) en el paquete cifrado para asegurar que no se alteró el mensaje.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Estándar de cifrado avanzado (AES):</b> es el método de cifrado que usa WPA2. Es el método preferido, ya que se alinea con el estándar del sector IEEE 802.11i. AES realiza las mismas funciones que TKIP, pero es un método de cifrado más seguro. Usa el protocolo Counter Mode Cipher Block Chaining Message Authentication Code Protocol (CCMP), que permite que los hosts de destino reconozcan si se alteraron los bits cifrados y no cifrados. </li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Nota:</b> siempre que sea posible, elija WPA2 con AES.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

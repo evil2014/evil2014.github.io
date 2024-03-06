@@ -1,0 +1,68 @@
+﻿<textcomponents>
+<component id="ID_s1_title">
+<text><![CDATA[<b>Tramas de unidifusión duplicadas</b>]]></text>
+</component>
+
+<component id="ID_s1_txt01">
+  <text><![CDATA[Enlace troncal3]]></text> 
+</component>
+<component id="ID_s1_txt02">
+  <text><![CDATA[Enlace troncal2]]></text> 
+</component>
+<component id="ID_s1_txt03">
+  <text><![CDATA[Enlace troncal1]]></text> 
+</component>
+<component id="ID_s1_txt04">
+  <text><![CDATA[La PC1 envía una trama de unidifusión a la PC4 mediante el S2.]]></text>
+</component>
+<component id="ID_s1_txt05">
+  <text><![CDATA[El S2 no tiene registro de la PC4 en la tabla de direcciones MAC. Satura todos los puertos con la trama de unidifusión.]]></text>
+</component>
+<component id="ID_s1_txt06">
+  <text><![CDATA[Tanto el S1 como el S3 tienen una entrada para la PC4 en sus tablas de direcciones MAC. Ambos reenvían la trama según corresponda.]]></text>
+</component>
+<component id="ID_s1_txt07">
+  <text><![CDATA[El S1 también reenvía la trama duplicada recibida del S3 a la PC4.]]></text>
+</component>
+
+<component id="ID_s1_txt08">
+	<text><![CDATA[<b>Tabla MAC de S3</b><br/>PC4 = F0/1]]></text>
+</component>
+<component id="ID_s1_txt09">
+	<text><![CDATA[<b>Tabla MAC del S1</b><br/>PC4 = F0/3]]></text>
+</component>
+<component id="ID_s1_txt10">
+	<text><![CDATA[<b>Tabla MAC de S2</b><br/>PC1 = F0/11]]></text>
+</component>
+
+  
+  
+	<component id="end">
+		<text><![CDATA[End]]></text>
+	</component>
+
+	<component id="fforward">
+		<text><![CDATA[Adelantar]]></text>
+	</component>
+
+	<component id="pause">
+		<text><![CDATA[Pausa]]></text>
+	</component>
+
+	<component id="play">
+		<text><![CDATA[Reproducir]]></text>
+	</component>
+
+	<component id="rewind">
+		<text><![CDATA[Regresar]]></text>
+	</component>
+
+	<component id="start">
+		<text><![CDATA[Inicio]]></text>
+	</component>
+
+	<component id="ID_cont">
+		<text><![CDATA[Haga clic en Reproducir para continuar.]]></text>
+	</component>
+
+</textcomponents>

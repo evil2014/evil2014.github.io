@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.3.3.3 VLSM en acción</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.3.3.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Revisión de CIDR y VLSM</h1>
+        <h2>VLSM</h2>
+      </div>
+      <div id="content">
+<p>VLSM permite el uso de diferentes máscaras para cada subred. Después de que una dirección de red se divide en subredes, esas subredes también se pueden dividir en subredes. VLSM simplemente subdivide una subred. Se puede considerar a VLSM como una división en sub-subredes.</p>
+<p></p>
+<p>La figura muestra la red 10.0.0.0/8 que se ha dividido en subredes usando la máscara de subred de /16, lo que produce 256 subredes. Es decir 10.0.0.0/16, 10.1.0.0/16, 10.2.0.0/16, …, 10.255.0.0/16. En la ilustración, se muestran cuatro de estas subredes de /16. Cualquiera de las subredes /16 pueden subdividirse aún más. </p>
+<p></p>
+<p>Haga clic en el botón Reproducir en la ilustración para ver la animación. En la animación:</p>
+<p>
+<ul>
+<li>La subred 10.1.0.0/16 se vuelve a dividir en subredes con la máscara /24.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>La subred 10.2.0.0/16 se vuelve a dividir en subredes con la máscara /24. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>La subred 10.3.0.0/16 se vuelve a dividir en subredes con la máscara /28.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>La subred 10.4.0.0/16 se vuelve a dividir en subredes con la máscara /20. </li>
+</ul>
+</p>
+<p></p>
+<p>Las direcciones host individuales se asignan a partir de las direcciones de "sub-subredes". Por ejemplo, la figura muestra la subred 10.1.0.0/16 dividida en subredes de /24. La dirección 10.1.4.10 sería ahora miembro de la subred más específica 10.1.4.0/24.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

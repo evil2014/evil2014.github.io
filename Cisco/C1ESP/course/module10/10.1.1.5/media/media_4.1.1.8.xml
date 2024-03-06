@@ -1,0 +1,98 @@
+﻿<textcomponents>
+
+<component id='ID_inst'>
+	<text><![CDATA[<b>Actividad: Aplicación y presentación (protocolos y estándares)</b><br><br>Arrastre los nombres de protocolo y los estándares apropiados a las ubicaciones de red de OSI y de TCP/IP correctas. Cada respuesta se utiliza dos veces, una vez en las ubicaciones del modelo OSI y una vez en las del modelo TCP/IP.
+]]></text>
+</component>
+
+<component id='ID_s1_CORRECT_TITLE'>
+	<text><![CDATA[Correcto]]></text>
+</component>
+
+<component id='ID_s1_CORRECT_BODY'>
+	<text><![CDATA[Eligió correctamente las ubicaciones para los protocolos y los estándares.]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_TITLE'>
+	<text><![CDATA[Incorrecto]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_BODY'>
+	<text><![CDATA[No eligió correctamente las ubicaciones para los protocolos y los estándares.]]></text>
+</component>
+
+<component id='ID_CHECK'>
+	<text><![CDATA[Verificar]]></text>
+</component>
+
+<component id='ID_RESET'>
+	<text><![CDATA[Restablecer]]></text>
+</component>
+
+<component id='ID_a_DS'>
+	<text><![CDATA[HTTP]]></text>
+</component>
+
+<component id='ID_b_DS'>
+	<text><![CDATA[DNS]]></text>
+</component>
+
+<component id='ID_c_DS'>
+	<text><![CDATA[POP]]></text>
+</component>
+
+<component id='ID_d_DS'>
+	<text><![CDATA[DHCP]]></text>
+</component>
+
+<component id='ID_e_DS'>
+	<text><![CDATA[TFTP]]></text>
+</component>
+
+<component id='ID_f_DS'>
+	<text><![CDATA[IMAP]]></text>
+</component>
+
+<component id='ID_g_DS'>
+	<text><![CDATA[MPEG]]></text>
+</component>
+
+<component id='ID_h_DS'>
+	<text><![CDATA[JPEG]]></text>
+</component>
+
+<component id='ID_i_DS'>
+	<text><![CDATA[HTML]]></text>
+</component> <!--OSI Model-->
+<component id='ID_osi_header'>
+	<text><![CDATA[<b>Modelo OSI</b>]]></text>
+</component>
+
+<component id="ID_OSInum05">
+  <text><![CDATA[<font color="#00918E"><b>5</b></font>]]></text> 
+</component>
+<component id="ID_OSInum06">
+  <text><![CDATA[<font color="#00918E"><b>6</b></font>]]></text> 
+</component>
+<component id="ID_OSInum07">
+  <text><![CDATA[<font color="#00918E"><b>7</b></font>]]></text> 
+</component>
+
+<component id='ID_osi_txt07'>
+	<text><![CDATA[Aplicación]]></text>
+</component>
+<component id='ID_osi_txt06'>
+	<text><![CDATA[Presentación]]></text>
+</component>
+<component id='ID_osi_txt05'>
+	<text><![CDATA[Sesión]]></text>
+</component> <!--TCP/IP Model-->
+<component id='ID_tcpip_header'>
+	<text><![CDATA[<b>Modelo TCP/IP</font>]]></text>
+</component>
+
+<component id='ID_tcpip_txt04'>
+	<text><![CDATA[Aplicación]]></text>
+</component>
+
+</textcomponents>

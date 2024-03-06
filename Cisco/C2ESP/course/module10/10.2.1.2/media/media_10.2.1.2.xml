@@ -1,0 +1,85 @@
+﻿<textcomponents>
+<component id="ID_main_txt01">
+  <text><![CDATA[Cliente]]></text> 
+</component> <!-- slide 1 -->
+
+<component id="ID_s1_title">
+<text><![CDATA[<b>El cliente envía un mensaje RS</b>]]></text>
+</component>
+<component id="ID_s1_txt01">
+  <text><![CDATA[<b>RS</b><br/>IPv6 de multidifusión de todos los routers]]></text> 
+</component>
+<component id="ID_s1_txt02">
+<text><![CDATA[“Necesito un RA del router”.]]></text> 
+</component> <!-- slide 2 -->
+
+<component id="ID_s2_title">
+<text><![CDATA[<b>El router envía un mensaje RA</b>]]></text>
+</component>
+
+<component id="ID_s2_txt01">
+	<text><![CDATA[<b>RS</b><br/>IPv6 de multidifusión de todos los routers]]></text> 
+</component>
+<component id="ID_s2_txt02">
+	<text><![CDATA[“Necesito un RA del router”.]]></text> 
+</component>
+<component id="ID_s2_txt03">
+	<text><![CDATA[<b>RA</b><br/>IPv6 de multidifusión de todos los nodos]]></text>
+</component>
+<component id="ID_s2_txt04">
+  <text><![CDATA[“Aquí tiene un prefijo, una longitud de prefijo, etc.”.]]></text> 
+</component> <!-- slide 3 -->
+
+<component id="ID_s3_title">
+<text><![CDATA[<b>El cliente crea una dirección de unidifusión global</b>]]></text>
+</component>
+
+<component id="ID_s3_txt01">
+	<text><![CDATA[<b>RS</b><br/>IPv6 de multidifusión de todos los routers]]></text> 
+</component>
+<component id="ID_s3_txt02">
+	<text><![CDATA[“Necesito un RA del router”.]]></text> 
+</component>
+<component id="ID_s3_txt03">
+	<text><![CDATA[<b>RA</b><br/>IPv6 de multidifusión de todos los nodos]]></text>
+</component>
+<component id="ID_s3_txt04">
+  <text><![CDATA[“Aquí tiene un prefijo, una longitud de prefijo, etc.”.]]></text> 
+</component>
+<component id="ID_s3_txt05">
+  <text><![CDATA[<b>Dirección IPv6 unicast global</b>]]></text> 
+</component>
+<component id="ID_s3_txt06">
+  <text><![CDATA[“Una vez que se genera mi ID de interfaz, se utiliza el prefijo y la longitud de prefijo para crear mi dirección IPv6”.]]></text> 
+</component> <!-- slide 4 -->
+
+<component id="ID_s4_title">
+<text><![CDATA[<b>El cliente realiza la detección de direcciones duplicadas</b>]]></text>
+</component>
+
+<component id="ID_s4_txt01">
+	<text><![CDATA[<b>RS</b><br/>IPv6 de multidifusión de todos los routers]]></text> 
+</component>
+<component id="ID_s4_txt02">
+	<text><![CDATA[“Necesito un RA del router”.]]></text> 
+</component>
+<component id="ID_s4_txt03">
+	<text><![CDATA[<b>RA</b><br/>IPv6 de multidifusión de todos los nodos]]></text>
+</component>
+<component id="ID_s4_txt04">
+  <text><![CDATA[“Aquí tiene un prefijo, una longitud de prefijo, etc.”.]]></text> 
+</component>
+<component id="ID_s4_txt05">
+  <text><![CDATA[<b>Dirección IPv6 unicast global</b>]]></text> 
+</component>
+<component id="ID_s4_txt06">
+  <text><![CDATA[“Una vez que se genera mi ID de interfaz, se utiliza el prefijo y la longitud de prefijo para crear mi dirección IPv6”.]]></text> 
+</component>
+<component id="ID_s4_txt07">
+  <text><![CDATA[<b>Detección de direcciones duplicadas</b><br/>IPv6 de multidifusión del nodo solicitado]]></text> 
+</component>
+<component id="ID_s4_txt08">
+  <text><![CDATA[“¿Esta dirección IPv6 ya se encuentra en uso?”.]]></text> 
+</component>
+
+</textcomponents>

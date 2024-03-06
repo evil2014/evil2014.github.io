@@ -1,0 +1,12 @@
+﻿<textcomponents>
+	<component id="ID_title">
+		<text><![CDATA[<b>Protocolo TCP de enlace de tres vías (ACK)</b>]]></text>
+	</component>
+	
+	<component id="ID_title_txt">
+		<text><![CDATA[<font><b class="textboxheader">Un analizador de protocolos muestra la respuesta del cliente para la sesión en la trama 12</b></font>]]></text>
+	</component>
+	<component id="ID_body_txt">
+		<text><![CDATA[<font><div id="divSpacing"><span>En el segmento TCP de esta trama se muestra lo siguiente:</span></div><textformat blockindent='-14'><li id="hackSpan">El indicador ACK está establecido para indicar un número válido de acuse de recibo.</li><li>Respuesta de número de acuse de recibo al número de secuencia inicial como valor relativo de 1.</li><li>El número de puerto de origen 1061 corresponde a</li><li>El número de puerto de destino 80 (HTTP) indica el servicio del servidor Web (httpd).</li></textformat></font>]]></text>
+	</component>
+</textcomponents>

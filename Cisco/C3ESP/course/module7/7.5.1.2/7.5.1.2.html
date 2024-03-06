@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.5.1.2 Resumen</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.5.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resumen</h1>
+        <h2>Resumen</h2>
+      </div>
+      <div id="content">
+<p>EIGRP (protocolo de routing de gateway interior mejorado) es un protocolo de routing vector distancia sin clase. Es una mejora de otro protocolo de routing de Cisco: el protocolo de routing de gateway interior (IGRP) que ahora es obsoleto. EIGRP se lanzó originalmente en 1992 como un protocolo exclusivo de Cisco disponible solamente en los dispositivos de Cisco. En 2013, Cisco cedió una funcionalidad básica de EIGRP como estándar abierto al IETF. </p>
+<p></p>
+<p>EIGRP utiliza el código de origen "D" para DUAL en la tabla de enrutamiento. EIGRP tiene una distancia administrativa predeterminada de 90 para las rutas internas y de 170 para las rutas importadas desde un origen externo, como rutas predeterminadas.</p>
+<p></p>
+<p>EIGRP es un protocolo de routing vector distancia avanzado que incluye características que no se encuentran en otros protocolos de routing vector distancia, como RIP. Estas características incluyen: algoritmo de actualización por difusión (DUAL), establecimiento de adyacencias de vecinos, protocolo de transporte confiable (RTP), actualizaciones parciales y limitadas, y balanceo de carga de mismo costo y con distinto costo.</p>
+<p></p>
+<p>EIGRP utiliza módulos dependientes de protocolo (PDM), lo que le otorga la capacidad de admitir diferentes protocolos de capa 3, incluidos IPv4 e IPv6. EIGRP utiliza RTP (Reliable Transport Protocol) como protocolo de la capa de Transporte para la entrega de paquetes EIGRP. EIGRP utiliza entrega confiable para las actualizaciones, las consultas y las respuestas EIGRP, y utiliza entrega poco confiable para los saludos y acuses de recibo EIGRP. RTP confiable significa que se debe devolver un acuse de recibo EIGRP.</p>
+<p></p>
+<p>Antes de enviar cualquier actualización EIGRP, primero el router debe descubrir a sus vecinos. Esto se realiza mediante los paquetes de saludo EIGRP. No es necesario que los valores de saludo y de espera coincidan para que dos routers se conviertan en vecinos. El comando <span class="cmd"><b>show ip eigrp neighbors</b></span> se utiliza para ver la tabla de vecinos y para verificar que EIGRP haya establecido una adyacencia con sus vecinos.</p>
+<p></p>
+<p>EIGRP no envía actualizaciones periódicas, como RIP. EIGRP envía actualizaciones parciales o limitadas, que incluyen sólo los cambios de ruta y sólo los envía a los routers que se ven afectados por el cambio. La métrica compuesta de EIGRP utiliza el ancho de banda, el retraso, la confiabilidad y la carga para determinar la mejor ruta. De manera predeterminada, sólo se usan el ancho de banda y el retardo.</p>
+<p></p>
+<p>En el centro de EIGRP se encuentra DUAL (Algoritmo de actualización por difusión). La máquina de estados finitos DUAL se utiliza para determinar el mejor camino y las rutas de respaldo posibles hacia cada red de destino. Un sucesor es un router vecino que se utiliza para el reenvío de paquetes mediante el uso de la ruta menos costosa hacia la red de destino. Distancia factible (FD) es la métrica calculada más baja para llegar a la red de destino a través del sucesor. Un sucesor factible (FS) es un vecino que tiene una ruta de respaldo sin bucles hacia la misma red que el sucesor, y también cumple con la condición de factibilidad. La condición de factibilidad (FC) se cumple cuando la distancia notificada (RD) de un vecino hacia una red es menor que la distancia factible del router local hacia la misma red de destino. La distancia notificada es simplemente una distancia factible EIGRP de vecinos a la red de destino.</p>
+<p></p>
+<p>EIGRP se configura con el comando <span class="cmd"><b>router eigrp</b></span> <span class="cmd"><i>sistema-autónomo</i></span>. El valor autonomous-system es en realidad un id de proceso y debe ser igual en todos los routers en el dominio de enrutamiento EIGRP. El comando <span class="cmd"><b>network</b></span> es similar al que se utiliza con RIP. La red es la dirección de red con clase de las interfaces conectadas directamente en el router. Una máscara wildcard es un parámetro opcional que puede utilizarse para incluir sólo interfaces específicas.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

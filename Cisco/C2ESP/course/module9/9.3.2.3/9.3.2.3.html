@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.3.2.3 Filtrado de tráfico con ACL extendidas</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.3.2.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>ACL de IPv4 extendidas</h1>
+        <h2>Configuración de ACL de IPv4 extendidas</h2>
+      </div>
+      <div id="content">
+<p>En el ejemplo que se muestra en la figura 1, se deniega el tráfico FTP de la subred 192.168.11.0 que va a la subred 192.168.10.0, pero se permite el resto del tráfico. Observe el uso de las máscaras wildcard y de la instrucción deny any explícita. Recuerde que FTP utiliza los puertos TCP 20 y 21, por lo tanto, la ACL requiere ambas palabras claves de nombre de puerto <span class="cmd"><b>ftp</b></span> y <span class="cmd"><b>ftp-data</b></span> o <span class="cmd"><b>eq 20</b></span> y <span class="cmd"><b>eq 21</b></span> para denegar el tráfico FTP.</p>
+<p></p>
+<p>Si se utilizan números de puerto en vez de nombres de puerto, los comandos se deben escribir de la siguiente forma:</p>
+<p></p>
+<p>
+<span class="cmd">
+<b>access-list 114 permit tcp 192.168.20.0 0.0.0.255 any eq 20</b>
+</span>
+</p>
+<p>
+<span class="cmd">
+<b>access-list 114 permit tcp 192.168.20.0 0.0.0.255 any eq 21</b>
+</span>
+</p>
+<p></p>
+<p>Para evitar que la instrucción deny any implícita al final de la ACL bloquee todo el tráfico, se agrega la instrucción <span class="cmd"><b>permit ip any any</b></span>. Si no hay por lo menos una instrucción <span class="cmd"><b>permit</b></span> en una ACL, todo el tráfico en la interfaz donde se aplicó esa ACL se descarta. La ACL se debe aplicar en sentido de entrada en la interfaz G0/1 para filtrar el tráfico de la LAN 192.168.11.0/24 cuando ingresa a la interfaz del router.</p>
+<p></p>
+<p>En el ejemplo que se muestra en la figura 2, se deniega el tráfico de Telnet de cualquier origen a la LAN 192.168.11.0/24, pero se permite el resto del tráfico IP. Debido a que el tráfico destinado a la LAN 192.168.11.0/24 sale de la interfaz G0/1, la ACL se aplica a G0/1 con la palabra clave <span class="cmd"><b>out</b></span>. Observe el uso de las palabras clave <span class="cmd"><b>any</b></span> en la instrucción permit. Esta instrucción permit se agrega para asegurar que no se bloquee ningún otro tipo de tráfico. </p>
+<p></p>
+<p>
+<b>Nota:</b> en ambos ejemplos en las figuras 1 y 2, se utiliza la instrucción <span class="cmd"><b>permit ip any any</b></span> al final de la ACL. Para obtener mayor seguridad, se puede utilizar el comando <span class="cmd"><b>permit 192.168.11.0 0.0.0.255 any</b></span>.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

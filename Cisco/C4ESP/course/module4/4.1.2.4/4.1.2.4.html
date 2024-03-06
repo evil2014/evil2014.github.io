@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.1.2.4 Topologías de Frame Relay</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.1.2.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Introducción a Frame Relay</h1>
+        <h2>Operación de Frame Relay</h2>
+      </div>
+      <div id="content">
+<p>Cuando se deben conectar más de dos sitios, se debe planificar la topología o el mapa de Frame Relay de las conexiones entre los sitios. Un diseñador de red debe considerar la topología desde varios puntos de vista para comprender la red y los equipos utilizados para armarla. Las topologías completas para el diseño, la implementación, la operación y el mantenimiento incluyen mapas de descripción general, mapas de las conexiones lógicas, mapas funcionales y mapas de direcciones que muestren el detalle de los equipos y los enlaces de canales.</p>
+<p></p>
+<p>Las redes Frame Relay enlazan decenas e incluso cientos de sitios en forma rentable. Si se considera que una red empresarial podría abarcar cualquier cantidad de proveedores de servicios e incluir redes de empresas adquiridas que difieren en el diseño básico, registrar las topologías puede ser un proceso muy complicado. Sin embargo, cada red o segmento de red puede verse como uno de tres tipos de topología: en estrella, malla completa o malla parcial.</p>
+<p></p>
+<p>
+<b>Topología en estrella (hub-and-spoke)</b>
+</p>
+<p></p>
+<p>La topología de WAN más simple es una estrella, como la que se muestra en la figura 1. En esta topología, la empresa SPAN Ingeniería tiene un sitio central en Chicago que funciona como hub y aloja los servicios principales. </p>
+<p></p>
+<p>Las conexiones a cada uno de los cinco sitios remotos funcionan como spokes (que significa “rayos”). En una topología en estrella, la ubicación del hub generalmente se elige por el costo de línea arrendada más bajo. Cuando se implementa una topología en estrella con Frame Relay, cada sitio remoto tiene un enlace de acceso a la nube de Frame Relay con un único VC.</p>
+<p></p>
+<p>En la figura 2, se muestra la topología en estrella en el contexto de una nube de Frame Relay. El hub en Chicago tiene un enlace de acceso con varios VC, uno para cada sitio remoto. Las líneas que salen de la nube representan las conexiones del proveedor de servicios de Frame Relay y terminan en las instalaciones del cliente. En general, estas líneas tienen velocidades que van desde 56 kb/s hasta un T1 (1544 Mb/s) y más rápidas. Se asigna uno o más números de DLCI a cada terminal de la línea. Debido a que los costos de Frame Relay no se relacionan con la distancia, no es necesario que el hub esté en el centro geográfico de la red.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

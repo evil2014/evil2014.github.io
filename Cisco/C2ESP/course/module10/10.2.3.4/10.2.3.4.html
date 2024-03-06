@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>10.2.3.4 Configuración de un router como agente de retransmisión DHCPv6</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_10.2.3.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolo de configuración dinámica de host v6</h1>
+        <h2>Servidor de DHCPv6 con estado</h2>
+      </div>
+      <div id="content">
+<p>Si el servidor de DHCPv6 está ubicado en una red distinta de la del cliente, el router IPv6 puede configurarse como agente de retransmisión DHCPv6. La configuración de un agente de retransmisión DHCPv6 es similar a la configuración de un router IPv4 como retransmisor DHCPv4. </p>
+<p></p>
+<p>
+<b>Nota:</b> si bien la configuración de un agente de retransmisión DHCPv6 es similar a DHCPv4, los routers o los agentes de retransmisión IPv6 reenvían mensajes DHCPv6 de manera levemente distinta que los retransmisores DHCPv4. Los mensajes y el proceso exceden el ámbito de este currículo.</p>
+<p></p>
+<p>En la figura 1, se muestra una topología de ejemplo en la que un servidor de DHCPv6 se encuentra en la red 2001:DB8:CAFE:1::/64. El administrador de red desea utilizar este servidor de DHCPv6 como un servidor de DHCPv6 central con estado para asignar direcciones IPv6 a todos los clientes. Por lo tanto, los clientes en otras redes, como la PC1 en la red 2001:DB8:CAFE:A::/64, deben comunicarse con el servidor de DHCPv6. </p>
+<p></p>
+<p>Los mensajes DHCPv6 de los clientes se envían a la dirección IPv6 de multidifusión FF02::1:2. Dirección de todos los agentes de retransmisión y servidores de DHCPv6: esta dirección tiene alcance link-local, lo que significa que los routers no reenvían estos mensajes. El router se debe configurar como agente de retransmisión DHCPv6 para habilitar al cliente y al servidor de DHCPv6 para que se comuniquen.</p>
+<p></p>
+<p>
+<b>Configuración del agente de retransmisión DHCPv6</b>
+</p>
+<p></p>
+<p>Como se muestra en la figura 2, un agente de retransmisión DHCPv6 se configura mediante el comando <span class="cmd"><b>ipv6 dhcp relay destination</b></span>. Este comando se configura en la interfaz que interactúa con el cliente DHCPv6, y se utiliza la dirección del servidor de DHCPv6 como destino.</p>
+<p></p>
+<p>El comando <span class="cmd"><b>show ipv6 dhcp interface</b></span> verifica que la interfaz G0/0 esté en modo de retransmisión con 2001:DB8:CAFE:1::6 configurado como el servidor de DHCPv6.</p>
+<p></p>
+<p>Mediante el verificador de sintaxis de la figura 3, configure los comandos de retransmisión de DHCPv6 en el router correcto de modo que la PC3 pueda recibir información de direccionamiento IPv6 del servidor de DHCPv6. Consulte la figura 1 para ver la topología de la red.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

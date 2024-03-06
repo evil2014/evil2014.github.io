@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.4.2.2 Cisco Easy VPN Server e Easy VPN Remote</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.4.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Acceso remoto</h1>
+        <h2>VPN de acceso remoto con IPsec</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Cisco Easy VPN Server</b>
+</p>
+<p></p>
+<p>Cisco Easy VPN Server permite que los trabajadores móviles y a distancia que utilizan un software de cliente VPN en sus computadoras puedan crear túneles IPsec seguros para acceder a la intranet de la oficina central donde se ubican datos y aplicaciones fundamentales. Permite que los routers con IOS de Cisco y los firewalls Cisco ASA funcionen como terminales de cabecera de las VPN de sitio a sitio o de acceso remoto. Los dispositivos de oficina remota utilizan la característica Cisco Easy VPN Remote o la aplicación Cisco VPN Client para conectarse al servidor, que después inserta las políticas de seguridad definidas en el dispositivo VPN remoto. Esto asegura que esas conexiones cuenten con las políticas actualizadas antes de que se establezca la conexión. </p>
+<p></p>
+<p>
+<b>Cisco Easy VPN Remote</b>
+</p>
+<p></p>
+<p>Cisco Easy VPN Remote permite que los clientes de software o los routers con IOS de Cisco funcionen como clientes VPN remotos. Estos dispositivos pueden recibir las políticas de seguridad de Cisco Easy VPN Server, lo que minimiza los requisitos de configuración de VPN en la ubicación remota. Esta solución rentable es ideal para oficinas remotas con poco soporte de TI o para implementaciones de equipo local del cliente (CPE) a gran escala donde es poco práctico configurar varios dispositivos remotos de forma individual.</p>
+<p></p>
+<p>En la ilustración, se muestran tres dispositivos de red con Easy VPN Remote habilitado, todos conectados a Easy VPN Server para obtener los parámetros de configuración. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

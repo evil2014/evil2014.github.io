@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.1.2.3 Encapsulación Frame Relay</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.1.2.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Introducción a Frame Relay</h1>
+        <h2>Operación de Frame Relay</h2>
+      </div>
+      <div id="content">
+<p>Frame Relay toma paquetes de datos de un protocolo de capa de red, como IPv4 o IPv6, los encapsula como la porción de datos de una trama Frame Relay y después pasa la trama a la capa física para la entrega en el cable. Para entender cómo funciona esto, es conveniente entender cómo se relaciona con los niveles inferiores del modelo OSI. </p>
+<p></p>
+<p>Frame Relay encapsula los datos para el transporte y los baja a la capa física para la entrega, como se muestra en la figura 1.</p>
+<p></p>
+<p>Primero, Frame Relay acepta un paquete de un protocolo de capa de red, como IPv4. A continuación, lo envuelve con un campo de dirección que contiene el DLCI y un valor de checksum. Se agregan campos de indicador para indicar el principio y el fin de la trama. Los campos de indicador marcan el comienzo y el fin de la trama, y siempre son los mismos. Los indicadores se representan como el número hexadecimal 7E o como el número binario 01111110. Una vez que se encapsula el paquete, Frame Relay pasa la trama a la capa física para el transporte.</p>
+<p></p>
+<p>El router CPE encapsula cada paquete de capa 3 dentro de un encabezado y un tráiler de Frame Relay antes de enviarlo a través del VC. El encabezado y el tráiler se definen en la especificación de servicios portadores para el procedimiento de acceso de enlace para Frame Relay (LAPF), ITU Q.922-A. Como se muestra en la figura 2, el encabezado de Frame Relay (campo de dirección) contiene específicamente lo siguiente:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>DLCI:</b> el DLCI de 10 bits es uno de los campos más importantes del encabezado de Frame Relay. Este valor representa la conexión virtual entre el dispositivo DTE y el switch. Un DLCI exclusivo representa cada conexión virtual que se multiplexa en el canal físico. Los valores de DLCI solo tienen importancia local, lo que significa que solo son exclusivos para el canal físico en el que residen. Por lo tanto, los dispositivos de los extremos opuestos de una conexión pueden usar diferentes valores de DLCI para referirse a la misma conexión virtual. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>C/R:</b> es el bit que sigue al byte de DLCI más importante del campo de dirección. El bit C/R no está definido actualmente.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Dirección extendida (EA):</b> si el valor del campo EA es 1, se determina que el byte actual es el último octeto del DLCI. Si bien todas las implementaciones actuales de Frame Relay utilizan un DLCI de dos octetos, esta capacidad permite que se usen DLCI más largos en el futuro. El octavo bit de cada byte del campo Dirección indica la EA. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Control de congestión:</b> consta de 3 bits de notificación de congestión de Frame Relay. Estos 3 bits se denominan específicamente “bit de notificación explícita de congestión hacia delante” (FECN), “bit de notificación explícita de congestión hacia atrás” (BECN) y “bit elegible de descarte”.</li>
+</ul>
+</p>
+<p></p>
+<p>Por lo general, la capa física es EIA/TIA-232, 449 o 530, V.35 o X.21. La trama Frame Relay es un subconjunto del tipo de trama HDLC; por lo tanto, se delimita con campos de indicador. El indicador de 1 byte utiliza el patrón de bits 01111110. La FCS determina si ocurrieron errores en el campo de dirección de capa 2 durante la transmisión. El nodo emisor calcula la FCS antes de la transmisión, y el resultado se inserta en el campo FCS. En el extremo distante, se calcula un segundo valor de FCS y se lo compara con la FCS en la trama. Si los resultados son iguales, se procesa la trama. Si existe una diferencia, se descarta la trama. Frame Relay no notifica el origen cuando se descarta una trama. El control de errores se reserva para las capas superiores del modelo OSI.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>10.2.1.4 SMTP, POP e IMAP</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_10.2.1.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolos y servicios de capa de aplicación reconocidos</h1>
+        <h2>Protocolos de capa de aplicación comunes </h2>
+      </div>
+      <div id="content">
+<p>Uno de los principales servicios que un ISP ofrece es hosting de correo electrónico. El correo electrónico revolucionó la forma en que las personas se comunican gracias a su sencillez y velocidad. No obstante, para ejecutar el correo electrónico en una PC o en otro dispositivo final, este requiere varios servicios y aplicaciones.</p>
+<p></p>
+<p>El correo electrónico es un método para almacenar y enviar que se utiliza para enviar, almacenar y recuperar mensajes electrónicos a través de una red. Los mensajes de correo electrónico se guardan en bases de datos en servidores de correo. A menudo, los ISP mantienen servidores de correo que admiten varias cuentas de clientes diferentes. </p>
+<p></p>
+<p>Los clientes de correo electrónico se comunican con servidores de correo para enviar y recibir mensajes de correo electrónico. Los servidores de correo se comunican con otros servidores de correo para transportar mensajes desde un dominio a otro. Un cliente de correo electrónico no se comunica directamente con otro cliente de correo electrónico cuando envía un mensaje. Más bien, ambos clientes dependen del servidor de correo para el transporte de los mensajes. Esto sucede incluso cuando ambos usuarios se encuentran en el mismo dominio. </p>
+<p></p>
+<p>Los clientes de correo electrónico envían mensajes al servidor de correo electrónico determinado en las configuraciones de aplicaciones. Cuando el servidor recibe el mensaje, verifica si el dominio receptor se encuentra en su base de datos local. De no ser así, envía una solicitud de DNS para determinar la dirección IP del servidor de correo electrónico para el dominio de destino. A continuación, el correo electrónico se reenvía al servidor correspondiente.</p>
+<p></p>
+<p>El correo electrónico admite tres protocolos diferentes para su funcionamiento: el protocolo simple de transferencia de correo (SMTP), el protocolo de oficina de correos (POP) y el protocolo de acceso a mensajes de Internet (IMAP). El proceso de capa de aplicación que envía correo utiliza SMTP. Esto sucede cuando se envía correo de un cliente a un servidor y cuando se envía correo de un servidor a otro.</p>
+<p></p>
+<p> Sin embargo, un cliente recupera el correo electrónico mediante uno de dos protocolos de capa de aplicación: POP o IMAP.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

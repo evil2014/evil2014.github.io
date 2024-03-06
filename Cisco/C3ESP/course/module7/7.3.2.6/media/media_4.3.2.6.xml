@@ -1,0 +1,55 @@
+﻿<textcomponents>
+<component id="ID_s1_title">
+<text><![CDATA[<b>Topología EIGRP para IPv4</b>]]></text>
+</component>
+<component id="ID_s1_txt01">
+<text><![CDATA[Dominio <br/>de routing EIGRP]]></text>
+</component>
+<component id="ID_s1_txt02">
+  <text><![CDATA[Internet]]></text> 
+  </component>
+<component id="ID_s2_title">
+<text><![CDATA[<b>Cálculo del ancho de banda</b>]]></text>
+</component>  
+<component id="ID_s3_title">
+<text><![CDATA[<b>Análisis de los valores de retraso</b>]]></text>
+</component>  
+<component id="ID_s4_title">
+<text><![CDATA[<b>Verificación de la métrica de EIGRP</b>]]></text>
+</component>  
+
+<component id="ID_s2_txt01">
+<text><![CDATA[<font>Calcule el ancho de banda usando el ancho de banda más lento al destino: <b>1024</b><br/><br/>(10&nbsp;000&nbsp;000÷<b>1024</b>) = 9765<br/><br/>Nota: 9765,625 se redondea hacia abajo, a 9765.</font>]]></text>
+</component> 
+
+<component id="ID_s2_txt02">
+<text><![CDATA[&lt;resultado omitido&gt;]]></text>
+</component>  
+
+<component id="ID_s2_txt03">
+<text><![CDATA[&lt;resultado omitido&gt;]]></text>
+</component>  
+
+
+<component id="ID_s3_txt01">
+<text><![CDATA[Calcule el retraso usando la suma de todos los retrasos al destino:<b> 20&nbsp;000 + 10</b><br/><br/>(<b>20&nbsp;000 + 10</b>)÷10 = 2001]]></text>
+</component> 
+
+
+<component id="ID_s3_txt02">
+<text><![CDATA[&lt;resultado omitido&gt;]]></text>
+</component>  
+
+<component id="ID_s3_txt03">
+<text><![CDATA[&lt;resultado omitido&gt;]]></text>
+</component>  
+
+<component id="ID_s4_txt01">
+<text><![CDATA[Utilice los resultados en la fórmula predeterminada de la métrica:<br/><br/>(<b>Ancho de banda</b><b>  </b>+ <b>Retraso</b>) * 256 = <b>Métrica</b><br/><br/>(<b>9765  </b>+ <b>2001</b>) * 256 = <b>3&nbsp;012&nbsp;096</b>]]></text>
+</component>  
+
+<component id="ID_s4_txt02">
+<text><![CDATA[&lt;resultado omitido&gt;]]></text>
+</component>  
+
+</textcomponents>

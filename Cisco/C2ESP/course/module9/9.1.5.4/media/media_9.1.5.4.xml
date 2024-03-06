@@ -1,0 +1,50 @@
+﻿<textcomponents>
+
+<component id="ID_title">
+<text><![CDATA[<b>Actividad: colocar ACL estándar y extendidas  </b>]]></text>
+</component>
+
+<component id="ID_drag01">
+  <text><![CDATA[ACL estándar]]></text> 
+  </component>
+  
+<component id="ID_drag02">
+  <text><![CDATA[ACL extendida]]></text> 
+  </component>
+
+  
+  <component id="ID_CHECK">
+  <text><![CDATA[Verificar]]></text> 
+</component>
+
+<component id="ID_RESET">
+  <text><![CDATA[Restablecer]]></text> 
+</component>
+
+  <component id="ID_server_txt">
+  <text><![CDATA[Servidor WEB/TFTP]]></text> 
+</component>
+
+<component id="ID_instruction">
+  <text><![CDATA[<b>Actividad  </b><br/><br/>Evalúe las políticas de red y determine la mejor colocación para las ACL. Arrastre la etiqueta de ACL y suéltela en el lugar correcto del gráfico.<br/><br/><b>Política de red n.°&nbsp;1: </b> utilice una ACL estándar para evitar que la red 192.168.10.0/24 acceda a Internet a través del ISP.<br/><br/><b>Política de red n.°&nbsp;2: </b> utilice una ACL extendida para evitar que la red 192.168.30.0/24 acceda al servidor web/TFTP.]]></text> 
+</component>
+
+
+  <component id="ID_s1_CORRECT_TITLE">
+  <text><![CDATA[<b>Correcto  </b>]]></text> 
+</component>
+
+ <component id="ID_s1_CORRECT_BODY">
+  <text><![CDATA[Determinó correctamente la colocación de las ACL estándar y extendida según la topología y las políticas de red.]]></text> 
+</component>
+  <component id="ID_s1_INCORRECT_TITLE">
+  <text><![CDATA[<b>Incorrecto  </b>]]></text> 
+</component>
+
+  <component id="ID_s1_INCORRECT_BODY">
+  <text><![CDATA[No determinó correctamente la colocación de las ACL estándar y extendida según la topología y las políticas de red. Haga clic en Restablecer y vuelva a intentarlo.]]></text> 
+</component>
+
+
+
+</textcomponents>

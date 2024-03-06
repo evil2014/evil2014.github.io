@@ -1,0 +1,26 @@
+﻿<textcomponents>
+<component id="ID_title">
+<text><![CDATA[<b>Mensajes de solicitud y de anuncio de router</b>]]></text>
+</component>
+
+<component id="ID_txt01">
+<text><![CDATA[Servidor de DHCPv6]]></text>
+</component>
+
+<component id="ID_txt02">
+<text><![CDATA[<b>Solicitud de router a todos los routers IPv6</b><br/>“Necesito información de direccionamiento del router”.]]></text>
+</component>
+
+<component id="ID_txt03">
+<text><![CDATA[<b>Anuncio de router: a todos los nodos IPv6</b><br/>Opción 2 (SLAAC y DHCPv6): “Aquí está la información del prefijo, de la longitud del prefijo y del gateway predeterminado, pero necesita obtener la información de DNS de un servidor de DHCPv6”.]]></text>
+</component>
+
+<component id="ID_txt04">
+<text><![CDATA[<b>Solicitud para DHCPv6: a todos los servidores DHCPv6</b><br/>Opción 2 (SLAAC y DHCPv6): “Necesito información de direccionamiento del servidor de DHCPv6”.]]></text>
+</component>
+
+<component id="ID_txt05">
+<text><![CDATA[<b>Nota:</b> un RA con la opción 3 (DHCPv6 solamente) habilitada requerirá que el cliente obtenga toda la información del servidor de DHCPv6.]]></text>
+</component>
+
+</textcomponents>

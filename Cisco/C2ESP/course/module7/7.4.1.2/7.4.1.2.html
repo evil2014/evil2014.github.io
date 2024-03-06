@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.4.1.2 Algoritmo de Dijkstra</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.4.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Routing dinámico de estado de enlace</h1>
+        <h2>Funcionamiento del protocolo de routing de estado de enlace</h2>
+      </div>
+      <div id="content">
+<p>Todos los protocolos de routing de estado de enlace aplican el algoritmo de Dijkstra para calcular la mejor ruta. A este algoritmo se le llama comúnmente “algoritmo SPF” (Shortest Path First). Para determinar el costo total de una ruta, este algoritmo utiliza costos acumulados a lo largo de cada ruta, de origen a destino. </p>
+<p></p>
+<p>En la figura, cada ruta se rotula con un valor arbitrario para el costo. El costo de la ruta más corta para que el R2 envíe paquetes a la LAN conectada al R3 es 27. Cada router determina su propio costo hacia cada destino en la topología. En otros términos, cada router calcula el algoritmo SPF y determina el costo desde su propia perspectiva.</p>
+<p></p>
+<p>
+<b>Nota:</b> el objetivo central de esta sección es analizar el costo, el cual está determinado por el árbol SPF. Por este motivo, en los gráficos de esta sección se muestran las conexiones del árbol SPF y no la topología. Todos los enlaces se representan mediante una línea negra continua. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

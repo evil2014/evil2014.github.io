@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.5.4.3 Entradas de redes IPv6 remotas</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.5.4.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>La tabla de routing</h1>
+        <h2>Análisis de una tabla de routing IPv6</h2>
+      </div>
+      <div id="content">
+<p>En la figura 1, se destacan las entradas de la tabla de routing para las tres redes remotas (es decir, la LAN del R2, la LAN del R3 y el enlace entre el R2 y el R3). Las tres entradas se agregaron mediante EIGRP. </p>
+<p></p>
+<p>En la figura 2, se muestra una entrada de la tabla de routing en el R1 para la ruta hacia la red remota 2001:DB8:CAFE:3::/64 en el R3. La entrada indica la siguiente información:</p>
+<p>
+<ul>
+<li>
+<b>Origen de la ruta:</b> identifica el modo en que se descubrió la ruta. Los códigos comunes incluyen O (OSPF), D (EIGRP), R (RIP) y S (ruta estática).</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Red de destino:</b> identifica la dirección de la red IPv6 remota.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Distancia administrativa:</b> identifica cuán confiable es el origen de la ruta. IPv6 utiliza las mismas distancias que IPv4.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Métrica:</b> identifica el valor asignado para llegar a la red remota. Los valores más bajos indican las rutas preferidas. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Siguiente salto:</b> identifica la dirección IPv6 del router siguiente al que se debe reenviar el paquete.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Interfaz de salida:</b> identifica la interfaz de salida que se debe utilizar para reenviar un paquete hacia el destino final.</li>
+</ul>
+</p>
+<p></p>
+<p>Cuando un paquete IPv6 llega a una interfaz del router, el router analiza el encabezado de IPv6 e identifica la dirección IPv6 de destino. A continuación, el router continúa con el proceso de búsqueda del siguiente router.</p>
+<p></p>
+<p>El router examina las rutas de red de nivel 1 en busca de la mejor coincidencia con la dirección de destino del paquete IPv6. Al igual que en IPv4, la coincidencia más larga es la mejor coincidencia. Por ejemplo, si hay varias coincidencias en la tabla de routing, el router elige la ruta con la coincidencia más larga. La coincidencia se encuentra entre los bits del extremo izquierdo de la dirección IPv6 de destino del paquete y el prefijo IPv6 y la duración de prefijo en la tabla de routing IPv6.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

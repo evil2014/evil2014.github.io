@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.0.1.2 Actividad de clase: Es solo un sistema operativo</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.0.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de un sistema operativo de red</h1>
+        <h2>Introducción</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Es solo un sistema operativo</b>
+</p>
+<p></p>
+<p>En esta actividad, imagine que lo contratan como ingeniero para una compañía automotriz. Actualmente, la compañía trabaja en un nuevo modelo de automóvil. Este modelo tendrá ciertas funciones que el conductor podrá controlar mediante comandos de voz específicos. </p>
+<p></p>
+<p>Diseñe el conjunto de comandos que utiliza este sistema de control activado por voz e identifique la forma en que se ejecutarán. Las funciones del automóvil que se pueden controlar mediante comandos de voz son las siguientes:</p>
+<p>
+<ul>
+<li>Luces</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Limpiaparabrisas</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Radio</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Equipo de teléfono </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Aire acondicionado</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Encendido</li>
+</ul>
+</p>
+<p></p>
+<p>
+<a href="../../files/2.0.1.2%20Class%20Activity%20-%20It%20is%20Just%20an%20Operating%20System%20Instructions.pdf" target="_blank">Actividad de clase: Es solo un sistema operativo (instrucciones)</a>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

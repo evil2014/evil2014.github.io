@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.1.1.5 OSPF de área única y OSPF multiárea</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.1.1.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Características de OSPF</h1>
+        <h2>Open Shortest Path First</h2>
+      </div>
+      <div id="content">
+<p>Para que OSPF sea más eficaz y escalable, este protocolo admite el routing jerárquico mediante áreas. Un área OSPF es un grupo de routers que comparten la misma información de estado de enlace en sus LSDB.</p>
+<p></p>
+<p>OSPF se puede implementar de dos maneras:</p>
+<p>
+<ul>
+<li>
+<b>OSPF de área única:</b> en la figura 1, todos los routers se encuentran en un área llamada “área backbone” (área 0).</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>OSPF multiárea:</b> en la figura 2, OSPF se implementa mediante varias áreas, de manera jerárquica. Todas las áreas deben conectarse al área backbone (área 0). Los routers que interconectan las áreas se denominan “routers fronterizos de área” (ABR). </li>
+</ul>
+</p>
+<p></p>
+<p>Con OSPF multiárea, OSPF puede dividir un sistema autónomo (AS) grande en áreas más pequeñas, a fin de admitir el routing jerárquico. Con el routing jerárquico, se sigue produciendo el routing entre áreas, y muchas de las operaciones de routing que implican una gran exigencia para el procesador, como volver a calcular la base de datos, se guardan en un área.</p>
+<p></p>
+<p>Por ejemplo, cada vez que un router recibe información nueva acerca de un cambio de topología dentro del área (como el agregado, la eliminación o la modificación de un enlace), el router debe volver a ejecutar el algoritmo SPF, crear un nuevo árbol SPF y actualizar la tabla de routing. El algoritmo SPF representa una gran exigencia para el CPU y el tiempo que le toma realizar los cálculos depende del tamaño del área. </p>
+<p></p>
+<p>
+<b>Nota:</b> los cambios de topología se distribuyen a los routers de otras áreas en formato vector distancia. En otras palabras, estos routers solo actualizan sus tablas de routing y no necesitan volver a ejecutar el algoritmo SPF.</p>
+<p></p>
+<p>Si hubiera demasiados routers en un área, la LSDB sería muy grande y se incrementaría la carga en la CPU. Por lo tanto, la disposición de los routers en distintas áreas divide de manera eficaz una base de datos potencialmente grande en bases de datos más pequeñas y más fáciles de administrar.</p>
+<p></p>
+<p>Las posibilidades de topología jerárquica de OSPF multiárea presentan las siguientes ventajas:</p>
+<p>
+<ul>
+<li>
+<b>Tablas de routing más pequeñas:</b> se crean menos entradas de tabla de routing, ya que las direcciones de red pueden resumirse entre áreas. La sumarización de ruta no está habilitada de manera predeterminada.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Menor sobrecarga de actualización de estado de enlace:</b> minimiza los requisitos de procesamiento y memoria. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Menor frecuencia de cálculos de SPF:</b> localiza el impacto de un cambio de topología dentro de un área. Por ejemplo, minimiza el impacto de las actualizaciones de routing debido a que la saturación con LSA se detiene en el límite del área.</li>
+</ul>
+</p>
+<p></p>
+<p>En la figura 3, se ilustran estas ventajas. </p>
+<p></p>
+<p>Por ejemplo, el R2 es un ABR para el área 51. Como ABR, resumiría las rutas del área 51 en el área 0. Cuando uno de los enlaces resumidos falla, las LSA se intercambian solo dentro del área 51. Los routers del área 51 deben volver a ejecutar el algoritmo SPF para identificar las mejores rutas. Sin embargo, los routers del área 0 y el área 1 no reciben ninguna actualización, motivo por el cual no ejecutan el algoritmo SPF. </p>
+<p></p>
+<p>Este capítulo se centra en OSPF de área única.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

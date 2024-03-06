@@ -1,0 +1,141 @@
+﻿<textcomponents> <!-- slide01 content-->
+
+<component id="ID_s1_inst">
+	<text><![CDATA[<b>Actividad: comparar RIP y EIGRP (parte&nbsp;1) </b><br/>Arrastre el protocolo de routing vector distancia que coincida con cada descripción al campo proporcionado. Haga clic en el botón&nbsp;2 para continuar la actividad.]]></text>
+</component>
+
+<component id="ID_s1_txt01">
+	<text><![CDATA[<b>Descripción del protocolo de routing vector distancia  </b>]]></text>
+</component>
+
+<component id="ID_s1_txt02">
+	<text><![CDATA[<b>RIP O EIGRP  </b>]]></text>
+</component>
+
+<component id="ID_s1_txt03">
+	<text><![CDATA[Envía paquetes de saludo.]]></text>
+</component>
+
+<component id="ID_s1_txt04">
+	<text><![CDATA[La versión 2 admite VLSM y routing sin clase.]]></text>
+</component>
+
+<component id="ID_s1_txt05">
+	<text><![CDATA[Límite máximo de 255&nbsp;saltos.]]></text>
+</component>
+
+<component id="ID_s1_txt06">
+	<text><![CDATA[Límite máximo de 15 saltos.]]></text>
+</component>
+
+<component id="ID_s1_txt07">
+	<text><![CDATA[Crea adyacencias con los vecinos.]]></text>
+</component>
+
+
+
+<component id='ID_s1_drag01'>
+	<text><![CDATA[RIP]]></text>
+</component>
+
+<component id='ID_s1_drag02'>
+	<text><![CDATA[EIGRP]]></text>
+</component>
+
+
+<component id='ID_s1_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto  </b>]]></text>
+</component>
+
+<component id='ID_s1_CORRECT_BODY'>
+	<text><![CDATA[Unió correctamente cada protocolo de routing vector distancia con su descripción. Haga clic en el botón 2 para continuar.]]></text>
+</component>
+
+
+<component id='ID_s1_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto  </b>]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_BODY'>
+	<text><![CDATA[No unió correctamente cada protocolo de routing vector distancia con su descripción. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_s1_CHECK'>
+	<text><![CDATA[<b>Verificar  </b>]]></text>
+</component>
+
+<component id='ID_s1_RESET'>
+	<text><![CDATA[<b>Restablecer  </b>]]></text>
+</component> <!-- slide02 content-->
+
+  
+<component id="ID_s2_inst">
+	<text><![CDATA[<b>Actividad: comparar RIP y EIGRP (parte&nbsp;2) </b><br/>Arrastre el protocolo de routing vector distancia que coincida con cada descripción al campo proporcionado.]]></text>
+</component>
+
+<component id="ID_s2_txt01">
+	<text><![CDATA[<b>Descripción del protocolo de routing vector distancia  </b>]]></text>
+</component>
+
+<component id="ID_s2_txt02">
+	<text><![CDATA[<b>RIP O EIGRP  </b>]]></text>
+</component>
+
+<component id="ID_s2_txt03">
+	<text><![CDATA[Transmite actualizaciones de routing a 255.255.255.255 por difusión.]]></text>
+</component>
+
+<component id="ID_s2_txt04">
+	<text><![CDATA[Transmisiones por multidifusión limitadas, actualizaciones dirigidas a 224.0.0.10.]]></text>
+</component>
+
+<component id="ID_s2_txt05">
+	<text><![CDATA[Utiliza una distancia administrativa de 120.]]></text>
+</component>
+
+<component id="ID_s2_txt06">
+	<text><![CDATA[Las actualizaciones de routing se envían cada 30&nbsp;segundos.]]></text>
+</component>
+
+<component id="ID_s2_txt07">
+	<text><![CDATA[Utiliza el algoritmo DUAL.]]></text>
+</component>
+
+
+<component id='ID_s2_drag01'>
+	<text><![CDATA[RIP]]></text>
+</component>
+
+<component id='ID_s2_drag02'>
+	<text><![CDATA[EIGRP]]></text>
+</component>
+
+
+
+
+<component id='ID_s2_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto  </b>]]></text>
+</component>
+
+<component id='ID_s2_CORRECT_BODY'>
+	<text><![CDATA[Unió correctamente cada protocolo de routing vector distancia con su descripción.]]></text>
+</component>
+
+
+<component id='ID_s2_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto  </b>]]></text>
+</component>
+
+<component id='ID_s2_INCORRECT_BODY'>
+	<text><![CDATA[No unió correctamente cada protocolo de routing vector distancia con su descripción. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_s2_CHECK'>
+	<text><![CDATA[<b>Verificar  </b>]]></text>
+</component>
+
+<component id='ID_s2_RESET'>
+	<text><![CDATA[<b>Restablecer  </b>]]></text>
+</component>
+
+</textcomponents>

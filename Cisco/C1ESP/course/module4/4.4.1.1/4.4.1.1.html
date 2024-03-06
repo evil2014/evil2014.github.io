@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.4.1.1 Control de acceso a los medios</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.4.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Control de acceso al medio</h1>
+        <h2>Topologías</h2>
+      </div>
+      <div id="content">
+<p>La regulación de la ubicación de las tramas de datos en los medios se encuentra bajo el control de la subcapa de control de acceso al medio. </p>
+<p></p>
+<p>El control de acceso al medio es el equivalente a las reglas de tránsito que regulan la entrada de vehículos a una autopista. La ausencia de un control de acceso al medio sería el equivalente a vehículos que ignoren el resto del tráfico e ingresen al camino sin tener en cuenta a los demás vehículos. Sin embargo, no todos los caminos y entradas son iguales. El tráfico puede ingresar a un camino confluyendo, esperando su turno en una señal de parada o respetando el semáforo. Un conductor sigue un conjunto de reglas diferente para cada tipo de entrada. </p>
+<p></p>
+<p>De la misma manera, existen diferentes formas de regular la colocación de tramas en los medios. Los protocolos de la capa de enlace de datos definen las reglas de acceso a los diferentes medios. Algunos métodos de control de acceso al medio utilizan procesos altamente controlados para asegurar que las tramas se coloquen con seguridad en los medios. Estos métodos se definen mediante protocolos sofisticados que requieren mecanismos que introducen sobrecargas a la red.</p>
+<p></p>
+<p>Entre las diferentes implementaciones de los protocolos de capa de enlace de datos, existen diferentes métodos para controlar el acceso al medio. Estas técnicas de control de acceso al medio definen si los nodos comparten los medios y de qué manera lo hacen.</p>
+<p></p>
+<p>El método específico de control de acceso al medio utilizado depende de lo siguiente:</p>
+<p>
+<ul>
+<li>
+<b>Topología:</b> cómo aparece la conexión entre los nodos ante la capa de enlace de datos. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Uso compartido de los medios:</b> la forma en que los nodos comparten los medios. El uso compartido de los medios puede ser punto a punto, como en las conexiones WAN, o compartido, como en las redes LAN.</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

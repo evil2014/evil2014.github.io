@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>0.0.1.10 Cómo ayuda Packet Tracer a dominar conceptos</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_0.0.1.10_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Bienvenido a Principios básicos de routing y switching</h1>
+        <h2>Mensaje para el estudiante</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Juegos educativos</b>
+</p>
+<p>Los juegos multiusuario de Packet Tracer le permiten a usted o a un equipo competir con otros estudiantes para ver quiénes pueden completar una serie de tareas de redes de la manera correcta y con la mayor rapidez. Es una excelente manera de practicar las habilidades que se aprenden con las actividades y las prácticas de laboratorio de Packet Tracer.</p>
+<p>Cisco Aspire es un juego de simulación estratégico y autónomo para un solo jugador. Los jugadores prueban sus aptitudes de redes cumpliendo contratos en una ciudad virtual. La edición para Networking Academy se diseñó específicamente para ayudarlo a prepararse para el examen de certificación CCENT. También incorpora aptitudes para la comunicación y habilidades comerciales que los empleadores de la industria de ICT buscan en los postulantes.</p>
+<p></p>
+<p>
+<b>Evaluaciones de Performance-Based</b>
+</p>
+<p>Las evaluaciones basadas en el rendimiento de Networking Academy le permiten realizar las actividades de Packet Tracer como siempre lo hizo, solo que ahora incorporan un motor de evaluación en línea que califica los resultados en forma automática y le proporciona comentarios inmediatos. Estos comentarios lo ayudan a identificar con mayor precisión los conocimientos y las aptitudes que logró dominar y aquello que necesita seguir practicando. En los cuestionarios y los exámenes de los capítulos, también hay preguntas que utilizan las actividades de Packet Tracer para proporcionarle comentarios adicionales con respecto a su progreso.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

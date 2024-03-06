@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.3.1.1 Actividad: trío de switches</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.3.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resumen</h1>
+        <h2>Resumen</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Trío de switches</b>
+</p>
+<p></p>
+<p>
+<b>Situación </b>
+</p>
+<p>Usted es el administrador de red de una pequeña o mediana empresa. La oficina central de la empresa dispuso que se implementen medidas de seguridad en todos los switches de todas las oficinas. En el memorándum que recibió esta mañana, se indica lo siguiente:</p>
+<p>
+<i>“Para el lunes 18 de abril de 20xx, los primeros tres puertos de todos los switches configurables ubicados en todas las oficinas deben estar protegidos con direcciones MAC: una dirección se debe reservar para la impresora, otra para la computadora portátil de la oficina y otra para el servidor de la oficina. </i>
+</p>
+<p>
+<i>Si se infringe la seguridad de un puerto, desactívelo hasta que se establezca el motivo de la infracción. </i>
+</p>
+<p>
+<i>Implemente esta política, a más tardar, el día que se especifica en este memorándum. Si tiene preguntas, comuníquese al 1.800.555.1212. Gracias. El equipo de administración de redes”</i>
+</p>
+<p>Trabaje con un compañero de clase y creen un ejemplo de Packet Tracer para probar esta nueva política de seguridad. Una vez que creó su archivo, pruébelo al menos con un dispositivo para asegurarse de que funcione o sea válido. </p>
+<p>Guarde su trabajo y esté preparado para compartirlo con toda la clase. </p>
+<p></p>
+<p>
+<a href="../../files/2.3.1.1%20Switch%20Trio%20Instructions.pdf" target="_blank">Actividad de clase: trío de switches (instrucciones)</a>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

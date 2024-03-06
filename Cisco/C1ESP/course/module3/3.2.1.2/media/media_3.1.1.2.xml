@@ -1,0 +1,93 @@
+﻿<textcomponents> 
+<component id="ID_s1_title">
+<text><![CDATA[<font><b>Función de los protocolos</b></font>]]></text> 
+</component>
+<component id="ID_s1_txt01">
+  <text><![CDATA[IP]]></text>
+  </component>
+  <component id="ID_s1_txt02">
+  <text><![CDATA[Datos]]></text>
+  </component>
+ <component id="ID_s1_txt03">
+  <text><![CDATA[Formato o estructura de las partes de la comunicación]]></text>
+  </component>
+
+<component id="ID_s1_bubble01">
+<text><![CDATA[<p id="ID_s1_bubble01" class="ID_s1_bubble01 top">Enviaré este mensaje a través de la red utilizando un encabezado de IPv4.</p>]]></text>
+</component>
+<component id="ID_s1_bubble02">
+<text><![CDATA[<p id="ID_s1_bubble02" class="ID_s1_bubble02 top">Puedo reenviar este mensaje, porque entiendo el encabezado de IPv4.</p>]]></text>
+</component>
+<component id="ID_s1_bubble03">
+<text><![CDATA[<p id="ID_s1_bubble03" class="ID_s1_bubble03 top">Puedo aceptar este mensaje, porque entiendo IPv4.</p>]]></text>
+</component>
+
+<component id="ID_s2_title">
+<text><![CDATA[<b>Función de los protocolos</b>]]></text> 
+</component>
+<component id="ID_s2_bubble01">
+<text><![CDATA[<p id="ID_s2_bubble01" class="ID_s2_bubble01">Acordemos que si una de nuestras rutas está inactiva, notificaremos a todos los dispositivos conectados.</p>]]></text>
+</component>
+<component id="ID_s2_bubble02">
+<text><![CDATA[<p id="ID_s2_bubble02" class="ID_s2_bubble02 left">Correcto</p>]]></text>
+</component>
+<component id="ID_s2_bubble03">
+<text><![CDATA[<p id="ID_s2_bubble03" class="ID_s2_bubble03 top">La ruta A está inactiva.</p>]]></text>
+</component>
+<component id="ID_s2_bubble04">
+<text><![CDATA[<p id="ID_s2_bubble04" class="ID_s2_bubble04 top">Correcto</p>]]></text>
+</component>
+<component id="ID_s2_bubble05">
+<text><![CDATA[<p id="ID_s2_bubble05" class="ID_s2_bubble05">Correcto</p>]]></text>
+</component>
+
+
+<component id="ID_s2_txt01">
+  <text><![CDATA[A]]></text>
+  </component>
+  
+  <component id="ID_s2_txt02">
+  <text><![CDATA[B]]></text>
+  </component>
+<component id="ID_s2_txt04">
+  <text><![CDATA[Proceso por el cual los dispositivos de red comparten información sobre rutas a otras redes]]></text> 
+  </component>
+  
+<component id="ID_s3_title">
+<text><![CDATA[<b>Función de los protocolos</b>]]></text> 
+</component>
+<component id="ID_s3_bubble01">
+<text><![CDATA[<p id="ID_s3_bubble01" class="ID_s3_bubble01">Acordemos que los mensajes de error tendrán un número de ID único.</p>]]></text>
+</component>
+<component id="ID_s3_bubble02">
+<text><![CDATA[<p id="ID_s3_bubble02" class="ID_s3_bubble02">Error 1002: la ruta B es lenta.</p>]]></text>
+</component>
+<component id="ID_s3_bubble03">
+<text><![CDATA[<p id="ID_s3_bubble03" class="ID_s3_bubble03 top">Error 1001: la ruta A está inactiva.</p>]]></text>
+</component>
+
+<component id="ID_s3_txt01">
+  <text><![CDATA[A]]></text>
+  </component>
+  
+  <component id="ID_s3_txt02">
+  <text><![CDATA[B]]></text>
+  </component>
+<component id="ID_s3_txt04">
+  <text><![CDATA[Cómo y cuándo se transmiten mensajes de error y del sistema entre los dispositivos]]></text> 
+  </component>
+<component id="ID_s4_title">
+<text><![CDATA[<b>Función de los protocolos</b>]]></text> 
+</component>
+<component id="ID_s4_bubble01">
+<text><![CDATA[<p id="ID_s4_bubble01" class="ID_s4_bubble01 top">Estoy de acuerdo. Ahora podemos enviar y recibir información entre nosotros.</p>]]></text>
+</component>
+<component id="ID_s4_bubble02">
+<text><![CDATA[<p id="ID_s4_bubble02" class="ID_s4_bubble02 top">Me gustaría establecer una conexión virtual con usted para que podamos intercambiar información.</p>]]></text>
+</component>
+
+<component id="ID_s4_txt01">
+  <text><![CDATA[Configuración y terminación de las sesiones de transferencia de datos]]></text>
+  </component> 
+
+</textcomponents>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.1.5.1 Los routers son un blanco</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.1.5.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuraciones avanzadas de OSPF de área única </h1>
+        <h2>OSPF segura</h2>
+      </div>
+      <div id="content">
+<p>La función de los routers en una red es tan importante que, con frecuencia, son el blanco de ataques de red. Los administradores de red deben tener en cuenta que los routers corren el mismo riesgo de sufrir ataques que los sistemas para usuarios finales. </p>
+<p></p>
+<p>En general, se puede atacar a los sistemas de routing mediante la perturbación de los peers de routing o la falsificación de los datos que se transportan en el protocolo de routing. En general, la información de routing falsificada se puede usar para causar que los sistemas intercambien información errónea (se mientan), provoquen un ataque por denegación de servicio (DoS) u ocasionen que el tráfico tome una ruta que normalmente no seguiría. Las consecuencias de falsificar información de routing son las siguientes:</p>
+<p>
+<ul>
+<li>Redireccionamiento del tráfico para crear bucles de routing</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Redireccionamiento del tráfico para que se lo pueda controlar en un enlace no seguro</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Redireccionamiento del tráfico para descartarlo</li>
+</ul>
+</p>
+<p></p>
+<p>Haga clic en el botón Reproducir en la animación para ver un ejemplo de un ataque que genera un bucle de routing. Un atacante pudo conectarse directamente al enlace entre los routers R1 y R2. El atacante inserta información de routing falsa destinada solo al router R1, que indica que el R2 es el destino preferido a la ruta de host 192.168.10.10/32. Aunque el R1 tiene una entrada en la tabla de routing a la red 192.168.10.0/24 conectada directamente, agrega la ruta insertada a su tabla de routing debido a la máscara de subred más larga. Una ruta con una máscara de subred coincidente más larga se considera superior a una ruta con una máscara de subred más corta. En consecuencia, cuando un router recibe un paquete, selecciona la máscara de subred más larga, debido a que se trata de una ruta más precisa hacia el destino.</p>
+<p></p>
+<p>Cuando la PC3 envía un paquete a la PC1 (192.168.10.10/24), el R1 no reenvía el paquete a la PC1 host. En cambio, dirige el paquete al router R2, porque la aparente mejor ruta a 192.168.10.10/32 pasa a través del R2. Cuando el R2 recibe el paquete, analiza la tabla de routing y reenvía el paquete nuevamente al R1, lo que ocasiona un bucle.</p>
+<p></p>
+<p>Para mitigar los ataques a los protocolos de routing, puede configurar la autenticación de OSPF.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

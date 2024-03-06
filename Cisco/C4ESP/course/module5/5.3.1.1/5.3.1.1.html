@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.3.1.1 Resolución de problemas de NAT: comandos show</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.3.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resolución de problemas de NAT</h1>
+        <h2>Resolución de problemas de NAT</h2>
+      </div>
+      <div id="content">
+<p>En la figura 1, se muestra el R2 habilitado para PAT, que usa el rango de direcciones de 209.165.200.226 a 209.165.200.240. </p>
+<p></p>
+<p>Cuando hay problemas de conectividad IPv4 en un entorno NAT, suele ser difícil determinar la causa del problema. El primer paso para resolverlo es descartar que la causa sea NAT. Siga estos pasos para verificar que NAT funcione como se espera:</p>
+<p></p>
+<p>
+<b>Paso 1. </b>En función de la configuración, defina claramente lo que debe lograr la NAT. Esto puede revelar un problema con la configuración.</p>
+<p></p>
+<p>
+<b>Paso 2. </b>Verifique que las traducciones de la tabla sean correctas con el comando <span class="cmd"><b>show ip nat translations</b></span>.</p>
+<p></p>
+<p>
+<b>Paso 3. </b>Utilice los comandos <span class="cmd"><b>clear</b></span> y <span class="cmd"><b>debug</b></span> para verificar que NAT funcione como se espera. Verifique si se vuelven a crear las entradas dinámicas después de borrarlas.</p>
+<p></p>
+<p>
+<b>Paso 4. </b>Revise en detalle lo que sucede con el paquete y verifique que los routers tengan la información de routing correcta para trasladar el paquete.</p>
+<p></p>
+<p></p>
+<p>En la figura 2, se muestra el resultado de los comandos <span class="cmd"><b>show ip nat statistics</b></span> y <span class="cmd"><b>show ip nat translations</b></span>. Antes de utilizar los comandos <span class="cmd"><b>show</b></span>, se eliminan las estadísticas y entradas de NAT de la tabla de NAT con los comandos <span class="cmd"><b>clear ip nat statistics</b></span> y <span class="cmd"><b>clear ip nat translation *</b></span>. Una vez que el host en 192.168.10.10 accede mediante Telnet al servidor en 209.165.201.1, se muestran las estadísticas de NAT y la tabla de NAT para verificar que NAT funcione como se espera. </p>
+<p></p>
+<p>En un entorno de red simple, es útil controlar las estadísticas de NAT con el comando <span class="cmd"><b>show ip nat statistics</b></span>. El comando <span class="cmd"><b>show ip nat statistics</b></span> muestra información sobre la cantidad total de traducciones activas, los parámetros de configuración NAT, la cantidad de direcciones en el conjunto y la cantidad que se asignó. Sin embargo, en un entorno NAT más complejo, con varias traducciones en curso, es posible que este comando no identifique el problema de forma clara. Es posible que se deban ejecutar los comandos <span class="cmd"><b>debug</b></span> en el router.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

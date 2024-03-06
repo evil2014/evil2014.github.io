@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.4.4.5 Tramas LAN y WAN</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.4.4.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Control de acceso al medio</h1>
+        <h2>Trama de enlace de datos</h2>
+      </div>
+      <div id="content">
+<p>En una red TCP/IP, todos los protocolos de capa 2 del modelo OSI funcionan con la dirección IP en la capa 3. Sin embargo, el protocolo de capa 2 específico que se utilice depende de la topología lógica de la red y la implementación de la capa física. Debido al amplio rango de medios físicos utilizados a través de un rango de topologías en interconexión de redes, hay una gran cantidad correspondiente de protocolos de la Capa 2 en uso. </p>
+<p></p>
+<p>Cada protocolo lleva a cabo el control de acceso al medio para las topologías lógicas de capa 2 especificadas. Esto significa que una cantidad de dispositivos de red diferentes pueden actuar como nodos que operan en la capa de enlace de datos al implementar esos protocolos. Estos dispositivos incluyen el adaptador de red o tarjetas de interfaz de red (NIC) en computadoras, así como las interfaces en routers y en switches de la Capa 2.</p>
+<p></p>
+<p>El protocolo de la Capa 2 que se utiliza para una topología de red particular está determinado por la tecnología utilizada para implementar esa topología. La tecnología es, a su vez, determinada por el tamaño de la red, en términos de cantidad de hosts y alcance geográfico y los servicios que se proveerán a través de la red.</p>
+<p></p>
+<p>En general, las redes LAN utilizan una tecnología de ancho de banda elevado que es capaz de admitir una gran cantidad de hosts. El área geográfica relativamente pequeña de una LAN (un único edificio o un campus de varios edificios) y su alta densidad de usuarios hacen que esta tecnología sea rentable.</p>
+<p></p>
+<p>Sin embargo, utilizar una tecnología de ancho de banda elevado generalmente no es rentable para las redes WAN que abarcan grandes áreas geográficas (varias ciudades, por ejemplo). El costo de los enlaces físicos de larga distancia y la tecnología utilizada para transportar las señales a través de esas distancias, generalmente, ocasiona una menor capacidad de ancho de banda. </p>
+<p></p>
+<p>La diferencia de ancho de banda normalmente produce el uso de diferentes protocolos para las LAN y las WAN.</p>
+<p></p>
+<p>Los protocolos de capa de enlace de datos comunes incluyen los siguientes: </p>
+<p>
+<ul>
+<li>Ethernet </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Protocolo punto a punto (PPP) </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Inalámbrico 802.11</li>
+</ul>
+</p>
+<p></p>
+<p>Otros protocolos que se abordan en el currículo de CCNA son el protocolo de enlace de datos de alto nivel (HDLC) y Frame Relay.</p>
+<p></p>
+<p>Haga clic en el botón Reproducir para ver ejemplos de protocolos de capa 2.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

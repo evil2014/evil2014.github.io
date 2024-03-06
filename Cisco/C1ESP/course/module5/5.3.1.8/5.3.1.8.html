@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.3.1.8 Almacenamiento en búfer de memoria en switches</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.3.1.8_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Switches LAN</h1>
+        <h2>Conmutación</h2>
+      </div>
+      <div id="content">
+<p>Según lo analizado, un switch examina parte de un paquete, o su totalidad, antes de reenviarlo al host de destino. Un switch Ethernet puede usar una técnica de bufferes para almacenar tramas antes de enviarlas. El almacenamiento en buffers también puede utilizarse cuando el puerto de destino está ocupado debido a una congestión. El switch almacena la trama hasta el momento en que pueda transmitirse.</p>
+<p></p>
+<p>Como se muestra en la ilustración, existen dos métodos de almacenamiento en búfer de memoria: el método basado en puerto y el de memoria compartida.</p>
+<p></p>
+<p>
+<b>Búfer de memoria basada en puerto</b>
+</p>
+<p>En el búfer de memoria basado en puerto, las tramas se almacenan en colas conectadas a puertos de entrada y de salida específicos. Una trama se transmite al puerto de salida una vez que todas las tramas que están delante de ella en la cola se hayan transmitido con éxito. Es posible que una sola trama retarde la transmisión de todas las tramas almacenadas en la memoria debido al tráfico del puerto de destino. Este retraso se produce aunque las demás tramas puedan transmitirse a puertos de destino abiertos.</p>
+<p></p>
+<p>
+<b>Almacenamiento en búfer de memoria compartida </b>
+</p>
+<p>El búfer de memoria compartida deposita todas las tramas en un búfer de memoria común que comparten todos los puertos del switch. La cantidad de memoria de búfer que requiere un puerto se asigna de forma dinámica. Las tramas en el búfer se vinculan de forma dinámica al puerto de destino. Esto permite que se pueda recibir el paquete por un puerto y se pueda transmitir por otro puerto, sin tener que colocarlo en otra cola.</p>
+<p></p>
+<p>El switch conserva un mapa de enlaces de trama a puerto que indica dónde debe transmitirse el paquete. El enlace del mapa se elimina una vez que la trama se ha transmitido con éxito. La cantidad de tramas almacenadas en el búfer se encuentra limitada por el tamaño del búfer de memoria en su totalidad y no se limita a un solo búfer de puerto. Esto permite la transmisión de tramas más amplias y que se descarte una menor cantidad de ellas. Esto es muy importante para la conmutación asimétrica. La conmutación asimétrica permite diferentes velocidades de datos en diferentes puertos. Esto permite que se dedique más ancho de banda a ciertos puertos, como un puerto conectado a un servidor.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

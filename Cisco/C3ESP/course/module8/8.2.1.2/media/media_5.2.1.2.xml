@@ -1,0 +1,91 @@
+﻿<textcomponents>
+
+<component id="ID_title">
+<text><![CDATA[<b>Diagnóstico de problemas de conectividad de EIGRP</b>]]></text>
+</component>
+
+<component id="ID_s1_txt01">
+  <text><![CDATA[¿La tabla de vecinos es correcta?]]></text> 
+</component>
+
+<component id="ID_s1_txt02">
+  <text><![CDATA[¿La tabla de routing es correcta?]]></text> 
+</component>
+
+<component id="ID_s1_txt03">
+  <text><![CDATA[¿El tráfico sigue la ruta deseada?]]></text> 
+</component>
+  
+<component id="ID_s1_txt04">
+  <text><![CDATA[¿Hay problemas de conectividad debido al routing?]]></text> 
+</component>
+  
+<component id="ID_s1_txt05">
+  <text><![CDATA[¿La red funciona?]]></text> 
+</component>
+   
+<component id="ID_s1_txt06">
+  <text><![CDATA[Sí]]></text> 
+</component>
+  
+<component id="ID_s1_txt07">
+  <text><![CDATA[Sí]]></text> 
+</component>
+  
+<component id="ID_s1_txt08">
+  <text><![CDATA[Sí]]></text> 
+</component>
+  
+<component id="ID_s1_txt09">
+  <text><![CDATA[Sí]]></text> 
+</component>
+
+<component id="ID_s1_txt10">
+  <text><![CDATA[No]]></text> 
+</component>
+
+<component id="ID_s1_txt11">
+  <text><![CDATA[No]]></text> 
+</component>
+
+<component id="ID_s1_txt12">
+  <text><![CDATA[No]]></text> 
+</component>
+             
+<component id="ID_btn01">
+  <text><![CDATA[<b>Solución de problemas</b>]]></text> 
+</component>
+      
+<component id="ID_btn02">
+  <text><![CDATA[<b>Solución de problemas</b>]]></text> 
+</component>
+     
+<component id="ID_btn03">
+  <text><![CDATA[<b>Solución de problemas</b>]]></text> 
+</component>
+  
+<component id="ID_titleTxt01">
+  <text><![CDATA[<b>Solución de problemas</b>]]></text> 
+</component>
+
+<component id="ID_bodyTxt01">
+  <text><![CDATA[<textformat blockindent='-14'><ul><li>¿Las interfaces funcionan?</li><li>¿Las interfaces están habilitadas para EIGRP?</li><li>¿El AS de EIGRP coincide?</li><li>¿Hay alguna interfaz configurada como pasiva?</li></ul></textformat><br/><b>Comandos show</b><br/><textformat blockindent='14'><b><font face="courier new"><div class="div15px">show ip eigrp neighbors<br/>show ip interface brief<br/>show ip eigrp interface</div></font></b></textformat>]]></text> 
+</component>
+  
+<component id="ID_titleTxt02">
+  <text><![CDATA[<b>Solución de problemas</b>]]></text> 
+</component>
+
+<component id="ID_bodyTxt02">
+  <text><![CDATA[<textformat blockindent='-14'><ul><li>¿Las redes se anuncian?</li><li>¿Hay alguna ACL que bloquee los anuncios?</li><li>¿Se utiliza algún otro protocolo de routing con una AD más baja?</li><li>¿Hay un problema de red no contigua?</li></ul></textformat><br/><b>Comandos show</b><br/><textformat blockindent='14'><b><font face="courier new"><div class="div15px">show ip protocols<br/>show ip route eigrp</div></font></b></textformat>]]></text> 
+</component>
+  
+<component id="ID_titleTxt03">
+  <text><![CDATA[<b>Solución de problemas</b>]]></text> 
+</component>
+
+<component id="ID_bodyTxt03">
+  <text><![CDATA[<textformat blockindent='-14'><ul><li>Verifique los valores del ancho de banda de la interfaz.</li></ul></textformat><br/><b>Comandos show</b><br/><textformat blockindent='14'><b><font face="courier new"><div class="div15px">show ip eigrp interface</div></font></b></textformat>]]></text> 
+</component>
+  
+</textcomponents>

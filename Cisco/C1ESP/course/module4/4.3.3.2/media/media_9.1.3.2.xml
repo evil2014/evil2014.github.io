@@ -1,0 +1,79 @@
+﻿<textcomponents>
+
+	<component id='ID_inst'>
+		<text><![CDATA[<b>Actividad: Organismos de estandarización de la capa de enlace de datos</b><br><br>Arrastre los protocolos de enlace de datos hacia los organismos de estandarización correspondientes.]]></text>
+	</component>
+
+	<component id='ID_txt01'>
+		<text><![CDATA[<b>IEEE</b>]]></text>
+	</component>
+
+	<component id='ID_txt02'>
+		<text><![CDATA[<b>ITU-T</b>]]></text>
+	</component>
+
+	<component id='ID_txt03'>
+		<text><![CDATA[<b>ISO</b>]]></text>
+	</component>
+
+	<component id='ID_txt04'>
+		<text><![CDATA[<b>ANSI</b>]]></text>
+	</component> <!--Drag and Drop-->
+	<component id='ID_drag01'>
+		<text><![CDATA[<font color="#393536">HDLC</font>]]></text>
+	</component>
+	<component id='ID_drag02'>
+		<text><![CDATA[<font color="#393536">FDDI MAC</font>]]></text>
+	</component>
+
+	<component id='ID_drag03'>
+		<text><![CDATA[<font color="#393536">Ethernet 802.3</font>]]></text>
+	</component>
+
+	<component id='ID_drag04'>
+		<text><![CDATA[<font color="#393536">ADSL</font>]]></text>
+	</component>
+
+	<component id='ID_drag05'>
+		<text><![CDATA[<font color="#393536">ISDN</font>]]></text>
+	</component>
+
+	<component id='ID_drag06'>
+		<text><![CDATA[<font color="#393536">Bluetooth 802.15</font>]]></text>
+	</component>
+
+	<component id='ID_drag07'>
+		<text><![CDATA[<font color="#393536">Inalámbrico y WiFi 802.11</font>]]></text>
+	</component>
+
+	<component id='ID_drag08'>
+		<text><![CDATA[<font color="#393536">FDDI</font>]]></text>
+	</component>
+
+
+	<component id='ID_s1_CORRECT_TITLE'>
+		<text><![CDATA[<b>Correcto]]></text>
+	</component>
+
+	<component id='ID_s1_CORRECT_BODY'>
+		<text><![CDATA[Unió correctamente los nombres de los protocolos de enlace de datos con los organismos de estandarización apropiados.]]></text>
+	</component>
+
+
+	<component id='ID_s1_INCORRECT_TITLE'>
+		<text><![CDATA[<b>Incorrecto]]></text>
+	</component>
+
+	<component id='ID_s1_INCORRECT_BODY'>
+		<text><![CDATA[No unió correctamente los nombres de los protocolos de enlace de datos con los organismos de estandarización apropiados.]]></text>
+	</component>
+
+	<component id='ID_CHECK'>
+		<text><![CDATA[Verificar]]></text>
+	</component>
+
+	<component id='ID_RESET'>
+		<text><![CDATA[Restablecer]]></text>
+	</component>
+
+</textcomponents>

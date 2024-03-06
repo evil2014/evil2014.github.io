@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>3.1.1.7 Punto de demarcación</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_3.1.1.7_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Descripción general de conexión serial punto a punto</h1>
+        <h2>Comunicaciones seriales</h2>
+      </div>
+      <div id="content">
+<p>Antes de la desregulación en América del Norte y otros países, las empresas telefónicas eran propietarias del bucle local, incluidos el cableado y los equipos en las instalaciones de los clientes. El bucle local se refiere a la línea desde las instalaciones de un suscriptor telefónico hasta la oficina central de la compañía telefónica. La desregulación obligó a las empresas telefónicas a desarmar su infraestructura de bucle local para permitir que otros proveedores proporcionaran equipos y servicios. Esto llevó a la necesidad de delinear la parte de la red que pertenecía a la compañía telefónica y la parte que pertenecía al cliente. Este punto de delineación es el punto de demarcación. El punto de demarcación marca el punto en que la red se comunica con una red que pertenece a otra organización. En la terminología de la telefonía, esta es la interfaz entre el equipo local del cliente (CPE) y el equipo del proveedor de servicios de red. El punto de demarcación es aquel donde termina la responsabilidad del proveedor de servicios, como se muestra en la figura 1. </p>
+<p></p>
+<p>Las diferencias en los puntos de demarcación se muestran mejor mediante el uso de ISDN. En los Estados Unidos, un proveedor de servicios proporciona el bucle local en las instalaciones del cliente, y este proporciona equipos activos como la CSU/DSU, donde termina el bucle local. Esta terminación ocurre con frecuencia en un gabinete de telecomunicaciones, y el cliente es responsable de mantener, reemplazar o corregir el equipo. En otros países, el proveedor de servicios proporciona y administra la unidad de terminación red (NTU). Esto permite que el proveedor de servicios administre y resuelva problemas del bucle local de forma activa con el punto de demarcación que ocurre después de la NTU. El cliente conecta un dispositivo CPE, como un router o un dispositivo de acceso Frame Relay, a la NTU mediante una interfaz serial V.35 o RS-232.</p>
+<p></p>
+<p>Se requiere un puerto serial de router para cada conexión de línea arrendada. Si la red subyacente se basa en las tecnologías de portadora T o E, la línea arrendada se conecta a la red de la portadora a través de una CSU/DSU. El propósito de la CSU/DSU es proporcionar una señal de reloj a la interfaz del equipo del cliente desde la DSU y terminar los medios de transporte canalizados de la portadora en la CSU. La CSU también proporciona funciones de diagnóstico, como la prueba de loopback. </p>
+<p></p>
+<p>Como se muestra en la figura 2, la mayoría de las interfaces TDM T1 o E1 en los routers actuales incluyen capacidades de CSU/DSU. No se requiere una CSU/DSU separada, ya que esta funcionalidad está integrada en la interfaz. Para configurar las operaciones de la CSU/DSU, se utilizan los comandos del IOS.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

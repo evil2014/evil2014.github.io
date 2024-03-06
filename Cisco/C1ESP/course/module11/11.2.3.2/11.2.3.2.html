@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>11.2.3.2 Autenticación, autorización y contabilidad</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_11.2.3.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Cómo mantener la seguridad de la red</h1>
+        <h2>Mitigación de ataques de red</h2>
+      </div>
+      <div id="content">
+<p>Los servicios de seguridad de red de autenticación, autorización y contabilidad (AAA o “triple A”) proporcionan el marco principal para configurar el control de acceso en dispositivos de red. AAA es un modo de controlar quién tiene permitido acceder a una red (autenticar), controlar lo que las personas pueden hacer mientras se encuentran allí (autorizar) y observar las acciones que realizan mientras acceden a la red (contabilizar). AAA proporciona un mayor grado de escalabilidad que los comandos de autenticación de EXEC privilegiado, consola, puertos auxiliares y VTY. </p>
+<p></p>
+<p>
+<b>Autenticación</b>
+</p>
+<p>Los usuarios y administradores deben probar que son quienes dicen ser. La autenticación se puede establecer utilizando combinaciones de nombre de usuario y contraseña, preguntas de desafío y respuesta, tarjetas token y otros métodos. Por ejemplo: “Soy el usuario ‘estudiante’. Conozco la contraseña para probar que soy el usuario ‘estudiante’”.</p>
+<p></p>
+<p>En redes pequeñas, se suele utilizar la autenticación local. Con la autenticación local, cada dispositivo mantiene su propia base de datos de combinaciones de nombre de usuario y contraseña. Sin embargo, cuando hay más de unas pocas cuentas de usuario en la base de datos de un dispositivo local, administrar dichas cuentas puede resultar complejo. Además, a medida que la red crece y se le agregan más dispositivos, la autenticación local se hace difícil de mantener y no se puede escalar. Por ejemplo, si hay 100 dispositivos de red, se deben agregar todas las cuentas de usuario a los 100 dispositivos. </p>
+<p></p>
+<p>En el caso de redes más grandes, una solución más escalable es la autenticación externa. La autenticación externa permite autenticar a todos los usuarios a través de un servidor de red externo. Las dos opciones más populares para la autenticación externa de usuarios son RADIUS y TACACS+:</p>
+<p>
+<ul>
+<li>RADIUS es un estándar abierto con poco uso de memoria y recursos de la CPU. Lo utilizan una variedad de dispositivos de red, como switches, routers y dispositivos inalámbricos.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>TACACS+ es un mecanismo de seguridad que habilita servicios modulares de autenticación, autorización y contabilidad. Utiliza un demonio TACACS+ que se ejecuta en un servidor de seguridad.</li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Autorización</b>
+</p>
+<p>Una vez autenticado el usuario, los servicios de autorización determinan a qué recursos puede acceder el usuario y qué operaciones está habilitado para realizar. Un ejemplo es “El usuario ‘estudiante’ puede acceder al servidor host XYZ mediante Telnet únicamente”.</p>
+<p></p>
+<p>
+<b>Contabilidad</b>
+</p>
+<p>La contabilidad registra lo que hace el usuario, incluidos los elementos a los que accede, la cantidad de tiempo que accede al recurso y todos los cambios que se realizaron. La contabilidad realiza un seguimiento de la forma en que se utilizan los recursos de red. Un ejemplo es “El usuario ‘estudiante" accedió al servidor host XYZ mediante Telnet durante 15 minutos”.</p>
+<p></p>
+<p>El concepto de AAA es similar al uso de una tarjeta de crédito. La tarjeta de crédito identifica quién la puede utilizar y cuánto puede gastar ese usuario, y lleva un registro de los elementos en los que el usuario gastó dinero, como se muestra en la ilustración.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

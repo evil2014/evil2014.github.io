@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.2.1.4 Componentes del cable</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.2.1.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Comparación de las soluciones de banda ancha</h1>
+        <h2>Cable</h2>
+      </div>
+      <div id="content">
+<p>La prestación de servicios mediante una red de cable requiere diferentes radiofrecuencias. Las frecuencias descendentes están en la banda de 50 MHz a 860 MHz, y las frecuencias ascendentes están en la banda de 5 MHz a 42 MHz. </p>
+<p></p>
+<p>Se requieren dos tipos de equipos para enviar señales de módem digitales de forma ascendente y descendente en un sistema de cable:</p>
+<p></p>
+<p>
+<ul>
+<li>El sistema de terminación de cable módem (CMTS) en la cabecera del operador de cable</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Un cable módem (CM) en el extremo del suscriptor</li>
+</ul>
+</p>
+<p></p>
+<p>Haga clic en los componentes resaltados en la ilustración para obtener más información sobre la forma en que cada dispositivo contribuye a la comunicación.</p>
+<p></p>
+<p>Un CMTS de cabecera se comunica con los CM ubicados en los hogares de los suscriptores. La cabecera es en realidad un router con las bases de datos para proporcionar servicios de Internet a los suscriptores del servicio de cable. La arquitectura es relativamente simple: se utiliza una red mixta óptica y coaxial en la que la fibra óptica reemplaza al cable coaxial, de ancho de banda inferior.</p>
+<p></p>
+<p>Una red de cables troncales de fibra óptica conecta la cabecera a los nodos donde ocurre la conversión de la señal óptica a una señal de RF. La fibra transporta el mismo contenido de banda ancha para las conexiones a Internet, el servicio telefónico y la transmisión de video que transporta el cable coaxial. Los cables de alimentación coaxial conectan el nodo a los suscriptores y transportan señales de RF. </p>
+<p></p>
+<p>En una red HFC moderna, generalmente hay de 500 a 2000 suscriptores de servicios de datos activos conectados a un segmento de red de cable, y todos comparten el ancho de banda ascendente y descendente. El ancho de banda real para el servicio de Internet a través de una línea de CATV puede ser de hasta 160 Mb/s descendentes con la última iteración de DOCSIS, y de hasta 120 Mb/s ascendentes. </p>
+<p></p>
+<p>Cuando se produce congestión por el uso elevado, el operador de cable puede agregar ancho de banda adicional para los servicios de datos mediante la asignación de un canal de televisión adicional para datos de alta velocidad. Esto puede duplicar eficazmente el ancho de banda descendente disponible para los suscriptores. Otra opción es reducir el número de suscriptores que reciben servicios de cada segmento de red. Para reducir el número de suscriptores, el operador de cable continúa subdividiendo la red al extender las conexiones de fibra óptica aún más en los vecindarios.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

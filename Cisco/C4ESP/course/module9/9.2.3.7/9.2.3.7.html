@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.2.3.7 Paso 5: Verificar la ruta correcta</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.2.3.7_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resolución de problemas de red</h1>
+        <h2>Resolución de problemas de conectividad IP</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Resolución de problemas de la capa de red</b>
+</p>
+<p>Al resolver problemas, con frecuencia es necesario verificar la ruta hacia la red de destino. En la figura 1, se muestra la topología de referencia que indica la ruta deseada para los paquetes de la PC1 al SRV1.</p>
+<p></p>
+<p>En la figura 2, se usa el comando <span class="cmd"><b>show ip route</b></span> para examinar la tabla de routing IPv4.</p>
+<p></p>
+<p>Las tablas de routing IPv4 e IPv6 se pueden llenar con los siguientes métodos:</p>
+<p>
+<ul>
+<li>Redes conectadas directamente</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Host local o rutas locales</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Rutas estáticas</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Rutas dinámicas</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Rutas predeterminadas</li>
+</ul>
+</p>
+<p>El proceso de reenvío de paquetes IPv4 e IPv6 se basa en la coincidencia más larga de bits o de prefijos. El proceso de la tabla de routing intenta reenviar el paquete mediante una entrada en la tabla de routing con el máximo número de bits coincidentes en el extremo izquierdo. La longitud de prefijo de la ruta indica el número de bits coincidentes. </p>
+<p></p>
+<p>En la figura 3, se muestra una situación similar con IPv6. Para verificar que la ruta IPv6 actual coincide con la ruta deseada para llegar a los destinos, use el comando <span class="cmd"><b>show ipv6 route</b></span> en el router para examinar la tabla de routing. Después de examinar la tabla de routing IPv6, el R1 tiene una ruta a 2001:DB8:ACAD:4::/64 mediante el R2 en FE80::2.</p>
+<p></p>
+<p>La siguiente lista, junto con la figura 4, describe el proceso de las tablas de routing IPv4 e IPv6. Si la dirección de destino en un paquete:</p>
+<p></p>
+<p>
+<ul>
+<li>No coincide con una entrada en la tabla de routing, se usa la ruta predeterminada. Si no hay una ruta predeterminada que esté configurada, se descarta el paquete.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Coincide con una única entrada en la tabla de routing, el paquete se reenvía a través de la interfaz definida en esta ruta.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Coincide con más de una entrada en la tabla de routing y las entradas de routing tienen la misma longitud de prefijo, los paquetes para este destino se pueden distribuir entre las rutas definidas en la tabla de routing.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Coincide con más de una entrada en la tabla de routing y las entradas de routing tienen longitudes de prefijo diferentes, los paquetes para este destino se reenvían por la interfaz que está asociada a la ruta que tiene la coincidencia de prefijos más larga.</li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Ejemplo de resolución de problemas</b>
+</p>
+<p>Los dispositivos no se pueden conectar al servidor SRV1 en 172.16.1.100. Mediante el comando <span class="cmd"><b>show ip route</b></span>, el administrador debe revisar si existe una entrada de routing en la red 172.16.1.0/24. Si la tabla de routing no tiene una ruta específica a la red del SRV1, el administrador de red debe revisar la existencia de una entrada de ruta resumida o predeterminada en el sentido de la red 172.16.1.0/24. Si no existe ninguna entrada, es posible que el problema esté relacionado con el routing y que el administrador deba verificar que la red esté incluida dentro de la configuración del protocolo de routing dinámico o que deba agregar una ruta estática. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

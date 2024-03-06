@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.4.3.2 Desventajas de los protocolos de estado de enlace</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.4.3.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Routing dinámico de estado de enlace</h1>
+        <h2>Razones para utilizar protocolos de routing de estado de enlace</h2>
+      </div>
+      <div id="content">
+<p>Los protocolos de enrutamiento de link-state modernos están diseñados para minimizar los efectos en la memoria, el CPU y el ancho de banda. La utilización y configuración de áreas múltiples puede reducir el tamaño de las bases de datos de link-state. Las áreas múltiples también pueden limitar el grado de saturación de información de link-state en un dominio de enrutamiento y enviar los LSP sólo a aquellos routers que los necesitan. Cuando hay un cambio en la topología, solo los routers del área afectada reciben el LSP y ejecutan el algoritmo SPF. Esto puede ayudar a aislar un enlace inestable en un área específica en el dominio de enrutamiento. </p>
+<p></p>
+<p>Por ejemplo, en la ilustración hay tres dominios de routing independientes: área 1, área 0 y área 51. Si una red en el área 51 deja de funcionar, solo los routers en esa área se saturan con el LSP que contiene la información sobre dicho enlace fuera de servicio. Únicamente los routers del área 51 necesitan actualizar sus bases de datos de estado de enlace, volver a ejecutar el algoritmo SPF, crear un nuevo árbol SPF y actualizar sus tablas de routing. Los routers de otras áreas descubren que esta ruta no funciona, pero esto se realiza con un tipo de LSP que no los obliga a volver a ejecutar su algoritmo SPF. Los routers de otras áreas pueden actualizar sus tablas de enrutamiento directamente. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

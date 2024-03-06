@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.0.1.1 Introducción</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.0.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Listas de control de acceso</h1>
+        <h2>Listas de control de acceso</h2>
+      </div>
+      <div id="content">
+<p>La seguridad de red es un tema muy amplio, y gran parte de este tema se encuentra más allá del ámbito de este curso. Sin embargo, una de las habilidades más importantes que necesita un administrador de red es el dominio de las listas de control de acceso (ACL). </p>
+<p></p>
+<p>Los diseñadores de red utilizan firewalls para proteger las redes del uso no autorizado. Los firewalls son soluciones de hardware o de software que aplican las políticas de seguridad de la red. Imagine una cerradura en la puerta de una habitación dentro de un edificio. La cerradura permite que solo los usuarios autorizados que poseen una llave o una tarjeta de acceso puedan entrar. De igual forma, un firewall filtra los paquetes no autorizados o potencialmente peligrosos e impide que ingresen a la red. En un router Cisco, puede configurar un firewall simple que proporcione capacidades básicas de filtrado de tráfico mediante ACL. Los administradores utilizan las ACL para detener el tráfico o para permitir solamente tráfico específico en sus redes.</p>
+<p></p>
+<p>Una ACL es una lista secuencial de instrucciones permit (permitir) o deny (denegar) que se aplican a los protocolos de capa superior o a las direcciones. Las ACL son una herramienta potente para controlar el tráfico hacia y desde la red. Se pueden configurar ACL para todos los protocolos de red enrutada. </p>
+<p></p>
+<p>El motivo más importante para configurar ACL es aportar seguridad a una red. En este capítulo, se explica cómo utilizar las ACL estándar y extendidas en un router Cisco como parte de una solución de seguridad. Se incluyen consejos, consideraciones, recomendaciones y pautas generales sobre cómo utilizar las ACL. </p>
+<p></p>
+<p>En este capítulo, se ofrece la oportunidad de desarrollar su dominio de las ACL con una serie de lecciones, actividades y ejercicios de práctica de laboratorio.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>10.3.1.6 Guerreros de la red</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_10.3.1.6_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>El mensaje se escucha en todo el mundo</h1>
+        <h2>Póngase en movimiento</h2>
+      </div>
+      <div id="content">
+<p>Un recurso de entretenimiento para ayudar a visualizar los conceptos de red es la película animada “Warriors of the Net” (Guerreros de la red), de TNG Media Lab. Antes de ver el video, se debe tener en cuenta lo siguiente: Primero, en cuanto a los conceptos que ha aprendido en este capítulo, piense en qué momento del video está en la LAN, en la WAN, en intranet o en Internet, y cuáles son los dispositivos finales vs. los dispositivos intermedios, cómo se aplican los modelos OSI y TCP/IP y qué protocolos están involucrados.</p>
+<p></p>
+<p>En segundo lugar, si bien se hace referencia a los números de puerto 21, 23, 25, 53 y 80 de forma explícita en el video, se hace referencia a las direcciones IP solo de forma implícita, ¿puede ver dónde? ¿Dónde se pudieron involucrar las direcciones MAC en el video?</p>
+<p></p>
+<p>Finalmente, aunque todas las animaciones con frecuencia tienen simplificaciones en ellas, hay un error categórico en el video. Aproximadamente a los cinco minutos se afirma lo siguiente: “Lo que el Sr.  IP hace cuando no recibe un acuse de recibo es enviar un paquete de reemplazo.” Esta no es una función del protocolo de Internet de capa 3, que es “poco confiable”, y de entrega de máximo esfuerzo, sino que es una función del protocolo TCP de la capa de transporte.</p>
+<p></p>
+<p>Descargue la película de <a href="http://www.warriorsofthe.net/" target="_blank">http://www.warriorsofthe.net</a>.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

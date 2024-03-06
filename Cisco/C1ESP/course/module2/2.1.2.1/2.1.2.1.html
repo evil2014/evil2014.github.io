@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.1.2.1 Método de acceso a la consola</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.1.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Entrenamiento intensivo sobre IOS</h1>
+        <h2>Acceso a un dispositivo Cisco IOS</h2>
+      </div>
+      <div id="content">
+<p>Existen varias formas de acceder al entorno de la CLI. Los métodos más comunes son los siguientes:</p>
+<p>
+<ul>
+<li>Consola</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Telnet o SSH</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Puerto auxiliar</li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Consola</b>
+</p>
+<p>El puerto de consola es un puerto de administración que proporciona acceso fuera de banda a los dispositivos Cisco. El acceso fuera de banda se refiere al acceso mediante un canal de administración dedicado que se utiliza únicamente para el mantenimiento del dispositivo. La ventaja de utilizar un puerto de consola es que es posible acceder al dispositivo incluso si no se configuró ningún servicio de red, por ejemplo, cuando se realiza la configuración inicial del dispositivo de red. Al realizar la configuración inicial, una PC con software de emulación de terminal se conecta al puerto de consola del dispositivo mediante un cable especial. Los comandos de configuración para el switch o el router se pueden introducir en la PC conectada. </p>
+<p></p>
+<p>El puerto de consola también puede utilizarse cuando fallan los servicios de red y no es posible acceder al dispositivo Cisco IOS de manera remota. Si esto ocurre, una conexión a la consola puede habilitar a una PC para determinar el estado del dispositivo. En forma predeterminada, la consola comunica el inicio del dispositivo, la depuración y los mensajes de error. Una vez que el técnico de red se conecta al dispositivo, puede ejecutar cualquier comando de configuración necesario mediante la sesión de consola.</p>
+<p></p>
+<p>Para muchos dispositivos IOS, el acceso de consola no requiere ningún tipo de seguridad, en forma predeterminada. Sin embargo, la consola debe estar configurada con contraseñas para evitar el acceso no autorizado al dispositivo. En caso de que se pierda una contraseña, existe un conjunto especial de procedimientos para eludir la contraseña y acceder al dispositivo. También se debe colocar el dispositivo en una habitación bajo llave o en un bastidor de equipos para evitar el acceso físico no autorizado.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

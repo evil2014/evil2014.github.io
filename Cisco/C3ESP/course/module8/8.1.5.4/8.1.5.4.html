@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.1.5.4 Verificación de la autenticación</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.1.5.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuraciones avanzadas de EIGRP</h1>
+        <h2>EIGRP segura</h2>
+      </div>
+      <div id="content">
+<p>Una vez que se configura la autenticación de mensajes EIGRP en un router, cualquier vecino adyacente que no se haya configurado para la autenticación deja de ser un vecino EIGRP. Por ejemplo, cuando la interfaz Serial 0/0/0 del R1 estaba configurada con autenticación MD5, pero el R2 todavía no estaba configurado, apareció el siguiente mensaje del IOS en el R1:</p>
+<p></p>
+<p>
+<span class="cmd">%DUAL-5-NBRCHANGE: EIGRP-IPv4 1: Neighbor 172.16.3.2 (Serial0/0/0) is down: authentication mode changed</span>
+</p>
+<p></p>
+<p>Cuando se configura la interfaz Serial 0/0/0 adyacente en el R2, se vuelve a establecer la adyacencia y aparece el siguiente mensaje del IOS en el R1.</p>
+<p></p>
+<p>
+<span class="cmd">%DUAL-5-NBRCHANGE: EIGRP-IPv4 1: Neighbor 172.16.3.2 (Serial0/0/0) is up: new adjacency</span>
+</p>
+<p></p>
+<p>También aparecen mensajes parecidos en el R2.</p>
+<p></p>
+<p>Las adyacencias solo se forman cuando ambos dispositivos de conexión tienen configurada la autenticación, como se muestra en la figura 1. Para verificar que se hayan formado las adyacencias EIGRP correctas después de configurarlas para la autenticación, utilice el comando <span class="cmd"><b>show ip eigrp neighbors</b></span> en cada router. En la figura 2, se muestra que los tres routers volvieron a establecer adyacencias de vecinos después de que se configuró la autenticación de EIGRP. </p>
+<p></p>
+<p>Para verificar las adyacencias de vecinos EIGRP para IPv6, use el comando <span class="cmd"><b>show ipv6 eigrp neighbors</b></span>.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

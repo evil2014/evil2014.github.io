@@ -1,0 +1,53 @@
+﻿<textcomponents>
+<component id="ID_s1_title">
+<text><![CDATA[<b>Los routers intercambian paquetes de saludo</b>]]></text>
+</component>
+<component id="ID_s2_title">
+  <text><![CDATA[<b>Los routers intercambian LSA</b>]]></text> 
+  </component>
+<component id="ID_s3_title">
+  <text><![CDATA[<b>El R1 crea su base de datos topológica</b>]]></text> 
+  </component>
+<component id="ID_s4_title">
+  <text><![CDATA[<b>El R1 ejecuta el algoritmo SPF</b>]]></text> 
+  </component>
+  <component id="ID_s5_title">
+  <text><![CDATA[<b>El R1 crea el árbol SPF</b>]]></text> 
+  </component>
+  <component id="ID_s6_title">
+  <text><![CDATA[<b>Contenido del árbol SPF del R1</b>]]></text> 
+  </component>
+  
+  <component id="ID_s1_txt01">
+	<text><![CDATA[Paquetes de saludo]]></text> 
+  </component>
+  <component id="ID_s2_txt01">
+	<text><![CDATA[LSA]]></text> 
+  </component>
+  <component id="ID_s3_txt01">
+	<text><![CDATA[Tabla de topología<br/>(LSDB)]]></text> 
+  </component>
+  <component id="ID_s4_txt01">
+	<text><![CDATA[Tabla de topología<br/>(LSDB)]]></text> 
+  </component>
+  <component id="ID_s4_txt02">
+	<text><![CDATA[SPF]]></text> 
+  </component>
+  <component id="ID_s5_txt01">
+	<text><![CDATA[Tabla de topología<br/>(LSDB)]]></text> 
+  </component>
+  <component id="ID_s5_txt02">
+	<text><![CDATA[SPF]]></text> 
+  </component>
+  <component id="ID_s6_txt01">
+	<text><![CDATA[<b>Destino</b>]]></text> 
+  </component>
+  <component id="ID_s6_txt02">
+	<text><![CDATA[<b>Ruta más corta</b>]]></text> 
+  </component>
+  <component id="ID_s6_txt03">
+	<text><![CDATA[<b>Costo</b>]]></text> 
+  </component>
+  
+  
+</textcomponents>

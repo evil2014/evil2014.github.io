@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.4.4.7 Trama PPP</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.4.4.7_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Control de acceso al medio</h1>
+        <h2>Trama de enlace de datos</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Protocolo punto a punto</b>
+</p>
+<p></p>
+<p>Otro protocolo de capa de enlace de datos es el protocolo punto a punto (PPP). El protocolo PPP se utiliza para entregar tramas entre dos nodos. A diferencia de muchos protocolos de capa de enlace de datos, definidos por los organismos de ingeniería eléctrica, el estándar PPP se define mediante RFC. PPP fue desarrollado como un protocolo WAN y sigue siendo el protocolo elegido para implementar muchas WAN serie. El protocolo PPP se puede utilizar en diversos medios físicos, incluidos par trenzado, líneas de fibra óptica y transmisiones satelitales, así como para conexiones virtuales. </p>
+<p></p>
+<p>PPP utiliza una arquitectura en capas. Para incluir a los diferentes tipos de medios, PPP establece conexiones lógicas, llamadas sesiones, entre dos nodos. La sesión PPP oculta el medio físico subyacente del protocolo PPP superior. Estas sesiones también proporcionan a PPP un método para encapsular varios protocolos sobre un enlace punto a punto. Cada protocolo encapsulado en el enlace establece su propia sesión PPP.</p>
+<p></p>
+<p>PPP también permite que dos nodos negocien opciones dentro de la sesión PPP. Esto incluye la autenticación, compresión y multienlace (el uso de varias conexiones físicas). </p>
+<p></p>
+<p>Consulte la ilustración para ver los campos básicos de una trama PPP.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

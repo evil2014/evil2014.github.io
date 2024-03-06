@@ -1,0 +1,112 @@
+﻿<textcomponents>
+
+<component id="ID_s1_text01">
+<text><![CDATA[<b>Capa de aplicación</b>]]></text>
+</component>
+<component id="ID_s1_text02">
+<text><![CDATA[Sistema de nombres]]></text>
+</component>
+<component id="ID_s1_text03">
+<text><![CDATA[Configura-<br/>ción del host]]></text>
+</component>
+<component id="ID_s1_text04">
+<text><![CDATA[Correo electrónico]]></text>
+</component>
+<component id="ID_s1_text05">
+<text><![CDATA[Transferen-<br/>cia de archivos]]></text>
+</component>
+<component id="ID_s1_text06">
+<text><![CDATA[Web]]></text>
+</component>
+<component id="ID_s1_text07">
+<text><![CDATA[Haga clic en cada protocolo de aplicación para obtener más información.]]></text>
+</component>
+
+
+<component id="ID_btn01">
+<text><![CDATA[<b>DNS</b>]]></text>
+</component>
+<component id="ID_btn02">
+<text><![CDATA[<b>BOOTP</b>]]></text>
+</component>
+<component id="ID_btn03">
+<text><![CDATA[<b>DHCP</b>]]></text>
+</component>
+<component id="ID_btn04">
+<text><![CDATA[<b>SMTP</b>]]></text>
+</component>
+<component id="ID_btn05">
+<text><![CDATA[<b>POP</b>]]></text>
+</component>
+<component id="ID_btn06">
+<text><![CDATA[<b>IMAP</b>]]></text>
+</component>
+<component id="ID_btn07">
+<text><![CDATA[<b>FTP</b>]]></text>
+</component>
+<component id="ID_btn08">
+<text><![CDATA[<b>TFTP</b>]]></text>
+</component>
+<component id="ID_btn09">
+<text><![CDATA[<b>HTTP</b>]]></text>
+</component>
+
+
+
+<component id="ID_titleTxt01">
+<text><![CDATA[<b>Sistema (o servicio) de nombres de dominios</b>]]></text>
+</component> 
+<component id="ID_bodyTxt01">
+<text><![CDATA[Traduce los nombres de dominio tales como cisco.com a direcciones IP]]></text>
+</component> 
+<component id="ID_titleTxt02">
+<text><![CDATA[<b>Protocolo Bootstrap</b>]]></text>
+</component> 
+<component id="ID_bodyTxt02">
+<text><![CDATA[<textformat blockindent="-14"><li>Habilita una estación de trabajo sin disco para que descubra su propia dirección IP, la dirección IP de un servidor BOOTP en la red y un archivo que debe cargarse en la memoria para iniciar la máquina.</li><li>DHCP está reemplazando a BOOTP.</li></textformat>]]></text>
+</component> 
+<component id="ID_titleTxt03">
+<text><![CDATA[<b>Protocolo de configuración dinámica de host</b>]]></text>
+</component> 
+<component id="ID_bodyTxt03">
+<text><![CDATA[<textformat blockindent="-14"><li>Asigna direcciones IP en forma dinámica a las estaciones cliente durante el inicio.</li><li>Permite que las direcciones se vuelvan a utilizar cuando ya no se necesitan.</li>]]></text>
+</component>
+<component id="ID_titleTxt04">
+<text><![CDATA[<b>Protocolo simple de transferencia de correo (Simple Mail Transfer Protocol)</b>]]></text>
+</component> 
+<component id="ID_bodyTxt04">
+<text><![CDATA[<textformat blockindent="-14"><li>Permite que los clientes envíen correos electrónicos a un servidor de correo.</li><li>Permite que los servidores envíen correos electrónicos a otros servidores.</li>]]></text>
+</component> 
+<component id="ID_titleTxt05">
+<text><![CDATA[<b>Protocolo de oficina de correos versión 3 (POP3, Post Office Protocol version 3)</b>]]></text>
+</component> 
+<component id="ID_bodyTxt05">
+<text><![CDATA[<textformat blockindent="-14"><li>Permite que los clientes recuperen correos electrónicos de un servidor de correo.</li><li>Descarga el correo electrónico del servidor de correo al escritorio.</li>]]></text>
+</component> 
+<component id="ID_titleTxt06">
+<text><![CDATA[<b>Protocolo de acceso a mensajes de Internet (Internet Message Access Protocol)</b>]]></text>
+</component> 
+<component id="ID_bodyTxt06">
+<text><![CDATA[<textformat blockindent="-14"><li>Permite que los clientes accedan a los correos electrónicos almacenados en un servidor de correo.</li><li>Mantiene el correo electrónico en el servidor.</li>]]></text>
+</component> 
+<component id="ID_titleTxt07">
+<text><![CDATA[<b>Protocolo de transferencia de archivos</b>]]></text>
+</component> 
+<component id="ID_bodyTxt07">
+<text><![CDATA[<textformat blockindent="-14"><li>Fija las reglas que habilitan a un usuario en un host a acceder y transferir archivos hacia y desde otro host a través de una red.</li><li>Protocolo de entrega de archivos confiable, orientado a la conexión y con confirmación.</li>]]></text>
+</component> 
+<component id="ID_titleTxt08">
+<text><![CDATA[<b>Protocolo de transferencia de archivos trivial</b>]]></text>
+</component> 
+<component id="ID_bodyTxt08">
+<text><![CDATA[<textformat blockindent="-14"><li>Protocolo de transferencia de archivos simple, sin conexión.</li><li>Protocolo de entrega de archivos de máximo esfuerzo, sin confirmación.</li><li>Utiliza menos sobrecarga que el protocolo FTP.</li>]]></text>
+</component> 
+<component id="ID_titleTxt09">
+<text><![CDATA[<b>Protocolo de transferencia de hipertexto  </b>]]></text>
+</component> 
+<component id="ID_bodyTxt09">
+<text><![CDATA[Conjunto de reglas para intercambiar texto, imágenes gráficas, sonido, video y otros archivos multimedia en la World Wide Web]]></text>
+</component> 
+
+
+</textcomponents>

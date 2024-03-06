@@ -1,0 +1,40 @@
+﻿<textcomponents>
+<component id="ID_title">
+	<text><![CDATA[<b>Linksys, modelo WRT300N2</b>]]></text>
+</component>
+<component id="ID_btn01">
+		<text><![CDATA[Delantera]]></text>
+	</component>
+	<component id="ID_btn02">
+		<text><![CDATA[Trasera]]></text>
+	</component>
+	<component id="ID_s1_title">
+		<text><![CDATA[<b>Vista frontal</b>]]></text>
+	</component>
+	<component id="ID_s1_txt">
+		<text><![CDATA[Linksys es un dispositivo simplificado y económico que cumple con la funcionalidad de varios dispositivos de red (switch, router, punto de acceso inalámbrico).<br /><br />Los diodos emisores de luz (LED) indican el estado de conexión de cada puerto.<br /><br />Haga clic en los LED para obtener una descripción.]]></text>
+	</component>
+	<component id="ID_s2_title">
+		<text><![CDATA[<b>Vista posterior</b>]]></text>
+	</component><component id="ID_s2_txt">
+		<text><![CDATA[Al conectar una red local mediante un dispositivo multifunción, es importante que todos los dispositivos locales estén conectados a puertos de switch.<br /><br />Haga clic en los puertos para obtener una descripción.]]></text>
+	</component>
+	<component id="ID_LED_HOTSPOT_T">
+		<text><![CDATA[<b>Descripciones de los LED</b>]]></text>
+	</component>
+	<component id="ID_LED_HOTSPOT">
+		<text><![CDATA[<textformat blockindent="-14"><ul><li>LED de encendido: indica la presencia de alimentación en el dispositivo. Es un LED de color verde permanente.</li><li>LED de WLAN: indica el estado de las conexiones inalámbricas.</li><li>LED 1 a 4: indican el estado de las conexiones Ethernet por cable.</li><li>LED de Internet: indica el estado de la conexión a Internet.</li></ul><br/>Estados según el color de los LED:<br/><br/><ul><li>Verde: indica que hay una conexión a un dispositivo final.</li><li>Rojo o amarillo: generalmente indica un problema en la conexión.</li><li>LED que parpadea: indica que hay actividad en el puerto.</li></ul></textformat>]]></text>
+	</component>
+	<component id="ID_INTERNET_HOTSPOT_T">
+		<text><![CDATA[<b>Puerto de Internet</b>]]></text>
+	</component>
+	<component id="ID_INTERNET_HOTSPOT">
+		<text><![CDATA[Un único puerto conectado a la porción de router del dispositivo multifunción. Se utiliza para conectar el dispositivo a otra red, por ejemplo Internet. La porción del router de un dispositivo multifunción mantiene las tablas de routing. Existe una conexión interna desde la porción del router del dispositivo multifunción hasta la porción del switch. El puerto de Internet está conectado a una red diferente de los puertos Ethernet.]]></text>
+	</component>
+	<component id="ID_ETHERNET_HOTSPOT_T">
+		<text><![CDATA[<b>Puertos Ethernet</b>]]></text>
+	</component>
+	<component id="ID_ETHERNET_HOTSPOT">
+		<text><![CDATA[Varios puertos conectados a la porción interna de switch del dispositivo multifunción. Por lo general se indican como "Ethernet". Todos los dispositivos conectados a los puertos del switch están en la misma red local. También existe una conexión interna desde el puerto del switch hasta el puerto del router (puerto de Internet).]]></text>
+	</component>
+</textcomponents>

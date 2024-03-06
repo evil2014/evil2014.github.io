@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.3.1.5 Ataque man-in-the-middle </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.3.1.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Seguridad de una LAN inalámbrica</h1>
+        <h2>Amenazas de WLAN</h2>
+      </div>
+      <div id="content">
+<p>Uno de los ataques más sofisticados que un usuario malintencionado puede usar se denomina “ataque man-in-the-middle” (MITM, intermediario). Existen varias maneras de crear un ataque MITM. </p>
+<p></p>
+<p>Un popular ataque MITM inalámbrico se denomina “ataque con AP de red intrusa”, en el que un atacante introduce un AP no autorizado y lo configura con el mismo SSID que el de un AP legítimo. Las ubicaciones que ofrecen Wi-Fi gratuito, como los aeropuertos, los cafés y los restaurantes, son focos para este tipo de ataque, debido a la autenticación abierta. </p>
+<p></p>
+<p>Los clientes que se conectan a una red inalámbrica verían dos AP que ofrecen acceso inalámbrico. Aquellos que están cerca del AP no autorizado detectan la señal más intensa y es más probable que se asocien a este AP de red intrusa. El tráfico de usuarios ahora se envía al AP no autorizado, que a su vez captura los datos y los reenvía al AP legítimo. El tráfico de retorno del AP legítimo se envía al AP no autorizado, se captura y se reenvía a la STA desprevenida. El atacante puede robar la contraseña del usuario y su información personal, obtener acceso a la red y comprometer el sistema del usuario.</p>
+<p></p>
+<p>Por ejemplo, en la figura 1, un usuario malintencionado está en la Cafetería de Juan y desea capturar el tráfico de los clientes inalámbricos desprevenidos. El atacante lanza un software que le permite a su computadora portátil convertirse en un AP de red intrusa con el mismo SSID y el mismo canal que el router inalámbrico legítimo. </p>
+<p></p>
+<p>En la figura 2, un usuario ve dos conexiones inalámbricas disponibles, pero elige el AP no autorizado y se asocia a este. El atacante captura los datos del usuario y los reenvía al AP legítimo, que a su vez dirige el tráfico de retorno al AP de red intrusa. El AP de red intrusa captura el tráfico de retorno y reenvía la información al usuario desprevenido.</p>
+<p></p>
+<p>Vencer un ataque MITM depende de la sofisticación de la infraestructura WLAN y la vigilancia de la actividad de monitoreo de red. El proceso comienza con la identificación de los dispositivos legítimos en la WLAN. Para hacer esto, se deben autenticar los usuarios. Una vez que se conocen todos los dispositivos legítimos, se puede monitorear la red para detectar los dispositivos o el tráfico anormales. </p>
+<p></p>
+<p>Las WLAN de empresas que utilizan dispositivos WLAN de tecnología avanzada proveen herramientas a los administradores que trabajan juntas como un sistema de prevención de intrusión inalámbrica (IPS). Estas herramientas incluyen escáneres que identifican las redes ad hoc y los AP no autorizados, así como la administración de recursos de radio (RRM), que controla la banda de RF para vigilar la actividad y la carga de AP. Un AP que está más ocupado de lo normal advierte al administrador sobre posible tráfico no autorizado. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

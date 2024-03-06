@@ -1,0 +1,49 @@
+﻿<textcomponents>
+
+<component id="ID_title">
+<text><![CDATA[<b>Ayuda de la revisión de sintaxis de comandos</b>]]></text>
+</component> <!--slide 1-->
+<component id="ID_s1_txt01">
+<text><![CDATA[El IOS devuelve un mensaje de ayuda en el que se indica que se omitieron palabras clave o argumentos necesarios del final del comando.]]></text> 
+</component>
+
+<component id="ID_s1_txt02">
+<text><![CDATA[El IOS devuelve un mensaje de ayuda en el que se indica que no se introdujeron suficientes caracteres para que el intérprete de comandos reconozca el comando.]]></text> 
+</component>
+
+<component id="ID_s1_txt03">
+<text><![CDATA[El IOS devuelve un <b>“^”</b> para indicar en qué parte el intérprete de comandos no puede descifrar el comando.]]></text> 
+</component> <!--slide 2-->
+<component id="ID_s2_table">
+<text><![CDATA[<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4' width='740px' VALIGN='top' overflow-x='scroll' height="255px">
+<tr>
+	<td colspan='4' bgcolor='#0E6360' class="mtable_top"><font size='1' color='#0E6360'><span style="color:#98D3D1">.</span></font></td>
+</tr>
+<tr>
+	<td bgcolor='#077A77' style="width:210px !important;"><font color='#FFFFFF'><b>Mensaje de error&nbsp;&nbsp;</b></font></td>
+	<td bgcolor='#077A77' style="width:268px !important;"><font color='#FFFFFF'><b>Significado</b></font></td>
+	<td bgcolor='#077A77' style="width:250px !important;"><font color='#FFFFFF'><b>Ejemplos</b></font></td>
+	<td bgcolor='#077A77' style="width:350px !important;"><font color='#FFFFFF'><b>Cómo obtener ayuda</b></font></td>
+</tr>
+<tr>
+	<td width='152' valign='top'  bgcolor='#EFF8F7' >% Ambiguous command: 'comando'</td>
+	<td width='170' valign='top'  bgcolor='#EFF8F7' >No se introdujeron suficientes caracteres para que el IOS reconozca el comando.</td>
+	<td width='180' valign='top'  bgcolor='#EFF8F7' ><font>Switch#<b>c  </b><br/><b>% Ambiguous command:'c'</b></font></td>
+	<td width='240' valign='top'  bgcolor='#EFF8F7' >Vuelva a introducir el comando seguido de un signo de interrogación (?) sin espacio entre el comando y el signo.<br/>Se muestran las posibles palabras clave que puede introducir con el comando.</td>
+</tr>
+<tr>
+<td bgcolor='#FFFFFF' valign='top'><font>% Incomplete command.</font></td>
+<td bgcolor='#FFFFFF' valign='top'>No se introdujeron todos los argumentos o palabras clave necesarios.</td>
+<td bgcolor='#FFFFFF' valign='top'><font>Switch#<b>clock set  </b><br/><b>% Incomplete command.</b></font></td>
+<td bgcolor='#FFFFFF' valign='top'>Vuelva a ingresar el comando seguido de un signo de interrogación (?) con un espacio después de la última palabra. Aparecen las palabras clave o los argumentos requeridos.</td>
+</tr>
+<tr>
+<td bgcolor='#EFF8F7' valign='top'><font>% Invalid input detected at '^' marker</font></td>
+<td bgcolor='#EFF8F7' valign='top'>El comando se introdujo de manera incorrecta. El error se produjo donde aparece la marca de acento (^).</td>
+<td bgcolor='#EFF8F7' valign='top' align=''><textformat tabstops='[175]'> <font>Switch#<b>clock set 19:50:00 25 6</b><br/><font color="#f3f5e7">Switch#<b>clock set 19:50:00 25  </b></font><b>^</b><br/><b>% Invalid input detected at '^' marker.</b></font></textformat></td>
+<td bgcolor='#EFF8F7' valign='top'>Vuelva a ingresar el comando seguido de un signo de interrogación (?) en un lugar señalado por la marca '^'. Puede ser necesario eliminar los últimos argumentos o palabras clave.</td>
+</tr>
+</table>]]></text>
+</component>
+
+</textcomponents>

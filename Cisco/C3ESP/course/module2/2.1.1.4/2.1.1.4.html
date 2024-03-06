@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.1.1.4 Problemas con la redundancia de capa 1: tramas de unidifusión duplicadas</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.1.1.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Conceptos de árbol de expansión</h1>
+        <h2>Propósito del árbol de expansión</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Transmisiones de múltiples tramas</b>
+</p>
+<p></p>
+<p>Las tramas de difusión no son el único tipo de tramas que son afectadas por los bucles. Las tramas de unicast enviadas a una red con bucles pueden generar tramas duplicadas que llegan al dispositivo de destino.</p>
+<p></p>
+<p>Haga clic en el botón Reproducir de la ilustración para ver una animación de este problema. Cuando se detenga la animación, lea el texto a la derecha de la topología. La animación continuará después de una pausa breve.</p>
+<p></p>
+<p>En la animación:</p>
+<p></p>
+<p>1. La PC1 envía una trama de unicast con destino a la PC4. </p>
+<p></p>
+<p>2. El S2 no tiene ninguna entrada para la PC4 en su tabla MAC, por lo que satura todos los puertos del switch con la trama de unidifusión para intentar encontrar a la PC4. </p>
+<p></p>
+<p>3. La trama llega a los switches S1 y S3. </p>
+<p></p>
+<p>4. S1 no posee una entrada de dirección MAC para la PC4, de forma que reenvía la trama a la PC4. </p>
+<p></p>
+<p>5. S3 también cuenta con una entrada en su tabla de direcciones MAC para la PC4, de manera que reenvía la trama de unicast a través del Enlace troncal3 a S1. </p>
+<p></p>
+<p>6. El S1 recibe la trama duplicada y la reenvía a la PC4. </p>
+<p></p>
+<p>7. La PC4 ha recibido ahora la misma trama dos veces.</p>
+<p></p>
+<p>La mayoría de los protocolos de capa superior no están diseñados para reconocer las transmisiones duplicadas o lidiar con ellas. En general, los protocolos que utilizan un mecanismo de numeración en secuencia asumen que la transmisión ha fallado y que el número de secuencia se ha reciclado para otra sesión de comunicación. Otros protocolos intentan enviar la transmisión duplicada al protocolo de capa superior adecuado para que sea procesada y posiblemente descartada. </p>
+<p></p>
+<p>Los protocolos LAN de capa 2, como Ethernet, carecen de mecanismos para reconocer y eliminar las tramas que forman bucles incesantes. Algunos protocolos de capa 3 implementan un mecanismo de TTL que limita la cantidad de veces que un dispositivo de red de capa 3 puede volver a transmitir un paquete. Los dispositivos de capa 2, que carecen de este mecanismo, continúan retransmitiendo de forma indefinida el tráfico que genera bucles. STP, un mecanismo que sirve para evitar los bucles en la capa 2, se desarrolló para enfrentar estos problemas.</p>
+<p></p>
+<p>Para evitar que ocurran estos problemas en una red redundante, se debe habilitar algún tipo de árbol de expansión en los switches. De manera predeterminada, el árbol de expansión está habilitado en los switches Cisco para prevenir que ocurran bucles en la capa 2. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

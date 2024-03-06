@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.2.2.2 Mitigación de problemas de ARP</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.2.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolo de resolución de direcciones</h1>
+        <h2>Problemas de ARP</h2>
+      </div>
+      <div id="content">
+<p>Los switches modernos pueden mitigar los problemas de broadcast y de seguridad relacionados con ARP. Los switches Cisco admiten varias tecnologías de seguridad diseñadas específicamente para mitigar problemas de Ethernet relacionados con los broadcasts, en general, y con ARP, en particular.</p>
+<p></p>
+<p>Los switches proporcionan la segmentación de LAN, ya que las dividen en dominios de colisiones independientes. Cada puerto de un switch representa un dominio de colisiones distinto y proporciona el ancho de banda de medio completo al nodo o a los nodos conectados a dicho puerto. Si bien los switches no impiden de manera predeterminada que los broadcasts se propaguen a los dispositivos conectados, aíslan las comunicaciones unicast de Ethernet de modo que solamente las “escuchen” el dispositivo de origen y de destino. Entonces, si hay una gran cantidad de solicitudes de ARP, cada respuesta de ARP tendrá lugar solamente entre dos dispositivos.</p>
+<p></p>
+<p>Con respecto a la mitigación de diferentes tipos de ataques de broadcast, a los que las redes Ethernet son propensas, los ingenieros de red implementan tecnologías de seguridad de switches de Cisco, como listas de acceso y seguridad de puertos especializadas.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+﻿<textcomponents>
+<component id="ID_title">
+	<text><![CDATA[<b>Conmutación por método de corte</b>]]></text>
+</component>
+<component id="ID_txt01">
+	<text><![CDATA[Encabezado de la trama]]></text>
+</component>
+<component id="ID_txt02">
+  <text><![CDATA[Encabezado de la red]]></text> 
+</component>
+<component id="ID_txt03">
+  <text><![CDATA[Encabezado de transporte]]></text> 
+</component>
+<component id="ID_txt04">
+	<text><![CDATA[Datos]]></text>
+</component>
+<component id="ID_txt05">
+  <text><![CDATA[Preámbulo]]></text> 
+</component>
+<component id="ID_txt06">
+  <text><![CDATA[Dirección MAC de destino]]></text> 
+</component>
+<component id="ID_txt07">
+	<text><![CDATA[Dirección MAC de origen]]></text>
+</component>
+<component id="ID_txt08">
+  <text><![CDATA[Tipo]]></text> 
+</component>
+<component id="ID_txt09">
+  <text><![CDATA[Checksum de FCS (CRC)]]></text> 
+</component>
+<component id="ID_txt10">
+	<text><![CDATA[Bytes]]></text>
+</component>
+<component id="ID_txt11">
+  <text><![CDATA[Las tramas pueden comenzar a reenviarse en cuanto se recibe la MAC de destino.]]></text> 
+</component>
+
+</textcomponents>

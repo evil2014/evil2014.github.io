@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.0.1.2 Actividad: ¿qué camino debemos tomar?</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.0.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Enrutamiento estático</h1>
+        <h2>Introducción</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Actividad:</b>
+<b>¿qué camino debemos tomar?</b>
+</p>
+<p></p>
+<p>Un evento deportivo de gran envergadura tendrá lugar en su ciudad. Para asistir al evento, usted hizo planes precisos de modo de llegar con puntualidad al estadio para ver el juego completo.</p>
+<p></p>
+<p>Para ir al evento, hay dos caminos que puede tomar: </p>
+<p>
+<ul>
+<li>
+<b>Autopista</b>: es fácil de seguir y está permitido conducir a altas velocidades. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Ruta directa alternativa</b>: encontró esta ruta en un mapa de la ciudad. Según ciertas condiciones, como la cantidad de tráfico o la congestión, esta podría ser la forma de llegar al estadio a tiempo.</li>
+</ul>
+</p>
+<p></p>
+<p>Con un compañero, analice estas opciones. Elija una ruta de preferencia para llegar al estadio a tiempo para ver cada segundo del gran evento deportivo.</p>
+<p></p>
+<p>Compare sus opciones de preferencia con el tráfico de la red, ¿qué ruta elegiría para transmitir comunicaciones de datos para su pequeña o mediana empresa? ¿Elegiría la ruta más rápida, la más fácil o la ruta alternativa, directa? Justifique su elección.</p>
+<p></p>
+<p>Complete el archivo .pdf con la actividad de creación de modelos y prepárese para justificar sus respuestas ante la clase o con otro grupo.</p>
+<p></p>
+<p>
+<a href="../../files/6.0.1.2%20Which%20Way%20Should%20We%20Go%20Instructions.pdf" target="_blank">Actividad de clase: ¿qué camino debemos tomar? Instrucciones</a>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

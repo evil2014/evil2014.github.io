@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.1.2.2 Recolección de síntomas</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.1.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resolución de problemas mediante un enfoque sistemático</h1>
+        <h2>Proceso de resolución de problemas</h2>
+      </div>
+      <div id="content">
+<p>Al recolectar síntomas, es importante que el administrador reúna datos y evidencia para eliminar de manera progresiva posibles causas y, finalmente, identificar la causa raíz del problema. Al analizar la información, el administrador de red formula una hipótesis para proponer posibles causas y soluciones y, al mismo tiempo, eliminar otras.</p>
+<p></p>
+<p>Existen cinco pasos en la recolección de información:</p>
+<p></p>
+<p>
+<b>Paso 1. Recolectar información:</b> para formar una definición del problema, recolecte la información en las solicitudes de soporte y de los usuarios o los sistemas finales afectados por el problema.</p>
+<p></p>
+<p>
+<b>Paso 2. Determinar a quién corresponde:</b> si el problema está dentro del ámbito de control de la organización, continúe con la etapa siguiente. Si el problema está fuera del límite de control de la organización (por ejemplo, pérdida de conectividad a Internet fuera del sistema autónomo), comuníquese con un administrador del sistema externo antes de recolectar más síntomas de la red.</p>
+<p></p>
+<p>
+<b>Paso 3. Reducir el ámbito:</b> determine si el problema está en la capa de núcleo, de distribución o de acceso de la red. En la capa identificada, analice los síntomas existentes y use su conocimiento de la topología de la red para determinar qué equipo es la causa más probable.</p>
+<p></p>
+<p>
+<b>Paso 4. Recolectar síntomas de los dispositivos sospechosos:</b> mediante un método de resolución de problemas en capas, recolecte los síntomas del hardware y el software de los dispositivos sospechosos. Comience por la posibilidad más probable y use sus conocimientos y experiencia para determinar si es más probable que el problema sea de configuración del hardware o del software.</p>
+<p></p>
+<p>
+<b>Paso 5. Registrar los síntomas:</b> a veces, el problema se puede resolver sobre la base de los síntomas registrados. De lo contrario, inicie la etapa de aislamiento del proceso general de resolución de problemas. </p>
+<p></p>
+<p>Para recolectar síntomas de la red, use los comandos del IOS de Cisco y otras herramientas, por ejemplo:</p>
+<p>
+<ul>
+<li>
+<span class="cmd">
+<b>ping,</b>
+</span><span class="cmd"><b>traceroute</b></span> y <span class="cmd"><b>telnet</b></span> (comandos)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<span class="cmd">
+<b>show </b>
+</span>y <span class="cmd"><b>debug</b></span> (comandos)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Capturas de paquetes</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Registros de dispositivos</li>
+</ul>
+</p>
+<p></p>
+<p>En la tabla de la ilustración, se describen los comandos comunes del IOS de Cisco usados para recolectar los síntomas de un problema de red.</p>
+<p></p>
+<p>
+<b>Nota:</b> si bien el comando <span class="cmd"><b>debug</b></span> es una herramienta importante para recolectar síntomas, genera una gran cantidad de tráfico de mensajes de la consola y puede afectar considerablemente el rendimiento de un dispositivo de red. Si la depuración con el comando <span class="cmd"><b>debug</b></span> se debe realizar durante el horario de trabajo normal, advierta a los usuarios de la red que se está realizando un esfuerzo para resolver problemas y que el rendimiento de la red se puede ver afectado. Al terminar, recuerde deshabilitar la depuración.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

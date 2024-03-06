@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.3.3.1 Máscara de subred de longitud fija</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.3.3.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Revisión de CIDR y VLSM</h1>
+        <h2>VLSM</h2>
+      </div>
+      <div id="content">
+<p>Con la máscara de subred de longitud fija (FLSM), se asigna la misma cantidad de direcciones a cada subred. Si todas las subredes tuvieran los mismos requisitos en cuanto a la cantidad de hosts, estos bloques de direcciones de tamaño fijo serían suficientes. Sin embargo, esto no es lo que suele suceder. </p>
+<p></p>
+<p>
+<b>Nota:</b> la FLSM también se suele denominar “división tradicional en subredes”.</p>
+<p></p>
+<p>La topología que se muestra en la figura 1 requiere que la dirección de red 192.168.20.0/24 se subdivida en siete subredes: una para cada una de las cuatro LAN (Edificios A a D) y una para cada una de las tres conexiones WAN entre los routers. </p>
+<p></p>
+<p>En la figura 2, se destaca la manera en que la división en subredes tradicional puede tomar prestados 3 bits de la porción de host en el último octeto para cumplir con el requisito de siete subredes. Por ejemplo, en la porción de host, la porción de subred destaca cómo el préstamo de 3 bits crea 8 subredes, mientras que la porción de host destaca 5 bits del host que proporcionan 30 direcciones IP de hosts utilizables por subred. Mediante este esquema, se crean las subredes necesarias y se cumplen los requisitos de host de la LAN más grande.</p>
+<p></p>
+<p>Si bien la división en subredes tradicional satisface las necesidades de la LAN más grande y divide el espacio de direcciones en una cantidad adecuada de subredes, da como resultado un desperdicio significativo de direcciones sin utilizar. </p>
+<p></p>
+<p>Por ejemplo, solo se necesitan dos direcciones en cada subred para los tres enlaces WAN. Dado que cada subred tiene 30 direcciones utilizables, hay 28 direcciones sin utilizar en cada una de estas subredes. Como se muestra en la figura 3, esto da como resultado 84 direcciones sin utilizar (28 x 3). Además, de esta forma se limita el crecimiento futuro al reducir el número total de subredes disponibles. Este uso ineficiente de las direcciones es característico de la división en subredes tradicional de redes con clase. </p>
+<p></p>
+<p>La aplicación de un esquema de división en subredes tradicional a esta situación no resulta muy eficiente y genera desperdicio. De hecho, este ejemplo es un modelo satisfactorio para mostrar cómo la división en subredes de una subred puede utilizarse para maximizar el uso de la dirección. La subdivisión de subredes, o el uso de una máscara de subred de longitud variable (VLSM), se diseñó para evitar que se desperdicien direcciones.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

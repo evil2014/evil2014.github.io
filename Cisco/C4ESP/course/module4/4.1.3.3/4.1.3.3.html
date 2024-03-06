@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.1.3.3 Ráfaga</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.1.3.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Introducción a Frame Relay</h1>
+        <h2>Conceptos avanzados de Frame Relay</h2>
+      </div>
+      <div id="content">
+<p>Una gran ventaja de Frame Relay es que cualquier capacidad de red que no se utilice queda a disposición de todos los clientes o se comparte con ellos, generalmente sin cargo adicional. Esto permite que los clientes excedan la CIR a modo de bonificación. </p>
+<p></p>
+<p>Con el ejemplo anterior, en la figura 1 se muestra que la velocidad de acceso en el puerto serie S0/0/1 del router R1 es de 64 kb/s. Esto supera la combinación de las CIR de los dos PVC. En circunstancias normales, los dos PVC no deben transmitir más de 32 kb/s y 16 kb/s, respectivamente. Mientras la cantidad de datos que envían los dos PVC no exceda la CIR, debería atravesar la red. </p>
+<p></p>
+<p>Debido a que los circuitos físicos de la red Frame Relay se comparten entre los suscriptores, suele haber momentos en los que hay un exceso de ancho de banda disponible. Frame Relay puede permitir que los clientes accedan de forma dinámica a este ancho de banda adicional y que excedan la CIR sin costo. </p>
+<p></p>
+<p>Las ráfagas permiten que los dispositivos que necesitan ancho de banda adicional temporalmente puedan tomarlo prestado de otros dispositivos que no lo utilizan, sin costo adicional. Por ejemplo, si el PVC 102 transfiere un archivo grande, podría usar cualquiera de los 16 kb/s que no utiliza el PVC 103. Un dispositivo puede llegar hasta la velocidad de acceso y aun así esperar que los datos pasen. La duración de una transmisión en ráfaga debe ser inferior a tres o cuatro segundos. </p>
+<p></p>
+<p>Se utilizan varios términos para describir las velocidades de ráfaga, incluidos “tamaño de ráfaga comprometida” (Bc) y “tamaño de ráfaga en exceso” (Be). </p>
+<p></p>
+<p>El Bc es una velocidad negociada por encima de la CIR que el cliente puede usar para transmitir durante una ráfaga breve y que representa el tráfico máximo permitido en condiciones de funcionamiento normales. Permite que el tráfico se transmita en ráfaga a velocidades más altas, tanto como el ancho de banda disponible de la red lo permita. Sin embargo, no puede exceder la velocidad de acceso del enlace. Un dispositivo puede llegar hasta el Bc y aun así esperar que los datos pasen. Si persisten las ráfagas largas, se debe adquirir una CIR más alta.</p>
+<p></p>
+<p>Por ejemplo, el DLCI 102 tiene una CIR de 32 kb/s con un Bc adicional de 16 kb/s para obtener un total de hasta 48 kb/s. El DLCI 103 tiene una CIR de 16 kb/s. Sin embargo, el DLCI 103 no tiene un Bc negociado; por lo tanto, la Bc se establece en 0 kb/s. Las tramas dentro de las CIR negociadas no son elegibles para descarte (DE = 0). Las tramas por encima de la CIR tienen el bit DE establecido en 1, lo que las marca como elegibles para descarte si se congestiona la red. Las tramas que se envían en el nivel de Bc se marcan como elegibles para descarte (DE) en el encabezado de la trama, pero es muy probable que se reenvíen.</p>
+<p></p>
+<p>El Be describe el ancho de banda disponible por encima de la CIR hasta la velocidad de acceso del enlace. A diferencia del Bc, no se negocia. Las tramas se pueden transmitir en este nivel, pero es muy probable que se descarten. </p>
+<p></p>
+<p>En la figura 2, se muestra la relación entre los diversos términos relacionados con las ráfagas.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

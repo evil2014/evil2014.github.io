@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.1.1.7 Ruta resumida</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.1.1.7_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuraciones avanzadas de EIGRP</h1>
+        <h2>Sumarización automática </h2>
+      </div>
+      <div id="content">
+<p>En la ilustración, se muestra una situación en la que podría producirse un bucle de routing: </p>
+<p></p>
+<p>1. El R1 tiene una ruta predeterminada 0.0.0.0/0 mediante el router ISP. </p>
+<p>2. El R1 envía una actualización de routing al R2 con la ruta predeterminada.</p>
+<p>3. El R2 instala la ruta predeterminada del R1 en su tabla de routing IPv4.</p>
+<p>4. La tabla de routing del R2 contiene las subredes 172.16.1.0/24, 172.16.2.0/24 y 172.16.3.0/24 en su tabla de routing. </p>
+<p>5. El R2 envía una actualización resumida al R1 para la red 172.16.0.0/16.</p>
+<p>6. El R1 instala la ruta resumida para 172.16.0.0/16 mediante el R2.</p>
+<p>7. El R1 recibe un paquete para 172.16.4.10. Debido a que el R1 tiene una ruta para 172.16.0.0/16 mediante el R2, reenvía el paquete al R2.</p>
+<p>8. El R2 recibe el paquete con la dirección de destino 172.16.4.10 del R1. El paquete no coincide con ninguna ruta específica, de manera que, mediante la ruta predeterminada en su tabla de routing, el R2 reenvía el paquete de regreso al R1. </p>
+<p>9. El paquete para 172.16.4.10 va y viene en un bucle entre el R1 y el R2 hasta que el TTL expira y el paquete se descarta.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

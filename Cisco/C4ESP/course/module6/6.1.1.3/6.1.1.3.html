@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.1.1.3 Beneficios para la comunidad y el gobierno</title>
+    <!--  -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.1.1.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Trabajo a distancia</h1>
+        <h2>Beneficios del trabajo a distancia</h2>
+      </div>
+      <div id="content">
+<p>El trabajo a distancia puede beneficiar a organizaciones de todos los tamaños, desde pequeñas empresas hasta grandes corporaciones. Sin embargo, esos beneficios en realidad se extienden más allá del nivel de la organización, lo que ofrece ventajas exclusivas para las entidades públicas como las comunidades e incluso los gobiernos locales y nacionales. </p>
+<p></p>
+<p>Las entidades públicas, como las comunidades y los gobiernos, son empresas que deben administrar ganancias y gastos. Deben ser tan eficaces, responsables y transparentes como sea posible, porque el dinero de los contribuyentes está en juego. Por este motivo, desde el punto de vista empresarial, todos los beneficios para los empleados y de ahorro de costos que ofrece el trabajo a distancia se aplican a estas entidades públicas. Además, las entidades públicas se benefician del trabajo a distancia de las siguientes maneras: </p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Ayuda a reducir el tráfico y los requisitos de infraestructura:</b> el trabajo a distancia elimina muchos problemas contemporáneos de raíz. El tráfico es solo un ejemplo. Según un artículo del Washington Post publicado en el año 2004, los retrasos de tráfico en la región de Washington D. C. disminuyeron un 10% por cada 3% de las personas que trabajan desde el hogar. Además, el trabajo a distancia reduce los costos de infraestructura y de prestación de servicios. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Ayuda a disminuir la urbanización:</b> la urbanización se refiere al traslado de las personas desde zonas rurales hasta centros urbanos en busca de mejores condiciones y oportunidades laborales. La urbanización provoca hacinamiento y congestión. El trabajo a distancia permite que las personas puedan trabajar sin importar la ubicación física, lo que elimina la necesidad de que se tengan que mudar por causas laborales. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Mejora los servicios rurales y suburbanos:</b> el aumento en la cantidad de personas que trabajan en regiones rurales o suburbanas podría traer mejoras en los servicios de transporte público y cambios en las instalaciones minoristas locales. Hay menos probabilidades de que las oficinas de correo, los consultorios médicos, los bancos o las estaciones de servicio cierren y se muden a otro lugar. Con una respuesta más flexible, empresas más productivas y la capacidad de todas las personas para contribuir, las regiones o el país se vuelven más competitivos y atraen más empleo y desarrollo.</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.2.4.3 Seguridad de puertos: funcionamiento</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.2.4.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Seguridad de switches: administración e implementación</h1>
+        <h2>Seguridad de puertos de switch</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Seguridad del puerto</b>
+</p>
+<p></p>
+<p>Se deben proteger todos los puertos (interfaces) del switch antes de implementar el dispositivo para la producción. Una forma de proteger los puertos es mediante la implementación de una característica denominada “seguridad de puertos”. La seguridad de puerto limita la cantidad de direcciones MAC válidas permitidas en el puerto. Se permite el acceso a las direcciones MAC de los dispositivos legítimos, mientras que otras direcciones MAC se rechazan.</p>
+<p></p>
+<p>La seguridad de puertos se puede configurar para permitir una o más direcciones MAC. Si la cantidad de direcciones MAC permitidas en el puerto se limita a una, solo el dispositivo con esa dirección MAC específica puede conectarse correctamente al puerto.</p>
+<p></p>
+<p>Si se configura un puerto como seguro y se alcanza la cantidad máxima de direcciones MAC, cualquier intento adicional de conexión de las direcciones MAC desconocidas genera una violación de seguridad. En la figura 1, se resumen estos puntos.</p>
+<p></p>
+<p>
+<b>Tipos de direcciones MAC seguras</b>
+</p>
+<p></p>
+<p>Existen varias maneras de configurar la seguridad de puerto. El tipo de dirección segura se basa en la configuración e incluye lo siguiente:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Direcciones MAC seguras estáticas:</b> son direcciones MAC que se configuran manualmente en un puerto mediante el comando <span class="cmd"><b>switchport port-security mac-address </b></span><span class="cmd"><i>dirección-mac</i></span> del modo de configuración de interfaz. Las direcciones MAC configuradas de esta forma se almacenan en la tabla de direcciones y se agregan a la configuración en ejecución del switch. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Direcciones MAC seguras dinámicas:</b> son direcciones MAC detectadas dinámicamente y se almacenan solamente en la tabla de direcciones. Las direcciones MAC configuradas de esta manera se eliminan cuando el switch se reinicia. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Direcciones MAC seguras persistentes:</b> son direcciones MAC que pueden detectarse de forma dinámica o configurarse de forma manual, y que después se almacenan en la tabla de direcciones y se agregan a la configuración en ejecución.</li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Direcciones MAC seguras persistentes </b>
+</p>
+<p>Para configurar una interfaz a fin de convertir las direcciones MAC detectadas dinámicamente en direcciones MAC seguras persistentes y agregarlas a la configuración en ejecución, debe habilitar el aprendizaje por persistencia. El aprendizaje por persistencia se habilita en una interfaz mediante el comando <span class="cmd"><b>switchport port-security mac-address sticky</b></span> del modo de configuración de interfaz. </p>
+<p></p>
+<p>Cuando se introduce este comando, el switch convierte todas las direcciones MAC detectadas dinámicamente en direcciones MAC seguras persistentes, incluso las que se detectaron dinámicamente antes de que se habilitara el aprendizaje por persistencia. Todas las direcciones MAC seguras persistentes se agregan a la tabla de direcciones y a la configuración en ejecución. </p>
+<p></p>
+<p>Las direcciones MAC seguras persistentes también se pueden definir manualmente. Cuando se configuran direcciones MAC seguras persistentes mediante el comando <span class="cmd"><b>switchport port-security mac-address sticky </b></span><span class="cmd"><i>dirección-mac</i></span> del modo de configuración de interfaz, todas las direcciones especificadas se agregan a la tabla de direcciones y a la configuración en ejecución. </p>
+<p></p>
+<p>Si se guardan las direcciones MAC seguras persistentes en el archivo de configuración de inicio, cuando el switch se reinicia o la interfaz se desactiva, la interfaz no necesita volver a aprender las direcciones. Si no se guardan las direcciones seguras persistentes, estas se pierden. </p>
+<p></p>
+<p>Si se inhabilita el aprendizaje por persistencia mediante el comando <span class="cmd"><b>no switchport port-security mac-address sticky</b></span> del modo de configuración de interfaz, las direcciones MAC seguras persistentes siguen formando parte de la tabla de direcciones, pero se eliminan de la configuración en ejecución. </p>
+<p></p>
+<p>En la figura 2, se muestran las características de las direcciones MAC seguras persistentes.</p>
+<p></p>
+<p>Observe que la característica de seguridad de puertos no funciona hasta que se habilita la seguridad de puertos en la interfaz mediante el comando <span class="cmd"><b>switchport port-security</b></span>. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+﻿<textcomponents> <!--Slide 1-->
+<component id="ID_s1_title">
+<text><![CDATA[<b>Entorno frágil</b>]]></text>
+</component>
+
+
+<component id="ID_s1_txt01">
+   <text><![CDATA[Se necesita un mayor esfuerzo para asegurar la entrega&nbsp;=&nbsp;mayor sobrecarga&nbsp;=&nbsp;velocidades de transmisión más lentas]]></text>
+   </component>
+
+<component id="ID_s1_txt02">
+   <text><![CDATA[En un <font color="#f26200"><b>entorno frágil</b></font>, se necesitan más controles para asegurar una entrega. Los campos de encabezado y de tráiler son más grandes, ya que se necesita más información de control.]]></text>
+   </component>
+   
+   <component id="ID_s1_txt03">
+   <text><![CDATA[<b>Trama</b>]]></text>
+   </component>
+   
+    <component id="ID_s1_txt04">
+   <text><![CDATA[<b>Trama</b>]]></text>
+   </component> <!--Slide 2-->
+<component id="ID_s2_title">
+<text><![CDATA[<b>Entorno protegido</b>]]></text>
+</component>
+
+<component id="ID_s2_txt01">
+   <text><![CDATA[Se necesita un menor esfuerzo para asegurar la entrega&nbsp;=&nbsp;menor sobrecarga&nbsp;=&nbsp;velocidades de transmisión más rápidas]]></text>
+   </component>
+<component id="ID_s2_txt02">
+   <text><![CDATA[En un <font color="#f26200"><b>entorno protegido</b></font>, podemos confiar en que la trama llegue a destino. Se necesitan menos controles, lo que tiene como resultado tramas y campos más pequeños.]]></text>
+   </component>
+   
+   
+    <component id="ID_s2_txt03">
+   <text><![CDATA[<b>Trama</b>]]></text>
+   </component>
+   
+    <component id="ID_s2_txt04">
+   <text><![CDATA[<b>Trama</b>]]></text>
+   </component>
+   
+     <component id="ID_s2_txt05">
+   <text><![CDATA[<b>Trama</b>]]></text>
+   </component>
+
+   
+   
+</textcomponents>

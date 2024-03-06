@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.1.1.5 Dominios de fallas</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.1.1.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Implementación de un diseño de red</h1>
+        <h2>Diseño jerárquico de la red</h2>
+      </div>
+      <div id="content">
+<p>Una red bien diseñada no solo controla el tráfico, sino que además limita el tamaño de los dominios de fallas. Un dominio de fallas es el área de la red que se ve afectada cuando un dispositivo o un servicio de red esenciales experimentan problemas. </p>
+<p></p>
+<p>La función del dispositivo que inicialmente falla determina el impacto del dominio de fallas. Por ejemplo, un switch que funciona mal en un segmento de red normalmente afecta solo a los hosts de ese segmento. Sin embargo, si la falla se presenta en el router que conecta este segmento con otros segmentos, el impacto es mucho mayor. </p>
+<p></p>
+<p>El uso de enlaces redundantes y equipos confiables de alta tecnología minimizan las posibilidades de interrupciones de los servicios de la red. Si los dominios de fallas son más pequeños, se reduce el impacto de las fallas sobre la productividad de la empresa. Además, simplifican el proceso de resolución de problemas, lo que reduce el tiempo de inactividad para todos los usuarios.</p>
+<p></p>
+<p>En la ilustración, haga clic en cada dispositivo de red para ver el dominio de fallas relacionado.</p>
+<p></p>
+<p>
+<b>Limitación del tamaño de los dominios de fallas </b>
+</p>
+<p></p>
+<p>Dado que una falla en la capa de núcleo de una red puede tener un gran impacto, el diseñador de red suele enfocarse en los esfuerzos para prevenir fallas. Estos esfuerzos pueden suponer un gran incremento del costo de implementación de la red. En el modelo de diseño jerárquico, es más fácil y, generalmente, más económico controlar el tamaño de un dominio de fallas en la capa de distribución. En esta capa, los errores de la red se pueden contener en un área más pequeña, de manera que se vean afectados menos usuarios. Cuando se utilizan dispositivos de capa 3 en la capa de distribución, cada router funciona como gateway para un número limitado de usuarios de la capa de acceso. </p>
+<p></p>
+<p>
+<b>Implementación de un bloque de switches</b>
+</p>
+<p></p>
+<p>Los routers, o los switches multicapa, generalmente se implementan de a pares, y los switches de capa de acceso se dividen en partes iguales entre ellos. A esta configuración se la denomina “bloque de switches de edificio” o “de departamento”. Cada bloque de switches funciona de manera independiente. Como resultado, la falla de un único dispositivo no desactiva la red. Ni siquiera la falla de todo un bloque de switches afecta a un gran número de usuarios finales.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

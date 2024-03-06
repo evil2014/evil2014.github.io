@@ -1,0 +1,120 @@
+﻿<textcomponents> <!--slide 1-->
+<component id="ID_s1_title">
+<text><![CDATA[<b>Redes convergentes</b>]]></text>
+</component>
+<component id="ID_s1_txt01">
+  <text><![CDATA[<b>Tráfico en tiempo real</b><textformat blockindent='-16'><ul><li>Voz sobre IP (VOIP)</li><li>Videoconferencia</li></ul></textformat>]]></text> 
+  </component>
+<component id="ID_s1_txt02">
+  <text><![CDATA[<b>Contenido Web</b><textformat blockindent='-18'><ul><li>Explorar</li><li>Hacer compras</li></ul></textformat>]]></text> 
+  </component>
+<component id="ID_s1_txt03">
+  <text><![CDATA[<b>Tráfico de transacciones</b><textformat blockindent='-18'><ul><li>Procesamiento de pedidos y facturación</li><li>Inventario e informes</li><li>Contabilidad e informes</li></ul></textformat>]]></text> 
+  </component>
+<component id="ID_s1_txt04">
+  <text><![CDATA[<b>Tráfico de streaming</b><textformat blockindent='-18'><ul><li>Video a petición (VoD)</li><li>Películas</li></ul></textformat>]]></text> 
+  </component>
+<component id="ID_s1_txt05">
+	<text><![CDATA[<b>Tráfico masivo</b><textformat blockindent='-18'><ul><li>Correo electrónico</li><li>Copias de seguridad de datos</li><li>Archivos de impresión</li></ul></textformat>]]></text>
+</component>
+<component id="ID_s1_txt06">
+	<text><![CDATA[<font size="12"><b>Convergencia</b></font>]]></text>
+</component>
+<component id="ID_s1_txt07">
+	<text><![CDATA[<font color="#FFFFFF" size="14"><b>Red</b></font>]]></text>
+</component>
+<component id="ID_s1_txt08">
+	<text><![CDATA[El tráfico NO es todo igual.]]></text>
+</component> <!--slide2-->
+<component id="ID_s2_title">
+<text><![CDATA[<b>Uso de colas para priorizar la comunicación</b>]]></text>
+</component>
+
+<component id="ID_s2_txt01">
+<text><![CDATA[Voz sobre IP]]></text>
+</component>
+
+<component id="ID_s2_txt02">
+<text><![CDATA[Transacción financiera]]></text>
+</component>
+
+<component id="ID_s2_txt03">
+<text><![CDATA[Página Web]]></text>
+</component>
+
+<component id="ID_s2_txt04">
+<text><![CDATA[Cola de prioridad alta]]></text>
+</component>
+
+<component id="ID_s2_txt05">
+<text><![CDATA[Cola de prioridad media]]></text>
+</component>
+
+<component id="ID_s2_txt06">
+<text><![CDATA[Cola de prioridad baja]]></text>
+</component>
+
+<component id="ID_s2_txt07">
+<text><![CDATA[Todas las comunicaciones tienen cierto acceso a los medios, pero la comunicación de mayor prioridad tiene un mayor porcentaje de paquetes.]]></text>
+</component>
+
+<component id="ID_s2_txt08">
+<text><![CDATA[Enlace a la red]]></text>
+</component>
+
+<component id="ID_s2_caption">
+<text><![CDATA[La puesta en cola según los tipos de datos permite que los datos de voz tengan prioridad sobre los datos de transacción, los que a su vez tienen prioridad sobre los datos Web.]]></text>
+</component> <!--slide 3-->
+<component id="ID_s3_title">
+<text><![CDATA[<b>La calidad de servicio importa</b>]]></text> 
+</component>
+
+<component id="ID_s3_header1">
+<text><![CDATA[<font size="12">Tipo de comunicación</font>]]></text> 
+</component>
+
+<component id="ID_s3_header2">
+<text><![CDATA[<font size="12">Sin QoS</font>]]></text> 
+</component>
+
+<component id="ID_s3_header3">
+<text><![CDATA[<font size="12">Con QoS</font>]]></text> 
+</component>
+
+<component id="ID_s3_txt01">
+<text><![CDATA[Streaming video o streaming audio]]></text>
+</component>
+
+<component id="ID_s3_txt02">
+<text><![CDATA[Transacciones de importancia crítica]]></text> 
+</component>
+
+<component id="ID_s3_txt03">
+<text><![CDATA[Descarga de páginas web (a menudo, de prioridad baja)]]></text> 
+</component>
+
+<component id="ID_s3_txt04">
+<text><![CDATA[Imagen entrecortada que comienza y se detiene.]]></text> 
+</component>
+
+<component id="ID_s3_txt05">
+<text><![CDATA[Servicio nítido y continuo.]]></text> 
+</component>
+
+<component id="ID_s3_txt06">
+<text><![CDATA[<textformat tabstops='[75]'>Tiempo/Precio<br><br>02:14:05 : $1,54<br><br>Solo un segundo antes.</textformat>]]></text> 
+</component>
+
+<component id="ID_s3_txt07">
+<text><![CDATA[<textformat tabstops='[75]'>Tiempo/Precio<br><br>02:14:04 : $1,52<br><br>El precio podría ser mejor.</textformat>]]></text> 
+</component>
+
+<component id="ID_s3_txt08">
+<text><![CDATA[]]>Las páginas web tardan un poco más en llegar.</text> 
+</component>
+
+<component id="ID_s3_txt09">
+<text><![CDATA[]]>El resultado final es el mismo.</text> 
+</component>
+
+</textcomponents>

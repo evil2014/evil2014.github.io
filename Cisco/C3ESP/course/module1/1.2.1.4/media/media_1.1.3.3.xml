@@ -1,0 +1,65 @@
+﻿<textcomponents> <!--slide 1-->
+<component id="ID_s1_title">
+<text><![CDATA[<b>Alimentación por Ethernet</b>]]></text>
+</component>
+
+<component id="ID_s1_txt01">
+<text><![CDATA[El teléfono IP recibe alimentación a través del cable Ethernet.]]></text> 
+</component>
+<component id="ID_s1_txt02">
+<text><![CDATA[El punto de acceso inalámbrico recibe alimentación a través del cable Ethernet.]]></text> 
+</component>
+
+<component id="ID_s1_pop01">
+<text><![CDATA[Los puertos de PoE tienen la misma apariencia que cualquier puerto de switch. Verifique el modelo del switch para determinar si el puerto admite PoE.]]></text> 
+</component>
+<component id="ID_s1_pop01A">
+<text><![CDATA[Puerto PoE]]></text> 
+</component>    
+<component id="ID_s1_pop02A">
+<text><![CDATA[Fuente de energía externa]]></text> 
+</component>
+<component id="ID_s1_pop02B">
+<text><![CDATA[Puertos PoE]]></text> 
+</component>
+<component id="ID_s1_pop03">
+<text><![CDATA[Los puertos de PoE en el punto de acceso inalámbrico tienen la misma apariencia que cualquier puerto del switch. Verifique el modelo del punto de acceso inalámbrico para determinar si el puerto admite PoE.]]></text> 
+</component>
+<component id="ID_s1_pop03A">
+<text><![CDATA[Puerto PoE]]></text> 
+</component> <!--slide 2-->
+<component id="dummy">
+<text><![CDATA[&nbsp;]]></text>
+</component>
+
+<component id="ID_s2_title">
+<text><![CDATA[<b>Paso a través de PoE</b>]]></text>
+</component>
+
+<component id="ID_s2_txt01">
+<text><![CDATA[Cisco Catalyst 3750-X]]></text> 
+</component>
+<component id="ID_s2_txt02">
+<text><![CDATA[Enlaces de PoE+]]></text> 
+</component>
+<component id="ID_s2_txt03">
+<text><![CDATA[Switch de paso a través de PoE Cisco Catalyst]]></text> 
+</component>
+<component id="ID_s2_txt04">
+<text><![CDATA[Enlaces de PoE inactivos]]></text> 
+</component>
+<component id="ID_s2_txt05">
+<text><![CDATA[Teléfono IP]]></text> 
+</component>
+<component id="ID_s2_txt06">
+<text><![CDATA[Punto de acceso inalámbrico]]></text> 
+</component>
+<component id="ID_s2_txt07">
+<text><![CDATA[Laptop]]></text> 
+</component>
+
+<component id="ID_s2_pop01">
+<text><![CDATA[Puertos habilitados para PoE]]></text> 
+</component>
+
+</textcomponents>

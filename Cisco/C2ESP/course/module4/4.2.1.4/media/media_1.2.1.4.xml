@@ -1,0 +1,142 @@
+﻿<textcomponents>
+
+    <component id="ID_title">
+      <text><![CDATA[<b>El R2 reenvía el paquete al R3  </b>]]></text>
+   </component>
+   
+    <component id="ID_header01">
+      <text><![CDATA[<b>Trama de enlace de datos de capa&nbsp;2  </b>]]></text>
+   </component>
+
+   <component id="ID_header02">
+      <text><![CDATA[<b>Datos de capa&nbsp;3 del paquete  </b>]]></text>
+   </component>
+   
+   
+    <component id="ID_txt01">
+      <text><![CDATA[Dirección MAC 00-10]]></text>
+   </component>
+
+   <component id="ID_txt02">
+      <text><![CDATA[MAC de origen 0A-10]]></text>
+   </component> 
+  
+   <component id="ID_txt03">
+      <text><![CDATA[Dirección MAC]]></text>
+   </component>  
+
+   <component id="ID_txt04">
+      <text><![CDATA[<b>MAC de <br>destino<br> 0B-31  </b>]]></text>
+   </component>
+   
+      <component id="ID_txt05">
+      <text><![CDATA[<b>MAC de <br>origen<br> 00-20  </b>]]></text>
+   </component>
+
+    <component id="ID_txt08">
+      <text><![CDATA[<b>IP de <br>origen<br>192.168.1.10</b>]]></text>
+   </component>
+
+   <component id="ID_txt06">
+      <text><![CDATA[Tipo 0x800]]></text>
+   </component>
+
+   <component id="ID_txt07">
+      <text><![CDATA[<b>Dirección<br> IP 192.168.4.10  </b>]]></text>
+   </component>
+    <component id="ID_txt09">
+      <text><![CDATA[Campos de<br> IP]]></text>
+   </component>
+   
+     <component id="ID_txt10">
+      <text><![CDATA[Datos]]></text>
+   </component>
+   
+   <component id="ID_txt11">
+      <text><![CDATA[Tráiler]]></text>
+   </component>
+   
+   
+   <component id="ID_txt12">
+      <text><![CDATA[<b>Dirección 0x8F  </b>]]></text>
+   </component>  
+   
+   <component id="ID_txt13">
+      <text><![CDATA[MAC de origen.]]></text>
+   </component>
+       <component id="ID_txt14">
+      <text><![CDATA[<b>Control<br/>0x00  </b>]]></text>
+   </component> <!--R1 ROUTING TABLE-->
+      <component id="ID_txt15">
+      <text><![CDATA[<b>Tabla de routing del R2  </b>]]></text>
+   </component>
+   <component id="ID_txt16">
+      <text><![CDATA[Red]]></text>
+   </component>
+   <component id="ID_txt17">
+      <text><![CDATA[Saltos]]></text>
+   </component>
+   <component id="ID_txt18">
+      <text><![CDATA[IP del siguiente salto]]></text>
+   </component>
+   <component id="ID_txt19">
+      <text><![CDATA[Interfaz de salida]]></text>
+   </component>
+         <component id="ID_txt20">
+      <text><![CDATA[Dir. Conéctese.]]></text>
+   </component>
+
+   <component id="ID_txt21">
+      <text><![CDATA[Dir. Conéctese.]]></text>
+   </component> <!-- SPEECH BUBBLES -->
+
+
+   <component id="ID_speech01">
+      <text><![CDATA[La dirección MAC me envió una trama. Permítame investigar más.]]></text>
+   </component>
+
+   <component id="ID_speech02">
+      <text><![CDATA[Por el tipo y la dirección IP de destino, puedo ver que este paquete debe reenviarse.]]></text>
+   </component>
+
+   <component id="ID_speech03">
+      <text><![CDATA[Hay una ruta que sale de mi interfaz S0/0/0 para llegar a la PC2.]]></text>
+   </component>
+
+   <component id="ID_speech04">
+      <text><![CDATA[Permítame reconstruir la información en la trama.]]></text>
+   </component>
+
+   <component id="ID_speech05">
+      <text><![CDATA[El paquete se envía a través de una conexión serial, por lo tanto, debo utilizar una dirección de destino de difusión de capa&nbsp;2.]]></text>
+   </component>
+
+   <component id="ID_speech06">
+      <text><![CDATA[Esta es una conexión serial P2P, por lo que no se requiere una dirección de origen.]]></text>
+   </component> <!-- controller -->
+
+<component id="end">
+<text><![CDATA[Finalizar]]></text>
+</component>
+
+<component id="fforward">
+<text><![CDATA[Adelantar]]></text>
+</component>
+
+<component id="pause">
+<text><![CDATA[Pausa]]></text>
+</component>
+
+<component id="play">
+<text><![CDATA[Reproducir]]></text>
+</component>
+
+<component id="rewind">
+<text><![CDATA[Regresar]]></text>
+</component>
+
+<component id="start">
+<text><![CDATA[Inicio]]></text>
+</component>
+
+</textcomponents>

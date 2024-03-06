@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.4.4.1 Arquitecturas de red de Cisco</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.4.4.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>El cambiante entorno de red</h1>
+        <h2>Arquitecturas de red</h2>
+      </div>
+      <div id="content">
+<p>La función de la red cambió de una red únicamente de datos a un sistema que permite conectar personas, dispositivos e información en un entorno de red convergente y con gran variedad de medios. Para que las redes funcionen eficazmente y crezcan en este tipo de entorno, se deben crear sobre la base de una arquitectura de red estándar. </p>
+<p></p>
+<p>La arquitectura de red se refiere a los dispositivos, las conexiones y los productos que se integran para admitir las tecnologías y aplicaciones necesarias. Una arquitectura de tecnología de red bien planificada ayuda a asegurar la conexión de cualquier dispositivo en cualquier combinación de redes. Además de garantizar la conectividad, también aumenta la rentabilidad al integrar la seguridad y la administración de la red, y mejora los procesos comerciales. En la base de todas las arquitecturas de red —y de hecho, en la base de Internet propiamente dicha—, se encuentran los routers y los switches. Los routers y los switches transportan datos y comunicaciones de voz y video, además de permitir acceso inalámbrico y proporcionar seguridad. </p>
+<p></p>
+<p>La creación de redes que admitan nuestras necesidades actuales y las necesidades y las tendencias del futuro comienza con una clara comprensión de la infraestructura de conmutación y enrutamiento subyacente. Una vez que se establece una infraestructura de red básica de conmutación y enrutamiento, las personas, las pequeñas empresas y las organizaciones pueden ampliar la red con el tiempo mediante el agregado de características y funcionalidades a una solución integrada.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.4.3.4 Packet Tracer: solución de problemas relacionados con gateways predeterminados</title>
+    <!--  -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.4.3.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de un router Cisco</h1>
+        <h2>Configuración del gateway predeterminado</h2>
+      </div>
+      <div id="content">
+<p>Para que un dispositivo se comunique a través de varias redes, debe estar configurado con una dirección IP, una máscara de subred y un gateway predeterminado. El gateway predeterminado se utiliza cuando el host desea enviar un paquete a un dispositivo en otra red. Por lo general, la dirección de gateway predeterminado es la dirección de la interfaz del router asociada a la red local a la que el host está conectado. En esta actividad, terminará de documentar la red. A continuación, verificará la documentación de la red mediante la puesta a prueba de la conectividad de extremo a extremo y la resolución de problemas. El método de resolución de problemas que utilizará consta de los siguientes pasos: </p>
+<p>
+<ul>
+<li>Verificar la documentación de la red y utilizar pruebas para descartar problemas. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Determinar cuál es la solución adecuada para un problema dado. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Implementar la solución. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Realizar pruebas para verificar que se haya resuelto el problema. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Documentar la solución. </li>
+</ul>
+</p>
+<p></p>
+<p>
+<a href="../../files/6.4.3.4%20Packet%20Tracer%20-%20Troubleshooting%20Default%20Gateway%20Issues%20Instructions.pdf" target="_blank">Packet Tracer: Resolución de problemas del gateway predeterminado (instrucciones)</a>
+</p>
+<p></p>
+<p>
+<a href="../../files/6.4.3.4%20Packet%20Tracer%20-%20Troubleshooting%20Default%20Gateway%20Issues.pka" target="_blank">Packet Tracer: Resolución de problemas del gateway predeterminado (PKA)</a>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

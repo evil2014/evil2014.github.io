@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.2.3.2 Instrucción network faltante</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.2.3.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resolución de problemas de EIGRP</h1>
+        <h2>Resolver problemas de tabla de routing EIGRP</h2>
+      </div>
+      <div id="content">
+<p>En la figura 1, se muestra que la interfaz GigabitEthernet 0/1 del R1 ahora está configurada con la dirección 10.10.10.1/24 y está activa.</p>
+<p></p>
+<p>El R1 y el R3 todavía tienen adyacencias de vecinos, pero una prueba de ping del router R3 a la interfaz G0/1 del R1 de 10.10.10.1 es incorrecta. En la figura 2, se muestra una prueba fallida de conectividad del R3 a la red de destino 10.10.10.0/24.</p>
+<p></p>
+<p>En la figura 3, con el comando <span class="cmd"><b>show ip protocols</b></span> en el router R1 se muestra que la red 10.10.10.0/24 no se anuncia a los vecinos EIGRP. </p>
+<p></p>
+<p>Como se muestra en la figura 4, el proceso EIGRP del R1 está configurado para incluir el anuncio de la red 10.10.10.0/24.</p>
+<p></p>
+<p>En la figura 5, se muestra que ahora hay una ruta en la tabla de routing del R3 para la red 10.10.10.0/24, y la posibilidad de conexión se verifica mediante un ping a la interfaz GigabitEthernet 0/1 del R1.</p>
+<p></p>
+<p>
+<b>EIGRP para IPv6</b>
+</p>
+<p></p>
+<p>También se aplican comandos y criterios de resolución de problemas similares en EIGRP para IPv6.</p>
+<p></p>
+<p>Los siguientes son los comandos equivalentes que se utilizan con EIGRP para IPv6:</p>
+<p>
+<ul>
+<li>
+<span class="cmd">Router# </span>
+<span class="cmd">
+<b>show ipv6 protocols </b>
+</span>
+</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<span class="cmd">Router# </span>
+<span class="cmd">
+<b>show ipv6 route</b>
+</span>
+</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<span class="cmd">Router(config-rtr)# </span>
+<span class="cmd">
+<b>network </b>
+</span>
+<span class="cmd">
+<i>prefijo-ipv6/longitud-prefijo</i>
+</span>
+</li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Nota:</b> es posible que el filtrado que el router hace de actualizaciones de routing entrantes y salientes produzca otra forma de ruta faltante. Las ACL proporcionan filtrado para diferentes protocolos y es posible que afecten el intercambio de los mensajes de protocolo de routing que ocasionan que las rutas no aparezcan en la tabla de routing. El comando <span class="cmd"><b>show ip protocols</b></span> muestra si hay ACL aplicadas a EIGRP. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

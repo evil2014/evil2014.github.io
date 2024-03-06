@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.1.2.5 Separación de comunicaciones múltiples</title>
+    <!--  -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.1.2.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolos de la capa de transporte</h1>
+        <h2>Introducción a TCP y UDP</h2>
+      </div>
+      <div id="content">
+<p>La capa de transporte debe poder separar y administrar varias comunicaciones con diferentes necesidades de requisitos de transporte. Tome como ejemplo un usuario conectado a una red en un dispositivo final. El usuario envía y recibe correo electrónico y mensajes instantáneos, visita sitios Web y realiza una llamada telefónica de voz sobre IP (VoIP) simultáneamente. Cada una de estas aplicaciones envía y recibe datos a través de la red al mismo tiempo, a pesar de los diferentes requisitos de confiabilidad. Además, los datos de la llamada telefónica no están dirigidos al explorador Web y el texto de un mensaje instantáneo no aparece en un correo electrónico.</p>
+<p></p>
+<p>Por motivos de confiabilidad, los usuarios necesitan que un correo electrónico o una página Web se reciba y presente por completo para que la información se considere útil. Por lo general, se permiten leves retrasos en la carga de correo electrónico o de páginas Web, siempre y cuando el producto final se muestre en su totalidad y de forma correcta. En este ejemplo, la red administra el reenvío o reemplazo de la información que falta y no muestra el producto final hasta que se hayan recibido y armado todos los datos.</p>
+<p></p>
+<p>En cambio, la pérdida ocasional de partes pequeñas de una conversación telefónica se puede considerar aceptable. Incluso si se descartan partes pequeñas de algunas palabras, se puede deducir el audio que falta del contexto de la conversación o solicitar que la otra persona repita lo que dijo. Si la red administrara y reenviara segmentos faltantes, se prefiere lo mencionado anteriormente a los retrasos que se producen. En este ejemplo, es el usuario y no la red quien administra el reenvío o reemplazo de la información que falta.</p>
+<p></p>
+<p>Como se muestra en la ilustración, para que TCP y UDP administren estas conversaciones simultáneas con diversos requisitos, los servicios basados en UDP y TCP deben hacer un seguimiento de las diversas aplicaciones que se comunican. Para diferenciar los segmentos y datagramas para cada aplicación, tanto TCP como UDP cuentan con campos de encabezado que pueden identificar de manera exclusiva estas aplicaciones. Estos identificadores únicos son números de puertos.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

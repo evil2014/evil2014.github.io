@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.2.1.1 Lista de protocolos de árbol de expansión</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.2.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Variedades de protocolos de árbol de expansión</h1>
+        <h2>Descripción general</h2>
+      </div>
+      <div id="content">
+<p>Desde el lanzamiento del estándar IEEE 802.1D original, surgió una gran variedad de protocolos de árbol de expansión. </p>
+<p></p>
+<p>Las variedades de protocolos de árbol de expansión incluyen lo siguiente:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>STP:</b> es la versión original de IEEE 802.1D (802.1D-1998 y anterior), que proporciona una topología sin bucles en una red con enlaces redundantes. El árbol de expansión común (CTS) asume una instancia de árbol de expansión para toda la red enlazada, independientemente de la cantidad de VLAN.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>PVST+:</b> esta es una mejora de Cisco de STP que proporciona una instancia de árbol de expansión 802.1D para cada VLAN configurada en la red. La instancia aparte admite PortFast, UplinkFast, BackboneFast, la protección BPDU, el filtro BPDU, la protección de raíz y la protección de bucle. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>802.1D-2004:</b> esta es una versión actualizada del estándar STP que incorpora IEEE 802.1w.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Protocolo de árbol de expansión rápido (RSTP) o IEEE 802.1w:</b> esta es una evolución de STP que proporciona una convergencia más veloz que STP.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>PVST+ rápido:</b> esta es una mejora de Cisco de RSTP que utiliza PVST+. PVST+ rápido proporciona una instancia de 802.1w distinta por VLAN. La instancia aparte admite PortFast, la protección BPDU, el filtro BPDU, la protección de raíz y la protección de bucle.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Protocolo de árbol de expansión múltiple</b>
+<b>(MSTP):</b> es un estándar IEEE inspirado en la anterior implementación de STP de varias instancias (MISTP), exclusivo de Cisco. MSTP asigna varias VLAN en la misma instancia de árbol de expansión. MST es la implementación de Cisco de MSTP, que proporciona hasta 16 instancias de RSTP y combina varias VLAN con la misma topología física y lógica en una instancia de RSTP común. Cada instancia admite PortFast, protección BPDU, filtro BPDU, protección de raíz y protección de bucle.</li>
+</ul>
+</p>
+<p></p>
+<p>Es posible que un profesional de red, cuyas tareas incluyen la administración de los switches, deba decidir cuál es el tipo de protocolo de árbol de expansión que se debe implementar.</p>
+<p></p>
+<p>
+<b>Nota:</b> las características antiguas UplinkFast y BackboneFast exclusivas de Cisco no se describen en este curso. Estas características fueron reemplazadas por la implementación de PVST+ rápido, que las incorpora como parte de la implementación del estándar RSTP.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.1.3.3 Cálculo de la máscara wildcard</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.1.3.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Funcionamiento de ACL de IP</h1>
+        <h2>Máscaras wildcard en ACL</h2>
+      </div>
+      <div id="content">
+<p>El cálculo de máscaras wildcard puede ser difícil. Un método abreviado es restar la máscara de subred a 255.255.255.255.</p>
+<p></p>
+<p>
+<b>Cálculo de máscara wildcard: ejemplo 1</b>
+</p>
+<p></p>
+<p>En el primer ejemplo en la ilustración, suponga que desea permitir el acceso a todos los usuarios en la red 192.168.3.0. Dado que la máscara de subred es 255.255.255.0, podría tomar 255.255.255.255 y restarle la máscara de subred 255.255.255.0. El resultado genera la máscara wildcard 0.0.0.255.</p>
+<p></p>
+<p>
+<b>Cálculo de máscara wildcard: ejemplo 2</b>
+</p>
+<p></p>
+<p>En el segundo ejemplo en la ilustración, suponga que desea permitir el acceso a la red a los 14 usuarios en la subred 192.168.3.32/28. La máscara de subred para la subred IP es 255.255.255.240; por lo tanto, tome 255.255.255.255 y réstele la máscara de subred 255.255.255.240. Esta vez, el resultado genera la máscara wildcard 0.0.0.15.</p>
+<p></p>
+<p>
+<b>Cálculo de máscara wildcard: ejemplo 3</b>
+</p>
+<p></p>
+<p>En el tercer ejemplo en la ilustración, suponga que solo quiere establecer la coincidencia con las redes 192.168.10.0 y 192.168.11.0. Una vez más, tome 255.255.255.255 y reste la máscara de subred regular que, en este caso, es 255.255.252.0. El resultado es 0.0.3.255.</p>
+<p></p>
+<p>Puede lograr el mismo resultado con instrucciones como las dos que se muestran a continuación:</p>
+<p></p>
+<p>
+<span class="cmd">R1(config)# </span>
+<span class="cmd">
+<b>access-list 10 permit 192.168.10.0</b>
+</span>
+</p>
+<p>
+<span class="cmd">R1(config)# </span>
+<span class="cmd">
+<b>access-list 10 permit 192.168.11.0</b>
+</span>
+</p>
+<p></p>
+<p>Resulta mucho más eficaz configurar la máscara wildcard de la siguiente manera:</p>
+<p></p>
+<p>
+<span class="cmd">R1(config)#</span>
+<span class="cmd">
+<b> access-list 10 permit 192.168.10.0 0.0.3.255</b>
+</span>
+</p>
+<p></p>
+<p>Tenga en cuenta la configuración que se indica a continuación para establecer coincidencias con las redes en el rango entre 192.168.16.0 y 192.168.31.0:</p>
+<p></p>
+<p>
+<span class="cmd">R1(config)# </span>
+<span class="cmd">
+<b>access-list 10 permit 192.168.16.0</b>
+</span>
+</p>
+<p>
+<span class="cmd">R1(config)# </span>
+<span class="cmd">
+<b>access-list 10 permit 192.168.17.0</b>
+</span>
+</p>
+<p>
+<span class="cmd">R1(config)#</span>
+<span class="cmd">
+<b> access-list 10 permit 192.168.18.0</b>
+</span>
+</p>
+<p>
+<span class="cmd">R1(config)#</span>
+<span class="cmd">
+<b> access-list 10 permit 192.168.19.0</b>
+</span>
+</p>
+<p>
+<span class="cmd">R1(config)#</span>
+<span class="cmd">
+<b> access-list 10 permit 192.168.20.0</b>
+</span>
+</p>
+<p>
+<span class="cmd">R1(config)#</span>
+<span class="cmd">
+<b> access-list 10 permit 192.168.21.0</b>
+</span>
+</p>
+<p>
+<span class="cmd">R1(config)#</span>
+<span class="cmd">
+<b> access-list 10 permit 192.168.22.0</b>
+</span>
+</p>
+<p>
+<span class="cmd">R1(config)#</span>
+<span class="cmd">
+<b> access-list 10 permit 192.168.23.0</b>
+</span>
+</p>
+<p>
+<span class="cmd">R1(config)#</span>
+<span class="cmd">
+<b> access-list 10 permit 192.168.24.0</b>
+</span>
+</p>
+<p>
+<span class="cmd">R1(config)#</span>
+<span class="cmd">
+<b> access-list 10 permit 192.168.25.0</b>
+</span>
+</p>
+<p>
+<span class="cmd">R1(config)#</span>
+<span class="cmd">
+<b> access-list 10 permit 192.168.26.0</b>
+</span>
+</p>
+<p>
+<span class="cmd">R1(config)#</span>
+<span class="cmd">
+<b> access-list 10 permit 192.168.27.0</b>
+</span>
+</p>
+<p>
+<span class="cmd">R1(config)#</span>
+<span class="cmd">
+<b> access-list 10 permit 192.168.28.0</b>
+</span>
+</p>
+<p>
+<span class="cmd">R1(config)#</span>
+<span class="cmd">
+<b> access-list 10 permit 192.168.29.0</b>
+</span>
+</p>
+<p>
+<span class="cmd">R1(config)#</span>
+<span class="cmd">
+<b> access-list 10 permit 192.168.30.0</b>
+</span>
+</p>
+<p>
+<span class="cmd">R1(config)#</span>
+<span class="cmd">
+<b> access-list 10 permit 192.168.31.0</b>
+</span>
+</p>
+<p></p>
+<p>Las 16 instrucciones de configuración indicadas anteriormente se pueden reducir a una sola instrucción con la máscara wildcard correcta, como se muestra a continuación:</p>
+<p></p>
+<p>
+<span class="cmd">R1(config)#</span>
+<span class="cmd">
+<b> access-list 10 permit 192.168.16.0 0.0.15.255</b>
+</span>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

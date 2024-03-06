@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>3.1.2.3 Etiquetado de tramas de Ethernet para la identificación de VLAN</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_3.1.2.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Segmentación de VLAN</h1>
+        <h2>Redes VLAN en un entorno conmutado múltiple</h2>
+      </div>
+      <div id="content">
+<p>Los switches de la serie Catalyst 2960 son dispositivos de capa 2. Estos utilizan la información del encabezado de la trama de Ethernet para reenviar paquetes. No poseen tablas de routing. El encabezado de las tramas de Ethernet estándar no contiene información sobre la VLAN a la que pertenece la trama; por lo tanto, cuando las tramas de Ethernet se colocan en un enlace troncal, se debe agregar la información sobre las VLAN a las que pertenecen. Este proceso, denominado “etiquetado”, se logra mediante el uso del encabezado IEEE 802.1Q, especificado en el estándar IEEE 802.1Q. El encabezado 802.1Q incluye una etiqueta de 4 bytes insertada en el encabezado de la trama de Ethernet original que especifica la VLAN a la que pertenece la trama.</p>
+<p></p>
+<p>Cuando el switch recibe una trama en un puerto configurado en modo de acceso y asignado a una VLAN, el switch coloca una etiqueta VLAN en el encabezado de la trama, vuelve a calcular la FCS y envía la trama etiquetada por un puerto de enlace troncal.</p>
+<p></p>
+<p>
+<b>Detalles del campo de etiqueta de la VLAN</b>
+</p>
+<p></p>
+<p>El campo de etiqueta de la VLAN consta de un campo de tipo, un campo de prioridad, un campo de identificador de formato canónico y un campo de ID de la VLAN:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Tipo:</b> es un valor de 2 bytes denominado “ID de protocolo de etiqueta” (TPID). Para Ethernet, este valor se establece en 0x8100 hexadecimal.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Prioridad de usuario:</b> es un valor de 3 bits que admite la implementación de nivel o de servicio.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Identificador de formato canónico (CFI):</b> es un identificador de 1 bit que habilita las tramas Token Ring que se van a transportar a través de los enlaces Ethernet.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>ID de VLAN (VID):</b> es un número de identificación de VLAN de 12 bits que admite hasta 4096 ID de VLAN.</li>
+</ul>
+</p>
+<p></p>
+<p>Una vez que el switch introduce los campos Tipo y de información de control de etiquetas, vuelve a calcular los valores de la FCS e inserta la nueva FCS en la trama.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

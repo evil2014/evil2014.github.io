@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.1.1.6 Las redes respaldan la forma en que trabajamos</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.1.1.6_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Conectados globalmente</h1>
+        <h2>Las redes en la actualidad</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Cambio en la forma en que trabajamos</b>
+</p>
+<p>En el ámbito empresarial, al comienzo las empresas utilizaban las redes de datos para registrar y administrar internamente información financiera, información de clientes y los sistemas de nómina de pagos de los empleados. Estas redes empresariales evolucionaron para permitir la transmisión de muchos tipos de servicios de información diferentes, incluidos correo electrónico, video, mensajería y telefonía.</p>
+<p></p>
+<p>El uso de redes para capacitar a los empleados de forma eficaz y rentable tiene una aceptación cada vez mayor. Las oportunidades de aprendizaje en línea pueden disminuir el transporte costoso y prolongado, e incluso asegurar que todos los empleados estén correctamente capacitados para realizar sus tareas de manera productiva y segura.</p>
+<p></p>
+<p>Hay muchas historias de éxito que muestran formas innovadoras en las que las redes se utilizan para hacernos más exitosos en el lugar de trabajo. Algunas de esas situaciones se encuentran disponibles en el sitio Web de Cisco, <a href="http://www.cisco.com/" target="_blank">http://www.cisco.com</a>.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

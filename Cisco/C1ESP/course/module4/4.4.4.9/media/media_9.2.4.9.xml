@@ -1,0 +1,263 @@
+﻿<textcomponents> <!--slide01-->
+<component id='ID_s1_inst'>
+	<text><![CDATA[<b>Actividad (parte&nbsp;1): Campos de la trama de Ethernet</b><br><br>En el gráfico, se muestra una trama de Ethernet en blanco. Arrastre cada nombre de campo al sitio correspondiente para armar una trama de Ethernet.]]></text>
+</component>
+
+<component id='ID_s1_txt01'>
+	<text><![CDATA[<b>Trama de Ethernet</b>]]></text>
+</component>
+
+<component id='ID_s1_txt02'>
+	<text><![CDATA[8&nbsp;bytes]]></text>
+</component>
+
+<component id='ID_s1_txt03'>
+	<text><![CDATA[6&nbsp;bytes]]></text>
+</component>
+
+<component id='ID_s1_txt04'>
+	<text><![CDATA[6&nbsp;bytes]]></text>
+</component>
+
+<component id='ID_s1_txt05'>
+	<text><![CDATA[2&nbsp;bytes]]></text>
+</component>
+
+<component id='ID_s1_txt06'>
+	<text><![CDATA[46 a1500&nbsp;bytes]]></text>
+</component>
+
+<component id='ID_s1_txt07'>
+	<text><![CDATA[4&nbsp;bytes]]></text>
+</component> <!--Drag and Drop-->
+<component id='ID_s1_traget01'>
+	<text><![CDATA[<font color="#393536">Secuencia de verificación de trama</font>]]></text>
+</component>
+
+<component id='ID_s1_traget02'>
+	<text><![CDATA[<font color="#393536">Tipo</font>]]></text>
+</component>
+
+<component id='ID_s1_traget03'>
+	<text><![CDATA[<font color="#393536">Datos</font>]]></text>
+</component>
+
+<component id='ID_s1_traget04'>
+	<text><![CDATA[<font color="#393536">Destino</font>]]></text>
+</component>
+
+<component id='ID_s1_traget05'>
+	<text><![CDATA[<font color="#393536">Preámbulo</font>]]></text>
+</component>
+
+<component id='ID_s1_traget06'>
+	<text><![CDATA[<font color="#393536">Origen</font>]]></text>
+</component> <!--FEEDBACKS-->
+<component id='ID_s1_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id='ID_s1_CORRECT_BODY'>
+	<text><![CDATA[Armó correctamente la trama de <u>Ethernet</u>.]]></text>
+</component>
+
+
+<component id='ID_s1_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_BODY'>
+	<text><![CDATA[No armó correctamente la trama de <u>Ethernet</u>. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_s1_CHECK'>
+	<text><![CDATA[Verificar]]></text>
+</component>
+
+<component id='ID_s1_RESET'>
+	<text><![CDATA[Restablecer]]></text>
+</component> <!--slide02-->
+<component id='ID_s2_inst'>
+	<text><![CDATA[<b>Actividad (parte&nbsp;2): Campos de la trama PPP</b><br><br>En el gráfico, se muestra una trama PPP en blanco. Arrastre cada nombre de campo al sitio correspondiente para armar una trama PPP.]]></text>
+</component>
+
+<component id='ID_s2_txt01'>
+	<text><![CDATA[<b>Trama PPP</b>]]></text>
+</component>
+
+<component id='ID_s2_txt02'>
+	<text><![CDATA[1 byte]]></text>
+</component>
+
+<component id='ID_s2_txt03'>
+	<text><![CDATA[1 byte]]></text>
+</component>
+
+<component id='ID_s2_txt04'>
+	<text><![CDATA[1&nbsp;bytes]]></text>
+</component>
+
+<component id='ID_s2_txt05'>
+	<text><![CDATA[2&nbsp;bytes]]></text>
+</component>
+
+<component id='ID_s2_txt06'>
+	<text><![CDATA[Variable]]></text>
+</component>
+
+<component id='ID_s2_txt07'>
+	<text><![CDATA[2 o 4&nbsp;bytes]]></text>
+</component> <!--Drag and Drop-->
+<component id='ID_s2_traget01'>
+	<text><![CDATA[<font color="#393536">Señalizador</font>]]></text>
+</component>
+
+<component id='ID_s2_traget02'>
+	<text><![CDATA[<font color="#393536">Dirección</font>]]></text>
+</component>
+
+<component id='ID_s2_traget03'>
+	<text><![CDATA[<font color="#393536">Control</font>]]></text>
+</component>
+
+<component id='ID_s2_traget04'>
+	<text><![CDATA[<font color="#393536">Protocolo</font>]]></text>
+</component>
+
+<component id='ID_s2_traget05'>
+	<text><![CDATA[<font color="#393536">Datos</font>]]></text>
+</component>
+
+<component id='ID_s2_traget06'>
+	<text><![CDATA[<font color="#393536">FCS</font>]]></text>
+</component> <!--FEEDBACKS-->
+<component id='ID_s2_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id='ID_s2_CORRECT_BODY'>
+	<text><![CDATA[Armó correctamente la trama <u>PPP</u>.]]></text>
+</component>
+
+
+<component id='ID_s2_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_s2_INCORRECT_BODY'>
+	<text><![CDATA[No armó correctamente la trama <u>PPP</u>. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_s2_CHECK'>
+	<text><![CDATA[Verificar]]></text>
+</component>
+
+<component id='ID_s2_RESET'>
+	<text><![CDATA[Restablecer]]></text>
+</component> <!--slide03-->
+<component id='ID_s3_inst'>
+	<text><![CDATA[<b>Actividad (parte 3): Campos de la trama inalámbrica 802.11</b><br/><br/>En el gráfico, se muestra una trama inalámbrica 802.11 en blanco. Arrastre cada nombre de campo al sitio correspondiente para armar una trama inalámbrica 802.11.]]></text>
+</component>
+
+<component id='ID_s3_txt01'>
+	<text><![CDATA[<b>Trama inalámbrica 802.11</b>]]></text>
+</component>
+
+<component id='ID_s3_txt02'>
+	<text><![CDATA[2&nbsp;octetos]]></text>
+</component>
+
+<component id='ID_s3_txt03'>
+	<text><![CDATA[2&nbsp;octetos]]></text>
+</component>
+
+<component id='ID_s3_txt04'>
+	<text><![CDATA[6&nbsp;octetos]]></text>
+</component>
+
+<component id='ID_s3_txt05'>
+	<text><![CDATA[6&nbsp;octetos]]></text>
+</component>
+
+<component id='ID_s3_txt06'>
+	<text><![CDATA[6&nbsp;octetos]]></text>
+</component>
+
+<component id='ID_s3_txt07'>
+	<text><![CDATA[2&nbsp;octetos]]></text>
+</component>
+
+<component id='ID_s3_txt08'>
+	<text><![CDATA[6&nbsp;octetos]]></text>
+</component>
+
+<component id='ID_s3_txt09'>
+	<text><![CDATA[0-2312&nbsp;<br>octetos]]></text>
+</component>
+
+<component id='ID_s3_txt10'>
+	<text><![CDATA[4 octetos]]></text>
+</component> <!--Drag and Drop-->
+<component id='ID_s3_traget01'>
+	<text><![CDATA[<font color="#393536">Control de secuencia</font>]]></text>
+</component>
+
+<component id='ID_s3_traget02'>
+	<text><![CDATA[<font color="#393536">TA</font>]]></text>
+</component>
+
+<component id='ID_s3_traget03'>
+	<text><![CDATA[<font color="#393536">Trama <br>Cuerpo</font>]]></text>
+</component>
+
+<component id='ID_s3_traget04'>
+	<text><![CDATA[<font color="#393536">FCS</font>]]></text>
+</component>
+
+<component id='ID_s3_traget05'>
+	<text><![CDATA[<font color="#393536">Control de trama</font>]]></text>
+</component>
+
+<component id='ID_s3_traget06'>
+	<text><![CDATA[<font color="#393536">SA</font>]]></text>
+</component>
+
+<component id='ID_s3_traget07'>
+	<text><![CDATA[<font color="#393536">Duración/<br/>ID</font>]]></text>
+</component>
+
+<component id='ID_s3_traget08'>
+	<text><![CDATA[<font color="#393536">DA</font>]]></text>
+</component>
+
+<component id='ID_s3_traget09'>
+	<text><![CDATA[<font color="#393536">RA</font>]]></text>
+</component> <!--FEEDBACKS-->
+<component id='ID_s3_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id='ID_s3_CORRECT_BODY'>
+	<text><![CDATA[Armó correctamente la trama <u>inalámbrica 802.11</u>.]]></text>
+</component>
+
+
+<component id='ID_s3_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_s3_INCORRECT_BODY'>
+	<text><![CDATA[No armó correctamente la trama <u>inalámbrica 802.11</u>. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_s3_CHECK'>
+	<text><![CDATA[Verificar]]></text>
+</component>
+
+<component id='ID_s3_RESET'>
+	<text><![CDATA[Restablecer]]></text>
+</component>
+
+
+
+</textcomponents>

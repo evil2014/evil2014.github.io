@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>3.2.2.5 Práctica de laboratorio: configuración de redes VLAN y enlaces troncales</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_3.2.2.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Implementaciones de VLAN</h1>
+        <h2>Enlaces troncales de la VLAN</h2>
+      </div>
+      <div id="content">
+<p>
+<b>En esta práctica de laboratorio, cumplirá los siguientes objetivos:</b>
+</p>
+<p>
+<ul>
+<li>Parte 1: Armar la red y configurar los parámetros básicos de los dispositivos</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Parte 2: crear redes VLAN y asignar puertos de switch</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Parte 3: mantener las asignaciones de puertos de VLAN y la base de datos de VLAN</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Parte 4: configurar un enlace troncal 802.1Q entre los switches</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Parte 5: eliminar la base de datos de VLAN</li>
+</ul>
+</p>
+<p></p>
+<p>
+<a href="../../files/3.2.2.5%20Lab%20-%20Configuring%20VLANs%20and%20Trunking.pdf" target="_blank">Práctica de laboratorio: configuración de redes VLAN y enlaces troncales</a>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

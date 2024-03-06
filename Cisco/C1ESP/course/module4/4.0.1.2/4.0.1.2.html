@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.0.1.2 Actividad: Administración del medio</title>
+    <!-- Activity -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.0.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Acceso a la red</h1>
+        <h2>Introducción</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Administración del medio</b>
+</p>
+<p>Usted y un colega asisten a una conferencia de redes. Durante el evento, se llevan a cabo muchas charlas y presentaciones. Debido a que estas se superponen, cada uno puede elegir solo un conjunto limitado de sesiones a las cuales asistir. </p>
+<p></p>
+<p>Por lo tanto, deciden separarse. Cada uno asistirá a un conjunto distinto de presentaciones y, una vez que el evento finalice, compartirán las diapositivas y los conocimientos obtenidos por cada uno. </p>
+<p></p>
+<p>Intente responder las siguientes preguntas:</p>
+<p></p>
+<p>
+<ul>
+<li>¿Cómo organizaría personalmente una conferencia donde se llevarán a cabo a varias sesiones al mismo tiempo? ¿Los ubicaría a todos en una misma sala de conferencias o utilizaría varias salas? ¿Por qué?</li>
+</ul>
+</p>
+<p></p>
+<p>
+<ul>
+<li>Suponga que la sala de conferencias cuenta con equipo audiovisual adecuado para mostrar videos de gran tamaño y amplificar la voz. Si una persona deseara asistir a una determinada sesión, ¿la disposición de los asientos hace alguna diferencia, o es suficiente visitar la sala de conferencias apropiada?</li>
+</ul>
+</p>
+<p></p>
+<p>
+<ul>
+<li>¿Se consideraría beneficioso o perjudicial que el discurso pronunciado en una sala de conferencias se filtrara de alguna manera a otra sala?</li>
+</ul>
+</p>
+<p></p>
+<p>
+<ul>
+<li>Si surgen preguntas durante una presentación, ¿los asistentes deberían simplemente hacer sus preguntas en voz alta o debería existir algún proceso para ordenar las preguntas, como ponerlas por escrito y entregarlas a un coordinador? ¿Qué sucedería sin este proceso?</li>
+</ul>
+</p>
+<p></p>
+<p>
+<ul>
+<li>Si un tema interesante genera un debate más amplio en el cual muchos asistentes tienen preguntas o comentarios, ¿es posible que se termine el tiempo de la sesión sin que se haya expuesto todo el contenido previsto? ¿Por qué?</li>
+</ul>
+</p>
+<p></p>
+<p>
+<ul>
+<li>Imagine que la sesión se lleva a cabo en un formato de panel; es decir, un debate más libre entre los asistentes y los panelistas y, quizá, entre los asistentes entre sí. Si una persona desea dirigirse a otra persona dentro de la misma sala, ¿puede hacerlo directamente? ¿Qué se debería hacer si un panelista quisiera invitar a otra persona que no se encuentra actualmente en la sala a que se una al debate?</li>
+</ul>
+</p>
+<p></p>
+<p>
+<ul>
+<li>¿Qué se logra mediante el aislamiento de varias sesiones en salas de conferencias independientes si, después del evento, las personas pueden reunirse y compartir información?</li>
+</ul>
+</p>
+<p></p>
+<p>
+<a href="../../files/4.0.1.2%20Let%20Me%20Tell%20You%20What%20I%20Heard%20at%20a%20Conference%20Instructions.pdf" target="_blank">Actividad de clase: Permítanme contarles lo que escuché en una conferencia (instrucciones)</a>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

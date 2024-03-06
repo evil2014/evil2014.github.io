@@ -1,0 +1,211 @@
+﻿<textcomponents> <!-- instructions -->
+<component id="ID_inst">
+	<text><![CDATA[<b>Actividad: Búsqueda del tesoro con organismos de estandarización</b><br><br>Los seis organismos de estandarización que se indican más abajo son responsables de crear, desarrollar y supervisar muchos de los protocolos o estándares que se utilizan en el mundo actual de las comunicaciones.]]></text>
+</component>
+
+<component id="ID_inst2">
+	<text><![CDATA[<br>Haga clic en cada uno de los hipervínculos que se proporcionan a continuación. Lea la página que se proporciona para cada organismo. Una el organismo de estandarización con la descripción (o función) correspondiente haciendo clic en la celda adecuada.<br><br><textformat tabstops='[85]'><a href="http://www.iana.org" target="_blank"><font color='#0197D6'><u><b style="color:#0298D7; text-decoration:underline;">IANA</b></u></font></a> <a href="http://www.icann.org/en/about/welcome" target="_blank"><font color='#0197D6'><u><b style="color:#0298D7; text-decoration:underline;">ICANN</b></u></font></a><br><br><a href="http://standards.ieee.org/develop/index.html" target="_blank"><font color='#0197D6'><u><b style="color:#0298D7; text-decoration:underline;">IEEE</b></u></font></a> <a href="http://www.ietf.org/newcomers.html#whither" target="_blank"><font color='#0197D6'><u><b style="color:#0298D7; text-decoration:underline;">IETF</b></u></font></a><br><br><a href="http://www.itu.int/en/about/Pages/whatwedo.aspx" target="_blank"><font color='#0197D6'><u><b style="color:#0298D7; text-decoration:underline;">ITU</b></u></font></a> <a href="http://www.tiaonline.org/standards/strategic-initiatives" target="_blank"><font color='#0197D6'><u><b style="color:#0298D7; text-decoration:underline;">TIA</b></u></font></a></textformat>]]></text>
+</component> <!-- buttons -->
+<component id="ID_Button01">
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id="ID_Button02">
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component> <!--Number of rows in the table-->
+<component id="txt_numrows">
+	<text><![CDATA[19]]></text>
+</component> <!--Number of columns for the answers in the table. Do not count the question column-->
+<component id="txt_numcols">
+	<text><![CDATA[6]]></text>
+</component> <!--Answer column headers-->
+<component id="txt_col1">
+	<text><![CDATA[<b>IANA</b>]]></text>
+</component>
+
+<component id="txt_col2">
+	<text><![CDATA[<b>ICANN</b>]]></text>
+</component>
+
+<component id="txt_col3">
+	<text><![CDATA[<b>IEEE</b>]]></text>
+</component>
+
+<component id="txt_col4">
+	<text><![CDATA[<b>IETF</b>]]></text>
+</component>
+
+<component id="txt_col5">
+	<text><![CDATA[<b>ITU</b>]]></text>
+</component>
+
+<component id="txt_col6">
+	<text><![CDATA[<b>TIA</b>]]></text>
+</component> <!--Question text - blockindent code moves the text away from the left edge a bit--> <!--Question text - If questions are numbered, use blockindent for hanging indents-->
+<component id="txt_q1">
+	<text><![CDATA[1. <textformat blockindent='13'>Administra los estándares de la zona raíz de DNS y el registro .int.</textformat>]]></text>
+</component>
+
+<component id="txt_q2">
+	<text><![CDATA[2. <textformat blockindent='13'>Crea estándares para la infraestructura de cableado mundial.</textformat>]]></text>
+</component>
+
+<component id="txt_q3">
+	<text><![CDATA[3. <textformat blockindent='13'>Define las políticas que describen cómo funcionan los “nombres y números” de Internet.</textformat>]]></text>
+</component>
+
+<component id="txt_q4">
+	<text><![CDATA[4. <textformat blockindent='13'>Los productos de estándares oficiales son documentos de RFC, que se publican sin cargo.</textformat>]]></text>
+</component>
+
+<component id="txt_q5">
+	<text><![CDATA[5. <textformat blockindent='13'>Los estándares se desarrollan mediante un diagrama de ciclo de vida de seis etapas.</textformat>]]></text>
+</component>
+
+<component id="txt_q6">
+	<text><![CDATA[6. <textformat blockindent='13'>Utiliza estándares de comunicaciones para predecir hambrunas y cambios climáticos globales.</textformat>]]></text>
+</component>
+
+<component id="txt_q7">
+	<text><![CDATA[7. <textformat blockindent='13'>Apoya las iniciativas de “superación de la brecha digital”.
+</textformat>]]></text>
+</component>
+
+<component id="txt_q8">
+	<text><![CDATA[8. <textformat blockindent='13'>Crea estándares para tecnologías de conexión por cable o inalámbricas.</textformat>]]></text>
+</component>
+
+<component id="txt_q9">
+	<text><![CDATA[9. <textformat blockindent='13'>Funciona como el repositorio central para los registros de nombres y números de protocolos.</textformat>]]></text>
+</component>
+
+<component id="txt_q10">
+	<text><![CDATA[10. <textformat blockindent='21'>Ofrece herramientas y recursos en línea para estándares y desarrolladores.</textformat>]]></text>
+</component>
+
+<component id="txt_q11">
+	<text><![CDATA[11. <textformat blockindent='21'>Proporciona estándares inalámbricos para IPTV.</textformat>]]></text>
+</component>
+
+<component id="txt_q12">
+	<text><![CDATA[12. <textformat blockindent='21'>Coordina direcciones de Internet internacionales exclusivas para nombres de sitios y direcciones IP.</textformat>]]></text>
+</component>
+
+<component id="txt_q13">
+	<text><![CDATA[13. <textformat blockindent='21'>Estandariza el IP a los protocolos de capa de aplicación.</textformat>]]></text>
+</component>
+
+<component id="txt_q14">
+	<text><![CDATA[14. <textformat blockindent='21'>Admite la navegación y los mapas en línea mediante transmisiones de radio o satelitales.</textformat>]]></text>
+</component>
+
+<component id="txt_q15">
+	<text><![CDATA[15. <textformat blockindent='21'>Proporciona un espacio donde se establecen y mantienen los protocolos de Internet.</textformat>]]></text>
+</component>
+
+<component id="txt_q16">
+	<text><![CDATA[16. <textformat blockindent='21'>Administra las asignaciones de DNS, de direcciones IP y de identificadores de protocolo.</textformat>]]></text>
+</component>
+
+<component id="txt_q17">
+	<text><![CDATA[17. <textformat blockindent='21'>“Hace que Internet funcione mejor”, mediante un enfoque de ingeniería.</textformat>]]></text>
+</component>
+
+<component id="txt_q18">
+	<text><![CDATA[18. <textformat blockindent='21'>Desarrolla estándares o protocolos que afectan la computación en la nube.</textformat>]]></text>
+</component>
+
+<component id="txt_q19">
+	<text><![CDATA[19. <textformat blockindent='21'>Desarrolla estándares para los equipos de respuesta de seguridad o emergencia doméstica.</textformat>]]></text>
+</component> <!--Answers - Give the column number(s), column numbering start with 1 not 0--> <!--Answers - For MCMA separate the correct answers with commas [2, 4, 5] -->
+<component id="txt_a1">
+	<text><![CDATA[1]]></text>
+</component>
+
+<component id="txt_a2">
+	<text><![CDATA[6]]></text>
+</component>
+
+<component id="txt_a3">
+	<text><![CDATA[2]]></text>
+</component>
+
+<component id="txt_a4">
+	<text><![CDATA[4]]></text>
+</component>
+
+<component id="txt_a5">
+	<text><![CDATA[3]]></text>
+</component>
+
+<component id="txt_a6">
+	<text><![CDATA[5]]></text>
+</component>
+
+<component id="txt_a7">
+	<text><![CDATA[5]]></text>
+</component>
+
+<component id="txt_a8">
+	<text><![CDATA[3]]></text>
+</component>
+
+<component id="txt_a9">
+	<text><![CDATA[1]]></text>
+</component>
+
+<component id="txt_a10">
+	<text><![CDATA[3]]></text>
+</component>
+
+<component id="txt_a11">
+	<text><![CDATA[5]]></text>
+</component>
+
+<component id="txt_a12">
+	<text><![CDATA[2]]></text>
+</component>
+
+<component id="txt_a13">
+	<text><![CDATA[4]]></text>
+</component>
+
+<component id="txt_a14">
+	<text><![CDATA[5]]></text>
+</component>
+
+<component id="txt_a15">
+	<text><![CDATA[4]]></text>
+</component>
+
+<component id="txt_a16">
+	<text><![CDATA[2]]></text>
+</component>
+
+<component id="txt_a17">
+	<text><![CDATA[4]]></text>
+</component>
+
+<component id="txt_a18">
+	<text><![CDATA[6]]></text>
+</component>
+
+<component id="txt_a19">
+	<text><![CDATA[6]]></text>
+</component> <!-- Correct Feedback -->
+<component id="ID_titleCorrect">
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id="ID_correctText">
+	<text><![CDATA[Unió correctamente el organismo de estandarización con su descripción.]]></text>
+</component> <!-- Incorrect Feedback -->
+<component id="ID_titleIncorrect">
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id="ID_IncorrectText">
+	<text><![CDATA[No unió correctamente el organismo de estandarización con su descripción. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+</textcomponents>

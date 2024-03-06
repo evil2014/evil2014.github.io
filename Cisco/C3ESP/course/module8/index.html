@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html class="module-index" dir="ltr">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta charset="UTF-8"/>
+    <title>Escalamiento de redes</title>
+    <link rel="stylesheet" type="text/css" href="../common-ext/styles/index.css"/>
+    <script type="text/javascript" src="../common-ext/scripts/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="../common-ext/scripts/index.js"></script>
+  </head>
+  <body>
+    <div id="header">
+      <div id="header-logo" title="Cisco Systems, Inc. - Cisco Networking Academy"></div>
+      <a id="home-btn" href="../../index.html" title="Inicio">Inicio</a>
+      <h1>Capítulo 8: Configuraciones avanzadas y resolución de problemas de EIGRP <span id="title"></span></h1>
+    </div>
+    <div id="nav">
+      <ul class="sections">
+        <li>
+          <span class="icon"></span>
+          <span class="section-title">8.0 Configuraciones avanzadas y resolución de problemas de EIGRP</span>
+          <ul class="topics">
+            <li>
+              <span class="icon"></span>
+              <span class="topic-title">8.0.1 Introducción</span>
+              <ul class="pages">
+                <li>
+                  <a data-ident="8.0.1.1" class="page-title" href="8.0.1.1/8.0.1.1.html" target="frame">8.0.1.1 Introducción</a>
+                </li>
+                <li>
+                  <a data-ident="8.0.1.2" class="page-title" href="8.0.1.2/8.0.1.2.html" target="frame">8.0.1.2 Actividad de clase: Volver al futuro (EIGRP)</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <span class="icon"></span>
+          <span class="section-title">8.1 Configuraciones avanzadas de EIGRP</span>
+          <ul class="topics">
+            <li>
+              <span class="icon"></span>
+              <span class="topic-title">8.1.1 Sumarización automática </span>
+              <ul class="pages">
+                <li>
+                  <a data-ident="8.1.1.1" class="page-title" href="8.1.1.1/8.1.1.1.html" target="frame">8.1.1.1 Topología de la red</a>
+                </li>
+                <li>
+                  <a data-ident="8.1.1.2" class="page-title" href="8.1.1.2/8.1.1.2.html" target="frame">8.1.1.2 Sumarización automática de EIGRP </a>
+                </li>
+                <li>
+                  <a data-ident="8.1.1.3" class="page-title" href="8.1.1.3/8.1.1.3.html" target="frame">8.1.1.3 Configuración de la sumarización automática de EIGRP </a>
+                </li>
+                <li>
+                  <a data-ident="8.1.1.4" class="page-title" href="8.1.1.4/8.1.1.4.html" target="frame">8.1.1.4 Verificación de la sumarización automática: show ip protocols</a>
+                </li>
+                <li>
+                  <a data-ident="8.1.1.5" class="page-title" href="8.1.1.5/8.1.1.5.html" target="frame">8.1.1.5 Verificación de la sumarización automática: tabla de topología</a>
+                </li>
+                <li>
+                  <a data-ident="8.1.1.6" class="page-title" href="8.1.1.6/8.1.1.6.html" target="frame">8.1.1.6 Verificación de la sumarización automática: tabla de routing</a>
+                </li>
+                <li>
+                  <a data-ident="8.1.1.7" class="page-title" href="8.1.1.7/8.1.1.7.html" target="frame">8.1.1.7 Ruta resumida</a>
+                </li>
+                <li>
+                  <a data-ident="8.1.1.8" class="page-title" href="8.1.1.8/8.1.1.8.html" target="frame">8.1.1.8 Ruta resumida (cont.)</a>
+                </li>
+                <li>
+                  <a data-ident="8.1.1.9" class="page-title" href="8.1.1.9/8.1.1.9.html" target="frame">8.1.1.9 Actividad: Determinar la sumarización con clase</a>
+                </li>
+                <li>
+                  <a data-ident="8.1.1.10" class="page-title" href="8.1.1.10/8.1.1.10.html" target="frame">8.1.1.10 Actividad: Determinar la interfaz de salida para un paquete determinado</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <span class="icon"></span>
+              <span class="topic-title">8.1.2 Sumarización manual</span>
+              <ul class="pages">
+                <li>
+                  <a data-ident="8.1.2.1" class="page-title" href="8.1.2.1/8.1.2.1.html" target="frame">8.1.2.1 Rutas resumidas manuales</a>
+                </li>
+                <li>
+                  <a data-ident="8.1.2.2" class="page-title" href="8.1.2.2/8.1.2.2.html" target="frame">8.1.2.2 Configuración de rutas resumidas manuales EIGRP</a>
+                </li>
+                <li>
+                  <a data-ident="8.1.2.3" class="page-title" href="8.1.2.3/8.1.2.3.html" target="frame">8.1.2.3 Verificación de las rutas resumidas manuales</a>
+                </li>
+                <li>
+                  <a data-ident="8.1.2.4" class="page-title" href="8.1.2.4/8.1.2.4.html" target="frame">8.1.2.4 EIGRP para IPv6: rutas resumidas manuales</a>
+                </li>
+                <li>
+                  <a data-ident="8.1.2.5" class="page-title" href="8.1.2.5/8.1.2.5.html" target="frame">8.1.2.5 Packet Tracer: Configuración de rutas resumidas manuales EIGRP para IPv4 e IPv6</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <span class="icon"></span>
+              <span class="topic-title">8.1.3 Propagación de rutas predeterminadas</span>
+              <ul class="pages">
+                <li>
+                  <a data-ident="8.1.3.1" class="page-title" href="8.1.3.1/8.1.3.1.html" target="frame">8.1.3.1 Propagación de una ruta estática predeterminada </a>
+                </li>
+                <li>
+                  <a data-ident="8.1.3.2" class="page-title" href="8.1.3.2/8.1.3.2.html" target="frame">8.1.3.2 Verificación de la ruta predeterminada propagada</a>
+                </li>
+                <li>
+                  <a data-ident="8.1.3.3" class="page-title" href="8.1.3.3/8.1.3.3.html" target="frame">8.1.3.3 EIGRP para IPv6: ruta predeterminada.</a>
+                </li>
+                <li>
+                  <a data-ident="8.1.3.4" class="page-title" href="8.1.3.4/8.1.3.4.html" target="frame">8.1.3.4 Packet Tracer: Propagación de una ruta predeterminada en EIGRP para IPv4 e IPv6</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <span class="icon"></span>
+              <span class="topic-title">8.1.4 Ajuste de las interfaces EIGRP</span>
+              <ul class="pages">
+                <li>
+                  <a data-ident="8.1.4.1" class="page-title" href="8.1.4.1/8.1.4.1.html" target="frame">8.1.4.1 Utilización del ancho de banda de EIGRP</a>
+                </li>
+                <li>
+                  <a data-ident="8.1.4.2" class="page-title" href="8.1.4.2/8.1.4.2.html" target="frame">8.1.4.2 Temporizadores de saludo y de espera</a>
+                </li>
+                <li>
+                  <a data-ident="8.1.4.3" class="page-title" href="8.1.4.3/8.1.4.3.html" target="frame">8.1.4.3 Balanceo de carga de IPv4</a>
+                </li>
+                <li>
+                  <a data-ident="8.1.4.4" class="page-title" href="8.1.4.4/8.1.4.4.html" target="frame">8.1.4.4 Balanceo de carga de IPv6</a>
+                </li>
+                <li>
+                  <a data-ident="8.1.4.5" class="page-title" href="8.1.4.5/8.1.4.5.html" target="frame">8.1.4.5 Actividad: Determinar los comandos para el ajuste de EIGRP</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <span class="icon"></span>
+              <span class="topic-title">8.1.5 EIGRP segura</span>
+              <ul class="pages">
+                <li>
+                  <a data-ident="8.1.5.1" class="page-title" href="8.1.5.1/8.1.5.1.html" target="frame">8.1.5.1 Descripción general de la autenticación del protocolo de enrutamiento</a>
+                </li>
+                <li>
+                  <a data-ident="8.1.5.2" class="page-title" href="8.1.5.2/8.1.5.2.html" target="frame">8.1.5.2 Configuración de EIGRP con autenticación MD5</a>
+                </li>
+                <li>
+                  <a data-ident="8.1.5.3" class="page-title" href="8.1.5.3/8.1.5.3.html" target="frame">8.1.5.3 Ejemplo de autenticación de EIGRP</a>
+                </li>
+                <li>
+                  <a data-ident="8.1.5.4" class="page-title" href="8.1.5.4/8.1.5.4.html" target="frame">8.1.5.4 Verificación de la autenticación</a>
+                </li>
+                <li>
+                  <a data-ident="8.1.5.5" class="page-title" href="8.1.5.5/8.1.5.5.html" target="frame">8.1.5.5 Práctica de laboratorio: Configuración de EIGRP avanzado para admitir características de IPv4</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <span class="icon"></span>
+          <span class="section-title">8.2 Resolución de problemas de EIGRP</span>
+          <ul class="topics">
+            <li>
+              <span class="icon"></span>
+              <span class="topic-title">8.2.1 Componentes de la resolución de problemas de EIGRP</span>
+              <ul class="pages">
+                <li>
+                  <a data-ident="8.2.1.1" class="page-title" href="8.2.1.1/8.2.1.1.html" target="frame">8.2.1.1 Comandos para la resolución de problemas de EIGRP básico </a>
+                </li>
+                <li>
+                  <a data-ident="8.2.1.2" class="page-title" href="8.2.1.2/8.2.1.2.html" target="frame">8.2.1.2 Componentes </a>
+                </li>
+                <li>
+                  <a data-ident="8.2.1.3" class="page-title" href="8.2.1.3/8.2.1.3.html" target="frame">8.2.1.3 Actividad: Identificar el comando para la resolución de problemas</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <span class="icon"></span>
+              <span class="topic-title">8.2.2 Resolver problemas de vecinos de EIGRP</span>
+              <ul class="pages">
+                <li>
+                  <a data-ident="8.2.2.1" class="page-title" href="8.2.2.1/8.2.2.1.html" target="frame">8.2.2.1 Conectividad de capa 3</a>
+                </li>
+                <li>
+                  <a data-ident="8.2.2.2" class="page-title" href="8.2.2.2/8.2.2.2.html" target="frame">8.2.2.2 Parámetros EIGRP</a>
+                </li>
+                <li>
+                  <a data-ident="8.2.2.3" class="page-title" href="8.2.2.3/8.2.2.3.html" target="frame">8.2.2.3 Interfaces EIGRP</a>
+                </li>
+                <li>
+                  <a data-ident="8.2.2.4" class="page-title" href="8.2.2.4/8.2.2.4.html" target="frame">8.2.2.4 Actividad: Resolver problemas de vecinos EIGRP</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <span class="icon"></span>
+              <span class="topic-title">8.2.3 Resolver problemas de tabla de routing EIGRP</span>
+              <ul class="pages">
+                <li>
+                  <a data-ident="8.2.3.1" class="page-title" href="8.2.3.1/8.2.3.1.html" target="frame">8.2.3.1 Interfaz pasiva</a>
+                </li>
+                <li>
+                  <a data-ident="8.2.3.2" class="page-title" href="8.2.3.2/8.2.3.2.html" target="frame">8.2.3.2 Instrucción network faltante</a>
+                </li>
+                <li>
+                  <a data-ident="8.2.3.3" class="page-title" href="8.2.3.3/8.2.3.3.html" target="frame">8.2.3.3 Sumarización automática </a>
+                </li>
+                <li>
+                  <a data-ident="8.2.3.4" class="page-title" href="8.2.3.4/8.2.3.4.html" target="frame">8.2.3.4 Actividad: Resolver problemas de tabla de routing EIGRP</a>
+                </li>
+                <li>
+                  <a data-ident="8.2.3.5" class="page-title" href="8.2.3.5/8.2.3.5.html" target="frame">8.2.3.5 Packet Tracer: Resolución de problemas de EIGRP para IPv4</a>
+                </li>
+                <li>
+                  <a data-ident="8.2.3.6" class="page-title" href="8.2.3.6/8.2.3.6.html" target="frame">8.2.3.6 Práctica de laboratorio: Resolución de problemas de EIGRP básico para IPv4 e IPv6</a>
+                </li>
+                <li>
+                  <a data-ident="8.2.3.7" class="page-title" href="8.2.3.7/8.2.3.7.html" target="frame">8.2.3.7 Práctica de laboratorio: Resolución de problemas de EIGRP avanzado</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <span class="icon"></span>
+          <span class="section-title">8.3 Resumen</span>
+          <ul class="topics">
+            <li>
+              <span class="icon"></span>
+              <span class="topic-title">8.3.1 Resumen</span>
+              <ul class="pages">
+                <li>
+                  <a data-ident="8.3.1.1" class="page-title" href="8.3.1.1/8.3.1.1.html" target="frame">8.3.1.1 Actividad de clase: Ajuste de EIGRP</a>
+                </li>
+                <li>
+                  <a data-ident="8.3.1.2" class="page-title" href="8.3.1.2/8.3.1.2.html" target="frame">8.3.1.2 Packet Tracer: desafío de integración de habilidades</a>
+                </li>
+                <li>
+                  <a data-ident="8.3.1.3" class="page-title" href="8.3.1.3/8.3.1.3.html" target="frame">8.3.1.3 Resumen</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <ul id="nav-menu" class="contextmenu">
+      <li id="nav-menu-expand">Expandir todo</li>
+      <li id="nav-menu-collapse">Contraer todo</li>
+    </ul>
+    <div id="content">
+      <div id="container"></div>
+      <button id="prev-btn" type="button" title="Anterior" disabled><span class="icon">Anterior</span></button>
+      <input id="jump-box" type="text" value=""/>
+      <button id="next-btn" type="button" title="Siguiente" disabled><span class="icon">Siguiente</span></button>
+      <button id="mini-btn" type="button" title="Alternar"><span class="icon">Alternar</span></button>
+    </div>
+  </body>
+</html>
+

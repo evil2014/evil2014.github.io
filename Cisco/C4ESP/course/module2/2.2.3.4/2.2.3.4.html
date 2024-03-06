@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.2.3.4 Datos móviles 3G/4G</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.2.3.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Elección de una tecnología WAN</h1>
+        <h2>Infraestructuras WAN públicas</h2>
+      </div>
+      <div id="content">
+<p>Cada vez más, el servicio celular es otra tecnología WAN inalámbrica que se usa para conectar usuarios y ubicaciones remotas donde no hay otra tecnología de acceso WAN disponible. Muchos usuarios con smartphones y tablet PC pueden usar los datos móviles para enviar correos electrónicos, navegar la Web, descargar aplicaciones y mirar videos. </p>
+<p></p>
+<p>Los teléfonos, las tablet PC, las computadoras portátiles e incluso algunos routers se pueden comunicar a través de Internet mediante la tecnología de datos móviles. Estos dispositivos usan ondas de radio para comunicarse por medio de una torre de telefonía móvil. El dispositivo tiene una pequeña antena de radio, y el proveedor tiene una antena mucho más grande que se ubica en la parte superior de una torre en algún lugar a una distancia determinada del teléfono. </p>
+<p></p>
+<p>Algunos términos comunes de la industria de datos móviles incluyen los siguientes:</p>
+<p>
+<ul>
+<li>
+<b>3G/4G inalámbrico:</b> abreviatura para el acceso celular de tercera y cuarta generación. Estas tecnologías admiten acceso inalámbrico a Internet.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Evolución a largo plazo (LTE):</b> hace referencia a una tecnología más reciente y más rápida, que se considera parte de la tecnología de cuarta generación (4G).</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

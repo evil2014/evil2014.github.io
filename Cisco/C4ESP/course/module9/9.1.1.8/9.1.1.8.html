@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.1.1.8 Packet Tracer: Desafío de resolución de problemas sobre la documentación de la red</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.1.1.8_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resolución de problemas mediante un enfoque sistemático</h1>
+        <h2>Documentación de red</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Información básica/situación</b>
+</p>
+<p></p>
+<p>En esta actividad, se abarcan los pasos que se deben seguir para detectar una red principalmente mediante el uso de los comandos <span class="cmd"><b>telnet</b></span>, <span class="cmd"><b>show cdp neighbors detail</b></span> y <span class="cmd"><b>show ip route</b></span>. Esta es la parte 1 de una actividad que consta de dos partes. La parte 2 es Packet Tracer: Desafío de resolución de problemas sobre el uso del registro para resolver problemas, que se presenta más adelante en este capítulo.</p>
+<p></p>
+<p>La topología que ve cuando abre la actividad de Packet Tracer no muestra todos los detalles de la red. Los detalles se ocultaron mediante la función de clúster de Packet Tracer. La infraestructura de la red se contrajo, y la topología en el archivo muestra solo las terminales. Su tarea consiste en usar sus conocimientos sobre comandos de detección y redes para obtener información acerca de la topología de la red completa y registrarla.</p>
+<p></p>
+<p>
+<a href="../../files/9.1.1.8%20Packet%20Tracer%20-%20Troubleshooting%20Challenge%20-%20Documenting%20The%20Network%20Instructions.pdf" target="_blank">Packet Tracer: Desafío de resolución de problemas sobre la documentación de la red (instrucciones)</a>
+</p>
+<p></p>
+<p>
+<a href="../../files/9.1.1.8%20Packet%20Tracer%20-%20Troubleshooting%20Challenge%20-%20Documenting%20The%20Network.pka" target="_blank">Packet Tracer: Desafío de resolución de problemas sobre la documentación de la red (PKA)</a>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

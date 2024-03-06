@@ -1,0 +1,98 @@
+﻿<textcomponents>
+	
+	<component id="ID_title">
+	<text><![CDATA[<b>Campos de la trama de Ethernet</b>]]></text> 
+	</component>
+	<component id="ID_inst">
+	<text><![CDATA[Haga clic en los cuadros azules para obtener más información.]]></text>
+	</component>
+	
+	<component id="ID_txt01">
+	<text><![CDATA[<b>IEEE 802.3</b>]]></text>
+	</component>
+		
+	<component id="ID_txt02">
+	<text><![CDATA[7<br/><br/>Preámbulo]]></text> 
+	</component>
+	
+	<component id="ID_txt03">
+	<text><![CDATA[1<br/><br/>Delimitador de inicio de trama]]></text> 
+	</component>
+	
+	<component id="ID_txt04">
+	<text><![CDATA[6<br/><br/>Dirección de destino]]></text>
+	</component>
+	
+	<component id="ID_txt05">
+	<text><![CDATA[6<br/><br/>Dirección de origen]]></text> 
+	</component>
+	
+	<component id="ID_txt06">
+	<text><![CDATA[2<br/><br/>Longitud]]></text> 
+	</component>
+	
+	<component id="ID_txt07">
+	<text><![CDATA[46 a 1500<br/><br/>Encabezado y datos de 802.2]]></text> 
+	</component>
+	
+	<component id="ID_txt08">
+	<text><![CDATA[4<br/><br/>Secuencia de verificación de trama]]></text> 
+	</component>
+	
+	<component id="ID_txtTitle1">
+	<text><![CDATA[<b>Preámbulo</b>]]></text>
+	</component>
+	
+	<component id="ID_txtBody1">
+	<text><![CDATA[Preámbulo de trama de 7&nbsp;bytes]]></text>
+	</component>
+	
+	<component id="ID_txtTitle2">
+	<text><![CDATA[<b>Delimitador de inicio de trama</b>]]></text>
+	</component>
+	
+	<component id="ID_txtBody2">
+	<text><![CDATA[Delimitador de inicio de trama de 1&nbsp;byte]]></text>
+	</component>
+	
+	<component id="ID_txtTitle3">
+	<text><![CDATA[<b>Dirección de destino</b>]]></text>
+	</component>
+	
+	<component id="ID_txtBody3">
+	<text><![CDATA[Dirección MAC de destino de 6&nbsp;bytes]]></text>
+	</component>
+	
+	<component id="ID_txtTitle4">
+	<text><![CDATA[<b>Dirección de origen</b>]]></text>
+	</component>
+	
+	<component id="ID_txtBody4">
+	<text><![CDATA[Dirección MAC de origen de 6&nbsp;bytes]]></text>
+	</component>
+	
+	<component id="ID_txtTitle5">
+	<text><![CDATA[<b>Longitud</b>]]></text>
+	</component>
+	
+	<component id="ID_txtBody5">
+	<text><![CDATA[Tipo de protocolo encapsulado o longitud de trama de 2&nbsp;bytes]]></text>
+	</component>
+	
+	<component id="ID_txtTitle6">
+	<text><![CDATA[<b>Encabezado y datos 802.2</b>]]></text>
+	</component>
+	
+	<component id="ID_txtBody6">
+	<text><![CDATA[Datos de 46 a 1500&nbsp;bytes (paquete encapsulado) más relleno, de ser necesario.]]></text>
+	</component>
+	
+	<component id="ID_txtTitle7">
+	<text><![CDATA[<b>Secuencia de verificación de trama</b>]]></text>
+	</component>
+	
+	<component id="ID_txtBody7">
+	<text><![CDATA[Secuencia de verificación de trama (Checksum de CRC) de 4&nbsp;bytes]]></text>
+	</component>
+
+</textcomponents>

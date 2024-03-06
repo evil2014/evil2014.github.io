@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.2.5.3 NAT para IPv6</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.2.5.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de NAT</h1>
+        <h2>Configuración de NAT e IPv6</h2>
+      </div>
+      <div id="content">
+<p>NAT para IPv6 se utiliza en un contexto muy diferente del de NAT para IPv4, como se muestra en la ilustración. Las variedades de NAT para IPv6 se usan para proporcionar acceso de manera transparente entre redes solo IPv6 y redes solo IPv4. No se utiliza como forma de traducción de IPv6 privada a IPv6 global.</p>
+<p></p>
+<p>Lo ideal es que IPv6 se ejecute de forma nativa siempre que sea posible. Es decir, en dispositivos IPv6 que se comunican entre sí a través de redes IPv6. No obstante, para colaborar en el cambio de IPv4 a IPv6, el IETF elaboró varias técnicas de transición que admiten una variedad de situaciones de IPv4 a IPv6, como dual-stack, tunneling y traducción.</p>
+<p></p>
+<p>Dual-stack es cuando los dispositivos ejecutan protocolos asociados a IPv4 y a IPv6. Tunneling para IPv6 es el proceso de encapsulación de un paquete IPv6 dentro de un paquete IPv4. Esto permite que el paquete IPv6 se transmita a través de una red solo IPv4.</p>
+<p></p>
+<p>La NAT para IPv6 no se debe usar como una estrategia a largo plazo, sino como un mecanismo temporal para contribuir a la migración de IPv4 a IPv6. Con el correr de los años, hubo varios tipos de NAT para IPv6, incluida la traducción de direcciones de red/traducción de protocolos (NAT-PT). El IETF dejó en desuso NAT-PT en favor de su reemplazo, NAT64. NAT64 excede el ámbito de este currículo.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

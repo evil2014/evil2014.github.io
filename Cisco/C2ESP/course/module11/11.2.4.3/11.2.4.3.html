@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>11.2.4.3 Configuración de reenvío de puertos con IOS</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_11.2.4.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de NAT</h1>
+        <h2>Reenvío de puertos</h2>
+      </div>
+      <div id="content">
+<p>Los comandos de IOS que se usan para implementar el reenvío de puertos son similares a los que se usan para configurar la NAT estática. Básicamente, el reenvío de puertos es una traducción de NAT estática con un número de puerto TCP o UDP específico.</p>
+<p></p>
+<p>En la figura 1, se muestra el comando de NAT estática que se usa para configurar el reenvío de puertos con IOS. </p>
+<p></p>
+<p>En la figura 2, se muestra un ejemplo de configuración del reenvío de puertos con comandos de IOS en el router R2. La dirección 192.168.10.254 es la dirección IPv4 local interna del servidor web que escucha en el puerto 80. Los usuarios acceden a este servidor web interno con la dirección IP global 209.165.200.225, una dirección IPv4 pública globalmente única. En este caso, es la dirección de la interfaz Serial 0/1/0 del R2. El puerto global se configura como 8080. Este es el puerto de destino que se utiliza junto con la dirección IPv4 global 209.165.200.225 para acceder al servidor web interno. Observe los siguientes parámetros de comando dentro de la configuración NAT:</p>
+<p>
+<ul>
+<li>
+<span class="cmd">
+<i>ip-local</i>
+</span> = 192.168.10.254</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<span class="cmd">
+<i>puerto-local</i>
+</span> = 80</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<span class="cmd">
+<i>ip-global</i>
+</span> = 209.165.200.225</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<span class="cmd">
+<i>puerto-global</i>
+</span> = 8080</li>
+</ul>
+</p>
+<p></p>
+<p>Cuando no se utiliza un número de puerto bien conocido, el cliente debe especificar el número de puerto de la aplicación.</p>
+<p></p>
+<p>Al igual que otros tipos de NAT, el reenvío de puertos requiere que se configuren las interfaces NAT interna y externa.</p>
+<p></p>
+<p>Como en el caso de la NAT estática, se puede utilizar el comando <span class="cmd"><b>show ip nat translations</b></span> para verificar el reenvío de puertos, como se muestra en la figura 3. </p>
+<p></p>
+<p>En el ejemplo, cuando el router recibe el paquete con la dirección IPv4 global interna 209.165.200.225 y un puerto TCP de destino 8080, el router realiza una búsqueda en la tabla de NAT con la dirección IPv4 de destino y el puerto de destino como claves. A continuación, el router traduce la dirección a la dirección local interna del host 192.168.10.254 y el puerto de destino 80. Luego, el R2 reenvía el paquete al servidor web. En el caso de los paquetes de retorno del servidor web al cliente, este proceso se invierte.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

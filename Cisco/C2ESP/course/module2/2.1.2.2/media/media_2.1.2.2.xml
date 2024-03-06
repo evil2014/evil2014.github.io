@@ -1,0 +1,108 @@
+﻿<textcomponents> <!--Slide 1-->
+<component id="ID_s1_title">
+<text><![CDATA[<b>Configurar dúplex y velocidad  </b>]]></text>
+</component>
+
+
+<component id="ID_s1_txt01">
+   <text><![CDATA[Modo full-duplex<br/>100&nbsp;Mb/s]]></text>
+   </component>
+
+
+   <component id="ID_s1_txt02">
+   <text><![CDATA[Modo full-duplex<br/>100&nbsp;Mb/s]]></text>
+   </component>
+
+   <component id="ID_s1_table01">
+  <text><![CDATA[<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4' class="mtable">
+	
+
+<tr>
+	 <td colspan='2' bgcolor='#98D3D1' class="title"><font size='12' class="font12px" color='#393536'><b>Comandos de IOS de un switch Cisco  </b></font></td>
+	 </tr>
+
+
+
+
+
+<tr>
+		<td colspan='2' bgcolor='#0E6360' class="mtable_top"><font size='1' color='#0E6360'><span style="color:#98D3D1">.</span></font></td>
+	</tr>
+		<tr>
+		<td bgcolor='#EFF8F7' valign="top"><font color='#393536' size="11" class="font11px">Ingrese al modo de configuración global.</font></td>
+		<td bgcolor='#EFF8F7' valign="top"><font face="_typewriter" color='#393536' size="11" class="font11px">S1# <b>configure terminal  </b></font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#ffffff' valign="top"><font color='#393536' size="11" class="font11px">Ingrese el modo de configuración de interfaz.</font></td>
+		<td bgcolor='#ffffff' valign="top"><font face="_typewriter" color='#393536' size="11" class="font11px">S1(config)# <b>interface FastEthernet 0/1  </b></font></td>
+	</tr>
+
+
+
+<tr>
+		<td bgcolor='#EFF8F7' valign="top"><font color='#393536' size="11" class="font11px">Configura el modo dúplex de la interfaz.</font></td>
+		<td bgcolor='#EFF8F7' valign="top"><font face="_typewriter" color='#393536' size="11" class="font11px">S1(config-if)# <b>duplex full  </b></font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#ffffff' valign="top"><font color='#393536' size="11" class="font11px">Configura la velocidad de la interfaz.</font></td>
+		<td bgcolor='#ffffff' valign="top"><font face="_typewriter" color='#393536' size="11" class="font11px">S1(config-if)# <b>speed 100  </b></font></td>
+	</tr>
+
+
+
+
+<tr>
+		<td bgcolor='#EFF8F7' valign="top"><font color='#393536' size="11" class="font11px">Vuelve al modo EXEC privilegiado.</font></td>
+		<td bgcolor='#EFF8F7' valign="top"><font face="_typewriter" color='#393536' size="11" class="font11px">S1(config-if)# <b>end  </b></font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#ffffff' valign="top"><font color='#393536' size="11" class="font11px">Guarda la configuración en ejecución en la configuración de inicio.</font></td>
+		<td bgcolor='#ffffff' valign="top"><font face="_typewriter" color='#393536' size="11" class="font11px">S1# <b>copy running-config startup-config  </b></font></td>
+	</tr>
+	</table>]]></text>
+  </component>
+<component id="ID_sc_reset">
+		<text><![CDATA[Restablecer]]></text>
+	</component>
+	<component id="ID_sc_showme">
+		<text><![CDATA[Mostrar]]></text>
+	</component>
+	<component id="ID_sc_showall">
+		<text><![CDATA[Mostrar todo]]></text>
+	</component> <!--Slide 2-->
+<component id="ID_s2_title">
+<text><![CDATA[<b>  </b>]]></text>
+</component>
+
+<component id="ID_s2_SC01" fontFace='Courier New' fontSize="10">
+		<feedback id="fb"><![CDATA[<b><font size='10' class="font10px" face="Arial" color="#0000FF">***Debe introducir el comando exacto y completo. Los comandos que incluyen un nombre o una contraseña distinguen mayúsculas de minúsculas.***</font>  </b>
+		]]></feedback>
+		
+		<existingcommands><![CDATA[<font  face="Arial"><b>Ingrese al modo de configuración y establezca el modo dúplex de FastEthernet0/1 en full y la velocidad en 100.  </b></font>]]></existingcommands>
+		<command prompt="S1#">
+		    <correctresponse><![CDATA[configure terminal]]></correctresponse>
+				<deviceresponse><![CDATA[<font Face='Courier New' Size="10" class="font10px">Enter configuration commands, one per line. End with CNTL/Z.</font>]]></deviceresponse> 					
+		</command>
+		<command prompt="S1(config)#">
+			<correctresponse><![CDATA[interface FastEthernet0/1]]></correctresponse>
+		</command>
+		<command prompt="S1(config-if)#">
+			<correctresponse><![CDATA[duplex full]]></correctresponse>
+		</command>
+		<command prompt="S1(config-if)#">
+			<correctresponse><![CDATA[speed 100]]></correctresponse>
+			<instruction><![CDATA[<font face="Arial"><b>Finalice el modo de configuración y guarde la configuración en la NVRAM.  </b></font>]]></instruction>
+		</command>
+		<command prompt="S1(config-if)#">
+			<correctresponse><![CDATA[end]]></correctresponse>
+				<deviceresponse><![CDATA[<font Face='Courier New' Size="10" class="font10px">S1#<br>%SYS-5-CONFIG_I: Configured from console by console</font>]]></deviceresponse> 					
+		</command>
+		<command prompt="S1#">
+			<correctresponse><![CDATA[copy running-config startup-config]]></correctresponse>
+			<instruction><![CDATA[<font  face="Arial"><b>Configuró correctamente los parámetros de dúplex y velocidad del puerto del switch.  </b></font>]]></instruction>
+		</command>
+		<command prompt=""/>
+	</component>
+
+
+</textcomponents>

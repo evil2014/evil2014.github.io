@@ -1,0 +1,42 @@
+﻿<textcomponents> <!--slide 1 -->
+<component id="ID_s1_title">
+<text><![CDATA[<b>Puertos de extremo</b>]]></text>
+</component>
+
+<component id="ID_s1_txt01">
+<text><![CDATA[Puente raíz]]></text> 
+</component>
+
+<component id="ID_s1_txt02">
+<text><![CDATA[Base de datos]]></text> 
+</component>
+
+<component id="ID_s1_tBoxTitle">
+<text><![CDATA[<b>Puertos de extremo</b>]]></text> 
+</component>
+
+<component id="ID_s1_tBoxBody">
+<text><![CDATA[<textformat blockindent="-14"><li>Nunca se conectan a un switch.</li><li>Pasan de inmediato al estado de reenvío.</li><li>Funcionan de forma similar a un puerto configurado con Cisco PortFast.</li><li>En los switches Cisco, se configuran mediante el comando <font face='_typewriter'><b>spanning-tree portfast</b></font>.</li></textformat>]]></text> 
+</component> <!--slide 2 -->
+<component id="ID_s2_title">
+<text><![CDATA[<b>Puertos de perímetro</b>]]></text> 
+</component>
+
+<component id="ID_s2_txt01">
+<text><![CDATA[Puente raíz]]></text> 
+</component>
+
+<component id="ID_s2_txt02">
+<text><![CDATA[Base de datos]]></text> 
+</component>
+
+
+<component id="ID_s2_tBoxTitle">
+<text><![CDATA[<b>Puertos de perímetro</b>]]></text> 
+</component>
+
+<component id="ID_s2_tBoxBody">
+<text><![CDATA[Son puertos que pueden estar conectados a otros dispositivos de switch y no se deben configurar como puertos perimetrales.]]></text> 
+</component>
+
+</textcomponents>

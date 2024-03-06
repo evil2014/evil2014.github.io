@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.3.1.2 Tabla de direcciones MAC del switch</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.3.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Switches LAN</h1>
+        <h2>Conmutación</h2>
+      </div>
+      <div id="content">
+<p>Los switches emplean direcciones MAC para dirigir las comunicaciones de red a través de su estructura al puerto correspondiente hasta el nodo de destino. La estructura del switch son los circuitos integrados y la programación de máquina adjunta que permite controlar las rutas de datos a través del switch. El switch debe primero saber qué nodos existen en cada uno de sus puertos para poder definir cuál será el puerto que utilizará para transmitir una trama unicast.</p>
+<p></p>
+<p>El switch determina cómo manejar las tramas de datos entrantes mediante una tabla de direcciones MAC. El switch genera su tabla de direcciones MAC grabando las direcciones MAC de los nodos que se encuentran conectados en cada uno de sus puertos. Una vez que la dirección MAC de un nodo específico en un puerto determinado queda registrada en la tabla de direcciones, el switch ya sabe enviar el tráfico destinado a ese nodo específico desde el puerto asignado a dicho nodo para posteriores transmisiones.</p>
+<p></p>
+<p>Cuando un switch recibe una trama de datos entrantes y la dirección MAC de destino no figura en la tabla, éste reenvía la trama a todos los puertos excepto al que la recibió en primer lugar. Cuando el nodo de destino responde, el switch registra la dirección MAC de éste en la tabla de direcciones del campo dirección de origen de la trama. En las redes que cuentan con varios switches interconectados, las tablas de direcciones MAC registran varias direcciones MAC para los puertos que conectan los switches que reflejan los nodos de destino. Generalmente, los puertos de los switches que se utilizan para interconectar dos switches cuentan con varias direcciones MAC registradas en la tabla de direcciones. </p>
+<p></p>
+<p>Para ver cómo funciona, consulte cada uno de los pasos en las figuras 1 a 6.</p>
+<p></p>
+<p>A continuación se describe este proceso:</p>
+<p></p>
+<p>
+<b>Paso 1.</b> El switch recibe una trama de broadcast de la PC1 en el Puerto 1.</p>
+<p></p>
+<p>
+<b>Paso 2.</b> El switch ingresa la dirección MAC de origen y el puerto del switch que recibió la trama en la tabla de direcciones.</p>
+<p></p>
+<p>
+<b>Paso 3.</b> Dado que la dirección de destino es broadcast, el switch satura todos los puertos enviando la trama, excepto el puerto que la recibió.</p>
+<p></p>
+<p>
+<b>Paso 4.</b> El dispositivo de destino responde al broadcast con una trama de unicast dirigida a la PC1.</p>
+<p></p>
+<p>
+<b>Paso 5.</b> El switch introduce en la tabla de direcciones la dirección MAC de origen de la PC2 y el número del puerto de switch que recibió la trama. En la tabla de direcciones MAC pueden encontrarse la dirección de destino de la trama y su puerto asociado.</p>
+<p></p>
+<p>
+<b>Paso 6.</b> Ahora el switch puede enviar tramas entre los dispositivos de origen y destino sin saturar el tráfico, ya que cuenta con entradas en la tabla de direcciones que identifican a los puertos asociados.</p>
+<p></p>
+<p>
+<b>Nota:</b> en ocasiones, la tabla de direcciones MAC se denomina “tabla de memoria de contenido direccionable” (CAM). Si bien el término “tabla CAM” es bastante común, para el propósito de este curso la denominaremos “tabla de direcciones MAC”.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

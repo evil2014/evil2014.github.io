@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.2.3.3 Tipos de medios de fibra óptica</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.2.3.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Medios de red</h1>
+        <h2>Cableado de fibra óptica</h2>
+      </div>
+      <div id="content">
+<p>Los pulsos de luz que representan los datos transmitidos en forma de bits en los medios son generados por uno de los siguientes:</p>
+<p>
+<ul>
+<li>Láseres</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Diodos emisores de luz (LED) </li>
+</ul>
+</p>
+<p></p>
+<p>Los dispositivos electrónicos semiconductores, denominados fotodiodos, detectan los impulsos de luz y los convierten en voltajes que pueden reconstruirse en tramas de datos. </p>
+<p></p>
+<p>
+<b>Nota:</b> la luz de láser transmitida a través del cableado de fibra óptica puede dañar el ojo humano. Se debe tener precaución y evitar mirar dentro del extremo de una fibra óptica activa.</p>
+<p></p>
+<p>En términos generales, los cables de fibra óptica pueden clasificarse en dos tipos: </p>
+<p>
+<ul>
+<li>
+<b>Fibra óptica monomodo:</b> la fibra óptica monomodo (SMF) consta de un núcleo muy pequeño y emplea tecnología láser costosa para enviar un único haz de luz. Se usa mucho en situaciones de larga distancia que abarcan cientos de kilómetros, como aplicaciones de TV por cable y telefonía de larga distancia. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Fibra óptica multimodo:</b> la fibra óptica multimodo (MMF) consta de un núcleo más grande y utiliza emisores LED para enviar pulsos de luz. Específicamente, la luz de un LED ingresa a la fibra multimodo en diferentes ángulos. Se usa mucho en las redes LAN, debido a que se puede alimentar mediante LED de bajo costo. Proporciona un ancho de banda de hasta 10 Gb/s a través de longitudes de enlace de hasta 550 m.</li>
+</ul>
+</p>
+<p></p>
+<p>En las figuras 1 y 2, se destacan las características de la fibra óptica multimodo y monomodo. Una de las diferencias destacadas entre la fibra óptica multimodo y monomodo es la cantidad de dispersión. La dispersión se refiere a la extensión de los pulsos de luz con el tiempo. Cuanta más dispersión existe, mayor es la pérdida de intensidad de la señal. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

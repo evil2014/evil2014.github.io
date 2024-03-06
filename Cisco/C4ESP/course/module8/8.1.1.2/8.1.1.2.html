@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.1.1.2 Funcionamiento de syslog</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.1.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Syslog</h1>
+        <h2>Funcionamiento de syslog</h2>
+      </div>
+      <div id="content">
+<p>En los dispositivos de red Cisco, el protocolo syslog comienza enviando los mensajes del sistema y el resultado del comando <span class="cmd"><b>debug</b></span> a un proceso de registro local interno del dispositivo. La forma en que el proceso de registro administra estos mensajes y resultados se basa en las configuraciones del dispositivo. Por ejemplo, los mensajes de syslog se pueden enviar a través de la red a un servidor de syslog externo. Estos mensajes se pueden recuperar sin necesidad de acceder al dispositivo propiamente dicho. Los resultados y los mensajes de registro almacenados en el servidor externo se pueden incluir en varios informes para facilitar la lectura. </p>
+<p></p>
+<p>Por otra parte, los mensajes de syslog se pueden enviar a un búfer interno. Los mensajes enviados al búfer interno solo se pueden ver mediante la CLI del dispositivo. </p>
+<p></p>
+<p>Por último, el administrador de red puede especificar que solo se envíen determinados tipos de mensajes del sistema a varios destinos. Por ejemplo, se puede configurar el dispositivo para que reenvíe todos los mensajes del sistema a un servidor de syslog externo. Sin embargo, los mensajes del nivel de depuración se reenvían al búfer interno, y solo el administrador puede acceder a ellos desde la CLI. </p>
+<p></p>
+<p>Como se muestra en la ilustración, los destinos comunes para los mensajes de syslog incluyen lo siguiente:</p>
+<p>
+<ul>
+<li>Búfer de registro (RAM dentro de un router o switch)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Línea de consola </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Línea de terminal</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Servidor de syslog</li>
+</ul>
+</p>
+<p></p>
+<p>Es posible controlar los mensajes del sistema de manera remota viendo los registros en un servidor de syslog o accediendo al dispositivo mediante Telnet, SSH o a través del puerto de consola.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.1.3.2 Ejemplo de Frame Relay</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.1.3.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Introducción a Frame Relay</h1>
+        <h2>Conceptos avanzados de Frame Relay</h2>
+      </div>
+      <div id="content">
+<p>Independientemente de cualquier costo de CPE, el cliente paga por tres componentes de los costos de Frame Relay siguientes:</p>
+<p>
+<ul>
+<li>
+<b>Velocidad de acceso:</b> el costo de la línea de acceso desde el DTE hasta el DCE (del cliente al proveedor de servicios). Esta línea se cobra sobre la base de la velocidad del puerto que se negoció y se instaló. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>PVC:</b> este componente de los costos se basa en los PVC. Después de establecer un PVC, el costo adicional para aumentar la CIR suele ser bajo y se puede hacer en pequeños incrementos (4 kb/s).</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>CIR:</b> en general, los clientes eligen una CIR inferior a la velocidad de acceso. Esto les permite aprovechar las ráfagas.</li>
+</ul>
+</p>
+<p></p>
+<p>En el ejemplo de la ilustración, el cliente paga por lo siguiente:</p>
+<p></p>
+<p>
+<ul>
+<li>Una línea de acceso con una velocidad de 64 kb/s que conecta su DTE al DCE del proveedor de servicios a través del puerto serie S0/0/1. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Dos puertos virtuales, uno a 32 kb/s y el otro a 16 kb/s. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Una CIR de 48 kb/s a través de toda la red Frame Relay. Por lo general, es un cargo fijo y no se relaciona con la distancia.</li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Nota:</b> los valores de ancho de banda que se usan en este capítulo son solo con fines comparativos. No reflejan necesariamente implementaciones reales.</p>
+<p></p>
+<p>
+<b>Sobresuscripción</b>
+</p>
+<p>En ocasiones, los proveedores de servicios venden más capacidad de la que tienen, con la suposición de que no todos exigen la capacidad que tienen permitida todo el tiempo. Esta sobresuscripción es similar a que las aerolíneas vendan más asientos de los que tienen con la expectativa de que algunos de los clientes reservados no se presenten. Debido a la sobresuscripción, hay situaciones en las que la suma de las CIR de varios PVC a una ubicación dada es superior a la velocidad del puerto o del canal de acceso. Esto puede causar congestión y descarte de tráfico.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

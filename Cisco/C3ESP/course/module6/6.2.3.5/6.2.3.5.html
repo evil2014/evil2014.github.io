@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.2.3.5 Verificación de OSPFv3 multiárea</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.2.3.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de OSPF de diversas áreas</h1>
+        <h2>Verificación de OSPF de diversas áreas</h2>
+      </div>
+      <div id="content">
+<p>Al igual que OSPFv2, OSPFv3 proporciona comandos de verificación de OSPFv3 similares. Consulte la topología OSPFv3 de referencia en la figura 1. </p>
+<p></p>
+<p>En la figura 2, se muestra la configuración OSPFv3 del R1. Observe que el comando confirma que ahora existen dos áreas. También identifica cada interfaz habilitada para las respectivas áreas.</p>
+<p></p>
+<p>En la figura 3, se verifican las interfaces con OSPFv3 habilitado y el área a la que pertenecen.</p>
+<p></p>
+<p>En la figura 4, se muestra la tabla de routing del R1. Observe que la tabla de routing IPv6 muestra entradas <b>OI</b> en la tabla de routing para identificar las redes descubiertas a partir de otras áreas. Específicamente, la <b>O</b> representa las rutas OSPF, y la <b>I</b> significa “interárea”, lo que quiere decir que la ruta se originó en otra área. Recuerde que el R1 está en el área 0 y que la subred 2001:DB8:CAFE3::/64 se conecta al R3 en el área 2. La entrada [110/1295] de la tabla de routing representa la distancia administrativa que se asigna a OSPF (<span class="cmd">110</span>) y el costo total de las rutas (costo de <span class="cmd">1295</span>).</p>
+<p></p>
+<p>En la figura 5, se muestra el contenido de la LSDB del R1. El comando muestra información similar a la de su equivalente de OSPFv2. No obstante, la LSDB de OSPFv3 contiene tipos de LSA adicionales que no están disponibles en OSPFv2.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

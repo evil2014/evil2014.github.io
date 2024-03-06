@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.2.1.4 Componentes de la resolución de problemas de OSPF</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.2.1.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resolución de problemas de implementaciones de OSPF de área única</h1>
+        <h2>Componentes de la resolución de problemas de OSPF de área única</h2>
+      </div>
+      <div id="content">
+<p>Como se muestra en la ilustración, en general, los problemas de OSPF se relacionan con uno de los siguientes aspectos:</p>
+<p>
+<ul>
+<li>Adyacencias de vecinos</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Rutas faltantes</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Selección de rutas</li>
+</ul>
+</p>
+<p></p>
+<p>Cuando resuelva problemas de vecinos, verifique si el router estableció adyacencias con routers vecinos mediante el comando <span class="cmd"><b>show ip ospf neighbors</b></span>. Si no hay adyacencias, los routers no pueden intercambiar rutas. Verifique si las interfaces funcionan y están habilitadas para OSPF mediante los comandos <span class="cmd"><b>show ip interface brief</b></span> y <span class="cmd"><b>show ip ospf interface</b></span>. Si las interfaces funcionan y están habilitadas para OSPF, asegúrese de que las interfaces en ambos routers estén configuradas para la misma área OSPF y que no estén configuradas como interfaces pasivas.</p>
+<p></p>
+<p>Si la adyacencia entre los dos routers está establecida, verifique que haya rutas OSPF en la tabla de routing mediante el comando <span class="cmd"><b>show ip route ospf</b></span>. Si no hay rutas OSPF, verifique que no haya otros protocolos de routing con distancias administrativas más bajas en ejecución en la red. Verifique si todas las redes requeridas se anuncian en OSPF. También verifique si hay una lista de acceso configurada en un router que podría filtrar las actualizaciones de routing entrantes o salientes. </p>
+<p></p>
+<p>Si todas las rutas requeridas están en la tabla de routing pero la ruta que el tráfico toma es incorrecta, verifique el costo de OSPF de las interfaces en la ruta. Además, preste especial atención en los casos en que las interfaces tienen una velocidad superior a 100 Mb/s, ya que todas las interfaces por encima de este ancho de banda tienen el mismo costo de OSPF de manera predeterminada.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

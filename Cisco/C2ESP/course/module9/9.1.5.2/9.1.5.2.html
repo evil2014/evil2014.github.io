@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.1.5.2 Ubicación de la ACL estándar</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.1.5.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Funcionamiento de ACL de IP</h1>
+        <h2>Pautas para la colocación de ACL</h2>
+      </div>
+      <div id="content">
+<p>Las ACL estándar solo pueden filtrar tráfico según la dirección de origen. La regla básica para la colocación de una ACL estándar es colocar la ACL lo más cerca posible de la red de destino. Esto permite que el tráfico llegue a todas las demás redes, excepto la red que filtra los paquetes. </p>
+<p></p>
+<p>En la ilustración, el administrador desea impedir que el tráfico que se origina en la red 192.168.10.0/24 llegue a la red 192.168.30.0/24. </p>
+<p>Si la ACL estándar se coloca en la interfaz de salida del R1, eso evitaría que el tráfico de la red 192.168.10.0/24 alcance cualquier red a la que se pueda llegar a través de la interfaz Serial 0/0/0 del R1. </p>
+<p></p>
+<p>De acuerdo con las pautas básicas de colocación de ACL estándar cerca del destino, en la ilustración se muestran dos interfaces posibles del R3 a las que aplicar la ACL estándar: </p>
+<p>
+<ul>
+<li>
+<b>Interfaz S0/0/1 del R3:</b> la aplicación de una ACL estándar para impedir que el tráfico de 192.168.10.0/24 ingrese a la interfaz S0/0/1 evita que dicho tráfico llegue a 192.168.30.0/24 y al resto de las redes a las que puede llegar el R3. Esto incluye la red 192.168.31.0/24. Dado que el objetivo de la ACL es filtrar el tráfico destinado solo a 192.168.30.0/24, no se debe aplicar una ACL estándar a esta interfaz.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Interfaz G0/0 del R3:</b> al aplicar una ACL estándar al tráfico que sale por la interfaz G0/0, se filtran los paquetes que van de 192.168.10.0/24 a 192.168.30.0/24. Esto no afecta a las otras redes a las que puede llegar el R3. Los paquetes de 192.16810.0/24 aún pueden llegar a 192.168.31.0/24.</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

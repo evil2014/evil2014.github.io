@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.1.1.2 Subcapa MAC</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.1.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolo Ethernet</h1>
+        <h2>Funcionamiento de Ethernet</h2>
+      </div>
+      <div id="content">
+<p>Como se muestra en la ilustración, la subcapa MAC de Ethernet tiene dos responsabilidades principales:</p>
+<p></p>
+<p>
+<ul>
+<li>Encapsulación de datos</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Control de acceso al medio</li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Encapsulación de datos</b>
+</p>
+<p>El proceso de encapsulación de datos incluye el armado de la trama antes de la transmisión y el desarmado de la trama en el momento en que se la recibe. Cuando se forma la trama, la capa MAC agrega un encabezado y un tráiler a la PDU de la capa de red. </p>
+<p></p>
+<p>La encapsulación de datos proporciona tres funciones principales:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Delimitación de tramas</b>: el proceso de entramado proporciona delimitadores importantes que se utilizan para identificar un grupo de bits que componen una trama. Este proceso ofrece una sincronización entre los nodos transmisores y receptores.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Direccionamiento</b>: el proceso de encapsulación también proporciona direccionamiento de la capa de enlace de datos. Cada encabezado Ethernet agregado a la trama contiene la dirección física (dirección MAC) que permite que la trama se envíe a un nodo de destino.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Detección de errores</b>: cada trama de Ethernet contiene un tráiler con una comprobación de redundancia cíclica (CRC) del contenido de la trama. Una vez que se recibe una trama, el nodo receptor crea una CRC para compararla con la de la trama. Si estos dos cálculos de CRC coinciden, puede asumirse que la trama se recibió sin errores.</li>
+</ul>
+</p>
+<p></p>
+<p>La utilización de tramas facilita la transmisión de bits a medida que se colocan en los medios y la agrupación de bits en el nodo receptor.</p>
+<p></p>
+<p>
+<b>Control de acceso al medio</b>
+</p>
+<p>La segunda responsabilidad de la subcapa MAC es el control de acceso al medio. El control de acceso al medio es responsable de la ubicación y la remoción de tramas en los medios. Como su nombre lo indica, controla el acceso a los medios. Esta subcapa se comunica directamente con la capa física.</p>
+<p></p>
+<p>La topología lógica subyacente de Ethernet es de bus de multiacceso; por lo tanto, todos los nodos (dispositivos) en un mismo segmento de red comparten el medio. Ethernet es un método de red de contienda. Recuerde que en un método por contienda, o método no determinista, cualquier dispositivo puede intentar transmitir datos a través del medio compartido siempre que tenga datos para enviar. Sin embargo, tal como sucede si dos personas intentan hablar al mismo tiempo, si hay varios dispositivos en un único medio que intentan reenviar datos simultáneamente, los datos colisionan, lo que provoca que estos se dañen y no se puedan utilizar. Por este motivo, Ethernet proporciona un método para controlar la forma en que los nodos comparten el acceso mediante el uso de una tecnología de acceso múltiple por detección de portadora (CSMA).</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

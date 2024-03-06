@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.4.1.1 Nuevas tendencias</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.4.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>El cambiante entorno de red</h1>
+        <h2>Tendencias de red</h2>
+      </div>
+      <div id="content">
+<p>Cuando observamos la forma en la que Internet cambió tantas de las cosas que las personas hacen a diario, es difícil creer que hace solo alrededor de 20 años que la mayoría tiene acceso a este servicio. Internet realmente transformó la manera en la que las personas y las organizaciones se comunican. Por ejemplo, antes de que Internet estuviera tan ampliamente disponible, las compañías y las pequeñas empresas dependían principalmente de material de marketing impreso para que los consumidores conocieran sus productos. Era difícil para las empresas determinar qué hogares eran posibles clientes, por lo que utilizaban programas masivos de marketing impreso. Esos programas eran costosos y su eficacia era variada. Compare ese método con los que se utilizan actualmente para llegar a los consumidores. La mayoría de las empresas están presentes en Internet, donde los consumidores pueden obtener información sobre sus productos, leer comentarios de otros clientes y pedir productos directamente desde los sitios Web. Los sitios de redes sociales se asocian a las empresas para promocionar productos y servicios. Los blogueros se asocian a las empresas para destacar y respaldar productos y servicios. La mayor parte de esta publicidad no tradicional está dirigida al consumidor potencial, y no a las masas. En la ilustración 1, se muestran varias predicciones sobre Internet para el futuro cercano.</p>
+<p></p>
+<p>A medida que se lanzan al mercado nuevas tecnologías y dispositivos para usuarios finales, las empresas y los consumidores deben continuar adaptándose a este entorno en constante evolución. La función de la red es transformarse para permitir que las personas, los dispositivos y la información estén conectados. Existen muchas nuevas tendencias de red que afectarán a organizaciones y consumidores. Algunas de las tendencias principales incluyen las siguientes:</p>
+<p></p>
+<p>
+<ul>
+<li>Cualquier dispositivo, a cualquier contenido, de cualquier forma</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Colaboración en línea</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Video</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Computación en la nube</li>
+</ul>
+</p>
+<p></p>
+<p>Estas tendencias están interconectadas y seguirán creciendo al respaldarse entre ellas en los próximos años. Se tratarán estas tendencias con mayor detalle en los siguientes temas.</p>
+<p></p>
+<p>Sin embargo, debe recordar que a diario se imaginan y concretan nuevas tendencias. ¿Cómo piensa que cambiará Internet en los próximos 10 años?,  ¿y en los próximos 20 años? En la figura 2, se muestra un video sobre algunas de las ideas de Cisco acerca de avances futuros.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

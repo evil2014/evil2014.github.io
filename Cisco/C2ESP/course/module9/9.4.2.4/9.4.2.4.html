@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.4.2.4 Resolución de problemas de errores comunes de ACL, ejemplo 4</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.4.2.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resolución de problemas de ACL</h1>
+        <h2>Errores comunes de ACL </h2>
+      </div>
+      <div id="content">
+<p>
+<b>Ejemplo de error 4</b>
+</p>
+<p></p>
+<p>En la ilustración, el host 192.168.30.12 puede conectarse a 192.168.31.12 mediante Telnet, pero la política de la empresa establece que esta conexión no debe permitirse. Los resultados del comando <span class="cmd"><b>show access-lists 140</b></span> indican que se encontró una coincidencia para la instrucción permit.</p>
+<p></p>
+<p>
+<b>Solución:</b> el host 192.168.30.12 puede utilizar Telnet para conectarse a 192.168.31.12 porque no hay reglas que denieguen el host 192.168.30.12 o su red como origen. La instrucción 10 de la lista de acceso 140 deniega la interfaz del router por la que el tráfico ingresa a este. La dirección host IPv4 en la instrucción 10 debería ser 192.168.30.12.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

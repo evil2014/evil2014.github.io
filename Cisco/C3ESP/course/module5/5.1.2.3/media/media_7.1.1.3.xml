@@ -1,0 +1,81 @@
+﻿<textcomponents>
+
+<component id="ID_s1_title">
+<text><![CDATA[<b>Establecimiento de adyacencias</b>]]></text> 
+</component>
+<component id="ID_s2_title">
+<text><![CDATA[<b>Función del DR</b>]]></text> 
+</component>
+
+<component id="ID_s1_txt01">
+<text><![CDATA[<b>DR</b>]]></text> 
+</component>
+
+<component id="ID_s2_txt01">
+<text><![CDATA[LSA]]></text> 
+</component>
+
+<component id="ID_s2_txt02">
+<text><![CDATA[LSA]]></text> 
+</component>
+
+<component id="ID_s2_txt03">
+<text><![CDATA[LSA]]></text> 
+</component>
+<component id="ID_s2_txt04">
+<text><![CDATA[LSA]]></text> 
+</component>
+<component id="ID_s2_txt05">
+<text><![CDATA[LSA]]></text> 
+</component>
+
+<component id="ID_s2_txt06">
+<text><![CDATA[Las adyacencias solo se forman con el DR y el BDR.]]></text> 
+</component>
+
+<component id="ID_s2_txt07">
+<text><![CDATA[El DR envía LSA a todos los otros routers.]]></text> 
+</component>
+
+
+
+<component id="ID_s2_txt09">
+<text><![CDATA[<b>DR</b>]]></text> 
+</component>
+
+<component id="ID_s2_txt10">
+<text><![CDATA[<b>BDR</b>]]></text> 
+</component>
+
+<component id="ID_s2_btxt_01">
+<text><![CDATA[Estas son mis LSA.]]></text> 
+</component>
+<component id="ID_s2_btxt_02">
+<text><![CDATA[Estas son las LSA de 10.1.1.1.]]></text> 
+</component> <!--ANIMATION CONTROLLER-->
+	<component id="end">
+		<text><![CDATA[End]]></text>
+	</component>
+	
+	<component id="fforward">
+		<text><![CDATA[Adelantar]]></text>
+	</component>
+	
+	<component id="pause">
+		<text><![CDATA[Pausa]]></text>
+	</component>
+	
+	<component id="play">
+		<text><![CDATA[Reproducir]]></text>
+	</component>
+	
+	<component id="rewind">
+		<text><![CDATA[Regresar]]></text>
+	</component>
+	
+	<component id="start">
+		<text><![CDATA[Inicio]]></text>
+	</component>	
+
+
+</textcomponents>

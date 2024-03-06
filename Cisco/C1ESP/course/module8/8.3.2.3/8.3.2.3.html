@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.3.2.3 Ping para prueba de conectividad a dispositivo remoto </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.3.2.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Verificación de conectividad</h1>
+        <h2>Prueba y verificación</h2>
+      </div>
+      <div id="content">
+<p>También se puede utilizar ping para probar la capacidad de un host local para comunicarse a través de una internetwork. El host local puede hacer ping a un host IPv4 operativo de una red remota, como se muestra en la ilustración.</p>
+<p></p>
+<p>Si este ping se realiza correctamente, se puede verificar el funcionamiento de una amplia porción de la internetwork. Un ping correcto a través de la internetwork confirma la comunicación en la red local, el funcionamiento del router que funciona como gateway y el funcionamiento de todos los otros routers que podrían estar en la ruta entre la red local y la red del host remoto.</p>
+<p></p>
+<p>Además, es posible verificar la funcionalidad del host remoto. Si el host remoto no podía comunicarse fuera de la red local, no hubiera respondido. </p>
+<p></p>
+<p>
+<b>Nota:</b> muchos administradores de red limitan o prohíben la entrada de mensajes de ICMP a la red corporativa; motivo por el cual la ausencia de una respuesta de ping podría deberse a restricciones de seguridad.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

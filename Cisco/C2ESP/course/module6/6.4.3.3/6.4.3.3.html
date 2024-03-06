@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.4.3.3 Prueba de la ruta estática flotante</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.4.3.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de rutas resumidas y estáticas flotantes</h1>
+        <h2>Configuración de rutas estáticas flotantes</h2>
+      </div>
+      <div id="content">
+<p>Debido a que la ruta estática predeterminada en el R1 al R2 tiene una distancia administrativa de 1, el tráfico del R1 al R3 debe pasar por el R2. El resultado en la figura 1 confirma que el tráfico entre el R1 y el R3 atraviesa el R2. </p>
+<p></p>
+<p>¿Qué ocurriría si el R2 falla? Para simular esta falla, se desactivan ambas interfaces seriales del R2, como se muestra en la figura 2.</p>
+<p></p>
+<p>Observe en la figura 3 que el R1 genera mensajes de forma automática que indican que la interfaz serial al R2 está inactiva. Al revisar la tabla de routing, se puede verificar que la ruta predeterminada ahora apunta al R3 que utiliza la ruta estática flotante predeterminada que se configuró para el siguiente salto 10.10.10.2.</p>
+<p></p>
+<p>El resultado en la figura 4 confirma que el tráfico ahora fluye directamente entre el R1 y el R3. </p>
+<p></p>
+<p>
+<b>Nota:</b> la configuración de rutas estáticas flotantes IPv6 está fuera del ámbito de este capítulo.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

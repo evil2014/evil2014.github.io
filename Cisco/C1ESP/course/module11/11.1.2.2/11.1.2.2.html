@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>11.1.2.2 Protocolos comunes de una red pequeña</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_11.1.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Crear y crecer</h1>
+        <h2>Protocolos en redes pequeñas</h2>
+      </div>
+      <div id="content">
+<p>La mayor parte del trabajo de un técnico, ya sea en una red pequeña o una red grande, está relacionada de alguna manera con los protocolos de red. Los protocolos de red admiten los servicios y aplicaciones que usan los empleados en una red pequeña. Los protocolos de red comunes incluyen los siguientes:</p>
+<p>
+<ul>
+<li>DNS</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Telnet</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>IMAP, SMTP, POP (correo electrónico)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>DHCP</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>HTTP</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>FTP</li>
+</ul>
+</p>
+<p></p>
+<p>Haga clic en los servidores de la ilustración para ver una descripción breve de los servicios de red que proporciona cada uno.</p>
+<p></p>
+<p>Estos protocolos de red conforman el conjunto de herramientas fundamental de los profesionales de red. Cada uno de estos protocolos de red define lo siguiente: </p>
+<p>
+<ul>
+<li>Procesos en cualquier extremo de una sesión de comunicación.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Tipos de mensajes.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Sintaxis de los mensajes.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Significado de los campos informativos.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Cómo se envían los mensajes y la respuesta esperada.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Interacción con la capa inferior siguiente.</li>
+</ul>
+</p>
+<p></p>
+<p>Muchas compañías establecieron una política de utilización de versiones seguras de estos protocolos, siempre que sea posible. Estos protocolos son HTTPS, SFTP y SSH. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

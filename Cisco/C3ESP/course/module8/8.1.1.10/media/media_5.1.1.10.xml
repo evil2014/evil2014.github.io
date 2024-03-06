@@ -1,0 +1,160 @@
+﻿<textcomponents>  
+
+<component id="ID_title">
+	<text><![CDATA[<b>3.1.4 IA - D Clasificar los protocolos de routing dinámico]]></text>
+</component>
+
+<component id="ID_s1_inst">
+	<text><![CDATA[<b>Actividad de topología: Determinar la interfaz de salida de un paquete determinado  </b><br/>Use este diagrama de topología como referencia para resolver cada una de las tres situaciones. Ahora, haga clic en el botón&nbsp;2.]]></text>
+</component>
+
+
+<component id="ID_s2_inst">
+	<text><![CDATA[<b>Actividad: Determinar la interfaz de salida de un paquete determinado (situación&nbsp;1) </b><br/>Arrastre cada dirección IP de destino hasta la interfaz de salida correcta en el router&nbsp;3 (R3). Consulte la tabla de routing y el diagrama de topología. Haga clic en el botón&nbsp;3 para continuar. ]]></text>
+</component>
+
+<component id="ID_s2_txt01">
+	<text><![CDATA[<b>INTERFACES DE SALIDA DEL ROUTER&nbsp;3</b>]]></text>
+</component>
+
+<component id='ID_s2_drag01'>
+	<text><![CDATA[172.16.0.65]]></text>
+</component>
+
+<component id='ID_s2_drag02'>
+	<text><![CDATA[172.17.0.17]]></text>
+</component>
+
+<component id='ID_s2_drag03'>
+	<text><![CDATA[192.168.1.2]]></text>
+</component>
+
+<component id='ID_s2_drag04'>
+	<text><![CDATA[172.18.0.24]]></text>
+</component>
+
+<component id='ID_s2_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id='ID_s2_CORRECT_BODY'>
+	<text><![CDATA[Identificó correctamente las interfaces de salida correspondientes para las direcciones IP de destino. Haga clic en el botón&nbsp;3 para continuar. ]]></text>
+</component>
+
+<component id='ID_s2_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_s2_INCORRECT_BODY'>
+	<text><![CDATA[No identificó correctamente las interfaces de salida correspondientes para las direcciones IP de destino. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_s2_CHECK'>
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id='ID_s2_RESET'>
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component>
+
+
+<component id="ID_s3_inst">
+	<text><![CDATA[<b>Actividad: Determinar la interfaz de salida de un paquete determinado (situación&nbsp;2) </b><br/>Arrastre cada dirección IP de destino hasta la interfaz de salida correcta en el router&nbsp;1 (R1). Consulte la tabla de routing y el diagrama de topología. Haga clic en el botón&nbsp;4 para continuar. ]]></text>
+</component>
+
+<component id="ID_s3_txt01">
+	<text><![CDATA[<b>INTERFACES DE SALIDA DEL ROUTER&nbsp;1</b>]]></text>
+</component>
+
+<component id='ID_s3_drag01'>
+	<text><![CDATA[172.16.0.65]]></text>
+</component>
+
+<component id='ID_s3_drag02'>
+	<text><![CDATA[172.17.0.17]]></text>
+</component>
+
+<component id='ID_s3_drag03'>
+	<text><![CDATA[192.168.1.2]]></text>
+</component>
+
+<component id='ID_s3_drag04'>
+	<text><![CDATA[172.18.0.24]]></text>
+</component>
+
+<component id='ID_s3_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id='ID_s3_CORRECT_BODY'>
+	<text><![CDATA[Identificó correctamente las interfaces de salida correspondientes para las direcciones IP de destino. Haga clic en el botón&nbsp;4 para continuar. ]]></text>
+</component>
+
+<component id='ID_s3_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_s3_INCORRECT_BODY'>
+	<text><![CDATA[No identificó correctamente las interfaces de salida correspondientes para las direcciones IP de destino. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_s3_CHECK'>
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id='ID_s3_RESET'>
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component>
+
+
+
+
+<component id="ID_s4_inst">
+	<text><![CDATA[<b>Actividad: Determinar la interfaz de salida de un paquete determinado (situación&nbsp;3)</b><br/>Arrastre cada dirección IP de destino hasta la interfaz de salida correcta en el router&nbsp;2 (R2). Consulte la tabla de routing y el diagrama de topología. ]]></text>
+</component>
+
+<component id="ID_s4_txt01">
+	<text><![CDATA[<b>INTERFACES DE SALIDA DEL ROUTER&nbsp;2</b>]]></text>
+</component>
+
+<component id='ID_s4_drag01'>
+	<text><![CDATA[172.16.0.65]]></text>
+</component>
+
+<component id='ID_s4_drag02'>
+	<text><![CDATA[172.17.0.17]]></text>
+</component>
+
+<component id='ID_s4_drag03'>
+	<text><![CDATA[192.168.1.2]]></text>
+</component>
+
+<component id='ID_s4_drag04'>
+	<text><![CDATA[172.18.0.24]]></text>
+</component>
+
+<component id='ID_s4_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id='ID_s4_CORRECT_BODY'>
+	<text><![CDATA[Identificó correctamente las interfaces de salida correspondientes para las direcciones IP de destino.]]></text>
+</component>
+
+<component id='ID_s4_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_s4_INCORRECT_BODY'>
+	<text><![CDATA[No identificó correctamente las interfaces de salida correspondientes para las direcciones IP de destino. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_s4_CHECK'>
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id='ID_s4_RESET'>
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component>
+
+</textcomponents>

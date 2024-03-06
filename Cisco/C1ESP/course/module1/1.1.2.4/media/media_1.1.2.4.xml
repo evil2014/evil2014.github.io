@@ -1,0 +1,22 @@
+﻿<textcomponents>
+	<component id="ID_txt01">
+		<text><![CDATA[Tengo una impresora para compartir.]]></text> 
+	</component>
+	
+	<component id="ID_txt02">
+		<text><![CDATA[Tengo archivos para compartir.]]></text> 
+	</component>
+	
+	<component id="ID_txt03">
+		<text><![CDATA[<b>Uso compartido de impresora</b>]]></text> 
+	</component>
+	
+	<component id="ID_txt04">
+		<text><![CDATA[<b>Uso compartido de archivos</b>]]></text> 
+	</component>
+
+	<component id="ID_table01">
+		<text><![CDATA[<b>Ventajas de las redes punto a punto:</b><br /><textformat blockindent="-14"><li>Configuración sencilla.</li><li>Menor complejidad.</li><li>Bajo costo, dado que es posible que no se necesiten dispositivos de red ni servidores dedicados.</li><li>Se pueden utilizar para tareas sencillas como transferir archivos y compartir impresoras.</li></textformat><br/><b>Desventajas de las redes punto a punto:</b><br /><textformat blockindent="-14"><li>La administración no está centralizada.</li><li>No son tan seguras.</li><li>No son escalables.</li><li>Todos los dispositivos pueden funcionar como clientes y como servidores, lo que puede lentificar el funcionamiento.</li></textformat>]]></text>
+	</component>
+
+</textcomponents>

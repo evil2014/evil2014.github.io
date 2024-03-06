@@ -1,0 +1,98 @@
+﻿<textcomponents>
+	<component id="ID_s1_title">
+		<text><![CDATA[<b>192.168.1.0/24   Red</b>]]></text>
+	</component>
+	<component id="ID_s1_txt01">
+		<text><![CDATA[<b>Dirección</b>]]></text> 
+	</component>
+	<component id="ID_s1_txt02">
+		<text><![CDATA[<b>Máscara</b>]]></text> 
+	</component>
+	<component id="ID_s1_txt03">
+		<text><![CDATA[Porción de red]]></text> 
+	</component>
+	<component id="ID_s1_txt04">
+		<text><![CDATA[Porción de host]]></text> 
+	</component>
+	<component id="ID_s1_txt05">
+		<text><![CDATA[Si no se toma prestado ningún bit de host, la porción de host de la dirección de red y de la máscara se compone solo de bits&nbsp;0.]]></text> 
+	</component>
+	
+	<component id="ID_s2_txt01">
+		<text><![CDATA[Se toma prestado 1&nbsp;bit de la porción de host de la dirección.]]></text> 
+	</component>
+	<component id="ID_s2_txt02">
+		<text><![CDATA[<b>Original</b>]]></text> 
+	</component>
+	<component id="ID_s2_txt03">
+		<text><![CDATA[<b>Máscara</b>]]></text> 
+	</component>
+	<component id="ID_s2_txt04">
+		<text><![CDATA[Una red]]></text> 
+	</component>
+	<component id="ID_s2_txt05">
+		<text><![CDATA[El valor del bit que se tomó prestado es<b> 0</b> para la dirección de la Red&nbsp;0.]]></text> 
+	</component>
+	<component id="ID_s2_txt06">
+		<text><![CDATA[<b>Red&nbsp;0</b>]]></text> 
+	</component>
+	<component id="ID_s2_txt07">
+		<text><![CDATA[El valor del bit que se tomó prestado es<b> 1</b> para la dirección de la Red&nbsp;1.]]></text> 
+	</component>
+	<component id="ID_s2_txt08">
+		<text><![CDATA[<b>Red&nbsp;1</b>]]></text> 
+	</component>
+	<component id="ID_s2_txt09">
+		<text><![CDATA[Dos&nbsp;subredes]]></text> 
+	</component>
+	<component id="ID_s2_txt10">
+		<text><![CDATA[Las subredes nuevas tienen la <b>MISMA</b> máscara de subred.]]></text> 
+	</component>
+	<component id="ID_s2_txt11">
+		<text><![CDATA[<b>Máscara</b>]]></text> 
+	</component>
+	
+	<component id="ID_s3_title">
+		<text><![CDATA[<b>Representación decimal</b>]]></text>
+	</component>
+	<component id="ID_s3_txt01">
+		<text><![CDATA[<b>Original</b>]]></text> 
+	</component>
+	<component id="ID_s3_txt02">
+		<text><![CDATA[<b>Máscara</b>]]></text> 
+	</component>
+	<component id="ID_s3_txt03">
+		<text><![CDATA[Red: 192.168.1.0/24]]></text> 
+	</component>
+	<component id="ID_s3_txt04">
+		<text><![CDATA[Máscara: 255.255.255.0]]></text> 
+	</component>
+	<component id="ID_s3_txt05">
+		<text><![CDATA[Si se toma prestado 1&nbsp;bit, se crean 2&nbsp;subredes con la misma máscara.]]></text> 
+	</component>
+	<component id="ID_s3_txt06">
+		<text><![CDATA[<b>Red&nbsp;0</b>]]></text> 
+	</component>
+	<component id="ID_s3_txt07">
+		<text><![CDATA[<b>Máscara</b>]]></text> 
+	</component>
+	<component id="ID_s3_txt08">
+		<text><![CDATA[Red: 192.168.1.<font color='#5FBC21'><b>0</b></font>/<b>25</b>]]></text> 
+	</component>
+	<component id="ID_s3_txt09">
+		<text><![CDATA[Máscara: 255.255.255.<font color='#652C8A'><b>128</b></font>]]></text> 
+	</component>
+	<component id="ID_s3_txt10">
+		<text><![CDATA[<b>Red&nbsp;1</b>]]></text> 
+	</component>
+	<component id="ID_s3_txt11">
+		<text><![CDATA[<b>Máscara</b>]]></text> 
+	</component>
+	<component id="ID_s3_txt12">
+		<text><![CDATA[Red: 192.168.1.<font color='#5FBC21'><b>128</b></font>/<b>25</b>]]></text> 
+	</component>
+	<component id="ID_s3_txt13">
+		<text><![CDATA[Máscara: 255.255.255.<font color='#652C8A'><b>128</b></font>]]></text> 
+	</component>
+	
+</textcomponents>

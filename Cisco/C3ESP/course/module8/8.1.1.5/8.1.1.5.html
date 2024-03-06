@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.1.1.5 Verificación de la sumarización automática: tabla de topología</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.1.1.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuraciones avanzadas de EIGRP</h1>
+        <h2>Sumarización automática </h2>
+      </div>
+      <div id="content">
+<p>En la figura 1, los routers R1 y R2 envían al R3 una actualización de routing EIGRP resumida de 172.16.0.0/16. Las tablas de routing del R1 y el R2 tienen subredes de la red 172.16.0.0/16, por lo tanto, ambos routers envían al R3 anuncios resumidos a través de una red principal diferente.</p>
+<p></p>
+<p>En la figura 2, se muestra el resultado del comando <span class="cmd"><b>show ip eigrp topology all-links</b></span> que se usó para ver la tabla completa de topología de EIGRP del R3. Esto verifica que el R3 recibió la ruta resumida 172.16.0.0/16 tanto del R1 en 192.168.10.5 como del R2 en 192.168.10.9. La primera entrada a través de 192.168.10.5 es el sucesor, y la segunda entrada a través de 192.168.10.9 es el sucesor factible. El R1 es el sucesor porque su enlace de 1544 kb/s al R3 le da a este último un mejor costo EIGRP a 172.16.0.0/16 que el del R2, que usa un enlace más lento de 1024 kb/s. </p>
+<p></p>
+<p>La opción <span class="cmd"><b>all-links</b></span> muestra todas las actualizaciones recibidas, independientemente de si la ruta califica como sucesor factible (FS) o no. En este caso, el R2 califica como FS. El R2 se considera un FS debido a que la distancia notificada (RD) de 2816 es menor que la distancia factible (FD) de 2 170 112 a través del R1.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

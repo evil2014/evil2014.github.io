@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.4.3.1 ¿Por qué utilizar protocolos de estado de enlace?</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.4.3.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Routing dinámico de estado de enlace</h1>
+        <h2>Razones para utilizar protocolos de routing de estado de enlace</h2>
+      </div>
+      <div id="content">
+<p>Como se muestra en la ilustración, los protocolos de routing de estado de enlace presentan varias ventajas en comparación con los protocolos de routing vector distancia. </p>
+<p>
+<ul>
+<li>
+<b>Armado de un mapa topológico:</b> los protocolos de routing de estado de enlace crean un mapa topológico o árbol SPF de la topología de la red. Debido a que los protocolos de enrutamiento de link-state intercambian estados de enlace, el algoritmo SPF puede crear un árbol SPF de la red. Al utilizar el árbol SPF, cada router puede determinar en forma independiente la ruta más corta a cada red.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Convergencia rápida:</b> cuando reciben un LSP, los protocolos de routing de estado de enlace saturan de inmediato todas las interfaces con el LSP, excepto la interfaz desde la que se lo recibió. En cambio, el protocolo RIP necesita procesar cada actualización de routing y actualizar su tabla de routing antes de saturar otras interfaces. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Actualizaciones desencadenadas por eventos:</b> después de la saturación inicial con LSP, los protocolos de routing de estado de enlace solo envían un LSP cuando se produce un cambio en la topología. El LSP sólo incluye la información relacionada con el enlace afectado. A diferencia de algunos protocolos de enrutamiento vector distancia, los protocolos de enrutamiento de link-state no envían actualizaciones periódicas.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Diseño jerárquico:</b> los protocolos de routing de estado de enlace utilizan el concepto de áreas. Las áreas múltiples crean un diseño jerárquico para redes y permiten un mejor agregado de rutas (sumarización) y el aislamiento de los problemas de enrutamiento dentro del área. </li>
+</ul>
+</p>
+<p></p>
+<p>Los protocolos de estado de enlace también tienen algunas desventajas en comparación con los protocolos de routing vector distancia:</p>
+<p>
+<ul>
+<li>
+<b>Requisitos de memoria:</b> los protocolos de estado de enlace requieren memoria adicional para crear y mantener la base de datos de estado de enlace y el árbol SPF.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Requisitos de procesamiento:</b> los protocolos de estado de enlace también pueden requerir un mayor procesamiento de CPU que los protocolos de routing vector distancia. El algoritmo SPF requiere un mayor tiempo de CPU que los algoritmos vector distancia, como Bellman-Ford, ya que los protocolos de estado de enlace arman un mapa completo de la topología. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Requisitos de ancho de banda:</b> la saturación de paquetes de estado de enlace puede ejercer un impacto negativo en el ancho de banda disponible en una red. Si bien esto sólo debería ocurrir durante la puesta en marcha inicial de los routers, también podría ser un problema en redes inestables.</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

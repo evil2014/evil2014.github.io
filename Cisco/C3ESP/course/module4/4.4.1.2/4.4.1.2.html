@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.4.1.2 Configuración e instalación iniciales de Linksys EA6500</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.4.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de LAN inalámbricas</h1>
+        <h2>Configuración de un router inalámbrico</h2>
+      </div>
+      <div id="content">
+<p>El router inalámbrico Linksys EA6500 viene con un CD de configuración. </p>
+<p></p>
+<p>Para configurar e instalar el software del router Linksys EA6500, siga estos pasos:</p>
+<p></p>
+<p>
+<b>Paso 1.</b> Introduzca el CD en la unidad de CD o DVD, y la instalación debería comenzar automáticamente. Si el CD de instalación no está disponible, descargue el programa de instalación de <a href="http://linksys.com/support" target="_blank">http://Linksys.com/support</a>.</p>
+<p></p>
+<p>En la figura 1, se muestra la ventana inicial Connect your Linksys EA6500 (Conecte el Linksys EA6500) con las instrucciones para conectar la alimentación del router y la conexión a Internet. </p>
+<p></p>
+<p>
+<b>Nota:</b> en nuestro ejemplo, el router inalámbrico no se conecta a Internet.</p>
+<p></p>
+<p>
+<b>Paso 2.</b> Haga clic en <b>Next</b> (Siguiente) para iniciar la instalación.</p>
+<p></p>
+<p>El programa inicia la instalación y muestra una ventana de estado (figura 2). Durante este tiempo, el programa de instalación intenta configurar y habilitar la conexión a Internet. En el ejemplo, la conexión a Internet no está disponible y, después de algunas solicitudes para conectarse a Internet, se muestra la opción para omitir este paso.</p>
+<p></p>
+<p>Se muestra la ventana de la configuración del router Linksys (figura 3). Aquí es donde se configuran el SSID, la contraseña inalámbrica y la contraseña administrativa. </p>
+<p></p>
+<p>
+<b>Paso 3.</b> Haga clic en <b>Next</b> para mostrar la pantalla de resumen de configuración del router (figura 4). Registre esta configuración si no se completó previamente la tabla inicial.</p>
+<p></p>
+<p>
+<b>Paso 4.</b> Haga clic en <b>Next</b> para mostrar la ventana de configuración de la cuenta de Linksys Smart Wi-Fi (figura 5). </p>
+<p></p>
+<p>Esta ventana le permite administrar el router de manera remota a través de Internet. En este ejemplo, no se configura la cuenta de Linksys Smart Wi-Fi debido a que no hay acceso a Internet.</p>
+<p></p>
+<p>
+<b>Paso 5.</b> Haga clic en <b>Continue</b> (Continuar) para mostrar la ventana Sign In (Inicio de sesión, figura 6). Debido a que no se configuró la conexión a Internet, se requiere la contraseña administrativa del router. </p>
+<p></p>
+<p>
+<b>Paso 6.</b> Después de introducir la contraseña, haga clic en <b>Log In</b> (Iniciar sesión) para mostrar la página de inicio de Linksys Smart Wi-Fi (figura 7).</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

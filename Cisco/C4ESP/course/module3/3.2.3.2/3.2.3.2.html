@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>3.2.3.2 Funcionamiento de LCP</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_3.2.3.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Funcionamiento de PPP</h1>
+        <h2>Sesiones para PPP</h2>
+      </div>
+      <div id="content">
+<p>El funcionamiento de LCP incluye las disposiciones para el establecimiento, el mantenimiento y la finalización de enlaces. El funcionamiento de LCP utiliza tres clases de tramas LCP para lograr el trabajo de cada una de las fases de LCP:</p>
+<p></p>
+<p>
+<ul>
+<li>Las tramas de establecimiento de enlace establecen y configuran un enlace (solicitud de configuración, acuse de recibo de configuración, acuse de recibo negativo [NAK] de configuración y rechazo de configuración).</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Las tramas de mantenimiento de enlace administran y depuran un enlace (rechazo de código, rechazo de protocolo, solicitud de eco, respuesta de eco y solicitud de descarte).</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Las tramas de terminación de enlace terminan un enlace (solicitud de terminación y acuse de recibo de terminación).</li>
+</ul>
+</p>
+<p></p>
+<p></p>
+<p>
+<b>Establecimiento del enlace</b>
+</p>
+<p>El establecimiento del enlace es la primera fase de una operación LCP, como se observa en la figura 1. Esta fase se debe completar correctamente antes de que se intercambie cualquier paquete de capa de red. Durante el establecimiento del enlace, LCP abre una conexión y negocia los parámetros de configuración. El proceso de establecimiento del enlace comienza cuando el dispositivo de inicio envía una trama de solicitud de configuración al respondedor. La trama de solicitud de configuración incluye una cantidad variable de opciones de configuración necesarias para configurar en el enlace. </p>
+<p></p>
+<p>El iniciador incluye las opciones para la forma en que desea que se cree el enlace, incluidos los parámetros de protocolo o de autenticación. El respondedor procesa la solicitud: </p>
+<p>
+<ul>
+<li>Si las opciones no son aceptables o no se reconocen, el respondedor envía un mensaje de NAK de configuración o de rechazo de configuración. Si esto sucede y la negociación falla, el iniciador debe reiniciar el proceso con nuevas opciones. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Si las opciones son aceptables, el respondedor responde con un mensaje de acuse de recibo de configuración, y el proceso pasa a la fase de autenticación. La operación del enlace se entrega a NCP.</li>
+</ul>
+</p>
+<p></p>
+<p>Una vez que NCP completó todas las configuraciones necesarias, incluida la validación de la autenticación si se configuró, la línea está disponible para la transferencia de datos. Durante el intercambio de datos, LCP pasa al mantenimiento del enlace.</p>
+<p></p>
+<p>
+<b>Mantenimiento del enlace</b>
+</p>
+<p>Durante el mantenimiento del enlace, LCP puede utilizar mensajes para proporcionar comentarios y probar el enlace, como se muestra en la figura 2.</p>
+<p>
+<ul>
+<li>
+<b>Solicitud de eco, respuesta de eco y solicitud de descarte:</b> estas tramas se pueden utilizar para probar el enlace.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Rechazo de código y rechazo de protocolo:</b> estos tipos de tramas proporcionan comentarios cuando un dispositivo recibe una trama no válida debido a un código LCP desconocido (tipo de trama LCP) o a un identificador de protocolo defectuoso. Por ejemplo, si se recibe un paquete interpretable del peer, se envía un paquete rechazo de código en respuesta. El dispositivo emisor vuelve a enviar el paquete.</li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Terminación del enlace</b>
+</p>
+<p>Una vez finalizada la transferencia de datos en la capa de red, LCP termina el enlace, como se muestra en la figura 3. NCP solo termina el enlace NCP y de capa de red. El enlace permanece abierto hasta que LCP lo termina. Si LCP termina el enlace antes que NCP, también se termina la sesión NCP. </p>
+<p></p>
+<p>PPP puede terminar el enlace en cualquier momento. Esto podría suceder debido a la pérdida de la portadora, a un error de autenticación, a una falla de la calidad del enlace, al vencimiento de un temporizador de período inactivo o al cierre administrativo del enlace. LCP cierra el enlace mediante el intercambio de paquetes de terminación. El dispositivo que inicia la desactivación envía un mensaje de solicitud de terminación. El otro dispositivo responde con un mensaje de acuse de recibo de terminación. Una solicitud de terminación indica que el dispositivo que la envía necesita cerrar el enlace. Cuando se cierra el enlace, PPP informa a los protocolos de capa de red para que puedan tomar las medidas adecuadas.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>11.2.3.1 Copias de seguridad, actualizaciones y parches</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_11.2.3.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Cómo mantener la seguridad de la red</h1>
+        <h2>Mitigación de ataques de red</h2>
+      </div>
+      <div id="content">
+<p>Los softwares antivirus pueden detectar la mayoría de los virus y muchas aplicaciones de caballo de Troya, y evitar que se propaguen en la red. Los softwares antivirus se pueden implementar en el nivel de usuario y en el nivel de red.</p>
+<p></p>
+<p>Mantenerse actualizado con los últimos avances en estos tipos de ataques también puede contribuir a una defensa más eficaz contra ellos. A medida que se publican nuevas aplicaciones de virus y troyanos, las empresas deben mantenerse al día con actualizaciones a las versiones más recientes de los softwares antivirus.</p>
+<p></p>
+<p>La mitigación de ataques de gusanos requiere la diligencia del personal de administración de redes y sistemas. Los siguientes son los pasos recomendados para mitigar ataques de gusanos:</p>
+<p>
+<ul>
+<li>
+<b>Contención:</b> contenga la propagación del gusano dentro de la red. Divida en secciones las partes no infectadas de la red.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Inoculación:</b> comience a aplicar parches a todos los sistemas y, si es posible, examine en busca de sistemas vulnerables.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Cuarentena:</b> realice un seguimiento de todas las máquinas infectadas dentro de la red. Desconecte o quite las máquinas infectadas de la red o bloquéelas.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Tratamiento:</b> limpie todos los sistemas infectados y aplíqueles parches. Es posible que algunos gusanos requieran la reinstalación completa del sistema central para limpiar el sistema.</li>
+</ul>
+</p>
+<p></p>
+<p>La manera más eficaz de mitigar un ataque de gusanos consiste en descargar las actualizaciones de seguridad del proveedor del sistema operativo y aplicar parches a todos los sistemas vulnerables. Esto resulta difícil con los sistemas de usuario no controlados en la red local. La administración de numerosos sistemas implica la creación de una imagen de software estándar (sistema operativo y aplicaciones acreditadas cuyo uso esté autorizado en los sistemas cliente) que se implementa en los sistemas nuevos o actualizados. Sin embargo, los requisitos de seguridad cambian, y es posible que se deban instalar parches de seguridad actualizados en los sistemas que ya están implementados.</p>
+<p></p>
+<p>Una solución para la administración de parches críticos de seguridad es crear un servidor central de parches con el que deban comunicarse todos los sistemas después de un período establecido, como el que se muestra en la ilustración. Todo parche que no esté aplicado en un host se descarga automáticamente del servidor de parches y se instala sin que intervenga el usuario. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

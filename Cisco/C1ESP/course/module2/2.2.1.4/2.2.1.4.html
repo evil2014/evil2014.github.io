@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.2.1.4 Configuración de nombres de host</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.2.1.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Información básica</h1>
+        <h2>Nombres de host</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Configuración del nombre de host de IOS</b>
+</p>
+<p></p>
+<p>En el modo EXEC privilegiado, acceda al modo de configuración global introduciendo el comando <span class="cmd"><b>configure terminal</b></span>:</p>
+<p></p>
+<p>
+<span class="cmd">Switch#</span>
+<span class="cmd">
+<b>configure terminal</b>
+</span>
+</p>
+<p></p>
+<p>Después de que se ejecuta el comando, la petición de entrada cambiará a:</p>
+<p></p>
+<p>
+<span class="cmd">Switch(config)#</span>
+</p>
+<p></p>
+<p>Introduzca el nombre de host en el modo de configuración global, como se muestra en la ilustración:</p>
+<p></p>
+<p>
+<span class="cmd">Switch(config)#</span>
+<span class="cmd">
+<b>hostname Sw-piso-1</b>
+</span>
+</p>
+<p></p>
+<p></p>
+<p>Después de que se ejecuta el comando, la petición de entrada cambiará a:</p>
+<p></p>
+<p>
+<span class="cmd">Sw-piso-1</span>
+<span class="cmd">(config)#</span>
+</p>
+<p></p>
+<p>Observe que el nombre de host aparece en la petición de entrada. Para salir del modo de configuración global, utilice el comando <span class="cmd"><b>exit</b></span>. </p>
+<p></p>
+<p>Siempre asegúrese de que la documentación esté actualizada cada vez que se agrega o modifica un dispositivo. Identifique los dispositivos en la documentación por su ubicación, propósito y dirección. </p>
+<p></p>
+<p>
+<b>Nota:</b> para deshacer los efectos de un comando, escriba la palabra clave <span class="cmd"><b>no</b></span> antes del comando. </p>
+<p></p>
+<p>Por ejemplo, para eliminar el nombre de un dispositivo, utilice:</p>
+<p></p>
+<p>
+<span class="cmd">Sw-piso-1</span>
+<span class="cmd">(config)#</span>
+<span class="cmd">
+<b>no hostname</b>
+</span>
+</p>
+<p>
+<span class="cmd">Switch(config)#</span>
+</p>
+<p></p>
+<p>Observe que el comando <span class="cmd"><b>no hostname</b></span> provocó que el switch volviera a usar el nombre de host predeterminado “Switch”. </p>
+<p></p>
+<p>En la ilustración, practique la introducción de un nombre de host en un switch.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

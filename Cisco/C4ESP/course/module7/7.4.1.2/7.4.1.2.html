@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.4.1.2 VPN con SSL de Cisco</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.4.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Acceso remoto</h1>
+        <h2>Soluciones VPN de acceso remoto</h2>
+      </div>
+      <div id="content">
+<p>VPN con SSL del IOS de Cisco es la primera solución de VPN con SSL basada en routers del sector. Ofrece conectividad desde cualquier ubicación, no solo desde los recursos administrados por las empresas, sino también desde las computadoras de los empleados, las computadoras de escritorio de los contratistas o de los socios de negocios, y los quioscos de Internet.</p>
+<p></p>
+<p>El protocolo SSL admite diversos algoritmos criptográficos para las operaciones, como la autenticación del servidor y el cliente entre sí, la transmisión de certificados y el establecimiento de claves de sesión. Las soluciones de VPN con SSL de Cisco se pueden personalizar para empresas de cualquier tamaño. Estas soluciones ofrecen muchas características y ventajas de conectividad de acceso remoto, incluido lo siguiente:</p>
+<p></p>
+<p>
+<ul>
+<li>Acceso total a la red, sin clientes y basado en Web, sin software de escritorio instalado previamente. Esto facilita el acceso remoto personalizado según los requisitos de usuario y de seguridad, y minimiza los costos de soporte de escritorio.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Protección contra virus, gusanos, spyware y piratas informáticos en una conexión VPN mediante la integración de la seguridad de la red y de las terminales en la plataforma VPN con SSL de Cisco. Esto reduce los costos y la complejidad de la administración, ya que elimina la necesidad de contar con equipos de seguridad e infraestructura de administración adicionales.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Uso de un único dispositivo tanto para VPN con SSL como para VPN con IPsec. Esto reduce los costos y la complejidad de la administración, ya que facilita servicios VPN sólidos de acceso remoto y de sitio a sitio desde una única plataforma con administración unificada.</li>
+</ul>
+</p>
+<p></p>
+<p>VPN con SSL del IOS de Cisco es una tecnología que proporciona acceso remoto mediante un navegador web y el cifrado SSL nativo del navegador web. Alternativamente, puede proporcionar acceso remoto mediante el software Cisco AnyConnect Secure Mobility Client. </p>
+<p></p>
+<p>Cisco ASA proporciona dos modos principales de implementación que se encuentran en las soluciones de VPN con SSL de Cisco, como se muestra en la ilustración:</p>
+<p>
+<ul>
+<li>
+<b>Cisco AnyConnect Secure Mobility Client con SSL:</b> requiere el cliente Cisco AnyConnect.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Cisco Secure Mobility Clientless SSL VPN:</b> requiere un explorador de Internet.</li>
+</ul>
+</p>
+<p></p>
+<p>Cisco ASA se debe configurar para admitir la conexión VPN con SSL.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,103 @@
+﻿<textcomponents>
+
+	<component id='ID_s1_inst'>
+		<text><![CDATA[<b>Actividad: Métodos de resolución de problemas</b><br>Seleccione cuál de las afirmaciones que se incluyen a continuación se asocia a cada uno de los métodos de resolución de problemas.]]></text>
+	</component> <!--Number of rows in the table-->
+
+	<component id="ID_Button01">
+		<text><![CDATA[<b>Verificar</b>]]></text>
+	</component>
+
+	<component id="ID_Button02">
+		<text><![CDATA[<b>Restablecer</b>]]></text>
+	</component>
+
+	<component id="txt_numrows">
+		<text><![CDATA[6]]></text>
+	</component> <!--Number of columns for the answers in the table. Do not count the question column-->
+	<component id="txt_numcols">
+		<text><![CDATA[6]]></text>
+	</component> <!--Answer column headers-->
+	<component id="txt_col1">
+		<text><![CDATA[<b>Ascendente</b>]]></text>
+	</component>
+
+	<component id="txt_col2">
+		<text><![CDATA[<b>Descendente</b>]]></text>
+	</component>
+	
+		<component id="txt_col3">
+		<text><![CDATA[<b>Divide y<br/>vencerás</b>]]></text>
+	</component>
+
+	<component id="txt_col4">
+		<text><![CDATA[<b>Prueba y<br/> error</b>]]></text>
+	</component>
+	
+		<component id="txt_col5">
+		<text><![CDATA[<b>Detección de las<br/>diferencias</b>]]></text>
+	</component>
+
+	<component id="txt_col6">
+		<text><![CDATA[<b>Sustitución</b>]]></text>
+	</component> <!--Question text - blockindent code moves the text away from the left edge a bit--> <!--Question text - If questions are numbered, use blockindent for hanging indents-->
+	<component id="txt_q1">
+		<text><![CDATA[Comienza por una deducción fundamentada sobre en qué capa del modelo OSI se debe iniciar la resolución de problemas.]]></text>
+	</component>
+
+	<component id="txt_q2">
+		<text><![CDATA[Se usa cuando se sospecha que el problema es una falla de cableado o de un dispositivo.]]></text>
+	</component>
+
+	<component id="txt_q3">
+		<text><![CDATA[Se usa para problemas que es probable que abarquen la configuración del software.]]></text>
+	</component>
+
+	<component id="txt_q4">
+		<text><![CDATA[Usa una deducción de resolución de problemas basada en la experiencia para investigar una causa posible.]]></text>
+	</component>
+
+	<component id="txt_q5">
+		<text><![CDATA[Cambia el dispositivo problemático por un dispositivo que se sepa que funciona.]]></text>
+	</component>
+	<component id="txt_q6">
+		<text><![CDATA[Compara una situación de funcionamiento con una en la que no hay funcionamiento para buscar las diferencias significativas.]]></text>
+	</component> <!--Answers - Give the column number(s), column numbering start with 1 not 0--> <!--Answers - For MCMA separate the correct answers with commas [2, 4, 5] -->
+	<component id="txt_a1">
+		<text><![CDATA[3]]></text>
+	</component>
+
+	<component id="txt_a2">
+		<text><![CDATA[1]]></text>
+	</component>
+
+	<component id="txt_a3">
+		<text><![CDATA[2]]></text>
+	</component>
+
+	<component id="txt_a4">
+		<text><![CDATA[4]]></text>
+	</component>
+
+	<component id="txt_a5">
+		<text><![CDATA[6]]></text>
+	</component>
+	
+		<component id="txt_a6">
+		<text><![CDATA[5]]></text>
+	</component> <!-- Correct Feedback -->
+	<component id="ID_titleCorrect">
+		<text><![CDATA[<b>Correcto</b>]]></text>
+	</component>
+
+	<component id="ID_correctText">
+		<text><![CDATA[Unió correctamente las afirmaciones con cada método de resolución de problemas.]]></text>
+	</component> <!--Incorrect Feedback -->
+	<component id="ID_titleIncorrect">
+		<text><![CDATA[<b>Incorrecto</b>]]></text>
+	</component>
+
+	<component id="ID_IncorrectText">
+		<text><![CDATA[No unió correctamente las afirmaciones con cada método de resolución de problemas. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+	</component>
+</textcomponents>

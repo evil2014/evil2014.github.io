@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.1.1.2 Beneficios del trabajo a distancia para el empleador</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.1.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Trabajo a distancia</h1>
+        <h2>Beneficios del trabajo a distancia</h2>
+      </div>
+      <div id="content">
+<p>Para las organizaciones, ofrecer un entorno de trabajo a distancia tiene muchos beneficios. Algunos de los beneficios más conocidos incluyen lo siguiente:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Mejora la productividad de los empleados:</b> en general, el trabajo a distancia permite que los empleados trabajen más y mantengan una mejor calidad de trabajo que los trabajadores limitados exclusivamente a un espacio de oficina. Según un estudio de British Telecom realizado por Gartner Group, el empleado a distancia promedio trabaja un 11% más de horas que el empleado de oficina. La empresa Bell Atlantic Corporation (ahora conocida como Verizon) indicó que 25 horas de trabajo en el hogar equivalen a 40 horas de trabajo en la oficina. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Reduce costos y gastos:</b> el costo inmobiliario es un gasto importante para muchas organizaciones. El trabajo a distancia representa menos requisitos de espacio de oficina. El ahorro en el costo inmobiliario puede equivaler entre el 10% y el 80%. Incluso un ahorro del 10% en costos inmobiliarios puede marcar la diferencia entre pérdidas y ganancias. Los ahorros adicionales incluyen calefacción, aire acondicionado, estacionamiento, iluminación, equipos e insumos de oficina, ya que todos estos costos, entre otros, disminuyen a medida que el personal comienza a trabajar a distancia. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Facilita la contratación y la retención:</b> al ofrecer flexibilidad, se puede reducir la rotación de personal hasta un 20%. Esto es un ahorro considerable, ya que el reemplazo de personal representa un 75% del salario o más, incluso sin tener en cuenta los costos de capacitación y retención. Algunos observadores calculan que el costo de la rotación de personal llega al 250% del salario.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Reduce el ausentismo:</b> el trabajo a distancia puede reducir el ausentismo hasta un 80%.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Aumenta la motivación:</b> los empleadores que ofrecen la opción de trabajo a distancia a menudo se consideran empleadores que concilian la vida laboral y familiar.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Mejora la ciudadanía empresarial:</b> permitir que los empleados trabajen desde sus hogares y reducir las emisiones de transporte que generan los empleados de una empresa puede ser una parte importante del plan de una organización para lograr reducir cada vez más la emisión de dióxido de carbono y ser una empresa más ecológica. Esto puede traer muchos beneficios, incluido lo siguiente: crear oportunidades de marketing, agregar valor a los productos y servicios, abordar las inquietudes que expresan los clientes y responder a los requisitos de la cadena de abastecimiento. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Mejora el servicio al cliente:</b> si el personal no tiene que comenzar la jornada laboral trasladándose a la oficina, los clientes experimentan mejoras en los tiempos de contacto y de respuesta, lo que da lugar a grandes mejoras con respecto a la retención y la valoración de los clientes. Los clientes informan una respuesta más rápida y un mejor servicio.</li>
+</ul>
+</p>
+<p></p>
+<p>Al haber mejores tiempos de respuesta, un mejor servicio al cliente, una reducción en los costos y una mayor productividad de los empleados, las empresas pueden competir mejor en mercados que cambian rápidamente. El trabajo a distancia realmente es una manera inteligente de hacer negocios. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

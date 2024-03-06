@@ -1,0 +1,264 @@
+﻿<textcomponents>
+	<component id="ID_s1_title">
+		<text><![CDATA[<b>Actividad (parte&nbsp;1): Identificar las características y las operaciones de PPP</b><br/>Arrastre las etiquetas de la arquitectura en capas de PPP hasta los campos correspondientes para ordenar la operación en el diagrama de arquitectura de red en capas. No utilizará todas las etiquetas. Haga clic en el botón&nbsp;2 para continuar la actividad.]]></text>
+	</component>
+	<component id="ID_s1_txt01">
+		<text><![CDATA[<b>IPv4</b>]]></text>
+	</component>
+	<component id="ID_s1_txt02">
+		<text><![CDATA[<b>IPv6</b>]]></text>
+	</component>
+	<component id="ID_s1_txt03">
+		<text><![CDATA[<b>Otros protocolos de capa&nbsp;3</b>]]></text>
+	</component>
+	<component id="ID_s1_txt04">
+		<text><![CDATA[<b>Nombre de la capa del modelo OSI</b>]]></text>
+	</component>
+	<component id="ID_s1_txt05">
+		<text><![CDATA[IPCP]]></text>
+	</component>
+	<component id="ID_s1_txt06">
+		<text><![CDATA[IPXCP y otros]]></text>
+	</component>
+	<component id="ID_s1_txt07">
+		<text><![CDATA[Capa de Red]]></text>
+	</component>
+	<component id="ID_s1_txt08">
+		<text><![CDATA[<b>Subcapa PPP</b>]]></text>
+	</component>
+	<component id="ID_s1_txt09">
+		<text><![CDATA[Compresión]]></text>
+	</component>
+	<component id="ID_s1_txt10">
+		<text><![CDATA[Otras opciones]]></text>
+	</component>
+	<component id="ID_s1_txt11">
+		<text><![CDATA[<b>Subcapa PPP</b>]]></text>
+	</component>
+	<component id="ID_s1_txt12">
+		<text><![CDATA[Medios físicos]]></text>
+	</component>
+	<component id="ID_s1_txt13">
+		<text><![CDATA[Capa física]]></text>
+	</component>
+
+
+
+	<component id="ID_s1_txt14">
+		<text><![CDATA[IPv6CP]]></text>
+	</component>
+
+	<component id="ID_s1_txt15">
+		<text><![CDATA[Protocolo de control de red (NCP)]]></text>
+	</component>
+
+	<component id="ID_s1_txt16">
+		<text><![CDATA[Protocolo de control de enlace (LCP)]]></text>
+	</component>
+
+	<component id="ID_s1_txt17">
+		<text><![CDATA[Autenticación]]></text>
+	</component>
+
+	<component id="ID_s1_txt18">
+		<text><![CDATA[HDLC]]></text>
+	</component>
+
+	<component id="ID_s1_txt19">
+		<text><![CDATA[Capa de Transporte]]></text>
+	</component>
+
+	<component id="ID_s1_txt20">
+		<text><![CDATA[Síncrono]]></text>
+	</component>
+
+	<component id="ID_s1_txt21">
+		<text><![CDATA[Capa de Enlace de datos]]></text>
+	</component>
+
+	<component id="ID_s1_txt22">
+		<text><![CDATA[Asíncrono]]></text>
+	</component>
+
+	<component id="ID_s1_txt23">
+		<text><![CDATA[Multisíncrono]]></text>
+	</component>
+
+
+
+	<component id='ID_s1_CORRECT_TITLE'>
+		<text><![CDATA[<b>Correcto</b>]]></text>
+	</component>
+
+	<component id='ID_s1_CORRECT_BODY'>
+		<text><![CDATA[Identificó correctamente el orden de la operación PPP en el diagrama de arquitectura de red en capas. Haga clic en el botón&nbsp;2 para continuar.]]></text>
+	</component>
+
+
+	<component id='ID_s1_INCORRECT_TITLE'>
+		<text><![CDATA[<b>Incorrecto</b>]]></text>
+	</component>
+
+	<component id='ID_s1_INCORRECT_BODY'>
+		<text><![CDATA[No identificó correctamente el orden de la operación PPP en el diagrama de arquitectura de red en capas. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+	</component>
+
+	<component id='ID_s1_CHECK'>
+		<text><![CDATA[<b>Verificar</b>]]></text>
+	</component>
+
+	<component id='ID_s1_RESET'>
+		<text><![CDATA[<b>Restablecer</b>]]></text>
+	</component>
+
+
+
+
+	<component id="ID_s2_title">
+		<text><![CDATA[<b>Actividad (parte&nbsp;2): Identificar las funciones de LCP y NCP</b><br/>Haga clic en el campo correspondiente para determinar si cada característica describe a LCP o NCP. Haga clic en el botón&nbsp;3 para continuar la actividad.]]></text>
+	</component> <!-- buttons -->
+<component id="ID_Button01">
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id="ID_Button02">
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component> <!--Number of rows in the table-->
+<component id="txt_numrows">
+	<text><![CDATA[7]]></text>
+</component> <!--Number of columns for the answers in the table. Do not count the question column-->
+<component id="txt_numcols">
+	<text><![CDATA[2]]></text>
+</component> <!--Answer column headers-->
+<component id="txt_col1">
+	<text><![CDATA[<b>LCP</b>]]></text>
+</component>
+
+<component id="txt_col2">
+	<text><![CDATA[<b>NCP</b>]]></text>
+</component> <!--Question text - blockindent code moves the text away from the left edge a bit--> <!--Question text - If questions are numbered, use blockindent for hanging indents-->
+<component id="txt_q1">
+	<text><![CDATA[Negocia y configura las opciones de control en el circuito WAN.]]></text>
+</component>
+
+<component id="txt_q2">
+	<text><![CDATA[Administra paquetes de varios protocolos de capa de red.]]></text>
+</component>
+
+<component id="txt_q3">
+	<text><![CDATA[Establece, configura y prueba la conexión de enlace de datos.]]></text>
+</component>
+
+<component id="txt_q4">
+	<text><![CDATA[Termina el enlace.]]></text>
+</component>
+
+<component id="txt_q5">
+	<text><![CDATA[Activa y desactiva los protocolos de capa de red.]]></text>
+</component>
+
+<component id="txt_q6">
+	<text><![CDATA[Determina si el enlace funciona correctamente.]]></text>
+</component>
+
+<component id="txt_q7">
+	<text><![CDATA[Encapsula y negocia las opciones para IPv4, IPv6 e IPX.]]></text>
+</component> <!--Answers - Give the column number(s), column numbering start with 1 not 0--> <!--Answers - For MCMA separate the correct answers with commas [2, 4, 5] -->
+<component id="txt_a1">
+	<text><![CDATA[1]]></text>
+</component>
+
+<component id="txt_a2">
+	<text><![CDATA[2]]></text>
+</component>
+
+<component id="txt_a3">
+	<text><![CDATA[1]]></text>
+</component>
+
+<component id="txt_a4">
+	<text><![CDATA[1]]></text>
+</component>
+
+<component id="txt_a5">
+	<text><![CDATA[2]]></text>
+</component>
+
+<component id="txt_a6">
+	<text><![CDATA[1]]></text>
+</component>
+
+<component id="txt_a7">
+	<text><![CDATA[2]]></text>
+</component> <!-- Correct Feedback -->
+<component id="ID_titleCorrect">
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id="ID_correctText">
+	<text><![CDATA[Identificó correctamente las características de LCP y NCP. Haga clic en el botón&nbsp;3 para continuar.]]></text>
+</component> <!-- Incorrect Feedback -->
+<component id="ID_titleIncorrect">
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id="ID_IncorrectText">
+	<text><![CDATA[No identificó correctamente las características de LCP y NCP. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+
+
+	<component id="ID_s3_title">
+		<text><![CDATA[<b>Actividad (parte&nbsp;3): Identificar el formato de la trama PPP</b><br/>Arrastre los nombres de los campos hasta los espacios correspondientes para ordenar los campos de la trama PPP en el formato estándar de dicha trama.]]></text>
+	</component>
+	<component id="ID_s3_txt01">
+		<text><![CDATA[FCS]]></text>
+	</component>
+	<component id="ID_s3_txt02">
+		<text><![CDATA[Dirección]]></text>
+	</component>
+	<component id="ID_s3_txt03">
+		<text><![CDATA[Control]]></text>
+	</component>
+	<component id="ID_s3_txt04">
+		<text><![CDATA[Datos]]></text>
+	</component>
+	<component id="ID_s3_txt05">
+		<text><![CDATA[Señalizador]]></text>
+	</component>
+	<component id="ID_s3_txt06">
+		<text><![CDATA[Protocolo]]></text>
+	</component>
+
+	<component id="ID_s3_txt07">
+		<text><![CDATA[<b>Trama PPP</b>]]></text>
+	</component>
+
+
+
+	<component id='ID_s3_CORRECT_TITLE'>
+		<text><![CDATA[<b>Correcto</b>]]></text>
+	</component>
+
+	<component id='ID_s3_CORRECT_BODY'>
+		<text><![CDATA[Ordenó correctamente los campos de la trama PPP.]]></text>
+	</component>
+
+
+	<component id='ID_s3_INCORRECT_TITLE'>
+		<text><![CDATA[<b>Incorrecto</b>]]></text>
+	</component>
+
+	<component id='ID_s3_INCORRECT_BODY'>
+		<text><![CDATA[No ordenó correctamente los campos de la trama PPP. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+	</component>
+
+	<component id='ID_s3_CHECK'>
+		<text><![CDATA[<b>Verificar</b>]]></text>
+	</component>
+
+	<component id='ID_s3_RESET'>
+		<text><![CDATA[<b>Restablecer</b>]]></text>
+	</component>	
+
+</textcomponents>

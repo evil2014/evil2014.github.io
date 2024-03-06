@@ -1,0 +1,60 @@
+﻿
+<textcomponents>
+
+<component id="ID_inst">
+	<text><![CDATA[<b>Actividad: identificar los tipos de ataques, las técnicas de mitigación de ataques y las características de seguridad de VLAN</b><br/><br/>Arrastre el tipo de ataque, la técnica de mitigación de ataques o la característica de seguridad de VLAN hacia la descripción correspondiente. No utilizará todas las opciones.]]></text>
+</component>
+
+<component id="ID_txt01">
+	<text><![CDATA[Un usuario ataca a otras computadoras de usuario en el entorno de una cafetería. Las computadoras de usuario aún necesitan obtener acceso a Internet y al servidor de impresión.]]></text>
+</component>
+<component id="ID_txt02">
+	<text><![CDATA[Deshabilita el DTP en todos los puertos y asigna a estos últimos de manera estática como puerto de acceso o puerto de enlace troncal.]]></text>
+</component>
+<component id="ID_txt03">
+	<text><![CDATA[Asegura que la VLAN nativa de los puertos troncales sea diferente de las VLAN del puerto de acceso.]]></text>
+</component>
+
+<component id='ID_drag01'>
+	<text><![CDATA[Perímetro de PVLAN]]></text>
+</component>
+
+<component id='ID_drag02'>
+	<text><![CDATA[Ataque con salto de VLAN]]></text>
+</component>
+
+<component id='ID_drag03'>
+	<text><![CDATA[Ataque de Double-Tagging]]></text>
+</component>
+
+<component id='ID_drag04'>
+	<text><![CDATA[Habilitación de Shell seguro (SSH)]]></text>
+</component>
+
+<component id='ID_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id='ID_CORRECT_BODY'>
+	<text><![CDATA[Unió correctamente cada descripción con el tipo de ataque, la técnica de mitigación de ataques o la característica de seguridad de VLAN correspondiente.]]></text>
+</component>
+
+
+<component id='ID_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_INCORRECT_BODY'>
+	<text><![CDATA[No unió correctamente cada descripción con el tipo de ataque, la técnica de mitigación de ataques o la característica de seguridad de VLAN correspondiente.]]></text>
+</component>
+
+<component id='ID_CHECK'>
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id='ID_RESET'>
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component>
+
+
+</textcomponents>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.3.2.1 Configuración de NetFlow</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.3.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>NetFlow</h1>
+        <h2>Configuración de NetFlow</h2>
+      </div>
+      <div id="content">
+<p>Para implementar NetFlow en un router, siga estos pasos:</p>
+<p></p>
+<p>
+<b>Paso 1. Configure la captura de datos de NetFlow:</b> NetFlow captura datos de los paquetes entrantes y salientes.</p>
+<p></p>
+<p>
+<b>Paso 2. Configure la exportación de datos de NetFlow:</b> se debe especificar la dirección IP y el nombre de host del recopilador NetFlow, así como el puerto UDP al que escucha el recopilador NetFlow.</p>
+<p></p>
+<p>
+<b>Paso 3. Verifique NetFlow, su funcionamiento y sus estadísticas:</b> después de configurar NetFlow, se pueden analizar los datos exportados en una estación de trabajo que ejecute una aplicación como NetFlow Traffic Analyzer de SolarWinds, Scrutinizer de Plixer o NetFlow Collector de Cisco (NFC). Como mínimo, se puede depender del resultado de varios comandos <span class="cmd"><b>show</b></span> en el router mismo.</p>
+<p></p>
+<p>Algunas consideraciones de configuración de NetFlow incluyen lo siguiente:</p>
+<p>
+<ul>
+<li>Los routers Cisco más modernos, como la serie ISR G2, admiten NetFlow y Flexible NetFlow. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Los switches Cisco más modernos, como los de la serie 3560-X, admiten Flexible NetFlow; sin embargo, algunos switches Cisco, como los de la serie Cisco 2960, no admiten NetFlow o Flexible NetFlow. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>NetFlow consume memoria adicional. Si un dispositivo de red de Cisco tiene restricciones de memoria, se puede establecer previamente el tamaño de la caché de NetFlow, de modo que contenga una menor cantidad de entradas. El tamaño predeterminado de la caché depende de la plataforma. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Los requisitos de software de NetFlow para el recopilador NetFlow varían. Por ejemplo, el software de NetFlow Scrutinizer en un host de Windows requiere 4 GB de RAM y 50 GB de espacio de unidad. </li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Nota:</b> el enfoque se centra en la configuración de un router Cisco con NetFlow original (denominado simplemente “NetFlow” en los documentos de Cisco). La configuración de Flexible NetFlow excede el ámbito de este curso.</p>
+<p></p>
+<p>Un flujo de NetFlow es unidireccional. Esto significa que una conexión de usuario a una aplicación existe como dos flujos de NetFlow, uno para cada sentido. Para definir los datos que se deben capturar para NetFlow en el modo de configuración de interfaz:</p>
+<p>
+<ul>
+<li>Capture los datos de NetFlow para controlar los paquetes entrantes en la interfaz mediante el comando <span class="cmd"><b>ip flow ingress</b></span>.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Capture los datos de NetFlow para controlar los paquetes salientes en la interfaz mediante el comando <span class="cmd"><b>ip flow egress</b></span>.</li>
+</ul>
+</p>
+<p></p>
+<p>Para habilitar el envío de los datos de NetFlow al recopilador NetFlow, se deben configurar varios elementos en el modo de configuración global del router:</p>
+<p>
+<ul>
+<li>
+<b>Dirección IP y número de puerto UDP del recopilador NetFlow:</b> utilice el comando <span class="cmd"><b>ip flow-export destination </b></span><span class="cmd"><i>dirección-ip puerto-udp</i></span>. De manera predeterminada, el recopilador tiene uno o más puertos para la captura de datos de NetFlow. El software permite que el administrador especifique qué puertos se deben aceptar para la captura de datos de NetFlow. Algunos puertos UDP comunes que se asignan son los puertos 99, 2055 y 9996.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>(Optativo) La versión de NetFlow que se debe seguir para dar formato a los registros de NetFlow que se envían al recopilador:</b> utilice el comando <span class="cmd"><b>ip flow-export version </b></span><span class="cmd"><i>versión</i></span>. NetFlow exporta los datos en UDP en uno de cinco formatos (1, 5, 7, 8 y 9). La versión 9 es el formato de exportación de datos más versátil, pero no es compatible con las versiones anteriores. La versión 1 es la predeterminada si no se especifica la versión 5. La versión 1 solo debe usarse cuando es la única versión del formato de exportación de datos de NetFlow que admite el software del recopilador NetFlow. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>(Optativo) Interfaz de origen que se debe usar como origen de los paquetes enviados al recopilador:</b> utilice el comando <span class="cmd"><b>ip flow-export source </b></span><span class="cmd"><i>tipo</i></span><span class="cmd"><b></b></span><span class="cmd"><i>número</i></span>.</li>
+</ul>
+</p>
+<p></p>
+<p>En la ilustración, se muestra una configuración básica de NetFlow. El router R1 tiene la dirección IP 192.168.1.1 en la interfaz G0/1. El recopilador NetFlow tiene la dirección IP 192.168.1.3 y se configuró para capturar los datos en el puerto UDP 2055. Se controla el tráfico que entra y sale por G0/1. Los datos de NetFlow se envían en el formato de la versión 5. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.1.1.3 Numeración de trenes T y de línea principal del IOS de Cisco 12.4</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.1.1.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Administración de archivos del sistema IOS</h1>
+        <h2>Convenciones de nomenclatura</h2>
+      </div>
+      <div id="content">
+<p>La convención de numeración de versiones del IOS de Cisco se utiliza para identificar la versión del software IOS, incluso correcciones de errores y nuevas características de software. En la ilustración, se muestra un ejemplo del esquema de numeración para los trenes de línea principal y para los trenes T:</p>
+<p></p>
+<p>
+<ul>
+<li>El esquema de numeración de versiones del software para un tren de línea principal consta de un número de tren, un identificador de mantenimiento y un identificador de recopilación. Por ejemplo, la versión 12.4(21a) del software IOS de Cisco es un tren de línea principal. La versión para un tren T consta de un número de tren, un identificador de mantenimiento, un identificador de tren y un identificador de recopilación. Por ejemplo, la versión 12.4(20)T1 del software IOS de Cisco pertenece al tren 12.4T del software IOS de Cisco. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Cada identificador de mantenimiento de la línea principal del software IOS de Cisco 12.4, como 12.4(7), incluye correcciones de mantenimiento y de software adicionales. Este cambio se indica con el número entre paréntesis. Cada versión de mantenimiento del software IOS de Cisco 12.4T, como 12.4(20)T, incluye estas mismas correcciones de software, junto con características de software adicionales y compatibilidad de hardware.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Cisco utiliza recopilaciones de una versión individual para integrar correcciones de problemas importantes. Esto reduce el posible impacto en los clientes que ya implementaron y certificaron una versión individual. Una recopilación típicamente incluye correcciones para una cantidad limitada de defectos de software, conocidos como advertencias. Se indica con una letra minúscula dentro del paréntesis de los trenes de línea principal o con un número final en otros trenes. Por ejemplo, la versión 12.4(21) del software IOS de Cisco recibió algunas correcciones de advertencias, y la recopilación resultante se denominó 12.4(21a). De manera similar, 12.4(15)T8 es la octava recopilación de 12.4(15)T. Cada nueva recopilación aumenta el identificador de recopilación y entrega correcciones de software adicionales en un programa acelerado, antes de la siguiente versión individual planeada. Los criterios para realizar cambios en una recopilación son estrictos.</li>
+</ul>
+</p>
+<p></p>
+<p>Se utiliza un conjunto único de números de versión individual para todos los trenes 12.4 del software IOS de Cisco. La versión de mantenimiento 12.4 y la versión 12.4T del software IOS de Cisco utilizan un pool de números de versión individual que se comparten en toda la familia de la versión 12.4 de dicho software. A la versión 12.4(6)T del software IOS de Cisco le siguió la versión 12.4(7)T y la versión 12.4(8)T. Esto permite que el administrador rastree cambios introducidos en el código. </p>
+<p></p>
+<p>
+<b>Nota:</b> cualquier advertencia que se corrija en una versión de tren T debe implementarse en la siguiente versión de trenes de línea principal.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

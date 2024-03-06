@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.3.1.1 Actividad de clase: Tenemos que hablar nuevamente (juego)</title>
+    <!--  -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.3.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resumen</h1>
+        <h2>Resumen</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Tenemos que hablar nuevamente</b>
+</p>
+<p></p>
+<p>
+<b>Nota:</b> es importante que los estudiantes hayan completado la actividad de creación de modelos introductoria de este capítulo. Conviene realizar esta actividad en grupos medianos de seis a ocho estudiantes.</p>
+<p></p>
+<p>El instructor susurrará un mensaje complejo al primer estudiante de un grupo. Por ejemplo, el mensaje puede ser: “Se espera una tormenta de nieve mañana”. Se espera que suceda por la mañana, por lo que el horario de clases se retrasará dos horas. Por lo tanto, traigan la tarea”.</p>
+<p></p>
+<p>Ese estudiante le susurrará el mensaje al siguiente estudiante del grupo. Todos los grupos siguen este proceso hasta que todos los miembros de cada grupo hayan oído el mensaje susurrado.</p>
+<p></p>
+<p>Las reglas que debe seguir son las siguientes:</p>
+<p>
+<ul>
+<li>Puede susurrarle el mensaje al compañero junto a usted por partes Y TAMBIÉN puede repetir las partes del mensaje después de verificar que ese compañero escuchó el mensaje correctamente.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Se pueden verificar y repetir partes del mensaje (hacia la derecha O hacia la izquierda para asegurar la precisión de las partes del mensaje) en susurros. A un estudiante se le asignará la tarea de medir el tiempo total de la actividad.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Cuando se haya transmitido el mensaje a todo el grupo, el último estudiante que escuchó el mensaje lo dirá en voz alta. Las pequeñas partes del mensaje se pueden repetir (es decir, se pueden reenviar) y el proceso se puede volver a iniciar para asegurarse de que TODAS las partes del mensaje se hayan entregado en forma completa y correcta.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>El instructor repetirá el mensaje original para comprobar que el mensaje se haya entregado correctamente.</li>
+</ul>
+</p>
+<p></p>
+<p></p>
+<p>
+<a href="../../files/7.3.1.1%20Class%20Activity%20-%20We%20Need%20to%20Talk,%20Again%20Instructions.pdf" target="_blank">Actividad de clase: Tenemos que hablar nuevamente (instrucciones)</a>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

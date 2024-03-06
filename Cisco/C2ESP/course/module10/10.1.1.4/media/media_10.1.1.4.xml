@@ -1,0 +1,84 @@
+﻿<textcomponents>
+
+<component id="ID_s1_title">
+<text><![CDATA[<b>Mensaje Discover DHCPv4</b>]]></text>
+</component>
+<component id="ID_s1_txt01">
+  <text><![CDATA[<b>Cliente de DHCPv4 A<br/>IP: <font color="#F68026">??</font>  </b>]]></text> 
+  </component>
+<component id="ID_s1_txt02">
+  <text><![CDATA[<b>Servidor de DHCPv4<br/>192.168.1.254/24</b>]]></text> 
+  </component>
+  <component id="ID_s1_txt03">
+  <text><![CDATA[<b>Trama de Ethernet</b>]]></text>
+  </component>
+   <component id="ID_s1_txt04">
+  <text><![CDATA[<b>IP</b>]]></text>
+  </component>
+   <component id="ID_s1_txt05">
+  <text><![CDATA[<b>UDP</b>]]></text>
+  </component>
+   <component id="ID_s1_txt06">
+  <text><![CDATA[<b>DHCPDISCOVER</b>]]></text>
+   </component>
+  <component id="ID_s1_txt07">
+  <text><![CDATA[<font size='10' class="font10px">MAC de origen: MAC A<br/>MAC de destino: FF:FF:FF:FF:FF:FF</font>]]></text>
+  </component>
+   <component id="ID_s1_txt08">
+  <text><![CDATA[<font size='10' class="font10px">IP de origen: 0.0.0.0<br/>IP de destino: 255.255.255.255</font>]]></text>
+  </component>
+   <component id="ID_s1_txt09">
+  <text><![CDATA[UDP 67]]></text>
+  </component>
+   <component id="ID_s1_txt10">
+  <text><![CDATA[<font size='10' class="font10px">CIADDR: 0.0.0.0<br/>GIADDR: 0.0.0.0<br/>Máscara: 0.0.0.0<br/>CHADDR: MAC A</font>]]></text>
+  </component>
+   <component id="ID_s1_txt11">
+  <text><![CDATA[<font size='10' class="font10px">MAC: dirección de control de acceso a los medios<br/>CIADDR: dirección IP del cliente<br/>GIADDR: dirección IP del gateway<br/>CHADDR: dirección de hardware del cliente</font>]]></text>
+  </component>
+  <component id="ID_s1_Body_txt01">
+		<text><![CDATA[<font size='10' class="font10px">El cliente de DHCP envía una difusión IP dirigida con un paquete DHCPDISCOVER. En este ejemplo, el servidor de DHCP se encuentra en el mismo segmento y capta esta solicitud. El servidor advierte que el campo GIADDR está en blanco, de manera que el cliente está en el mismo segmento. El servidor también observa la dirección de hardware del cliente en el paquete de solicitud.</font>]]></text>
+	</component>	
+ 
+
+<component id="ID_s2_title">
+<text><![CDATA[<b>Mensaje Offer DHCPv4</b>]]></text>
+</component>
+<component id="ID_s2_txt01">
+  <text><![CDATA[<b>Cliente de DHCPv4 A<br/>IP: <font color="#F68026">??</font>  </b>]]></text> 
+  </component>
+<component id="ID_s2_txt02">
+  <text><![CDATA[<b>Servidor de DHCPv4<br/>192.168.1.254/24</b>]]></text> 
+  </component>
+  <component id="ID_s2_txt03">
+  <text><![CDATA[<b>Trama de Ethernet</b>]]></text>
+  </component>
+   <component id="ID_s2_txt04">
+  <text><![CDATA[<b>IP</b>]]></text>
+  </component>
+   <component id="ID_s2_txt05">
+  <text><![CDATA[<b>UDP</b>]]></text>
+  </component>
+   <component id="ID_s2_txt06">
+  <text><![CDATA[<b>Respuesta de DHCP</b>]]></text>
+   </component>
+  <component id="ID_s2_txt07">
+  <text><![CDATA[MAC de origen: servidor MAC<br/>MAC de destino: MAC A]]></text>
+  </component>
+   <component id="ID_s2_txt08">
+  <text><![CDATA[<font size='10' class="font10px">IP de origen: 192.168.1.254<br/>IP de destino: 192.168.1.10</font>]]></text>
+  </component>
+   <component id="ID_s2_txt09">
+  <text><![CDATA[UDP 68]]></text>
+  </component>
+   <component id="ID_s2_txt10">
+  <text><![CDATA[<font size='10' class="font10px">CIADDR: 192.168.1.10<br/>GIADDR: 0.0.0.0<br/>Máscara: 255.255.255.0<br/>CHADDR: MAC A</font>]]></text>
+  </component>
+   <component id="ID_s2_txt11">
+  <text><![CDATA[<font size='10' class="font10px">MAC: dirección de control de acceso a los medios<br/>CIADDR: dirección IP del cliente<br/>GIADDR: dirección IP del gateway<br/>CHADDR: dirección de hardware del cliente</font>]]></text>
+  </component>
+  <component id="ID_s2_Body_txt01">
+		<text><![CDATA[<font size='10' class="font10px">El servidor de DHCP recoge una dirección IP del conjunto disponible para ese segmento, así como los parámetros globales y de los otros segmentos. El servidor de DHCP los coloca en los campos adecuados del paquete DHCP. A continuación, el servidor de DHCP usa la dirección de hardware A (en CHADDR) a fin de armar la trama adecuada para enviar al cliente.</font>]]></text>
+	</component>	
+	
+</textcomponents>

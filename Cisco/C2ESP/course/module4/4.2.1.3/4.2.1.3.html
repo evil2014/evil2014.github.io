@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.2.1.3 Reenvío al siguiente salto</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.2.1.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Decisiones de routing</h1>
+        <h2>Switching de paquetes entre redes</h2>
+      </div>
+      <div id="content">
+<p>Los siguientes procesos ocurren cuando el R1 recibe la trama de Ethernet de la PC1:</p>
+<p></p>
+<p>1. El R1 examina la dirección MAC de destino, que coincide con la dirección MAC de la interfaz receptora, FastEthernet 0/0. Por lo tanto, el R1 copia la trama en su búfer.</p>
+<p>2. El R1 distingue que el campo tipo de Ethernet es 0x800, lo que significa que la trama de Ethernet contiene un paquete IPv4 en la porción de datos de la trama.</p>
+<p>3. El R1 desencapsula la trama de Ethernet.</p>
+<p>4. Dado que la dirección IPv4 de destino del paquete no coincide con ninguna de las redes directamente conectadas del R1, este consulta su tabla de routing para enrutar este paquete. El R1 busca una dirección de red en la tabla de routing que incluya la dirección IPv4 de destino del paquete como dirección host dentro de esa red. En este ejemplo la tabla de enrutamiento tiene una ruta para la red 192.168.4.0/24. La dirección IPv4 de destino del paquete es 192.168.4.10, que es una dirección host IPv4 en esa red.</p>
+<p></p>
+<p>La ruta a la red 192.168.4.0/24 que encuentra el R1 tiene la dirección IPv4 de siguiente salto 192.168.2.2 y una interfaz de salida FastEthernet 0/1. Esto significa que el paquete IPV4 se encapsula en una nueva trama de Ethernet con la dirección MAC de destino de la dirección IPv4 del router de siguiente salto. </p>
+<p></p>
+<p>Debido a que la interfaz de salida se encuentra en una red Ethernet, el R1 debe resolver la dirección IPv4 de siguiente salto con una dirección MAC de destino mediante ARP:</p>
+<p></p>
+<p>1. El R1 busca la dirección IPv4 de siguiente salto 192.168.2.2 en su caché ARP. Si la entrada no aparece en la caché ARP, el R1 envía una solicitud de ARP por la interfaz FastEthernet 0/1, y el R2 envía una respuesta de ARP. A continuación, el R1 actualiza su caché ARP con una entrada para 192.168.2.2 y la dirección MAC asociada.</p>
+<p>2. El paquete IPv4 ahora se encapsula en una nueva trama de Ethernet y se reenvía por la interfaz FastEthernet 0/1 del R1.</p>
+<p></p>
+<p>En la animación de la ilustración, se muestra cómo el R1 reenvía el paquete al R2.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

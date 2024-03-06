@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.1.2.3 LSA de OSPF de tipo 2</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.1.2.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Funcionamiento de OSPF multiárea</h1>
+        <h2>Funcionamiento de LSA de OSPF multiárea</h2>
+      </div>
+      <div id="content">
+<p>Un LSA de tipo 2 solo existe para redes de diversos accesos y redes sin diversos accesos ni difusión (NBMA) en donde se selecciona un DR y al menos dos routers en el segmento de diversos accesos. La LSA de tipo 2 contiene la ID del router y la dirección IP del DR, además de la ID del router de todos los demás routers en el segmento de accesos múltiples. Se crea una LSA de tipo 2 para cada red de accesos múltiples en el área. </p>
+<p></p>
+<p>El propósito de una LSA de tipo 2 es proporcionar a otros routers información sobre las redes de accesos múltiples dentro de la misma área.</p>
+<p></p>
+<p>El DR inunda los LSA de tipo 2 solo en el área en que se originan. Los LSA de tipo 2 no se reenvían fuera del área.</p>
+<p></p>
+<p>A las LSA de tipo 2 también se las denomina “entradas de enlace de red”. </p>
+<p></p>
+<p>Como se muestra en la figura, ABR1 es el DR de la red de Ethernet del área 1. Genera LSA de tipo 2 y los reenvía al área 1. ABR2 es el DR de la red de diversos accesos del área 0. No existen redes de diversos accesos en el área 2; por lo tanto, nunca se propagarán LSA de tipo 2 en dicha área.</p>
+<p></p>
+<p>La ID de estado de enlace para una LSA de red es la dirección IP de la interfaz del DR que la anuncia.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

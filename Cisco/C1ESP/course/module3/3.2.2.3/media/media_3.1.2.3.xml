@@ -1,0 +1,512 @@
+﻿<textcomponents> <!-- SLIDE 1  -->
+
+<component id="ID_s1_title">
+<text><![CDATA[<b>Suite de protocolos TCP/IP y proceso de comunicación</b>]]></text>
+</component>
+
+<component id="ID_s1_txt01">
+<text><![CDATA[<b>Capa de aplicación</b>]]></text>
+</component>
+
+<component id="ID_s1_txt02">                                         
+<text><![CDATA[Sistema<br/>de nombres]]></text>
+</component>
+
+<component id="ID_s1_txt03">
+<text><![CDATA[Configur<br/>ación del host]]></text>
+</component>
+
+<component id="ID_s1_txt04">
+<text><![CDATA[Correo electrónico]]></text>
+</component>
+
+<component id="ID_s1_txt05">
+<text><![CDATA[Transfer<br/>encia de archivos]]></text>
+</component>
+
+<component id="ID_s1_txt06">
+<text><![CDATA[Web]]></text>
+</component>
+
+<component id="ID_s1_txt07">
+<text><![CDATA[<b>Capa de Transporte</b>]]></text>
+</component>
+
+<component id="ID_s1_txt08">
+<text><![CDATA[<b>Capa de Internet</b>]]></text>
+</component>
+
+<component id="ID_s1_txt09">
+<text><![CDATA[Compati<br/>bilidad con IP]]></text>
+</component>
+
+<component id="ID_s1_txt10">
+<text><![CDATA[Protocolos de enrutamiento]]></text>
+</component>
+
+<component id="ID_s1_txt11">
+<text><![CDATA[<b>Capa de acceso a la red</b>]]></text>
+</component> <!--button and textbox text
+	ID_titleTxt01
+	ID_bodyTxt01
+-->
+<component id="ID_btn01">
+<text><![CDATA[DNS]]></text>
+</component>
+<component id="ID_titleTxt01">
+<text><![CDATA[<b>Sistema (o servicio) de nombres de dominios</b>]]></text>
+</component> 
+<component id="ID_bodyTxt01">
+<text><![CDATA[Traduce los nombres de dominio tales como cisco.com a direcciones IP]]></text>
+</component> 
+
+
+<component id="ID_btn02">
+<text><![CDATA[BOOTP]]></text>
+</component>
+<component id="ID_titleTxt02">
+<text><![CDATA[<b>Protocolo Bootstrap</b> ]]></text>
+</component> 
+<component id="ID_bodyTxt02">
+<text><![CDATA[<textformat blockindent='-16'><li>Habilita una estación de trabajo sin disco para que descubra su propia dirección IP, la dirección IP de un servidor BOOTP en la red y un archivo que debe cargarse en la memoria para iniciar la máquina.</li><li>DHCP está reemplazando a BOOTP.</li></textformat>]]></text>
+</component> 
+
+
+<component id="ID_btn03">
+<text><![CDATA[DHCP]]></text>
+</component>
+<component id="ID_titleTxt03">
+<text><![CDATA[<b>Protocolo de configuración dinámica de host</b> ]]></text>
+</component> 
+<component id="ID_bodyTxt03">
+<text><![CDATA[<textformat blockindent='-16'><li>Asigna direcciones IP en forma dinámica a las estaciones cliente durante el inicio.</li><li>Permite que las direcciones se vuelvan a utilizar cuando ya no se necesitan.
+</li></textformat>]]></text>
+</component>
+
+
+<component id="ID_btn04">
+<text><![CDATA[SMTP]]></text>
+</component>
+<component id="ID_titleTxt04">
+<text><![CDATA[<b>Protocolo simple de transferencia de correo</b>]]></text>
+</component> 
+<component id="ID_bodyTxt04">
+<text><![CDATA[<textformat blockindent='-16'><li>Permite que los clientes envíen correos electrónicos a un servidor de correo. </li><li>Permite que los servidores envíen correos electrónicos a otros servidores. </li></textformat>]]></text>
+</component> 
+
+
+<component id="ID_btn05">
+<text><![CDATA[POP]]></text>
+</component>
+<component id="ID_titleTxt05">
+<text><![CDATA[<b>Protocolo de oficina de correos versión 3 (POP3)</b>]]></text>
+</component> 
+<component id="ID_bodyTxt05">
+<text><![CDATA[<textformat blockindent='-16'><li>Permite que los clientes recuperen correos electrónicos de un servidor de correo.</li><li>Descarga el correo electrónico del servidor de correo al escritorio.
+</li></textformat>]]></text>
+</component> 
+
+
+<component id="ID_btn06">
+<text><![CDATA[IMAP]]></text>
+</component>
+<component id="ID_titleTxt06">
+<text><![CDATA[<b>Protocolo de acceso a mensajes de Internet</b>]]></text>
+</component> 
+<component id="ID_bodyTxt06">
+<text><![CDATA[<textformat blockindent='-16'><li>Permite que los clientes accedan a los correos electrónicos almacenados en un servidor de correo. </li><li>Mantiene el correo electrónico en el servidor.</li></textformat>]]></text>
+</component> 
+
+
+<component id="ID_btn07">
+<text><![CDATA[FTP]]></text>
+</component>
+<component id="ID_titleTxt07">
+<text><![CDATA[<b>Protocolo de transferencia de archivos</b>]]></text>
+</component> 
+<component id="ID_bodyTxt07">
+<text><![CDATA[<textformat blockindent='-16'><li>Fija las reglas que habilitan a un usuario en un host a acceder y transferir archivos hacia y desde otro host a través de una red. </li><li>Protocolo de entrega de archivos confiable, orientado a la conexión y con confirmación.</li></textformat>]]></text>
+</component> 
+
+
+<component id="ID_btn08">
+<text><![CDATA[TFTP]]></text>
+</component>
+<component id="ID_titleTxt08">
+<text><![CDATA[<b>Protocolo de transferencia de archivos trivial</b>]]></text>
+</component> 
+<component id="ID_bodyTxt08">
+<text><![CDATA[<textformat blockindent='-16'><li>Protocolo de transferencia de archivos simple, sin conexión.</li><li>Protocolo de entrega de archivos de máximo esfuerzo, sin confirmación.</li><li>Utiliza menos sobrecarga que el protocolo FTP.</li></textformat>]]></text>
+</component> 
+
+
+<component id="ID_btn09">
+<text><![CDATA[HTTP]]></text>
+</component>
+<component id="ID_titleTxt09">
+<text><![CDATA[<b>Protocolo de transferencia de hipertexto</b> ]]></text>
+</component> 
+<component id="ID_bodyTxt09">
+<text><![CDATA[Conjunto de reglas para intercambiar texto, imágenes gráficas, sonido, video y otros archivos multimedia en la World Wide Web]]></text>
+</component> 
+
+
+<component id="ID_btn10">
+<text><![CDATA[UDP]]></text>
+</component>
+<component id="ID_titleTxt10">
+<text><![CDATA[<b>Protocolo de datagramas del usuario</b>]]></text>
+</component> 
+<component id="ID_bodyTxt10">
+<text><![CDATA[<textformat blockindent='-16'><li>Habilita un proceso que se ejecuta en un host para enviar paquetes a un proceso que se ejecuta en otro host.</li><li>No confirma la transmisión correcta de datagramas.</li></textformat>]]></text>
+</component> 
+
+
+<component id="ID_btn11">
+<text><![CDATA[TCP]]></text>
+</component>
+<component id="ID_titleTxt11">
+<text><![CDATA[<b>Protocolo de control de transmisión</b>]]></text>
+</component> 
+<component id="ID_bodyTxt11">
+<text><![CDATA[<textformat blockindent='-16'><li>Permite la comunicación confiable entre los procesos que se ejecutan en hosts independientes.</li><li>Transmisiones confiables con acuse de recibo que confirman el envío correcto.</li></textformat>]]></text>
+</component> 
+
+
+<component id="ID_btn12">
+<text><![CDATA[IP]]></text>
+</component>
+<component id="ID_titleTxt12">
+<text><![CDATA[<b>Protocolo de Internet</b>]]></text>
+</component> 
+<component id="ID_bodyTxt12">
+<text><![CDATA[<textformat blockindent='-16'><li>Recibe segmentos de mensaje de la capa de transporte.</li><li>Dispone mensajes en paquetes.</li><li>Direcciona paquetes para la entrega de extremo a extremo a través de una internetwork.</li></textformat>]]></text>
+</component> 
+
+
+<component id="ID_btn13">
+<text><![CDATA[NAT]]></text>
+</component>
+<component id="ID_titleTxt13">
+<text><![CDATA[<b>Traducción de direcciones de red</b>]]></text>
+</component> 
+<component id="ID_bodyTxt13">
+<text><![CDATA[Traduce las direcciones IP desde una red privada a direcciones IP públicas únicas de forma global]]></text>
+</component> 
+
+
+<component id="ID_btn14">
+<text><![CDATA[ICMP]]></text>
+</component>
+<component id="ID_titleTxt14">
+<text><![CDATA[<b>Protocolo de mensajes de control de Internet</b> ]]></text>
+</component> 
+<component id="ID_bodyTxt14">
+<text><![CDATA[Proporciona comentarios desde un host de destino a un host de origen con respecto a los errores en la entrega de paquetes]]></text>
+</component> 
+
+
+<component id="ID_btn15">
+<text><![CDATA[OSPF]]></text>
+</component>
+<component id="ID_titleTxt15">
+<text><![CDATA[<b>Abrir primero la ruta libre más corta</b>]]></text>
+</component> 
+<component id="ID_bodyTxt15">
+<text><![CDATA[<textformat blockindent='-16'><li>Protocolo de enrutamiento link-state</li><li>Diseño jerárquico basado en áreas</li><li>Protocolo de enrutamiento interior de estándar abierto</li></textformat>]]></text>
+</component> 
+
+
+<component id="ID_btn16">
+<text><![CDATA[EIGRP]]></text>
+</component>
+<component id="ID_titleTxt16">
+<text><![CDATA[<b>Protocolo de enrutamiento de gateway interior mejorado</b>]]></text>
+</component> 
+<component id="ID_bodyTxt16">
+<text><![CDATA[<textformat blockindent='-16'><li>Protocolo de enrutamiento exclusivo de Cisco.</li><li>Utiliza la métrica compuesta según el ancho de banda, el retraso, la carga y la confiabilidad.</li></textformat>]]></text>
+</component>
+
+
+<component id="ID_btn17">
+<text><![CDATA[ARP]]></text>
+</component>
+<component id="ID_titleTxt17">
+<text><![CDATA[<b>Protocolo de resolución de direcciones</b>]]></text>
+</component> 
+<component id="ID_bodyTxt17">
+<text><![CDATA[Proporciona la asignación de direcciones dinámicas entre una dirección IP y una dirección de hardware]]></text>
+</component> 
+
+
+<component id="ID_btn18">
+<text><![CDATA[PPP]]></text>
+</component>
+<component id="ID_titleTxt18">
+<text><![CDATA[<b>Protocolo punto a punto</b> ]]></text>
+</component> 
+<component id="ID_bodyTxt18">
+<text><![CDATA[Proporciona un medio de encapsulación de paquetes para transmitirlos a través de un enlace serial]]></text>
+</component> 
+
+
+<component id="ID_btn19">
+<text><![CDATA[Ethernet]]></text>
+</component>
+<component id="ID_titleTxt19">
+<text><![CDATA[<b>Ethernet</b>]]></text>
+</component> 
+
+<component id="ID_bodyTxt19">
+<text><![CDATA[Define las reglas para establecer los estándares de cableado y señalización de la capa de acceso a la red.]]></text>
+</component> 
+
+
+<component id="ID_btn20">
+<text><![CDATA[Controladores de interfaz]]></text>
+</component>
+
+<component id="ID_titleTxt20">
+<text><![CDATA[<b>Controlador de interfaz</b>]]></text>
+</component> 
+
+<component id="ID_bodyTxt20">
+<text><![CDATA[Proporciona instrucciones a la máquina para el control de una interfaz específica en un dispositivo de red]]></text>
+</component> <!-- SLIDE 2  -->
+
+<component id="ID_s2_title">
+<text><![CDATA[<b>Operación del protocolo para enviar y recibir un mensaje</b>]]></text>
+</component>
+
+<component id="ID_s2_txt01">
+<text><![CDATA[Ethernet]]></text>
+</component>
+
+<component id="ID_s2_txt02">
+<text><![CDATA[IP]]></text>
+</component>
+
+<component id="ID_s2_txt03">
+<text><![CDATA[TCP]]></text>
+</component>
+
+<component id="ID_s2_txt04">
+<text><![CDATA[HTTP]]></text>
+</component>
+
+<component id="ID_s2_txt05">
+<text><![CDATA[Datos]]></text>
+</component>
+<component id="ID_s2_txt08">
+<text><![CDATA[Datos de HTTP]]></text>
+</component>
+
+<component id="ID_s2_txt09">
+<text><![CDATA[Segmento TCP]]></text>
+</component>
+
+<component id="ID_s2_txt10">
+<text><![CDATA[Paquete IP]]></text>
+</component>
+
+<component id="ID_s2_txt11">
+<text><![CDATA[Trama de Ethernet]]></text>
+</component>
+
+<component id="ID_s2_txt12">
+<text><![CDATA[Servidor Web]]></text>
+</component>
+
+<component id="ID_s2_txt13">
+<text><![CDATA[Datos]]></text>
+</component>
+
+<component id="ID_s2_txt14">
+<text><![CDATA[Cliente Web]]></text>
+</component>
+
+<component id="ID_s2_txt15">
+<text><![CDATA[<b>Términos de encapsulación de protocolos</b>]]></text>
+</component>
+
+<component id="ID_s2_txt16">
+<text><![CDATA[HTTP]]></text>
+</component>
+
+<component id="ID_s2_txt17">
+<text><![CDATA[TCP]]></text>
+</component>
+
+<component id="ID_s2_txt18">
+<text><![CDATA[IP]]></text>
+</component>
+
+<component id="ID_s2_txt19">
+<text><![CDATA[Ethernet]]></text>
+</component>
+
+<component id="ID_s2_txt20">
+<text><![CDATA[Datos]]></text>
+</component>
+
+<component id="ID_s2_txt21">
+<text><![CDATA[Datos]]></text>
+</component>
+<component id="ID_s2_txt22">
+<text><![CDATA[HTTP]]></text>
+</component>
+
+<component id="ID_s2_txt23">
+<text><![CDATA[TCP]]></text>
+</component>
+
+<component id="ID_s2_txt24">
+<text><![CDATA[IP]]></text>
+</component>
+
+<component id="ID_s2_txt25">
+<text><![CDATA[Ethernet]]></text>
+</component>    
+<component id="ID_s2_txt26">
+<text><![CDATA[Datos del usuario]]></text>
+</component> <!-- SLIDE 3  -->
+
+<component id="ID_s3_title">
+<text><![CDATA[<b>Operación del protocolo para enviar y recibir un mensaje</b>]]></text>
+</component>
+
+<component id="ID_s3_txt01">
+<text><![CDATA[Ethernet]]></text>
+</component>
+
+<component id="ID_s3_txt02">
+<text><![CDATA[IP]]></text>
+</component>
+
+<component id="ID_s3_txt03">
+<text><![CDATA[TCP]]></text>
+</component>
+
+<component id="ID_s3_txt04">
+<text><![CDATA[HTTP]]></text>
+</component>
+
+<component id="ID_s3_txt05">
+<text><![CDATA[Datos]]></text>
+</component>
+
+<component id="ID_s3_txt06">
+<text><![CDATA[010101101010010111101101010010]]></text>
+</component>
+
+
+<component id="ID_s3_txt07">
+<text><![CDATA[Usuario<br> datos]]></text>
+</component>
+
+
+<component id="ID_s3_txt08">
+<text><![CDATA[Datos de HTTP]]></text>
+</component>
+
+<component id="ID_s3_txt09">
+<text><![CDATA[Segmento TCP]]></text>
+</component>
+
+<component id="ID_s3_txt10">
+<text><![CDATA[Paquete IP]]></text>
+</component>
+
+<component id="ID_s3_txt11">
+<text><![CDATA[Trama de Ethernet]]></text>
+</component>
+
+<component id="ID_s3_txt12">
+<text><![CDATA[Servidor Web]]></text>
+</component>
+
+<component id="ID_s3_txt30">
+<text><![CDATA[Cliente Web]]></text>
+</component>
+
+<component id="ID_s3_txt14">
+<text><![CDATA[Cliente Web]]></text>
+</component>
+
+<component id="ID_s3_txt16">
+<text><![CDATA[<b>Términos de encapsulación de protocolos</b>]]></text>
+</component>
+
+<component id="ID_s3_txt17">
+<text><![CDATA[Datos]]></text>
+</component> <!-- controller -->
+
+<component id="ID_s3_end">
+<text><![CDATA[Finalizar]]></text>
+</component>
+
+<component id="ID_s3_fforward">
+<text><![CDATA[Adelantar]]></text>
+</component>
+
+<component id="ID_s3_pause">
+<text><![CDATA[Pausa]]></text>
+</component>
+
+<component id="ID_s3_play">
+<text><![CDATA[Reproducir]]></text>
+</component>
+
+<component id="ID_s3_rewind">
+<text><![CDATA[Regresar]]></text>
+</component>
+
+<component id="ID_s3_start">
+<text><![CDATA[Inicio]]></text>
+</component>
+
+
+<component id="ID_s2_end">
+<text><![CDATA[Finalizar]]></text>
+</component>
+
+<component id="ID_s2_fforward">
+<text><![CDATA[Adelantar]]></text>
+</component>
+
+<component id="ID_s2_pause">
+<text><![CDATA[Pausa]]></text>
+</component>
+
+<component id="ID_s2_play">
+<text><![CDATA[Reproducir]]></text>
+</component>
+
+<component id="ID_s2_rewind">
+<text><![CDATA[Regresar]]></text>
+</component>
+
+<component id="ID_s2_start">
+<text><![CDATA[Inicio]]></text>
+</component>
+
+<component id="play">
+<text>Reproducir</text>
+</component>
+<component id="pause">
+<text>Pausa</text>
+</component>
+<component id="rewind">
+<text>Regresar</text>
+</component>
+<component id="fforward">
+<text>Adelantar</text>
+</component>
+<component id="start">
+<text>Inicio</text>
+</component>
+<component id="end">
+<text>Finalizar</text>
+</component>
+
+</textcomponents>

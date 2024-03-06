@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.1.1.6 Certificación Wi-Fi </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.1.1.6_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Conceptos de tecnología inalámbrica</h1>
+        <h2>Introducción a la tecnología inalámbrica</h2>
+      </div>
+      <div id="content">
+<p>Los estándares aseguran interoperabilidad entre dispositivos hechos por diferentes fabricantes. Las tres organizaciones que influyen en los estándares de WLAN en todo el mundo son las siguientes:</p>
+<p>
+<ul>
+<li>
+<b>ITU-R:</b> regula la asignación del espectro de RF y las órbitas satelitales. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>IEEE:</b> especifica cómo se modula la RF para transportar la información. Mantiene los estándares para las redes de área local y metropolitana (MAN) con la familia de estándares de LAN y MAN IEEE 802. Los estándares dominantes en la familia IEEE 802 son Ethernet 802.3 y WLAN 802.11. Si bien el IEEE especificó los estándares para los dispositivos de modulación de RF, no especificó los estándares de fabricación; por lo tanto, las interpretaciones de los estándares 802.11 por parte de los diferentes proveedores pueden causar problemas de interoperabilidad entre los dispositivos. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Wi-Fi Alliance:</b> Wi-Fi Alliance® (<a href="http://www.wi-fi.org/" target="_blank">http://www.wi-fi.org</a>) es una asociación comercial global del sector sin fines de lucro dedicada a promover el crecimiento y la aceptación de las redes WLAN. Es una asociación de proveedores cuyo objetivo es mejorar la interoperabilidad de los productos basados en el estándar 802.11 mediante la certificación de los proveedores por el cumplimiento de las normas del sector y la observancia de los estándares. </li>
+</ul>
+</p>
+<p></p>
+<p>Wi-Fi Alliance certifica la compatibilidad de Wi-Fi con los siguientes productos: </p>
+<p>
+<ul>
+<li>Compatibilidad con IEEE 802.11a/b/g/n/ac/ad</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>IEEE 802.11i seguro con WPA2™ y el protocolo de autenticación extensible (EAP)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Configuración protegida de Wi-Fi (WPS) para simplificar la conexión de los dispositivos</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Wi-Fi Direct para compartir medios entre dispositivos</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Wi-Fi Passpoint para simplificar de forma segura la conexión a las redes de zona de cobertura Wi-Fi</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Wi-Fi Miracast para mostrar video sin inconvenientes entre dispositivos</li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Nota:</b> existen otros productos de certificación Wi-Fi, como WMM® (Wi-Fi Multimedia™), Tunneled Direct Link Setup (TDLS) y Ahorro de energía WMM.</p>
+<p></p>
+<p>En la figura 1, se muestran los logos de Wi-Fi Alliance que identifican la compatibilidad con una característica específica. Los dispositivos que muestran logos específicos admiten la característica identificada. Los dispositivos pueden mostrar una combinación de estos logos.</p>
+<p></p>
+<p>Haga clic en el botón Reproducir de las figuras 2 a 4 para ver videos entretenidos sobre las características de Wi-Fi Direct, Wi-Fi Passpoint y Wi-Fi Miracast.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

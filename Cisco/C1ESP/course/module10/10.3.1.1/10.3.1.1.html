@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>10.3.1.1 Internet de las cosas</title>
+    <!--  -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_10.3.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>El mensaje se escucha en todo el mundo</h1>
+        <h2>Póngase en movimiento</h2>
+      </div>
+      <div id="content">
+<p>La capa de aplicación es responsable del acceso directo a los procesos subyacentes que administran y transmiten la comunicación a través de la red. Esta capa funciona como origen y destino de las comunicaciones a través de las redes de datos, independientemente del tipo de red de datos que se utilice. De hecho, los avances en la forma en que nos conectamos mediante redes tienen un impacto directo en el tipo de aplicaciones que están en desarrollo.</p>
+<p></p>
+<p>Las tendencias como Traiga su propio dispositivo (BYOD), el acceso desde cualquier lugar, la virtualización y las conexiones de máquina a máquina (m2m) abrieron el camino hacia una nueva generación de aplicaciones. Se estima que para el año 2020 habrá aproximadamente 50 000 millones de dispositivos conectados. Solo en 2010 se desarrollaron más de 350 000 aplicaciones, de las que se realizaron más de tres millones de descargas. Todo esto conduce a un mundo de conexiones intuitivas entre personas, procesos, datos y los elementos que están en la red. </p>
+<p></p>
+<p>Mediante el uso de etiquetas inteligentes y de la conectividad avanzada para digitalizar productos que no son de tecnología inteligente (desde bicicletas y botellas hasta refrigeradores y automóviles) y para conectarlos a Internet, las personas y las compañías podrán interactuar en formas nuevas e inimaginables. Los objetos podrán recopilar, recibir y enviar información a usuarios y a otros objetos conectados. Como se muestra en la ilustración, esta nueva ola de desarrollo de Internet se conoce como Internet de las cosas.</p>
+<p></p>
+<p>En la actualidad, existen más de 100 millones de máquinas expendedoras, vehículos, detectores de humo y otros dispositivos que ya comparten información automáticamente, una cifra que los analistas de mercado de <a href="http://www.berginsight.com/" target="_blank">Berg Insight</a> esperan que suba a 360 millones para el año 2016. Actualmente, las fotocopiadoras que cuentan con un módulo M2M pueden pedir tóner y papel nuevos en forma automática, o avisar a los técnicos sobre una falla; incluso pueden indicarles qué piezas deben traer.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

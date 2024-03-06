@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.0.1.2 ¿Cuánto cuesta?</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.0.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Routing dinámico</h1>
+        <h2>Introducción</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Actividad: </b>
+<b>¿cuánto cuesta?</b>
+</p>
+<p></p>
+<p>En esta actividad de creación de modelos, se ilustra el concepto de red de costo de routing. </p>
+<p></p>
+<p>Para completar las situaciones de la actividad, formará parte de un equipo de cinco estudiantes que recorren distintas rutas. Cada grupo debe contar con una cámara digital o un dispositivo portátil (BYOD) con cámara, un cronómetro y el archivo para estudiantes de esta actividad. Una persona, seleccionada por cada grupo, se desempeñará como fotógrafo y secretario del evento. Los cuatro miembros del equipo restantes participarán activamente en las situaciones que se describen a continuación.</p>
+<p></p>
+<p>Para desarrollar estas actividades, pueden utilizarse un aula, un pasillo, el área de atletismo al aire libre o el estacionamiento de la escuela o universidad, o cualquier otra ubicación.</p>
+<p></p>
+<p>
+<b>Actividad 1</b>
+</p>
+<p>La persona más alta del grupo establece una línea de salida y una de llegada mediante la marcación de 15 pasos desde el inicio hasta la meta, lo que indica la distancia de la ruta del equipo. Cada estudiante dará 15 pasos desde la línea de salida hasta la de llegada y se detendrá en el decimoquinto paso; no puede dar ningún paso más. </p>
+<p>
+<b>Nota:</b> es posible que no todos los estudiantes cubran la misma distancia desde la línea de salida, debido a las diferencias de altura y de longitud del paso. El fotógrafo tomará una foto grupal de la ubicación final del equipo completo después de dar los 15 pasos requeridos. </p>
+<p></p>
+<p>
+<b>Actividad 2</b>
+</p>
+<p>Se establecerá una nueva línea de salida y de llegada; sin embargo, esta vez se establecerá una distancia más larga que la especificada en la actividad 1 para la ruta. Para crear esta ruta específica, no hay un máximo de pasos como base. De a uno por vez, los estudiantes “recorrerán la nueva ruta de principio a fin, dos veces”. </p>
+<p></p>
+<p>Cada miembro del equipo debe contar los pasos que necesitó para completar la ruta. El secretario medirá el tiempo de cada estudiante y, cuando cada miembro del equipo finalice la ruta, registrará el tiempo que le llevó completar toda la ruta y cuántos pasos fueron necesarios, según el recuento de cada miembro del equipo y el registro en el archivo para estudiantes.</p>
+<p></p>
+<p>Una vez que se hayan completado ambas actividades, los equipos usarán la fotografía digital tomada para la actividad 1 y los datos que se registraron en el archivo de la actividad 2 para responder las preguntas de reflexión.</p>
+<p></p>
+<p>Si el tiempo lo permite, las respuestas grupales se pueden analizar en clase.</p>
+<p></p>
+<p>
+<a href="../../files/7.0.1.2%20How%20Much%20Does%20This%20Cost%20Instructions.pdf" target="_blank">Actividad de clase: ¿cuánto cuesta? Instrucciones</a>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

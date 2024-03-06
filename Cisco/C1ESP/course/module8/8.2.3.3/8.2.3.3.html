@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.2.3.3 Direcciones IPv6 unicast</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.2.3.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Direcciones de red IPv6</h1>
+        <h2>Tipos de direcciones IPv6</h2>
+      </div>
+      <div id="content">
+<p>Las direcciones IPv6 unicast identifican de forma exclusiva una interfaz en un dispositivo con IPv6 habilitado. Un paquete que se envía a una dirección unicast es recibido por la interfaz que tiene asignada esa dirección. Como sucede con IPv4, las direcciones IPv6 de origen deben ser direcciones unicast. Las direcciones IPv6 de destino pueden ser direcciones unicast o multicast.</p>
+<p></p>
+<p>Existen seis tipos de direcciones IPv6 unicast.</p>
+<p></p>
+<p>
+<b>Unicast global</b>
+</p>
+<p>Las direcciones unicast globales son similares a las direcciones IPv4 públicas. Estas son direcciones enrutables de Internet globalmente exclusivas. Las direcciones unicast globales pueden configurarse estáticamente o asignarse de forma dinámica. Existen algunas diferencias importantes con respecto a la forma en que un dispositivo recibe su dirección IPv6 dinámicamente en comparación con DHCP para IPv4. </p>
+<p></p>
+<p>
+<b>Link-local</b>
+</p>
+<p>Las direcciones link-local se utilizan para comunicarse con otros dispositivos en el mismo enlace local. Con IPv6, el término “enlace” hace referencia a una subred. Las direcciones link-local se limitan a un único enlace. Su exclusividad se debe confirmar solo para ese enlace, ya que no se pueden enrutar más allá del enlace. En otras palabras, los routers no reenvían paquetes con una dirección de origen o de destino link-local. </p>
+<p></p>
+<p>
+<b>Loopback</b>
+</p>
+<p>Los hosts utilizan la dirección de loopback para enviarse paquetes a sí mismos, y esta dirección no se puede asignar a una interfaz física. Al igual que en el caso de una dirección IPv4 de loopback, se puede hacer ping a una dirección IPv6 de loopback para probar la configuración de TCP/IP en el host local. La dirección IPv6 de loopback está formada por todos ceros, excepto el último bit, representado como ::1/128 o, simplemente, ::1 en el formato comprimido.</p>
+<p></p>
+<p>
+<b>Dirección sin especificar</b>
+</p>
+<p>Una dirección sin especificar es una dirección compuesta solo por ceros representada como ::/128 o, simplemente, :: en formato comprimido. No puede asignarse a una interfaz y solo se utiliza como dirección de origen en un paquete IPv6. Las direcciones sin especificar se utilizan como direcciones de origen cuando el dispositivo aún no tiene una dirección IPv6 permanente o cuando el origen del paquete es irrelevante para el destino. </p>
+<p></p>
+<p>
+<b>Local única</b>
+</p>
+<p>Las direcciones IPv6 locales únicas tienen cierta similitud con las direcciones privadas para IPv4 definidas en RFC 1918, pero también existen diferencias importantes. Las direcciones locales únicas se utilizan para el direccionamiento local dentro de un sitio o entre una cantidad limitada de sitios. Estas direcciones no deben ser enrutables en la IPv6 global. Las direcciones locales únicas están en el rango de FC00::/7 a FDFF::/7. </p>
+<p></p>
+<p>Con IPv4, las direcciones privadas se combinan con NAT/PAT para proporcionar una traducción de varios a uno de direcciones privadas a públicas. Esto se hace debido a la disponibilidad limitada de espacio de direcciones IPv4. Muchos sitios también utilizan la naturaleza privada de las direcciones definidas en RFC 1918 para ayudar a proteger u ocultar su red de posibles riesgos de seguridad. Sin embargo, este nunca fue el uso que se pretendió dar a estas tecnologías, y el IETF siempre recomendó que los sitios tomen las precauciones de seguridad adecuadas en el router con conexión a Internet. Si bien IPv6 proporciona direccionamiento de sitio específico, no tiene por propósito ser utilizado para contribuir a ocultar dispositivos internos con IPv6 habilitado de Internet IPv6. El IETF recomienda que la limitación del acceso a los dispositivos se logre implementando medidas de seguridad adecuadas y recomendadas.</p>
+<p></p>
+<p>
+<b>Nota:</b> en la especificación IPv6 original, se definían las direcciones locales de sitio con un propósito similar y se utilizaba el rango de prefijos FEC0::/10. La especificación contenía varias ambigüedades, y el IETF dejó en desuso las direcciones locales de sitio en favor de direcciones locales únicas.</p>
+<p></p>
+<p>
+<b>IPv4 integrada</b>
+</p>
+<p>El último tipo de dirección unicast es la dirección IPv4 integrada. Estas direcciones se utilizan para facilitar la transición de IPv4 a IPv6. En este curso, no se analizan las direcciones IPv4 integradas.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

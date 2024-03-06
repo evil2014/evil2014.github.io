@@ -1,0 +1,76 @@
+﻿<textcomponents>
+   <component id="ID_title">
+      <text><![CDATA[<b>Sistema de cable</b>]]></text>
+   </component>
+   
+<component id="ID_txt01">
+   <text><![CDATA[Sitio de la antena]]></text>
+</component>
+
+<component id="ID_txt02">
+   <text><![CDATA[Sistema de transporte]]></text>
+</component>
+
+<component id="ID_txt03">
+   <text><![CDATA[Enlace troncal]]></text>
+</component>
+
+<component id="ID_txt04">
+   <text><![CDATA[Extremo final]]></text>
+</component>
+
+<component id="ID_txt05">
+   <text><![CDATA[Amplificador]]></text>
+</component>
+
+<component id="ID_txt06">
+   <text><![CDATA[Cable de derivación del suscriptor]]></text>
+</component>
+
+<component id="ID_txt07">
+   <text><![CDATA[Cable de distribución (alimentador)]]></text>
+</component>
+
+<component id="ID_btn01_header">
+   <text><![CDATA[<b>Sitio de la antena</b>]]></text>
+</component>
+
+<component id="ID_btn01_body">
+   <text><![CDATA[la ubicación de un sitio para la antena se elige con el fin de obtener una recepción óptima por aire, por satélite y por señales punto a punto. Las antenas receptoras y parabólicas principales se ubican en el sitio de la antena.]]></text>
+</component>
+
+<component id="ID_btn02_header">
+   <text><![CDATA[<b>Red de transporte</b>]]></text>
+</component>
+
+<component id="ID_btn02_body">
+   <text><![CDATA[una red de transporte vincula un sitio de una antena remota con un extremo final o un extremo final remoto a la red de distribución. La red de transporte puede ser de microondas, supertronco coaxial o fibra óptica.]]></text>
+</component>
+
+<component id="ID_btn03_header">
+   <text><![CDATA[<b>Extremo final</b>]]></text>
+</component>
+
+<component id="ID_btn03_body">
+   <text><![CDATA[aquí se reciben, se procesan y se formatean las primeras señales. Luego, se las distribuye de forma descendente a la red de cable. Generalmente, las instalaciones del extremo final no tienen personal, están bajo cerco de seguridad y son similares a una oficina central de una empresa telefónica.]]></text>
+</component>
+
+<component id="ID_btn04_header">
+   <text><![CDATA[<b>Amplificador</b>]]></text>
+</component>
+
+<component id="ID_btn04_body">
+   <text><![CDATA[en un sistema de cables clásico llamado sistema de cables de árbol a sucursal, la red de distribución está formada con enlaces troncales y de alimentación. El enlace troncal es el backbone que distribuye señales en toda el área de servicio de la comunidad al alimentador y, generalmente, utiliza un cable coaxial de 19 mm (0,750 pulgadas). Las sucursales del alimentador fluyen de un enlace troncal y llegan a todos los suscriptores del área de servicio mediante cables coaxiales. El cable de alimentación es un cable coaxial de 13 mm (0,50 pulgadas).]]></text>
+</component>
+
+<component id="ID_btn05_header">
+   <text><![CDATA[<b>Derivación del suscriptor</b>]]></text>
+</component>
+
+
+<component id="ID_btn05_body">
+   <text><![CDATA[un cable de derivación del suscriptor conecta al suscriptor con los servicios de cable. La derivación del suscriptor es una conexión entre la parte de alimentación de una red de distribución y el dispositivo terminal del suscriptor (por ejemplo, un televisor, reproductores de Blu-ray, decodificadores de televisión de alta definición o un cable módem). Una derivación de suscriptor consta de cableado coaxial (generalmente, cables coaxiales serie 59 o 6) de grado de radio (RG), hardware de conexión y de conexión a tierra, dispositivos pasivos y un decodificador.]]></text>
+</component>
+
+
+</textcomponents>

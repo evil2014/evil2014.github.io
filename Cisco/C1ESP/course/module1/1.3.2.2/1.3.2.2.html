@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.3.2.2 Tolerancia a fallas en redes conmutadas por circuitos</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.3.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>La red como plataforma</h1>
+        <h2>Red confiable</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Tolerancia a fallas</b>
+</p>
+<p></p>
+<p>Se espera que Internet esté siempre disponible para los millones de usuarios que confían en ese servicio. Para lograrlo, se requiere una arquitectura de red desarrollada para tener tolerancia a fallas. Una red con tolerancia a fallas es una que limita el impacto de las fallas, de modo que la cantidad de dispositivos afectados sea la menor posible. Además, se arma de forma tal que permita una recuperación rápida cuando se produce una falla. Estas redes dependen de varias rutas entre el origen y el destino del mensaje. Si falla una ruta, los mensajes se pueden enviar inmediatamente por otro enlace. El hecho de que haya varias rutas que conducen a un destino se denomina “redundancia”. </p>
+<p></p>
+<p>
+<b>Redes orientadas a la conexión y conmutadas por circuitos</b>
+</p>
+<p></p>
+<p>Para comprender la necesidad de redundancia, podemos tomar como ejemplo el funcionamiento de los primeros sistemas telefónicos. Cuando se realizaba una llamada con un teléfono tradicional, esta primero se sometía un proceso de configuración. Este proceso identificaba las ubicaciones de conmutación telefónica de la persona que realizaba la llamada (origen) y del teléfono que recibía la llamada (destino). Se creaba una ruta temporal, o circuito, para el tiempo que durara la llamada telefónica. Si fallaba un enlace o un dispositivo en el circuito, la llamada se interrumpía. Para volver a establecer la conexión, se debía realizar una nueva llamada con un nuevo circuito. Este proceso de conexión se conoce como “proceso de conmutación por circuitos” y se muestra en la ilustración. </p>
+<p></p>
+<p>Muchas redes conmutadas por circuitos dan prioridad a las conexiones de circuitos existentes, a expensas de las solicitudes de nuevos circuitos. Una vez establecido el circuito, este permanece conectado y los recursos se utilizan hasta que una de las partes desconecta la llamada, aunque no exista comunicación entre las personas en ningún extremo de la llamada. Debido a que solo se puede crear una cantidad finita de circuitos, es posible recibir un mensaje que indique que todos los circuitos están ocupados y que no se puede realizar una llamada. La razón por la que la tecnología de conmutación por circuitos no es óptima para Internet radica en el costo de crear varias rutas alternativas con suficiente capacidad para admitir una gran cantidad de circuitos simultáneos y las tecnologías necesarias para recrear de forma dinámica los circuitos interrumpidos en caso de falla.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

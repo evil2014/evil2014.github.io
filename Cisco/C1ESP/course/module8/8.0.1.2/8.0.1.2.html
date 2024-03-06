@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.0.1.2 Actividad: Internet de todo (IdT)</title>
+    <!-- Activity -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.0.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Asignación de direcciones IP</h1>
+        <h2>Introducción</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Internet de todo (IdT)</b>
+</p>
+<p></p>
+<p>Si la naturaleza, el tráfico, el transporte, las redes y la exploración espacial dependen del intercambio de información digital, ¿de qué forma se identifica dicha información de origen a destino?</p>
+<p></p>
+<p>En esta actividad, comenzará a pensar no solo en lo que se identificará en el mundo de IdT, sino también en cómo se direccionarán todos esos aspectos en ese mundo.</p>
+<p></p>
+<p>
+<ul>
+<li>Lea el blog o la fuente de noticias proporcionada por John Chambers con respecto a Internet de todo (IdT) <a href="http://blogs.cisco.com/news/internet-of-everything-2" target="_blank">http://blogs.cisco.com/news/internet-of-everything-2</a>. Vea el video que se encuentra en la mitad de la página.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>A continuación, vaya a la página principal de IdT: <a href="http://www.cisco.com/web/tomorrow-starts-here/index.html" target="_blank">http://www.cisco.com/web/tomorrow-starts-here/index.html</a>. Haga clic en una categoría que le interese.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Vea el video, el blog o el .pdf que pertenece a la categoría de IdT de interés.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Escriba cinco preguntas o comentarios sobre lo que vio o leyó, y compártalos con la clase.</li>
+</ul>
+</p>
+<p></p>
+<p></p>
+<p>
+<a href="../../files/8.0.1.2%20Activity%20-%20Modeling%20the%20Internet%20of%20Everything%20_IoE.pdf" target="_blank">Actividad de clase: Internet de todo (IdT) (instrucciones)</a>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

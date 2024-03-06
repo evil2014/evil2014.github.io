@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>11.2.4.2 Contraseñas</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_11.2.4.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Cómo mantener la seguridad de la red</h1>
+        <h2>Protección de dispositivos</h2>
+      </div>
+      <div id="content">
+<p>Para proteger los dispositivos de red, es importante utilizar contraseñas seguras. Las pautas estándar que se deben seguir son las siguientes:</p>
+<p></p>
+<p>
+<ul>
+<li>Utilice una longitud de contraseña de, al menos, ocho caracteres y preferentemente de diez caracteres o más. Cuanto más larga sea, mejor será la contraseña.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Cree contraseñas complejas. Incluya una combinación de letras mayúsculas y minúsculas, números, símbolos y espacios, si están permitidos. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Evite las contraseñas basadas en la repetición, las palabras comunes de diccionario, las secuencias de letras o números, los nombres de usuario, los nombres de parientes o mascotas, información biográfica (como fechas de nacimiento), números de identificación, nombres de antepasados u otra información fácilmente identificable.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Escriba una contraseña con errores de ortografía a propósito. Por ejemplo, Smith = Smyth = 5mYth, o Seguridad = 5egur1dad.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Cambie las contraseñas con frecuencia. Si se pone en riesgo una contraseña sin saberlo, se limitan las oportunidades para que el atacante la utilice.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>No anote las contraseñas ni las deje en lugares obvios, por ejemplo, en el escritorio o el monitor.</li>
+</ul>
+</p>
+<p></p>
+<p>En la ilustración, se muestran ejemplos de contraseñas seguras y no seguras.</p>
+<p></p>
+<p>En los routers Cisco, se ignoran los espacios iniciales para las contraseñas, pero no se ignoran los espacios que le siguen al primer carácter. Por lo tanto, un método para crear una contraseña segura es utilizar la barra espaciadora en la contraseña y crear una frase compuesta de muchas palabras. Esto se denomina “frase de contraseña”. Una frase de contraseña suele ser más fácil de recordar que una contraseña simple. Además, es más larga y más difícil de descifrar.</p>
+<p></p>
+<p>Los administradores deben asegurarse de que se utilicen contraseñas seguras en toda la red. Una forma de lograr esto es utilizar las mismas herramientas de ataque por “fuerza bruta” que utilizan los atacantes como método para verificar la seguridad de la contraseña.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

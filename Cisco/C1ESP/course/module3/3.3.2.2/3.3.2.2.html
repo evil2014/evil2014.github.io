@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>3.3.2.2 Comunicación con un dispositivo en la misma red</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_3.3.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Movimiento de datos en la red</h1>
+        <h2>Acceso a los recursos locales</h2>
+      </div>
+      <div id="content">
+<p>Para comprender la forma en que la comunicación se lleva a cabo correctamente en la red, es importante entender las funciones de las direcciones de la capa de red y de las direcciones del enlace de datos cuando un dispositivo se comunica con otro dispositivo en la misma red. En este ejemplo, tenemos un equipo cliente, PC1, que se comunica con un servidor de archivos, servidor FTP, en la misma red IP.</p>
+<p></p>
+<p>
+<b>Direcciones de red</b>
+</p>
+<p></p>
+<p>Las direcciones de la capa de red, o direcciones IP, indican la dirección de red y de host del origen y del destino. La porción de red de la dirección será la misma; solamente cambiará la porción de host o de dispositivo de la dirección.</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Dirección IP de origen:</b> la dirección IP del dispositivo emisor, es decir, el equipo cliente PC1: 192.168.1.110.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Dirección IP de destino:</b> la dirección IP del dispositivo receptor, el servidor FTP: 192.168.1.9.</li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Direcciones de enlaces de datos</b>
+</p>
+<p></p>
+<p>Cuando el emisor y el receptor del paquete IP están en la misma red, la trama de enlace de datos se envía directamente al dispositivo receptor. En una red Ethernet, las direcciones de enlace de datos se conocen como direcciones MAC de Ethernet. Las direcciones MAC son direcciones de 48 bits que están integradas físicamente en la NIC Ethernet. Las direcciones MAC también se conocen como direcciones físicas (BIA).</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Dirección MAC de origen:</b> la dirección de enlace de datos, o la dirección MAC de Ethernet, del dispositivo que envía el paquete IP, es decir, PC1. La dirección MAC de la NIC Ethernet de PC1 es AA-AA-AA-AA-AA-AA.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Dirección MAC de destino:</b> cuando el dispositivo receptor está en la misma red que el dispositivo emisor, la dirección MAC de destino es la dirección de enlace de datos del dispositivo receptor. En este ejemplo, la dirección MAC de destino es la dirección MAC del servidor FTP: CC-CC-CC-CC-CC-CC.</li>
+</ul>
+</p>
+<p></p>
+<p>Las direcciones de origen y de destino se agregan a la trama de Ethernet. La trama con el paquete IP encapsulado ahora se puede transmitir desde PC1 directamente hasta el servidor FTP.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

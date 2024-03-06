@@ -1,0 +1,121 @@
+﻿<textcomponents> <!--Slide 1-->
+<component id="ID_s1_title">
+      <text><![CDATA[<b>Problema de horizonte dividido, ejemplo&nbsp;1</b>]]></text>
+   </component>
+   
+<component id="ID_s1_txt02">
+   <text><![CDATA[<b>Oficina central</b><br/>(router hub)]]></text>
+</component>
+
+<component id="ID_s1_txt03">
+   <text><![CDATA[NBMA Frame Relay]]></text>
+</component>
+
+<component id="ID_s1_txt05">
+   <text><![CDATA[<b>Actualización de EIGRP</b>]]></text>
+</component>
+
+<component id="ID_s1_txt06">
+   <text><![CDATA[<b>Routers remotos</b><br/>(routers spoke)]]></text>
+</component>
+
+<component id="ID_s1_txt07">
+   <text><![CDATA[<b>Problema:</b> la actualización recibida en una interfaz física no se retransmite por esa misma interfaz: horizonte dividido.]]></text>
+</component>
+
+<component id="ID_s1_txt08">
+   <text><![CDATA[<b>Actualización de EIGRP</b>]]></text>
+</component> <!--Slide 2-->
+<component id="ID_s2_title">
+<text><![CDATA[<b>Problema de horizonte dividido, ejemplo&nbsp;2</b>]]></text>
+</component>
+  
+<component id="ID_s2_txt01">
+   <text><![CDATA[Frame Relay]]></text>
+</component>
+
+<component id="ID_s2_txt02">
+   <text><![CDATA[DLCI 103]]></text>
+</component>
+
+<component id="ID_s2_txt03">
+   <text><![CDATA[DLCI 301]]></text>
+</component>
+
+<component id="ID_s2_txt04">
+   <text><![CDATA[DLCI 102]]></text>
+</component>
+
+<component id="ID_s2_txt05">
+   <text><![CDATA[DLCI 201]]></text>
+</component>
+
+<component id="ID_s2_txt06">
+   <text><![CDATA[Actualización de enrutamiento]]></text>
+</component>
+
+<component id="ID_s2_txt07">
+   <text><![CDATA[<b>Problema:</b> la actualización recibida en una interfaz física no se retransmite por esa misma interfaz: horizonte dividido.]]></text>
+</component> <!--Slide 3-->
+<component id="ID_s3_title">
+<text><![CDATA[<b>Problema de horizonte dividido, ejemplo&nbsp;3</b>]]></text>
+</component>
+<component id="ID_s3_txt01">
+   <text><![CDATA[Frame Relay]]></text>
+</component>
+
+<component id="ID_s3_txt02">
+   <text><![CDATA[DLCI 103]]></text>
+</component>
+
+<component id="ID_s3_txt03">
+   <text><![CDATA[DLCI 301]]></text>
+</component>
+
+<component id="ID_s3_txt04">
+   <text><![CDATA[DLCI 102]]></text>
+</component>
+
+<component id="ID_s3_txt05">
+   <text><![CDATA[DLCI 201]]></text>
+</component>
+
+<component id="ID_s3_txt06">
+   <text><![CDATA[Actualización de enrutamiento]]></text>
+</component>
+
+<component id="ID_s3_txt07">
+   <text><![CDATA[<b>Problema:</b> se debe reproducir el tráfico de difusión para cada conexión activa.]]></text>
+</component>
+
+
+
+<component id="ID_s4_title">
+   <text><![CDATA[<b>Descubrimiento de vecinos: DR/BDR</b>]]></text>
+</component>
+ 
+<component id="ID_s4_txt01">
+   <text><![CDATA[<b>Router designado</b><br/>(DR)]]></text>
+</component>
+
+<component id="ID_s4_txt02">
+   <text><![CDATA[<b>Oficina central</b><br/>(router hub)]]></text>
+</component>
+<component id="ID_s4_txt03">
+   <text><![CDATA[NBMA Frame Relay]]></text>
+</component>
+
+<component id="ID_s4_txt05">
+   <text><![CDATA[<b>OSPF LSU</b>]]></text>
+</component>
+
+<component id="ID_s4_txt06">
+   <text><![CDATA[<b>Routers remotos</b><br/>(routers spoke)]]></text>
+</component>
+
+<component id="ID_s4_txt08">
+   <text><![CDATA[<b>OSPF LSU</b>]]></text>
+</component>
+
+
+</textcomponents>

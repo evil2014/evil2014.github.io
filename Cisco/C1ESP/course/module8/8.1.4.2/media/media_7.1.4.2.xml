@@ -1,0 +1,66 @@
+﻿<textcomponents>
+
+  <component id="ID_btn01">
+    <text><![CDATA[Admitir]]></text>
+  </component>
+
+  <component id="ID_btn02">
+    <text><![CDATA[Bloquear]]></text>
+  </component>
+
+  <component id="ID_btn03">
+    <text><![CDATA[Inicio]]></text>
+  </component>
+
+  <component id="ID_btn04">
+    <text><![CDATA[Restablecer]]></text>
+  </component>
+  
+  
+  
+<component id="ID_title">
+  <text><![CDATA[<b>Actividad</b><br/><br/>Elija admitir o bloquear cada dirección&nbsp;IP según si es una dirección pública (Internet) o privada (red local pequeña).<br><br>Haga clic en Inicio para comenzar y, a continuación, haga clic en Admitir o Bloquear.]]></text>
+</component>
+
+<component id="ID_txt02">
+  <text><![CDATA[Puntos]]></text>
+</component>
+
+<component id="ID_txt03">
+  <text><![CDATA[ISP]]></text>
+</component>
+<component id="ID_txt04">
+  <text><![CDATA[Internet]]></text>
+</component>
+
+  
+  
+  
+  
+  
+  <component id="ID_Start">
+  <text><![CDATA[Inicio]]></text>
+</component>
+<component id="ID_Reset">
+  <text><![CDATA[Restablecer]]></text>
+</component>
+<component id="ID_Pass">
+  <text><![CDATA[Admitir]]></text>
+</component>
+<component id="ID_Block">
+  <text><![CDATA[Bloquear]]></text>
+</component>
+<component id="ID_MsgBadBody">
+  <text><![CDATA[Lo siento. Repase los rangos de direcciones IP privadas y vuelva a intentarlo.]]></text>
+</component>
+<component id="ID_MsgBadTitle">
+  <text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+<component id="ID_MsgGoodBody">
+  <text><![CDATA[Buen trabajo. Haga clic en Siguiente para continuar.]]></text>
+</component>
+<component id="ID_MsgGoodTitle">
+  <text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+</textcomponents>

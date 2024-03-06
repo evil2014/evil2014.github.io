@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.3.1.1 IPsec</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.3.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Presentación de IPsec</h1>
+        <h2>Seguridad de protocolo de Internet</h2>
+      </div>
+      <div id="content">
+<p>Las VPN con IPsec ofrecen conectividad flexible y escalable. Las conexiones de sitio a sitio pueden proporcionar una conexión remota segura, rápida y confiable. Con una VPN con IPsec, la información de una red privada se transporta de manera segura a través de una red pública. Esto forma una red virtual en lugar de usar una conexión dedicada de capa 2, como se muestra en la ilustración. Para que siga siendo privado, el tráfico se cifra a fin de mantener la confidencialidad de los datos. </p>
+<p></p>
+<p>IPsec es un estándar IETF que define la forma en que se puede configurar una VPN de manera segura mediante el protocolo de Internet. </p>
+<p></p>
+<p>IPsec es un marco de estándares abiertos que detalla las reglas para las comunicaciones seguras. IPSec no se limita a ningún tipo específico de cifrado, autenticación, algoritmo de seguridad ni tecnología de creación de claves. En realidad, IPsec depende de algoritmos existentes para implementar comunicaciones seguras. IPsec permite que se implementen nuevos y mejores algoritmos sin modificar los estándares existentes de IPsec. </p>
+<p></p>
+<p>IPsec funciona en la capa de red, por lo que protege y autentica los paquetes IP entre los dispositivos IPsec participantes, también conocidos como “peers”. IPsec protege una ruta entre un par de gateways, un par de hosts o un gateway y un host. Como resultado, IPsec puede proteger prácticamente todo el tráfico de una aplicación, dado que la protección se puede implementar desde la capa 4 hasta la capa 7.</p>
+<p></p>
+<p>Todas las implementaciones de IPsec tienen un encabezado de capa 3 de texto no cifrado, de modo que no hay problemas de routing. IPsec funciona en todos los protocolos de capa 2, como Ethernet, ATM o Frame Relay.</p>
+<p></p>
+<p>Las características de IPsec se pueden resumir de la siguiente manera:</p>
+<p>
+<ul>
+<li>IPsec es un marco de estándares abiertos que no depende de algoritmos.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>IPsec proporciona confidencialidad e integridad de datos, y autenticación del origen.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>IPsec funciona en la capa de red, por lo que protege y autentica paquetes IP.</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

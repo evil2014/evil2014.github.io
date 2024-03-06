@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>3.3.2.2 Protocolo de autenticación de contraseña (PAP)</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_3.3.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de PPP</h1>
+        <h2>Autenticación del PPP</h2>
+      </div>
+      <div id="content">
+<p>Una de las diversas características de PPP es que realiza la autenticación de capa 2 además de otras capas de autenticación, de cifrado, de control de acceso y de procedimientos de seguridad generales.</p>
+<p></p>
+<p>
+<b>Inicio de PAP</b>
+</p>
+<p>PAP proporciona un método simple para que un nodo remoto establezca su identidad mediante un enlace bidireccional. PAP no es interactivo. Como se muestra en la figura 1, cuando se utiliza el comando <span class="cmd"><b>ppp authentication pap</b></span>, se envía el nombre de usuario y la contraseña como un paquete de datos LCP, en lugar de que el servidor envíe una solicitud de inicio de sesión y espere una respuesta. Una vez que PPP completa la fase de establecimiento del enlace, el nodo remoto envía repetidamente un par de nombre de usuario y contraseña a través del enlace hasta que el nodo receptor lo confirma o finaliza la conexión.</p>
+<p></p>
+<p>
+<b>Finalización de PAP</b>
+</p>
+<p>En el nodo receptor, un servidor de autenticación que permite o deniega la conexión verifica el nombre de usuario y la contraseña. Se devuelve un mensaje de aceptación o rechazo al solicitante, como se muestra en la figura 2.</p>
+<p></p>
+<p>PAP no es un protocolo de autenticación seguro. Mediante PAP, las contraseñas se envían a través del enlace en texto no cifrado, y no existe protección contra los ataques de reproducción o los ataques repetidos de prueba y error. El nodo remoto tiene el control de la frecuencia y la temporización de los intentos de inicio de sesión.</p>
+<p></p>
+<p>No obstante, hay momentos en los que se justifica el uso de PAP. Por ejemplo, a pesar de sus limitaciones, PAP se puede utilizar en los siguientes entornos:</p>
+<p></p>
+<p>
+<ul>
+<li>Una gran base instalada de aplicaciones cliente que no admiten CHAP</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Incompatibilidades entre las distintas implementaciones de CHAP de los proveedores</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Situaciones en las que una contraseña de texto no cifrado debe estar disponible para simular un inicio de sesión en el host remoto</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

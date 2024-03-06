@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.2.3.2 Costos acumulados de OSPF</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.2.3.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de OSPFv2 de área única</h1>
+        <h2>Costo OSPF</h2>
+      </div>
+      <div id="content">
+<p>El costo de una ruta OSPF es el valor acumulado desde un router hasta la red de destino. </p>
+<p></p>
+<p>Por ejemplo, en la figura 1, el costo para llegar desde el R1 hasta la LAN 172.16.2.0/24 del R2 debe ser el siguiente:</p>
+<p>
+<ul>
+<li>Costo del enlace serial del R1 al R2 = 64</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Costo del enlace Gigabit Ethernet en el R2 = 1</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Costo total para llegar a 172.16.2.0/24= <b>65</b></li>
+</ul>
+</p>
+<p></p>
+<p>En la tabla de routing del R1 de la figura 2, se confirma que la métrica para llegar a la LAN del R2 equivale a un costo de 65.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

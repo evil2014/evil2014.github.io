@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.2.3.1 Saturación de canales de frecuencia</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.2.3.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Operaciones de LAN inalámbrica</h1>
+        <h2>Administración de canales</h2>
+      </div>
+      <div id="content">
+<p>Como se explicó anteriormente, los dispositivos LAN inalámbricos tienen transmisores y receptores sintonizados en frecuencias específicas de ondas de radio para comunicarse. Es habitual asignar las frecuencias como rangos. Estos rangos después se dividen en rangos más pequeños denominados “canales”.</p>
+<p></p>
+<p>Si la demanda de un canal específico es demasiado alta, es probable que ese canal se sobresature. La saturación de un medio inalámbrico deteriora la calidad de la comunicación. Con el paso de los años, se creó un número de técnicas para mejorar la comunicación inalámbrica y aliviar la saturación. Las técnicas que se indican a continuación mitigan la saturación de canales al usar los canales de manera más eficaz:</p>
+<p>
+<ul>
+<li>
+<b>Espectro ensanchado por secuencia directa (DSSS):</b> esto es una técnica de modulación de espectro ensanchado. El espectro ensanchado se diseñó para extender la señal a través de una banda de frecuencia más amplia, lo que hace que sea más resistente a la interferencia. Con DSSS, la señal se multiplica mediante un “ruido fabricado” conocido como “código de extensión”. Debido a que el receptor sabe sobre el código de extensión y cuándo se agregó, puede eliminarlo matemáticamente y reconstruir la señal original. En efecto, esto crea redundancia en la señal transmitida en un esfuerzo por contrarrestar la pérdida de calidad en el medio inalámbrico. El estándar 802.11b usa DSSS. Los teléfonos inalámbricos que operan en las bandas de 900 MHz, 2,4 GHz y 5,8 GHz, las redes de telefonía móvil con CDMA y las redes GPS también lo usan. (figura 1).</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Espectro ensanchado por salto de frecuencia (FHSS):</b> este también depende de los métodos de espectro ensanchado para comunicarse. Es similar a DSSS, pero transmite las señales de radio al conmutar rápidamente una señal portadora entre muchos canales de frecuencia. Con FHSS, el emisor y el receptor deben estar sincronizados para “saber” qué canal saltar. Este proceso de salto de canales permite un uso más eficaz de los canales, lo que disminuye la congestión del canal. Los walkie-talkies y los teléfonos inalámbricos de 900 MHz también usan FHSS, y Bluetooth usa una variante de FHSS. El estándar 802.11 original también usa FHSS. (figura 2).</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Multiplexación por división de frecuencia ortogonal (OFDM):</b> es un subconjunto de la multiplexación por división de frecuencia en el que un único canal usa varios subcanales en frecuencias adyacentes. Los subcanales en un sistema OFDM son precisamente ortogonales entre sí, lo que permite que los subcanales se superpongan sin interferir. Como resultado, los sistemas OFDM pueden maximizar la eficacia espectral sin causar interferencia en los canales adyacentes. En efecto, esto facilita que la estación receptora “oiga” la señal. Debido a que OFDM usa subcanales, el uso de canales es muy eficaz. Una serie de sistemas de comunicación, incluidos los estándares 802.11a/g/n/ac, usa OFDM. (figura 3).</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

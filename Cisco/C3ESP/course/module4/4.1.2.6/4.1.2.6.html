@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.1.2.6 Soluciones de implementación de tecnología inalámbrica a gran escala</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.1.2.6_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Conceptos de tecnología inalámbrica</h1>
+        <h2>Componentes de WLANs</h2>
+      </div>
+      <div id="content">
+<p>Las organizaciones que requieren la agrupación en clústeres de varios AP necesitan una solución más sólida y escalable. Para las organizaciones más grandes con muchos AP, Cisco proporciona soluciones basadas en controladores, que incluyen la arquitectura administrada a través de la nube Cisco Meraki y la arquitectura de red inalámbrica Cisco Unified.</p>
+<p></p>
+<p>
+<b>Nota:</b> existen otras soluciones basadas en controladores, como los controladores que usan el modo Flex. Visite <a href="http://www.cisco.com/" target="_blank">http://www.cisco.com</a> para obtener más información.</p>
+<p></p>
+<p>
+<b>Arquitectura administrada a través de la nube Cisco Meraki</b>
+</p>
+<p>La arquitectura de la nube Cisco Meraki es una solución de administración utilizada para simplificar la implementación de la tecnología inalámbrica. Con esta arquitectura, los AP se administran de forma centralizada desde un controlador en la nube, como se muestra en la figura 1. Las redes y la administración a través de la nube proporcionan una administración, una visibilidad y un control centralizados, sin el costo y la complejidad de aparatos controladores o de un software de administración de superposición. </p>
+<p></p>
+<p>Este proceso reduce los costos y la complejidad. El controlador inserta la configuración de administración, como las actualizaciones de firmware, la configuración de seguridad, la red inalámbrica y la configuración de SSID en los AP Meraki. </p>
+<p></p>
+<p>
+<b>Nota:</b> solo los datos de administración fluyen a través de la infraestructura de la nube Meraki. El tráfico de usuarios no pasa a través de los centros de datos de Meraki. Por lo tanto, si Cisco Meraki no puede acceder a la nube, la red continúa funcionando con normalidad. Esto significa que los usuarios todavía pueden autenticar, que las reglas de firewall siguen vigentes y que el tráfico fluye a la máxima velocidad de línea. Solo se interrumpen las funciones de administración, como los informes y las herramientas de configuración.</p>
+<p></p>
+<p>La arquitectura administrada a través de la nube Cisco Meraki requiere lo siguiente:</p>
+<p>
+<ul>
+<li>
+<b>AP inalámbricos administrados a través de la nube Cisco MR:</b> existen varios modelos para abordar las variadas opciones de implementación de la tecnología inalámbrica. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Controlador en la nube Meraki (MCC):</b> el MCC proporciona una administración, una optimización y un monitoreo centralizados del sistema WLAN Meraki. El MCC no es un aparato que se deba adquirir e instalar para administrar los AP inalámbricos. En cambio, el MCC es un servicio basado en la nube que constantemente monitorea, optimiza e informa el comportamiento de la red. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Tablero basado en Web:</b> el tablero de Meraki basado en Web realiza la configuración y el diagnóstico de manera remota.</li>
+</ul>
+</p>
+<p></p>
+<p>Haga clic en cada componente de la figura 2 para leer más información sobre la arquitectura Cisco Meraki.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

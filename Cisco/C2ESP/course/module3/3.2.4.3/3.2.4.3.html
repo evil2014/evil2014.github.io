@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>3.2.4.3 Introducción a la resolución de problemas de enlaces troncales</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_3.2.4.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Implementaciones de VLAN</h1>
+        <h2>Resolución de problemas de VLAN y enlaces troncales</h2>
+      </div>
+      <div id="content">
+<p>Una de las tareas frecuentes de los administradores de red es resolver problemas de formación de enlaces troncales o de enlaces que se comportan incorrectamente como enlaces troncales. En ocasiones, un puerto de switch se puede comportar como puerto de enlace troncal, incluso si no se configuró como tal. Por ejemplo, un puerto de acceso puede aceptar tramas de redes VLAN distintas de la VLAN a la cual se asignó. Esto se conoce como “filtración de VLAN”.</p>
+<p></p>
+<p>En la figura 1, se muestra un diagrama de flujo de las pautas generales de resolución de problemas de enlaces troncales.</p>
+<p></p>
+<p>Para resolver problemas de enlaces troncales que no se forman o de filtración de VLAN, proceda de la siguiente manera:</p>
+<p></p>
+<p>
+<b>Paso 1. </b>Utilice el comando <span class="cmd"><b>show interfaces trunk</b></span> para verificar si hay coincidencia entre la VLAN nativa local y peer. Si la VLAN nativa no coincide en ambos extremos, hay una filtración de VLAN.</p>
+<p></p>
+<p>
+<b>Paso 2. </b>Utilice el comando <span class="cmd"><b>show interfaces trunk</b></span> para verificar si se estableció un enlace troncal entre los switches. Configure estáticamente los enlaces troncales siempre que sea posible. Los puertos de los switches Cisco Catalyst utilizan DTP de manera predeterminada e intentan negociar un enlace troncal.</p>
+<p></p>
+<p>Para mostrar el estado del enlace troncal, la VLAN nativa utilizada en ese enlace troncal y verificar el establecimiento del enlace troncal, utilice el comando <span class="cmd"><b>show interfaces trunk</b></span>. En el ejemplo de la figura 2, se muestra que la VLAN nativa en un extremo del enlace troncal se cambió a la VLAN 2. Si un extremo del enlace troncal se configura como VLAN 99 nativa y el otro extremo como VLAN 2 nativa, las tramas que se envían desde la VLAN 99 en un extremo se reciben en la VLAN 2 en el otro extremo. La VLAN 99 se filtra en el segmento VLAN 2. </p>
+<p></p>
+<p>CDP muestra un aviso de incompatibilidad de VLAN nativa en un enlace troncal con este mensaje:</p>
+<p></p>
+<p>
+<span class="cmd">*Mar 1 06:45:26.232: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on FastEthernet0/1 (2), with S2 FastEthernet0/1 (99).</span>
+</p>
+<p></p>
+<p>Si existe una incompatibilidad de VLAN nativa, se producen problemas de conectividad en la red. El tráfico de datos para las VLAN distintas de las dos VLAN nativas configuradas se propaga correctamente a través del enlace troncal, pero los datos relacionados con cualquiera de las VLAN nativas no se propagan correctamente a través del enlace troncal. </p>
+<p></p>
+<p>Como se muestra en la figura 2, los problemas de incompatibilidad de la VLAN nativa no impiden que se forme el enlace troncal. Para resolver una incompatibilidad de VLAN nativa, configure la VLAN nativa para que sea la misma VLAN en ambos lados del enlace.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

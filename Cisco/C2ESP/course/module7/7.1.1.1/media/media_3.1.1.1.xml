@@ -1,0 +1,130 @@
+﻿<textcomponents> 
+<component id="ID_s1_title">
+<text><![CDATA[<font><b>Evolución de los protocolos de routing  </b></font>]]></text> 
+</component>
+
+<component id="ID_s1_txt01">
+  <text><![CDATA[EIGRP para IPv6]]></text>
+  </component>
+  
+<component id="ID_s1_txt02">
+  <text><![CDATA[IS-IS para IPv6]]></text>
+  </component>  
+  
+<component id="ID_s1_txt03_00">
+  <text><![CDATA[OSPFv3]]></text>
+  </component>
+  
+ <component id="ID_s1_txt03_01">
+  <text><![CDATA[Extensiones del multiprotocolo BPG-4 (BGP-MP)]]></text>
+  </component>
+  
+  <component id="ID_s1_txt04">
+  <text><![CDATA[RIPng]]></text>
+  </component>
+  
+  <component id="ID_s1_txt05">
+  <text><![CDATA[Protocolo de gateway fronterizo versión 4 (BGP-4)]]></text>
+  </component>
+  
+  <component id="ID_s1_txt06">
+  <text><![CDATA[RIPv2]]></text>
+  </component>
+  
+  <component id="ID_s1_txt07">
+  <text><![CDATA[Protocolo de enrutamiento de gateway interno mejorado (EIGRP)]]></text>
+  </component>
+  
+  <component id="ID_s1_txt08">
+  <text><![CDATA[OSPFv2]]></text>
+  </component>
+  
+  <component id="ID_s1_txt09">
+  <text><![CDATA[Intermediate-System-to-Intermediate-System (IS-IS)]]></text>
+  </component>
+  
+  <component id="ID_s1_txt10">
+  <text><![CDATA[Protocolo OSPFv1 (Open Shortest Path First)]]></text>
+  </component>
+  
+  <component id="ID_s1_txt11">
+  <text><![CDATA[Protocolo de información de routing versión 1 (RIPv1)]]></text>
+  </component>
+  
+  <component id="ID_s1_txt12">
+  <text><![CDATA[Protocolo de routing de gateway interior (IGRP)]]></text>
+  </component>
+  
+  <component id="ID_s1_txt13">
+  <text><![CDATA[Protocolo de gateway exterior (EGP)]]></text>
+  </component>
+  
+   <component id="ID_s1_txt14">
+<text><![CDATA[- Protocolos de routing IPv4]]></text> 
+</component>
+
+ <component id="ID_s1_txt15">
+<text><![CDATA[- Protocolos de routing IPv6]]></text> 
+</component>
+
+<component id="ID_s1_txt16">
+<text><![CDATA[Leyenda]]></text> 
+</component>
+
+  <component id="ID_s2_title">
+<text><![CDATA[<b>Clasificación de los protocolos de routing  </b>]]></text> 
+</component>
+
+  <component id="ID_s2_txt_01">
+<text><![CDATA[Protocolos de gateway interior]]></text> 
+</component>
+
+<component id="ID_s2_txt_02">
+<text><![CDATA[Protocolos de gateway exterior]]></text> 
+</component>
+
+
+
+<component id="ID_table">
+		<text><![CDATA[<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4'>
+		<tr>
+			<td colspan='6' bgcolor='#0E6360' class="mtable_top"><font size='1' color='#434321'><span style="color:#DAE17A">.</span></font></td>
+		</tr>
+		
+		<tr>
+			<td colspan="1"  width="70" bgcolor='#154D4C' valign="top"><font color='#ffffff'></font></td>
+			<td colspan="4"  width="70" bgcolor='#154D4C' valign="top"><font color='#ffffff'><b>Protocolos de gateway interior  </b></font></td>
+			<td colspan="1"  width="70"  bgcolor='#154D4C' valign="top"><font color='#ffffff'><b>Protocolos de gateway exterior  </b></font></td>	
+			
+		</tr>
+		
+		<tr>
+			<td colspan="1"  width="70" bgcolor='#077A77' valign="top"><font color='#ffffff'></font></td>
+			<td colspan="2"  width="70" bgcolor='#077A77' valign="top"><font color='#ffffff'><b>Vector distancia  </b></font></td>
+			<td colspan="2"  width="70"  bgcolor='#077A77' valign="top"><font color='#ffffff'><b>Estado de enlace  </b></font></td>	
+			<td   width="140"  bgcolor='#077A77' valign="top"><font color='#ffffff'><b>Vector ruta  </b></font></td>
+		</tr>
+			
+		
+		<tr>		
+		<td  bgcolor="#EFF8F7" valign="top"><font color='#393536'>IPv4</font></td>
+		<td  bgcolor="#EFF8F7" valign="top"><font color='#393536'>RIPv2</font></td>			
+		<td bgcolor="#EFF8F7" valign="top"><font color='#393536'>EIGRP</font></td>	
+		<td bgcolor="#EFF8F7" valign="top"><font color='#393536'>OSPFv2</font></td>			
+		<td bgcolor="#EFF8F7" valign="top"><font color='#393536'>IS-IS</font></td>	
+		<td bgcolor="#EFF8F7" valign="top"><font color='#393536'>BGP-4</font></td>		 
+		</tr>
+		
+		<tr>	
+		<td  bgcolor="#FFFFFF" valign="top"><font color='#393536'>IPv6</font></td>
+		<td  bgcolor="#FFFFFF" valign="top"><font color='#393536'>RIPng</font></td>			
+		<td bgcolor="#FFFFFF" valign="top"><font color='#393536'>EIGRP para IPv6</font></td>	
+		<td bgcolor="#FFFFFF" valign="top"><font color='#393536'>OSPFv3</font></td>			
+		<td bgcolor="#FFFFFF" valign="top"><font color='#393536'>IS-IS para IPv6</font></td>	
+		<td bgcolor="#FFFFFF" valign="top"><font color='#393536'>BGP-MP</font></td>			 
+		</tr>
+	
+	</table>]]></text> 
+	</component>
+
+</textcomponents>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.4.3.2 Topología lógica para medios compartidos</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.4.3.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Control de acceso al medio</h1>
+        <h2>Topologías de LAN</h2>
+      </div>
+      <div id="content">
+<p>La topología lógica de una red está estrechamente relacionada con el mecanismo que se utiliza para administrar el acceso a la red. Los métodos de acceso proporcionan los procedimientos para administrar el acceso a la red para que todas las estaciones tengan acceso. Cuando varias entidades comparten los mismos medios, deben estar instalados algunos mecanismos para controlar el acceso. Los métodos de acceso se aplican en las redes para regular dicho acceso al medio. </p>
+<p></p>
+<p>Algunas topologías de red comparten un medio común con varios nodos. En cualquier momento puede haber una cantidad de dispositivos que intentan enviar y recibir datos utilizando los medios de red. Hay reglas que rigen cómo esos dispositivos comparten los medios. </p>
+<p></p>
+<p>Hay dos métodos básicos de control de acceso al medio para medios compartidos: </p>
+<p>
+<ul>
+<li>
+<b>Acceso por contienda:</b> todos los nodos compiten por el uso del medio, pero tienen un plan si se producen colisiones. En la figura 1, se muestra el acceso por contienda.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Acceso controlado:</b> cada nodo tiene su propio tiempo para utilizar el medio. En la figura 2, se muestra el acceso controlado.</li>
+</ul>
+</p>
+<p></p>
+<p>El protocolo de capa de enlace de datos especifica el método de control de acceso al medio que proporciona el equilibrio adecuado entre control de trama, protección de trama y sobrecarga de red. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.1.4.1 Pautas generales para la creación de ACL</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.1.4.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Funcionamiento de ACL de IP</h1>
+        <h2>Pautas para la creación de ACL</h2>
+      </div>
+      <div id="content">
+<p>La composición de ACL puede ser una tarea compleja. Para cada interfaz, puede haber varias políticas necesarias para administrar el tipo de tráfico que tiene permitido ingresar a la interfaz o salir de ella. El router en la ilustración tiene dos interfaces configuradas para IPv4 e IPv6. Si necesitáramos ACL para ambos protocolos, en ambas interfaces y en ambos sentidos, esto requeriría ocho ACL diferentes. Cada interfaz tendría cuatro ACL: dos ACL para IPv4 y dos ACL para IPv6. Para cada protocolo, una ACL es para el tráfico entrante y otra para el tráfico saliente. </p>
+<p></p>
+<p>
+<b>Nota:</b> las ACL no deben configurarse en ambos sentidos. La cantidad de ACL y el sentido aplicado a la interfaz dependen de los requisitos que se implementen.</p>
+<p></p>
+<p>Las siguientes son algunas pautas para el uso de ACL:</p>
+<p></p>
+<p>
+<ul>
+<li>Utilice las ACL en los routers de firewall ubicados entre su red interna y una red externa, como Internet. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Utilice las ACL en un router ubicado entre dos partes de la red para controlar el tráfico que entra a una parte específica de su red interna o que sale de esta. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Configure las ACL en los routers de frontera, es decir, los routers ubicados en los límites de las redes. Esto proporciona una separación muy básica de la red externa o entre un área menos controlada y un área más importante de su propia red. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Configure las ACL para cada protocolo de red configurado en las interfaces del router de frontera. </li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Las tres P</b>
+</p>
+<p></p>
+<p>Para recordar una regla general de aplicación de ACL en un router, puede pensar en “las tres P”. Se puede configurar una ACL por protocolo, por sentido y por interfaz: </p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Una ACL por protocolo:</b> para controlar el flujo de tráfico en una interfaz, se debe definir una ACL para cada protocolo habilitado en la interfaz. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Una ACL por sentido:</b> las ACL controlan el tráfico en una interfaz de a un sentido por vez. Se deben crear dos ACL diferentes para controlar el tráfico entrante y saliente. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Una ACL por interfaz:</b> las ACL controlan el tráfico para una interfaz, por ejemplo, GigabitEthernet 0/0.</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

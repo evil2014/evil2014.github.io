@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>0.0.1.11 Descripción general del curso</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_0.0.1.11_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Escalamiento de redes</h1>
+        <h2>Mensaje para el estudiante</h2>
+      </div>
+      <div id="content">
+<p>Este curso se centra en la arquitectura, los componentes y las operaciones de los routers y los switches en redes más grandes y complejas. Aprenderá a configurar routers y switches para que tengan una funcionalidad avanzada. En este curso, aprenderá a hacer lo siguiente: </p>
+<p></p>
+<p>
+<ul>
+<li>Configurar y llevar a cabo la resolución de problemas de operaciones DHCP y DNS para IPv4 e IPv6.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Describir las operaciones y los beneficios del protocolo de árbol de expansión (STP).</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Llevar a cabo la configuración y resolución de problemas de operaciones de STP.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Describir las operaciones y los beneficios de la agregación de enlaces y del Protocolo de enlace troncal de VLAN (VTP) de Cisco.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Llevar a cabo la configuración y resolución de problemas de VTP, STP y RSTP.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Llevar a cabo la configuración y resolución de problemas de operaciones básicas de routers en una red enrutada compleja para IPv4 e IPv6.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Configurar y llevar a cabo la resolución de problemas de operaciones avanzadas de routers e implementar RIP, OSPF y los protocolos de enrutamiento de EIGRP para IPv4 e IPv6.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Administrar los archivos de configuración y de otorgamiento de licencias del software Cisco IOS®.</li>
+</ul>
+</p>
+<p></p>
+<p>Al finalizar este curso, podrá llevar a cabo la configuración y resolución de problemas de routers y switches, y resolver problemas comunes con OSPF, EIGRP, STP y VTP en redes IPv4 e IPv6. También desarrollará las aptitudes y obtendrá los conocimientos necesarios para implementar operaciones DHCP y DNS en una red.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

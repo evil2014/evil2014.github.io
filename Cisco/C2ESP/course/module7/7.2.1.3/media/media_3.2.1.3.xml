@@ -1,0 +1,94 @@
+﻿<textcomponents>
+
+<component id='ID_inst'>
+	<text><![CDATA[<b>Actividad: identificar la terminología relacionada con vector distancia </b><br/><br/>Arrastre el término que coincida mejor con la descripción del protocolo de routing vector distancia al campo proporcionado.]]></text>
+</component> <!--Drag and Drop-->
+<component id='ID_drag01'>
+	<text><![CDATA[<font color="#393536">Bellman-Ford</font>]]></text>
+</component>
+
+<component id='ID_drag02'>
+	<text><![CDATA[<font color="#393536">Transmitir actualizaciones por difusión</font>]]></text>
+</component>
+
+<component id='ID_drag03'>
+	<text><![CDATA[<font color="#393536">Vecinos</font>]]></text>
+</component>
+
+<component id='ID_drag04'>
+	<text><![CDATA[<font color="#393536">Actualizaciones periódicas</font>]]></text>
+</component>
+
+<component id='ID_drag05'>
+	<text><![CDATA[<font color="#393536">Algoritmo</font>]]></text>
+</component>
+
+<component id='ID_drag06'>
+	<text><![CDATA[<font color="#393536">DUAL</font>]]></text>
+</component>
+
+
+
+
+
+
+<component id='ID_s1_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto  </b>]]></text>
+</component>
+
+<component id='ID_s1_CORRECT_BODY'>
+	<text><![CDATA[Unió correctamente cada término con la descripción del protocolo de routing vector distancia. ]]></text>
+</component>
+
+
+<component id='ID_s1_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto  </b>]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_BODY'>
+	<text><![CDATA[No unió correctamente cada término con la descripción del protocolo de routing vector distancia. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_CHECK'>
+	<text><![CDATA[Verificar]]></text>
+</component>
+
+<component id='ID_RESET'>
+	<text><![CDATA[Restablecer]]></text>
+</component>
+
+
+<component id='ID_target_header'>
+	<text><![CDATA[<b>Término  </b>]]></text>
+</component>
+<component id='ID_text_header'>
+	<text><![CDATA[<b>Descripción del protocolo de routing vector distancia  </b>]]></text>
+</component>
+
+<component id="ID_txt01">
+	<text><![CDATA[Proceso de temporización donde se envían actualizaciones a los routers vecinos a intervalos regulares.]]></text>
+</component>
+
+<component id="ID_txt02">
+  <text><![CDATA[Un proceso en el cual los routers vecinos reciben actualizaciones de red en una dirección de red específica.]]></text> 
+</component>
+
+<component id="ID_txt03">
+  <text><![CDATA[Proceso que calcula las mejores rutas hacia las redes.]]></text> 
+</component>
+
+<component id="ID_txt04">
+  <text><![CDATA[EIGRP e IGRP utilizan este proceso de algoritmo tal como lo desarrolló Cisco.]]></text> 
+</component>
+
+<component id="ID_txt05">
+  <text><![CDATA[RIP utiliza este proceso de algoritmo.]]></text> 
+</component>
+
+<component id="ID_txt06">
+  <text><![CDATA[Describe los routers que comparten un enlace y el mismo protocolo de routing.]]></text> 
+</component>
+
+
+   
+</textcomponents>

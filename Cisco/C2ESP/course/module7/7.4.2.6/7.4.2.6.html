@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.4.2.6 Armado de la base de datos de estado de enlace</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.4.2.6_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Routing dinámico de estado de enlace</h1>
+        <h2>Actualizaciones de estado de enlace</h2>
+      </div>
+      <div id="content">
+<p>El paso final en el proceso de routing de estado de enlace es que cada router utiliza la base de datos para construir un mapa completo de la topología y calcula la mejor ruta para cada red de destino. </p>
+<p></p>
+<p>Finalmente, todos los routers reciben un LSP de todos los demás routers de estado de enlace en el área de routing. Dichos LSP se almacenan en la base de datos de link-state. </p>
+<p></p>
+<p>En el ejemplo en la ilustración, se muestra el contenido de la base de datos de estado de enlace del R1.</p>
+<p></p>
+<p>Como resultado del proceso de saturación, el R1 obtuvo la información de estado de enlace para cada router de su área de routing. Observe que R1 también incluye su propia información de link-state en la base de datos de link-state.</p>
+<p></p>
+<p>Con una base de datos de estado de enlace completa, el R1 ahora puede utilizar la base de datos y el algoritmo SPF (Shortest Path First) para calcular la ruta preferida o la ruta más corta a cada red, lo que da como resultado el árbol SPF. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

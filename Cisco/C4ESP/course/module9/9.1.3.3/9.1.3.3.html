@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.1.3.3 Métodos de resolución de problemas (cont.)</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.1.3.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resolución de problemas mediante un enfoque sistemático</h1>
+        <h2>Aislamiento del problema mediante modelos en capas</h2>
+      </div>
+      <div id="content">
+<p>Además del enfoque sistemático de resolución de problemas en capas, también existen otros enfoques menos estructurados. </p>
+<p></p>
+<p>Un enfoque de resolución de problemas se basa en una deducción fundamentada del administrador de red, según los síntomas del problema. Los administradores de red experimentados implementan este método con mayor éxito porque se apoyan en sus amplios conocimientos y experiencia para aislar y resolver problemas de red con determinación. En el caso de un administrador de red menos experimentado, es muy posible que este método sea más parecido a una resolución de problemas fortuita.</p>
+<p></p>
+<p>Otro método consiste en comparar una situación de funcionamiento con una en la que no hay funcionamiento y detectar las diferencias significativas, que incluyen:</p>
+<p>
+<ul>
+<li>Configuraciones</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Versiones de software</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Propiedades del hardware y de otros dispositivos</li>
+</ul>
+</p>
+<p></p>
+<p>Si bien este método puede proporcionar una solución que funcione, no revela con claridad la causa del problema. Este método puede ser útil cuando al administrador de red le falta un área de conocimientos o cuando es necesario resolver el problema rápidamente. Después de que se implementa la corrección, el administrador de red puede continuar la investigación para determinar la causa real del problema.</p>
+<p></p>
+<p>La sustitución es otra metodología rápida de resolución de problemas, que implica cambiar el dispositivo problemático por uno que se sepa que funciona. Si se corrige el problema, el administrador de red sabe que el problema está en el dispositivo que quitó. Si el problema permanece, la causa puede estar en cualquier otro lugar. En situaciones específicas, este puede ser un método ideal para la resolución rápida de un problema, por ejemplo, cuando queda inactivo un único punto de error crítico, como un router de frontera. En vez de resolver el problema, puede resultar más beneficioso reemplazar el dispositivo y restaurar el servicio. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.3.2.3 Intercambio de claves de Diffie-Hellman</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.3.2.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Presentación de IPsec</h1>
+        <h2>Estructura IPsec</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Integridad de datos</b>
+</p>
+<p></p>
+<p>Diffie-Hellman (DH) no es un mecanismo de cifrado y no se suele utilizar para cifrar datos. En cambio, es un método para intercambiar con seguridad las claves que cifran datos. Los algoritmos (DH) permiten que dos partes establezcan la clave secreta compartida que usan el cifrado y los algoritmos de hash. </p>
+<p></p>
+<p>DH, presentado por Whitfield Diffie y Martin Hellman en 1976, fue el primer sistema en utilizar la clave pública o las claves criptográficas asimétricas. En la actualidad, DH forma parte del estándar IPsec. Además, un protocolo denominado OAKLEY utiliza un algoritmo DH. OAKLEY es un protocolo utilizado por el protocolo IKE, que forma parte del marco general denominado “protocolo de administración de claves y de asociación de seguridad de Internet”.</p>
+<p></p>
+<p>Los algoritmos de cifrado, como DES, 3DES y AES, así como los algoritmos de hash MD5 y SHA-1, requieren una clave secreta compartida simétrica para realizar el cifrado y el descifrado. ¿Cómo obtienen la clave secreta compartida los dispositivos de cifrado y descifrado? El método más sencillo de intercambio de claves es un método de intercambio de clave pública entre dispositivos de cifrado y descifrado.</p>
+<p></p>
+<p>El algoritmo DH especifica un método de intercambio de clave pública que proporciona una manera para que dos peers establezcan una clave secreta compartida que solo ellos conozcan, aunque se comuniquen a través de un canal inseguro. Como todos los algoritmos criptográficos, el intercambio de claves DH se basa en una secuencia matemática de pasos. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

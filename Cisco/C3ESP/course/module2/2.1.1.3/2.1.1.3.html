@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.1.1.3 Problemas con la redundancia de capa 1: tormentas de difusión</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.1.1.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Conceptos de árbol de expansión</h1>
+        <h2>Propósito del árbol de expansión</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Tormenta de difusión</b>
+</p>
+<p></p>
+<p>Una tormenta de difusión se produce cuando existen tantas tramas de difusión atrapadas en un bucle de Capa 2, que se consume todo el ancho de banda disponible. Como consecuencia, no hay ancho de banda disponible para el tráfico legítimo y la red deja de estar disponible para la comunicación de datos. Esto es una denegación de servicio eficaz.</p>
+<p></p>
+<p>La tormenta de difusión es inevitable en una red con bucles. A medida que más dispositivos envían difusiones a través de la red, más tráfico se concentra en el bucle, lo que consume recursos. Finalmente, se crea una tormenta de difusión que hace fallar la red.</p>
+<p></p>
+<p>Existen otras consecuencias de las tormentas de difusión. Debido a que el tráfico de difusión se envía a todos los puertos del switch, todos los dispositivos conectados deben procesar todo el tráfico de difusión que fluye indefinidamente en la red con bucles. Esto puede hacer que la terminal no funcione bien a causa de los altos requisitos de procesamiento para mantener una carga de tráfico tan elevada en la NIC.</p>
+<p></p>
+<p>Haga clic en el botón Reproducir de la ilustración para ver una animación de una tormenta de difusión. Cuando se detenga la animación, lea el texto a la derecha de la topología. La animación continuará después de una pausa breve.</p>
+<p></p>
+<p>En la animación:</p>
+<p></p>
+<p>1. La PC1 envía una trama de difusión a la red con bucles. </p>
+<p></p>
+<p>2. La trama de difusión crea un bucle entre todos los switches interconectados en la red.</p>
+<p></p>
+<p>3. La PC4 también envía una trama de difusión a la red con bucles. </p>
+<p></p>
+<p>4. La trama de difusión de la PC4 también queda atrapada en el bucle entre todos los switches interconectados, al igual que la trama de difusión de la PC1. </p>
+<p></p>
+<p>5. A medida que más dispositivos envían difusiones a través de la red, más tráfico se concentra en el bucle, lo que consume recursos. Finalmente, se crea una tormenta de difusión que hace fallar la red.</p>
+<p></p>
+<p>6. Cuando la red se satura por completo con tráfico de difusión que genera un bucle entre los switches, el switch descarta el tráfico nuevo porque no lo puede procesar.</p>
+<p></p>
+<p>Dado que los dispositivos conectados a una red envían regularmente tramas de difusión, como las solicitudes de ARP, se puede formar una tormenta de difusión en segundos. Como resultado, cuando se crea un bucle, la red conmutada se desactiva con rapidez.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

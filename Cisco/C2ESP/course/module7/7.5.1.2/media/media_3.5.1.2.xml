@@ -1,0 +1,37 @@
+﻿<textcomponents> <!-- SLIDE 1-->
+	<component id="ID_s1_title">
+		<text><![CDATA[<b>Interfaces del R1 conectadas directamente</b>]]></text> 
+	</component> <!--SLIDE 2-->
+	<component id="ID_s2_title">
+		<text><![CDATA[<b>Rutas conectadas directamente en el R1</b>]]></text> 
+	</component>
+	
+	<component id="ID_s2_txt01">
+		<text><![CDATA[Origen de la ruta]]></text>
+	</component>
+	
+	<component id="ID_s2_txt02">
+		<text><![CDATA[Red destino]]></text>
+	</component>
+	
+	<component id="ID_s2_txt03">
+		<text><![CDATA[Interfaz de salida]]></text>
+	</component>
+	
+	<component id="ID_s2_txt04">
+		<text><![CDATA[Identifica de qué manera el router identificó la red.]]></text>
+	</component>
+	
+	<component id="ID_s2_txt05">
+		<text><![CDATA[Identifica la red de destino y cómo está conectada.]]></text>
+	</component>
+	
+	<component id="ID_s2_txt06">
+		<text><![CDATA[Identifica la interfaz en el router conectado a la red de destino.]]></text>
+	</component>
+	
+	<component id="ID_txt07">
+		<text><![CDATA[<b>Leyenda</b>]]></text>
+	</component>
+	
+</textcomponents>

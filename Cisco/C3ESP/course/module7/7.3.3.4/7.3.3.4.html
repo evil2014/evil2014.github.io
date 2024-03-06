@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.3.3.4 Sucesores factibles, condición de factibilidad y distancia notificada</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.3.3.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1> Funcionamiento de EIGRP</h1>
+        <h2>DUAL y la tabla de topología</h2>
+      </div>
+      <div id="content">
+<p>DUAL puede converger rápidamente después de un cambio en la topología, debido a que puede usar rutas de respaldo a otras redes sin recalcular DUAL. Estas rutas de respaldo se conocen como “sucesores factibles” (FS).</p>
+<p></p>
+<p>Un FS es un vecino que tiene una ruta de respaldo sin bucles a la misma red que el sucesor y satisface la condición de factibilidad (FC). El sucesor de R2 para la red 192.168.1.0/24 es el R3, que proporciona la mejor ruta o la métrica más baja a la red de destino. Observe en la figura 1 que el R1 proporciona una ruta alternativa, pero ¿es un FS? Antes de que el R1 pueda ser un FS para el R2, debe cumplir la FC.</p>
+<p></p>
+<p>La FC se cumple cuando la distancia notificada (RD) desde un vecino hasta una red es menor que la distancia factible desde el router local hasta la misma red de destino. Si la distancia notificada es menor, representa una ruta sin bucles. La distancia notificada es simplemente una distancia factible desde el vecino EIGRP hasta la misma red de destino. La distancia notificada es la métrica que un router informa a un vecino acerca de su propio costo hacia esa red. </p>
+<p></p>
+<p>En la figura 2, la distancia factible del R1 a 192.168.1.0/24 es 2 170 112. </p>
+<p>
+<ul>
+<li>El R1 informa al R2 que su FD a 192.168.1.0/24 es 2 170 112. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Desde la perspectiva del R2, 2 170 112 es la RD del R1. </li>
+</ul>
+</p>
+<p>El R2 utiliza esta información para determinar si el R1 cumple la FC y, por lo tanto, puede ser un FS. </p>
+<p></p>
+<p>Como se muestra en la figura 3, debido a que la RD del R1 (2 170 112) es menor que la propia FD del R2 (3 012 096), el R1 cumple con la FC. </p>
+<p></p>
+<p>El R1 es ahora un FS para el R2 a la red 192.168.1.0/24.</p>
+<p></p>
+<p>Si hay un error en la ruta del R2 a 192.168.1.0/24 a través del R3 (sucesor), el R2 instala inmediatamente la ruta a través del R1 (FS) en su tabla de routing. El R1 se convierte en el nuevo sucesor para la ruta del R2 a esta red, como se muestra en la figura 4.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

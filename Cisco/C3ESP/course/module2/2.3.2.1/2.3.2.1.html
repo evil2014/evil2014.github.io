@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.3.2.1 Modo de árbol de expansión</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.3.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de árbol de expansión</h1>
+        <h2>Configuración rápida de PVST+</h2>
+      </div>
+      <div id="content">
+<p>PVST+ rápido es la implementación de Cisco de RSTP. Este admite RSTP por VLAN. La topología en la figura 1 posee dos VLAN: 10 y 20. </p>
+<p></p>
+<p>
+<b>Nota:</b> la configuración predeterminada de árbol de expansión en un switch Cisco de la serie Catalyst 2960 es PVST+. Los switches Cisco de la serie Catalyst 2960 admiten PVST+, PVST+ rápido y MST, pero solo puede haber una versión activa para todas las VLAN al mismo tiempo. </p>
+<p></p>
+<p>Los comandos de PVST+ rápido controlan la configuración de las instancias de árbol de expansión de las VLAN. La instancia de árbol de expansión se crea cuando se asigna una interfaz a una VLAN y se elimina cuando la última interfaz se traslada a otra VLAN. Además, puede configurar los parámetros de puertos y switches STP antes de que se cree una instancia de árbol de expansión. Estos parámetros se aplican cuando se crea una instancia de árbol de expansión. </p>
+<p></p>
+<p>En la figura 2, se muestra la sintaxis de comandos Cisco IOS que se necesita para configurar PVST+ rápido en un switch Cisco. El comando necesario para configurar PVST+ rápido es el comando <span class="cmd"><b>spanning-tree mode rapid-pvst</b></span> del modo de configuración global. Cuando se especifica la interfaz que se debe configurar, las interfaces válidas incluyen puertos físicos, redes VLAN y canales de puertos. El rango de ID de la VLAN es de 1 a 4094 cuando está instalada la imagen mejorada del software (EI) y de 1 a 1005 cuando está instalada la imagen estándar del software (SI). El intervalo de canales de puerto es de 1 a 6.</p>
+<p></p>
+<p>En la figura 3, se muestran los comandos de PVST+ rápido configurados en el S1.</p>
+<p></p>
+<p>En la figura 4, el comando <span class="cmd"><b>show spanning-tree vlan 10</b></span> muestra la configuración de árbol de expansión para la VLAN 10 en el switch S1. Observe que la prioridad de BID está establecida en 4096. En el resultado, la instrucción “Spanning tree enabled protocol rstp” indica que el S1 ejecuta PVST+ rápido. Dado que el S1 es el puente raíz para la VLAN 10, todas sus interfaces son puertos designados.</p>
+<p></p>
+<p>En la figura 5, el comando <span class="cmd"><b>show running-config</b></span> se utiliza para verificar la configuración de PVST+ rápido en el S1.</p>
+<p></p>
+<p>
+<b>Nota:</b> por lo general, no es necesario configurar el parámetro <i>tipo-enlace</i> punto a punto para PVST+ rápido, ya que no es común que se dé un <i>tipo-enlace</i> compartido. En la mayoría de los casos, la única diferencia entre la configuración de PVST+ y PVST+ rápido es el comando <span class="cmd"><b>spanning-tree mode rapid-pvst</b></span>.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

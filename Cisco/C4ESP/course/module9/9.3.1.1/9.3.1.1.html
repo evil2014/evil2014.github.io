@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.3.1.1 Actividad de clase: Elaboración del registro</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.3.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resumen</h1>
+        <h2>Resumen</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Elaboración del registro</b>
+</p>
+<p></p>
+<p>Como administrador de red de una pequeña empresa, desea implementar un sistema de registro para usar en la resolución de problemas de red.</p>
+<p></p>
+<p>Después de pensar mucho, decide recopilar información simple de documentación de red en un archivo que se utilizará cuando surjan problemas de red. También sabe que si la empresa crece en el futuro, se puede usar este archivo para exportar la información a un sistema de software de red computarizado.</p>
+<p></p>
+<p>Para comenzar el proceso de documentación de red, incluye lo siguiente:</p>
+<p>
+<ul>
+<li>Un diagrama físico de la red de su pequeña empresa.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Un diagrama lógico de la red de su pequeña empresa.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Información de configuración de red para los dispositivos importantes, incluidos routers y switches.</li>
+</ul>
+</p>
+<p></p>
+<p>
+<a href="../../files/9.3.1.1%20Documentation%20Development%20Instructions.pdf" target="_blank">Actividad de clase: Elaboración del registro</a>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

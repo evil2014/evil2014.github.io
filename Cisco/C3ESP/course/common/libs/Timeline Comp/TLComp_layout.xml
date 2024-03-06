@@ -1,0 +1,40 @@
+<template>
+	<type>TIMELINE</type>
+	<timeline min="1960" max="2010" scale="10">
+		<event date="1960">
+			<bodytext src="ID_bodytext01"/>
+			<titletext src="ID_title01"/>
+		</event>
+		<event date="1971">
+			<bodytext src="ID_bodytext07" />
+			<titletext src="ID_title07"/>
+		</event>
+		<event date="1975">
+			<bodytext src="ID_bodytext08" />
+		</event>
+		<event date="1981">
+			<bodytext src="ID_bodytext09" />
+			<titletext src="ID_title09"/>
+		</event>
+		<event date="1985">
+			<bodytext src="ID_bodytext02"/>
+			<titletext src="ID_title02"/>
+		</event>
+		<event date="1985">
+			<bodytext src="ID_bodytext03"/>
+			<titletext src="ID_title03"/>
+		</event>
+		<event date="1985">
+			<bodytext src="ID_bodytext04" />
+			<titletext src="ID_title04"/>
+		</event>
+		<event date="2000">
+			<bodytext src="ID_bodytext05" />
+			<titletext src="ID_title05"/>
+		</event>
+		<event date="2010">
+			<bodytext src="ID_bodytext06" />
+			<titletext src="ID_title06"/>
+		</event>			
+	</timeline>
+</template>

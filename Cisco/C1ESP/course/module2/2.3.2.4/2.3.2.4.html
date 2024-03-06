@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.3.2.4 Conflictos de dirección IP</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.3.2.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Esquemas de direcciones</h1>
+        <h2>Direccionamiento de dispositivos</h2>
+      </div>
+      <div id="content">
+<p>Si se define una dirección IP estática (manual) para un dispositivo de red; por ejemplo, una impresora, y luego se instala un servidor de DHCP, pueden ocurrir conflictos de direcciones IP duplicadas entre el dispositivo de red y una PC que obtiene información de direccionamiento IP automático del servidor de DHCP. También puede ocurrir un conflicto si se define manualmente una dirección IP estática para un dispositivo de red durante una falla de red relacionada con el servidor de DHCP; una vez que se resuelve la falla de red y se puede acceder al servidor de DHCP a través de la red, surge el conflicto.</p>
+<p></p>
+<p>Para resolver tales conflictos de direccionamiento IP, convierta el dispositivo de red con la dirección IP estática en cliente DHCP o excluya la dirección IP estática para el dispositivo final del ámbito de DHCP en el servidor de DHCP. </p>
+<p></p>
+<p>La segunda solución requiere privilegios de nivel administrativo en el servidor de DHCP y que esté familiarizado con la configuración de DHCP en un servidor.</p>
+<p></p>
+<p>También puede encontrar conflictos de direccionamiento IP al realizar manualmente la configuración de IP en un dispositivo final de una red que solo utiliza direcciones IP estáticas. En este caso, debe determinar qué direcciones IP están disponibles en la subred IP específica y realizar la configuración según corresponda. Este caso muestra por qué es tan importante que un administrador de red mantenga un registro detallado de los dispositivos finales que incluya las asignaciones de direcciones IP.</p>
+<p></p>
+<p>
+<b>Nota:</b> por lo general, en redes de pequeñas o medianas empresas, se utilizan direcciones IP estáticas en los servidores e impresoras, mientras que los dispositivos de los empleados utilizan información de dirección IP asignada mediante DHCP.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

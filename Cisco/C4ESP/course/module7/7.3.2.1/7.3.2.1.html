@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.3.2.1 Confidencialidad con cifrado</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.3.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Presentación de IPsec</h1>
+        <h2>Estructura IPsec</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Confidencialidad</b>
+</p>
+<p></p>
+<p>El tráfico VPN se mantiene confidencial con el cifrado. Los datos de texto no cifrado que se transportan a través de Internet pueden interceptarse y leerse. Cifre la fecha para que se mantenga privada. El cifrado digital de los datos hace que estos sean ilegibles hasta que el receptor autorizado los descifre. </p>
+<p></p>
+<p>Para que la comunicación cifrada funcione, el emisor y el receptor deben conocer las reglas que se utilizan para transformar el mensaje original a su forma cifrada. Las reglas se basan en algoritmos y claves asociadas. En el contexto del cifrado, un algoritmo es una secuencia matemática de pasos que combina un mensaje, texto, dígitos o las tres cosas con una cadena de dígitos denominada “clave”. El resultado es una cadena de cifrado ilegible. El algoritmo de cifrado también especifica cómo se descifra un mensaje cifrado. El descifrado es extremadamente difícil o imposible sin la clave correcta.</p>
+<p></p>
+<p>En la ilustración, Gail desea enviar una transferencia electrónica de fondos (EFT) a Jeremías a través de Internet. En el extremo local, el documento se combina con una clave y se procesa con un algoritmo de cifrado. El resultado es un texto cifrado. El texto cifrado se envía a través de Internet. En el extremo remoto, el mensaje se vuelve a combinar con una clave y se devuelve a través del algoritmo de cifrado. El resultado es el documento financiero original.</p>
+<p></p>
+<p>La confidencialidad se logra con el cifrado del tráfico mientras viaja por una VPN. El grado de seguridad depende de la longitud de la clave del algoritmo de cifrado y la sofisticación del algoritmo. Si un pirata informático intenta descifrar la clave mediante un ataque por fuerza bruta, la cantidad de intentos posibles es una función de la longitud de la clave. El tiempo para procesar todas las posibilidades es una función de la potencia de la computadora del dispositivo atacante. Cuanto más corta sea la clave, más fácil será descifrarla. Por ejemplo, una computadora relativamente sofisticada puede tardar aproximadamente un año para descifrar una clave de 64 bits, mientras que descifrar una clave de 128 bits puede llevarle de 10 a 19 años.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

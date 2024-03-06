@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.2.2.2 Máscara wildcard</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.2.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de OSPFv2 de área única</h1>
+        <h2>Configuración de OSPFv2 de área única</h2>
+      </div>
+      <div id="content">
+<p>OSPFv2 usa la combinación de argumentos <span class="cmd"><i>dirección-red máscara-wildcard</i></span> para habilitar OSPF en las interfaces. Por su diseño, OSPF es un protocolo sin clase; por lo tanto, siempre se requiere la máscara wildcard. Al identificar las interfaces que participan en un proceso de routing, la máscara wildcard generalmente es el valor inverso a la máscara de subred configurada en esa interfaz. </p>
+<p></p>
+<p>Una máscara wildcard es una cadena de 32 dígitos binarios que el router utiliza para determinar qué bits de la dirección debe examinar para obtener una coincidencia. En una máscara de subred, un 1 binario equivale a una coincidencia, y un 0 binario no es una coincidencia. En una máscara wildcard, sucede lo contrario:</p>
+<p>
+<ul>
+<li>
+<b>Bit 0 de máscara wildcard:</b> coincide con el valor de bit correspondiente en la dirección. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Bit 1 de máscara wildcard:</b> omite el valor del bit correspondiente en la dirección.</li>
+</ul>
+</p>
+<p></p>
+<p>El método más sencillo para calcular una máscara wildcard es restar la máscara de subred de la red a 255.255.255.255.</p>
+<p></p>
+<p>En el ejemplo de la figura 1, se calcula la máscara wildcard a partir de la dirección de red 192.168.10.0/24. Para hacerlo, se resta la máscara de subred 255.255.255.0 a 255.255.255.255, cuyo resultado es 0.0.0.255. Por lo tanto,192.168.10.0/24 es 192.168.10.0 con una máscara wildcard 0.0.0.255.</p>
+<p></p>
+<p>En el ejemplo de la figura 2, se calcula la máscara wildcard a partir de la dirección de red 192.168.10.64/26. Para hacerlo, se resta la máscara de subred 255.255.255.192 a 255.255.255.255, cuyo resultado es 0.0.0.63. Por lo tanto,192.168.10.0/26 es 192.168.10.0 con una máscara wildcard 0.0.0.63.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

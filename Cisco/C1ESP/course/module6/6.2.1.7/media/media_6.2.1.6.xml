@@ -1,0 +1,107 @@
+﻿<textcomponents> <!-- instructions -->
+<component id="ID_inst">
+	<text><![CDATA[<b>Actividad interactiva: Identificación de elementos de una entrada de tabla de enrutamiento de host</b><br><br>Se muestra una entrada parcial de una tabla de enrutamiento de host. Cada sección de la entrada está identificada con una letra encerrada en un círculo sobre ella.<br><br>Seleccione el segmento correcto de entrada de la tabla de enrutamiento para cada una de las afirmaciones que describen resultados haciendo clic en la columna correspondiente.]]></text>
+</component>
+
+<component id="ID_txt01">
+	<text><![CDATA[&lt;Resultado omitido&gt;]]></text>
+</component>
+
+ <!-- buttons -->
+<component id="ID_Button01">
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id="ID_Button02">
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component> <!--Number of rows in the table-->
+<component id="txt_numrows">
+	<text><![CDATA[6]]></text>
+</component> <!--Number of columns for the answers in the table. Do not count the question column-->
+<component id="txt_numcols">
+	<text><![CDATA[5]]></text>
+</component> <!--Answer column headers-->
+
+
+<component id="txt_col1">
+	<text><![CDATA[<b>A</b>]]></text>
+</component>
+
+<component id="txt_col2">
+	<text><![CDATA[<b>B</b>]]></text>
+</component>
+
+<component id="txt_col3">
+	<text><![CDATA[<b>C</b>]]></text>
+</component>
+
+<component id="txt_col4">
+	<text><![CDATA[<b>D</b>]]></text>
+</component>
+
+<component id="txt_col5">
+	<text><![CDATA[<b>E</b>]]></text>
+</component> <!--Question text - blockindent code moves the text away from the left edge a bit--> <!--Question text - If questions are numbered, use blockindent for hanging indents-->
+<component id="txt_q1">
+	<text><![CDATA[1. <textformat blockindent='13'>Dirección IP de la interfaz física utilizada para enviar el paquete al gateway.</textformat>]]></text>
+</component>
+
+<component id="txt_q2">
+	<text><![CDATA[2. <textformat blockindent='13'>Costo de la ruta; se prefieren números más bajos.</textformat>]]></text>
+</component>
+
+<component id="txt_q3">
+	<text><![CDATA[3. <textformat blockindent='13'>Redes disponibles a las que se puede llegar.</textformat>]]></text>
+</component>
+
+<component id="txt_q4">
+	<text><![CDATA[4. <textformat blockindent='13'>En esta columna se encuentra la dirección de red.</textformat>]]></text>
+</component>
+
+<component id="txt_q5">
+	<text><![CDATA[5. <textformat blockindent='13'>Se utiliza para determinar la porción de red de una dirección IP.</textformat>]]></text>
+</component>
+
+<component id="txt_q6">
+	<text><![CDATA[6. <textformat blockindent='13'>Dirección IP del dispositivo que puede enviar el paquete más allá de la red local.</textformat>]]></text>
+</component> <!--Answers - Give the column number(s), column numbering start with 1 not 0--> <!--Answers - For MCMA separate the correct answers with commas [2, 4, 5] -->
+<component id="txt_a1">
+	<text><![CDATA[4]]></text>
+</component>
+
+<component id="txt_a2">
+	<text><![CDATA[5]]></text>
+</component>
+
+<component id="txt_a3">
+	<text><![CDATA[1]]></text>
+</component>
+
+<component id="txt_a4">
+	<text><![CDATA[1]]></text>
+</component>
+
+<component id="txt_a5">
+	<text><![CDATA[2]]></text>
+</component>
+
+<component id="txt_a6">
+	<text><![CDATA[3]]></text>
+</component> <!-- Correct Feedback -->
+<component id="ID_titleCorrect">
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id="ID_correctText">
+	<text><![CDATA[Eligió correctamente la entrada de la tabla de enrutamiento de host según la descripción.]]></text>
+</component> <!-- Incorrect Feedback -->
+<component id="ID_titleIncorrect">
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id="ID_IncorrectText">
+	<text><![CDATA[No eligió correctamente la entrada de la tabla de enrutamiento de host según la descripción.]]></text>
+</component>
+
+
+</textcomponents>

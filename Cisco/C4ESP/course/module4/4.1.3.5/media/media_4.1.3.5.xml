@@ -1,0 +1,100 @@
+﻿<textcomponents>
+
+<component id='ID_inst'>
+	<text><![CDATA[<b>Actividad: Unir los términos relacionados con el ancho de banda y el control del flujo de Frame Relay con las descripciones</b><br/>Una los términos relacionados con el ancho de banda y el control del flujo de Frame Relay con las descripciones arrastrándolos al espacio correspondiente. No se utilizarán todas las opciones.]]></text>
+</component>
+
+
+<component id='ID_header01'>
+	<text><![CDATA[<b>Descripción del ancho de banda y el control del flujo de Frame Relay</b>]]></text>
+</component>
+
+
+<component id='ID_header02'>
+	<text><![CDATA[<b>Término</b>]]></text>
+</component>
+
+
+
+
+<component id='ID_txt01'>
+	<text><![CDATA[Ancho de banda del puerto del bucle local.]]></text>
+</component>
+
+<component id='ID_txt02'>
+	<text><![CDATA[“Tomar prestado” ancho de banda de otros PVC cuando está disponible.]]></text>
+</component>
+
+<component id='ID_txt03'>
+	<text><![CDATA[Almacenar tramas en un búfer antes de enviarlas.]]></text>
+</component>
+
+<component id='ID_txt04'>
+	<text><![CDATA[Ancho de banda garantizado para un PVC específico.]]></text>
+</component>
+
+<component id='ID_txt05'>
+	<text><![CDATA[Notificación en sentido descendente de que hay congestión en un switch Frame Relay.]]></text>
+</component>
+
+<component id='ID_txt06'>
+	<text><![CDATA[Identifica las tramas que se deben descartar en momentos de congestión.]]></text>
+</component> <!--Drag and Drop-->
+<component id='ID_drag01'>
+	<text><![CDATA[<font color="#393536">Cola</font>]]></text>
+</component>
+
+<component id='ID_drag02'>
+	<text><![CDATA[<font color="#393536">Ráfaga</font>]]></text>
+</component>
+
+<component id='ID_drag03'>
+	<text><![CDATA[<font color="#393536">Velocidad de acceso</font>]]></text>
+</component>
+
+<component id='ID_drag04'>
+	<text><![CDATA[<font color="#393536">DE</font>]]></text>
+</component>
+
+<component id='ID_drag05'>
+	<text><![CDATA[<font color="#393536">ECN</font>]]></text>
+</component>
+<component id='ID_drag06'>
+	<text><![CDATA[<font color="#393536">FECN</font>]]></text>
+</component>
+
+<component id='ID_drag07'>
+	<text><![CDATA[<font color="#393536">BECN</font>]]></text>
+</component>
+
+<component id='ID_drag08'>
+	<text><![CDATA[<font color="#393536">CIR</font>]]></text>
+</component>
+
+
+
+<component id='ID_s1_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id='ID_s1_CORRECT_BODY'>
+	<text><![CDATA[Identificó correctamente los términos relacionados con el ancho de banda y el control del flujo de Frame Relay.]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_BODY'>
+	<text><![CDATA[No identificó correctamente los términos relacionados con el ancho de banda y el control del flujo de Frame Relay. Restablezca la actividad y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_CHECK'>
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id='ID_RESET'>
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component>
+
+</textcomponents>

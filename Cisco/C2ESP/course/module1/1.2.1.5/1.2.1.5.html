@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.2.1.5 Conmutación por método de corte</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.2.1.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>El entorno conmutado</h1>
+        <h2>Reenvío de tramas</h2>
+      </div>
+      <div id="content">
+<p>Una ventaja del switching por método de corte es que el switch tiene la capacidad de iniciar el reenvío de una trama antes que con el switching por almacenamiento y envío. El switching por método de corte tiene dos características principales: el reenvío rápido de tramas y el procesamiento de tramas no válidas.</p>
+<p></p>
+<p>
+<b>Reenvío rápido de tramas</b>
+</p>
+<p></p>
+<p>Como se indica en la ilustración, los switches que usan el método de corte pueden tomar una decisión de reenvío tan pronto como encuentran la dirección MAC de destino de la trama en la tabla de direcciones MAC. El switch no tiene que esperar a que el resto de la trama ingrese al puerto de entrada antes de tomar la decisión de reenvío.</p>
+<p></p>
+<p>Con los controladores MAC y los ASIC actuales, los switches que usan el método de corte pueden decidir rápidamente si necesitan examinar una mayor parte de los encabezados de una trama para propósitos de filtrado adicional. Por ejemplo, el switch puede analizar más allá de los primeros 14 bytes (la dirección MAC de origen, la dirección MAC de destino y los campos de EtherType) y examinar 40 bytes adicionales para llevar a cabo las funciones más sofisticadas relacionadas con las capas 3 y 4 de IPv4.</p>
+<p></p>
+<p>El switching por método de corte no descarta la mayoría de las tramas no válidas. Las tramas con errores se reenvían a otros segmentos de la red. Si hay un índice de error alto (tramas no válidas) en la red, el switching por método de corte puede tener un impacto negativo en el ancho de banda; de esta forma, se obstruye el ancho de banda con las tramas dañadas y no válidas.</p>
+<p></p>
+<p>
+<b>Libre de fragmentos </b>
+</p>
+<p></p>
+<p>El switching libre de fragmentos es una forma modificada del switching por método de corte en la cual el switch espera a que pase la ventana de colisión (64 bytes) antes de reenviar la trama. Esto significa que cada trama se registra en el campo de datos para asegurarse de que no se produzca la fragmentación. El modo libre de fragmentos proporciona una mejor verificación de errores que el de corte, con prácticamente ningún aumento de latencia. </p>
+<p></p>
+<p>Con la ventaja de la velocidad de latencia más baja que la del switching por método de corte, este modo resulta más adecuado para las aplicaciones muy exigentes de tecnología informática de alto rendimiento (HPC) que requieren latencias de proceso a proceso de 10 microsegundos o menos.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

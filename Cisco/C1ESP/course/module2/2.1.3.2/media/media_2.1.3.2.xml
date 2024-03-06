@@ -1,0 +1,21 @@
+﻿<textcomponents> <!--<component id='ID_title'>
+	<text><![CDATA[<b></b>]]></text>
+</component>-->
+
+<component id='ID_txt01'>
+	<text><![CDATA[<font size="14"><b class="txt01">Modo EXEC del usuario</b></font><br /><br /><span class="txt01a">Examen limitado del router. Acceso remoto.</span><br /><br /><font face="_typewriter"><p align='center' class="txt01b">Switch&gt;<br />Router&gt;</p></font>]]></text>
+</component>
+
+<component id='ID_txt02'>
+	<text><![CDATA[El modo&nbsp;<b>EXEC del usuario</b> solo permite una cantidad limitada de comandos de control básicos y, a menudo, se describe como un modo de solo lectura.]]></text>
+</component>
+
+<component id='ID_txt03'>
+	<text><![CDATA[<font size="14"><b class="txt01">Modo EXEC privilegiado</b></font><br /><br /><span class="txt01a">Examen detallado del router. Depuración y prueba. Manipulación de archivo. Acceso remoto.</span><br /><br /><font face="_typewriter"><p align='center' class="txt01b">Switch#<br />Router#</p></font>]]></text>
+</component>
+
+<component id='ID_txt04'>
+	<text><![CDATA[De manera predeterminada, el modo <b>EXEC privilegiado</b> permite todos los comandos de control, así como la ejecución de comandos de configuración y administración.]]></text>
+</component>
+
+</textcomponents>

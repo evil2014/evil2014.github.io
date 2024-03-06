@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.3.2.6 Prestación de seguridad de la red</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.3.2.6_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>La red como plataforma</h1>
+        <h2>Red confiable</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Seguridad</b>
+</p>
+<p></p>
+<p>Internet ha evolucionado y ha pasado de ser una internetwork de organizaciones educativas y gubernamentales fuertemente controlada a ser un medio accesible para todos para la transmisión de comunicaciones comerciales y personales. Como resultado, cambiaron los requerimientos de seguridad de la red. La infraestructura de red, los servicios y los datos contenidos en los dispositivos conectados a la red son activos comerciales y personales muy importantes. Si se pone en peligro la integridad de esos recursos, esto podría traer consecuencias graves, como las siguientes:</p>
+<p>
+<ul>
+<li>Interrupciones de la red que impidan la comunicación y la realización de transacciones, lo que puede provocar pérdidas de negocios.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Robo de propiedad intelectual (ideas de investigación, patentes y diseños) y uso por parte de la competencia.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Información personal o privada que se pone en riesgo o se hace pública sin el consentimiento de los usuarios.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Mala orientación y pérdida de recursos personales y comerciales.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Pérdida de datos importantes cuyo reemplazo requiere un gran trabajo o que son irreemplazables. </li>
+</ul>
+</p>
+<p></p>
+<p>Existen dos tipos de problemas de seguridad de red que se deben tratar: la seguridad de la infraestructura de red y la seguridad de la información.</p>
+<p></p>
+<p>La seguridad de una infraestructura de red incluye el aseguramiento físico de los dispositivos que proporcionan conectividad de red y prevenir el acceso no autorizado al software de administración que reside en ellos.</p>
+<p></p>
+<p>La seguridad de la información se refiere a proteger la información que contienen los paquetes que se transmiten por la red y la información almacenada en los dispositivos conectados a la red. Las medidas de seguridad que se deben tomar en una red son:</p>
+<p>
+<ul>
+<li>Prevenir la divulgación no autorizada. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Prevenir el robo de información (figura 1).</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Evitar la modificación no autorizada de la información.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Prevenir la denegación de servicio (DoS).</li>
+</ul>
+</p>
+<p></p>
+<p>Para alcanzar los objetivos de seguridad de red, hay tres requisitos principales, que se muestran en la figura 2:</p>
+<p>
+<ul>
+<li>
+<b>Asegurar la confidencialidad:</b> la confidencialidad de los datos se refiere a que solamente los destinatarios deseados y autorizados (personas, procesos o dispositivos) pueden acceder a los datos y leerlos. Esto se logra mediante la implementación de un sistema sólido de autenticación de usuarios, el establecimiento de contraseñas que sean difíciles de adivinar y la solicitud a los usuarios de que las cambien con frecuencia. La encriptación de datos con el fin de que solamente el destinatario deseado pueda leerlos también forma parte de la confidencialidad. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Mantener la integridad de la comunicación:</b> la integridad de los datos se relaciona con tener la seguridad de que la información no se alteró durante la transmisión desde el origen hasta el destino. La integridad de los datos se puede poner en riesgo si se daña la información, ya sea voluntaria o accidentalmente. Se puede asegurar la integridad de los datos mediante la solicitud de validación del emisor así como por medio del uso de mecanismos para validar que el paquete no se modificó durante la transmisión.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Asegurar la disponibilidad</b>: la disponibilidad se relaciona con tener la seguridad de que los usuarios autorizados contarán con acceso a los servicios de datos en forma confiable y oportuna. Los dispositivos de firewall de red, junto con el software antivirus de los equipos de escritorio y de los servidores pueden asegurar la confiabilidad y la solidez del sistema para detectar, repeler y resolver esos ataques. Crear infraestructuras de red totalmente redundantes, con pocos puntos de error únicos, puede reducir el impacto de estas amenazas.</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

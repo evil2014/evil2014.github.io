@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.2.2.1 Problemas de conexión</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.2.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configurar Frame Relay</h1>
+        <h2>Configuración de subinterfaces</h2>
+      </div>
+      <div id="content">
+<p>De manera predeterminada, la mayoría de las redes Frame Relay proporcionan conectividad NBMA entre sitios remotos mediante una topología hub-and-spoke. En una topología de Frame Relay NBMA, cuando se debe usar una única interfaz multipunto para interconectar varios sitios, pueden surgir problemas de conexión de las actualizaciones de routing. Con los protocolos de routing vector distancia, pueden surgir problemas de conexión de horizonte dividido, así como de reproducción de multidifusión y de difusión. Con los protocolos de routing de estado de enlace, los problemas con la elección del DR/BDR pueden ocasionar problemas de conexión.</p>
+<p></p>
+<p>
+<b>Horizonte dividido </b>
+</p>
+<p>La regla del horizonte dividido es un mecanismo de prevención de bucles para los protocolos de routing vector distancia como EIGRP y RIP. No se aplica a los protocolos de routing de estado de enlace. La regla del horizonte dividido reduce los bucles de routing al evitar que una actualización de routing que se recibe en una interfaz se reenvíe desde la misma interfaz. </p>
+<p></p>
+<p>Por ejemplo, en la figura 1, que es una topología hub-and-spoke de Frame Relay, el router remoto R2 (un router spoke) envía una actualización al router de oficina central R1 (el router hub). El R1 conecta varios PVC a través de una única interfaz física. El R1 recibe la multidifusión en su interfaz física; sin embargo, el horizonte dividido no puede reenviar esa actualización de routing a través de la misma interfaz a otros routers remotos (spoke).</p>
+<p></p>
+<p>
+<b>Nota:</b> el horizonte dividido no es un problema si se configuró solo un PVC (una única conexión remota) en una interfaz física. Este tipo de conexión es punto a punto.</p>
+<p></p>
+<p>En la figura 2, se muestra un ejemplo similar con la topología de referencia que se usa en este capítulo. El R2, un router spoke, envía una actualización de routing al R1, un router hub. El R1 tiene varios PVC en una única interfaz física. La regla del horizonte dividido evita que el R1 reenvíe esa actualización de routing a través de la misma interfaz física al otro router spoke remoto (el R3). </p>
+<p></p>
+<p>
+<b>Reproducción de multidifusión y de difusión</b>
+</p>
+<p></p>
+<p>Como se muestra en la figura 3, debido al horizonte dividido, cuando un router admite las conexiones multipunto a través de una única interfaz, el router debe reproducir los paquetes de difusión y de multidifusión. En el caso de las actualizaciones de routing, las actualizaciones deben reproducirse y enviarse en cada PVC a los routers remotos. Estos paquetes reproducidos consumen ancho de banda y causan importantes variaciones de latencia en el tráfico de usuarios. La cantidad de tráfico de difusión y el número de VC que terminan en cada router se deben evaluar durante la fase de diseño de una red Frame Relay. El tráfico de sobrecarga, como las actualizaciones de routing, puede afectar la entrega de datos de usuarios críticos, especialmente cuando la ruta de entrega contiene enlaces con ancho de banda bajo (56 kb/s).</p>
+<p></p>
+<p>
+<b>Descubrimiento de vecinos: DR y BDR</b>
+</p>
+<p></p>
+<p>Los protocolos de routing de estado de enlace, como OSPF, no utilizan la regla del horizonte dividido para evitar los bucles. No obstante, pueden surgir problemas de conexión con el DR/BDR. En las redes NBMA, OSPF funciona en el modo de red sin difusión de manera predeterminada, y los vecinos no se descubren de forma automática. Los vecinos se pueden configurar estáticamente. Sin embargo, asegúrese de que el router hub se convierta en un DR, como se muestra en la figura 4. Recuerde que una red NBMA se comporta como Ethernet, y en Ethernet se necesita un DR para intercambiar información de routing entre todos los routers en un segmento. Por lo tanto, solo el router hub puede funcionar como DR, porque es el único router que tiene PVC con el resto de los routers.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

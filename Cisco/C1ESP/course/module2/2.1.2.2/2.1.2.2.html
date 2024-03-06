@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.1.2.2 Métodos de acceso mediante Telnet, SSH y puerto auxiliar</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.1.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Entrenamiento intensivo sobre IOS</h1>
+        <h2>Acceso a un dispositivo Cisco IOS</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Telnet </b>
+</p>
+<p></p>
+<p>Telnet es un método para establecer una sesión de CLI de un dispositivo en forma remota, mediante una interfaz virtual, a través de una red. A diferencia de la conexión de consola, las sesiones de Telnet requieren servicios de redes activos en el dispositivo. El dispositivo de red debe tener, por lo menos, una interfaz activa configurada con una dirección de Internet, por ejemplo una dirección IPv4. Los dispositivos Cisco IOS incluyen un proceso de servidor Telnet que permite a los usuarios introducir comandos de configuración desde un cliente Telnet. Además de admitir el proceso de servidor Telnet, el dispositivo Cisco IOS también contiene un cliente Telnet. Esto permite que los administradores de red accedan mediante Telnet a cualquier otro dispositivo que admita un proceso de servidor Telnet desde la CLI del dispositivo Cisco. </p>
+<p></p>
+<p>
+<b>SSH</b>
+</p>
+<p></p>
+<p>El protocolo de Shell seguro (SSH) proporciona un inicio de sesión remoto similar al de Telnet, excepto que utiliza servicios de red más seguros. El SSH proporciona autenticación de contraseña más potente que Telnet y usa encriptación cuando transporta datos de la sesión. De esta manera se mantienen en privado la ID del usuario, la contraseña y los detalles de la sesión de administración. Se recomienda utilizar el protocolo SSH en lugar de Telnet, siempre que sea posible.</p>
+<p></p>
+<p>La mayoría de las versiones de Cisco IOS incluyen un servidor SSH. En algunos dispositivos, este servicio se activa en forma predeterminada. Otros dispositivos requieren que el servidor SSH se habilite en forma manual. Los dispositivos IOS también incluyen un cliente SSH que puede utilizarse para establecer sesiones SSH con otros dispositivos. </p>
+<p></p>
+<p>
+<b>AUX</b>
+</p>
+<p></p>
+<p>Una antigua forma de establecer una sesión de CLI de manera remota era mediante una conexión telefónica de dial-up con un módem conectado al puerto auxiliar (AUX) de un router, el cual aparece resaltado en la ilustración. Al igual que la conexión de consola, el método de puerto auxiliar también es una conexión fuera de banda y no requiere la configuración ni la disponibilidad de ningún servicio de red en el dispositivo. En caso de que los servicios de red fallen, es posible que un administrador remoto acceda al switch o al router mediante una línea telefónica. </p>
+<p></p>
+<p>El puerto auxiliar también puede usarse en forma local, como el puerto de consola, con una conexión directa a una computadora que ejecute un programa de emulación de terminal. No obstante, se prefiere el puerto de consola al puerto auxiliar para la resolución de problemas, ya que el primero muestra mensajes de inicio, depuración y error de manera predeterminada. </p>
+<p></p>
+<p>
+<b>Nota:</b> los switches Cisco Catalyst no admiten conexiones auxiliares.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

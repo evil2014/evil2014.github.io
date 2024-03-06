@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.6.1.2 Resumen</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.6.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resumen</h1>
+        <h2>Resumen</h2>
+      </div>
+      <div id="content">
+<p>Los routers no filtran tráfico de manera predeterminada. El tráfico que ingresa al router se enruta solamente en función de la información de la tabla de routing.</p>
+<p></p>
+<p>El filtrado de paquetes controla el acceso a una red mediante el análisis de los paquetes entrantes y salientes y la transferencia o el descarte de estos según criterios como la dirección IP de origen, la dirección IP de destino y el protocolo incluido en el paquete. Un router que filtra paquetes utiliza reglas para determinar si permite o deniega el tráfico. Un router también puede realizar el filtrado de paquetes en la capa 4, la capa de transporte. </p>
+<p></p>
+<p>Una ACL es una lista secuencial de instrucciones permit o deny. La última instrucción de una ACL siempre es una instrucción deny implícita que bloquea todo el tráfico. Para evitar que la instrucción deny any implícita al final de la ACL bloquee todo el tráfico, es posible agregar la instrucción<span class="cmd"><b> permit ip any any</b></span>.</p>
+<p></p>
+<p>Cuando el tráfico de la red atraviesa una interfaz configurada con una ACL, el router compara la información dentro del paquete con cada entrada, en orden secuencial, para determinar si el paquete coincide con una de las instrucciones. Si se encuentra una coincidencia, el paquete se procesa según corresponda.</p>
+<p></p>
+<p>Las ACL se configuran para aplicarse al tráfico entrante o al tráfico saliente. </p>
+<p></p>
+<p>Las ACL estándar se pueden utilizar para permitir o denegar el tráfico de direcciones IPv4 de origen únicamente. El destino del paquete y los puertos involucrados no se evalúan. La regla básica para la colocación de una ACL estándar es colocarla cerca del destino.</p>
+<p></p>
+<p>Las ACL extendidas filtran paquetes según varios atributos: el tipo de protocolo, la dirección IPv4 de origen o de destino y los puertos de origen o de destino. La regla básica para la colocación de una ACL extendida es colocarla lo más cerca posible del origen. </p>
+<p></p>
+<p>El comando de configuración global <span class="cmd"><b>access-list</b></span> define una ACL estándar con un número en el intervalo de 1 a 99 o una ACL extendida con un número en el intervalo de 100 a 199 y de 2000 a 2699. Tanto las ACL estándar como las extendidas pueden tener un nombre. El comando <span class="cmd"><b>ip access-list standard </b></span><span class="cmd"><i>nombre</i></span> se utiliza para crear una ACL estándar con nombre, mientras que el comando <span class="cmd"><b>ip access-list extended </b></span><span class="cmd"><i>nombre</i></span> se utiliza para una lista de acceso extendida. Las ACE de IPv4 incluyen el uso de máscaras wildcard.</p>
+<p></p>
+<p>Después de que se configura una ACL, se vincula a una interfaz mediante el comando <span class="cmd"><b>ip access-group</b></span> del modo de configuración de interfaz. Recuerde la regla de las tres P: una ACL por protocolo, por sentido y por interfaz. </p>
+<p></p>
+<p>Para eliminar una ACL de una interfaz, primero introduzca el comando <span class="cmd"><b>no ip access-group</b></span> en la interfaz y, a continuación, introduzca el comando global <span class="cmd"><b>no access-list</b></span> para eliminar la ACL completa.</p>
+<p></p>
+<p>Los comandos <span class="cmd"><b>show running-config</b></span> y <span class="cmd"><b>show access-lists</b></span> se utilizan para verificar la configuración de la ACL. El comando <span class="cmd"><b>show ip interface</b></span> se utiliza para verificar la ACL en la interfaz y el sentido en el que se aplicó.</p>
+<p></p>
+<p>El comando <span class="cmd"><b>access-class</b></span> configurado en el modo de configuración de línea restringe las conexiones de entrada y salida entre una VTY determinada y las direcciones en una lista de acceso. </p>
+<p></p>
+<p>Al igual que las ACL de IPv4 con nombre, los nombres en IPv6 son alfanuméricos, distinguen mayúsculas de minúsculas y deben ser únicos. A diferencia de IPv4, no hay necesidad de una opción estándar o extendida. </p>
+<p></p>
+<p>En el modo de configuración global, utilice el comando <span class="cmd"><b>ipv6 access-list </b></span><span class="cmd"><i>nombre</i></span> para crear una ACL de IPv6. A diferencia de las ACL de IPv4, las ACL de IPv6 no utilizan máscaras wildcard. En cambio, se utiliza la longitud de prefijo para indicar cuánto de una dirección IPv6 de origen o destino debe coincidir. </p>
+<p>Después de que se configura una ACL de IPv6, se la vincula a una interfaz mediante el comando <span class="cmd"><b>ipv6 traffic-filter</b></span>.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

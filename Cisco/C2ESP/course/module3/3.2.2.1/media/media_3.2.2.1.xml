@@ -1,0 +1,74 @@
+﻿<textcomponents>
+<component id="ID_s1_title">
+<text><![CDATA[<b>Configuración de enlaces troncales</b>]]></text>
+</component>
+
+<component id="ID_s2_title">
+<text><![CDATA[<b>Topología de ejemplo</b>]]></text>
+</component>
+
+<component id="ID_s3_title">
+<text><![CDATA[<b>Ejemplo de configuración</b>]]></text>
+</component>
+
+<component id="ID_s2_txt01">
+<text><![CDATA[Cuerpo docente<br/>VLAN 10<br/>172.17.10.21]]></text> 
+</component>
+<component id="ID_s2_txt02">
+<text><![CDATA[Estudiante<br/>VLAN 20<br/>172.17.20.22]]></text> 
+</component>
+<component id="ID_s2_txt03">
+<text><![CDATA[Invitado<br/>VLAN 30<br/>172.17.30.23]]></text> 
+</component>
+<component id="ID_s2_txt04">
+<text><![CDATA[Enlace troncal]]></text> 
+</component>
+
+
+
+<component id="ID_s1_table01">
+<text><![CDATA[<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' 
+glow='true' glowcolor='#808080' cellpadding='4'>
+
+<tr>
+<td colspan='2' bgcolor='#98D3D1' class="mtitle"><font size='12' color='#393536'><b>Comandos de IOS de un switch Cisco</b></font></td>
+</tr>
+
+<tr class="mtable_top">
+<td colspan='2' bgcolor='#0E6360'><font size='1' color='#0E6360' class="mtable_top"><span style="color:#98D3D1">.</span></font></td>
+</tr>
+
+<tr>
+<td bgcolor='#EFF8F7' valign="top" width="150">Ingrese al modo de configuración global.</td>
+<td bgcolor='#EFF8F7' valign="top"><font face='_typewriter'>S1# <b>configure terminal</b></font></td>
+</tr>
+
+<tr>
+<td bgcolor='#ffffff' valign="top" width="150">Ingrese al modo de configuración de interfaz para la SVI.</td>
+<td bgcolor='#ffffff' valign="top"><font face='_typewriter'>S1(config)# <b>interface  </b><i> id_interfaz</i></font></td>
+</tr>
+
+<tr>
+<td bgcolor='#EFF8F7' valign="top" width="150">Haga que el enlace sea un enlace troncal.</td>
+<td bgcolor='#EFF8F7' valign="top"><font face='_typewriter'>S1(config-if)# <b>switchport mode trunk</b></font></td>
+</tr>
+
+<tr>
+<td bgcolor='#ffffff' valign="top" width="150">Especifique una VLAN nativa para enlaces troncales 802.1Q sin etiquetar.</td>
+<td bgcolor='#ffffff' valign="top"><font face='_typewriter'>S1(config-if)# <b>switchport trunk native vlan   </b><i>id_vlan</i></font></td>
+</tr>
+
+<tr>
+<td bgcolor='#EFF8F7' valign="top" width="150">Especifique la lista de VLAN que se permitirán en el enlace troncal.</td>
+<td bgcolor='#EFF8F7' valign="top"><font face='_typewriter'>S1(config-if)# <b>switchport trunk allowed vlan   </b><i>lista-vlan</i></font></td>
+</tr>
+
+<tr>
+<td bgcolor='#ffffff' valign="top" width="150">Vuelva al modo EXEC privilegiado.</td>
+<td bgcolor='#ffffff' valign="top"><font face='_typewriter'>S1(config-if)# <b>end</b></font></td>
+</tr>
+
+</table>]]></text>
+</component>
+
+</textcomponents>

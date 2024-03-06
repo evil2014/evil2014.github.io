@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.1.2.4 Verificación de la configuración de puertos de un switch</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.1.2.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración básica del switch</h1>
+        <h2>Configuración de puertos de un switch</h2>
+      </div>
+      <div id="content">
+<p>En la figura 1, se describen algunas de las opciones del comando <span class="cmd"><b>show</b></span> que son útiles para verificar las características configurables comunes de un switch.</p>
+<p></p>
+<p>En la figura 2, se muestra un resultado abreviado del comando <span class="cmd"><b>show running-config</b></span>. Use este comando para verificar que el switch se haya configurado correctamente. Como se observa en el resultado de S1, se muestra cierta información clave:</p>
+<p></p>
+<p>
+<ul>
+<li>Interfaz Fast Ethernet 0/18 configurada con la VLAN 99 de administración</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>VLAN 99 configurada con la dirección IP 172.17.99.11 255.255.255.0</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Gateway predeterminado establecido en 172.17.99.1</li>
+</ul>
+</p>
+<p></p>
+<p>El comando <span class="cmd"><b>show interfaces</b></span> es otro comando de uso frecuente que muestra información estadística y de estado sobre las interfaces de red del switch. El comando <span class="cmd"><b>show interfaces</b></span> se usa habitualmente cuando se configuran y se controlan los dispositivos de red. </p>
+<p></p>
+<p>En la figura 3, se muestra el resultado del comando <span class="cmd"><b>show interfaces fastEthernet 0/18</b></span>. En la primera línea de la ilustración, se indica que la interfaz FastEthernet 0/18 está “up/up”, lo que significa que está en funcionamiento. Más abajo en el resultado, se muestra que el modo dúplex es full y la velocidad es de 100 Mb/s.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

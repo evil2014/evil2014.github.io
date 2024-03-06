@@ -1,0 +1,101 @@
+﻿<textcomponents>
+<component id="ID_s1_title">
+<text><![CDATA[<b>Verificación de auto-MDIX  </b>]]></text>
+</component>
+
+<component id="ID_s1_table">
+<text><![CDATA[
+				<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4' class="mtable"><tr>
+					<td colspan='2' bgcolor='#98D3D1' valign="top"><font size='12' class="font12px" color='#1C3635'><b>Comandos de IOS de un switch Cisco  </b></font></td>					
+				</tr>
+				<tr class="liner">
+					<td colspan='2' bgcolor='#0E6360' class="mtable_top"><font size='1' color='#434321'><span style="color:#DAE17A">.</span></font></td>
+				</tr>
+				
+				<tr>
+					<td bgcolor='#EFF8F7' valign="top"><font color='#393536'>Ingrese al modo de configuración global.</font></td>	
+					<td bgcolor='#EFF8F7' valign="top"><font face="_typewriter" color='#393536'>S1# <b class="command">configure terminal  </b></font></td>		
+				</tr>
+				<tr>					
+					<td bgcolor='#FFFFFF' valign="top"><font color='#393536'>Ingrese el modo de configuración de interfaz.</font></td>	
+					<td bgcolor='#FFFFFF' valign="top"><font face="_typewriter" color='#393536'>S1(config)# <b class="command">interface fastethernet 0/1  </b></font></td>		
+				</tr>
+				<tr>
+					<td bgcolor='#EFF8F7' valign="top"><font color='#393536'>Configura la interfaz para autonegociar la comunicación dúplex con el dispositivo conectado.</font></td>	
+					<td bgcolor='#EFF8F7' valign="top"><font face="_typewriter" color='#393536'>S1(config-if)# <b class="command">duplex auto  </b></font></td>		
+				</tr>
+				<tr>					
+					<td bgcolor='#FFFFFF' valign="top"><font color='#393536'>Configura la interfaz para autonegociar la velocidad con el dispositivo conectado.</font></td>	
+					<td bgcolor='#FFFFFF' valign="top"><font face="_typewriter" color='#393536'>S1(config-if)# <b class="command">speed auto  </b></font></td>		
+				</tr>
+				<tr>
+					<td bgcolor='#EFF8F7' valign="top"><font color='#393536'>Habilita auto-MDIX en la interfaz.</font></td>	
+					<td bgcolor='#EFF8F7' valign="top"><font face="_typewriter" color='#393536'>S1(config-if)# <b class="command">mdix auto  </b></font></td>		
+				</tr>
+				<tr>					
+					<td bgcolor='#FFFFFF' valign="top"><font color='#393536'>Vuelve al modo EXEC privilegiado.</font></td>	
+					<td bgcolor='#FFFFFF' valign="top"><font face="_typewriter" color='#393536'>S1(config-if)# <b class="command">end  </b></font></td>		
+				</tr>
+				<tr>
+					<td bgcolor='#EFF8F7' valign="top"><font color='#393536'>Guarda la configuración en ejecución en la configuración de inicio.</font></td>	
+					<td bgcolor='#EFF8F7' valign="top"><font face="_typewriter" color='#393536'>S1# <b class="command">copy running-config startup-config  </b></font></td>		
+				</tr>
+				</table>]]></text>
+</component>
+
+
+<component id="ID_s2_title">
+<text><![CDATA[<b>Verificación de auto-MDIX  </b>]]></text>
+</component>
+
+
+
+<component id="ID_s3_title">
+<text><![CDATA[<b>Habilitación de auto-MDIX  </b>]]></text>
+</component>
+
+
+<component id="ID_sc_reset">
+		<text><![CDATA[Restablecer]]></text>
+	</component>
+	<component id="ID_sc_showme">
+		<text><![CDATA[Mostrar]]></text>
+	</component>
+	<component id="ID_sc_showall">
+		<text><![CDATA[Mostrar todo]]></text>
+	</component>
+
+<component id="ID_title"> <!--text><![CDATA[<b>MDIX Auto Feature </b>]]></text-->
+	</component>
+	<component id="ID_s3_SC5" fontFace='Courier New' fontSize="10">
+		<feedback id="fb"><![CDATA[<b>***<font face="Arial" color="#0000FF">You must enter the exact and full command. Commands that include a file name are case-sensitive.</font>***  </b>
+		]]></feedback>
+		<existingcommands><![CDATA[<font face="Arial"><b>Ingrese al modo de configuración y establezca el modo dúplex, la velocidad y la característica de MDIX de Fastethernet0/1 en auto.  </b></font>]]></existingcommands>
+		<command prompt="S2#">
+		    <correctresponse><![CDATA[configure terminal]]></correctresponse>
+				<deviceresponse><![CDATA[<span style="font-family:Courier New;">Enter configuration commands, one per line. End with CNTL/Z.</span>]]></deviceresponse> 					
+		</command>
+		<command prompt="S2(config)#">
+			<correctresponse><![CDATA[interface fastethernet0/1]]></correctresponse>
+		</command>
+		<command prompt="S2(config-if)#">
+			<correctresponse><![CDATA[duplex auto]]></correctresponse>
+		</command>
+		<command prompt="S2(config-if)#">
+			<correctresponse><![CDATA[speed auto]]></correctresponse>
+		</command>
+		<command prompt="S2(config-if)#">
+			<correctresponse><![CDATA[mdix auto]]></correctresponse>
+			<instruction><![CDATA[<font face="Arial"><b>Finalice el modo de configuración y guarde la configuración en la NVRAM.  </b></font>]]></instruction>
+		</command>
+		<command prompt="S2(config-if)#">
+			<correctresponse><![CDATA[end]]></correctresponse>
+				<deviceresponse><![CDATA[S2#<br><span style="font-family:Courier New;">%SYS-5-CONFIG_I: Configured from console by console<span>]]></deviceresponse> 					
+		</command>
+		<command prompt="S2#">
+			<correctresponse><![CDATA[copy running-config startup-config]]></correctresponse>
+			<instruction><![CDATA[<font face="Arial"><b>Configuró correctamente la característica automática de MDIX.  </b></font>]]></instruction>
+		</command>
+		<command prompt=""/>
+	</component>
+</textcomponents>

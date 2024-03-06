@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.1.4.1 Verificación de la configuración de interfaz</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.1.4.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración inicial de un router</h1>
+        <h2>Verificación de la conectividad de redes conectadas directamente</h2>
+      </div>
+      <div id="content">
+<p>Existen varios comandos <span class="cmd"><b>show</b></span> que se pueden usar para verificar el funcionamiento y la configuración de una interfaz. Los siguientes tres comandos son particularmente útiles para identificar de forma rápida el estado de una interfaz:</p>
+<p>
+<ul>
+<li>
+<span class="cmd">
+<b>show ip interface brief </b>
+</span>: muestra un resumen de todas las interfaces, incluso la dirección IPv4 de la interfaz y el estado operativo actual. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<span class="cmd">
+<b>show ip route </b>
+</span>: muestra el contenido de la tabla de enrutamiento IPv4 almacenada en la RAM. En el IOS de Cisco 15, las interfaces activas deben aparecer en la tabla de routing con dos entradas relacionadas identificadas con el código “<span class="cmd">C</span>” (conectada) o “<span class="cmd">L</span>” (local). En versiones anteriores de IOS, solo aparece una única entrada con el código “<span class="cmd">C</span>”.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<span class="cmd">
+<b>show running-config interface </b>
+</span>
+<span class="cmd">
+<i>id-interfaz</i>
+</span>
+<span class="cmd">
+<b></b>
+</span>: muestra los comandos configurados en la interfaz especificada. </li>
+</ul>
+</p>
+<p></p>
+<p>En la figura 1, se muestra el resultado del comando <span class="cmd"><b>show ip interface brief</b></span>. El resultado muestra que todas las interfaces LAN y el enlace WAN están activos y en funcionamiento, como lo indica el valor “up” en las columnas Status (Estado) y Protocol (Protocolo). Un resultado distinto indicaría un problema con la configuración o el cableado.</p>
+<p></p>
+<p>
+<b>Nota:</b> en la figura 1, se muestra la interfaz Embedded-Service-Engine0/0 porque los ISR Cisco G2 tienen CPU de doble núcleo en la placa madre. La interfaz Embedded-Service-Engine0/0 excede el ámbito de este curso.</p>
+<p></p>
+<p>En la figura 2, se muestra el resultado del comando <span class="cmd"><b>show ip route</b></span>. Observe las tres entradas de redes conectadas directamente y las tres entradas de interfaz de ruta de host local. Una ruta de host local tiene una distancia administrativa de 0. También tiene una máscara /32 para IPv4 y una máscara /128 para IPv6. La ruta de host local es para las rutas en el router que posee la dirección IP. Estas se usan para permitir que el router procese los paquetes destinados a esa dirección IP.</p>
+<p></p>
+<p>En la figura 3, se muestra el resultado del comando <span class="cmd"><b>show running-config interface</b></span>. El resultado muestra los comandos configurados actualmente en la interfaz especificada. </p>
+<p></p>
+<p>Los dos comandos siguientes se usan para recopilar información más detallada sobre la interfaz: </p>
+<p>
+<ul>
+<li>
+<span class="cmd">
+<b>show interfaces </b>
+</span>: muestra información sobre la interfaz y el conteo de flujo de paquetes de todas las interfaces del dispositivo. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<span class="cmd">
+<b>show ip interface </b>
+</span>: muestra la información relacionada con IPv4 de todas las interfaces de un router.</li>
+</ul>
+</p>
+<p></p>
+<p>Utilice el verificador de sintaxis de las figuras 4 y 5 para verificar las interfaces del R1.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

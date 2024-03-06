@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>11.1.3.2 Análisis de protocolos de redes pequeñas</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_11.1.3.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Crear y crecer</h1>
+        <h2>Crecimiento hacia redes más grandes</h2>
+      </div>
+      <div id="content">
+<p>Para admitir y ampliar una red pequeña, se necesita estar familiarizado con los protocolos y las aplicaciones de red que se ejecutan en ella. Si bien en entornos de redes pequeñas los administradores tienen más tiempo para analizar individualmente el uso de la red por parte de cada dispositivo, se recomienda un enfoque más integral con algún tipo de analizador de protocolos basado en software o hardware. </p>
+<p></p>
+<p>Como se muestra en la ilustración, los analizadores de protocolos permiten que los profesionales de red recopilen información estadística sobre los flujos de tráfico en una red rápidamente.</p>
+<p></p>
+<p>Al intentar determinar cómo administrar el tráfico de la red, en especial a medida que esta crece, es importante comprender el tipo de tráfico que atraviesa la red y el flujo de tráfico actual. Si se desconocen los tipos de tráfico, el analizador de protocolos ayuda a identificar el tráfico y su origen.</p>
+<p></p>
+<p>Para determinar patrones de flujo de tráfico, es importante:</p>
+<p></p>
+<p>
+<ul>
+<li>Capturar tráfico en horas de uso pico para obtener una buena representación de los diferentes tipos de tráfico.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Realizar la captura en diferentes segmentos de la red porque parte del tráfico es local en un segmento en particular.</li>
+</ul>
+</p>
+<p></p>
+<p>La información recopilada por el analizador de protocolos se analiza de acuerdo con el origen y el destino del tráfico, y con el tipo de tráfico que se envía. Este análisis puede utilizarse para tomar decisiones acerca de cómo administrar el tráfico de manera más eficiente. Para hacerlo, se pueden reducir los flujos de tráfico innecesarios o modificar completamente los patrones de flujo mediante el traslado de un servidor, por ejemplo.</p>
+<p></p>
+<p>En ocasiones, simplemente reubicar un servidor o un servicio en otro segmento de red mejora el rendimiento de la red y permite adaptarse a las necesidades del tráfico creciente. Otras veces, la optimización del rendimiento de la red requiere el rediseño y la intervención de la red principal.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

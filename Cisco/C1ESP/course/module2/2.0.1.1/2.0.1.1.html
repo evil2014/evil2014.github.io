@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.0.1.1 Introducción a Cisco IOS</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.0.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de un sistema operativo de red</h1>
+        <h2>Introducción</h2>
+      </div>
+      <div id="content">
+<p>Por lo general, las redes domésticas interconectan una amplia variedad de dispositivos finales, como computadoras portátiles y de escritorio, tablet PC, smartphones, televisores inteligentes y reproductores de medios de red que cumplen con los requisitos de la Digital Living Network Alliance (DLNA), como las consolas Xbox 360 o Playstation 3, entre otros. </p>
+<p></p>
+<p>Por lo general, todos estos dispositivos finales están conectados a un router doméstico. En realidad, los routers domésticos son cuatro dispositivos en uno:</p>
+<p>
+<ul>
+<li>
+<b>Router</b>
+<b>:</b> reenvía paquetes de datos a Internet y recibe paquetes de datos de ella.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Switch</b>
+<b>:</b> conecta dispositivos finales mediante cables de red.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Punto de acceso inalámbrico</b>
+<b>:</b> consta de un transmisor de radio que puede conectar dispositivos finales en forma inalámbrica.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Dispositivo de firewall</b>
+<b>:</b> protege el tráfico saliente y restringe el tráfico entrante.</li>
+</ul>
+</p>
+<p></p>
+<p>En las redes empresariales más grandes, con muchos más dispositivos y mucho más tráfico, estos se suelen incorporar como dispositivos independientes y autónomos que proporcionan un servicio dedicado. Los dispositivos finales, como las computadoras portátiles y de escritorio, se conectan a los switches de red mediante conexiones por cable. Para enviar paquetes más allá de la red local, los switches de red se conectan a routers de red. Entre los demás dispositivos de infraestructura en una red, se incluyen los puntos de acceso inalámbrico y los dispositivos de seguridad dedicados, como los firewalls. </p>
+<p></p>
+<p>Cada dispositivo es muy diferente en lo que respecta al hardware, el uso y la capacidad. Sin embargo, en todos los casos, el sistema operativo es lo que permite que el hardware funcione.</p>
+<p></p>
+<p>Prácticamente en todos los dispositivos para usuarios finales y de red conectados a Internet se utilizan sistemas operativos. Entre los dispositivos para usuarios finales, se incluyen los dispositivos como smartphones, tablet PC y computadoras portátiles y de escritorio. Los dispositivos de red, o intermediarios, se utilizan para transportar datos a través de la red. Entre estos se incluyen los switches, los routers, los puntos de acceso inalámbrico y los firewalls. El sistema operativo de un dispositivo de red se conoce como “sistema operativo de red”. </p>
+<p></p>
+<p>Sistema operativo Internetwork (IOS, Internetwork Operating System) de Cisco es un término genérico para la colección de sistemas operativos de red que se utilizan en los dispositivos de red Cisco. Cisco IOS se utiliza en la mayoría de los dispositivos Cisco, independientemente del tamaño o el tipo de dispositivo.</p>
+<p></p>
+<p>En este capítulo, se hace referencia a una topología de red básica que consta de dos switches y dos PC, a fin de demostrar el uso de Cisco IOS.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

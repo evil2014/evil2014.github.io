@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.4.3.3 Acceso por contienda</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.4.3.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Control de acceso al medio</h1>
+        <h2>Topologías de LAN</h2>
+      </div>
+      <div id="content">
+<p>Al utilizar un método de contienda no determinista, los dispositivos de red pueden intentar acceder al medio cada vez que tengan datos para enviar. Para evitar caos completo en los medios, estos métodos usan un proceso de Acceso múltiple por detección de portadora (CSMA) para detectar primero si los medios están transportando una señal. </p>
+<p></p>
+<p>Si se detecta una señal portadora en el medio desde otro nodo, quiere decir que otro dispositivo está transmitiendo. Cuando un dispositivo está intentando transmitir y nota que el medio está ocupado, esperará e intentará después de un período de tiempo corto. Si no se detecta una señal portadora, el dispositivo transmite sus datos. Las redes Ethernet e inalámbricas utilizan control de acceso al medio por contención. </p>
+<p></p>
+<p>Es posible que el proceso de CSMA falle y que dos dispositivos transmitan al mismo tiempo y ocasionen una colisión de datos. Si esto ocurre, los datos enviados por ambos dispositivos se dañarán y deberán enviarse nuevamente. </p>
+<p></p>
+<p>Los métodos de control de acceso al medio por contención no tienen la sobrecarga de los métodos de acceso controlado. No se requiere un mecanismo para analizar quién posee el turno para acceder al medio. Sin embargo, los sistemas por contención no escalan bien bajo un uso intensivo de los medios. A medida que el uso y el número de nodos aumenta, la probabilidad de acceder a los medios con éxito sin una colisión disminuye. Además, los mecanismos de recuperación que se requieren para corregir errores debidos a esas colisiones disminuyen aún más el rendimiento.</p>
+<p></p>
+<p>Generalmente se implementa CSMA junto con un método para resolver la contención del medio. Los dos métodos comúnmente utilizados son:</p>
+<p>
+<ul>
+<li>
+<b>Acceso múltiple por detección de portadora con detección de colisiones:</b> con el acceso múltiple por detección de portadora y detección de colisiones (CSMA/CD), el dispositivo final supervisa los medios para detectar la presencia de una señal de datos. Si no hay una señal de datos y, en consecuencia, los medios están libres, el dispositivo transmite los datos. Si luego se detectan señales que muestran que otro dispositivo estaba transmitiendo al mismo tiempo, todos los dispositivos dejan de enviar e intentan después. Las formas tradicionales de Ethernet utilizan este método.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Acceso múltiple por detección de portadora y prevención de colisiones:</b> con el acceso múltiple por detección de portadora y prevención de colisiones (CSMA/CA), el dispositivo final examina los medios para detectar la presencia de una señal de datos. Si el medio está libre, el dispositivo envía una notificación a través del medio, sobre su intención de utilizarlo. Una vez que recibe autorización para transmitir, el dispositivo envía los datos. Las tecnologías de red inalámbricas 802.11 utilizan este método.</li>
+</ul>
+</p>
+<p></p>
+<p>En la ilustración, se muestra lo siguiente:</p>
+<p>
+<ul>
+<li>Funcionamiento de los métodos de acceso por contienda</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Características de los métodos de acceso por contienda</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Ejemplos de los métodos de acceso por contienda</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

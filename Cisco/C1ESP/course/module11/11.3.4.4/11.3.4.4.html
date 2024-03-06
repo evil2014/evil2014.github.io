@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>11.3.4.4 Uso del comando show ip interface brief</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_11.3.4.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Rendimiento básico de la red</h1>
+        <h2>Host y comandos de IOS</h2>
+      </div>
+      <div id="content">
+<p>De la misma manera que los comandos y las utilidades se utilizan para verificar la configuración de un host, los comandos se pueden utilizar para verificar las interfaces de los dispositivos intermediarios. Cisco IOS proporciona comandos para verificar el funcionamiento de interfaces de router y switch.</p>
+<p></p>
+<p>
+<b>Verificación de interfaces del router</b>
+</p>
+<p></p>
+<p>Uno de los comandos más utilizados es el comando <span class="cmd"><b>show ip interface brief</b></span>. Este comando proporciona un resultado más abreviado que el comando <span class="cmd"><b>show ip interface</b></span>. Proporciona un resumen de la información clave para todas las interfaces de red de un router.</p>
+<p></p>
+<p>En la figura 1, se muestra la topología que se utiliza en este ejemplo.</p>
+<p></p>
+<p>En la figura 2, haga clic en el botón R1. El resultado de <span class="cmd"><b>show ip interface brief</b></span> muestra todas las interfaces del router, la dirección IP asignada a cada interfaz (si las hubiera) y el estado de funcionamiento de la interfaz.</p>
+<p></p>
+<p>Según el resultado, la interfaz FastEthernet0/0 tiene la dirección IP 192.168.254.254. En las últimas dos columnas de esta línea, se muestra el estado de la capa 1 y de la capa 2 de esta interfaz. El valor <span class="cmd"><b>up</b></span> (activo) en la columna Status (Estado) muestra que esa interfaz opera en la capa 1. El valor <span class="cmd"><b>up</b></span> en la columna Protocol (Protocolo) indica que el protocolo de capa 2 funciona.</p>
+<p></p>
+<p>Observe también que la interfaz Serial 0/0/1 no se habilitó. Esto lo indica el valor <span class="cmd"><b>administratively down</b></span> (administrativamente inactiva) en la columna Status. </p>
+<p></p>
+<p>Como en cualquier dispositivo final, es posible verificar la conectividad de capa 3 con los comandos <span class="cmd"><b>ping</b></span> y <span class="cmd"><b>traceroute</b></span>. En este ejemplo, tanto el comando<span class="cmd"><b> ping </b></span>como el comando<span class="cmd"><b> trace </b></span>muestran una conectividad satisfactoria.</p>
+<p></p>
+<p>
+<b>Verificación de las interfaces del switch</b>
+</p>
+<p></p>
+<p>En la figura 2, haga clic en el botón S1. El comando <span class="cmd"><b>show ip interface brief</b></span> también se puede utilizar para verificar el estado de las interfaces del switch. La dirección IP para el switch se aplica a una interfaz VLAN. En este caso, la interfaz Vlan1 recibió la dirección IP 192.168.254.250 y está habilitada y en funcionamiento.</p>
+<p></p>
+<p>El resultado también muestra que la interfaz FastEthernet0/1 está inactiva. Esto indica que no hay ningún dispositivo conectado a la interfaz o que el dispositivo que está conectado a ella tiene una interfaz de red que no funciona. </p>
+<p></p>
+<p>Por otro lado, el resultado muestra que las interfaces FastEthernet0/2 y FastEthernet0/3 funcionan. Esto lo indica el valor <span class="cmd"><b>up</b></span> en las columnas Status y Protocol.</p>
+<p></p>
+<p>También se puede probar la conectividad de capa 3 en el switch con los comandos <span class="cmd"><b>show ip interface brief</b></span> y <span class="cmd"><b>traceroute</b></span>. En este ejemplo, tanto el comando<span class="cmd"><b> ping </b></span>como el comando<span class="cmd"><b> trace </b></span>muestran una conectividad satisfactoria. </p>
+<p></p>
+<p>Es importante tener en cuenta que no se requiere ninguna dirección IP para que un switch cumpla su función de reenvío de tramas en la capa 2. Se necesita una dirección IP solo si se administra el switch a través de la red mediante Telnet o SSH. Si el administrador de red planea conectarse al switch de forma remota desde una ubicación fuera de la red LAN local, también se debe configurar un gateway predeterminado. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

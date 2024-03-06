@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.1.2.1 Tipos de redes OSPF</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.1.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuraciones avanzadas de OSPF de área única </h1>
+        <h2>OSPF en redes de accesos múltiples</h2>
+      </div>
+      <div id="content">
+<p>Para configurar los ajustes de OSPF, empiece por una implementación básica del protocolo de routing OSPF. </p>
+<p></p>
+<p>OSPF define cinco tipos de redes, como se muestra en las figuras 1 a 5:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Punto a punto:</b> dos routers interconectados por medio de un enlace común. No hay otros routers en el enlace. Con frecuencia, esta es la configuración en los enlaces WAN (figura 1).</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Multiacceso con difusión:</b> varios routers interconectados por medio de una red Ethernet (figura 2).</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Multiacceso sin difusión (NBMA):</b> varios routers interconectados en una red que no permite transmisiones por difusión, como Frame Relay (figura 3).</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Punto a multipunto:</b> varios routers interconectados en una topología hub-and-spoke por medio de una red NBMA. Con frecuencia, se usa para conectar sitios de sucursal (spokes, que significa “rayo”) a un sitio central (hub, que significa “concentrador”) (figura 4).</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Enlaces virtuales:</b> una red OSPF especial que se usa para interconectar áreas OSPF distantes al área de red troncal (figura 5)</li>
+</ul>
+</p>
+<p></p>
+<p>Una red de accesos múltiples es una red con varios dispositivos en los mismos medios compartidos, que comparten comunicaciones. Las LAN Ethernet son el ejemplo más común de redes multiacceso con difusión. En las redes de difusión, todos los dispositivos en la red pueden ver todas las tramas de difusión y de multidifusión. Son redes de accesos múltiples ya que puede haber gran cantidad de hosts, impresoras, routers y demás dispositivos que formen parte de la misma red. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

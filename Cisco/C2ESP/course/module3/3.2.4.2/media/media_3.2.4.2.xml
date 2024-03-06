@@ -1,0 +1,53 @@
+﻿<textcomponents>
+<component id="ID_s1_title">
+<text><![CDATA[<b>VLAN faltante</b>]]></text>
+</component>
+<component id="ID_s1_txt01">
+<text><![CDATA[<font face="_typewriter"><b>show vlan<br/>show mac address-table</b></font>]]></text>
+</component>
+<component id="ID_s1_txt02">
+  <text><![CDATA[<font face="_typewriter"><b>show vlan<br/>show interfaces<br/>show interfaces switchport</b></font>]]></text> 
+  </component>
+<component id="ID_s1_txt03">
+  <text><![CDATA[No hay conexión entre dispositivos en la misma VLAN.]]></text> 
+  </component>
+<component id="ID_s1_txt04">
+<text><![CDATA[¿El puerto está en la VLAN correcta?]]></text>
+</component>
+<component id="ID_s1_txt05">
+  <text><![CDATA[Sí]]></text> 
+  </component>
+<component id="ID_s1_txt06">
+  <text><![CDATA[¿La VLAN está en la base<br/>de datos de VLAN?]]></text> 
+  </component>
+<component id="ID_s1_txt07">
+<text><![CDATA[Sí]]></text>
+</component>
+<component id="ID_s1_txt08">
+  <text><![CDATA[Verifique la conexión entre dispositivos en la misma VLAN.]]></text> 
+  </component>
+<component id="ID_s1_txt09">
+  <text><![CDATA[No]]></text> 
+  </component>
+<component id="ID_s1_txt10">
+<text><![CDATA[No]]></text>
+</component>
+<component id="ID_s1_txt11">
+  <text><![CDATA[Asigne el puerto a la VLAN correcta.]]></text> 
+  </component>
+<component id="ID_s1_txt12">
+  <text><![CDATA[Cree una VLAN en la base de datos de VLAN.]]></text> 
+  </component>
+  
+  
+  
+  
+<component id="ID_s2_title">
+<text><![CDATA[<b>VLAN faltante</b>]]></text>
+</component>
+<component id="ID_s2_txt01">
+<text><![CDATA[&lt;resultado omitido&gt;]]></text>
+</component>
+
+
+</textcomponents>

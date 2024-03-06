@@ -1,0 +1,78 @@
+﻿<textcomponents> <!--slide 1-->
+<component id="ID_s1_title">
+<text><![CDATA[<b>Tramas PPP a través de una conexión de dial-up antigua</b>]]></text>
+</component>
+
+<component id="ID_s1_txt01">
+<text><![CDATA[Internet]]></text> 
+</component>
+
+<component id="ID_s1_txt02">
+<text><![CDATA[TELCO/ISP]]></text> 
+</component>
+
+<component id="ID_s1_txt03">
+<text><![CDATA[Línea telefónica (a POTS)]]></text> 
+</component>
+
+<component id="ID_s1_txt04">
+<text><![CDATA[PPP]]></text> 
+</component>
+
+<component id="ID_s1_txt05">
+<text><![CDATA[Paquete IP]]></text> 
+</component>
+
+<component id='ID_s1_caption'>
+	<text><![CDATA[En una situación de dial-up antiguo, la PC1 llega a Internet a través de la nube TELCO/ISP mediante un dispositivo FAX/MÓDEM.]]></text>
+</component> <!--slide 2-->
+<component id="ID_s2_title">
+<text><![CDATA[<b>Tramas PPP a través de una conexión Ethernet (PPPoE)</b>]]></text>
+</component>
+
+<component id="ID_s2_txt01">
+<text><![CDATA[Internet]]></text> 
+</component>
+
+<component id="ID_s2_txt02">
+<text><![CDATA[PPPoE]]></text> 
+</component>
+
+<component id="ID_s2_txt03">
+<text><![CDATA[Módem DSL]]></text> 
+</component>
+
+<component id="ID_s2_txt04">
+<text><![CDATA[DSL]]></text> 
+</component>
+
+<component id="ID_s2_txt05">
+<text><![CDATA[TELCO/ISP]]></text> 
+</component>
+
+<component id="ID_s2_txt06">
+<text><![CDATA[Ethernet]]></text> 
+</component>
+
+<component id="ID_s2_txt07">
+<text><![CDATA[PPP]]></text> 
+</component>
+
+<component id="ID_s2_txt08">
+<text><![CDATA[Paquete IP]]></text> 
+</component>
+
+<component id="ID_s2_txt09">
+<text><![CDATA[PPP]]></text> 
+</component>
+
+<component id="ID_s2_txt10">
+<text><![CDATA[Paquete IP]]></text> 
+</component>
+
+
+<component id='ID_s2_caption'>
+	<text><![CDATA[La PC1 se conecta directamente a un módem DSL. Mediante el uso del software adecuado (generalmente, un marcador o un cliente DLS que proporciona el ISP), la PC1 encapsula tramas PPP dentro de las tramas de Ethernet y las envía al módem DSL.]]></text>
+</component>
+
+</textcomponents>

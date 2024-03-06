@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.3.2.1 Formateo de datos para la transmisión</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.3.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolos de la capa de enlace de datos</h1>
+        <h2>Estructura de trama de la capa 2</h2>
+      </div>
+      <div id="content">
+<p>La capa de enlace de datos prepara los paquetes para transportarlos a través de los medios locales mediante su encapsulación con un encabezado y un tráiler para crear una trama. La descripción de una trama es un elemento clave de cada protocolo de capa de enlace de datos. </p>
+<p></p>
+<p>Los protocolos de capa de enlace de datos requieren información de control para permitir que los protocolos funcionen. Por lo general, la información de control responde las siguientes preguntas:</p>
+<p>
+<ul>
+<li>¿Qué nodos se comunican entre sí?</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>¿Cuándo comienza la comunicación entre los nodos individuales y cuándo termina?</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>¿Qué errores se produjeron mientras se comunicaron los nodos?</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>¿Qué nodos se comunicarán a continuación?</li>
+</ul>
+</p>
+<p></p>
+<p>A diferencia de las otras PDU que se analizaron en este curso, las tramas de la capa de enlace de datos incluyen los siguientes elementos:</p>
+<p>
+<ul>
+<li>
+<b>Encabezado:</b> contiene información de control, como direccionamiento, y está ubicado al comienzo de la PDU.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Datos:</b> contienen el encabezado IP, el encabezado de la capa de transporte y los datos de aplicación.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Tráiler:</b> contiene la información de control que se agrega al final de la PDU para la detección de errores.</li>
+</ul>
+</p>
+<p></p>
+<p>Estos elementos de la trama se muestran en la ilustración y se analizarán con mayor detalle.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

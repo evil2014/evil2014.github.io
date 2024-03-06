@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.1.1.2 OSPF multiárea</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.1.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Funcionamiento de OSPF multiárea</h1>
+        <h2>¿Por qué OSPF de diversas áreas?</h2>
+      </div>
+      <div id="content">
+<p>Cuando se divide un área OSPF grande en áreas más pequeñas, esto se denomina “OSPF multiárea”. OSPF multiárea es útil en implementaciones de red más grandes, ya que reduce la sobrecarga de procesamiento y de memoria.</p>
+<p></p>
+<p>Por ejemplo, cada vez que un router recibe información nueva acerca de la topología, como la adición, la eliminación o la modificación de un enlace, el router debe volver a ejecutar el algoritmo SPF, crear un nuevo árbol SPF y actualizar la tabla de routing. El algoritmo SPF representa una gran exigencia para el CPU y el tiempo que le toma realizar los cálculos depende del tamaño del área. Si hubiera demasiados routers en un área, la LSDB sería más grande y se incrementaría la carga en la CPU. Por lo tanto, la disposición de los routers en distintas áreas divide de manera eficaz una base de datos potencialmente grande en bases de datos más pequeñas y más fáciles de administrar.</p>
+<p></p>
+<p>OSPF multiárea requiere un diseño de red jerárquico. El área principal se denomina “de red troncal” (área 0) y el resto de las áreas deben estar conectadas a esta. Con el routing jerárquico, se sigue produciendo el routing entre áreas (routing interárea), y muchas de las tediosas operaciones de routing, como volver a calcular la base de datos, se guardan en un área.</p>
+<p></p>
+<p>Como se ilustra en la figura 1, las posibilidades de topología jerárquica de OSPF multiárea presentan las siguientes ventajas:</p>
+<p>
+<ul>
+<li>
+<b>Tablas de routing más pequeñas:</b> hay menos entradas de la tabla de routing, ya que las direcciones de red pueden resumirse entre áreas. Por ejemplo, el R1 resume las rutas del área 1 al área 0 y el R2 resume las rutas del área 51 al área 0. Además, el R1 y el R2 propagan una ruta estática predeterminada a las áreas 1 y 51.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Menor sobrecarga de actualización de estado de enlace:</b> minimiza los requisitos de procesamiento y memoria, ya que hay menos routers que intercambian LSA. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Menor frecuencia de cálculos de SPF:</b> localiza el impacto de un cambio de topología dentro de un área. Por ejemplo, minimiza el impacto de una actualización de routing, porque la inundación de LSA se detiene en la frontera del área.</li>
+</ul>
+</p>
+<p></p>
+<p>En la figura 2, suponga que un enlace entre dos routers internos en el área 51 falla. Solo los routers en el área 51 intercambian LSA y vuelven a ejecutar el algoritmo SPF para este evento. El R1 no recibe los LSA del área 51 y no vuelve a calcular el algoritmo SPF.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

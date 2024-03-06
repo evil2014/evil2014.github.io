@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>11.2.2.2 Configuración de NAT dinámica</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_11.2.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de NAT</h1>
+        <h2>Configuración de NAT dinámica</h2>
+      </div>
+      <div id="content">
+<p>En la figura 1, se muestran los pasos y los comandos utilizados para configurar la NAT dinámica. </p>
+<p></p>
+<p>
+<b>Paso 1. </b>Defina el conjunto de direcciones que se utilizará para la traducción con el comando <span class="cmd"><b>ip nat pool</b></span>. Por lo general, este conjunto es un grupo de direcciones públicas. Las direcciones se definen indicando la primera y la última dirección IP del conjunto. Las palabras clave <span class="cmd"><b>netmask</b></span> o <span class="cmd"><b>prefix-length</b></span> indican qué bits de la dirección pertenecen a la red y cuáles al host en el rango de direcciones. </p>
+<p></p>
+<p>
+<b>Paso 2. </b>Configure una ACL estándar para identificar (permitir) solo aquellas direcciones que se deben traducir. Una ACL demasiado permisiva puede generar resultados impredecibles. Recuerde que al final de cada ACL hay una instrucción implícita para <b>denegar todo</b>.</p>
+<p></p>
+<p>
+<b>Paso 3. </b>Conecte la ACL al conjunto. Para conectar la ACL al conjunto, se utiliza el comando <span class="cmd"><b>ip nat inside source list </b></span><span class="cmd"><i>número-lista-acceso </i></span><span class="cmd"><b>number pool </b></span><span class="cmd"><i>nombre-conjunto</i></span>. El router utiliza esta configuración para determinar qué dirección (<span class="cmd"><b>pool</b></span>) recibe cada dispositivo (<span class="cmd"><b>list</b></span>).</p>
+<p></p>
+<p>
+<b>Paso 4. </b>Identifique qué interfaces son internas con respecto a NAT; es decir, cualquier interfaz que se conecte a la red interna.</p>
+<p></p>
+<p>
+<b>Paso 5.</b> Identifique qué interfaces son externas con respecto a NAT; es decir, cualquier interfaz que se conecte a la red externa.</p>
+<p></p>
+<p>En la figura 2, se muestra una topología y una configuración de ejemplo. Esta configuración permite la traducción para todos los hosts en la red 192.168.0.0/16, que incluye las LAN 192.168.10.0 y 192.168.11.0, cuando generan tráfico que ingresa por S0/0/0 y sale por S0/1/0. Estos hosts se traducen a una dirección disponible del conjunto en el rango de 209.165.200.226 a 209.165.200.240.</p>
+<p></p>
+<p>En la figura 3, se muestra la topología utilizada para la configuración del verificador de sintaxis. Utilice el verificador de sintaxis de la figura 4 para configurar la NAT dinámica en el R2. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

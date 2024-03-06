@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.3.1.1 Los routers son computadoras</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.3.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Routers</h1>
+        <h2>Anatomía de un router</h2>
+      </div>
+      <div id="content">
+<p>Existen muchos tipos de routers de infraestructura. De hecho, los routers Cisco están diseñados para satisfacer las siguientes necesidades:</p>
+<p>
+<ul>
+<li>
+<b>De sucursal:</b> trabajadores a distancia, pequeñas empresas y sucursales medianas. Incluye los routers de servicios integrados (ISR) Cisco 800, 1900, 2900 y 3900 de segunda generación (G2).</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>De WAN:</b> grandes empresas y organizaciones. Incluye los switches de la serie Cisco Catalyst 6500 y el router de servicios de agregación (ASR) Cisco 1000.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>De proveedor de servicios:</b> grandes proveedores de servicios. Incluye los routers Cisco ASR 1000, Cisco ASR 9000, Cisco XR 12000, Cisco CRS-3 Carrier Routing System y los de la serie 7600.</li>
+</ul>
+</p>
+<p></p>
+<p>La certificación de CCNA se centra en la familia de routers de sucursal. En la ilustración, se muestra la familia de routers ISR G2 Cisco 1900, 2900 y 3900. </p>
+<p></p>
+<p>Más allá de su función, su tamaño o su complejidad, todos los modelos de routers son, básicamente, computadoras. Al igual que las computadoras, las tablet PC y los dispositivos inteligentes, los routers también requieren lo siguiente:</p>
+<p>
+<ul>
+<li>Sistemas operativos (OS)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Unidades centrales de proceso (CPU)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Memoria de acceso aleatorio (RAM) </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Memoria de solo lectura (ROM) </li>
+</ul>
+</p>
+<p></p>
+<p>Los routers también tienen una memoria especial, que incluye memoria flash y memoria de acceso aleatorio no volátil (NVRAM).</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

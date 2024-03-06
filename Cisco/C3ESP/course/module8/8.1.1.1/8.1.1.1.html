@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.1.1.1 Topología de la red</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.1.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuraciones avanzadas de EIGRP</h1>
+        <h2>Sumarización automática </h2>
+      </div>
+      <div id="content">
+<p>Antes de ajustar las características de EIGRP, empiece con una implementación básica de EIGRP. </p>
+<p></p>
+<p>En la figura 1, se muestra la topología de la red que se usa en este capítulo. </p>
+<p></p>
+<p>En las figuras 2, 3 y 4, se muestra la configuración de interfaces IPv4 y las implementaciones de EIGRP en el R1, el R2 y el R3, respectivamente. </p>
+<p></p>
+<p>Es posible que los tipos de interfaces seriales y sus anchos de banda asociados no reflejen necesariamente los tipos de conexiones más frecuentes que se encuentran en las redes en la actualidad. Los anchos de banda de los enlaces seriales que se usan en esta topología ayudan a explicar el cálculo de las métricas de los protocolos de routing y el proceso de selección de la mejor ruta.</p>
+<p></p>
+<p>Observe que se usaron los comandos <span class="cmd"><b>bandwidth</b></span> en las interfaces seriales para modificar el ancho de banda predeterminado de 1544 kb/s.</p>
+<p></p>
+<p>En este capítulo, el router ISP se usa como gateway del dominio de routing a Internet. Los tres routers ejecutan el IOS de Cisco, versión 15.2.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.1.2.3 Configuración del routing entre VLAN antiguo: configuración de la interfaz del router</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.1.2.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración del routing entre VLAN</h1>
+        <h2>Configuración de routing entre VLAN antiguo</h2>
+      </div>
+      <div id="content">
+<p>A continuación, se puede configurar el router para que realice routing entre VLAN.</p>
+<p></p>
+<p>Las interfaces del router se configuran de manera similar a las interfaces de VLAN en los switches. Para configurar una interfaz específica, pase al modo de configuración de interfaz desde el modo de configuración global. </p>
+<p></p>
+<p>Como se muestra en la figura 1, cada interfaz se configura con una dirección IP mediante el comando <span class="cmd"><b>ip address </b></span><span class="cmd"><i>dirección_ip máscara_subred</i></span> en el modo de configuración de interfaz. </p>
+<p></p>
+<p>Como se muestra en el ejemplo, la interfaz G0/0 se configuró con la dirección IP 172.17.10.1 y la máscara de subred 255.255.255.0 mediante el comando <span class="cmd"><b>ip address 172.17.10.1 255.255.255.0</b></span>. </p>
+<p></p>
+<p>Las interfaces del router están deshabilitadas de manera predeterminada y es necesario habilitarlas con el comando <span class="cmd"><b>no shutdown</b></span> antes de utilizarlas. Una vez que se emite el comando del modo de configuración de interfaz <span class="cmd"><b>no shutdown</b></span>, se muestra una notificación que indica que el estado de la interfaz cambió a activó (up). Esto indica que la interfaz ahora está habilitada.</p>
+<p></p>
+<p>El proceso se repite para todas las interfaces del router. Es necesario asignar cada interfaz del router a una subred única para que se produzca el routing. En este ejemplo, la otra interfaz del router, G0/1, se configuró para utilizar la dirección IP 172.17.30.1, que se encuentra en una subred diferente que la interfaz G0/0.</p>
+<p></p>
+<p>Una vez que se asignan las direcciones IP a las interfaces físicas y que las interfaces se habilitan, el router es capaz de llevar a cabo routing entre VLAN.</p>
+<p></p>
+<p>Examine la tabla de routing con el comando <span class="cmd"><b>show ip route</b></span>. </p>
+<p></p>
+<p>En la figura 2, hay dos rutas visibles en la tabla de routing. Una ruta es la subred 172.17.10.0, que está conectada a la interfaz local G0/0. La otra ruta es la subred 172.17.30.0, que está conectada a la interfaz local G0/1. El router utiliza la tabla de enrutamiento para determinar dónde enviar el tráfico que recibe. Por ejemplo: si el router recibe un paquete en la interfaz G0/0 destinado a la subred 172.17.30.0, el router identificará que debe enviar el paquete por la interfaz G0/1 para que llegue a los hosts en la subred 172.17.30.0.</p>
+<p></p>
+<p>Observe la letra <span class="cmd"><b>C</b></span> a la izquierda de cada una de las entradas de ruta para las VLAN. Esta letra indica que la ruta es local para una interfaz conectada, que también está identificada en la entrada de ruta. Según el resultado de este ejemplo, si el tráfico estuviera destinado a la subred 172.17.30.0, el router debería reenviar el tráfico por la interfaz G0/1.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

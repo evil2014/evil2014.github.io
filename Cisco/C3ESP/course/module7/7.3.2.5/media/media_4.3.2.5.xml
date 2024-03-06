@@ -1,0 +1,18 @@
+﻿<textcomponents>
+
+	<component id="ID_title">
+		<text><![CDATA[<b>Métrica de EIGRP predeterminada</b>]]></text>
+	</component>
+	
+	<component id="ID_txt01">
+	  <text><![CDATA[<b>(K1*ancho de banda + K3*retraso)*256 = Métrica</b><br/><br/>Debido a que K1 y K3 ambos son iguales a 1, la fórmula se convierte en:<br/><br/><b>(ancho de banda + retraso)*256 = Métrica</b>]]></text> 
+	</component>
+	
+	<component id="ID_txt03">
+		<text><![CDATA[El ancho de banda se calcula usando la velocidad del enlace más lento en la ruta hacia el destino.<br/>El retraso se calcula con la suma de todos los retrasos en la ruta hacia el destino.]]></text>
+	</component>
+
+<component id="ID_txt02">
+	  <text><![CDATA[<b>([10&nbsp;000&nbsp;000/ancho de banda] + [suma de retrasos/10]) * 256 = Métrica</b> ]]></text> 
+	</component>
+</textcomponents>

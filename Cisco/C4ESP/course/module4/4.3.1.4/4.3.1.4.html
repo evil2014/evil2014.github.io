@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.3.1.4 Verificación del funcionamiento de Frame Relay: ARP inverso</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.3.1.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resolución de problemas de conectividad</h1>
+        <h2>Resolución de problemas de Frame Relay</h2>
+      </div>
+      <div id="content">
+<p>Para borrar mapas de Frame Relay creados dinámicamente mediante ARP inverso, utilice el comando <span class="cmd"><b>clear frame-relay inarp</b></span>, como se muestra en la figura 1. </p>
+<p></p>
+<p>La última tarea es confirmar si el comando <span class="cmd"><b>frame-relay inverse-arp</b></span> resolvió una dirección IPv4 remota a un DLCI local. Utilice el comando <span class="cmd"><b>show frame-relay map</b></span> para mostrar las entradas de mapa actuales y la información sobre las conexiones. En la figura 2, se muestra el resultado del router R3 con una configuración de Frame Relay anterior en la interfaz física, sin el uso de subinterfaces. ARP inverso está habilitado de manera predeterminada para IPv4. Frame Relay para IPv6 utiliza el descubrimiento inverso de vecinos (IND) para obtener una dirección IPv6 de capa 3 a partir de un DLCI de capa 2.</p>
+<p></p>
+<p>El resultado muestra la siguiente información:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>10.1.1.9</b> es la dirección IPv4 del router remoto, descubierta dinámicamente a través del proceso ARP inverso. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>302</b> es el valor decimal del número de DLCI local. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>0x12E</b> es la conversión hexadecimal del número de DLCI, 0x12E = decimal 302. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>0x48E0</b> es el valor como aparecería en el cable debido a la forma en que se propagan los bits de DLCI en el campo de dirección de la trama Frame Relay. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+La <b>difusión/multidifusión</b> se encuentra habilitada en el PVC. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>El tipo de LMI es <b>cisco</b>.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>El PVC está en estado <b>activo</b>. </li>
+</ul>
+</p>
+<p></p>
+<p>Cuando se realiza una solicitud de ARP inverso, el router actualiza su tabla de mapa con tres estados posibles de conexión LMI. Estos estados son los siguientes: </p>
+<p>
+<ul>
+<li>
+<b>ACTIVE:</b> indica un circuito de extremo a extremo (DTE a DTE) correcto. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>INACTIVE:</b> indica una conexión correcta al switch (DTE a DCE) sin que se detecte un DTE en el otro extremo del PVC. Esto puede ocurrir debido a una configuración incorrecta en el switch. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>DELETED:</b> indica que el DTE está configurado para un DLCI que el switch no reconoce como válido para esa interfaz.</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

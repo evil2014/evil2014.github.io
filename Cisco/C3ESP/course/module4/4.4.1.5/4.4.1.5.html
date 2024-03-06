@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.4.1.5 Herramientas de Smart Wi-Fi </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.4.1.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de LAN inalámbricas</h1>
+        <h2>Configuración de un router inalámbrico</h2>
+      </div>
+      <div id="content">
+<p>Como se muestra en las figuras 1 a 6, las herramientas de Smart Wi-Fi proporcionan servicios adicionales que incluyen lo siguiente:</p>
+<p>
+<ul>
+<li>
+<b>Device List (Lista de dispositivos):</b> vea quién está conectado a la WLAN. Se pueden personalizar los nombres y los íconos de los dispositivos. También se pueden conectar dispositivos mediante este servicio.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Guest Access (Acceso de invitados):</b> cree una red separada para hasta 50 invitados en el hogar y, al mismo tiempo, proteja los archivos de la red con la herramienta Guest Access.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Parental Controls (Controles parentales):</b> proteja a los niños y a los integrantes de la familia mediante la restricción del acceso a sitios web potencialmente perjudiciales. Esta herramienta se usa para restringir el acceso a Internet en dispositivos específicos, controlar la hora y los días en los que estos dispositivos pueden acceder a Internet, bloquear sitios web específicos para ciertos dispositivos, deshabilitar las restricciones de acceso a Internet y deshabilitar la característica Parental Controls.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Media Prioritization (Priorización de medios):</b> prioriza el ancho de banda para aplicaciones y dispositivos específicos. Con esta herramienta, se optimiza la experiencia en línea al priorizar el ancho de banda en las aplicaciones y los dispositivos que más lo necesitan. Esta herramienta se puede usar para emplear la característica Settings (Configuración) de la herramienta Media Prioritization, agregar más aplicaciones para asignarles un ancho de banda específico y asignar un ancho de banda más alto para una aplicación, un dispositivo o un juego en línea al establecer la prioridad del ancho de banda.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Speed Test (Prueba de velocidad):</b> esta herramienta se usa para probar la velocidad de subida y descarga del enlace a Internet. Es útil para establecer la línea de base.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>USB Storage (Almacenamiento USB):</b>
+<b></b> controla el acceso a los archivos compartidos. Configura cómo los usuarios pueden acceder a los archivos compartidos. Con esta herramienta, los usuarios pueden acceder al almacenamiento USB en la red local, crear recursos compartidos en un dispositivo de almacenamiento USB, configurar los parámetros de Folder Access (Acceso a las carpetas), configurar la forma en que los dispositivos y las computadoras dentro de la red pueden acceder al servidor FTP y configurar el acceso a un servidor de medios.</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

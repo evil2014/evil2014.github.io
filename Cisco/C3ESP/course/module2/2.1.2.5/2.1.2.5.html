@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.1.2.5 Formato de trama BPDU 802.1D</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.1.2.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Conceptos de árbol de expansión</h1>
+        <h2>Funcionamiento de STP</h2>
+      </div>
+      <div id="content">
+<p>El algoritmo de árbol de expansión depende del intercambio de BPDU para determinar un puente raíz. Una trama BPDU contiene 12 campos distintos que transmiten información de ruta y de prioridad que se utiliza para determinar el puente raíz y las rutas a este.</p>
+<p></p>
+<p>Haga clic en los campos de BPDU en la figura 1 para obtener más detalles.</p>
+<p></p>
+<p>
+<ul>
+<li>Los primeros cuatro campos identifican el protocolo, la versión, el tipo de mensaje y los señaladores de estado.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Los cuatro campos siguientes se utilizan para identificar el puente raíz y el costo de la ruta hacia éste.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Los últimos cuatro campos son todos campos de temporizador que determinan la frecuencia con la que se envían los mensajes de BPDU y el tiempo que se retiene la información que se recibe mediante el proceso de BPDU (próximo tema). </li>
+</ul>
+</p>
+<p></p>
+<p>En la figura 2, se muestra una trama BPDU que se capturó mediante Wireshark. En el ejemplo, la trama de BPDU contiene más campos de los que se describieron anteriormente. El mensaje de BPDU se encapsula en una trama de Ethernet cuando se transmite a través de la red. El encabezado 802.3 indica las direcciones de origen y destino de la trama de BPDU. Esta trama tiene la dirección MAC de destino 01:80:C2:00:00:00, que es una dirección de multidifusión para el grupo de árbol de expansión. Cuando se asigna esta dirección MAC a una trama, cada switch configurado para árbol de expansión acepta y lee la información de la trama. El resto de los dispositivos en la red ignora la trama.</p>
+<p></p>
+<p>En este ejemplo, el ID de raíz y el BID son iguales en la trama de BPDU capturada. Esto indica que la trama se capturó de un puente raíz. Todos los temporizadores se establecen en sus valores predeterminados.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

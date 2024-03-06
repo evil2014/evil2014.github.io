@@ -1,0 +1,39 @@
+﻿<textcomponents>
+
+	<component id="ID_title">
+		<text><![CDATA[<b>Ventajas y desventajas del enrutamiento estático</b>]]></text>
+	</component>
+	
+	<component id='ID_table'>
+		<text><![CDATA[
+						 <table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4' class="mtable">
+								<tr class="mtable_top">
+									<td colspan='2' bgcolor='#0E6360' class="mtable_top"><font size='1' color='#0E6360'><span style="color:#98D3D1">.</span></font></td>
+								</tr> 
+								<tr>
+								  <td bgcolor='#077A77' class="mtitle"><font  color='#ffffff'><b>Ventajas</b></font></td>
+								  <td bgcolor='#077A77' class="mtitle"><font  color='#ffffff'><b>Desventajas</b></font></td>
+								</tr>
+								<tr>
+								  <td bgcolor='#EFF8F7' valign="top">Fácil de implementar en una red pequeña.</td>
+								  <td bgcolor='#EFF8F7' valign="top">Adecuado solamente para topologías simples o para fines específicos, como una ruta estática predeterminada. La complejidad de la configuración aumenta notablemente a medida que crece la red.</td>
+								</tr>
+								<tr>
+								  <td bgcolor='#ffffff' valign="top">Muy seguro. No se envían anuncios, a diferencia del caso de los protocolos de routing dinámico.</td>
+								  <td bgcolor='#ffffff' valign="top">La complejidad de la configuración aumenta significativamente cuando el tamaño de la red es mayor.</td>
+								</tr> 
+								<tr>
+								  <td bgcolor='#EFF8F7' valign="top">La ruta hacia el destino siempre es la misma.</td>
+								  <td bgcolor='#EFF8F7' valign="top">Se requiere intervención manual para volver a enrutar el tráfico.</td>
+								</tr>	
+                                <tr>
+								  <td bgcolor='#ffffff' valign="top">Dado que no se requieren algoritmos de routing ni mecanismos de actualización, no se necesitan recursos adicionales (CPU o RAM).</td>
+								  <td bgcolor='#ffffff' valign="top">&nbsp;</td>
+								</tr>
+							  </table>
+					]]>
+		</text>
+</component>
+
+
+</textcomponents>

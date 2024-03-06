@@ -1,0 +1,33 @@
+﻿<textcomponents> <!-- slide 1 -->
+<component id="ID_s1_title">
+<text><![CDATA[<b>Situación de rutas estáticas y predeterminadas</b>]]></text>
+</component>
+
+<component id="ID_s1_txt01">
+<text><![CDATA[Internet]]></text> 
+</component>
+
+<component id="ID_s1_txt02">
+<text><![CDATA[El router R2 está conectado a otras redes y a Internet. También es mi único camino hacia el exterior. Solo necesito una ruta estática predeterminada para alcanzar cualquier red que no conozca.]]></text> 
+</component>
+
+<component id="ID_s1_txt03">
+<text><![CDATA[El router R1 solo tiene dos redes que necesito conocer, por lo que simplemente necesito dos rutas estáticas para alcanzar esas redes.]]></text> 
+</component> <!-- slide 2 -->
+<component id="ID_s2_title">
+<text><![CDATA[<b>Situación de routing dinámico</b>]]></text>
+</component>
+
+<component id="ID_s2_txt01">
+<text><![CDATA[Internet]]></text> 
+</component>
+
+<component id="ID_s2_txt02">
+<text><![CDATA[Hola, soy R1 y utilizo EIGRP para avisarles a mis vecinos que puedo llegar a las siguientes redes:<br/><textformat blockindent='-18'><li>192.168.10.0/24</li><li>192.168.11.0/24</li><li>209.165.200.224/30</li></textformat>]]></text> 
+</component>
+
+<component id="ID_s2_txt03">
+<text><![CDATA[Hola, R1. Soy R2 y también utilizo EIGRP para avisarles a mis vecinos que puedo llegar a las siguientes redes:<br/><textformat blockindent='-18'><li>10.1.1.0/24</li><li>10.1.2.0/24</li><li>209.165.200.224/30</li>También soy el gateway predeterminado a Internet.</textformat>]]></text> 
+</component>
+
+</textcomponents>

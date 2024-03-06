@@ -1,0 +1,47 @@
+﻿<textcomponents> <!-- slide 1 -->
+<component id='ID_s1_txt01'>
+	<text><![CDATA[Puertos VTY 0-4]]></text>
+</component> <!-- slide 2 -->
+
+<component id="ID_sc_reset">
+		<text><![CDATA[Restablecer]]></text>
+	</component>
+	<component id="ID_sc_showme">
+		<text><![CDATA[Mostrar]]></text>
+	</component>
+	<component id="ID_sc_showall">
+		<text><![CDATA[Mostrar todo]]></text>
+	</component>
+
+<component id="ID_s2_SC1" fontFace='Courier New' fontSize="10">
+	<text></text>		
+	<feedback id="fb"><![CDATA[<b>*** </b><font face="Arial" color="#0000FF">Debe introducir el comando exacto y completo.</font><b>***  </b> ]]></feedback>		
+	<existingcommands><![CDATA[<font face="Arial"><b>Utilice la lista de acceso 21 para configurar las líneas vty, a fin de que acepten las conexiones ssh de entrada.  </b></font>]]></existingcommands>
+	<command prompt="R1(config)#">
+	<correctresponse><![CDATA[line vty 0 4]]></correctresponse>
+	</command>
+	<command prompt="R1(config-line)#">
+	<correctresponse><![CDATA[login local]]></correctresponse>
+	</command>
+	<command prompt="R1(config-line)#">
+	<correctresponse><![CDATA[transport input ssh]]></correctresponse>
+	</command>
+	<command prompt="R1(config-line)#">
+	<correctresponse><![CDATA[access-class 21 in]]></correctresponse>
+	<instruction><![CDATA[<font face="Arial"><b>Salga del modo global y cree la lista de acceso 21 para permitir la red 192.168.10.0/24 y denegar explícitamente todas las demás.  </b></font>]]></instruction>
+	</command>
+	<command prompt="R1(config-line)#">
+	<correctresponse><![CDATA[exit]]></correctresponse>
+	</command>
+	<command prompt="R1(config)#">
+	<correctresponse><![CDATA[access-list 21 permit 192.168.10.0 0.0.0.255]]></correctresponse>
+	</command>
+	<command prompt="R1(config)#">
+	<correctresponse><![CDATA[access-list 21 deny any]]></correctresponse>
+	<instruction><![CDATA[<font face="Arial" class="syntaxBottomLine"><b>Aseguró correctamente las líneas vty en el R1.  </b></font>]]></instruction>
+	</command>
+	<command prompt=""/>
+</component>
+
+	
+</textcomponents>

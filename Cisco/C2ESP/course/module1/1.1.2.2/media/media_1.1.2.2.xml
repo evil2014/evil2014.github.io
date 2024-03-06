@@ -1,0 +1,37 @@
+﻿<textcomponents> <!-- SLIDE 1 -->
+	<component id="ID_s1_title">
+		<text><![CDATA[<b>  </b>]]></text>
+	</component>
+	
+	<component id="ID_Title_txt01">
+		<text><![CDATA[<b>Consideraciones comerciales comunes que se deben tener en cuenta al seleccionar el equipo de switch:  </b>]]></text>
+	</component>
+	
+	<component id="ID_Body_txt01">
+		<text><![CDATA[<textformat blockindent='-14'><ul><li><b>Costo:</b> el costo de un switch depende de la cantidad y la velocidad de las interfaces, de las funciones admitidas y de la capacidad de expansión. </li><li><b>Densidad de puertos:</b> los switches de red deben admitir una cantidad adecuada de dispositivos en la red. </li><li><b>Alimentación:</b> hoy en día, es común alimentar puntos de acceso, teléfonos IP e incluso switches compactos mediante la alimentación por Ethernet. Además de las consideraciones de alimentación por Ethernet, algunos switches basados en bastidor admiten fuentes de alimentación redundantes.  </li><li><b>Confiabilidad:</b> el switch debe proporcionar acceso continuo a la red. </li><li><b>Velocidad del puerto:</b> la velocidad de la conexión de red es uno de los aspectos fundamentales para los usuarios finales. </li><li><b>Buffers para tramas:</b> la capacidad que tiene el switch de almacenar tramas es importante en las redes donde puede haber puertos congestionados conectados a servidores o a otras áreas de la red. </li><li><b>Escalabilidad:</b> en general, la cantidad de usuarios en una red aumenta con el tiempo; por lo tanto, el switch debe proporcionar la posibilidad de crecimiento. </li></ul></textformat>]]></text>
+	</component> <!-- SLIDE 2 -->
+
+	<component id="ID_s2_title">
+		<text><![CDATA[<b>Switches de configuración fija</b>]]></text>
+	</component>
+	
+	<component id="ID_s2_txt01">
+	  <text><![CDATA[Las características y las opciones se limitan a aquéllas que originalmente vienen con el switch.]]></text> 
+	</component> <!-- SLIDE 3 -->
+
+	<component id="ID_s3_title">
+		<text><![CDATA[<b>Switches de configuración modular</b>]]></text> 
+	</component>
+	
+	<component id="ID_s3_txt01">
+	  <text><![CDATA[El chasis acepta tarjetas de línea que contienen los puertos.]]></text> 
+	</component> <!-- SLIDE 4 -->
+	
+	<component id="ID_s4_title">
+		<text><![CDATA[<b>Switches de configuración apilable</b>]]></text> 
+	</component>
+	
+	<component id="ID_s4_txt01">
+	  <text><![CDATA[Los switches apilables, conectados por un cable especial, operan con eficacia como un gran switch.]]></text> 
+	</component>
+</textcomponents>

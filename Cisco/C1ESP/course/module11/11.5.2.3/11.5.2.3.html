@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>11.5.2.3 Configuración de un cliente inalámbrico</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_11.5.2.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Servicios de enrutamiento integrados</h1>
+        <h2>Configuración del router integrado</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Configuración de un cliente inalámbrico</b>
+</p>
+<p>Un host inalámbrico, o cliente, se define como cualquier dispositivo que contenga un software de cliente inalámbrico y una NIC inalámbrica. Este software cliente le permite al hardware participar en la WLAN. Los dispositivos incluyen algunos smartphones, computadoras portátiles y de escritorio, impresoras, televisores, sistemas de juego y tablet PC. </p>
+<p></p>
+<p>Para que un cliente inalámbrico se conecte a la WLAN, las opciones de configuración del cliente deben coincidir con las del router inalámbrico. Esto incluye el SSID, la configuración de seguridad y la información del canal (si este se configuró manualmente). Esta configuración se especifica en el software de cliente.</p>
+<p></p>
+<p>El software cliente inalámbrico utilizado puede estar integrado por software al sistema operativo del dispositivo o puede ser un software de utilidad inalámbrica, independiente y que se puede descargar, diseñado específicamente para interactuar con la NIC inalámbrica.</p>
+<p></p>
+<p>Una vez que se configure el software cliente, verifique el enlace entre el cliente y el AP. </p>
+<p></p>
+<p>Abra la pantalla de información del enlace inalámbrico para ver datos como la velocidad de datos de la conexión, el estado de la conexión y el canal inalámbrico utilizado, como se muestra en la ilustración. Si está disponible, la característica Información de enlace muestra la potencia de señal y la calidad de la señal inalámbrica actuales. </p>
+<p></p>
+<p>Además de verificar el estado de la conexión inalámbrica, verifique que los datos realmente puedan transmitirse. Una de las pruebas más comunes para verificar si la transmisión de datos se realiza correctamente es la prueba de ping. Si el ping se realiza correctamente se puede realizar la transmisión de datos.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

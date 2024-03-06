@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>3.0.1.2 Actividad de clase: Diseño de un sistema de comunicaciones</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_3.0.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolos y comunicaciones de red</h1>
+        <h2>Introducción</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Solo hablemos de esto…</b>
+</p>
+<p></p>
+<p>Acaba de adquirir un automóvil nuevo para uso personal. Después de conducir el automóvil durante alrededor de una semana, descubre que no funciona correctamente.</p>
+<p></p>
+<p>Después de analizar el problema con varios de sus pares, decide llevarlo un taller de reparaciones de automóviles muy recomendado. Se trata del único taller de reparaciones que le queda cerca. </p>
+<p></p>
+<p>Cuando llega al taller de reparaciones, advierte que todos los mecánicos hablan otro idioma. Tiene dificultades para explicar los problemas de funcionamiento del automóvil, pero es realmente necesario realizar las reparaciones. No está seguro de poder conducirlo de regreso a su hogar para buscar otras opciones.</p>
+<p></p>
+<p>Debe encontrar una manera de trabajar con el taller para asegurarse de que el automóvil se repare correctamente.</p>
+<p></p>
+<p>¿Cómo se comunicará con los mecánicos de esa empresa? Diseñe un modelo de comunicaciones para asegurar que el vehículo se repare correctamente.</p>
+<p></p>
+<p>
+<a href="../../files/3.0.1.2%20Class%20Activity%20-%20Let's%20just%20talk%20about%20this...%20Instructions.pdf" target="_blank">Actividad de clase: Solo hablemos de esto (instrucciones)</a>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

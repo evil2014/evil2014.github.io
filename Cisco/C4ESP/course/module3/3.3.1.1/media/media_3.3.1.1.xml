@@ -1,0 +1,48 @@
+﻿<textcomponents>
+<component id="ID_title">
+  <text><![CDATA[<b>Códigos de campo de opciones configurables</b>]]></text> 
+</component>
+
+<component id="ID_txt01">
+  <text><![CDATA[<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4'>
+<tr><td colspan='4' bgcolor='#0E6360' class="mtable_top"><font size='1' color='#0E6360'><span style="color:#98D3D1">.</span></font></td>
+	</tr>
+	<tr class="mtitle">
+		<td bgcolor='#077A77'  valign="top" width="120" class="mtitle"><font color='#ffffff' size="11"><b>Nombre de la opción</b></font></td>
+		<td bgcolor='#077A77'  valign="top" width="90" class="mtitle"><font color='#ffffff' size="11"><b>Tipo de opción</b></font></td>
+		<td bgcolor='#077A77'  valign="top" width="60" class="mtitle"><font color='#ffffff' size="11"><b>Longitud de la opción</b></font></td>
+		<td bgcolor='#077A77'  valign="top" class="mtitle"><font color='#ffffff' size="11"><b>Descripción</b></font></td>
+	</tr>
+  <tr>
+    <td bgcolor='#EFF8F7'>Protocolo de autenticación</td>
+    <td bgcolor='#EFF8F7'>3</td>
+    <td bgcolor='#EFF8F7'>5 o 6</td>
+    <td bgcolor='#EFF8F7'>Este campo indica el protocolo de autenticación, ya sea el PAP o el CHAP. </td>
+  </tr> 
+  <tr>
+    <td bgcolor='#FFFFFF'>Compresión de protocolo</td>
+    <td bgcolor='#FFFFFF'>7</td>
+    <td bgcolor='#FFFFFF'>2</td>
+    <td bgcolor='#FFFFFF'>Un señalador que indica que la ID del protocolo PPP se comprimirá a un solo octeto cuando la ID del protocolo de 2 bytes se encuentre en el rango de 0x00-00 a 0x00-FF.</td>
+  </tr>
+  <tr>
+    <td bgcolor='#EFF8F7'>Compresión de campos de dirección y control</td>
+    <td bgcolor='#EFF8F7'>8</td>
+    <td bgcolor='#EFF8F7'>2</td>
+    <td bgcolor='#EFF8F7'>Un señalador que indica que el campo Dirección de PPP (siempre establecido en 0xFF) y el campo Control de PPP (siempre establecido en 0x03) se eliminarán del encabezado PPP. </td>
+  </tr>
+  <tr>
+    <td bgcolor='#FFFFFF'>Número mágico (detección de errores)</td>
+    <td bgcolor='#FFFFFF'>5</td>
+    <td bgcolor='#FFFFFF'>6 </td>
+    <td bgcolor='#FFFFFF'>Es un número elegido de manera aleatoria para distinguir un par y detectar las líneas de loopback.</td>
+  </tr>
+  <tr>
+    <td bgcolor='#EFF8F7'>Devolución de llamada</td>
+    <td bgcolor='#EFF8F7'>13 o 0x0D</td>
+    <td bgcolor='#EFF8F7'>3</td>
+    <td bgcolor='#EFF8F7'>Un indicador de 1 octeto que muestra cómo se determinan las devoluciones de llamadas. </td>
+  </tr>
+</table>]]></text> 
+  </component>
+</textcomponents>

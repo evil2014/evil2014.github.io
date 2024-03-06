@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.2.1.2 Configuración de SSH</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.2.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Seguridad de switches: administración e implementación</h1>
+        <h2>Acceso remoto seguro</h2>
+      </div>
+      <div id="content">
+<p>Antes de configurar SSH, el switch debe tener configurado, como mínimo, un nombre de host único y los parámetros correctos de conectividad de red.</p>
+<p></p>
+<p>
+<b>Paso 1. Verificar la compatibilidad con SSH</b>
+</p>
+<p></p>
+<p>Use el comando <span class="cmd"><b>show ip ssh</b></span> para verificar que el switch admita SSH. Si el switch no ejecuta un IOS que admita características criptográficas, este comando no se reconoce. </p>
+<p></p>
+<p>
+<b>Paso 2. Configurar el dominio IP</b>
+</p>
+<p></p>
+<p>Configure el nombre de dominio IP de la red mediante el comando <span class="cmd"><b>ip domain-name </b></span><span class="cmd"><i>nombre-de-dominio</i></span> del modo de configuración global. En la figura 1, el valor de <span class="cmd"><i>nombre-de-dominio</i></span> es <span class="cmd"><b>cisco.com</b></span>.</p>
+<p></p>
+<p>
+<b>Paso 3. Generar pares de claves RSA</b>
+</p>
+<p></p>
+<p>No todas las versiones del IOS utilizan la versión 2 de SSH de manera predeterminada, y la versión 1 de SSH tiene fallas de seguridad conocidas. Para configurar la versión 2 de SSH, emita el comando <span class="cmd"><b>ip ssh version 2</b></span> del modo de configuración global. La creación de un par de claves RSA habilita SSH automáticamente. Use el comando <span class="cmd"><b>crypto key generate rsa</b></span> del modo de configuración global para habilitar el servidor SSH en el switch y generar un par de claves RSA. Al crear claves RSA, se solicita al administrador que introduzca una longitud de módulo. Cisco recomienda un tamaño de módulo mínimo de 1024 bits (consulte la configuración de muestra en la figura 1). Una longitud de módulo mayor es más segura, pero se tarda más en generarlo y utilizarlo.</p>
+<p></p>
+<p>
+<b>Nota:</b> para eliminar el par de claves RSA, use el comando <span class="cmd"><b>crypto key zeroize rsa</b></span> del modo de configuración global. Después de eliminarse el par de claves RSA, el servidor SSH se deshabilita automáticamente.</p>
+<p></p>
+<p>
+<b>Paso 4. Configurar la autenticación de usuario</b>
+</p>
+<p></p>
+<p>El servidor SSH puede autenticar a los usuarios localmente o con un servidor de autenticación. Para usar el método de autenticación local, cree un nombre de usuario y una contraseña con el comando del modo de configuración global <span class="cmd"><b>username </b></span><span class="cmd"><i>nombre-de-usuario</i></span><span class="cmd"><b> secret </b></span><span class="cmd"><i>contraseña</i></span>. En el ejemplo, se asignó la contraseña <span class="cmd"><b>ccna</b></span> al usuario <span class="cmd"><b>admin</b></span>.</p>
+<p></p>
+<p>
+<b>Paso 5. Configurar las líneas vty</b>
+</p>
+<p></p>
+<p>Habilite el protocolo SSH en las líneas vty mediante el comando <span class="cmd"><b>transport input ssh</b></span> del modo de configuración de línea. El switch Catalyst 2960 tiene líneas vty que van de 0 a 15. Esta configuración evita las conexiones que no son SSH (como Telnet) y limita al switch a que acepte solo las conexiones SSH. Use el comando <span class="cmd"><b>line vty</b></span> del modo de configuración global y, luego, el comando <span class="cmd"><b>login local</b></span> del modo de configuración de línea para requerir la autenticación local de las conexiones SSH mediante la base de datos de nombres de usuarios locales.</p>
+<p></p>
+<p>
+<b>Paso 6. Habilitar la versión 2 de SSH.</b>
+</p>
+<p></p>
+<p>De manera predeterminada, SSH admite las versiones 1 y 2. Si se admiten ambas versiones, en el resultado de <span class="cmd"><b>show ip ssh</b></span> se muestra que se admite la versión 1.99. La versión 1 tiene vulnerabilidades conocidas. Por esta razón, se recomienda habilitar únicamente la versión 2. Habilite la versión de SSH mediante el comando de configuración global <span class="cmd"><b>ip ssh version 2</b></span>.</p>
+<p></p>
+<p></p>
+<p>Use el verificador de sintaxis de la figura 2 para configurar SSH en el switch S1.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

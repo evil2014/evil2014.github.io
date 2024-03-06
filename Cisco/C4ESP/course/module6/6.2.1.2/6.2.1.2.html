@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.2.1.2 Cable y espectro electromagnético</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.2.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Comparación de las soluciones de banda ancha</h1>
+        <h2>Cable</h2>
+      </div>
+      <div id="content">
+<p>El espectro electromagnético abarca una amplia banda de frecuencias. </p>
+<p></p>
+<p>La frecuencia es la velocidad a la que se producen los ciclos de corriente o de voltaje. La frecuencia se calcula como la cantidad de ondas por segundo. La longitud de onda es la distancia desde el punto más alto de una onda hasta el punto más alto de la siguiente. La longitud de onda se calcula como la velocidad de propagación de la señal electromagnética dividida por su frecuencia en ciclos por segundo. </p>
+<p></p>
+<p>Las ondas de radio, a menudo denominadas RF, constituyen una porción del espectro electromagnético entre 1 kHz y 1 THz aproximadamente, como se indica en la ilustración. Cuando los usuarios sintonizan una radio o un televisor para buscar diferentes estaciones de radio o canales de televisión, sintonizan distintas frecuencias electromagnéticas a través de ese espectro de RF. El mismo principio se aplica al sistema de cable.</p>
+<p></p>
+<p>La industria de la televisión por cable utiliza una parte del espectro electromagnético de RF. Dentro del cable, hay diferentes frecuencias que transportan canales de televisión y datos. En el extremo del suscriptor, los equipos como los televisores, los reproductores de Blu-ray, los DVR y los decodificadores de HDTV sintonizan ciertas frecuencias que permiten que el usuario vea el canal o utilice un cable módem para recibir acceso a Internet de alta velocidad.</p>
+<p></p>
+<p>Una red de cable puede transmitir señales por el cable en cualquier sentido al mismo tiempo. Se utilizan los siguientes alcances de frecuencia:</p>
+<p>
+<ul>
+<li>
+<b>Descendente:</b> el sentido de la transmisión de una señal de RF, como los canales de televisión y los datos, desde el origen, o la cabecera, hasta el destino, o los suscriptores. La transmisión de origen a destino se denomina “ruta de reenvío”. Las frecuencias descendentes se encuentran en la banda de 50 MHz a 860 MHz.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Ascendente:</b> el sentido de la transmisión de la señal de RF desde los suscriptores hasta la cabecera. Las frecuencias ascendentes se encuentran en la banda de 5 MHz a 42 MHz.</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

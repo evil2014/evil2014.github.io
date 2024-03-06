@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.2.2.3 Packet Tracer: Resolución de problemas de OSPFv2 de área única</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.2.2.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resolución de problemas de implementaciones de OSPF de área única</h1>
+        <h2>Resolución de problemas de routing de OSPFv2 de área única</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Información básica/situación</b>
+</p>
+<p></p>
+<p>En esta actividad, resolverá problemas de routing OSPF mediante los comandos <span class="cmd"><b>ping</b></span> y <span class="cmd"><b>show</b></span> para identificar errores en la configuración de red. A continuación, registrará los errores que detecte e implementará una solución apropiada. Por último, verificará que se haya restaurado la conectividad de extremo a extremo.</p>
+<p></p>
+<p>
+<a href="../../files/5.2.2.3%20Packet%20Tracer%20-%20Troubleshooting%20Single-Area%20OSPFv2%20Instructions.pdf" target="_blank">Packet Tracer: Resolución de problemas de OSPFv2 de área única (instrucciones)</a>
+</p>
+<p></p>
+<p>
+<a href="../../files/5.2.2.3%20Packet%20Tracer%20-%20Troubleshooting%20Single-Area%20OSPFv2.pka" target="_blank">Packet Tracer: Resolución de problemas de OSPFv2 de área única (PKA)</a>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

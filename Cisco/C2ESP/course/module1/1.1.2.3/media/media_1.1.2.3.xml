@@ -1,0 +1,125 @@
+﻿<textcomponents>
+
+<component id='ID_inst'>
+	<text><![CDATA[<b>Actividad: seleccionar el hardware del switch</b><br/>Lea los criterios de selección de switch y busque los nombres de categorías de switch que mejor los representen. Arrastre el nombre de la categoría que representa al criterio hacia el campo correspondiente.]]></text>
+</component> <!--Drag and Drop-->
+<component id='ID_drag01'>
+	<text><![CDATA[<font color="#393536">Apilable</font>]]></text>
+</component>
+
+<component id='ID_drag02'>
+	<text><![CDATA[<font color="#393536">Alimentación</font>]]></text>
+</component>
+
+<component id='ID_drag03'>
+	<text><![CDATA[<font color="#393536">Confiabilidad</font>]]></text>
+</component>
+
+<component id='ID_drag04'>
+	<text><![CDATA[<font color="#393536">Escalabilidad</font>]]></text>
+</component>
+
+<component id='ID_drag05'>
+	<text><![CDATA[<font color="#393536">Densidad del puerto</font>]]></text>
+</component>
+
+<component id='ID_drag06'>
+	<text><![CDATA[<font color="#393536">Precio</font>]]></text>
+</component>
+
+<component id='ID_drag07'>
+	<text><![CDATA[<font color="#393536">Modulares</font>]]></text>
+</component>
+
+<component id='ID_drag08'>
+	<text><![CDATA[<font color="#393536">Velocidad del puerto</font>]]></text>
+</component>
+
+<component id='ID_drag09'>
+	<text><![CDATA[<font color="#393536">Buffers para tramas</font>]]></text>
+</component>
+
+<component id='ID_drag10'>
+	<text><![CDATA[<font color="#393536">Configuración fija</font>]]></text>
+</component>
+
+
+
+
+
+
+<component id='ID_s1_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id='ID_s1_CORRECT_BODY'>
+	<text><![CDATA[Correcto]]></text>
+</component>
+
+
+<component id='ID_s1_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_BODY'>
+	<text><![CDATA[No eligió correctamente los nombres de las categorías de los criterios de selección de switch. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_CHECK'>
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id='ID_RESET'>
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component>
+
+
+<component id='ID_target_header'>
+	<text><![CDATA[<b>Nombre de la categoría</b>]]></text>
+</component>
+<component id='ID_text_header'>
+	<text><![CDATA[<b>Criterios de selección de switch</b>]]></text>
+</component>
+
+<component id="ID_txt01">
+	<text><![CDATA[Se ve afectado por la cantidad de dispositivos de red que debe admitir.]]></text>
+</component>
+
+<component id="ID_txt02">
+  <text><![CDATA[Redundancia mediante alimentación por Ethernet.]]></text> 
+</component>
+
+<component id="ID_txt03">
+  <text><![CDATA[La velocidad con la que las interfaces procesan los datos de red.]]></text> 
+</component>
+
+<component id="ID_txt04">
+  <text><![CDATA[Acceso continuo a la red.]]></text> 
+</component>
+
+<component id="ID_txt05">
+  <text><![CDATA[Se ve afectado por la cantidad de interfaces, las características y la capacidad de expansión.]]></text> 
+</component>
+
+<component id="ID_txt06">
+  <text><![CDATA[La capacidad de almacenar tramas en la caché.]]></text> 
+</component>
+
+<component id="ID_txt07">
+  <text><![CDATA[La capacidad de adaptarse al aumento de la cantidad de usuarios de la red.]]></text> 
+</component>
+
+<component id="ID_txt08">
+  <text><![CDATA[Switches con tarjetas de línea y de puerto de switching ajustables.]]></text> 
+</component>
+
+<component id="ID_txt09">
+  <text><![CDATA[Switches con características u opciones preestablecidas.]]></text> 
+</component>
+
+<component id="ID_txt10">
+  <text><![CDATA[Switches agrupados en cadena margarita con rendimiento de ancho de banda alto.]]></text> 
+</component>
+
+  
+</textcomponents>

@@ -1,0 +1,58 @@
+﻿<textcomponents>
+	<component id="ID_s1_title">
+	<text><![CDATA[<b>Formato del mensaje DHCPv4</b>]]></text>
+	</component>
+
+	<component id="ID_table">
+	<text><![CDATA[<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' class="mtable" cellpadding='4'>
+	<tr class="mtable_top">
+			<td colspan='4' bgcolor='#0E6360' class="mtable_top"><font size='1' color='#0E6360'><span 
+	style="color:#98D3D1">.</span></font></td>
+		</tr>
+		<tr>
+			<td bgcolor='#0E6360' valign="top" class="mtitle"><p align='center'><font color="#ffffff"><b>8</b></font> </p></td>
+			<td bgcolor='#0E6360' valign="top" class="mtitle"><p align='center'><font color="#ffffff"><b>16</b></font> </p></td>
+			<td bgcolor='#0E6360' valign="top" class="mtitle"><p align='center'><font color="#ffffff"><b>24</b></font> </p></td>
+			<td bgcolor='#0E6360' valign="top" class="mtitle"><p align='center'><font color="#ffffff"><b>32</b></font> </p></td>
+		</tr>
+		
+		<tr>
+			<td bgcolor='#EFF8F7' valign="top"><p align='center'>Código OP (1) </p></td>
+			<td bgcolor='#EFF8F7' valign="top"><p align='center'>Tipo de hardware (1) </p></td>
+			<td bgcolor='#EFF8F7' valign="top"><p align='center'>Longitud de dirección de hardware (1) </p></td>
+			<td bgcolor='#EFF8F7' valign="top"><p align='center'>Saltos (1) </p></td>
+		</tr>
+		<tr>
+			<td colspan="4" bgcolor='#ffffff' valign="top"><p align='center'>Identificador de transacción</p></td>
+		</tr>
+		<tr>
+			<td colspan="2" bgcolor='#EFF8F7' valign="top"><p align='center'>Segundos: 2&nbsp;bytes</p></td>
+			<td colspan="2" bgcolor='#EFF8F7' valign="top"><p align='center'>Indicadores: 2&nbsp;bytes</p></td>
+		</tr>
+		<tr>
+			<td colspan="4" bgcolor='#ffffff' valign="top"><p align='center'>Dirección IP del cliente (CIADDR): 4&nbsp;bytes</p></td>
+		</tr>
+		<tr>
+			<td colspan="4" bgcolor='#EFF8F7' valign="top"><p align='center'>Su dirección IP (YIADDR): 4&nbsp;bytes</p></td>
+		</tr>
+		<tr>
+			<td colspan="4" bgcolor='#ffffff' valign="top"><p align='center'>Dirección IP del servidor (SIADDR): 4&nbsp;bytes</p></td>
+		</tr>
+		<tr>
+			<td colspan="4" bgcolor='#EFF8F7' valign="top"><p align='center'>Dirección IP del gateway (GIADDR): 4&nbsp;bytes</p></td>
+		</tr>
+		<tr>
+			<td colspan="4" bgcolor='#ffffff' valign="top"><p align='center'>Dirección de hardware del cliente (CHADDR): 16&nbsp;bytes</p></td>
+		</tr>
+		<tr>
+			<td colspan="4" bgcolor='#EFF8F7' valign="top"><p align='center'>Nombre del servidor (SNAME): 64&nbsp;bytes</p></td>
+		</tr>
+		<tr>
+			<td colspan="4" bgcolor='#ffffff' valign="top"><p align='center'>Nombre del archivo de arranque: 128&nbsp;bytes</p></td>
+		</tr>
+		<tr>
+			<td colspan="4" bgcolor='#EFF8F7' valign="top"><p align='center'>Opciones de DHCP: variable</p></td>
+		</tr>
+	</table>]]></text>
+	</component>
+</textcomponents>

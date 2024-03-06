@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.2.1.2 Componentes </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.2.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resolución de problemas de EIGRP</h1>
+        <h2>Componentes de la resolución de problemas de EIGRP</h2>
+      </div>
+      <div id="content">
+<p>En la ilustración, se muestra un diagrama de flujo para el diagnóstico de problemas de conectividad de EIGRP.</p>
+<p></p>
+<p>Después de configurar EIGRP, el primer paso es probar la conectividad a la red remota. Si el ping falla, confirme las adyacencias de vecinos EIGRP. Hay varias razones por las que es posible que no se forme una adyacencia de vecino, incluidas las siguientes:</p>
+<p>
+<ul>
+<li>La interfaz entre los dispositivos está inactiva.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Los dos routers tienen números de sistema autónomo (ID de proceso) EIGRP que no coinciden.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>No están habilitadas las interfaces adecuadas para el proceso EIGRP.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Una interfaz está configurada como pasiva.</li>
+</ul>
+</p>
+<p></p>
+<p>Aparte de estos problemas, existen otros más avanzados que pueden ocasionar que no se formen adyacencias de vecinos. Dos ejemplos son la configuración incorrecta de la autenticación de EIGRP y valores K incompatibles, que EIGRP usa para calcular su métrica.</p>
+<p></p>
+<p>Si se forma una adyacencia de vecinos EIGRP entre dos routers, pero todavía hay un problema de conexión, es posible que haya un problema de routing. Algunos de los problemas que pueden causar un problema de conectividad para EIGRP son los siguientes:</p>
+<p>
+<ul>
+<li>No se anuncian las redes adecuadas en routers remotos.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Una interfaz pasiva configurada incorrectamente, o una ACL, bloquea los anuncios de las redes remotas.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>La sumarización automática provoca un routing incongruente en una red no contigua.</li>
+</ul>
+</p>
+<p></p>
+<p>Si todas las rutas requeridas están en la tabla de routing, pero la ruta que toma el tráfico es incorrecta, verifique los valores del ancho de banda de la interfaz.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

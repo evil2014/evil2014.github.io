@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.1.4.2 Verificación de la configuración de interfaz IPv6</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.1.4.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración inicial de un router</h1>
+        <h2>Verificación de la conectividad de redes conectadas directamente</h2>
+      </div>
+      <div id="content">
+<p>Los comandos para verificar la configuración de interfaz IPv6 son similares a los comandos que se usan para IPv4. </p>
+<p></p>
+<p>El comando <span class="cmd"><b>show ipv6 interface brief</b></span> de la figura 1 muestra un resumen para cada una de las interfaces. El resultado <span class="cmd">[up/up]</span> en la misma línea que el nombre de interfaz indica el estado de interfaz de capa 1/capa 2. Esto es lo mismo que las columnas Status (Estado) y Protocol (Protocolo) en el comando IPv4 equivalente. </p>
+<p></p>
+<p>El resultado muestra dos direcciones IPv6 configuradas por interfaz. Una de las direcciones es la dirección de unidifusión global de IPv6 que se introdujo manualmente. La otra, que comienza con FE80, es la dirección de unidifusión link-local para la interfaz. La dirección link-local se agrega automáticamente a una interfaz cuando se asigna una dirección de unidifusión global. Las interfaces de red IPv6 deben tener una dirección link-local, pero no necesariamente una dirección de unidifusión global.</p>
+<p></p>
+<p>El resultado del comando <span class="cmd"><b>show ipv6 interface gigabitethernet 0/0</b></span> que se muestra en la figura 2 indica el estado de interfaz y todas las direcciones IPv6 que pertenecen a la interfaz. Además de la dirección link-local y la dirección de unidifusión global, el resultado incluye las direcciones de multidifusión asignadas a la interfaz, las cuales comienzan con el prefijo FF02.</p>
+<p></p>
+<p>Como se muestra en la figura 3, el comando <span class="cmd"><b>show ipv6 route</b></span> se puede utilizar para verificar si las redes IPv6 y las direcciones específicas de la interfaz IPv6 se instalaron en la tabla de routing IPv6. El comando <span class="cmd"><b>show ipv6 route</b></span> muestra solamente redes IPv6, no redes IPv4.</p>
+<p></p>
+<p>En la tabla de routing, una “<span class="cmd">C</span>” junto a una ruta indica que se trata de una red conectada directamente. Cuando la interfaz del router se configura con una dirección unicast global y su estado es “up/up”, se agrega el prefijo y la duración de prefijo IPv6 a la tabla de enrutamiento IPv6 como una ruta conectada. </p>
+<p></p>
+<p>La dirección IPv6 unicast global configurada en la interfaz también se instala en la tabla de enrutamiento como una ruta local. La ruta local tiene un prefijo /128. La tabla de routing utiliza las rutas locales para procesar eficazmente los paquetes cuyo destino es la dirección de la interfaz del router.</p>
+<p></p>
+<p>El comando <span class="cmd"><b>ping</b></span> para IPv6 es idéntico al comando que se utiliza con IPv4, excepto que se utiliza una dirección IPv6. Como se muestra en la figura 4, el comando <span class="cmd"><b>ping</b></span> se utiliza para verificar la conectividad de capa 3 entre el R1 y la PC1.</p>
+<p></p>
+<p>Otros comandos de verificación de IPv6 incluyen los siguientes:</p>
+<p>
+<ul>
+<li>
+<span class="cmd">
+<b>show interfaces</b>
+</span>
+</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<span class="cmd">
+<b>show ipv6 routers</b>
+</span>
+</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

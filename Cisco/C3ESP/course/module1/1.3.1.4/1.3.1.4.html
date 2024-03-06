@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.3.1.4 Resumen</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.3.1.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resumen</h1>
+        <h2>Resumen</h2>
+      </div>
+      <div id="content">
+<p>El modelo de diseño de red jerárquico divide la funcionalidad de la red en la capa de acceso, la de distribución y la de núcleo. La arquitectura empresarial de Cisco divide aún más la red en componentes funcionales.</p>
+<p></p>
+<p>Una red bien diseñada controla el tráfico y limita el tamaño de los dominios de fallas. Los routers y los switches multicapa se pueden implementar de a pares para que la falla de un único dispositivo no provoque interrupciones en el servicio.</p>
+<p></p>
+<p>Un diseño de red debe incluir una estrategia de direccionamiento IP, protocolos de routing escalables y de convergencia rápida, protocolos de capa 2 adecuados y dispositivos modulares o agrupados en clústeres que puedan actualizarse fácilmente para incrementar la capacidad. </p>
+<p></p>
+<p>Un servidor crítico debe estar conectado a dos switches de capa de acceso diferentes. Debe contar con módulos redundantes, siempre que sea posible, y con una fuente de alimentación de respaldo. Incluso podría sería apropiado proporcionar varias conexiones a uno o varios ISP.</p>
+<p></p>
+<p>Los sistemas de control de seguridad y los sistemas de telefonía IP deben ser de alta disponibilidad y, por lo general, tienen consideraciones especiales de diseño.</p>
+<p></p>
+<p>El diseñador de red debe especificar un router de la categoría apropiada, ya sea un router de sucursal, un router de perímetro de la red o un router de proveedor de servicios. También es importante implementar el tipo de switch adecuado para un conjunto de requisitos, características y especificaciones de switch determinados y el flujo de tráfico esperado.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

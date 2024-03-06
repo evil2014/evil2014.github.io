@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.1.2.2 Configuración de rutas resumidas manuales EIGRP</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.1.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuraciones avanzadas de EIGRP</h1>
+        <h2>Sumarización manual</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Determinación de la ruta sumarizada EIGRP</b>
+</p>
+<p></p>
+<p>En la figura 1, se muestra las dos rutas resumidas manuales que están configuradas en el R3. Estas rutas resumidas se envían por las interfaces Serial 0/0/0 y Serial 0/0/1 a los vecinos EIGRP del R3.</p>
+<p></p>
+<p>Para determinar el resumen de estas tres redes, se usa el mismo método que para determinar rutas estáticas resumidas, como se muestra en la figura 2:</p>
+<p></p>
+<p>
+<b>Paso 1.</b> Escriba las redes que se resumirán en formato binario. </p>
+<p>
+<b>Paso 2.</b> Para encontrar la máscara de subred para la sumarización, empiece con el bit del extremo izquierdo. </p>
+<p>
+<b>Paso 3.</b> De izquierda a derecha, encuentre todos los bits que coincidan en forma consecutiva. </p>
+<p>
+<b>Paso 4.</b> Cuando haya una columna de bits que no coincidan, deténgase. Este es el límite de resumen. </p>
+<p>
+<b>Paso 5.</b> Cuente el número de bits coincidentes que se encuentran en el extremo izquierdo. En el ejemplo, es 22. Este número se usa para determinar la máscara de subred de la ruta resumida: /22 o 255.255.252.0.</p>
+<p>
+<b>Paso 6.</b> Para encontrar la dirección de red para el resumen, copie los 22 bits que coinciden y agregue a todos los bits 0 al final para obtener 32 bits.</p>
+<p></p>
+<p>El resultado es la dirección de red resumida y la máscara para 192.168.0.0/22.</p>
+<p></p>
+<p>
+<b>Configuración de la sumarización manual de EIGRP</b>
+</p>
+<p></p>
+<p>Para establecer la sumarización manual EIGRP en una interfaz EIGRP específica, utilice el siguiente comando del modo de configuración de interfaz:</p>
+<p></p>
+<p>
+<span class="cmd">Router(config-if)# </span>
+<span class="cmd">
+<b>ip summary-address eigrp</b>
+</span>
+<span class="cmd"></span>
+<span class="cmd">
+<i>as-number network-address subnet-mask</i>
+</span>
+</p>
+<p></p>
+<p>En la figura 2, se muestra la configuración para propagar una ruta resumida manual en la interfaz Serial 0/0/0 del R3. Debido a que el R3 tiene dos vecinos EIGRP, la sumarización manual de EIGRP debe configurarse tanto en Serial 0/0/0 como en Serial 0/0/1.</p>
+<p></p>
+<p>Utilice el verificador de sintaxis de la figura 3 para configurar la misma ruta resumida manual en la interfaz Serial 0/0/1 del R3.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

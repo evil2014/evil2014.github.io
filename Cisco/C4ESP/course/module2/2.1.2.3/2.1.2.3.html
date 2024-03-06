@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.1.2.3 Dispositivos WAN</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.1.2.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Descripción general de las tecnologías WAN</h1>
+        <h2>Operaciones WAN</h2>
+      </div>
+      <div id="content">
+<p>Existen muchos tipos de dispositivos que son específicos de los entornos WAN, incluidos los siguientes:</p>
+<p>
+<ul>
+<li>
+<b>Módem dial-up:</b> considerado una tecnología WAN antigua, un módem de banda de voz convierte (es decir, modula) las señales digitales producidas por una computadora en frecuencias de voz que se pueden transmitir a través de las líneas analógicas de la red de telefonía pública. En el otro lado de la conexión, otro módem convierte nuevamente los sonidos en una señal digital (es decir, los demodula) como entrada para una computadora o una conexión de red. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Servidor de acceso:</b> concentra las comunicaciones de entrada y de salida del módem dial-up de los usuarios. Considerado una tecnología antigua; un servidor de acceso puede tener una combinación de interfaces analógicas y digitales y admitir cientos de usuarios simultáneos.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Módem de banda ancha:</b> un tipo de módem digital que se utiliza con servicio de Internet por DSL o por cable de alta velocidad. Ambos funcionan de manera similar al módem de banda de voz, pero usan mayores velocidades de transmisión y frecuencias de banda ancha.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>CSU/DSU:</b> las líneas arrendadas digitales requieren una CSU y una DSU. Una CSU/DSU puede ser un dispositivo separado, como un módem, o puede ser una interfaz en un router. La CSU proporciona terminación de la señal digital y asegura la integridad de la conexión mediante la corrección de errores y el monitoreo de la línea. La DSU convierte las tramas de línea en tramas que la LAN puede interpretar y viceversa.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Switch WAN:</b> un dispositivo de internetworking de varios puertos utilizado en las redes de los proveedores de servicios. Por lo general, estos dispositivos conmutan el tráfico, como Frame Relay o ATM, y operan en la capa 2. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Router:</b> proporciona internetworking y puertos de interfaz de acceso WAN que se usan para conectarse a la red del proveedor de servicios. Estas interfaces pueden ser conexiones seriales, Ethernet u otras interfaces WAN. Con algunos tipos de interfaces WAN, se requiere un dispositivo externo, como una DSU/CSU o un módem (analógico, por cable o DSL) para conectar el router al proveedor de servicios local. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Router principal/switch multicapa:</b> router o switch multicapa que reside en el centro o en el backbone de la WAN, en lugar de en la periferia. Para desempeñar esta función, un router o switch multicapa debe poder admitir varias interfaces de telecomunicaciones con la mayor velocidad usada en el núcleo de la WAN. También debe poder reenviar paquetes IP a máxima velocidad en todas esas interfaces. El router o switch multicapa también debe admitir los protocolos de routing que se utilizan en el núcleo.</li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Nota:</b> la lista anterior no es exhaustiva y pueden ser necesarios otros dispositivos, según la tecnología de acceso WAN elegida.</p>
+<p></p>
+<p>Las tecnologías WAN se conmutan por circuitos o por paquetes. El tipo de dispositivo usado depende de la tecnología WAN implementada.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

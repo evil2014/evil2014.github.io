@@ -1,0 +1,18 @@
+﻿<textcomponents>
+<component id="ID_title">
+<text><![CDATA[<b>Mensajes de solicitud y de anuncio de router</b>]]></text>
+</component>
+
+<component id="ID_txt01">
+<text><![CDATA[Servidor de DHCPv6]]></text>
+</component>
+
+<component id="ID_txt02">
+<text><![CDATA[<b>Solicitud de router</b><br/>“Necesito información de direccionamiento del router”.]]></text>
+</component>
+
+<component id="ID_txt03">
+<text><![CDATA[<b>Anuncio de router</b><br/>“Soy todo lo que necesita (prefijo, longitud del prefijo, gateway predeterminado)”.<br/>O<br/>“Aquí está mi información, pero necesita más datos, como las direcciones DNS de un servidor de DHCPv6”.<br/>O<br/>“No puedo ayudarlo”. Solicite toda la información a un servidor de DHCPv6”.]]></text>
+</component>
+
+</textcomponents>

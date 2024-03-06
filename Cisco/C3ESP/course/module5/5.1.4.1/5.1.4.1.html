@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.1.4.1 Intervalos de saludo y muerto de OSPF</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.1.4.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuraciones avanzadas de OSPF de área única </h1>
+        <h2>Ajuste de las interfaces OSPF</h2>
+      </div>
+      <div id="content">
+<p>Los intervalos de saludo y muerto de OSPF pueden configurarse por interfaz. Los intervalos de OSPF deben coincidir, de lo contrario, no se crea una adyacencia de vecino.</p>
+<p></p>
+<p>Para verificar los intervalos de la interfaz configurados actualmente, use el comando <span class="cmd"><b>show ip ospf interface</b></span>, como se muestra en la figura 1. Los intervalos de saludo y muerto de la interfaz Serial 0/0/0 están establecidos en los valores predeterminados: 10 segundos y 40 segundos, respectivamente. </p>
+<p></p>
+<p>En la figura 2, se presenta un ejemplo de uso de una técnica de filtrado para mostrar los intervalos de OSPF de la interfaz Serial 0/0/0 con OSPF habilitado en el R1. </p>
+<p></p>
+<p>En la figura 3, se usa el comando <span class="cmd"><b>show ip ospf neighbor</b></span> en el R1 para verificar que el R1 es adyacente al R2 y el R3. Observe en el resultado que el Tiempo muerto cuenta regresivamente a partir de los 40 segundos. De manera predeterminada, este valor se actualiza cada 10 segundos cuando R1 recibe un saludo del vecino.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

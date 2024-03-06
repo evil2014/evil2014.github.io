@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.3.2.4 Resultado de show version</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.3.2.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Routers</h1>
+        <h2>Arranque del router</h2>
+      </div>
+      <div id="content">
+<p>El comando <span class="cmd"><b>show version</b></span> se puede utilizar para revisar y resolver problemas de algunos de los componentes básicos de hardware y software del router. Este comando muestra información sobre la versión del software Cisco IOS que se encuentra en ejecución en el router, la versión del programa bootstrap y datos sobre la configuración de hardware, incluida la cantidad de memoria del sistema.</p>
+<p></p>
+<p>El resultado del comando <span class="cmd"><b>show version</b></span> incluye lo siguiente:</p>
+<p>
+<ul>
+<li>
+<b>Versión de IOS:</b> la versión del software Cisco IOS que se encuentra en la RAM y que utiliza el router.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Programa bootstrap en la ROM:</b> muestra la versión del software bootstrap del sistema almacenado en la ROM que se utilizó inicialmente para arrancar el router.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Ubicación del IOS:</b> muestra dónde se encuentra el programa boostrap y dónde cargó el Cisco IOS, además del nombre de archivo completo de la imagen de IOS.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>CPU y cantidad de RAM:</b> en la primera parte de esta línea, se muestra el tipo de CPU del router en cuestión. La última parte de esta línea muestra la cantidad de DRAM. Algunas series de routers, como el ISR Cisco 1941, utilizan una parte de la DRAM como memoria de paquetes. La memoria de paquetes se usa para paquetes de almacenamiento intermedio. Para determinar la cantidad total de DRAM en el router, se deben sumar ambos números. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Interfaces:</b> muestra las interfaces físicas del router. En este ejemplo, el ISR Cisco 1941 tiene dos interfaces Gigabit Ethernet y dos interfaces seriales de baja velocidad.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Cantidad de memoria NVRAM y flash:</b> esta es la cantidad de memoria NVRAM y flash del router. La memoria NVRAM se utiliza para almacenar el archivo startup-config, y la memoria flash se utiliza para almacenar Cisco IOS de forma permanente. </li>
+</ul>
+</p>
+<p></p>
+<p>En la última línea del comando <span class="cmd"><b>show version</b></span>, se muestra el valor configurado actualmente del registro de configuración del software en sistema hexadecimal. Si se muestra un segundo valor entre paréntesis, indica el valor del registro de configuración que se utilizará durante la siguiente recarga.</p>
+<p></p>
+<p>El registro de configuración tiene varios usos, incluida la recuperación de la contraseña. La configuración predeterminada de fábrica para el registro de configuración es 0x2102. Este valor indica que el router intenta cargar una imagen del software Cisco IOS desde la memoria flash y el archivo de configuración de inicio desde la NVRAM.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

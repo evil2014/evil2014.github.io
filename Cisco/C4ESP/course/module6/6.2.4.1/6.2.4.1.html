@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.2.4.1 Comparación de las soluciones de banda ancha</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.2.4.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Comparación de las soluciones de banda ancha</h1>
+        <h2>Selección de las soluciones de banda ancha</h2>
+      </div>
+      <div id="content">
+<p>Todas las soluciones de banda ancha tienen ventajas y desventajas. Lo ideal es tener un cable de fibra óptica conectado directamente a la red SOHO. En algunas ubicaciones, solo es posible una opción, como el cable o DSL. Algunas ubicaciones cuentan solamente con opciones de tecnología inalámbrica de banda ancha de conectividad a Internet. </p>
+<p></p>
+<p>Si hay varias soluciones de banda ancha disponibles, se debe llevar a cabo un análisis de costos y beneficios para determinar cuál es la mejor solución. </p>
+<p></p>
+<p>Algunos factores para tener en cuenta al tomar una decisión incluyen lo siguiente:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Cable:</b> el ancho de banda se comparte con muchos usuarios; las velocidades de datos ascendentes suelen ser lentas.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>DSL:</b> el ancho de banda es limitado y se ve afectado por la distancia; la velocidad ascendente es proporcionalmente muy pequeña en comparación con la velocidad descendente.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Fibra hasta el hogar:</b> requiere la instalación de la fibra directamente en el hogar (como se muestra en la ilustración).</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Datos móviles:</b> la cobertura a menudo representa un problema; incluso dentro de una SOHO, el ancho de banda es relativamente limitado.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Malla Wi-Fi:</b> la mayoría de las municipalidades no cuentan con la implementación de una red de malla; si está disponible y la SOHO está dentro del alcance, entonces es una opción viable.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>WiMAX:</b> la velocidad de bits se limita a 2 Mb/s por suscriptor; el tamaño de las celdas es de 1 km a 2 km (1,25 mi).</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Satélite:</b> es costoso, tiene una capacidad limitada por suscriptor, suele proporcionar acceso donde no hay posibilidad de ningún otro tipo de acceso.</li>
+</ul>
+</p>
+<p></p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

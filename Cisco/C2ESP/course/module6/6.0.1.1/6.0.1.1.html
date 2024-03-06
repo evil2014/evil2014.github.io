@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.0.1.1 Introducción</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.0.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Enrutamiento estático</h1>
+        <h2>Introducción</h2>
+      </div>
+      <div id="content">
+<p>El enrutamiento es fundamental para cualquier red de datos, ya que transfiere información a través de una internetwork de origen a destino. Los routers son dispositivos que se encargan de transferir paquetes de una red a la siguiente.</p>
+<p></p>
+<p>Los routers descubren redes remotas de manera dinámica, mediante protocolos de routing, de manera manual, o por medio de rutas estáticas. En muchos casos, los routers utilizan una combinación de protocolos de routing dinámico y rutas estáticas. Este capítulo trata sobre el enrutamiento estático.</p>
+<p></p>
+<p>Las rutas estáticas son muy comunes y no requieren la misma cantidad de procesamiento y sobrecarga que los protocolos de routing dinámico.</p>
+<p></p>
+<p>En este capítulo, se utilizarán topologías de ejemplo para configurar las rutas estáticas IPv4 e IPv6 y para presentar técnicas de resolución de problemas. A lo largo del proceso, se analizarán varios comandos importantes de IOS y los resultados que generan. Se incluirá una introducción a la tabla de routing con redes conectadas directamente y rutas estáticas.</p>
+<p></p>
+<p>En este capítulo, también se compara el routing con clase con los métodos de routing sin clase ampliamente implementados. Abarcará el routing entre dominios sin clase (CIDR) y los métodos de máscara de subred de longitud variable (VLSM). El CIDR y los VLSM ayudaron a conservar el espacio de direcciones IPv4 mediante el uso de la división en subredes y técnicas de sumarización.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

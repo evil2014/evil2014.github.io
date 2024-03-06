@@ -1,0 +1,90 @@
+﻿<textcomponents> <!--Slide 1-->
+<component id='ID_inst'>
+	<text><![CDATA[<b>Actividad: Características de TCP y UDP</b><br><br>Arrastre cada característica al método de entrega, TCP o UDP.]]></text>
+</component>
+
+<component id='ID_drag_header'>
+	<text><![CDATA[<b>esenciales</b>]]></text>
+</component>
+
+<component id='ID_header01'>
+	<text><![CDATA[<b>TCP</b>]]></text>
+</component>
+
+<component id='ID_header02'>
+	<text><![CDATA[<b>UDP</b>]]></text>
+</component>
+
+<component id='ID_header03'>
+	<text><![CDATA[<b>Ambos</b>]]></text>
+</component>
+
+<component id='ID_drop_header'>
+	<text><![CDATA[<b>Método de entrega</b>]]></text>
+</component> <!--Drag and Drop -->
+<component id='ID_a01_DS'>
+	<text><![CDATA[<font color="#393536">Establecimiento de sesión</font>]]></text>
+</component>
+
+<component id='ID_a02_DS'>
+	<text><![CDATA[<font color="#393536">Segmentos de mensaje en secuencia</font>]]></text>
+</component>
+
+<component id='ID_a03_DS'>
+	<text><![CDATA[<font color="#393536">Entrega garantizada</font>]]></text>
+</component>
+
+<component id='ID_a04_DS'>
+	<text><![CDATA[<font color="#393536">Control de flujo</font>]]></text>
+</component>
+
+
+<component id='ID_a05_DS'>
+	<text><![CDATA[<font color="#393536">Entrega ordenada</font>]]></text>
+</component>
+
+
+<component id='ID_b01_DS'>
+	<text><![CDATA[<font color="#393536">Sin conexión</font>]]></text>
+</component>
+
+<component id='ID_b02_DS'>
+	<text><![CDATA[<font color="#393536">Menos sobrecarga</font>]]></text>
+</component>
+
+<component id='ID_b03_DS'>
+	<text><![CDATA[<font color="#393536">Sin acuse de recibo</font>]]></text>
+</component>
+
+<component id='ID_b04_DS'>
+	<text><![CDATA[<font color="#393536">Entrega no ordenada</font>]]></text>
+</component>
+
+<component id='ID_b05_DS'>
+	<text><![CDATA[<font color="#393536">Requisitos de transmisión rápida</font>]]></text>
+</component> <!--Drag and Drop-->
+<component id='ID_s1_CORRECT_TITLE'>
+	<text><![CDATA[Correcto]]></text>
+</component>
+
+<component id='ID_s1_CORRECT_BODY'>
+	<text><![CDATA[Unió correctamente cada característica al método de entrega TCP o UDP.]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_TITLE'>
+	<text><![CDATA[Incorrecto]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_BODY'>
+	<text><![CDATA[No unió correctamente cada característica al método de entrega TCP o UDP. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_CHECK'>
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id='ID_RESET'>
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component>
+
+</textcomponents>

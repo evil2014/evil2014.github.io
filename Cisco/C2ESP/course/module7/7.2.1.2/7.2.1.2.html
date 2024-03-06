@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.2.1.2 Algoritmo vector distancia</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.2.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Routing dinámico vector distancia</h1>
+        <h2>Funcionamiento del protocolo de enrutamiento vector distancia</h2>
+      </div>
+      <div id="content">
+<p>El algoritmo de routing se encuentra en el centro del protocolo vector distancia. El algoritmo se utiliza para calcular los mejores caminos y después enviar dicha información a los vecinos. </p>
+<p></p>
+<p>El algoritmo utilizado para los protocolos de enrutamiento define los siguientes procesos:</p>
+<p>
+<ul>
+<li>El mecanismo para enviar y recibir información de routing.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>El mecanismo para calcular las mejores rutas e instalar rutas en la tabla de routing.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>El mecanismo para detectar cambios en la topología y reaccionar ante ellos.</li>
+</ul>
+</p>
+<p></p>
+<p>En la animación de la ilustración, el R1 y el R2 están configurados con el protocolo de routing RIP. El algoritmo envía y recibe actualizaciones. Tanto R1 como R2 obtienen información nueva de la actualización. En este caso, cada router obtiene información acerca de una red nueva. El algoritmo de cada router realiza los cálculos de manera independiente y actualiza la tabla de enrutamiento con la información nueva. Cuando la LAN del R2 deja de funcionar, el algoritmo compone una actualización dirigida y la envía al R1. Luego, R1 elimina la red de la tabla de enrutamiento. </p>
+<p></p>
+<p>Los diferentes protocolos de enrutamiento utilizan diversos algoritmos para instalar rutas en la tabla de enrutamiento, enviar actualizaciones a los vecinos y determinar las rutas. Por ejemplo:</p>
+<p>
+<ul>
+<li>RIP utiliza el algoritmo de Bellman-Ford como algoritmo de routing. Se basa en dos algoritmos desarrollados por Richard Bellman y Lester Ford júnior en 1958 y 1956. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>IGRP y EIGRP utilizan el algoritmo de actualización por difusión (DUAL) como algoritmo de routing, desarrollado por el Dr. J. J. Garcia-Luna-Aceves en SRI International. </li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

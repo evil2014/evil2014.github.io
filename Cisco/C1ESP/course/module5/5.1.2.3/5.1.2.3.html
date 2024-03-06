@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.1.2.3 Introducción a la trama de Ethernet</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.1.2.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolo Ethernet</h1>
+        <h2>Atributos de la trama de Ethernet</h2>
+      </div>
+      <div id="content">
+<p>Los campos principales de la trama de Ethernet son los siguientes:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Campos Preámbulo y Delimitador de inicio de trama:</b> los campos Preámbulo (7 bytes) y Delimitador de inicio de trama (SFD), también conocido como “Inicio de trama” (1 byte), se utilizan para la sincronización entre los dispositivos emisores y receptores. Estos ocho primeros bytes de la trama se utilizan para captar la atención de los nodos receptores. Básicamente, los primeros bytes le indican al receptor que se prepare para recibir una trama nueva. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Campo Dirección MAC de destino:</b> este campo de 6 bytes es el identificador del destinatario previsto. Como recordará, la Capa 2 utiliza esta dirección para ayudar a los dispositivos a determinar si la trama viene dirigida a ellos. La dirección de la trama se compara con la dirección MAC del dispositivo. Si coinciden, el dispositivo acepta la trama.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Campo Dirección MAC de origen:</b> este campo de 6 bytes identifica la NIC o la interfaz que origina la trama. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Campo Longitud</b>: para todos los estándares IEEE 802.3 anteriores a 1997, el campo Longitud define la longitud exacta del campo de datos de la trama. Esto se utiliza posteriormente como parte de la FCS para garantizar que el mensaje se reciba adecuadamente. Por lo demás, el propósito del campo es describir qué protocolo de capa superior está presente. Si el valor de los dos octetos es igual o mayor que 0x0600 hexadecimal o 1536 decimal, el contenido del campo Datos se decodifica según el protocolo EtherType indicado. Por otro lado, si el valor es igual o menor que el hexadecimal de 0x05DC o el decimal de 1500, el campo Longitud se está utilizando para indicar el uso del formato de trama de IEEE 802.3. Así se diferencian las tramas de Ethernet II y 802.3. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Campo Datos</b>: este campo (de 46 a 1500 bytes) contiene los datos encapsulados de una capa superior, que es una PDU de capa 3 genérica o, más comúnmente, un paquete IPv4. Todas las tramas deben tener al menos 64 bytes de longitud. Si se encapsula un paquete pequeño, se utilizan bits adicionales conocidos como “relleno” para incrementar el tamaño de la trama al tamaño mínimo.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Campo Secuencia de verificación de trama (FCS):</b> este campo de 4 bytes se utiliza para detectar errores en una trama. Utiliza una comprobación de redundancia cíclica (CRC). El dispositivo emisor incluye los resultados de una CRC en el campo FCS de la trama. El dispositivo receptor recibe la trama y genera una CRC para buscar errores. Si los cálculos coinciden, significa que no se produjo ningún error. Los cálculos que no coinciden indican que los datos cambiaron y, por consiguiente, se descarta la trama. Un cambio en los datos podría ser resultado de una interrupción de las señales eléctricas que representan los bits.</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

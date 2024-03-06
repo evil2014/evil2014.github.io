@@ -1,0 +1,134 @@
+﻿<textcomponents> <!--screen1-->  
+<component id="ID_s1_title">
+<text><![CDATA[<b>Pasos de configuración de NAT dinámica</b>]]></text>
+</component> <!--screen 1 table -->
+
+<component id="ID_s1_table01">
+<text><![CDATA[<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4'>
+<tr>
+<td colspan='2' bgcolor='#98D3D1' class="title"><font size='11' color='#1C3635'><b>Pasos de configuración de NAT dinámica</b></font></td>
+</tr>
+
+<tr>
+<td colspan='2' bgcolor='#0E6360' class="mtable_top"><font size='1' color='#434321'><span style="color:#DAE17A">.</span></font></td>
+</tr>
+
+<tr>
+<td width="50" bgcolor='#eff8f7' valign="top"><font color='#393536'><b>Paso 1</b></font></td>
+<td bgcolor='#eff8f7' valign="top"><font color='#393536'>Definir el conjunto de direcciones globales que se debe usar para la traducción.<br/><font face="_typewriter"><b>ip nat pool  </b> <i>nombre primera-ip última-ip</i><br/>{<b>netmask  </b><i>máscara-red</i> | <b>prefix-length  </b><i> longitud-prefijo</i>}</font></font></td>
+</tr>
+
+<tr>
+<td  bgcolor='#ffffff' valign="top"><font color='#393536'><b>Paso 2</b></font></td>
+<td  bgcolor='#ffffff' valign="top"><font color='#393536'>Configurar una lista de acceso estándar que permita las direcciones que se deben traducir.<br/><font face="_typewriter"><b>access-list  </b> <i> número-lista-acceso  </i> <b>permit  </b> <i>origen </i> [<i>wildcard-origen</i>]</font></font></td>
+</tr>
+
+<tr>
+<td  bgcolor='#eff8f7' valign="top"><font color='#393536'><b>Paso 3</b></font></td>
+<td bgcolor='#eff8f7' valign="top"><font color='#393536'>Especificar la lista de acceso y el conjunto que se definieron en los pasos anteriores para establecer la traducción dinámica de origen.<br/><font face="_typewriter"><b>ip nat inside source list  </b> <i>número-lista-acceso  </i> <b>pool  </b> <i>nombre</i></font></font></td>
+</tr>
+
+<tr>
+<td bgcolor='#ffffff' valign="top"><font color='#393536'><b>Paso 4</b></font></td>
+<td bgcolor='#ffffff' valign="top"><font color='#393536'>Identificar la interfaz interna.<br/><font face="_typewriter"><b>interface </b>  <i>tipo número</i><br/><b> ip nat inside</b></font></font></td>
+</tr>
+
+<tr>
+<td  bgcolor='#eff8f7' valign="top"><font color='#393536'><b>Paso 5</b></font></td>
+<td bgcolor='#eff8f7' valign="top"><font color='#393536'>Identificar la interfaz externa.<br/><font face="_typewriter"><b>interface  </b> <i>tipo número</i><br/> <b>ip nat outside</b></font></font></td>
+</tr> 
+</table>]]></text> 
+</component> <!--screen2-->
+<component id="ID_s2_title">
+<text><![CDATA[<b>Configuración de NAT dinámica de ejemplo</b>]]></text>
+</component>
+<component id="ID_s2_txt01">
+  <text><![CDATA[<b>Red interna</b>]]></text> 
+  </component>
+<component id="ID_s2_txt02">
+  <text><![CDATA[<b>Red externa</b>]]></text> 
+  </component>
+  <component id="ID_s2_txt03">
+  <text><![CDATA[Internet]]></text> 
+  </component>
+   <component id="ID_s2_txt04">
+  <text><![CDATA[<b>Traducción uno a uno</b>]]></text> 
+  </component>
+   <component id="ID_s2_txt05">
+  <text><![CDATA[<b>NAT dinámica</b>]]></text> 
+  </component>
+  
+   <component id="ID_s2_txt06">
+  <text><![CDATA[Servidor]]></text> 
+  </component>
+  
+   <component id="ID_s2_txt07" fontFace='Courier New' fontSize="10">
+  <text><![CDATA[<pre class="margin-top"><font size = '11' face="Arial">Defines a pool of public IPv4 addresses under the pool name NAT-POOL1.</font><br><font face = "_typewriter">R2(config)# <b>ip nat pool NAT-POOL1 209.165.200.226<br>209.165.200.240 netmask 255.255.255.224</b></font><br><br><font size = '11' face="Arial">Defines which addresses are eligible to be translated.</font><br><font face = "_typewriter">R2(config)# <b>access-list 1 permit 192.168.0.0 0.0.255.255</b></font><br><br><font size = '11' face="Arial">Binds NAT-POOL1 with ACL 1.</font><br><font face = "_typewriter">R2(config)# <b>ip nat inside source list 1 pool NAT-POOL1</b></font><br><br><font size = '11' face="Arial">Identifies interface serial 0/0/0 as an inside NAT interface.</font><br><font face = "_typewriter">R2(config)# <b>interface Serial0/0/0</b></font><br><font face = "_typewriter">R2(config-if)# <b>ip nat inside</b></font><br><br><font size = '11' face="Arial">Identifies interface serial 0/1/0 as an outside NAT interface.</font><br><font face = "_typewriter">R2(config)# <b>interface Serial0/1/0</b></font><br><font face = "_typewriter">R2(config-if)# <b>ip nat outside</b></font></pre>]]></text> 
+</component> <!--screen 3-->
+
+<component id="ID_s3_title">
+<text><![CDATA[<b>configurar la NAT dinámica</b>]]></text>
+</component>
+<component id="ID_s3_txt01">
+<text><![CDATA[<b>Red interna</b>]]></text>
+</component>
+<component id="ID_s3_txt02">
+  <text><![CDATA[<b>Red externa</b>]]></text> 
+</component>
+
+<component id="ID_s3_txt03">
+  <text><![CDATA[Internet]]></text> 
+</component> 
+ <component id="ID_s3_txt06">
+  <text><![CDATA[Servidor]]></text> 
+  </component> <!--screen 4-->
+<component id="ID_s4_title">
+<text><![CDATA[<b>Configuración de NAT dinámicas</b>]]></text>
+</component>
+
+<component id="ID_sc_reset">
+<text><![CDATA[Restablecer]]></text>
+</component>
+
+<component id="ID_sc_showme">
+<text><![CDATA[Mostrar]]></text>
+</component>
+
+<component id="ID_sc_showall">
+<text><![CDATA[Mostrar todo]]></text>
+</component> <!-- syntax checker -->
+<component id="ID_SC4" fontFace='Courier New' fontSize="10" class="font10px">
+		<feedback id="fb"><![CDATA[<b><font size='9' class="font9px" face="Arial" color="#0000FF">***Debe introducir el comando exacto y completo. Los comandos que incluyen un nombre o una contraseña distinguen mayúsculas de minúsculas.***</font></b>
+		]]></feedback>
+		<existingcommands><![CDATA[<font size='9' class="font9px" face="Arial"><b>***Nota: el tamaño de fuente se redujo ligeramente para admitir la longitud de los comandos.***<br>Defina un conjunto de direcciones IPv4 públicas de 209.165.200.241 a 209.165.200.250 con el nombre de conjunto PUBLIC-POOL.</b></font>]]></existingcommands>
+		<command prompt="R2(config)#">
+			<correctresponse ignoreCase='false'><![CDATA[ip nat pool PUBLIC-POOL 209.165.200.241 209.165.200.250 netmask 255.255.255.224]]></correctresponse>
+			<instruction><![CDATA[<font size='9' class="font9px" face="Arial"><b>Configure la ACL 2 para permitir que NAT traduzca los dispositivos de la red 192.168.10.0/24.</font>]]></instruction>
+		</command>
+		<command prompt="R2(config)#">
+			<correctresponse><![CDATA[access-list 2 permit 192.168.10.0 0.0.0.255]]></correctresponse>
+			<instruction><![CDATA[<font size='9' class="font9px" face="Arial"><b>Vincule PUBLIC-POOL a la ACL 2.</font>]]></instruction>
+		</command>
+		<command prompt="R2(config)#">
+			<correctresponse><![CDATA[ip nat inside source list 2 pool PUBLIC-POOL]]></correctresponse>
+			<instruction><![CDATA[<font size='9' class="font9px" face="Arial"><b>Configure la interfaz NAT interna adecuada.</font>]]></instruction>
+		</command>
+		<command prompt="R2(config)#">
+			<correctresponse><![CDATA[interface Serial0/0/0]]></correctresponse>
+		</command>	
+		<command prompt="R2(config-if)#">
+			<correctresponse><![CDATA[ip nat inside]]></correctresponse>
+			<instruction><![CDATA[<font size='9' class="font9px" face="Arial"><b>Configure la interfaz NAT externa adecuada.</b></font>]]></instruction>
+		</command>
+		<command prompt="R2(config)#">
+			<correctresponse><![CDATA[interface Serial0/1/0]]></correctresponse>
+		</command>	
+		<command prompt="R2(config-if)#">
+			<correctresponse><![CDATA[ip nat outside]]></correctresponse>
+			<instruction><![CDATA[<font size='9' class="font9px" face="Arial"><b>Configuró correctamente la NAT dinámica.</font>]]></instruction>
+		</command>
+		<command prompt=""/>
+	</component>
+
+
+</textcomponents>

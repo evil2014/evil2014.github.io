@@ -1,0 +1,98 @@
+﻿<textcomponents>
+<component id="ID_s1_title">
+<text><![CDATA[<b>Plantilla de Switch Database Manager  </b>]]></text>
+</component>
+<component id="ID_s2_title">
+<text><![CDATA[<b>Plantilla de SDM  </b>]]></text>
+</component>
+<component id="ID_s3_title">
+<text><![CDATA[<b>Compatibilidad con rutas estáticas en un switch Catalyst 2960  </b>]]></text>
+</component>
+<component id="ID_s4_title">
+<text><![CDATA[<b>Habilitación de la funcionalidad de routing IPv4 en un switch Catalyst 2960  </b>]]></text>
+</component>
+<component id="ID_s5_title">
+<text><![CDATA[<b>Router que participa en routing con un switch  </b>]]></text>
+</component>
+<component id="ID_s6_title">
+<text><![CDATA[<b>Configuración de una ruta estática en un switch Catalyst 2960  </b>]]></text>
+</component>
+<component id="ID_s7_title">
+<text><![CDATA[<b>Tabla de routing final en el router   </b>]]></text>
+</component>
+<component id="ID_s8_title">
+<text><![CDATA[<b>Conectividad del host  </b>]]></text>
+</component>
+<component id="ID_s9_title">
+<text><![CDATA[<b>Routing estático en un switch Catalyst 2960  </b>]]></text>
+</component>
+
+
+<component id="ID_sc_reset">
+		<text><![CDATA[Restablecer]]></text>
+	</component>
+	<component id="ID_sc_showme">
+		<text><![CDATA[Mostrar]]></text>
+	</component>
+	<component id="ID_sc_showall">
+		<text><![CDATA[Mostrar todo]]></text>
+	</component>
+
+<component id="ID_SC5" fontFace='Courier New' fontSize="10">
+		<feedback id="fb"><![CDATA[<b><font size='10' class="font10px" face="Arial" color="#0000FF">***Debe introducir el comando exacto y completo. Los comandos que incluyen un nombre o una contraseña distinguen mayúsculas de minúsculas.***</font>  </b>]]></feedback>
+		<existingcommands><![CDATA[<font size='10' class="font10px" face="Arial"><b>Muestre la plantilla de Switch Database Manager (SDM) actual.  </b></font>]]></existingcommands>
+		<command prompt="S1#">
+			<correctresponse><![CDATA[show sdm prefer]]></correctresponse>
+				<deviceresponse><![CDATA[<font face='Courier New' size="10" class="font10px">The current template is "default" template.  <br> The selected template optimizes the resources in <br> the switch to support this level of features for <br> 0 routed interfaces and 255 VLANs.  <br> <br> number of unicast mac addresses: 8K <br>  number of IPv4 IGMP groups: 0.25K <br>  number of IPv4/MAC qos aces: 0.125k <br>  number of IPv4/MAC security aces: 0.375k</font>]]></deviceresponse>
+			<instruction><![CDATA[<font size='10' class="font10px" face="Arial"><b>Ingrese al modo de configuración y muestre las opciones para el comando “sdm prefer”.  </b></font>]]></instruction>
+		</command>
+		<command prompt="S1#">
+			<correctresponse><![CDATA[configure terminal]]></correctresponse>
+				<deviceresponse><![CDATA[<font face='Courier New' size="10" class="font10px">Enter configuration commands, one per line. End with CNTL/Z.</font>]]></deviceresponse>
+		</command>	
+		<command prompt="S1(config)#">
+			<correctresponse><![CDATA[sdm prefer ?]]></correctresponse>
+			<deviceresponse><![CDATA[<font face='Courier New' size="10" class="font10px">  default Default bias <br>  dual-ipv4-and-ipv6 Support both IPv4 and IPv6 <br>  lanbase-routing Supports both IPv4 and IPv6 Static Routing <br>  qos QoS bias</font>]]></deviceresponse>
+			<instruction><![CDATA[<font size='10' class="font10px" face="Arial"><b>Configure el switch para admitir el routing.  </b></font>]]></instruction>
+		</command>	
+		<command prompt="S1(config)#">
+			<correctresponse><![CDATA[sdm prefer lanbase-routing]]></correctresponse>
+			<deviceresponse><![CDATA[<font face='Courier New' size="10" class="font10px">Changes to the running SDM preferences have been stored, but cannot take effect <br>until the next reload.  <br>Use 'show sdm prefer' to see what SDM preference is currently active.</font>]]></deviceresponse>
+			<instruction><![CDATA[<font size='10' class="font10px" face="Arial"><b>Recargue el switch con la opción “do” y guarde la configuración cuando se le solicite.  </b></font>]]></instruction>
+		</command>	
+		<command prompt="S1(config)#">
+			<correctresponse><![CDATA[do reload]]></correctresponse>
+		</command>	
+		<command prompt="System configuration has been modified. Save? [yes/no]:">
+			<correctresponse><![CDATA[sí]]></correctresponse>
+			<deviceresponse><![CDATA[<font face='Courier New' size="10" class="font10px">Building configuration... <br>[OK]<br>Proceed with reload? [confirm]<br>*Mar 20 00:10:24.557: %SYS-5-RELOAD: Reload requested by console. Reload Reason: Reload<br>.</font>]]></deviceresponse>
+			<instruction><![CDATA[<font size='10' class="font10px" face="Arial"><b>Ahora, el switch está nuevamente en el modo EXEC del usuario. Pase al modo EXEC privilegiado y muestre la plantilla de SDM actual.  </b></font>]]></instruction>
+		</command>	
+		<command prompt="S1&gt;">
+			<correctresponse><![CDATA[enable]]></correctresponse>
+		</command>	
+		<command prompt="S1#">
+			<correctresponse><![CDATA[show sdm prefer]]></correctresponse>
+				<deviceresponse><![CDATA[ <font face='Courier New' size="10" class="font10px">The current template is "lanbase-routing" template.  <br> The selected template optimizes the resources in <br> the switch to support this level of features for <br> 0 routed interfaces and 255 VLANs.  <br> <br> number of unicast mac addresses: 4K <br>  number of IPv4 IGMP groups + multicast routes: 0.25K <br>  number of IPv4 unicast routes: 0.75K <br>    number of directly-connected IPv4 hosts: 0.75K <br>    number of indirect IPv4 routes: 16 <br>  number of IPv6 multicast groups: 0.375k <br>  number of directly-connected IPv6 addresses: 0.75K <br>    number of indirect IPv6 unicast routes: 16 <br>  number of IPv4 policy based routing aces: 0 <br>  number of IPv4/MAC qos aces: 0.125k <br>  number of IPv4/MAC security aces: 0.375k <br>  number of IPv6 policy based routing aces: 0 <br>  number of IPv6 qos aces: 0.375k <br>  number of IPv6 security aces: 127<br>S1#</font>]]></deviceresponse>
+			<instruction><![CDATA[<font size='10' class="font10px" face="Arial"><b>Complete los siguientes pasos en orden:<ul><li>Ingresar al modo de configuración.<li>Habilitar el routing.<li>Configurar una ruta predeterminada utilizando 192.168.1.10 como dirección de siguiente salto.<li>Utilizar el comando “do” para mostrar la tabla actual de routing en el switch.</ul>  </b></font>]]></instruction>
+		</command>	
+		<command prompt="S1#">
+			<correctresponse><![CDATA[configure terminal]]></correctresponse>
+				<deviceresponse><![CDATA[<font face='Courier New' size="10" class="font10px">Enter configuration commands, one per line. End with CNTL/Z.</font>]]></deviceresponse>
+		</command>	
+		<command prompt="S1(config)#">
+			<correctresponse><![CDATA[ip routing]]></correctresponse>
+		</command>	
+		<command prompt="S1(config)#">
+			<correctresponse><![CDATA[ip route 0.0.0.0 0.0.0.0 192.168.1.10]]></correctresponse>
+		</command>	
+		<command prompt="S1(config)#">
+			<correctresponse><![CDATA[do show ip route]]></correctresponse>
+				<deviceresponse><![CDATA[<font size='9' class="font9px" face="Courier New">Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP <br>       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area <br>       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2 <br>       E1 - OSPF external type 1, E2 - OSPF external type 2 <br>       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2 <br>       ia - IS-IS inter area, * - candidate default, U - per-user static route <br>       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP <br>       + - replicated route, % - next hop override <br> <br>Gateway of last resort is 192.168.1.10 to network 0.0.0.0 <br> <br>S* 0.0.0.0/0 [1/0] via 192.168.1.10 <br>      192.168.1.0/24 is variably subnetted, 2 subnets, 2 masks <br>C 192.168.1.0/24 is directly connected, Vlan1 <br>L 192.168.1.1/32 is directly connected, Vlan1 <br>      192.168.2.0/24 is variably subnetted, 2 subnets, 2 masks <br>C 192.168.2.0/24 is directly connected, Vlan2 <br>L 192.168.2.1/32 is directly connected, Vlan2]]></deviceresponse>
+			<instruction><![CDATA[<font size='10' face="Arial"  class="syntaxBottomLine"><b>Configuró correctamente las rutas estáticas en un switch Catalyst 2960.</font>]]></instruction>
+		</command>
+		<command prompt=""/>
+	</component>
+
+
+</textcomponents>

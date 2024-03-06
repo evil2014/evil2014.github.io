@@ -1,0 +1,134 @@
+﻿<textcomponents> <!--envelope text-->
+<component id="ID_envelopeAB-1">
+   <text><![CDATA[<b>A a B</b>]]></text>
+</component>
+<component id="ID_envelopeAB-2">
+   <text><![CDATA[<b>A a B</b>]]></text>
+</component>
+<component id="ID_envelopeAB-3">
+   <text><![CDATA[<b>A a B</b>]]></text>
+</component>
+<component id="ID_envelopeAB-4">
+   <text><![CDATA[<b>A a B</b>]]></text>
+</component>
+<component id="ID_envelopeAB-5">
+   <text><![CDATA[<b>A a B</b>]]></text>
+</component>
+<component id="ID_envelopeAB-6">
+   <text><![CDATA[<b>A a B</b>]]></text>
+</component>
+<component id="ID_envelopeAB-7">
+   <text><![CDATA[<b>A a B</b>]]></text>
+</component>
+<component id="ID_envelopeAB-8">
+   <text><![CDATA[<b>A a B</b>]]></text>
+</component>
+<component id="ID_envelopeBA-1">
+   <text><![CDATA[<b>B a A</b>]]></text>
+</component>
+<component id="ID_envelopeBA-2">
+   <text><![CDATA[<b>B a A</b>]]></text>
+</component>
+<component id="ID_envelopeX">
+   <text><![CDATA[<b>X a ?  </b>]]></text>
+</component>
+<component id="ID_envelopeY">
+   <text><![CDATA[<b>Y a ?  </b>]]></text>
+</component> <!--Slide 1-->
+<component id="ID_s1_title">
+	<text><![CDATA[<b>El switch satura los puertos con la trama que tiene una dirección MAC desconocida</b>]]></text>
+</component>
+<component id="ID_s1_bubble01">
+   <text><![CDATA[La tabla de direcciones MAC está incompleta.]]></text>
+</component>
+<component id="ID_s1_bubble02">
+   <text><![CDATA[El Host B es desconocido, de modo que el switch satura los puertos con la trama.]]></text>
+</component>
+<component id="ID_s1_bubble03">
+   <text><![CDATA[El Host C detecta tráfico al host B.]]></text>
+</component> <!--Slide 2-->
+<component id="ID_s2_title">
+	<text><![CDATA[<b>El switch registra la dirección MAC</b>]]></text>
+</component>
+<component id="ID_s2_bubble01">
+   <text><![CDATA[La tabla de direcciones MAC descubre que el Host B se encuentra en el puerto 2.]]></text>
+</component>
+<component id="ID_s2_bubble02">
+   <text><![CDATA[El Host C descarta el paquete dirigido al Host B.]]></text>
+</component> <!--Slide 3-->
+<component id="ID_s3_title">
+	<text><![CDATA[<b>El switch usa la tabla de direcciones MAC para reenviar el tráfico</b>]]></text>
+</component>
+<component id="ID_s3_bubble01">
+   <text><![CDATA[Las tablas de direcciones MAC poseen límite de tamaño.]]></text>
+</component>
+<component id="ID_s3_bubble02">
+   <text><![CDATA[La tabla de direcciones MAC descubrió que el Host B se encuentra en el puerto 2.]]></text>
+</component>
+<component id="ID_s3_bubble03">
+   <text><![CDATA[El Host C ya no ve el tráfico dirigido al Host B.]]></text>
+</component> <!--Slide 4-->
+<component id="ID_s4_title">
+	<text><![CDATA[<b>Ataque por saturación de direcciones MAC</b>]]></text>
+</component>
+<component id="ID_s4_bubble01">
+   <text><![CDATA[Se agregan direcciones para hosts ficticios a la tabla de direcciones MAC.]]></text>
+</component>
+<component id="ID_s4_bubble02">
+   <text><![CDATA[Los hosts ficticios X e Y se encuentran en el puerto 3, y se actualiza la tabla de direcciones MAC.]]></text>
+</component>
+<component id="ID_s4_bubble03">
+   <text><![CDATA[El atacante comienza a enviar direcciones MAC de bogus desconocidas.]]></text>
+</component>
+<component id="ID_s4_txt01">
+      <text><![CDATA[El intruso ejecuta una herramienta de ataque en el Host C.]]></text>
+</component> <!--Slide 5-->
+<component id="ID_s5_title">
+	<text><![CDATA[<b>Ataque por saturación de direcciones MAC</b>]]></text>
+</component>
+<component id="ID_s5_bubble01">
+   <text><![CDATA[La tabla de direcciones MAC está llena.]]></text>
+</component>
+<component id="ID_s5_bubble02">
+   <text><![CDATA[El Host B es desconocido, porque la tabla de direcciones MAC está completa. Por lo tanto, el switch satura los puertos con la trama para buscar al Host B.]]></text>
+</component>
+<component id="ID_s5_txt01">
+	<text><![CDATA[El intruso ejecuta una herramienta de ataque en el Host C.]]></text>
+</component>
+
+
+
+
+<component id="ID_txt01">
+   <text><![CDATA[<b>MAC</b>]]></text>
+</component>
+
+<component id="ID_txt02">
+   <text><![CDATA[<b>Puerto</b>]]></text>
+</component>
+
+<component id="ID_txt03">
+   <text><![CDATA[Host A]]></text>
+</component>
+
+<component id="ID_txt04">
+   <text><![CDATA[Host B]]></text>
+</component>
+
+<component id="ID_txt05">
+   <text><![CDATA[Host C]]></text>
+</component>
+
+<component id="ID_txt06">
+   <text><![CDATA[Puerto 1]]></text>
+</component>
+
+<component id="ID_txt07">
+   <text><![CDATA[Puerto&nbsp;2]]></text>
+</component>
+
+<component id="ID_txt08">
+   <text><![CDATA[Puerto&nbsp;3]]></text>
+</component>
+
+</textcomponents>

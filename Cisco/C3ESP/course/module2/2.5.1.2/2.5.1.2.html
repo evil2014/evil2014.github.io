@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.5.1.2 Resumen</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.5.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resumen</h1>
+        <h2>Resumen</h2>
+      </div>
+      <div id="content">
+<p>Los problemas que pueden surgir de una red de capa 2 redundante incluyen las tormentas de difusión, la inestabilidad de la base de datos MAC y la duplicación de tramas unidifusión. STP es un protocolo de capa 2 que asegura que exista solo una ruta lógica entre todos los destinos en la red mediante el bloqueo intencional de las rutas redundantes que pueden provocar un bucle.</p>
+<p></p>
+<p>STP envía tramas BPDU para la comunicación entre los switches. Se elige un switch como puente raíz para cada instancia de árbol de expansión. Los administradores pueden controlar esta elección cambiando la prioridad del puente. Los puentes raíz se pueden configurar para habilitar el balanceo de carga del árbol de expansión por VLAN o por grupo de VLAN, según el protocolo de árbol de expansión que se utilice. Después, STP asigna una función de puerto a cada puerto participante mediante un costo de ruta. El costo de la ruta es igual a la suma de todos los costos de puerto a lo largo de la ruta hacia el puente raíz. Se asigna un costo de puerto automáticamente a cada puerto. Sin embargo, también se puede configurar de forma manual. Las rutas con el costo más bajo se convierten en las preferidas, y el resto de las rutas redundantes se bloquean.</p>
+<p></p>
+<p>PVST+ es la configuración predeterminada de IEEE 802.1D en los switches Cisco. Ejecuta una instancia de STP para cada VLAN. RSTP, un protocolo de árbol de expansión más moderno y de convergencia más rápida, se puede implementar en los switches Cisco por VLAN en forma de PVST+ rápido. El árbol de expansión múltiple (MST) es la implementación de Cisco del protocolo de árbol de expansión múltiple (MSTP), en la que se ejecuta una instancia de árbol de expansión para un grupo definido de VLAN. Las características como PortFast y la protección BPDU aseguran que los hosts del entorno conmutado obtengan acceso inmediato a la red sin interferir en el funcionamiento del árbol de expansión.</p>
+<p></p>
+<p>Los protocolos de redundancia de primer salto, como HSRP, VRRP y GLBP, proporcionan gateways predeterminados alternativos a los hosts en un entorno de router redundante o conmutado multicapa. Varios routers comparten una dirección IP y una dirección MAC virtuales que se utilizan como gateway predeterminado en un cliente. Esto asegura que los hosts mantengan la conectividad en caso de falla de un dispositivo que funciona como gateway predeterminado para una VLAN o un grupo de VLAN. Cuando se utiliza HSRP o VRRP, un router está en estado activo o de reenvío para un grupo en particular, mientras que los demás están en modo de reserva. GLBP permite el uso simultáneo de varios gateways, además de proporcionar la conmutación por falla automática.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

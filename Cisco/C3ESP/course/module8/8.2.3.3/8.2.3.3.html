@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.2.3.3 Sumarización automática </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.2.3.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resolución de problemas de EIGRP</h1>
+        <h2>Resolver problemas de tabla de routing EIGRP</h2>
+      </div>
+      <div id="content">
+<p>Otra cuestión que es posible que cree problemas para el administrador de red es la sumarización automática de EIGRP.</p>
+<p></p>
+<p>En la figura 1, se muestra una topología de red diferente de la que se usó en este capítulo. No hay ninguna conexión entre el R1 y el R3. La LAN del R1 tiene la dirección de red 10.10.10.0/24, y la LAN del R3 es 10.20.20.0/24. Las conexiones seriales entre ambos routers y el R2 tienen el mismo ancho de banda: 1024 kb/s.</p>
+<p></p>
+<p>El R1 y el R3 tienen las interfaces seriales y las LAN habilitadas para EIGRP, como se muestra en la figura 2. Ambos routers realizan sumarización automática de EIGRP.</p>
+<p></p>
+<p>EIGRP para IPv4 puede configurarse para que resuma automáticamente las rutas en límites con clase. Si hay redes no contiguas, la sumarización automática provoca un routing incongruente.</p>
+<p></p>
+<p>En la figura 3, la tabla de routing del R2 muestra que no recibe rutas individuales para las subredes 10.10.10.0/24 y 10.20.20.0/24. El R1 y el R3 resumen automáticamente esas subredes al límite con clase 10.0.0.0/8 cuando envían paquetes de actualización de EIGRP al R2. El resultado es que el R2 tiene dos rutas de igual costo a 10.0.0.0/8 en la tabla de routing, lo que puede ocasionar routing impreciso y pérdida de paquetes. Según se use balanceo de carga por paquete, por destino o CEF, es posible que los paquetes se reenvíen por la interfaz correcta o no.</p>
+<p></p>
+<p>En la figura 4, con el comando <span class="cmd"><b>show ip protocols</b></span> se verifica que se lleva a cabo sumarización automática en el R1 y el R3. Observe que ambos routers resumen la red 10.0.0.0/8 con la misma métrica.</p>
+<p></p>
+<p>El comando <span class="cmd"><b>auto-summary</b></span> está deshabilitado de manera predeterminada en la versiones 15 y en las versiones más nuevas de 12.2(33) del software IOS de Cisco. El software más antiguo tiene habilitada la sumarización automática de manera predeterminada. Para deshabilitar la sumarización automática, introduzca el comando <span class="cmd"><b>no auto-summary</b></span> en el modo de configuración del <span class="cmd"><b>router EIGRP</b></span>.</p>
+<p></p>
+<p>Para corregir este problema, el R1 y el R3 tienen deshabilitada la sumarización automática:</p>
+<p></p>
+<p>
+<span class="cmd">R1(config)# </span>
+<span class="cmd">
+<b>router eigrp 1</b>
+</span>
+</p>
+<p>
+<span class="cmd">R1(config-router)# </span>
+<span class="cmd">
+<b>no auto-summary</b>
+</span>
+</p>
+<p></p>
+<p>
+<span class="cmd">R3(config)# </span>
+<span class="cmd">
+<b>router eigrp 1</b>
+</span>
+</p>
+<p>
+<span class="cmd">R3(config-router)# </span>
+<span class="cmd">
+<b>no auto-summary</b>
+</span>
+</p>
+<p></p>
+<p>Después de deshabilitar la sumarización automática en el R1 y el R3, la tabla de routing del R2 indica que recibe las subredes individuales 10.10.10.0/24 y 10.20.20.0/24 del R1 y el R3, respectivamente, como se muestra en la figura 5. Se restauró el routing preciso y la conectividad en ambas subredes.</p>
+<p></p>
+<p>
+<b>EIGRP para IPv6</b>
+</p>
+<p></p>
+<p>En IPv6 no existen las redes con clase, por lo tanto, EIGRP para IPv6 no admite la sumarización automática. Toda la sumarización debe realizarse mediante rutas resumidas manuales EIGRP.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

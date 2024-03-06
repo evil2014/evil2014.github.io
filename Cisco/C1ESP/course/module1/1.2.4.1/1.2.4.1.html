@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.2.4.1 Tecnologías de acceso a Internet</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.2.4.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>LAN, WAN e Internet</h1>
+        <h2>Conexión a Internet</h2>
+      </div>
+      <div id="content">
+<p>Existen varias formas diferentes de conectar a usuarios y organizaciones a Internet.</p>
+<p></p>
+<p>Generalmente, los usuarios domésticos, los trabajadores a distancia y las oficinas pequeñas requieren una conexión a un proveedor de servicios de Internet (ISP, Internet Service Provider) para acceder a Internet. Las opciones de conexión varían considerablemente según los ISP y la ubicación geográfica. Sin embargo, las opciones más utilizadas incluyen la banda ancha por cable, la banda ancha por línea de suscriptor digital (DSL, digital subscriber line), las redes WAN inalámbricas y los servicios móviles.</p>
+<p></p>
+<p>Normalmente, las organizaciones necesitan acceder a otros sitios corporativos y a Internet. Para admitir servicios empresariales, como telefonía IP, videoconferencias y el almacenamiento en centros de datos, se requieren conexiones rápidas. </p>
+<p></p>
+<p>Por lo general, los proveedores de servicios (SP, service providers) son quienes proporcionan interconexiones de nivel empresarial. Los servicios de nivel empresarial más comunes son DSL empresarial, las líneas arrendadas y la red Metro Ethernet.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

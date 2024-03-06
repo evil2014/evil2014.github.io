@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.1.1.2 Sumarización automática de EIGRP </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.1.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuraciones avanzadas de EIGRP</h1>
+        <h2>Sumarización automática </h2>
+      </div>
+      <div id="content">
+<p>Uno de los métodos de ajuste más comunes de EIGRP es habilitar y deshabilitar la sumarización automática de rutas. La sumarización de ruta permite que un router agrupe redes y las anuncie como un gran grupo por medio de una única ruta resumida. La capacidad para resumir rutas es necesaria debido al rápido crecimiento de las redes.</p>
+<p></p>
+<p>Un router de frontera es un router que se ubica en el límite de una red. Este router debe poder anunciar todas las redes conocidas dentro de su tabla de rutas a un router de red o router ISP conector. Potencialmente, esta convergencia puede dar como resultado tablas de rutas muy grandes. Imagine si un solo router tuviera 10 redes diferentes y debiera anunciar las 10 entradas de rutas a un router conector. ¿Qué sucedería si ese router conector también tuviera 10 redes y debiera anunciar las 20 rutas a un router ISP? Si cada router de la empresa siguiera este patrón, la tabla de routing del router ISP sería enorme. </p>
+<p></p>
+<p>La sumarización disminuye la cantidad de entradas en las actualizaciones de enrutamiento y reduce la cantidad de entradas en las tablas de enrutamiento locales. Reduce, además, el uso del ancho de banda para las actualizaciones de enrutamiento y acelera las búsquedas en las tablas de enrutamiento. </p>
+<p></p>
+<p>Para limitar la cantidad de anuncios de routing y el tamaño de las tablas de routing, los protocolos de routing, como EIGRP, utilizan la sumarización automática en los límites con clase. Esto significa que EIGRP reconoce las subredes como una única red de clase A, B o C y crea solo una entrada en la tabla de routing para la ruta resumida. Como resultado, todo el tráfico destinado a las subredes viaja por esa ruta. </p>
+<p></p>
+<p>En la ilustración, se muestra un ejemplo de la manera en que funciona la sumarización automática. Los routers R1 y R2 están configurados con EIGRP para IPv4, con sumarización automática. El R1 tiene tres subredes en la tabla de routing: 172.16.1.0/24, 172.16.2.0/24 y 172.16.3.0/24. En la arquitectura de direccionamiento de redes con clase, todas estas subredes se consideran parte de una red de clase B más grande: 172.16.0.0/16. Debido a que EIGRP en el router R1 está configurado para sumarización automática, cuando envía la actualización de routing al R2, resume las tres subredes /24 como una única red 172.16.0.0/16. Esto reduce la cantidad de actualizaciones de routing que se envían y la cantidad de entradas en la tabla de routing IPv4 del R2.</p>
+<p></p>
+<p>Todo el tráfico destinado a las tres subredes viaja a través de la única ruta. El R2 no mantiene rutas a subredes individuales y no se descubre información de subredes. En una red empresarial, es posible que la ruta elegida para alcanzar la ruta sumarizada no sea la mejor elección para el tráfico que está intentando alcanzar la subred individual. La única forma en que todos los routers pueden encontrar las mejores rutas para cada subred individual es que los vecinos envíen información sobre las subredes. En esta situación, se debe deshabilitar la sumarización automática. Cuando se deshabilita la sumarización automática, las actualizaciones incluyen información de subredes. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.1.4.4 Característica de historial de comandos</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.1.4.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración inicial de un router</h1>
+        <h2>Verificación de la conectividad de redes conectadas directamente</h2>
+      </div>
+      <div id="content">
+<p>La característica de historial de comandos es útil, ya que almacena temporalmente la lista de comandos ejecutados que se deben recuperar. </p>
+<p></p>
+<p>Para recuperar comandos del búfer de historial, presione <b>Ctrl</b>+<b>P</b> o la tecla <b>Flecha arriba</b>. El resultado de los comandos comienza con el comando más reciente. Repita la secuencia de teclas para recuperar sucesivamente los comandos más antiguos. Para volver a los comandos más recientes en el búfer de historial, presione <b>Ctrl</b>+<b>N</b> o la tecla <b>Flecha abajo</b>. Repita la secuencia de teclas para recuperar sucesivamente los comandos más recientes.</p>
+<p></p>
+<p>De manera predeterminada, el historial de comandos está habilitado, y el sistema captura las últimas 10 líneas de comandos en el búfer de historial. Utilice el comando <span class="cmd"><b>show history</b></span> del modo EXEC privilegiado para mostrar el contenido del búfer.</p>
+<p></p>
+<p>También es práctico aumentar la cantidad de líneas de comandos que registra el búfer de historial solamente durante la sesión de terminal actual. Utilice el comando <span class="cmd"><b>terminal history size</b></span> del modo EXEC del usuario para aumentar o reducir el tamaño del búfer.</p>
+<p></p>
+<p>En la figura 1, se muestra un ejemplo de los comandos <span class="cmd"><b>terminal history size</b></span> y <span class="cmd"><b>show history</b></span>.</p>
+<p></p>
+<p>Utilice el verificador de sintaxis de la figura 2 para practicar los dos comandos del modo EXEC.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

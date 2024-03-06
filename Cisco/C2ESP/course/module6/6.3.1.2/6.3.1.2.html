@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.3.1.2 Máscaras de subred con clase</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.3.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Revisión de CIDR y VLSM</h1>
+        <h2>Direccionamiento con clase</h2>
+      </div>
+      <div id="content">
+<p>Como se especifica en RFC 790, cada clase de red tiene asociada una máscara de subred predeterminada. </p>
+<p></p>
+<p>Como se muestra en la figura 1, las redes de clase A utilizan el primer octeto para identificar la porción de red de la dirección. Esto se traduce a una máscara de subred con clase 255.0.0.0. Debido a que solo se dejaron 7 bits en el primer octeto (recuerde que el primer bit es siempre 0), se elevó el 2 a la 7.a potencia, o se generaron 128 redes. El número real es de 126 redes, porque hay dos direcciones reservadas de clase A (es decir, 0.0.0.0/8 y 127.0.0.0/8). Con 24 bits en la porción de host, cada dirección de clase A tenía capacidad para más de 16 millones de direcciones host individuales. </p>
+<p></p>
+<p>Como se muestra en la figura 2, las redes de clase B utilizan los dos primeros octetos para identificar la porción de red de la dirección de red. Con los primeros dos bits ya establecidos en 1 y 0, quedaban 14 bits en los primeros dos octetos para asignar redes, lo que produjo 16 384 direcciones de red de clase B. Debido a que cada dirección de red de clase B contenía 16 bits en la porción de host, controlaba 65 534 direcciones. (Recuerde que dos direcciones se reservaron para las direcciones de red y de difusión).</p>
+<p></p>
+<p>Como se muestra en la figura 3, las redes de clase C utilizan los dos primeros octetos para identificar la porción de red de la dirección de red. Con los primeros tres bits establecidos en 1 y 1, y 0, quedaban 21 bits para asignar redes para más de 2 millones de redes de clase C. Pero cada red de clase C sólo tenía 8 bits en la porción de host o 254 direcciones host posibles.</p>
+<p></p>
+<p>Una ventaja de asignar máscaras de subred predeterminadas específicas a cada clase es que reduce los mensajes de actualización de routing. Los protocolos de routing con clase no incluyen la información de la máscara de subred en las actualizaciones. El router receptor aplica la máscara predeterminada según el valor del primer octeto que identifica la clase.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

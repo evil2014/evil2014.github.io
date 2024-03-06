@@ -1,0 +1,32 @@
+﻿<textcomponents>
+<component id="ID_title">
+<text><![CDATA[<b>Optimizaciones de las ACL</b>]]></text>
+</component>
+
+  <component id="ID_table">
+  <text><![CDATA[<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4'>
+	<tr>
+		<td colspan='2' bgcolor='#0E6360' class="liner_top"><font size='1' color='#0E6360'><span style="color:#98D3D1">.</span></font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#077A77'  valign="top" width="200"><font color='#ffffff' size="11"><b>Pautas</b></font></td>
+		<td bgcolor='#077A77'  valign="top"><font color='#ffffff' size="11"><b>Beneficios</b></font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#FFFFFF'>Fundamente sus ACL según las políticas de seguridad de la organización.</td>
+		<td bgcolor='#FFFFFF'>Esto asegurará la implementación de las pautas de seguridad de la organización.</td>
+	</tr>
+	<tr>
+		<td bgcolor='#EFF8F7'>Prepare una descripción de lo que desea que realicen las ACL.</td>
+		<td bgcolor='#EFF8F7'>Esto lo ayudará a evitar posibles problemas de acceso generados de manera inadvertida.</td>
+	</tr>
+	<tr>
+		<td bgcolor='#FFFFFF'>Utilice un editor de texto para crear, editar y guardar las ACL.</td>
+		<td bgcolor='#FFFFFF'>Esto lo ayudará a crear una biblioteca de ACL reutilizables.</td>
+	</tr>
+	<tr>
+		<td bgcolor='#EFF8F7'>Pruebe sus ACL en una red de desarrollo antes de implementarlas en una red de producción.</td>
+		<td bgcolor='#EFF8F7'>Esto lo ayudará a evitar errores costosos.</td>
+	</tr></table>]]></text>
+  </component>
+</textcomponents>

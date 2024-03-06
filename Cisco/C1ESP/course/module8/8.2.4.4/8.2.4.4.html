@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.2.4.4 Configuración dinámica de una dirección unicast global mediante DHCPv6</title>
+    <!--  -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.2.4.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Direcciones de red IPv6</h1>
+        <h2>Direcciones IPv6 unicast</h2>
+      </div>
+      <div id="content">
+<p>
+<b>DHCPv6</b>
+</p>
+<p></p>
+<p>El protocolo de configuración dinámica de host para IPv6 (DHCPv6) es similar a DHCP para IPv4. Los dispositivos pueden recibir de manera automática la información de direccionamiento, incluso una dirección unicast global, la duración de prefijo, la dirección de gateway predeterminado y las direcciones de servidores DNS, mediante los servicios de un servidor de DHCPv6. </p>
+<p></p>
+<p>Los dispositivos pueden recibir la información de direccionamiento IPv6 en forma total o parcial de un servidor de DHCPv6 en función de si en el mensaje de RA de ICMPv6 se especificó la opción 2 (SLAAC y DHCPv6) o la opción 3 (DHCPv6 solamente). Además, el OS host puede optar por omitir el contenido del mensaje de RA del router y obtener su dirección IPv6 y otra información directamente de un servidor de DHCPv6.</p>
+<p></p>
+<p>Antes de implementar dispositivos IPv6 en una red, se recomienda primero verificar si el host observa las opciones dentro del mensaje ICMPv6 de RA del router.</p>
+<p></p>
+<p>Un dispositivo puede obtener la dirección IPv6 unicast global dinámicamente y también estar configurado con varias direcciones IPv6 estáticas en la misma interfaz. IPv6 permite que varias direcciones IPv6 (que pertenecen a la misma red IPv6) se configuren en la misma interfaz. </p>
+<p></p>
+<p>También se puede configurar un dispositivo con más de una dirección IPv6 de gateway predeterminado. Para obtener más información sobre cómo se toma la decisión respecto de cuál es la dirección que se usa como la dirección IPv6 de origen o cuál es la dirección de gateway predeterminado que se utiliza, consulte RFC 6724, Default Address Selection for IPv6 (Selección de direcciones predeterminada para IPv6).</p>
+<p></p>
+<p>
+<b>ID de interfaz</b>
+</p>
+<p>Si el cliente no utiliza la información incluida en el mensaje de RA y depende exclusivamente de DHCPv6, el servidor de DHCPv6 proporciona la dirección IPv6 unicast global completa, incluidos el prefijo y la ID de interfaz.</p>
+<p></p>
+<p>Sin embargo, si se utiliza la opción 1 (SLAAC solamente) o la opción 2 (SLAAC con DHCPv6), el cliente no obtiene la porción de ID de interfaz real de la dirección mediante este estos procesos. El dispositivo cliente debe determinar su propia ID de interfaz de 64 bits, ya sea mediante el proceso EUI-64 o generando un número aleatorio de 64 bits. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

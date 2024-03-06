@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.3.1.2 Interfaces y puertos</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.3.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Esquemas de direcciones</h1>
+        <h2>Puertos y direcciones</h2>
+      </div>
+      <div id="content">
+<p>Las comunicaciones de red dependen de las interfaces de los dispositivos para usuarios finales, las interfaces de los dispositivos de red y los cables que las conectan. </p>
+<p></p>
+<p>Cada interfaz física tiene especificaciones o estándares que la definen. Los cables que se conectan a la interfaz deben estar diseñados para cumplir con los estándares físicos de la interfaz. Los tipos de medios de red incluyen los cables de cobre de par trenzado, los cables de fibra óptica, los cables coaxiales y la tecnología inalámbrica. Los diferentes tipos de medios de red tienen diferentes características y beneficios. No todos los medios de red tienen las mismas características ni son adecuados para el mismo fin. Algunas de las diferencias entre los distintos tipos de medios incluyen las siguientes:</p>
+<p></p>
+<p>
+<ul>
+<li>La distancia a través de la cual los medios pueden transportar una señal correctamente.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>El entorno en el que se instalarán los medios.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>La cantidad de datos y la velocidad a la que se deben transmitir.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>El costo de los medios y de la instalación.</li>
+</ul>
+</p>
+<p></p>
+<p>Cada enlace de Internet no solo requiere un tipo específico de medio de red, sino que también requiere una determinada tecnología de red. Ethernet es la tecnología de red de área local (LAN) de uso más frecuente en la actualidad. Hay puertos Ethernet en los dispositivos para usuarios finales, en los dispositivos de switch y en otros dispositivos de red que se pueden conectar físicamente a la red mediante un cable. Para que un cable conecte dispositivos mediante un puerto Ethernet, este debe tener el conector correcto: un conector RJ-45. </p>
+<p></p>
+<p>Los switches Cisco IOS tienen puertos físicos a los que se pueden conectar los dispositivos, pero también cuentan con una o más interfaces virtuales de switch (SVI, switch virtual interfaces). Son interfaces virtuales porque no hay hardware físico en el dispositivo asociado a ellas; las SVI se crean en el software. La interfaz virtual proporciona un medio para administrar un switch de manera remota a través de una red usando IPv4. Cada switch viene con una SVI que aparece en la configuración predeterminada inicial. La SVI predeterminada es interface VLAN1.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

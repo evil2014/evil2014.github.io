@@ -1,0 +1,30 @@
+﻿<textcomponents>
+<component id="ID_title">
+<text><![CDATA[<b>Sintaxis del comando <font face="Courier New">ip route</font>]]></text>
+</component>
+
+  <component id="ID_table">
+  <text><![CDATA[<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4' class="mtable">
+	<tr>
+		<td colspan='2' bgcolor='#0E6360' class="mtable_top"><font size='1' color='#0E6360'><span style="color:#98D3D1">.</span></font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#077A77'  valign="top" width="110" class="mtitle"><font color='#ffffff'><b>Parámetro  </b></font></td>
+		<td bgcolor='#077A77'  valign="top" class="mtitle"><font color='#ffffff'><b>Descripción  </b></font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#EFF8F7' valign="top"><font color='#393536' face="Courier New">dirección-red</font></td>
+		<td bgcolor='#EFF8F7' valign="top"><font color='#393536'><textformat blockindent="-14">Dirección de la red de destino de la red remota que será agregada a la tabla de enrutamiento.</textformat></font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#ffffff' valign="top"><font color='#393536' face="Courier New">máscara-subred</font></td>
+		<td bgcolor='#ffffff' valign="top"><font color='#393536'><textformat blockindent="-14"><li>Máscara de subred de la red remota que será agregada a la tabla de enrutamiento.  </li><li>La máscara de subred puede modificarse para resumir un grupo de redes.  </li></textformat></font></td></tr><tr><td bgcolor='#EFF8F7' valign="top"><font color='#393536' face="Courier New">dirección-ip</font></td><td bgcolor='#EFF8F7' valign="top"><font color='#393536'><textformat blockindent="-16"><li>Se le denomina comúnmente como dirección IP del router del siguiente salto.  </li><li>Suele utilizarse para la conexión a un medio de difusión (es decir, Ethernet).  </li><li>Por lo general, crea una búsqueda recursiva.  </li></textformat></font>
+		</td>
+	</tr>
+	<tr><td bgcolor='#ffffff' valign="top"><font color='#393536' face="Courier New">interfaz-salida</font></td>
+		<td bgcolor='#ffffff' valign="top"><font color='#393536'><textformat blockindent="-14"><li>Use la interfaz de salida para reenviar paquetes a la red de destino.  </li><li>También se la denomina “ruta estática conectada directamente”.  </li><li>Suele utilizarse para conectarse en una configuración punto a punto.  </li></textformat></font>
+		</td>
+	</tr>
+	</table>]]></text>
+  </component>
+</textcomponents>

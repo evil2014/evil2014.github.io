@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.2.3.1 Tipos de tecnologías inalámbricas de banda ancha</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.2.3.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Comparación de las soluciones de banda ancha</h1>
+        <h2>Acceso inalámbrico de banda ancha</h2>
+      </div>
+      <div id="content">
+<p>En lugar de la conectividad por cable y DSL, hoy en día muchos usuarios optan por la conectividad inalámbrica. </p>
+<p></p>
+<p>El alcance de las conexiones inalámbricas ahora incluye las redes de área personal, las LAN y las WAN. La cantidad de zonas de cobertura inalámbrica aumentó el acceso a las conexiones inalámbricas en todo el mundo. Una zona de cobertura inalámbrica es el área que cubren uno o más puntos de acceso interconectados. Los puntos de encuentro públicos, como las cafeterías, los bares y las bibliotecas, tienen zonas de cobertura inalámbrica Wi-Fi. Si se superponen puntos de acceso, las zonas de cobertura inalámbrica pueden abarcar muchas millas cuadradas. </p>
+<p></p>
+<p>Los desarrollos en la tecnología inalámbrica de banda ancha aumentan la disponibilidad inalámbrica. Estos tipos de banda ancha se explican en la figura 1 e incluyen lo siguiente:</p>
+<p>
+<ul>
+<li>Wi-Fi municipal (malla)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>WiMAX (Interoperabilidad mundial para el acceso por microondas)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Datos móviles</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Internet satelital</li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Wi-Fi municipal</b>
+</p>
+<p>Muchos gobiernos municipales, que suelen trabajar con proveedores de servicios, implementan redes inalámbricas. Algunas de estas redes proporcionan acceso a Internet de alta velocidad sin costo o por un precio considerablemente inferior al de otros servicios de banda ancha. Otras ciudades reservan las redes Wi-Fi para uso oficial, a fin de proporcionar acceso remoto a Internet y a las redes municipales para la policía, los bomberos y los empleados de mantenimiento de espacios públicos.</p>
+<p></p>
+<p>La mayoría de las redes inalámbricas municipales utilizan una topología de malla en lugar de un modelo hub-and-spoke. Una malla es una serie de puntos de acceso interconectados, como se muestra en la figura 2. Cada punto de acceso está al alcance y puede comunicarse con al menos otros dos puntos de acceso. La malla cubre su área con señales de radio. Las señales viajan de un punto de acceso a otro a través de esta nube.</p>
+<p></p>
+<p>Una red de malla tiene varias ventajas en comparación con una zona de cobertura inalámbrica con un único router. La instalación es más fácil y puede ser más económica, dado que hay menos cables. La implementación en un área urbana grande es más rápida y confiable. Si falla un nodo, el resto de los nodos en la malla lo compensan. </p>
+<p></p>
+<p>
+<b>WiMAX</b>
+</p>
+<p>WiMAX, que se muestra en la figura 3, es una tecnología de telecomunicaciones cuyo propósito es proporcionar datos inalámbricos a través de largas distancias de diversas maneras, desde enlaces punto a punto hasta acceso de tipo de datos móviles. WiMAX funciona a velocidades más altas, a mayores distancias y para una mayor cantidad de usuarios que Wi-Fi. Debido a la mayor velocidad (ancho de banda) y a la caída en los precios de los componentes, se predice que WiMAX pronto reemplazará las redes de malla municipales para las implementaciones inalámbricas.</p>
+<p></p>
+<p>Una red WiMAX consta de dos componentes principales:</p>
+<p>
+<ul>
+<li>Una torre cuyo concepto es similar al de una torre de telefonía móvil. Una única torre WiMAX puede proporcionar cobertura a un área de hasta 3000 mi cuadradas (7500 km cuadrados).</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Un receptor WiMAX conectado a un puerto USB o incorporado a la computadora portátil u otro dispositivo inalámbrico.</li>
+</ul>
+</p>
+<p></p>
+<p>Una estación de torre WiMAX se conecta directamente a Internet mediante una conexión de ancho de banda elevado, como una línea T3. Una torre también se puede conectar a otras torres WiMAX mediante enlaces de microondas con línea de vista. Por lo tanto, WiMAX puede proporcionar cobertura a las áreas rurales fuera del alcance de las tecnologías de DSL y de cable de última milla.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

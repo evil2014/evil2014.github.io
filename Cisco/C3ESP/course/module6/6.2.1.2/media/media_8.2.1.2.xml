@@ -1,0 +1,82 @@
+﻿<textcomponents>
+<component id="ID_s1_header">
+<text><![CDATA[<b>Topología OSPFv2 multiárea</b>]]></text>
+</component>
+
+<component id="ID_s1_txt01">
+<text><![CDATA[<b>Area 0</b>]]></text>
+</component>
+
+<component id="ID_s1_txt02">
+<text><![CDATA[<b>Área&nbsp;1</b>]]></text>
+</component>
+
+<component id="ID_s1_txt03">
+<text><![CDATA[<b>Area 2</b>]]></text>
+</component>
+
+<component id="ID_s2_header">
+  <text><![CDATA[<b>Configuración de OSPF multiárea en el R1</b>]]></text> 
+  </component>
+<component id="ID_s3_header">
+  <text><![CDATA[<b>Configuración de OSPF multiárea en el R2 y el R3</b>]]></text> 
+  </component>
+
+	<component id="ID_sc_reset">
+		<text><![CDATA[Restablecer]]></text>
+	</component>
+	<component id="ID_sc_showme">
+		<text><![CDATA[Mostrar]]></text>
+	</component>
+	<component id="ID_sc_showall">
+		<text><![CDATA[Mostrar todo]]></text>
+	</component>
+
+
+	<component id="ID_s3_SC1" fontFace='Courier New' fontSize="10">
+		<feedback id="fb"><![CDATA[<b>***</b><font size='10' face="Arial" color="#0000FF">Debe introducir el comando exacto y completo.</font><b>***</b> 
+		]]></feedback>		
+		<existingcommands><![CDATA[<font size='10' face="Arial"><b>Ingrese al modo de configuración del router OSPF en el R2 con la ID de proceso 10 y configure lo siguiente en orden:<ul><li>Configure la ID de router 2.2.2.2.<li>Anuncie la red 192.168.10.0/30 para el área 0.<li>Anuncie la red 192.168.10.4/30 para el área 0.<li>Anuncie la red 10.2.1.0/24 para el área 0.<li>Vuelva al modo EXEC privilegiado.</ul></b></font>]]></existingcommands>
+		<command prompt="R2(config)#">
+		    <correctresponse><![CDATA[router ospf 10]]></correctresponse>
+		</command>
+		<command prompt="R2(config-router)#">
+		    <correctresponse><![CDATA[router-id 2.2.2.2]]></correctresponse>
+		</command>
+		<command prompt="R2(config-router)#">
+		    <correctresponse><![CDATA[network 192.168.10.0 0.0.0.3 area 0]]></correctresponse>
+		</command>
+		<command prompt="R2(config-router)#">
+		    <correctresponse><![CDATA[network 192.168.10.4 0.0.0.3 area 0]]></correctresponse>
+		</command>
+		<command prompt="R2(config-router)#">
+		    <correctresponse><![CDATA[network 10.2.1.0 0.0.0.255 area 0]]></correctresponse>
+		</command>
+		<command prompt="R2(config-router)#">
+		    <correctresponse><![CDATA[end]]></correctresponse>
+				<deviceresponse><![CDATA[<font size='10' face="Courier New">R2#<br>*Apr 19 18:11:04.029: %OSPF-5-ADJCHG: Process 10, Nbr 1.1.1.1 on <br>Serial0/0/0 from LOADING to FULL, Loading Done<br>R2#<br>*Apr 19 18:11:06.781: %SYS-5-CONFIG_I: Configured from console by <br>Consola<br>R2#]]></deviceresponse> 
+			<instruction><![CDATA[<font size='10' face="Arial"><b>Ahora configure el R3. Ingrese al modo de configuración del router OSPF en el R3 con la ID de proceso 10 y configure lo siguiente en orden:<ul><li>Configure la ID de router 3.3.3.3.<li>Anuncie la interfaz 192.168.10.6 para el área 0.<li>Anuncie la interfaz 192.168.1.1 para el área 2.<li>Anuncie la interfaz 192.168.2.1 para el área 2.<li>Vuelva al modo EXEC privilegiado.</ul></b>]]></instruction>
+		</command>
+		<command prompt="R3(config)#">
+		    <correctresponse><![CDATA[router ospf 10]]></correctresponse>
+		</command>
+		<command prompt="R3(config-router)#">
+		    <correctresponse><![CDATA[router-id 3.3.3.3]]></correctresponse>
+		</command>
+		<command prompt="R3(config-router)#">
+		    <correctresponse><![CDATA[network 192.168.10.6 0.0.0.0 area 0]]></correctresponse>
+		</command>
+		<command prompt="R3(config-router)#">
+		    <correctresponse><![CDATA[network 192.168.1.1 0.0.0.0 area 2]]></correctresponse>
+		</command>
+		<command prompt="R3(config-router)#">
+		    <correctresponse><![CDATA[network 192.168.2.1 0.0.0.0 area 2]]></correctresponse>
+		</command>
+		<command prompt="R3(config-router)#">
+		    <correctresponse><![CDATA[end]]></correctresponse>
+				<deviceresponse><![CDATA[<font size='10' face="Courier New">*Apr 19 18:12:55.881: %OSPF-5-ADJCHG: Process 10, Nbr 2.2.2.2 on <br>Serial0/0/1 from LOADING to FULL, Loading Done<br>R3#]]></deviceresponse> 
+			<instruction><![CDATA[<font size='10' face="Arial" class="syntaxBottomLine"><b>Configuró correctamente OSPF multiárea en los routers R2 y R3.</b>]]></instruction>
+		</command>
+		<command prompt=""/>
+	</component>
+</textcomponents>

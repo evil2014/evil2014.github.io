@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.1.2.2 Circuitos virtuales múltiples</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.1.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Introducción a Frame Relay</h1>
+        <h2>Operación de Frame Relay</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Varios VC</b>
+</p>
+<p></p>
+<p>Frame Relay se multiplexa estadísticamente, lo que significa que solo transmite de a una trama por vez, pero pueden coexistir muchas conexiones lógicas en una única línea física. El dispositivo de acceso Frame Relay (FRAD) o el router conectado a la red Frame Relay puede tener varios VC que lo conecten a las diversas terminales. Varios VC en una única línea física se distinguen porque cada VC tiene su propio DLCI. Recuerde que el DLCI solo tiene importancia local y puede ser diferente en cada extremo de un VC.</p>
+<p></p>
+<p>En la figura 1, se muestra un ejemplo de dos VC en una línea de acceso única, cada uno con su propio DLCI, que se conectan a un router (el R1). </p>
+<p></p>
+<p>Esta capacidad suele reducir la complejidad de la red y el equipo que se requiere para conectar varios dispositivos, lo que lo hace un reemplazo muy rentable para una malla de líneas de acceso. Con esta configuración, cada terminal necesita solo una línea y una interfaz de acceso únicas. Surgen más ahorros, ya que la capacidad de la línea de acceso se basa en el requisito de ancho de banda promedio de los VC, en lugar del requisito de ancho de banda máximo. </p>
+<p></p>
+<p>En el ejemplo de la figura 2, la empresa SPAN Ingeniería. tiene cinco ubicaciones remotas, con la oficina central en Chicago. Chicago está conectada a la red mediante cinco VC, y cada VC tiene un DLCI. Para ver las asignaciones de los respectivos DLCI de Chicago, haga clic en la ubicación en la tabla. Observe que SPAN creció y recientemente abrió una oficina en San José. El uso de Frame Relay hizo que esta expansión fuera relativamente fácil.</p>
+<p></p>
+<p>
+<b>Beneficios de costos de tener varios VC</b>
+</p>
+<p></p>
+<p>Con Frame Relay, los clientes pagan por el ancho de banda que utilizan. En efecto, pagan por un puerto de Frame Relay. Cuando el cliente aumenta la cantidad de puertos, como se describió anteriormente, paga por más ancho de banda, pero no paga por más equipos, porque los puertos son virtuales. No hay cambios en la infraestructura física. Compare esto con la adquisición de más ancho de banda mediante líneas dedicadas.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

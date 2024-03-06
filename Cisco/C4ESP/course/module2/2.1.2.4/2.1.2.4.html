@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.1.2.4 Conmutación de circuitos</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.1.2.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Descripción general de las tecnologías WAN</h1>
+        <h2>Operaciones WAN</h2>
+      </div>
+      <div id="content">
+<p>Las red de conmutación de circuitos son aquellas que establecen un circuito (o canal) dedicado entre los nodos y las terminales antes de que los usuarios se puedan comunicar. Específicamente, la conmutación de circuitos establece una conexión virtual dedicada para voz o datos entre un emisor y un receptor en forma dinámica. Antes de que la comunicación pueda comenzar, es necesario establecer la conexión a través de la red del proveedor de servicios. </p>
+<p></p>
+<p>Como ejemplo, cuando un suscriptor realiza una llamada telefónica, el número marcado se usa para establecer los switches en los intercambios a lo largo de la ruta de la llamada, de modo que haya un circuito continuo desde el origen hasta el destinatario de la llamada. Debido a la operación de conmutación utilizada para establecer el circuito, el sistema telefónico se denomina “red de conmutación de circuitos”. Si los teléfonos se reemplazan por módems, el circuito de conmutación puede transportar datos informáticos. </p>
+<p></p>
+<p>Si el circuito transporta datos informáticos, es posible que el uso de esta capacidad fija no sea eficaz. Por ejemplo, si el circuito se utiliza para acceder a Internet, se produce una ráfaga de actividad en el circuito cuando se transfiere una página web. A esto lo podría seguir un período sin actividad, en el que el usuario lee la página, y luego otra ráfaga de actividad cuando se transfiere la página siguiente. Esta variación en el uso, entre un uso nulo y un uso máximo, es típica del tráfico de la red de computadoras. Debido a que el suscriptor tiene uso exclusivo de la asignación de la capacidad fija, los circuitos de conmutación generalmente son una manera costosa de mover datos.</p>
+<p></p>
+<p>Los dos tipos más comunes de tecnologías WAN de conmutación de circuitos son la red pública de telefonía de conmutación (PSTN) y la red digital de servicios integrados (ISDN). </p>
+<p></p>
+<p>Haga clic en el botón Reproducir de la ilustración para ver cómo funciona la conmutación de circuitos.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+﻿<textcomponents>
+
+<component id="ID_s1_title">
+<text><![CDATA[<b>El significado de vector distancia</b>]]></text>
+</component>
+<component id="ID_s2_title">
+  <text><![CDATA[<b>Funcionamiento del protocolo de enrutamiento vector distancia</b>]]></text> 
+</component>
+
+<component id="ID_s1_txt01">
+<text><![CDATA[<b>Distancia </b>= ¿cuán lejos?]]></text>
+</component>
+<component id="ID_s1_txt02">
+  <text><![CDATA[<b>Vector </b>= sentido]]></text> 
+  </component>
+<component id="ID_s1_txt03">
+  <text><![CDATA[Para el R1, 172.16.3.0/24 está a un salto (distancia)<br/>Puede alcanzarse a través del R2 (vector).]]></text> 
+  </component>
+
+
+<component id="ID_s2_txt01">
+<text><![CDATA[Tabla de enrutamiento de R1]]></text>
+</component>
+<component id="ID_s2_txt02">
+  <text><![CDATA[Tabla de routing del R2]]></text> 
+  </component>
+<component id="ID_s2_txt03">
+  <text><![CDATA[Tabla de routing del R3]]></text> 
+  </component>
+<component id="ID_s2_txt04">
+  <text><![CDATA[Tabla de routing del R4]]></text> 
+  </component>
+<component id="ID_s2_txt05">
+  <text><![CDATA[Los protocolos de routing vector distancia pasan toda la tabla de routing de manera periódica.]]></text> 
+</component> <!-- controller -->
+
+<component id="end">
+<text><![CDATA[Finalizar]]></text>
+</component>
+
+<component id="fforward">
+<text><![CDATA[Adelantar]]></text>
+</component>
+
+<component id="pause">
+<text><![CDATA[Pausa]]></text>
+</component>
+
+<component id="play">
+<text><![CDATA[Reproducir]]></text>
+</component>
+
+<component id="rewind">
+<text><![CDATA[Regresar]]></text>
+</component>
+
+<component id="start">
+<text><![CDATA[Inicio]]></text>
+</component>
+</textcomponents>

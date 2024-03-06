@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.2.3.3 Ajuste del ancho de banda de referencia</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.2.3.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de OSPFv2 de área única</h1>
+        <h2>Costo OSPF</h2>
+      </div>
+      <div id="content">
+<p>OSPF utiliza un ancho de banda de referencia de 100 Mb/s para todos los enlaces que sean iguales o más rápidos que una conexión Fast Ethernet. Por lo tanto, el costo asignado a una interfaz Fast Ethernet con un ancho de banda de interfaz de 100 Mb/s sería igual a 1. </p>
+<p></p>
+<p>
+<span class="cmd">
+<b>Costo =</b>
+</span>
+<span class="cmd"></span>
+<span class="cmd">
+<i>
+100 000 000 bps
+</i>
+</span>
+<span class="cmd"> / </span>
+<span class="cmd">
+<i>
+<u>100 000 000</u>
+</i>
+</span>
+<span class="cmd">
+<i> = </i>
+</span>
+<span class="cmd">
+<i>
+<u>1</u>
+</i>
+</span>
+</p>
+<p></p>
+<p>Si bien este cálculo funciona para las interfaces Fast Ethernet, es problemático para los enlaces que son más rápidos que 100 Mb/s, debido a que la métrica de OSPF solo utiliza números enteros como costo final de un enlace. Si se calcula un valor menor que un número entero, OSPF redondea al número entero más cercano. Por este motivo, desde la perspectiva de OSPF, una interfaz con un ancho de banda de interfaz de 100 Mb/s (un costo de 1) tiene el mismo costo que una interfaz con un ancho de banda de 100 Gb/s (un costo de 1). </p>
+<p></p>
+<p>Para ayudar a OSPF a determinar la ruta correcta, se debe cambiar el ancho de banda de referencia a un valor superior, a fin de admitir redes con enlaces más rápidos que 100 Mb/s.</p>
+<p></p>
+<p>
+<b>Ajuste del ancho de banda de referencia</b>
+</p>
+<p></p>
+<p>El cambio del ancho de banda de referencia en realidad no afecta la capacidad de ancho de banda en el enlace, sino que simplemente afecta el cálculo utilizado para determinar la métrica. Para ajustar el ancho de banda de referencia, use el comando de configuración del router <span class="cmd"><b>auto-cost reference-bandwidth </b></span><span class="cmd"><i>Mb/s</i></span>. Se debe configurar este comando en cada router en el dominio OSPF. Observe que el valor se expresa en Mb/s; por lo tanto, a fin de ajustar los costos para estas interfaces, utilice los siguientes comandos:</p>
+<p>
+<ul>
+<li>
+<b>Gigabit Ethernet:</b> <span class="cmd"><b>auto-cost reference-bandwidth 1000</b></span></li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>10 Gigabit Ethernet:</b> <span class="cmd"><b>auto-cost reference-bandwidth 10000</b></span></li>
+</ul>
+</p>
+<p></p>
+<p>Para volver al ancho de banda de referencia predeterminado, use el comando <span class="cmd"><b>auto-cost reference-bandwidth 100</b></span>.</p>
+<p></p>
+<p>En la tabla de la figura 1, se muestra el costo de OSPF si el ancho de banda de referencia se establece en Gigabit Ethernet. Si bien los valores de métrica aumentan, OSPF toma mejores decisiones debido a que ahora puede diferenciar entre enlaces FastEthernet y enlaces Gigabit Ethernet.</p>
+<p></p>
+<p>En la figura 2, se muestra el costo de OSPF si se ajusta el ancho de banda de referencia para admitir 10 enlaces Gigabit Ethernet. Se debe ajustar el ancho de banda de referencia cada vez que haya enlaces más rápidos que FastEthernet (100 Mb/s).</p>
+<p></p>
+<p>
+<b>Nota:</b><b></b> los costos representan números enteros que se redondearon hacia abajo.</p>
+<p></p>
+<p>En la figura 3, todos los routers se configuraron para admitir el enlace Gigabit Ethernet con el comando de configuración del router <span class="cmd"><b>auto-cost reference-bandwidth 1000</b></span>. El nuevo costo acumulado para llegar desde el R1 hasta la LAN 172.16.2.0/24 del R2 es el siguiente:</p>
+<p>
+<ul>
+<li>Costo del enlace serial del R1 al R2 = 647</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Costo del enlace Gigabit Ethernet en el R2 = 1</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Costo total para llegar a 172.16.2.0/24= <b>648</b></li>
+</ul>
+</p>
+<p></p>
+<p>Utilice el comando <span class="cmd"><b>show ip ospf interface s0/0/0</b></span> para verificar el costo de OSPF actual asignado a la interfaz Serial 0/0/0 del R1, como se muestra en la figura 4. Observe que se muestra un costo de 647. </p>
+<p></p>
+<p>En la tabla de routing del R1 de la figura 5, se confirma que la métrica para llegar a la LAN del R2 equivale a un costo de 648.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

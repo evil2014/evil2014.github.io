@@ -1,0 +1,41 @@
+﻿<textcomponents> <!-- Slide 01 -->
+	<component id="ID_s1_title">
+		<text><![CDATA[<b>Visualización del UDI</b>]]></text>
+	</component> <!-- Slide 02 -->
+	<component id="ID_s2_title">
+		<text><![CDATA[<b>Visualización del UDI (PID/SN) en una etiqueta extraíble</b>]]></text>
+	</component>
+
+	<component id="ID_s2_txt01">
+		<text><![CDATA[<b>SN</b>]]></text>
+	</component>
+
+	<component id="ID_s2_txt02">
+		<text><![CDATA[<b>ID de producto</b>]]></text>
+	</component> <!-- Slide 03 -->
+	<component id="ID_s3_title">
+		<text><![CDATA[<b>Visualización del UDI de la licencia en el R2</b>]]></text>		
+	</component>
+	<component id="ID_sc_reset">
+		<text><![CDATA[Restablecer]]></text>
+	</component>	
+	<component id="ID_sc_showme">
+		<text><![CDATA[Mostrar]]></text>
+	</component>	
+	<component id="ID_sc_showall">
+		<text><![CDATA[Mostrar todo]]></text>
+	</component>	
+
+
+
+	<component id="ID_s3_SC5" fontFace='Courier New' fontSize="10"><text />
+		<feedback id="fb"><![CDATA[<b>***</b><font face="Arial" color="#0000FF">Debe introducir el comando exacto y completo.</font><b>***</b> ]]></feedback>		
+		<existingcommands><![CDATA[<font face="Arial"><b>Muestre el Identificador de dispositivo único (UDI) para el R2.</b></font>]]></existingcommands>
+		<command  prompt="R2#">
+		<correctresponse><![CDATA[show license udi]]></correctresponse>
+		<deviceresponse><![CDATA[<font face="Courier New">Device# PID              SN            UDI <br>---------------------------------------------------------------- <br>*0      CISCO1941/K9     FTX16368491   CISCO1941/K9:FTX16368491 <br> <br>R2#</font>]]></deviceresponse> 
+		<instruction><![CDATA[<font face="Arial" class="syntaxBottomLine"><b>Mostró correctamente el UDI para el R2.</b>]]></instruction>
+		</command>
+		<command prompt=""/>
+	</component>
+</textcomponents>

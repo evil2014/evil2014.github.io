@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.1.5.5 Ejemplo de autenticación MD5 de OSPF</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.1.5.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuraciones avanzadas de OSPF de área única </h1>
+        <h2>OSPF segura</h2>
+      </div>
+      <div id="content">
+<p>En el ejemplo de la figura 1, se muestra cómo configurar el R1 para habilitar la autenticación MD5 de OSPF en todas las interfaces. Observe que los mensajes informativos indican que las adyacencias de vecinos OSPF con el R2 y el R3 cambiaron al estado <span class="cmd">Down</span> (inactivo), porque todavía no se configuraron el R2 ni el R3 para que admitan autenticación MD5.</p>
+<p></p>
+<p>Como una alternativa a la habilitación global de la autenticación MD5, en el ejemplo de la figura 2 se muestra cómo configurar el R1 para habilitar la autenticación MD5 de OSPF por interfaz. Observe que, también en este caso, las adyacencias de vecinos OSPF cambiaron al estado <span class="cmd">Down</span>. </p>
+<p></p>
+<p>Utilice el verificador de sintaxis de la figura 3 para habilitar la autenticación MD5 de OSPF globalmente en el R2 y por interfaz en el R3.</p>
+<p></p>
+<p>Aquí también aparecen mensajes informativos. El primer mensaje se debe a que se volvió a establecer la adyacencia de vecino con el R1. Sin embargo, la adyacencia con el R3 cambió al estado <span class="cmd">Down</span>, porque todavía no se configuró el R3.</p>
+<p></p>
+<p>Después de configurar el R3, se volvieron a establecer todas las adyacencias de vecinos.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

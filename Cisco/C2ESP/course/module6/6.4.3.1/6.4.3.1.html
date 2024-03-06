@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.4.3.1 Rutas estáticas flotantes</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.4.3.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de rutas resumidas y estáticas flotantes</h1>
+        <h2>Configuración de rutas estáticas flotantes</h2>
+      </div>
+      <div id="content">
+<p>Las rutas estáticas flotantes son rutas estáticas que tienen una distancia administrativa mayor que la de otra ruta estática o la de rutas dinámicas. Son muy útiles para proporcionar un respaldo a un enlace principal, como se muestra en la ilustración. </p>
+<p></p>
+<p>De manera predeterminada, las rutas estáticas tienen una distancia administrativa de 1, lo que las hace preferibles a las rutas descubiertas mediante protocolos de routing dinámico. Por ejemplo, las distancias administrativas de algunos protocolos de routing dinámico comunes son las siguientes:</p>
+<p>
+<ul>
+<li>EIGRP = 90</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>IGRP = 100</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>OSPF = 110</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>IS-IS = 115</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>RIP = 120</li>
+</ul>
+</p>
+<p></p>
+<p>La distancia administrativa de una ruta estática se puede aumentar para hacer que la ruta sea menos deseable que la ruta de otra ruta estática o una ruta descubierta mediante un protocolo de routing dinámico. De esta manera, la ruta estática “flota” y no se utiliza cuando está activa la ruta con la mejor distancia administrativa. Sin embargo, si se pierde la ruta de preferencia, la ruta estática flotante puede tomar el control, y se puede enviar el tráfico a través de esta ruta alternativa. </p>
+<p></p>
+<p>Una ruta estática flotante se puede utilizar para proporcionar una ruta de respaldo a varias interfaces o redes en un router. También es independiente de la encapsulación, lo que significa que puede utilizarse para reenviar paquetes desde cualquier interfaz, sin importar el tipo de encapsulación. </p>
+<p></p>
+<p>Es importante tener en cuenta que el tiempo de convergencia afecta una ruta estática flotante. Una ruta que pierde y restablece una conexión de manera continua puede hacer que la interfaz de respaldo se active innecesariamente.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

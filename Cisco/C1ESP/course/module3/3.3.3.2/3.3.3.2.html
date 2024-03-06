@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>3.3.3.2 Comunicación con un dispositivo en una red remota</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_3.3.3.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Movimiento de datos en la red</h1>
+        <h2>Acceso a recursos remotos</h2>
+      </div>
+      <div id="content">
+<p>Sin embargo, ¿cuáles son las funciones de la dirección de la capa de red y de la dirección de la capa de enlace de datos cuando un dispositivo se comunica con un dispositivo en una red remota? En este ejemplo, tenemos un equipo cliente, PC1, que se comunica con un servidor, en este caso un servidor Web, en una red IP diferente.</p>
+<p></p>
+<p>
+<b>Direcciones de red</b>
+</p>
+<p></p>
+<p>Las direcciones IP indican las direcciones de red y de los dispositivos de origen y de destino. Cuando el emisor del paquete se encuentra en una red distinta de la del receptor, las direcciones IP de origen y de destino representan los hosts en redes diferentes. Esto lo indica la porción de red de la dirección IP del host de destino.</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Dirección IP de origen:</b> la dirección IP del dispositivo emisor, es decir, el equipo cliente PC1: 192.168.1.110.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Dirección IP de destino:</b> la dirección IP del dispositivo receptor, es decir, el servidor Web: 172.16.1.99.</li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Direcciones de enlaces de datos</b>
+</p>
+<p></p>
+<p>Cuando el emisor y el receptor del paquete IP se encuentran en redes diferentes, la trama de enlace de datos de Ethernet no se puede enviar directamente al host de destino, debido a que en la red del emisor no se puede tener acceso directamente al host. La trama de Ethernet se debe enviar a otro dispositivo conocido como “router” o “gateway predeterminado”. En nuestro ejemplo, el gateway predeterminado es R1. R1 tiene una interfaz y una dirección IP que se encuentra en la misma red que PC1. Esto permite que PC1 alcance el router directamente. </p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Dirección MAC de origen:</b> la dirección MAC de Ethernet del dispositivo emisor, PC1. La dirección MAC de la interfaz Ethernet de PC1 es AA-AA-AA-AA-AA-AA.</li>
+</ul>
+</p>
+<p>
+<b>Dirección MAC de destino:</b> cuando el dispositivo receptor está en una red distinta de la del dispositivo emisor, la dirección MAC de destino es la dirección MAC de Ethernet del gateway predeterminado o el router. En este ejemplo, la dirección MAC de destino es la dirección MAC de la interfaz Ethernet de R1 que está conectada a la red de PC1, que es 11-11-11-11-11-11.</p>
+<p></p>
+<p>La trama de Ethernet con el paquete IP encapsulado ahora se puede transmitir a R1. R1 reenvía el paquete al destino, el servidor Web. Esto puede significar que R1 reenvía el paquete a otro router o directamente al servidor Web si el destino se encuentra en una red conectada a R1. </p>
+<p></p>
+<p>¿Cómo hace el dispositivo emisor para determinar la dirección MAC del router? </p>
+<p>Cada dispositivo conoce la dirección IP del router a través de la dirección de gateway predeterminado definida en la configuración de TCP/IP. La dirección de gateway predeterminado es la dirección de la interfaz del router conectado a la misma red local que el dispositivo de origen. Todos los dispositivos de la red local utilizan la dirección de gateway predeterminado para enviar mensajes al router. Una vez que el host conoce la dirección IP del gateway predeterminado, puede utilizar ARP para determinar la dirección MAC de ese gateway predeterminado. La dirección MAC del gateway predeterminado entonces se coloca en la trama.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

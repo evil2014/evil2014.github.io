@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.2.2.1 Ataques de seguridad frecuentes: saturación de direcciones MAC</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.2.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Seguridad de switches: administración e implementación</h1>
+        <h2>Cuestiones de seguridad en redes LAN</h2>
+      </div>
+      <div id="content">
+<p>La seguridad básica del switch no evita los ataques malintencionados. La seguridad es un proceso en capas que, básicamente, nunca está completo. Cuanto más consciente sea el equipo de profesionales de redes de una organización sobre los ataques de seguridad y los peligros que presentan, mejor. Algunos tipos de ataques de seguridad se describen aquí, pero los detalles sobre cómo funcionan algunos de estos ataques exceden el ámbito de este curso. Encontrará información más detallada en los cursos de tecnologías WAN y de seguridad de CCNA.</p>
+<p></p>
+<p>
+<b>Saturación de direcciones MAC</b>
+</p>
+<p></p>
+<p>La tabla de direcciones MAC de un switch contiene las direcciones MAC relacionadas con cada puerto físico y la VLAN asociada para cada puerto. Cuando un switch de la Capa 2 recibe una trama, el switch busca en la tabla de direcciones MAC la dirección MAC de destino. Todos los modelos de switches Catalyst utilizan una tabla de direcciones MAC para la conmutación en la Capa 2. A medida que llegan las tramas a los puertos del switch, se registran las direcciones MAC de origen en la tabla de direcciones MAC. Si la dirección MAC tiene una entrada en la tabla, el switch reenvía la trama al puerto correspondiente. Si la dirección MAC no existe en la tabla de direcciones MAC, el switch satura todos los puertos con la trama, excepto el puerto en el cual se la recibió. </p>
+<p></p>
+<p>El comportamiento de un switch de saturar direcciones MAC para las direcciones desconocidas se puede usar para atacar un switch. Este tipo de ataque se denomina “ataque de desbordamiento de la tabla de direcciones MAC”. En ocasiones, los ataques de desbordamiento de la tabla de direcciones MAC se denominan “ataques de saturación MAC” y “ataques de desbordamiento de la tabla CAM”. En las ilustraciones, se muestra cómo funciona este tipo de ataque.</p>
+<p></p>
+<p>En la figura 1, el host A envía tráfico al host B. El switch recibe las tramas y busca la dirección MAC de destino en la tabla de direcciones MAC. Si el switch no puede encontrar una MAC de destino en la tabla de direcciones MAC, este copia la trama y satura todos los puertos del switch con esta (la difunde), excepto el puerto en el cual se la recibió.</p>
+<p></p>
+<p>En la figura 2, el host B recibe la trama y envía una respuesta al host A. A continuación, el switch descubre que la dirección MAC del host B está ubicada en el puerto 2 y registra esa información en la tabla de direcciones MAC.</p>
+<p></p>
+<p>El host C también recibe la trama que va del host A al host B, pero debido a que la dirección MAC de destino de la trama es el host B, el host C la descarta.</p>
+<p></p>
+<p>Como se muestra en la figura 3, cualquier trama que envíe el host A (o cualquier otro host) al host B se reenvía al puerto 2 del switch y no se difunde por todos los puertos.</p>
+<p></p>
+<p>Las tablas de direcciones MAC poseen límite de tamaño. Los ataques de saturación MAC usan esta limitación para sobrecargar al switch con direcciones MAC de origen falsas hasta que la tabla de direcciones MAC del switch esté completa. </p>
+<p></p>
+<p>Como se muestra en la figura 4, un atacante en el host C puede enviar tramas al switch con direcciones MAC de origen y destino falsas y generadas aleatoriamente. El switch actualiza la tabla de direcciones MAC con la información de las tramas falsas. Cuando la tabla de direcciones MAC está llena de direcciones MAC falsas, el switch entra en un modo que se conoce como modo “fail-open”. En este modo, el switch transmite todas las tramas a todas las máquinas en la red. Como resultado, el atacante puede ver todas las tramas.</p>
+<p></p>
+<p>Algunas herramientas de ataques de red pueden generar hasta 155 000 entradas de MAC por minuto en un switch. El tamaño máximo de la tabla de direcciones MAC varía en función del switch.</p>
+<p></p>
+<p>Como se muestra en la figura 5, mientras la tabla de direcciones MAC en el switch esté llena, el switch difunde todas las tramas recibidas por cada puerto. En este ejemplo, las tramas enviadas del host A al host B también se difunden por el puerto 3 del switch, y el atacante en el host C las puede ver.</p>
+<p></p>
+<p>Una forma de mitigar los ataques de desbordamiento de la tabla de direcciones MAC es configurar la seguridad de puertos.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

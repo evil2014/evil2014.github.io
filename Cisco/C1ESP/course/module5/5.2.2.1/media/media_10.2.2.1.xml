@@ -1,0 +1,53 @@
+﻿<textcomponents>
+
+   <component id="ID_txt01">
+      <text><![CDATA[Problemas de ARP:<br/><textformat blockindent='-18'><li>Broadcasts, sobrecarga en los medios</li><li>Seguridad</li></textformat>]]></text>
+      </component>
+
+<component id="ID_txt03">
+   <text><![CDATA[Medios compartidos (acceso múltiple)]]></text>
+   </component>
+<component id="ID_txt04">
+   <text><![CDATA[Los broadcasts de ARP pueden saturar los medios locales.]]></text>
+   </component>
+<component id="ID_txt05">
+   <text><![CDATA[Los mensajes ARP falsos pueden proporcionar una dirección MAC incorrecta que luego toma control de las tramas que utilizan esa dirección (proceso denominado “suplantación”).]]></text>
+   </component>
+   <component id='ID_table'>
+		<text><![CDATA[
+				<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4'>
+				<tr>
+						<td colspan='6' width="75" bgcolor='#98D3D1' valign="top"><font size="12" color='#000000'><b>Ethernet</b></font></td>
+						
+					  </tr>
+						<tr class="liner">
+							<td colspan='6' bgcolor='#0E6360' class="liner_top"><font size='1' color='#434321'><span style="color:#DAE17A">.</span></font></td>
+						</tr>
+					  
+					  <tr>
+						<td bgcolor='#EFF8F7' valign="top"><font color='#393536'>8</font></td>
+					 	<td bgcolor='#EFF8F7' valign="top"><font color='#393536'>6</font></td>
+						<td bgcolor='#EFF8F7' valign="top"><font color='#393536'>6</font></td>
+					 	<td bgcolor='#EFF8F7' valign="top"><font color='#393536'>2</font></td>
+						<td bgcolor='#EFF8F7' valign="top"><font color='#393536'>46 a 1500</font></td>
+					 	<td bgcolor='#EFF8F7' valign="top"><font color='#393536'>4</font></td>
+						
+					  </tr>
+					  <tr>
+						<td bgcolor='#FFFFFF' valign="top"><font color='#393536'>Preámbulo</font></td>
+							<td bgcolor='#FFFFFF' valign="top"><font color='#f26200'><b>Dirección de destino</b></font></td>
+							<td bgcolor='#FFFFFF' valign="top"><font color='#393536'>Dirección de origen</font></td>
+							<td bgcolor='#FFFFFF' valign="top"><font color='#393536'>Tipo</font></td>
+							<td bgcolor='#FFFFFF' valign="top"><font color='#393536'>Datos</font></td>
+							<td bgcolor='#FFFFFF' valign="top"><font color='#393536'>Secuencia de verificación de trama</font></td>
+					  </tr>
+				</table>
+			]]>
+			
+		</text>
+		</component>
+
+
+
+
+</textcomponents>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.2.1.2 Densidad de puertos</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.2.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Selección de dispositivos de red</h1>
+        <h2>Hardware del switch</h2>
+      </div>
+      <div id="content">
+<p>La densidad de puertos de un switch se refiere al número de puertos disponibles en un único switch. En la ilustración se muestra la densidad de puertos de tres switches diferentes.</p>
+<p></p>
+<p></p>
+<p>Los switches de configuración fija generalmente admiten hasta 48 puertos en un único dispositivo. Presentan opciones para hasta cuatro puertos adicionales para dispositivos de factor de forma conectable (SFP) pequeños. Las altas densidades de puerto permiten un mejor uso del espacio y la energía limitados. Si hay dos switches de 24 puertos cada uno, podrían admitir hasta 46 dispositivos, dado que al menos uno de los puertos de cada switch se pierde en la conexión de cada switch al resto de la red. Además, se requieren dos tomas de alimentación eléctrica. Por otra parte, si hay un único switch de 48 puertos, se pueden admitir 47 dispositivos; en este caso, se utiliza un solo puerto para conectar el switch al resto de la red y un solo tomacorriente para admitir el switch.</p>
+<p></p>
+<p>Los switches modulares pueden admitir altas densidades de puertos mediante el agregado de varias tarjetas de línea de puertos de switch. Por ejemplo, algunos switches Catalyst 6500 pueden admitir más de 1000 puertos de switch. </p>
+<p></p>
+<p>Las grandes redes empresariales que admiten muchos miles de dispositivos de red requieren switches modulares de alta densidad para lograr el mejor uso del espacio y de la energía. Sin el uso de un switch modular de alta densidad, la red necesitaría muchos switches de configuración fija para incluir el número de dispositivos que necesitan acceso a la red. Este enfoque puede consumir muchas tomas de alimentación eléctrica y mucho espacio en el armario. </p>
+<p></p>
+<p>El diseñador de red también debe tener en cuenta el problema de los cuellos de botella de los uplinks: una serie de switches de configuración fija puede consumir muchos puertos adicionales para la agregación de ancho de banda entre switches, con el propósito de cumplir el objetivo de rendimiento. Si se utiliza un único switch modular, la agregación de ancho de banda no se vuelve un problema, dado que el backplane del bastidor puede proporcionar el ancho de banda necesario para admitir los dispositivos conectados a las tarjetas de línea de puertos de switch.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

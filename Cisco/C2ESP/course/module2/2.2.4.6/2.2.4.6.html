@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.2.4.6 Seguridad de puertos: verificación</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.2.4.6_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Seguridad de switches: administración e implementación</h1>
+        <h2>Seguridad de puertos de switch</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Verificar la seguridad de puerto</b>
+</p>
+<p></p>
+<p>Después de configurar la seguridad de puertos en un switch, revise cada interfaz para verificar que la seguridad de puertos y las direcciones MAC estáticas se configuraron correctamente. </p>
+<p></p>
+<p>
+<b>Verificar los parámetros de seguridad de puerto</b>
+</p>
+<p></p>
+<p>Para mostrar la configuración de seguridad de puertos para el switch o la interfaz especificada, use el comando <span class="cmd"><b>show port-security [interface </b></span><span class="cmd"><i>ID-de-interfaz</i></span><span class="cmd"><b>]</b></span>. El resultado de la configuración de la seguridad del puerto dinámico se muestra en la figura 1. De manera predeterminada, se permite una dirección MAC en este puerto.</p>
+<p></p>
+<p>El resultado que se muestra en la figura 2 muestra los valores de la configuración de seguridad del puerto persistente. La cantidad máxima de direcciones se estableció en 10, como se configuró. </p>
+<p></p>
+<p>
+<b>Nota:</b> la dirección MAC se identifica como sticky MAC (MAC persistente).</p>
+<p></p>
+<p>Las direcciones MAC persistentes se agregan a la tabla de direcciones MAC y a la configuración en ejecución. Como se muestra en la figura 3, la dirección MAC persistente de la PC2 se agregó a la configuración en ejecución para S1.</p>
+<p></p>
+<p></p>
+<p>
+<b>Verificar las direcciones MAC seguras</b>
+</p>
+<p></p>
+<p>Para mostrar todas las direcciones MAC seguras configuradas en todas las interfaces del switch o en una interfaz especificada con la información de vencimiento para cada una, use el comando <span class="cmd"><b>show port-security address</b></span>. Como se muestra en la figura 4, las direcciones MAC seguras se indican junto con los tipos. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

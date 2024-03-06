@@ -1,0 +1,100 @@
+﻿<textcomponents> <!--slide 1-->
+<component id="ID_s1_title">
+<text><![CDATA[<b>Verificación del estado de una interfaz</b>]]></text>
+</component>
+
+<component id="ID_s1_txt01">
+<text><![CDATA[&lt;resultado omitido&gt;]]></text>
+</component>
+
+<component id="ID_table01">
+<text><![CDATA[<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4' class="mtable">
+<tr class="mtable_top">
+<td colspan='3' bgcolor='#0E6360' class="mtable_top"><font size='1' color='#434321'><span style="color:#DAE17A">.</span></font></td>
+</tr>
+
+<tr>
+<td width="137" bgcolor='#077A77' valign="top" class="mtitle"><font color='#ffffff'><b>Estado de la interfaz</b></font></td>
+<td  width="137" bgcolor='#077A77' valign="top" class="mtitle"><font color='#ffffff'><b>Estado del protocolo de línea</b></font></td>
+<td  width="137" bgcolor='#077A77' valign="top" class="mtitle"><font color='#ffffff'><b>Estado de enlace</b></font></td>
+</tr>
+
+<tr>
+<td bgcolor="#EFF8F7" valign="top"><font color='#393536'>Up (Activo)</font></td>
+<td bgcolor="#EFF8F7" valign="top"><font color='#393536'>Up (Activo)</font></td>
+<td bgcolor="#EFF8F7" valign="top"><font color='#393536'>Operativo</font></td>
+</tr>
+
+<tr>
+<td bgcolor='#ffffff' valign="top"><font color='#393536'>Down (Inactivo)</font></td>
+<td bgcolor='#ffffff' valign="top"><font color='#393536'>Down (Inactivo)</font></td>
+<td  bgcolor='#ffffff' valign="top"><font color='#393536'>Problema de interfaz</font></td>
+</tr>
+
+</table>]]></text> 
+</component> <!--slide 2-->
+<component id="ID_s2_title">
+<text><![CDATA[<b>Visualización del estado y las estadísticas de una interfaz</b>]]></text>
+</component>
+
+<component id="ID_s2_txt01">
+<text><![CDATA[&lt;resultado omitido&gt;]]></text>
+</component>
+
+<component id="ID_s2_txt02">
+<text><![CDATA[&lt;resultado omitido&gt;]]></text>
+</component> <!--slide 3-->
+<component id="ID_s3_title">
+<text><![CDATA[<b>Problemas de la capa de acceso a la red</b>]]></text>
+</component>
+
+<component id="ID_s3_table">
+<text><![CDATA[<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4' class="mtable">
+
+<tr class="mtable_top">
+<td colspan='2' bgcolor='#0E6360' class="mtable_top"><font size='1' color='#434321'><span style="color:#DAE17A">.</span></font></td>
+</tr>
+
+<tr>
+<td width="70" bgcolor='#077A77' valign="top" class="mtitle"><font color='#ffffff'><b>Tipo de error</b></font></td>
+<td  width="350" bgcolor='#077A77' valign="top" class="mtitle"><font color='#ffffff'><b>Descripción</b></font></td>
+</tr>
+
+<tr>
+<td bgcolor="#EFF8F7" valign="top"><font color='#393536'>Errores de entrada</font></td>
+<td  bgcolor="#EFF8F7" valign="top"><font color='#393536'>Cantidad total de errores. Incluye los recuentos de fragmentos de colisión, de fragmentos gigantes, de los que no están almacenados en buffer, de CRC, de tramas, de saturación y de ignorados.</font></td>
+</tr>
+
+<tr>
+<td bgcolor='#ffffff' valign="top"><font color='#393536'>Fragmentos de colisión</font></td>
+<td bgcolor='#ffffff' valign="top"><font color='#393536'>Paquetes que se descartan porque son más pequeños que el tamaño mínimo de paquete para el medio. Por ejemplo, cualquier paquete Ethernet que tenga menos de 64&nbsp;bytes se considera un fragmento de colisión.</font></td>
+</tr>
+
+<tr>
+<td bgcolor="#EFF8F7" valign="top"><font color='#393536'>Fragmentos gigantes</font></td>
+<td  bgcolor="#EFF8F7" valign="top"><font color='#393536'>Paquetes que se descartan porque superan el tamaño máximo de paquete para el medio. Por ejemplo, cualquier paquete Ethernet que tenga más de 1518&nbsp;bytes se considera un fragmento gigante.</font></td>
+</tr>
+
+<tr>
+<td bgcolor='#ffffff' valign="top"><font color='#393536'>CRC</font></td>
+<td  bgcolor='#ffffff' valign="top"><font color='#393536'>Se generan errores de CRC cuando el checksum calculado no es igual al checksum recibido.</font></td>
+</tr>
+
+<tr>
+<td bgcolor="#EFF8F7" valign="top"><font color='#393536'>Errores de salida</font></td>
+<td  bgcolor="#EFF8F7" valign="top"><font color='#393536'>La suma de todos los errores que impiden la transmisión final de los datagramas por la interfaz que se analiza.</font></td>
+</tr>
+
+<tr>
+<td bgcolor='#ffffff' valign="top"><font color='#393536'>Colisiones</font></td>
+<td  bgcolor='#ffffff' valign="top"><font color='#393536'>Cantidad de mensajes retransmitidos debido a una colisión de Ethernet.</font></td>
+</tr>
+
+<tr>
+<td bgcolor="#EFF8F7" valign="top"><font color='#393536'>Colisiones tardías</font></td>
+<td  bgcolor="#EFF8F7" valign="top"><font color='#393536'>Una colisión que ocurre después de que se transmitieron 512&nbsp;bits de la trama.</font></td>
+</tr>
+</table>]]></text> 
+</component>
+
+</textcomponents>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.1.3.3 Modo infraestructura</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.1.3.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Conceptos de tecnología inalámbrica</h1>
+        <h2>Topologías de WLAN 802.11</h2>
+      </div>
+      <div id="content">
+<p>La arquitectura IEEE 802.11 consta de varios componentes que interactúan para proporcionar una WLAN que admita clientes. Define dos componentes básicos de la topología del modo de infraestructura: un conjunto de servicios básicos (BSS) y un conjunto de servicios extendidos (ESS).</p>
+<p></p>
+<p>
+<b>Conjunto de servicios básicos </b>
+</p>
+<p>Un BSS consta de un único AP que interconecta todos los clientes inalámbricos asociados. En la figura 1, se muestran dos BSS. Los círculos representan el área de cobertura dentro de la que los clientes inalámbricos del BSS pueden permanecer comunicados. Esta área se denomina “área de servicios básicos” (BSA). Si un cliente inalámbrico sale de su BSA, ya no se puede comunicar directamente con otros clientes inalámbricos dentro de la BSA. El BSS es el componente básico de la topología, mientras que la BSA es el área de cobertura real (los términos BSA y BSS a menudo se usan de manera indistinta).</p>
+<p></p>
+<p>La dirección MAC de capa 2 del AP se usa para identificar de forma exclusiva cada BSS y se denomina “identificador del conjunto de servicios básicos” (BSSID). Por lo tanto, el BSSID es el nombre formal del BSS y siempre se asocia a un único AP. </p>
+<p></p>
+<p></p>
+<p>
+<b>Conjunto de servicios extendidos</b>
+</p>
+<p>Cuando un único BSS proporciona una cobertura de RF insuficiente, se pueden unir dos o más BSS a través de un sistema de distribución (DS) común para formar un ESS. Como se muestra en la figura 2, un ESS es la unión de dos o más BSS interconectados mediante un DS por cable. Los clientes inalámbricos en una BSA ahora se pueden comunicar con los clientes inalámbricos en otra BSA dentro del mismo ESS. Los clientes con conexión inalámbrica móvil se pueden trasladar de una BSA a otra (dentro del mismo ESS) y se pueden conectar sin inconvenientes.</p>
+<p></p>
+<p>El área rectangular representa el área de cobertura dentro de la que los miembros de un ESS se pueden comunicar. Esta área se denomina “área de servicios extendidos” (ESA). Una ESA a menudo involucra varios BSS en configuraciones superpuestas o separadas. </p>
+<p></p>
+<p>Cada ESS se identifica mediante un SSID y, en un ESS, cada BSS se identifica mediante su BSSID. Por motivos de seguridad, se pueden propagar SSID adicionales a través del ESS para segregar el nivel de acceso a la red.</p>
+<p></p>
+<p>
+<b>Nota:</b> el estándar 802.11 denomina IBSS al modo ad hoc.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

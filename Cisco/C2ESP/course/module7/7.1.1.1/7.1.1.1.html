@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.1.1.1 La evolución de los protocolos de enrutamiento dinámico</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.1.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolos de enrutamiento dinámico</h1>
+        <h2>Funcionamiento del protocolo de enrutamiento dinámico</h2>
+      </div>
+      <div id="content">
+<p>Los protocolos de routing dinámico se utilizan en el ámbito de las redes desde finales de la década de los ochenta. Uno de los primeros protocolos de routing fue el protocolo de información de routing (RIP). Si bien el protocolo RIP versión 1 (RIPv1) se lanzó en 1988, ya en 1969 se utilizaban algunos de los algoritmos básicos en dicho protocolo en la Advanced Research Projects Agency Network (ARPANET). </p>
+<p></p>
+<p>A medida que las redes evolucionaron y se volvieron más complejas, surgieron nuevos protocolos de routing. El protocolo de routing RIP se actualizó a RIPv2 a fin de admitir el crecimiento del entorno de red. Sin embargo, la versión más nueva de RIP aún no es escalable a las implementaciones de red más extensas de la actualidad. Con el objetivo de satisfacer las necesidades de las redes más grandes, se desarrollaron dos protocolos de routing: el protocolo OSPF (Open Shortest Path First) e Intermediate System-to-Intermediate System (IS-IS). Cisco desarrolló el protocolo de routing de gateway interior (IGRP) e IGRP mejorado (EIGRP), que también tiene buena escalabilidad en implementaciones de redes más grandes. </p>
+<p></p>
+<p>Asimismo, surgió la necesidad de conectar distintas internetworks y proporcionar routing entre ellas. En la actualidad, se utiliza el protocolo de gateway fronterizo (BGP) entre proveedores de servicios de Internet (ISP). El protocolo BGP también se utiliza entre los ISP y sus clientes privados más grandes para intercambiar información de routing. </p>
+<p></p>
+<p>En la figura 1, se muestra la línea cronológica de la introducción de los diversos protocolos. </p>
+<p></p>
+<p>En la figura 2, se clasifican los protocolos. </p>
+<p></p>
+<p>Con la llegada de numerosos dispositivos que usan IP para consumidores, el espacio de direccionamiento IPv4 quedó prácticamente agotado, por lo que surgió IPv6. A fin de admitir la comunicación basada en IPv6, se desarrollaron versiones más nuevas de los protocolos de routing IP (consulte la fila de IPv6 en la ilustración). </p>
+<p></p>
+<p>RIP es el más simple de los protocolos de routing dinámico y, en esta sección, se utiliza para proporcionar un nivel básico de comprensión sobre los protocolos de routing. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>10.4.1.4 Resumen</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_10.4.1.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resumen</h1>
+        <h2>Resumen</h2>
+      </div>
+      <div id="content">
+<p>La capa de aplicación es responsable del acceso directo a los procesos subyacentes que administran y transmiten la comunicación a través de la red humana. Esta capa sirve como origen y destino de las comunicaciones a través de las redes de datos. Las aplicaciones, los protocolos y los servicios de la capa de aplicación permiten a los usuarios interactuar con la red de datos de manera significativa y eficaz. </p>
+<p></p>
+<p>
+<ul>
+<li>Las aplicaciones son programas informáticos con los que el usuario interactúa y que inician el proceso de transferencia de datos a solicitud del usuario.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Los servicios son programas en segundo plano que proporcionan conexión entre la capa de aplicación y las capas inferiores del modelo de red.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Los protocolos proporcionan una estructura de reglas y procesos acordados que garantizan que los servicios que se ejecutan en un dispositivo particular puedan enviar y recibir datos de una variedad de dispositivos de red diferentes.</li>
+</ul>
+</p>
+<p></p>
+<p>Un cliente puede solicitar a un servidor la entrega de datos por la red, o se puede solicitar entre dispositivos que funcionan en una disposición P2P, donde la relación cliente/servidor se establece según el dispositivo de origen y de destino en ese momento. Los mensajes se intercambian entre los servicios de la capa de aplicación en cada dispositivo final de acuerdo con las especificaciones del protocolo para establecer y utilizar estas relaciones.</p>
+<p></p>
+<p>Por ejemplo, los protocolos como el HTTP, admiten el envío de páginas Web a dispositivos finales. SMTP y POP admiten el envío y la recepción de correo electrónico. SMB y FTP permiten compartir archivos a los usuarios. Las aplicaciones P2P facilitan a los consumidores la tarea de compartir medios sin inconvenientes de una manera distribuida. DNS resuelve los nombres utilizados para referirse a los recursos de red en direcciones numéricas utilizables por la red. Las nubes son ubicaciones ascendentes remotas que almacenan datos y aplicaciones host, de modo que los usuarios no requieran tantos recursos locales y para que puedan acceder al contenido sin inconvenientes desde distintos dispositivos en cualquier ubicación. </p>
+<p></p>
+<p>Todos estos elementos funcionan conjuntamente, en la capa de aplicación. La capa de aplicación permite que los usuarios trabajen y jueguen a través de Internet.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

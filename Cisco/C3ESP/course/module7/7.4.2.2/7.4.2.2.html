@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.4.2.2 Configuración de direcciones IPv6 link-local</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.4.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de EIGRP para IPv6</h1>
+        <h2>Configuración de EIGRP para IPv6</h2>
+      </div>
+      <div id="content">
+<p>Las direcciones link-local se crean de manera automática cuando se asigna una dirección IPv6 de unidifusión global a la interfaz. No se requieren direcciones de unidifusión global en una interfaz, pero sí se requieren direcciones IPv6 link-local.</p>
+<p></p>
+<p>A menos que se configuren manualmente, los routers Cisco crean la dirección link-local utilizando el prefijo FE80::/10 y el proceso EUI-64, como se muestra en la figura 1. EUI-64 implica usar la dirección MAC de Ethernet de 48 bits, insertar FFFE en el medio e invertir el séptimo bit. Para las interfaces seriales, Cisco usa la dirección MAC de una interfaz Ethernet. Un router con varias interfaces seriales puede asignar la misma dirección link-local a cada interfaz IPv6, porque las direcciones link-local solo necesitan ser locales en el enlace.</p>
+<p></p>
+<p>Las direcciones link-local creadas con el formato EUI-64 o, en algunos casos, con ID de interfaces aleatorias, hacen que resulte difícil reconocer y recordar esas direcciones. Debido a que los protocolos de routing IPv6 utilizan direcciones IPv6 link-local para el direccionamiento de unidifusión y la información de dirección de siguiente salto en la tabla de routing, habitualmente se busca que sea una dirección fácil de reconocer. Configurar la dirección link-local manualmente permite crear una dirección reconocible y más fácil de recordar.</p>
+<p></p>
+<p>Las direcciones link-local se pueden configurar manualmente mediante el mismo comando del modo de configuración de interfaz que se utiliza para crear direcciones IPv6 de unidifusión global, pero con diferentes parámetros:</p>
+<p></p>
+<p>
+<span class="cmd">Router(config-if)# </span>
+<span class="cmd">
+<b>ipv6 address</b>
+</span>
+<span class="cmd"></span>
+<span class="cmd">
+<i>dirección-link-local</i>
+</span>
+<span class="cmd"></span>
+<span class="cmd">
+<b>link-local</b>
+</span>
+</p>
+<p></p>
+<p>Una dirección link-local tiene un prefijo dentro del rango FE80 a FEBF. Cuando una dirección comienza con este hexteto (segmento de 16 bits), la palabra clave <span class="cmd"><b>link-local</b></span> debe escribirse después de la dirección. </p>
+<p></p>
+<p>En la figura 2, se muestra la configuración de una dirección link-local mediante el comando <span class="cmd"><b>ipv6 address</b></span> del modo de configuración de interfaz. La dirección link-local FE80::1 se utiliza para que sea posible reconocer fácilmente que pertenece al router R1. Se configura la misma dirección IPv6 link-local en todas las interfaces de R1. Se puede configurar FE80::1 en cada enlace, debido a que solamente tiene que ser única en ese enlace.</p>
+<p></p>
+<p>De manera similar al R1, en la figura 3 el router R2 se configura con FE80::2 como la dirección IPv6 link-local en todas sus interfaces.</p>
+<p></p>
+<p>Utilice el verificador de sintaxis en la figura 4 para configurar FE80::3 como la dirección link-local en todas las interfaces del R3.</p>
+<p></p>
+<p>Como se muestra en la figura 5, el comando <span class="cmd"><b>show ipv6 interface brief</b></span> se usa para verificar las direcciones IPv6 link-local y de unidifusión global en todas las interfaces. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

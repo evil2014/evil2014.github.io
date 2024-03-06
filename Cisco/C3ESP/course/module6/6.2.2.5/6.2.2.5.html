@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.2.2.5 Configuración de resumen de rutas interárea</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.2.2.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de OSPF de diversas áreas</h1>
+        <h2>Resumen de rutas OSPF</h2>
+      </div>
+      <div id="content">
+<p>En la figura 1, para demostrar el efecto de la sumarización de ruta, el R1 está configurado para resumir las rutas internas del área 1.</p>
+<p></p>
+<p>Para configurar manualmente la sumarización de rutas interárea en un ABR, utilice el comando <span class="cmd"><b>area </b></span><span class="cmd"><i>id-área</i></span><span class="cmd"><b> range </b></span><span class="cmd"><i>dirección máscara</i></span> del modo de configuración de router. Esto le ordena al ABR que resuma las rutas para un área específica antes de introducirlas en otra área en forma de LSA de tipo 3 de resumen a través del backbone.</p>
+<p></p>
+<p>
+<b>Nota:</b> en OSPFv3, el comando es idéntico, excepto por la dirección de red IPv6. La sintaxis del comando para OSPFv3 es <span class="cmd"><b>area </b></span><span class="cmd"><i>id-área </i></span><span class="cmd"><b>range </b></span><span class="cmd"><i>prefijo/longitud-prefijo</i></span>.<span class="cmd"><i></i></span></p>
+<p></p>
+<p>En la figura 2, se resumen las dos rutas internas del área 1 en una ruta resumida interárea OSPF en el R1. La ruta resumida 10.1.0.0/22 resume cuatro direcciones de red: de la 10.1.0.0/24 a la 10.1.3.0/24.</p>
+<p></p>
+<p>En la figura 3, se muestra la tabla de routing IPv4 del R1. Observe que apareció una nueva entrada con una interfaz de salida <span class="cmd">Null0</span>. Cuando se configura la sumarización manual para evitar los bucles de routing, el IOS de Cisco crea de manera automática una ruta resumida falsa a la interfaz <span class="cmd">Null0</span>. Todo paquete enviado a una interfaz nula se descarta. </p>
+<p></p>
+<p>Por ejemplo, supongan que R1 recibió un paquete destinado a 10.1.0.10. Aunque coincidiría con la ruta sumarizada de R1, R1 no posee una ruta válida en el área 1. Por lo tanto, el R1 consultaría la tabla de routing para buscar la siguiente coincidencia más extensa, que sería la entrada de <span class="cmd">Null0</span>. El paquete se reenviaría a la interfaz <span class="cmd">Null0</span> y se descartaría. Este proceso evita que el router reenvíe el paquete a una ruta predeterminada y posiblemente cree un bucle.</p>
+<p></p>
+<p>En la figura 4, se muestra la tabla de routing actualizada del R3. Noten cómo ahora solo existe una entrada de interárea que se dirige a la ruta sumarizada 10.1.0.0/22. Si bien este ejemplo solo redujo la tabla de routing en una entrada, la sumarización se puede implementar para resumir muchas redes. Esto reduciría el tamaño de las tablas de routing.</p>
+<p></p>
+<p>Utilice el verificador de sintaxis de la figura 5 para resumir las rutas del área 2 en el R3.</p>
+<p></p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

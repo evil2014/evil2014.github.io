@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.1.3.2 Configuración de router-on-a-stick: configuración del switch</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.1.3.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración del routing entre VLAN</h1>
+        <h2>Configurar un enrutamiento router-on-a-stick entre VLAN</h2>
+      </div>
+      <div id="content">
+<p>Para habilitar el routing entre VLAN utilizando el método router-on-a stick, comience por habilitar el enlace troncal en el puerto del switch que está conectado al router.</p>
+<p></p>
+<p>En la ilustración, el router R1 se conecta al switch S1 en el puerto de enlace troncal F0/5. Las VLAN 10 y 30 se agregaron al switch S1. </p>
+<p></p>
+<p>Debido a que el puerto del switch F0/5 está configurado como puerto de enlace troncal, no necesita asignarse a ninguna VLAN. Para configurar el puerto del switch F0/5 como un puerto de enlace troncal, ejecute el comando<span class="cmd"><b> switchport mode trunk </b></span>en el modo de configuración de la interfaz para el puerto F0/5. </p>
+<p></p>
+<p>
+<b>Nota</b>: el router no admite el protocolo de enlace troncal dinámico (DTP), que es utilizado por los switches, por lo que no pueden usarse los siguientes comandos:<span class="cmd"><b> switchport mode dynamic auto </b></span>o<span class="cmd"><b> switchport mode dynamic desirable. </b></span></p>
+<p></p>
+<p>Ahora se puede configurar el router para que realice routing entre VLAN.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

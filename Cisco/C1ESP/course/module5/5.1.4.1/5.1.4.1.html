@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.1.4.1 MAC e IP</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.1.4.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolo Ethernet</h1>
+        <h2>MAC e IP</h2>
+      </div>
+      <div id="content">
+<p>Existen dos direcciones principales asignadas a un dispositivo host: </p>
+<p>
+<ul>
+<li>Dirección física (dirección MAC)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Dirección lógica (dirección IP)</li>
+</ul>
+</p>
+<p></p>
+<p>Tanto la dirección MAC como la dirección IP operan juntas para identificar un dispositivo en la red. El proceso de utilizar la dirección MAC y la dirección IP para encontrar una PC es similar al proceso de utilizar el nombre y la dirección de una persona para enviarle una carta. </p>
+<p></p>
+<p>El nombre de una persona generalmente no cambia. Por otro lado, la dirección de una persona indica dónde vive esa persona y puede cambiar. </p>
+<p></p>
+<p>La dirección MAC en un host, como los nombres de las personas, no cambia; se asigna físicamente a la NIC del host y se conoce como “dirección física”. La dirección física es siempre la misma, independientemente del lugar en donde se encuentre el host. </p>
+<p></p>
+<p>La dirección IP es similar a la dirección de una persona. Esta dirección está basada en la ubicación real del host. Con esta dirección, la trama puede determinar la ubicación adonde se deben enviar las tramas. La dirección IP, o dirección de red, se conoce como “dirección lógica” porque se asigna de forma lógica. Un administrador de red asigna esta dirección a cada host sobre la base de la red local a la que el host está conectado. En la ilustración, se muestra la naturaleza jerárquica de la localización de una persona sobre la base de una dirección “lógica”. Haga clic en cada grupo para ver cómo se filtra la dirección.</p>
+<p></p>
+<p>Para que una computadora pueda comunicarse en una red jerárquica, se necesitan tanto la dirección MAC física como la dirección IP lógica, de la misma manera en la que se necesitan el nombre y la dirección de una persona para poder enviarle una carta. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

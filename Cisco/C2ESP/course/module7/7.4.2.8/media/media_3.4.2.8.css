@@ -1,0 +1,23 @@
+
+/*   load the main media CSS file    */
+
+@import url('../../../common/styles/media2.css');
+
+html, body {
+	margin:0;
+	height:100%;
+
+}
+#flashContent {
+	width:98%;
+	height:98%;
+}
+table tr td {padding:8px 0px !important; font-weight:bold;}
+td.mtable_top { padding:0px !important;}
+span {/*font-size:15px !important;*/}
+#ID_bodyText01 {word-spacing:-.3px;}
+
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+span {/*position:relative;top:-5px;*/}
+}

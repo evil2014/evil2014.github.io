@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.1.2.3 Paquete de saludo</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.1.2.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Características de OSPF</h1>
+        <h2>Mensajes OSPF</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Paquete de saludo</b>
+</p>
+<p>El paquete OSPF de tipo 1 es el paquete de saludo. Los paquetes de saludo se utilizan para:</p>
+<p>
+<ul>
+<li>Descubrir vecinos OSPF y establecer adyacencias de vecinos.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Publicar parámetros en los que dos routers deben acordar convertirse en vecinos.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Elegir el Router designado (DR) y el Router designado de respaldo (BDR) en redes de accesos múltiples, como Ethernet y Frame Relay. Los enlaces punto a punto no requieren DR o BDR.</li>
+</ul>
+</p>
+<p></p>
+<p>En la ilustración, se muestran los campos contenidos en el paquete de tipo 1, el paquete de saludo. Los campos importantes que se muestran en la figura incluyen:</p>
+<p>
+<ul>
+<li>
+<b>Tipo:</b> identifica el tipo de paquete. Un uno (1) indica un paquete de saludo. Un valor de 2 identifica un paquete DBD, un valor de 3 identifica un paquete LSR, un valor de 4 identifica un paquete LSU, y un valor de 5 identifica un paquete LSAck.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>ID del router:</b> un valor de 32 bits expresado en notación decimal con puntos (una dirección IPv4) que se utiliza para identificar exclusivamente el router de origen.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>ID de área:</b> el área en la cual se originó el paquete. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Máscara de red:</b> la máscara de subred asociada a la interfaz emisora.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Intervalo de saludo:</b> especifica la frecuencia, en segundos, a la que un router envía paquetes de saludo. El intervalo de saludo predeterminado en redes de accesos múltiples es de 10 segundos. Este temporizador debe ser el mismo en los routers vecinos; de lo contrario, no se establece ninguna adyacencia.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Prioridad del router:</b> se utiliza en una elección de DR/BDR. La prioridad predeterminada para todos los routers OSPF es 1, pero se puede modificar manualmente desde 0 hasta 255. Cuanto mayor es el valor, mayor es la probabilidad de que el router sea el DR en el enlace.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Intervalo muerto:</b> es el tiempo en segundos que espera un router para establecer comunicación con un vecino antes de declarar que el router vecino no funciona. De manera predeterminada, el intervalo muerto del router es cuatro veces el intervalo de saludo. Este temporizador debe ser el mismo en los routers vecinos; de lo contrario, no se establece ninguna adyacencia.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Router designado (DR):</b> la ID del router del DR.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Router designado de respaldo (BDR):</b> la ID del router del BDR.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Lista de vecinos:</b> la lista en la que se identifican las ID del router de todos los routers adyacentes. </li>
+</ul>
+</p>
+<p></p>
+<p>Haga clic en cada uno de los campos resaltados en la ilustración para obtener más información.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

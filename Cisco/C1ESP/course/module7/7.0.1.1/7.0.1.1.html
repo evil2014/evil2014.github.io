@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.0.1.1 Introducción</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.0.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Capa de transporte</h1>
+        <h2>Introducción</h2>
+      </div>
+      <div id="content">
+<p>Las redes de datos e Internet brindan soporte a la red humana por medio del suministro de comunicación confiable entre personas. En un único dispositivo, las personas pueden utilizar varias aplicaciones y diversos servicios, como correo electrónico, la Web y la mensajería instantánea, para enviar mensajes o recuperar información. Las aplicaciones, como los clientes de correo electrónico, los exploradores Web y los clientes de mensajería instantánea, permiten que las personas usen PC y redes para enviar mensajes y encontrar información.</p>
+<p></p>
+<p>Los datos de cada una de estas aplicaciones se empaquetan, se transportan y se entregan a la aplicación correspondiente en el dispositivo de destino. Los procesos que se describen en la capa de transporte del modelo OSI aceptan los datos de la capa de aplicación y los preparan para el direccionamiento en la capa de red. La capa de transporte <b>prepara</b> los datos para transmitirlos a través de la red. La PC de origen se comunica con una PC receptora para decidir cómo dividir los datos en <b>segmentos</b>, cómo asegurarse de que ninguno de los segmentos se pierda y cómo verificar si llegan todos los segmentos. Al considerar la capa de transporte, imagínese un departamento de envíos que prepara un único pedido de varios paquetes para entregar. </p>
+<p></p>
+<p>En este capítulo, se examina el rol de la capa de transporte en el encapsulamiento de datos de aplicación que utiliza la capa de red. La capa de transporte incluye también las siguientes funciones: </p>
+<p>
+<ul>
+<li>Permite que varias aplicaciones, como el envío de correo electrónico y las redes sociales, se puedan comunicar a través la red al mismo tiempo en un único dispositivo. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Asegura que, si es necesario, la aplicación correcta reciba todos los datos con confianza y en orden.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Emplea mecanismos de manejo de errores.</li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Objetivos de aprendizaje</b>
+</p>
+<p></p>
+<p>Al completar este capítulo, usted podrá:</p>
+<p>
+<ul>
+<li>Explicar la necesidad de la capa de transporte.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Identificar la función de la capa de transporte a medida que provee la transferencia de datos de extremo a extremo entre las aplicaciones.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Describir la función de dos protocolos de la capa de transporte TCP/IP: TCP y UDP.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Explicar las funciones clave de la capa de transporte, incluso la confiabilidad, el direccionamiento de puerto y la segmentación.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Explicar cómo cada TCP y UDP maneja las funciones clave.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Identificar cuándo es apropiado usar TCP o UDP y proveer ejemplos de aplicaciones que usan cada protocolo.</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

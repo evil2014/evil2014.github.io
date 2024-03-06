@@ -1,0 +1,78 @@
+﻿<textcomponents>
+
+<component id="ID_title">
+<text><![CDATA[<b>Enrutamiento entre VLAN basado en switch</b>]]></text>
+</component>
+
+<component id="ID_bubble01">
+<text><![CDATA[<b>Enlace troncal</b>]]></text>
+</component>
+
+<component id="ID_bubble02">
+<text><![CDATA[<b>Enlace troncal</b>]]></text>
+</component>
+
+<component id="ID_bubble03">
+<text><![CDATA[<b>Enlace troncal</b>]]></text>
+</component>
+
+<component id="ID_bubble04">
+<text><![CDATA[<b>Puertos del switch S1</b><br/>F0/1-F0/4 = Enlace troncal<br/><br/><b>Puertos del switch S2</b><br/>F0/11 = VLAN 10<br/>F0/18 = VLAN 20<br/>F0/6 = VLAN 30<br/>F0/1-F0/4 = Enlace troncal]]></text>
+</component>
+
+<component id="ID_bubble05">
+<text><![CDATA[Trama etiquetada de VLAN]]></text>
+</component>
+
+<component id="ID_frame01">
+<text><![CDATA[Unicast]]></text>
+</component>
+
+<component id="ID_frame02">
+<text><![CDATA[Unidifusión de VLAN 10]]></text>
+</component>
+
+<component id="ID_frame03">
+<text><![CDATA[Unidifusión de VLAN 30]]></text>
+</component>
+
+<component id="ID_bubble06">
+<text><![CDATA[<b>Enlace troncal</b>]]></text>
+</component>
+
+<component id="ID_bubble07">
+<text><![CDATA[<b>Interfaces VLAN del S1</b><br/>VLAN 10: 172.17.10.1<br/>VLAN 20: 172.17.20.1<br/>VLAN 30: 172.17.30.1]]></text>
+</component>
+
+<component id="ID_bubble08">
+<text><![CDATA[VLAN 10]]></text>
+</component>
+
+<component id="ID_bubble09">
+<text><![CDATA[VLAN 30]]></text>
+</component> <!-- controller -->
+
+<component id="end">
+<text><![CDATA[Finalizar]]></text>
+</component>
+
+<component id="fforward">
+<text><![CDATA[Adelantar]]></text>
+</component>
+
+<component id="pause">
+<text><![CDATA[Pausa]]></text>
+</component>
+
+<component id="play">
+<text><![CDATA[Reproducir]]></text>
+</component>
+
+<component id="rewind">
+<text><![CDATA[Regresar]]></text>
+</component>
+
+<component id="start">
+<text><![CDATA[Inicio]]></text>
+</component>
+</textcomponents>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.4.2.7 Armado del árbol SPF</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.4.2.7_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Routing dinámico de estado de enlace</h1>
+        <h2>Actualizaciones de estado de enlace</h2>
+      </div>
+      <div id="content">
+<p>Cada router en el área de routing utiliza la base de datos de estado de enlace y el algoritmo SPF para armar el árbol SPF. </p>
+<p></p>
+<p>Por ejemplo, utilizando la información de estado de enlace de todos los demás routers, el R1 ahora puede comenzar a armar un árbol SPF de la red. Para comenzar, el algoritmo SPF interpreta el LSP de cada router para identificar las redes y los costos asociados.</p>
+<p></p>
+<p>En la figura 1, el R1 identifica sus redes conectadas directamente y los costos.</p>
+<p></p>
+<p>En las figuras 2 a 5, el R1 continúa agregando toda red desconocida y sus costos asociados al árbol SPF. Observe que el R1 ignora cualquier red que ya haya identificado.</p>
+<p></p>
+<p>A continuación, el algoritmo SPF calcula las rutas más cortas para llegar a cada red individual, lo que da como resultado el árbol SPF como se muestra en la figura 6. El R1 ahora tiene una vista de topología completa del área de estado de enlace.</p>
+<p></p>
+<p>Cada router construye su propio árbol SPF independientemente de los otros routers. Para garantizar el enrutamiento adecuado, las bases de datos de link-state utilizadas para construir dichos árboles deben ser idénticas en todos los routers.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

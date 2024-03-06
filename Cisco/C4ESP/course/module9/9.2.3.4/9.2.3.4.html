@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.2.3.4 Paso 2: Revisar las incompatibilidades de dúplex</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.2.3.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resolución de problemas de red</h1>
+        <h2>Resolución de problemas de conectividad IP</h2>
+      </div>
+      <div id="content">
+<p>Otra causa común de los errores de interfaz es un modo de dúplex incompatible entre los dos extremos de un enlace Ethernet. Actualmente, en numerosas redes basadas en Ethernet, las conexiones punto a punto son la norma, y el uso de hubs y la operación half-duplex asociadas se están volviendo menos frecuentes. Esto significa que, en la actualidad, la mayoría de los enlaces Ethernet operan en modo full-duplex y que, si bien se consideraba que las colisiones eran normales en un enlace Ethernet, hoy en día las colisiones suelen indicar que la negociación de dúplex falló y que el enlace no opera en el modo de dúplex correcto.</p>
+<p></p>
+<p>El estándar Gigabit Ethernet IEEE 802.3ab exige el uso de la autonegociación para velocidad y dúplex. Además, si bien no es estrictamente obligatorio, casi todas las NIC Fast Ethernet también usan la autonegociación de manera predeterminada. En la actualidad, la práctica recomendada es la autonegociación para velocidad y dúplex. En la figura 1, se indican las pautas para la configuración de dúplex.</p>
+<p></p>
+<p>Sin embargo, si la negociación de dúplex falla por algún motivo, podría ser necesario establecer la velocidad y el dúplex manualmente en ambos extremos. Por lo general, esto conllevaría configurar el modo dúplex en full-duplex en ambos extremos de la conexión. Sin embargo, si esto no funciona, es preferible ejecutar half-duplex en ambos extremos a experimentar una incompatibilidad de dúplex.</p>
+<p></p>
+<p>
+<b>Ejemplo de resolución de problemas</b>
+</p>
+<p></p>
+<p>El administrador de red tuvo que agregar usuarios adicionales a la red de la situación anterior. Para incorporar a estos nuevos usuarios, el administrador de red instaló un segundo switch y lo conectó al primero. Poco después de que se agregó el S2 a la red, los usuarios en ambos switches comenzaron a experimentar importantes problemas de rendimiento al conectarse con los dispositivos en el otro switch, como se muestra en la figura 2. </p>
+<p></p>
+<p>El administrador de red observa un mensaje de la consola en el switch S2:</p>
+<p></p>
+<p>
+<span class="cmd">*Mar 1 00:45:08.756: %CDP-4-DUPLEX_MISMATCH: duplex mismatch discovered on FastEthernet0/20 (not half duplex), with Switch FastEthernet0/20 (half duplex).</span>
+</p>
+<p></p>
+<p>Mediante el comando <span class="cmd"><b>show interfaces fa 0/20</b></span>, el administrador de red examina la interfaz en el S1 usada para conectarse al S2 y observa que está establecida en full-duplex, como se muestra en la figura 3. Ahora, el administrador de red examina el otro lado de la conexión: el puerto en el S2. En la figura 4, se muestra que este lado de la conexión se configuró como half-duplex. El administrador de red corrige la configuración y la establece en <span class="cmd"><b>duplex auto</b></span>, para que el dúplex se negocie automáticamente. Debido a que el puerto en el S1 se establece en full-duplex, el S2 también usa full-duplex.</p>
+<p></p>
+<p>Los usuarios informan que ya no existe ningún problema de rendimiento.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

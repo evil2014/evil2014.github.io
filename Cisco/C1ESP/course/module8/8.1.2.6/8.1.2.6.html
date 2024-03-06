@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.1.2.6 Importancia de la operación AND</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.1.2.6_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Direcciones de red IPv4</h1>
+        <h2>Máscara de subred IPv4</h2>
+      </div>
+      <div id="content">
+<p>Si se aplica la lógica AND a cualquier bit de la dirección con valor de bit de 1 de la máscara de subred, da como resultado el valor de bit original de la dirección. Entonces, un 0 (de la dirección IPv4) AND 1 (de la máscara de subred) es 0. Un 1 (de la dirección IPv4) AND 1 (de la máscara de subred) es 1. Por lo tanto, el resultado de la aplicación de AND con un 0 en cualquier caso es 0. Estas propiedades de la operación AND se utilizan con la máscara de subred para “enmascarar” los bits de host de una dirección IPv4. Se aplica la lógica AND a cada bit de la dirección con el bit de máscara de subred correspondiente.</p>
+<p></p>
+<p>Debido a que todos los bits de la máscara de subred que representan bits de host son 0, la porción de host de la dirección de red resultante está formada por todos 0. Recuerde que una dirección IPv4 con todos 0 en la porción de host representa la dirección de red. </p>
+<p></p>
+<p>Asimismo, todos los bits de la máscara de subred que indican la porción de red son 1. Cuando se aplica la lógica AND a cada uno de estos 1 con el bit correspondiente de la dirección, los bits resultantes son idénticos a los bits de la dirección original.</p>
+<p></p>
+<p>Como se muestra en la ilustración, los bits 1 en la máscara de subred hacen que la porción de red de la dirección de red tenga los mismos bits que la porción de red del host. La porción de host de la dirección de red da como resultado todos 0.</p>
+<p></p>
+<p>En una dirección IP dada y su subred, se puede utilizar la operación AND para determinar a qué subred pertenece la dirección, así como qué otras direcciones pertenecen a la misma subred. Se debe tener en cuenta que si dos direcciones están en la misma red o subred, se considera que son locales una respecto de la otra y, por consiguiente, pueden comunicarse directamente entre sí. Las direcciones que no se encuentran en la misma red o subred se consideran remotas respecto de sí y, por lo tanto, deben tener un dispositivo de capa 3 (como un router o un switch de capa 3) entre ellas para comunicarse.</p>
+<p></p>
+<p>En la verificación o resolución de problemas de red, con frecuencia es necesario determinar si dos hosts se encuentran en la misma red local. Es necesario tomar esta determinación desde el punto de vista de los dispositivos de red. Debido a una configuración incorrecta, un host puede encontrarse en una red que no era la planificada. Esto puede hacer que el funcionamiento parezca irregular, a menos que se realice el diagnóstico mediante el análisis de los procesos de aplicación de AND utilizados por el host.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

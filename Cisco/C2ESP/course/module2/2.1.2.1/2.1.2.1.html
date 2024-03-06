@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.1.2.1 Comunicación dúplex</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.1.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración básica del switch</h1>
+        <h2>Configuración de puertos de un switch</h2>
+      </div>
+      <div id="content">
+<p>En la ilustración, se muestra la comunicación full-duplex y half-duplex.</p>
+<p></p>
+<p>La comunicación full-duplex mejora el rendimiento de una LAN conmutada. La comunicación full-duplex aumenta el ancho de banda eficaz al permitir que ambos extremos de una conexión transmitan y reciban datos simultáneamente. Esto también se conoce como “flujo de datos bidireccional”. Este método de optimización de rendimiento de la red requiere microsegmentación. Las LAN microsegmentadas se crean cuando un puerto de switch tiene solo un dispositivo conectado y funciona en modo full-duplex. Como resultado, se obtiene el dominio de colisiones de tamaño micro de un único dispositivo. Sin embargo, debido a que hay solamente un dispositivo conectado, en las LAN microsegmentadas no hay colisiones.</p>
+<p></p>
+<p>A diferencia de la comunicación full-duplex, la comunicación half-duplex es unidireccional. El envío y la recepción de datos no ocurren al mismo tiempo. La comunicación half-duplex genera problemas de rendimiento debido a que los datos fluyen en una sola dirección por vez, lo que a menudo provoca colisiones. Las conexiones half-duplex suelen verse en los dispositivos de hardware más antiguos, como los hubs. La comunicación full-duplex reemplazó a la half-duplex en la mayoría del hardware.</p>
+<p></p>
+<p>Actualmente, la mayoría de las tarjetas NIC Ethernet y Fast Ethernet disponibles en el mercado proporciona capacidad full-duplex. Las NIC Gigabit Ethernet y de 10 Gb requieren conexiones full-duplex para funcionar. En el modo full-duplex, el circuito de detección de colisiones de la NIC se encuentra inhabilitado. Las tramas enviadas por los dos dispositivos conectados no pueden colisionar, dado que estos utilizan dos circuitos independientes en el cable de red. Las conexiones full-duplex requieren un switch que admita la configuración full-duplex o una conexión directa entre dos dispositivos mediante un cable Ethernet. </p>
+<p></p>
+<p>En general, la eficacia de una configuración Ethernet compartida estándar basada en hubs es del 50% al 60% del ancho de banda indicado. Full-duplex ofrece el 100% de eficacia en ambas direcciones (transmisión y recepción). Como resultado, se obtiene un uso potencial del 200% del ancho de banda indicado.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

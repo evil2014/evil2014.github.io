@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.2.3.4 Conectores de red de fibra óptica</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.2.3.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Medios de red</h1>
+        <h2>Cableado de fibra óptica</h2>
+      </div>
+      <div id="content">
+<p>El extremo de una fibra óptica se termina con un conector de fibra óptica. Existe una variedad de conectores de fibra óptica. Las diferencias principales entre los tipos de conectores son las dimensiones y los métodos de acoplamiento mecánico. Por lo general, los organismos estandarizan un tipo de conector según el equipo que utilizan comúnmente, o estandarizan por tipo de fibra (uno para MMF, uno para SMF). Si se tienen en cuenta todas las generaciones de conectores, en la actualidad se utilizan alrededor de 70 tipos diferentes.</p>
+<p></p>
+<p>Como se muestra en la figura 1, los tres conectores de red de fibra óptica más populares son los siguientes:</p>
+<p>
+<ul>
+<li>
+<b>Punta recta (ST):</b> conectores antiguos de estilo bayoneta, ampliamente utilizados con la fibra óptica multimodo.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Conector suscriptor (SC):</b> en ocasiones, se lo denomina “conector cuadrado” o “conector estándar”. Es un conector LAN y WAN ampliamente adoptado que utiliza un mecanismo de inserción/extracción para asegurar la inserción correcta. Este tipo de conector se utiliza con la fibra óptica multimodo y monomodo.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Conector Lucent (LC):</b> en ocasiones, denominado conector “pequeño” o “local”, cada vez adquiere mayor popularidad debido a su tamaño reducido. Se utiliza con la fibra óptica monomodo y también es compatible con la fibra óptica multimodo. </li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Nota:</b> otros conectores de fibra óptica, como el conector de férula (FC) y el subminiatura A (SMA) no son de uso extendido en la implementación de redes LAN y WAN. Entre los conectores considerados obsoletos, se incluyen los conectores bicónicos (obsoleto) y los D4. Estos conectores exceden el ámbito de este capítulo.</p>
+<p></p>
+<p>Se requieren dos fibras para realizar una operación full duplex ya que la luz sólo puede viajar en una dirección a través de la fibra óptica. En consecuencia, los cables de conexión de fibra óptica forman un haz de dos cables de fibra óptica, y su terminación incluye un par de conectores de fibra monomodo estándar. Algunos conectores de fibra óptica aceptan las fibras de transmisión y recepción en un único conector, conocido como “conector dúplex”, que también se muestra en la figura 1. </p>
+<p></p>
+<p>Los cables de conexión de fibra óptica son necesarios para interconectar dispositivos de infraestructura. Por ejemplo, en la figura 2, se muestran diversos cables de conexión comunes:</p>
+<p>
+<ul>
+<li>Cable de conexión multimodo SC-SC</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Cable de conexión monomodo LC-LC</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Cable de conexión multimodo ST-LC</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Cable de conexión monomodo SC-ST</li>
+</ul>
+</p>
+<p></p>
+<p>Los cables de fibra óptica se deben proteger con un pequeño capuchón de plástico cuando no se utilizan.</p>
+<p></p>
+<p>Observe además el uso de colores para distinguir entre los cables de conexión monomodo y multimodo. Esto se debe al estándar TIA-598, que recomienda el uso de un revestimiento amarillo para los cables de fibra óptica monomodo y uno naranja (o aguamarina) para los cables de fibra óptica multimodo.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.2.2.5 Estadísticas de ACL</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.2.2.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>ACL de IPv4 estándar </h1>
+        <h2>Modificación de ACL de IPv4</h2>
+      </div>
+      <div id="content">
+<p>Una vez que la ACL se aplicó a una interfaz y se realizaron algunas pruebas, el comando <span class="cmd"><b>show access-lists</b></span> muestra las estadísticas para cada instrucción que tiene coincidencias. En el resultado que se muestra en la figura 1, observe que se encontraron coincidencias para algunas de las instrucciones. Cuando se genera tráfico que debe coincidir con una instrucción de ACL, las coincidencias que se muestran en el resultado del comando <span class="cmd"><b>show access-lists</b></span> deberían aumentar. Por ejemplo, en este caso, si se hace ping de la PC1 a la PC3 o la PC4, en el resultado se mostrará un aumento en las coincidencias para la instrucción deny de ACL 1. </p>
+<p></p>
+<p>Tanto las instrucciones permit como las deny realizan un seguimiento de las estadísticas de coincidencias; sin embargo, recuerde que cada ACL tiene una instrucción deny any implícita como última instrucción. Esta instrucción no aparece en el comando <span class="cmd"><b>show access-lists</b></span>, por lo que no se muestran estadísticas para esa instrucción. Para ver las estadísticas de la instrucción deny any implícita, la instrucción se puede configurar manualmente y aparecerá en el resultado. Se debe tener sumo cuidado cuando se configura manualmente la instrucción deny any, ya que coincidirá con todo el tráfico. Si esta instrucción no se configura como la última instrucción en la ACL, podría ocasionar resultados inesperados.</p>
+<p></p>
+<p>Durante la prueba de una ACL, se pueden borrar los contadores mediante el comando <span class="cmd"><b>clear access-list counters</b></span>. Este comando se puede utilizar solo o con el número o el nombre de una ACL específica. Como se muestra en la figura 2, este comando borra los contadores de estadísticas para una ACL.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

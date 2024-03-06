@@ -1,0 +1,56 @@
+﻿<textcomponents>
+<component id="ID_title">
+<text><![CDATA[<b>Comparación entre IGRP y EIGRP</b>]]></text>
+</component>
+
+
+<component id="ID_header1">
+<text><![CDATA[Características y funciones]]></text> 
+</component>
+
+<component id="ID_header2">
+<text><![CDATA[IGRP]]></text> 
+</component>
+
+<component id="ID_header3">
+<text><![CDATA[EIGRP]]></text> 
+</component>
+
+<component id="ID_txt01">
+<text><![CDATA[Métrica]]></text>
+</component>
+
+<component id="ID_txt02">
+<text><![CDATA[Dirección a la que se envían las actualizaciones]]></text> 
+</component>
+
+<component id="ID_txt03">
+<text><![CDATA[Admite VLSM]]></text> 
+</component>
+
+<component id="ID_txt04">
+<text><![CDATA[Admite CIDR]]></text> 
+</component>
+
+<component id="ID_txt05">
+<text><![CDATA[Admite sumarización]]></text> 
+</component>
+
+<component id="ID_txt06">
+<text><![CDATA[Admite autenticación]]></text> 
+</component>
+
+<component id="ID_txt07">
+<text><![CDATA[Ambos utilizan una métrica compuesta que consta del ancho de banda y el retraso. La confiabilidad y la carga también se pueden incluir en el cálculo de la métrica.]]></text> 
+</component>
+
+<component id="ID_txt08">
+<text><![CDATA[255.255.255.255]]></text> 
+</component>
+
+<component id="ID_txt09">
+<text><![CDATA[224.0.0.10]]></text> 
+</component>
+
+
+</textcomponents>

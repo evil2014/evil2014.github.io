@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.1.2.5 Operación AND bit a bit </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.1.2.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Direcciones de red IPv4</h1>
+        <h2>Máscara de subred IPv4</h2>
+      </div>
+      <div id="content">
+<p>Cuando se asigna una dirección IPv4 a un dispositivo, ese dispositivo utiliza la máscara de subred para determinar a qué dirección de red pertenece. La dirección de red es la dirección que representa todos los dispositivos en la misma red. </p>
+<p></p>
+<p>Al enviar datos de red, el dispositivo utiliza esta información para determinar si puede enviar paquetes localmente o si debe enviarlos a un gateway predeterminado para la entrega remota. Cuando un host envía un paquete, compara la porción de red de su propia dirección IP con la porción de red de la dirección IP de destino, sobre la base de las máscaras de subred. Si los bits de la red coinciden, tanto el host de origen como el de destino se encuentran en la misma red, y el paquete puede ser enviado localmente. Si no coinciden, el host emisor reenvía el paquete al gateway predeterminado para que se envíe a otra red. </p>
+<p></p>
+<p>
+<b>La operación AND</b>
+</p>
+<p>AND es una de las tres operaciones binarias básicas que se utilizan en la lógica digital. Las otras dos son OR y NOT. Mientras que las tres se usan en redes de datos, AND se usa para determinar la dirección de red. Por lo tanto, sólo se tratará aquí la lógica AND. La lógica AND es la comparación de dos bits que produce los siguientes resultados:</p>
+<p></p>
+<p>1 AND 1 = 1 (figura 1)</p>
+<p></p>
+<p>0 AND 1 = 0 (figura 2)</p>
+<p></p>
+<p>0 AND 0 = 0 (figura 3)</p>
+<p></p>
+<p>1 AND 0 = 0 (figura 4)</p>
+<p></p>
+<p>Se aplica la lógica AND a la dirección de host IPv4, bit a bit, con su máscara de subred, para determinar la dirección de red a la cual se asocia el host. Cuando se aplica esta lógica AND bit a bit entre la dirección y la máscara de subred, el resultado que se produce es la dirección de red. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

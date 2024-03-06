@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.1.1.1 El rol de la capa de transporte</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.1.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolos de la capa de transporte</h1>
+        <h2>Transporte de datos</h2>
+      </div>
+      <div id="content">
+<p>La capa de transporte es responsable de establecer una sesión de comunicación temporal entre dos aplicaciones y de transmitir datos entre ellas. Las aplicaciones generan los datos que se envían de una aplicación en un host de origen a una aplicación a un host de destino, independientemente del tipo de host de destino, el tipo de medios a través de los que deben viajar los datos, la ruta que toman los datos, la congestión en un enlace o el tamaño de la red. Como se muestra en la ilustración, la capa de transporte es el enlace entre la capa de aplicación y las capas inferiores que son responsables de la transmisión a través de la red.</p>
+<p></p>
+<p>La capa de transporte proporciona un método para entregar datos a través de la red de una manera que garantiza que estos se puedan volver a unir correctamente en el extremo receptor. La capa de transporte permite la segmentación de datos y proporciona el control necesario para rearmar estos segmentos en los distintos streams de comunicación. En el protocolo TCP/IP, estos procesos de segmentación y rearmado se pueden lograr utilizando dos protocolos muy diferentes de la capa de transporte: el protocolo de control de transmisión (TCP) y el protocolo de datagramas de usuario (UDP). </p>
+<p></p>
+<p>Las principales responsabilidades de los protocolos de la capa de transporte son las siguientes:</p>
+<p>
+<ul>
+<li>Rastreo de comunicación individual entre aplicaciones en los hosts de origen y destino</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>División de los datos en segmentos para su administración y reunificación de los datos segmentados en streams de datos de aplicación en el destino</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Identificación de la aplicación correspondiente para cada stream de comunicación </li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.3.1.4 Balanceo de carga de PVST+</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.3.1.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de árbol de expansión</h1>
+        <h2>Configuración de PVST+</h2>
+      </div>
+      <div id="content">
+<p>En la topología de la figura 1, se muestran tres switches conectados mediante enlaces troncales 802.1Q. Hay dos VLAN, 10 y 20, que se enlazan de forma troncal a través de estos enlaces. El objetivo es configurar el S3 como puente raíz para la VLAN 20 y el S1 como puente raíz para la VLAN 10. El puerto F0/3 en el S2 es el puerto de reenvío para la VLAN 20 y el puerto de bloqueo para la VLAN 10. El puerto F0/2 en el S2 es el puerto de reenvío para la VLAN 10 y el puerto de bloqueo para la VLAN 20. </p>
+<p></p>
+<p>Además de establecer un puente raíz, también es posible establecer uno secundario. Un puente raíz secundario es un switch que se puede convertir en puente raíz para una VLAN si falla el puente raíz principal. Si se tiene en cuenta que los otros puentes de la VLAN retienen su prioridad de STP predeterminada, este switch se convierte en el puente raíz en el caso de producirse una falla en el puente raíz principal. </p>
+<p></p>
+<p>Los pasos para configurar PVST+ en esta topología de ejemplo son los siguientes:</p>
+<p></p>
+<p>
+<b>Paso 1.</b> Seleccionar los switches que desea como puentes raíz principal y secundario para cada VLAN. Por ejemplo, en la figura 1, el S3 es el puente principal y el S1 es el puente secundario para la VLAN 20.</p>
+<p></p>
+<p>
+<b>Paso 2.</b> Configure el switch como puente principal para la VLAN mediante el comando <span class="cmd"><b>spanning-tree vlan </b></span><span class="cmd"><i>number</i></span><span class="cmd"><b> root primary</b></span>, como se muestra en la figura 2. </p>
+<p></p>
+<p>
+<b>Paso 3.</b> Configure el switch como puente secundario para la VLAN mediante el comando <span class="cmd"><b>spanning-tree vlan </b></span><span class="cmd"><i>number</i></span><span class="cmd"><b> root secondary</b></span>. </p>
+<p></p>
+<p>Otra forma de especificar el puente raíz es establecer la prioridad de árbol de expansión de cada switch en el menor valor, de modo que se seleccione el switch como puente principal para la VLAN asociada.</p>
+<p></p>
+<p>Observe que, en la figura 2, el S3 está configurado como puente raíz principal para la VLAN 20 y el S1 está configurado como puente raíz principal para la VLAN 10. El S2 mantuvo la prioridad de STP predeterminada.</p>
+<p></p>
+<p>En la ilustración, también se observa que el S3 está configurado como puente raíz secundario para la VLAN 10 y el S1 está configurado como puente raíz secundario para la VLAN 20. Esta configuración habilita el balanceo de carga de árbol de expansión, en el que el tráfico de la VLAN 10 pasa por el S1 y el de la VLAN 20 pasa por el S3.</p>
+<p></p>
+<p>Como se muestra en la figura 3, otra forma de especificar el puente raíz es establecer la prioridad de árbol de expansión de cada switch en el menor valor, de modo que se seleccione el switch como puente principal para la VLAN asociada. Se puede establecer la prioridad de switch para cualquier instancia de árbol de expansión. Esta configuración afecta la posibilidad de que un switch se elija como puente raíz. Un valor menor provoca el aumento de la probabilidad de que el switch sea seleccionado. El rango varía entre 0 y 61440 en incrementos de 4096; el resto de los valores se descarta. Por ejemplo, un valor de prioridad válido sería 4096 x 2 = 8192. </p>
+<p></p>
+<p>Como se muestra en la figura 4, el comando <span class="cmd"><b>show spanning-tree active</b></span> solo muestra los detalles de configuración de árbol de expansión para las interfaces activas. El resultado que se muestra pertenece al S1 configurado con PVST+. Existen varios parámetros de comandos del IOS de Cisco relacionados con el comando <span class="cmd"><b>show spanning-tree</b></span>.</p>
+<p></p>
+<p>En la figura 5, el resultado muestra que la prioridad de la VLAN 10 es 4096, la más baja de las tres prioridades de VLAN respectivas. </p>
+<p></p>
+<p>Utilice el verificador de sintaxis de la figura 6 para configurar y verificar el árbol de expansión para el S1 y el S3. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

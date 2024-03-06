@@ -1,0 +1,47 @@
+﻿<textcomponents> <!--Slide 1-->
+   
+<component id="ID_s1_title">
+	<text><![CDATA[<b>Etiquetado de VLAN de voz</b>]]></text>
+</component>
+
+<component id="ID_s1_txt01">
+   <text><![CDATA[Puerto de switch configurado para admitir tráfico de voz:<textformat blockindent="-14"><ul><li>Indica al teléfono que etiquete las tramas de voz con la VLAN&nbsp;150.</li><li>Prioriza las tramas de voz.</li><li>Reenvía tramas de datos en la VLAN&nbsp;20.</ul></li></textformet>]]></text>
+</component>
+
+<component id="ID_s1_txt02">
+   <text><![CDATA[Configurado para enviar el tráfico de datos etiquetado.]]></text>
+</component>
+
+<component id="ID_s1_txt03">
+   <text><![CDATA[Configurado para enviar el tráfico de datos sin etiquetar.]]></text>
+</component>
+
+<component id="ID_s1_txt04">
+   <text><![CDATA[Configurado para etiquetar las tramas de tráfico de voz con VLAN 150.</textcomponents>]]></text>
+</component>
+
+<component id="ID_s1_txt05">
+	<text><![CDATA[Teléfono IP de Cisco]]></text>
+</component>
+
+<component id="ID_s1_txt06">
+	<text><![CDATA[Teléfono ASIC]]></text>
+</component>
+
+<component id="ID_s1_txt07">
+   <text><![CDATA[Puerto de acceso]]></text>
+</component>
+
+<component id="ID_s1_txt08">
+   <text><![CDATA[Switch de<br/>tres puertos]]></text>
+</component> <!--Slide 2-->
+
+<component id="ID_s2_title">
+	<text><![CDATA[<b>Ejemplo de configuración</b>]]></text>
+</component>
+
+<component id="ID_s2_txt01">
+   <text><![CDATA[&lt;resultado omitido&gt;]]></text>
+</component>
+
+</textcomponents>

@@ -1,0 +1,53 @@
+﻿<textcomponents>
+
+<component id="ID_s1_title">
+	<text><![CDATA[<b>Protocolos de routing y sus métricas</b>]]></text>
+</component>
+
+<component id="ID_s2_title">
+	<text><![CDATA[<b>Convergencia</b>]]></text>
+</component> <!--SLIDE 1-->
+<component id="ID_s1_txt01">
+  <text><![CDATA[Red]]></text> 
+</component>
+
+<component id="ID_s1_txt02">
+  <text><![CDATA[Interfaz]]></text> 
+</component>
+
+<component id="ID_s1_txt03">
+  <text><![CDATA[Salto]]></text> 
+</component>
+
+<component id="ID_s1_txt04">
+  <text><![CDATA[Red]]></text> 
+</component>
+
+<component id="ID_s1_txt05">
+  <text><![CDATA[Interfaz]]></text> 
+</component>
+
+<component id="ID_s1_txt06">
+  <text><![CDATA[Salto]]></text> 
+</component>
+
+<component id="ID_s1_txt07">
+  <text><![CDATA[Red]]></text> 
+</component>
+
+<component id="ID_s1_txt08">
+  <text><![CDATA[Interfaz]]></text> 
+</component>
+
+<component id="ID_s1_txt09">
+  <text><![CDATA[Salto]]></text> 
+</component> <!--SLIDE 2-->
+<component id="ID_s2_txt01">
+	<text><![CDATA[Convergencia más lenta: RIP <br />Convergencia más rápida: EIGRP y OSPF]]></text>
+</component>
+
+<component id="ID_s2_txt02">
+	<text><![CDATA[¿Cuánto tiempo tardarán el R1 y el R3 en obtener información acerca de la interfaz G0/0 del R2 que se encuentra fuera de servicio?]]></text>
+</component>
+
+</textcomponents>

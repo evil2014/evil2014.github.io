@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.1.2.3 Auto-MDIX</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.1.2.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración básica del switch</h1>
+        <h2>Configuración de puertos de un switch</h2>
+      </div>
+      <div id="content">
+<p>Hasta hace poco, se requerían determinados tipos de cable (cruzado o directo) para conectar dispositivos. Las conexiones switch a switch o switch a router requerían el uso de diferentes cables Ethernet. Mediante el uso de la característica automática de conexión cruzada de interfaz dependiente del medio (auto-MDIX) en una interfaz, se elimina este problema. Al habilitar la característica auto-MDIX, la interfaz detecta automáticamente el tipo de conexión de cable requerido (directo o cruzado) y configura la conexión conforme a esa información. Al conectarse a los switches sin la característica auto-MDIX, se deben usar cables directos para conectarse a dispositivos como servidores, estaciones de trabajo o routers, y cables cruzados para conectarse a otros switches o repetidores. </p>
+<p></p>
+<p>Con la característica auto-MDIX habilitada, se puede usar cualquier tipo de cable para conectarse a otros dispositivos, y la interfaz se ajusta de manera automática para proporcionar comunicaciones satisfactorias. En los routers y switches Cisco más modernos, el comando <span class="cmd"><b>mdix auto</b></span> del modo de configuración de interfaz habilita la característica. Cuando se usa auto-MDIX en una interfaz, la velocidad y el modo dúplex de la interfaz se deben establecer en <span class="cmd"><b>auto</b></span> para que la característica funcione correctamente.</p>
+<p>Los comandos para habilitar auto-MDIX se muestran en la figura 1.</p>
+<p></p>
+<p>
+<b>Nota:</b> la característica auto-MDIX está habilitada de manera predeterminada en los switches Catalyst 2960 y Catalyst 3560, pero no está disponible en los switches más antiguos Catalyst 2950 y Catalyst 3550.</p>
+<p></p>
+<p>Para examinar la configuración de auto-MDIX de una interfaz específica, use el comando <span class="cmd"><b>show controllers ethernet-controller</b></span> con la palabra clave <span class="cmd"><b>phy</b></span>. Para limitar los resultados a las líneas que se refieren a auto-MDIX, use el filtro <span class="cmd"><b>include Auto-MDIX</b></span>. Como se muestra en la figura 2, el resultado indica On (Habilitada) u Off (Deshabilitada) para la característica.</p>
+<p></p>
+<p>Use el verificador de sintaxis de la figura 3 para configurar la interfaz FastEthernet 0/1 de S2 con auto-MDIX.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

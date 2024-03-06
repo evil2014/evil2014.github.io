@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.3.1.1 División en subredes mediante la ID de subred</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.3.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Consideraciones de diseño para IPv6</h1>
+        <h2>División en subredes de una red IPv6</h2>
+      </div>
+      <div id="content">
+<p>La división en subredes IPv6 requiere un enfoque diferente que la división en subredes IPv4. El motivo principal es que con IPv6 hay tantas direcciones que la división en subredes se realiza por razones completamente distintas. Los espacios de direcciones IPv6 no se dividen en subredes para conservar direcciones, sino para admitir el diseño lógico jerárquico de la red. Mientras que la división en subredes IPv4 tiene que ver con administrar la escasez de direcciones, la división en subredes IPv6 se relaciona con armar una jerarquía de direccionamiento basada en la cantidad de routers y las redes que estos admiten. </p>
+<p></p>
+<p>Recuerde que un bloque de direcciones IPv6 con el prefijo /48 tiene 16 bits para la ID de subred, como se muestra en la figura 1. La división en subredes mediante la ID de subred de 16 bits produce un total de 65 536 subredes /64 posible y no requiere tomar prestados bits de la ID de interfaz ni de la porción de host de la dirección. Cada subred /64 IPv6 contiene alrededor de 18 trillones de direcciones, obviamente más de lo que jamás se necesitará en un segmento de red IP.</p>
+<p></p>
+<p>Las subredes creadas a partir de la ID de subred son fáciles de representar, ya que no es necesaria la conversión al sistema binario. Para determinar la siguiente subred disponible, simplemente sume valores hexadecimales. Como se muestra en la figura 2, esto significa aumentar el valor hexadecimal en la porción de ID de subred.</p>
+<p></p>
+<p>El prefijo de enrutamiento global es igual para todas las subredes. Solo se incrementa el cuarteto de la ID de subred para cada subred.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

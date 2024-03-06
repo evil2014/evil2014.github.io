@@ -1,0 +1,58 @@
+﻿<textcomponents>
+	<component id="ID_title">
+		<text><![CDATA[<b>Cómo funciona el router</b>]]></text>
+	</component>
+	
+	<component id="ID_txt01">
+	     <text><![CDATA[LAN]]></text>
+	</component>
+	
+	<component id="ID_txt02">
+	 	<text><![CDATA[LAN]]></text>
+	</component>
+
+	<component id="ID_txt03">
+		<text><![CDATA[192.168.1.0/24]]></text>
+	</component>
+	
+	<component id="ID_txt04">
+	        <text><![CDATA[192.168.2.0/24]]></text>
+	</component>
+	
+	<component id="ID_txt05">
+		<text><![CDATA[192.168.3.0/24]]></text>
+	</component>
+
+	<component id="ID_txt06">
+		<text><![CDATA[Los routers utilizan la tabla de routing como un mapa para descubrir la mejor ruta para una red determinada.]]></text>
+	</component>
+	
+	<component id="ID_txt07">
+	<text><![CDATA[El R2 sigue el mismo proceso.]]></text>
+	</component> <!-- controller -->
+
+	<component id="end">
+	<text><![CDATA[Finalizar]]></text>
+	</component>
+	
+	<component id="fforward">
+	<text><![CDATA[Adelantar]]></text>
+	</component>
+	
+	<component id="pause">
+	<text><![CDATA[Pausa]]></text>
+	</component>
+	
+	<component id="play">
+	<text><![CDATA[Reproducir]]></text>
+	</component>
+	
+	<component id="rewind">
+	<text><![CDATA[Regresar]]></text>
+	</component>
+	
+	<component id="start">
+	<text><![CDATA[Inicio]]></text>
+	</component>
+	
+</textcomponents>

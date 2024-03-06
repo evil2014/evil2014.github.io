@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.2.1.2 Nombres de dispositivos</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.2.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Información básica</h1>
+        <h2>Nombres de host</h2>
+      </div>
+      <div id="content">
+<p>Al configurar un dispositivo de red, uno de los primeros pasos es la configuración de un nombre de dispositivo único o “nombre de host”. Los nombres de host aparecen en las peticiones de entrada de la CLI, pueden utilizarse en varios procesos de autenticación entre dispositivos y deben utilizarse en los diagramas de topologías.</p>
+<p></p>
+<p>Los nombres de host se configuran en el dispositivo de red activo. Si el nombre del dispositivo no se configura explícitamente, Cisco IOS utiliza un nombre de dispositivo predeterminado de fábrica. El nombre predeterminado de los switches Cisco IOS es “Switch”. </p>
+<p></p>
+<p>Imagine si una internetwork tuviera varios switches con el nombre predeterminado “Switch” (como se muestra en la ilustración). Esto generaría una gran confusión durante la configuración y el mantenimiento de la red. Al acceder a un dispositivo remoto mediante SSH, es importante tener la confirmación de que se está conectado al dispositivo correcto. Si se dejara el nombre predeterminado en todos los dispositivos, sería difícil determinar que el dispositivo correcto está conectado.</p>
+<p></p>
+<p>Al elegir nombres adecuados, resulta más fácil recordar, analizar, registrar e identificar los dispositivos de red. Para nombrar los dispositivos de manera uniforme y provechosa, es necesario el establecimiento de una convención de denominación que se extienda por toda la empresa o, al menos, por la división. A fin de permitir la continuidad dentro de una organización, siempre conviene crear la convención de nomenclatura al mismo tiempo que el esquema de direccionamiento. </p>
+<p></p>
+<p>Según ciertas pautas de convenciones de denominación, los nombres deberían:</p>
+<p>
+<ul>
+<li>Comenzar con una letra.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>No contener espacios.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Finalizar con una letra o dígito.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Utilizar solamente letras, dígitos y guiones.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Tener menos de 64 caracteres de longitud.</li>
+</ul>
+</p>
+<p></p>
+<p>Los nombres de host utilizados en el IOS del dispositivo conservan el uso de caracteres en mayúscula y minúscula. Por lo tanto, es posible escribir un nombre con mayúsculas como se haría normalmente. Esto contrasta con la mayoría de los esquemas de denominación de Internet, donde los caracteres en mayúsculas y minúsculas reciben igual trato. </p>
+<p></p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

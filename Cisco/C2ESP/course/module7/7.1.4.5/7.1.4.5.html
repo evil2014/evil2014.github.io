@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.1.4.5 Protocolos de enrutamiento con clase</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.1.4.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolos de enrutamiento dinámico</h1>
+        <h2>Tipos de protocolos de routing</h2>
+      </div>
+      <div id="content">
+<p>La mayor diferencia entre los protocolos de routing con clase y sin clase es que los protocolos de routing con clase no envían información de la máscara de subred en sus actualizaciones de routing. Los protocolos de routing sin clase incluyen información de la máscara de subred en las actualizaciones de routing. </p>
+<p></p>
+<p>Los dos protocolos de routing IPv4 originales que se desarrollaron fueron RIPv1 e IGRP, que se crearon cuando las direcciones de red se asignaban según las clases (es decir, clase A, B o C). En ese entonces, no era necesario que un protocolo de routing incluyera la máscara de subred en la actualización de routing, debido a que era posible determinar la máscara de red sobre la base del primer octeto de la dirección de red. </p>
+<p></p>
+<p>
+<b>Nota:</b> solo RIPv1 e IGRP son protocolos con clase. El resto de los protocolos de routing IPv4 e IPv6 son protocolos sin clase. El direccionamiento con clase nunca fue parte de IPv6. </p>
+<p></p>
+<p>El hecho de que RIPv1 e IGRP no incluyan información de la máscara de subred en sus actualizaciones significa que no pueden proporcionar máscaras de subred de longitud variable (VLSM) ni routing entre dominios sin clase (CIDR). </p>
+<p></p>
+<p>Los protocolos de routing con clase también generan problemas en las redes no contiguas. Que una red sea no contigua significa que las subredes de la misma dirección de red principal con clase están separadas por una dirección de red con clase diferente. </p>
+<p></p>
+<p>Consulte la topología que se muestra en la figura 1 para ver una ilustración de las limitaciones del routing con clase. Observe que las LAN del R1 (172.16.1.0/24) y del R3 (172.16.2.0/24) son subredes de la misma red de clase B (172.16.0.0/16), que están separadas por distintas direcciones de red con clase (192.168.1.0/30 y 192.168.2.0/30). </p>
+<p></p>
+<p>Cuando el R1 reenvía una actualización al R2, RIPv1 no incluye información de la máscara de subred con la actualización, sino que solamente reenvía la dirección de red de clase B 172.16.0.0. </p>
+<p></p>
+<p>El R2 recibe la actualización y la procesa. A continuación, crea una entrada para la red de clase B 172.16.0.0/16 y la agrega en la tabla de routing, como se muestra en la figura 2. </p>
+<p></p>
+<p>En la figura 3, se muestra que cuando el R3 reenvía una actualización al R2, tampoco incluye información de la máscara de subred y, por lo tanto, solamente reenvía la dirección de red con clase 172.16.0.0. </p>
+<p></p>
+<p>En la figura 4, el R2 recibe y procesa la actualización y agrega otra entrada para la dirección de red con clase 172.16.0.0/16 a su tabla de routing. Cuando hay dos entradas con métricas idénticas en la tabla de routing, el router comparte la carga de tráfico por igual entre los dos enlaces. Esto se conoce como “balanceo de carga”. </p>
+<p></p>
+<p>Como se muestra en la figura 5, esto tiene un efecto negativo sobre una red no contigua. Observe el comportamiento irregular de los comandos <span class="cmd"><b>ping</b></span> y <span class="cmd"><b>traceroute</b></span>. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

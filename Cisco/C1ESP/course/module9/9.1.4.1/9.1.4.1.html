@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.1.4.1 Requisitos de la división en subredes basada en hosts </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.1.4.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>División de una red IPv4 en subredes</h1>
+        <h2>Determinación de la máscara de subred</h2>
+      </div>
+      <div id="content">
+<p>La decisión sobre cuántos bits de host se deben tomar prestados para crear subredes constituye una decisión de planificación importante. Al planificar las subredes, deben considerarse dos aspectos: la cantidad de direcciones de host que se requieren para cada red y la cantidad de subredes individuales que se necesitan. En la animación, se muestran las posibilidades de subredes para la red 192.168.1.0. La selección de una cantidad de bits para la ID de subred afecta tanto la cantidad de subredes posibles como la cantidad de direcciones de host en cada subred.</p>
+<p></p>
+<p>Observe que existe una relación inversa entre la cantidad de subredes y la cantidad de hosts: cuantos más bits se toman prestados para crear subredes, menor es la cantidad de bits de host disponibles, lo que tiene como resultado menos hosts por subred. Si se necesitan más direcciones de host, se requieren más bits de host, lo que tiene como resultado menos subredes.</p>
+<p></p>
+<p>
+<b>Cantidad de hosts</b>
+</p>
+<p></p>
+<p>Al tomar prestados bits para crear varias subredes, se deben dejar suficientes bits de host para la subred más grande. La cantidad de direcciones de host que se requieren en la subred más grande determina cuántos bits se deben dejar en la porción de host. La fórmula 2^n (donde “n” representa la cantidad de bits de host restantes) se utiliza para calcular cuántas direcciones disponibles habrá en cada subred. Recuerde que dos de las direcciones no se pueden utilizar, de modo que la cantidad utilizable de direcciones puede calcularse mediante la fórmula 2^n-2. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

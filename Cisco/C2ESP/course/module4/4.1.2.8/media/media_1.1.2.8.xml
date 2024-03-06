@@ -1,0 +1,95 @@
+﻿<textcomponents>
+	<component id='ID_inst'>
+	<text><![CDATA[<b>Actividad: registrar el direccionamiento de red</b><br/><br/>Del conjunto de direcciones, arrastre una dirección a la tabla y a la topología para asignar una dirección a cada dispositivo.]]></text>
+</component> <!--Drag and Drop-->
+<component id='ID_drag01'>
+	<text><![CDATA[<font color="#393536">172.16.10.1</font>]]></text>
+</component>
+
+<component id='ID_drag02'>
+	<text><![CDATA[<font color="#393536">172.16.20.10</font>]]></text>
+</component>
+
+<component id='ID_drag03'>
+	<text><![CDATA[<font color="#393536">172.16.20.1</font>]]></text>
+</component>
+
+<component id='ID_drag04'>
+	<text><![CDATA[<font color="#393536">10.10.10.1</font>]]></text>
+</component>
+
+<component id='ID_drag05'>
+	<text><![CDATA[<font color="#393536">172.16.20.1</font>]]></text>
+</component>
+
+<component id='ID_drag06'>
+	<text><![CDATA[<font color="#393536">172.16.10.10</font>]]></text>
+</component>
+
+<component id='ID_drag07'>
+	<text><![CDATA[<font color="#393536">172.16.20.10</font>]]></text>
+</component>
+
+<component id='ID_drag08'>
+	<text><![CDATA[<font color="#393536">10.10.10.2</font>]]></text>
+</component>
+
+<component id='ID_drag09'>
+	<text><![CDATA[<font color="#393536">10.10.10.2</font>]]></text>
+</component>
+
+<component id='ID_drag10'>
+	<text><![CDATA[<font color="#393536">172.16.20.1</font>]]></text>
+</component>
+
+
+
+<component id='ID_s1_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id='ID_s1_CORRECT_BODY'>
+	<text><![CDATA[Asignó correctamente todas las direcciones IP requeridas.]]></text>
+</component>
+
+
+<component id='ID_s1_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_BODY'>
+	<text><![CDATA[No asignó correctamente todas las direcciones IP requeridas. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_CHECK'>
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id='ID_RESET'>
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component>
+
+
+<component id='ID_txt01'>
+	<text><![CDATA[<b>Dispositivo</b>]]></text>
+</component>
+
+<component id='ID_txt02'>
+	<text><![CDATA[<b>Interfaz</b>]]></text>
+</component>
+
+
+<component id='ID_txt03'>
+	<text><![CDATA[<b>Dirección IPv4</b>]]></text>
+</component>
+
+
+<component id='ID_txt04'>
+	<text><![CDATA[<b>Máscara de subred</b>]]></text>
+</component>
+
+<component id='ID_txt05'>
+	<text><![CDATA[<b>Gateway predeterminado</b>]]></text>
+</component> 
+  
+</textcomponents>

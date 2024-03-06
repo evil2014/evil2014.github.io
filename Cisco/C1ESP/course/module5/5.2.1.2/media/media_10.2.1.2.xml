@@ -1,0 +1,83 @@
+﻿<textcomponents>
+
+<component id='ID_title'>
+	<text><![CDATA[<b>El proceso de ARP</b>]]></text>
+</component>
+
+<component id="ID_txt05">
+<text><![CDATA[<p class="ID_txt05">Debo enviar una solicitud de ARP para descubrir la dirección MAC del host con la dirección IP 192.168.1.7.</p>]]></text> 
+</component>
+
+<component id="ID_txt06">
+<text><![CDATA[<p class="ID_txt06">No soy yo.</p>]]></text> 
+</component>
+
+<component id="ID_txt07">
+<text><![CDATA[<p class="ID_txt07">No soy yo.</p>]]></text> 
+</component>
+
+<component id="ID_txt08">
+<text><![CDATA[<p class="ID_txt08">Soy yo. Enviaré mi dirección MAC en respuesta.</p>]]></text> 
+</component>
+
+<component id="ID_txt09">
+<text><![CDATA[<p class="ID_txt09">Ahora tengo la dirección MAC y puedo reenviar mi información.</p>]]></text> 
+</component>
+
+<component id="ID_txt10">
+<text><![CDATA[<p class="ID_txt10">Gracias. La recibí.</p>]]></text> 
+</component>
+
+<component id="ID_txt05_3">
+<text><![CDATA[Gracias. La recibí.]]></text> 
+</component>
+
+<component id="ID_txt02_3">
+<text><![CDATA[No soy yo.]]></text> 
+</component>
+
+<component id="ID_txt03_3">
+<text><![CDATA[No soy yo.]]></text> 
+</component>
+
+<component id="ID_txt04_3">
+<text><![CDATA[Soy yo. Enviaré mi dirección MAC en respuesta.]]></text> 
+</component>
+
+<component id="ID_ipAddress3">
+<text><![CDATA[<b>192.168.1.7</b>]]></text> 
+</component>
+
+<component id="ID_ipAddress4">
+<text><![CDATA[<b>192.168.1.8</b>]]></text> 
+</component> <!-- controller -->
+
+<component id="end">
+<text><![CDATA[Finalizar]]></text>
+</component>
+
+<component id="fforward">
+<text><![CDATA[Adelantar]]></text>
+</component>
+
+<component id="pause">
+<text><![CDATA[Pausa]]></text>
+</component>
+
+<component id="play">
+<text><![CDATA[Reproducir]]></text>
+</component>
+
+<component id="rewind">
+<text><![CDATA[Regresar]]></text>
+</component>
+
+<component id="start">
+<text><![CDATA[Inicio]]></text>
+</component>
+
+<component id="transcript">
+<text><![CDATA[Transcripción]]></text>
+</component>
+
+</textcomponents>

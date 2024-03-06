@@ -1,0 +1,153 @@
+﻿<textcomponents>
+
+<component id="ID_txt01">
+<text><![CDATA[Origen]]></text>
+</component>
+
+<component id="ID_txt02">
+<text><![CDATA[Internet]]></text>
+</component>
+
+<component id="ID_txt03">
+<text><![CDATA[Destino]]></text>
+</component> <!--Send 1 -->
+
+
+<component id="ID_txt04">
+<text><![CDATA[Envío del segmento<br/>1]]></text>
+</component>
+
+<component id="ID_txt05">
+<text><![CDATA[...e inicio del temporizador 1]]></text>
+</component>
+
+<component id="ID_txt06">
+<text><![CDATA[El temporizador 1 se ejecuta...]]></text>
+</component>
+
+<component id="ID_txt07">
+<text><![CDATA[El destino recibe el segmento 1]]></text>
+</component>
+
+<component id="ID_txt08">
+<text><![CDATA[Acuse de recibo 1 y solicitud 2]]></text>
+</component>
+
+<component id="ID_txt09">
+<text><![CDATA[El origen recibe el acuse de recibo]]></text>
+</component> <!--Send 2 Fail-->
+
+
+<component id="ID_txt10">
+<text><![CDATA[Envío del segmento 2]]></text>
+</component>
+
+<component id="ID_txt11">
+<text><![CDATA[...e inicio del temporizador 2]]></text>
+</component>
+
+<component id="ID_txt12">
+<text><![CDATA[El temporizador 2 expira]]></text>
+</component>
+
+<component id="ID_txt13">
+<text><![CDATA[El destino recibe el segmento 1]]></text>
+</component>
+
+<component id="ID_txt14">
+<text><![CDATA[Sin acuse de recibo 2]]></text>
+</component>
+
+<component id="ID_txt15">
+<text><![CDATA[El origen recibe el acuse de recibo]]></text>
+</component>
+
+<component id="ID_txt16">
+<text><![CDATA[El segmento 2 no fue recibido]]></text>
+</component>
+
+<component id="ID_txt18">
+<text><![CDATA[Sin acuse de recibo 2]]></text>
+</component>
+
+<component id="ID_txt19">
+<text><![CDATA[El temporizador 2 expira]]></text>
+</component> <!--Send 2 -->
+
+
+<component id="ID_txt20">
+<text><![CDATA[Reenvío del segmento 2]]></text>
+</component>
+
+<component id="ID_txt21">
+<text><![CDATA[...y reinicio del temporizador 2]]></text>
+</component>
+
+<component id="ID_txt22">
+<text><![CDATA[El temporizador 2 se ejecuta...]]></text>
+</component>
+
+<component id="ID_txt23">
+<text><![CDATA[El destino recibe el segmento 2]]></text>
+</component>
+
+<component id="ID_txt24">
+<text><![CDATA[Acuse de recibo 2 y solicitud 3]]></text>
+</component>
+
+<component id="ID_txt25">
+<text><![CDATA[El origen recibe el acuse de recibo]]></text>
+</component> <!--Send 3 -->
+
+
+<component id="ID_txt26">
+<text><![CDATA[Envío del segmento 3]]></text>
+</component>
+
+<component id="ID_txt27">
+<text><![CDATA[...e inicio del temporizador 3]]></text>
+</component>
+
+<component id="ID_txt28">
+<text><![CDATA[El temporizador 3 se ejecuta...]]></text>
+</component>
+
+<component id="ID_txt29">
+<text><![CDATA[El destino recibe el segmento 3]]></text>
+</component>
+
+<component id="ID_txt30">
+<text><![CDATA[Acuse de recibo 3 y solicitud 4]]></text>
+</component>
+
+<component id="ID_txt31">
+<text><![CDATA[El origen recibe el acuse de recibo]]></text>
+</component>
+
+<component id="ID_txt32">
+<text><![CDATA[<b>Transmisión final</b>]]></text>
+</component> <!--ANIMATION CONTROLLER-->
+	<component id="end">
+		<text><![CDATA[Finalizar]]></text>
+	</component>
+	
+	<component id="fforward">
+		<text><![CDATA[Adelantar]]></text>
+	</component>
+	
+	<component id="pause">
+		<text><![CDATA[Pausa]]></text>
+	</component>
+	
+	<component id="play">
+		<text><![CDATA[Reproducir]]></text>
+	</component>
+	
+	<component id="rewind">
+		<text><![CDATA[Regresar]]></text>
+	</component>
+	
+	<component id="start">
+		<text><![CDATA[Inicio]]></text>
+	</component>
+</textcomponents>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>11.6.1.3 Resumen</title>
+    <!--  -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_11.6.1.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resumen</h1>
+        <h2>Resumen</h2>
+      </div>
+      <div id="content">
+<p>Para cumplir con los requisitos de los usuarios, incluso las redes pequeñas requieren planificación y diseño, como se muestra en la ilustración. La planificación asegura que se consideren debidamente todos los requisitos, factores de costo y opciones de implementación. La confiabilidad, la escalabilidad y la disponibilidad son partes importantes del diseño de una red. </p>
+<p></p>
+<p>Para admitir y ampliar una red pequeña, se necesita estar familiarizado con los protocolos y las aplicaciones de red que se ejecutan en ella. Los analizadores de protocolos permiten que los profesionales de red recopilen información estadística sobre los flujos de tráfico en una red rápidamente. La información recopilada por el analizador de protocolos se analiza de acuerdo con el origen y el destino del tráfico, y con el tipo de tráfico que se envía. Los técnicos de red pueden utilizar este análisis para tomar decisiones acerca de cómo administrar el tráfico de manera más eficiente. Los protocolos de red comunes incluyen DNS, Telnet, SMTP, POP, DHCP, HTTP y FTP.</p>
+<p></p>
+<p>Es necesario tener en cuenta las amenazas y vulnerabilidades de seguridad al planificar la implementación de una red. Se deben proteger todos los dispositivos de red. Esto incluye routers, switches, dispositivos para usuarios finales e, incluso, dispositivos de seguridad. Se deben proteger las redes contra softwares malintencionados, como virus, caballos de Troya y gusanos. Los softwares antivirus pueden detectar la mayoría de los virus y muchas aplicaciones de caballo de Troya, y evitar que se propaguen en la red. La manera más eficaz de mitigar un ataque de gusanos consiste en descargar las actualizaciones de seguridad del proveedor del sistema operativo y aplicar parches a todos los sistemas vulnerables. </p>
+<p></p>
+<p>También se deben proteger las redes contra los ataques de red. Los ataques de red se pueden clasificar en tres categorías principales: de reconocimiento, de acceso y por denegación de servicio. Existen varias maneras de proteger la red contra los ataques de red. </p>
+<p>
+<ul>
+<li>Los servicios de seguridad de red de autenticación, autorización y contabilidad (AAA o “triple A”) proporcionan el marco principal para configurar el control de acceso en dispositivos de red. AAA es un modo de controlar quién tiene permitido acceder a una red (autenticar), controlar lo que las personas pueden hacer mientras se encuentran allí (autorizar) y observar las acciones que realizan mientras acceden a la red (contabilizar).</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>El firewall es una de las herramientas de seguridad más eficaces disponibles para la protección de los usuarios internos de la red contra amenazas externas. El firewall reside entre dos o más redes y controla el tráfico entre ellas, además de evitar el acceso no autorizado.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Para proteger los dispositivos de red, es importante utilizar contraseñas seguras. Además, al acceder a los dispositivos de red de forma remota, se recomienda habilitar SSH en vez del protocolo Telnet, que no es seguro. </li>
+</ul>
+</p>
+<p></p>
+<p>Una vez que se implementó la red, el administrador debe poder supervisar y mantener la conectividad de red. Existen varios comandos para este fin. Para probar la conectividad de red a destinos locales y remotos, se suelen utilizar comandos como <span class="cmd"><b>ping, telnet</b></span> y <span class="cmd"><b>traceroute</b></span>. </p>
+<p></p>
+<p>En los dispositivos Cisco IOS, se puede utilizar el comando <span class="cmd"><b>show version</b></span> para verificar y resolver problemas de algunos de los componentes básicos de hardware y software que se utilizan durante el proceso de arranque. Para ver información de todas las interfaces de red en un router, se utiliza el comando <span class="cmd"><b>show ip interface</b></span>. También se puede utilizar el comando <span class="cmd"><b>show ip interface brief</b></span> para ver un resultado más abreviado que el del comando <span class="cmd"><b>show ip interface</b></span>. Cisco Discovery Protocol (CDP) es un protocolo exclusivo de Cisco que se ejecuta en la capa de enlace de datos. Debido a que el protocolo CDP funciona en la capa de enlace de datos, es posible que dos o más dispositivos de red Cisco (como routers que admiten distintos protocolos de la capa de red) obtengan información de los demás incluso si no hay conectividad de capa 3.</p>
+<p></p>
+<p>Los archivos de configuración de Cisco IOS como startup-config o running-config se deben archivar. Estos archivos pueden guardarse en un archivo de texto o almacenarse en un servidor TFTP. Algunos modelos de routers también tienen un puerto USB, y se puede crear la copia de seguridad de un archivo en una unidad USB. Si es necesario, esos archivos se pueden copiar en el router o switch desde el servidor TFTP o la unidad USB.</p>
+<p></p>
+<p>El uso de redes no se limita a las pequeñas empresas y a las grandes organizaciones. Otro entorno en el que cada vez se aprovecha más la tecnología de red es el hogar. Una red doméstica es muy similar a la red de una pequeña empresa. Sin embargo, la mayoría de las redes domésticas (y muchas redes de pequeñas empresas) no requieren dispositivos de gran volumen, como routers y switches dedicados. En lugar de esto, la mayoría de las redes domésticas utilizan un único dispositivo multifunción. A los fines de este curso, los dispositivos multifunción se denominarán routers integrados. La mayoría de los routers integrados ofrecen tanto capacidades de conmutación por cable como conectividad inalámbrica y sirven como punto de acceso (AP) en la red inalámbrica. Para habilitar la conectividad inalámbrica, se debe configurar el modo inalámbrico, el SSID, el canal de RF y cualquier mecanismo de encriptación de seguridad deseado.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

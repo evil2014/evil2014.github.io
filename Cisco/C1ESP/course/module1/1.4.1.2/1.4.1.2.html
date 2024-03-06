@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.4.1.2 BYOD</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.4.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>El cambiante entorno de red</h1>
+        <h2>Tendencias de red</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Bring Your Own Device (BYOD)</b>
+</p>
+<p>El concepto de “cualquier dispositivo, a cualquier contenido, de cualquier forma” es una importante tendencia global que requiere cambios significativos en la forma en que se utilizan los dispositivos. Esta tendencia se conoce como “Bring Your Own Device” (BYOD) o Traiga su propio dispositivo. </p>
+<p></p>
+<p>La tendencia BYOD les da a los usuarios finales la libertad de utilizar herramientas personales para acceder a información y comunicarse a través de una red comercial o de campus. Con el crecimiento de los dispositivos para consumidores —y la consiguiente caída en los costos—, se espera que los empleados y estudiantes cuenten con algunas de las herramientas más avanzadas de computación y de redes para uso personal. Entre estas herramientas personales, se incluyen computadoras portátiles, equipos ultraportátiles, tablet PC, smartphones y lectores de libros electrónicos. Estos dispositivos pueden ser propiedad de la compañía o el lugar de estudios, de una persona, o una combinación de ambas. </p>
+<p></p>
+<p>BYOD significa que se puede usar cualquier dispositivo, de cualquier persona, en cualquier lugar. Por ejemplo, en el pasado, un estudiante que necesitaba acceder a la red del campus o a Internet debía usar una de las PC del lugar de estudios. Por lo general, estos dispositivos eran limitados y se los veía como herramientas que servían únicamente para trabajar en el aula o en la biblioteca. La conectividad extendida mediante acceso móvil y remoto a la red del campus les da a los estudiantes una enorme flexibilidad y más oportunidades de aprendizaje. </p>
+<p></p>
+<p>BYOD es una tendencia influyente que afecta o afectará a todas las organización de TI. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

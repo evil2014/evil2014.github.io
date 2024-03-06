@@ -1,0 +1,80 @@
+﻿<textcomponents>
+
+<component id='ID_inst'>
+	<text><![CDATA[<b>Actividad: Identificación de los componentes del router</b><br><br>En la tabla, se proporcionan descripciones de las funciones y de las partes de hardware de un router. Arrastre cada nombre de componente del router a su función o descripción.]]></text>
+</component>
+
+<component id='ID_txt01'>
+	<text><![CDATA[Conecta los routers a redes externas, generalmente a través de distancias extensas.]]></text>
+</component>
+
+<component id='ID_txt02'>
+	<text><![CDATA[Una forma de acceder de manera remota a la CLI a través de una interfaz de red.]]></text>
+</component>
+
+<component id='ID_txt03'>
+	<text><![CDATA[Conecta las PC, los switches y los routers para formar redes internas.]]></text>
+</component>
+
+<component id='ID_txt04'>
+	<text><![CDATA[Puerto local que utiliza conexiones USB o seriales de baja velocidad para administrar dispositivos de red.]]></text>
+</component>
+
+<component id='ID_txt05'>
+	<text><![CDATA[Puerto para administrar routers mediante líneas telefónicas y módems.]]></text>
+</component>
+
+<component id='ID_txt06'>
+	<text><![CDATA[<b>Nombre del componente del router</b>]]></text>
+</component>
+
+<component id='ID_txt07'>
+	<text><![CDATA[<b>Función/descripción</b>]]></text>
+</component> <!--Drag and Drop-->
+<component id='ID_ip1_DS'>
+	<text><![CDATA[<font color="#393536">Interfaz WAN</font>]]></text>
+</component>
+
+<component id='ID_ip2_DS'>
+	<text><![CDATA[<font color="#393536">Puerto auxiliar</font>]]></text>
+</component>
+
+<component id='ID_ip3_DS'>
+	<text><![CDATA[<font color="#393536">Interfaz LAN</font>]]></text>
+</component>
+
+<component id='ID_ip4_DS'>
+	<text><![CDATA[<font color="#393536">Telnet o SSH</font>]]></text>
+</component>
+
+<component id='ID_ip5_DS'>
+	<text><![CDATA[<font color="#393536">Puerto de consola</font>]]></text>
+</component>
+
+
+<component id='ID_s1_CORRECT_TITLE'>
+	<text><![CDATA[Correcto]]></text>
+</component>
+
+<component id='ID_s1_CORRECT_BODY'>
+	<text><![CDATA[Unió correctamente los nombres de los componentes del router con sus funciones o descripciones.]]></text>
+</component>
+
+
+<component id='ID_s1_INCORRECT_TITLE'>
+	<text><![CDATA[Incorrecto]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_BODY'>
+	<text><![CDATA[No unió correctamente los nombres de los componentes del router con sus funciones o descripciones. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_CHECK'>
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id='ID_RESET'>
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component>
+
+</textcomponents>

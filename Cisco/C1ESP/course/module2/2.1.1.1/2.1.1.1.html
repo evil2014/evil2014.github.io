@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.1.1.1 Sistemas operativos</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.1.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Entrenamiento intensivo sobre IOS</h1>
+        <h2>Cisco IOS</h2>
+      </div>
+      <div id="content">
+<p>Todos los dispositivos finales y de red conectados a Internet requieren un sistema operativo (SO) que los ayude a realizar sus funciones. </p>
+<p>Al encender una computadora se carga el SO, por lo general desde una unidad de disco, en la RAM. La parte del código del SO que interactúa directamente con el hardware de la computadora se conoce como núcleo. La porción que interactúa con las aplicaciones y el usuario se conoce como “shell”. El usuario puede interactuar con el shell mediante la interfaz de línea de comandos (CLI, command-line interface) o la interfaz gráfica de usuario (GUI, graphical user interface). </p>
+<p></p>
+<p>Al emplear la CLI, el usuario interactúa directamente con el sistema en un entorno basado en texto introduciendo comandos con el teclado en una ventana de petición de entrada de comandos. El sistema ejecuta el comando y, por lo general, proporciona una respuesta en forma de texto. La interfaz GUI permite que el usuario interactúe con el sistema en un entorno que utiliza imágenes gráficas, formatos multimedia y texto. Las acciones se llevan a cabo al interactuar con las imágenes en la pantalla. La GUI es más fácil de usar y requiere un menor conocimiento de la estructura de comandos para utilizar el sistema. Por este motivo, muchas personas prefieren los entornos GUI. Muchos sistemas operativos ofrecen tanto una GUI como una CLI.</p>
+<p></p>
+<p>Haga clic en las porciones de Hardware, Núcleo y Shell de la ilustración para obtener más información.</p>
+<p></p>
+<p>A la mayoría de los sistemas operativos de los dispositivos finales, incluidos MS Windows, MAC OS X, Linux, Apple iOS y Android, entre otros, se accede mediante una GUI.</p>
+<p></p>
+<p>El sistema operativo de los routers domésticos generalmente se denomina “firmware”. El método más frecuente para configurar un router doméstico consiste en utilizar un explorador Web para acceder a una GUI fácil de usar. La mayoría de los routers domésticos habilitan la actualización del firmware a medida que se detectan nuevas características o vulnerabilidades de seguridad.</p>
+<p></p>
+<p>Los dispositivos de red de infraestructura utilizan un sistema operativo de red. El sistema operativo de red que se utiliza en los dispositivos Cisco se denomina Sistema operativo Internetwork (IOS, Internetwork Operating System). “Cisco IOS” es un término genérico para la colección de sistemas operativos de red que se utilizan en los dispositivos de red Cisco. Cisco IOS se utiliza en la mayoría de los dispositivos Cisco, independientemente del tamaño o el tipo de dispositivo. El método más frecuente para acceder a estos dispositivos consiste en utilizar una CLI.</p>
+<p></p>
+<p>Este capítulo se centra en la topología de switch de la red de una pequeña empresa. La topología consta de dos switches y dos PC, y se utilizará para demostrar el uso de Cisco IOS mediante la CLI.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.1.2.1 Tipos de LSA de OSPF</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.1.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Funcionamiento de OSPF multiárea</h1>
+        <h2>Funcionamiento de LSA de OSPF multiárea</h2>
+      </div>
+      <div id="content">
+<p>Las LSA son los bloques funcionales de la LSDB de OSPF. De manera individual, funcionan como registros de la base de datos y proporcionan detalles específicos de las redes OSPF. En conjunto, describen toda la topología de un área o una red OSPF. </p>
+<p></p>
+<p>Actualmente, las RFC para OSPF especifican hasta 11 tipos de LSA diferentes (figura 1). Sin embargo, cualquier implementación de OSPF multiárea debe admitir las primeras cinco LSA: de la LSA 1 a la LSA 5 (figura 2). Este tema se centra en estas cinco primeras LSA.</p>
+<p></p>
+<p>Todo enlace de router se define como un tipo de LSA. El LSA comprende un campo de Id. de enlace que identifica, por número y máscara de red, el objeto al cual se conecta el enlace. Según el tipo, el Id. de enlace tiene diferentes significados. Los LSA varían según cómo se generaron y propagaron dentro del dominio de routing. </p>
+<p></p>
+<p>
+<b>Nota:</b> OSPFv3 incluye tipos de LSA adicionales. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

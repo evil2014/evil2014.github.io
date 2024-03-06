@@ -1,0 +1,46 @@
+﻿<textcomponents>
+
+<component id="ID_s1_title">
+<text><![CDATA[<b>Topología EIGRP para IPv4</b>]]></text>
+</component>
+<component id="ID_s1_txt01">
+  <text><![CDATA[<b>Dominio de routing EIGRP</b>]]></text> 
+  </component>
+<component id="ID_s1_txt02">
+	<text><![CDATA[Internet]]></text> 
+</component>
+<component id="ID_s1_txt03">
+	<text><![CDATA[<b>¿Sucesor factible?</b>]]></text> 
+</component>
+<component id="ID_s1_txt04">
+	<text><![CDATA[<b>Sucesor</b>]]></text> 
+</component>
+
+
+<component id="ID_s2_title">
+<text><![CDATA[<b>Distancia factible y sucesor</b>]]></text>
+</component>
+
+<component id="ID_s2_txt01">
+<text><![CDATA[Distancia factible]]></text>
+</component>
+
+<component id="ID_s2_txt02">
+<text><![CDATA[Sucesor]]></text>
+</component>
+
+<component id="ID_s2_txt03">
+<text><![CDATA[&lt;resultado omitido&gt;]]></text>
+</component>
+
+
+<component id="ID_s2_Title_txt01">
+<text><![CDATA[<b></b>]]></text>
+</component>
+
+<component id="ID_s2_Body_txt01">
+<text><![CDATA[<textformat blockindent='-14'><ul><li>El R3 en 192.168.10.10 es la red sucesora a 192.168.1.0/24.</li><li>Esta ruta tiene una distancia factible de 3&nbsp;012&nbsp;096. </li></ul></textformat>]]></text>
+</component>
+
+
+</textcomponents>

@@ -1,0 +1,96 @@
+﻿<textcomponents>
+<component id="ID_title">
+<text><![CDATA[<b>Comparación de los protocolos de routing</b>]]></text>
+</component>
+
+
+
+	<component id="ID_table">
+		<text><![CDATA[<table  header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4'cellspacing='2'>
+	<tr class="liner">
+		<td colspan='7' bgcolor='#0E6360' class="mtable_top"><font size='1' color='#434321'><span style="color:#DAE17A">.</span></font></td>
+	</tr>
+	
+	<tr>		
+		<td rowspan="2" width="110" bgcolor='#077A77' valign="top" class="col1"><font color='#ffffff'><b>  </b></font></td>
+		<td  colspan="4" bgcolor='#077A77' valign="top" class="col2"><font color='#ffffff'><b>Vector distancia</b></font></td>
+		<td  colspan="2" bgcolor='#077A77' valign="top" class="col3"><font color='#ffffff'><b>Estado de enlace</b></font></td>		
+	</tr>
+	<tr>
+		
+		<td  width="62" bgcolor="#077A77" valign="top"><font color='#ffffff'><b>RIPv1</b></font></td>		
+		<td  width="62" bgcolor="#077A77" valign="top"><font color='#ffffff'><b>RIPv2</b></font></td>
+		<td  width="62" bgcolor='#077A77' valign="top"><font color='#ffffff'><b>IGRP</b></font></td>		
+		 <td  width="65" bgcolor="#077A77" valign="top"><font color='#ffffff'><b>EIGRP</b></font></td>
+		 <td  width="65" bgcolor="#077A77" valign="top"><font color='#ffffff'><b>OSPF</b></font></td>
+		 <td  width="65" bgcolor="#077A77" valign="top"><font color='#ffffff'><b>IS-IS</b></font></td>
+		 
+	</tr>
+	
+	<tr>
+		
+		<td  bgcolor="#EFF8F7" valign="top"><font color='#393536'>Velocidad de convergencia</font></td>	
+		
+		<td  bgcolor="#EFF8F7" valign="top"><font color='#393536'>Lento</font></td>		
+		<td  bgcolor="#EFF8F7" valign="top"><font color='#393536'>Lento</font></td>
+		<td  bgcolor='#EFF8F7' valign="top"><font color='#393536'>Lento</font></td>		
+		 <td  bgcolor="#EFF8F7" valign="top"><font color='#393536'>Rápido</font></td>
+		 <td  bgcolor="#EFF8F7" valign="top"><font color='#393536'>Rápido</font></td>
+		 <td  bgcolor="#EFF8F7" valign="top"><font color='#393536'>Rápido</font></td>
+		 
+	</tr>
+    
+
+<tr>
+		
+		<td  bgcolor="#ffffff" valign="top"><font color='#393536'>Escalabilidad: tamaño de la red</font></td>	
+		
+		<td  bgcolor="#ffffff" valign="top"><font color='#393536'>Pequeño</font></td>		
+		<td  bgcolor="#ffffff" valign="top"><font color='#393536'>Pequeño</font></td>
+		<td  bgcolor='#ffffff' valign="top"><font color='#393536'>Pequeño</font></td>		
+		 <td  bgcolor="#ffffff" valign="top"><font color='#393536'>Grande</font></td>
+		 <td  bgcolor="#ffffff" valign="top"><font color='#393536'>Grande</font></td>
+		 <td  bgcolor="#ffffff" valign="top"><font color='#393536'>Grande</font></td>
+		 
+	</tr>
+	
+	<tr>
+		
+		<td  bgcolor="#EFF8F7" valign="top"><font color='#393536'>Uso de VLSM</font></td>	
+		
+		<td  bgcolor="#EFF8F7" valign="top"><font color='#393536'>No</font></td>		
+		<td  bgcolor="#EFF8F7" valign="top"><font color='#393536'>Sí</font></td>
+		<td  bgcolor='#EFF8F7' valign="top"><font color='#393536'>No</font></td>		
+		 <td  bgcolor="#EFF8F7" valign="top"><font color='#393536'>Sí</font></td>
+		 <td  bgcolor="#EFF8F7" valign="top"><font color='#393536'>Sí</font></td>
+		 <td  bgcolor="#EFF8F7" valign="top"><font color='#393536'>Sí</font></td>
+		 
+	</tr>
+	
+	<tr>
+		
+		<td  bgcolor="#ffffff" valign="top"><font color='#393536'>Uso de recursos</font></td>	
+		
+		<td  bgcolor="#ffffff" valign="top"><font color='#393536'>Bajo</font></td>		
+		<td  bgcolor="#ffffff" valign="top"><font color='#393536'>Bajo</font></td>
+		<td  bgcolor='#ffffff' valign="top"><font color='#393536'>Bajo</font></td>		
+		 <td  bgcolor="#ffffff" valign="top"><font color='#393536'>Medio</font></td>
+		 <td  bgcolor="#ffffff" valign="top"><font color='#393536'>Alto</font></td>
+		 <td  bgcolor="#ffffff" valign="top"><font color='#393536'>Alto</font></td>
+		 
+	</tr>
+	
+	<tr>
+			<td  bgcolor="#EFF8F7" valign="top"><font color='#393536'>Implementación y mantenimiento</font></td>	
+		
+		<td  bgcolor="#EFF8F7" valign="top"><font color='#393536'>Simple</font></td>		
+		<td  bgcolor="#EFF8F7" valign="top"><font color='#393536'>Simple</font></td>
+		<td  bgcolor='#EFF8F7' valign="top"><font color='#393536'>Simple</font></td>		
+		 <td  bgcolor="#EFF8F7" valign="top"><font color='#393536'>Complejo</font></td>
+		 <td  bgcolor="#EFF8F7" valign="top"><font color='#393536'>Complejo</font></td>
+		 <td  bgcolor="#EFF8F7" valign="top"><font color='#393536'>Complejo</font></td>
+		 
+	</tr>
+</table>]]></text> 
+	</component>
+</textcomponents>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.6.1.2 Resumen</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.6.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resumen</h1>
+        <h2>Resumen</h2>
+      </div>
+      <div id="content">
+<p>Los routers utilizan protocolos de routing dinámico para facilitar el intercambio de información de routing entre ellos. El propósito de los protocolos de routing dinámico incluye lo siguiente: detección de redes remotas, mantenimiento de información de routing actualizada, selección de la mejor ruta hacia las redes de destino y capacidad para encontrar una mejor ruta nueva si la ruta actual deja de estar disponible. Si bien los protocolos de routing dinámico requieren menos sobrecarga administrativa que el routing estático, requieren dedicar parte de los recursos de un router a la operación del protocolo, incluidos tiempo de CPU y ancho de banda del enlace de red. </p>
+<p></p>
+<p>Las redes generalmente utilizan una combinación de routing estático y dinámico. El routing dinámico es la mejor opción para las redes grandes, y el routing estático es más adecuado para las redes de rutas internas.</p>
+<p></p>
+<p>Los protocolos de routing se encargan de detectar redes remotas y de mantener información de red precisa. Cuando se produce un cambio en la topología, los protocolos de routing propagan esa información por todo el dominio de routing. El proceso para lograr que todas las tablas de routing alcancen un estado de coherencia, en el cual todos los routers en el mismo dominio o área de routing tienen información completa y precisa acerca de la red, se denomina “convergencia”. Algunos protocolos de routing convergen más rápido que otros.</p>
+<p></p>
+<p>Los protocolos de routing pueden clasificarse como con clase o sin clase, vector distancia o estado de enlace, y protocolo de gateway interior o protocolo de gateway exterior. </p>
+<p></p>
+<p>Los protocolos vector distancia utilizan routers como “letreros” a lo largo de la ruta hacia el destino final. La única información que conoce el router sobre una red remota es la distancia o métrica para llegar a esa red y qué ruta o interfaz usar para alcanzarla. Los protocolos de enrutamiento vector distancia no tienen un mapa en sí de la topología de la red. </p>
+<p></p>
+<p>Un router configurado con un protocolo de routing de estado de enlace puede crear una “vista completa” o una topología de la red al reunir información proveniente de todos los demás routers.</p>
+<p></p>
+<p>Los protocolos de enrutamiento usan métricas para determinar el mejor camino o la ruta más corta para llegar a una red de destino. Diferentes protocolos de enrutamiento pueden usar diferentes métricas. Por lo general, una métrica inferior indica un mejor camino. Las métricas se pueden determinar mediante los saltos, el ancho de banda, el retraso, la confiabilidad y la carga.</p>
+<p></p>
+<p>Los routers a veces obtienen información sobre múltiples rutas hacia la misma red a partir de rutas estáticas como de protocolos de enrutamiento dinámico. Cuando un router aprende sobre una red de destino desde más de un origen de enrutamiento, los routers Cisco usan el valor de distancia administrativa para determinar qué origen usar. Cada protocolo de enrutamiento dinámico tiene un valor administrativo único junto con las rutas estáticas y las redes conectadas directamente. Cuanto menor es el valor administrativo, mayor es la preferencia del origen de ruta. Una red conectada directamente es siempre el origen preferido, seguido de las rutas estáticas y luego los diversos protocolos de enrutamiento dinámico.</p>
+<p></p>
+<p>El comando <span class="cmd"><b>show ip protocols</b></span> muestra los parámetros del protocolo de routing IPv4 configurados actualmente en el router. Para IPv6, utilice<span class="cmd"><b> show ipv6 protocols</b></span>.</p>
+<p></p>
+<p>En los protocolos de routing de estado de enlace, como OSPF, un enlace es una interfaz en un router. La información acerca del estado de dichos enlaces se conoce como estados de enlace. Todos los protocolos de routing de estado de enlace aplican el algoritmo de Dijkstra para calcular la mejor ruta. A este algoritmo se le llama comúnmente “algoritmo SPF” (Shortest Path First). Para determinar el costo total de una ruta, este algoritmo utiliza costos acumulados a lo largo de cada ruta, de origen a destino.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

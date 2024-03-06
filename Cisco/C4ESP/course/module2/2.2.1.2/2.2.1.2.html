@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.2.1.2 Infraestructura de la red del proveedor de servicios</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.2.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Elección de una tecnología WAN</h1>
+        <h2>Servicios WAN</h2>
+      </div>
+      <div id="content">
+<p>Cuando un proveedor de servicios WAN recibe datos de un cliente en un sitio, debe reenviar los datos al sitio remoto para la entrega final al destinatario. En algunos casos, el sitio remoto se puede conectar al mismo proveedor de servicios que el sitio de origen. En otros casos, el sitio remoto se puede conectar a un ISP diferente, y el ISP de origen debe transmitir los datos al ISP conectado.</p>
+<p></p>
+<p>Las comunicaciones de largo alcance normalmente son esas conexiones entre ISP o entre sucursales en empresas muy grandes.</p>
+<p></p>
+<p>Las redes de los proveedores de servicios son complejas. Constan principalmente de medios de fibra óptica de un ancho de banda elevado, que usan el estándar de red óptica síncrona (SONET) o de jerarquía digital síncrona (SDH). Estos estándares definen cómo transferir diverso tráfico de datos, voz y video a través de fibra óptica mediante láseres o diodos emisores de luz (LED) por grandes distancias. </p>
+<p></p>
+<p>
+<b>Nota:</b> SONET es un estándar de ANSI con base en los Estados Unidos, mientras que SDH es un estándar de ETSI y de ITU con base en Europa. Ambos son básicamente iguales y, por lo tanto, con frecuencia se los presenta como SONET/SDH.</p>
+<p></p>
+<p>Un avance más reciente en los medios de fibra óptica para las comunicaciones de largo alcance se denomina “multiplexación por división de longitud de onda densa” (DWDM). DWDM multiplica la cantidad de ancho de banda que puede admitir un único hilo de fibra, como se muestra en la figura 1. </p>
+<p></p>
+<p>Específicamente, DWDM tiene las siguientes características:</p>
+<p>
+<ul>
+<li>Habilita comunicaciones bidireccionales a través de un hilo de fibra. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Puede multiplexar más de 80 canales de datos (es decir, longitudes de onda) diferentes en una única fibra. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Cada canal puede transportar una señal multiplexada de10 Gb/s. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Asigna señales ópticas entrantes a longitudes de onda de luz específicas (es decir, frecuencias). </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Puede amplificar esas longitudes de onda para mejorar la intensidad de la señal. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Admite los estándares SONET y SDH.</li>
+</ul>
+</p>
+<p></p>
+<p>Los circuitos DWDM se usan en todos los sistemas de cables submarinos de comunicaciones modernos y en otros circuitos de largo alcance, como se muestra en la figura 2.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

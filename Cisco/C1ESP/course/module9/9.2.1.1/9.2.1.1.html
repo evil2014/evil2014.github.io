@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.2.1.1 Planificación del direccionamiento de la red</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.2.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Esquemas de direccionamiento</h1>
+        <h2>Diseño estructurado</h2>
+      </div>
+      <div id="content">
+<p>Como se muestra en la ilustración, es necesario que la asignación del espacio de direcciones de la capa de red dentro de la red corporativa esté bien diseñada. La asignación de direcciones no debe ser aleatoria. Al planificar la asignación de direcciones, se deben tener en cuenta tres aspectos principales:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Evitar la duplicación de direcciones:</b> cada host en una internetwork debe tener una dirección única. Sin la planificación y el registro adecuados, se podría asignar una dirección a más de un host, lo que ocasiona problemas de acceso para ambos hosts. </li>
+</ul>
+</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Proporcionar y controlar el acceso: </b>algunos hosts, como los servidores, proporcionan recursos tanto a hosts internos como a hosts externos. La dirección de capa 3 asignada a un servidor puede utilizarse para controlar el acceso a ese servidor. Sin embargo, si la dirección se asigna de manera aleatoria y no está bien registrada, es más difícil controlar el acceso. </li>
+</ul>
+</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Controlar la seguridad y el rendimiento:</b> de manera similar, se deben controlar la seguridad y el rendimiento de los hosts de la red y de la red en su totalidad. Como parte del proceso de control, se examina el tráfico de la red para detectar direcciones que generan o reciben demasiados paquetes. Si se planifica y registra de forma correcta el direccionamiento de la red, es posible encontrar fácilmente los dispositivos de red problemáticos. </li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Asignación de direcciones dentro de una red</b>
+</p>
+<p></p>
+<p>Dentro de una red, existen distintos tipos de dispositivos, incluidos los siguientes:</p>
+<p>
+<ul>
+<li>Clientes de usuarios finales </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Servidores y periféricos </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Hosts a los que se accede desde Internet</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Dispositivos intermediarios</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Gateway </li>
+</ul>
+</p>
+<p></p>
+<p>Al desarrollar un esquema de direccionamiento IP, por lo general se recomienda tener un patrón establecido de la forma en que se asignan las direcciones a cada tipo de dispositivo. Esto beneficia a los administradores cuando agregan y quitan dispositivos, ya que filtra el tráfico basado en IP y también simplifica el registro.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

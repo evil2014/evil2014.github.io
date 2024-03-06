@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.3.1.2 Mensajes de solicitud y de anuncio de router de ICMPv6</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.3.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Verificación de conectividad</h1>
+        <h2>ICMP</h2>
+      </div>
+      <div id="content">
+<p>Los mensajes informativos y de error que se encuentran en ICMPv6 son muy similares a los mensajes de control y de error que implementa ICMPv4. Sin embargo, ICMPv6 tiene nuevas características y funcionalidad mejorada que no se encuentran en ICMPv4.</p>
+<p></p>
+<p>ICMPv6 incluye cuatro nuevos protocolos como parte del protocolo ND o NDP (Neighbor Discovery Protocol, protocolo de descubrimiento de vecinos):</p>
+<p>
+<ul>
+<li>Mensaje de solicitud de router</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Mensaje de anuncio de router</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Mensaje de solicitud de vecino</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Mensaje de anuncio de vecino</li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Mensajes de solicitud y de anuncio de router</b>
+</p>
+<p>Los dispositivos con IPv6 habilitado pueden dividirse en dos categorías: routers y hosts. Los mensajes de solicitud de router y de anuncio de router se envían entre hosts y routers. </p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Mensaje de solicitud de router (RS):</b> cuando un host está configurado para obtener la información de direccionamiento de forma automática mediante la configuración automática de dirección sin estado (SLAAC), el host envía un mensaje de RS al router. El mensaje de RS se envía como un mensaje IPv6 multicast de todos los routers.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Mensaje de anuncio de router (RA):</b> los routers envían mensajes de RA para proporcionar información de direccionamiento a los hosts mediante SLAAC. El mensaje de RA puede incluir información de direccionamiento para el host, como el prefijo y la duración de prefijo. Los routers envían mensajes de RA de forma periódica o en respuesta a un mensaje de RS. De manera predeterminada, los routers Cisco envían mensajes de RA cada 200 segundos. Los mensajes de RA se envían a la dirección IPv6 multicast de todos los nodos. Los hosts que utilizan SLAAC establecen su gateway predeterminado en la dirección link-local del router que envió el mensaje de RA.</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

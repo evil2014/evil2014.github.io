@@ -1,0 +1,18 @@
+﻿<textcomponents> <!-- slide 1 -->
+<component id="ID_s1_title">
+<text><![CDATA[<b>ACL estándar</b>]]></text>
+</component>
+
+<component id="ID_s1_txt01">
+<text><![CDATA[<textformat blockindent='-14'>Las ACL estándar filtran paquetes IP solamente según la dirección de origen.</textformat>]]></text>
+</component> <!-- slide 2 -->
+
+<component id="ID_s2_title">
+<text><![CDATA[<b>ACL extendidas</b>]]></text> 
+</component>
+
+<component id="ID_s2_txt01">
+<text><![CDATA[<textformat blockindent='-14'>Las ACL extendidas filtran paquetes IP según varios atributos, incluidos los siguientes:<li>Las direcciones IP de origen y destino</li><li>Los puertos TCP y UDP de origen y destino</li><li>El tipo y número de protocolo (por ejemplo: IP, ICMP, UDP, TCP, etc.) </li></textformat>]]></text>
+</component>
+
+</textcomponents>

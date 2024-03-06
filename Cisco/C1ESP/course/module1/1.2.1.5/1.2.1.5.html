@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.2.1.5 Representaciones de red</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.2.1.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>LAN, WAN e Internet</h1>
+        <h2>Componentes de las redes</h2>
+      </div>
+      <div id="content">
+<p>Para transmitir información compleja, como la presentación de todos los dispositivos y el medio en una internetwork grande, es conveniente utilizar representaciones visuales. Los diagramas permiten comprender fácilmente la forma en la que se conectan los dispositivos en una red grande. Estos diagramas utilizan símbolos para representar los diferentes dispositivos y conexiones que componen una red. Este tipo de representación de una red se denomina “diagrama de topología”.</p>
+<p></p>
+<p>Como cualquier otro lenguaje, el lenguaje de las redes se compone de un conjunto común de símbolos que se utilizan para representar los distintos dispositivos finales, dispositivos de red y medios, como se muestra en la ilustración. La capacidad de reconocer las representaciones lógicas de los componentes físicos de red es fundamental para poder visualizar la organización y el funcionamiento de una red. A lo largo de este curso y de estos laboratorios, aprenderá cómo operan estos dispositivos y cómo realizar tareas de configuración básica en los mismos.</p>
+<p></p>
+<p>Además de estas representaciones, se utiliza terminología especializada al hablar sobre cómo se conectan estos dispositivos y los medios unos a otros. Algunos términos importantes para recordar son:</p>
+<p>
+<ul>
+<li>
+<b>Tarjeta de interfaz de red:</b> una NIC, o adaptador LAN, proporciona la conexión física a la red para la PC u otro dispositivo host. Los medios que realizan la conexión de la PC al dispositivo de red se conectan en la NIC.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Puerto físico:</b> se trata de un conector o una boca en un dispositivo de red donde se conectan los medios a un host u otro dispositivo de red.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Interfaz:</b> puertos especializados en un dispositivo de internetworking que se conectan a redes individuales. Puesto que los routers se utilizan para interconectar redes, los puertos de un router se conocen como interfaces de red.</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

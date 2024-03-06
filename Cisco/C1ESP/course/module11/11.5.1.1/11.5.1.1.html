@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>11.5.1.1 Dispositivo Multi-Function</title>
+    <!--  -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_11.5.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Servicios de enrutamiento integrados</h1>
+        <h2>Router integrado</h2>
+      </div>
+      <div id="content">
+<p>El uso de redes no se limita a las pequeñas empresas y a las grandes organizaciones. </p>
+<p></p>
+<p>Otro entorno en el que cada vez se aprovecha más la tecnología de red es el hogar. Las redes domésticas se utilizan para proporcionar conectividad y uso compartido de Internet entre varios sistemas de computación personales y computadoras portátiles en el hogar. También permiten que las personas aprovechen diversos servicios, como el uso compartido de una impresora de red, el almacenamiento centralizado de fotos, música y películas en un dispositivo de almacenamiento conectado a la red (NAS) y el acceso de otros dispositivos para usuarios finales, como tablet PC, teléfonos celulares e incluso electrodomésticos, como un televisor, a servicios de Internet. </p>
+<p></p>
+<p>Una red doméstica es muy similar a la red de una pequeña empresa. Sin embargo, la mayoría de las redes domésticas y muchas redes de pequeñas empresas no requieren dispositivos de gran volumen, como routers y switches dedicados. Los dispositivos de menor escala son suficientes, siempre que proporcionen la misma funcionalidad de enrutamiento y conmutación. Por este motivo, muchas redes domésticas y de pequeñas empresas utilizan el servicio de un dispositivo multifunción. </p>
+<p></p>
+<p>A los fines de este curso, los dispositivos multifunción se denominarán routers integrados.</p>
+<p></p>
+<p>Un router integrado es como tener varios dispositivos diferentes conectados entre sí. Por ejemplo: la conexión entre el switch y el router sigue existiendo, pero se produce internamente. Cuando se reenvía un paquete desde un dispositivo hacia otro en la misma red local, el switch integrado reenvía automáticamente el paquete al dispositivo de destino. No obstante, si se reenvía un paquete a un dispositivo en una red remota, el switch integrado reenvía el paquete a la conexión del router interno. Luego, el router interno determina cuál es el mejor camino y reenvía el paquete en consecuencia. </p>
+<p></p>
+<p>La mayoría de los routers integrados ofrecen tanto capacidades de conmutación por cable como conectividad inalámbrica y sirven como punto de acceso (AP) en la red inalámbrica, como el que se muestra en la figura 1. La conectividad inalámbrica es una forma popular, flexible y rentable de que los hogares y las empresas proporcionen servicios de red a los dispositivos finales.</p>
+<p></p>
+<p>En las figuras 2 y 3, se enumeran algunas ventajas y consideraciones comunes respecto del uso de la tecnología inalámbrica. </p>
+<p></p>
+<p>Además de admitir el enrutamiento, la conmutación y la conectividad inalámbrica, un router integrado puede ofrecer muchas funciones adicionales, las cuales incluyen: servicio de DHCP, un firewall e, incluso, servicios de almacenamiento conectado a la red.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.2.2.2 Confiabilidad de TCP: reconocimiento y tamaño de la ventana</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.2.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>TCP y UDP</h1>
+        <h2>Confiabilidad y control del flujo</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Confirmación de recepción de segmentos</b>
+</p>
+<p></p>
+<p>Una de las funciones de TCP es garantizar que cada segmento llegue a destino. Los servicios de TCP en el host de destino envían un acuse de recibo de los datos que recibe la aplicación de origen. </p>
+<p></p>
+<p>El número de secuencia (SEQ) y el número de acuse de recibo (ACK) se utilizan juntos para confirmar la recepción de los bytes de datos contenidos en los segmentos transmitidos. El número de SEQ indica la cantidad relativa de bytes que se transmitieron en esta sesión, incluso los bytes en el segmento actual. TCP utiliza el número de ACK reenviado al origen para indicar el próximo byte que el receptor espera recibir. Esto se llama acuse de recibo de expectativa. </p>
+<p></p>
+<p>Se le informa al origen que el destino recibió todos los bytes de este stream de datos, hasta el byte especificado por el número de ACK, pero sin incluirlo. Se espera que el host emisor envíe un segmento que utiliza un número de secuencia que es igual al número de ACK. </p>
+<p></p>
+<p>Recuerde que cada conexión son realmente dos sesiones de una vía. Los números de SEQ y ACK se intercambian en ambas direcciones.</p>
+<p></p>
+<p>En el ejemplo de la figura, el host de la izquierda envía datos al host de la derecha. Envía un segmento que contiene 10 bytes de datos para esta sesión y un número de secuencia igual a 1 en el encabezado. </p>
+<p></p>
+<p>El host receptor recibe el segmento en la capa 4 y determina que el número de secuencia es 1 y que tiene 10 bytes de datos. Luego el host envía un segmento de vuelta al host de la izquierda para acusar recibo de estos datos. En este segmento, el host establece el número de ACK en 11 para indicar que el siguiente byte de datos que espera recibir en esta sesión es el byte número 11. Cuando el host emisor recibe este acuse de recibo, puede enviar el próximo segmento que contiene datos para esta sesión a partir del byte 11.</p>
+<p></p>
+<p>En este ejemplo, si el host emisor tuviera que esperar el acuse de recibo de cada uno de los 10 bytes, la red tendría mucha sobrecarga. Para reducir la sobrecarga de estos acuses de recibo, pueden enviarse varios segmentos de datos y dar acuse de recibo de estos con un único mensaje de TCP en la dirección opuesta. Este acuse de recibo contiene un número de ACK que se basa en la cantidad total de bytes recibidos en la sesión. Por ejemplo, si se comienza con un número de secuencia 2000, si se reciben 10 segmentos de 1000 bytes cada uno, se devolverá al origen un número de ACK igual a 12 001. </p>
+<p></p>
+<p>La cantidad de datos que un origen puede transmitir antes de recibir un acuse de recibo se denomina “tamaño de la ventana”, que es un campo en el encabezado TCP que permite administrar datos perdidos y controlar el flujo.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

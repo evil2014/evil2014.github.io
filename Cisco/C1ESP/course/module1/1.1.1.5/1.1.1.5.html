@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.1.1.5 Las redes respaldan la forma en que nos comunicamos</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.1.1.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Conectados globalmente</h1>
+        <h2>Las redes en la actualidad</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Cambio en la forma en que nos comunicamos</b>
+</p>
+<p>La globalización de Internet conduce a nuevas formas de comunicación que les dan a las personas la capacidad de crear información a la que puede acceder una audiencia mundial. </p>
+<p></p>
+<p>Algunas formas de comunicación incluyen las siguientes:</p>
+<p>
+<ul>
+<li>
+<b>IM/mensajería de texto:</b> tanto la mensajería instantánea (IM, Instant Messaging) como la mensajería de texto permiten que dos o más personas se comuniquen de forma instantánea y en tiempo real. Muchas de las aplicaciones de IM y de mensajería de texto incorporan características como la transferencia de archivos. Las aplicaciones de IM pueden ofrecer funciones adicionales, como comunicación por voz y por video. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Medios sociales:</b> consisten en sitios Web interactivos en los que las personas y las comunidades crean y comparten contenido generado por los usuarios con amigos, familiares, pares y el mundo.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Herramientas de colaboración:</b> estas herramientas permiten que las personas puedan trabajar en forma conjunta con documentos compartidos. Las personas conectadas a un sistema compartido pueden comunicarse y hablar, generalmente a través de video interactivo en tiempo real, sin limitaciones de ubicación o de zona horaria. A través de la red, pueden compartir texto y gráficos, además de editar documentos en forma conjunta. Con las herramientas de colaboración siempre disponibles, las organizaciones pueden compartir información rápidamente y lograr los objetivos. La amplia distribución de las redes de datos permite que las personas en ubicaciones remotas puedan contribuir de igual manera con las personas ubicadas en los centros de gran población.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Weblogs (blogs):</b> los weblogs son páginas Web fáciles de actualizar y editar. A diferencia de los sitios Web comerciales, creados por expertos profesionales en comunicación, los blogs proporcionan a todas las personas un medio para comunicar sus opiniones a una audiencia mundial sin tener conocimientos técnicos sobre diseño Web. Hay blogs de casi todos los temas que uno se pueda imaginar y con frecuencia se forman comunidades de gente alrededor de los autores de blogs populares.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Wikis:</b> las wikis son páginas Web que grupos de personas pueden editar y ver juntos. Mientras un blog es más como un diario individual y personal, una wiki es una creación de grupo. Como tal, puede estar sujeta a una revisión y edición más extensa. Al igual que los blogs, las wikis pueden crearse en etapas, por cualquier persona, sin el patrocinio de una importante empresa comercial. Wikipedia se convirtió en un recurso muy completo, una enciclopedia en línea de temas aportados por el público. Las personas y organizaciones privadas también pueden crear sus propias wikis para capturar la información recopilada sobre un tema en particular. Muchas empresas utilizan wikis como herramienta de colaboración interna. Ahora con el Internet mundial, gente de cualquier ámbito de la sociedad puede participar en las wikis y añadir sus propias ideas y conocimientos a un recurso compartido.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Podcasting:</b> se trata de un medio basado en audio que originalmente permitía a las personas grabar audio y convertirlo para utilizarlo. El podcasting permite a las personas difundir sus grabaciones entre un público amplio. El archivo de audio se coloca en un sitio Web (o un blog o wiki) donde otros pueden descargarlo y reproducirlo en sus PC, computadoras portátiles y otros dispositivos móviles.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Intercambio de archivos P2P:</b> el intercambio de archivos punto a punto (P2P, Peer-to-Peer) permite a las personas compartir archivos entre sí sin tener que almacenarlos en un servidor central ni descargarlos de un servidor tal. Para incorporarse a la red P2P, el usuario simplemente debe instalar un software P2P. Esto les permite localizar archivos y compartirlos con otros usuarios de la red P2P. La extensa digitalización de los archivos de medios, como archivos de música y video, aumentó el interés en el intercambio de archivos P2P. Sin embargo, no todos adoptaron el intercambio de archivos P2P. Hay muchas personas a las que les preocupa infringir las leyes sobre materiales protegidos por derechos de autor. </li>
+</ul>
+</p>
+<p></p>
+<p>¿Qué otros sitios o herramientas utiliza para compartir lo que piensa?</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

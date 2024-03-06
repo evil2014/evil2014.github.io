@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.2.2.6 Números de secuencia de ACL estándar </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.2.2.6_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>ACL de IPv4 estándar </h1>
+        <h2>Modificación de ACL de IPv4</h2>
+      </div>
+      <div id="content">
+<p>El IOS de Cisco implementa una lógica interna en las ACL estándar. Como se mencionó anteriormente, una parte de esta lógica evita que las instrucciones de host se configuren después de una instrucción de rango si el host es parte de ese rango, como se muestra en la figura 1.</p>
+<p></p>
+<p>Otra parte de la lógica interna del IOS es responsable de la secuenciación interna de las ACE estándar. En la figura 2, se muestra la configuración de una lista de acceso estándar. Las instrucciones de rango que deniegan tres redes se configuran primero, y después se configuran cinco instrucciones de host. Las instrucciones de host son todas instrucciones válidas, porque sus direcciones IP host no forman parte de las instrucciones de rango introducidas previamente. </p>
+<p></p>
+<p>El comando <span class="cmd"><b>show running-config</b></span> se utiliza para verificar la configuración de la ACL. Observe que las instrucciones se enumeran en un orden distinto al orden en que se introdujeron. Utilizaremos el comando <span class="cmd"><b>show access-lists</b></span> para comprender la lógica detrás de esto.</p>
+<p></p>
+<p>Como se muestra en la figura 3, el comando <span class="cmd"><b>show access-lists</b></span> muestra las ACE junto con sus números de secuencia. Sería de esperar que el orden de las instrucciones en el resultado reflejara el orden en que se introdujeron. Sin embargo, el resultado de <span class="cmd"><b>show access-lists</b></span> muestra que este no es el caso.</p>
+<p></p>
+<p>El orden en que se enumeran las ACE estándar es la secuencia utilizada por el IOS para procesar la lista. Observe que las instrucciones se agrupan en dos secciones: las instrucciones de host seguidas por las instrucciones de rango. El número de secuencia indica el orden en que se introdujo la instrucción, no el orden en que se procesará.</p>
+<p></p>
+<p>Las instrucciones de host se enumeran primero, pero no necesariamente en el orden en que se introdujeron. El IOS ordena las instrucciones de host mediante una función de hash especial. El orden resultante optimiza la búsqueda de una entrada de ACL de host.</p>
+<p></p>
+<p>Las instrucciones de rango se muestran después de las instrucciones de host. Estas instrucciones se enumeran en el orden en que se introdujeron. </p>
+<p></p>
+<p>Recuerde que las ACL estándar y numeradas se pueden editar con números de secuencia. El número de secuencia que se muestra en el resultado del comando <span class="cmd"><b>show access-lists</b></span> es el número utilizado para eliminar las instrucciones individuales de la lista. Cuando se introduce una nueva instrucción de ACL, el número de secuencia solo afecta a la ubicación de una instrucción de rango en la lista. Las instrucciones de host siempre se ordenan con la función de hash.</p>
+<p></p>
+<p>Siguiendo con el ejemplo, una vez que se guarda la configuración en ejecución, el router se vuelve a cargar (se reinicia). Como se muestra en la figura 3, el comando <span class="cmd"><b>show access-lists</b></span> muestra la ACL en el mismo orden, sin embargo, las instrucciones se volvieron a numerar. Los números de secuencia ahora están en orden numérico.</p>
+<p></p>
+<p>
+<b>Nota:</b> la función de hash se aplica solamente a las instrucciones de host en listas de acceso de IPv4 estándar. El algoritmo no se utiliza para las ACL de IPv4 extendidas ni las ACL de IPv6. Esto se debe a que las ACL extendidas e IPv6 filtran más de una sola dirección de origen. Los detalles de la función de hash exceden el ámbito de este curso.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

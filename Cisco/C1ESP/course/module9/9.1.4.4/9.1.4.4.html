@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.1.4.4 División en subredes para cumplir con los requisitos de la red (cont.)</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.1.4.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>División de una red IPv4 en subredes</h1>
+        <h2>Determinación de la máscara de subred</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Determine la cantidad y el tamaño de las redes</b>
+</p>
+<p></p>
+<p>A continuación, considere la cantidad de subredes que se requieren y la cantidad de direcciones de host que se necesitan en cada subred. Según la topología de la red que consta de 5 segmentos LAN y 4 conexiones de internetwork entre los routers, se requieren 9 subredes. La subred más grande requiere 40 hosts. Al diseñar un esquema de direccionamiento, debe prever el crecimiento en términos de cantidad de subredes y cantidad de hosts por subred. </p>
+<p></p>
+<p>La dirección de red 172.16.0.0/22 tiene 10 bits de host. Debido a que la subred más grande requiere 40 hosts, se debe tomar prestado un mínimo de 6 bits de host para proporcionar el direccionamiento de los 40 hosts. Esto se determina mediante la siguiente fórmula: 2^6 – 2 = 62 hosts. Los primeros 4 bits de host pueden utilizarse para asignar subredes. Mediante la fórmula para determinar subredes, esto da como resultado 16 subredes: 2^4 = 16. Dado que la internetwork que se utilizó como ejemplo requiere 9 subredes, esto cumple con el requisito y permite cierto crecimiento adicional. </p>
+<p></p>
+<p>Cuando se toman prestados 4 bits, la nueva duración de prefijo es /26, con la máscara de subred 255.255.255.192.</p>
+<p></p>
+<p>Como se muestra en la figura 1, mediante la duración de prefijo /26, se pueden determinar las 16 direcciones de subred. Solo aumenta la porción de subred de la dirección. Los 22 bits originales de la dirección de red no pueden cambiar, y la porción de host contendrá todos bits 0.</p>
+<p></p>
+<p>
+<b>Nota:</b> tenga en cuenta que, dado que la porción de subred está en el tercero y el cuarto octeto, uno o ambos de estos valores variarán en las direcciones de subred. </p>
+<p></p>
+<p>Como se muestra en la figura 2, la red 172.16.0.0/22 original era una única red con 10 bits de host que proporcionaban 1022 direcciones utilizables para asignar a los hosts. Al tomar prestados 4 bits de host, se pueden crear 16 subredes (0000 hasta 1111). Cada subred tiene 6 bits de host o 62 direcciones de host utilizables. </p>
+<p></p>
+<p>Como se muestra en la figura 3, las subredes se pueden asignar a los segmentos LAN y a conexiones de router a router.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

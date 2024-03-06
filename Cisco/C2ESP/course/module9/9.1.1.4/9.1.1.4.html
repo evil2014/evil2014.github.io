@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.1.1.4 Filtrado de paquetes (cont.)</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.1.1.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Funcionamiento de ACL de IP</h1>
+        <h2>Propósito de los ACLs</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Ejemplo del filtrado de paquetes</b>
+</p>
+<p></p>
+<p>Para entender el concepto de cómo utiliza el router el filtrado de paquetes, imagine que se coloca un guarda en una puerta cerrada con llave. Las instrucciones del guarda son que solo permita el acceso por esa puerta a aquellas personas cuyos nombres aparecen en una lista. El guarda filtra las personas según el criterio de que los nombres aparezcan en la lista autorizada. Las ACL funcionan de manera similar: toman decisiones sobre la base de criterios establecidos.</p>
+<p></p>
+<p>Por ejemplo, una ACL se puede configurar para “permitir el acceso web a los usuarios de la red A, pero denegar el resto de los servicios a los usuarios de esa red. Denegar el acceso HTTP a los usuarios de la red B, pero permitir que los usuarios de esa red tengan todos los otros tipos de acceso”, de manera lógica. Consulte la ilustración para examinar la ruta de decisión que utiliza el filtro de paquetes para llevar a cabo esta tarea. </p>
+<p></p>
+<p>Para esta situación, el filtro de paquetes examina cada paquete de la siguiente manera:</p>
+<p></p>
+<p>
+<ul>
+<li>Si el paquete es un SYN de TCP de la red A que utiliza el puerto 80, tiene permiso para pasar. El resto de los tipos de acceso se deniega a esos usuarios.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Si el paquete es un SYN de TCP de la red B que utiliza el puerto 80, se bloquea. Sin embargo, se permite el resto de los tipos de acceso.</li>
+</ul>
+</p>
+<p></p>
+<p></p>
+<p>Este es solo un ejemplo sencillo. Se pueden configurar varias reglas para permitir o denegar otros servicios a usuarios específicos. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

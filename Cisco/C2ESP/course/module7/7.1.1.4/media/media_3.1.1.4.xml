@@ -1,0 +1,229 @@
+﻿<textcomponents> <!--Slide 1-->
+
+<component id='ID_s1_inst'>
+	<text><![CDATA[<b>Actividad&nbsp;1: clasificar los protocolos de routing  </b><br><br>Seleccione estado o vector ruta para unir cada protocolo de routing con su clasificación. Si la respuesta es correcta, la palabra “¡Correcto!” destellará en la pantalla. Si la respuesta es incorrecta, aparecerá el mensaje “Intente de nuevo”. Se seguirán mostrando elementos emergentes que se hayan respondido todos. <br><br>Si desea realizar la actividad completa nuevamente, haga clic en Restablecer. De lo contrario, siga con la actividad&nbsp;2.]]></text>
+</component>
+
+<component id="ID_s1_txt01">
+<text><![CDATA[<b>Protocolos de enrutamiento  </b>]]></text>
+</component>
+
+<component id="ID_s1_field01">
+<text><![CDATA[<b>Vector distancia  </b>]]></text>
+</component>
+
+<component id="ID_s1_field02">
+<text><![CDATA[<b>Estado de enlace  </b>]]></text>
+</component>
+
+<component id="ID_s1_field03">
+<text><![CDATA[<b>Vector ruta  </b>]]></text>
+</component> <!--answers-->
+<component id="ID_s1_ans01">
+<text><![CDATA[RIPv2 (IPv4)]]></text>
+</component>
+
+<component id="ID_s1_ans02">
+<text><![CDATA[RIPng (IPv6)]]></text>
+</component>
+
+<component id="ID_s1_ans03">
+<text><![CDATA[EIGRP (IPv4)]]></text>
+</component>
+
+<component id="ID_s1_ans04">
+<text><![CDATA[EIGRP (IPv6)]]></text>
+</component>
+
+<component id="ID_s1_ans05">
+<text><![CDATA[OSPFv2 (IPv4)]]></text>
+</component>
+
+<component id="ID_s1_ans06">
+<text><![CDATA[OSPFv3 (IPv6)]]></text>
+</component>
+
+<component id="ID_s1_ans07">
+<text><![CDATA[IS-IS (IPv4)]]></text>
+</component>
+
+<component id="ID_s1_ans08">
+<text><![CDATA[IS-IS (IPv6)]]></text>
+</component>
+
+<component id="ID_s1_ans09">
+<text><![CDATA[BGP-4 (IPv4)]]></text>
+</component>
+
+<component id="ID_s1_ans10">
+<text><![CDATA[BGP-MP (IPv6)]]></text>
+</component>
+
+<component id="ID_s1_break">
+<text><![CDATA[<br><br>]]></text>
+</component> <!--buttons-->
+<component id="ID_s1_btn01">
+<text><![CDATA[<b>Restablecer  </b>]]></text>
+</component> <!--feedback-->
+<component id='ID_s1_titleCorrect'>
+	<text><![CDATA[<b>Correcto  </b>]]></text>
+</component>
+
+<component id='ID_s1_correctText'>
+	<text><![CDATA[<br><p align='center'>¡Correcto! </p>]]></text>
+</component>
+
+<component id='ID_s1_titleIncorrect'>
+	<text><![CDATA[<b>Incorrecto  </b>]]></text>
+</component>
+
+<component id='ID_s1_incorrectText'>
+	<text><![CDATA[Intente de nuevo.]]></text>
+</component> <!--Slide 2-->
+<component id='ID_s2_inst'>
+	<text><![CDATA[<b>Actividad: identificar los componentes de un protocolo de routing (EIGRP) (parte&nbsp;1)  </b><br><br>En esta actividad, se centrará en el funcionamiento de EIGRP, un protocolo de routing vector distancia. <br><br>Lea la afirmación en la parte superior de la matriz. A continuación, arrastre una marca de verificación azul al campo o los campos ubicados junto a los elementos que completan correctamente la afirmación. Se puede seleccionar más de un elemento. Haga clic en Verificar para revisar sus respuestas. Si son correctas, pase a la parte&nbsp;2 de esta actividad. Si son incorrectas, haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_s2_question'>
+	<text><![CDATA[En el área de estructura de datos, EIGRP crea y mantiene la ____________.]]></text>
+</component>
+
+<component id='ID_s2_ans01'>
+	<text><![CDATA[Tabla de topología]]></text>
+</component>
+
+<component id='ID_s2_ans02'>
+	<text><![CDATA[Tabla de vecinos]]></text>
+</component>
+
+<component id='ID_s2_ans03'>
+	<text><![CDATA[Tabla de actualizaciones]]></text>
+</component>
+
+<component id='ID_s2_ans04'>
+	<text><![CDATA[Mejor ruta (o rutas) en la tabla de routing]]></text>
+</component>
+
+<component id='ID_s2_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto  </b>]]></text>
+</component>
+
+<component id='ID_s2_CORRECT_BODY'>
+	<text><![CDATA[Identificó correctamente las áreas de estructura de datos de EIGRP. Continúe con la parte&nbsp;2 de esta actividad.]]></text>
+</component>
+
+<component id='ID_s2_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto  </b>]]></text>
+</component>
+
+<component id='ID_s2_INCORRECT_BODY'>
+	<text><![CDATA[No identificó correctamente las áreas de estructura de datos de EIGRP. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_s2_check'>
+	<text><![CDATA[<b>Verificar  </b>]]></text>
+</component>
+
+<component id='ID_s2_reset'>
+	<text><![CDATA[<b>Restablecer  </b>]]></text>
+</component> <!--Slide 3-->
+<component id='ID_s3_inst'>
+	<text><![CDATA[<b>Actividad: identificar los componentes de un protocolo de routing (EIGRP) (parte&nbsp;2)  </b><br><br>Lea la afirmación en la parte superior de la matriz. A continuación, arrastre una marca de verificación azul al campo o los campos ubicados junto a los elementos que completan correctamente la afirmación. Se puede seleccionar más de un elemento. Haga clic en Verificar para revisar sus respuestas. Si son correctas, pase a la parte&nbsp;3 de esta actividad. Si son incorrectas, haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_s3_question'>
+	<text><![CDATA[En el área de mensajes del protocolo de routing, EIGRP utiliza _________.]]></text>
+</component>
+
+<component id='ID_s3_ans01'>
+	<text><![CDATA[Acuses de recibo]]></text>
+</component>
+
+<component id='ID_s3_ans02'>
+	<text><![CDATA[Consultas]]></text>
+</component>
+
+<component id='ID_s3_ans03'>
+	<text><![CDATA[Actualizaciones]]></text>
+</component>
+
+<component id='ID_s3_ans04'>
+	<text><![CDATA[Respuestas]]></text>
+</component>
+
+<component id='ID_s3_ans05'>
+	<text><![CDATA[Saludos]]></text>
+</component>
+
+<component id='ID_s3_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto  </b>]]></text>
+</component>
+
+<component id='ID_s3_CORRECT_BODY'>
+	<text><![CDATA[Identificó correctamente los tipos de mensajes del protocolo de routing EIGRP. Continúe con la parte&nbsp;3 de esta actividad.]]></text>
+</component>
+
+<component id='ID_s3_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto  </b>]]></text>
+</component>
+
+<component id='ID_s3_INCORRECT_BODY'>
+	<text><![CDATA[No identificó correctamente los tipos de mensajes del protocolo de routing EIGRP. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_s3_check'>
+	<text><![CDATA[<b>Verificar  </b>]]></text>
+</component>
+
+<component id='ID_s3_reset'>
+	<text><![CDATA[<b>Restablecer  </b>]]></text>
+</component> <!--Slide 4-->
+<component id='ID_s4_inst'>
+	<text><![CDATA[<b>Actividad: identificar los componentes de un protocolo de routing (EIGRP) (parte&nbsp;3)  </b><br><br>Lea la afirmación en la parte superior de la matriz. A continuación, arrastre una marca de verificación azul al campo o los campos ubicados junto a los elementos que completan correctamente la afirmación. Se puede seleccionar más de un elemento. Haga clic en Verificar para revisar sus respuestas. Si son incorrectas, haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_s4_question'>
+	<text><![CDATA[Para identificar la mejor ruta hacia una red, EIGRP utiliza este algoritmo:]]></text>
+</component>
+
+<component id='ID_s4_ans01'>
+	<text><![CDATA[Djikstra]]></text>
+</component>
+
+<component id='ID_s4_ans02'>
+	<text><![CDATA[Bellman-Ford]]></text>
+</component>
+
+<component id='ID_s4_ans03'>
+	<text><![CDATA[DUAL]]></text>
+</component>
+
+<component id='ID_s4_ans04'>
+	<text><![CDATA[ICMP]]></text>
+</component>
+
+<component id='ID_s4_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto  </b>]]></text>
+</component>
+
+<component id='ID_s4_CORRECT_BODY'>
+	<text><![CDATA[Identificó correctamente el algoritmo de EIGRP.]]></text>
+</component>
+
+<component id='ID_s4_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto  </b>]]></text>
+</component>
+
+<component id='ID_s4_INCORRECT_BODY'>
+	<text><![CDATA[No identificó correctamente el algoritmo de EIGRP. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_s4_check'>
+	<text><![CDATA[<b>Verificar  </b>]]></text>
+</component>
+
+<component id='ID_s4_reset'>
+	<text><![CDATA[<b>Restablecer  </b>]]></text>
+</component>
+
+</textcomponents>

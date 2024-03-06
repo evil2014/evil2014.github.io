@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.2.4.2 Snooping de DHCP</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.2.4.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Seguridad de switches: administración e implementación</h1>
+        <h2>Seguridad de puertos de switch</h2>
+      </div>
+      <div id="content">
+<p>El snooping DHCP es una función que determina cuáles son los puertos de switch que pueden responder a solicitudes de DHCP. Los puertos se identifican como confiables o no confiables. Los puertos confiables pueden recibir todos los mensajes de DHCP, incluidos los paquetes de oferta de DHCP y de acuse de recibo de DHCP; los puertos no confiables solo pueden recibir solicitudes. Los puertos confiables de los hosts se alojan en el servidor de DHCP o pueden ser un enlace hacia dicho servidor. Si un dispositivo no autorizado en un puerto no confiable intenta enviar un paquete de oferta de DHCP a la red, el puerto se desactiva. Esta función puede unirse con las opciones de DHCP donde la información del switch, como el ID de puerto o la solicitud de DHCP pueden insertarse en el paquete de solicitudes de DHCP</p>
+<p></p>
+<p>Como se muestra en las figuras 1 y 2, los puertos no confiables son aquellos que no están configurados explícitamente como confiables. Se construye una tabla enlazada de DHCP para los puertos no confiables. Cada entrada contiene una dirección MAC cliente, una dirección IP, un tiempo de arrendamiento, un número de VLAN y una ID de puerto registrados como clientes que realizan solicitudes de DHCP. Se utiliza entonces la tabla para filtrar el tráfico de DHCP subsiguiente. Desde la perspectiva de la detección de DHCP, los puertos de acceso no confiables no deben enviar mensajes de servidor de DHCP. </p>
+<p></p>
+<p>Estos pasos describen la forma en que se configura la detección de DHCP en un switch Catalyst 2960:</p>
+<p></p>
+<p>
+<b>Paso 1.</b> Habilite la detección de DHCP mediante el comando <span class="cmd"><b>ip dhcp snooping</b></span> del modo de configuración global.</p>
+<p>
+<b>Paso 2.</b> Habilite la detección de DHCP para VLAN específicas mediante el comando <span class="cmd"><b>ip dhcp snooping vlan </b></span><span class="cmd"><i>número</i></span>.</p>
+<p>
+<b>Paso 3.</b> Defina los puertos como confiables en el nivel de la interfaz mediante la identificación de los puertos confiables con el comando <span class="cmd"><b>ip dhcp snooping trust</b></span>.</p>
+<p>
+<b>Paso 4.</b> (Optativo) Limite la velocidad a la que un atacante puede enviar solicitudes de DHCP falsas de manera continua a través de puertos no confiables al servidor de DHCP mediante el comando <span class="cmd"><b>ip dhcp snooping limit rate <span class="cmd"><i>velocidad</i></span></b></span>.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

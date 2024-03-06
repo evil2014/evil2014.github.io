@@ -1,0 +1,67 @@
+﻿<textcomponents>
+
+	<component id="ID_s1_title">
+	  <text><![CDATA[<b>Sintaxis de comando de la ACL estándar <font face="_typewriter">access-list</font></b>]]></text> 
+	  </component>
+		
+	<component id="ID_s2_title">
+	  <text><![CDATA[<b>Eliminación de una ACL</b>]]></text> 
+	</component>
+	
+	  
+	  
+	<component id="ID_Table_01">
+			<text><![CDATA[<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4'>
+		<tr class="liner">
+			<td colspan='2' bgcolor='#0E6360' class="liner_top"><font size='1' color='#434321'><span style="color:#DAE17A">.</span></font></td>
+		</tr>
+		
+		<tr>
+			
+			<td width="100" bgcolor='#077A77' valign="top"><font color='#ffffff'><b>Parámetro</b></font></td>
+			<td bgcolor='#077A77' valign="top"><font color='#ffffff'><b>Descripción</b></font></td>	
+			
+		</tr>
+			
+		
+		<tr>
+			<td bgcolor="#EFF8F7" valign="top"><font face='_typewriter' color='#393536'><i>access-list-number</i></font></td>
+			<td bgcolor="#EFF8F7" valign="top"><font color='#393536'>Número de una ACL. Es un número decimal del 1 al 99 o del 1300 al 1999 (para las ACL estándar).</font></td>			
+		 
+		</tr>
+		<tr>
+			<td bgcolor="#ffffff" valign="top"><font color='#393536' face='_typewriter'><b>deny</b></font></td>
+			<td bgcolor="#ffffff" valign="top"><font color='#393536'>Deniega el acceso si las condiciones concuerdan.</font></td>			
+		 
+		</tr>
+		
+		<tr>
+			<td bgcolor="#EFF8F7" valign="top"><font color='#393536' face='_typewriter'><b>permit</b></font></td>
+			<td bgcolor="#EFF8F7" valign="top"><font color='#393536'>Permite el acceso si las condiciones concuerdan.</font></td>	 	 
+		</tr>
+		
+		<tr>
+			<td bgcolor="#ffffff" valign="top"><font color='#393536' face='_typewriter'><b>remark</b></font></td>
+			<td bgcolor="#ffffff" valign="top"><font color='#393536'>Agregue un comentario sobre las entradas en la lista de acceso IP para facilitar la comprensión y el análisis de la lista.</font></td>			
+		 
+		</tr>	
+		
+		<tr>
+			<td bgcolor="#EFF8F7" valign="top"><font color='#393536' face='_typewriter'><i>Origen</i></font></td>
+			<td bgcolor="#EFF8F7" valign="top"><font color='#393536'>Número de la red o del host desde el que se envía el paquete. Existen dos formas de especificar el <font color='#393536' face='_typewriter'><i>origen</i></font>:<ul><li><textformat blockindent='-14'>Utilice una cantidad de 32&nbsp;bits en formato decimal punteado de cuatro partes.</textformat> </li><li><textformat blockindent='-14'>Utilice la palabra clave <font face='_typewriter'><b>any  </b></font> como abreviatura de <font face='_typewriter'><i>origen </i></font> y <font face='_typewriter'><i>wildcard-origen </i></font> de 0.0.0.0 255.255.255.255.</textformat> </li></ul></font></td>
+		 
+		</tr>
+		
+		<tr>
+			<td bgcolor="#ffffff" valign="top"><font color='#393536' face='_typewriter'><i>source-wildcard</i></font></td>
+			<td bgcolor="#ffffff" valign="top"><font color='#393536'>(Optativo) Máscara wildcard de 32&nbsp;bits para aplicar al origen. Coloca unos en las posiciones de bits que desea omitir.</font></td>
+	</tr>
+	
+		
+		<tr>
+			<td bgcolor="#ffffff" valign="top"><font color='#393536' face='_typewriter'><b>log</b></font></td>
+			<td bgcolor="#EFF8F7" valign="top"><font color='#393536'><p>(Opcional) Genera un mensaje de registro informativo en la consola acerca del paquete que coincide con la entrada. (El nivel de mensajes registrados en la consola lo controla el comando <font face='_typewriter'><b>logging console  </b></font>). </p><br/><p>El mensaje incluye el número de ACL, si el paquete fue permitido o denegado, la dirección de origen y la cantidad de paquetes. El mensaje se genera para el primer paquete que coincida y, luego, a intervalos de cinco minutos, incluida la cantidad de paquetes permitidos o denegados en el intervalo de cinco minutos anterior. </p></font></td>
+		</tr>		
+	</table>]]></text> 
+	</component>
+</textcomponents>

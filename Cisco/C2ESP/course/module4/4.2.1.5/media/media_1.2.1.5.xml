@@ -1,0 +1,142 @@
+﻿<textcomponents>
+
+    <component id="ID_title">
+      <text><![CDATA[<b>El R3 reenvía el paquete a la PC2  </b>]]></text>
+   </component>  
+   <component id="ID_header01">
+      <text><![CDATA[<b>Trama de enlace de datos de capa&nbsp;2  </b>]]></text>
+   </component>
+   <component id="ID_header02">
+      <text><![CDATA[<b>Datos de capa&nbsp;3 del paquete  </b>]]></text>
+   </component>
+   <component id="ID_txt01">
+      <text><![CDATA[Dirección MAC 00-10]]></text>
+   </component>
+   <component id="ID_txt02">
+      <text><![CDATA[MAC de origen 0A-10]]></text>
+   </component>
+  <component id="ID_txt03">
+      <text><![CDATA[<b>Dirección MAC<br/>0B-20  </b>]]></text>
+   </component>
+   <component id="ID_txt04">
+      <text><![CDATA[<b>Dirección<br>0x8F  </b>]]></text>
+   </component>
+   <component id="ID_txt05">
+      <text><![CDATA[<b>Control<br>0x00  </b>]]></text>
+   </component>
+   <component id="ID_txt06">
+      <text><![CDATA[Tipo 0x800]]></text>
+   </component>   
+   <component id="ID_txt07">
+      <text><![CDATA[<b>Dirección IP<br/>192.168.4.10  </b>]]></text>
+   </component>
+   <component id="ID_txt08">
+      <text><![CDATA[<b>IP de origen <br/>192.168.1.10  </b>]]></text>
+   </component>
+   <component id="ID_txt09">
+      <text><![CDATA[<b>Campos de IP  </b>]]></text>
+   </component>
+   <component id="ID_txt10">
+      <text><![CDATA[<b>Datos  </b>]]></text>
+   </component>   
+   <component id="ID_txt11">
+      <text><![CDATA[Tráiler]]></text>
+   </component>   
+      <component id="ID_txt12">
+      <text><![CDATA[<b>MAC de origen<br/>0C-22  </b>]]></text>
+   </component> <!--R3 ROUTING TABLE-->
+    <component id="ID_tbl01_header">
+      <text><![CDATA[<b>Tabla de routing del R3  </b>]]></text>
+   </component>
+   
+        <component id="ID_tbl01_txt01">
+      <text><![CDATA[Red]]></text>
+   </component>
+       <component id="ID_tbl01_txt02">
+      <text><![CDATA[Saltos]]></text>
+   </component>
+   <component id="ID_tbl01_txt03">
+      <text><![CDATA[IP del siguiente salto]]></text>
+   </component>
+   
+          <component id="ID_tbl01_txt04">
+      <text><![CDATA[Interfaz de salida]]></text>
+   </component>
+   
+   
+      <component id="ID_tbl01_txt05">
+      <text><![CDATA[Dir. Conéctese.]]></text>
+   </component>
+
+   <component id="ID_tbl01_txt06">
+      <text><![CDATA[Dir. Conéctese.]]></text>
+   </component> <!-- ARP TABLE-->
+   
+   
+    <component id="ID_tbl02_header">
+      <text><![CDATA[<b>Caché ARP de R3  </b>]]></text>
+   </component>
+
+   <component id="ID_tbl02_txt01">
+      <text><![CDATA[Dirección IP]]></text>
+   </component>
+
+   <component id="ID_tbl02_txt02">
+      <text><![CDATA[Dirección MAC]]></text>
+   </component> <!--SPEECH BUBBLES-->
+   
+   
+   <component id="ID_speech01">
+      <text><![CDATA[Se me envió una trama a través de mi enlace punto a punto. Permítame investigar más.]]></text>
+   </component>
+
+   <component id="ID_speech02">
+      <text><![CDATA[Por el tipo y la dirección IP de destino, puedo ver que este paquete debe reenviarse.]]></text>
+   </component>
+
+   <component id="ID_speech03">
+      <text><![CDATA[Hay una ruta que sale de mi interfaz Fa0/0 para llegar a la PC2.]]></text>
+   </component>
+
+   <component id="ID_speech04">
+      <text><![CDATA[Permítame reconstruir la información en la trama.]]></text>
+   </component>
+
+   <component id="ID_speech05">
+      <text><![CDATA[Mi tabla ARP me indica que la PC2 utiliza la dirección MAC 0B-20.]]></text>
+   </component>
+
+   <component id="ID_speech06">
+      <text><![CDATA[Mire: se está enviando una trama a mi dirección MAC; permítame procesarla. Además, el paquete coincide con mi dirección IP, entonces DEBE ser mío.]]></text>
+   </component>
+
+   <component id="ID_speech07">
+      <text><![CDATA[La trama ya está lista para que pueda enviarla por mi Fa0/1.]]></text>
+   </component> <!-- controller -->
+
+<component id="end">
+<text><![CDATA[Finalizar]]></text>
+</component>
+
+<component id="fforward">
+<text><![CDATA[Adelantar]]></text>
+</component>
+
+<component id="pause">
+<text><![CDATA[Pausa]]></text>
+</component>
+
+<component id="play">
+<text><![CDATA[Reproducir]]></text>
+</component>
+
+<component id="rewind">
+<text><![CDATA[Regresar]]></text>
+</component>
+
+<component id="start">
+<text><![CDATA[Inicio]]></text>
+</component>
+
+
+</textcomponents>

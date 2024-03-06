@@ -1,0 +1,51 @@
+﻿<textcomponents>
+  <component id="ID_title">
+    <text><![CDATA[<b>Identificadores de entrada de red remota  </b>]]></text>
+  </component> <!-- <component id="ID_txt01">
+    <text><![CDATA[D]]></text>
+  </component>-->
+  
+   <component id="ID_txt01">
+    <text><![CDATA[<b>D  </b>]]></text>
+  </component>
+
+     <component id="ID_txt02">
+    <text><![CDATA[<b>Leyenda  </b>]]></text>
+  </component>
+ 
+
+	 <component id="ID_txt03">
+    <text><![CDATA[Identifica de qué manera el router identificó la red.]]></text>
+  </component>
+ 
+ 
+ 
+	<component id="ID_txt04">
+    <text><![CDATA[Identifica la red de destino.]]></text>
+  </component>
+	
+	<component id="ID_txt05">
+    <text><![CDATA[Identifica la distancia administrativa (confiabilidad) del origen de la ruta.]]></text>
+  </component>
+	
+	<component id="ID_txt06">
+    <text><![CDATA[Identifica la métrica para llegar a la red remota.]]></text>
+  </component>
+	
+	<component id="ID_txt07">    
+	<text><![CDATA[Identifica la dirección IP de siguiente salto para llegar a la red remota.]]></text>
+  </component>
+  
+	<component id="ID_txt08">    
+	<text><![CDATA[Identifica el tiempo transcurrido desde que se descubrió la red.]]></text>
+  </component>
+	
+	<component id="ID_txt09">    
+	<text><![CDATA[Identifica la interfaz de salida en el router para llegar a la red de destino.]]></text>
+  </component>
+
+
+  
+  
+
+</textcomponents>

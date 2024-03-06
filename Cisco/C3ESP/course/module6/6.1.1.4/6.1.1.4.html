@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.1.1.4 Tipos de routers de OSPF</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.1.1.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Funcionamiento de OSPF multiárea</h1>
+        <h2>¿Por qué OSPF de diversas áreas?</h2>
+      </div>
+      <div id="content">
+<p>Distintos tipos de routers OSPF controlan el tráfico que entra a las áreas y sale de estas. Los routers OSPF se categorizan según la función que cumplen en el dominio de routing.</p>
+<p></p>
+<p>Existen cuatro tipos diferentes de routers de OSPF: </p>
+<p>
+<ul>
+<li>
+<b>Router interno:</b> es un router cuyas interfaces están todas en la misma área. Todos los routers internos de un área tienen LSDB idénticas. (figura 1).</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Router de respaldo:</b> es un router que se encuentra en el área de red troncal. Por lo general, el área de red troncal se configura como área 0. (figura 2).</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Router de área perimetral.</b>
+<b>(ABR):</b> es un router cuyas interfaces se conectan a varias áreas. Debe mantener una LSDB para cada área a la que está conectado; puede hacer routing entre áreas. Los ABR son puntos de salida para cada área. Esto significa que la información de routing que se destina hacia otra área puede llegar únicamente mediante el ABR del área local. Es posible configurar los ABR para resumir la información de routing que proviene de las LSDB de las áreas conectadas. Los ABR distribuyen la información de routing en la red troncal. Luego, los routers de red troncal reenvían la información a otros ABR. En una red de diversas áreas, un área puede tener uno o más ABR. (figura 3).</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Router limítrofe del sistema autónomo (ASBR):</b> es un router que tiene al menos una interfaz conectada a una internetwork externa (otro sistema autónomo), por ejemplo, una red que no es OSPF. Un ASBR puede importar información de una red no OSPF hacia una red OSPF, y viceversa, mediante un proceso que se llama "redistribución de rutas". (figura 4).</li>
+</ul>
+</p>
+<p></p>
+<p>La redistribución en OSPF de diversas áreas ocurre cuando un ASBR conecta diferentes dominios de routing (por ejemplo, EIGRP y OSPF) y los configura para intercambiar y anunciar información de routing entre dichos dominios de routing. </p>
+<p></p>
+<p>Un router se puede clasificar como uno o más tipos de router. Por ejemplo, si un router se conecta a las áreas 0 y 1, y además mantiene información de routing de otra red que no es OSPF, se ubica en tres categorías diferentes: router de respaldo, ABR y ASBR.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

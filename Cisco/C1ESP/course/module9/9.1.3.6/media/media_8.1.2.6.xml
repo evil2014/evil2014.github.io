@@ -1,0 +1,54 @@
+﻿<textcomponents>	
+	<component id="ID_title">
+		<text><![CDATA[<b>Actividad: Determinación básica de direcciones de red</b><br/><br/>En esta actividad, se proporciona práctica para determinar la dirección de red.<br/><br/>Se le brindarán direcciones IP y máscaras de subred aleatorias. Para cada conversión, introduzca la dirección de red correcta en formato binario y en formato decimal.<br/><br/>Haga clic en el botón Verificar para ver si sus cálculos son correctos.]]></text>
+	</component>
+	<component id='ID_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id='ID_CORRECT_BODY'>
+	<text><![CDATA[Convirtió correctamente la dirección de red a los sistemas binario y decimal. Haga clic en Nuevo número para continuar.]]></text>
+</component>
+
+<component id='ID_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_INCORRECT_BODY'>
+	<text><![CDATA[No convirtió correctamente la dirección de red a los sistemas binario o decimal. Haga clic en Restablecer e intente de nuevo.]]></text>
+</component>
+
+
+
+
+
+	
+	<component id="txt_hostaddress">
+		<text><![CDATA[Dirección host]]></text>
+	</component>
+	<component id="txt_subnetmask">
+		<text><![CDATA[Máscara de subred]]></text>
+	</component>
+	<component id="txt_hostaddrbin">
+		<text><![CDATA[Dirección host binaria]]></text>
+	</component>
+	<component id="txt_subnetbin">
+		<text><![CDATA[Máscara de subred en forma binaria]]></text>
+	</component>
+	<component id="txt_netbin">
+		<text><![CDATA[Dirección de red binaria]]></text>
+	</component>
+	<component id="txt_netdec">
+		<text><![CDATA[Dirección de red en decimal]]></text>
+	</component>
+	<component id="txt_check">
+		<text><![CDATA[Verificar]]></text>
+	</component>
+	<component id="txt_reset">
+		<text><![CDATA[Restablecer]]></text>
+	</component>
+	<component id="txt_newnumber">
+		<text><![CDATA[Nuevo número]]></text>
+	</component>
+
+</textcomponents>

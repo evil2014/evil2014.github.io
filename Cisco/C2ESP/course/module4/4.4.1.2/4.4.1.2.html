@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.4.1.2 Resumen</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.4.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resumen</h1>
+        <h2>Resumen</h2>
+      </div>
+      <div id="content">
+<p>Existen muchas características clave relacionadas con las estructuras y el rendimiento a las cuales nos referimos cuando hablamos de redes: topología, velocidad, costo, seguridad, disponibilidad, escalabilidad y confiabilidad.</p>
+<p></p>
+<p>Los routers y los switches Cisco tienen muchas similitudes: admiten sistemas operativos modales y estructuras de comandos similares, así como muchos de los mismos comandos. Una característica que distingue a los switches de los routers es el tipo de interfaces que admite cada uno. Una vez que se configuró una interfaz en ambos dispositivos, se deben utilizar los comandos show adecuados para verificar que la interfaz funcione.</p>
+<p></p>
+<p>El objetivo principal de un router es conectar múltiples redes y reenviar paquetes desde una red a la siguiente. Esto significa que un router normalmente tiene múltiples interfaces. Cada interfaz es un miembro o host en una red IP diferente. </p>
+<p></p>
+<p>El IOS de Cisco utiliza lo que se conoce como “distancia administrativa” (AD) para determinar la ruta que se debe instalar en la tabla de routing de IP. La tabla de routing es una lista de redes que conoce el router. La tabla de enrutamiento incluye direcciones de red para sus propias interfaces que son las redes conectadas directamente, además de direcciones de red para redes remotas. Una red remota es una red a la que se puede llegar únicamente reenviando el paquete a otro router.</p>
+<p></p>
+<p>Las redes remotas se agregan a la tabla de routing de dos maneras: por el administrador de red que configura manualmente las rutas estáticas o implementando un protocolo de routing dinámico. Las rutas estáticas no tienen tanta sobrecarga como los protocolos de enrutamiento dinámico; sin embargo, las rutas estáticas requieren más mantenimiento si la topología es inestable o está en constante cambio. </p>
+<p></p>
+<p>Los protocolos de enrutamiento dinámico se ajustan automáticamente a los cambios sin intervención alguna del administrador de la red. Los protocolos de enrutamiento dinámico requieren más procesamiento de la CPU y además usan una cierta cantidad de capacidad de enlace para mensajes y actualizaciones de enrutamiento. En muchos casos, una tabla de enrutamiento tendrá tanto rutas estáticas como dinámicas. </p>
+<p></p>
+<p>Los routers toman su decisión principal de reenvío en la Capa 3, la capa de Red. Sin embargo, las interfaces del router participan en las capas 1, 2 y 3. Los paquetes IP de capa 3 se encapsulan en una trama de enlace de datos de capa 2 y se codifican en bits en la capa 1. Las interfaces del router participan en los procesos de capa 2 asociados a la encapsulación. Por ejemplo, una interfaz Ethernet en un router participa en el proceso ARP como otros hosts en esa LAN.</p>
+<p></p>
+<p>La tabla de enrutamiento IP de Cisco no es una base de datos plana. La tabla de enrutamiento, en realidad, es una estructura jerárquica que se usa para acelerar el proceso de búsqueda cuando se ubican rutas y se reenvían paquetes.</p>
+<p></p>
+<p>Los componentes de la tabla de routing IPv6 son muy similares a los de la tabla de routing IPv4. Por ejemplo, se completa con las interfaces conectadas directamente, con las rutas estáticas y con las rutas descubiertas de forma dinámica. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

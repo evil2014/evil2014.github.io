@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.4.2.3 Banda ancha inalámbrica </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.4.2.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>El cambiante entorno de red</h1>
+        <h2>Tecnologías de red para el hogar</h2>
+      </div>
+      <div id="content">
+<p>La conexión a Internet es fundamental para la tecnología del hogar inteligente. DSL y cable son tecnologías comunes que se utilizan para conectar hogares y pequeñas empresas a Internet. Sin embargo, la red inalámbrica puede ser otra opción en muchas áreas. </p>
+<p></p>
+<p>
+<b>Proveedor de servicios de Internet inalámbrico (WISP)</b>
+</p>
+<p></p>
+<p>El proveedor de servicios de Internet inalámbrico (WISP, Wireless Internet Service Provider) es un ISP que conecta a los suscriptores a un punto de acceso designado o una zona activa mediante tecnologías inalámbricas similares a las que se encuentran en las redes de área local inalámbrica (WLAN, Wireless Local Area Network). Los WISP se encuentran con mayor frecuencia en entornos rurales donde los servicios de cable o DSL no están disponibles. </p>
+<p></p>
+<p>Aunque se puede instalar una torre de transmisión separada para la antena, comúnmente la antena se conecta a una estructura elevada existente, como una torre de agua o una torre de radio. Se instala una pequeña antena en el techo del suscriptor, al alcance del transmisor del WISP. La unidad de acceso del suscriptor se conecta a la red conectada por cable dentro del hogar. Desde la perspectiva del usuario doméstico, la configuración no es muy diferente de la de DSL o el servicio de cable. La diferencia principal es que la conexión del hogar al ISP es inalámbrica, en lugar de establecerse mediante un cable físico.</p>
+<p></p>
+<p>
+<b>Servicio de banda ancha inalámbrico</b>
+</p>
+<p></p>
+<p>Otra solución inalámbrica para los hogares y las pequeñas empresas es la banda ancha inalámbrica. Esta opción utiliza la misma tecnología de datos móviles que se utiliza para acceder a Internet con un smartphone o una tablet PC. Se instala una antena fuera del hogar, que proporciona conectividad inalámbrica o por cable a los dispositivos en el hogar. En muchas zonas, la banda ancha inalámbrica doméstica compite directamente con los servicios de DSL y cable.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

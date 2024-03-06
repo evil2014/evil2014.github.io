@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.1.3.10 Creación de 100 subredes con un prefijo /16</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.1.3.10_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>División de una red IPv4 en subredes</h1>
+        <h2>División de una red IPv4 en subredes</h2>
+      </div>
+      <div id="content">
+<p>En los ejemplos anteriores, utilizamos una internetwork que requería tres subredes y una que requería cinco subredes. Para alcanzar el objetivo de crear cuatro subredes, tomamos prestados 2 bits de los 8 bits de host disponibles con una dirección IP que tiene la máscara predeterminada 255.255.255.0 o el prefijo /24. La máscara de subred resultante fue 255.255.255.192, y se crearon 4 subredes posibles en total. Con la fórmula de cálculo de hosts 2^6-2, determinamos que en cada una de dichas 4 subredes, podíamos tener 62 direcciones de host para asignar a los nodos. </p>
+<p></p>
+<p>Para adquirir 5 subredes, tomamos prestados 3 bits de los 8 bits de host disponibles con una dirección IP que tiene la máscara predeterminada 255.255.255.0 o el prefijo /24. Al tomar prestados esos 3 bits de la porción de host de la dirección, quedaron 5 bits de host. La máscara de subred resultante fue 255.255.255.224, con un total de 8 subredes creadas y 30 direcciones de host por subred.</p>
+<p></p>
+<p>Piense en grandes organizaciones o campus con una internetwork que requiere 100 subredes. Al igual que en los ejemplos anteriores, para lograr el objetivo de crear 100 subredes, debemos tomar prestados bits de la porción de host de la dirección IP de la internetwork existente. Del mismo modo que antes, para calcular la cantidad de subredes debemos observar la cantidad de bits de host disponibles y utilizar la fórmula de cálculo de subredes 2^cantidad de bits que se toman prestados menos 2. Con la dirección IP del último ejemplo, 192.168.10.0/24, tenemos 8 bits de host. Para crear 100 subredes, debemos tomar prestados 7 bits. </p>
+<p></p>
+<p>Calcule la cantidad de subredes si se toman prestados 7 bits: 2^7=128 subredes.</p>
+<p></p>
+<p>Sin embargo, si se toman prestados 7 bits, restará solo un bit de host, y si aplicamos la fórmula de cálculo de hosts, el resultado sería que no hay hosts en estas subredes. Calcule la cantidad de hosts si resta un bit: 2^1=2. A continuación, reste 2 para la dirección de red y para la dirección de broadcast. El resultado es 0 hosts (2^1-2=0).</p>
+<p></p>
+<p>En una situación en la que se necesita una mayor cantidad de subredes, se requiere una red IP con más bits de host para tomar prestados, como una dirección IP con la máscara de subred predeterminada /16 o 255.255.0.0. Las direcciones que tienen un rango de 128 a 191 en el primer octeto tienen la máscara predeterminada 255.255.0.0 o /16. Las direcciones de este rango tienen 16 bits en la porción de red y 16 bits en la porción de host. Estos 16 bits son los bits disponibles para tomar prestados para la creación de subredes.</p>
+<p></p>
+<p>Con una nueva dirección IP del bloque de direcciones 172.16.0.0/16, se deben tomar prestados bits de host para crear, al menos, 100 subredes. Comenzaremos de izquierda a derecha con el primer bit de host disponible y tomaremos prestado un único bit por vez hasta alcanzar la cantidad de bits necesarios para crear 100 subredes. Si tomamos prestado 1 bit, crearíamos 2 subredes; si tomamos prestados 2 bits, crearíamos 4 subredes; con 3 bits crearíamos 8 subredes, y así sucesivamente. Calcule la cantidad de subredes que se crean si se toman prestados 7 bits mediante la fórmula 2^cantidad de bits que se toman prestados:</p>
+<p></p>
+<p>2^7 = 128 subredes</p>
+<p></p>
+<p>Si se toman prestados 7 bits, se crean 128 subredes, como se muestra en la ilustración.</p>
+<p></p>
+<p>Recuerde que la máscara de subred debe modificarse para que se muestren los bits prestados. En este ejemplo, cuando se toman prestados 7 bits, la máscara se extiende 7 bits en el tercer octeto. En formato decimal, la máscara se representa como 255.255.254.0 o el prefijo /23, debido a que, en formato binario, el tercer octeto es 11111110 y el cuarto octeto es 00000000. La división en subredes se realizará en el tercer octeto, con los bits de host del tercero y el cuarto octeto.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

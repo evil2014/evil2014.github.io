@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.1.2.2 Capa de acceso</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.1.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Descripción general del diseño de redes jerárquicas</h1>
+        <h2>Diseño jerárquico de la red</h2>
+      </div>
+      <div id="content">
+<p>En un entorno LAN, la capa de acceso otorga acceso a la red para las terminales. En el entorno WAN, puede proporcionar acceso a la red empresarial para los trabajadores a distancia o los sitios remotos a través de conexiones WAN.</p>
+<p></p>
+<p>Como se muestra en la ilustración, la capa de acceso para la red de una pequeña empresa, por lo general, incorpora switches de capa 2 y puntos de acceso que proporcionan conectividad entre las estaciones de trabajo y los servidores. </p>
+<p></p>
+<p>La capa de acceso cumple varias funciones, incluido lo siguiente:</p>
+<p>
+<ul>
+<li>Switching de capa 2</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Alta disponibilidad</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Seguridad del puerto</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Clasificación y marcación de QoS, y límites de confianza</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Inspección del protocolo de resolución de direcciones (ARP)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Listas de control de acceso virtual (VACL)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Árbol de expansión</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Alimentación por Ethernet y VLAN auxiliares para VoIP</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

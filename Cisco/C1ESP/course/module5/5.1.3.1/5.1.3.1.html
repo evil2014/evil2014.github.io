@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.1.3.1 Direcciones MAC y numeración hexadecimal</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.1.3.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolo Ethernet</h1>
+        <h2>MAC de Ethernet</h2>
+      </div>
+      <div id="content">
+<p>El uso de la dirección MAC es uno de los aspectos más importantes de la tecnología LAN Ethernet. Las direcciones MAC utilizan numeración hexadecimal. </p>
+<p></p>
+<p>“Hexadecimal” es una palabra que se utiliza como sustantivo y como adjetivo. Cuando se utiliza sola (como sustantivo), se refiere al sistema de numeración hexadecimal. El método hexadecimal proporciona una manera conveniente de representar valores binarios. Así como el decimal es un sistema con una base de diez números y el binario es un sistema con una base de dos números, el hexadecimal es un sistema de base dieciséis.</p>
+<p></p>
+<p>El sistema de numeración de base 16 utiliza los números del 0 al 9 y las letras entre A y F. En la figura 1, se muestran los valores decimales y hexadecimales equivalentes a los valores binarios del 0000 al 1111. Es más fácil expresar un valor con un único dígito hexadecimal que con cuatro bits binarios. </p>
+<p></p>
+<p>Dado que 8 bits (un byte) es una agrupación binaria común, los binarios 00000000 hasta 11111111 pueden representarse en valores hexadecimales como el intervalo 00 a FF. Los ceros iniciales se muestran siempre para completar la representación de 8 bits. Por ejemplo, el valor binario 0000 1010 se muestra en valor hexadecimal como 0A.</p>
+<p></p>
+<p>
+<b>Nota:</b> en lo que respecta a los caracteres del 0 al 9, es importante distinguir los valores hexadecimales de los decimales, tal como se muestra en la figura 1. </p>
+<p></p>
+<p>
+<b>Representación de valores hexadecimales</b>
+</p>
+<p>Por lo general, los valores hexadecimales se representan en forma de texto mediante el valor precedido por 0x (por ejemplo, 0x73) o un subíndice 16. Con menor frecuencia, pueden estar seguidos de una H, por ejemplo, 73H. Sin embargo, y debido a que el texto en subíndice no es reconocido en entornos de línea de comando o de programación, la representación técnica de un valor hexadecimal es precedida de "0x" (cero X). Por lo tanto, los ejemplos anteriores deberían mostrarse como 0x0A y 0x73, respectivamente.</p>
+<p></p>
+<p>El valor hexadecimal se utiliza para representar las direcciones MAC de Ethernet y las direcciones IP versión 6.</p>
+<p></p>
+<p>
+<b>Conversiones hexadecimales</b>
+</p>
+<p>Las conversiones numéricas entre valores decimales y hexadecimales son simples, pero no siempre es conveniente dividir o multiplicar por 16. Si es necesario realizar dichas conversiones, generalmente es más fácil convertir el valor decimal o hexadecimal a un valor binario y después convertir dicho valor binario a un valor decimal o hexadecimal, según corresponda. </p>
+<p></p>
+<p>Con la práctica, es posible reconocer los patrones de bits binarios que coinciden con los valores decimales y hexadecimales. En la figura 2, se muestran estos patrones para valores seleccionados de 8 bits.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

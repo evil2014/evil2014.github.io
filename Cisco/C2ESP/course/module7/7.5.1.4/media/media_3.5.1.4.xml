@@ -1,0 +1,99 @@
+﻿<textcomponents>
+<component id="ID_inst">
+<text><![CDATA[<b>Actividad: identificar las partes de una entrada de la tabla de routing IPv4 </b><br/><br/>Analice las rutas en la tabla de routing para determinar el origen de la ruta, la AD y la métrica. Arrastre cada valor al campo correspondiente en la tabla.]]></text>
+</component> <!-- Drag and Drop -->  
+
+<component id='ID_target_header'>
+	<text><![CDATA[<b>Comandos de configuración del R1:  </b>]]></text>
+</component>
+
+<component id='ID_header'>
+	<text><![CDATA[<b>Ruta  </b>]]></text>
+</component>
+<component id='ID_header1'>
+	<text><![CDATA[<b>Origen de la ruta  </b>]]></text>
+</component>
+<component id='ID_header2'>
+	<text><![CDATA[<b>AD  </b>]]></text>
+</component>
+<component id='ID_header3'>
+	<text><![CDATA[<b>Métrica  </b>]]></text>
+</component>
+
+
+<component id='ID_drag01'>
+	<text><![CDATA[<font color="#393536">OSPF</font>]]></text>
+</component>
+<component id='ID_drag02'>
+	<text><![CDATA[<font color="#393536">0</font>]]></text>
+</component>
+<component id='ID_drag03'>
+	<text><![CDATA[<font color="#393536">EIGRP</font>]]></text>
+</component>
+<component id='ID_drag04'>
+	<text><![CDATA[<font color="#393536">ODR</font>]]></text>
+</component>
+<component id='ID_drag05'>
+	<text><![CDATA[<font color="#393536">110</font>]]></text>
+</component>
+<component id='ID_drag06'>
+	<text><![CDATA[<font color="#393536">RIP</font>]]></text>
+</component>
+<component id='ID_drag07'>
+	<text><![CDATA[<font color="#393536">BGP</font>]]></text>
+</component>
+<component id='ID_drag08'>
+	<text><![CDATA[<font color="#393536">90</font>]]></text>
+</component>
+<component id='ID_drag09'>
+	<text><![CDATA[<font color="#393536">1</font>]]></text>
+</component>
+<component id='ID_drag10'>
+	<text><![CDATA[<font color="#393536">Estática</font>]]></text>
+</component>
+<component id='ID_drag11'>
+	<text><![CDATA[<font color="#393536">120</font>]]></text>
+</component>
+<component id='ID_drag12'>
+	<text><![CDATA[<font color="#393536">65</font>]]></text>
+</component>
+<component id='ID_drag13'>
+	<text><![CDATA[<font color="#393536">Conectada</font>]]></text>
+</component>
+<component id='ID_drag14'>
+	<text><![CDATA[<font color="#393536">2172416</font>]]></text>
+</component>
+
+<component id='ID_drag15'>
+	<text><![CDATA[<font color="#393536">0</font>]]></text>
+</component>
+<component id='ID_drag16'>
+	<text><![CDATA[<font color="#393536">0</font>]]></text>
+</component>
+
+
+<component id='ID_CORRECT_TITLE'>
+	<text><![CDATA[<span class="font10px"><b>Correcto  </b></span>]]></text>
+</component>
+
+<component id='ID_CORRECT_BODY'>
+	<text><![CDATA[<span class="font10px">Identificó correctamente el origen de la ruta, la AD y la métrica para cada una de las rutas en la tabla de routing.</span>]]></text>
+</component>
+
+
+<component id='ID_INCORRECT_TITLE'>
+	<text><![CDATA[<span class="font10px"><b>Incorrecto  </b></span>]]></text>
+</component>
+
+<component id='ID_INCORRECT_BODY'>
+	<text><![CDATA[<span class="font10px">No identificó correctamente el origen de la ruta, la AD y la métrica para cada una de las rutas en la tabla de routing. Haga clic en Restablecer y vuelva a intentarlo.</span>]]></text>
+</component>
+
+<component id='ID_CHECK'>
+	<text><![CDATA[<b>Verificar  </b>]]></text>
+</component>
+
+<component id='ID_RESET'>
+	<text><![CDATA[<b>Restablecer  </b>]]></text>
+</component>
+</textcomponents>

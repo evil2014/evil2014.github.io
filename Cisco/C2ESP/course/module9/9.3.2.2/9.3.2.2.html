@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.3.2.2 Aplicación de ACL extendidas a las interfaces</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.3.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>ACL de IPv4 extendidas</h1>
+        <h2>Configuración de ACL de IPv4 extendidas</h2>
+      </div>
+      <div id="content">
+<p>En el ejemplo anterior, el administrador de red configuró una ACL para permitir que los usuarios de la red 192.168.10.0/24 exploren sitios web seguros e inseguros. Aunque se configuró, la ACL no filtrará el tráfico hasta que se aplique a una interfaz. Para aplicar una ACL a una interfaz, primero debe considerar si el tráfico que se filtrará es entrante o saliente. Cuando un usuario de la LAN interna accede a un sitio web en Internet, hay tráfico que sale hacia Internet. Cuando un usuario interno recibe un correo electrónico de Internet, el tráfico ingresa al router local. Sin embargo, cuando se aplica una ACL a una interfaz, los términos “entrada” y “salida” tienen otros significados. Desde el punto de vista de una ACL, la entrada y salida son respecto de la interfaz del router.</p>
+<p></p>
+<p>En la topología de la ilustración, el R1 tiene tres interfaces: una interfaz serial, S0/0/0, y dos interfaces Gigabit Ethernet, G0/0 y G0/1. Recuerde que una ACL extendida comúnmente se debería aplicar cerca del origen. En esta topología, la interfaz más cercana al origen del tráfico de destino es la interfaz G0/0.</p>
+<p></p>
+<p>La solicitud de tráfico web de los usuarios en la LAN 192.168.10.0/24 entra a la interfaz G0/0. El tráfico de retorno de las conexiones establecidas a los usuarios en la LAN sale de la interfaz G0/0. En el ejemplo, se aplica la ACL a la interfaz G0/0 en ambos sentidos. La ACL de entrada, 103, revisa el tipo de tráfico. La ACL de salida, 104, revisa si hay tráfico de retorno de las conexiones establecidas. Esto restringe el acceso a Internet desde 192.168.10.0 para permitir solamente la navegación de sitios web.</p>
+<p></p>
+<p>
+<b>Nota:</b> las listas de acceso se podrían haber aplicado a la interfaz S0/0/0, pero en ese caso el proceso de ACL del router tendría que examinar todos los paquetes que ingresan al router y no solo el tráfico que va hacia 192.168.11.0 y que vuelve de esa red. Esto provocaría que el router realice un procesamiento innecesario.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

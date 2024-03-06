@@ -1,0 +1,82 @@
+﻿<textcomponents>
+<component id="ID_txt01">
+<text><![CDATA[www.cisco.com]]></text>
+</component>
+<component id="ID_txt02">
+  <text><![CDATA[Internet]]></text> 
+  </component>
+<component id="ID_txt03">
+  <text><![CDATA[Origen]]></text> 
+  </component>
+<component id="ID_txt04">
+<text><![CDATA[Destino]]></text>
+</component>
+<component id="ID_txt05">
+  <text><![CDATA[<b>Cliente</b>]]></text> 
+  </component>
+<component id="ID_txt06">
+  <text><![CDATA[<b>Servidor</b>]]></text> 
+  </component>
+<component id="ID_txt07">
+  <text><![CDATA[Aplicación]]></text> 
+  </component>
+<component id="ID_txt08">
+  <text><![CDATA[Transporte]]></text> 
+  </component>
+<component id="ID_txt09">
+  <text><![CDATA[Internet]]></text> 
+  </component>
+<component id="ID_txt10">
+  <text><![CDATA[Acceso a la red]]></text> 
+  </component>
+<component id="ID_txt11">
+  <text><![CDATA[Transporte]]></text> 
+  </component>
+  
+  <component id="ID_txt12">
+  <text><![CDATA[El origen solicita la conexión]]></text> 
+  </component>
+  
+    <component id="ID_txt13">
+  <text><![CDATA[El destino acepta la conexión]]></text> 
+  </component>
+  
+   <component id="ID_txt14">
+  <text><![CDATA[Se completó la configuración de la conexión]]></text> 
+  </component>
+  
+  
+  <component id="ID_txt15">
+  <text><![CDATA[Conexión de origen a destino entre procesos]]></text> 
+  </component>
+  
+  
+<component id="transcript">
+  <text><![CDATA[<b>transcript goes here</b>]]></text> 
+  </component> <!--ANIMATION CONTROLLER-->
+	<component id="end">
+		<text><![CDATA[Finalizar]]></text>
+	</component>
+	
+	<component id="fforward">
+		<text><![CDATA[Adelantar]]></text>
+	</component>
+	
+	<component id="pause">
+		<text><![CDATA[Pausa]]></text>
+	</component>
+	
+	<component id="play">
+		<text><![CDATA[Reproducir]]></text>
+	</component>
+	
+	<component id="rewind">
+		<text><![CDATA[Regresar]]></text>
+	</component>
+	
+	<component id="start">
+		<text><![CDATA[Inicio]]></text>
+	</component>
+
+  
+</textcomponents>

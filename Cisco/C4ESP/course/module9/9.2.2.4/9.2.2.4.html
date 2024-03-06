@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.2.2.4 Resolución de problemas de la capa de transporte: ACL</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.2.2.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resolución de problemas de red</h1>
+        <h2>Síntomas y causas de la resolución de problemas de red</h2>
+      </div>
+      <div id="content">
+<p>Los problemas de red pueden surgir a partir de problemas de la capa de transporte en el router, especialmente en el perímetro de la red, donde se examina y se modifica el tráfico. Dos de las tecnologías de capa de transporte que se implementan con más frecuencia son las listas de control de acceso (ACL) y la traducción de direcciones de red (NAT), que se muestran en la figura 1. </p>
+<p></p>
+<p>La mayoría de los problemas frecuentes con las ACL se debe a una configuración incorrecta, como se muestra en la figura 2. Los problemas con las ACL pueden provocar fallas en sistemas que, por lo demás, funcionan correctamente. Comúnmente, las configuraciones incorrectas ocurren en varias áreas: </p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Selección del flujo de tráfico:</b> la configuración incorrecta del router más frecuente es aplicar la ACL al tráfico incorrecto. El tráfico se define por la interfaz del router a través de la que viaja y el sentido en el que viaja. Para que funcione de manera adecuada, se debe aplicar la ACL a la interfaz correcta y se debe seleccionar el sentido de tráfico apropiado.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Orden de entradas de control de acceso:</b> el orden de las entradas en una ACL debe ir de lo específico a lo general. Si bien una ACL puede tener una entrada para permitir específicamente un flujo de tráfico en particular, los paquetes nunca coincidirán con esa entrada si una entrada anterior en la lista ya los rechazó. Si el router ejecuta las ACL y la NAT, es importante el orden en que se aplica cada una de estas tecnologías a un flujo de tráfico. La ACL de entrada procesa el tráfico entrante antes de que lo procese la NAT de afuera hacia dentro. La ACL de salida procesa el tráfico saliente después de que lo procesa la NAT de adentro hacia fuera.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Instrucción implícita de denegar todo el tráfico:</b> cuando no se requiere un nivel de seguridad elevado en la ACL, este elemento implícito de control de acceso puede ser la causa de una configuración incorrecta de la ACL.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Direcciones y máscaras wildcard IPv4:</b> las máscaras wildcard IPv4 complejas proporcionan mejoras importantes en términos de eficiencia, pero están más sujetas a errores de configuración. Un ejemplo de una máscara wildcard compleja consiste en usar la dirección IPv4 10.0.32.0 y la máscara wildcard 0.0.32.15 para seleccionar las primeras 15 direcciones host en la red 10.0.0.0 o 10.0.32.0. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Selección del protocolo de la capa de transporte:</b> al configurar las ACL, es importante que se especifiquen solo los protocolos de la capa de transporte correctos. Cuando no están seguros de si un flujo de tráfico determinado usa un puerto TCP o un puerto UDP, muchos administradores de red configuran ambos. Especificar ambos puertos provoca una abertura a través del firewall, lo que posibilita a los intrusos un camino dentro la red. También introduce un elemento adicional en la ACL, de modo que el procesamiento de esta toma más tiempo, lo que imprime mayor latencia a las comunicaciones de la red.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Puertos de origen y destino:</b> controlar el tráfico entre dos hosts de manera adecuada requiere elementos simétricos de control de acceso para las ACL de entrada y de salida. La información de dirección y de puerto del tráfico generado por un host que responde es el reflejo de la información de dirección y puerto del tráfico generado por el host de origen.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Uso de </b>
+<b>la</b>
+<b> palabra clave </b>
+<b><span class="cmd">established</span>:</b>
+<b></b>la palabra clave <span class="cmd"><b>established</b></span> aumenta la seguridad que se proporciona mediante una ACL. Sin embargo, si la palabra clave se aplica incorrectamente, pueden tener lugar resultados imprevistos.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Protocolos poco frecuentes:</b> las ACL configuradas incorrectamente suelen causar problemas en protocolos distintos de TCP y UDP. Los protocolos poco frecuentes que están ganando popularidad son VPN y los protocolos de cifrado.</li>
+</ul>
+</p>
+<p></p>
+<p>La palabra clave <span class="cmd"><b>log</b></span> es un comando útil para ver la operación de las ACL en las entradas de ACL. Esta palabra clave le ordena al router que coloque una entrada en el registro del sistema cada vez que haya una coincidencia con esa condición de entrada. El evento registrado incluye los detalles del paquete que coincidió con el elemento de la ACL. La palabra clave <span class="cmd"><b>log</b></span> es especialmente útil para resolver problemas y también proporciona información sobre los intentos de intrusión que la ACL bloquea.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

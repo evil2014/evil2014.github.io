@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>3.1.1.2 Establecimiento de reglas</title>
+    <!--  -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_3.1.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Reglas de la comunicación</h1>
+        <h2>Las reglas</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Establecimiento de reglas</b>
+</p>
+<p>Antes de comunicarse entre sí, las personas deben utilizar reglas o acuerdos establecidos que rijan la conversación. Por ejemplo, tenga en cuenta la figura 1, donde los protocolos son necesarios para la comunicación eficaz. Los protocolos que se utilizan son específicos de las características del método de comunicación, incluidas las características del origen, el destino y el canal. Estas reglas, o protocolos, deben respetarse para que el mensaje se envíe y comprenda correctamente. Se encuentran disponibles muchos protocolos que rigen la comunicación humana correcta. Una vez que se acuerda un método de comunicación (cara a cara, teléfono, carta, fotografía), los protocolos implementados deben contemplar los siguientes requisitos:</p>
+<p>
+<ul>
+<li>Un emisor y un receptor identificados</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Idioma y gramática común</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Velocidad y temporización de la entrega</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Requisitos de confirmación o acuse de recibo </li>
+</ul>
+</p>
+<p></p>
+<p>Los protocolos que se utilizan en las comunicaciones de red comparten muchas de las características fundamentales de los protocolos que se utilizan para regir las conversaciones humanas correctas. Consulte la figura 2. Además de identificar el origen y el destino, los protocolos informáticos y de red definen los detalles sobre la forma en que los mensajes se transmiten a través de una red para cumplir con los requisitos anteriores. Si bien hay muchos protocolos que deben interactuar, entre los protocolos informáticos habituales, se incluyen los siguientes:</p>
+<p>
+<ul>
+<li>Codificación de los mensajes</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Formato y encapsulación del mensaje</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Tamaño del mensaje</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Temporización del mensaje</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Opciones de entrega del mensaje</li>
+</ul>
+</p>
+<p></p>
+<p>A continuación, se analizan más detalladamente cada uno de estos protocolos. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

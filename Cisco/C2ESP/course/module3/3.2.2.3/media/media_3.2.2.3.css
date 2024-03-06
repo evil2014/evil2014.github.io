@@ -1,0 +1,23 @@
+
+/*   load the main media CSS file    */
+
+@import url('../../../common/styles/media2.css');
+
+html, body {
+	margin:0;
+	height:100%;
+	overflow-y:hidden;
+
+}
+#flashContent {
+	width:98%;
+	height:98%;
+}
+
+.orange {
+    width: 100% !important;
+}
+#ID_routerOutput1
+{
+line-height:12.3px !important;
+}

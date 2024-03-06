@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.3.3.5 Ejemplo de VLSM</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.3.3.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Revisión de CIDR y VLSM</h1>
+        <h2>VLSM</h2>
+      </div>
+      <div id="content">
+<p>Se debe prestar particular atención al diseño de un esquema de direccionamiento de red. Por ejemplo, la topología de ejemplo en la figura 1 requiere siete subredes. </p>
+<p></p>
+<p>Al utilizar la división en subredes tradicional, los primeros siete bloques de direcciones se asignan a las LAN y WAN, tal como se muestra en la figura 2. Este esquema da como resultado 8 subredes con 30 direcciones utilizables cada una (/27). Si bien este esquema funciona para los segmentos LAN, se desperdician muchas direcciones en los segmentos WAN. </p>
+<p></p>
+<p>Si se diseña un esquema de direccionamiento de una red nueva, los bloques de direcciones pueden asignarse de manera tal que se minimice el desperdicio y que los bloques de direcciones sin utilizar sean contiguos. Agregar esto a una red existente puede ser más difícil.</p>
+<p></p>
+<p>Como se muestra en la figura 3, para utilizar el espacio de direcciones de manera más eficaz, se crean subredes /30 para los enlaces WAN. A fin de mantener juntos los bloques de direcciones sin utilizar, la última subred /27 se vuelve a dividir en subredes para crear subredes /30. Las primeras tres subredes se asignaron a los enlaces WAN que crearon las subredes 192.168.20.224/30, 192.168.20.228/30 y 192.168.20.232/30. Si se diseña el esquema de direccionamiento de esta manera, quedan tres subredes /27 y cinco subredes /30 sin utilizar.</p>
+<p></p>
+<p>En las figuras 4 a 7, se muestran configuraciones de ejemplo en los cuatro routers para implementar el esquema de direccionamiento VLSM.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

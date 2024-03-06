@@ -1,0 +1,46 @@
+﻿	<textcomponents>
+	<component id="ID_inst">
+		<text><![CDATA[<b>Actividad: calcular la máscara de subred y la máscara wildcard  </b><br/><br/>Calcule la máscara de subred y la máscara wildcard requeridas para anunciar la dirección de red especificada en OSPF. Escriba las respuestas en los campos proporcionados. Haga clic en Verificar para revisar sus respuestas. Haga clic en Mostrar para ver y corregir la respuesta.<br/><br/>Haga clic en Nuevo problema para continuar la actividad.]]></text>
+	</component>
+		
+	<component id="txt_correct">
+		<text><![CDATA[<b>Correcto  </b>]]></text>
+	</component>
+	
+	<component id="txt_incorrect">
+		<text><![CDATA[<b>Incorrecto  </b>]]></text>
+	</component>
+	
+	<component id="txt_body_correct">
+		<text><![CDATA[Calculó correctamente la máscara de subred y la máscara wildcard para la red especificada. Haga clic en Nuevo problema para continuar la actividad.]]></text>
+	</component>
+	
+	<component id="txt_body_incorrect">
+		<text><![CDATA[No calculó correctamente la máscara de subred y la máscara wildcard para la red especificada. Haga clic en Mostrar para ver la respuesta correcta. Haga clic en Nuevo problema para continuar la actividad.]]></text>
+	</component>
+	
+	<component id="ID_txt01">
+	<text><![CDATA[<b>Red / Subred / Host  </b>]]></text>
+	</component>
+	
+	<component id="ID_txt02">
+	<text><![CDATA[Máscara de subred decimal]]></text>
+	</component>
+	
+	<component id="ID_txt03">
+	<text><![CDATA[Máscara wildcard]]></text>
+	</component>
+	
+	<component id="txt_check">
+	<text><![CDATA[Verificar]]></text>
+	</component>
+	
+	<component id="txt_show">
+	<text><![CDATA[Mostrar]]></text>
+	</component>
+	
+	<component id="txt_newnumber">
+	<text><![CDATA[Nuevo problema]]></text>
+	</component>
+
+</textcomponents>

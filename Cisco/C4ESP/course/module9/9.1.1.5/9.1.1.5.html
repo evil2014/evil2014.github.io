@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.1.1.5 Medición de los datos</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.1.1.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resolución de problemas mediante un enfoque sistemático</h1>
+        <h2>Documentación de red</h2>
+      </div>
+      <div id="content">
+<p>Al documentar la red, con frecuencia es necesario reunir información directamente de los routers y los switches. Los comandos obvios y útiles para la documentación de red incluyen <span class="cmd"><b>ping</b></span>, <span class="cmd"><b>traceroute</b></span> y <span class="cmd"><b>telnet</b></span>, así como los siguientes comandos <span class="cmd"><b>show</b></span>: </p>
+<p></p>
+<p>
+<ul>
+<li>Los comandos <span class="cmd"><b>show ip interface brief</b></span> y <span class="cmd"><b>show ipv6 interface brief</b></span> se usan para mostrar el estado activo o inactivo y la dirección IP de todas las interfaces en un dispositivo. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Los comandos <span class="cmd"><b>show ip route</b></span> y <span class="cmd"><b>show ipv6 route</b></span> se usan para mostrar la tabla de routing de un router a fin de detectar los vecinos conectados directamente, los dispositivos remotos adicionales (a través de las rutas detectadas) y los protocolos de routing que se configuraron. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>El comando <span class="cmd"><b>show cdp neighbor detail</b></span> se usa para obtener información detallada sobre los dispositivos vecinos Cisco conectados directamente.</li>
+</ul>
+</p>
+<p></p>
+<p>En la figura 1, se indican algunos de los comandos más comunes del IOS de Cisco que se usan para la recolección de datos.</p>
+<p></p>
+<p>La recolección manual de datos mediante los comandos <span class="cmd"><b>show</b></span> en dispositivos de red individuales puede tomar muchísimo tiempo y no es una solución escalable. Por esa razón, la recolección manual de datos se debe reservar para las redes más pequeñas o aquellas que se limitan a los dispositivos de red esenciales. Para diseños de red más simples, en las tareas de línea de base por lo general se combinan la recolección manual de datos con inspectores de protocolos de red simples.</p>
+<p></p>
+<p>Con frecuencia, para establecer la línea de base de redes grandes y complejas se utiliza un software de administración de red sofisticado. Por ejemplo, como se muestra en la figura 2, el módulo SuperAgent de Fluke Network permite que los administradores creen y revisen informes automáticamente mediante la característica de líneas de base inteligentes. Esta característica compara los niveles de rendimiento actuales con observaciones históricas y puede identificar automáticamente los problemas de rendimiento y las aplicaciones que no proporcionan los niveles de servicio esperados. </p>
+<p></p>
+<p>Establecer una línea de base inicial o realizar un análisis de monitoreo del rendimiento puede requerir muchas horas o muchos días para reflejar el rendimiento de la red con precisión. Con frecuencia, el software de administración de red o los inspectores y analizadores de protocolos se ejecutan continuamente a lo largo del proceso de recolección de datos. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

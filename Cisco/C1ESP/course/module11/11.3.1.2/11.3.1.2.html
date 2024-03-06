@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>11.3.1.2 Ping extendido</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_11.3.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Rendimiento básico de la red</h1>
+        <h2>Los comandos </h2>
+      </div>
+      <div id="content">
+<p>Cisco IOS ofrece un modo “extendido” del comando ping. Se ingresa a este modo escribiendo “ping” (sin las comillas) en el modo EXEC privilegiado, sin una dirección IP de destino. Luego, se presenta una serie de peticiones de entrada, como se muestra en el siguiente ejemplo. Al presionar Intro se aceptan los valores predeterminados indicados. El siguiente ejemplo muestra cómo forzar que la dirección de origen para un ping sea 10.1.1.1 (observe el R2 en la ilustración); la dirección de origen para un ping estándar sería 209.165.200.226. De esta manera, el administrador de red puede verificar de forma remota (desde el R2) que el R1 tenga la ruta 10.1.1.0/24 en su tabla de enrutamiento.</p>
+<p></p>
+<p>R2#<b> ping</b></p>
+<p>Protocol [ip]:</p>
+<p>Target IP address:<b> 192.168.10.1</b></p>
+<p>Repeat count [5]:</p>
+<p>Datagram size [100]:</p>
+<p>Timeout in seconds [2]:</p>
+<p>Extended commands [n]:<b> y</b></p>
+<p>Source address or interface:<b> 10.1.1.1 </b></p>
+<p>Type of service [0]:</p>
+<p>Set DF bit in IP header? [no]:</p>
+<p>Validate reply data? [no]:</p>
+<p>Data pattern [0xABCD]:</p>
+<p>Loose, Strict, Record, Timestamp, Verbose[none]:</p>
+<p>Sweep range of sizes [n]:</p>
+<p>Type escape sequence to abort.</p>
+<p>Sending 5, 100-byte ICMP Echos to 192.168.10.1, timeout is 2 seconds:</p>
+<p>!!!!!</p>
+<p>Success rate is 100 percent (5/5), round-trip min/avg/max = 36/97/132 ms </p>
+<p></p>
+<p>Al ingresar un período de tiempo de espera más prolongado que el predeterminado, se podrán detectar posibles problemas de latencia. Si la prueba de ping es exitosa con un valor superior, existe una conexión entre los hosts, pero es posible que haya un problema de latencia en la red.</p>
+<p></p>
+<p>Tenga en cuenta que introducir “y” en la petición de entrada “Extended commands” (Comandos extendidos) proporciona más opciones que resultar útiles para la resolución de problemas.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

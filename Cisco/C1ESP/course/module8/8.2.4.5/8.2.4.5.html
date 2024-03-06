@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.2.4.5 Proceso EUI-64 o de generación aleatoria</title>
+    <!--  -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.2.4.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Direcciones de red IPv6</h1>
+        <h2>Direcciones IPv6 unicast</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Proceso EUI-64</b>
+</p>
+<p></p>
+<p>El IEEE definió el identificador único extendido (EUI) o proceso EUI-64 modificado. Este proceso utiliza la dirección MAC de Ethernet de 48 bits de un cliente e introduce otros 16 bits en medio de la dirección MAC de 48 bits para crear una ID de interfaz de 64 bits. </p>
+<p></p>
+<p>Las direcciones MAC de Ethernet, por lo general, se representan en formato hexadecimal y constan de dos partes: </p>
+<p>
+<ul>
+<li>
+<b>Identificador único de organización (OUI):</b> el OUI es un código de proveedor de 24 bits (seis dígitos hexadecimales) que asigna el IEEE.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Identificador de dispositivo:</b> el identificador de dispositivo es un valor único de 24 bits (seis dígitos hexadecimales) dentro de un OUI común. </li>
+</ul>
+</p>
+<p></p>
+<p>Las ID de interfaz EUI-64 se representan en sistema binario y constan de tres partes:</p>
+<p>
+<ul>
+<li>OUI de 24 bits de la dirección MAC del cliente, pero el séptimo bit (bit universal/local, U/L) se invierte. Esto significa que si el séptimo bit es un 0, se convierte en 1, y viceversa. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Valor de 16 bits FFFE introducido (en formato hexadecimal)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Identificador de dispositivo de 24 bits de la dirección MAC del cliente</li>
+</ul>
+</p>
+<p></p>
+<p>En la figura 1, se ilustra el proceso EUI-64, con la siguiente dirección MAC de GigabitEthernet de R1: FC99:4775:CEE0.</p>
+<p></p>
+<p>
+<b>Paso 1:</b> Dividir la dirección MAC entre el OUI y el identificador de dispositivo</p>
+<p></p>
+<p>
+<b>Paso 2:</b> Insertar el valor hexadecimal FFFE, que en formato binario es: 1111 1111 1111 1110 </p>
+<p></p>
+<p>
+<b>Paso 3:</b> Convertir los primeros dos valores hexadecimales del OUI a binario e invertir el bit U/L (séptimo bit) En este ejemplo, el 0 en el bit 7 se cambia a 1.</p>
+<p></p>
+<p>El resultado es una ID de interfaz de FE99:47FF:FE75:CEE0 generada mediante EUI-64. </p>
+<p></p>
+<p>
+<b>Nota:</b> el uso del bit U/L y los motivos para invertir su valor se analizan en RFC 5342.</p>
+<p></p>
+<p>La ventaja de EUI-64 es que se puede utilizar la dirección MAC de Ethernet para determinar la ID de interfaz. También permite que los administradores de red rastreen fácilmente una dirección IPv6 a un dispositivo final mediante la dirección MAC única. Sin embargo, esto generó inquietudes con respecto a la privacidad a muchos usuarios. Les preocupa que los paquetes puedan ser rastreados a la PC física real. Debido a estas inquietudes, se puede utilizar en cambio una ID de interfaz generada aleatoriamente.</p>
+<p></p>
+<p>
+<b>ID de interfaz generadas aleatoriamente</b>
+</p>
+<p></p>
+<p>Según el sistema operativo, un dispositivo puede utilizar una ID de interfaz generada aleatoriamente en lugar de utilizar la dirección MAC y el proceso EUI-64. Por ejemplo, comenzando con Windows Vista, Windows utiliza una ID de interfaz generada aleatoriamente en lugar de una ID de interfaz creada mediante EUI-64. Windows XP y sistemas operativos Windows anteriores utilizaban EUI-64.</p>
+<p></p>
+<p>Una manera sencilla de identificar que una dirección muy probablemente se creó mediante EUI-64 es el valor FFFE ubicado en medio de la ID de interfaz, como se muestra en la figura 2.</p>
+<p></p>
+<p>Después de que se establece una ID de interfaz, ya sea mediante el proceso EUI-64 o mediante la generación aleatoria, se puede combinar con un prefijo IPv6 para crear una dirección unicast global o una dirección link-local.</p>
+<p>
+<ul>
+<li>
+<b>Dirección unicast global:</b> al utilizar SLAAC, el dispositivo recibe su prefijo del mensaje de RA de ICMPv6 y lo combina con la ID de interfaz.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Dirección link-local:</b> los prefijos link-local comienzan con FE80::/10. Los dispositivos suelen utilizar FE80::/64 como prefijo o duración de prefijo, seguido de la ID de interfaz.</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

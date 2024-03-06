@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.1.1.6 Mecanismos de reenvío de paquetes</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.1.1.6_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración inicial de un router</h1>
+        <h2>Funciones de un router</h2>
+      </div>
+      <div id="content">
+<p>Los routers admiten tres mecanismos de reenvío de paquetes:</p>
+<p>
+<ul>
+<li>
+<b>Switching de procesos:</b> es un mecanismo de reenvío de paquetes más antiguo que todavía está disponible para los routers Cisco. Cuando un paquete llega a una interfaz, se reenvía al plano de control, donde la CPU hace coincidir la dirección de destino con una entrada de la tabla de routing y, a continuación, determina la interfaz de salida y reenvía el paquete. Es importante comprender que el router hace esto con cada paquete, incluso si el destino es el mismo para un flujo de paquetes. Este mecanismo de switching de procesos es muy lento y rara vez se implementa en las redes modernas.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Switching rápido:</b> este es un mecanismo frecuente de reenvío de paquetes que usa una memoria caché de switching rápido para almacenar la información de siguiente salto. Cuando un paquete llega a una interfaz, se reenvía al plano de control, donde la CPU busca una coincidencia en la caché de switching rápido. Si no encuentra ninguna, se aplica el switching de procesos al paquete, y este se reenvía a la interfaz de salida. La información de flujo del paquete también se almacena en la caché de switching rápido. Si otro paquete con el mismo destino llega a una interfaz, se vuelve a utilizar la información de siguiente salto de la caché sin intervención de la CPU. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Cisco Express Forwarding (CEF):</b> CEF es el mecanismo de reenvío de paquetes más reciente y más utilizado del IOS de Cisco. Al igual que el switching rápido, CEF arma una base de información de reenvío (FIB) y una tabla de adyacencia. Sin embargo, las entradas de la tabla no se activan por los paquetes como en el switching rápido, sino que se activan por los cambios, como cuando se modifica un elemento en la topología de la red. Por lo tanto, cuando se converge una red, la FIB y las tablas de adyacencia contienen toda la información que el router debe tener en cuenta al reenviar un paquete. La FIB contiene búsquedas inversas calculadas previamente, información de siguiente salto para las rutas, incluida la información de interfaz y de capa 2. Cisco Express Forwarding es el mecanismo de reenvío más rápido y la opción más utilizada en los routers Cisco. </li>
+</ul>
+</p>
+<p></p>
+<p>En las figuras 1 a 3, se muestran las diferencias entre los tres mecanismos de reenvío de paquetes. Suponga que hay un flujo de tráfico que consta de cinco paquetes que van hacia el mismo destino. Como se muestra en la figura 1, con el switching de procesos, la CPU debe procesar cada paquete en forma individual. Compare esto con el switching rápido, el cual se muestra en la figura 2. Con el switching rápido, observe que el switching de procesos se aplica solo al primer paquete de un flujo, el cual se agrega a la caché de switching rápido. Los cuatro paquetes siguientes se procesan rápidamente según la información de la caché de switching rápido. Por último, en la figura 3, se observa que CEF crea la FIB y las tablas de adyacencia una vez que se converge la red. Los cinco paquetes se procesan rápidamente en el plano de datos.</p>
+<p></p>
+<p>Una analogía frecuente que se usa para describir los tres mecanismos de reenvío de paquetes es la siguiente:</p>
+<p>
+<ul>
+<li>El switching de procesos resuelve un problema realizando todos los cálculos matemáticos, incluso si los problemas son idénticos. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>El switching rápido resuelve un problema realizando todos los cálculos matemáticos una vez y recuerda la respuesta para los problemas posteriores idénticos.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>CEF soluciona todos los problemas posibles antes de tiempo en una hoja de cálculo.</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

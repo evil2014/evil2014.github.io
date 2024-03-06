@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.2.3.4 Tipos de enlace</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.2.3.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Variedades de protocolos de árbol de expansión</h1>
+        <h2>PVST+ rápido</h2>
+      </div>
+      <div id="content">
+<p>Mediante el uso del modo dúplex en el puerto, el tipo de enlace proporciona una categorización para cada puerto que participa en RSTP. Según lo que se conecta a cada puerto, se pueden identificar dos tipos diferentes de enlace:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Punto a punto:</b> un puerto que funciona en modo full-duplex generalmente conecta un switch a otro y es candidato para la transición rápida al estado de reenvío.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Compartido:</b> un puerto que funciona en modo half-duplex conecta un switch a un hub que conecta varios dispositivos.</li>
+</ul>
+</p>
+<p></p>
+<p>En la ilustración, haga clic en cada enlace para obtener información acerca de los tipos de enlace.</p>
+<p></p>
+<p>El tipo de enlace puede determinar si el puerto puede pasar de inmediato al estado de reenvío, suponiendo que se cumplan ciertas condiciones. Estas condiciones son distintas para los puertos de extremo y para los puertos que no son de extremo. Los puertos que no son de extremo se categorizan en dos tipos de enlaces, punto a punto y compartido. El tipo de enlace se determina automáticamente, pero se puede anular con una configuración de puerto explícita mediante el comando <span class="cmd"><b>spanning-tree link-type </b></span><span class="cmd"><i>parameter</i></span>.</p>
+<p></p>
+<p>Las conexiones de puerto de perímetro y punto a punto son candidatas para la transición rápida al estado de reenvío. Sin embargo, antes de que se considere el parámetro de tipo de enlace, RSTP debe determinar la función de puerto. Las características de las funciones de puerto en relación con los tipos de enlace incluyen lo siguiente:</p>
+<p></p>
+<p>
+<ul>
+<li>Los puertos raíz no utilizan el parámetro de tipo de enlace. Los puertos raíz son capaces de realizar una transición rápida al estado de enviar siempre que el puerto se encuentre sincronizado.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>En la mayoría de los casos, los puertos alternativos y de respaldo no utilizan el parámetro de tipo de enlace. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Los puertos designados son los que más utilizan el parámetro de tipo de enlace. La transición rápida al estado de reenvío para el puerto designado ocurre solo si el parámetro de tipo de enlace se establece en <span class="cmd"><i>point-to-point</i></span>.</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+﻿<textcomponents>
+	<component id="ID_title">
+	   <text><![CDATA[<b>Servicios de red</b>]]></text>
+	   </component>
+	<component id="ID_txtTitle1">
+	<text><![CDATA[<b>Sistema de nombres de dominio (DNS)</b>]]></text>
+	</component>
+	
+	<component id="ID_txtBody1">
+	<text><![CDATA[Servicio que proporciona la dirección IP de un sitio Web o un nombre de dominio para que un host pueda conectarse a él.]]></text>
+	</component>
+	
+	<component id="ID_txtTitle2">
+	<text><![CDATA[<b>Servidor Telnet</b>]]></text>
+	</component>
+	
+	<component id="ID_txtBody2">
+	<text><![CDATA[Servicio que permite a los administradores conectarse a un host desde una ubicación remota y controlar el host como si hubieran iniciado sesión en forma local.]]></text>
+	</component>
+	
+	<component id="ID_txtTitle3">
+	<text><![CDATA[<b>Servidor de correo electrónico</b>]]></text>
+	</component>
+	
+	<component id="ID_txtBody3">
+	<text><![CDATA[<textformat blockindent="-14"><li>Utiliza el protocolo simple de transferencia de correo (SMTP), el protocolo de oficina de correos (POP3) o protocolo de acceso a mensajes de Internet (IMAP).</li><li>Se utiliza para enviar mensajes de correo electrónico de clientes a servidores a través de Internet.</li><li>Los destinatarios se especifican con el formato usuario@xyz.</li></textformat>]]></text>
+	</component>
+	
+	<component id="ID_txtTitle4">
+	<text><![CDATA[<b>Servidor Protocolo de configuración dinámica de host (DHCP)</b>]]></text>
+	</component>
+	
+	<component id="ID_txtBody4">
+	<text><![CDATA[Servicio que asigna la dirección IP, la máscara de subred, el gateway predeterminado y demás información a los clientes.]]></text>
+	</component>
+	
+	<component id="ID_txtTitle5">
+	<text><![CDATA[<b>Servidor Web</b>]]></text>
+	</component>
+	
+	<component id="ID_txtBody5">
+	<text><![CDATA[<textformat blockindent="-14"><li>Protocolo de transferencia de hipertexto (HTTP)</li><li>Se utiliza para transferir información entre clientes Web y servidores Web.</li><li>Mediante HTTP se accede a la mayoría de las páginas Web.</li></textformat>]]></text>
+	</component>
+	
+	<component id="ID_txtTitle6">
+	<text><![CDATA[<b>Servidor Protocolo de transferencia de archivos (FTP)</b>]]></text>
+	</component>
+	
+	<component id="ID_txtBody6">
+	<text><![CDATA[Servicio que permite la descarga y la subida de archivos entre un cliente y un servidor.]]></text>
+	</component>
+		
+	<component id="ID_txt02">
+	<text><![CDATA[Servidor DNS]]></text>
+	</component>
+	
+	<component id="ID_txt03">
+	<text><![CDATA[Servidor Telnet]]></text>
+	</component>
+	
+	<component id="ID_txt04">
+	<text><![CDATA[Servidor de correo electrónico]]></text>
+	</component>
+	
+	<component id="ID_txt05">
+	<text><![CDATA[Servidor DHCP]]></text>
+	</component>
+	
+	<component id="ID_txt06">
+	<text><![CDATA[Servidor Web]]></text>
+	</component>
+	
+	<component id="ID_txt07">
+	<text><![CDATA[Servidor FTP]]></text>
+	</component>
+	
+	<component id="ID_inst">
+	<text><![CDATA[Haga clic en cada servidor para obtener una breve descripción de los servicios de red proporcionados.]]></text>
+	</component>
+
+</textcomponents>

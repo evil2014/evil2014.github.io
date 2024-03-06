@@ -1,0 +1,97 @@
+﻿<textcomponents>
+
+   <component id="ID_title01">
+      <text><![CDATA[<b>La PC1 envía un paquete a la PC2  </b>]]></text>
+   </component>
+
+   <component id="ID_header1">
+      <text><![CDATA[<b>Trama de enlace de datos de capa&nbsp;2  </b>]]></text>
+   </component>
+
+   <component id="ID_header2">
+      <text><![CDATA[<b>Datos de capa&nbsp;3 del paquete  </b>]]></text>
+   </component>
+   
+   <component id="ID_txt01">
+      <text><![CDATA[<b>Dirección MAC 00-10  </b>]]></text>
+   </component>
+
+   <component id="ID_txt02">
+      <text><![CDATA[<b>MAC de origen 0A-10  </b>]]></text>
+   </component>
+
+   <component id="ID_txt03">
+      <text><![CDATA[Tipo 0x800]]></text>
+   </component> 
+
+   <component id="ID_txt04">
+      <text><![CDATA[<b>IP de origen 192.168.1.10  </b>]]></text>
+   </component>
+   
+   <component id="ID_txt05">
+      <text><![CDATA[<b>Dirección IP 192.168.4.10  </b>]]></text>
+   </component>
+
+   <component id="ID_txt06">
+      <text><![CDATA[Campos de IP]]></text>
+   </component>
+
+   <component id="ID_txt07">
+      <text><![CDATA[Datos]]></text>
+   </component>
+
+   <component id="ID_txt08">
+      <text><![CDATA[Tráiler]]></text>
+   </component>
+
+   <component id="ID_txt09">
+      <text><![CDATA[<b>Caché ARP de la PC1 para R1  </b>]]></text>
+   </component>
+
+   <component id="ID_txt10">
+      <text><![CDATA[<b>Dirección IP  </b>]]></text>
+   </component>
+
+   <component id="ID_txt11">
+      <text><![CDATA[<b>Dirección MAC  </b>]]></text>
+   </component> <!--SPEECH BUBBLES-->
+   <component id="ID_speech01">
+      <text><![CDATA[Tengo un paquete para la PC2.]]></text>
+   </component>
+
+   <component id="ID_speech02">
+      <text><![CDATA[¿Qué ruta tiene que seguir?]]></text>
+   </component>
+
+   <component id="ID_speech03">
+      <text><![CDATA[Veo que la PC2 se encuentra en una red diferente.]]></text>
+   </component>
+
+   <component id="ID_speech04">
+      <text><![CDATA[Dado que la PC2 está en una red diferente, encapsularé el paquete y lo enviaré al router en MI red. Permítame encontrar esa dirección MAC…]]></text>
+   </component> <!--ANIMATION CONTROLLER-->
+	<component id="end">
+		<text><![CDATA[Finalizar]]></text>
+	</component>
+	
+	<component id="fforward">
+		<text><![CDATA[Adelantar]]></text>
+	</component>
+	
+	<component id="pause">
+		<text><![CDATA[Pausa]]></text>
+	</component>
+	
+	<component id="play">
+		<text><![CDATA[Reproducir]]></text>
+	</component>
+	
+	<component id="rewind">
+		<text><![CDATA[Regresar]]></text>
+	</component>
+	
+	<component id="start">
+		<text><![CDATA[Inicio]]></text>
+	</component>
+
+</textcomponents>

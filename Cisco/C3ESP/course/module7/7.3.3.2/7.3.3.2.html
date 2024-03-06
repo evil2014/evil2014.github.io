@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.3.3.2 Introducción a DUAL</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.3.3.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1> Funcionamiento de EIGRP</h1>
+        <h2>DUAL y la tabla de topología</h2>
+      </div>
+      <div id="content">
+<p>EIGRP utiliza el algoritmo de convergencia DUAL. La convergencia es fundamental para las redes para evitar bucles de routing. </p>
+<p></p>
+<p>Los bucles de routing, incluso los temporarios, pueden ser perjudiciales para el rendimiento de la red. Los protocolos de routing vector distancia, como RIP, evitan los bucles de routing con temporizadores de espera y horizonte dividido. A pesar de que EIGRP utiliza ambas técnicas, las usa de manera un tanto diferentes; la manera principal en la que EIGRP evita los loops de enrutamiento es con el algoritmo DUAL. </p>
+<p></p>
+<p>Haga clic en Reproducir en la ilustración para ver la operación básica de DUAL.</p>
+<p></p>
+<p>El algoritmo DUAL se utiliza para asegurar que no haya bucles en cada instancia a través del cómputo de una ruta. Esto permite que todos los routers involucrados en un cambio de topología se sincronicen al mismo tiempo. Los routers que no se ven afectados por los cambios en la topología no se encuentran involucrados en el recálculo. Este método proporciona a EIGRP mayor tiempo de convergencia que a otros protocolos de enrutamiento vector distancia.</p>
+<p></p>
+<p>La máquina de estados finitos (FSM) DUAL realiza el proceso de decisión para todos los cómputos de ruta. Una FSM es un modelo de flujo de trabajo, similar a un diagrama de flujo, que está compuesto por lo siguiente:</p>
+<p>
+<ul>
+<li>Un número finito de etapas (estados)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Transiciones entre estas etapas</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Operaciones </li>
+</ul>
+</p>
+<p></p>
+<p>La FSM DUAL rastrea todas las rutas, utiliza las métricas de EIGRP para elegir rutas eficaces sin bucles e identifica las rutas con el menor costo para insertarlas en la tabla de routing. </p>
+<p></p>
+<p>El recálculo del algoritmo DUAL puede ser muy exigente para el procesador. EIGRP mantiene una lista de rutas de respaldo que DUAL ya determinó que no tienen bucles para evitar los recálculos siempre que sea posible. Si la ruta principal en la tabla de enrutamiento falla, el mejor camino de respaldo se agrega de inmediato a la tabla de enrutamiento.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

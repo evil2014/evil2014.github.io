@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.1.4.6 Comandos de examen de IOS</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.1.4.6_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Entrenamiento intensivo sobre IOS</h1>
+        <h2>Estructura de los comandos</h2>
+      </div>
+      <div id="content">
+<p>Para verificar y resolver problemas en la operación de la red, debemos examinar la operación de los dispositivos. El comando básico de examen es el comando <span class="cmd"><b>show</b></span>. </p>
+<p></p>
+<p>Existen muchas variantes diferentes de este comando. A medida que el usuario adquiera más conocimientos sobre IOS, aprenderá a usar e interpretar el resultado de los comandos <span class="cmd"><b>show</b></span>. Utilice el comando <span class="cmd"><b>show ?</b></span> para obtener una lista de los comandos disponibles en un modo o contexto determinado. </p>
+<p></p>
+<p>Un comando <span class="cmd"><b>show</b></span> típico puede proporcionar información sobre la configuración, el funcionamiento y el estado de las partes de un switch o un router Cisco. En la ilustración, se destacan algunos de los comandos de IOS frecuentes.</p>
+<p></p>
+<p>En este curso, la atención se centra principalmente en los comandos <span class="cmd"><b>show</b></span> básicos.</p>
+<p></p>
+<p>Un comando <span class="cmd"><b>show</b></span> de uso frecuente es <span class="cmd"><b>show interfaces</b></span>. Este comando muestra estadísticas de todas las interfaces del dispositivo. Para ver las estadísticas de una interfaz específica, introduzca el comando <span class="cmd"><b>show interfaces</b></span> seguido del tipo de interfaz específico y el número de ranura o de puerto. Por ejemplo:</p>
+<p></p>
+<p>
+<span class="cmd">Switch#</span>
+<span class="cmd">
+<b>show interfaces fastethernet 0/1</b>
+</span>
+</p>
+<p></p>
+<p>Algunos otros comandos <span class="cmd"><b>show</b></span> que los técnicos de red utilizan con frecuencia incluyen los siguientes:</p>
+<p></p>
+<p>
+<span class="cmd">
+<b>show startup-config: </b>
+</span>muestra la configuración guardada ubicada en la NVRAM.<span class="cmd"><b></b></span></p>
+<p>
+<span class="cmd">
+<b>show running-config: </b>
+</span>muestra el contenido del archivo de configuración en ejecución actual.</p>
+<p></p>
+<p>
+<b>La petición de entrada More</b>
+</p>
+<p></p>
+<p>Cuando un comando devuelve más resultados de los que pueden mostrarse en una sola pantalla, aparece la petición de entrada <span class="cmd"><b>--More--</b></span> en la parte inferior de la pantalla. Cuando aparezca la petición de entrada <span class="cmd"><b>--More--</b></span>, presione la <b>barra espaciadora</b> para ver el siguiente tramo del resultado. Para visualizar sólo la siguiente línea, presione la tecla <b>Intro</b>. Si se presiona cualquier otra tecla, se cancela el resultado y se vuelve a la petición de entrada.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

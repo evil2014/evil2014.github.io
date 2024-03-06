@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.2.2.5 Dirección Next-Hop</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.2.2.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Enrutamiento</h1>
+        <h2>Tablas de enrutamiento de router</h2>
+      </div>
+      <div id="content">
+<p>El siguiente salto es la dirección del dispositivo que procesará el paquete a continuación. Para un host en una red, la dirección del gateway predeterminado (interfaz del router) es el siguiente salto para todos los paquetes que se deben enviar a otra red. En la tabla de enrutamiento de un router, cada ruta a una red remota incluye un siguiente salto. </p>
+<p></p>
+<p>Cuando un paquete destinado a una red remota llega al router, este busca una correspondencia entre la red de destino y una ruta en la tabla de enrutamiento. Si se encuentra una coincidencia, el router reenvía el paquete a la dirección IP del router de siguiente salto mediante la interfaz que se identificó con la entrada de la ruta.</p>
+<p></p>
+<p>Un router de siguiente salto es el gateway a las redes remotas.</p>
+<p></p>
+<p>Por ejemplo, en la ilustración, un paquete que llega al R1 destinado a la red 10.1.1.0 o la red 10.1.2.0 se reenvía a la dirección de siguiente salto 209.165.200.226 mediante la interfaz serial 0/0/0.</p>
+<p></p>
+<p>Las redes conectadas directamente a un router no tienen dirección de siguiente salto, porque los routers pueden reenviar los paquetes en forma directa a los hosts en esas redes mediante la interfaz designada.</p>
+<p></p>
+<p>El router no puede reenviar los paquetes sin una ruta para la red de destino en la tabla de enrutamiento. Si no hay una ruta que represente la red de destino en la tabla de enrutamiento, el paquete se descarta (es decir, no se reenvía). </p>
+<p></p>
+<p>Sin embargo, de la misma manera en que un host puede utilizar un gateway predeterminado para reenviar un paquete a un destino desconocido, un router también se puede configurar para que utilice una ruta estática predeterminada para crear un gateway de último recurso. El gateway de último recurso se aborda en mayor detalle en el curso de enrutamiento de CCNA. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

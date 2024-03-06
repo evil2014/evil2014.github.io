@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.0.1.1 Introducción</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.0.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Capa de Red</h1>
+        <h2>Introducción</h2>
+      </div>
+      <div id="content">
+<p>Las aplicaciones y los servicios de red en un dispositivo final pueden comunicarse con las aplicaciones y los servicios que se ejecutan en otro dispositivo final. ¿Cómo se comunican estos datos a través de la red de manera eficaz?</p>
+<p></p>
+<p>Los protocolos de la capa de red del modelo OSI especifican el direccionamiento y los procesos que permiten empaquetar y transportar los datos de la capa de transporte. La encapsulación de la capa de red permite transmitir los datos a un destino dentro de la red (o de otra red) con una sobrecarga mínima. </p>
+<p></p>
+<p>En este capítulo, se analiza la función de la capa de red. Se analiza cómo divide las redes en grupos de hosts para administrar el flujo de paquetes de datos dentro de una red. También se examina la forma en que se facilita la comunicación entre redes. A esta comunicación entre redes se la denomina enrutamiento.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

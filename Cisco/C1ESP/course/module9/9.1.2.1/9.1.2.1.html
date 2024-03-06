@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.1.2.1 El plan</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.1.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>División de una red IPv4 en subredes</h1>
+        <h2>La división de IP en subredes es fundamental</h2>
+      </div>
+      <div id="content">
+<p>Como se muestra en la ilustración, la planificación de las subredes de la red requiere un análisis de las necesidades de uso de red por parte de la organización y de la forma en que se estructurarán las subredes. El punto de inicio consiste en llevar a cabo un estudio de los requisitos de la red. Esto significa analizar la totalidad de la red y determinar sus secciones principales y el modo en que se segmentarán. El plan de direcciones incluye la determinación de las necesidades de cada subred en cuanto a tamaño, cantidad de hosts por subred, forma en que se asignarán las direcciones de host, cuáles son los hosts que requerirán direcciones IP estáticas y cuáles pueden utilizar DHCP para obtener la información de direccionamiento.</p>
+<p></p>
+<p>El tamaño de la subred implica planificar la cantidad de hosts que requerirán direcciones IP de host en cada subred de la red privada subdividida. Por ejemplo, en un diseño de red de campus, sería recomendable considerar cuántos hosts se necesitan en la LAN de la administración, cuántos en la LAN del cuerpo docente y cuántos en la LAN de los estudiantes. En una red doméstica, se podrían considerar la cantidad de hosts en la LAN principal de la casa y la cantidad de hosts en la LAN de la oficina doméstica.</p>
+<p></p>
+<p>Como ya se mencionó, el administrador de red decide el rango de direcciones IP privadas utilizado en una LAN y debe considerarlo cuidadosamente para asegurarse de que haya suficientes direcciones de host disponibles para los hosts conocidos hasta el momento y para futuras expansiones. Recuerde que los rangos de direcciones IP privadas son los siguientes: </p>
+<p></p>
+<p>
+<ul>
+<li>10.0.0.0 con una máscara de subred de 255.0.0.0</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>172.16.0.0 con una máscara de subred de 255.240.0.0</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>192.168.0.0 con una máscara de subred de 255.255.0.0</li>
+</ul>
+</p>
+<p></p>
+<p>Conocer los requisitos de dirección IP permite determinar el rango o los rangos de direcciones de host que se deben implementar. La división en subredes del espacio de direcciones IP privadas seleccionado proporciona direcciones de host para satisfacer las necesidades de la red.</p>
+<p></p>
+<p>Las direcciones públicas que se utilizan para conectarse a Internet las suele asignar un proveedor de servicios. Por lo tanto, si bien se aplicarían los mismos principios de la división en subredes, esto generalmente no es responsabilidad del administrador de red de la organización.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

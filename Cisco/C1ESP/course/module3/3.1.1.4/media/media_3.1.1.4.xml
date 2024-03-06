@@ -1,0 +1,128 @@
+﻿<textcomponents>
+
+<component id="ID_sender">
+<text><![CDATA[Remitente<br/>4085 SE Pine Street<br/>Ocala, Florida 34471]]></text>
+</component>
+<component id="ID_recipient">
+<text><![CDATA[Destinatario<br/>1400 Main Street<br>Canton, Ohio 44203]]></text>
+</component>
+<component id="ID_address1">
+<text><![CDATA[4085 SE Pine Street<br/>Ocala, Florida 34471]]></text>
+</component>
+<component id="ID_address2">
+<text><![CDATA[1400 Main Street<br>Canton, Ohio 44203]]></text>
+</component>
+<component id="ID_letter">
+<text><![CDATA[Querida Jane:<br/><br/>Acabo de regresar de mi viaje. Se me ocurrió que te gustaría ver mis fotos.<br/><br/>John]]></text>
+</component>
+<component id="ID_dear">
+<text><![CDATA[Querida]]></text>
+</component>
+<component id="ID_jane">
+<text><![CDATA[Jane:]]></text>
+</component>
+<component id="ID_bodyText">
+<text><![CDATA[Acabo de regresar de mi viaje. Se me ocurrió que te gustaría ver mis fotos.]]></text>
+</component>
+<component id="ID_john">
+<text><![CDATA[John]]></text>
+</component>
+
+<component id="ID_envelopeAddressing">
+<text><![CDATA[Dirección del sobre]]></text>
+</component>
+<component id="ID_encapsulatedLetter">
+<text><![CDATA[Carta encapsulada]]></text>
+</component>
+<component id="ID_salutation">
+<text><![CDATA[Saludo (indicador de inicio del mensaje)]]></text>
+</component>
+<component id="ID_senderID">
+<text><![CDATA[Identifica-dor del emisor (origen)]]></text>
+</component>
+
+
+<component id="ID_box1">
+<text><![CDATA[Dirección de ubicación del destinatario (destino)]]></text>
+</component>
+
+<component id="ID_box2">
+<text><![CDATA[Dirección de ubicación del remitente (origen)]]></text>
+</component>
+
+<component id="ID_box3">
+<text><![CDATA[Saludo (indicador de inicio del mensaje)]]></text>
+</component>
+
+<component id="ID_box4">
+<text><![CDATA[Identificador del destinatario (destino)]]></text>
+</component>
+
+<component id="ID_box5">
+<text><![CDATA[Contenido de la carta (datos encapsulados)]]></text>
+</component>
+
+<component id="ID_box6">
+<text><![CDATA[Identifica-dor del emisor (origen)]]></text>
+</component>
+
+<component id="ID_box7">
+<text><![CDATA[Fin de la trama (indicador de final del mensaje)]]></text>
+</component>
+
+<component id="ID_box8">
+<text><![CDATA[Dirección del sobre]]></text>
+</component>
+
+<component id="ID_box9">
+<text><![CDATA[Carta encapsulada]]></text>
+</component> <!-- controller -->
+
+<component id="end">
+<text><![CDATA[Finalizar]]></text>
+</component>
+
+<component id="fforward">
+<text><![CDATA[Adelantar]]></text>
+</component>
+
+<component id="pause">
+<text><![CDATA[Pausa]]></text>
+</component>
+
+<component id="play">
+<text><![CDATA[Reproducir]]></text>
+</component>
+
+<component id="rewind">
+<text><![CDATA[Regresar]]></text>
+</component>
+
+<component id="start">
+<text><![CDATA[Inicio]]></text>
+</component>
+
+
+
+
+<component id="ID_s2_table">
+<text><![CDATA[<table header='none' bordercolor='#4E4C4D' borderwidth='2' shadow='false' shadowcolor='#000000' glow='false' glowcolor='#808080' cellpadding='2'>
+	<tr>
+		<td width='55' bgcolor='#DBECDA' valign="top"><font  color='#393536'>Destino (dirección física o de hardware)</font></td>
+		<td width='55' bgcolor='#DBECDA' valign="top"><font  color='#393536'>Origen (dirección física o de hardware)</font></td>
+        <td width='55' bgcolor='#DBECDA' valign="top"><font  color='#393536'>Indicador de inicio (indicador de inicio del mensaje)</font></td>
+        <td width='66' bgcolor='#DBECDA' valign="top"><font  color='#393536'>Destinatario (identificador de destino)</font></td>
+        <td width='66' bgcolor='#DBECDA' valign="top"><font  color='#393536'>Emisor (identificador de origen)</font></td>
+        <td width='72' bgcolor='#DBECDA' valign="top"><font  color='#393536'>Datos encapsulados (bits)</font></td>
+        <td bgcolor='#DBECDA' valign="top"><font  color='#393536'>Fin de la trama (indicador de final del mensaje)</font></td>
+	</tr>
+    <tr>
+		<td bgcolor='#E9E7E8' valign="top" colspan="2"><font color='#393536'>Direccionamiento de la trama</font></td>
+		<td bgcolor='#E0D5E6' valign="top" colspan="4"><font color='#393536'>Mensaje encapsulado</font></td>
+        <td bgcolor='#E9E7E8' valign="top" colspan="1"><font color='#393536'></font></td>
+	</tr>	
+</table>]]></text>
+</component>
+
+
+</textcomponents>

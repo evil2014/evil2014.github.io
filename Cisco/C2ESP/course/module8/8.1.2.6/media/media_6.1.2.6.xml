@@ -1,0 +1,138 @@
+﻿<textcomponents> <!-- slide01 content-->
+
+<component id="ID_s1_inst">
+	<text><![CDATA[<b>Actividad: identificar los tipos de paquetes OSPF, parte&nbsp;1</b><br/>Arrastre los tipos de paquetes OSPF hacia los campos que se encuentran debajo de las descripciones de las funciones correspondientes. No utilizará todos los tipos de paquetes OSPF. Haga clic en el botón&nbsp;2 para continuar la actividad.]]></text>
+</component>
+
+<component id="ID_s1_txt01">
+	<text><![CDATA[Solicita registros específicos de estado de enlace de router a router.]]></text>
+</component>
+
+<component id="ID_s1_txt02">
+	<text><![CDATA[Envía los registros de estado de enlace específicamente solicitados]]></text>
+</component>
+
+<component id="ID_s1_txt03">
+	<text><![CDATA[Descubre los vecinos y construye adyacencias entre ellos]]></text>
+</component>
+
+<component id='ID_s1_drag01'>
+	<text><![CDATA[Hola]]></text>
+</component>
+
+<component id='ID_s1_drag02'>
+	<text><![CDATA[Descriptores de bases de datos (DBD)]]></text>
+</component>
+
+<component id='ID_s1_drag03'>
+	<text><![CDATA[solicitud de link-state (LSR)]]></text>
+</component>
+
+<component id='ID_s1_drag04'>
+	<text><![CDATA[Actualización de link-state (LSU)]]></text>
+</component>
+
+<component id='ID_s1_drag05'>
+	<text><![CDATA[Acuse de recibo de estado de enlace (LSAck)]]></text>
+</component>
+
+<component id='ID_s1_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id='ID_s1_CORRECT_BODY'>
+	<text><![CDATA[Unió correctamente cada tipo de paquete OSPF con la descripción de su función. Haga clic en el botón 2 para continuar.]]></text>
+</component>
+
+
+<component id='ID_s1_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_BODY'>
+	<text><![CDATA[No unió correctamente cada tipo de paquete OSPF con la descripción de su función. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_s1_CHECK'>
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id='ID_s1_RESET'>
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component> <!-- slide02 content-->
+
+
+
+<component id="ID_s2_inst">
+	<text><![CDATA[<b>Actividad: identificar los tipos de paquetes OSPF, parte&nbsp;2</b><br/>Arrastre los tipos de paquetes OSPF a los campos que se encuentran debajo de las descripciones de las funciones correspondientes. No utilizará todos los tipos de paquetes OSPF.]]></text>
+</component>
+
+<component id="ID_s2_txt01">
+	<text><![CDATA[Controla la sincronización de bases de datos entre routers.]]></text>
+</component>
+
+<component id="ID_s2_txt02">
+	<text><![CDATA[Mantiene la adyacencia con otros routers OSPF.]]></text>
+</component>
+
+<component id="ID_s2_txt03">
+	<text><![CDATA[Confirma la recepción de un paquete de actualización de estado de enlace.]]></text>
+</component>
+
+
+<component id='ID_s2_drag01'>
+	<text><![CDATA[Hola]]></text>
+</component>
+
+<component id='ID_s2_drag02'>
+	<text><![CDATA[Descriptores de bases de datos (DBD)]]></text>
+</component>
+
+<component id='ID_s2_drag03'>
+	<text><![CDATA[solicitud de link-state (LSR)]]></text>
+</component>
+
+<component id='ID_s2_drag04'>
+	<text><![CDATA[Actualización de link-state (LSU)]]></text>
+</component>
+
+<component id='ID_s2_drag05'>
+	<text><![CDATA[Acuse de recibo de estado de enlace (LSAck)]]></text>
+</component>
+
+<component id='ID_s2_drag06'>
+	<text><![CDATA[IGRP]]></text>
+</component>
+
+<component id='ID_s2_drag07'>
+	<text><![CDATA[OSPF]]></text>
+</component>
+
+
+
+
+<component id='ID_s2_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id='ID_s2_CORRECT_BODY'>
+	<text><![CDATA[Unió correctamente cada tipo de paquete OSPF con la descripción de su función.]]></text>
+</component>
+
+
+<component id='ID_s2_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_s2_INCORRECT_BODY'>
+	<text><![CDATA[No unió correctamente cada tipo de paquete OSPF con la descripción de la función. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_s2_CHECK'>
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id='ID_s2_RESET'>
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component>
+</textcomponents>

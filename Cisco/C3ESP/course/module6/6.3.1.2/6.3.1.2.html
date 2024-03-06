@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.3.1.2 Resumen</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.3.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resumen</h1>
+        <h2>Resumen</h2>
+      </div>
+      <div id="content">
+<p>OSPF de área única es útil en redes más pequeñas, pero en redes más grandes, OSPF multiárea es una mejor opción. OSPF multiárea resuelve los problemas de las tablas de routing extensas, las bases de datos de estado de enlace muy grandes y los cálculos frecuentes del algoritmo SPF, como se muestra en las figuras 1 y 2.</p>
+<p></p>
+<p>El área principal se denomina “de red troncal” (área 0) y el resto de las áreas deben estar conectadas a esta. Se sigue produciendo el routing entre áreas, y muchas de las operaciones de routing, como volver a calcular la base de datos, se guardan en un área.</p>
+<p></p>
+<p>Existen cuatro tipos de routers OSPF diferentes: el router interno, el router de respaldo, el router de área perimetral (ABR) y el router limítrofe del sistema autónomo (ASBR). Un router se puede clasificar como uno o más tipos de router.</p>
+<p></p>
+<p>Las notificaciones de estado de enlace (LSA) son los bloques funcionales de OSPF. Este capítulo se centró en las LSA de tipo 1 a 5. Las LSA de tipo 1 se denominan “entradas de enlace de router”. Las LSA de tipo 2 se denominan “entradas de enlace de red”, y los DR saturan las áreas con ellas. Las LSA de tipo 3 se denominan “entradas de enlace de resumen”, y los ABR saturan las áreas con ellas. El ABR genera un LSA de resumen de tipo 4 solo cuando existe un ASBR en el área. Los LSA externos de tipo 5 anuncian rutas a redes que se encuentran afuera del sistema autónomo de OSPF. Los LSA de tipo 5 se originan en el ASBR y se propagan hacia todo el sistema autónomo. </p>
+<p></p>
+<p>En las tablas de routing IPv4, las rutas OSPF se identifican con los siguientes descriptores: O, IA O, O E1 u O E2. Cada router utiliza el algoritmo SPF en virtud de la LSDB para crear un árbol SPF. El árbol de SPF se utiliza para determinar las mejores rutas. </p>
+<p></p>
+<p>No se requieren comandos especiales para implementar una red OSPF multiárea. Un router simplemente se convierte en ABR cuando tiene dos instrucciones <span class="cmd"><b>network</b></span> en diferentes áreas.</p>
+<p></p>
+<p>Este es un ejemplo de una configuración OSPF:</p>
+<p></p>
+<p>
+<span class="cmd">R1(config)# </span>
+<span class="cmd">
+<b>router ospf 10</b>
+</span>
+</p>
+<p>
+<span class="cmd">R1(config-router)# </span>
+<span class="cmd">
+<b>router-id 1.1.1.1</b>
+</span>
+</p>
+<p>
+<span class="cmd">R1(config-router)# </span>
+<span class="cmd">
+<b>network 10.1.1.1 0.0.0.0 area 1</b>
+</span>
+</p>
+<p>
+<span class="cmd">R1(config-router)# </span>
+<span class="cmd">
+<b>network 10.1.2.1 0.0.0.0 area 1</b>
+</span>
+</p>
+<p>
+<span class="cmd">R1(config-router)# </span>
+<span class="cmd">
+<b>network 192.168.10.1 0.0.0.0 area 0</b>
+</span>
+</p>
+<p>OSPF no realiza la sumarización automática. En OSPF, la sumarización se puede configurar solo en los ABR o los ASBR. La sumarización de rutas interárea se debe configurar manualmente, se produce en los ABR y se aplica a las rutas dentro de cada área. Para configurar manualmente la sumarización de rutas interárea en un ABR, utilice el comando <span class="cmd"><b>area </b></span><span class="cmd"><i>id-área</i></span><span class="cmd"><b> range </b></span><span class="cmd"><i>dirección máscara</i></span> del modo de configuración de router. </p>
+<p></p>
+<p>La sumarización de rutas externas es específica de las rutas externas que se introducen en OSPF mediante la redistribución de rutas. Por lo general, solo los ASBR resumen rutas externas. En los ASBR, la sumarización de rutas externas se configura mediante el comando <span class="cmd"><b>summary-address </b></span><span class="cmd"><i>dirección máscara</i></span> del modo de configuración del router.</p>
+<p></p>
+<p>Los comandos que se utilizan para verificar la configuración de OSPF son los siguientes:</p>
+<p>
+<ul>
+<li>
+<span class="cmd">
+<b>show ip ospf neighbor </b>
+</span>
+</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<span class="cmd">
+<b>show ip ospf</b>
+</span>
+</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<span class="cmd">
+<b>show ip ospf interface </b>
+</span>
+</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<span class="cmd">
+<b>show ip protocols</b>
+</span>
+</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<span class="cmd">
+<b>show ip ospf interface brief</b>
+</span>
+</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<span class="cmd">
+<b>show ip route ospf</b>
+</span>
+</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<span class="cmd">
+<b>show ip ospf database </b>
+</span>
+</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,135 @@
+﻿<textcomponents> <!--Slide 1-->
+<component id="ID_s1_inst">
+<text><![CDATA[<b>Actividad: resumir redes y prefijos (parte&nbsp;1) </b><br/><br/> Lea las situaciones y luego compute la dirección y el prefijo de la red resumida para esa situación en particular.<br/><br/><b> Situación&nbsp;1 </b>: el R1 necesita alcanzar todas las redes que se muestran. Resuma las redes y los prefijos en una sola ruta resumida. Después de computar el prefijo y la ruta resumida, búsquela en el banco de rutas resumidas suministrado. Arrastre la respuesta correcta hasta el campo en la topología. Seleccione el botón&nbsp;2 para continuar la actividad.]]></text>
+</component>
+
+<component id='ID_s1_target01'>
+	<text><![CDATA[<font color="#393536">10.0.0.0/27</font>]]></text>
+</component>
+
+<component id='ID_s1_target02'>
+	<text><![CDATA[<font color="#393536">10.0.0.0/24</font>]]></text>
+</component>
+
+<component id='ID_s1_target03'>
+	<text><![CDATA[<font color="#393536">10.0.0.0/11</font>]]></text>
+</component>
+
+<component id='ID_s1_target04'>
+	<text><![CDATA[<font color="#393536">10.0.0.0/14</font>]]></text>
+</component>
+<component id='ID_s1_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto]]></text>
+</component>
+
+<component id='ID_s1_CORRECT_BODY'>
+	<text><![CDATA[Resumió correctamente las redes y los prefijos en una sola ruta resumida. Seleccione el botón&nbsp;2 para continuar la actividad.]]></text>
+</component>
+
+
+<component id='ID_s1_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_BODY'>
+	<text><![CDATA[No resumió correctamente las redes y los prefijos en una sola ruta resumida. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_s1_CHECK'>
+	<text><![CDATA[<b>Verificar  </b>]]></text>
+</component>
+
+<component id='ID_s1_RESET'>
+	<text><![CDATA[<b>Restablecer  </b>]]></text>
+</component> <!--Slide 2-->
+<component id="ID_s2_inst">
+<text><![CDATA[<b>Actividad: resumir redes y prefijos (parte&nbsp;2) </b><br/><br/><b>Situación&nbsp;2: </b> el R1 necesita alcanzar todas las redes que se muestran. Resuma las redes y los prefijos en una sola ruta resumida.<br/><br/>Después de computar el prefijo y la ruta resumida, búsquela en el banco de rutas resumidas suministrado. Arrastre la respuesta correcta hasta el campo en la topología. Seleccione el botón&nbsp;3 para continuar la actividad.]]></text>
+</component>
+
+<component id='ID_s2_traget01'>
+	<text><![CDATA[<font color="#393536">172.16.0.0/12</font>]]></text>
+</component>
+
+<component id='ID_s2_traget02'>
+	<text><![CDATA[<font color="#393536">172.0.0.0/20</font>]]></text>
+</component>
+
+<component id='ID_s2_traget03'>
+	<text><![CDATA[<font color="#393536">172.16.0.0/20</font>]]></text>
+</component>
+
+<component id='ID_s2_traget04'>
+	<text><![CDATA[<font color="#393536">172.16.0.0/19</font>]]></text>
+</component>
+<component id='ID_s2_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto]]></text>
+</component>
+
+<component id='ID_s2_CORRECT_BODY'>
+	<text><![CDATA[Resumió correctamente las redes y los prefijos en una sola ruta resumida. Seleccione el botón&nbsp;3 para continuar la actividad.]]></text>
+</component>
+
+
+<component id='ID_s2_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto]]></text>
+</component>
+
+<component id='ID_s2_INCORRECT_BODY'>
+	<text><![CDATA[No resumió correctamente las redes y los prefijos en una sola ruta resumida. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_s2_CHECK'>
+	<text><![CDATA[<b>Verificar  </b>]]></text>
+</component>
+
+<component id='ID_s2_RESET'>
+	<text><![CDATA[<b>Restablecer  </b>]]></text>
+</component> <!--Slide 3-->
+<component id="ID_s3_inst">
+<text><![CDATA[<b>Actividad: resumir redes y prefijos (parte&nbsp;3) </b><br/><br/><b>Situación&nbsp;3: </b> el R1 necesita alcanzar todas las redes que se muestran. Resuma las redes y los prefijos en una sola ruta resumida.<br/><br/>Después de computar el prefijo y la ruta resumida, búsquela en el banco de rutas resumidas suministrado. Arrastre la respuesta correcta hasta el campo en la topología. 
+]]></text>
+</component>
+
+<component id='ID_s3_traget01'>
+	<text><![CDATA[<font color="#393536">192.168.1.0/30</font>]]></text>
+</component>
+
+<component id='ID_s3_traget02'>
+	<text><![CDATA[<font color="#393536">192.168.0.0/30</font>]]></text>
+</component>
+
+<component id='ID_s3_traget03'>
+	<text><![CDATA[<font color="#393536">192.168.0.0/17</font>]]></text>
+</component>
+
+<component id='ID_s3_traget04'>
+	<text><![CDATA[<font color="#393536">192.168.1.0/17</font>]]></text>
+</component>
+<component id='ID_s3_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto]]></text>
+</component>
+
+<component id='ID_s3_CORRECT_BODY'>
+	<text><![CDATA[Resumió correctamente las redes y los prefijos en una sola ruta resumida.]]></text>
+</component>
+
+
+<component id='ID_s3_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto]]></text>
+</component>
+
+<component id='ID_s3_INCORRECT_BODY'>
+	<text><![CDATA[No resumió correctamente las redes y los prefijos en una sola ruta resumida. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_s3_CHECK'>
+	<text><![CDATA[<b>Verificar  </b>]]></text>
+</component>
+
+<component id='ID_s3_RESET'>
+	<text><![CDATA[<b>Restablecer  </b>]]></text>
+</component>
+
+
+
+</textcomponents>

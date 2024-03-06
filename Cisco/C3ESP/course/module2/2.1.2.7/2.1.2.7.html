@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.1.2.7 ID de sistema extendido</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.1.2.7_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Conceptos de árbol de expansión</h1>
+        <h2>Funcionamiento de STP</h2>
+      </div>
+      <div id="content">
+<p>El ID de puente (BID) se utiliza para determinar el puente raíz de una red. El campo BID de una trama de BPDU contiene tres campos separados: </p>
+<p>
+<ul>
+<li>Prioridad del puente</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>ID de sistema extendido</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Dirección MAC</li>
+</ul>
+</p>
+<p></p>
+<p>Cada campo se utiliza durante la elección del puente raíz.</p>
+<p></p>
+<p>
+<b>Prioridad de puente</b>
+</p>
+<p></p>
+<p>La prioridad del puente es un valor personalizable que se puede utilizar para influir en la elección del switch como puente raíz. El switch con la menor prioridad, que implica el BID más bajo, se convierte en el puente raíz, dado que prevalece un valor de prioridad menor. Por ejemplo, para asegurar que un switch específico sea siempre el puente raíz, establezca la prioridad en un valor inferior al del resto de los switches de la red. El valor de prioridad predeterminado para todos los switches Cisco es 32768. El rango va de 0 a 61440 y aumenta de a 4096. Los valores de prioridad válidos son 0, 4096, 8192, 12288, 16384, 20480, 24576, 28672, 32768, 36864, 40960, 45056, 49152, 53248, 57344 y 61440. El resto de los valores se rechazan. La prioridad de puente 0 prevalece sobre el resto de las prioridades de puente.</p>
+<p></p>
+<p>
+<b>ID de sistema extendido</b>
+</p>
+<p></p>
+<p>Las primeras implementaciones de IEEE 802.1D estaban diseñadas para redes que no utilizaban VLAN. Existía un único árbol de expansión común para todos los switches. Por este motivo, en los switches Cisco más antiguos, se puede omitir la ID de sistema extendido en las tramas BPDU. A medida que las VLAN se volvieron más comunes en la segmentación de la infraestructura de red, se fue mejorando 802.1D para incluir a las VLAN, con el requisito de que se incluyera la ID de VLAN en la trama BPDU. La información de VLAN se incluye en la trama BPDU mediante el uso de la ID de sistema extendido. Todos los switches más modernos incluyen el uso de la ID de sistema extendido de manera predeterminada.</p>
+<p></p>
+<p>Como se muestra en la figura 1, el campo de prioridad del puente tiene una longitud de 2 bytes o 16 bits; 4 bits se utilizan para la prioridad del puente y 12 bits para la ID de sistema extendido, que identifica la VLAN que participa en este proceso STP en particular. Si se utilizan estos 12 bits para la ID de sistema extendido, se reduce la prioridad del puente a 4 bits. Este proceso reserva los 12 bits del extremo derecho para la ID de VLAN y los 4 bits del extremo izquierdo para la prioridad del puente. Esto explica por qué el valor de prioridad del puente solo se puede configurar en múltiplos de 4096, o 2^12. Si los bits del extremo izquierdo son 0001, la prioridad del puente es 4096; si los bits del extremo derecho son 1111, la prioridad del puente es 61440 (= 15 x 4096). Los switches de las series Catalyst 2960 y 3560 no permiten configurar la prioridad del puente en 65536 (= 16 x 4096), dado que supone el uso de un quinto bit que no está disponible debido al uso de la ID de sistema extendido.</p>
+<p></p>
+<p>El valor de ID de sistema extendido se agrega al valor de prioridad de puente en el BID para identificar la prioridad y la VLAN de la trama de BPDU. </p>
+<p>Cuando dos switches se configuran con la misma prioridad y tienen la misma ID de sistema extendido, el switch que posee la dirección MAC con el menor valor hexadecimal es el que tiene el menor BID. Inicialmente, todos los switches se configuran con el mismo valor de prioridad predeterminado. Luego, la dirección MAC es el factor de decisión sobre el cual el switch se convertirá en puente raíz. Para asegurar que el puente raíz elegido cumpla con los requisitos de la red, se recomienda que el administrador configure el switch de puente raíz deseado con una prioridad menor. Esto también permite asegurar que, si se agregan nuevos switches a la red, no se produzca una nueva elección de árbol de expansión, lo que puede interrumpir la comunicación de red mientras se selecciona un nuevo puente raíz.</p>
+<p></p>
+<p>En la figura 2, el S1 tiene una prioridad inferior a la del resto de los switches; por lo tanto, se lo prefiere como puente raíz para esa instancia de árbol de expansión.</p>
+<p></p>
+<p>Cuando todos los switches están configurados con la misma prioridad, como es el caso de los switches que mantienen la configuración predeterminada con la prioridad 32768, la dirección MAC se vuelve el factor decisivo en la elección del switch que se convertirá en el puente raíz (figura 3).</p>
+<p></p>
+<p>
+<b>Nota:</b> en el ejemplo, la prioridad de todos los switches es 32769. El valor se basa en la prioridad predeterminada 32768 y la asignación de la VLAN 1 relacionada con cada switch (32768 + 1).</p>
+<p></p>
+<p>La dirección MAC con el menor valor hexadecimal se considera como preferida para puente raíz. En el ejemplo, el S2 tiene la dirección MAC con el valor más bajo y, por lo tanto, se lo designa como puente raíz para esa instancia de árbol de expansión.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

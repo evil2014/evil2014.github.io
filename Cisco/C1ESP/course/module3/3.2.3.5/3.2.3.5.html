@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>3.2.3.5 Otros organismos de estandarización</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_3.2.3.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolos y estándares de red</h1>
+        <h2>Organismos de estandarización</h2>
+      </div>
+      <div id="content">
+<p>Los estándares de redes incluyen otros varios organismos de estandarización. Algunos de los más comunes son los siguientes:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>EIA:</b> la Electronic Industries Alliance (EIA), conocida anteriormente como Electronics Industries Association, es un organismo internacional comercial y de estandarización para organizaciones de la industria electrónica. La EIA es conocida principalmente por sus estándares relacionados con el cableado eléctrico, los conectores y los bastidores de 19 in que se utilizan para montar equipos de red.</li>
+</ul>
+</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>TIA:</b> la Telecommunications Industry Association (TIA) es responsable de desarrollar estándares de comunicación en diversas áreas, entre las que se incluyen equipos de radio, torres de telefonía móvil, dispositivos de voz sobre IP (VoIP) y comunicaciones satelitales. Muchos de los estándares se crean en colaboración con la EIA.</li>
+</ul>
+</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>UIT-T:</b> el Sector de Normalización de las Telecomunicaciones de la Unión Internacional de Telecomunicaciones (UIT-T) es uno de los organismos de estandarización de comunicación más grandes y más antiguos. El UIT-T define estándares para la compresión de videos, televisión de protocolo de Internet (IPTV) y comunicaciones de banda ancha, como la línea de suscriptor digital (DSL). Por ejemplo, al marcar a otro país, se utilizan los códigos de país de la UIT para realizar la conexión. </li>
+</ul>
+</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>ICANN:</b> la Internet Corporation for Assigned Names and Numbers (ICANN) es un organismo sin fines de lucro con base en los Estados Unidos que coordina la asignación de direcciones IP, la administración de nombres de dominio utilizados por DNS y los identificadores de protocolo o los números de puerto utilizados por los protocolos TCP y UDP. ICANN crea políticas y tiene una responsabilidad general sobre estas asignaciones.</li>
+</ul>
+</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>IANA:</b> la Internet Assigned Numbers Authority (IANA) es un departamento de ICANN responsable de controlar y administrar la asignación de direcciones IP, la administración de nombres de dominio y los identificadores de protocolo para ICANN.</li>
+</ul>
+</p>
+<p></p>
+<p>Conocer los organismos que crean estándares que se utilizan en redes lo ayudará a obtener una mayor comprensión de la forma en que estos estándares crean una Internet abierta y neutral en lo que respecta a proveedores, y le permitirá obtener información sobre nuevos estándares a medida que se desarrollan. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

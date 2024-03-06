@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.2.3.2 Captura de texto</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.2.3.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Información básica</h1>
+        <h2>Cómo guardar configuraciones</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Copia de seguridad de las configuraciones mediante captura de texto</b>
+</p>
+<p></p>
+<p>Además de guardar las configuraciones en ejecución en la configuración de inicio, los archivos de configuración también se pueden guardar y archivar en documentos de texto. Esta secuencia de pasos asegura la disponibilidad de una copia utilizable de los archivos de configuración para su modificación o reutilización en otra oportunidad.</p>
+<p></p>
+<p>En la figura 1, los archivos de configuración se pueden guardar y archivar en un documento de texto utilizando Tera Term. </p>
+<p></p>
+<p>Los pasos son los siguientes:</p>
+<p></p>
+<p>
+<ul>
+<li>En el menú File, haga clic en <b>Log</b>.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Elija la ubicación. Tera Term comenzará a capturar texto. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Una vez que comienza la captura, ejecute el comando <span class="cmd"><b>show running-config</b></span> o <span class="cmd"><b>show startup-config</b></span> en la petición de entrada de EXEC privilegiado. El texto que aparece en la ventana de la terminal se colocará en el archivo elegido.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Cuando la captura haya finalizado, seleccione <b>Close</b> (Cerrar) en la ventana Log (Registro) de TeraTerm.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Observe el resultado para verificar que no esté dañado.</li>
+</ul>
+</p>
+<p></p>
+<p>De manera similar, en la figura 2, se muestra cómo se pueden guardar y archivar los archivos en un documento de texto utilizando HyperTerminal.</p>
+<p></p>
+<p>
+<b>Restauración de las configuraciones de texto</b>
+</p>
+<p></p>
+<p>Se puede copiar un archivo de configuración desde el almacenamiento a un dispositivo. Cuando se copia en la terminal, el IOS ejecuta cada línea del texto de configuración como un comando. Es posible que deba editar el archivo antes de copiarlo. Se recomienda cambiar las contraseñas encriptadas a texto no cifrado y eliminar el parámetro, ya sea el número 5 o 7, que especifica que la contraseña está encriptada. Los mensajes de IOS y el texto que no represente comandos, como “--More--”, se deben eliminar. Este proceso se analiza en la práctica de laboratorio. </p>
+<p></p>
+<p>A su vez, en la CLI, el dispositivo debe establecerse en el modo de configuración global para recibir los comandos del archivo de texto que se copia.</p>
+<p></p>
+<p>Cuando se usa Tera Term, los pasos son los siguientes:</p>
+<p></p>
+<p>
+<ul>
+<li>Edite el texto para eliminar lo que no represente comandos y guarde los cambios.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>En el menú <b>File</b> haga clic en <b>Send</b> para enviar el archivo.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Ubique el archivo que debe copiar en el dispositivo y haga clic en <b>Open</b>.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Tera Term pegará el archivo en el dispositivo.</li>
+</ul>
+</p>
+<p></p>
+<p>El texto en el archivo estará aplicado como comandos en la CLI y pasará a ser la configuración en ejecución en el dispositivo. Este método es conveniente para configurar dispositivos en forma manual.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

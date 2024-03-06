@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.2.1.4 Paso 2. Obtener una licencia</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.2.1.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Licencias del IOS</h1>
+        <h2>Licencia de software </h2>
+      </div>
+      <div id="content">
+<p>
+<b>Paso 2.</b>
+<b>Obtener una licencia.</b>
+</p>
+<p></p>
+<p>El siguiente paso es obtener una licencia, que en realidad es un archivo de licencia. Un archivo de licencia, también conocido como Licencia de activación de software, se obtiene mediante una de las siguientes opciones:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Cisco License Manager (CLM):</b> esta es una aplicación de software gratuita disponible en <a href="http://www.cisco.com/go/clm" target="_blank">http://www.cisco.com/go/clm</a>. Cisco License Manager es una aplicación autónoma de Cisco que ayuda a los administradores de red a implementar rápidamente varias licencias de software de Cisco a través de las redes. Cisco License Manager puede detectar dispositivos de red, ver su información de licencia y adquirir e implementar licencias de Cisco. La aplicación proporciona una GUI que simplifica la instalación y ayuda a automatizar la obtención de licencias, además de llevar a cabo varias tareas de licencia desde una ubicación central. CLM es gratuito y puede descargarse de CCO.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Cisco License Registration Portal:</b> este es un portal basado en Web para obtener y registrar licencias de software individuales, disponibles en <a href="http://www.cisco.com/go/license" target="_blank">http://www.cisco.com/go/license</a>.</li>
+</ul>
+</p>
+<p></p>
+<p>Ambos procesos requieren un número de PAK y un Identificador de dispositivo único (UDI). </p>
+<p></p>
+<p>La PAK se recibe al efectuar la compra. </p>
+<p></p>
+<p>El UDI es una combinación de la ID del producto (PID), el número de serie (SN) y la versión de hardware. El SN es un número de 11 dígitos que identifica exclusivamente un dispositivo. La PID identifica el tipo de dispositivo. Para la creación de licencias, solo se utilizan la PID y el SN. El UDI puede mostrarse mediante el comando <span class="cmd"><b>show license udi</b></span>, que se muestra en la figura 1. Esta información también está disponible en una bandeja de etiquetas extraíble que se encuentra en el dispositivo. En la figura 2, se muestra un ejemplo de la etiqueta extraíble en un router Cisco 1941.</p>
+<p></p>
+<p>Después de introducir la información adecuada, el cliente recibe un correo electrónico con la información de licencia para instalar el archivo de licencia. El archivo de licencia es un archivo de texto XML con la extensión .lic. </p>
+<p></p>
+<p>Utilice el verificador de sintaxis de la figura 3 para determinar el UDI en el router R2.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

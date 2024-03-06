@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.2.1.5 Configuración de la ID del router EIGRP </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.2.1.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de EIGRP para IPv4</h1>
+        <h2>Configuración de EIGRP con IPv4</h2>
+      </div>
+      <div id="content">
+<p>
+<span class="cmd">
+<b>eigrp router-id </b>
+</span>
+<b>(comando)</b>
+</p>
+<p></p>
+<p>El comando <span class="cmd"><b>eigrp router-id</b></span> se usa para configurar la ID del router EIGRP y tiene prioridad sobre cualquier dirección de loopback o dirección IPv4 de interfaz física. La sintaxis del comando es:</p>
+<p></p>
+<p>
+<span class="cmd">Router(config)# </span>
+<span class="cmd">
+<b>router eigrp </b>
+</span>
+<span class="cmd">
+<i>sistema-autónomo</i>
+</span>
+</p>
+<p>
+<span class="cmd">Router(config-router)# </span>
+<span class="cmd">
+<b>eigrp router-id </b>
+</span>
+<span class="cmd">
+<i>dirección-ipv4</i>
+</span>
+</p>
+<p></p>
+<p>
+<b>Nota:</b> la dirección IPv4 utilizada para indicar la ID del router es en realidad cualquier número de 32 bits que se muestre en notación decimal con puntos. </p>
+<p></p>
+<p>La ID del router se puede configurar con cualquier dirección IPv4, con dos excepciones: 0.0.0.0 y 255.255.255.255. La ID del router debe ser un número único de 32 bits en el dominio de routing EIGRP; de lo contrario, pueden ocurrir incongruencias de routing.</p>
+<p></p>
+<p>En la figura 1, se muestra la configuración de la ID de router EIGRP para los routers R1 y R2 mediante el uso del comando <span class="cmd"><b>router eigrp</b></span> <span class="cmd"><i>sistema-autónomo</i></span>.</p>
+<p></p>
+<p>
+<b>Uso de la dirección de loopback como ID del router</b>
+</p>
+<p></p>
+<p>Otra opción para especificar la ID del router EIGRP es usar una dirección de loopback IPv4. La ventaja de usar una interfaz loopback en lugar de la dirección IPv4 de una interfaz física es que, a diferencia de las interfaces físicas, no puede fallar. No hay cables ni dispositivos adyacentes reales de los que dependa la interfaz loopback para encontrarse en estado up. Por lo tanto, usar una dirección de loopback como ID del router puede proporcionar una ID de router más coherente que usar una dirección de interfaz.</p>
+<p></p>
+<p>Si no se utiliza el comando <span class="cmd"><b>eigrp router-id</b></span> y hay interfaces loopback configuradas, EIGRP elige la dirección IPv4 más alta de cualquiera de las interfaces loopback. Los siguientes comandos se utilizan para habilitar y configurar una interfaz loopback:</p>
+<p></p>
+<p>
+<span class="cmd">Router(config)#</span>
+<span class="cmd">
+<b> interface loopback </b>
+</span>
+<span class="cmd">
+<i>número</i>
+</span>
+</p>
+<p>
+<span class="cmd">Router(config-if)#</span>
+<span class="cmd">
+<b> ip address </b>
+</span>
+<span class="cmd">
+<i>dirección-ipv4</i>
+</span>
+<span class="cmd">
+<b></b>
+</span>
+<span class="cmd">
+<i>máscara-subred</i>
+</span>
+</p>
+<p></p>
+<p>
+<b>Nota:</b> la ID de router EIGRP no cambia, salvo que se elimine el proceso EIGRP con el comando <span class="cmd"><b>no router eigrp</b></span> o que la ID del router se configure manualmente con el comando <span class="cmd"><b>eigrp router-id</b></span>.</p>
+<p></p>
+<p>
+<b>Verificación del proceso EIGRP</b>
+</p>
+<p></p>
+<p>En la figura 2, se muestra el resultado de <span class="cmd"><b>show ip protocols</b></span> para el R1, incluida la ID del router. El comando <span class="cmd"><b>show ip protocols</b></span> muestra los parámetros y el estado actual de cualquier proceso de protocolo de routing activo, incluidos EIGRP y OSPF. El comando <span class="cmd"><b>show ip protocols</b></span> muestra distintos tipos de resultados específicos de cada protocolo de routing. </p>
+<p></p>
+<p>Utilice el verificador de sintaxis de la figura 3 para configurar y verificar la ID del router para el R3.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

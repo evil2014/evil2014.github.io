@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.1.2.1 Algoritmo de árbol de expansión: introducción</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.1.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Conceptos de árbol de expansión</h1>
+        <h2>Funcionamiento de STP</h2>
+      </div>
+      <div id="content">
+<p>La redundancia aumenta la disponibilidad de la topología de red al proteger la red de un único punto de falla, como un cable de red o switch que fallan. Cuando se introduce la redundancia física en un diseño, se producen bucles y se duplican las tramas. Esto trae consecuencias graves para las redes conmutadas. El protocolo de árbol de expansión (STP) fue desarrollado para enfrentar estos inconvenientes.</p>
+<p></p>
+<p>STP asegura que exista sólo una ruta lógica entre todos los destinos de la red, al realizar un bloqueo de forma intencional a aquellas rutas redundantes que puedan ocasionar un bucle. Se considera que un puerto está bloqueado cuando no se permite que entren o salgan datos de usuario por ese puerto. Esto no incluye las tramas de unidad de datos de protocolo puente (BPDU) utilizadas por STP para evitar bucles. El bloqueo de las rutas redundantes es fundamental para evitar bucles en la red. Las rutas físicas aún existen para proporcionar la redundancia, pero las mismas se deshabilitan para evitar que se generen bucles. Si alguna vez la ruta es necesaria para compensar la falla de un cable de red o de un switch, STP vuelve a calcular las rutas y desbloquea los puertos necesarios para permitir que la ruta redundante se active.</p>
+<p></p>
+<p>Haga clic en el botón Reproducir de la figura 1 para ver el protocolo STP en acción.</p>
+<p></p>
+<p>En el ejemplo, STP está habilitado en todos los switches.</p>
+<p></p>
+<p>1. La PC1 envía un difusión a la red. </p>
+<p></p>
+<p>2. El S2 está configurado con STP y estableció el puerto para Enlace_troncal2 en estado de bloqueo. El estado de bloqueo evita que se utilicen los puertos para reenviar datos de usuario, de modo de evitar que ocurra un bucle. El S2 reenvía una trama de difusión por todos los puertos del switch, excepto el puerto de origen de la PC1 y el puerto para Enlace_troncal2. </p>
+<p></p>
+<p>3. El S1 recibe la trama de difusión y la reenvía por todos sus puertos de switch, por donde llega a la PC4 y al S3. El S3 reenvía la trama por el puerto para Enlace_troncal2, y el S2 descarta la trama. Se evita el bucle de Capa 2.</p>
+<p></p>
+<p>Haga clic en el botón Reproducir de la figura 2 para ver el nuevo cálculo de STP cuando ocurre una falla.</p>
+<p></p>
+<p>En este ejemplo:</p>
+<p></p>
+<p>1. La PC1 envía un difusión a la red. </p>
+<p></p>
+<p>2. Luego la difusión se envía a través de la red, de la misma forma que en la animación anterior. </p>
+<p></p>
+<p>3. El enlace troncal entre el S2 y el S1 falla, lo que provoca una interrupción en la ruta anterior. </p>
+<p></p>
+<p>4. El S2 desbloquea el puerto que se había bloqueado anteriormente para Enlace_troncal2 y permite que el tráfico de difusión atraviese la ruta alternativa alrededor de la red, lo que permite que continúe la comunicación. Si este enlace vuelve a activarse, STP vuelve a converger y el puerto en el S2 se vuelve a bloquear.</p>
+<p></p>
+<p>STP evita que ocurran bucles mediante la configuración de una ruta sin bucles a través de la red, con puertos “en estado de bloqueo” ubicados estratégicamente. Los switches que ejecutan STP pueden compensar las fallas mediante el desbloqueo dinámico de los puertos bloqueados anteriormente y el permiso para que el tráfico se transmita por las rutas alternativas. </p>
+<p></p>
+<p>Hasta ahora, utilizamos el término “protocolo de árbol de expansión” y el acrónimo STP. El uso del término “protocolo de árbol de expansión” y del acrónimo STP puede ser engañoso. La mayoría de los profesionales suele utilizar estas denominaciones para referirse a las diversas implementaciones del árbol de expansión, como el protocolo de árbol de expansión rápido (RSTP) y el protocolo de árbol de expansión múltiple (MSTP). Para poder explicar los conceptos de árbol de expansión correctamente, es importante consultar la implementación o el estándar específico en contexto. El documento más reciente del IEEE acerca del árbol de expansión, IEEE-802-1D-2004, establece que “STP se reemplazó con el protocolo de árbol de expansión rápido (RSTP)”. Como se ve, el IEEE utiliza “STP” para referirse a la implementación original del árbol de expansión y “RSTP” para describir la versión del árbol de expansión especificada en IEEE-802.1D-2004. En este currículo, cuando se analiza el protocolo de árbol de expansión original, se utiliza la frase “árbol de expansión 802.1D original” para evitar confusiones.</p>
+<p></p>
+<p>
+<b>Nota:</b> STP se basa en un algoritmo que Radia Perlman creó mientras trabajaba para Digital Equipment Corporation, y que se publicó en el ensayo realizado en 1985 denominado “An Algorithm for Distributed Computation of a Spanning Tree in an Extended LAN”. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

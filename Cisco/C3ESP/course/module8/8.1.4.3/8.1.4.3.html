@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.1.4.3 Balanceo de carga de IPv4</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.1.4.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuraciones avanzadas de EIGRP</h1>
+        <h2>Ajuste de las interfaces EIGRP</h2>
+      </div>
+      <div id="content">
+<p>El balanceo de carga de igual costo es la capacidad de un router de distribuir tráfico saliente a través de todas las interfaces que tienen la misma métrica desde la dirección de destino. El balanceo de carga usa los segmentos de red y el ancho de banda de manera más eficiente. En el caso de IP, el software IOS de Cisco aplica de manera predeterminada el balanceo de carga con hasta cuatro rutas de igual costo. </p>
+<p></p>
+<p>En la figura 1, se muestra la topología de la red EIGRP para IPv4. En esta topología, el R3 tiene dos rutas EIGRP de igual costo para la red entre el R1 y el R2, 172.16.3.0/30. Una ruta es a través del R1 en 192.168.10.4/30, y la otra es a través del R2 en 192.168.10.8/30.</p>
+<p></p>
+<p>El comando <span class="cmd"><b>show ip protocols</b></span> se puede usar para verificar la cantidad de rutas de igual costo que actualmente están configuradas en el router. El resultado de la figura 2 muestra que el R3 usa la opción predeterminada de cuatro rutas de igual costo.</p>
+<p></p>
+<p>La tabla de routing mantiene ambas rutas. En la figura 3, se muestra que el R3 tiene dos rutas EIGRP de igual costo para la red 172.16.3.0/30. Una ruta es a través del R1 en 192.168.10.5, y la otra es a través del R2 en 192.168.10.9. Si se observa la topología de la figura 1, puede parecer que la ruta a través del R1 es la mejor ruta, porque hay un enlace de 1544 kb/s entre el R3 y el R1, mientras que el enlace al R2 es solo de 1024 kb/s. Sin embargo, EIGRP solo usa el ancho de banda más lento en la métrica compuesta, que es el enlace de 64 kb/s entre el R1 y el R2. Las dos rutas tienen el mismo enlace de 64 kb/s como el ancho de banda más lento, lo que da como resultado que ambas rutas sean iguales.</p>
+<p></p>
+<p>Cuando se aplica switching de procesos a un paquete, el balanceo de carga de rutas de igual costo se produce por paquete. Cuando se aplica switching rápido a los paquetes, el balanceo de carga de rutas de igual costo se produce por destino. Cisco Express Forwarding (CEF) puede realizar balanceo de carga tanto por paquete como por destino.</p>
+<p></p>
+<p>De manera predeterminada, el IOS de Cisco permite que el balanceo de carga use hasta cuatro rutas de igual costo. Sin embargo, esto se puede modificar. Con el comando <span class="cmd"><b>maximum-paths</b></span> del modo de configuración del router, pueden mantenerse hasta 32 rutas de igual costo en la tabla de routing. </p>
+<p></p>
+<p>
+<span class="cmd">Router(config-router)# </span>
+<span class="cmd">
+<b>maximum-paths</b>
+</span>
+<span class="cmd"></span>
+<span class="cmd">
+<i>valor</i>
+</span>
+</p>
+<p></p>
+<p>El argumento <span class="cmd"><i>valor</i></span> se refiere a la cantidad de rutas que deben mantenerse para el balanceo de carga. Si el valor se establece en <b>1</b>, el balanceo de carga se deshabilita. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.4.1.3 Packet Tracer: Desafío de integración de habilidades sobre EIGRP</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.4.1.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resumen</h1>
+        <h2>Resumen</h2>
+      </div>
+      <div id="content">
+<p>Esta actividad de Packet Tracer proporciona una oportunidad para revisar las habilidades obtenidas en trabajos de cursos anteriores.</p>
+<p></p>
+<p>
+<b>Información básica/situación</b>
+</p>
+<p></p>
+<p>Usted es el nuevo técnico de red de una empresa que perdió a su técnico anterior en medio del proceso de actualización del sistema. Su tarea es completar las actualizaciones de la infraestructura de red que tiene dos ubicaciones. La mitad de la red empresarial utiliza direccionamiento IPv4 y la otra mitad utiliza direccionamiento IPv6. Además, los requisitos incluyen una variedad de tecnologías de routing y switching.</p>
+<p></p>
+<p>
+<a href="../../files/1.4.1.3%20Packet%20Tracer%20-%20Skills%20Integration%20Challenge%20EIGRP%20Instructions.pdf" target="_blank">Packet Tracer: Desafío de integración de habilidades sobre EIGRP (instrucciones)</a>
+</p>
+<p></p>
+<p>
+<a href="../../files/1.4.1.3%20Packet%20Tracer%20-%20Skills%20Integration%20Challenge%20EIGRP.pka" target="_blank">Packet Tracer: Desafío de integración de habilidades sobre EIGRP (PKA)</a>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

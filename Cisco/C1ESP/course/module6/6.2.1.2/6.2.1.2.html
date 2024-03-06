@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.2.1.2 Gateway predeterminado</title>
+    <!--  -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.2.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Enrutamiento</h1>
+        <h2>Cómo enrutan los hosts</h2>
+      </div>
+      <div id="content">
+<p>El gateway predeterminado es el dispositivo que enruta el tráfico desde la red local hacia los dispositivos en las redes remotas. En un entorno doméstico o de pequeña empresa, el gateway predeterminado se suele utilizar para conectar la red local a Internet. </p>
+<p></p>
+<p>Si el host envía un paquete a un dispositivo en otra red IP, debe reenviar el paquete al gateway predeterminado a través del dispositivo intermediario. Esto se debe a que los dispositivos host no mantienen la información de enrutamiento más allá de la red local para llegar a destinos remotos; esto lo hace el gateway predeterminado. El gateway predeterminado, que en general es un router, mantiene una tabla de enrutamiento. Una tabla de enrutamiento es un archivo de datos que se encuentra en la RAM y que se utiliza para almacenar información de la ruta sobre la red conectada directamente, así como las entradas de redes remotas descubiertas por el dispositivo. El router utiliza la información en la tabla de enrutamiento para determinar cuál es el mejor camino para llegar a esos destinos. </p>
+<p></p>
+<p>¿Cómo decide un host si debe o no debe reenviar paquetes al gateway predeterminado? Los hosts deben poseer una tabla de enrutamiento local propia para asegurarse de que los paquetes de la capa de red se dirijan a la red de destino correcta. La tabla local del host generalmente contiene lo siguiente:</p>
+<p>
+<ul>
+<li>
+<b>Conexión directa:</b> se trata de una ruta a la interfaz loopback (127.0.0.1).</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Ruta de red local:</b> la red a la cual está conectado el host se completa automáticamente en la tabla de enrutamiento del host. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Ruta predeterminada local:</b> la ruta predeterminada representa la ruta que los paquetes deben seguir para llegar a todas las direcciones de redes remotas. La ruta predeterminada se crea cuando hay una dirección de gateway predeterminado en el host. La dirección de gateway predeterminado es la dirección IP de la interfaz de red del router que está conectada a la red local. La dirección de gateway predeterminado se puede configurar en el host de forma manual o se puede descubrir de manera dinámica.</li>
+</ul>
+</p>
+<p></p>
+<p>Es importante observar que la ruta predeterminada y, por lo tanto, el gateway predeterminado, se utilizan solo cuando un host debe reenviar paquetes a una red remota. No se requieren, ni es necesario configurarlos, si solo se envían paquetes a dispositivos en la red local. </p>
+<p></p>
+<p>Por ejemplo, considere una impresora o un escáner de red. Si la impresora de red tiene una dirección IP y una máscara de subred configuradas, los hosts locales pueden enviar documentos a la impresora para imprimirlos. Además, la impresora puede reenviar los documentos escaneados a cualquier host local. En tanto la impresora se use solo de forma local, no se requiere una dirección de gateway predeterminado. De hecho, al no configurar una dirección de gateway predeterminado en la impresora, se deniega de manera eficaz el acceso a Internet, lo que puede ser una acertada decisión de seguridad. Sin acceso a Internet, no existe riesgo de seguridad. Si bien algunos dispositivos, como las impresoras, pueden ofrecer la capacidad de realizar actualizaciones automáticas por Internet, por lo general es más fácil y más seguro obtener esas mismas actualizaciones a través de cargarlas en forma local desde un host local protegido, como una PC.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

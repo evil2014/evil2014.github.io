@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.2.3.3 Paso 1: Verificar la capa física</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.2.3.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resolución de problemas de red</h1>
+        <h2>Resolución de problemas de conectividad IP</h2>
+      </div>
+      <div id="content">
+<p>Todos los dispositivos de red son sistemas de computación especializados. Como mínimo, estos dispositivos constan de una CPU, RAM y espacio de almacenamiento, que permiten que el dispositivo arranque y ejecute el sistema operativo y las interfaces. Esto permite la recepción y la transmisión del tráfico de la red. Cuando un administrador de red determina que existe un problema en un dispositivo determinado y que el problema puede estar relacionado con el hardware, vale la pena verificar el funcionamiento de estos componentes genéricos. Los comandos del IOS de Cisco usados con más frecuencia son <span class="cmd"><b>show processes cpu</b></span>, <span class="cmd"><b>show memory</b></span> y <span class="cmd"><b>show interfaces</b></span>. En este tema, se analiza el comando <span class="cmd"><b>show interfaces</b></span>.</p>
+<p></p>
+<p>Al resolver problemas relacionados con el rendimiento en los que se sospecha que el hardware es el culpable, se puede usar el comando <span class="cmd"><b>show interfaces</b></span> para verificar las interfaces que atraviesa el tráfico. </p>
+<p></p>
+<p>En el resultado del comando <span class="cmd"><b>show interfaces</b></span> en la ilustración, se indican varias estadísticas importantes que se pueden revisar:</p>
+<p>
+<ul>
+<li>
+<b>Descartes de la cola de entrada:</b> los descartes de la cola de entrada (y los contadores ignorados y de limitación relacionados) indican que, en algún momento, se entregó al router más tráfico del que podía procesar. Esto no indica necesariamente un problema. Podría ser normal durante los picos de tráfico. Sin embargo, podría ser una indicación de que la CPU no puede procesar los paquetes a tiempo, por lo que, si este número es permanentemente alto, vale la pena tratar de detectar en qué momentos aumentan estos contadores y cómo se relaciona eso con el uso de CPU.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Descartes de la cola de salida:</b> los descartes de la cola de salida indican que se descartaron paquetes debido a la congestión en la interfaz. Es normal ver descartes de salida en cualquier punto donde la agregación de tráfico de entrada es superior al tráfico de salida. Durante los picos de tráfico, si el tráfico se entrega a la interfaz más rápidamente de que lo que se puede enviar, se descartan paquetes. Sin embargo, incluso si esto se considera un comportamiento normal, provoca el descarte de paquetes y retrasos en la cola, de modo que es posible que las aplicaciones afectadas por esas situaciones, como VoIP, tengan problemas de rendimiento. La observación sistemática de descartes de salida puede indicar que es necesario implementar un mecanismo de cola avanzado para proporcionar una buena QoS para cada aplicación. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Errores de entrada:</b> los errores de entrada (input errors) indican errores que se experimentan durante la recepción de la trama, como errores de CRC. Una cantidad elevada de errores de CRC podría indicar problemas de cableado, problemas de hardware de interfaz o, en una red basada en Ethernet, incompatibilidades de dúplex.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Errores de salida:</b> los errores de salida (output errors) indican errores durante la transmisión de una trama, por ejemplo, colisiones. En la actualidad, en la mayoría de las redes basadas en Ethernet, la transmisión full-duplex es la norma y la transmisión half-duplex es la excepción. En la transmisión full-duplex, no pueden ocurrir colisiones en las operaciones; por lo tanto, las colisiones (especialmente las colisiones tardías) indican con frecuencia incompatibilidades de dúplex.</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

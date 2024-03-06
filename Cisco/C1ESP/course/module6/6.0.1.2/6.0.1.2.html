@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.0.1.2 Actividad: La ruta menos transitada...</title>
+    <!--  -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.0.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Capa de Red</h1>
+        <h2>Introducción</h2>
+      </div>
+      <div id="content">
+<p>
+<b>La ruta menos transitada... ¿realmente lo es?</b>
+</p>
+<p></p>
+<p>Decidió que el próximo fin de semana irá a visitar a un compañero de curso que está en su casa debido a una enfermedad. Tiene la dirección de su compañero, pero nunca fue a la ciudad donde vive. En lugar de buscar la dirección en el mapa, decide simplificar las cosas y pedir indicaciones a los residentes del lugar después de bajar del tren. Los residentes a los que pide ayuda son muy amables. Sin embargo, todos tienen una costumbre interesante. En lugar de explicar por completo el camino que debe tomar para llegar a destino, todos le dicen: “vaya por esta calle y, en cuanto llegue al cruce más cercano, vuelva a preguntar a alguien allí”. </p>
+<p></p>
+<p>Confundido por esta situación claramente curiosa, sigue estas instrucciones y finalmente llega a la casa de su compañero pasando cruce por cruce y calle por calle.</p>
+<p></p>
+<p>Responda las siguientes preguntas:</p>
+<p>
+<ul>
+<li>¿Habría sido muy diferente si, en lugar de que se le indicara que fuera hasta el cruce más cercano, se le hubiera indicado el camino completo o una parte del camino más extensa? </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>¿Habría sido más útil preguntar por la dirección específica o solo por la calle? ¿Qué ocurriría si la persona a la que solicita indicaciones no supiera dónde queda la calle de destino o le indicara un recorrido incorrecto?</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Suponga que en su camino de regreso a casa decide volver a pedirles indicaciones a los residentes. ¿Es seguro que le indicarían seguir el mismo camino que hizo para llegar a la casa de su amigo? Justifique su respuesta.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>¿Es necesario explicar de dónde parte cuando pide indicaciones para llegar a un destino deseado?</li>
+</ul>
+</p>
+<p></p>
+<p>
+<a href="../../files/6.0.1.2%20Class%20Activity%20-%20The%20road%20less%20traveled...%20Instructions.pdf" target="_blank">Actividad de clase: La ruta menos transitada... ¿realmente lo es? Instrucciones</a>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

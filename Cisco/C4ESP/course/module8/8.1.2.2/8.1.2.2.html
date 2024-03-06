@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.1.2.2 Registro predeterminado</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.1.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Syslog</h1>
+        <h2>Configuración de syslog</h2>
+      </div>
+      <div id="content">
+<p>De forma predeterminada, los routers y switches de Cisco envían mensajes de registro a la consola para todos los niveles de gravedad. En algunas versiones del IOS, el dispositivo también almacena en búfer los mensajes de registro de manera predeterminada. Para habilitar estas dos configuraciones, utilice los comandos de configuración global <span class="cmd"><b>logging console</b></span> y <span class="cmd"><b>logging buffered</b></span>, respectivamente. </p>
+<p></p>
+<p>El comando <span class="cmd"><b>show logging</b></span> muestra la configuración predeterminada del servicio de registro en un router Cisco, como se muestra en la ilustración. En las primeras líneas del resultado, se proporciona información sobre el proceso de registro, y al final del resultado se indican los mensajes de registro.</p>
+<p></p>
+<p>En la primera línea resaltada, se indica que este router se registra en la consola y se incluyen mensajes de depuración. Esto en realidad significa que todos los mensajes del nivel de depuración, así como cualquier mensaje de nivel inferior (como los mensajes del nivel de notificación), se registran en la consola. El resultado también indica que se registraron 32 de estos mensajes. </p>
+<p></p>
+<p>En la segunda línea resaltada, se indica que este router se registra en un búfer interno. Dado que en este router se habilitó el registro en un búfer interno, el comando <span class="cmd"><b>show logging</b></span> también indica los mensajes en ese búfer. Puede ver algunos de los mensajes del sistema que se registraron al final del resultado.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

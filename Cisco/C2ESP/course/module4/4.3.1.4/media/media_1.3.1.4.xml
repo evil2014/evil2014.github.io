@@ -1,0 +1,74 @@
+﻿<textcomponents>
+
+<component id='ID_inst'>
+	<text><![CDATA[<b>Actividad  </b><br><br>Con la topología que se muestra, cree una entrada en la tabla de routing para el R1 sobre la base de la situación que se presenta a continuación. Para introducir las respuestas, arrástrelas a los campos correspondientes.<br/><br/><b>Situación: </b> se envían datos de red de la PC1 al host 10.1.1.10. No hay rutas estáticas ni predeterminadas configuradas en el R1 o el R2. El R1 y el R2 utilizan EIGRP como protocolo de routing. 
+]]></text>
+</component>
+
+<component id='ID_txt01'>
+	<text><![CDATA[<b>Entrada de la tabla de routing del R1  </b>]]></text>
+</component> <!--Drag and Drop-->
+<component id='ID_drag01'>
+	<text><![CDATA[<font color="#393536">S0/0/1</font>]]></text>
+</component>
+<component id='ID_drag02'>
+	<text><![CDATA[<font color="#393536">via 209.165.200.226</font>]]></text>
+</component>
+<component id='ID_drag03'>
+	<text><![CDATA[<font color="#393536">via 209.165.200.225</font>]]></text>
+</component>
+<component id='ID_drag04'>
+	<text><![CDATA[<font color="#393536">00:00:33</font>]]></text>
+</component>
+
+<component id='ID_drag05'>
+	<text><![CDATA[<font color="#393536">90/3072</font>]]></text>
+</component>
+
+<component id='ID_drag06'>
+	<text><![CDATA[<font color="#393536">10.1.1.0/24</font>]]></text>
+</component>
+
+<component id='ID_drag07'>
+	<text><![CDATA[<font color="#393536">209.165.200.224/30</font>]]></text>
+</component>
+
+<component id='ID_drag08'>
+	<text><![CDATA[<font color="#393536">D</font>]]></text>
+</component>
+
+<component id='ID_drag09'>
+	<text><![CDATA[<font color="#393536">S0/0/0</font>]]></text>
+</component>
+
+<component id='ID_drag10'>
+	<text><![CDATA[<font color="#393536">S</font>]]></text>
+</component>
+
+
+
+<component id='ID_s1_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto  </b>]]></text>
+</component>
+
+<component id='ID_s1_CORRECT_BODY'>
+	<text><![CDATA[Creó correctamente una entrada en la tabla de routing para el R1, según la situación presentada.]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto  </b>]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_BODY'>
+	<text><![CDATA[No creó correctamente una entrada en la tabla de routing para el R1, según la situación presentada. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_CHECK'>
+	<text><![CDATA[Verificar]]></text>
+</component>
+
+<component id='ID_RESET'>
+	<text><![CDATA[Restablecer]]></text>
+</component>
+
+</textcomponents>

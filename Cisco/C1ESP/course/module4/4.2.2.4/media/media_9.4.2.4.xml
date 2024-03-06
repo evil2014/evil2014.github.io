@@ -1,0 +1,69 @@
+﻿<textcomponents>
+
+<component id='ID_table'>
+<text><![CDATA[<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4' valign="top">
+	<tr class="liner">
+		<td colspan='3' bgcolor='#0E6360' class="mtable_top"><font size='2' color='#434321'>.</font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#077A77'><font color="#FFFFFF"><b>Tipo de cable</b></font></td>
+		<td bgcolor='#077A77'><font color="#FFFFFF"><b>Estándar</b></font></td>
+		<td bgcolor='#077A77'><font color="#FFFFFF"><b>Capa de aplicación</b></font></td>
+	</tr>
+	<tr>
+		<td width='125' bgcolor='#EFF8F7' valign="top">Cable directo de Ethernet</td>
+		<td width='125' bgcolor='#EFF8F7' valign="top">Ambos extremos son T568A o T568B.</td>
+		<td bgcolor='#EFF8F7' valign="top">Conecta un host de red a un dispositivo de red, como un switch o un hub.</td>
+	</tr>
+	<tr>
+		<td bgcolor='#FFFFFF' valign="top">Cruzado Ethernet</td>
+		<td bgcolor='#FFFFFF' valign="top">Un extremo es T568A,<br/> el otro extremo es T568B.</td>
+		<td bgcolor='#FFFFFF' valign="top"><textformat blockindent='-18'><li>Conecta dos hosts de red.</li><li>Conecta dos dispositivos de red intermediarios (un switch a un switch, o un router a un router).</li></textformat></td>
+	</tr>
+	<tr>
+		<td bgcolor='#EFF8F7' valign="top">De consola</td>
+		<td bgcolor='#EFF8F7' valign="top">Propietario de Cisco</td>
+		<td bgcolor='#EFF8F7' valign="top">Conecta el puerto serie de una estación de trabajo al puerto de consola de un router mediante un adaptador.</td>
+	</tr>
+</table>]]></text>
+</component> <!--first cable-->
+<component id="ID_txt01">
+<text><![CDATA[<b>Par&nbsp;2</b>]]></text>
+</component>
+
+<component id="ID_txt02">
+<text><![CDATA[<b>Par&nbsp;3</b>]]></text>
+</component>
+
+<component id="ID_txt03">
+<text><![CDATA[<b>Par 1</b>]]></text>
+</component>
+
+<component id="ID_txt04">
+<text><![CDATA[<b>Par&nbsp;4</b>]]></text>
+</component>
+
+<component id="ID_txt05">
+<text><![CDATA[<b>T568A</b>]]></text>
+</component> <!--second cable-->
+<component id="ID_txt06">
+<text><![CDATA[<b>Par&nbsp;3</b>]]></text>
+</component>
+
+<component id="ID_txt07">
+<text><![CDATA[<b>Par&nbsp;2</b>]]></text>
+</component>
+
+<component id="ID_txt08">
+<text><![CDATA[<b>Par 1</b>]]></text>
+</component>
+
+<component id="ID_txt09">
+<text><![CDATA[<b>Par&nbsp;4</b>]]></text>
+</component>
+
+<component id="ID_txt10">
+<text><![CDATA[<b>T568B<b>]]></text>
+</component>
+
+</textcomponents>

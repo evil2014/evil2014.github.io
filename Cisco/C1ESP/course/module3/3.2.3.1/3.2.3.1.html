@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>3.2.3.1 Normas abiertas</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_3.2.3.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolos y estándares de red</h1>
+        <h2>Organismos de estandarización</h2>
+      </div>
+      <div id="content">
+<p>Los estándares abiertos fomentan la competencia y la innovación. También garantizan que ningún producto de una sola compañía pueda monopolizar el mercado o tener una ventaja desleal sobre la competencia. La compra de un router inalámbrico para el hogar constituye un buen ejemplo de esto. Existen muchas opciones distintas disponibles de diversos proveedores, y todas ellas incorporan protocolos estándares, como IPv4, DHCP, 802.3 (Ethernet) y 802.11 (LAN inalámbrica). Estos estándares abiertos también permiten que un cliente con el sistema operativo OS X de Apple descargue una página Web de un servidor Web con el sistema operativo Linux. Esto se debe a que ambos sistemas operativos implementan los protocolos de estándar abierto, como los de la suite TCP/IP.</p>
+<p></p>
+<p>Los organismos de estandarización son importantes para mantener una Internet abierta con especificaciones y protocolos de libre acceso que pueda implementar cualquier proveedor. Los organismos de estandarización pueden elaborar un conjunto de reglas en forma totalmente independiente o, en otros casos, pueden seleccionar un protocolo exclusivo como base para el estándar. Si se utiliza un protocolo exclusivo, suele participar el proveedor que creó el protocolo. </p>
+<p></p>
+<p>Los organismos de estandarización generalmente son organismos sin fines de lucro y neutrales en lo que respecta a proveedores, que se establecen para desarrollar y promover el concepto de estándares abiertos.</p>
+<p></p>
+<p>Entre los organismos de estandarización, se incluyen los siguientes:</p>
+<p>
+<ul>
+<li>Internet Society (ISOC) </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Internet Architecture Board (IAB)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Internet Engineering Task Force (IETF)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Instituto de Ingenieros en Electricidad y Electrónica (IEEE)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>International Organization for Standardization (ISO)</li>
+</ul>
+</p>
+<p></p>
+<p>Cada uno de estos organismos se analizará en mayor detalle en las próximas páginas.</p>
+<p></p>
+<p>En la ilustración, haga clic en cada logotipo para ver la información sobre los estándares.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

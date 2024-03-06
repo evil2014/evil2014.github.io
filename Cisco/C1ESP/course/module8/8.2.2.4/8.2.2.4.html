@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.2.2.4 Regla 2: Omisión de los segmentos compuestos por todos ceros</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.2.2.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Direcciones de red IPv6</h1>
+        <h2>Asignación de direcciones IPv6</h2>
+      </div>
+      <div id="content">
+<p>La segunda regla que permite reducir la notación de direcciones IPv6 es que los dos puntos dobles (::) pueden reemplazar cualquier cadena única y contigua de uno o más segmentos de 16 bits (hextetos) compuestos solo por ceros. </p>
+<p></p>
+<p>Los dos puntos dobles (::) se pueden utilizar solamente una vez dentro de una dirección; de lo contrario, habría más de una dirección resultante posible. Cuando se utiliza junto con la técnica de omisión de ceros iniciales, la notación de direcciones IPv6 generalmente se puede reducir de manera considerable. Esto se suele conocer como “formato comprimido”.</p>
+<p></p>
+<p>Dirección incorrecta: </p>
+<p>
+<ul>
+<li>2001:0DB8::ABCD::1234</li>
+</ul>
+</p>
+<p></p>
+<p>Expansiones posibles de direcciones comprimidas ambiguas:</p>
+<p>
+<ul>
+<li>2001:0DB8::ABCD:0000:0000:1234</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>2001:0DB8::ABCD:0000:0000:0000:1234</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>2001:0DB8:0000:ABCD::1234</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>2001:0DB8:0000:0000:ABCD::1234</li>
+</ul>
+</p>
+<p></p>
+<p>En las figuras 1 a 7, se muestran varios ejemplos de cómo el uso de los dos puntos dobles (::) y la omisión de ceros iniciales puede reducir el tamaño de una dirección IPv6.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

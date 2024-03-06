@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.2.2.5 Mensajes de aviso</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.2.2.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Información básica</h1>
+        <h2>Limitación del acceso a las configuraciones de los dispositivos</h2>
+      </div>
+      <div id="content">
+<p>Aunque el pedido de contraseñas es un modo de impedir el acceso a la red de personas no autorizadas, resulta vital proveer un método para informar que sólo el personal autorizado debe intentar obtener acceso al dispositivo. Para hacerlo, agregue un aviso a la salida del dispositivo.</p>
+<p></p>
+<p>Los avisos pueden ser una parte importante en los procesos legales en el caso de una demanda por el ingreso no autorizado a un dispositivo. Algunos sistemas legales no permiten la acusación, y ni siquiera el monitoreo de los usuarios, a menos que haya una notificación visible. </p>
+<p></p>
+<p>El contenido o las palabras exactas de un aviso dependen de las leyes locales y de las políticas de la empresa. A continuación se muestran algunos ejemplos de información que se debe incluir en un aviso: </p>
+<p></p>
+<p>
+<ul>
+<li>“El uso del dispositivo es exclusivo del personal autorizado”.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>“Es posible que se esté controlando la actividad”. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>“Se iniciarán acciones legales en caso de uso no autorizado”.</li>
+</ul>
+</p>
+<p></p>
+<p>Ya que cualquier persona que intenta iniciar sesión puede ver los avisos, se debe redactar el mensaje cuidadosamente. Es inapropiada toda redacción que implique que "se acepta" o "se invita" al usuario a iniciar sesión. Si una persona causa problemas en la red luego de obtener acceso no autorizado, será difícil probar la responsabilidad si hay algún indicio de invitación. </p>
+<p></p>
+<p>La creación de avisos es un proceso simple; sin embargo, éstos deben usarse en forma apropiada. Cuando se utiliza un aviso, este nunca debe invitar a un usuario al dispositivo. Debe aclarar que sólo el personal autorizado tiene permitido el acceso al dispositivo. Asimismo, el aviso puede incluir cierres programados del sistema y demás información que afecte a todos los usuarios de la red.</p>
+<p></p>
+<p>El IOS proporciona varios tipos de avisos. Un aviso común es el mensaje del día (MOTD). Con frecuencia se usa para notificaciones legales ya que se visualiza en todos los terminales conectados. </p>
+<p></p>
+<p>Configure el MOTD con el comando <span class="cmd"><b>banner motd</b></span> del modo de configuración global.</p>
+<p></p>
+<p>El comando <span class="cmd"><b>banner motd</b></span> requiere el uso de delimitadores para identificar el contenido del mensaje de aviso. El comando <span class="cmd"><b>banner motd</b></span> va seguido de un espacio y un carácter delimitador. Luego, se ingresan una o más líneas de texto para representar el mensaje del aviso. Una segunda ocurrencia del carácter delimitador denota el final del mensaje. El carácter delimitador puede ser cualquier carácter siempre que no aparezca en el mensaje. Por este motivo, a menudo se usan símbolos como "#".</p>
+<p></p>
+<p>La sintaxis para configurar un MOTD en el modo de configuración global es la siguiente:</p>
+<p></p>
+<p>
+<span class="cmd">Switch(config)#</span>
+<span class="cmd">
+<b>banner motd #</b>
+</span>
+<span class="cmd">
+<i>Mensaje</i>
+</span>
+<span class="cmd"></span>
+<span class="cmd">
+<b>#</b>
+</span>
+</p>
+<p></p>
+<p>Una vez que se ha ejecutado el comando, aparecerá el aviso en todos los intentos posteriores de acceso al dispositivo hasta que el aviso se elimine.</p>
+<p></p>
+<p>El ejemplo de la ilustración muestra un anuncio configurado con el símbolo delimitador “#”. Observe cómo aparece ahora el anuncio cuando se accede al switch. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

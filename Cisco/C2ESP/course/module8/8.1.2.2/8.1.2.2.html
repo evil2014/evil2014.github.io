@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.1.2.2 Tipos de paquetes OSPF</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.1.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Características de OSPF</h1>
+        <h2>Mensajes OSPF</h2>
+      </div>
+      <div id="content">
+<p>OSPF utiliza paquetes de estado de enlace (LSP) para establecer y mantener adyacencias de vecinos, así como para intercambiar actualizaciones de routing. </p>
+<p></p>
+<p>En la ilustración, se muestran los cinco tipos de LSP que usa OSPF. Cada paquete cumple una función específica en el proceso de enrutamiento de OSPF:</p>
+<p>
+<ul>
+<li>
+<b>Tipo 1, paquete de saludo:</b> se usa para establecer y mantener la adyacencia con otros routers OSPF. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Tipo 2, paquete de descripción de base de datos (DBD):</b> contiene una lista abreviada de la LSDB del router emisor, y los routers receptores la usan para compararla con la LSDB local. Para crear un árbol SPF preciso, la LSDB debe ser idéntica en todos los routers de estado de enlace dentro de un área.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Tipo 3, paquete de solicitud de estado de enlace (LSR):</b> los routers receptores pueden requerir más información sobre cualquier entrada de la DBD mediante el envío de un LSR. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Tipo 4, paquete de actualización de estado de enlace (LSU)</b>: se utiliza para responder a los LSR y anunciar la nueva información. Los LSU contienen siete tipos de LSA. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Tipo 5, paquete de acuse de recibo de estado de enlace (LSAck):</b> cuando se recibe una LSU, el router envía un LSAck para confirmar la recepción de la LSU. El campo de datos del LSAck está vacío.</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

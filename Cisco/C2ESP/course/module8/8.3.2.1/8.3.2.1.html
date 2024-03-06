@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.3.2.1 Topología de la red OSPFv3</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.3.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de OSPFv3 de área única</h1>
+        <h2>Configuración de OSPFv3</h2>
+      </div>
+      <div id="content">
+<p>En la figura 1, se muestra la topología de la red que se utiliza para configurar OSPFv3. </p>
+<p></p>
+<p>En la figura 2, se muestra el routing de unidifusión IPv6 y la configuración de las direcciones de unidifusión global del R1, como se identifican en la topología de referencia. Suponga que las interfaces del R2 y el R3 también se configuraron con sus direcciones de unidifusión global, como se identifica en la topología mencionada.</p>
+<p></p>
+<p>En esta topología, ninguno de los routers tiene direcciones IPv4 configuradas. Una red con las interfaces del router configuradas con direcciones IPv4 e IPv6 se denomina “dual-stack”. Una red dual-stack puede tener OSPFv2 y OSPFv3 habilitados de manera simultánea. </p>
+<p></p>
+<p>En la figura 3, se muestran los pasos para configurar OSPFv3 básico en un área única.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

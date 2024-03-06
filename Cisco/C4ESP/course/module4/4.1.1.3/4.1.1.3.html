@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.1.1.3 Requisitos de la línea dedicada</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.1.1.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Introducción a Frame Relay</h1>
+        <h2>Beneficios de Frame Relay</h2>
+      </div>
+      <div id="content">
+<p>Mediante las líneas arrendadas, cada uno de los sitios de SPAN se conecta a través de un switch en la oficina central (CO) de la compañía telefónica local por medio del bucle local, y después a través de toda la red. Los sitios de Chicago y Nueva York usan una línea dedicada T1 (equivalente a 24 canales DS0) para conectarse al switch, mientras que otros sitios utilizan conexiones ISDN (56 kb/s), como se muestra en la ilustración. Debido a que el sitio de Dallas se conecta a Nueva York y Chicago, tiene dos líneas arrendadas localmente. Los proveedores de servicios de red proporcionan a SPAN un DS0 entre las respectivas CO, excepto la canalización más grande que conecta Chicago y Nueva York, y que tiene cuatro DS0. Los DS0 tienen precios diferentes según la región y, generalmente, se ofrecen a un precio fijo. Estas líneas son realmente dedicadas, ya que el proveedor de servicios de red reserva esa línea para uso exclusivo de SPAN. No existe el uso compartido, y SPAN paga por el circuito de extremo a extremo, independientemente de cuánto ancho de banda utiliza.</p>
+<p></p>
+<p>Una línea dedicada proporciona pocas oportunidades prácticas para establecer una conexión de uno a varios sin obtener más líneas del proveedor de servicios de red. En el ejemplo, casi toda la comunicación debe fluir a través de las oficinas centrales de la empresa, simplemente para reducir el costo de líneas adicionales.</p>
+<p></p>
+<p>Después de un análisis más detallado de los requisitos de ancho de banda para cada sitio, se comprueba que hay una falta de eficacia: </p>
+<p></p>
+<p>
+<ul>
+<li>De los 24 canales DS0 disponibles en la conexión T1, el sitio de Chicago utiliza solo siete. Algunas prestadoras de servicios ofrecen conexiones T1 fraccionadas en incrementos de 64 kb/s, pero esto requiere un dispositivo especializado denominado “multiplexor” en el extremo del cliente para canalizar las señales. En este caso, SPAN optó por el servicio T1 completo.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>De manera similar, el sitio de Nueva York utiliza solo cinco de sus 24 DS0 disponibles.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Debido a que Dallas debe conectarse a Chicago y Nueva York, hay dos líneas que se conectan a cada sitio a través de la CO.</li>
+</ul>
+</p>
+<p></p>
+<p>El diseño de línea arrendada también limita la flexibilidad. A menos que los circuitos ya estén instalados, la conexión de nuevos sitios normalmente requiere nuevas instalaciones de circuitos, e implementarlo lleva mucho tiempo. Desde el punto de vista de la confiabilidad de la red, imagine los costos adicionales en dinero y la complejidad de agregar circuitos redundantes de repuesto.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

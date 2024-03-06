@@ -1,0 +1,391 @@
+﻿<textcomponents> <!-- slide 1-->
+<component id="ID_s1_title">
+<text><![CDATA[<b>Una conversación TCP  </b>]]></text>
+</component> <!--animation-->
+	<component id="ID_s1_txt01">
+	<text><![CDATA[SYN de TCP]]></text>
+	</component>
+	
+	<component id="ID_s1_txt02">
+	<text><![CDATA[“Hablemos”.]]></text>
+	</component>
+	
+	<component id="ID_s1_txt03">
+	<text><![CDATA[“Sí, hablemos”.]]></text>
+	</component>
+	
+	<component id="ID_s1_txt04">
+	<text><![CDATA[SYN/ACK de TCP]]></text>
+	</component>
+	
+	<component id="ID_s1_txt05">
+	<text><![CDATA[ACK de TCP]]></text>
+	</component>
+	
+	<component id="ID_s1_txt06">
+	<text><![CDATA[“Perfecto, estamos conectados”.]]></text>
+	</component>
+	
+	<component id="ID_s1_txt07">
+	<text><![CDATA[Datos TCP]]></text>
+	</component>
+	
+	<component id="ID_s1_txt08">
+	<text><![CDATA[“Necesito que me envíe unos datos”.]]></text>
+	</component>
+	
+	<component id="ID_s1_txt09">
+	<text><![CDATA[“Gracias, recibí su solicitud”.]]></text>
+	</component>
+	
+	<component id="ID_s1_txt10">
+	<text><![CDATA[ACK de TCP]]></text>
+	</component>
+	
+	<component id="ID_s1_txt11">
+	<text><![CDATA[“Estos son los datos que desea”.]]></text>
+	</component>
+	
+	<component id="ID_s1_txt12">
+	<text><![CDATA[Datos TCP]]></text>
+	</component>
+	
+	<component id="ID_s1_txt13">
+	<text><![CDATA[ACK de TCP]]></text>
+	</component>
+	
+	<component id="ID_s1_txt14">
+	<text><![CDATA[“Gracias. Recibí los datos”.]]></text>
+	</component>
+	
+	<component id="ID_s1_txt15">
+	<text><![CDATA[“Terminé y no tengo más datos para enviar”.]]></text>
+	</component>
+	
+	<component id="ID_s1_txt16">
+	<text><![CDATA[FIN de TCP]]></text>
+	</component>
+	
+	<component id="ID_s1_txt17">
+	<text><![CDATA[TCP FIN/ACK]]></text>
+	</component>
+	
+	<component id="ID_s1_txt18">
+	<text><![CDATA[“Yo también terminé. Gracias”.]]></text>
+	</component>
+
+	<component id="ID_s1_txt19">
+	<text><![CDATA[“Gracias”.]]></text>
+	</component>
+	
+	<component id="ID_s1_txt20">
+	<text><![CDATA[ACK de TCP]]></text>
+	</component> <!-- slide 2-->
+<component id="ID_s2_title">
+<text><![CDATA[<b>Números de puerto  </b>]]></text>
+</component>
+
+<component id="ID_s2_table01">
+<text><![CDATA[<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4' class="mtable">
+<tr class="mtable_top">
+<td colspan='2' bgcolor='#0E6360' class="mtable_top"><font size='1' color='#0E6360'><span style="color:#98D3D1">.</span></font></td>
+</tr>
+<tr>
+<td bgcolor='#077A77'  valign="top" width="210" class="mtitle"><font color='#ffffff'><b>Rango de números de puerto  </b></font></td>
+<td bgcolor='#077A77'  valign="top" width="210" class="mtitle"><font color='#ffffff'><b>Grupo de puertos  </b></font></td>
+</tr>
+<tr>
+<td bgcolor='#EFF8F7' valign="top"><font color='#393536'>De 0 a 1023</font></td>
+<td bgcolor='#EFF8F7' valign="top"><font color='#393536'>Puertos bien conocidos</font></td>
+</tr>
+<tr>
+<td bgcolor='#ffffff' valign="top"><font color='#393536'>de 1024 a 49151</font></td>
+<td bgcolor='#ffffff' valign="top"><font color='#393536'>Puertos registrados</font></td>
+</tr>
+<tr>
+<td bgcolor='#EFF8F7' valign="top"><font color='#393536'>de 49152 a 65535</font></td>
+<td bgcolor='#EFF8F7' valign="top"><font color='#393536'>Puertos privados y/o dinámicos</font></td>
+</tr>
+</table>]]></text>
+</component> <!-- slide 3-->
+<component id="ID_s3_title">
+<text><![CDATA[<b>Puertos TCP  </b>]]></text>
+</component>
+
+<component id="ID_s3_txt00">
+<text><![CDATA[<b>Leyenda  </b>]]></text>
+</component>
+
+<component id="ID_s3_table01">
+<text><![CDATA[<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4' class="mtable">
+<tr class="mtable_top">
+<td colspan='2' bgcolor='#0E6360' class="mtable_top"><font size='1' color='#0E6360'><span style="color:#98D3D1">.</span></font></td>
+</tr>
+<tr>
+<td bgcolor='#077A77'  valign="top" width="210" class="mtitle"><font color='#ffffff'><b>Rango de números de puerto  </b></font></td>
+<td bgcolor='#077A77'  valign="top" width="210" class="mtitle"><font color='#ffffff'><b>Grupo de puertos  </b></font></td>
+</tr>
+<tr>
+<td bgcolor='#5FBC21' valign="top"><font color='#ffffff'>De 0 a 1023</font></td>
+<td bgcolor='#5FBC21' valign="top"><font color='#ffffff'>Puertos bien conocidos</font></td>
+</tr>
+<tr>
+<td bgcolor='#652C8A' valign="top"><font color='#ffffff'>de 1024 a 49151</font></td>
+<td bgcolor='#652C8A' valign="top"><font color='#ffffff'>Puertos registrados</font></td>
+</tr>
+<tr>
+<td bgcolor='#EFF8F7' valign="top"><font color='#393536'>de 49152 a 65535</font></td>
+<td bgcolor='#EFF8F7' valign="top"><font color='#393536'>Puertos privados y/o dinámicos</font></td>
+</tr>
+</table>]]></text>
+</component>
+<!--
+<component id="ID_s3_txt01">
+<text><![CDATA[<b>Puertos TCP registrados:  </b><br/><textformat tabstops='[40]'><span class="shift1">1863 </span><textformat blockindent='40'>MSN Messenger</textformat><br/><span class="shift1">2000 </span><textformat blockindent='40'>Cisco SCCP (VoIP)</textformat><br/><span class="shift1">8008 </span><textformat blockindent='40'>HTTP alternativo</textformat><br/><span class="shift1">8080 </span><textformat blockindent='40'>HTTP alternativo</textformat>]]></text>
+</component>-->
+
+
+<component id="ID_s3_txt01">
+<text><![CDATA[<table header="none" glow='true' shadow='false' shadowcolor='#000000' glowcolor='#E9E7E8' borderwidth="5" bordercolor="#652C8A" border="0" cellspacing="0" bgcolor='#652C8A'>
+	<tr>
+		<td bgcolor='#652C8A' valign="top" colspan="2"><font color='#ffffff'><b>Puertos TCP registrados:  </b></font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#652C8A' valign="top" width="40"><font color='#ffffff'>1863</font></td>
+		<td bgcolor='#652C8A' valign="top"><font color='#ffffff'>MSN Messenger</font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#652C8A' valign="top"><font color='#ffffff'>2000</font></td>
+		<td bgcolor='#652C8A' valign="top"><font color='#ffffff'>Cisco SCCP (VoIP)</font></td>
+	</tr>
+	<tr>
+	   	<td bgcolor='#652C8A' valign="top"><font color='#ffffff'>8008</font></td>
+	   	<td bgcolor='#652C8A' valign="top"><font color='#ffffff'>HTTP alternativo</font></td>
+	</tr>
+	<tr>
+	   	<td bgcolor='#652C8A' valign="top"><font color='#ffffff'>8080</font></td>
+	   	<td bgcolor='#652C8A' valign="top"><font color='#ffffff'>HTTP alternativo</font></td>
+	</tr>
+</table>
+]]></text>
+</component>
+
+<!--
+<component id="ID_s3_txt02">
+<text><![CDATA[<b>Puertos TCP bien conocidos:  </b><br/><textformat tabstops='[33]'><span class="shift1">21 </span><textformat blockindent='33'>FTP</textformat><br/><span class="shift1">23 </span><textformat blockindent='33'>Telnet</textformat><br/><span class="shift1">25 </span><textformat blockindent='33'>SMTP</textformat><br/><span class="shift1">80 </span><textformat blockindent='33'>HTTP</textformat><br/><span class="shift1">143 </span><textformat blockindent='33'>IMAP</textformat><br/><span class="shift1">194 </span><textformat blockindent='33'>Internet Relay Chat (IRC)</textformat><br/><span class="shift1">443 </span><textformat blockindent='33'>HTTP seguro (HTTPS)</textformat>]]></text>
+</component> 
+-->
+ 
+<component id="ID_s3_txt02">
+<text><![CDATA[<table header="none" glow='true' shadow='false' shadowcolor='#000000' glowcolor='#E9E7E8' borderwidth="5" bordercolor="#5FBC21" border="0" cellspacing="0" bgcolor='#5FBC21'>
+	<tr>
+		<td bgcolor='#5FBC21' valign="top" colspan="2"><font color='#ffffff'><b>Puertos TCP bien conocidos:</b></font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#5FBC21' valign="top" width="30"><font color='#ffffff'>21</font></td>
+		<td bgcolor='#5FBC21' valign="top"><font color='#ffffff'>FTP</font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#5FBC21' valign="top"><font color='#ffffff'>23</font></td>
+		<td bgcolor='#5FBC21' valign="top"><font color='#ffffff'>Telnet</font></td>
+	</tr>
+	<tr>
+	   	<td bgcolor='#5FBC21' valign="top"><font color='#ffffff'>25</font></td>
+	   	<td bgcolor='#5FBC21' valign="top"><font color='#ffffff'>SMTP</font></td>
+	</tr>
+	<tr>
+	   	<td bgcolor='#5FBC21' valign="top"><font color='#ffffff'>80</font></td>
+	   	<td bgcolor='#5FBC21' valign="top"><font color='#ffffff'>HTTP</font></td>
+	</tr>
+	<tr>
+	   	<td bgcolor='#5FBC21' valign="top"><font color='#ffffff'>143</font></td>
+	   	<td bgcolor='#5FBC21' valign="top"><font color='#ffffff'>IMAP</font></td>
+	</tr>
+	<tr>
+	   	<td bgcolor='#5FBC21' valign="top"><font color='#ffffff'>194</font></td>
+	   	<td bgcolor='#5FBC21' valign="top"><font color='#ffffff'>Internet Relay Chat (IRC)</font></td>
+	</tr>
+	<tr>
+	   	<td bgcolor='#5FBC21' valign="top"><font color='#ffffff'>443</font></td>
+	   	<td bgcolor='#5FBC21' valign="top"><font color='#ffffff'>HTTP seguro (HTTPS)</font></td>
+	</tr>
+	</table>
+]]></text>
+</component>
+
+<!-- slide 4-->
+<component id="ID_s4_title">
+<text><![CDATA[<b>Puertos UDP  </b>]]></text>
+</component>
+
+<component id="ID_s4_txt00">
+<text><![CDATA[<b>Leyenda  </b>]]></text>
+</component>
+
+<component id="ID_s4_table01">
+<text><![CDATA[<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4' class="mtable">
+<tr class="mtable_top">
+<td colspan='2' bgcolor='#0E6360' class="mtable_top"><font size='1' color='#0E6360'><span style="color:#98D3D1">.</span></font></td>
+</tr>
+<tr>
+<td bgcolor='#077A77'  valign="top" width="210" class="mtitle"><font color='#ffffff'><b>Rango de números de puerto  </b></font></td>
+<td bgcolor='#077A77'  valign="top" width="210" class="mtitle"><font color='#ffffff'><b>Grupo de puertos  </b></font></td>
+</tr>
+<tr>
+<td bgcolor='#5FBC21' valign="top"><font color='#ffffff'>De 0 a 1023</font></td>
+<td bgcolor='#5FBC21' valign="top"><font color='#ffffff'>Puertos bien conocidos</font></td>
+</tr>
+<tr>
+<td bgcolor='#652C8A' valign="top"><font color='#ffffff'>de 1024 a 49151</font></td>
+<td bgcolor='#652C8A' valign="top"><font color='#ffffff'>Puertos registrados</font></td>
+</tr>
+<tr>
+<td bgcolor='#EFF8F7' valign="top"><font color='#393536'>de 49152 a 65535</font></td>
+<td bgcolor='#EFF8F7' valign="top"><font color='#393536'>Puertos privados y/o dinámicos</font></td>
+</tr>
+</table>]]></text>
+</component>
+<!--<component id="ID_s4_txt01">
+<text><![CDATA[<b>Puertos UDP registrados:  </b><br/><textformat tabstops='[40]'>1812 <textformat blockindent='40'>Protocolo de autenticación RADIUS</textformat><br/><span class="shift2">5004 </span><textformat blockindent='40'>RTP (<span class="spacer">protocolo</span> de transporte de voz y video)</textformat><br/><span class="shift2">5040 </span><textformat blockindent='40'>SIP (VoIP)</textformat>]]></text>
+</component>-->
+
+<component id="ID_s4_txt01">
+<text><![CDATA[<table header="none" glow='true' shadow='false' shadowcolor='#000000' glowcolor='#E9E7E8' borderwidth="5" bordercolor="#652C8A" border="0" cellspacing="0" bgcolor='#652C8A'>
+	<tr>
+		<td bgcolor='#652C8A' valign="top" colspan="2"><font color='#ffffff'><b>Puertos UDP registrados:</b></font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#652C8A' valign="top" width="40"><font color='#ffffff'>1812</font></td>
+		<td bgcolor='#652C8A' valign="top"><font color='#ffffff'>Protocolo de autenticación RADIUS</font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#652C8A' valign="top"><font color='#ffffff'>5004</font></td>
+		<td bgcolor='#652C8A' valign="top"><font color='#ffffff'>RTP (protocolo de transporte de voz y video)</font></td>
+	</tr>
+	<tr>
+	   	<td bgcolor='#652C8A' valign="top"><font color='#ffffff'>5040</font></td>
+	   	<td bgcolor='#652C8A' valign="top"><font color='#ffffff'>SIP (VoIP)</font></td>
+	</tr></table>]]></text>
+</component>
+<!--<component id="ID_s4_txt02">
+<text><![CDATA[<b>Puertos UDP bien conocidos:  </b><br/><textformat tabstops='[33]'><span class="shift2">69 </span><textformat blockindent='33'>TFTP</textformat><br/><span class="shift2">520 </span><textformat blockindent='33'>RIP</textformat>]]></text>
+</component>-->
+
+<component id="ID_s4_txt02">
+<text><![CDATA[<table header='none' bordercolor='#5FBC21' borderwidth='5' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#E9E7E8' cellpadding='0'>
+	<tr>
+		<td bgcolor='#5FBC21' valign="top" colspan="2"><font color='#ffffff'><b>Puertos UDP bien conocidos:</b></font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#5FBC21' valign="top" width="30"><font color='#ffffff'>69</font></td>
+		<td bgcolor='#5FBC21' valign="top"><font color='#ffffff'>TFTP</font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#5FBC21' valign="top"><font color='#ffffff'>520</font></td>
+		<td bgcolor='#5FBC21' valign="top"><font color='#ffffff'>RIP</font></td>
+	</tr>
+</table>]]></text>
+</component>
+
+ <!-- slide 5-->
+<component id="ID_s5_title">
+<text><![CDATA[<b>Puertos TCP/UDP comunes  </b>]]></text>
+</component>
+
+<component id="ID_s5_txt00">
+<text><![CDATA[<b>Leyenda  </b>]]></text>
+</component>
+
+<component id="ID_s5_table01">
+<text><![CDATA[<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4' class="mtable">
+<tr class="mtable_top">
+<td colspan='2' bgcolor='#0E6360' class="mtable_top"><font size='1' color='#0E6360'><span style="color:#98D3D1">.</span></font></td>
+</tr>
+<tr>
+<td bgcolor='#077A77'  valign="top" width="210" class="mtitle"><font color='#ffffff'><b>Rango de números de puerto  </b></font></td>
+<td bgcolor='#077A77'  valign="top" width="210" class="mtitle"><font color='#ffffff'><b>Grupo de puertos  </b></font></td>
+</tr>
+<tr>
+<td bgcolor='#5FBC21' valign="top"><font color='#ffffff'>De 0 a 1023</font></td>
+<td bgcolor='#5FBC21' valign="top"><font color='#ffffff'>Puertos bien conocidos</font></td>
+</tr>
+<tr>
+<td bgcolor='#652C8A' valign="top"><font color='#ffffff'>de 1024 a 49151</font></td>
+<td bgcolor='#652C8A' valign="top"><font color='#ffffff'>Puertos registrados</font></td>
+</tr>
+<tr>
+<td bgcolor='#EFF8F7' valign="top"><font color='#393536'>de 49152 a 65535</font></td>
+<td bgcolor='#EFF8F7' valign="top"><font color='#393536'>Puertos privados y/o dinámicos</font></td>
+</tr>
+</table>]]></text>
+</component>
+<!--
+<component id="ID_s5_txt01">
+<text><![CDATA[<b>Puertos TCP/UDP registrados comunes: </b><br/><textformat tabstops='[40]'><span class="shift3">1433 </span><textformat blockindent='40'>MS SQL</textformat><br/><span class="shift3">2948 </span><textformat blockindent='40'>WAP (MMS)</textformat>]]></text>
+</component>-->
+
+<component id="ID_s5_txt01">
+<text><![CDATA[<table header="none" glow='true' shadow='false' shadowcolor='#000000' glowcolor='#E9E7E8' borderwidth="5" bordercolor="#652C8A" border="0" cellspacing="0" bgcolor='#652C8A'>
+	<tr>
+		<td bgcolor='#652C8A' valign="top" colspan="2"><font color='#ffffff'><b>Puertos TCP/UDP registrados comunes:</b></font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#652C8A' valign="top" width="40"><font color='#ffffff'>1433</font></td>
+		<td bgcolor='#652C8A' valign="top"><font color='#ffffff'>MS SQL</font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#652C8A' valign="top"><font color='#ffffff'>2948</font></td>
+		<td bgcolor='#652C8A' valign="top"><font color='#ffffff'>WAP (MMS)</font></td>
+	</tr>
+	</table>
+]]></text>
+</component>
+<!--
+<component id="ID_s5_txt02">
+<text><![CDATA[<b>Puertos TCP/UDP bien conocidos comunes: </b><br/><textformat tabstops='[33]'><span class="shift3">53 </span><textformat blockindent='33'>DNS</textformat><br/><span class="shift3">161 </span><textformat blockindent='33'>SNMP</textformat><br/><span class="shift3">531 </span><textformat blockindent='33'>AOL Instant Messenger, IRC</textformat>]]></text>
+</component>-->
+
+<component id="ID_s5_txt02">
+<text><![CDATA[<table header='none' bordercolor='#5FBC21' borderwidth='5' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#E9E7E8' cellpadding='0'>
+	<tr>
+		<td bgcolor='#5FBC21' valign="top" colspan="2"><font color='#ffffff'><b>Puertos TCP/UDP bien conocidos comunes:</b></font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#5FBC21' valign="top" width="30"><font color='#ffffff'>53</font></td>
+		<td bgcolor='#5FBC21' valign="top"><font color='#ffffff'>DNS</font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#5FBC21' valign="top"><font color='#ffffff'>161</font></td>
+		<td bgcolor='#5FBC21' valign="top"><font color='#ffffff'>SNMP</font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#5FBC21' valign="top"><font color='#ffffff'>531</font></td>
+		<td bgcolor='#5FBC21' valign="top"><font color='#ffffff'>AOL Instant Messenger, IRC</font></td>
+	</tr>
+</table>]]></text>
+</component>
+
+<component id="end">
+<text><![CDATA[Finalizar]]></text>
+</component>
+
+<component id="fforward">
+<text><![CDATA[Adelantar]]></text>
+</component>
+
+<component id="pause">
+<text><![CDATA[Pausa]]></text>
+</component>
+
+<component id="play">
+<text><![CDATA[Reproducir]]></text>
+</component>
+
+<component id="rewind">
+<text><![CDATA[Regresar]]></text>
+</component>
+
+<component id="start">
+<text><![CDATA[Inicio]]></text>
+</component>
+</textcomponents>

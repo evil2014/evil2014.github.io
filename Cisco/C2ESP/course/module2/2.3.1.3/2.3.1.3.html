@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.3.1.3 Resumen</title>
+    <!--  -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.3.1.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resumen</h1>
+        <h2>Resumen</h2>
+      </div>
+      <div id="content">
+<p>Cuando se enciende un switch LAN Cisco por primera vez, realiza la siguiente secuencia de arranque:</p>
+<p></p>
+<p>1. Primero, el switch carga un programa de autodiagnóstico al encender (POST) almacenado en la memoria ROM. El POST verifica el subsistema de la CPU. Este comprueba la CPU, la memoria DRAM y la parte del dispositivo flash que integra el sistema de archivos flash.</p>
+<p>2. A continuación, el switch carga el software del cargador de arranque. El cargador de arranque es un pequeño programa almacenado en la memoria ROM que se ejecuta inmediatamente después de que el POST se completa correctamente.</p>
+<p>3. El cargador de arranque lleva a cabo la inicialización de la CPU de bajo nivel. Inicializa los registros de la CPU, que controlan dónde está asignada la memoria física, la cantidad de memoria y su velocidad. </p>
+<p>4. El cargador de arranque inicia el sistema de archivos flash en la placa del sistema. </p>
+<p>5. Por último, el cargador de arranque ubica y carga en la memoria una imagen del software del sistema operativo IOS predeterminado y le cede el control del switch al IOS. </p>
+<p></p>
+<p>La variable de entorno BOOT determina el archivo de Cisco IOS específico que se carga. Una vez que se carga Cisco IOS, utiliza los comandos que encuentra en el archivo startup-config para inicializar y configurar las interfaces. Si faltan los archivos de Cisco IOS o estos están dañados, se puede usar el programa del cargador de arranque para volver a cargarlo o para recuperarse del problema.</p>
+<p></p>
+<p>Una serie de LED en el panel frontal muestra el estado de funcionamiento del switch. Estos LED indican, por ejemplo, el estado de los puertos, el modo dúplex y la velocidad.</p>
+<p></p>
+<p>Se configura una dirección IP en la SVI de la VLAN de administración para permitir la configuración remota del dispositivo. Se debe configurar un gateway predeterminado que pertenezca a la VLAN de administración en el switch mediante el comando <span class="cmd"><b>ip default-gateway</b></span>. Si el gateway predeterminado no se configura correctamente, no es posible la administración remota. Se recomienda usar Shell seguro (SSH) para proporcionar una conexión de administración segura (cifrada) a un dispositivo remoto, a fin de evitar la detección de nombres de usuario y contraseñas sin cifrar, lo cual es posible cuando se usan protocolos como Telnet. </p>
+<p></p>
+<p>Una de las ventajas de los switches es que permiten la comunicación full-duplex entre los dispositivos, lo que duplica la velocidad de comunicación de forma eficaz. Si bien es posible especificar la configuración de dúplex y de velocidad de una interfaz de switch, se recomienda permitir que el switch configure estos parámetros automáticamente para evitar errores.</p>
+<p></p>
+<p>La seguridad de puertos del switch es un requisito para evitar los ataques como la saturación de direcciones MAC y la suplantación de identidad de DHCP. Los puertos de switch se deben configurar para permitir que ingresen solo las tramas con direcciones MAC de origen específicas. Se deben rechazar las direcciones MAC de origen desconocidas, y se debe desactivar el puerto para evitar otros ataques.</p>
+<p></p>
+<p>La seguridad de puertos es solo uno de los métodos de defensa contra los riesgos que puede sufrir la red. Existen 10 prácticas recomendadas que representan los métodos más seguros para una red:</p>
+<p></p>
+<p>
+<ul>
+<li>Desarrolle una política de seguridad escrita para la organización.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Desactive los servicios y puertos que no se utilicen.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Utilice contraseñas seguras y cámbielas con frecuencia.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Controle el acceso físico a los dispositivos.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Evite usar sitios web HTTP estándar inseguros, especialmente para las pantallas de inicio de sesión. En lugar de esto, use HTTPS, que es más seguro.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Realice copias de respaldo y pruébelas periódicamente.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Capacite a los empleados sobre los ataques de ingeniería social y desarrolle políticas para validar identidades por teléfono, mediante correo electrónico y personalmente.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Cifre los datos confidenciales y protéjalos con una contraseña segura.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Implemente hardware y software de seguridad, como firewalls.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Mantenga el software IOS actualizado mediante la instalación semanal o mensual de parches de seguridad, si es posible.</li>
+</ul>
+</p>
+<p></p>
+<p>Estos métodos son solo un punto de partida para la administración de la seguridad. Las organizaciones deben mantenerse alerta en todo momento para defenderse de estas amenazas en constante evolución.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

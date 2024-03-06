@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>3.1.1.6 Temporización del mensaje</title>
+    <!--  -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_3.1.1.6_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Reglas de la comunicación</h1>
+        <h2>Las reglas</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Temporización del mensaje</b>
+</p>
+<p>Otro factor que afecta la correcta recepción y comprensión del mensaje es la temporización. Las personas utilizan la temporización para determinar cuándo hablar, la velocidad con la que lo harán y cuánto tiempo deben esperar una respuesta. Éstas son las reglas de la participación.</p>
+<p></p>
+<p>
+<b>Método de acceso</b>
+</p>
+<p>El método de acceso determina en qué momento alguien puede enviar un mensaje. Estas reglas de temporización se basan en el contexto. Por ejemplo: tal vez usted pueda hablar cada vez que quiera decir algo. En este contexto, una persona debe esperar hasta que nadie más esté hablando antes de comenzar a hablar. Si dos personas hablan a la vez, se produce una colisión de información, y es necesario que ambas se detengan y vuelvan a comenzar, como se muestra en la figura 1. De manera similar, las computadoras deben definir un método de acceso. Los hosts de una red necesitan un método de acceso para saber cuándo comenzar a enviar mensajes y cómo responder cuando se produce algún error. </p>
+<p></p>
+<p>
+<b>Control de flujo</b>
+</p>
+<p>La temporización también afecta la cantidad de información que se puede enviar y la velocidad con la que puede entregarse. Si una persona habla demasiado rápido, la otra persona tendrá dificultades para escuchar y comprender el mensaje, como se muestra en la figura 2. La persona que recibe el mensaje debe solicitar al emisor que disminuya la velocidad. En las comunicaciones de redes, un host emisor puede transmitir mensajes a una velocidad mayor que la que puede recibir y procesar el host de destino. Los hosts de origen y destino utilizan el control del flujo para negociar la temporización correcta, a fin de que la comunicación sea exitosa. </p>
+<p></p>
+<p>
+<b>Tiempo de espera de respuesta</b>
+</p>
+<p>Si una persona hace una pregunta y no escucha una respuesta antes de un tiempo aceptable, supone que no habrá ninguna respuesta y reacciona en consecuencia, como se muestra en la figura 3. La persona puede repetir la pregunta o puede continuar la conversación. Los hosts de las redes también tienen reglas que especifican cuánto tiempo deben esperar una respuesta y qué deben hacer si se agota el tiempo de espera para la respuesta.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

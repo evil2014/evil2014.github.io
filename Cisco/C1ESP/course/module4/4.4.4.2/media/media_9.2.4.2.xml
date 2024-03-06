@@ -1,0 +1,63 @@
+﻿<textcomponents>
+
+	<component id="ID_title">
+		<text><![CDATA[<b>La función del encabezado</b>]]></text>
+	</component>
+
+	<component id="ID_inst">
+		<text><![CDATA[Haga clic en los cuadros azul oscuro para obtener más información.</b>]]></text>
+	</component>
+
+	<component id="ID_titleTxt01">
+		<text><![CDATA[<b>Inicio de trama</b>]]></text>
+	</component>
+	
+	<component id="ID_bodyTxt01">
+		<text><![CDATA[Este campo avisa a los demás dispositivos en la red que está llegando una trama a través del medio.]]></text>
+	</component>
+	
+	<component id="ID_titleTxt02">
+		<text><![CDATA[<b>Dirección</b>]]></text>
+	</component>
+	
+	<component id="ID_bodyTxt02">
+		<text><![CDATA[Este campo almacena las direcciones de enlace de datos de origen y destino.]]></text>
+	</component>
+	
+	<component id="ID_titleTxt03">
+		<text><![CDATA[<b>Tipo/longitud</b>]]></text>
+	</component>
+	
+	<component id="ID_bodyTxt03">
+		<text><![CDATA[Este es un campo optativo utilizado por algunos protocolos para indicar qué tipo de datos ingresa o la longitud posible de la trama.]]></text>
+	</component>
+
+	<component id="ID_txt01">
+		<text><![CDATA[Inicio de trama]]></text>
+	</component>
+
+	<component id="ID_txt02">
+		<text><![CDATA[Dirección]]></text>
+	</component>
+
+	<component id="ID_txt03">
+		<text><![CDATA[Tipo/longitud]]></text>
+	</component>
+
+	<component id="ID_txt04">
+		<text><![CDATA[Datos]]></text>
+	</component>
+
+	<component id="ID_txt05">
+	<text><![CDATA[FCS]]></text>
+	</component>
+
+	<component id="ID_txt07">
+		<text><![CDATA[Encabezado]]></text>
+	</component>
+	
+	<component id="ID_txt08">
+		<text><![CDATA[]]></text>
+	</component>
+
+</textcomponents>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.3.2.2 Verificación de NetFlow</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.3.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>NetFlow</h1>
+        <h2>Configuración de NetFlow</h2>
+      </div>
+      <div id="content">
+<p>Una vez que se verificó que NetFlow funciona correctamente, puede comenzar la recolección de datos en el recopilador NetFlow. La verificación de NetFlow se realiza con un examen de la información almacenada en el recopilador NetFlow. Como mínimo, revise la caché local de NetFlow en un router para asegurarse de que el router esté recopilando los datos. </p>
+<p></p>
+<p>NetFlow se configuró en el router R1 de la siguiente manera:</p>
+<p>
+<ul>
+<li>Dirección IP 192.168.1.1/24 en G0/1</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>NetFlow controla el tráfico entrante y saliente.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Recopilador de NetFlow en 192.168.1.3/24</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Puerto de captura de UDP 2055 de NetFlow</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Formato de exportación de NetFlow versión 5 </li>
+</ul>
+</p>
+<p></p>
+<p>Para mostrar un resumen de las estadísticas de contabilidad de NetFlow, así como el protocolo que utiliza el mayor volumen de tráfico, y ver entre qué hosts fluye este tráfico, utilice el comando <span class="cmd"><b>show ip cache flow</b></span> en el modo EXEC del usuario o el modo EXEC privilegiado. Este comando se introduce en el R1 para verificar la configuración de NetFlow, como se ve en la figura 1. El resultado del comando detalla qué protocolo utiliza el mayor volumen del tráfico y entre qué hosts fluye este tráfico. En la tabla de la figura 1, se describen los campos importantes que se muestran en las líneas de la caché de switching de flujo de la visualización.</p>
+<p></p>
+<p>El resultado en la parte superior de la visualización confirma que el router está recopilando datos. La primera entrada resaltada indica que NetFlow controla un conteo de 178 617 paquetes. El final del resultado muestra estadísticas acerca de tres flujos, la que está resaltada corresponde a una conexión HTTPS activa entre el recopilador NetFlow y el R1. También muestra el puerto de origen (SrcP) y el puerto de destino (DstP) en sistema hexadecimal. </p>
+<p></p>
+<p>
+<b>Nota:</b> el valor hexadecimal 01BB equivale al valor decimal 443, el puerto TCP bien conocido para HTTPS. </p>
+<p></p>
+<p>En la figura 2, se describen los campos importantes en las líneas de la caché de switching de flujo del resultado del comando <span class="cmd"><b>show ip cache flow</b></span>.</p>
+<p></p>
+<p>En la figura 3, se describen los campos importantes en la actividad según las líneas de protocolo del resultado del comando <span class="cmd"><b>show ip cache flow</b></span>.</p>
+<p></p>
+<p>En la figura 4, se describen los campos importantes en las líneas de registro de NetFlow del resultado del comando <span class="cmd"><b>show ip cache flow</b></span>.</p>
+<p></p>
+<p>Si bien el resultado del comando <span class="cmd"><b>show ip cache flow</b></span> confirma que el router está recopilando datos, para asegurarse de que NetFlow se configuró en las interfaces y en las direcciones correctas, utilice el comando <span class="cmd"><b>show ip flow interface</b></span>, como se muestra en la figura 5. </p>
+<p></p>
+<p>Para revisar la configuración de los parámetros de exportación, utilice el comando <span class="cmd"><b>show ip flow export</b></span>, que se muestra en la figura 5. En la primera línea resaltada, se muestra que NetFlow está habilitado con el formato de exportación de la versión 5. En las últimas líneas resaltadas en la figura 5, se muestra que se exportaron 1764 flujos en forma de 532 datagramas UDP al recopilador NetFlow en 192.168.1.3 a través del puerto 2055.</p>
+<p></p>
+<p>Utilice el verificador de sintaxis de la figura 6 para configurar y verificar NetFlow en el R1.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

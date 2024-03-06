@@ -1,0 +1,63 @@
+﻿<textcomponents>
+<component id='ID_inst'>
+	<text><![CDATA[<b>Actividad: Identificar la características de GRE</b><br/>Arrastre cada etiqueta de protocolo hasta las ubicaciones funcionales de VPN en el gráfico.]]></text>
+</component>
+
+
+<component id='ID_drag01'>
+	<text><![CDATA[<font color="#393536">IP</font>]]></text>
+</component>
+
+<component id='ID_drag02'>
+	<text><![CDATA[<font color="#393536">GRE</font>]]></text>
+</component>
+
+<component id='ID_drag03'>
+	<text><![CDATA[<font color="#393536">IPv4, IPv6, otros protocolos</font>]]></text>
+</component>
+
+
+
+
+
+
+<component id='ID_s1_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id='ID_s1_CORRECT_BODY'>
+	<text><![CDATA[Identificó correctamente las ubicaciones funcionales de protocolo de VPN.]]></text>
+</component>
+
+
+<component id='ID_s1_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_BODY'>
+	<text><![CDATA[No identificó correctamente las ubicaciones funcionales de protocolo de VPN. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_CHECK'>
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id='ID_RESET'>
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component>
+	
+		<component id="ID_txt01">
+		<text><![CDATA[Protocolo de pasajeros]]></text>
+	</component>
+	
+		<component id="ID_txt02">
+		<text><![CDATA[Protocolo de transporte]]></text>
+	</component>
+		<component id="ID_txt03">
+		<text><![CDATA[Protocolo de pasajeros]]></text>
+	</component>
+		<component id="ID_txt04">
+		<text><![CDATA[Protocolo del proveedor]]></text>
+	</component>
+	
+</textcomponents>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.1.2.1 Servidores TFTP como ubicación de copia de seguridad</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.1.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Administración de archivos del sistema IOS</h1>
+        <h2>Administración de imágenes del IOS de Cisco</h2>
+      </div>
+      <div id="content">
+<p>A medida que una red crece, las imágenes y los archivos de configuración del software IOS de Cisco pueden almacenarse en un servidor TFTP central. Esto ayuda a controlar la cantidad de imágenes del IOS y las revisiones a dichas imágenes del IOS, así como los archivos de configuración que deben mantenerse.</p>
+<p></p>
+<p>Las internetworks de producción suelen abarcar áreas extensas y contienen varios routers. Para cualquier red, es aconsejable tener una copia de seguridad de la imagen del software IOS de Cisco en caso de que la imagen de sistema en el router se dañe o se elimine accidentalmente.</p>
+<p></p>
+<p>Los routers distribuidos ampliamente necesitan una ubicación de origen o de copia de seguridad para las imágenes del software IOS de Cisco. El uso de un servidor TFTP de red permite las cargas y descargas de la imagen y la configuración a través de la red. El servidor TFTP de red puede ser otro router, una estación de trabajo o un sistema host.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

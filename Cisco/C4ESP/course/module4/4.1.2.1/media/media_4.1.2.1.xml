@@ -1,0 +1,164 @@
+﻿<textcomponents>
+
+<component id="ID_s1_title">
+<text><![CDATA[<b>Circuitos virtuales</b>]]></text>
+</component>
+<component id="ID_s1_txt03">
+<text><![CDATA[<b>A</b>]]></text>
+</component>
+<component id="ID_s1_txt04">
+<text><![CDATA[<b>B</b>]]></text>
+</component>
+<component id="ID_s1_txt05">
+<text><![CDATA[<b>C</b>]]></text>
+</component>
+<component id="ID_s1_txt06">
+<text><![CDATA[<b>D</b>]]></text>
+</component>
+<component id="ID_s1_txt07">
+<text><![CDATA[Nodo receptor<br/><b>DLCI 201</b>]]></text>
+</component>
+<component id="ID_s1_txt08">
+<text><![CDATA[Nodo emisor<br/><b>DLCI 102</b>]]></text>
+</component> <!-- controller -->
+
+<component id="end_s1">
+<text><![CDATA[Finalizar]]></text>
+</component>
+
+<component id="fforward_s1">
+<text><![CDATA[Adelantar]]></text>
+</component>
+
+<component id="pause_s1">
+<text><![CDATA[Pausa]]></text>
+</component>
+
+<component id="play_s1">
+<text><![CDATA[Reproducir]]></text>
+</component>
+
+<component id="rewind_s1">
+<text><![CDATA[Regresar]]></text>
+</component>
+
+<component id="start_s1">
+<text><![CDATA[Inicio]]></text>
+</component>
+
+
+
+<component id="ID_s2_title">
+<text><![CDATA[<b>Importancia local de los DLCI</b>]]></text>
+</component>
+<component id="ID_s2_txt01">
+<text><![CDATA[<b>DLCI 201</b>]]></text>
+</component>
+<component id="ID_s2_txt02">
+<text><![CDATA[<b>DLCI 319</b>]]></text>
+</component>
+<component id="ID_s2_txt03">
+<text><![CDATA[<b>DLCI 102</b>]]></text>
+</component>
+<component id="ID_s2_txt04">
+<text><![CDATA[<b>DLCI 624</b>]]></text>
+</component>
+
+<component id="ID_s2_txt05">
+<text><![CDATA[Los valores de DLCI tienen importancia local, lo que significa que sólo son únicos para el canal físico en el que residen. Por lo tanto, los dispositivos de los extremos opuestos de una conexión pueden usar los mismos valores DLCI para referirse a diferentes circuitos virtuales.]]></text>
+</component>
+
+
+<component id="ID_s3_title">
+<text><![CDATA[<b>Identificación de VC</b>]]></text>
+</component>
+
+
+<component id="ID_s3_txt01">
+<text><![CDATA[<b>A</b>]]></text>
+</component>
+<component id="ID_s3_txt02">
+<text><![CDATA[<b>B</b>]]></text>
+</component>
+<component id="ID_s3_txt03">
+<text><![CDATA[<b>C</b>]]></text>
+</component>
+<component id="ID_s3_txt04">
+<text><![CDATA[<b>D</b>]]></text>
+</component>
+<component id="ID_s3_txt05">
+<text><![CDATA[<b>DLCI 201</b>]]></text>
+</component>
+<component id="ID_s3_txt06">
+<text><![CDATA[<b>DLCI 102</b>]]></text>
+</component>
+
+
+<component id="ID_s3_header01">
+<text><![CDATA[Tramo]]></text>
+</component>
+
+<component id="ID_s3_header02">
+<text><![CDATA[VC]]></text>
+</component>
+
+<component id="ID_s3_header03">
+<text><![CDATA[Puerto]]></text>
+</component>
+
+<component id="ID_s3_header04">
+<text><![CDATA[VC]]></text>
+</component>
+
+<component id="ID_s3_header05">
+<text><![CDATA[Puerto]]></text>
+</component> <!-- controller -->
+
+<component id="end_s3">
+<text><![CDATA[Finalizar]]></text>
+</component>
+
+<component id="fforward_s3">
+<text><![CDATA[Adelantar]]></text>
+</component>
+
+<component id="pause_s3">
+<text><![CDATA[Pausa]]></text>
+</component>
+
+<component id="play_s3">
+<text><![CDATA[Reproducir]]></text>
+</component>
+
+<component id="rewind_s3">
+<text><![CDATA[Regresar]]></text>
+</component>
+
+<component id="start_s3">
+<text><![CDATA[Inicio]]></text>
+</component> <!-- controller -->
+
+<component id="end">
+<text><![CDATA[Finalizar]]></text>
+</component>
+
+<component id="fforward">
+<text><![CDATA[Adelantar]]></text>
+</component>
+
+<component id="pause">
+<text><![CDATA[Pausa]]></text>
+</component>
+
+<component id="play">
+<text><![CDATA[Reproducir]]></text>
+</component>
+
+<component id="rewind">
+<text><![CDATA[Regresar]]></text>
+</component>
+
+<component id="start">
+<text><![CDATA[Inicio]]></text>
+</component>
+</textcomponents>

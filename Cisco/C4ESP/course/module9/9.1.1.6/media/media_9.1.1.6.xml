@@ -1,0 +1,94 @@
+﻿<textcomponents> <!-- instructions -->
+<component id="ID_inst">
+	<text><![CDATA[<b>Actividad: Identificar los beneficios de establecer una línea de base de red</b><br><br>Indique cuáles de las afirmaciones que se incluyen a continuación son beneficios de establecer una línea de base de red.]]></text>
+</component> <!-- buttons -->
+<component id="ID_Button01">
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id="ID_Button02">
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component> <!--Number of rows in the table-->
+<component id="txt_numrows">
+	<text><![CDATA[7]]></text>
+</component> <!--Number of columns for the answers in the table. Do not count the question column-->
+<component id="txt_numcols">
+	<text><![CDATA[2]]></text>
+</component> <!--Answer column headers-->
+<component id="txt_col1">
+	<text><![CDATA[<b>Beneficios</b>]]></text>
+</component>
+
+<component id="txt_col2">
+	<text><![CDATA[<b>No es un beneficio</b>]]></text>
+</component> <!--Question text - blockindent code moves the text away from the left edge a bit--> <!--Question text - If questions are numbered, use blockindent for hanging indents-->
+<component id="txt_q1">
+	<text><![CDATA[Identificar dónde se producen la mayoría de los errores.]]></text>
+</component>
+
+<component id="txt_q2">
+	<text><![CDATA[Ubicar las áreas de la red que se usan con mayor frecuencia.]]></text>
+</component>
+
+<component id="txt_q3">
+	<text><![CDATA[Habilitar servicios de transporte rápido entre los campus.]]></text>
+</component>
+
+<component id="txt_q4">
+	<text><![CDATA[Combinar dos capas de diseño jerárquico.]]></text>
+</component>
+
+<component id="txt_q5">
+	<text><![CDATA[Investigar si la red puede cumplir con las políticas y los requisitos de uso identificados.]]></text>
+</component>
+
+<component id="txt_q6">
+	<text><![CDATA[Identificar las partes de la red que se usan con menos frecuencia.]]></text>
+</component>
+
+<component id="txt_q7">
+	<text><![CDATA[Establecer los patrones y las cargas de tráfico para un día normal o promedio.]]></text>
+</component> <!--Answers - Give the column number(s), column numbering start with 1 not 0--> <!--Answers - For MCMA separate the correct answers with commas [2, 4, 5] -->
+<component id="txt_a1">
+	<text><![CDATA[1]]></text>
+</component>
+
+<component id="txt_a2">
+	<text><![CDATA[1]]></text>
+</component>
+
+<component id="txt_a3">
+	<text><![CDATA[2]]></text>
+</component>
+
+<component id="txt_a4">
+	<text><![CDATA[2]]></text>
+</component>
+
+<component id="txt_a5">
+	<text><![CDATA[1]]></text>
+</component>
+
+<component id="txt_a6">
+	<text><![CDATA[1]]></text>
+</component>
+
+<component id="txt_a7">
+	<text><![CDATA[1]]></text>
+</component> <!-- Correct Feedback -->
+<component id="ID_titleCorrect">
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id="ID_correctText">
+	<text><![CDATA[Identificó correctamente cada beneficio de establecer una línea de base de red.]]></text>
+</component> <!-- Incorrect Feedback -->
+<component id="ID_titleIncorrect">
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id="ID_IncorrectText">
+	<text><![CDATA[No identificó correctamente cada beneficio de establecer una línea de base de red. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+</textcomponents>

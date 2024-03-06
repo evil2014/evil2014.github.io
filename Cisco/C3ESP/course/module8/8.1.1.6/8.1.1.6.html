@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.1.1.6 Verificación de la sumarización automática: tabla de routing</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.1.1.6_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuraciones avanzadas de EIGRP</h1>
+        <h2>Sumarización automática </h2>
+      </div>
+      <div id="content">
+<p>Examine la tabla de routing para verificar que se haya recibido la ruta resumida. </p>
+<p></p>
+<p>En la figura 1, se muestra la tabla de routing del R3 antes de la sumarización automática y, luego, con la sumarización automática habilitada mediante el comando <span class="cmd"><b>auto-summary</b></span>. Observe que con la sumarización automática habilitada, la tabla de routing del R3 ahora solo la dirección de red de clase B 172.16.0.0/16. El sucesor o el router de siguiente salto es el R1, a través de 192.168.10.5.</p>
+<p></p>
+<p>
+<b>Nota:</b> la sumarización automática solo es una opción con EIGRP para IPv4. El direccionamiento con clase no existe en IPv6, por lo tanto, la sumarización automática no es necesaria con EIGRP para IPv6.</p>
+<p></p>
+<p>En el momento de habilitar la sumarización automática, también es necesario entender la interfaz nula (Null). En la figura 2, se muestra la tabla de routing del R1. Observe que en las dos entradas destacadas se usa una interfaz de salida Null0. EIGRP automáticamente incluyó una ruta resumida a Null0 para dos redes con clase: 192.168.10.0/24 y 172.16.0.0/16. </p>
+<p></p>
+<p>La interfaz Null0 es una interfaz virtual del IOS que constituye una ruta hacia ninguna parte, comúnmente conocida como “el limbo electrónico”. Los paquetes que vinculan una ruta con una interfaz de salida Null0 se descartan. </p>
+<p></p>
+<p>EIGRP para IPv4 automáticamente incluye un resumen de rutas Null0 cuando se producen las siguientes condiciones:</p>
+<p>
+<ul>
+<li>Por lo menos existe una subred que se aprendió a través de EIGRP.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Hay dos o más comandos <span class="cmd"><b>network</b></span> del modo de configuración del router EIGRP.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>La sumarización automática se encuentra habilitada.</li>
+</ul>
+</p>
+<p></p>
+<p>El objetivo del resumen de rutas Null0 es evitar bucles de routing hacia destinos que se incluyen en el resumen, pero que no existen realmente en la tabla de routing.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

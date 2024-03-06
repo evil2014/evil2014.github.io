@@ -1,0 +1,171 @@
+﻿<textcomponents>
+<component id="ID_s1_title">
+<text><![CDATA[<b>Tipos de LSA de OSPF</b>]]></text>
+</component>
+
+<component id="ID_s1_txt01">
+  <text><![CDATA[
+				<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4'>
+				<tr class="liner">
+					<td colspan='2' bgcolor='#0E6360' class="liner_top"><font size='1' color='#434321'><span style="color:#DAE17A">.</span></font></td>
+				</tr>
+				<tr>
+					<td width="100" bgcolor='#077A77' valign="top"><font size='11' color='#ffffff'><b>Tipo de LSA</b></font></td>
+					<td bgcolor='#077A77' valign="top"><font size='11' color='#ffffff'><b>Descripción</b></font></td>
+				</tr>
+				<tr>
+					<td bgcolor='#EFF8F7' valign="top"><font  color='#393536'>1</font></td>	
+					<td bgcolor='#EFF8F7' valign="top"><font  color='#393536'>LSA del router</font></td>		
+				</tr>
+				<tr>					
+					<td bgcolor='#FFFFFF' valign="top"><font  color='#393536'>2</font></td>	
+					<td bgcolor='#FFFFFF' valign="top"><font  color='#393536'>LSA de la red</font></td>		
+				</tr>
+				<tr>
+					<td bgcolor='#EFF8F7' valign="top"><font  color='#393536'>3 y 4</font></td>	
+					<td bgcolor='#EFF8F7' valign="top"><font  color='#393536'>LSA de resumen</font></td>	
+				</tr>
+				<tr>					
+					<td bgcolor='#FFFFFF' valign="top"><font  color='#393536'>5</font></td>	
+					<td bgcolor='#FFFFFF' valign="top"><font  color='#393536'>LSA externo de AS</font></td>		
+				</tr>
+				<tr>
+					<td bgcolor='#EFF8F7' valign="top"><font  color='#393536'>6</font></td>	
+					<td bgcolor='#EFF8F7' valign="top"><font  color='#393536'>LSA de multidifusión OSPF</font></td>	
+				</tr>
+				<tr>					
+					<td bgcolor='#FFFFFF' valign="top"><font  color='#393536'>7</font></td>	
+					<td bgcolor='#FFFFFF' valign="top"><font  color='#393536'>Definido para las NSSA</font></td>		
+				</tr>
+				<tr>
+					<td bgcolor='#EFF8F7' valign="top"><font  color='#393536'>8</font></td>	
+					<td bgcolor='#EFF8F7' valign="top"><font  color='#393536'>LSA de atributos externos para el protocolo de gateway fronterizo (BGP)</font></td>	
+				</tr>
+				<tr>					
+					<td bgcolor='#FFFFFF' valign="top"><font  color='#393536'>9, 10 u 11</font></td>	
+					<td bgcolor='#FFFFFF' valign="top"><font  color='#393536'>LSA opacos</font></td>		
+				</tr>
+				</table>]]>
+			
+		</text>
+  </component>
+
+  <component id="ID_s2_title">
+<text><![CDATA[<b>Tipos de LSA de OSPF más comunes</b>]]></text>
+</component>
+  
+<component id="ID_s2_txt01">
+  <text><![CDATA[
+				<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4'>
+				<tr class="liner">
+					<td colspan='2' bgcolor='#0E6360' class="liner_top"><font size='1' color='#434321'><span style="color:#DAE17A">.</span></font></td>
+				</tr>
+				<tr>
+					<td width="100" bgcolor='#077A77' valign="top"><font size='11' color='#ffffff'><b>Tipo de LSA</b></font></td>
+					<td bgcolor='#077A77' valign="top"><font size='11' color='#ffffff'><b>Descripción</b></font></td>
+				</tr>
+				<tr>
+					<td bgcolor='#EFF8F7' valign="top"><font  color='#393536'><b>1</b></font></td>	
+					<td bgcolor='#EFF8F7' valign="top"><font  color='#393536'>LSA del router</font></td>		
+				</tr>
+				<tr>					
+					<td bgcolor='#FFFFFF' valign="top"><font  color='#393536'><b>2</b></font></td>	
+					<td bgcolor='#FFFFFF' valign="top"><font  color='#393536'>LSA de la red</font></td>		
+				</tr>
+				<tr>
+					<td bgcolor='#EFF8F7' valign="top"><font  color='#393536'><b>3 y 4</b></font></td>	
+					<td bgcolor='#EFF8F7' valign="top"><font  color='#393536'>LSA de resumen</font></td>	
+				</tr>
+				<tr>					
+					<td bgcolor='#FFFFFF' valign="top"><font  color='#393536'><b>5</b></font></td>	
+					<td bgcolor='#FFFFFF' valign="top"><font  color='#393536'>LSA externo de AS</font></td>		
+				</tr>
+				<tr>
+					<td bgcolor='#EFF8F7' valign="top"><font  color='#D3D1D2'>6</font></td>	
+					<td bgcolor='#EFF8F7' valign="top"><font  color='#D3D1D2'>LSA de multidifusión OSPF</font></td>	
+				</tr>
+				<tr>					
+					<td bgcolor='#FFFFFF' valign="top"><font  color='#D3D1D2'>7</font></td>	
+					<td bgcolor='#FFFFFF' valign="top"><font  color='#D3D1D2'>Definido para las NSSA</font></td>		
+				</tr>
+				<tr>
+					<td bgcolor='#EFF8F7' valign="top"><font  color='#D3D1D2'>8</font></td>	
+					<td bgcolor='#EFF8F7' valign="top"><font  color='#D3D1D2'>LSA de atributos externos para el protocolo de gateway fronterizo (BGP)</font></td>	
+				</tr>
+				<tr>					
+					<td bgcolor='#FFFFFF' valign="top"><font  color='#D3D1D2'>9, 10 u 11</font></td>	
+					<td bgcolor='#FFFFFF' valign="top"><font  color='#D3D1D2'>LSA opacos</font></td>		
+				</tr>
+				</table>]]>
+			
+		</text>
+  </component>
+  <component id="ID_s3_title">
+<text><![CDATA[<b>Propagación de tipos de LSA</b>]]></text>
+</component>
+<component id="ID_s3_txt01">
+  <text><![CDATA[<b>Área&nbsp;1</b>]]></text> 
+  </component>
+  <component id="ID_s3_txt02">
+  <text><![CDATA[<b>Area 0</b>]]></text> 
+  </component>
+  <component id="ID_s3_txt03">
+  <text><![CDATA[<b>Area 2</b>]]></text> 
+  </component>
+  <component id="ID_s3_txt04">
+  <text><![CDATA[Internet]]></text> 
+  </component>
+    <component id="ID_s3_txt05">
+  <text><![CDATA[DR]]></text> 
+  </component>
+      <component id="ID_s3_txt06">
+  <text><![CDATA[DR]]></text> 
+  </component>
+    <component id="ID_s3_txt07">
+  <text><![CDATA[Tipo&nbsp;1]]></text> 
+  </component>
+    <component id="ID_s3_txt08">
+  <text><![CDATA[Tipo&nbsp;1]]></text> 
+  </component>
+    <component id="ID_s3_txt09">
+  <text><![CDATA[Tipo&nbsp;1]]></text> 
+  </component>
+    <component id="ID_s3_txt10">
+  <text><![CDATA[Tipo&nbsp;1]]></text> 
+  </component>
+    <component id="ID_s3_txt11">
+  <text><![CDATA[Tipo&nbsp;2]]></text> 
+  </component>
+    <component id="ID_s3_txt12">
+  <text><![CDATA[Tipo&nbsp;2]]></text> 
+  </component>
+    <component id="ID_s3_txt13">
+  <text><![CDATA[Tipo&nbsp;3]]></text> 
+  </component>
+    <component id="ID_s3_txt14">
+  <text><![CDATA[Tipo&nbsp;3]]></text> 
+  </component>
+    <component id="ID_s3_txt15">
+  <text><![CDATA[Tipo&nbsp;3]]></text> 
+  </component>
+    <component id="ID_s3_txt16">
+  <text><![CDATA[Tipo&nbsp;3]]></text> 
+  </component>
+    <component id="ID_s3_txt17">
+  <text><![CDATA[Tipo&nbsp;4]]></text> 
+  </component>
+    <component id="ID_s3_txt18">
+  <text><![CDATA[Tipo&nbsp;4]]></text> 
+  </component>
+    <component id="ID_s3_txt19">
+  <text><![CDATA[Tipo&nbsp;5]]></text> 
+  </component>
+    <component id="ID_s3_txt20">
+  <text><![CDATA[Tipo&nbsp;5]]></text> 
+  </component>
+    <component id="ID_s3_txt21">
+  <text><![CDATA[Tipo&nbsp;5]]></text> 
+  </component>
+ 
+  
+</textcomponents>

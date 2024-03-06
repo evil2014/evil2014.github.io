@@ -1,0 +1,104 @@
+﻿<textcomponents>
+
+<component id="ID_title">
+ <text><![CDATA[<b>Transición a través de los estados OSPF  </b>]]></text>
+</component>
+
+<component id="ID_txt01">
+ <text><![CDATA[Estado Down]]></text>
+</component>
+
+<component id="ID_txt02">
+ <text><![CDATA[Estado Init]]></text> 
+</component>
+  
+<component id="ID_txt03">
+  <text><![CDATA[Estado Two-Way]]></text> 
+</component>
+
+<component id="ID_txt04">
+  <text><![CDATA[Estado ExStart]]></text> 
+</component>
+
+<component id="ID_txt05">
+  <text><![CDATA[Estado Exchange]]></text> 
+</component>
+
+<component id="ID_txt06">
+  <text><![CDATA[Estado Loading]]></text> 
+</component>
+  
+<component id="ID_txt07">
+  <text><![CDATA[Estado Full]]></text> 
+</component>
+  
+<component id="ID_txt08">
+  <text><![CDATA[Establecimiento de adyacencias de vecinos]]></text> 
+</component>
+  
+<component id="ID_txt09">
+  <text><![CDATA[Sincronización de las bases de datos OSPF]]></text> 
+</component>
+  
+  
+<component id="ID_btn01_body">
+<text><![CDATA[<textformat blockindent='-18'><ul><li>Ningún paquete de saludo recibido = Down.  </li><li>El router envía paquetes de saludo.  </li><li>Transición al estado Init.  </li></ul></textformat>]]></text>
+</component>
+
+
+<component id="ID_btn02_body">
+<text><![CDATA[<textformat blockindent='-18'><ul><li>Se reciben los paquetes de saludo del vecino.  </li><li>Estos contienen la ID del router emisor.  </li><li>Transición al estado Two-Way.  </li></ul></textformat>]]></text>
+</component>
+
+<component id="ID_btn03_body">
+<text><![CDATA[<textformat blockindent='-18'><ul><li>En los enlaces Ethernet, se elige un DR y un BDR.  </li><li>Transición al estado ExStart.  </li></ul></textformat>]]></text>
+</component>
+
+<component id="ID_btn04_body">
+<text><![CDATA[<textformat blockindent='-18'><ul><li>Se negocia la relación de maestro/esclavo y el número de secuencia del paquete DBD.  </li><li>El maestro inicia el intercambio de paquetes DBD.  </li></ul></textformat>]]></text>
+</component>
+
+<component id="ID_btn05_body">
+<text><![CDATA[<textformat blockindent='-18'><ul><li>Los routers intercambian paquetes DBD.  </li><li>Si se requiere información adicional del router, se realiza la transición a Loading; de lo contrario, se realiza la transición a Full.  </li></ul></textformat>]]></text>
+</component>
+
+<component id="ID_btn06_body">
+<text>
+<![CDATA[<textformat blockindent='-18'><ul><li>Las LSR y las LSU se usan para obtener información adicional de la ruta.  </li><li>Las rutas se procesan mediante el algoritmo SPF.  </li><li>Transición al estado Full.  </li></ul></textformat>]]></text>
+</component>
+
+<component id="ID_btn07_body">
+<text>
+<![CDATA[Los routers convergieron.]]>
+</text>
+</component>
+
+<component id="ID_btn01_header">
+	<text><![CDATA[<b>Estado Down  </b>]]></text>
+</component>
+
+<component id="ID_btn02_header">
+	<text><![CDATA[<b>Estado Init  </b>]]></text> 
+ </component>
+ 
+<component id="ID_btn03_header">
+ 	<text><![CDATA[<b>Estado Two-Way  </b>]]></text> 
+ </component>
+ 
+<component id="ID_btn04_header">
+ 	<text><![CDATA[<b>Estado ExStart  </b>]]></text> 
+</component>
+
+<component id="ID_btn05_header">
+	<text><![CDATA[<b>Estado Exchange  </b>]]></text> 
+</component>
+
+<component id="ID_btn06_header">
+	<text><![CDATA[<b>Estado Loading  </b>]]></text> 
+</component>
+  
+<component id="ID_btn07_header">
+	<text><![CDATA[<b>Estado Full  </b>]]></text> 
+</component>
+
+</textcomponents>

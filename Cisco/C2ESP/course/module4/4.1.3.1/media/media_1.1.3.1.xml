@@ -1,0 +1,89 @@
+﻿<textcomponents> <!--Slide 1-->
+	<component id="ID_s1_title">
+		<text><![CDATA[<b>Asignar un nombre al dispositivo  </b>]]></text>
+	</component> <!--Slide 2-->
+	<component id="ID_s2_title">
+		<text><![CDATA[<b>Proteger el acceso administrativo  </b>]]></text>
+	</component> <!--Slide 3-->
+	<component id="ID_s3_title">
+		<text><![CDATA[<b>Configurar un aviso  </b>]]></text>
+	</component> <!--Slide 4-->
+	<component id="ID_s4_title">
+		<text><![CDATA[<b>Guardar la configuración  </b>]]></text>
+	</component> <!--Slide 5-->
+<component id="ID_sc_reset">
+		<text><![CDATA[Restablecer]]></text>
+	</component>
+	<component id="ID_sc_showme">
+		<text><![CDATA[Mostrar]]></text>
+	</component>
+	<component id="ID_sc_showall">
+		<text><![CDATA[Mostrar todo]]></text>
+	</component>
+
+	<component id="ID_s5_title">
+		<text><![CDATA[<b>Configurar los parámetros básicos en R2  </b>]]></text>
+	</component>
+	<component id="ID_s5_SC5" fontFace='Courier New' fontSize="10" class="font9px">
+		<text></text>		
+		<feedback id="fb"><![CDATA[<b>***  </b><font size='10' face="Arial" color="#0000FF" class="fbBluefont">Debe introducir el comando exacto y completo. Los comandos que incluyen un nombre o una contraseña distinguen mayúsculas de minúsculas.</font><b>***  </b> 
+		]]></feedback>		
+		<existingcommands><![CDATA[<font size='10' face="Arial"><b>Introduzca los comandos para configurar el nombre del router como “R2”.  </b></font>]]></existingcommands>
+		<command prompt="Router#">
+		    <correctresponse><![CDATA[configure terminal]]></correctresponse>
+		    <deviceresponse><![CDATA[<font size='10' face="Arial"><b>Enter configuration commands, one per line. End with CNTL/Z.  </b></font>]]></deviceresponse>
+		</command>
+		<command prompt="Router(config)#">
+		    <correctresponse><![CDATA[hostname R2]]></correctresponse>
+		    <instruction><![CDATA[<font size='10' face="Arial"><b>Configure “class” como contraseña secreta.  </b></font>]]></instruction> 			
+		</command>
+		<command prompt="R2(config)#">
+		    <correctresponse><![CDATA[enable secret class]]></correctresponse>
+		    <instruction><![CDATA[<font size='10' face="Arial"><b>Configure “cisco” como contraseña de la línea de consola y solicite a los usuarios que inicien sesión. Luego, salga del modo de configuración de línea.  </b></font>]]></instruction>
+		</command>
+		<command prompt="R2(config)#">
+			<correctresponse><![CDATA[line console 0]]></correctresponse>
+		</command>
+		<command prompt="R2(config-line)#">
+			<correctresponse><![CDATA[password cisco]]></correctresponse>
+		</command>
+		<command prompt="R2(config-line)#">
+			<correctresponse><![CDATA[login]]></correctresponse>
+		</command>
+		<command prompt="R2(config-line)#">
+			<correctresponse><![CDATA[exit]]></correctresponse>
+			<instruction><![CDATA[<font size='10' face="Arial"><b>Configure “cisco” como contraseña de vty para las líneas 0 a 4 y solicite a los usuarios que inicien sesión.  </b>]]></instruction>
+		</command>
+		<command prompt="R2(config)#">
+			<correctresponse><![CDATA[line vty 0 4]]></correctresponse>
+		</command>
+		<command prompt="R2(config-line)#">
+			<correctresponse><![CDATA[password cisco]]></correctresponse>
+		</command>
+		<command prompt="R2(config-line)#">
+			<correctresponse><![CDATA[login]]></correctresponse>
+			<instruction><![CDATA[<font size='10' face="Arial"><b>Salga del modo de configuración de línea y encripte todas las contraseñas de texto no cifrado.  </b>]]></instruction>
+		</command>
+		<command prompt="R2(config-line)#">
+			<correctresponse><![CDATA[exit]]></correctresponse>
+		</command>
+		<command prompt="R2(config)#">
+			<correctresponse><![CDATA[service password-encryption]]></correctresponse>
+			<instruction><![CDATA[<font size='10'  face="Arial"><b>Introduzca el mensaje “¡Acceso autorizado únicamente!” y utilice # como carácter delimitador.  </b>]]></instruction>
+		</command>
+		<command prompt="R2(config)#">
+			<correctresponse><![CDATA[banner motd #¡Acceso autorizado únicamente!#]]></correctresponse>
+			<instruction><![CDATA[<font size='10'  face="Arial"><b>Salga del modo de configuración global y guarde la configuración.  </b>]]></instruction>
+		</command>
+		<command prompt="R2(config)#">
+			<correctresponse><![CDATA[exit]]></correctresponse>
+		</command>
+		<command prompt="R2#">
+			<correctresponse><![CDATA[copy running-config startup-config]]></correctresponse>
+		    <deviceresponse><![CDATA[<font size='10'>Destination filename [startup-config]? <br>Building configuration... <br>[OK]<br>R2#<br></font>]]></deviceresponse>
+			<instruction><![CDATA[<font size='10'  class="syntaxBottomLine" face="Arial"><b>Configuró correctamente el R2 con los parámetros iniciales.  </b>]]></instruction>
+		</command>
+		<command prompt=""/>
+	</component>
+	
+</textcomponents>

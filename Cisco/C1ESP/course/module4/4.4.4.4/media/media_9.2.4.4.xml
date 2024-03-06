@@ -1,0 +1,62 @@
+﻿<textcomponents>
+
+	<component id="ID_title">
+	<text><![CDATA[<b>Tráiler de la trama</b>]]></text>
+	</component>
+	
+	<component id="ID_inst">
+		<text><![CDATA[Haga clic en los cuadros azul oscuro para obtener más información.</b>]]></text>
+	</component>
+
+	<component id="ID_titleTxt01">
+		<text><![CDATA[<b>Secuencia de verificación de trama</b>]]></text>
+	</component>
+	
+	<component id="ID_bodyTxt01">
+		<text><![CDATA[Este campo se utiliza para la verificación de errores. El origen calcula un número en función de los datos de la trama y coloca ese numero en el campo FCS. El destino, entonces, recalcula los datos para determinar si FCS coincide. Si no coinciden, el destino elimina la trama.]]></text>
+	</component>
+	
+	<component id="ID_titleTxt02">
+		<text><![CDATA[<b>Detención de trama</b>]]></text>
+	</component>
+	
+	<component id="ID_bodyTxt02">
+		<text><![CDATA[Este campo, también denominado “Tráiler de la trama”, es un campo optativo que se utiliza cuando no se especifica la longitud de la trama en el campo Tipo/Longitud. Indica el final de una trama cuando ya se transmitió.]]></text>
+	</component>
+
+	<component id="ID_txt01">
+		<text><![CDATA[Campo Inicio de trama]]></text>
+	</component>
+
+	<component id="ID_txt02">
+		<text><![CDATA[Campo Direcciones de origen y destino ]]></text>
+	</component>
+
+	<component id="ID_txt03">
+		<text><![CDATA[Campo Tipo]]></text>
+	</component>
+
+	<component id="ID_txt04">
+		<text><![CDATA[Datos]]></text>
+	</component>
+
+	<component id="ID_txt05">
+		<text><![CDATA[FCS]]></text>
+	</component>
+
+	<component id="ID_txt06">
+		<text><![CDATA[Detención de trama]]></text>
+	</component>
+
+	<component id="ID_txt07">
+		<text><![CDATA[Tráiler]]></text>
+	</component>
+	
+	<component id="ID_txt08">
+		<text><![CDATA[]]></text>
+	</component>
+<component id="ID_txt09">
+		<text><![CDATA[]]></text>
+	</component>
+
+</textcomponents>

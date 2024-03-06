@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.3.3.1 Identificación de las funciones del recopilador NetFlow</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.3.3.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>NetFlow</h1>
+        <h2>Análisis de los patrones de tráfico</h2>
+      </div>
+      <div id="content">
+<p>Un recopilador NetFlow es un host que ejecuta software de aplicación. Este software se especializa en el manejo de los datos de NetFlow sin procesar. Este recopilador se puede configurar para recibir información de NetFlow de varios dispositivos de red. Los recopiladores NetFlow agregan y organizan datos de NetFlow según lo que indica el administrador de red dentro de las limitaciones del software.</p>
+<p></p>
+<p>En un recopilador NetFlow, los datos de NetFlow se escriben en una unidad a intervalos especificados. El administrador puede ejecutar varios esquemas o subprocesos de recolección simultáneamente. Por ejemplo, se pueden almacenar distintos cortes de datos para admitir la comparación entre la planificación y la facturación; un recopilador NetFlow puede producir fácilmente los esquemas de agregación adecuados.</p>
+<p></p>
+<p>En la figura 1, se muestra un recopilador NetFlow que escucha de manera pasiva los datagramas de NetFlow exportados. Una aplicación de recopilador NetFlow proporciona una solución de alto rendimiento, fácil de usar y escalable para ajustar el consumo de datos de exportación de NetFlow de varios dispositivos. El uso que le da una organización varía, pero el propósito suele ser admitir los flujos fundamentales asociados a las aplicaciones de consumidores. Estos incluyen la contabilidad, la facturación y la planificación y el monitoreo de red.</p>
+<p></p>
+<p>Existen varios recopiladores NetFlow en el mercado. Estas herramientas permiten el análisis del tráfico en la red al mostrar los hosts principales (o los más activos), las aplicaciones más usadas y otros medios de medir los datos de tráfico, como se muestra en la figura 2. Un recopilador NetFlow muestra los tipos de tráfico (web, correo, FTP, peer-to-peer, etc.) en la red, así como los dispositivos que envían y reciben la mayoría del tráfico. La recolección de datos proporciona a un administrador de red datos sobre los principales emisores, hosts y oyentes. Dado que los datos se preservan con el tiempo, el análisis posterior del tráfico de la red puede determinar tendencias de uso de la red.</p>
+<p></p>
+<p>Sobre la base del uso de analizadores NetFlow, un administrador de red puede identificar lo siguiente:</p>
+<p></p>
+<p>
+<ul>
+<li>Quiénes son los principales emisores y con quién hablan.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Qué sitios web se visitan regularmente y qué se descarga.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Quién genera la mayor parte del tráfico.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Si hay suficiente ancho de banda para admitir actividad esencial.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Quién monopoliza el ancho de banda.</li>
+</ul>
+</p>
+<p></p>
+<p>La cantidad de información que puede analizar un recopilador NetFlow varía según la versión de NetFlow que se utilice, ya que los distintos formatos de exportación de NetFlow constan de distintos tipos de registro de NetFlow. Un registro de NetFlow contiene información específica sobre el tráfico real que constituye un flujo de NetFlow. </p>
+<p></p>
+<p>Un recopilador NetFlow proporciona la visualización y el análisis en tiempo real de los datos de flujo registrados y agregados. Se pueden especificar los routers y los switches admitidos, así como el esquema de agregación y el intervalo de tiempo para almacenar datos antes del siguiente análisis periódico. Los datos se pueden clasificar y visualizar de una manera que sea útil para los usuarios: gráficos de barras, gráficos circulares o histogramas de los informes clasificados. Después se pueden exportar los datos a hojas de cálculo, como las de Microsoft Excel, para obtener análisis, tendencias e informes más detallados.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

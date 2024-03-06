@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.2.1.4 Entradas de enrutamiento de host IPv4</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.2.1.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Enrutamiento</h1>
+        <h2>Cómo enrutan los hosts</h2>
+      </div>
+      <div id="content">
+<p>Para ayudar a simplificar el resultado, las redes de destino se pueden agrupar en cinco secciones, identificadas por las áreas resaltadas en la ilustración: </p>
+<p></p>
+<p>
+<b>0.0.0.0</b>
+</p>
+<p>La ruta predeterminada local. Todos los paquetes con destinos que no coincidan con otras direcciones especificadas en la tabla de enrutamiento se reenvían al gateway. Por lo tanto, todas las rutas de destino que no coincidan se envían al gateway con la dirección IP 192.168.10.1 (R1) que sale de la interfaz con la dirección IP 192.168.10.10. Observe que la dirección de destino final especificada en el paquete no cambia; en realidad, el host simplemente sabe que debe reenviar el paquete al gateway para su procesamiento posterior.</p>
+<p></p>
+<p>
+<b>127.0.0.0 – 127.255.255.255 </b>
+</p>
+<p>Todas estas direcciones de loopback se relacionan con la conexión directa y proporcionan servicios al host local.</p>
+<p></p>
+<p>
+<b>192.168.10.0 - 192.168.10.255</b>
+</p>
+<p>Todas estas direcciones se relacionan con el host y la red local. Todos los paquetes con direcciones de destino dentro de esta categoría salen por la interfaz 192.168.10.10. </p>
+<p>
+<ul>
+<li>
+<b>192.168.10.0:</b> dirección de la ruta de red local que representa todas las PC en la red 192.168.10.x.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>192.168.10.10:</b> dirección del host local. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>192.168.10.255:</b> dirección de broadcast de la red, que envía mensajes a todos los hosts en la ruta de red local.</li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>224.0.0.0</b>
+</p>
+<p>Direcciones multicast de clase D especiales reservadas para usar mediante la interfaz loopback (127.0.0.1) o la dirección IP del host (192.168.10.10). </p>
+<p></p>
+<p>
+<b>255.255.255.255</b>
+</p>
+<p>Las últimas dos direcciones representan los valores de direcciones IP de broadcast limitado para usar mediante la interfaz loopback (127.0.0.1) o la dirección IP del host (192.168.10.10). Estas direcciones se pueden utilizar para buscar un servidor de DHCP antes de que se determine la dirección IP local.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

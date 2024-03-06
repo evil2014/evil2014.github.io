@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.1.2.2 Paquetes de saludo EIGRP</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.1.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Características de EIGRP</h1>
+        <h2>Tipos de paquetes EIGRP</h2>
+      </div>
+      <div id="content">
+<p>EIGRP utiliza pequeños paquetes de saludo para descubrir otros routers con EIGRP habilitado en enlaces conectados directamente. Los routers utilizan los paquetes de saludo para formar adyacencias de vecinos EIGRP, también conocidas como “relaciones de vecinos”.</p>
+<p></p>
+<p>Los paquetes de saludo EIGRP se envían como transmisiones IPv4 o IPv6 de multidifusión y utilizan entrega RTP poco confiable. Esto significa que el receptor no responde con un paquete de acuse de recibo. </p>
+<p>
+<ul>
+<li>La dirección de multidifusión EIGRP reservada para IPv4 es 224.0.0.10.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>La dirección de multidifusión EIGRP reservada para IPv6 es FF02::A.</li>
+</ul>
+</p>
+<p></p>
+<p>Los routers EIGRP descubren vecinos y establecen adyacencias con los routers vecinos mediante el paquete de saludo. En la mayoría de las redes, los paquetes de saludo EIGRP se envían como paquetes de multidifusión cada cinco segundos. Sin embargo, en redes multipunto multiacceso sin difusión (NBMA), como X.25, Frame Relay, e interfaces de modo de transferencia asíncrona (ATM) con enlaces de acceso de T1 (1,544 Mb/s) o más lentos, los paquetes de saludo se envían como paquetes de unidifusión cada 60 segundos. </p>
+<p></p>
+<p>EIGRP también usa paquetes de saludo para mantener adyacencias establecidas. Un router EIGRP supone que, mientras reciba paquetes de saludo de un vecino, el vecino y sus rutas siguen siendo viables. </p>
+<p></p>
+<p>EIGRP utiliza un temporizador de espera para determinar el tiempo máximo que el router debe esperar para recibir el siguiente saludo antes de declarar que el vecino es inalcanzable. De manera predeterminada, el tiempo de espera es tres veces el intervalo de saludo, es decir, 15 segundos en la mayoría de las redes y 180 segundos en redes NBMA de baja velocidad. Si el tiempo de espera expira, EIGRP declara la ruta como inactiva y DUAL busca una nueva ruta mediante el envío de consultas.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

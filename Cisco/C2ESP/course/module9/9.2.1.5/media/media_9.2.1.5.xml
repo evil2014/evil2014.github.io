@@ -1,0 +1,33 @@
+﻿<textcomponents>
+
+	<component id="ID_s1_title">
+	<text><![CDATA[<b>Procedimiento para la configuración de ACL estándar</b>]]></text>
+	</component>
+	
+	<component id="ID_s2_title">
+	<text><![CDATA[<b>Admisión de una subred específica</b>]]></text>
+	</component>
+	
+	<component id="ID_s1_txt01">
+  <text><![CDATA[Paso 1: utilice el comando de configuración global <font face='_typewriter' color='#393536'><b>access-list</b></font> para crear una entrada en una ACL de IPv4 estándar.]]></text> 
+  </component>
+	<component id="ID_s1_txt02">
+  <text><![CDATA[La sentencia del ejemplo coincide con cualquier dirección que comience con 192.168.10.x. Utilice la opción <font face='_typewriter' color='#393536'><b>comentario</b></font> para agregar una descripción a su ACL.]]></text> 
+  </component>
+  
+  <component id="ID_s1_txt03">
+ <text><![CDATA[Paso 2: utilice el comando de configuración <font face='_typewriter' color='#393536'><b>interface</b></font> para seleccionar una interfaz a la cual aplicarle la ACL.]]></text> 
+  </component>
+  
+  <component id="ID_s1_txt04">   
+ <text><![CDATA[Paso 3: utilice el comando de configuración de interfaz <font face='_typewriter' color='#393536'><b>ip access-group</b></font> para activar la ACL actual en una interfaz.]]></text> 
+  </component>
+  
+  <component id="ID_s1_txt05">   
+ <text><![CDATA[Este ejemplo activa la ACL estándar IPv4 1 en la interfaz como filtro de salida.]]></text> 
+  </component>
+  
+   <component id="ID_s2_txt01">   
+ <text><![CDATA[<b>Compañía A</b>]]></text> 
+  </component>
+</textcomponents>

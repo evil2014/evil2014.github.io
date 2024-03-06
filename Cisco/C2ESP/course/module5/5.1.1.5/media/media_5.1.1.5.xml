@@ -1,0 +1,147 @@
+﻿<textcomponents>
+<component id="ID_s1_inst">
+<text><![CDATA[<b>Actividad: identificar los tipos de routing entre VLAN (parte&nbsp;1) </b><br/>Identifique esta topología como routing entre VLAN antiguo, con router-on-a-stick o con switch multicapa y arrastre la respuesta correcta al campo proporcionado. Haga clic en la parte 2 para continuar la actividad.]]></text></component>
+
+<component id="ID_s1_txt01">
+<text><![CDATA[<b>Interfaz del R1  </b><br/>Gi0/0 Enlace troncal<br/><br/> <b>Subinterfaces del R1  </b><br/>Gi0/0.10 10.17.10.1/28<br/>Gi0/0.20 10.17.20.1/28<br/>Gi0/0.30 10.17.30.1/28<br/><br/><b>Puertos del S1  </b><br/>Gi0/1 Enlace troncal<br/>Gi0/3 = VLAN 10<br/>Gi0/9 = VLAN 20<br/>Gi0/17 = VLAN 30<br/><br/><b>Terminales  </b><br/>PC1 – VLAN 10 10.17.10.4/28<br/>PC2 – VLAN 20 10.17.20.4/28<br/>PC3 – VLAN 30 10.17.30.4/28]]></text> 
+ </component>
+ 
+<component id="ID_s1_txt02">
+<text><![CDATA[<b>Tipo de enrutamiento entre VLAN  </b>]]></text> 
+ </component>
+ 
+<component id='ID_s1_drag01'>
+	<text><![CDATA[Antiguo]]></text>
+</component>
+
+<component id='ID_s1_drag02'>
+	<text><![CDATA[Router-on-a-stick]]></text>
+</component>
+
+<component id='ID_s1_drag03'>
+	<text><![CDATA[Switch de multicapa]]></text>
+</component>
+
+<component id='ID_s1_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto  </b>]]></text>
+</component>
+
+<component id='ID_s1_CORRECT_BODY'>
+	<text><![CDATA[Identificó correctamente el tipo de routing entre VLAN que se utilizó en esta topología. Haga clic en la parte 2 para continuar.]]></text>
+</component>
+
+
+<component id='ID_s1_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto  </b>]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_BODY'>
+	<text><![CDATA[No identificó correctamente el tipo de routing entre VLAN que se utilizó en esta topología. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_s1_CHECK'>
+	<text><![CDATA[<b>Verificar  </b>]]></text>
+</component>
+
+<component id='ID_s1_RESET'>
+	<text><![CDATA[<b>Restablecer  </b>]]></text>
+</component>
+
+<component id="ID_s2_inst">
+<text><![CDATA[<b>Actividad: identificar los tipos de routing entre VLAN (parte&nbsp;2) </b><br/>Identifique esta topología como routing entre VLAN antiguo, con router-on-a-stick o con switch multicapa y arrastre la respuesta correcta al campo proporcionado. Haga clic en la parte 3 para continuar la actividad.]]></text></component>
+
+<component id="ID_s2_txt01">
+<text><![CDATA[<b>Puertos del S1  </b><br/>Gi0/1-Gi0/4 = Enlace troncal<br/>VLAN 10 172.17.10.1<br/>VLAN 20 172.17.20.1<br/><br/><b>Puertos del S2  </b><br/>Gi0/1-Gi0/2 – Enlace troncal<br/>Gi0/5-Gi0/6 – Enlace troncal<br/>VLAN 10 – Gi0/11<br/><br/><b>Puertos del S3  </b><br/>Gi0/3-Gi0/6 = Enlace troncal<br/>VLAN 20 – Gi0/18<br/><br/><b>Terminales  </b><br/>PC1 – VLAN 10<br/>10.17.10.4/28<br/>PC2 – VLAN 20<br/>10.17.20.4/28]]></text> 
+ </component>
+ 
+<component id="ID_s2_txt02">
+<text><![CDATA[<b>Tipo de enrutamiento entre VLAN  </b>]]></text> 
+ </component>
+ 
+<component id='ID_s2_drag01'>
+	<text><![CDATA[Antiguo]]></text>
+</component>
+
+<component id='ID_s2_drag02'>
+	<text><![CDATA[Router-on-a-stick]]></text>
+</component>
+
+<component id='ID_s2_drag03'>
+	<text><![CDATA[Switch de multicapa]]></text>
+</component>
+
+<component id='ID_s2_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto  </b>]]></text>
+</component>
+
+<component id='ID_s2_CORRECT_BODY'>
+	<text><![CDATA[Identificó correctamente el tipo de routing entre VLAN que se utilizó en esta topología. Haga clic en la parte 3 para continuar.]]></text>
+</component>
+
+
+<component id='ID_s2_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto  </b>]]></text>
+</component>
+
+<component id='ID_s2_INCORRECT_BODY'>
+	<text><![CDATA[No identificó correctamente el tipo de routing entre VLAN que se utilizó en esta topología. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_s2_CHECK'>
+	<text><![CDATA[<b>Verificar  </b>]]></text>
+</component>
+
+<component id='ID_s2_RESET'>
+	<text><![CDATA[<b>Restablecer  </b>]]></text>
+</component>
+
+<component id="ID_s3_inst">
+<text><![CDATA[<b>Actividad: identificar los tipos de routing entre VLAN (parte&nbsp;3) </b><br/>Identifique esta topología como routing entre VLAN antiguo, con router-on-a-stick o con switch multicapa y arrastre la respuesta correcta al campo proporcionado.]]></text></component>
+
+<component id="ID_s3_txt01">
+<text><![CDATA[<b>Interfaz del R1: </b><br/>Gi0/0 10.17.10.1/28<br/>Gi0/1 10.17.20.1/28<br/><br/><b>Puertos del S1  </b><br/>Gi0/3 = VLAN 10<br/>Gi0/17 = VLAN 20<br/><br/><b>Terminales </b><br/>PC1 – VLAN 10<br/>10.17.10.4/28<br/><br/>PC2 – VLAN 20<br/>10.17.20.4/28]]></text> 
+ </component>
+ 
+<component id="ID_s3_txt02">
+<text><![CDATA[<b>Tipo de enrutamiento entre VLAN  </b>]]></text> 
+ </component>
+ 
+<component id='ID_s3_drag01'>
+	<text><![CDATA[Antiguo]]></text>
+</component>
+
+<component id='ID_s3_drag02'>
+	<text><![CDATA[Router-on-a-stick]]></text>
+</component>
+
+<component id='ID_s3_drag03'>
+	<text><![CDATA[Switch de multicapa]]></text>
+</component>
+
+<component id='ID_s3_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto  </b>]]></text>
+</component>
+
+<component id='ID_s3_CORRECT_BODY'>
+	<text><![CDATA[Identificó correctamente el tipo de routing entre VLAN que se utilizó en esta topología.]]></text>
+</component>
+
+
+<component id='ID_s3_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto  </b>]]></text>
+</component>
+
+<component id='ID_s3_INCORRECT_BODY'>
+	<text><![CDATA[No identificó correctamente el tipo de routing entre VLAN que se utilizó en esta topología. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_s3_CHECK'>
+	<text><![CDATA[<b>Verificar  </b>]]></text>
+</component>
+
+<component id='ID_s3_RESET'>
+	<text><![CDATA[<b>Restablecer  </b>]]></text>
+</component>
+
+
+</textcomponents>

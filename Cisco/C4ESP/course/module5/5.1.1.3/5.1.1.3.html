@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.1.1.3 Terminología de NAT</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.1.1.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Funcionamiento de NAT</h1>
+        <h2>Características de NAT</h2>
+      </div>
+      <div id="content">
+<p>Según la terminología de NAT, la red interna es el conjunto de redes sujetas a traducción. La red externa se refiere a todas las otras redes. </p>
+<p></p>
+<p>Al utilizar NAT, las direcciones IPv4 se designan de distinto modo, según si están en la red privada o en la red pública (Internet), y si el tráfico es entrante o saliente. </p>
+<p></p>
+<p>NAT incluye cuatro tipos de direcciones:</p>
+<p>
+<ul>
+<li>Dirección local interna</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Dirección global interna</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Dirección local externa</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Dirección global externa</li>
+</ul>
+</p>
+<p></p>
+<p>Al determinar qué tipo de dirección se utiliza, es importante recordar que la terminología de NAT siempre se aplica desde la perspectiva del dispositivo con la dirección traducida:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Dirección interna:</b> la dirección del dispositivo que se traduce por medio de NAT. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Dirección externa:</b> la dirección del dispositivo de destino. </li>
+</ul>
+</p>
+<p></p>
+<p>NAT también usa los conceptos de local o global con relación a las direcciones:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Dirección local:</b> cualquier dirección que aparece en la porción interna de la red.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Dirección global:</b> cualquier dirección que aparece en la porción externa de la red. </li>
+</ul>
+</p>
+<p></p>
+<p>En la ilustración, la PC1 tiene la dirección local interna 192.168.10.10. Desde la perspectiva de la PC1, el servidor web tiene la dirección externa 209.165.201.1. Cuando se envían los paquetes de la PC1 a la dirección global del servidor web, la dirección local interna de la PC1 se traduce a 209.165.200.226 (dirección global interna). En general, la dirección del dispositivo externo no se traduce, ya que suele ser una dirección IPv4 pública.</p>
+<p></p>
+<p>Observe que la PC1 tiene distintas direcciones locales y globales, mientras que el servidor web tiene la misma dirección IPv4 pública en ambos casos. Desde la perspectiva del servidor web, el tráfico que se origina en la PC1 parece provenir de 209.165.200.226, la dirección global interna.</p>
+<p></p>
+<p>El router NAT, el R2 en la ilustración, es el punto de demarcación entre las redes internas y externas, así como entre las direcciones locales y globales.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

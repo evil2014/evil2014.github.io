@@ -1,0 +1,83 @@
+﻿<textcomponents>
+
+<component id='ID_inst'>
+	<text><![CDATA[<b>Actividad: Ordenar los pasos en el proceso de asociación del cliente y el AP</b><br/>Arrastre el cliente WLAN hasta los pasos de asociación de AP en el orden correcto en el diagrama proporcionado.]]></text>
+</component> <!--Drag and Drop-->
+<component id='ID_drag01'>
+	<text><![CDATA[Recibir el identificador de <br>asociación del AP (AID)]]></text>
+</component>
+
+<component id='ID_drag02'>
+	<text><![CDATA[Iniciar el proceso de autenticación mediante clave compartida]]></text>
+</component>
+
+<component id='ID_drag03'>
+	<text><![CDATA[<span style="margin-left:5px;">Escuchar las tramas de señal <br>para detectar los SSID de la WLAN <br>(modo pasivo)</span>]]></text>
+</component>
+
+<component id='ID_drag04'>
+	<text><![CDATA[<span style="margin-left:5px;">Enviar una solicitud de sondeo al AP<br>con o sin un SSID conocido<br>(modo activo)</span>]]></text>
+</component>
+
+<component id='ID_drag05'>
+	<text><![CDATA[<span style="margin-left:5px;">Recibir la dirección MAC del AP (BSSID)</span>]]></text>
+</component>
+
+<component id='ID_drag06'>
+	<text><![CDATA[Aceptar compartir la autenticación abierta con el AP]]></text>
+</component>
+
+<component id='ID_drag07'>
+	<text><![CDATA[Enviar la dirección MAC del <br>cliente al AP]]></text>
+</component>
+
+
+
+<component id='ID_s1_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id='ID_s1_CORRECT_BODY'>
+	<text><![CDATA[Ordenó correctamente los pasos en el proceso de asociación del cliente WLAN y el AP.]]></text>
+</component>
+
+
+<component id='ID_s1_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_BODY'>
+	<text><![CDATA[No ordenó correctamente los pasos en el proceso de asociación del cliente WLAN y el AP. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_CHECK'>
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id='ID_RESET'>
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component>
+
+
+
+<component id="ID_txt01">
+	<text><![CDATA[<b>Paso 1 (detección):</b>]]></text>
+</component>
+
+<component id="ID_txt02">
+  <text><![CDATA[<b>Paso 2 (autenticación):</b>]]></text> 
+</component>
+
+<component id="ID_txt03">
+  <text><![CDATA[<b>Paso 3 (asociación):</b>]]></text> 
+</component>
+   
+<component id="ID_txt04">
+  <text><![CDATA[<b>o</b>]]></text> 
+</component>
+
+<component id="ID_txt05">
+  <text><![CDATA[<b>o</b>]]></text> 
+</component>
+
+</textcomponents>

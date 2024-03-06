@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.3.1.3 PortFast y protección BPDU</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.3.1.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de árbol de expansión</h1>
+        <h2>Configuración de PVST+</h2>
+      </div>
+      <div id="content">
+<p>PortFast es una característica de Cisco para los entornos PVST+. Cuando un puerto de switch se configura con PortFast, ese puerto pasa del estado de bloqueo al de reenvío de inmediato, omitiendo los estados de transición de STP 802.1D usuales (los estados de escucha y aprendizaje). Puede utilizar PortFast en los puertos de acceso para permitir que estos dispositivos se conecten a la red inmediatamente, en lugar de esperar a que STP IEEE 802.1D converja en cada VLAN. Los puertos de acceso son puertos conectados a una única estación de trabajo o a un servidor.</p>
+<p></p>
+<p>En una configuración de PortFast válida, nunca se deben recibir BPDU, ya que esto indicaría que hay otro puente o switch conectado al puerto, lo que podría causar un bucle de árbol de expansión. Los switches Cisco admiten una característica denominada “protección BPDU”. Cuando se habilita, la protección BPDU coloca al puerto en estado <i>deshabilitado por error</i> al recibir una BPDU. Esto desactiva el puerto completamente. La característica de protección BPDU proporciona una respuesta segura a la configuración no válida, ya que se debe volver a activar la interfaz de forma manual.</p>
+<p></p>
+<p>La tecnología Cisco PortFast es útil para DHCP. Sin PortFast, un equipo puede enviar una solicitud de DHCP antes de que el puerto se encuentre en estado de enviar e impedirle al host la posibilidad de obtener una dirección IP utilizable y cualquier otra información. Debido a que PortFast cambia el estado a enviar de manera inmediata, el equipo siempre obtiene una dirección IP utilizable. </p>
+<p></p>
+<p>
+<b>Nota:</b> debido a que el propósito de PortFast es minimizar el tiempo que los puertos de acceso deben esperar a que converja el árbol de expansión, solo se debe utilizar en puertos de acceso. Si habilita PortFast en un puerto que se conecta a otro switch, corre el riesgo de crear un bucle de árbol de expansión.</p>
+<p></p>
+<p>Para configurar PortFast es un puerto de switch, introduzca el comando <span class="cmd"><b>spanning-tree portfast</b></span> del modo de configuración de interfaz en cada interfaz en la que se deba habilitar PortFast, como se muestra en la figura 2. El comando <span class="cmd"><b>spanning-tree portfast default</b></span> del modo de configuración global habilita PortFast en todas las interfaces no troncales.</p>
+<p></p>
+<p>Para configurar la protección BPDU en un puerto de acceso de capa 2, utilice el comando <span class="cmd"><b>spanning-tree bpduguard enable</b></span> del modo de configuración de interfaz. El comando <span class="cmd"><b>spanning-tree portfast bpduguard default</b></span> del modo de configuración global habilita la protección BPDU en todos los puertos con PortFast habilitado.</p>
+<p></p>
+<p>Para verificar que se hayan habilitado PortFast y la protección BPDU para un puerto de switch, utilice el comando <span class="cmd"><b>show running-config</b></span>, como se muestra en la figura 3. La característica PortFast y la protección BPDU están deshabilitadas en todas las interfaces de manera predeterminada.</p>
+<p></p>
+<p>Utilice el verificador de sintaxis de la figura 4 para configurar y verificar los switches S1 y S2 con PortFast y la protección BPDU.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

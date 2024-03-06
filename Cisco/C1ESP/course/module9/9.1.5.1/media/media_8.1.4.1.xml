@@ -1,0 +1,47 @@
+﻿<textcomponents>
+	<component id="ID_s1_title">
+		<text><![CDATA[<b>Topología de la red: subredes básicas</b>]]></text>
+	</component>
+	<component id="ID_s1_txt01">
+		<text><![CDATA[<b>Edificio A  </b><br/>25&nbsp;hosts]]></text> 
+	</component>
+	<component id="ID_s1_txt02">
+		<text><![CDATA[<b>Edificio B  </b><br/>20&nbsp;hosts]]></text> 
+	</component>
+	<component id="ID_s1_txt03">
+		<text><![CDATA[<b>Edificio C  </b><br/>15&nbsp;hosts]]></text> 
+	</component>
+	<component id="ID_s1_txt04">
+		<text><![CDATA[<b>Edificio D  </b><br/>28&nbsp;hosts]]></text> 
+	</component>
+	<component id="ID_s2_title">
+		<text><![CDATA[<b>Esquema de subredes básico</b>]]></text>
+	</component>
+	<component id="ID_s2_txt01">
+		<text><![CDATA[Porción de red]]></text> 
+	</component>
+	<component id="ID_s2_txt02">
+		<text><![CDATA[Porción de host]]></text> 
+	</component>
+	<component id="ID_s2_txt03">
+		<text><![CDATA[LAN del edificio A, B, C y D]]></text> 
+	</component>
+	<component id="ID_s2_txt04">
+		<text><![CDATA[WANs de sitio a sitio]]></text> 
+	</component>
+	<component id="ID_s2_txt05">
+		<text><![CDATA[Sin utilizar/<br>disponible]]></text> 
+	</component>
+	<component id="ID_s2_txt06">
+		<text><![CDATA[Porción de subred<br/>2^3&nbsp;=&nbsp;8&nbsp;subredes]]></text> 
+	</component>
+	<component id="ID_s2_txt07">
+		<text><![CDATA[Porción de host<br/>2^5&nbsp;–&nbsp;2&nbsp;=&nbsp;30&nbsp;hosts por subred]]></text> 
+	</component>
+	<component id="ID_s3_title">
+		<text><![CDATA[<b>Direcciones sin utilizar en subredes WAN</b>]]></text>
+	</component>
+	<component id="ID_s3_txt01">
+		<text><![CDATA[Porción de host<br/>2^5&nbsp;–&nbsp;2&nbsp;=&nbsp;30&nbsp;hosts por subred<br/><br/>30&nbsp;–&nbsp;2&nbsp;=&nbsp;28<br/>Cada subred WAN desperdicia 28&nbsp;direcciones.<br/><br/>28&nbsp;x&nbsp;3&nbsp;=&nbsp;84<br/>Hay 84&nbsp;direcciones sin utilizar.]]></text> 
+	</component>
+</textcomponents>

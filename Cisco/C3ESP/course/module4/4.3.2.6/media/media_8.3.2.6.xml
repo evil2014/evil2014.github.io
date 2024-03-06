@@ -1,0 +1,103 @@
+﻿<textcomponents>
+	<component id='ID_inst'>
+	<text><![CDATA[<b>Actividad: Identificar las características de autenticación de WLAN</b><br/>Arrastre cada característica de seguridad de WLAN hasta el campo del método de autenticación abierta o mediante clave abierta correspondiente.]]></text>
+</component> <!--Drag and Drop-->
+<component id='ID_drag01'>
+	<text><![CDATA[Cifrado de datos RC4]]></text>
+</component>
+
+<component id='ID_drag02'>
+	<text><![CDATA[Sin autenticación mediante contraseña]]></text>
+</component>
+
+<component id='ID_drag03'>
+	<text><![CDATA[Autenticación CCMP]]></text>
+</component>
+
+<component id='ID_drag04'>
+	<text><![CDATA[Alto riesgo de seguridad]]></text>
+</component>
+
+<component id='ID_drag05'>
+	<text><![CDATA[Cifrado de datos AES]]></text>
+</component>
+
+<component id='ID_drag06'>
+	<text><![CDATA[Autenticación MIC]]></text>
+</component>
+
+<component id='ID_drag07'>
+	<text><![CDATA[Mínimo riesgo de seguridad]]></text>
+</component>
+
+<component id='ID_drag08'>
+	<text><![CDATA[Sin cifrado de datos]]></text>
+</component>
+
+<component id='ID_drag09'>
+	<text><![CDATA[Cifrado de datos TKIP]]></text>
+</component>
+
+<component id='ID_drag10'>
+	<text><![CDATA[Máximo riesgo de seguridad]]></text>
+</component>
+
+<component id='ID_drag11'>
+	<text><![CDATA[<span style="margin-left:5px;">Solo autenticación mediante clave compartida</span>]]></text>
+</component>
+
+<component id='ID_drag12'>
+	<text><![CDATA[Riesgo de seguridad medio]]></text>
+</component>
+
+
+
+<component id='ID_s1_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id='ID_s1_CORRECT_BODY'>
+	<text><![CDATA[Unió correctamente las características de seguridad de WLAN con los métodos de autenticación.]]></text>
+</component>
+
+
+<component id='ID_s1_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_BODY'>
+	<text><![CDATA[No unió correctamente las características de seguridad de WLAN con los métodos de autenticación. Haga clic en Restablecer e intente de nuevo.]]></text>
+</component>
+
+<component id='ID_CHECK'>
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id='ID_RESET'>
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component>
+
+
+<component id='ID_txt01'>
+	<text><![CDATA[Método de autenticación abierta]]></text>
+</component>
+
+<component id='ID_txt02'>
+	<text><![CDATA[Método de autenticación mediante clave compartida]]></text>
+</component>
+
+
+<component id='ID_txt03'>
+	<text><![CDATA[<b>WEP</b>]]></text>
+</component>
+
+
+<component id='ID_txt04'>
+	<text><![CDATA[<b>WPA</b>]]></text>
+</component>
+
+<component id='ID_txt05'>
+	<text><![CDATA[<b>802.11i/WPA2</b>]]></text>
+</component> 
+  
+</textcomponents>

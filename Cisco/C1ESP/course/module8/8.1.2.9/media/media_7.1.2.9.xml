@@ -1,0 +1,52 @@
+﻿<textcomponents>	
+	<component id="txt_instructions">
+		<text><![CDATA[<b>Actividad: Uso de la operación AND para determinar la dirección de red</b><br><br>Utilice la operación AND para determinar la dirección de red (en formatos binario y decimal).]]></text>
+	</component>
+	
+	<component id="txt_incorrect">
+		<text><![CDATA[<b>Incorrecto</b>]]></text>
+	</component>
+	<component id="txt_correct">
+		<text><![CDATA[<b>Correcto</b>]]></text>
+	</component>
+	<component id="txt_correct_body">
+		<text><![CDATA[Las versiones binaria y decimal de la dirección de red son correctas. Haga clic en Nuevo número para continuar.]]></text>
+	</component>
+	<component id="txt_incorrect_binary">
+		<text><![CDATA[Las versiones binaria o decimal de la dirección de red son incorrectas. Intente de nuevo.]]></text>
+	</component>
+	<component id="txt_incorrect_decimal">
+		<text><![CDATA[Las versiones binaria o decimal de la dirección de red son incorrectas. Intente de nuevo.]]></text>
+	</component>
+	<component id="txt_incorrect_all">
+		<text><![CDATA[Las versiones binaria o decimal de la dirección de red son incorrectas. Intente de nuevo.]]></text>
+	</component>
+	<component id="txt_hostaddress">
+		<text><![CDATA[Dirección host]]></text>
+	</component>
+	<component id="txt_subnetmask">
+		<text><![CDATA[Máscara de subred]]></text>
+	</component>
+	<component id="txt_hostaddrbin">
+		<text><![CDATA[Dirección host binaria]]></text>
+	</component>
+	<component id="txt_subnetbin">
+		<text><![CDATA[Máscara de subred en forma binaria]]></text>
+	</component>
+	<component id="txt_netbin">
+		<text><![CDATA[Dirección de red binaria]]></text>
+	</component>
+	<component id="txt_netdec">
+		<text><![CDATA[Dirección de red en decimal]]></text>
+	</component>
+	<component id="txt_check">
+		<text><![CDATA[Verificar]]></text>
+	</component>
+	<component id="txt_reset">
+		<text><![CDATA[Restablecer]]></text>
+	</component>
+	<component id="txt_newnumber">
+		<text><![CDATA[Nuevo número]]></text>
+	</component>
+
+</textcomponents>

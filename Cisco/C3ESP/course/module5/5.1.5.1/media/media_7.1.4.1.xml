@@ -1,0 +1,52 @@
+﻿<textcomponents>
+<component id="ID_title">
+<text><![CDATA[<b>Descripción general de la autenticación del protocolo de enrutamiento</b>]]></text>
+</component>
+<component id="ID_txt01">
+  <text><![CDATA[Decirle al R1:<BR/>se puede llegar a 192.168.10.10/32 a través del R2.]]></text> 
+  </component>
+<component id="ID_txt02">
+  <text><![CDATA[R1 debería reenviar aquí...]]></text> 
+  </component>
+<component id="ID_txt03">
+  <text><![CDATA[...&nbsp;pero el atacante manipuló la información de routing del R1, por lo que el R1 reenvía al R2...]]></text> 
+  </component>
+<component id="ID_txt04">
+  <text><![CDATA[...&nbsp;pero el R2 sabe cómo deberían ser las cosas y envía el paquete de regreso al R1, lo que genera un bucle.]]></text> 
+  </component>
+<component id="ID_txt05">
+  <text><![CDATA[Mejor camino normal]]></text> 
+  </component>
+<component id="ID_txt06">
+  <text><![CDATA[R1 actualiza su tabla de enrutamiento.]]></text> 
+  </component>
+  
+<component id="ID_to">
+<text><![CDATA[Hacia: 192.168.10.10/24]]></text>
+</component>
+
+<component id="end">
+<text><![CDATA[End]]></text>
+</component>
+
+<component id="fforward">
+<text><![CDATA[Adelantar]]></text>
+</component>
+
+<component id="pause">
+<text><![CDATA[Pausa]]></text>
+</component>
+
+<component id="play">
+<text><![CDATA[Reproducir]]></text>
+</component>
+
+<component id="rewind">
+<text><![CDATA[Regresar]]></text>
+</component>
+
+<component id="start">
+<text><![CDATA[Inicio]]></text>
+</component>
+
+</textcomponents>

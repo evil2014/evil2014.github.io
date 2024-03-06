@@ -1,0 +1,39 @@
+﻿<textcomponents>
+
+	<component id="ID_title">
+		<text><![CDATA[<b>Filtrado de tráfico en un router mediante ACL</b>]]></text>
+	</component>
+
+	<component id="ID_txt01">
+		<text><![CDATA[<b>IPv4</b>]]></text>
+	</component>
+
+	<component id="ID_txt02">
+		<text><![CDATA[<b>IPv4</b>]]></text>
+	</component>
+
+	<component id="ID_txt01_1">
+		<text><![CDATA[<b>IPv6</b>]]></text>
+	</component>
+
+	<component id="ID_txt02_1">
+		<text><![CDATA[<b>IPv6</b>]]></text>
+	</component>
+
+	<component id="ID_txt03">
+		<text><![CDATA[Una lista por interfaz, por dirección y por protocolo]]></text>
+	</component>
+
+	<component id="ID_txt04">
+		<text><![CDATA[Con dos interfaces y dos protocolos en ejecución, este router podría tener un total de ocho ACL distintas aplicadas.]]></text>
+	</component>
+
+	<component id="ID_txt05">
+		<text><![CDATA[<b>Las tres P para utilizar ACL</b>]]></text>
+	</component>
+
+	<component id="ID_txt06">
+		<text><![CDATA[Solo se puede tener una ACL por protocolo, por interfaz y por sentido:<textformat blockindent="-14"><ul><li>Una ACL por protocolo (p. ej., IPv4 o IPv6) </li><li>Una ACL por sentido (es decir, de entrada o de salida) </li><li>Una ACL por interfaz (p. ej., FastEthernet0/0) </li></ul></textformat>]]></text>
+	</component>
+
+</textcomponents>

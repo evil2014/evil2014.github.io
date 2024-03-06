@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.4.3.2 Verificación de GLBP</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.4.3.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolos de redundancia de primer salto</h1>
+        <h2>Verificación de FHRP</h2>
+      </div>
+      <div id="content">
+<p>Aunque el HSRP y el VRRP proporcionan recuperabilidad a la puerta de enlace, para miembros de reserva del grupo de redundancia, el ancho de banda corriente arriba no se utiliza mientras el dispositivo se encuentra en modo de reserva. </p>
+<p></p>
+<p>Solo el router activo de los grupos HSRP y VRRP envía tráfico hacia la dirección MAC virtual. Los recursos que no se asocian con el router de reserva no se utilizan al máximo. Es posible lograr un equilibro de carga con estos protocolos mediante la creación de varios grupos y la asignación de varias puertas de enlace predeterminadas, pero esta configuración genera una carga administrativa.</p>
+<p></p>
+<p>GLBP es una solución propia de Cisco que permite la selección automática y la utilización simultánea de varias puertas de enlace disponibles, además de la conmutación por falla automática entre esas puertas de enlace. Como se muestra en la figura 1, varios routers comparten la carga de las tramas que, desde la perspectiva del cliente, se envían a una única dirección de gateway predeterminado.</p>
+<p></p>
+<p>Con GLBP, podrán utilizar al máximo los recursos sin la carga administrativa de configurar varios grupos y administrar varias configuraciones de puerta de enlace predeterminadas. GLBP tiene las siguientes características:</p>
+<p></p>
+<p>
+<ul>
+<li>Permite el pleno uso de los recursos en todos los dispositivos, sin la carga administrativa de crear varios grupos.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Proporciona una única dirección IP virtual y varias direcciones MAC virtuales.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Enruta el tráfico al único gateway distribuido a través de los routers.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Permite volver a enrutar de forma automática en caso de falla.</li>
+</ul>
+</p>
+<p></p>
+<p>Utilice el comando <span class="cmd"><b>show glbp</b></span> para verificar el estado de GLBP. En la figura 2, se muestra que el grupo GLBP 1 está en estado activo con la dirección IP virtual 192.168.2.100.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

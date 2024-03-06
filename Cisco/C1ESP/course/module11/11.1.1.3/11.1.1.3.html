@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>11.1.1.3 Direccionamiento IP para redes pequeñas</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_11.1.1.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Crear y crecer</h1>
+        <h2>Dispositivos de una red pequeña</h2>
+      </div>
+      <div id="content">
+<p>Al implementar una red pequeña, es necesario planificar el espacio de direccionamiento IP. Todos los hosts dentro de una internetwork deben tener una dirección exclusiva. Incluso en una red pequeña, la asignación de direcciones dentro de la red no debe ser aleatoria. En lugar de esto, se debe planificar, registrar y mantener un esquema de direccionamiento IP basado en el tipo de dispositivo que recibe la dirección.</p>
+<p></p>
+<p>Los siguientes son ejemplos de diferentes tipos de dispositivos que afectan el diseño de IP:</p>
+<p></p>
+<p>
+<ul>
+<li>Dispositivos finales para usuarios</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Servidores y periféricos </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Hosts a los que se accede desde Internet</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Dispositivos intermediarios</li>
+</ul>
+</p>
+<p></p>
+<p>La planificación y el registro del esquema de direccionamiento IP ayudan al administrador a realizar un seguimiento de los tipos de dispositivos. Por ejemplo, si se asigna una dirección de host entre los rangos 50 y 100 a todos los servidores, resulta fácil identificar el tráfico de servidores por dirección IP. Esto puede resultar muy útil al llevar a cabo la resolución de problemas de tráfico de la red mediante un analizador de protocolos.</p>
+<p></p>
+<p>Además, los administradores pueden controlar mejor el acceso a los recursos de la red sobre la base de las direcciones IP cuando se utiliza un esquema de direccionamiento IP determinista. Esto puede ser especialmente importante para los hosts que proporcionan recursos a la red interna y la red externa. Los servidores Web o los servidores de e-commerce cumplen dicha función. Si las direcciones para estos recursos no son planificadas y documentadas, no es posible controlar fácilmente la seguridad y accesibilidad de los dispositivos. Si se asigna una dirección aleatoria a un servidor, resulta difícil bloquear el acceso a esta dirección, y es posible que los clientes no puedan localizar ese recurso.</p>
+<p></p>
+<p>Cada uno de estos diferentes tipos de dispositivos debería asignarse a un bloque lógico de direcciones dentro del rango de direcciones de la red.</p>
+<p></p>
+<p>Haga clic en los botones de la ilustración para ver el método de asignación.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.2.3.1 Componentes de la resolución de problemas de conectividad de extremo a extremo</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.2.3.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resolución de problemas de red</h1>
+        <h2>Resolución de problemas de conectividad IP</h2>
+      </div>
+      <div id="content">
+<p>Diagnosticar y resolver problemas es una aptitud esencial para los administradores de red. No existe una única receta para la resolución de problemas, y un problema en particular se puede diagnosticar de muchas maneras diferentes. Sin embargo, al emplear un enfoque estructurado para el proceso de resolución de problemas, un administrador puede reducir el tiempo que tarda en diagnosticar y resolver un problema.</p>
+<p></p>
+<p>En este tema, se usa la siguiente situación. El host cliente PC1 no puede acceder a las aplicaciones en el servidor SRV1 o el servidor SRV2. En la ilustración, se muestra la topología de esta red. Para crear su dirección IPv6 de unidifusión global, la PC1 usa SLAAC con EUI-64. Para crear la ID de interfaz, EUI-64 usa la dirección MAC de Ethernet, inserta FFFE en el medio e invierte el séptimo bit. </p>
+<p></p>
+<p>Cuando no hay conectividad de extremo a extremo y el administrador elige resolver problemas con un enfoque ascendente, estos son los pasos frecuentes que el administrador puede seguir:</p>
+<p></p>
+<p>
+<b>Paso 1.</b> Revisar la conectividad física en el punto donde se detiene la comunicación de red. Esto incluye los cables y el hardware. El problema podría estar relacionado con un cable o una interfaz defectuosos o con un componente de hardware defectuoso o configurado incorrectamente. </p>
+<p></p>
+<p>
+<b>Paso 2.</b> Revisar las incompatibilidades de dúplex.</p>
+<p></p>
+<p>
+<b>Paso 3.</b> Revisar el direccionamiento de las capas de enlace de datos y de red en la red local. Esto incluye las tablas ARP de IPv4, las tablas de vecinos IPv6, las tablas de direcciones MAC y las asignaciones de VLAN.</p>
+<p></p>
+<p>
+<b>Paso 4.</b> Verificar que el gateway predeterminado sea correcto.</p>
+<p></p>
+<p>
+<b>Paso 5.</b> Asegurarse de que los dispositivos determinen la ruta correcta del origen al destino. Si es necesario, se debe manipular la información de routing. </p>
+<p></p>
+<p>
+<b>Paso 6.</b> Verificar que la capa de transporte funcione correctamente. También se puede usar Telnet desde la línea de comandos para probar las conexiones de la capa de transporte.</p>
+<p></p>
+<p>
+<b>Paso 7.</b> Verificar que no haya ACL que bloqueen el tráfico.</p>
+<p></p>
+<p>
+<b>Paso 8.</b> Asegurarse de que la configuración del DNS sea correcta. Debe haber un servidor DNS accesible.</p>
+<p></p>
+<p>El resultado de este proceso es una conectividad de extremo a extremo en condiciones de funcionamiento. Si se siguieron todos los pasos sin obtener resolución alguna, es posible que el administrador de red desee repetir los pasos anteriores o elevar el problema a un administrador más experimentado.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

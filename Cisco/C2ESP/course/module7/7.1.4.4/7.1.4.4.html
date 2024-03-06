@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.1.4.4 Protocolos de enrutamiento de link-state</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.1.4.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolos de enrutamiento dinámico</h1>
+        <h2>Tipos de protocolos de routing</h2>
+      </div>
+      <div id="content">
+<p>A diferencia de la operación del protocolo de routing vector distancia, un router configurado con un protocolo de routing de estado de enlace puede crear una “vista completa” o una topología de la red al reunir información proveniente de todos los demás routers. </p>
+<p></p>
+<p>Para continuar con nuestra analogía de letreros, el uso de un protocolo de enrutamiento de link-state es como tener un mapa completo de la topología de la red. Los letreros a lo largo de la ruta de origen a destino no son necesarios, debido a que todos los routers de estado de enlace usan un mapa de la red idéntico. Un router de estado de enlace usa la información de estado de enlace para crear un mapa de la topología y seleccionar la mejor ruta hacia todas las redes de destino en la topología. </p>
+<p></p>
+<p></p>
+<p>Los routers con RIP habilitado envían actualizaciones periódicas de su información de routing a sus vecinos. Los protocolos de enrutamiento de link-state no usan actualizaciones periódicas. Una vez que se produjo la convergencia de la red, la actualización del estado de enlace solo se envía cuando se produce un cambio en la topología. Por ejemplo, la actualización del estado de enlace en la animación no se envía hasta que la red 172.16.3.0 se desactiva. </p>
+<p></p>
+<p>Haga clic en Reproducir en la ilustración para ver operaciones de estado de enlace. </p>
+<p></p>
+<p>Los protocolos de link-state funcionan mejor en situaciones donde:</p>
+<p>
+<ul>
+<li>El diseño de red es jerárquico, lo cual suele suceder en redes extensas.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>La rápida convergencia de la red es crucial.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Los administradores tienen un conocimiento cabal del protocolo de routing de estado de enlace implementado.</li>
+</ul>
+</p>
+<p></p>
+<p>Hay dos IGP de estado de enlace IPv4:</p>
+<p>
+<ul>
+<li>
+<b>OSPF:</b> protocolo de routing muy popular basado en estándares</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>IS-IS:</b> popular en redes de proveedores</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

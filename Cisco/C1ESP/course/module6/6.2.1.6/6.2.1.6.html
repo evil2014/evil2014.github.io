@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.2.1.6 Tabla de enrutamiento de host IPv6 de muestra</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.2.1.6_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Enrutamiento</h1>
+        <h2>Cómo enrutan los hosts</h2>
+      </div>
+      <div id="content">
+<p>El resultado de la tabla de rutas IPv6 difiere en los encabezados de las columnas y el formato, debido a que las direcciones IPv6 son más largas.</p>
+<p></p>
+<p>En la sección de la tabla de rutas IPv6, se muestran cuatro columnas que identifican lo siguiente:</p>
+<p>
+<ul>
+<li>
+<b>Si:</b> incluye los números de interfaz de la sección Lista de interfaces del comando <span class="cmd"><b>netstat –r</b></span>. Los números de interfaz corresponden a las interfaces con capacidad de red en el host, incluidos los adaptadores Ethernet, Wi-Fi y Bluetooth.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Métrica:</b> indica el costo de cada ruta a un destino. Los números más bajos indican las rutas preferidas.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Destino de red:</b> enumera las redes que se pueden alcanzar.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Puerta de acceso:</b> indica la dirección que utiliza el host local para reenviar paquetes a un destino de red remoto. “En enlace” indica que el host actualmente está conectado.</li>
+</ul>
+</p>
+<p></p>
+<p>Por ejemplo, en la ilustración, se muestra la sección de rutas IPv6 generada mediante el comando <span class="cmd"><b>netstat – r</b></span> para mostrar los siguientes destinos de red:</p>
+<p>
+<ul>
+<li>
+<b>::/0:</b> equivalente en IPv6 a la ruta predeterminada local. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>::1/128:</b> equivale a la dirección de loopback IPv4 y proporciona servicios al host local.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>2001::/32:</b> prefijo de red unicast global.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>2001:0:9d38:953c:2c30:3071:e718:a926/128:</b> dirección IPv6 unicast global de la PC local. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>fe80::/64:</b> dirección de la ruta de red de enlace local, que representa todas las PC en la red IPv6 de enlace local.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>fe80::2c30:3071:e718:a926/128:</b> dirección IPv6 link-local de la PC local.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>ff00::/8:</b> direcciones multicast de clase D especiales y reservadas que equivalen a las direcciones IPv4 224.x.x.x. </li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Nota:</b> en general, las interfaces en IPv6 tienen dos direcciones IPv6: una dirección link-local y una dirección unicast global. Asimismo, observe que no hay direcciones de broadcast en IPv6. Las direcciones IPv6 se analizan en mayor detalle en el capítulo siguiente. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

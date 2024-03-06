@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.1.1.1 Motivos para la división en subredes</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.1.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>División de una red IPv4 en subredes</h1>
+        <h2>Segmentación de red</h2>
+      </div>
+      <div id="content">
+<p>En las primeras implementaciones de red, era común que las organizaciones tuvieran todas las PC y otros dispositivos en red conectados a una única red IP. A todos los dispositivos de la organización se les asignaba una dirección IP con la correspondiente ID de la red. Este tipo de configuración se conoce como “diseño de red plana”. En una red pequeña, con una cantidad limitada de dispositivos, el diseño de red plana no presenta inconvenientes. Sin embargo, a medida que la red crece, este tipo de configuración puede generar problemas importantes. </p>
+<p></p>
+<p>Considere la forma en que, en una LAN Ethernet, los dispositivos utilizan broadcasts para localizar los servicios y dispositivos necesarios. Recuerde que, en las redes IP, se envía un broadcast a todos los hosts. El protocolo de configuración dinámica de host (DHCP) constituye un ejemplo de un servicio de red que depende de broadcasts. Los dispositivos envían broadcasts a través de la red para localizar el servidor de DHCP. En una red grande, esto podría generar una cantidad significativa de tráfico que retardaría las operaciones de red. Además, debido a que los broadcasts se dirigen a todos los dispositivos, todos ellos deben aceptar y procesar el tráfico, lo que da como resultado el aumento de los requisitos de procesamiento de los dispositivos. Si un dispositivo debe procesar una cantidad significativa de broadcasts, esto podría incluso llegar a disminuir la velocidad de las operaciones del dispositivo. Por motivos tales como los mencionados, las redes más grandes se deben segmentar en subredes más pequeñas, de modo que permanezcan localizadas en grupos más reducidos de dispositivos y servicios. </p>
+<p></p>
+<p>El proceso de segmentación de una red mediante su división en varios espacios de red más pequeños se denomina “división en subredes”. Estas redes subordinadas se denominan “subredes”. Los administradores de red pueden agrupar dispositivos y servicios en subredes determinadas según la ubicación geográfica (por ejemplo, el tercer piso de un edificio), según la unidad organizativa (quizá el departamento de ventas), según el tipo de dispositivo (impresoras, servidores, WAN) o según cualquier otra división que tenga sentido para la red. La división en subredes puede reducir el tráfico general de la red y mejorar su rendimiento. </p>
+<p></p>
+<p>
+<b>Nota:</b> las subredes son equivalentes a las redes, y estos términos se pueden utilizar indistintamente. La mayoría de las redes son una subred de algún bloque de direcciones más grande.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

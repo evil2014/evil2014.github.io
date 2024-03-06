@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.3.2.6 Marco del protocolo IPsec</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.3.2.6_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Presentación de IPsec</h1>
+        <h2>Estructura IPsec</h2>
+      </div>
+      <div id="content">
+<p>Como se mencionó anteriormente, el marco del protocolo IPSec describe la mensajería para proteger las comunicaciones, pero depende de los algoritmos existentes.</p>
+<p></p>
+<p>En la figura 1, se describen dos protocolos IPSec principales:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Encabezado de autenticación (AH):</b> AH es el protocolo que se debe utilizar cuando no se requiere o no se permite la confidencialidad. Proporciona la autenticación y la integridad de datos para los paquetes IP que se transmiten entre dos sistemas. Sin embargo, AH no proporciona la confidencialidad (el cifrado) de datos de los paquetes. Todo el texto se transporta como texto no cifrado. Cuando se utiliza solo, el protocolo AH proporciona una protección poco eficaz. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Contenido de seguridad encapsulado (ESP):</b> es un protocolo de seguridad que proporciona confidencialidad y autenticación mediante el cifrado del paquete IP. El cifrado de paquetes IP oculta los datos y las identidades del origen y el destino. ESP autentica el paquete IP y el encabezado ESP internos. La autenticación proporciona la autenticación del origen de los datos y la integridad de los datos. Si bien el cifrado y la autenticación son optativos en ESP, se debe seleccionar, como mínimo, uno de ellos.</li>
+</ul>
+</p>
+<p></p>
+<p>En la figura 2, se muestran los componentes de la configuración de IPSec. Se deben seleccionar cuatro componentes básicos del marco de IPsec. </p>
+<p>
+<ul>
+<li>
+<b>Protocolo del marco de IPsec:</b> al configurar un gateway IPsec para proporcionar servicios de seguridad, se debe seleccionar un protocolo IPsec. Las opciones son una combinación de ESP y AH. En realidad, las opciones de ESP o ESP+AH casi siempre se seleccionan porque AH en sí mismo no proporciona el cifrado, como se muestra en la figura 3.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Confidencialidad (si se implementa IPsec con ESP):</b> el algoritmo de cifrado elegido se debe ajustar al nivel deseado de seguridad (DES, 3DES o AES). Se recomienda AES, ya que AES-GCM proporciona la mayor seguridad.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Integridad:</b> garantiza que el contenido no se haya alterado en tránsito. Se implementa mediante el uso de algoritmos de hash. Entre las opciones se incluye MD5 y SHA. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Autenticación:</b> representa la forma en que se autentican los dispositivos en cualquiera de los extremos del túnel VPN. Los dos métodos son PSK o RSA. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Grupo de algoritmos DH:</b> representa la forma en que se establece una clave secreta compartida entre los peers. Existen varias opciones, pero DH24 proporciona la mayor seguridad. </li>
+</ul>
+</p>
+<p></p>
+<p>La combinación de estos componentes es la que proporciona las opciones de confidencialidad, integridad y autenticación para las VPN con IPsec. </p>
+<p></p>
+<p>
+<b>Nota:</b> en esta sección, se presentó IPsec para proporcionar una comprensión de cómo IPsec protege los túneles VPN. La configuración de VPN con IPsec excede el ámbito de este curso.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

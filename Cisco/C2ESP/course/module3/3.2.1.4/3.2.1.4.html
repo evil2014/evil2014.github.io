@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>3.2.1.4 Cambio de pertenencia de puertos de una VLAN</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_3.2.1.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Implementaciones de VLAN</h1>
+        <h2>Asignación de red VLAN</h2>
+      </div>
+      <div id="content">
+<p>Existen varias maneras de cambiar la pertenencia de puertos de una VLAN. En la figura 1, se muestra la sintaxis para cambiar la pertenencia de un puerto de switch de la VLAN 1 con el comando <span class="cmd"><b>no switchport access vlan</b></span> del modo de configuración de interfaz. </p>
+<p></p>
+<p>La interfaz F0/18 se asignó anteriormente a la VLAN 20. Se introduce el comando <span class="cmd"><b>no switchport access vlan</b></span> para la interfaz F0/18. Examine el resultado del comando <span class="cmd"><b>show vlan brief</b></span> que le sigue inmediatamente, como se muestra en la figura 2. El comando <span class="cmd"><b>show vlan brief</b></span> muestra el tipo de asignación y pertenencia de VLAN para todos los puertos de switch. El comando <span class="cmd"><b>show vlan brief</b></span> muestra una línea para cada VLAN. El resultado para cada VLAN incluye el nombre, el estado y los puertos de switch de la VLAN.</p>
+<p></p>
+<p>La VLAN 20 sigue activa, aunque no tenga puertos asignados. En la figura 3, se muestra que el resultado del comando <span class="cmd"><b>show interfaces f0/18 switchport</b></span> verifica que la VLAN de acceso para la interfaz F0/18 se haya restablecido a la VLAN 1.</p>
+<p></p>
+<p>La pertenencia de VLAN de un puerto se puede cambiar fácilmente. No es necesario eliminar primero un puerto de una VLAN para cambiar su pertenencia de VLAN. Cuando se vuelve a asignar la pertenencia de VLAN de un puerto de acceso a otra VLAN existente, la nueva pertenencia de VLAN simplemente reemplaza la pertenencia de VLAN anterior. En la figura 4, el puerto F0/11 se asignó a la VLAN 20.</p>
+<p></p>
+<p>Utilice el verificador de sintaxis de la figura 5 para cambiar la pertenencia de puertos de una VLAN.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

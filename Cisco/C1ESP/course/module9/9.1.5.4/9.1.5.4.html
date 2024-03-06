@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.1.5.4 VLSM en la práctica</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.1.5.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>División de una red IPv4 en subredes</h1>
+        <h2>Beneficios de la máscara de subred de longitud variable</h2>
+      </div>
+      <div id="content">
+<p>Si se utilizan subredes VLSM, se pueden direccionar los segmentos LAN y WAN sin desperdicios innecesarios.</p>
+<p></p>
+<p>A los hosts en cada una de las LAN se les asignan una dirección de host con el rango para esa subred y una máscara /27 válidas. Cada uno de los cuatro routers tendrá una interfaz LAN con una subred /27 y una o más interfaces seriales con una subred /30.</p>
+<p></p>
+<p>Mediante un esquema de direccionamiento común, la primera dirección IPv4 de host para cada subred se asigna a la interfaz LAN del router. A las interfaces WAN de los routers se les asignan las direcciones IP y la máscara para las subredes /30.</p>
+<p></p>
+<p>En las figuras 1 a 4, se muestra la configuración de interfaz para cada uno de los routers.</p>
+<p></p>
+<p>Los hosts en cada subred tendrán una dirección IPv4 de host del rango de direcciones de host para esa subred y una máscara adecuada. Los hosts utilizarán la dirección de la interfaz LAN del router conectada como dirección de gateway predeterminado. </p>
+<p>
+<ul>
+<li>Los hosts del edificio A (192.168.20.0/27) utilizarán la dirección del router 192.168.20.1 como dirección de gateway predeterminado.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Los hosts del edificio B (192.168.20.32/27) utilizarán la dirección del router 192.168.20.33 como dirección de gateway predeterminado.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Los hosts del edificio C (192.168.20.64/27) utilizarán la dirección del router 192.168.20.65 como dirección de gateway predeterminado.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Los hosts del edificio D (192.168.20.96/27) utilizarán la dirección del router 192.168.20.97 como dirección de gateway predeterminado.</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

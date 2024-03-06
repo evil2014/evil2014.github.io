@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>10.2.2.3 Jerarquía DNS</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_10.2.2.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolos y servicios de capa de aplicación reconocidos</h1>
+        <h2>Provisión de servicios de direccionamiento IP</h2>
+      </div>
+      <div id="content">
+<p>El protocolo DNS utiliza un sistema jerárquico para crear una base de datos que proporcione la resolución de nombres. La jerarquía es similar a un árbol invertido con la raíz en la parte superior y las ramas por debajo (consulte la ilustración). DNS utiliza nombres de domino para formar la jerarquía.</p>
+<p></p>
+<p>La estructura de denominación se divide en zonas pequeñas y manejables. Cada servidor DNS mantiene un archivo de base de datos específico y sólo es responsable de administrar las asignaciones de nombre a IP para esa pequeña porción de toda la estructura DNS. Cuando un servidor DNS recibe una solicitud para una traducción de nombre que no se encuentra dentro de esa zona DNS, el servidor DNS reenvía la solicitud a otro servidor DNS dentro de la zona adecuada para su traducción. </p>
+<p></p>
+<p>
+<b>Nota:</b> DNS es escalable, porque la resolución de los nombres de hosts se distribuye entre varios servidores.</p>
+<p></p>
+<p>Los diferentes dominios de primer nivel representan el tipo de organización o el país de origen. Entre los ejemplos de dominios del nivel superior se encuentran:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>.au:</b> Australia<b></b></li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>.co:</b> Colombia<b></b></li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>.com:</b> una empresa o industria</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>.jp:</b> Japón</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>.org:</b> una organización sin fines de lucro</li>
+</ul>
+</p>
+<p></p>
+<p>Después de los dominios del nivel superior, se encuentran los nombres de los dominios de segundo nivel y debajo de estos hay otros dominios de nivel inferior. Cada nombre de dominio es una ruta hacia este árbol invertido que comienza de la raíz. Por ejemplo, como se muestra en la ilustración, es posible que el servidor DNS raíz no sepa exactamente dónde se encuentra el registro del servidor de correo electrónico, mail.cisco.com, pero conserva un registro del dominio .com dentro del dominio de nivel superior. Asimismo, es posible que los servidores dentro del dominio .com no tengan un registro de mail.cisco.com, pero sí tienen un registro del dominio. Los servidores dentro del dominio cisco.com tienen un registro (un registro MX para ser precisos) para mail.cisco.com.</p>
+<p></p>
+<p>El DNS depende de esta jerarquía de servidores descentralizados para almacenar y mantener estos registros de recursos. Los registros de recursos enumeran nombres de dominios que el servidor puede resolver y servidores alternativos que también pueden procesar solicitudes. Si un servidor dado tiene registros de recursos que corresponden a su nivel en la jerarquía de dominios, se dice que es autoritativo para dichos registros. Por ejemplo, un servidor de nombre en el dominio cisco.netacad.net no sería autoritativo para el registro de mail.cisco.com, porque dicho registro se mantiene en un servidor de nivel de dominio superior, específicamente el servidor de nombre en el dominio cisco.com.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

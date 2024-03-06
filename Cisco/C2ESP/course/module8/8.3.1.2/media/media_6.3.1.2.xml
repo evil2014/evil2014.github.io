@@ -1,0 +1,60 @@
+﻿<textcomponents>
+
+<component id="ID_title">
+<text><![CDATA[<b>Similitudes entre OSPFv2 y OSPFv3</b>]]></text>
+</component>
+
+<component id="ID_table01">
+<text><![CDATA[<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4' class="mtable">
+<tr class="mtitle">
+<td colspan='2' bgcolor='#98D3D1' class="title"><font size='12' color='#393536'><b>OSPFv2 y OSPFv3</b></font></td>
+</tr>
+
+<tr class="mtable_top">
+<td colspan='2' bgcolor='#0E6360' class="mtable_top"><font size='1' color='#434321'><span style="color:#DAE17A">.</span></font></td>
+</tr>
+
+<tr>
+<td width="120" bgcolor='#eff8f7' valign="top"><font color='#393536'>Estado de enlace</font></td>
+<td bgcolor='#eff8f7' valign="top"><font color='#393536'>Sí</font></td>
+</tr>
+
+<tr>
+<td bgcolor='#ffffff' valign="top"><font color='#393536'>Algoritmo de routing</font></td>
+<td bgcolor='#ffffff' valign="top"><font color='#393536'>SPF</font></td>
+</tr>
+
+<tr>
+<td bgcolor='#eff8f7' valign="top"><font color='#393536'>Métrica</font></td>
+<td bgcolor='#eff8f7' valign="top"><font color='#393536'>Costo</font></td>	
+</tr>
+
+<tr>
+<td bgcolor='#ffffff' valign="top"><font color='#393536'>Áreas</font></td>
+<td bgcolor='#ffffff' valign="top"><font color='#393536'>Admite la misma jerarquía de dos niveles.</font></td> 
+</tr>
+
+<tr>
+<td bgcolor='#eff8f7' valign="top"><font color='#393536'>Tipos de paquetes</font></td>
+<td bgcolor='#eff8f7' valign="top"><font color='#393536'>Mismos paquetes de saludo, DBD, LSR, LSU y LSAck.</font></td>
+</tr>
+
+<tr>
+<td bgcolor='#ffffff' valign="top"><font color='#393536'>Descubrimiento de vecinos</font></td>
+<td bgcolor='#ffffff' valign="top"><font color='#393536'>Transiciones a través de los mismos estados mediante los paquetes de saludo.</font></td>
+</tr>
+
+<tr>
+<td bgcolor='#eff8f7' valign="top"><font color='#393536'>DR y BDR</font></td>
+<td bgcolor='#eff8f7' valign="top"><font color='#393536'>La función y el proceso de elección son los mismos.</font></td>
+</tr>
+
+<tr>
+<td bgcolor='#ffffff' valign="top"><font color='#393536'>ID del router</font></td>
+<td bgcolor='#ffffff' valign="top"><font color='#393536'>ID del router de 32&nbsp;bits: determinada mediante el mismo proceso en ambos protocolos.</font></td>
+</tr>
+
+</table>]]></text> 
+</component>
+
+</textcomponents>

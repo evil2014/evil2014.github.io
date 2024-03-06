@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.5.1.1 Tipos de ACL de IPv6</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.5.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>ACL de IPv6</h1>
+        <h2>Creación de ACL de IPv6</h2>
+      </div>
+      <div id="content">
+<p>Las ACL de IPv6 son similares a las ACL de IPv4 en cuanto a la configuración y el funcionamiento. Si ya está familiarizado con las listas de acceso de IPv4, las ACL de IPv6 serán fáciles de comprender y configurar. </p>
+<p></p>
+<p>Existen dos tipos de ACL en IPv4: las estándar y las extendidas. Ambos tipos de ACL pueden ser numeradas o con nombre.</p>
+<p></p>
+<p>En cuanto a IPv6, hay solamente un tipo de ACL, que equivale a la ACL de IPv4 extendida con nombre. No existen ACL numeradas en IPv6. En resumen, las características de las ACL de IPv6 son las siguientes:</p>
+<p>
+<ul>
+<li>Son ACL con nombre únicamente.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Equivalen a la funcionalidad de una ACL de IPv4 extendida.</li>
+</ul>
+</p>
+<p></p>
+<p>Una ACL de IPv4 y una ACL de IPv6 no pueden tener el mismo nombre.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

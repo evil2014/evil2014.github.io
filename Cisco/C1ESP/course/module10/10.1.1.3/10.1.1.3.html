@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>10.1.1.3 Capas de presentación y sesión</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_10.1.1.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolos de la capa de aplicación.</h1>
+        <h2>Aplicación, sesión y presentación</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Capa de presentación</b>
+</p>
+<p></p>
+<p>La capa de presentación tiene tres funciones principales:</p>
+<p></p>
+<p>
+<ul>
+<li>Dar formato a los datos del dispositivo de origen, o presentarlos, en una forma compatible para que lo reciba el dispositivo de destino.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Comprimir los datos de forma tal que los pueda descomprimir el dispositivo de destino.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Encriptar los datos para su transmisión y posterior descifrado al llegar al dispositivo de destino.</li>
+</ul>
+</p>
+<p></p>
+<p>Como se muestra en la ilustración, la capa de presentación da formato a los datos para la capa de aplicación y establece estándares para los formatos de archivo. Dentro de los estándares más conocidos para video encontramos QuickTime y el Grupo de expertos en películas (MPEG). QuickTime es una especificación de PC de Apple para audio y video, y MPEG es un estándar para la codificación y compresión de audio y video. </p>
+<p></p>
+<p>Entre los formatos gráficos de imagen conocidos que se utilizan en redes, se incluyen los siguientes: formato de intercambio de gráficos (GIF), formato del Joint Photographic Experts Group (JPEG) y formato de gráficos de red portátiles (PNG). Los formatos GIF y JPEG son estándares de compresión y codificación de imágenes gráficas. El formato PNG se diseñó para abordar algunas de las limitaciones del formato GIF y para reemplazar este último. </p>
+<p></p>
+<p>
+<b>Capa de sesión</b>
+</p>
+<p></p>
+<p>Como su nombre lo indica, las funciones de la capa de sesión crean y mantienen diálogos entre las aplicaciones de origen y destino. La capa de sesión maneja el intercambio de información para iniciar los diálogos y mantenerlos activos y para reiniciar sesiones que se interrumpieron o que estuvieron inactivas durante un período prolongado. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

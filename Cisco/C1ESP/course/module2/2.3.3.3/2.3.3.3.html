@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.3.3.3 Prueba de la conectividad de extremo a extremo</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.3.3.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Esquemas de direcciones</h1>
+        <h2>Verificación de la conectividad</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Prueba de la conectividad de PC a switch</b>
+</p>
+<p></p>
+<p>El comando <span class="cmd"><b>ping</b></span> se puede utilizar en una PC de la misma forma que en un dispositivo Cisco IOS. En la ilustración, se muestra que el ping de la PC1 a la dirección IP de la interfaz VLAN 1 del S1, 192.168.10.2, debe ser correcto.</p>
+<p></p>
+<p>
+<b>Prueba de la conectividad de extremo a extremo</b>
+</p>
+<p></p>
+<p>La dirección IP de la PC1 es 192.168.10.10, con una máscara de subred 255.255.255.0 y un gateway predeterminado 192.168.10.1.</p>
+<p></p>
+<p>La dirección IP de la PC2 es 192.168.10.11, con una máscara de subred 255.255.255.0 y un gateway predeterminado 192.168.10.1.</p>
+<p></p>
+<p>El ping de la PC1 a la PC2 también debe ser correcto. Si un ping de la PC1 a la PC2 se realiza correctamente, se verifica la conectividad de extremo a extremo en la red.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

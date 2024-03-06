@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.1.2.5 Verificación de las adyacencias del DR/BDR</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.1.2.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuraciones avanzadas de OSPF de área única </h1>
+        <h2>OSPF en redes de accesos múltiples</h2>
+      </div>
+      <div id="content">
+<p>Para verificar las adyacencias OSPF, utilice el comando <span class="cmd"><b>show ip ospf neighbor</b></span>, como se muestra en la figura 1. </p>
+<p></p>
+<p>A diferencia de los enlaces seriales que solo muestran un estado de <span class="cmd">FULL/-</span>, el estado de los vecinos en redes de accesos múltiples puede ser uno de los siguientes:</p>
+<p>
+<ul>
+<li>
+<span class="cmd">FULL/DROTHER:</span>
+<b></b>se trata de un router DR o BDR que tiene plena adyacencia con un router que no es DR ni BDR. Estos dos vecinos pueden intercambiar paquetes de saludo, actualizaciones, consultas, respuestas y acuses de recibo.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<span class="cmd">FULL/DR:</span>
+<b></b>el router tiene plena adyacencia con el vecino DR indicado. Estos dos vecinos pueden intercambiar paquetes de saludo, actualizaciones, consultas, respuestas y acuses de recibo. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<span class="cmd">FULL/BDR:</span>
+<b></b>el router tiene plena adyacencia con el vecino BDR indicado. Estos dos vecinos pueden intercambiar paquetes de saludo, actualizaciones, consultas, respuestas y acuses de recibo.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<span class="cmd">2-WAY/DROTHER:</span>
+<b></b>el router que no es DR ni BDR tiene una relación de vecino con otro router que no es DR ni BDR. Estos dos vecinos intercambian paquetes de saludo. </li>
+</ul>
+</p>
+<p></p>
+<p>En general, el estado normal de un router OSPF es <span class="cmd">FULL</span>. Si un router está atascado en otro estado, es un indicio de que existen problemas en la formación de adyacencias. La única excepción a esto es el estado <span class="cmd">2-WAY</span>, que es normal es una red multiacceso con difusión. </p>
+<p></p>
+<p>En redes de accesos múltiples, los DROthers solo forman adyacencias FULL con el DR y el BDR. Sin embargo, forman adyacencias de vecino 2-WAY con cualquier otro DROther que se una a la red. Esto significa que todos los routers DROther en la red de accesos múltiples siguen recibiendo paquetes de saludo de todos los otros routers DROther. De esta manera, éstos conocen a todos los routers de la red. Cuando dos routers DROther forman una adyacencia de vecino, el estado de vecino aparece como <span class="cmd">2-WAY/DROTHER</span>.</p>
+<p></p>
+<p>El resultado que genera el R1 confirma que este tiene adyacencias con el router:</p>
+<p>
+<ul>
+<li>El R2 con la ID de router 2.2.2.2 está en estado Full y cumple la función de BDR. (1)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>El R3 con la ID de router 3.3.3.3 está en estado Full y cumple la función de DR. (2)</li>
+</ul>
+</p>
+<p></p>
+<p>El resultado que genera el R2, en la figura 2, confirma que este tiene adyacencias con el router:</p>
+<p>
+<ul>
+<li>El R1 con la ID de router 1.1.1.1 está en estado Full, y su función no es la de DR ni la de BDR. (1)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>El R3 con la ID de router 3.3.3.3 está en estado Full y cumple la función de DR. (2)</li>
+</ul>
+</p>
+<p></p>
+<p>El resultado que genera el R3, en la figura 3, confirma que este tiene adyacencias con el router:</p>
+<p>
+<ul>
+<li>El R1 con la ID de router 1.1.1.1 está en estado Full, y su función no es la de DR ni la de BDR. (1)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>El R2 con la ID de router 2.2.2.2 está en estado Full y cumple la función de BDR. (2)</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

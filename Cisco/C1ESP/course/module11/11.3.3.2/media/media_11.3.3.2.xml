@@ -1,0 +1,72 @@
+﻿<textcomponents> <!--more info-->
+<component id="ID_TipText">
+<text><![CDATA[<b>Más información]]></text>
+</component>
+
+<component id="ID_InfoTitle">
+<text><![CDATA[Más información]]></text>
+</component>
+
+<component id="ID_InfoBody">
+<text><![CDATA[El registro de configuración le indica al router cómo debe iniciarse. Hay varias configuraciones posibles para el registro de configuración. Las más comunes son las siguientes:<br/><br/> 0x2102: configuración predeterminada de fábrica para los routers Cisco (carga la imagen de IOS desde la memoria flash y el archivo de configuración de inicio desde la NVRAM).<br/>0x2142: el router ignora el contenido de la RAM no volátil (NVRAM).<br/>0x2120: El router arranca en el modo ROMmon.]]></text>
+</component> <!--animation-->
+<component id="ID_txt01">
+<text><![CDATA[Versión del IOS]]></text>
+</component>
+
+<component id="ID_txt02">
+<text><![CDATA[Versión del Bootstrap]]></text>
+</component>
+
+<component id="ID_txt03">
+<text><![CDATA[Archivo de imagen del IOS]]></text>
+</component>
+
+<component id="ID_txt04">
+<text><![CDATA[Modelo y CPU]]></text>
+</component>
+
+<component id="ID_txt05">
+<text><![CDATA[Cantidad de RAM]]></text>
+</component>
+
+<component id="ID_txt06">
+<text><![CDATA[Cantidad y tipo de interfaces]]></text>
+</component>
+
+<component id="ID_txt07">
+<text><![CDATA[Cantidad de NVRAM]]></text>
+</component>
+
+<component id="ID_txt08">
+<text><![CDATA[Cantidad de flash]]></text>
+</component>
+
+<component id="ID_txt09">
+<text><![CDATA[Registro de configuración]]></text>
+</component> <!-- controller -->
+<component id="end">
+<text><![CDATA[Finalizar]]></text>
+</component>
+
+<component id="fforward">
+<text><![CDATA[Adelantar]]></text>
+</component>
+
+<component id="pause">
+<text><![CDATA[Pausa]]></text>
+</component>
+
+<component id="play">
+<text><![CDATA[Reproducir]]></text>
+</component>
+
+<component id="rewind">
+<text><![CDATA[Regresar]]></text>
+</component>
+
+<component id="start">
+<text><![CDATA[Inicio]]></text>
+</component>
+
+</textcomponents>

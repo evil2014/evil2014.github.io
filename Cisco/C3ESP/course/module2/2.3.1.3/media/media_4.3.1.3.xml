@@ -1,0 +1,126 @@
+﻿<textcomponents> <!-- s1  -->
+<component id="ID_s1_title">
+<text><![CDATA[<b>PortFast y protección BPDU</b>]]></text>
+</component>
+
+<component id="ID_s1_txt01">
+<text><![CDATA[<b>Enlace troncal 3</b>]]></text>
+</component>
+
+<component id="ID_s1_txt02">
+<text><![CDATA[<b>Enlace troncal 1</b>]]></text>
+</component>
+
+<component id="ID_s1_txt03">
+<text><![CDATA[<b>Enlace troncal 2</b>]]></text>
+</component>
+
+<component id="ID_s1_txt04">
+<text><![CDATA[PortFast y protección BPDU]]></text>
+</component>
+
+<component id="ID_s1_txt05">
+<text><![CDATA[<font color="#F68026"><b>D</b></font>]]></text>
+</component>
+
+<component id="ID_s1_txt06">
+<text><![CDATA[<font color="#F68026"><b>D</b></font>]]></text>
+</component>
+
+<component id="ID_s1_txt07">
+<text><![CDATA[<font color="#F68026"><b>D</b></font>]]></text>
+</component>
+
+<component id="ID_s1_txt08">
+<text><![CDATA[<font color="#F68026"><b>R</b></font>]]></text>
+</component>
+
+<component id="ID_s1_txt09">
+<text><![CDATA[<font color="#F68026"><b>R</b></font>]]></text>
+</component>
+
+<component id="ID_s1_txt10">
+<text><![CDATA[<font color="#F68026"><b>A</b></font>]]></text>
+</component> <!-- s2  -->
+<component id="ID_s2_title">
+<text><![CDATA[<b>Configuración de PortFast y protección BPDU</b>]]></text>
+</component>
+
+<component id="ID_s2_txt01">
+<text><![CDATA[<b>Habilitar PortFast</b>]]></text>
+</component>
+
+<component id="ID_s2_txt02">
+<text><![CDATA[<b>Deshabilitar PortFast</b>]]></text>
+</component> <!-- s3  -->
+<component id="ID_s3_title">
+<text><![CDATA[<b>PortFast y protección BPDU</b>]]></text>
+</component>
+
+<component id="ID_s3_txt01">
+<text><![CDATA[&lt;resultado omitido&gt;]]></text>
+</component>
+
+<component id="ID_s3_txt02">
+<text><![CDATA[&lt;resultado omitido&gt;]]></text>
+</component> <!-- s4  -->
+
+<component id="ID_sc_reset">
+		<text><![CDATA[Restablecer]]></text>
+	</component>
+	<component id="ID_sc_showme">
+		<text><![CDATA[Mostrar]]></text>
+	</component>
+	<component id="ID_sc_showall">
+		<text><![CDATA[Mostrar todo]]></text>
+	</component>
+	
+	
+	
+<component id="ID_s4_title">
+		<text><![CDATA[<b>Verificación de la configuración de PortFast y de la protección BPDU</b>]]></text>
+	</component>
+	<component id="ID_SC4" fontFace='Courier New' fontSize="10">
+		<feedback id="fb"><![CDATA[<b><font size='10' face="Arial" color="#0000FF">***Debe introducir el comando exacto y completo. Los comandos que incluyen un nombre o una contraseña distinguen mayúsculas de minúsculas.***</font></b>
+		]]></feedback>
+		<existingcommands><![CDATA[<font size='10' face="Arial"><b>Configure FastEthernet 0/11 para portfast en el S2.</b></font>]]></existingcommands>
+		<command prompt="S2(config)#">
+			<correctresponse><![CDATA[interface FastEthernet 0/11]]></correctresponse>
+		</command>	
+		<command prompt="S2(config-if)#">
+			<correctresponse><![CDATA[spanning-tree portfast]]></correctresponse>
+				<deviceresponse><![CDATA[<font size='9' face="Courier New">%Warning: portfast should only be enabled on ports connected to a single <br> host. Connecting hubs, concentrators, switches, bridges, etc... to this <br> interface when portfast is enabled, can cause temporary bridging loops.  <br> Use with CAUTION <br> <br>%Portfast has been configured on FastEthernet0/11 but will only <br> thave effect when the interface is in a non-trunking mode.  <br></font>]]></deviceresponse>
+			<instruction><![CDATA[<font size='10' face="Arial"><b>Configure la protección BPDU y vuelva al modo EXEC privilegiado.</font>]]></instruction>
+		</command>	
+		<command prompt="S2(config-if)#">
+			<correctresponse><![CDATA[spanning-tree bpduguard enable]]></correctresponse>
+		</command>	
+		<command prompt="S2(config-if)#">
+			<correctresponse><![CDATA[end]]></correctresponse>
+			<instruction><![CDATA[<font size='10' face="Arial"><b>Muestre la configuración actual filtrada para la interfaz f0/11.</b></font>]]></instruction>
+		</command>	
+		<command prompt="S2#">
+			<correctresponse><![CDATA[show running-config interface f0/11]]></correctresponse>
+				<deviceresponse><![CDATA[Building configuration...  <br> <br>Current configuration : 90 bytes <br>!  <br>interface FastEthernet0/11 <br> spanning-tree portfast <br> spanning-tree bpduguard enable <br>end]]></deviceresponse>
+			<instruction><![CDATA[<font size='10' face="Arial"><b>Configure portfast de manera predeterminada para todas las interfaces en el S1.</font>]]></instruction>
+		</command>
+		<command prompt="S1(config)#">
+			<correctresponse><![CDATA[spanning-tree portfast default]]></correctresponse>
+				<deviceresponse><![CDATA[<font size='9' face="Courier New">%Warning: this command enables portfast by default on all interfaces. You<br> should now disable portfast explicitly on switched ports leading to hubs,<br> switches and bridges as they may create temporary bridging loops.<br></font>]]></deviceresponse>
+			<instruction><![CDATA[<font size='10' face="Arial"><b>Configure la protección BPDU de manera predeterminada en el S1 y vuelva al modo EXEC privilegiado.</b></font>]]></instruction>
+		</command>	
+		<command prompt="S1(config)#">
+			<correctresponse><![CDATA[spanning-tree portfast bpduguard default]]></correctresponse>
+		</command>
+		<command prompt="S1(config)#">
+			<correctresponse><![CDATA[end]]></correctresponse>
+			<instruction><![CDATA[<font size='10' face="Arial"><b>Mostrar la configuración actual aplicando un filtro al resultado para comenzar por spanning-tree.</b></font>]]></instruction>
+		</command>
+		<command prompt="S1#">
+			<correctresponse><![CDATA[show running-config | begin spanning-tree]]></correctresponse>
+				<deviceresponse><![CDATA[spanning-tree mode pvst <br>spanning-tree portfast default <br>spanning-tree portfast bpduguard default <br>spanning-tree extend system-id <br>spanning-tree vlan 1 priority 0 <br>spanning-tree vlan 10 priority 24576 <br>spanning-tree vlan 20 priority 28672 <br>&lt;resultado omitido&gt;<br>]]></deviceresponse>
+			<instruction><![CDATA[<font size='10' face="Arial"><b>Configuró correctamente portfast y la protección BPDU.</font>]]></instruction>
+		</command>
+		<command prompt=""/>
+	</component>
+</textcomponents>

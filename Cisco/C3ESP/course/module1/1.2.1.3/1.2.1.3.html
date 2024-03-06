@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.2.1.3 Velocidades de reenvío</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.2.1.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Selección de dispositivos de red</h1>
+        <h2>Hardware del switch</h2>
+      </div>
+      <div id="content">
+<p>Las tasas de reenvío definen las capacidades de procesamiento de un switch mediante la estimación de la cantidad de datos que puede procesar por segundo el switch. Como se muestra en la ilustración, las líneas de productos de switch se clasifican según las velocidades de reenvío. Los switches básicos presentan velocidades de reenvío inferiores que los switches de nivel empresarial. Es importante considerar las velocidades de reenvío cuando se selecciona un switch. Si la velocidad es demasiado baja, no puede incluir una comunicación de velocidad de cable completa a través de todos sus puertos de switch. La velocidad de cable es la velocidad de datos que puede obtener cada puerto Ethernet en el switch. Las velocidades de datos pueden ser 100 Mb/s, 1 Gb/s, 10 Gb/s o 100 Gb/s. </p>
+<p></p>
+<p>Por ejemplo, un switch gigabit de 48 puertos típico que funciona a la máxima velocidad de cable genera 48 Gb/s de tráfico. Si el switch sólo admite una velocidad de reenvío de 32 Gb/s, no puede ejecutar la velocidad de cable completa a través de todos los puertos de forma simultánea. Por fortuna, por lo general los switches de capa de acceso no necesitan funcionar a la máxima velocidad de cable, debido a que están limitados físicamente por los uplinks a la capa de distribución. Esto significa que se pueden utilizar switches más económicos y de menor rendimiento en la capa de acceso, y switches de mayor rendimiento y más costosos en las capas de distribución y de núcleo, donde la velocidad de reenvío tiene un mayor impacto en el rendimiento de la red.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+﻿<textcomponents>
+
+<component id="ID_s1_title">
+<text><![CDATA[<b>Subredes VLSM</b>]]></text>
+</component> <!-- orange text boxes -->
+
+<component id="ID_s1_txtbox_01">
+<text><![CDATA[La subred 10.0.0.0/8 se subdividió mediante la máscara de subred /16.]]></text>
+</component>
+
+<component id="ID_s1_txtbox_02">
+<text><![CDATA[Cualquiera de las subredes /16 pueden subdividirse aún más. En este ejemplo, 10.1.0.0/16 y 10.2.0.0/16 se dividieron en subredes con la máscara /24.]]></text>
+</component>
+
+<component id="ID_s1_txtbox_03">
+<text><![CDATA[En este ejemplo, 10.3.0.0/16 se dividió en subredes utilizando la máscara /28 y 10.4.0.0/16 se dividió en subredes utilizando la máscara /20.]]></text>
+</component>
+
+<component id="ID_s1_txtbox_04">
+<text><![CDATA[Las direcciones host individuales se asignan a partir de las “sub-subredes”.]]></text>
+</component> <!-- controller -->
+
+<component id="end">
+<text><![CDATA[Finalizar]]></text>
+</component>
+
+<component id="fforward">
+<text><![CDATA[Adelantar]]></text>
+</component>
+
+<component id="pause">
+<text><![CDATA[Pausa]]></text>
+</component>
+
+<component id="play">
+<text><![CDATA[Reproducir]]></text>
+</component>
+
+<component id="rewind">
+<text><![CDATA[Regresar]]></text>
+</component>
+
+<component id="start">
+<text><![CDATA[Inicio]]></text>
+</component>
+
+</textcomponents>

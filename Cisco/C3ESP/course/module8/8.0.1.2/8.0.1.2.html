@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.0.1.2 Actividad de clase: Volver al futuro (EIGRP)</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.0.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuraciones avanzadas y resolución de problemas de EIGRP</h1>
+        <h2>Introducción</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Actividad:</b>
+<b>Volver al futuro (EIGRP)</b>
+</p>
+<p></p>
+<p>En este capítulo, se le enseña a brindar mantenimiento a redes EIGRP y a influenciarlas para que hagan lo que usted desee que hagan. Entre los conceptos relacionados con EIGRP que aparecen en este capítulo, se incluyen los siguientes:</p>
+<p></p>
+<p>
+<ul>
+<li>Sumarización automática </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Equilibrio de carga</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Rutas predeterminadas</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Temporizadores de espera</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Autenticación</li>
+</ul>
+</p>
+<p></p>
+<p>Con un compañero, escriba 10 preguntas de revisión acerca de EIGRP sobre la base del contenido del currículo del capítulo anterior. Tres de las preguntas deben abordar los elementos indicados anteriormente. Lo ideal sería que creen preguntas de selección múltiple, verdadero o falso, o para completar espacios en blanco. Mientras crean las preguntas, registren la sección del currículo y los números de página del contenido de respaldo, en caso de que necesiten consultarlos para verificar las respuestas.</p>
+<p></p>
+<p>Guarde el trabajo y, a continuación, reúnase con otro grupo o con la clase completa, y ponga a prueba sus conocimientos con las preguntas que formuló.</p>
+<p></p>
+<p>
+<a href="../../files/8.0.1.2%20EIGRP%20-%20Back%20to%20the%20Future%20Instructions.pdf" target="_blank">Actividad de clase: Volver al futuro (EIGRP)</a>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

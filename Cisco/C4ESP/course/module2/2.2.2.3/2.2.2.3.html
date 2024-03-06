@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.2.2.3 ISDN</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.2.2.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Elección de una tecnología WAN</h1>
+        <h2>Infraestructuras WAN privadas</h2>
+      </div>
+      <div id="content">
+<p>La red digital de servicios integrados (ISDN) es una tecnología de conmutación de circuitos que habilita al bucle local de una PSTN para transportar señales digitales, lo que da como resultado conexiones de conmutación de mayor capacidad. </p>
+<p></p>
+<p>ISDN cambia las conexiones internas de la PSTN para que transporte señales digitales multiplexadas por división de tiempo (TDM) en vez de señales analógicas. TDM permite que se transfieran dos o más señales, o flujos de bits, como subcanales en un canal de comunicación. Las señales parecen transferirse en forma simultánea; sin embargo, físicamente, las señales se turnan en el canal. </p>
+<p></p>
+<p>En la figura 1, se muestra un ejemplo de una topología de ISDN. La conexión ISDN puede requerir un adaptador de terminal (TA), que es un dispositivo utilizado para conectar las conexiones de la interfaz de velocidad básica (BRI) de ISDN a un router. </p>
+<p></p>
+<p>ISDN convierte el bucle local en una conexión digital TDM. Este cambio permite que el bucle local transporte las señales digitales, lo que genera conexiones de conmutación de mayor capacidad. La conexión usa canales de corriente portadora (B) de 64 kb/s para transportar voz y datos, y un canal delta (D), de señalización, para la configuración de llamadas y otros propósitos. </p>
+<p></p>
+<p>Existen dos tipos de interfaces de ISDN:</p>
+<p>
+<ul>
+<li>
+<b>Interfaz de velocidad básica (BRI):</b> la BRI ISDN está diseñada para su uso en hogares y pequeñas empresas, y proporciona dos canales B de 64 kb/s y un canal D de 16 kb/s. El canal D de BRI está diseñado para propósitos de control y con frecuencia se infrautiliza, debido a que solo tiene que controlar dos canales B (figura 2). </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Interfaz de velocidad primaria (PRI):</b> ISDN también está disponible para instalaciones de mayor tamaño. En América del Norte, PRI proporciona 23 canales B con 64 kb/s y un canal D con 64 kb/s para una velocidad de bits total de hasta 1,544 Mb/s. Esto incluye cierta sobrecarga adicional para la sincronización. En Europa, Australia y otras partes del mundo, PRI ISDN proporciona 30 canales B y un canal D para una velocidad de bits total de hasta 2,048 Mb/s, lo que incluye la sobrecarga para la sincronización (figura 3). </li>
+</ul>
+</p>
+<p></p>
+<p>BRI tiene un tiempo de configuración de llamada inferior a un segundo, y el canal B de 64 kb/s proporciona mayor capacidad que un enlace de módem analógico. Si se requiere mayor capacidad, se puede activar un segundo canal B para proporcionar un total de 128 kb/s. Si bien es no es adecuado para video, permite varias conversaciones de voz simultáneas además del tráfico de datos. </p>
+<p></p>
+<p>Otra aplicación común de ISDN es proporcionar la capacidad adicional necesaria en una conexión de línea arrendada. La línea arrendada tiene el tamaño para transportar cargas de tráfico promedio, mientras que la ISDN se agrega durante períodos de picos de demanda. Si la línea arrendada falla, la ISDN también se usa como respaldo. Las tarifas de ISDN se determinan sobre la base de los canales B y son similares a las de las conexiones de voz analógicas. </p>
+<p></p>
+<p>Con PRI ISDN, se pueden conectar varios canales B entre dos terminales. Esto permite videoconferencias y conexiones de datos con un ancho de banda elevado sin latencia o vibración. Sin embargo, usar varias conexiones a través de distancias largas puede ser muy costoso.</p>
+<p></p>
+<p>
+<b>Nota:</b> si bien ISDN sigue siendo una tecnología importante para las redes de los proveedores de servicios de telefonía, su popularidad como opción de conexión a Internet disminuyó debido a la introducción de DSL de alta velocidad y otros servicios de banda ancha.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

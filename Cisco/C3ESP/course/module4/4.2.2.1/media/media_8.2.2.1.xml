@@ -1,0 +1,88 @@
+﻿<textcomponents>
+<component id="ID_s1_title">
+<text><![CDATA[<b>Uso de las tramas de control para la transferencia de datos</b>]]></text>
+</component>
+
+<component id="ID_s1_txt04">
+  <text><![CDATA[Emisor]]></text>
+</component>
+
+<component id="ID_s1_txt05">
+  <text><![CDATA[Receptor]]></text>
+</component>
+
+<component id="ID_s1_txt01">
+  <text><![CDATA[RTS (0x1B)]]></text>
+</component>
+
+<component id="ID_s1_txt02">
+  <text><![CDATA[CTS (0x1C)]]></text>
+</component>
+
+<component id="ID_s1_txt03">
+  <text><![CDATA[Datos]]></text>
+</component>
+
+<component id="ID_s1_txt06">
+  <text><![CDATA[ACK (0x1D)]]></text>
+</component>
+
+
+
+<component id="ID_s2_title">
+<text><![CDATA[<b>Diagrama de flujo de CSMA/CA</b>]]></text>
+</component>
+
+<component id="ID_s2_txt01">
+  <text><![CDATA[Inicio]]></text>
+</component>
+
+<component id="ID_s2_txt02">
+  <text><![CDATA[Armar una trama]]></text>
+</component>
+
+<component id="ID_s2_txt03">
+  <text><![CDATA[¿Está inactivo el canal?]]></text>
+</component>
+
+<component id="ID_s2_txt11">
+  <text><![CDATA[No]]></text>
+</component>
+
+<component id="ID_s2_txt12">
+  <text><![CDATA[No]]></text>
+</component>
+
+<component id="ID_s2_txt13">
+  <text><![CDATA[Sí]]></text>
+</component>
+
+<component id="ID_s2_txt08">
+  <text><![CDATA[Esperar el tiempo de postergación aleatoria]]></text>
+</component>
+
+<component id="ID_s2_txt04">
+  <text><![CDATA[Transmitir RTS]]></text>
+</component>
+
+<component id="ID_s2_txt05">
+  <text><![CDATA[¿Se recibió la trama CTS?]]></text>
+</component>
+
+<component id="ID_s2_txt09">
+  <text><![CDATA[No]]></text>
+</component>
+
+<component id="ID_s2_txt10">
+  <text><![CDATA[Sí]]></text>
+</component>
+
+<component id="ID_s2_txt06">
+  <text><![CDATA[Transmitir los datos de la aplicación]]></text>
+</component>
+
+<component id="ID_s2_txt07">
+  <text><![CDATA[End]]></text>
+</component>
+
+</textcomponents>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.1.3.5 Creación de ocho subredes</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.1.3.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>División de una red IPv4 en subredes</h1>
+        <h2>División de una red IPv4 en subredes</h2>
+      </div>
+      <div id="content">
+<p>A continuación, imagine una internetwork que requiere cinco subredes, como se muestra en la figura 1.</p>
+<p></p>
+<p>Con el mismo bloque de direcciones 192.168.1.0/24, se deben tomar prestados bits de host para crear, al menos, cinco subredes. Tomar prestados 2 bits proporcionaría solo 4 subredes, como se muestra en el ejemplo anterior. Para proporcionar más redes, se deben tomar prestados más bits de host. Utilice la fórmula para calcular la cantidad de subredes que se crean si se toman prestados 3 bits:</p>
+<p></p>
+<p>2^3 = 8 subredes</p>
+<p></p>
+<p>Como se muestra en las figuras 2 y 3, si se toman prestados 3 bits, se crean 8 subredes. Cuando se toman prestados 3 bits, la máscara de subred se extiende 3 bits en el último octeto (/27), lo que da como resultado la máscara de subred 255.255.255.224. Todos los dispositivos en estas subredes utilizarán la máscara de la máscara de subred 255.255.255.224 (/27).</p>
+<p></p>
+<p>
+<b>Cálculo de hosts</b>
+</p>
+<p>Para calcular la cantidad de hosts, examine el último octeto. Después de tomar prestados 3 bits para la subred, restan 5 bits de host.</p>
+<p></p>
+<p>Aplique la fórmula de cálculo de host:</p>
+<p></p>
+<p>2^5 = 32, pero reste 2 por todos los 0 en la porción de host (dirección de red) y todos los 1 en la porción de host (dirección de broadcast).</p>
+<p></p>
+<p>Las subredes se asignan a los segmentos de red necesarios para la topología, como se muestra en la figura 4.</p>
+<p></p>
+<p>Una vez más, mediante un plan de direccionamiento común, se asigna la primera dirección de host en la subred a la interfaz del router, como se muestra en la figura 5. Los hosts de cada subred utilizarán la dirección de la interfaz del router como la dirección de gateway predeterminado. </p>
+<p>
+<ul>
+<li>La PC1 (192.168.1.2/27) utilizará la dirección 192.168.1.1 como la dirección de gateway predeterminado.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>La PC2 (192.168.1.34/27) utilizará la dirección 192.168.1.33 como la dirección de gateway predeterminado.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>La PC3 (192.168.1.98/27) utilizará la dirección 192.168.1.97 como la dirección de gateway predeterminado.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>La PC4 (192.168.1.130/27) utilizará la dirección 192.168.1.129 como la dirección de gateway predeterminado.</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

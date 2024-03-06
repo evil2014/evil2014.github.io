@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.1.2.5 Ajuste de los protocolos de routing</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.1.2.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Implementación de un diseño de red</h1>
+        <h2>Expansión de la red</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Administración de la red enrutada</b>
+</p>
+<p>Los ISP y las redes empresariales generalmente utilizan protocolos más avanzados, como los protocolos de estado de enlace, debido a su diseño jerárquico y a la capacidad de escalamiento a redes más grandes. </p>
+<p></p>
+<p>Los protocolos de routing de estado de enlace, como el protocolo OSPF (Open Shortest Path First), que se muestra en la figura 1, funcionan bien en redes jerárquicas más grandes, donde es importante contar con una convergencia rápida. Los router OSPF establecen y mantienen las adyacencias de vecinos con otros routers OSPF conectados. Cuando los routers inician una adyacencia con los vecinos, comienza un intercambio de actualizaciones de Link-State. Los routers alcanzan un estado de adyacencia PLENA al sincronizar las vistas de sus bases de datos de Link-State. <Z1>Con OSPF se envían actualizaciones de Link-State cada vez que hay cambios en la red.</p>
+<p></p>
+<p>OSPF es un protocolo de routing de estado de enlace popular que se puede ajustar de muchas formas. En el capítulo “Ajuste y resolución de problemas de OSPF de área única”, se detallan algunas de las características más avanzadas de la configuración y la resolución de problemas de OSPF.</p>
+<p></p>
+<p>Además, OSPF admite un diseño jerárquico de dos capas, u OSPF multiárea, que se muestra en la figura 2. <Z1>Todas las redes OSPF comienzan con un Área 0, llamada también área de red troncal. A medida que se expande la red, se pueden crear otras áreas que no son de red troncal. Todas las áreas que no son de de red troncal se deben conectar directamente al área 0. En el capítulo “OSPF multiárea”, se presentan los beneficios, el funcionamiento y la configuración de OSPF multiárea.</p>
+<p></p>
+<p>Otro protocolo de routing popular en redes más grandes es el protocolo de routing de gateway interior mejorado (EIGRP). Cisco desarrolló EIGRP como un protocolo de routing vector distancia exclusivo con capacidades mejoradas. Aunque la configuración de EIGRP es relativamente simple, este protocolo tiene amplias y sólidas características y opciones subyacentes. Por ejemplo, EIGRP utiliza varias tablas, que se muestran en la figura 3, para administrar el proceso de routing. EIGRP contiene muchas funciones que no posee ninguno de los otros protocolos de routing. Es una excelente opción para redes grandes de protocolos múltiples en las que se utilizan principalmente dispositivos de Cisco.</p>
+<p></p>
+<p>En el capítulo “EIGRP”, se presentan el funcionamiento y la configuración del protocolo de routing EIGRP, mientras que en el capítulo “Configuración avanzada y resolución de problemas de EIGRP” se abarcan algunas de las opciones de configuración de EIGRP más avanzadas.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

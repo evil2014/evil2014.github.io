@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.4.3.1 Métodos de resolución de problemas</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.4.3.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de LAN inalámbricas</h1>
+        <h2>Resolución de problemas de WLAN</h2>
+      </div>
+      <div id="content">
+<p>La resolución de cualquier tipo de problemas de red debe seguir un método sistemático. Los modelos lógicos de tecnología de redes, como los modelos OSI y TCP/IP, dividen la funcionalidad de la red en capas modulares. </p>
+<p></p>
+<p>Cuando se realiza la resolución de problemas, se pueden aplicar estos modelos en capas a la red física para aislar los problemas de la red. Por ejemplo, si los síntomas sugieren un problema de conexión física, el técnico de red puede concentrarse en la resolución de problemas del circuito que funciona en la capa física. Si ese circuito funciona correctamente, el técnico observa las áreas en otra capa que podrían estar causando el problema. </p>
+<p></p>
+<p>Existen tres métodos principales de resolución de problemas para solucionar los problemas de una red:</p>
+<p>
+<ul>
+<li>
+<b>Ascendente:</b> comenzar por la capa 1 y continuar en sentido ascendente (figura 1).</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Descendente:</b> comenzar en la capa superior y continuar en sentido descendente (figura 2).</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Divide y vencerás:</b> hacer ping al destino. Si los pings fallan, verificar las capas inferiores. Si los pings se realizan correctamente, verificar las capas superiores (figura 3).</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

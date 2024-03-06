@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.2.3.1 Propiedades del cableado de fibra óptica</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.2.3.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Medios de red</h1>
+        <h2>Cableado de fibra óptica</h2>
+      </div>
+      <div id="content">
+<p>El cable de fibra óptica se volvió muy popular para interconectar dispositivos de red de infraestructura. Permite la transmisión de datos a través de distancias más extensas y a anchos de banda (velocidades de datos) mayores que cualquier otro medio de red. </p>
+<p></p>
+<p>La fibra óptica es un hilo flexible, extremadamente delgado y transparente de vidrio muy puro (sílice), no mucho más grueso que un cabello humano. En la fibra, los bits se codifican en forma de impulsos de luz. El cable de fibra óptica actúa como una guía de ondas o una “tubería de luz” para transmitir la luz entre los dos extremos con una pérdida mínima de la señal. </p>
+<p></p>
+<p>A modo de analogía, imagine un rollo de toallas de papel vacío que mide mil metros de largo y tiene el interior recubierto con material reflectante, y un pequeño puntero láser que se utiliza para enviar señales de código morse a la velocidad de la luz. Básicamente, así es cómo funciona un cable de fibra óptica, excepto que tiene un diámetro más pequeño y utiliza tecnologías de emisión y recepción de luz sofisticadas. </p>
+<p></p>
+<p>A diferencia de los cables de cobre, el cable de fibra óptica puede transmitir señales con menos atenuación y es totalmente inmune a las EMI y RFI.</p>
+<p></p>
+<p>En la actualidad, el cableado de fibra óptica se utiliza en cuatro tipos de industrias:</p>
+<p>
+<ul>
+<li>
+<b>Redes empresariales:</b> la fibra óptica se utiliza para aplicaciones de cableado backbone y para la interconexión de dispositivos de infraestructura.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>FTTH y redes de acceso:</b> la fibra hasta el hogar (FTTH) se utiliza para proporcionar servicios de banda ancha de conexión permanente a hogares y pequeñas empresas. La tecnología FTTH admite el acceso a Internet de alta velocidad a un precio accesible, así como el trabajo a distancia, la medicina a distancia y el video a petición.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Redes de largo alcance:</b> los proveedores de servicios utilizan redes de fibra óptica terrestres de largo alcance para conectar países y ciudades. En general, las redes tienen un alcance de algunas decenas a unos miles de kilómetros y utilizan sistemas basados en hasta 10 Gb/s.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Redes submarinas:</b> se utilizan cables de fibra óptica especiales para proporcionar soluciones confiables de alta velocidad y alta capacidad que puedan subsistir en entornos submarinos adversos por distancias transoceánicas. </li>
+</ul>
+</p>
+<p></p>
+<p>Nos centraremos en el uso de la fibra óptica en el nivel de empresa.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

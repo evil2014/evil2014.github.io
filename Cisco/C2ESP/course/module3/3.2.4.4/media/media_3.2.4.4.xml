@@ -1,0 +1,52 @@
+﻿<textcomponents>
+
+<component id="ID_title">
+  <text><![CDATA[<b>Problemas comunes con enlaces troncales</b>]]></text> 
+  </component>
+<component id="ID_txt03">
+  <text><![CDATA[<b>Determinar las opciones y seleccionar el OS</b>]]></text> 
+ </component>
+ 
+ <component id="ID_table01">
+<text><![CDATA[<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4'>
+<tr class="mtable_top">
+<td colspan='3' bgcolor='#0E6360' class="mtable_top"><font size='1' color='#434321'><span style="color:#DAE17A">.</span></font></td>
+</tr>
+
+<tr>
+<td width="130" bgcolor='#077A77' valign="top" class="mtitle"><font color='#ffffff'><b>Problema</b></font></td>
+<td  width="150" bgcolor='#077A77' valign="top" class="mtitle"><font color='#ffffff'><b>Resultado</b></font></td>
+<td  width="150" bgcolor='#077A77' valign="top" class="mtitle"><font color='#ffffff'><b>Ejemplo</b></font></td>
+ 
+</tr>
+
+<tr>
+<td bgcolor='#eff8f7' valign="top"><font color='#393536'>Faltas de concordancia de la VLAN nativa</font></td>
+<td bgcolor='#eff8f7' valign="top"><font color='#393536'>Presenta un riesgo a la seguridad y crea resultados no deseados.</font></td>
+<td bgcolor='#eff8f7' valign="top"><font color='#393536'>Por ejemplo, un puerto se define como VLAN 99 y el otro como VLAN 100.</font></td>
+ 
+
+</tr>
+
+
+<tr>
+<td bgcolor='#ffffff' valign="top"><font color='#393536'>Faltas de concordancia del modo de enlace troncal</font></td>
+<td  bgcolor='#ffffff' valign="top"><font color='#393536'>Causa pérdida de la conectividad de la red.</font></td>
+ <td  bgcolor='#ffffff' valign="top"><font color='#393536'>Por ejemplo, un puerto está configurado como modo de enlace troncal “desactivado” y el otro, como modo de enlace troncal “activado”.</font></td>
+
+</tr>
+
+
+
+
+
+<tr>
+<td bgcolor='#eff8f7' valign="top"><font color='#393536'>VLAN permitidas en enlaces troncales</font></td>
+<td  bgcolor='#eff8f7' valign="top"><font color='#393536'>Causa que se envíe tráfico no deseado o que no se envíe tráfico a través del enlace troncal.</font></td>
+ <td  bgcolor='#eff8f7' valign="top"><font color='#393536'>La lista de las VLAN permitidas no admite los requisitos de enlace troncal de VLAN actuales.</font></td>
+
+</tr>
+</table>]]></text> 
+</component>
+ 
+</textcomponents>

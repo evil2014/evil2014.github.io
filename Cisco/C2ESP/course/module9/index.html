@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html class="module-index" dir="ltr">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta charset="UTF-8"/>
+    <title>Principios básicos de routing y switching</title>
+    <link rel="stylesheet" type="text/css" href="../common-ext/styles/index.css"/>
+    <script type="text/javascript" src="../common-ext/scripts/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="../common-ext/scripts/index.js"></script>
+  </head>
+  <body>
+    <div id="header">
+      <div id="header-logo" title="Cisco Systems, Inc. - Cisco Networking Academy"></div>
+      <a id="home-btn" href="../../index.html" title="Inicio">Inicio</a>
+      <h1>Capítulo 9: Listas de control de acceso <span id="title"></span></h1>
+    </div>
+    <div id="nav">
+      <ul class="sections">
+        <li>
+          <span class="icon"></span>
+          <span class="section-title">9.0 Listas de control de acceso</span>
+          <ul class="topics">
+            <li>
+              <span class="icon"></span>
+              <span class="topic-title">9.0.1 Listas de control de acceso</span>
+              <ul class="pages">
+                <li>
+                  <a data-ident="9.0.1.1" class="page-title" href="9.0.1.1/9.0.1.1.html" target="frame">9.0.1.1 Introducción</a>
+                </li>
+                <li>
+                  <a data-ident="9.0.1.2" class="page-title" href="9.0.1.2/9.0.1.2.html" target="frame">9.0.1.2 Permítame que lo ayude</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <span class="icon"></span>
+          <span class="section-title">9.1 Funcionamiento de ACL de IP</span>
+          <ul class="topics">
+            <li>
+              <span class="icon"></span>
+              <span class="topic-title">9.1.1 Propósito de los ACLs</span>
+              <ul class="pages">
+                <li>
+                  <a data-ident="9.1.1.1" class="page-title" href="9.1.1.1/9.1.1.1.html" target="frame">9.1.1.1 ¿Qué es una ACL?</a>
+                </li>
+                <li>
+                  <a data-ident="9.1.1.2" class="page-title" href="9.1.1.2/9.1.1.2.html" target="frame">9.1.1.2 Una conversación TCP</a>
+                </li>
+                <li>
+                  <a data-ident="9.1.1.3" class="page-title" href="9.1.1.3/9.1.1.3.html" target="frame">9.1.1.3 Filtrado de paquetes</a>
+                </li>
+                <li>
+                  <a data-ident="9.1.1.4" class="page-title" href="9.1.1.4/9.1.1.4.html" target="frame">9.1.1.4 Filtrado de paquetes (cont.)</a>
+                </li>
+                <li>
+                  <a data-ident="9.1.1.5" class="page-title" href="9.1.1.5/9.1.1.5.html" target="frame">9.1.1.5 Funcionamiento de las ACL</a>
+                </li>
+                <li>
+                  <a data-ident="9.1.1.6" class="page-title" href="9.1.1.6/9.1.1.6.html" target="frame">9.1.1.6 Packet Tracer: demostración de ACL</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <span class="icon"></span>
+              <span class="topic-title">9.1.2 Comparación entre ACL de IPv4 estándar y extendidas</span>
+              <ul class="pages">
+                <li>
+                  <a data-ident="9.1.2.1" class="page-title" href="9.1.2.1/9.1.2.1.html" target="frame">9.1.2.1 Tipos de ACL de IPv4 de Cisco</a>
+                </li>
+                <li>
+                  <a data-ident="9.1.2.2" class="page-title" href="9.1.2.2/9.1.2.2.html" target="frame">9.1.2.2 Numeración y denominación de las ACL</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <span class="icon"></span>
+              <span class="topic-title">9.1.3 Máscaras wildcard en ACL</span>
+              <ul class="pages">
+                <li>
+                  <a data-ident="9.1.3.1" class="page-title" href="9.1.3.1/9.1.3.1.html" target="frame">9.1.3.1 Introducción a las máscaras wildcard en ACL</a>
+                </li>
+                <li>
+                  <a data-ident="9.1.3.2" class="page-title" href="9.1.3.2/9.1.3.2.html" target="frame">9.1.3.2 Ejemplos de máscara wildcard </a>
+                </li>
+                <li>
+                  <a data-ident="9.1.3.3" class="page-title" href="9.1.3.3/9.1.3.3.html" target="frame">9.1.3.3 Cálculo de la máscara wildcard</a>
+                </li>
+                <li>
+                  <a data-ident="9.1.3.4" class="page-title" href="9.1.3.4/9.1.3.4.html" target="frame">9.1.3.4 Palabras clave de las máscaras wildcard</a>
+                </li>
+                <li>
+                  <a data-ident="9.1.3.5" class="page-title" href="9.1.3.5/9.1.3.5.html" target="frame">9.1.3.5 Ejemplos de palabras clave de las máscaras wildcard</a>
+                </li>
+                <li>
+                  <a data-ident="9.1.3.6" class="page-title" href="9.1.3.6/9.1.3.6.html" target="frame">9.1.3.6 Actividad: determinar la máscara wildcard correcta</a>
+                </li>
+                <li>
+                  <a data-ident="9.1.3.7" class="page-title" href="9.1.3.7/9.1.3.7.html" target="frame">9.1.3.7 Actividad: determinar el permiso o la denegación</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <span class="icon"></span>
+              <span class="topic-title">9.1.4 Pautas para la creación de ACL</span>
+              <ul class="pages">
+                <li>
+                  <a data-ident="9.1.4.1" class="page-title" href="9.1.4.1/9.1.4.1.html" target="frame">9.1.4.1 Pautas generales para la creación de ACL</a>
+                </li>
+                <li>
+                  <a data-ident="9.1.4.2" class="page-title" href="9.1.4.2/9.1.4.2.html" target="frame">9.1.4.2 Optimizaciones de las ACL</a>
+                </li>
+                <li>
+                  <a data-ident="9.1.4.3" class="page-title" href="9.1.4.3/9.1.4.3.html" target="frame">9.1.4.3 Actividad: funcionamiento de ACL</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <span class="icon"></span>
+              <span class="topic-title">9.1.5 Pautas para la colocación de ACL</span>
+              <ul class="pages">
+                <li>
+                  <a data-ident="9.1.5.1" class="page-title" href="9.1.5.1/9.1.5.1.html" target="frame">9.1.5.1 Dónde ubicar las ACL</a>
+                </li>
+                <li>
+                  <a data-ident="9.1.5.2" class="page-title" href="9.1.5.2/9.1.5.2.html" target="frame">9.1.5.2 Ubicación de la ACL estándar</a>
+                </li>
+                <li>
+                  <a data-ident="9.1.5.3" class="page-title" href="9.1.5.3/9.1.5.3.html" target="frame">9.1.5.3 Ubicación de la ACL extendida</a>
+                </li>
+                <li>
+                  <a data-ident="9.1.5.4" class="page-title" href="9.1.5.4/9.1.5.4.html" target="frame">9.1.5.4 Actividad: colocar ACL estándar y extendidas</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <span class="icon"></span>
+          <span class="section-title">9.2 ACL de IPv4 estándar </span>
+          <ul class="topics">
+            <li>
+              <span class="icon"></span>
+              <span class="topic-title">9.2.1 Configuración de ACL de IPv4 estándar</span>
+              <ul class="pages">
+                <li>
+                  <a data-ident="9.2.1.1" class="page-title" href="9.2.1.1/9.2.1.1.html" target="frame">9.2.1.1 Cómo ingresar sentencias de criterios</a>
+                </li>
+                <li>
+                  <a data-ident="9.2.1.2" class="page-title" href="9.2.1.2/9.2.1.2.html" target="frame">9.2.1.2 Configurar una ACL estándar</a>
+                </li>
+                <li>
+                  <a data-ident="9.2.1.3" class="page-title" href="9.2.1.3/9.2.1.3.html" target="frame">9.2.1.3 Configuración de una ACL estándar (cont.)</a>
+                </li>
+                <li>
+                  <a data-ident="9.2.1.4" class="page-title" href="9.2.1.4/9.2.1.4.html" target="frame">9.2.1.4 Lógica interna</a>
+                </li>
+                <li>
+                  <a data-ident="9.2.1.5" class="page-title" href="9.2.1.5/9.2.1.5.html" target="frame">9.2.1.5 Aplicación de ACL estándar a las interfaces</a>
+                </li>
+                <li>
+                  <a data-ident="9.2.1.6" class="page-title" href="9.2.1.6/9.2.1.6.html" target="frame">9.2.1.6 Aplicación de ACL estándar a las interfaces (cont.)</a>
+                </li>
+                <li>
+                  <a data-ident="9.2.1.7" class="page-title" href="9.2.1.7/9.2.1.7.html" target="frame">9.2.1.7 Configuración de ACL estándar con nombre</a>
+                </li>
+                <li>
+                  <a data-ident="9.2.1.8" class="page-title" href="9.2.1.8/9.2.1.8.html" target="frame">9.2.1.8 Comentarios sobre las ACL</a>
+                </li>
+                <li>
+                  <a data-ident="9.2.1.9" class="page-title" href="9.2.1.9/9.2.1.9.html" target="frame">9.2.1.9 Actividad: configuración de ACL estándar</a>
+                </li>
+                <li>
+                  <a data-ident="9.2.1.10" class="page-title" href="9.2.1.10/9.2.1.10.html" target="frame">9.2.1.10 Packet Tracer: configuración de ACL estándar</a>
+                </li>
+                <li>
+                  <a data-ident="9.2.1.11" class="page-title" href="9.2.1.11/9.2.1.11.html" target="frame">9.2.1.11 Packet Tracer: configuración de ACL estándar con nombre</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <span class="icon"></span>
+              <span class="topic-title">9.2.2 Modificación de ACL de IPv4</span>
+              <ul class="pages">
+                <li>
+                  <a data-ident="9.2.2.1" class="page-title" href="9.2.2.1/9.2.2.1.html" target="frame">9.2.2.1 Edición de ACL estándar numeradas</a>
+                </li>
+                <li>
+                  <a data-ident="9.2.2.2" class="page-title" href="9.2.2.2/9.2.2.2.html" target="frame">9.2.2.2 Edición de ACL estándar numeradas (cont.)</a>
+                </li>
+                <li>
+                  <a data-ident="9.2.2.3" class="page-title" href="9.2.2.3/9.2.2.3.html" target="frame">9.2.2.3 Edición de ACL estándar con nombre</a>
+                </li>
+                <li>
+                  <a data-ident="9.2.2.4" class="page-title" href="9.2.2.4/9.2.2.4.html" target="frame">9.2.2.4 Verificar las ACL</a>
+                </li>
+                <li>
+                  <a data-ident="9.2.2.5" class="page-title" href="9.2.2.5/9.2.2.5.html" target="frame">9.2.2.5 Estadísticas de ACL</a>
+                </li>
+                <li>
+                  <a data-ident="9.2.2.6" class="page-title" href="9.2.2.6/9.2.2.6.html" target="frame">9.2.2.6 Números de secuencia de ACL estándar </a>
+                </li>
+                <li>
+                  <a data-ident="9.2.2.7" class="page-title" href="9.2.2.7/9.2.2.7.html" target="frame">9.2.2.7 Práctica de laboratorio: configuración y verificación de ACL estándar</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <span class="icon"></span>
+              <span class="topic-title">9.2.3 Protección de puertos VTY con una ACL de IPv4 estándar </span>
+              <ul class="pages">
+                <li>
+                  <a data-ident="9.2.3.1" class="page-title" href="9.2.3.1/9.2.3.1.html" target="frame">9.2.3.1 Configuración de una ACL estándar para proteger un puerto VTY </a>
+                </li>
+                <li>
+                  <a data-ident="9.2.3.2" class="page-title" href="9.2.3.2/9.2.3.2.html" target="frame">9.2.3.2 Verificación de una ACL estándar utilizada para proteger un puerto VTY</a>
+                </li>
+                <li>
+                  <a data-ident="9.2.3.3" class="page-title" href="9.2.3.3/9.2.3.3.html" target="frame">9.2.3.3 Packet Tracer: configuración de una ACL en líneas VTY</a>
+                </li>
+                <li>
+                  <a data-ident="9.2.3.4" class="page-title" href="9.2.3.4/9.2.3.4.html" target="frame">9.2.3.4 Práctica de laboratorio: configuración y verificación de restricciones de VTY</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <span class="icon"></span>
+          <span class="section-title">9.3 ACL de IPv4 extendidas</span>
+          <ul class="topics">
+            <li>
+              <span class="icon"></span>
+              <span class="topic-title">9.3.1 Estructura de una ACL de IPv4 extendida</span>
+              <ul class="pages">
+                <li>
+                  <a data-ident="9.3.1.1" class="page-title" href="9.3.1.1/9.3.1.1.html" target="frame">9.3.1.1 ACL extendidas</a>
+                </li>
+                <li>
+                  <a data-ident="9.3.1.2" class="page-title" href="9.3.1.2/9.3.1.2.html" target="frame">9.3.1.2 ACL extendidas (cont.)</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <span class="icon"></span>
+              <span class="topic-title">9.3.2 Configuración de ACL de IPv4 extendidas</span>
+              <ul class="pages">
+                <li>
+                  <a data-ident="9.3.2.1" class="page-title" href="9.3.2.1/9.3.2.1.html" target="frame">9.3.2.1 Configurar las ACL extendidas</a>
+                </li>
+                <li>
+                  <a data-ident="9.3.2.2" class="page-title" href="9.3.2.2/9.3.2.2.html" target="frame">9.3.2.2 Aplicación de ACL extendidas a las interfaces</a>
+                </li>
+                <li>
+                  <a data-ident="9.3.2.3" class="page-title" href="9.3.2.3/9.3.2.3.html" target="frame">9.3.2.3 Filtrado de tráfico con ACL extendidas</a>
+                </li>
+                <li>
+                  <a data-ident="9.3.2.4" class="page-title" href="9.3.2.4/9.3.2.4.html" target="frame">9.3.2.4 Creación de ACL extendidas con nombre</a>
+                </li>
+                <li>
+                  <a data-ident="9.3.2.5" class="page-title" href="9.3.2.5/9.3.2.5.html" target="frame">9.3.2.5 Verificación de ACL extendidas</a>
+                </li>
+                <li>
+                  <a data-ident="9.3.2.6" class="page-title" href="9.3.2.6/9.3.2.6.html" target="frame">9.3.2.6 Edición de ACL extendidas</a>
+                </li>
+                <li>
+                  <a data-ident="9.3.2.7" class="page-title" href="9.3.2.7/9.3.2.7.html" target="frame">9.3.2.7 Actividad: crear una instrucción de ACL extendida</a>
+                </li>
+                <li>
+                  <a data-ident="9.3.2.8" class="page-title" href="9.3.2.8/9.3.2.8.html" target="frame">9.3.2.8 Actividad: evaluar ACE extendidas</a>
+                </li>
+                <li>
+                  <a data-ident="9.3.2.9" class="page-title" href="9.3.2.9/9.3.2.9.html" target="frame">9.3.2.9 Actividad: breve prueba de ACL</a>
+                </li>
+                <li>
+                  <a data-ident="9.3.2.10" class="page-title" href="9.3.2.10/9.3.2.10.html" target="frame">9.3.2.10 Packet Tracer: configuración de ACL extendidas, situación 1</a>
+                </li>
+                <li>
+                  <a data-ident="9.3.2.11" class="page-title" href="9.3.2.11/9.3.2.11.html" target="frame">9.3.2.11 Packet Tracer: configuración de ACL extendidas, situación 2</a>
+                </li>
+                <li>
+                  <a data-ident="9.3.2.12" class="page-title" href="9.3.2.12/9.3.2.12.html" target="frame">9.3.2.12 Packet Tracer: configuración de ACL extendidas, situación 3</a>
+                </li>
+                <li>
+                  <a data-ident="9.3.2.13" class="page-title" href="9.3.2.13/9.3.2.13.html" target="frame">9.3.2.13 Práctica de laboratorio: configuración y verificación de ACL extendidas</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <span class="icon"></span>
+          <span class="section-title">9.4 Resolución de problemas de ACL</span>
+          <ul class="topics">
+            <li>
+              <span class="icon"></span>
+              <span class="topic-title">9.4.1 Procesamiento de paquetes con ACL</span>
+              <ul class="pages">
+                <li>
+                  <a data-ident="9.4.1.1" class="page-title" href="9.4.1.1/9.4.1.1.html" target="frame">9.4.1.1 Lógica de ACL de entrada y salida</a>
+                </li>
+                <li>
+                  <a data-ident="9.4.1.2" class="page-title" href="9.4.1.2/9.4.1.2.html" target="frame">9.4.1.2 Operaciones lógicas de ACL</a>
+                </li>
+                <li>
+                  <a data-ident="9.4.1.3" class="page-title" href="9.4.1.3/9.4.1.3.html" target="frame">9.4.1.3 Proceso de decisión de ACL estándar</a>
+                </li>
+                <li>
+                  <a data-ident="9.4.1.4" class="page-title" href="9.4.1.4/9.4.1.4.html" target="frame">9.4.1.4 Proceso de decisión de ACL extendida</a>
+                </li>
+                <li>
+                  <a data-ident="9.4.1.5" class="page-title" href="9.4.1.5/9.4.1.5.html" target="frame">9.4.1.5 Actividad: ordenar los pasos del proceso de toma de decisiones de ACL</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <span class="icon"></span>
+              <span class="topic-title">9.4.2 Errores comunes de ACL </span>
+              <ul class="pages">
+                <li>
+                  <a data-ident="9.4.2.1" class="page-title" href="9.4.2.1/9.4.2.1.html" target="frame">9.4.2.1 Resolución de problemas de errores comunes de ACL, ejemplo 1</a>
+                </li>
+                <li>
+                  <a data-ident="9.4.2.2" class="page-title" href="9.4.2.2/9.4.2.2.html" target="frame">9.4.2.2 Resolución de problemas de errores comunes de ACL, ejemplo 2</a>
+                </li>
+                <li>
+                  <a data-ident="9.4.2.3" class="page-title" href="9.4.2.3/9.4.2.3.html" target="frame">9.4.2.3 Resolución de problemas de errores comunes de ACL, ejemplo 3</a>
+                </li>
+                <li>
+                  <a data-ident="9.4.2.4" class="page-title" href="9.4.2.4/9.4.2.4.html" target="frame">9.4.2.4 Resolución de problemas de errores comunes de ACL, ejemplo 4</a>
+                </li>
+                <li>
+                  <a data-ident="9.4.2.5" class="page-title" href="9.4.2.5/9.4.2.5.html" target="frame">9.4.2.5 Resolución de problemas de errores comunes de ACL, ejemplo 5</a>
+                </li>
+                <li>
+                  <a data-ident="9.4.2.6" class="page-title" href="9.4.2.6/9.4.2.6.html" target="frame">9.4.2.6 Packet Tracer: resolución de problemas de ACL</a>
+                </li>
+                <li>
+                  <a data-ident="9.4.2.7" class="page-title" href="9.4.2.7/9.4.2.7.html" target="frame">9.4.2.7 Práctica de laboratorio: resolución de problemas de configuración y colocación de ACL</a>
+                </li>
+                <li>
+                  <a data-ident="9.4.2.8" class="page-title" href="9.4.2.8/9.4.2.8.html" target="frame">9.4.2.8 Packet Tracer: Reto de habilidades de integración</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <span class="icon"></span>
+          <span class="section-title">9.5 ACL de IPv6</span>
+          <ul class="topics">
+            <li>
+              <span class="icon"></span>
+              <span class="topic-title">9.5.1 Creación de ACL de IPv6</span>
+              <ul class="pages">
+                <li>
+                  <a data-ident="9.5.1.1" class="page-title" href="9.5.1.1/9.5.1.1.html" target="frame">9.5.1.1 Tipos de ACL de IPv6</a>
+                </li>
+                <li>
+                  <a data-ident="9.5.1.2" class="page-title" href="9.5.1.2/9.5.1.2.html" target="frame">9.5.1.2 Comparación entre ACL de IPv4 y de IPv6</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <span class="icon"></span>
+              <span class="topic-title">9.5.2 Configuración de ACL de IPv6</span>
+              <ul class="pages">
+                <li>
+                  <a data-ident="9.5.2.1" class="page-title" href="9.5.2.1/9.5.2.1.html" target="frame">9.5.2.1 Configuración de topología de IPv6</a>
+                </li>
+                <li>
+                  <a data-ident="9.5.2.2" class="page-title" href="9.5.2.2/9.5.2.2.html" target="frame">9.5.2.2 Configuración de ACL de IPv6</a>
+                </li>
+                <li>
+                  <a data-ident="9.5.2.3" class="page-title" href="9.5.2.3/9.5.2.3.html" target="frame">9.5.2.3 Aplicación de una ACL de IPv6 a una interfaz</a>
+                </li>
+                <li>
+                  <a data-ident="9.5.2.4" class="page-title" href="9.5.2.4/9.5.2.4.html" target="frame">9.5.2.4 Ejemplos de ACL de IPv6 </a>
+                </li>
+                <li>
+                  <a data-ident="9.5.2.5" class="page-title" href="9.5.2.5/9.5.2.5.html" target="frame">9.5.2.5 Verificación de ACL de IPv6 </a>
+                </li>
+                <li>
+                  <a data-ident="9.5.2.6" class="page-title" href="9.5.2.6/9.5.2.6.html" target="frame">9.5.2.6 Packet Tracer: configuración de ACL de IPv6</a>
+                </li>
+                <li>
+                  <a data-ident="9.5.2.7" class="page-title" href="9.5.2.7/9.5.2.7.html" target="frame">9.5.2.7 Práctica de laboratorio: configuración y verificación de ACL de IPv6</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <span class="icon"></span>
+          <span class="section-title">9.6 Resumen</span>
+          <ul class="topics">
+            <li>
+              <span class="icon"></span>
+              <span class="topic-title">9.6.1 Resumen</span>
+              <ul class="pages">
+                <li>
+                  <a data-ident="9.6.1.1" class="page-title" href="9.6.1.1/9.6.1.1.html" target="frame">9.6.1.1 Denegación de FTP</a>
+                </li>
+                <li>
+                  <a data-ident="9.6.1.2" class="page-title" href="9.6.1.2/9.6.1.2.html" target="frame">9.6.1.2 Resumen</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <ul id="nav-menu" class="contextmenu">
+      <li id="nav-menu-expand">Expandir todo</li>
+      <li id="nav-menu-collapse">Contraer todo</li>
+    </ul>
+    <div id="content">
+      <div id="container"></div>
+      <button id="prev-btn" type="button" title="Anterior" disabled><span class="icon">Anterior</span></button>
+      <input id="jump-box" type="text" value=""/>
+      <button id="next-btn" type="button" title="Siguiente" disabled><span class="icon">Siguiente</span></button>
+      <button id="mini-btn" type="button" title="Alternar"><span class="icon">Alternar</span></button>
+    </div>
+  </body>
+</html>
+

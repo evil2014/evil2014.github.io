@@ -1,0 +1,47 @@
+﻿<textcomponents>
+<component id="ID_title">
+<text><![CDATA[<b>Conmutación por método de corte</b>]]></text>
+</component>
+<component id="ID_txt01">
+   <text><![CDATA[Origen]]></text>
+   </component>
+<component id="ID_txt02">
+   <text><![CDATA[Destino]]></text>
+   </component>
+<component id="ID_txt03">
+   <text><![CDATA[El switch que utiliza el método de corte envía la trama antes de recibirla en su totalidad. Como mínimo, la dirección de destino de la trama debe leerse antes de que la trama pueda enviarse.]]></text>
+   </component>
+<component id="ID_txt04">
+   <text><![CDATA[Tabla de conmutación]]></text>
+   </component> <!-- controller -->
+
+<component id="end">
+<text><![CDATA[Finalizar]]></text>
+</component>
+
+<component id="fforward">
+<text><![CDATA[Adelantar]]></text>
+</component>
+
+<component id="pause">
+<text><![CDATA[Pausa]]></text>
+</component>
+
+<component id="play">
+<text><![CDATA[Reproducir]]></text>
+</component>
+
+<component id="rewind">
+<text><![CDATA[Regresar]]></text>
+</component>
+
+<component id="start">
+<text><![CDATA[Inicio]]></text>
+</component>
+
+<component id="transcript">
+<text><![CDATA[Transcripción]]></text>
+</component>   
+     
+   
+</textcomponents>

@@ -1,0 +1,72 @@
+﻿<textcomponents>
+
+<component id='ID_title'>
+	<text><![CDATA[<b>Proceso de decisión de reenvío de paquetes  </b>]]></text>
+</component>
+
+<component id="ID_txt01">
+<text><![CDATA[El paquete llega a la interfaz.]]></text>
+</component>
+
+<component id="ID_txt02">
+<text><![CDATA[El router busca <br/>una coincidencia en la tabla de routing.]]></text> 
+</component>
+
+<component id="ID_txt03">
+<text><![CDATA[¿La dirección&nbsp;IP de destino coincide con<br/>la subred de...]]></text> 
+</component>
+
+<component id="ID_txt04">
+<text><![CDATA[...&nbsp;una interfaz conectada directamente?]]></text> 
+</component>
+
+<component id="ID_txt05">
+<text><![CDATA[Se revisa la caché ARP (se realiza el proceso ARP, si es necesario) y se reenvía al host en la subred local.]]></text> 
+</component>
+
+<component id="ID_txt06">
+<text><![CDATA[...&nbsp;una red remota?]]></text> 
+</component>
+
+<component id="ID_txt07">
+<text><![CDATA[La trama se encapsula y se reenvía por la interfaz de salida al siguiente salto.]]></text> 
+</component>
+
+<component id="ID_txt08">
+<text><![CDATA[¿Hay un gateway de último recurso disponible?]]></text> 
+</component>
+
+<component id="ID_txt09">
+<text><![CDATA[La trama se encapsula y se reenvía por la interfaz de salida al siguiente salto.]]></text> 
+</component>
+
+<component id="ID_txt10">
+<text><![CDATA[El paquete se descarta y se envía un mensaje ICMP de vuelta a la dirección IP de origen.]]></text> 
+</component>
+
+<component id="ID_txt11">
+<text><![CDATA[Sí]]></text> 
+</component>
+
+<component id="ID_txt12">
+<text><![CDATA[Sí]]></text> 
+</component>
+
+<component id="ID_txt13">
+<text><![CDATA[Sí]]></text> 
+</component>
+
+<component id="ID_txt14">
+<text><![CDATA[No]]></text> 
+</component>
+
+<component id="ID_txt15">
+<text><![CDATA[No]]></text> 
+</component>
+
+<component id="ID_txt16">
+<text><![CDATA[No]]></text> 
+</component>
+
+
+</textcomponents>

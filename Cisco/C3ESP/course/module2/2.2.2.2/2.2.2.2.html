@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.2.2.2 Estados de los puertos y funcionamiento de PVST+</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.2.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Variedades de protocolos de árbol de expansión</h1>
+        <h2>PVST+</h2>
+      </div>
+      <div id="content">
+<p>STP facilita la ruta lógica sin bucles en todo el dominio de difusión. El árbol de expansión se determina a través de la información obtenida en el intercambio de tramas de BPDU entre los switches interconectados. Para facilitar el aprendizaje del árbol de expansión lógico, cada puerto de switch sufre una transición a través de cinco estados posibles y tres temporizadores de BPDU.</p>
+<p></p>
+<p>El árbol de expansión queda determinado inmediatamente después de que el switch finaliza el proceso de arranque. Si un puerto de switch pasa directamente del estado de bloqueo al de reenvío sin información acerca de la topología completa durante la transición, el puerto puede crear un bucle de datos temporal. Por este motivo, STP introduce los cinco estados de puerto. En la ilustración, se describen los siguientes estados de puerto que aseguran que no se produzcan bucles durante la creación del árbol de expansión lógico:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Bloqueo:</b> el puerto es un puerto alternativo y no participa en el reenvío de tramas. El puerto recibe tramas de BPDU para determinar la ubicación y el ID de raíz del switch del puente raíz y las funciones de puertos que cada uno de éstos debe asumir en la topología final de STP activa.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Escucha:</b> escucha la ruta hacia la raíz. STP determinó que el puerto puede participar en el reenvío de tramas según las tramas BPDU que recibió el switch hasta ahora. A esta altura, el puerto de switch no solo recibe tramas BPDU, sino que además transmite sus propias tramas BPDU e informa a los switches adyacentes que el puerto de switch se prepara para participar en la topología activa.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Aprendizaje:</b> aprende las direcciones MAC. El puerto se prepara para participar en el reenvío de tramas y comienza a completar la tabla de direcciones MAC. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Reenvío:</b> el puerto se considera parte de la topología activa. Reenvía tramas de datos, además de enviar y recibir tramas BPDU. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Deshabilitado:</b> el puerto de capa 2 no participa en el árbol de expansión y no reenvía tramas. El estado deshabilitado se establece cuando el puerto de switch se encuentra administrativamente deshabilitado.</li>
+</ul>
+</p>
+<p></p>
+<p>Observe que la cantidad de puertos en cada uno de los diversos estados (bloqueo, escucha, aprendizaje o reenvío) se puede mostrar con el comando <span class="cmd"><b>show spanning-tree summary</b></span>.</p>
+<p></p>
+<p>Para cada VLAN en una red conmutada, PVST+ sigue cuatro pasos para proporcionar una topología de red lógica sin bucles:</p>
+<p></p>
+<p>
+<b>1. Elegir un puente raíz:</b> solo un switch puede funcionar como puente raíz (para una determinada VLAN). El puente raíz es el switch con la menor ID de puente. En el puente raíz, todos los puertos son puertos designados (en particular, los que no son puertos raíz).</p>
+<p>
+<b>2. Seleccionar el puerto raíz en cada puerto que no es raíz:</b> STP establece un puerto raíz en cada puente que no es raíz. El puerto raíz es la ruta de menor costo desde el puente que no es raíz hasta el puente raíz, que indica la dirección de la mejor ruta hacia el puente raíz. Generalmente, los puertos raíz están en estado de reenvío.</p>
+<p>
+<b>3. Seleccionar el puerto designado en cada segmento:</b> STP establece un puerto designado en cada enlace. El puerto designado se selecciona en el switch que posee la ruta de menor costo hacia el puente raíz. Por lo general, los puertos designados están en estado de reenvío y reenvían el tráfico para el segmento. </p>
+<p>
+<b>4. El resto de los puertos en la red conmutada son puertos alternativos:</b> en general, los puertos alternativos se mantienen en estado de bloqueo para romper la topología de bucle de forma lógica. Cuando un puerto está en estado de bloqueo, no reenvía tráfico pero puede procesar los mensajes BPDU recibidos.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

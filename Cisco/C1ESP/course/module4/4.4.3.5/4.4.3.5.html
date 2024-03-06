@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.4.3.5 Acceso controlado</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.4.3.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Control de acceso al medio</h1>
+        <h2>Topologías de LAN</h2>
+      </div>
+      <div id="content">
+<p>Al utilizar el método de acceso controlado, los dispositivos de red toman turnos en secuencia para acceder al medio. Si un dispositivo final no necesita acceder al medio, el turno pasa al dispositivo final siguiente. Este proceso se facilita por medio de un token. Un dispositivo final adquiere el token y coloca una trama en los medios; ningún otro dispositivo puede hacerlo hasta que la trama se haya recibido y procesado en el destino, y se libere el token. </p>
+<p></p>
+<p>
+<b>Nota:</b> este método también se conoce como “acceso programado” o “determinista”.</p>
+<p></p>
+<p>Aunque el acceso controlado está bien ordenado y provee rendimiento predecible, los métodos determinísticos pueden ser ineficientes porque un dispositivo tiene que esperar su turno antes de poder utilizar el medio.</p>
+<p></p>
+<p>Los ejemplos de acceso controlado incluyen lo siguiente:</p>
+<p>
+<ul>
+<li>Token Ring (IEEE 802.5)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Interfaz de datos distribuida por fibra (FDDI), que se basa en el protocolo de token bus IEEE 802.4.</li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Nota:</b> estos dos métodos de control de acceso al medio se consideran obsoletos. </p>
+<p></p>
+<p>En la ilustración, se muestra lo siguiente:</p>
+<p>
+<ul>
+<li>Funcionamiento de los métodos de acceso controlado</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Características de los métodos de acceso controlado</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Ejemplos de métodos de acceso controlado</li>
+</ul>
+</p>
+<p></p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

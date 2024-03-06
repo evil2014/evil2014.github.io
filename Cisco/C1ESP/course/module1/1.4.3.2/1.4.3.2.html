@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.4.3.2 Soluciones de seguridad</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.4.3.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>El cambiante entorno de red</h1>
+        <h2>Seguridad de red</h2>
+      </div>
+      <div id="content">
+<p>No hay una solución única que pueda proteger una red contra la variedad de amenazas que existen. Por este motivo, la seguridad debe implementarse en varias capas, y debe utilizarse más de una solución de seguridad. Si un componente de seguridad no puede identificar ni proteger la red, hay otros que pueden hacerlo. </p>
+<p></p>
+<p>La implementación de seguridad en redes domésticas generalmente es muy básica. Por lo general, se implementa en los dispositivos host de conexión así como en el punto de conexión a Internet e incluso puede depender de servicios contratados al ISP. </p>
+<p></p>
+<p>Por otra parte, la implementación de seguridad de red en redes corporativas normalmente consiste en la integración de numerosos componentes a la red para controlar y filtrar el tráfico. Lo ideal es que todos los componentes funcionen juntos, lo que minimiza la necesidad de mantenimiento y aumenta la seguridad.</p>
+<p></p>
+<p>Los componentes de seguridad de red para redes domésticas o de oficinas pequeñas deben incluir, como mínimo, lo siguiente:</p>
+<p>
+<ul>
+<li>
+<b>Software antivirus y antispyware:</b> para proteger los dispositivos de usuario contra software malintencionado.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Filtrado de firewall:</b> para bloquear accesos no autorizados a la red. Esto puede incluir un sistema de firewall basado en host que se implemente para impedir el acceso no autorizado al dispositivo host o un servicio de filtrado básico en el router doméstico para impedir el acceso no autorizado del mundo exterior a la red.</li>
+</ul>
+</p>
+<p></p>
+<p>Además de lo anterior, las redes más grandes y las redes corporativas generalmente tienen otros requisitos de seguridad:</p>
+<p>
+<ul>
+<li>
+<b>Sistemas de firewall dedicados:</b> para proporcionar capacidades de firewall más avanzadas que puedan filtrar una gran cantidad de tráfico con mayor granularidad.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Listas de control de acceso:</b> las listas de control de acceso (ACL, Access control list) filtran el acceso y el reenvío de tráfico.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Sistemas de prevención de intrusión:</b> los sistemas de prevención de intrusión (IPS) identifican amenazas de rápida expansión, como ataques de día cero o de hora cero. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Redes privadas virtuales:</b> las redes privadas virtuales (VPN, Virtual private networks) proporcionan un acceso seguro a los trabajadores remotos.</li>
+</ul>
+</p>
+<p></p>
+<p>Los requisitos de seguridad de la red deben tomar en cuenta el entorno de red, así como las diversas aplicaciones y los requisitos informáticos. Tanto los entornos domésticos como las empresas deben poder proteger sus datos y, al mismo tiempo, mantener la calidad de servicio que se espera de cada tecnología. Además, la solución de seguridad implementada debe poder adaptarse a las crecientes tendencias de red, en constante cambio. </p>
+<p></p>
+<p>El estudio de las amenazas de seguridad de red y de las técnicas de mitigación comienza con una comprensión clara de la infraestructura de conmutación y enrutamiento subyacente utilizada para organizar los servicios de red.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

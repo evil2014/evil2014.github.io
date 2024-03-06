@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>10.2.2.2 Configuración de un router como cliente DHCPv6 sin estado</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_10.2.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolo de configuración dinámica de host v6</h1>
+        <h2>DHCPv6 sin estado</h2>
+      </div>
+      <div id="content">
+<p>En el ejemplo de esta ilustración, se utiliza un router Cisco como cliente DHCPv6 sin estado. Esta no es una situación típica y se utiliza solo con fines de demostración. Generalmente, un cliente DHCPv6 sin estado es un dispositivo, como una computadora, una tablet PC, un dispositivo móvil o una cámara web.</p>
+<p></p>
+<p>El router cliente necesita una dirección IPv6 link-local en la interfaz para enviar y recibir mensajes IPv6, como mensajes RS y mensajes DHCPv6. La dirección link-local de un router se crea automáticamente cuando se habilita IPv6 en la interfaz. Esto puede suceder cuando se configura una dirección de unidifusión global en la interfaz o cuando se utiliza el comando <span class="cmd"><b>ipv6 enable</b></span>. Una vez que el router recibe una dirección link-local, puede enviar mensajes RS y participar en DHCPv6. </p>
+<p></p>
+<p>En este ejemplo, se utiliza el comando <span class="cmd"><b>ipv6 enable</b></span>, porque el router aún no tiene una dirección de unidifusión global.</p>
+<p></p>
+<p>El comando <span class="cmd"><b>ipv6 address autoconfig</b></span> habilita la configuración automática del direccionamiento IPv6 mediante SLAAC. A continuación, se utiliza un mensaje RA para informarle al router cliente que utilice DHCPv6 sin estado.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

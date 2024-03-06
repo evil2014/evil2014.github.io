@@ -1,0 +1,67 @@
+﻿<textcomponents>
+
+<component id="ID_title">
+  <text><![CDATA[<b>Ejemplo de un bucle de routing</b>]]></text> 
+</component>
+
+<component id="ID_txt01">
+  <text><![CDATA[Tengo una ruta resumida para 172.16.0.0/16. Voy a enviar los paquetes para 172.16.4.10 al R2.]]></text> 
+</component>
+
+<component id="ID_txt02">
+  <text><![CDATA[Tengo una ruta predeterminada 0.0.0.0/0. Enviaré los paquetes para 172.16.4.10 al R1.]]></text> 
+</component>
+
+<component id="ID_txt03">
+  <text><![CDATA[Loop de enrutamiento]]></text> 
+</component>
+
+<component id="ID_txt04">
+  <text><![CDATA[Tabla de routing del IPv4]]></text> 
+</component>
+
+<component id="ID_txt05">
+  <text><![CDATA[Tabla de routing del IPv4]]></text> 
+</component>
+
+<component id="ID_txt06">
+  <text><![CDATA[0.0.0.0/0 mediante el ISP]]></text> 
+</component>
+
+<component id="ID_txt07">
+  <text><![CDATA[172.16.0.0/16 mediante el R2]]></text> 
+</component>
+
+<component id="ID_txt08">
+  <text><![CDATA[Actualización de routing: ruta predeterminada]]></text> 
+</component>
+
+<component id="ID_txt09">
+  <text><![CDATA[Actualización resumida: 172.16.0.0/16]]></text> 
+</component>
+
+<component id="ID_txt10">
+  <text><![CDATA[0.0.0.0/0 mediante el R1]]></text> 
+</component>
+
+<component id="ID_txt11">
+  <text><![CDATA[172.16.1.0/24<br>172.16.2.0/24<br>172.16.3.0/24]]></text> 
+</component>
+
+<component id="ID_txt12">
+  <text><![CDATA[Internet]]></text> 
+</component>
+
+<component id="ID_txt13">
+  <text><![CDATA[<b>R1</b>]]></text> 
+</component>
+
+<component id="ID_txt14">
+  <text><![CDATA[<b>R2</b>]]></text> 
+</component>
+
+<component id="ID_txt15">
+  <text><![CDATA[<b>ISP</b>]]></text> 
+</component>
+
+</textcomponents>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.1.2.4 Intervalos de los paquetes de saludo</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.1.2.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Características de OSPF</h1>
+        <h2>Mensajes OSPF</h2>
+      </div>
+      <div id="content">
+<p>Como se muestra en la ilustración, los paquetes de saludo OSPF se transmiten a la dirección de multidifusión 224.0.0.5 en IPv4 y FF02::5 en IPv6 (todos los routers OSPF) cada: </p>
+<p>
+<ul>
+<li>10 segundos (intervalo predeterminado en redes de accesos múltiples y punto a punto)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>30 segundos (intervalo predeterminado en redes multiacceso sin difusión [NBMA], por ejemplo, Frame Relay)</li>
+</ul>
+</p>
+<p></p>
+<p>El intervalo muerto es el período que el router espera para recibir un paquete de saludo antes de declarar al vecino como inactivo. Si el intervalo muerto caduca antes de que los routers reciban un paquete de saludo, OSPF elimina ese vecino de su LSDB. El router satura la LSDB con información acerca del vecino inactivo por todas las interfaces con OSPF habilitado. </p>
+<p></p>
+<p>Cisco utiliza un intervalo predeterminado de cuatro veces el intervalo de saludo:</p>
+<p>
+<ul>
+<li>40 segundos (intervalo predeterminado en redes de accesos múltiples y punto a punto)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>120 segundos (intervalo predeterminado en redes NBMA, por ejemplo, Frame Relay)</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

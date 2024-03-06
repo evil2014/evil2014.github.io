@@ -1,0 +1,145 @@
+﻿<textcomponents> <!--Slide 1-->
+<component id="ID_s1_title">
+<text><![CDATA[<b>Ataque de DoS</b>]]></text>
+</component>
+
+<component id="ID_s2__title">
+<text><![CDATA[<b>Explotación de confianza</b>]]></text>
+</component>
+
+<component id='ID_s1_table'>
+<text><![CDATA[
+<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4'>
+<tr>
+<td colspan='2' bgcolor='#0E6360' class="mtable_top"><font size='1' color='#434321'><span style="color:#DAE17A">.</span></font></td>
+</tr>				
+<tr>
+<td bgcolor='#077A77' width='180' valign="top"><font size='11' color='#ffffff'><b>Sobrecargas de recursos</b></font></td>
+<td bgcolor='#077A77'  valign="top"><font size='11' color='#ffffff'><b>Datos mal formados</b></font></td>
+</tr>
+<tr>
+<td bgcolor='#EFF8F7' valign="top"><font size='11'color='#393536'>Espacio en disco, ancho de banda, búferes</font></td>
+<td bgcolor='#EFF8F7' valign="top"><font size='11' color='#393536'>Paquetes de tamaños excesivos como el ping de la muerte</font></td>
+</tr>
+<tr>
+<td bgcolor='#FFFFFF' valign="top"><font size='11' color='#393536'>Saturación de ping como el smurf</font></td>
+<td bgcolor='#FFFFFF' valign="top"><font size='11' color='#393536'>Paquete superpuesto como el winuke</font></td>
+</tr>
+<tr>
+<td bgcolor='#EFF8F7' valign="top"><font size='11'color='#393536'>Tormentas de paquetes como las bombas UDP y fraggle</font></td>
+<td bgcolor='#EFF8F7' valign="top"><font size='11' color='#393536'>Datos no gestionados como el teardrop</font></td>
+</tr>				
+</table>]]>
+</text>
+</component>
+
+
+<component id="ID_s1_txt01">
+<text><![CDATA[Los ataques de DoS evitan que el personal autorizado use un servicio mediante la utilización de los recursos del sistema.]]></text>
+</component> <!--Slide 2-->
+<component id="ID_s2_title">
+<text><![CDATA[<b>Ping de la muerte</b>]]></text>
+</component>
+
+<component id="ID_s2_txt01">
+<text><![CDATA[Internet]]></text>
+</component>
+
+<component id="ID_s2_txt02">
+<text><![CDATA[Computadora atacante]]></text>
+</component>
+
+<component id='ID_s2_txt03'>
+	<text><![CDATA[El atacante envía un paquete ping mal formado o muy grande.]]></text>
+</component> <!--Slide 3-->
+<component id="ID_s3_title">
+<text><![CDATA[<b>Saturación SYN</b>]]></text>
+</component>
+<component id="ID_s3_txt01">
+<text><![CDATA[El atacante envía varias solicitudes SYN a un servidor Web.]]></text>
+</component>
+<component id="ID_s3_txt02">
+<text><![CDATA[El servidor Web envía respuestas SYN-ACK.]]></text> 
+</component>
+<component id="ID_s3_txt03">
+<text><![CDATA[El servidor Web espera a completar un protocolo de enlace de tres vías]]></text> 
+</component>
+<component id="ID_s3_txt04">
+<text><![CDATA[Un usuario válido envía una solicitud SYN.]]></text> 
+</component>
+<component id="ID_s3_txt05">
+<text><![CDATA[El servidor Web no está disponible.]]></text> 
+</component>
+<component id="ID_s3_txt06">
+<text><![CDATA[Servidor Web]]></text> 
+</component>
+<component id="ID_s3_txt07">
+<text><![CDATA[Servidor Web]]></text> 
+</component>
+<component id="ID_s3_txt08">
+<text><![CDATA[Servidor Web]]></text> 
+</component> <!--Slide 4-->
+<component id="ID_s4_title">
+<text><![CDATA[<b>DDoS</b>]]></text>
+</component>
+
+<component id="ID_s4_txt01">
+<text><![CDATA[Cliente/atacante]]></text>
+</component>
+
+<component id="ID_s4_txt02">
+<text><![CDATA[Manipuladores]]></text>
+</component>
+
+<component id="ID_s4_txt03">
+<text><![CDATA[Agentes/<br/>zombies]]></text>
+</component>
+
+<component id="ID_s4_txt04">
+<text><![CDATA[Víctima]]></text>
+</component>
+
+<component id='ID_s4_txt05'>
+	<text><![CDATA[El atacante utiliza muchos hosts intermediarios, denominados “zombis”, para iniciar el ataque.]]></text>
+</component> <!--Slide 5-->
+<component id="ID_s5_title">
+<text><![CDATA[<b>Ataque Smurf</b>]]></text>
+</component>
+
+<component id="ID_s5_txt01">
+<text><![CDATA[Zombies]]></text>
+</component>
+<component id="ID_s5_txt02">
+<text><![CDATA[Víctima]]></text>
+</component>
+<component id="ID_s5_txt03">
+<text><![CDATA[Amplificador smurf]]></text>
+</component>
+<component id="ID_s5_txt04">
+<text><![CDATA[Intento de saturar el enlace WAN el destino.]]></text>
+</component> <!--ANIMATION CONTROLLER-->
+	<component id="end">
+		<text><![CDATA[Finalizar]]></text>
+	</component>
+	
+	<component id="fforward">
+		<text><![CDATA[Adelantar]]></text>
+	</component>
+	
+	<component id="pause">
+		<text><![CDATA[Pausa]]></text>
+	</component>
+	
+	<component id="play">
+		<text><![CDATA[Reproducir]]></text>
+	</component>
+	
+	<component id="rewind">
+		<text><![CDATA[Regresar]]></text>
+	</component>
+	
+	<component id="start">
+		<text><![CDATA[Inicio]]></text>
+	</component>
+
+</textcomponents>

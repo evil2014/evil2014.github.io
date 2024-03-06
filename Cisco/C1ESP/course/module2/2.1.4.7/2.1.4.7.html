@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.1.4.7 El comando show version</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.1.4.7_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Entrenamiento intensivo sobre IOS</h1>
+        <h2>Estructura de los comandos</h2>
+      </div>
+      <div id="content">
+<p>Uno de los comandos de uso más frecuente en un switch o un router es el siguiente:</p>
+<p></p>
+<p>
+<span class="cmd">Switch#</span>
+<span class="cmd">
+<b>show version</b>
+</span>
+</p>
+<p></p>
+<p>Este comando muestra información sobre la versión de IOS cargada actualmente, además de información sobre el hardware y los dispositivos. Si inició sesión en un router o un switch de manera remota, el comando <span class="cmd"><b>show version</b></span> es un medio excelente para obtener rápidamente un resumen de información útil sobre el dispositivo específico al cual está conectado. Algunos de los datos que se obtienen a partir de este comando son los siguientes:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Versión del software:</b> versión del software IOS (almacenada en la memoria flash). </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Versión de bootstrap:</b> versión de bootstrap (almacenada en la ROM de arranque). </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Tiempo de actividad del sistema:</b> tiempo transcurrido desde la última vez que se reinició. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Información de reinicio del sistema</b>: método de reinicio (por ejemplo, apagado y encendido, colapso). </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Nombre de la imagen del software:</b> nombre del archivo de IOS almacenado en la memoria flash. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Tipo de router y tipo de procesador:</b> número de modelo y tipo de procesador. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Tipo y asignación de memoria (compartida/principal):</b> memoria RAM del procesador principal y almacenamiento en búfer de E/S de paquetes compartidos. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Características del software:</b> protocolos y conjuntos de características admitidos. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Interfaces de hardware:</b> interfaces disponibles en el dispositivo. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Registro de configuración:</b> establece especificaciones de arranque, la configuración de velocidad de la consola y parámetros relacionados.</li>
+</ul>
+</p>
+<p></p>
+<p>En la figura 1, se muestra el resultado para un ISR Cisco 1941, mientras que en la figura 2 se muestra el resultado para un switch Cisco Catalyst 2960.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

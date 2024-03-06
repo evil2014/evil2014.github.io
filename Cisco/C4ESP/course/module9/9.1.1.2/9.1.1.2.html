@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.1.1.2 Diagramas de topología de la red</title>
+    <!--  -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.1.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resolución de problemas mediante un enfoque sistemático</h1>
+        <h2>Documentación de red</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Diagramas de topología de la red</b>
+</p>
+<p>Los diagramas de topología de la red mantienen un registro de la ubicación, la función y el estado de los dispositivos en la red. Hay dos tipos de diagramas de topología de la red: la topología física y la topología lógica.</p>
+<p></p>
+<p>
+<b>Topología física</b>
+</p>
+<p>Una topología física de la red muestra la distribución física de los dispositivos conectados a la red. Para resolver problemas de la capa física, es necesario conocer la forma en que los dispositivos están conectados físicamente. La información registrada en el diagrama generalmente incluye:</p>
+<p>
+<ul>
+<li>Tipo de dispositivo</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Modelo y fabricante</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Versión del sistema operativo</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Tipo de cable e identificador</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Especificación del cable </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Tipo de conector</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Extremos de cables</li>
+</ul>
+</p>
+<p></p>
+<p>En la figura 1, se muestra un ejemplo de un diagrama de topología física de la red.</p>
+<p></p>
+<p>
+<b>Topología lógica</b>
+</p>
+<p>La topología lógica de la red ilustra la forma en que los dispositivos se conectan a la red de manera lógica, es decir, cómo los dispositivos transfieren datos a través de la red al comunicarse con otros dispositivos. Los símbolos se usan para representar los elementos de la red, como routers, servidores, hosts, concentradores VPN y dispositivos de seguridad. De manera adicional, se pueden mostrar conexiones entre varios sitios, pero no representan ubicaciones físicas reales. La información registrada en un diagrama de red lógico puede incluir lo siguiente: </p>
+<p>
+<ul>
+<li>Identificadores de dispositivos </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Dirección IP y longitudes de prefijos</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Identificadores de interfaz</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Tipo de conexión</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>DLCI para circuitos virtuales</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>VPN de sitio a sitio</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Protocolos de routing</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Rutas estáticas</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Protocolos de enlace de datos</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Tecnologías WAN utilizadas</li>
+</ul>
+</p>
+<p></p>
+<p>En la figura 2, se muestra un ejemplo de topología lógica de red IPv4. Si bien las direcciones IPv6 también se podrían mostrar en la misma topología, puede resultar más claro crear un diagrama separado de topología lógica de red IPv6.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.1.1.1 Características de una red</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.1.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración inicial de un router</h1>
+        <h2>Funciones de un router</h2>
+      </div>
+      <div id="content">
+<p>Las redes tuvieron un impacto considerable en nuestras vidas. Estas cambiaron la forma en que vivimos, trabajamos y jugamos. </p>
+<p></p>
+<p>Las redes nos permiten comunicarnos, colaborar e interactuar como nunca antes. Utilizamos la red de distintas formas, entre ellas las aplicaciones web, la telefonía IP, la videoconferencia, los juegos interactivos, el comercio electrónico, la educación y más. </p>
+<p></p>
+<p>Como se muestra en la ilustración, existen muchas características clave relacionadas con las estructuras y el rendimiento a las cuales nos referimos cuando hablamos de redes:</p>
+<p>
+<ul>
+<li>
+<b>Topología:</b> existen topologías físicas y lógicas. La topología física es la disposición de los cables, los dispositivos de red y los sistemas finales. Esta describe la forma en que los dispositivos de red se interconectan con los hilos y cables. La topología lógica es la ruta por la cual se transfieren los datos en una red. Describe cómo aparecen conectados los dispositivos de red a los usuarios de la red.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Velocidad</b>: la velocidad mide la velocidad de datos de un enlace dado en la red en bits por segundo (b/s).</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Costo</b>: el costo indica el gasto general de la adquisición de componentes de red, así como de la instalación y el mantenimiento de la red.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Seguridad</b>: la seguridad indica el nivel de protección de la red, incluida la información que se transmite a través de esta. El tema de la seguridad es importante, y las técnicas y las prácticas están en constante evolución. Siempre tenga en cuenta la seguridad cuando se tomen medidas que afecten la red.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Disponibilidad</b>: la disponibilidad mide la probabilidad de que la red esté disponible para ser utilizada cuando resulte necesario. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Escalabilidad</b>: la escalabilidad indica la facilidad con la que la red puede admitir más usuarios y requisitos de transmisión de datos. Si un diseño de red está optimizado para cumplir solo con los requisitos actuales, puede resultar muy difícil y costoso satisfacer nuevas necesidades cuando la red crezca.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Confiabilidad</b>: la confiabilidad indica la fiabilidad de los componentes que crean la red, como los routers, los switches, las computadoras y los servidores. A menudo, la confiabilidad se mide como la probabilidad de fallas o como el tiempo medio entre fallas (MTBF).</li>
+</ul>
+</p>
+<p></p>
+<p>Estas características y atributos proporcionan un medio para comparar distintas soluciones de redes. </p>
+<p></p>
+<p>
+<b>Nota:</b> si bien el término “velocidad” se utiliza comúnmente para referirse al ancho de banda de red, no es del todo preciso. La velocidad propiamente dicha a la que se transmiten los bits no varía en el mismo medio. La diferencia en el ancho de banda se debe a la cantidad de bits transmitidos por segundo, no a la velocidad a la que se trasladan a través del medio cableado o inalámbrico.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

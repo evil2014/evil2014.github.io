@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.1.1.2 La tecnología antes y ahora</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.1.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Conectados globalmente</h1>
+        <h2>Las redes en la actualidad</h2>
+      </div>
+      <div id="content">
+<p>Imagine un mundo sin Internet, sin Google, YouTube, mensajería instantánea, Facebook, Wikipedia, juegos en línea, Netflix, iTunes ni fácil acceso a información de actualidad. Un mundo sin sitios Web de comparación de precios, donde no podríamos evitar hacer fila ya que no podríamos comprar en línea y tampoco podríamos buscar rápidamente números de teléfono ni indicaciones en mapas para llegar a diversos lugares con solo un clic. ¿Cuán diferentes serías nuestras vidas sin todo esto? Vivíamos en ese mundo hace apenas 15 o 20 años. Sin embargo, con el correr de los años, las redes de datos se expandieron y transformaron lentamente para mejorar la calidad de vida de las personas en todo el mundo.</p>
+<p></p>
+<p>En el transcurso de un día, los recursos disponibles en Internet pueden ayudarlo a llevar a cabo las siguientes tareas:</p>
+<p>
+<ul>
+<li>Enviar y compartir sus fotografías, videos hechos en casa y experiencias con amigos o con el mundo.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Acceder a trabajos curriculares y entregarlos.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Comunicarse con amigos, familiares y pares mediante correo electrónico, mensajería instantánea o llamadas de teléfono a través de Internet.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Mirar videos, películas o capítulos de programas de televisión a petición.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Jugar en línea con amigos.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Decidir cómo vestirse al consultar en línea las condiciones actuales del clima.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Buscar el camino menos congestionado hacia su destino al observar videos de cámaras Web que muestran el clima y el tráfico.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Consultar su estado de cuenta bancario y pagar electrónicamente las facturas.</li>
+</ul>
+</p>
+<p></p>
+<p>Los innovadores buscan formas de utilizar Internet aún más cada día. A medida que los desarrolladores amplían los límites de lo posible, las capacidades de Internet y la función que Internet desempeña en nuestras vidas se expanden cada vez más. Piense en los cambios que se produjeron desde 1995, descritos en la ilustración. Ahora, considere qué cambios sucederán en el transcurso de los próximos 25 años. Lo que este futuro depara es Internet de todo (IdT).</p>
+<p></p>
+<p>IdT reúne personas, procesos, datos y demás cosas para hacer que las conexiones mediante redes sean más relevantes y tengan mayor valor. IdT transforma la información en acciones que crean nuevas capacidades y proporcionan experiencias más enriquecedoras y oportunidades económicas sin precedentes a personas, empresas y países.</p>
+<p></p>
+<p>¿Qué más considera que podremos hacer si utilizamos la red como plataforma?</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

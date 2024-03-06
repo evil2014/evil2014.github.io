@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.4.2.5 Saturación con LSP</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.4.2.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Routing dinámico de estado de enlace</h1>
+        <h2>Actualizaciones de estado de enlace</h2>
+      </div>
+      <div id="content">
+<p>El cuarto paso en el proceso de routing de estado de enlace es que cada router satura con LSP a todos los vecinos, quienes luego almacenan todos los LSP recibidos en una base de datos.</p>
+<p></p>
+<p>Cada router inunda con su información de link-state a todos los demás routers de link-state en el área de enrutamiento. Siempre que un router recibe un LSP de un router vecino, envía de inmediato dicho LSP a todas las demás interfaces, excepto la interfaz que recibió el LSP. Este proceso crea un efecto de saturación de los LSP desde todos los routers a través del área de enrutamiento.</p>
+<p></p>
+<p>Haga clic en Reproducir en la ilustración para ver una animación de la saturación con LSP.</p>
+<p></p>
+<p>En la animación, observe cómo se lleva a cabo la saturación con LSP de forma casi inmediata después de ser recibidos sin ningún cálculo intermedio. Los protocolos de routing de estado de enlace calculan el algoritmo SPF una vez que finaliza la saturación. Como resultado, los protocolos de routing de estado de enlace logran la convergencia muy rápidamente.</p>
+<p></p>
+<p>Recuerde que los LSP no necesitan enviarse periódicamente. Un LSP sólo necesita enviarse:</p>
+<p>
+<ul>
+<li>Durante el arranque inicial del proceso del protocolo de routing (por ejemplo, en el reinicio del router)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Cuando hay un cambio en la topología (por ejemplo, un enlace que se desactiva o activa, o una adyacencia de vecinos que se establece o se rompe)</li>
+</ul>
+</p>
+<p></p>
+<p>Además de la información de estado de enlace, se incluye información adicional en el LSP, como los números de secuencia y la información de vencimiento, para ayudar a administrar el proceso de saturación. Cada router utiliza esta información para determinar si ya recibió el LSP de otro router o si el LSP tiene información más nueva que la contenida en la base de datos de link-state. Este proceso permite que un router conserve sólo la información más actual en su base de datos de link-state.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

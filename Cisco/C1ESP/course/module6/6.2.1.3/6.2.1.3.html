@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.2.1.3 Tabla de enrutamiento de host IPv4</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.2.1.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Enrutamiento</h1>
+        <h2>Cómo enrutan los hosts</h2>
+      </div>
+      <div id="content">
+<p>En un host de Windows, se pueden utilizar los comandos <span class="cmd"><b>route print</b></span> o <span class="cmd"><b>netstat -r</b></span> para ver la tabla de enrutamiento del host. Los dos comandos provocan al mismo resultado. Al principio, los resultados pueden parecer abrumadores, pero son bastante fáciles de entender.</p>
+<p></p>
+<p>Al introducir el comando <span class="cmd"><b>netstat -r</b></span> o su equivalente, <span class="cmd"><b>route print</b></span>, se ven tres secciones relacionadas con las conexiones de red TCP/IP actuales:</p>
+<p>
+<ul>
+<li>
+<b>Lista de interfaces:</b> enumera las direcciones de control de acceso al medio (MAC) y el número de interfaz asignado de cada interfaz con capacidad de red en el host, incluidos los adaptadores Ethernet, Wi-Fi y Bluetooth.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Tabla de rutas IPv4:</b> enumera todas las rutas IPv4 conocidas, incluidas las conexiones directas, las rutas de red locales y las rutas predeterminadas locales.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Tabla de rutas IPv6:</b> enumera todas las rutas IPv6 conocidas, incluidas las conexiones directas, las rutas de red locales y las rutas predeterminadas locales.</li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Nota:</b> los resultados del comando varían según cómo esté configurado el host y los tipos de interfaz que tenga.</p>
+<p></p>
+<p>En la ilustración, se muestra la sección de la tabla de rutas IPv4 de los resultados. Observe que los resultados se dividen en cinco columnas que identifican lo siguiente:</p>
+<p>
+<ul>
+<li>
+<b>Destino de red:</b> enumera las redes que se pueden alcanzar.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Máscara de red:</b> incluye una máscara de subred que le indica al host cómo determinar las porciones de red y de host de la dirección IP.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Puerta de acceso:</b> indica la dirección que utiliza la PC local para llegar a un destino en una red remota. Si un destino es directamente accesible, se muestra como “En enlace” en esta columna.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Interfaz:</b> indica la dirección de la interfaz física utilizada para enviar el paquete al gateway que se emplea para llegar al destino de red.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Métrica:</b> indica el costo de cada ruta y se utiliza para determinar la mejor ruta a un destino.</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

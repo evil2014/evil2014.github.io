@@ -1,0 +1,20 @@
+<macromedia-extension name="Cisco Netacad - India" version="1.0" type="Library">  
+    <author name="Above Solutions India" />  
+    <products>  
+        <product name="Flash" version="9" primary="true" />  
+    </products>  
+    <description>  
+        <![CDATA[Media components for Cisco Networking Academy<br/> Timeline Component added on 04-02-2013]]>  
+    </description>  
+    <ui-access>  
+        <![CDATA[]]>  
+    </ui-access>  
+    <files>  
+        <file name="swc/Timeline.swc" destination="$flash/Components/cisco_netacad_india" /> 
+		<file name="classes/media/timeline/ScrollBarComp.as" destination="$flash/Classes/classes/media/timeline/" />
+		<file name="classes/media/timeline/Timeline.as" destination="$flash/Classes/classes/media/timeline/" />
+		<file name="classes/media/timeline/TimelineEvent.as" destination="$flash/Classes/classes/media/timeline/" />
+		<file name="classes/media/timeline/TimelineEventButton.as" destination="$flash/Classes/classes/media/timeline/" />
+		<file name="classes/media/timeline/TimelineSlider.as" destination="$flash/Classes/classes/media/timeline/" />  
+    </files>  
+</macromedia-extension>  

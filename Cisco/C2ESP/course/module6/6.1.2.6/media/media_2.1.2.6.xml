@@ -1,0 +1,93 @@
+﻿<textcomponents> <!-- instructions -->
+<component id="ID_inst">
+	<text><![CDATA[<b>Actividad: identificar el tipo de ruta estática  </b><br><br>Determine el tipo de ruta estática según cada descriptor en la tabla. <br><br>Haga clic en el campo apropiado junto a cada descriptor para indicar las respuestas.]]></text>
+</component> <!-- buttons -->
+<component id="ID_Button01">
+	<text><![CDATA[<b>Verificar  </b>]]></text>
+</component>
+
+<component id="ID_Button02">
+	<text><![CDATA[<b>Restablecer  </b>]]></text>
+</component> <!--Number of rows in the table-->
+<component id="txt_numrows">
+	<text><![CDATA[6]]></text>
+</component> <!--Number of columns for the answers in the table. Do not count the question column-->
+<component id="txt_numcols">
+	<text><![CDATA[4]]></text>
+</component> <!--Answer column headers-->
+<component id="txt_col1">
+	<text><![CDATA[<b>Estándar  </b>]]></text>
+</component>
+
+<component id="txt_col2">
+	<text><![CDATA[<b>Predeterminado  </b>]]></text>
+</component>
+<component id="txt_col3">
+	<text><![CDATA[<b>Resumen  </b>]]></text>
+</component>
+
+<component id="txt_col4">
+	<text><![CDATA[<b>Flotante  </b>]]></text>
+</component> <!--Question text - blockindent code moves the text away from the left edge a bit--> <!--Question text - If questions are numbered, use blockindent for hanging indents-->
+<component id="txt_q1">
+	<text><![CDATA[Respalda una ruta ya descubierta por un protocolo de routing dinámico.]]></text>
+</component>
+
+<component id="txt_q2">
+	<text><![CDATA[Utiliza una dirección de red única para enviar varias rutas estáticas a una dirección de destino.]]></text>
+</component>
+
+<component id="txt_q3">
+	<text><![CDATA[Hace coincidir todos los paquetes y los envía a un gateway predeterminado específico.]]></text>
+</component>
+
+<component id="txt_q4">
+	<text><![CDATA[Es útil al conectarse a una red de rutas internas.]]></text>
+</component>
+
+<component id="txt_q5">
+	<text><![CDATA[Está configurada con una distancia administrativa mayor que el protocolo de routing dinámico original.]]></text>
+</component>
+
+<component id="txt_q6">
+	<text><![CDATA[Suele utilizarse con routers perimetrales para conectarse a la red ISP.]]></text>
+</component> <!--Answers - Give the column number(s), column numbering start with 1 not 0--> <!--Answers - For MCMA separate the correct answers with commas [2, 4, 5] -->
+<component id="txt_a1">
+	<text><![CDATA[4]]></text>
+</component>
+
+<component id="txt_a2">
+	<text><![CDATA[3]]></text>
+</component>
+
+<component id="txt_a3">
+	<text><![CDATA[2]]></text>
+</component>
+
+<component id="txt_a4">
+	<text><![CDATA[1]]></text>
+</component>
+
+<component id="txt_a5">
+	<text><![CDATA[4]]></text>
+</component>
+
+<component id="txt_a6">
+	<text><![CDATA[2]]></text>
+</component> <!-- Correct Feedback -->
+<component id="ID_titleCorrect">
+	<text><![CDATA[<b>Correcto  </b>]]></text>
+</component>
+
+<component id="ID_correctText">
+	<text><![CDATA[Identificó correctamente los tipos de rutas estáticas en función de cada uno de los descriptores.]]></text>
+</component> <!-- Incorrect Feedback -->
+<component id="ID_titleIncorrect">
+	<text><![CDATA[<b>Incorrecto  </b>]]></text>
+</component>
+
+<component id="ID_IncorrectText">
+	<text><![CDATA[No identificó correctamente los tipos de rutas estáticas en función de cada uno de los descriptores. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+</textcomponents>

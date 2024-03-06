@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>10.2.1.4 Opción de SLAAC</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_10.2.1.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolo de configuración dinámica de host v6</h1>
+        <h2>SLAAC y DHCPv6</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Opción de SLAAC (anuncio de router solamente)</b>
+</p>
+<p></p>
+<p>SLAAC es la opción predeterminada en los routers Cisco. Tanto el indicador M como el indicador O están establecidos en 0 en el RA, como se muestra en la ilustración.</p>
+<p></p>
+<p>Esta opción le indica al cliente que utilice la información que se incluye en el mensaje RA de manera exclusiva. Esto incluye información del prefijo, de la longitud de prefijo, del servidor DNS, de la MTU y del gateway predeterminado. No se encuentra disponible ninguna otra información de un servidor de DHCPv6. La dirección IPv6 de unidifusión global se crea combinando el prefijo del mensaje RA y la ID de interfaz mediante EUI-64 o mediante un valor generado aleatoriamente. </p>
+<p></p>
+<p>Los mensajes RA se configuran en una interfaz individual de un router. Para volver a habilitar una interfaz para SLAAC que pudo haberse establecido en otra opción, se deben restablecer los indicadores M y O a sus valores iniciales de 0. Esto se realiza mediante los siguientes comandos del modo de configuración de interfaz: </p>
+<p></p>
+<p>
+<span class="cmd">Router(config-if)#</span>
+<span class="cmd">
+<b>no</b>
+</span>
+<span class="cmd"></span>
+<span class="cmd">
+<b>ipv6 nd managed-config-flag</b>
+</span>
+<span class="cmd"></span>
+</p>
+<p>
+<span class="cmd">Router(config-if)#</span>
+<span class="cmd">
+<b>no ipv6 nd other-config-flag</b>
+</span>
+<span class="cmd"></span>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

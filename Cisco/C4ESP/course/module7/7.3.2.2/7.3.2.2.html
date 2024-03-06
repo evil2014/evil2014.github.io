@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.3.2.2 Algoritmos de cifrado</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.3.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Presentación de IPsec</h1>
+        <h2>Estructura IPsec</h2>
+      </div>
+      <div id="content">
+<p>El grado de seguridad depende de la longitud de la clave del algoritmo de cifrado. Cuanto más larga es la clave, se torna más difícil descifrarla. Sin embargo, una clave más larga requiere más recursos de procesador para cifrar y descifrar datos.</p>
+<p></p>
+<p>DES y 3DES ya no se consideran seguros; por lo tanto, se recomienda utilizar AES para el cifrado de IPSec. La mejor seguridad para el cifrado de IPSec de las VPN entre dispositivos de Cisco la proporciona la opción de 256 bits de AES. Además, dado que se descifraron claves de Rivest, Shamir y Adleman (RSA) de 512 bits y 768 bits, Cisco recomienda utilizar claves de 2048 bits con la opción RSA si se la utilizó durante la fase de autenticación de IKE.</p>
+<p></p>
+<p>
+<b>Cifrado simétrico</b>
+</p>
+<p></p>
+<p>Los algoritmos de cifrado, como AES, requieren una clave secreta compartida para el cifrado y el descifrado. Cada uno de los dos dispositivos de red debe conocer la clave para decodificar la información. Con el cifrado de clave simétrica, también denominado “cifrado de la clave secreta”, cada dispositivo cifra la información antes de enviarla a través de la red al otro dispositivo. El cifrado de clave simétrica requiere saber qué dispositivos se comunican entre sí para poder configurar la misma clave en cada dispositivo, como se ilustra en la figura 1.</p>
+<p></p>
+<p>Por ejemplo, un emisor crea un mensaje cifrado en el que cada letra se reemplaza por otra letra que está dos lugares más adelante en el abecedario: A se convierte en C, B se convierte en D y así sucesivamente. En este caso, la palabra SECRET se convierte en UGETGV. El emisor ya le dijo al destinatario que la clave secreta se corre dos letras. Cuando el destinatario recibe el mensaje UGETGV, la computadora del destinatario decodifica el mensaje corriendo dos letras hacia atrás y calcula la palabra SECRET. Cualquier persona que ve el mensaje solo ve el mensaje cifrado, que parece no tener sentido, a menos que la persona conozca la clave secreta. </p>
+<p></p>
+<p>A continuación, se muestra una sinopsis para los algoritmos simétricos:</p>
+<p></p>
+<p>
+<ul>
+<li>Utilizan criptografía de clave simétrica.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>El cifrado y el descifrado utilizan la misma clave.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Por lo general, se utilizan para cifrar el contenido del mensaje.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Ejemplos: DES, 3DES y AES</li>
+</ul>
+</p>
+<p></p>
+<p>¿Cómo es que los dispositivos de cifrado y descifrado tienen una clave secreta compartida? Para enviar las claves secretas compartidas a los administradores de los dispositivos, se podría utilizar el correo electrónico, el servicio de mensajería común o de entrega urgente. Otro método más seguro es el cifrado asimétrico.</p>
+<p></p>
+<p>
+<b>Cifrado asimétrico</b>
+</p>
+<p></p>
+<p>El cifrado asimétrico utiliza claves diferentes para el cifrado y el descifrado. Aunque conozca una de las claves, un pirata informático no puede deducir la segunda clave y decodificar la información. Una clave cifra el mensaje, mientras que una segunda clave descifra el mensaje, como se ilustra en la figura 2. No es posible cifrar y descifrar con la misma clave.</p>
+<p></p>
+<p>El cifrado de clave pública es una variante del cifrado asimétrico que utiliza una combinación de una clave privada y una pública. El destinatario brinda una clave pública a cualquier emisor con el que desee comunicarse. El emisor utiliza una clave privada que se combina con la clave pública del destinatario para cifrar el mensaje. Además, el emisor debe compartir su clave pública con el destinatario. Para descifrar un mensaje, el destinatario utiliza la clave pública del emisor con su propia clave privada.</p>
+<p></p>
+<p>A continuación, se muestra una sinopsis para los algoritmos asimétricos:</p>
+<p></p>
+<p>
+<ul>
+<li>Utilizan criptografía de clave pública.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>El cifrado y el descifrado utilizan claves diferentes.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Por lo general, se usan en la certificación digital y la administración de claves.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Ejemplos: RSA</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

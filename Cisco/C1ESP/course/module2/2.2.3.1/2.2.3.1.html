@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.2.3.1 Archivos de configuración</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.2.3.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Información básica</h1>
+        <h2>Cómo guardar configuraciones</h2>
+      </div>
+      <div id="content">
+<p>El archivo de configuración en ejecución refleja la configuración actual aplicada a un dispositivo Cisco IOS. Contiene los comandos utilizados para determinar cómo funciona el dispositivo en la red, tal como se muestra en la figura 1. La modificación de la configuración en ejecución afecta el funcionamiento de un dispositivo Cisco de inmediato. </p>
+<p></p>
+<p>El archivo de configuración en ejecución se almacena en la memoria de trabajo del dispositivo o memoria de acceso aleatorio (RAM). Esto significa que el archivo de configuración en ejecución está temporalmente activo mientras el dispositivo Cisco está en funcionamiento (encendido). Sin embargo, si se corta la alimentación al dispositivo o se lo reinicia, se pierden todos los cambios de configuración, a menos que se hayan guardado.</p>
+<p></p>
+<p>Después de realizar cambios a un archivo de configuración en ejecución, tenga en cuenta estas distintas opciones: </p>
+<p></p>
+<p>
+<ul>
+<li>Volver a la configuración original del dispositivo.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Eliminar todas las configuraciones del dispositivo.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Convertir la configuración cambiada en la nueva configuración de inicio. </li>
+</ul>
+</p>
+<p></p>
+<p>El archivo de configuración de inicio refleja la configuración que utilizará el dispositivo cuando se lo reinicie. El archivo de configuración de inicio se almacena en NVRAM. Cuando se configura un dispositivo de red y se modifica la configuración en ejecución, es importante guardar esos cambios en el archivo de configuración de inicio. Esto evita que los cambios se pierdan debido a cortes de energía o a un reinicio intencional. </p>
+<p></p>
+<p>Antes de asignar los cambios, use los correspondientes comandos <span class="cmd"><b>show</b></span> para verificar la operación del dispositivo. Como se muestra en la ilustración, se puede utilizar el comando <span class="cmd"><b>show running-config</b></span> para ver un archivo de configuración en ejecución. Cuando se verifica que los cambios son correctos, utilice el comando <span class="cmd"><b>copy running-config startup-config</b></span> en la petición de entrada del modo EXEC privilegiado. El comando para guardar la configuración en ejecución en el archivo de configuración de inicio es:</p>
+<p></p>
+<p>
+<span class="cmd">Switch#</span>
+<span class="cmd">
+<b>copy running-config startup-config</b>
+</span>
+</p>
+<p></p>
+<p>Una vez que se ejecuta, el archivo de configuración en ejecución actualiza el archivo de configuración de inicio.</p>
+<p></p>
+<p>Si los cambios realizados en la configuración en ejecución no tienen el efecto deseado, puede ser necesario volver a la configuración previa del dispositivo. Suponiendo que no se ha sobreescrito la configuración de inicio con los cambios, se puede reemplazar la configuración en ejecución por la configuración de inicio. La mejor manera de hacerlo es reiniciando el dispositivo con el comando <span class="cmd"><b>reload</b></span> ante la petición de entrada del modo EXEC privilegiado. </p>
+<p></p>
+<p>Cuando se inicia una recarga, el IOS detectará que la configuración en ejecución tiene cambios que no se guardaron en la configuración de inicio. Aparecerá una petición de entrada para preguntar si se desean guardar los cambios realizados. Para descartar los cambios, ingrese <span class="cmd"><b>n</b></span> o <span class="cmd"><b>no</b></span>.</p>
+<p></p>
+<p>Aparecerá otra petición de entrada para confirmar la recarga. Para confirmar, presione Entrar. Si se presiona cualquier otra tecla, se cancelará el proceso.</p>
+<p></p>
+<p>Por ejemplo:</p>
+<p></p>
+<p>
+<span class="cmd">Switch#</span>
+<span class="cmd">
+<b>reload</b>
+</span>
+</p>
+<p>
+<span class="cmd">System configuration has been modified. Save? [yes/no]: </span>
+<span class="cmd">
+<b>n</b>
+</span>
+</p>
+<p>
+<span class="cmd">Proceed with reload? [confirm]</span>
+</p>
+<p>
+<span class="cmd">*Apr 13 01:34:15.758: %SYS-5-RELOAD: Reload requested by console. Reload Reason:</span>
+</p>
+<p>
+<span class="cmd">Reload Command.</span>
+</p>
+<p>
+<span class="cmd">System Bootstrap, Version 12.3(8r)T8, RELEASE SOFTWARE (fc1)</span>
+</p>
+<p>
+<span class="cmd">Soporte técnico: http://www.cisco.com/techsupport</span>
+</p>
+<p>
+<span class="cmd">Derechos de autor © 2004 por Cisco Systems, Inc.</span>
+</p>
+<p>
+<span class="cmd">PLD version 0x10</span>
+</p>
+<p>
+<span class="cmd">GIO ASIC version 0x127</span>
+</p>
+<p>
+<span class="cmd">c1841 processor with 131072 Kbytes of main memory</span>
+</p>
+<p>
+<span class="cmd">Main memory is configured to 64 bit mode with parity disabled</span>
+</p>
+<p></p>
+<p></p>
+<p>Si se guardan cambios no deseados en la configuración de inicio, posiblemente sea necesario eliminar todas las configuraciones. Esto requiere borrar la configuración de inicio y reiniciar el dispositivo.</p>
+<p></p>
+<p>La configuración de inicio se elimina mediante el comando <span class="cmd"><b>erase startup-config</b></span>. </p>
+<p></p>
+<p>Para borrar el archivo de configuración de inicio, utilice <span class="cmd"><b>erase NVRAM:startup-config</b></span> o <span class="cmd"><b>erase startup-config</b></span> en la petición de entrada del modo EXEC privilegiado: </p>
+<p></p>
+<p>
+<span class="cmd">Switch#</span>
+<span class="cmd">
+<b>erase startup-config</b>
+</span>
+</p>
+<p></p>
+<p>Una vez que se emite el comando, el switch le solicita confirmación:</p>
+<p></p>
+<p>
+<span class="cmd">Erasing the nvram filesystem will remove all configuration files! Continue? [confirm]</span>
+</p>
+<p></p>
+<p>Confirm es la respuesta predeterminada. Para confirmar y borrar el archivo de configuración de inicio, presione la tecla Entrar. Si se presiona cualquier otra tecla, se cancelará el proceso.</p>
+<p></p>
+<p>
+<b>Precaución:</b> tenga cuidado al utilizar el comando <span class="cmd"><b>erase</b></span>. Este comando puede utilizarse para borrar cualquier archivo del dispositivo. El uso incorrecto del comando puede borrar el IOS mismo u otro archivo esencial.</p>
+<p></p>
+<p>En un switch, también se debe emitir el comando <span class="cmd"><b>delete vlan.dat</b></span> además del comando <span class="cmd"><b>erase startup-config</b></span>, a fin de devolver el dispositivo a la configuración predeterminada inicial (similar a un restablecimiento de la configuración predeterminada de fábrica):</p>
+<p></p>
+<p>
+<span class="cmd">Switch#</span>
+<span class="cmd">
+<b>delete vlan.dat</b>
+</span>
+<span class="cmd"></span>
+</p>
+<p>
+<span class="cmd">Delete filename [vlan.dat]? </span>
+</p>
+<p>
+<span class="cmd">Delete flash:vlan.dat? [confirm]</span>
+</p>
+<p>
+<span class="cmd">Switch#</span>
+<span class="cmd">
+<b>erase startup-config</b>
+</span>
+</p>
+<p>
+<span class="cmd">Erasing the nvram filesystem will remove all configuration files! Continue? [confirm]</span>
+</p>
+<p>
+<span class="cmd">[OK]</span>
+</p>
+<p>
+<span class="cmd">Erase of nvram: complete</span>
+</p>
+<p>
+<span class="cmd">Switch#</span>
+</p>
+<p></p>
+<p>Después de eliminar la configuración de inicio de la NVRAM (y de borrar el archivo vlan.dat en el caso de un switch), vuelva a cargar el dispositivo para eliminar el archivo de configuración actual en ejecución de la RAM. El dispositivo cargará entonces la configuración de inicio predeterminada que se envió originalmente con el dispositivo en la configuración en ejecución.</p>
+<p></p>
+<p>En la figura 2, practique la introducción de comandos para guardar la configuración en ejecución de la RAM en la NVRAM.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

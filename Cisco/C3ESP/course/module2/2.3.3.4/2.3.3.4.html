@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.3.3.4 Consecuencias de las fallas del árbol de expansión</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.3.3.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de árbol de expansión</h1>
+        <h2>Problemas de configuración de STP</h2>
+      </div>
+      <div id="content">
+<p>En la mayoría de los protocolos, una falla significa que se pierde la funcionalidad que proporcionaba el protocolo. Por ejemplo, si OSPF funciona mal en un router, es posible que se pierda la conectividad a las redes a las que se puede llegar mediante ese router. En general, esto no afectaría el resto de la red OSPF. Si todavía está disponible la conectividad al router, es posible diagnosticar y resolver el problema.</p>
+<p></p>
+<p>Existen dos tipos de falla en STP. La primera es similar al problema de OSPF. Es posible que STP bloquee por error los puertos que se deberían haber colocado en estado de reenvío. Se puede perder la conectividad para el tráfico que normalmente pasaría por este switch, pero el resto de la red no se ve afectada. El segundo tipo de falla es mucho más perjudicial, como se muestra en la figura 1. Esta falla se produce cuando STP pasa uno o más puertos al estado de reenvío por error.</p>
+<p></p>
+<p>Recuerde que el encabezado de las tramas de Ethernet no incluye un campo TTL, lo que significa que los switches continúan reenviando indefinidamente cualquier trama que entre en un bucle de puente. Las únicas excepciones son las tramas que tienen la dirección de destino registrada en la tabla de direcciones MAC de los switches. Estas tramas simplemente se reenvían al puerto asociado a la dirección MAC y no ingresan a ningún bucle. Sin embargo, cualquier trama que un switch use para saturar los puertos ingresa al bucle (figura 2). Esto puede incluir difusiones, multidifusiones y unidifusiones con una dirección MAC de destino desconocida globalmente.</p>
+<p></p>
+<p>¿Cuáles son las consecuencias y los síntomas correspondientes de la falla de STP (figura 3)?</p>
+<p></p>
+<p>La carga de todos los enlaces en la LAN conmutada comienza a aumentar rápidamente a medida que ingresan cada vez más tramas al bucle. Este problema no se limita a los enlaces que forman el bucle, sino que además afecta al resto de los enlaces en el dominio conmutado, dado que las tramas saturan todos los enlaces. Cuando la falla del árbol de expansión se limita a una única VLAN, solo los enlaces de esa VLAN se ven afectados. Los switches y los enlaces troncales que no transportan esa VLAN funcionan con normalidad.</p>
+<p></p>
+<p>Si la falla del árbol de expansión creó un bucle de puente, el tráfico aumenta exponencialmente. Los switches saturan varios puertos con las difusiones. Esto crea copias de las tramas cada vez que los switches las reenvían.</p>
+<p></p>
+<p>Cuando el tráfico del plano de control comienza a ingresar al bucle (por ejemplo, los saludos OSPF o EIGRP), los dispositivos que ejecutan esos protocolos comienzan a sobrecargarse rápidamente. Las CPU se acercan al 100% de utilización mientras intentan procesar una carga de tráfico del plano de control en constante aumento. En muchos casos, el primer indicio de esta tormenta de difusión en proceso es que los routers o los switches de capa 3 informan fallas en el plano de control y que están funcionando con una elevada carga de CPU. </p>
+<p></p>
+<p>Los switches experimentan modificaciones frecuentes en la tabla de direcciones MAC. Si existe un bucle, es posible que un switch vea que una trama con determinada dirección MAC de origen ingresa por un puerto y que después vea que otra trama con la misma dirección MAC de origen ingresa por otro puerto una fracción de segundo más tarde. Esto provoca que el switch actualice la tabla de direcciones MAC dos veces para la misma dirección MAC.</p>
+<p></p>
+<p>Debido a la combinación de una carga muy alta en todos los enlaces con el funcionamiento de las CPU del switch a la carga máxima, por lo general, no se puede llegar a estos dispositivos. Esto hace que sea muy difícil diagnosticar el problema mientras ocurre.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.4.1.1 Pasos de configuración del router</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.4.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de un router Cisco</h1>
+        <h2>Configuración inicial</h2>
+      </div>
+      <div id="content">
+<p>Los routers y los switches Cisco tienen muchas similitudes: admiten sistemas operativos modales y estructuras de comandos similares, así como muchos de los mismos comandos. Además, los pasos de configuración inicial durante su implementación en una red son idénticos para ambos dispositivos. </p>
+<p></p>
+<p>De modo similar a lo que sucede al configurar un switch, se deben completar los siguientes pasos al configurar los parámetros iniciales de un router:</p>
+<p>1. Asignar un nombre de dispositivo mediante el comando de configuración global <span class="cmd"><b>hostname</b></span> (figura 1).</p>
+<p>2. Establecer contraseñas. (figura 2).</p>
+<p>
+<ul>
+<li>Proteger el acceso al modo EXEC privilegiado mediante el comando <span class="cmd"><b>enable secret</b></span>.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Proteger el acceso al modo EXEC con el comando <span class="cmd"><b>login</b></span> en el puerto de consola, y el comando <span class="cmd"><b>password</b></span> para establecer la contraseña. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Proteger el acceso virtual. Esto se realiza de forma similar a la protección del acceso al modo EXEC, excepto que se lleva a cabo en el puerto de teletipo virtual (VTY).</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Utilizar el comando de configuración global <span class="cmd"><b>service password-encryption</b></span> para evitar que las contraseñas se muestren como texto no cifrado en el archivo de configuración.</li>
+</ul>
+</p>
+<p>3. Proporcionar notificaciones legales mediante el comando de configuración global de mensaje del día (MOTD) <span class="cmd"><b>banner motd</b></span> (figura 3).</p>
+<p>4. Guardar la configuración mediante el comando <span class="cmd"><b>copy run start</b></span> (figura 4).</p>
+<p>5. Verificar la configuración mediante el comando <span class="cmd"><b>show run</b></span>. </p>
+<p></p>
+<p>En la figura 5, se proporciona un verificador de sintaxis que le permite practicar estos pasos de configuración.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

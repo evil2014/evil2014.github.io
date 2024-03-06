@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.3.3.1 Comparación de conmutación de capa 2 y conmutación de capa 3</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.3.3.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Switches LAN</h1>
+        <h2>Conmutación de capa 3</h2>
+      </div>
+      <div id="content">
+<p>Además de determinar los diversos factores de forma de switch, es posible que también sea necesario elegir entre un switch LAN de capa 2 y un switch de capa 3.</p>
+<p></p>
+<p>Recuerde que los switches LAN de capa 2 llevan a cabo los procesos de conmutación y filtrado solo según la dirección MAC de la capa de enlace de datos (capa 2) del modelo OSI y dependen de los routers para pasar datos entre subredes IP independientes (consulte la figura 1).</p>
+<p></p>
+<p>Como se muestra en la figura 2, un switch de capa 3, como el Catalyst 3560, funciona de manera similar a un switch de capa 2, como el Catalyst 2960, pero en lugar de utilizar solo la información de la dirección MAC de la capa 2 para las decisiones de reenvío, los switches de capa 3 también pueden utilizar la información de la dirección IP. En lugar de aprender qué direcciones MAC están vinculadas con cada uno de sus puertos, el switch de Capa 3 puede también conocer qué direcciones IP están relacionadas con sus interfaces. Esto permite que el switch de capa 3 también dirija el tráfico a través de la red sobre la base de la información de la dirección IP. </p>
+<p></p>
+<p>Los switches de Capa 3 son también capaces de llevar a cabo funciones de enrutamiento de Capa 3, con lo cual se reduce la necesidad de colocar routers dedicados en una LAN. Dado que los switches de Capa 3 cuentan con un hardware de conmutación especializado, pueden normalmente enviar datos con la misma rapidez con la que pueden conmutar.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

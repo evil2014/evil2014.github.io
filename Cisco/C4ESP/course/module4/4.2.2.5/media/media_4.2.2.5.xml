@@ -1,0 +1,108 @@
+﻿<textcomponents>
+
+<component id='ID_inst'>
+	<text><![CDATA[<b>Actividad: Unir los términos relacionados con la posibilidad de conexión de Frame Relay con las descripciones</b><br><br>Una los términos relacionados con la posibilidad de conexión de Frame Relay con la descripción arrastrándolos al espacio correspondiente. No utilizará todas las opciones.]]></text>
+</component>
+
+
+<component id='ID_header01'>
+	<text><![CDATA[<b>Terminología</b>]]></text>
+</component>
+
+
+<component id='ID_header02'>
+	<text><![CDATA[<b>Descripciones de la posibilidad de conexión de Frame Relay</b>]]></text>
+</component>
+
+
+
+
+<component id='ID_txt01'>
+	<text><![CDATA[Este tipo de topología se crea porque Frame Relay utiliza conexiones NBMA entre los sitios de manera predeterminada.]]></text>
+</component>
+
+<component id='ID_txt02'>
+	<text><![CDATA[Es posible que este mecanismo de bucle de routing vector distancia no funcione correctamente en la topología NBMA de Frame Relay.]]></text>
+</component>
+
+<component id='ID_txt03'>
+	<text><![CDATA[Este tipo de topología puede solucionar problemas de conexión de Frame Relay, pero su implementación es muy costosa.]]></text>
+</component>
+
+<component id='ID_txt04'>
+	<text><![CDATA[Una conexión PVC dedicada entre dos dispositivos Frame Relay.]]></text>
+</component>
+
+<component id='ID_txt05'>
+	<text><![CDATA[Varias terminales definidas para una interfaz o subinterfaz.]]></text>
+</component>
+
+<component id='ID_txt06'>
+	<text><![CDATA[El comando para habilitar Frame Relay en una interfaz.]]></text>
+</component> <!--Drag and Drop-->
+<component id='ID_drag01'>
+	<text><![CDATA[<font color="#393536">encapsulation frame-relay</font>]]></text>
+</component>
+
+<component id='ID_drag02'>
+	<text><![CDATA[<font color="#393536">Disminuye</font>]]></text>
+</component>
+
+<component id='ID_drag03'>
+	<text><![CDATA[<font color="#393536">Aumenta</font>]]></text>
+</component>
+
+<component id='ID_drag04'>
+	<text><![CDATA[<font color="#393536">Subredes</font>]]></text>
+</component>
+
+<component id='ID_drag05'>
+	<text><![CDATA[<font color="#393536">multipunto</font>]]></text>
+</component>
+<component id='ID_drag06'>
+	<text><![CDATA[<font color="#393536">hub-and-spoke</font>]]></text>
+</component>
+
+<component id='ID_drag07'>
+	<text><![CDATA[<font color="#393536">Punto a punto</font>]]></text>
+</component>
+
+<component id='ID_drag08'>
+	<text><![CDATA[<font color="#393536">estrella</font>]]></text>
+</component>
+
+<component id='ID_drag09'>
+	<text><![CDATA[<font color="#393536">Malla completa</font>]]></text>
+</component>
+
+<component id='ID_drag10'>
+	<text><![CDATA[<font color="#393536">horizonte dividido</font>]]></text>
+</component>
+
+
+
+<component id='ID_s1_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id='ID_s1_CORRECT_BODY'>
+	<text><![CDATA[Unió correctamente los términos relacionados con la posibilidad de conexión de Frame Relay con la descripción.]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_BODY'>
+	<text><![CDATA[No unió correctamente los términos relacionados con la posibilidad de conexión de Frame Relay con la descripción. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_CHECK'>
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id='ID_RESET'>
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component>
+
+</textcomponents>

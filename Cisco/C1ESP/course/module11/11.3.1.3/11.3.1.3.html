@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>11.3.1.3 Línea base de red</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_11.3.1.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Rendimiento básico de la red</h1>
+        <h2>Los comandos </h2>
+      </div>
+      <div id="content">
+<p>Una de las herramientas más efectivas para controlar y resolver problemas relacionados con el rendimiento de la red es establecer una línea de base de red. Una línea de base es un proceso para estudiar la red en intervalos regulares a fin de asegurar que la red funciona según su diseño. Una línea de base de red es más que un simple informe que detalla el estado de la red en determinado momento. La creación de una línea de base efectiva del rendimiento de la red se logra con el tiempo. La medición del rendimiento en distintos momentos (figuras 1 y 2) y con distintas cargas ayuda a tener una idea más precisa del rendimiento general de la red.</p>
+<p></p>
+<p>El resultado que deriva de los comandos de la red puede aportar datos a la línea de base de red. </p>
+<p></p>
+<p>Un método para iniciar una línea de base es copiar y pegar en un archivo de texto los resultados de los comandos ping, trace u otro comando relevante. Estos archivos de texto pueden tener grabada la fecha y la hora y pueden guardarse en un archivo para su posterior recuperación. </p>
+<p></p>
+<p>Un uso eficaz de la información almacenada consiste en comparar los resultados en el transcurso del tiempo (figura 3). Entre los elementos que se deben considerar se encuentran los mensajes de error y los tiempos de respuesta de host a host. Si se observa un aumento considerable de los tiempos de respuesta, es posible que exista un problema de latencia para considerar. </p>
+<p></p>
+<p>No bastan las palabras para destacar la importancia de crear documentación. La verificación de la conectividad de host a host, los problemas de latencia y las resoluciones de problemas identificados puede ayudar a un administrador de red a mantener el funcionamiento más eficiente posible de la red. </p>
+<p></p>
+<p>Las redes corporativas deben tener líneas de base extensas; más extensas de lo que podemos describir en este curso. Existen herramientas de software a nivel profesional para almacenar y mantener información de línea de base. En este curso, solo se abarcan algunas técnicas básicas y se analiza el propósito de las líneas de base.</p>
+<p></p>
+<p>Las prácticas recomendadas para los procesos de línea de base se pueden encontrar <a href="http://www.cisco.com/en/US/tech/tk869/tk769/technologies_white_paper09186a008014fb3b.shtml" target="_blank">aquí</a>.</p>
+<p></p>
+<p>La captura del resultado del comando <span class="cmd"><b>ping</b></span> también se puede completar desde la petición de entrada del IOS, como se muestra en la figura 4.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

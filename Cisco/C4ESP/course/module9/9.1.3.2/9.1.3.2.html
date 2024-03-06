@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.1.3.2 Métodos de resolución de problemas</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.1.3.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resolución de problemas mediante un enfoque sistemático</h1>
+        <h2>Aislamiento del problema mediante modelos en capas</h2>
+      </div>
+      <div id="content">
+<p>Mediante los modelos en capas, existen tres métodos principales para resolver problemas de red:</p>
+<p>
+<ul>
+<li>Ascendente </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Descendente</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Divide y vencerás</li>
+</ul>
+</p>
+<p></p>
+<p>Cada método tiene sus ventajas y desventajas. En este tema, se describen los tres métodos y se proporcionan pautas para elegir el mejor método para una situación específica.</p>
+<p></p>
+<p>
+<b>Método de resolución de problemas ascendente</b>
+</p>
+<p>En la resolución de problemas ascendente, se comienza por los componentes físicos de la red y se atraviesan las capas del modelo OSI de manera ascendente hasta que se identifica la causa del problema, como se muestra en la figura 1. La resolución de problemas ascendente es un buen método para usar cuando se sospecha que el problema es físico. La mayoría de los problemas de red residen en los niveles inferiores, de modo que, con frecuencia, la implementación del método ascendente es eficaz. </p>
+<p></p>
+<p>La desventaja del método de resolución de problemas ascendente es que requiere que revise cada dispositivo e interfaz en la red hasta que detecte la posible causa del problema. Recuerde que se debe registrar cada conclusión y cada posibilidad, de modo que es posible que haya mucho papeleo asociado a este enfoque. Otro desafío es determinar qué dispositivos se deben examinar primero.</p>
+<p></p>
+<p>
+<b>Método de resolución de problemas descendente</b>
+</p>
+<p>En la figura 2, la resolución de problemas descendente comienza por las aplicaciones de usuario final y atraviesa las capas del modelo OSI de manera descendente hasta que se identifica la causa del problema. Antes de abordar las partes más específicas de la red, se prueban las aplicaciones de usuario final de un sistema final. Use este método para los problemas más simples o cuando crea que el problema está en un software.</p>
+<p></p>
+<p>La desventaja del enfoque descendente es que requiere que se revise cada aplicación de red hasta que se detecte la posible causa del problema. Se debe registrar cada conclusión y cada posibilidad. El desafío es determinar qué aplicación se debe examinar primero.</p>
+<p></p>
+<p>
+<b>Método de resolución de problemas divide y vencerás</b>
+</p>
+<p>En la figura 3, se muestra el enfoque divide y vencerás para resolver un problema de red. El administrador de red selecciona una capa y hace pruebas en ambos sentidos desde esa capa.</p>
+<p></p>
+<p>En el método de resolución de problemas divide y vencerás, comienza por reunir las experiencias que el usuario tiene del problema, documenta los síntomas y, después, con esa información, hace una deducción fundamentada sobre la capa del modelo OSI en la que se debe comenzar la investigación. Cuando se verifica que una capa funciona correctamente, se puede suponer que las capas por debajo de ella funcionan. El administrador puede trabajar en las capas del modelo OSI en sentido ascendente. Si una capa del modelo OSI no funciona correctamente, el administrador puede trabajar en el modelo de capas OSI de manera descendente.</p>
+<p></p>
+<p>Por ejemplo, si los usuarios no pueden acceder al servidor web, pero pueden hacer ping al servidor, entonces el problema se encuentra por encima de la capa 3. Si el ping al servidor falla, es probable que el problema esté en una capa inferior del modelo OSI.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

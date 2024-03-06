@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.3.1.7 Propagación de rutas predeterminadas</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.3.1.7_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Routing RIP y RIPng</h1>
+        <h2>Configuración del protocolo RIP</h2>
+      </div>
+      <div id="content">
+<p>Consulte la Figura 1. En esta situación, el R1 tiene conexión simple a un proveedor de servicios. Por lo tanto, para que el R1 llegue a Internet, solo se requiere una ruta estática predeterminada desde la interfaz Serial 0/0/1. </p>
+<p></p>
+<p>Se podrían configurar rutas estáticas predeterminadas similares en el R2 y en el R3, pero es mucho más escalable introducirla una vez en el router perimetral R1 y, a continuación, hacer que el R1 la propague al resto de los routers mediante RIP. Para proporcionarle conectividad a Internet a todas las demás redes del dominio de enrutamiento RIP, la ruta estática predeterminada debe publicarse a todos los demás routers que usan el protocolo de enrutamiento dinámico. </p>
+<p></p>
+<p>Para propagar una ruta predeterminada, el router perimetral debe estar configurado con lo siguiente:</p>
+<p>
+<ul>
+<li>Una ruta estática predeterminada mediante el comando <span class="cmd"><b>ip route 0.0.0.0 0.0.0.0</b></span><span class="cmd"><i> interfaz-salida ip-siguiente-salto</i></span>.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>El comando de configuración del router <span class="cmd"><b>default-information originate</b></span>. Esto le ordena al router R1 que produzca información predeterminada mediante la propagación de la ruta estática predeterminada en actualizaciones RIP.</li>
+</ul>
+</p>
+<p></p>
+<p>En el ejemplo de la figura 2, se configura una ruta estática predeterminada completamente especificada al proveedor de servicios y, a continuación, se propaga la ruta mediante RIP. Observe que ahora el R1 tiene un gateway de último recurso y una ruta predeterminada instalados en su tabla de routing.</p>
+<p></p>
+<p>Utilice el verificador de sintaxis de la figura 3 para verificar que la ruta predeterminada se haya propagado al R2 y al R3.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

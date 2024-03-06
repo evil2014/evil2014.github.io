@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.2.4.2 Aplicaciones que utilizan UDP</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.2.4.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>TCP y UDP</h1>
+        <h2>TCP o UDP: esa es la cuestión</h2>
+      </div>
+      <div id="content">
+<p>Existen tres tipos de aplicaciones que son las más adecuadas para UDP:</p>
+<p>
+<ul>
+<li>Aplicaciones que pueden tolerar cierta pérdida de datos, pero requieren retrasos cortos o que no haya retrasos</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Aplicaciones con transacciones de solicitud y respuesta simples</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Comunicaciones unidireccionales donde no se requiere confiabilidad o donde la aplicación la pueda administrar</li>
+</ul>
+</p>
+<p></p>
+<p>Muchas aplicaciones de video y multimedia, como VoIP y la televisión por protocolo de Internet (IPTV), utilizan UDP. Estas aplicaciones pueden tolerar cierta pérdida de datos con un efecto mínimo o imperceptible. Los mecanismos de confiabilidad de TCP presentan cierto grado de demora que se puede percibir en la calidad de sonido o video que se recibe. </p>
+<p></p>
+<p>Otros tipos de aplicaciones adecuadas para UDP son las que utilizan transacciones de solicitud y respuesta simples. Esto se da cuando un host envía una solicitud y existe la posibilidad de que reciba una respuesta o no. Estos tipos de aplicaciones incluyen las siguientes:</p>
+<p>
+<ul>
+<li>DHCP</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>DNS: también puede utilizar TCP</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>SNMP </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>TFTP</li>
+</ul>
+</p>
+<p></p>
+<p>Algunas aplicaciones se ocupan de la confiabilidad por sí mismas. Estas aplicaciones no necesitan los servicios de TCP y pueden utilizar mejor UDP como protocolo de capa de transporte. TFTP es un ejemplo de este tipo de protocolo. TFTP tiene sus propios mecanismos para el control del flujo, la detección de errores, los acuses de recibo y la recuperación de errores. Este protocolo no necesita depender de TCP para esos servicios. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

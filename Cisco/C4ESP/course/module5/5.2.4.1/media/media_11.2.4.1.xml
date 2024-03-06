@@ -1,0 +1,56 @@
+﻿<textcomponents> <!--Slide 1-->
+<component id="ID_s1_title">
+<text><![CDATA[<b>Puertos de destino TCP y UDP</b>]]></text>
+</component>
+<component id="ID_s1_txt01">
+<text><![CDATA[Servidor Telnet]]></text>
+</component>
+<component id="ID_s1_txt02">
+<text><![CDATA[Servidor FTP]]></text>
+</component>
+<component id="ID_s1_txt03">
+<text><![CDATA[Servidor web]]></text>
+</component>
+<component id="ID_s1_txt04">
+<text><![CDATA[Puerto&nbsp;23]]></text>
+</component>
+<component id="ID_s1_txt05">
+<text><![CDATA[Puertos&nbsp;20 y 21]]></text>
+</component>
+<component id="ID_s1_txt06">
+<text><![CDATA[Puerto&nbsp;80]]></text>
+</component>
+<component id="ID_s1_txt07">
+<text><![CDATA[Cliente]]></text>
+</component>
+<component id="ID_s1_txt08">
+<text><![CDATA[<b>Internet</b>]]></text>
+</component> <!--Slide 2-->
+<component id='ID_s2_title'>
+	<text><![CDATA[<b>Reenvío de puertos</b>]]></text>
+</component>
+
+<component id="ID_s2_txt01">
+<text><![CDATA[Servidor del PoS]]></text>
+</component>
+<component id="ID_s2_txt02">
+<text><![CDATA[A la dirección IPv4 privada del servidor.]]></text>
+</component>
+<component id="ID_s2_txt03">
+<text><![CDATA[Red interna]]></text>
+</component>
+<component id="ID_s2_txt04">
+<text><![CDATA[Router SOHO]]></text>
+</component>
+<component id="ID_s2_txt05">
+<text><![CDATA[A la dirección IPv4 pública del router y al puerto de destino específico del servidor.]]></text>
+</component>
+<component id="ID_s2_txt06">
+<text><![CDATA[Internet]]></text>
+</component>
+<component id="ID_s2_txt07">
+<text><![CDATA[Reenvío los paquetes que coinciden con un puerto de destino específico al servidor del PoS.]]></text>
+</component>
+
+
+</textcomponents>

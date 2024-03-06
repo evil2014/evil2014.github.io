@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.2.2.2 Ataques de seguridad frecuentes: suplantación de identidad de DHCP</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.2.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Seguridad de switches: administración e implementación</h1>
+        <h2>Cuestiones de seguridad en redes LAN</h2>
+      </div>
+      <div id="content">
+<p>DHCP es el protocolo que asigna automáticamente una dirección IP válida de un pool de DHCP a un host. En esta industria, el protocolo DHCP se usa hace casi tanto tiempo como TCP/IP como protocolo principal para asignar direcciones IP a los clientes. Se pueden realizar dos tipos de ataques DHCP a una red conmutada: los ataques de agotamiento de DHCP y los de suplantación de identidad de DHCP.</p>
+<p></p>
+<p>En los ataques de agotamiento de DHCP, un atacante satura el servidor de DHCP con solicitudes de DHCP para utilizar todas las direcciones IP disponibles que el servidor de DHCP puede emitir. Una vez que se emiten estas direcciones IP, el servidor no puede emitir más direcciones; esta situación produce un ataque por denegación de servicio (DoS), ya que los nuevos clientes no pueden obtener acceso a la red. Un ataque DoS es cualquier ataque que se usa para sobrecargar dispositivos y servicios de red específicos con tráfico ilegítimo, lo que impide que el tráfico legítimo llegue a esos recursos.</p>
+<p></p>
+<p>En los ataques de suplantación de identidad de DHCP, un atacante configura un servidor de DHCP falso en la red para emitir direcciones de DHCP para los clientes. El motivo común de este ataque es obligar a los clientes a que usen servidores de Sistema de nombres de dominios (DNS) o de Servicio de nombres Internet de Windows (WINS) falsos y hacer que los clientes usen al atacante, o una máquina controlada por el atacante, como gateway predeterminado. </p>
+<p></p>
+<p>El agotamiento de DHCP se suele utilizar antes de un ataque de suplantación de identidad de DHCP para denegar el servicio al servidor de DHCP legítimo, lo que facilita la introducción de un servidor de DHCP falso en la red.</p>
+<p></p>
+<p>Para mitigar los ataques de DHCP, se usan las características de detección de DHCP y de seguridad de puertos de los switches Cisco Catalyst. Estas características se abarcan más adelante en otro tema.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

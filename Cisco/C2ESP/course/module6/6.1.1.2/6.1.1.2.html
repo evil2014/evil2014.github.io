@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.1.1.2 ¿Por qué utilizar el routing estático?</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.1.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Implementación del routing estático</h1>
+        <h2>Enrutamiento estático</h2>
+      </div>
+      <div id="content">
+<p>El routing estático proporciona algunas ventajas en comparación con el routing dinámico, por ejemplo:</p>
+<p>
+<ul>
+<li>Las rutas estáticas no se anuncian a través de la red, lo cual aumenta la seguridad. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Las rutas estáticas consumen menos ancho de banda que los protocolos de routing dinámico. No se utiliza ningún ciclo de CPU para calcular y comunicar las rutas. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>La ruta que usa una ruta estática para enviar datos es conocida.</li>
+</ul>
+</p>
+<p></p>
+<p>El routing estático tiene las siguientes desventajas:</p>
+<p>
+<ul>
+<li>La configuración inicial y el mantenimiento son prolongados.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>La configuración es propensa a errores, especialmente en redes extensas.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Se requiere la intervención del administrador para mantener la información cambiante de la ruta.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>No se adapta bien a las redes en crecimiento; el mantenimiento se torna cada vez más complicado. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Requiere un conocimiento completo de toda la red para una correcta implementación.</li>
+</ul>
+</p>
+<p></p>
+<p>En la ilustración, se comparan las características del routing dinámico y el routing estático. Observe que las ventajas de un método son las desventajas del otro.</p>
+<p></p>
+<p>Las rutas estáticas son útiles para redes más pequeñas con solo una ruta hacia una red externa. También proporcionan seguridad en una red más grande para ciertos tipos de tráfico o enlaces a otras redes que necesitan más control. Es importante comprender que el routing estático y el routing dinámico no son mutuamente excluyentes. En cambio, la mayoría de las redes utilizan una combinación de protocolos de routing dinámico y rutas estáticas. Esto puede ocasionar que el router tenga varias rutas a una red de destino a través de rutas estáticas y rutas descubiertas dinámicamente. Sin embargo, la distancia administrativa (AD) a una ruta estática es 1. Por lo tanto, una ruta estática tendrá prioridad sobre todas las rutas descubiertas dinámicamente. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

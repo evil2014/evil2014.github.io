@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>10.4.1.1 Actividad de creación de modelos: Hágalo realidad</title>
+    <!-- Activity -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_10.4.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resumen</h1>
+        <h2>Resumen</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Hágalo realidad</b>
+</p>
+<p></p>
+<p>Consulte la actividad de creación de modelos que se encuentra al comienzo de este capítulo como base para esta actividad. Los teléfonos IP se instalaron en media jornada, en lugar de tomar una semana completa como se previó inicialmente. Se restauró la capacidad total de la red, y las aplicaciones de red están disponibles para que las utilice. Tiene los mismos correos electrónicos que enviar y cotizaciones que preparar para obtener la aprobación del gerente.</p>
+<p></p>
+<p>Utilice la misma situación que completó en la actividad de creación de modelos introductoria para responder las siguientes preguntas:</p>
+<p></p>
+<p>
+<b>A. Correos electrónicos</b>
+</p>
+<p>
+<ul>
+<li>¿Qué métodos puede utilizar para enviar correspondencia electrónica ahora que la red funciona? </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>¿En qué formato se enviarán sus correos electrónicos a través de la red? </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>¿Cómo puede enviar el mismo mensaje a varios destinatarios ahora? </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>¿Cómo puede enviar los adjuntos grandes a varios destinatarios usando aplicaciones de red? </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>¿El uso de aplicaciones de red resultaría un método de comunicación rentable para la compañía?</li>
+</ul>
+</p>
+<p>
+<b>B. Cotización para obtener la aprobación del gerente.</b>
+</p>
+<p>
+<ul>
+<li>Dado que tiene programas de aplicaciones de escritorio instalados en su PC, ¿será relativamente fácil generar la cotización que su gerente necesita para el nuevo contrato, que tiene una fecha límite a finales de la semana? Justifique su respuesta.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Cuando termine de redactar la cotización, ¿cómo la presentará al gerente para obtener su aprobación? ¿Cómo enviará el gerente la cotización al cliente para que la apruebe?</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>¿El uso de aplicaciones de red constituye un modo rentable de realizar transacciones comerciales? Justifique su respuesta.</li>
+</ul>
+</p>
+<p></p>
+<p>Conserve una copia impresa o una copia electrónica de sus respuestas. Esté preparado para comentar sus respuestas en clase.</p>
+<p></p>
+<p>
+<a href="../../files/10.4.1.1%20Class%20Activity%20-%20Make%20it%20happen!%20Instructions.pdf" target="_blank">Actividad de clase: Hágalo realidad Instrucciones</a>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.4.2.2 Cálculo de direcciones de red IPv6</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.4.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de rutas resumidas y estáticas flotantes</h1>
+        <h2>Configuración de rutas resumidas IPv6</h2>
+      </div>
+      <div id="content">
+<p>El resumen de redes IPv6 en un único prefijo IPv6 y una única longitud de prefijo se puede realizar en siete pasos, tal como se muestra en las figuras 1 a 7:</p>
+<p></p>
+<p>
+<b>Paso 1. </b>Enumere las direcciones de red (prefijos) e identifique la parte en la cual las direcciones difieren.</p>
+<p></p>
+<p>
+<b>Paso 2. </b>Expanda la IPv6 si está abreviada. </p>
+<p></p>
+<p>
+<b>Paso 3. </b>Convierta la sección diferente de sistema hexadecimal a binario.</p>
+<p></p>
+<p>
+<b>Paso 4. </b>Cuente el número de bits coincidentes que se encuentran en el extremo izquierdo para determinar la longitud de prefijo para la ruta resumida. </p>
+<p></p>
+<p>
+<b>Paso 5. </b>Copie los bits coincidentes y luego agregue los bits 0 para determinar la dirección de red resumida (prefijo).</p>
+<p></p>
+<p>
+<b>Paso 6. </b>Convierta la sección binaria de nuevo en hexadecimal.</p>
+<p></p>
+<p>
+<b>Paso 7. </b>Agregue el prefijo de la ruta resumida (resultado del paso 4).</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

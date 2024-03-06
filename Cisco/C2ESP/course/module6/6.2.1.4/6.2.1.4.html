@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.2.1.4 Configuración de una ruta estática conectada directamente</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.2.1.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de rutas estáticas y predeterminadas</h1>
+        <h2>Configuración de rutas estáticas IPv4</h2>
+      </div>
+      <div id="content">
+<p>Al configurar una ruta estática, otra opción es utilizar la interfaz de salida para especificar la dirección del siguiente salto. En versiones anteriores de IOS, antes de CEF, este método se utiliza para evitar el problema de búsquedas recursivas. </p>
+<p></p>
+<p>En la figura 1, se configuran tres rutas estáticas conectadas directamente en el R1 mediante la interfaz de salida. La tabla de routing para el R1 en la figura 2 muestra que cuando un paquete está destinado a la red 192.168.2.0/24, el R1 busca una coincidencia en la tabla de routing y encuentra que puede reenviar el paquete desde su interfaz serial 0/0/0. No se necesita ninguna otra búsqueda.</p>
+<p></p>
+<p>Observe que la tabla de routing se ve diferente para la ruta configurada con una interfaz de salida que para la ruta configurada con una entrada recursiva.</p>
+<p></p>
+<p>La configuración de una ruta estática conectada directamente con una interfaz de salida permite que la tabla de routing resuelva esta interfaz en una única búsqueda, no en dos. Aunque la entrada de la tabla de routing indica “conectado directamente”, la distancia administrativa de la ruta estática sigue siendo 1. Solo una interfaz conectada directamente puede tener una distancia administrativa de 0.</p>
+<p></p>
+<p>
+<b>Nota</b>: para las interfaces punto a punto, puede utilizar rutas estáticas que señalan a la interfaz de salida o a la dirección del siguiente salto. Para interfaces multipunto o de difusión, es más conveniente utilizar rutas estáticas que señalen a una dirección del siguiente salto.</p>
+<p></p>
+<p>Utilice el verificador de sintaxis en las figuras 3 y 4 para configurar y verificar las rutas estáticas conectadas directamente en el R2 y el R3.</p>
+<p></p>
+<p>Aunque son comunes las rutas estáticas que utilizan solo una interfaz de salida en redes punto a punto, el uso del mecanismo de reenvío CEF predeterminado hace que esta práctica sea innecesaria. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

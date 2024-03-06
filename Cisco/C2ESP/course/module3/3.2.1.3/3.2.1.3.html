@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>3.2.1.3 Asignación de puertos a las redes VLAN</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_3.2.1.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Implementaciones de VLAN</h1>
+        <h2>Asignación de red VLAN</h2>
+      </div>
+      <div id="content">
+<p>Después de crear una VLAN, el siguiente paso es asignar puertos a la VLAN. Un puerto de acceso puede pertenecer a una sola VLAN por vez; una excepción a esta regla es un puerto conectado a un teléfono IP, en cuyo caso, hay dos VLAN asociadas al puerto: una para voz y otra para datos.</p>
+<p></p>
+<p>En la figura 1, se muestra la sintaxis para definir un puerto como puerto de acceso y asignarlo a una VLAN. El comando <span class="cmd"><b>switchport mode access</b></span> es optativo, pero se aconseja como práctica recomendada de seguridad. Con este comando, la interfaz cambia al modo de acceso permanente.</p>
+<p></p>
+<p>
+<b>Nota:</b> utilice el comando <span class="cmd"><b>interface range</b></span> para configurar varias interfaces simultáneamente. </p>
+<p></p>
+<p>En el ejemplo de la figura 2, la VLAN 20 se asigna al puerto F0/18 del switch S1; por lo tanto, la computadora de estudiantes (PC2) está en la VLAN 20. Cuando se configura la VLAN 20 en otros switches, el administrador de red sabe que debe configurar las otras computadoras de estudiantes para que estén en la misma subred que la PC2 (172.17.20.0/24).</p>
+<p></p>
+<p>Utilice el verificador de sintaxis de la figura 3 para asignar una VLAN y utilice el comando <span class="cmd"><b>show vlan brief</b></span> para mostrar el contenido del archivo vlan.dat. </p>
+<p></p>
+<p>El comando <span class="cmd"><b>switchport access vlan</b></span> fuerza la creación de una VLAN si es que aún no existe en el switch. Por ejemplo, la VLAN 30 no está presente en el resultado del comando <span class="cmd"><b>show vlan brief</b></span> del switch. Si se introduce el comando <span class="cmd"><b>switchport access vlan 30</b></span> en cualquier interfaz sin configuración previa, el switch muestra lo siguiente:</p>
+<p></p>
+<p>
+<span class="cmd">% Access VLAN does not exist. Creating vlan 30</span>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

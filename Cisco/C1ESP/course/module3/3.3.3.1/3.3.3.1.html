@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>3.3.3.1 Gateway predeterminado</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_3.3.3.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Movimiento de datos en la red</h1>
+        <h2>Acceso a recursos remotos</h2>
+      </div>
+      <div id="content">
+<p>El método que utilizan los hosts para enviar mensajes a un destino en una red remota difiere de la manera en la que envían mensajes a un destino en la misma red local. Cuando un host necesita enviar un mensaje a otro host ubicado en la misma red, reenvía el mensaje de manera directa. El host utiliza el ARP para determinar la dirección MAC del host de destino. Incluye la dirección IP de destino dentro del encabezado del paquete y encapsula el paquete en una trama que contiene la dirección MAC del destino y lo reenvía. </p>
+<p></p>
+<p>Cuando un host necesita enviar un mensaje a una red remota, debe utilizar el router, también conocido como “gateway predeterminado”. El gateway predeterminado es la dirección IP de una interfaz de un router en la misma red que el host emisor. </p>
+<p></p>
+<p>Es importante que en cada host de la red local se configure la dirección de gateway predeterminado. Si no se define ninguna dirección de gateway predeterminado en la configuración de TCP/IP del host, o si se especifica un gateway predeterminado incorrecto, no se podrán entregar los mensajes dirigidos a hosts de redes remotas. </p>
+<p></p>
+<p>En la ilustración, los hosts en la LAN utilizan R1 como el gateway predeterminado con la dirección 192.168.1.1 establecida en la configuración de TCP/IP. Si el destino de una PDU se encuentra en una red IP distinta, los hosts envían las PDU al gateway predeterminado en el router para su posterior transmisión.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

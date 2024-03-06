@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.3.1.3 Configuración de Dúplex</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.3.1.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Switches LAN</h1>
+        <h2>Conmutación</h2>
+      </div>
+      <div id="content">
+<p>Si bien los switches son transparentes para los protocolos de red y las aplicaciones de usuario, pueden funcionar en modos diferentes que pueden tener tanto efectos positivos como negativos al reenviar tramas de Ethernet en una red. Una de las configuraciones más básicas de un switch es la configuración de dúplex de cada puerto individual conectado a cada dispositivo host. Los puertos en los switches debe estar configurados para coincidir con la configuración de dúplex del tipo de medio. Existen dos tipos de configuraciones de dúplex que se utilizan para las comunicaciones en una red Ethernet: half duplex y full duplex.</p>
+<p></p>
+<p>
+<b>Half duplex</b>
+</p>
+<p>La comunicación half-duplex se basa en un flujo de datos unidireccional en el que el envío y la recepción de datos no se producen al mismo tiempo. Esto es similar a la función de las radios de dos vías o dos walki-talkies en donde una sola persona puede hablar a la vez. Si una persona habla mientras lo hace la otra, se produce una colisión. Por ello, la comunicación half-duplex implementa el CSMA/CD con el objeto de reducir las posibilidades de que se produzcan colisiones y detectarlas en caso de que se presenten. Las comunicaciones half-duplex presentan problemas de funcionamiento debido a la constante espera, ya que el flujo de datos sólo se produce en una dirección a la vez. Las conexiones half-duplex suelen verse en los dispositivos de hardware más antiguos, como los hubs. Los nodos que están conectados a los hubs y que comparten su conexión con un puerto de un switch deben funcionar en el modo half-duplex porque las computadoras finales deben tener la capacidad de detectar las colisiones. Los nodos pueden funcionar en el modo half-duplex si la tarjeta NIC no puede configurarse para hacerlo en full duplex. En este caso, el puerto del switch también adopta el modo half-duplex predeterminado. Debido a estas limitaciones, la comunicación full-duplex ha reemplazado a la half duplex en los elementos de hardware más modernos.</p>
+<p></p>
+<p>
+<b>Full duplex</b>
+</p>
+<p>En las comunicaciones full-duplex el flujo de datos es bidireccional, por lo tanto la información puede enviarse y recibirse al mismo tiempo. La capacidad bidireccional mejora el rendimiento, dado que reduce el tiempo de espera entre las transmisiones. Actualmente, la mayoría de las tarjetas NIC Ethernet, Fast Ethernet y Gigabit Ethernet disponibles en el mercado proporciona capacidad full-duplex. En el modo full-duplex, el circuito de detección de colisiones se encuentra desactivado. Las tramas enviadas por los dos nodos finales conectados no pueden colisionar, dado que éstos utilizan dos circuitos independientes en el cable de la red. Cada conexión full-duplex utiliza un solo puerto. Las conexiones full-duplex requieren un switch que admita esta modalidad o bien una conexión directa entre dos nodos compatibles con el modo full duplex. Los nodos que se conecten directamente al puerto de un switch dedicado con tarjetas NIC capaces de admitir full duplex deben conectarse a puertos que estén configurados para funcionar en el modo full-duplex.</p>
+<p></p>
+<p>La figura muestra los dos parámetros dúplex que están disponibles en los equipos de red modernos.</p>
+<p></p>
+<p>Los switches Cisco Catalyst admiten tres configuraciones dúplex:</p>
+<p></p>
+<p>
+<ul>
+<li>La opción full establece el modo full-duplex.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>La opción half establece el modo half-duplex. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>La opción auto establece el modo autonegociación de dúplex. Cuando este modo se encuentra habilitado, los dos puertos se comunican para decidir el mejor modo de funcionamiento.</li>
+</ul>
+</p>
+<p></p>
+<p>Para los puertos 10/100/1000 y Fast Ethernet la opción predeterminada es auto. Para los puertos 100BASE-FX, la opción predeterminada es full. Los puertos 10/100/1000 funcionan tanto en el modo half-duplex como en el full-duplex cuando se establecen en 10 ó 100 Mb/s, pero sólo funcionan en el modo full-duplex cuando se establecen en 1000 Mb/s.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

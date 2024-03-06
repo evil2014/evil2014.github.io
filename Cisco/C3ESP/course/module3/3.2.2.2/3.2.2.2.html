@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>3.2.2.2 Solución de problemas de EtherChannel</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_3.2.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración del agregado de enlaces</h1>
+        <h2>Verificación y resolución de problemas del EtherChannel</h2>
+      </div>
+      <div id="content">
+<p>Todas las interfaces dentro de un EtherChannel deben tener la misma configuración de velocidad y modo dúplex, de VLAN nativas y permitidas en los enlaces troncales, y de la VLAN de acceso en los puertos de acceso.</p>
+<p></p>
+<p>
+<ul>
+<li>Asigne todos los puertos en el EtherChannel a la misma VLAN o configúrelos como enlace troncal. Los puertos con VLAN nativas diferentes no pueden formar un EtherChannel.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Cuando se configure un EtherChannel desde puertos de enlace troncal, verifique que el modo de enlace troncal sea el mismo en todos los enlaces troncales. Los modos de enlace troncal incoherentes en los puertos EtherChannel pueden hacer que EtherChannel no funcione y que se desactiven los puertos (estado errdisable).</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Un EtherChannel admite el mismo rango permitido de VLAN en todos los puertos. Si el rango permitido de VLAN no es el mismo, los puertos no forman un EtherChannel, incluso cuando PAgP se establece en modo <span class="cmd"><b>auto</b></span> o <span class="cmd"><b>desirable</b></span>.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Las opciones de negociación dinámica para PAgP y LACP se deben configurar de manera compatible en ambos extremos del EtherChannel.</li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Nota:</b> es fácil confundir PAgP o LACP con DTP, ya que ambos son protocolos que se usan para automatizar el comportamiento en los enlaces troncales. PAgP y LACP se usan para la agregación de enlaces (EtherChannel). DTP se usa para automatizar la creación de enlaces troncales. Cuando se configura un enlace troncal de EtherChannel, normalmente se configura primero EtherChannel (PAgP o LACP) y después DTP.</p>
+<p></p>
+<p>En la figura 1, las interfaces F0/1 y F0/2 en los switches S1 y S2 se conectan con un EtherChannel. El resultado indica que el EtherChannel está inactivo. </p>
+<p></p>
+<p>En la figura 2, un resultado más detallado indica que existen modos PAgP incompatibles configurados en los switches S1 y S2.</p>
+<p></p>
+<p>En la figura 3, se cambia el modo PAgP en el EtherChannel a deseado, y el EtherChannel se activa.</p>
+<p></p>
+<p>
+<b>Nota:</b> EtherChannel y el árbol de expansión deben interoperar. Por este motivo, el orden en el que se introducen los comandos relacionados con EtherChannel es importante, y por ello (en la figura 3) se puede ver que se quitó el canal de puertos de interfaz 1 y después se volvió a agregar con el comando <span class="cmd"><b>channel-group</b></span>, y que no se cambió directamente. Si se intenta cambiar la configuración directamente, los errores del árbol de expansión hacen que los puertos asociados entren en estado de bloqueo o errdisabled.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

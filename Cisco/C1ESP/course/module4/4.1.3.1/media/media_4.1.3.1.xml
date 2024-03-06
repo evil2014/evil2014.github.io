@@ -1,0 +1,83 @@
+﻿<textcomponents> <!--slide 1-->
+<component id="ID_title">
+	<text><![CDATA[]]></text>
+</component>
+<component id='ID_table'>
+		<text><![CDATA[
+				<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4'>
+						<tr>
+							<td colspan='4' bgcolor='#0E6360' class="mtable_top"><font size='1' color='#434321'><span style="color:#DAE17A">&nbsp</span></font></td>
+						</tr>
+					   <tr>
+						<td  bgcolor='#077A77' valign="top" class="spacer"><font color='#ffffff'><b>Medios</b></font></td>
+						<td  bgcolor='#077A77' valign="top" class="spacer"><font color='#ffffff'><b>Componentes físicos</b></font> </td>
+						<td  bgcolor='#077A77' valign="top" class="spacer"><font color='#ffffff'><b>Técnica de codificación de la trama</b></font></td>
+						<td  bgcolor='#077A77' valign="top" class="spacer"><font color='#ffffff'><b>Método de señalización</b></font> </td>
+					  </tr>
+					   <tr>
+						<td bgcolor='#EFF8F7' valign="top" width="67">Cable de cobre</td>
+						<td bgcolor='#EFF8F7' valign="top" width="100">
+								<textformat blockindent='-14'>
+									<li>UTP</li>
+									 <li>Coaxial</li>
+									 <li>Conectores</li>
+									 <li>NIC</li>
+									 <li>Puertos</li>
+									 <li>Interfaces</li>
+								</textformat>
+						</td>
+						<td bgcolor='#EFF8F7' valign="top" width="140">
+								<textformat blockindent='-14'>
+									  <li>Codificación Manchester</li>
+									  <li>Técnicas sin retorno a cero (NRZ)</li>
+									  <li>Los códigos 4B/5B se utilizan con la señalización de nivel&nbsp;3 de la transición de múltiples niveles (MLT-3).</li>
+									  <li>8B/10B</li>
+									  <li>PAM5</li>		
+								</textformat>				 
+						</td>
+						<td bgcolor='#EFF8F7' valign="top">
+								<textformat blockindent='-14'>
+									 <li>Cambios en el campo electromagnético</li>
+									 <li>Intensidad del campo electromagnético </li>
+									 <li>Fase de la onda electromagnética</li>
+								</textformat>
+						</td>
+					  </tr> 
+				</table>
+			]]>
+			
+		</text>
+		</component> <!--Slide 2-->
+<component id="ID_s2_txt01">
+<text><![CDATA[<b>Modulación de frecuencia (FM)</b>]]></text>
+</component>
+
+<component id="ID_s2_txt02">
+<text><![CDATA[Onda de modulación]]></text>
+</component>
+
+<component id="ID_s2_txt03">
+<text><![CDATA[Señal portadora]]></text>
+</component>
+
+<component id="ID_s2_txt04">
+<text><![CDATA[Señal de FM]]></text>
+</component>
+
+<component id="ID_s2_txt05">
+<text><![CDATA[<b>Modulación de amplitud (AM)</b>]]></text>
+</component>
+
+<component id="ID_s2_txt06">
+<text><![CDATA[Onda de modulación]]></text>
+</component>
+
+<component id="ID_s2_txt07">
+<text><![CDATA[Señal portadora]]></text>
+</component>
+
+<component id="ID_s2_txt08">
+<text><![CDATA[Señal de AM]]></text>
+</component>
+
+</textcomponents>

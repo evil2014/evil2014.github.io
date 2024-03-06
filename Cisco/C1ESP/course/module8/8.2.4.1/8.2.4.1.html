@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.2.4.1 Estructura de una dirección IPv6 unicast global</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.2.4.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Direcciones de red IPv6</h1>
+        <h2>Direcciones IPv6 unicast</h2>
+      </div>
+      <div id="content">
+<p>Las direcciones IPv6 unicast globales son globalmente únicas y enrutables en Internet IPv6. Estas direcciones son equivalentes a las direcciones IPv4 públicas. La Internet Corporation for Assigned Names and Numbers (ICANN), el operador de la Internet Assigned Numbers Authority (IANA), asigna bloques de direcciones IPv6 a los cinco RIR. Actualmente, solo se asignan direcciones unicast globales con los tres primeros bits de 001 o 2000::/3. Esto solo constituye un octavo del espacio total disponible de direcciones IPv6, sin incluir solamente una parte muy pequeña para otros tipos de direcciones unicast y multicast. </p>
+<p></p>
+<p>
+<b>Nota:</b> la dirección 2001:0DB8::/32 se reservó para fines de documentación, incluido el uso en ejemplos. </p>
+<p></p>
+<p>En la figura 1, se muestra la estructura y el rango de una dirección unicast global.</p>
+<p></p>
+<p>Una dirección unicast global consta de tres partes:</p>
+<p>
+<ul>
+<li>Prefijo de enrutamiento global</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>ID de subred</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>ID de interfaz</li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Prefijo de enrutamiento global</b>
+</p>
+<p>El prefijo de enrutamiento global es la porción de prefijo, o de red, de la dirección que asigna el proveedor (por ejemplo, un ISP) a un cliente o a un sitio. En la actualidad, los RIR asignan a los clientes el prefijo de enrutamiento global /48. Esto incluye desde redes comerciales de empresas hasta unidades domésticas Para la mayoría de los clientes, este espacio de dirección es más que suficiente. </p>
+<p></p>
+<p>En la figura 2, se muestra la estructura de una dirección unicast global con el prefijo de enrutamiento global /48. Los prefijos /48 son los prefijos de enrutamiento global más comunes, y se utilizarán en la mayoría de los ejemplos a lo largo de este curso. </p>
+<p></p>
+<p>Por ejemplo, la dirección IPv6 2001:0DB8:ACAD::/48 tiene un prefijo que indica que los primeros 48 bits (3 hextetos) (2001:0DB8:ACAD) son la porción de prefijo o de red de la dirección. Los dos puntos dobles (::) antes de la duración de prefijo /48 significan que el resto de la dirección se compone solo de ceros.</p>
+<p></p>
+<p>
+<b>ID de subred</b>
+</p>
+<p>Las organizaciones utilizan la ID de subred para identificar una subred dentro de su ubicación. </p>
+<p></p>
+<p>
+<b>ID de interfaz</b>
+</p>
+<p>La ID de interfaz IPv6 equivale a la porción de host de una dirección IPv4. Se utiliza el término “ID de interfaz” debido a que un único host puede tener varias interfaces, cada una con una o más direcciones IPv6. </p>
+<p></p>
+<p>
+<b>Nota:</b> a diferencia de IPv4, en IPv6 se pueden asignar las direcciones de host compuestas solo por ceros y unos a un dispositivo. Se puede usar la dirección compuesta solo por unos debido al hecho de que en IPv6 no se usan las direcciones de broadcast. También se puede utilizar la dirección compuesta solo por ceros, pero se reserva como una dirección anycast de subred y router, y se debe asignar solo a routers.</p>
+<p></p>
+<p>Una forma fácil de leer la mayoría de las direcciones IPv6 es contar la cantidad de hextetos. Como se muestra en la figura 3, en una dirección unicast global /64 los primeros cuatro hextetos son para la porción de red de la dirección, y el cuarto hexteto indica la ID de subred. Los cuatro hextetos restantes son para la ID de interfaz. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>3.3.2.4 Encapsulación y proceso de autenticación del PPP</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_3.3.2.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de PPP</h1>
+        <h2>Autenticación del PPP</h2>
+      </div>
+      <div id="content">
+<p>El diagrama de flujo de la figura 1 se puede utilizar para ayudar a comprender el proceso de autenticación PPP al configurar este protocolo. El diagrama de flujo proporciona un ejemplo visual de las decisiones lógicas que toma PPP. </p>
+<p></p>
+<p>Por ejemplo, si una solicitud de PPP entrante no requiere autenticación, PPP avanza al siguiente nivel. Si una solicitud de PPP entrante requiere autenticación, se puede autenticar con la base de datos local o un servidor de seguridad. Como se muestra en el diagrama de flujo, si la autenticación es correcta, avanza al siguiente nivel; en cambio, si se produce una falla de autenticación, se desconecta y se descarta la solicitud de PPP entrante.</p>
+<p></p>
+<p></p>
+<p>Siga los pasos a medida que avanza la animación de la figura 2 para ver cómo el R1 establece una conexión PPP autenticada con CHAP con el R2.</p>
+<p></p>
+<p>
+<b>Paso 1. </b>Primero, el R1 negocia la conexión del enlace con el router R2 mediante LCP y ambos sistemas acuerdan utilizar la autenticación CHAP durante la negociación LCP de PPP. </p>
+<p></p>
+<p>
+<b>Paso 2.</b> El R2 genera una ID y un número aleatorio, y los envía con su nombre de usuario como paquete de desafío CHAP al R1. </p>
+<p></p>
+<p>
+<b>Paso 3.</b> El R1 utiliza el nombre de usuario del desafiante (el R2) y lo compara con su base de datos local para encontrar la contraseña asociada. A continuación, el R1 genera un número de hash MD5 exclusivo usando el nombre de usuario, la ID, el número aleatorio y la contraseña secreta compartida del R2. En este ejemplo, la contraseña secreta compartida es “boardwalk”.</p>
+<p></p>
+<p>
+<b>Paso 4.</b> El router R1 envía la ID de desafío, el valor de hash y su nombre de usuario (R1) al R2.</p>
+<p></p>
+<p>
+<b>Paso 5.</b> El R2 genera su propio valor de hash mediante la ID, la contraseña secreta compartida y el número aleatorio que envió originalmente al R1.</p>
+<p></p>
+<p>
+<b>Paso 6.</b> El R2 compara su valor de hash con el valor de hash que envió el R1. Si los valores son iguales, el R2 envía una respuesta de enlace establecido al R1.</p>
+<p></p>
+<p>Si la autenticación falló, se arma un paquete de falla CHAP a partir de los siguientes componentes:</p>
+<p></p>
+<p>
+<ul>
+<li>04 = tipo de mensaje de falla CHAP</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>id = se copia del paquete de respuesta</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>“Authentication failure” o algún mensaje de texto similar, diseñado para ser una explicación que el usuario pueda leer</li>
+</ul>
+</p>
+<p></p>
+<p>La contraseña secreta compartida debe ser idéntica en el R1 y el R2.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

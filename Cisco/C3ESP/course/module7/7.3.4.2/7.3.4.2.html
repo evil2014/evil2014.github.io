@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.3.4.2 DUAL: sucesor factible</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.3.4.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1> Funcionamiento de EIGRP</h1>
+        <h2>DUAL y la convergencia</h2>
+      </div>
+      <div id="content">
+<p>Actualmente, el R2 usa al R3 como el sucesor a 192.168.1.0/24. Además, el R2 actualmente incluye al R1 como un FS, como se muestra en la figura 1. </p>
+<p></p>
+<p>El resultado de <span class="cmd"><b>show ip eigrp topology</b></span> para el R2 en la figura 2 verifica que el R3 es el sucesor y el R1 es el FS para la red 192.168.1.0/24. Para comprender la manera en que DUAL puede usar un FS cuando la ruta que usa el sucesor no está disponible, se simula una falla de enlace entre el R2 y el R3.</p>
+<p></p>
+<p>Antes de simular la falla, debe habilitarse la depuración de DUAL mediante el comando <span class="cmd"><b>debug eigrp fsm</b></span> en el R2, como se muestra en la figura 3. La falla de enlace se simula mediante el comando <span class="cmd"><b>shutdown</b></span> en la interfaz Serial 0/0/1 del R2. </p>
+<p></p>
+<p>El resultado de <span class="cmd"><b>debug</b></span> muestra la actividad que genera DUAL cuando un enlace queda fuera de servicio. El R2 debe informar a todos los vecinos EIGRP del enlace perdido y también actualizar sus propias tablas de routing y de topología. En este ejemplo, solo se muestran resultados de <span class="cmd"><b>debug</b></span> seleccionados. Observe en particular que la FSM DUAL busca y encuentra un FS para la ruta en la tabla de topología de EIGRP. </p>
+<p></p>
+<p>El FS R1 ahora se convierte en el sucesor y se instala en la tabla de routing como la nueva mejor ruta a 192.168.1.0/24, como se muestra en la figura 4. Con un FS, este cambio en la tabla de routing sucede casi de inmediato.</p>
+<p></p>
+<p>Como se muestra en la figura 5, la tabla de topología para el R2 ahora muestra al R1 como el sucesor, y no hay nuevos FS. Si el enlace entre el R2 y el R3 se activa nuevamente, el R3 vuelve a ser el sucesor y el R1 se convierte una vez más en el FS.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

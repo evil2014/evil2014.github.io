@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.2.1.1 Decisión de reenvío de host</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.2.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Enrutamiento</h1>
+        <h2>Cómo enrutan los hosts</h2>
+      </div>
+      <div id="content">
+<p>Otra función de la capa de red es dirigir los paquetes entre los hosts. Un host puede enviar un paquete:</p>
+<p>
+<ul>
+<li>
+<b>A sí mismo:</b> en este caso, se utiliza una dirección IP especial, 127.0.0.1, que se denomina “interfaz loopback”. Esta dirección de loopback se asigna automáticamente a un host cuando se ejecuta TCP/IP. La capacidad de un host de enviarse un paquete a sí mismo mediante la funcionalidad de la red resulta útil para realizar pruebas. Cualquier dirección IP dentro de la red 127.0.0.0/8 se refiere al host local.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>A un host local:</b> un host en la misma red que el host emisor. Los hosts comparten la misma dirección de red. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>A un host remoto:</b> un host en una red remota. Los hosts no comparten la dirección de red. </li>
+</ul>
+</p>
+<p></p>
+<p>Para determinar si un paquete está destinado a un host local o un host remoto, se compara la combinación de la dirección IP y la máscara de subred del dispositivo de origen (o emisor) con la dirección IP y la máscara de subred del dispositivo de destino. </p>
+<p></p>
+<p>En una red doméstica o comercial, es posible que tenga varios dispositivos conectados por cable o inalámbricos interconectados mediante un dispositivo intermediario, como un switch LAN o un punto de acceso inalámbrico (WAP). Este dispositivo intermediario proporciona interconexiones entre los hosts locales en la red local. Los hosts locales pueden comunicarse y compartir información sin necesidad de ningún dispositivo adicional. Si un host envía un paquete a un dispositivo que está configurado con la misma red IP que el dispositivo host, el paquete tan solo se reenvía por la interfaz del host, a través del dispositivo intermediario, directamente al dispositivo de destino. </p>
+<p></p>
+<p>Por supuesto, en la mayoría de las situaciones deseamos que los dispositivos puedan conectarse más allá del segmento de red local: a otros hogares, a otras empresas y a Internet. Los dispositivos que están más allá del segmento de red local se conocen como “hosts remotos”. Cuando un dispositivo de origen envía un paquete a un dispositivo de destino remoto, se necesita la ayuda de routers y el enrutamiento. El enrutamiento es el proceso mediante el cual se identifica el mejor camino hacia un destino. El router conectado al segmento de red local se denomina <b>gateway predeterminado</b>.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

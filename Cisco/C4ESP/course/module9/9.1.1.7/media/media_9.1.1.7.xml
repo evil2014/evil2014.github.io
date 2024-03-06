@@ -1,0 +1,111 @@
+﻿<textcomponents>
+
+<component id='ID_inst'>
+	<text><![CDATA[<b>Actividad: Medir los datos de rendimiento de la red</b><br/>Una cada comando relacionado con el rendimiento de la red con su definición.]]></text>
+</component> <!--Drag and Drop-->
+<component id='ID_drag01'>
+	<text><![CDATA[<font face="_typewriter" color="#393536"><b>show interfaces</b></font>]]></text>
+</component>
+
+<component id='ID_drag02'>
+	<text><![CDATA[<font face="_typewriter" color="#393536"><b>show ip route</b></font>]]></text>
+</component>
+
+<component id='ID_drag03'>
+	<text><![CDATA[<font face="_typewriter" color="#393536"><b>show ip cache flow</b></font>]]></text>
+</component>
+
+<component id='ID_drag04'>
+	<text><![CDATA[<font face="_typewriter" color="#393536"><b>show arp</b></font>]]></text>
+</component>
+
+<component id='ID_drag05'>
+	<text><![CDATA[<font face="_typewriter" color="#393536"><b>show vlan</b></font>]]></text>
+</component>
+
+<component id='ID_drag06'>
+	<text><![CDATA[<font face="_typewriter" color="#393536"><b>show version</b></font>]]></text>
+</component>
+
+<component id='ID_drag07'>
+	<text><![CDATA[<font  face="_typewriter" color="#393536"><b>show running-config</b></font>]]></text>
+</component>
+
+<component id='ID_drag08'>
+	<text><![CDATA[<font face="_typewriter" color="#393536"><b>show ip interface brief</b></font>]]></text>
+</component>
+
+
+
+
+
+
+
+<component id='ID_s1_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id='ID_s1_CORRECT_BODY'>
+	<text><![CDATA[Unió correctamente cada comando relacionado con el rendimiento de la red con su definición.]]></text>
+</component>
+
+
+<component id='ID_s1_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_BODY'>
+	<text><![CDATA[No unió correctamente cada comando relacionado con el rendimiento de la red con su definición. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_CHECK'>
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id='ID_RESET'>
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component>
+
+
+<component id='ID_target_header'>
+	<text><![CDATA[<b>Comando</b>]]></text>
+</component>
+<component id='ID_text_header'>
+	<text><![CDATA[<b>Definición</b>]]></text>
+</component>
+
+<component id="ID_txt01">
+	<text><![CDATA[Tiempo de actividad e información sobre el software y el hardware del dispositivo]]></text>
+</component>
+
+<component id="ID_txt02">
+  <text><![CDATA[Configuración y estado detallados de las interfaces del dispositivo]]></text> 
+</component>
+
+<component id="ID_txt03">
+  <text><![CDATA[Contenido de la tabla de routing]]></text> 
+</component>
+
+<component id="ID_txt04">
+  <text><![CDATA[Tabla resumida del estado activo/inactivo de todas las interfaces del dispositivo]]></text> 
+</component>
+
+<component id="ID_txt05">
+  <text><![CDATA[Contenido de la tabla de resolución de direcciones]]></text> 
+</component>
+
+<component id="ID_txt06">
+  <text><![CDATA[Resumen de las VLAN y los puertos de acceso en un switch]]></text> 
+</component>
+
+<component id="ID_txt07">
+  <text><![CDATA[Resumen de las estadísticas de contabilidad de NetFlow]]></text> 
+</component>
+
+<component id="ID_txt08">
+  <text><![CDATA[Configuración actual del dispositivo]]></text> 
+</component>
+
+
+   
+</textcomponents>

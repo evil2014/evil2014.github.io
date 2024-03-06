@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.0.1.1 Introducción</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.0.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Acceso a la red</h1>
+        <h2>Introducción</h2>
+      </div>
+      <div id="content">
+<p>Para sostener nuestras comunicaciones, el modelo OSI divide las funciones de una red de datos en capas. Cada capa trabaja con las capas superior e inferior para transmitir datos. Dos capas dentro del modelo OSI están tan relacionadas que, según el modelo TCP/IP, son básicamente una sola. Esas dos capas son la capa de enlace de datos y la capa física. </p>
+<p></p>
+<p>En el dispositivo emisor, la función de la capa de enlace de datos es preparar los datos para la transmisión y controlar la forma en que estos acceden a los medios físicos. Sin embargo, la capa física controla cómo se transmiten los datos a los medios físicos mediante la codificación en señales de los dígitos binarios que representan los datos.</p>
+<p></p>
+<p>En el extremo receptor, la capa física recibe señales a través de los medios de conexión. Después de decodificar la señal y convertirla nuevamente en datos, la capa física transmite los datos a la capa de enlace de datos para su aceptación y procesamiento. </p>
+<p></p>
+<p>En este capítulo, se comienza con las funciones generales de la capa física y los estándares y protocolos que administran la transmisión de datos a través de los medios locales. También se presentan las funciones de la capa de enlace de datos y los protocolos asociados a esta. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

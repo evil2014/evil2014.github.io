@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>3.1.1.7 Opciones de entrega del mensaje</title>
+    <!--  -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_3.1.1.7_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Reglas de la comunicación</h1>
+        <h2>Las reglas</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Opciones de entrega del mensaje</b>
+</p>
+<p>Puede ser necesario entregar un mensaje mejor, de distintas maneras, como se muestra en la figura 1. En algunos casos, una persona desea comunicar información a un solo individuo. Otras veces, esa persona puede necesitar enviar información a un grupo de personas simultáneamente o, incluso, a todas las personas de un área. Una conversación entre dos personas constituye un ejemplo de una entrega de uno a uno. Cuando es necesario que un grupo de destinatarios reciba un mismo mensaje de manera simultánea, se necesita una entrega de mensaje de uno a varios o de uno a todos. </p>
+<p></p>
+<p>También puede ocurrir que el emisor de un mensaje necesite asegurarse de que el mensaje se haya entregado correctamente al destino. En estos casos, es necesario que el receptor envíe una confirmación al emisor. Si no se necesita ningún acuse de recibo, se dice que el envío del mensaje es sin acuse de recibo.</p>
+<p></p>
+<p>Los hosts en una red utilizan opciones de entrega similares para comunicarse, como se muestra en la figura 2.</p>
+<p></p>
+<p>Las opciones de entrega de uno a uno se denominan “unicast”, lo que significa que el mensaje tiene un único destino. </p>
+<p></p>
+<p>Si un host necesita enviar mensajes utilizando una opción de envío de uno a varios, se denomina “multicast”. Multicasting es el envío de un mismo mensaje a un grupo de hosts de destino de manera simultánea. </p>
+<p></p>
+<p>Si es necesario que todos los hosts de la red reciban el mensaje a la vez, se utiliza el método de broadcast. El broadcasting representa una opción de entrega de mensaje de uno a todos. Además, los hosts tienen requisitos para los mensajes con confirmación que son diferentes de los requisitos para los mensajes sin confirmación.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

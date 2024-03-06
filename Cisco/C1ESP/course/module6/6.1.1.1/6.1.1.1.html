@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.1.1.1 La capa de red</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.1.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolos de la capa de red</h1>
+        <h2>La capa de red en la comunicación</h2>
+      </div>
+      <div id="content">
+<p>La capa de red, o la capa 3 de OSI, proporciona servicios que permiten que los dispositivos finales intercambien datos a través de la red. Para lograr este transporte de extremo a extremo, la capa de red utiliza cuatro procesos básicos:</p>
+<p>
+<ul>
+<li>
+<b>Direccionamiento de dispositivos finales:</b> de la misma manera en que un teléfono tiene un número telefónico único, los dispositivos finales deben configurarse con una dirección IP única para su identificación en la red. Un dispositivo final con una dirección IP configurada se denomina “host”.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Encapsulación:</b> la capa de red recibe una unidad de datos del protocolo (PDU) de la capa de transporte. En un proceso denominado “encapsulación”, la capa de red agrega la información del encabezado IP, como la dirección IP de los hosts de origen (emisor) y de destino (receptor). Una vez que se agrega la información de encabezado a la PDU, esta se denomina “paquete”. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Enrutamiento:</b> la capa de red proporciona servicios para dirigir los paquetes a un host de destino en otra red. Para que el paquete se transfiera a otras redes, lo debe procesar un router. La función del router es seleccionar las rutas para los paquetes y dirigirlos hacia el host de destino en un proceso conocido como “enrutamiento”. Un paquete puede cruzar muchos dispositivos intermediarios antes de llegar al host de destino. Cada ruta que toma el paquete para llegar al host de destino se denomina “salto”. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Desencapsulación:</b> cuando un paquete llega a la capa de red del host de destino, el host revisa el encabezado IP del paquete. Si la dirección IP de destino en el encabezado coincide con su propia dirección IP, se elimina el encabezado IP del paquete. Este proceso de eliminación de encabezados de las capas inferiores se conoce como “desencapsulación”. Una vez que la capa de red desencapsula el paquete, la PDU de capa 4 que se obtiene como resultado se transfiere al servicio correspondiente en la capa de transporte.</li>
+</ul>
+</p>
+<p></p>
+<p>A diferencia de la capa de transporte (capa 4 de OSI), que administra el transporte de datos entre los procesos que se ejecutan en cada host, los protocolos de la capa de red especifican la estructura y el procesamiento de paquete que se utilizan para transportar los datos desde un host hasta otro. Operar sin tener en cuenta los datos transportados en cada paquete permite que la capa de red transporte paquetes para diversos tipos de comunicaciones entre varios hosts.</p>
+<p></p>
+<p>La animación en la figura muestra el intercambio de datos.</p>
+<p></p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

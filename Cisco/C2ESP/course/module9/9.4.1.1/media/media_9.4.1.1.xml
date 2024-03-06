@@ -1,0 +1,153 @@
+﻿<textcomponents>
+
+<component id='ID_s1_title'>
+	<text><![CDATA[<b>Proceso de ACL de entrada</b>]]></text>
+</component>
+
+<component id="ID_s1_txt01">
+<text><![CDATA[Interfaz de entrada]]></text>
+</component>
+
+<component id="ID_s1_txt02">
+<text><![CDATA[Coincide con la primera ACE]]></text> 
+</component>
+
+<component id="ID_s1_txt03">
+<text><![CDATA[Sí]]></text> 
+</component>
+
+<component id="ID_s1_txt04">
+<text><![CDATA[No]]></text> 
+</component>
+
+<component id="ID_s1_txt05">
+<text><![CDATA[Coincide con la segunda ACE]]></text> 
+</component>
+
+<component id="ID_s1_txt06">
+<text><![CDATA[Sí]]></text> 
+</component>
+
+<component id="ID_s1_txt07">
+<text><![CDATA[No]]></text> 
+</component>
+
+<component id="ID_s1_txt08">
+<text><![CDATA[Coincide con la tercera ACE]]></text> 
+</component>
+
+<component id="ID_s1_txt09">
+<text><![CDATA[Sí]]></text> 
+</component>
+
+<component id="ID_s1_txt10">
+<text><![CDATA[No]]></text> 
+</component>
+
+<component id="ID_s1_txt11">
+<text><![CDATA[deny any implícita]]></text> 
+</component>
+
+
+
+<component id="ID_s1_txt12">
+<text><![CDATA[(Enviar a la tabla de routing y a la interfaz de destino)]]></text> 
+</component>
+
+<component id="ID_s1_txt13">
+<text><![CDATA[Permitir]]></text> 
+</component>
+
+<component id="ID_s1_txt14">
+<text><![CDATA[Permitir o denegar]]></text> 
+</component>
+
+<component id="ID_s1_txt15">
+<text><![CDATA[Denegar]]></text> 
+</component>
+<component id="ID_s1_txt17">
+   <text><![CDATA[Paquete descartado]]></text>
+   </component>
+
+
+
+
+
+
+
+
+
+
+
+<component id='ID_s2_title'>
+	<text><![CDATA[<b>Proceso de ACL de salida</b>]]></text>
+</component>
+
+<component id="ID_s2_txt01">
+<text><![CDATA[(De tabla de routing y selección de interfaz de salida)]]></text>
+</component>
+
+<component id="ID_s2_txt02">
+<text><![CDATA[Coincide con la primera ACE]]></text> 
+</component>
+
+<component id="ID_s2_txt03">
+<text><![CDATA[Sí]]></text> 
+</component>
+
+<component id="ID_s2_txt04">
+<text><![CDATA[No]]></text> 
+</component>
+
+<component id="ID_s2_txt05">
+<text><![CDATA[Coincide con la segunda ACE]]></text> 
+</component>
+
+<component id="ID_s2_txt06">
+<text><![CDATA[Sí]]></text> 
+</component>
+
+<component id="ID_s2_txt07">
+<text><![CDATA[No]]></text> 
+</component>
+
+<component id="ID_s2_txt08">
+<text><![CDATA[Coincide con la tercera ACE]]></text> 
+</component>
+
+<component id="ID_s2_txt09">
+<text><![CDATA[Sí]]></text> 
+</component>
+
+<component id="ID_s2_txt10">
+<text><![CDATA[No]]></text> 
+</component>
+
+<component id="ID_s2_txt11">
+<text><![CDATA[deny any implícita]]></text> 
+</component>
+
+
+
+<component id="ID_s2_txt12">
+<text><![CDATA[Interfaz saliente]]></text> 
+</component>
+
+<component id="ID_s2_txt13">
+<text><![CDATA[Permitir]]></text> 
+</component>
+
+<component id="ID_s2_txt14">
+<text><![CDATA[Permitir o Denegar]]></text> 
+</component>
+
+<component id="ID_s2_txt15">
+<text><![CDATA[Denegar]]></text> 
+</component>
+
+<component id="ID_s2_txt17">
+   <text><![CDATA[Paquete descartado]]></text>
+   </component>
+
+
+</textcomponents>

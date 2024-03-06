@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>11.2.1.2 Seguridad física</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_11.2.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Cómo mantener la seguridad de la red</h1>
+        <h2>Medidas de seguridad para dispositivos de red</h2>
+      </div>
+      <div id="content">
+<p>Cuando se piensa en seguridad de red, o incluso en seguridad informática, es posible que se piense en atacantes que explotan las vulnerabilidades de software. Una vulnerabilidad igualmente importante es la seguridad física de los dispositivos, como se muestra en la ilustración. Si los recursos de red están expuestos a riesgos físicos, un atacante puede denegar el uso de dichos recursos.</p>
+<p></p>
+<p>Las cuatro clases de amenazas físicas son las siguientes:</p>
+<p>
+<ul>
+<li>
+<b>Amenazas de hardware:</b> daño físico a servidores, routers, switches, planta de cableado y estaciones de trabajo</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Amenazas ambientales:</b> extremos de temperatura (demasiado calor o demasiado frío) o extremos de humedad (demasiado húmedo o demasiado seco)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Amenazas eléctricas:</b> picos de voltaje, suministro de voltaje insuficiente (apagones parciales), alimentación sin acondicionamiento (ruido) y caída total de la alimentación</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Amenazas de mantenimiento:</b> manejo deficiente de componentes eléctricos clave (descarga electrostática), falta de repuestos críticos, cableado y etiquetado deficientes</li>
+</ul>
+</p>
+<p></p>
+<p>Algunos de estos problemas se deben abordar en las políticas de la organización. Algunos de ellos dependen de una buena dirección y administración de la organización. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

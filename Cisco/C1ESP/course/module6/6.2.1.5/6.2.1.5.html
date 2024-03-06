@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.2.1.5 Tabla de enrutamiento de host IPv4 de muestra</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.2.1.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Enrutamiento</h1>
+        <h2>Cómo enrutan los hosts</h2>
+      </div>
+      <div id="content">
+<p>Por ejemplo, si la PC1 desea enviarle un paquete a 192.168.10.20, debería hacer lo siguiente: </p>
+<p>1. Consultar la tabla de rutas IPv4.</p>
+<p>2. Encontrar la correspondencia entre la dirección IP de destino y la entrada de destino de red 192.168.10.0 para determinar que el host está en la misma red (En enlace).</p>
+<p>3. Luego, la PC1 enviaría el paquete hacia el destino final mediante su interfaz local (192.168.10.10).</p>
+<p></p>
+<p>En la figura 1, se destaca la ruta en que se encontró coincidencia.</p>
+<p></p>
+<p>Si la PC1 desea enviar un paquete a un host remoto ubicado en 10.10.10.10, debería hacer lo siguiente: </p>
+<p>1. Consultar la tabla de rutas IPv4.</p>
+<p>2. Determinar que no hay una coincidencia exacta para la dirección IP de destino.</p>
+<p>3. Elegir la ruta predeterminada local (0.0.0.0) para descubrir que debe reenviar el paquete a la dirección de gateway 192.168.10.1.</p>
+<p>4. Luego, la PC1 reenvía el paquete al gateway para usar su interfaz local (192.168.10.10). A continuación, el dispositivo de gateway determina la siguiente ruta para que el paquete llegue a la dirección de destino final 10.10.10.10.</p>
+<p></p>
+<p>En la figura 2, se destaca la ruta en que se encontró coincidencia.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

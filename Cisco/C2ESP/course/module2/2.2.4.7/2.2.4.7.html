@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.2.4.7 Puertos en estado de inhabilitación por errores</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.2.4.7_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Seguridad de switches: administración e implementación</h1>
+        <h2>Seguridad de puertos de switch</h2>
+      </div>
+      <div id="content">
+<p>Cuando se configura un puerto con seguridad de puertos, una violación puede provocar que el puerto se inhabilite por errores. Cuando un puerto se inhabilita por errores, se desactiva eficazmente, y no se envía ni se recibe tráfico en ese puerto. En la consola (figura 1), se muestra una serie de mensajes relacionados con la seguridad del puerto. </p>
+<p></p>
+<p>
+<b>Nota:</b> el estado del enlace y del protocolo del puerto cambia a down (inactivo).</p>
+<p></p>
+<p>El LED del puerto cambia a color naranja. El comando <span class="cmd"><b>show interfaces</b></span> identifica el estado del puerto como <span class="cmd"><b>err-disabled</b></span> (figura 2). El resultado del comando <span class="cmd"><b>show port-security interface</b></span> ahora muestra el estado del puerto como <span class="cmd"><b>secure-shutdown</b></span>. Debido a que el modo de violación de seguridad de puertos está establecido en shutdown, el puerto que experimenta la violación de seguridad pasa al estado de inhabilitación por errores. </p>
+<p></p>
+<p>El administrador debe determinar la causa de la violación de seguridad antes de volver a habilitar el puerto. Si hay un dispositivo no autorizado conectado a un puerto seguro, el puerto no se debe volver a habilitar hasta que se elimine la amenaza de seguridad. Para volver a habilitar el puerto, use el comando <span class="cmd"><b>shutdown</b></span> del modo de configuración de interfaz (figura 3). Luego, use el comando <span class="cmd"><b>no shutdown</b></span> del modo de configuración de interfaz para que el puerto funcione.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

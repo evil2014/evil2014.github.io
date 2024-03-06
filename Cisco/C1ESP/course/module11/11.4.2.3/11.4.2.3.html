@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>11.4.2.3 Uso de puertos USB en un router Cisco</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_11.4.2.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Administración de los archivos de configuración de IOS</h1>
+        <h2>Creación de copias de seguridad y restauración de archivos de configuración</h2>
+      </div>
+      <div id="content">
+<p>La característica de almacenamiento de bus serial universal (USB) habilita a determinados modelos de routers Cisco para que admitan unidades flash USB. La característica flash USB proporciona una capacidad de almacenamiento secundario optativa y un dispositivo de arranque adicional. Las imágenes, las configuraciones y demás archivos se pueden copiar en la memoria flash USB Cisco y desde esta con la misma confiabilidad con la que se almacenan y se recuperan archivos con una tarjeta Compact Flash. Además, los routers de servicios integrados modulares pueden arrancar con cualquier imagen del software Cisco IOS guardada en la memoria flash USB. </p>
+<p></p>
+<p>Los módulos de memoria flash USB Cisco están disponibles en versiones de 64 MB, 128 MB y 256 MB. </p>
+<p></p>
+<p>Para ser compatible con un router Cisco, una unidad flash USB debe tener formato FAT16. De lo contrario, el comando show file systems muestra un error que indica que el sistema de archivos es incompatible.</p>
+<p></p>
+<p>A continuación, se presenta un ejemplo del uso del comando dir en un sistema de archivos USB:</p>
+<p></p>
+<p>
+<b>Router# dir usbflash0:</b>
+</p>
+<p></p>
+<p>
+<b>Directory of usbflash0:/</b>
+</p>
+<p></p>
+<p>
+<b> 1 -rw- 30125020 Dec 22 2032 05:31:32 +00:00 c3825-entservicesk9-mz.123-14.T</b>
+</p>
+<p></p>
+<p>
+<b>63158272 bytes total (33033216 bytes free)</b>
+</p>
+<p>Lo ideal es que la memoria flash USB pueda contener varias copias de las configuraciones de Cisco IOS y varias configuraciones del router. La memoria flash USB permite que un administrador mueva y copie fácilmente esos archivos y configuraciones de IOS de un router a otro. En numerosas ocasiones, el proceso de copiado puede ser mucho más rápido que a través de una LAN o una WAN. Tenga en cuenta que es posible que el IOS no reconozca el tamaño correcto de la memoria flash USB, pero eso no significa necesariamente que la memoria flash no sea compatible. Además, los puertos USB de un router generalmente son USB 2.0, como los que se muestran en la ilustración.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

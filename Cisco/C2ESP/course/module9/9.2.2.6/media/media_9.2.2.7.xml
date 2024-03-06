@@ -1,0 +1,23 @@
+﻿<textcomponents>
+<component id="ID_s1_title">
+		<text><![CDATA[<b>  </b>]]></text>
+	</component> <!-- Slide 2-->
+	<component id="ID_s2_title">
+		<text><![CDATA[<b>Consideraciones de secuenciación durante la configuración</b>]]></text>
+	</component>
+	<component id="ID_s2_txt01">
+		<text><![CDATA[Instrucciones de rango (red)]]></text> 
+	</component>
+	<component id="ID_s2_txt02">
+		<text><![CDATA[Instrucciones de host]]></text> 
+	</component> <!-- Slide 3-->
+	<component id="ID_s3_title">
+		<text><![CDATA[<b>Números de secuencia después de la recarga</b>]]></text>
+	</component>
+	<component id="ID_s3_txt01">
+		<text><![CDATA[Las instrucciones de host se enumeran primero en un orden que permita que IOS los procese de manera eficaz.]]></text> 
+	</component>
+	<component id="ID_s3_txt02">
+		<text><![CDATA[Las instrucciones de rango se enumeran después de las instrucciones de host, en el orden en que se introdujeron.]]></text> 
+	</component>
+</textcomponents>

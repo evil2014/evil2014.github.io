@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.1.3.3 Modo y submodos de configuración global</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.1.3.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Entrenamiento intensivo sobre IOS</h1>
+        <h2>Navegación de IOS</h2>
+      </div>
+      <div id="content">
+<p>Solo se puede ingresar al modo de configuración global y a los modos de configuración de interfaz por medio del modo EXEC privilegiado. </p>
+<p></p>
+<p>
+<b>Modo de configuración global</b>
+</p>
+<p></p>
+<p>El modo de configuración principal recibe el nombre de configuración global o global config. En el modo de configuración global, se realizan cambios en la configuración de la CLI que afectan el funcionamiento del dispositivo en su totalidad. Antes de acceder a los modos de configuración específicos, se accede al modo de configuración global.</p>
+<p></p>
+<p>El siguiente comando de la CLI se usa para cambiar el dispositivo del modo EXEC privilegiado al modo de configuración global y para permitir la entrada de comandos de configuración desde una terminal:</p>
+<p></p>
+<p>
+<span class="cmd">Switch#</span>
+<span class="cmd">
+<b>configure terminal</b>
+</span>
+</p>
+<p></p>
+<p>Una vez que se ejecuta el comando, la petición de entrada cambia para mostrar que el switch está en el modo de configuración global.</p>
+<p></p>
+<p>
+<span class="cmd">Switch(config)#</span>
+</p>
+<p></p>
+<p>
+<b>Modos de configuración específicos</b>
+</p>
+<p></p>
+<p>En el modo de configuración global, el usuario puede ingresar a diferentes modos de subconfiguración. Cada uno de estos modos permite la configuración de una parte o función específica del dispositivo IOS. La lista que se presenta a continuación muestra algunos de ellos:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Modo de interfaz</b>: para configurar una de las interfaces de red (Fa0/0, S0/0/0).</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Modo de línea</b>: para configurar una de las líneas físicas o virtuales (consola, auxiliar, VTY). </li>
+</ul>
+</p>
+<p></p>
+<p>En la figura 1, se muestran las peticiones de entrada de algunos de estos modos. Para salir de un modo de configuración específico y volver al modo de configuración global, escriba <span class="cmd"><b>exit</b></span> (salir) en la petición de entrada. Para salir completamente del modo de configuración y volver al modo EXEC privilegiado, ingrese <span class="cmd"><b>end</b></span> o use la secuencia de teclas <b>Ctrl-Z</b>. </p>
+<p></p>
+<p>
+<b>Indicadores del sistema</b>
+</p>
+<p></p>
+<p>Cuando se usa la CLI, el modo se identifica mediante la petición de entrada de línea de comandos que es exclusiva de ese modo. De manera predeterminada, cada petición de entrada empieza con el nombre del dispositivo. Después del nombre, el resto de la petición de entrada indica el modo. Por ejemplo, la petición de entrada predeterminada del modo de configuración global en un switch sería la siguiente:</p>
+<p></p>
+<p>
+<span class="cmd">Switch(config)#</span>
+</p>
+<p></p>
+<p>A medida que se utilizan los comandos y se cambian los modos, la petición de entrada cambia para reflejar el contexto actual, como se muestra en la figura 2.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.1.1.2 Función de la capa de transporte (cont.)</title>
+    <!--  -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.1.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolos de la capa de transporte</h1>
+        <h2>Transporte de datos</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Rastreo de conversaciones individuales</b>
+</p>
+<p></p>
+<p>En la capa de transporte, cada conjunto de datos particular que fluye entre una aplicación de origen y una de destino se conoce como “conversación” (figura 1). Un host puede tener varias aplicaciones que se comunican a través de la red de forma simultánea. Cada una de estas aplicaciones se comunica con una o más aplicaciones en uno o más hosts remotos. Es responsabilidad de la capa de transporte mantener y hacer un seguimiento de todas estas conversaciones.</p>
+<p></p>
+<p>
+<b>Segmentación de datos y rearmado de segmentos</b>
+</p>
+<p></p>
+<p>Se deben preparar los datos para el envío a través de los medios en partes manejables. La mayoría de las redes tienen un límite de la cantidad de datos que se puede incluir en un solo paquete. Los protocolos de la capa de transporte tienen servicios que segmentan los datos de aplicación en bloques de datos de un tamaño apropiado (figura 2). Estos servicios incluyen la encapsulación necesaria en cada porción de datos. Se agrega un encabezado a cada bloque de datos para el rearmado. Este encabezado se utiliza para hacer un seguimiento del stream de datos.</p>
+<p></p>
+<p>En el destino, la capa de transporte debe poder reconstruir las porciones de datos en un stream de datos completo que sea útil para la capa de aplicación. Los protocolos en la capa de transporte describen cómo se utiliza la información del encabezado de dicha capa para rearmar las porciones de datos en streams para pasarlos a la capa de aplicación.</p>
+<p></p>
+<p>
+<b>Identificación de aplicaciones </b>
+</p>
+<p></p>
+<p>Puede haber muchas aplicaciones o servicios que se ejecutan en cada host de la red. Para pasar streams de datos a las aplicaciones adecuadas, la capa de transporte debe identificar la aplicación objetivo (figura 3). Para lograr esto, la capa de transporte asigna un identificador a cada aplicación. Este identificador se denomina “número de puerto”. A todos los procesos de software que requieran acceder a la red se les asigna un número de puerto exclusivo en ese host. La capa de transporte utiliza puertos para identificar la aplicación o el servicio.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

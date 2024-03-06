@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.1.1.5 Los routers eligen las mejores rutas</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.1.1.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración inicial de un router</h1>
+        <h2>Funciones de un router</h2>
+      </div>
+      <div id="content">
+<p>Las funciones principales de un router son las siguientes:</p>
+<p>
+<ul>
+<li>Determinar la mejor ruta para enviar paquetes. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Reenviar paquetes a su destino.</li>
+</ul>
+</p>
+<p></p>
+<p>El router usa su tabla de routing para encontrar la mejor ruta para reenviar un paquete. Cuando el router recibe un paquete, analiza la dirección de destino del paquete y usa la tabla de routing para buscar la mejor ruta hacia esa red. La tabla de routing también incluye la interfaz que se debe usar para reenviar los paquetes a cada red conocida. Cuando se encuentra una coincidencia, el router encapsula el paquete en la trama de enlace de datos de la interfaz de salida, y el paquete se reenvía hacia el destino.</p>
+<p></p>
+<p>Un router puede recibir un paquete encapsulado en un tipo de trama de enlace de datos y reenviarlo por una interfaz que usa otro tipo de trama de enlace de datos. Por ejemplo, un router puede recibir un paquete en una interfaz Ethernet, pero debe reenviarlo por una interfaz configurada con el protocolo punto a punto (PPP). La encapsulación de enlace de datos depende del tipo de interfaz en el router y del tipo de medio al que se conecta. Las distintas tecnologías de enlace de datos a las que se puede conectar un router incluyen Ethernet, PPP, Frame Relay, DSL, tecnología de cable y tecnología inalámbrica (802.11, Bluetooth).</p>
+<p></p>
+<p>En la animación de la ilustración, se sigue un paquete desde la computadora de origen hasta la computadora de destino. Debe observarse que el router es responsable de encontrar la red de destino en su tabla de enrutamiento y reenviar el paquete hacia su destino. En este ejemplo, el router R1 recibe el paquete encapsulado en una trama de Ethernet. Después de desencapsular el paquete, el R1 usa la dirección IP de destino del paquete para buscar una dirección de red que coincida en su tabla de routing. Luego de encontrar una dirección de red de destino en la tabla de enrutamiento, R1 encapsula el paquete dentro de una trama PPP y reenvía el paquete a R2. El R2 realiza un proceso similar.</p>
+<p></p>
+<p>
+<b>Nota:</b> los routers usan rutas estáticas y protocolos de routing dinámico para descubrir redes remotas y crear sus tablas de routing.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

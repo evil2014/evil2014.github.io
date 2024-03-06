@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.4.4.4 El tráiler</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.4.4.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Control de acceso al medio</h1>
+        <h2>Trama de enlace de datos</h2>
+      </div>
+      <div id="content">
+<p>Los protocolos de capa de enlace de datos agregan un tráiler al final de cada trama. El tráiler se utiliza para determinar si la trama llegó sin errores. Este proceso se denomina “detección de errores” y se logra mediante la colocación en el tráiler de un resumen lógico o matemático de los bits que componen la trama. La detección de errores se agrega a la capa de enlace de datos porque las señales en los medios pueden sufrir interferencias, distorsiones o pérdidas que cambien considerablemente los valores de bits que representan esas señales.</p>
+<p></p>
+<p>Un nodo transmisor crea un resumen lógico del contenido de la trama. Esto se conoce como valor de comprobación de redundancia cíclica  (CRC). Este valor se coloca en el campo Secuencia de verificación de la trama (FCS) para representar el contenido de la trama. </p>
+<p></p>
+<p>Haga clic en los campos FCS y Detención de trama en la ilustración para obtener más detalles.</p>
+<p></p>
+<p>Cuando la trama llega al nodo de destino, el nodo receptor calcula su propio resumen lógico, o CRC, de la trama. El nodo receptor compara los dos valores CRC. Si los dos valores son iguales, se considera que la trama llegó como se transmitió. Si el valor CRC en el FCS difiere del CRC calculado en el nodo receptor, la trama se descarta.</p>
+<p></p>
+<p>Por lo tanto, el campo FCS se utiliza para determinar si se produjeron errores durante la transmisión y la recepción de la trama. El mecanismo de detección de errores proporcionado por el uso del campo FCS descubre la mayoría de los errores provocados en los medios.</p>
+<p></p>
+<p>Existe siempre la pequeña posibilidad de que una trama con un buen resultado de CRC esté realmente dañada. Los errores en los bits se pueden cancelar entre sí cuando se calcula el CRC. Los protocolos de capa superior entonces deberían detectar y corregir esta pérdida de datos. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

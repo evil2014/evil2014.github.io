@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.1.1.1 Introducción a la tecnología Frame Relay</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.1.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Introducción a Frame Relay</h1>
+        <h2>Beneficios de Frame Relay</h2>
+      </div>
+      <div id="content">
+<p>Las líneas arrendadas proporcionan capacidad dedicada permanente y se utilizan mucho para armar redes WAN. Son la conexión tradicional de preferencia, pero presentan una serie de desventajas. Una desventaja es que los clientes pagan por líneas arrendadas con una capacidad fija. Sin embargo, el tráfico WAN suele variar, y parte de la capacidad queda sin utilizar. Además, cada terminal necesita una interfaz física individual en el router, lo que aumenta los costos de los equipos. Por lo general, cualquier cambio en la línea arrendada requiere que el personal de la empresa prestadora de servicios visite el sitio.</p>
+<p></p>
+<p>Frame Relay es un protocolo WAN de alto rendimiento que funciona en las capas física y de enlace de datos del modelo de referencia OSI. A diferencia de las líneas arrendadas, Frame Relay solo requiere un único circuito de acceso al proveedor de servicios de Frame Relay para comunicarse con otros sitios conectados al mismo proveedor. La capacidad entre dos sitios puede variar.</p>
+<p></p>
+<p>Eric Scace, un ingeniero de Sprint International, inventó Frame Relay como una versión más simple del protocolo X.25 para utilizarlo a través de las interfaces de red digital de servicios integrados (ISDN). En la actualidad, también se utiliza en otros tipos de interfaces de red. Cuando Sprint implementó Frame Relay en su red pública, utilizó switches StrataCom. La adquisición de StrataCom por parte de Cisco en 1996 marcó su entrada en el mercado de las prestadoras de servicios. </p>
+<p></p>
+<p>Los proveedores de servicios de red implementan Frame Relay para admitir tráfico de voz y de datos entre redes LAN a través de una WAN. Cada usuario final obtiene una línea privada, o una línea arrendada, a un nodo de Frame Relay. La red Frame Relay maneja la transmisión a través de una ruta que cambia con frecuencia, transparente para todos los usuarios finales. Como se muestra en la ilustración, Frame Relay proporciona una solución para permitir comunicaciones entre varios sitios mediante un único circuito de acceso al proveedor.</p>
+<p></p>
+<p>Históricamente, Frame Relay se utilizó ampliamente como protocolo WAN porque era económico en comparación con las líneas arrendadas dedicadas. Además, configurar el equipo del usuario en una red Frame Relay es muy simple. Las conexiones de Frame Relay se crean configurando los routers u otros dispositivos del equipo local del cliente (CPE) para que se comuniquen con un switch Frame Relay de un proveedor de servicios. El proveedor de servicios configura el switch Frame Relay, lo que reduce al mínimo las tareas de configuración del usuario final. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,155 @@
+﻿<textcomponents> <!--SLIDE 1-->
+<component id='ID_s1_inst'>
+	<text><![CDATA[<b>Actividad: Práctica de VLSM (parte 1)</b><br/><br/> En la tabla&nbsp;1, se utiliza la división en subredes común para admitir la red que se muestra. En la tabla&nbsp;2, se utiliza <b>VLSM</b> para subdividir la red en subredes.<br/><br/>Arrastre las direcciones a la descripción de subred que corresponda.]]></text>
+</component>
+
+<component id='ID_s1_header'>
+	<text><![CDATA[<b>192.168.5.0/24</b><br><font><b>Tabla&nbsp;1. Primer cálculo de subredes</b></font>]]></text>
+</component>
+
+<component id='ID_s1_subheader'>
+	<text><![CDATA[<b style="margin-left:5px;">Calcule 50&nbsp;usuarios por subred</b>]]></text>
+</component>
+
+<component id='ID_s1_txt01'>
+	<text><![CDATA[<span style="margin-left:5px;">Nueva máscara de subred (decimal)</span>]]></text>
+</component>
+
+<component id='ID_s1_txt02'>
+	<text><![CDATA[<span style="margin-left:5px;"><b>Primera</b> notación de prefijo</span>]]></text>
+</component>
+
+<component id='ID_s1_txt03'>
+	<text><![CDATA[<span style="margin-left:5px;">Primer rango de subred <b>completo</b></span>]]></text>
+</component>
+
+<component id='ID_s1_txt04'>
+	<text><![CDATA[<span style="margin-left:5px;">Segundo rango de subred <b>completo</b></span>]]></text>
+</component>
+
+<component id='ID_s1_txt05'>
+	<text><![CDATA[<span style="margin-left:5px;">Último rango de subred <b>completo</b></span>]]></text>
+</component> <!--Drag and Drop-->
+
+<component id='ID_sub1_DS'>
+	<text><![CDATA[<font color="#393536">255.255.255.192</font>]]></text>
+</component>
+
+<component id='ID_sub2_DS'>
+	<text><![CDATA[<font color="#393536">/26</font>]]></text>
+</component>
+
+<component id='ID_sub3_DS'>
+	<text><![CDATA[<font color="#393536">192.168.5.0-<br>192.168.5.63</font>]]></text>
+</component>
+
+<component id='ID_sub4_DS'>
+	<text><![CDATA[<font color="#393536">192.168.5.64-<br>192.168.5.127</font>]]></text>
+</component>
+
+<component id='ID_sub5_DS'>
+	<text><![CDATA[<font color="#393536">192.168.5.192-<br>192.168.5.255</font>]]></text>
+</component>
+
+<component id='ID_s1_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto]]></text>
+</component>
+
+<component id='ID_s1_CORRECT_BODY'>
+	<text><![CDATA[<span style="width:194px;">Calculó la subred correctamente.  </span>]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_BODY'>
+	<text><![CDATA[No calculó la subred correctamente. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_s1_CHECK'>
+	<text><![CDATA[<span style="margin-left:-8px">Verificar</span>]]></text>
+</component>
+
+<component id='ID_s1_RESET'>
+	<text><![CDATA[<span style="margin-left:-8px">Restablecer</span>]]></text>
+</component> <!--SLIDE 2-->
+<component id='ID_s2_inst'>
+	<text><![CDATA[<b>Actividad: Práctica de VLSM (parte 2)</b><br><br>En la tabla&nbsp;2, se utiliza VLSM para subdividir la red en subredes.<br><br>Arrastre las direcciones a la descripción de subred que corresponda.
+]]></text>
+</component>
+
+<component id='ID_s2_header'>
+	<text><![CDATA[<b>192.168.5.0/24</b><br><font><b>Tabla&nbsp;2. Cálculo de VLSM</b></font>]]></text>
+</component>
+
+<component id='ID_s2_subheader'>
+	<text><![CDATA[<b style="margin-left:5px;">Utilice el segundo rango de subred completo de la tabla&nbsp;1 y VLSM para hacer un cálculo para 20&nbsp;usuarios por subred.</b>]]></text>
+</component>
+
+
+<component id='ID_s2_txt01'>
+	<text><![CDATA[<span style="margin-left:5px;">Segundo rango de subred<b> completo</b> (/26) de la tabla&nbsp;1</span>]]></text>
+</component>
+
+<component id='ID_s2_txt02'>
+	<text><![CDATA[<span style="margin-left:5px;">Nueva máscara de subred VLSM (decimal)</span>]]></text>
+</component>
+
+<component id='ID_s2_txt03'>
+	<text><![CDATA[<span style="margin-left:5px;"><b>Notación de prefijo de VLSM</b></span>]]></text>
+</component>
+
+<component id='ID_s2_txt04'>
+	<text><![CDATA[<span style="margin-left:5px;">Primer rango de subred <b>VLSM completo</b></span>]]></text>
+</component>
+
+<component id='ID_s2_txt05'>
+	<text><![CDATA[<span style="margin-left:5px;">Último rango de subred <b>VLSM completo</b></span>]]></text>
+</component> <!--Drag and Drop-->
+
+<component id='ID_vlsm1_DS'>
+	<text><![CDATA[<font color="#393536">192.168.5.64-<br>192.168.5.128</font>]]></text>
+</component>
+
+<component id='ID_vlsm2_DS'>
+	<text><![CDATA[<font color="#393536">255.255.255.224</font>]]></text>
+</component>
+
+<component id='ID_vlsm3_DS'>
+	<text><![CDATA[<font color="#393536">/27</font>]]></text>
+</component>
+
+<component id='ID_vlsm4_DS'>
+	<text><![CDATA[<font color="#393536">192.168.5.64-<br>192.168.5.95</font>]]></text>
+</component>
+
+<component id='ID_vlsm5_DS'>
+	<text><![CDATA[<font color="#393536">192.168.5.224-<br>192.168.5.255</font>]]></text>
+</component>
+
+<component id='ID_s2_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto]]></text>
+</component>
+
+<component id='ID_s2_CORRECT_BODY'>
+	<text><![CDATA[Calculó correctamente la subred mediante VLSM. ]]></text>
+</component>
+
+<component id='ID_s2_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto]]></text>
+</component>
+
+<component id='ID_s2_INCORRECT_BODY'>
+	<text><![CDATA[No calculó correctamente la subred mediante VLSM. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_s2_CHECK'>
+	<text><![CDATA[<span style="margin-left:-8px">Verificar</span>]]></text>
+</component>
+
+<component id='ID_s2_RESET'>
+	<text><![CDATA[<span style="margin-left:-8px">Restablecer</span>]]></text>
+</component>
+
+</textcomponents>

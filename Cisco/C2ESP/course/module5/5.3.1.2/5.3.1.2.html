@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.3.1.2 Routing entre VLAN con interfaces virtuales de switch</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.3.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Conmutación de capa 3</h1>
+        <h2>Funcionamiento y configuración del switching de capa 3</h2>
+      </div>
+      <div id="content">
+<p>En los comienzos de las redes conmutadas, el switching era rápido (a menudo, tenía la velocidad del hardware, es decir que la velocidad era equivalente al tiempo físico que tomaba recibir las tramas y reenviarlas a otros puertos) y el routing era lento (debía procesarse mediante software). Esto hizo que los diseñadores de redes ampliaran la porción conmutada de la red al máximo posible. El acceso, la distribución y las capas de núcleo solían configurarse para comunicarse en la capa 2, pero esta topología generaba problemas de bucles. Para resolver estos problemas, se utilizaron tecnologías de árbol de expansión a fin de prevenir los bucles sin necesidad de renunciar a la flexibilidad y la redundancia de las conexiones entre switches.</p>
+<p></p>
+<p>Sin embargo, a medida que las tecnologías de redes evolucionaron, el routing se volvió más rápido y económico. Hoy en día, el routing se puede llevar a cabo a la velocidad del hardware. Una consecuencia de esta evolución es que el routing se puede transferir a las capas de núcleo y de distribución sin afectar el rendimiento de la red. </p>
+<p></p>
+<p>Muchos usuarios están en VLAN separadas, y cada VLAN suele ser una subred distinta. Por lo tanto, resulta lógico configurar los switches de distribución como gateways de capa 3 para los usuarios de la VLAN de cada switch de acceso. Esto significa que cada switch de distribución debe tener direcciones IP que coincidan con la VLAN de cada switch de acceso.</p>
+<p></p>
+<p>Los puertos de capa 3 (enrutados) se suelen implementar entre la capa de distribución y la capa de núcleo. </p>
+<p></p>
+<p>La arquitectura de red representada no depende del árbol de expansión, porque no existen bucles físicos en la porción de capa 2 de la topología. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

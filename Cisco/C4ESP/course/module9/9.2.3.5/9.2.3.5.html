@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.2.3.5 Paso 3: Verificar el direccionamiento de capa 2 y capa 3 en la red local</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.2.3.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resolución de problemas de red</h1>
+        <h2>Resolución de problemas de conectividad IP</h2>
+      </div>
+      <div id="content">
+<p>Al resolver problemas de conectividad de extremo a extremo, es útil verificar las asignaciones entre las direcciones IP de destino y las direcciones Ethernet de capa 2 en segmentos individuales. En IPv4, ARP proporciona esta funcionalidad. En IPv6, la funcionalidad de ARP se reemplaza por el proceso de detección de vecinos e ICMPv6. La tabla de vecinos almacena en caché las direcciones IPv6 y sus direcciones físicas de Ethernet (MAC) resueltas.</p>
+<p></p>
+<p>
+<b>Tabla ARP de IPv4</b>
+</p>
+<p>El comando <span class="cmd"><b>arp</b></span> de Windows muestra y modifica las entradas en la caché ARP que se usan para almacenar las direcciones IPv4 y sus direcciones físicas de Ethernet (MAC) resueltas. Como se muestra en la figura 1, el comando <span class="cmd"><b>arp</b></span> de Windows enumera todos los dispositivos que actualmente están en la caché ARP. La información que se muestra para cada dispositivo incluye la dirección IPv4, la dirección física (MAC) y el tipo de direccionamiento (estático o dinámico).</p>
+<p></p>
+<p>Si el administrador de red desea volver a llenar la caché con información actualizada, se puede borrar la caché mediante el comando <span class="cmd"><b>arp -d</b></span> de Windows.</p>
+<p></p>
+<p>
+<b>Nota:</b> los comandos <span class="cmd"><b>arp</b></span> en Linux y MAC OS X tienen una sintaxis similar. </p>
+<p></p>
+<p></p>
+<p>
+<b>Tabla de vecinos de IPv6</b>
+</p>
+<p>Como se muestra en la figura 2, el comando <span class="cmd"><b>netsh interface ipv6 show neighbor</b></span> de Windows enumera todos los dispositivos que actualmente están en la tabla de vecinos. La información que se muestra para cada dispositivo incluye la dirección IPv6, la dirección física (MAC) y el tipo de direccionamiento. Al examinar la tabla de vecinos, el administrador de red puede verificar que las direcciones IPv6 de destino se asignen a las direcciones Ethernet correctas. Las direcciones IPv6 link-local se configuraron manualmente en todas las interfaces del R1 como FE80::1. De manera similar, se configuró el R2 con la dirección link-local FE80::2 en sus interfaces, y se configuró el R3 con la dirección link-local FE80::3 en sus interfaces. Recuerde que las direcciones link-local solo tienen que ser exclusivas en el enlace o la red.</p>
+<p></p>
+<p>
+<b>Nota:</b> en los sistemas operativos Linux y MAC OS X, se puede mostrar la tabla de vecinos mediante el comando <span class="cmd"><b>ip neigh show</b></span>.</p>
+<p></p>
+<p>En la figura 3, se muestra un ejemplo de la tabla de vecinos en un router con IOS de Cisco mediante el comando <span class="cmd"><b>show ipv6 neighbors</b></span>. </p>
+<p>
+<b>Nota:</b> los estados de los vecinos en IPv6 son más complejos que los estados de la tabla ARP en IPv4. RFC 4861 contiene información adicional.</p>
+<p></p>
+<p>
+<b>Tabla de direcciones MAC del switch</b>
+</p>
+<p>Un switch reenvía una trama solamente al puerto donde se conecta el destino. Para hacer esto, el switch consulta su tabla de direcciones MAC. La tabla de direcciones MAC indica la dirección MAC conectada a cada puerto. Use el comando <span class="cmd"><b>show mac address-table</b></span> para visualizar la tabla de direcciones MAC en el switch. En la figura 4, se muestra un ejemplo del switch local de la PC1. Recuerde que la tabla de direcciones MAC de un switch solo contiene información de capa 2, que incluye la dirección MAC de Ethernet y el número de puerto. No se incluye información de dirección IP.</p>
+<p></p>
+<p>
+<b>Asignación de red VLAN</b>
+</p>
+<p>Al resolver problemas de conectividad de extremo a extremo, otro problema que se debe considerar es la asignación de VLAN. En una red conmutada, cada puerto en un switch pertenece a una VLAN. Cada VLAN se considera una red lógica independiente, y los paquetes destinados a las estaciones que no pertenecen a la VLAN se deben reenviar a través de un dispositivo que admita el routing. Si un host en una VLAN envía una trama de Ethernet de difusión, como una solicitud de ARP, todos los hosts en la misma VLAN reciben la trama, mientras que los hosts en otras VLAN no la reciben. Incluso si dos hosts están en la misma red IP, no se podrán comunicar si están conectados a puertos asignados a dos VLAN separadas. Además, si se elimina la VLAN a la que pertenece el puerto, este queda inactivo. Ninguno de los hosts conectados a los puertos que pertenecen a la VLAN que se eliminó se puede comunicar con el resto de la red. Los comandos como <span class="cmd"><b>show vlan</b></span> se pueden usar para validar las asignaciones de VLAN en un switch.</p>
+<p></p>
+<p>
+<b>Ejemplo de resolución de problemas</b>
+</p>
+<p>Consulte la topología en la figura 5. Para mejorar la administración de los cables en el armario de cableado, se reorganizaron los cables que se conectan al S1. Casi inmediatamente después de hacerlo, los usuarios comenzaron a llamar al soporte técnico con el comentario de que ya no tenían posibilidad de conexión a los dispositivos fuera de su propia red. Un examen de la tabla ARP de la PC1 mediante el comando <span class="cmd"><b>arp</b></span> de Windows muestra que la tabla ARP ya no contiene una entrada para el gateway predeterminado 10.1.10.1, como se muestra en la figura 6. No hubo cambios de configuración en el router, de modo que la resolución de problemas se centra en el S1.</p>
+<p></p>
+<p>La tabla de direcciones MAC para el S1, que se muestra en la figura 7, muestra que la dirección MAC del R1 está en una VLAN diferente que el resto de los dispositivos en 10.1.10.0/24, incluida la PC1. Mientras se volvían a conectar los cables, se trasladó el cable de conexión del R1 de Fa0/4 en la VLAN 10 a Fa0/1 en la VLAN 1. El problema se resolvió después de que el administrador de red configuró el puerto FA 0/1 del S1 para que estuviera en la VLAN 10, como se muestra en la figura 8. Como se muestra en la figura 9, ahora la tabla de direcciones MAC muestra la VLAN 10 para la dirección MAC del R1 en el puerto Fa0/1.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

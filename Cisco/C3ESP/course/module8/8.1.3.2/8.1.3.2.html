@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.1.3.2 Verificación de la ruta predeterminada propagada</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.1.3.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuraciones avanzadas de EIGRP</h1>
+        <h2>Propagación de rutas predeterminadas</h2>
+      </div>
+      <div id="content">
+<p>En la ilustración, se muestra una parte de las tablas de routing IPv4 del R1 y el R3. </p>
+<p></p>
+<p>En las tablas de routing del R1 y el R3, observe el origen de routing y la distancia administrativa de la nueva ruta predeterminada que se descubrieron mediante EIGRP. La entrada de la ruta predeterminada que se descubrió mediante EIGRP se identifica por lo siguiente:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>D:</b> esta ruta se descubrió en una actualización de routing EIGRP.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>*:</b> la ruta es candidata para una ruta predeterminada.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>EX:</b> la ruta es una ruta EIGRP externa, en este caso, una ruta estática fuera del dominio de routing EIGRP.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>170:</b> distancia administrativa de una ruta EIGRP externa.</li>
+</ul>
+</p>
+<p></p>
+<p>Observe que el R1 selecciona al R3 como el sucesor a la ruta predeterminada, porque tiene una distancia factible menor. Las rutas predeterminadas proporcionan una ruta predeterminada para salir del dominio de enrutamiento y, al igual que las rutas sumarizadas, minimizan el número de entradas en la tabla de enrutamiento.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html class="module-index" dir="ltr">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta charset="UTF-8"/>
+    <title>Principios básicos de routing y switching</title>
+    <link rel="stylesheet" type="text/css" href="../common-ext/styles/index.css"/>
+    <script type="text/javascript" src="../common-ext/scripts/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="../common-ext/scripts/index.js"></script>
+  </head>
+  <body>
+    <div id="header">
+      <div id="header-logo" title="Cisco Systems, Inc. - Cisco Networking Academy"></div>
+      <a id="home-btn" href="../../index.html" title="Inicio">Inicio</a>
+      <h1>Capítulo 5: Enrutamiento entre VLAN <span id="title"></span></h1>
+    </div>
+    <div id="nav">
+      <ul class="sections">
+        <li>
+          <span class="icon"></span>
+          <span class="section-title">5.0 Enrutamiento entre VLAN</span>
+          <ul class="topics">
+            <li>
+              <span class="icon"></span>
+              <span class="topic-title">5.0.1 Introducción</span>
+              <ul class="pages">
+                <li>
+                  <a data-ident="5.0.1.1" class="page-title" href="5.0.1.1/5.0.1.1.html" target="frame">5.0.1.1 Introducción</a>
+                </li>
+                <li>
+                  <a data-ident="5.0.1.2" class="page-title" href="5.0.1.2/5.0.1.2.html" target="frame">5.0.1.2 Switching a canales de la red local</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <span class="icon"></span>
+          <span class="section-title">5.1 Configuración del routing entre VLAN</span>
+          <ul class="topics">
+            <li>
+              <span class="icon"></span>
+              <span class="topic-title">5.1.1 Funcionamiento del routing entre VLAN</span>
+              <ul class="pages">
+                <li>
+                  <a data-ident="5.1.1.1" class="page-title" href="5.1.1.1/5.1.1.1.html" target="frame">5.1.1.1 ¿Qué es el enrutamiento entre VLAN?</a>
+                </li>
+                <li>
+                  <a data-ident="5.1.1.2" class="page-title" href="5.1.1.2/5.1.1.2.html" target="frame">5.1.1.2 Routing entre VLAN antiguo</a>
+                </li>
+                <li>
+                  <a data-ident="5.1.1.3" class="page-title" href="5.1.1.3/5.1.1.3.html" target="frame">5.1.1.3 Routing entre VLAN con router-on-a-stick</a>
+                </li>
+                <li>
+                  <a data-ident="5.1.1.4" class="page-title" href="5.1.1.4/5.1.1.4.html" target="frame">5.1.1.4 Routing entre VLAN con switch multicapa</a>
+                </li>
+                <li>
+                  <a data-ident="5.1.1.5" class="page-title" href="5.1.1.5/5.1.1.5.html" target="frame">5.1.1.5 Actividad: identificar los tipos de routing entre VLAN</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <span class="icon"></span>
+              <span class="topic-title">5.1.2 Configuración de routing entre VLAN antiguo</span>
+              <ul class="pages">
+                <li>
+                  <a data-ident="5.1.2.1" class="page-title" href="5.1.2.1/5.1.2.1.html" target="frame">5.1.2.1 Configuración del routing entre VLAN antiguo: preparación</a>
+                </li>
+                <li>
+                  <a data-ident="5.1.2.2" class="page-title" href="5.1.2.2/5.1.2.2.html" target="frame">5.1.2.2 Configuración del routing entre VLAN antiguo: configuración del switch</a>
+                </li>
+                <li>
+                  <a data-ident="5.1.2.3" class="page-title" href="5.1.2.3/5.1.2.3.html" target="frame">5.1.2.3 Configuración del routing entre VLAN antiguo: configuración de la interfaz del router</a>
+                </li>
+                <li>
+                  <a data-ident="5.1.2.4" class="page-title" href="5.1.2.4/5.1.2.4.html" target="frame">5.1.2.4 Práctica de laboratorio: configuración del routing entre VLAN por interfaz</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <span class="icon"></span>
+              <span class="topic-title">5.1.3 Configurar un enrutamiento router-on-a-stick entre VLAN</span>
+              <ul class="pages">
+                <li>
+                  <a data-ident="5.1.3.1" class="page-title" href="5.1.3.1/5.1.3.1.html" target="frame">5.1.3.1 Configuración de router-on-a-stick: preparación</a>
+                </li>
+                <li>
+                  <a data-ident="5.1.3.2" class="page-title" href="5.1.3.2/5.1.3.2.html" target="frame">5.1.3.2 Configuración de router-on-a-stick: configuración del switch</a>
+                </li>
+                <li>
+                  <a data-ident="5.1.3.3" class="page-title" href="5.1.3.3/5.1.3.3.html" target="frame">5.1.3.3 Configuración de router-on-a-stick: configuración de subinterfaces del router</a>
+                </li>
+                <li>
+                  <a data-ident="5.1.3.4" class="page-title" href="5.1.3.4/5.1.3.4.html" target="frame">5.1.3.4 Configuración de router-on-a-stick: verificación de subinterfaces</a>
+                </li>
+                <li>
+                  <a data-ident="5.1.3.5" class="page-title" href="5.1.3.5/5.1.3.5.html" target="frame">5.1.3.5 Configuración de router-on-a-stick: verificación de routing</a>
+                </li>
+                <li>
+                  <a data-ident="5.1.3.6" class="page-title" href="5.1.3.6/5.1.3.6.html" target="frame">5.1.3.6 Packet Tracer: configuración de routing entre VLAN con router-on-a-stick</a>
+                </li>
+                <li>
+                  <a data-ident="5.1.3.7" class="page-title" href="5.1.3.7/5.1.3.7.html" target="frame">5.1.3.7 Práctica de laboratorio: configuración de routing entre VLAN basado en enlaces troncales 801.2Q</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <span class="icon"></span>
+          <span class="section-title">5.2 Resolución de problemas de routing entre VLAN</span>
+          <ul class="topics">
+            <li>
+              <span class="icon"></span>
+              <span class="topic-title">5.2.1 Problemas de configuración entre VLAN</span>
+              <ul class="pages">
+                <li>
+                  <a data-ident="5.2.1.1" class="page-title" href="5.2.1.1/5.2.1.1.html" target="frame">5.2.1.1 Problemas en los puertos de switch</a>
+                </li>
+                <li>
+                  <a data-ident="5.2.1.2" class="page-title" href="5.2.1.2/5.2.1.2.html" target="frame">5.2.1.2 Verificación de la configuración del switch</a>
+                </li>
+                <li>
+                  <a data-ident="5.2.1.3" class="page-title" href="5.2.1.3/5.2.1.3.html" target="frame">5.2.1.3 Problemas de interfaz</a>
+                </li>
+                <li>
+                  <a data-ident="5.2.1.4" class="page-title" href="5.2.1.4/5.2.1.4.html" target="frame">5.2.1.4 Verificar la configuración del router</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <span class="icon"></span>
+              <span class="topic-title">5.2.2 Problemas de direccionamiento IP</span>
+              <ul class="pages">
+                <li>
+                  <a data-ident="5.2.2.1" class="page-title" href="5.2.2.1/5.2.2.1.html" target="frame">5.2.2.1 Errores relacionados con direcciones IP y máscaras de subred</a>
+                </li>
+                <li>
+                  <a data-ident="5.2.2.2" class="page-title" href="5.2.2.2/5.2.2.2.html" target="frame">5.2.2.2 Verificación de problemas de config. de dir. IP y máscaras de subred</a>
+                </li>
+                <li>
+                  <a data-ident="5.2.2.3" class="page-title" href="5.2.2.3/5.2.2.3.html" target="frame">5.2.2.3 Actividad: identificar la solución al problema de routing entre VLAN</a>
+                </li>
+                <li>
+                  <a data-ident="5.2.2.4" class="page-title" href="5.2.2.4/5.2.2.4.html" target="frame">5.2.2.4 Packet Tracer: resolución de problemas de routing entre VLAN</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <span class="icon"></span>
+          <span class="section-title">5.3 Conmutación de capa 3</span>
+          <ul class="topics">
+            <li>
+              <span class="icon"></span>
+              <span class="topic-title">5.3.1 Funcionamiento y configuración del switching de capa 3</span>
+              <ul class="pages">
+                <li>
+                  <a data-ident="5.3.1.1" class="page-title" href="5.3.1.1/5.3.1.1.html" target="frame">5.3.1.1 Introducción al switching de capa 3</a>
+                </li>
+                <li>
+                  <a data-ident="5.3.1.2" class="page-title" href="5.3.1.2/5.3.1.2.html" target="frame">5.3.1.2 Routing entre VLAN con interfaces virtuales de switch</a>
+                </li>
+                <li>
+                  <a data-ident="5.3.1.3" class="page-title" href="5.3.1.3/5.3.1.3.html" target="frame">5.3.1.3 Routing entre VLAN con interfaces virtuales de switch (cont.)</a>
+                </li>
+                <li>
+                  <a data-ident="5.3.1.4" class="page-title" href="5.3.1.4/5.3.1.4.html" target="frame">5.3.1.4 Routing entre VLAN con puertos enrutados</a>
+                </li>
+                <li>
+                  <a data-ident="5.3.1.5" class="page-title" href="5.3.1.5/5.3.1.5.html" target="frame">5.3.1.5 Configuración de rutas estáticas en un switch Catalyst 2960</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <span class="icon"></span>
+              <span class="topic-title">5.3.2 Resolución de problemas de switching de capa 3</span>
+              <ul class="pages">
+                <li>
+                  <a data-ident="5.3.2.1" class="page-title" href="5.3.2.1/5.3.2.1.html" target="frame">5.3.2.1 Problemas de configuración de switch de capa 3</a>
+                </li>
+                <li>
+                  <a data-ident="5.3.2.2" class="page-title" href="5.3.2.2/5.3.2.2.html" target="frame">5.3.2.2 Ejemplo: resolución de problemas de switching de capa 3</a>
+                </li>
+                <li>
+                  <a data-ident="5.3.2.3" class="page-title" href="5.3.2.3/5.3.2.3.html" target="frame">5.3.2.3 Actividad: resolver problemas de switching de capa 3</a>
+                </li>
+                <li>
+                  <a data-ident="5.3.2.4" class="page-title" href="5.3.2.4/5.3.2.4.html" target="frame">5.3.2.4 Práctica de laboratorio: resolución de problemas de routing entre VLAN</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <span class="icon"></span>
+          <span class="section-title">5.4 Resumen</span>
+          <ul class="topics">
+            <li>
+              <span class="icon"></span>
+              <span class="topic-title">5.4.1 Resumen</span>
+              <ul class="pages">
+                <li>
+                  <a data-ident="5.4.1.1" class="page-title" href="5.4.1.1/5.4.1.1.html" target="frame">5.4.1.1 Una posición ventajosa</a>
+                </li>
+                <li>
+                  <a data-ident="5.4.1.2" class="page-title" href="5.4.1.2/5.4.1.2.html" target="frame">5.4.1.2 Packet Tracer: Reto de habilidades de integración</a>
+                </li>
+                <li>
+                  <a data-ident="5.4.1.3" class="page-title" href="5.4.1.3/5.4.1.3.html" target="frame">5.4.1.3 Resumen</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <ul id="nav-menu" class="contextmenu">
+      <li id="nav-menu-expand">Expandir todo</li>
+      <li id="nav-menu-collapse">Contraer todo</li>
+    </ul>
+    <div id="content">
+      <div id="container"></div>
+      <button id="prev-btn" type="button" title="Anterior" disabled><span class="icon">Anterior</span></button>
+      <input id="jump-box" type="text" value=""/>
+      <button id="next-btn" type="button" title="Siguiente" disabled><span class="icon">Siguiente</span></button>
+      <button id="mini-btn" type="button" title="Alternar"><span class="icon">Alternar</span></button>
+    </div>
+  </body>
+</html>
+

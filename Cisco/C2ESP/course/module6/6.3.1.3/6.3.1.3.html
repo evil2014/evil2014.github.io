@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.3.1.3 Ejemplo de protocolo de routing con clase</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.3.1.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Revisión de CIDR y VLSM</h1>
+        <h2>Direccionamiento con clase</h2>
+      </div>
+      <div id="content">
+<p>El uso de direcciones IP con clase significaba que la máscara de subred podía determinarse por el valor del primer octeto, o más precisamente, los primeros tres bits de la dirección. Los protocolos de routing, como RIPv1, solo necesitan propagar la dirección de red de las rutas conocidas y no necesitan incluir la máscara de subred en la actualización de routing. Esto se debe a que el router que recibe la actualización de routing determina la máscara de subred con solo examinar el valor del primer octeto de la dirección de red o al aplicar su máscara de interfaz de entrada para las rutas divididas en subredes. La máscara de subred estaba directamente relacionada con la dirección de red. </p>
+<p></p>
+<p>En la figura 1, el R1 envía una actualización al R2. En el ejemplo, R1 tiene información de que la subred 172.16.1.0 pertenece a la misma red principal con clase que la interfaz saliente. Por lo tanto, le envía una actualización RIP a R2 que contiene la subred 172.16.1.0. Cuando R2 recibe la actualización, aplica la máscara de subred de la interfaz receptora (/24) a la actualización y agrega 172.16.1.0 a la tabla de enrutamiento.</p>
+<p></p>
+<p>En la figura 2, el R2 envía una actualización al R3. Cuando se envían actualizaciones a R3, R2 resume las subredes 172.16.1.0/24, 172.16.2.0/24 y 172.16.3.0/24 en la red principal con clase 172.16.0.0. Debido a que el R3 no tiene ninguna subred que pertenezca a 172.16.0.0, aplica la máscara con clase para una red de clase B, /16. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

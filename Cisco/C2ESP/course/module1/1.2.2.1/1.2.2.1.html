@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.2.2.1 Dominios de colisiones</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.2.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>El entorno conmutado</h1>
+        <h2>Dominios de switching</h2>
+      </div>
+      <div id="content">
+<p>En los segmentos Ethernet basados en hubs, los dispositivos de red compiten por el medio, porque los dispositivos deben turnarse durante la transmisión. Los segmentos de red que comparten el mismo ancho de banda entre dispositivos se conocen como “dominios de colisiones”, ya que cuando hay dos o más dispositivos que intentan comunicarse dentro de ese segmento al mismo tiempo, pueden ocurrir colisiones.</p>
+<p></p>
+<p>Sin embargo, es posible usar otros dispositivos de red (por ejemplo, switches y routers) que funcionan en la capa de acceso a la red del modelo TCP/IP y superiores para segmentar la red y reducir el número de dispositivos que compiten por el ancho de banda. Cada segmento nuevo produce un nuevo dominio de colisiones. Hay más ancho de banda disponible para los dispositivos en un segmento, y las colisiones en un dominio de colisiones no interfieren en los demás segmentos. Esto también se conoce como “microsegmentación”.</p>
+<p></p>
+<p>Como se muestra en la ilustración, cada puerto del switch se conecta a un único servidor o una única computadora y representa un dominio de colisiones independiente.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

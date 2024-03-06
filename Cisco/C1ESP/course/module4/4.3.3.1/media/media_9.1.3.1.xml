@@ -1,0 +1,63 @@
+﻿<textcomponents>
+
+<component id="ID_title">
+	<text><![CDATA[]]></text>
+</component>
+<component id='ID_table'>
+		<text><![CDATA[
+				<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4'>
+						<tr class="liner">
+							<td colspan='2' bgcolor='#0E6360' class="mtable_top"><font size='1' color='#434321'><span style="color:#DAE17A">.</span></font></td>
+						</tr>
+					 <tr>
+						<td width="150" bgcolor='#077A77' valign="top"><font color='#ffffff'><b>Organismo de estandarización</b></font></td>
+						<td width="250" bgcolor='#077A77' valign="top"><font color='#ffffff'><b>Estándares de red</b></font> </td>
+					 </tr>
+					 <tr>
+						<td bgcolor='#EFF8F7' valign="top"><font color='#393536'>IEEE</font></td>
+						<td bgcolor='#EFF8F7' valign="top"> 							<font color='#393536'>
+								<textformat blockindent='-18'>
+									 <li>802.2: Control de enlace lógico (LLC)</li>
+									 <li>802.3: Ethernet</li>
+									 <li>802.4: Token bus</li>
+									 <li>802.5: Token Ring</li>
+									 <li>802.11: LAN inalámbrica (WLAN) y malla (certificación Wi-Fi)</li>
+									 <li>802.15: Bluetooth</li>
+									 <li>802.16: WiMax</li>
+								</textformat> 						 </font>
+						</td>
+					 </tr>
+					 <tr>
+						<td bgcolor='#FFFFFF' valign="top"><font color='#393536'>ITU-T</font></td>
+						<td bgcolor='#FFFFFF' valign="top"> 							<font color='#393536'>
+								<textformat blockindent='-18'>
+								  <li>G.992: ADSL</li>
+								  <li>G.8100 - G.8199: aspectos de MPLS de transporte</li>
+								  <li>Q.921: ISDN </li>
+								  <li>Q.922: Frame Relay</li>
+								</textformat> 							 </font>
+						 </td>
+					 </tr>
+					 <tr>
+						<td bgcolor='#EFF8F7' valign="top"><font color='#393536'>ISO</font></td>
+						<td bgcolor='#EFF8F7' valign="top"> 							<font color='#393536'>
+								<textformat blockindent='-18'>
+									<li>Control de enlace de datos de alto nivel (HDLC)</li>
+									<li>ISO 9314: Control de acceso al medio (MAC) de la FDDI</li>
+								</textformat> 							</font>
+						</td>
+					 </tr>
+					 <tr>
+						<td bgcolor='#FFFFFF' valign="top"><font color='#393536'>ANSI</font></td>
+						<td bgcolor='#FFFFFF' valign="top"> 							<font color='#393536'>
+								<textformat blockindent='-18'>
+									<li>X3T9.5 y X3T12: Interfaz de datos distribuida por fibra (FDDI)</li>
+								</textformat> 							</font>
+						 </td>
+					 </tr>
+				</table>
+			]]>
+			
+		</text>
+		</component>
+</textcomponents>

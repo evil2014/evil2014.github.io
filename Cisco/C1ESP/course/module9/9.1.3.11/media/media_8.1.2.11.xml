@@ -1,0 +1,58 @@
+﻿<textcomponents> <!--Slide-1-->
+
+<component id="ID_s1_title">
+<text>
+<![CDATA[<b>Cálculo de número de hosts</b>]]>
+</text>
+</component>
+
+
+<component id="ID_s1_txt01">
+<text>
+<![CDATA[Hosts&nbsp;=&nbsp;2^n<br/> (donde “n” representa los bits de host restantes)]]>
+</text>
+</component>
+
+<component id="ID_s1_txt02">
+<text>
+<![CDATA[Restan 9&nbsp;bits en el campo de host.]]>
+</text>
+</component>
+
+<component id="ID_s1_txt03">
+<text>
+<![CDATA[<textformat tabstops='[16]'>	2^<font color="#f26200"><b>9</b></font>&nbsp;=&nbsp;512&nbsp;hosts por subred<br>2^<font color="#f26200"><b>9</b></font>&nbsp;-&nbsp;2&nbsp;=&nbsp;510&nbsp;hosts válidos por subred</textformat>]]>
+</text>
+</component> <!--Slide-2-->
+<component id="ID_s2_title">
+<text>
+<![CDATA[<b>Rango de direcciones para la subred 172.16.0.0/23</b>]]>
+</text>
+</component>
+
+<component id="ID_s2_txt01">
+<text>
+<![CDATA[ Dirección de red]]>
+</text>
+</component>
+
+<component id="ID_s2_txt02">
+<text>
+<![CDATA[Primera dirección de host]]>
+</text>
+</component>
+
+
+<component id="ID_s2_txt03">
+<text>
+<![CDATA[Última dirección de host]]>
+</text>
+</component>
+
+<component id="ID_s2_txt04">
+<text>
+<![CDATA[Dirección de broadcast]]>
+</text>
+</component>
+
+</textcomponents>

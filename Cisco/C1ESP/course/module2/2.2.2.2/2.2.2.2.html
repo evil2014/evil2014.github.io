@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.2.2.2 Protección del acceso a EXEC privilegiado</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.2.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Información básica</h1>
+        <h2>Limitación del acceso a las configuraciones de los dispositivos</h2>
+      </div>
+      <div id="content">
+<p>Para proteger el acceso a EXEC privilegiado, utilice el comando <span class="cmd"><b>enable secret </b></span><span class="cmd"><i>contraseña</i></span>. Una variación más antigua y menos segura de este comando es el comando <span class="cmd"><b>enable password </b></span><span class="cmd"><i>contraseña</i></span>. Si bien puede utilizarse cualquiera de estos comandos para establecer la autenticación antes de permitir el acceso al modo EXEC privilegiado (enable), se recomienda utilizar el comando <span class="cmd"><b>enable secret</b></span>. El comando <span class="cmd"><b>enable secret</b></span> proporciona mayor seguridad, dado que la contraseña está encriptada. </p>
+<p></p>
+<p>Comando de ejemplo para establecer contraseñas: </p>
+<p></p>
+<p>
+<span class="cmd">Switch(config)#</span>
+<span class="cmd">
+<b>enable secret class</b>
+</span>
+</p>
+<p></p>
+<p></p>
+<p>El ejemplo de la ilustración muestra que no se solicita una contraseña cuando se utiliza el comando <span class="cmd"><b>enable</b></span> por primera vez. A continuación, se configura el comando <span class="cmd"><b>enable secret class</b></span>, y el acceso a EXEC privilegiado ahora queda protegido. Observe que, por motivos de seguridad, la contraseña no se muestra cuando se introduce.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

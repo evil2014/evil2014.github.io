@@ -1,0 +1,65 @@
+﻿<textcomponents> <!--slide01-->
+<component id='ID_s1_inst'>
+	<text><![CDATA[<b>Actividad: Funcionamiento de PVST+</b><br/>Arrastre los estados de puerto de Reenvío y Bloqueo de PVST+ hasta las interfaces G1/1 y G1/2 para el SW3.]]></text>
+</component>
+
+<component id='ID_s1_txt01'>
+	<text><![CDATA[<b>Raíz del SW1 para la VLAN 100</b>]]></text>
+</component>
+
+<component id='ID_s1_txt02'>
+	<text><![CDATA[<b>Raíz del SW2 para la VLAN 200</b>]]></text>
+</component>
+
+<component id="ID_s1_txt03">
+   <text><![CDATA[Enlaces troncales 802.1Q]]></text>
+   </component> <!--Drag and Drop-->
+<component id='ID_s1_drag01'>
+	<text><![CDATA[Puerto de reenvío <br/>para la VLAN 100]]></text>
+</component>
+
+<component id='ID_s1_drag02'>
+	<text><![CDATA[Puerto de reenvío <br/>para la VLAN 200]]></text>
+</component>
+
+<component id="ID_s1_drag03">
+   <text><![CDATA[Puerto de bloqueo <br/>para la VLAN 100]]></text>
+   </component>
+
+<component id="ID_s1_drag04">
+   <text><![CDATA[Puerto de bloqueo <br/>para la VLAN 200]]></text>
+   </component>
+
+
+
+
+
+<component id='ID_s1_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id='ID_s1_CORRECT_BODY'>
+	<text><![CDATA[Identificó correctamente los estados de puerto de PVST+ para ambas VLAN para cada puerto de switch.]]></text>
+</component>
+
+
+<component id='ID_s1_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_BODY'>
+	<text><![CDATA[No identificó correctamente los estados de puerto de PVST+ para ambas VLAN para cada puerto de switch. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_s1_CHECK'>
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id='ID_s1_RESET'>
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component>
+
+
+
+
+</textcomponents>

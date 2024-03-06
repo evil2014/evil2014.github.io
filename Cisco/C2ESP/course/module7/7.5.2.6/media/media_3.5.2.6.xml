@@ -1,0 +1,49 @@
+﻿<textcomponents>
+	<component id='ID_inst'>
+		<text><![CDATA[<b>Actividad: identificar rutas IPv4 principales y secundarias </b><br/><br/>Utilice la tabla de routing que se encuentra a continuación para ubicar las redes que se indican en la tabla. Determine si las redes se clasifican como rutas de nivel&nbsp;1, rutas principales de nivel&nbsp;1 o rutas secundarias de nivel&nbsp;2. Arrastre el término adecuado al campo Tipo de ruta proporcionado. </b>]]></text>
+	</component> <!--Drag and Drop-->
+	<component id='ID_drag01'>
+		<text><![CDATA[<font color="#393536">Nivel 1</font>]]></text>
+	</component>
+
+	<component id='ID_drag02'>
+		<text><![CDATA[<font color="#393536">Principal de nivel&nbsp;1</font>]]></text>
+	</component>
+
+	<component id='ID_drag03'>
+		<text><![CDATA[<font color="#393536">Secundaria de nivel&nbsp;2</font>]]></text>
+	</component>
+
+	<component id='ID_s1_CORRECT_TITLE'>
+		<text><![CDATA[<span class="font10px"><b>Correcto  </b></span>]]></text>
+	</component>
+
+	<component id='ID_s1_CORRECT_BODY'>
+		<text><![CDATA[<span class="font10px">Clasificó correctamente los tipos de ruta para cada red.</span>]]></text>
+	</component>
+
+	<component id='ID_s1_INCORRECT_TITLE'>
+		<text><![CDATA[<span class="font10px"><b>Incorrecto  </b></span>]]></text>
+	</component>
+
+	<component id='ID_s1_INCORRECT_BODY'>
+		<text><![CDATA[<span class="font10px">No clasificó correctamente los tipos de ruta para cada red. Haga clic en Restablecer y vuelva a intentarlo.</span>]]></text>
+	</component>
+
+	<component id='ID_CHECK'>
+		<text><![CDATA[<b>Verificar  </b>]]></text>
+	</component>
+
+	<component id='ID_RESET'>
+		<text><![CDATA[<b>Restablecer  </b>]]></text>
+	</component>
+
+	<component id='ID_txt01'>
+		<text><![CDATA[<b>Red especificada  </b>]]></text>
+	</component> 
+	
+	<component id='ID_txt02'>
+		<text><![CDATA[<b>Tipo de ruta  </b>]]></text>
+	</component> 
+	
+</textcomponents>

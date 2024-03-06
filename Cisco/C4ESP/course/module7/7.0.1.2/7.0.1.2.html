@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.0.1.2 Actividad de clase: Resumen sobre las VPN</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.0.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Introducción</h1>
+        <h2>Introducción</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Resumen sobre las VPN</b>
+</p>
+<p></p>
+<p>Una pequeña o mediana empresa crece y necesita que los clientes, los trabajadores a distancia y los empleados que se conectan por cable y de forma inalámbrica puedan acceder a la red principal desde cualquier ubicación. Como administrador de red de la empresa, usted decidió implementar las VPN para aportar seguridad, facilitar el acceso a la red y ahorrar costos.</p>
+<p></p>
+<p>Su trabajo es asegurar que todos los administradores de red comiencen el proceso de planificación de VPN con el mismo conjunto de conocimientos.</p>
+<p></p>
+<p>Se deben investigar cuatro áreas informativas básicas de VPN, y dichas áreas se deben presentar al equipo de administración de la red:</p>
+<p>
+<ul>
+<li>Definición concisa de las VPN</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Algunos datos generales sobre las VPN</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>IPsec como opción de seguridad de VPN</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Formas en las que las VPN usan el tunneling</li>
+</ul>
+</p>
+<p></p>
+<p>
+<a href="../../files/7.0.1.2%20VPNs%20at%20a%20Glance%20Instructions.pdf" target="_blank">Actividad de clase: Resumen sobre las VPN</a>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

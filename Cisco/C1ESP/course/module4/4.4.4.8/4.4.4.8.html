@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.4.4.8 Trama inalámbrica 802.11</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.4.4.8_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Control de acceso al medio</h1>
+        <h2>Trama de enlace de datos</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Inalámbrico 802.11</b>
+</p>
+<p></p>
+<p>El estándar IEEE 802.11 utiliza el mismo LLC de 802.2 y el mismo esquema de direccionamiento de 48 bits que las demás LAN 802. Sin embargo, existen muchas diferencias en la subcapa MAC y en la capa física. En un entorno inalámbrico, el entorno requiere consideraciones especiales. No hay una conectividad física definible; por lo tanto, factores externos pueden interferir con la transferencia de datos y es difícil controlar el acceso. Para vencer estos desafíos, los estándares inalámbricos tienen controles adicionales.</p>
+<p></p>
+<p>Comúnmente, el estándar IEEE 802.11 se denomina “Wi-Fi”. Es un sistema de contienda que utiliza un proceso CSMA/CA de acceso al medio. CSMA/CA especifica un procedimiento postergación aleatoria para todos los nodos que están esperando transmitir. La oportunidad más probable para la contención de medio es el momento en que el medio está disponible. Hacer el back off de los nodos para un período aleatorio reduce en gran medida la probabilidad de colisión.</p>
+<p></p>
+<p>Las redes 802.11 también utilizan acuses de recibo de enlace de datos para confirmar que una trama se recibió correctamente. Si la estación transmisora no detecta la trama de reconocimiento, ya sea porque la trama de datos original o el reconocimiento no se recibieron intactos, se retransmite la trama. Este reconocimiento explícito supera la interferencia y otros problemas relacionados con la radio.</p>
+<p></p>
+<p>Otros servicios admitidos por la 802.11 son la autenticación, asociación (conectividad a un dispositivo inalámbrico) y privacidad (encriptación). </p>
+<p></p>
+<p>Como se muestra en la ilustración, las tramas 802.11 incluyen los siguientes campos:</p>
+<p>
+<ul>
+<li>
+<b>Campo Versión de protocolo:</b> la versión de la trama 802.11 en uso.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Campos Tipo y Subtipo:</b> identifican una de las tres funciones y subfunciones de la trama (control, datos y administración).</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Campo A DS:</b> se establece en 1 para las tramas de datos destinadas al sistema de distribución (dispositivos en la estructura inalámbrica).</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Campo Desde DS:</b> se establece en 1 para las tramas de datos que salen del sistema de distribución.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Campo Más fragmentos:</b> se establece en 1 para las tramas que tienen otro fragmento. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Campo Reintentar:</b> se establece en 1 si la trama es una retransmisión de una trama anterior.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Campo Administración de energía:</b> se establece en 1 para indicar que un nodo estará en el modo de ahorro de energía.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Campo Más datos:</b> se establece en 1 para indicarle a un nodo en el modo de ahorro de energía que se almacenan más tramas en búfer para ese nodo.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Campo Privacidad equivalente por cable (WEP):</b> se establece en 1 si la trama contiene información encriptada mediante WEP para propósitos de seguridad</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Campo Orden:</b> se establece en 1 en una trama de tipo de datos que utiliza la clase de servicio Estrictamente ordenada (no requiere reordenamiento).</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Campo Duración/ID:</b> según el tipo de trama, representa el tiempo que se requiere en microsegundos para transmitir la trama o una identidad de asociación (AID) para la estación que transmitió la trama.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Campo Dirección de destino (DA):</b> contiene la dirección MAC del nodo de destino final en la red.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Campo Dirección de origen (SA):</b> contiene la dirección MAC del nodo que inició la trama.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Campo Dirección del receptor (RA):</b> contiene la dirección MAC que identifica al dispositivo inalámbrico que es el destinatario inmediato de la trama.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Campo Número de fragmento:</b> indica el número de cada fragmento de la trama.<b></b></li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Campo Número de secuencia:</b> indica el número de secuencia asignado a la trama. Las tramas retransmitidas se identifican con números de secuencia duplicados.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Campo Dirección del transmisor (TA):</b> contiene la dirección MAC que identifica al dispositivo inalámbrico que transmitió la trama.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Campo Cuerpo de la trama:</b> contiene la información que se transporta. En las tramas de datos; generalmente se trata de un paquete IP.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Campo FCS:</b> contiene una comprobación de redundancia cíclica (CRC) de 32 bits de la trama.</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

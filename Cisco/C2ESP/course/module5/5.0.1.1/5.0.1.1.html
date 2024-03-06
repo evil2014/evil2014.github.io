@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.0.1.1 Introducción</title>
+    <!--  -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.0.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Enrutamiento entre VLAN</h1>
+        <h2>Introducción</h2>
+      </div>
+      <div id="content">
+<p>Hemos visto que el uso de redes VLAN para segmentar una red conmutada proporciona mayor rendimiento, seguridad y capacidad de administración. Se utilizan enlaces troncales para transportar información de varias VLAN entre dispositivos. Sin embargo, debido a que estas VLAN segmentan la red, es necesario un proceso de capa 3 para permitir que el tráfico pase de un segmento de red a otro.</p>
+<p></p>
+<p>Este proceso de routing de capa 3 puede implementarse utilizando un router o una interfaz de switch de capa 3. El uso de un dispositivo de capa 3 proporciona un método para controlar el flujo de tráfico entre segmentos de red, incluidos los segmentos de red creados por las VLAN.</p>
+<p></p>
+<p>En este capítulo, se analizan los métodos utilizados para la implementación del routing entre VLAN. Se incluye configuraciones para el uso de un router y un switch de capa 3 y también se describen los problemas que se encuentran al implementar routing entre VLAN y técnicas estándar de resolución de problemas.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

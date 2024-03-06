@@ -1,0 +1,101 @@
+﻿<textcomponents>
+
+<component id="ID_s1_txt01">
+<text><![CDATA[<b>Actividad: Funciones de puerto RSTP 802.1D</b><br>Arrastre los nombres de las funciones de puerto RSTP hasta los puertos de switch correspondientes en la topología. Los nombres de función de los puertos se pueden utilizar más de una vez.]]></text>
+</component>
+
+<component id="ID_s1_txt02">
+<text><![CDATA[Puerto raíz]]></text>
+</component>
+<component id="ID_s1_txt03">
+<text><![CDATA[Puerto designado]]></text>
+</component>
+<component id="ID_s1_txt04">
+<text><![CDATA[Puerto alternativo]]></text>
+</component>
+
+<component id="ID_s1_txt06">
+<text><![CDATA[<b>Nombres de las funciones de puerto RSTP 802.1D</b>]]></text>
+</component>
+<component id='ID_s1_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id="ID_s1_drag01">
+<text><![CDATA[RP]]></text>
+</component>
+
+<component id="ID_s1_drag02">
+<text><![CDATA[DP]]></text>
+</component>
+
+<component id="ID_s1_drag03">
+<text><![CDATA[AP]]></text>
+</component>
+
+<component id="ID_s1_drag04">
+<text><![CDATA[PE]]></text>
+</component>
+
+<component id='ID_s1_CORRECT_BODY'>
+	<text><![CDATA[Identificó correctamente los nombres de las funciones de puerto RSTP para cada puerto de switch.]]></text>
+</component>
+
+
+<component id='ID_s1_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_BODY'>
+	<text><![CDATA[No identificó correctamente los nombres de las funciones de puerto RSTP para cada puerto de switch. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_s1_CHECK'>
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id='ID_s1_RESET'>
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component>
+
+
+<component id="ID_s1_table01">
+<text><![CDATA[<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4'>
+<tr class="liner">
+<td colspan='3' bgcolor='#0E6360' class="mtable_top"><font size='1' color='#434321'><span style="color:#DAE17A">.</span></font></td>
+</tr>
+
+<tr>
+<td bgcolor='#077A77' valign="top"><font color='#ffffff'><b></b></font></td>
+<td bgcolor='#077A77' valign="top"><font color='#ffffff'><b>Prioridad</b></font></td>
+<td bgcolor='#077A77' valign="top"><font color='#ffffff'><b>Dirección MAC</b></font></td> 
+</tr>
+
+<tr>
+<td bgcolor='#eff8f7' valign="top"><font color='#393536'>S1</font></td>
+<td bgcolor='#eff8f7' valign="top"><font color='#393536'>32769</font></td>
+<td bgcolor='#eff8f7' valign="top"><font color='#393536'>000A00111111</font></td>
+</tr>
+
+<tr>
+<td bgcolor='#ffffff' valign="top"><font color='#393536'>S2</font></td>
+<td  bgcolor='#ffffff' valign="top"><font color='#393536'>24577</font></td>
+<td  bgcolor='#ffffff' valign="top"><font color='#393536'>000A00222222</font></td>
+</tr>
+
+<tr>
+<td bgcolor='#eff8f7' valign="top"><font color='#393536'>S3</font></td>
+<td  bgcolor='#eff8f7' valign="top"><font color='#393536'>32769</font></td>
+<td  bgcolor='#eff8f7' valign="top"><font color='#393536'>000A00333333</font></td>
+</tr>
+
+<tr>
+<td bgcolor='#ffffff' valign="top"><font color='#393536'>S4</font></td>
+<td  bgcolor='#ffffff' valign="top"><font color='#393536'>32769</font></td>
+<td  bgcolor='#ffffff' valign="top"><font color='#393536'>000A00444444</font></td>
+</tr>
+</table>]]></text> 
+</component>
+
+
+</textcomponents>

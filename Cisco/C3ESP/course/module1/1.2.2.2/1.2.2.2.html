@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.2.2.2 Routers Cisco</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.2.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Selección de dispositivos de red</h1>
+        <h2>Hardware de routers</h2>
+      </div>
+      <div id="content">
+<p>A medida que crece la red, es importante seleccionar los routers adecuados para cumplir con los requisitos. Como se muestra en la ilustración, hay tres categorías de routers:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Routers de sucursal:</b> los routers de sucursal optimizan los servicios de sucursal en una única plataforma, al tiempo que proporcionan una experiencia de aplicación óptima en todas las infraestructuras de sucursal y de WAN. Maximizar la disponibilidad del servicio en la sucursal requiere que la red esté diseñada para estar activa todos los días, las 24 horas (los 365 días del año). Las redes de sucursal de alta disponibilidad deben asegurar una recuperación rápida de las fallas típicas y, al mismo tiempo, minimizar o eliminar el impacto en el servicio y proporcionar una configuración y una administración de la red sencillas.</li>
+</ul>
+</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Routers de perímetro de la red:</b>
+<b></b>los routers de perímetro de la red permiten que dicho perímetro preste servicios confiables de alto rendimiento y de alta seguridad que unen las redes de campus, de centro de datos y de sucursal. Los clientes esperan una experiencia de medios de alta calidad y más tipos de contenido que nunca. Los clientes buscan interactividad, personalización, movilidad y control para todo ese contenido. También quieren poder acceder al contenido en cualquier momento y lugar de su elección, y con cualquier dispositivo, ya sea desde su hogar, desde la oficina o cuando van de un lado a otro. Los routers de perímetro de la red deben proporcionar una calidad de servicio mejorada y capacidades de video y de tecnología móvil ininterrumpidas. </li>
+</ul>
+</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Routers de proveedores de servicios:</b> estos routers diferencian la cartera de servicios y aumentan las ganancias por medio de la provisión de soluciones de extremo a extremo escalables y servicios que reconocen a los suscriptores. Los operadores deben optimizar las operaciones, reducir los costos y mejorar la escalabilidad y la flexibilidad para poder proporcionar experiencias de Internet de última generación en todos los dispositivos y las ubicaciones. Estos sistemas están diseñados para simplificar y mejorar el funcionamiento y la implementación de las redes de prestación de servicios. </li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

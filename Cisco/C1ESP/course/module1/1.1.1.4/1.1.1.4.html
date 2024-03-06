@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.1.1.4 Las redes respaldan la forma en que aprendemos</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.1.1.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Conectados globalmente</h1>
+        <h2>Las redes en la actualidad</h2>
+      </div>
+      <div id="content">
+<p>Las redes e Internet cambiaron todo lo que hacemos, desde la forma en que aprendemos hasta la forma en que nos comunicamos, cómo trabajamos e, incluso, cómo jugamos.</p>
+<p></p>
+<p>
+<b>Cambio en la forma en que aprendemos</b>
+</p>
+<p>Comunicación, colaboración y compromiso son los componentes básicos de la educación. Las instituciones se esfuerzan continuamente para mejorar estos procesos y maximizar la diseminación del conocimiento. Los métodos de capacitación tradicionales proporcionan principalmente dos fuentes de conocimientos de las cuales los estudiantes pueden obtener información: el libro de texto y el instructor. Estas dos fuentes son limitadas, tanto en el formato como en la temporización de la presentación. </p>
+<p></p>
+<p>Las redes cambiaron la forma en que aprendemos. Redes confiables y sólidas respaldan y enriquecen las experiencias de aprendizaje de los estudiantes. Mediante las redes, se ofrece material educativo en una amplia variedad de formatos, que incluye actividades, evaluaciones y comentarios. Como se muestra en la figura 1, en la actualidad las redes tienen las siguientes características:</p>
+<p>
+<ul>
+<li>Admiten la creación de aulas virtuales.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Proporcionan video a petición.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Dan lugar a espacios de aprendizaje cooperativos.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Permiten el aprendizaje móvil.</li>
+</ul>
+</p>
+<p></p>
+<p>El acceso a la enseñanza de alta calidad ya no está restringido para los estudiantes que viven en las inmediaciones de donde dicha enseñanza se imparte. El aprendizaje a distancia en línea eliminó las barreras geográficas y mejoró la oportunidad de los estudiantes. Ahora, los cursos en línea (e-learning) se pueden dictar a través de una red. Estos cursos pueden contener datos (texto, enlaces), voz y video disponibles para los estudiantes en cualquier momento y desde cualquier lugar. Los foros o grupos de discusión permiten al estudiante colaborar con el instructor, con otros estudiantes de la clase e incluso con estudiantes de todo el mundo. Los cursos combinados pueden mezclar las clases dirigidas por instructores y software educativo para proporcionar lo mejor de ambos estilos. En la figura 2, se muestra un video sobre las formas en las que se expandió el aula.</p>
+<p></p>
+<p>Además de los beneficios para el estudiante, las redes han mejorado la gestión y la administración de los cursos también. Algunas de estas funciones en línea incluyen la inscripción de alumnos, la entrega de evaluaciones y el seguimiento del progreso.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

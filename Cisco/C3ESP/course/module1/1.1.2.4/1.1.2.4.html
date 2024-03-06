@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.1.2.4 Expansión de la capa de acceso</title>
+    <!--  -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.1.2.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Implementación de un diseño de red</h1>
+        <h2>Expansión de la red</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Implementación de la conectividad inalámbrica</b>
+</p>
+<p></p>
+<p>La red debe estar diseñada para poder expandir el acceso a la red para las personas y los dispositivos, según sea necesario. Para la extensión de la conectividad de la capa de acceso, cada vez es más importante la conectividad inalámbrica. La provisión de conectividad inalámbrica proporciona muchas ventajas, como un aumento de la flexibilidad, una reducción de costos y la capacidad de crecer y adaptarse a los requisitos cambiantes de las redes y las empresas. </p>
+<p></p>
+<p>Para comunicarse de forma inalámbrica, los terminales requieren una NIC inalámbrica que incorpore un transmisor o un receptor de radio y el controlador de software necesario para que funcione. Como se muestra en la ilustración, también se necesita un router inalámbrico o un punto de acceso (AP) inalámbrico para que los usuarios puedan conectarse. </p>
+<p></p>
+<p>Existen varias consideraciones que se deben tener en cuenta al implementar una red inalámbrica, como los tipos de dispositivos inalámbricos que se debe utilizar y los requisitos de cobertura inalámbrica, así como las consideraciones de interferencia y de seguridad. </p>
+<p></p>
+<p>En el capítulo “LAN inalámbricas”, se detallan el funcionamiento y la implementación de la tecnología inalámbrica.</p>
+<p></p>
+<p></p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

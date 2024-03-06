@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>11.2.2.4 Verificación de NAT dinámica</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_11.2.2.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de NAT</h1>
+        <h2>Configuración de NAT dinámica</h2>
+      </div>
+      <div id="content">
+<p>El resultado del comando <span class="cmd"><b>show ip nat translations</b></span> que aparece en la figura 1 muestra los detalles de las dos asignaciones de NAT anteriores. El comando muestra todas las traducciones estáticas que se configuraron y todas las traducciones dinámicas que se crearon a causa del tráfico. </p>
+<p></p>
+<p>Si se agrega la palabra clave <span class="cmd"><b>verbose</b></span>, se muestra información adicional acerca de cada traducción, incluido el tiempo transcurrido desde que se creó y se utilizó la entrada. </p>
+<p></p>
+<p>De manera predeterminada, a las entradas de traducción se les agota el tiempo de espera después de 24 horas, a menos que se vuelvan a configurar los temporizadores con el comando <span class="cmd"><b>ip nat translation timeout </b></span><span class="cmd"><i>segundos-tiempo-espera</i></span> en el modo de configuración global.</p>
+<p></p>
+<p>Para borrar las entradas dinámicas antes de que se agote el tiempo de espera, utilice el comando <span class="cmd"><b>clear ip nat translation</b></span> en el modo de configuración global (figura 2). Es útil borrar las entradas dinámicas al probar la configuración NAT. Como se muestra en la tabla, este comando se puede utilizar con palabras clave y variables para controlar qué entradas se deben borrar. Se pueden borrar entradas específicas para evitar interrumpir las sesiones activas. Utilice el comando de configuración global <span class="cmd"><b>clear ip nat translation *</b></span> para borrar todas las traducciones de la tabla. </p>
+<p></p>
+<p>
+<b>Nota:</b> solo se borran de la tabla las traducciones dinámicas. Las traducciones estáticas no pueden borrarse de la tabla de traducción.</p>
+<p></p>
+<p>En la figura 3, el comando <span class="cmd"><b>show ip nat statistics</b></span> muestra la información sobre la cantidad total de traducciones activas, los parámetros de configuración NAT, la cantidad de direcciones en el conjunto y la cantidad de direcciones que se asignaron.</p>
+<p></p>
+<p>También puede utilizar el comando <span class="cmd"><b>show running-config</b></span> y buscar los comandos de NAT, ACL, interfaz o conjunto con los valores requeridos. Examínelos detenidamente y corrija cualquier error que detecte.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

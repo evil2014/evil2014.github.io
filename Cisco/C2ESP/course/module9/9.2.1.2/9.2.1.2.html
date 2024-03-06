@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.2.1.2 Configurar una ACL estándar</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.2.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>ACL de IPv4 estándar </h1>
+        <h2>Configuración de ACL de IPv4 estándar</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Lógica de las ACL estándar</b>
+</p>
+<p></p>
+<p>En la ilustración, se revisa la dirección de origen de los paquetes que ingresan al router a través de la interfaz G0/0 según las siguientes entradas:</p>
+<p></p>
+<p>
+<span class="cmd">
+<b>access-list 2 deny 192.168.10.10</b>
+</span>
+</p>
+<p>
+<span class="cmd">
+<b>access-list 2 permit 192.168.10.0 0.0.0.255</b>
+</span>
+</p>
+<p>
+<span class="cmd">
+<b>access-list 2 deny 192.168.0.0 0.0.255.255</b>
+</span>
+</p>
+<p>
+<span class="cmd">
+<b>access-list 2 permit 192.0.0.0 0.255.255.255</b>
+</span>
+</p>
+<p></p>
+<p>Si se permiten los paquetes, se enrutan a través del router hacia una interfaz de salida. Si se deniegan los paquetes, se descartan en la interfaz de entrada. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

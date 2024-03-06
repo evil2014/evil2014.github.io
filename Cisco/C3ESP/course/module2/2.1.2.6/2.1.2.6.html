@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.1.2.6 Propagación y proceso de BPDU</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.1.2.6_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Conceptos de árbol de expansión</h1>
+        <h2>Funcionamiento de STP</h2>
+      </div>
+      <div id="content">
+<p>En principio, cada switch en el dominio de difusión supone que es el puente raíz para una instancia de árbol de expansión, por lo que las tramas BPDU que se envían contienen el BID del switch local como ID de raíz. De manera predeterminada, las tramas BPDU se envían cada dos segundos después de que arranca el switch; es decir, el valor predeterminado del temporizador de saludo especificado en la trama BPDU es dos segundos. Cada switch mantiene información local acerca de su propio BID, el ID de raíz y el costo de la ruta hacia la raíz.</p>
+<p></p>
+<p>Cuando los switches adyacentes reciben una trama BPDU, comparan la ID de raíz de la trama BPDU con la ID de raíz local. Si la ID de raíz en la BPDU es inferior a la local, el switch actualiza la ID de raíz local y la ID en sus mensajes de BPDU. Estos mensajes indican el nuevo puente raíz en la red. La distancia al puente raíz también la indica la actualización del costo de la ruta. Por ejemplo, si se recibió la BPDU en un puerto de switch Fast Ethernet, el costo de la ruta aumentaría 19 números. Si la ID de raíz local es inferior a la ID de raíz que se recibe en la trama BPDU, se descarta la trama.</p>
+<p></p>
+<p>Después de que se ha actualizado un ID de ruta para identificar un nuevo puente raíz, todas las tramas de BPDU subsiguientes enviadas por ese switch contienen el ID de raíz nuevo y el costo de la ruta actualizado. De esta manera, todos los otros switches adyacentes pueden ver el menor ID de raíz identificado en todo momento. A medida que las tramas de BPDU se transmiten entre otros switches adyacentes, el costo de la ruta se actualiza en forma constante para indicar el costo de ruta total hacia el puente raíz. Todos los switches del árbol de expansión utilizan sus costos de ruta para identificar la mejor ruta posible al puente raíz.</p>
+<p>A continuación se resume el proceso BPDU:</p>
+<p></p>
+<p>
+<b>Nota:</b> la prioridad es el factor decisivo inicial cuando se elige un puente raíz. Si las prioridades de todos los switches son las mismas, el dispositivo con la dirección MAC más baja se convierte en el puente raíz.</p>
+<p></p>
+<p>1. En principio, todos los switches se identifican como puente raíz. El S2 reenvía tramas BPDU por todos los puertos de switch. (figura 1).</p>
+<p></p>
+<p>2. Cuando el S3 recibe una BPDU del switch S2, el S3 compara su ID de raíz con la trama BPDU que recibió. Las prioridades son iguales, de manera que el switch debe examinar la parte de dirección MAC para determinar cuál es la de menor valor. Debido a que el S2 posee un valor de dirección MAC inferior, el S3 actualiza su ID de raíz con la ID de raíz del S2. En ese momento, el S3 considera que el S2 es el puente raíz. (figura 2).</p>
+<p></p>
+<p>3. Cuando el S1 compara su ID de raíz con la que recibió en la trama BPDU, identifica la ID de raíz local como el valor más bajo y descarta la BPDU del S2. (figura 3).</p>
+<p></p>
+<p>4. Cuando el S3 envía sus tramas BPDU, la ID de raíz incluida en la trama BPDU es la del S2. (figura 4).</p>
+<p></p>
+<p>5. Cuando S2 recibe la trama de BPDU, la descarta después de verificar que el ID de raíz de la BPDU coincide con su ID de raíz local. (figura 5)</p>
+<p></p>
+<p>6. Debido a que S1 posee un valor de prioridad menor en su ID de raíz, descarta la trama de BPDU recibida de S3. (figura 6)</p>
+<p></p>
+<p>7. S1 envía sus tramas de BPDU. (figura 7)</p>
+<p></p>
+<p>8. El S3 identifica la ID de raíz en la trama BPDU como una de menor valor y, por lo tanto, actualiza sus valores de ID de raíz para indicar que el S1 ahora es el puente raíz (figura 8).</p>
+<p></p>
+<p>9. El S2 identifica la ID de raíz en la trama BPDU como una de menor valor y, por lo tanto, actualiza sus valores de ID de raíz para indicar que el S1 ahora es el puente raíz (figura 9).</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

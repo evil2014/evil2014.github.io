@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.1.2.3 Estándares de capa física</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.1.2.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolos de capa física</h1>
+        <h2>Propósito de la capa física</h2>
+      </div>
+      <div id="content">
+<p>Los protocolos y las operaciones de las capas OSI superiores se llevan a cabo en softwares diseñado por ingenieros en software e informáticos. Por ejemplo, Internet Engineering Task Force (IETF) define los servicios y protocolos de la suite TCP/IP en las RFC, como se muestra en la figura 1. </p>
+<p></p>
+<p>La capa física consta de circuitos electrónicos, medios y conectores desarrollados por ingenieros. Por lo tanto, es necesario que las principales organizaciones especializadas en ingeniería eléctrica y en comunicaciones definan los estándares que rigen este hardware. </p>
+<p></p>
+<p>Existen muchos organismos internacionales y nacionales, organismos de regulación gubernamentales y compañías privadas que intervienen en el establecimiento y el mantenimiento de los estándares de la capa física. Por ejemplo, los siguientes organismos definen y rigen los estándares de hardware, medios, codificación y señalización de la capa física:</p>
+<p>
+<ul>
+<li>Organización Internacional para la Estandarización (ISO) </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Telecommunications Industry Association/Electronic Industries Association (TIA/EIA)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Unión Internacional de Telecomunicaciones (UIT) </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>American National Standards Institute (ANSI) </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Instituto de Ingenieros en Electricidad y Electrónica (IEEE)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Autoridades nacionales reguladoras de las telecomunicaciones, incluida la Federal Communication Commission (FCC) de los EE. UU. y el European Telecommunications Standards Institute (ETSI)</li>
+</ul>
+</p>
+<p></p>
+<p>Además de estos, a menudo existen grupos regionales de estandarización de cableado, como la Canadian Standards Association (CSA), el European Committee for Electrotechnical Standardization (CENELEC) y la Japanese Standards Association (JSA/JIS), los cuales desarrollan las especificaciones locales.</p>
+<p></p>
+<p>En la figura 2, se enumeran los principales colaboradores y algunos de sus estándares de capa física más importantes.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

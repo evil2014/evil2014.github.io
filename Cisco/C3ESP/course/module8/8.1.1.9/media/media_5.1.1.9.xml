@@ -1,0 +1,253 @@
+﻿<textcomponents> <!--screen1-->
+<component id="ID_s1_inst">
+<text><![CDATA[<b>Actividad: Determinar la sumarización con clase (situación&nbsp;1)</b><br/><br/>El router&nbsp;1 (R1) envía anuncios de rutas al router&nbsp;2 (R2). Arrastre las redes y máscaras que anuncia el R1 hasta la tabla de topología del R2. No se utilizan todos los elementos. Haga clic en el botón&nbsp;2 para continuar.]]></text>
+</component>
+
+<component id="ID_s1_txt01">
+  <text><![CDATA[router eigrp 100<br/>network 172.16.0.0<br/>network 192.168.1.0<br/>auto-summary]]></text> 
+  </component>
+<component id="ID_s1_txt02">
+  <text><![CDATA[router eigrp 100<br/>network 192.168.1.0<br/>auto-summary]]></text> 
+  </component>
+<component id="ID_s1_txt03">
+  <text><![CDATA[router eigrp 100<br/>network 172.16.0.0<br/>network 192.168.1.0<br/>auto-summary]]></text> 
+</component>
+<component id="ID_s1_txt04">
+  <text><![CDATA[Publicación del R1]]></text> 
+</component>
+<component id="ID_s1_txt05">
+  <text><![CDATA[Red]]></text> 
+</component>
+<component id="ID_s1_txt06">
+  <text><![CDATA[Máscara]]></text> 
+</component>
+
+
+<component id="ID_s1_drag01">
+  <text><![CDATA[192.168.1.0]]></text> 
+</component>
+<component id="ID_s1_drag02">
+  <text><![CDATA[/26]]></text> 
+</component>
+
+<component id="ID_s1_drag03">
+  <text><![CDATA[172.16.0.0]]></text> 
+</component>
+
+<component id="ID_s1_drag04">
+  <text><![CDATA[/30]]></text> 
+</component>
+
+<component id="ID_s1_drag05">
+  <text><![CDATA[192.168.1.4]]></text> 
+</component>
+
+<component id="ID_s1_drag06">
+  <text><![CDATA[/8]]></text> 
+</component>
+
+<component id="ID_s1_drag07">
+  <text><![CDATA[/24]]></text> 
+</component>
+
+<component id="ID_s1_drag08">
+  <text><![CDATA[/16]]></text> 
+</component>
+
+<component id="ID_s1_drag09">
+  <text><![CDATA[172.16.2.0]]></text> 
+</component>
+
+<component id='ID_s1_CHECK'>
+		<text><![CDATA[<b>Verificar</b>]]></text>
+	</component>
+
+	<component id='ID_s1_RESET'>
+		<text><![CDATA[<b>Restablecer</b>]]></text>
+	</component>
+
+	<component id='ID_s1_CORRECT_TITLE'>
+		<text><![CDATA[<b>Correcto</b>]]></text>
+	</component>
+
+	<component id='ID_s1_CORRECT_BODY'>
+		<text><![CDATA[Identificó correctamente las redes y las máscaras correspondientes. Haga clic en el botón&nbsp;2 para continuar.]]></text>
+	</component>
+
+	<component id='ID_s1_INCORRECT_TITLE'>
+		<text><![CDATA[<b>Incorrecto</b>]]></text>
+	</component>
+
+	<component id='ID_s1_INCORRECT_BODY'>
+		<text><![CDATA[No identificó correctamente las redes y las máscaras correspondientes. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+	</component> <!--screen2-->
+<component id="ID_s2_inst">
+<text><![CDATA[<b>Actividad: Determinar la sumarización con clase (situación&nbsp;2)</b><br/><br/>El router&nbsp;3 (R3) envía anuncios de rutas al router&nbsp;2 (R2). Arrastre las redes y máscaras que anuncia el R3 hasta la tabla de topología del R2. No se utilizan todos los elementos. Haga clic en el botón&nbsp;3 para continuar.]]></text>
+</component>
+
+<component id="ID_s2_drag01">
+  <text><![CDATA[192.168.1.0]]></text> 
+</component>
+<component id="ID_s2_drag02">
+  <text><![CDATA[/26]]></text> 
+</component>
+
+<component id="ID_s2_drag03">
+  <text><![CDATA[172.16.0.0]]></text> 
+</component>
+
+<component id="ID_s2_drag04">
+  <text><![CDATA[/30]]></text> 
+</component>
+
+<component id="ID_s2_drag05">
+  <text><![CDATA[192.168.1.4]]></text> 
+</component>
+
+<component id="ID_s2_drag06">
+  <text><![CDATA[/8]]></text> 
+</component>
+
+<component id="ID_s2_drag07">
+  <text><![CDATA[/24]]></text> 
+</component>
+
+<component id="ID_s2_drag08">
+  <text><![CDATA[/16]]></text> 
+</component>
+
+<component id="ID_s2_drag09">
+  <text><![CDATA[172.16.2.0]]></text> 
+</component>
+
+<component id='ID_s2_CHECK'>
+		<text><![CDATA[<b>Verificar</b>]]></text>
+	</component>
+
+	<component id='ID_s2_RESET'>
+		<text><![CDATA[<b>Restablecer</b>]]></text>
+	</component>
+
+	<component id='ID_s2_CORRECT_TITLE'>
+		<text><![CDATA[<b>Correcto</b>]]></text>
+	</component>
+
+	<component id='ID_s2_CORRECT_BODY'>
+		<text><![CDATA[Identificó correctamente las redes y las máscaras correspondientes. Haga clic en el botón&nbsp;3 para continuar.]]></text>
+	</component>
+
+	<component id='ID_s2_INCORRECT_TITLE'>
+		<text><![CDATA[<b>Incorrecto</b>]]></text>
+	</component>
+
+	<component id='ID_s2_INCORRECT_BODY'>
+		<text><![CDATA[No identificó correctamente las redes y las máscaras correspondientes. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+	</component>
+
+
+<component id="ID_s2_txt01">
+  <text><![CDATA[router eigrp 100<br/>network 172.16.0.0<br/>network 192.168.1.0<br/>no auto-summary]]></text> 
+  </component>
+<component id="ID_s2_txt02">
+  <text><![CDATA[router eigrp 100<br/>network 192.168.1.0<br/>no auto-summary<br/>]]></text> 
+  </component>
+<component id="ID_s2_txt03">
+  <text><![CDATA[router eigrp 100<br/>network 172.16.0.0<br/>network 192.168.1.0<br/>no auto-summary]]></text> 
+</component>
+<component id="ID_s2_txt04">
+  <text><![CDATA[Anuncio del R3]]></text> 
+</component>
+<component id="ID_s2_txt05">
+  <text><![CDATA[Red]]></text> 
+</component>
+<component id="ID_s2_txt06">
+  <text><![CDATA[Máscara]]></text> 
+</component> <!--screen3-->
+
+<component id="ID_s3_inst">
+<text><![CDATA[<b>Actividad: Determinar la sumarización con clase (situación&nbsp;3)</b><br/><br/>El router&nbsp;1 (R1) envía anuncios de rutas al router&nbsp;2 (R2). Arrastre las redes y máscaras que anuncia el R1 hasta la tabla de topología del R2. No se utilizan todos los elementos.]]></text>
+</component>
+
+
+<component id="ID_s3_drag01">
+  <text><![CDATA[172.16.1.128]]></text> 
+</component>
+<component id="ID_s3_drag02">
+  <text><![CDATA[/26]]></text> 
+</component>
+
+<component id="ID_s3_drag03">
+  <text><![CDATA[172.16.1.196]]></text> 
+</component>
+
+<component id="ID_s3_drag04">
+  <text><![CDATA[/30]]></text> 
+</component>
+
+<component id="ID_s3_drag05">
+  <text><![CDATA[172.16.1.64]]></text> 
+</component>
+
+<component id="ID_s3_drag06">
+  <text><![CDATA[172.16.0.0]]></text> 
+</component>
+
+<component id="ID_s3_drag07">
+  <text><![CDATA[/24]]></text> 
+</component>
+
+<component id="ID_s3_drag08">
+  <text><![CDATA[/16]]></text> 
+</component>
+
+<component id="ID_s3_drag09">
+  <text><![CDATA[172.16.1.192]]></text> 
+</component>
+
+<component id='ID_s3_CHECK'>
+		<text><![CDATA[<b>Verificar</b>]]></text>
+	</component>
+
+	<component id='ID_s3_RESET'>
+		<text><![CDATA[<b>Restablecer</b>]]></text>
+	</component>
+
+	<component id='ID_s3_CORRECT_TITLE'>
+		<text><![CDATA[<b>Correcto</b>]]></text>
+	</component>
+
+	<component id='ID_s3_CORRECT_BODY'>
+		<text><![CDATA[Identificó correctamente las redes y las máscaras correspondientes.]]></text>
+	</component>
+
+	<component id='ID_s3_INCORRECT_TITLE'>
+		<text><![CDATA[<b>Incorrecto</b>]]></text>
+	</component>
+
+	<component id='ID_s3_INCORRECT_BODY'>
+		<text><![CDATA[No identificó correctamente las redes y las máscaras correspondientes. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+	</component>
+
+
+<component id="ID_s3_txt01">
+  <text><![CDATA[router eigrp 101<br/>network 172.16.0.0<br/>auto-summary]]></text> 
+  </component>
+<component id="ID_s3_txt02">
+  <text><![CDATA[router eigrp 101<br/>network 172.16.0.0<br/>auto-summary]]></text> 
+  </component>
+<component id="ID_s3_txt03">
+  <text><![CDATA[router eigrp 101<br/>network 172.16.0.0<br/>auto-summary]]></text> 
+</component>
+<component id="ID_s3_txt04">
+  <text><![CDATA[Publicación del R1]]></text> 
+</component>
+<component id="ID_s3_txt05">
+  <text><![CDATA[Red]]></text> 
+</component>
+<component id="ID_s3_txt06">
+  <text><![CDATA[Máscara]]></text> 
+</component>
+
+
+
+</textcomponents>

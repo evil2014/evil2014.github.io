@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.2.2.6 Resolución de problemas de la capa de aplicación</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.2.2.6_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resolución de problemas de red</h1>
+        <h2>Síntomas y causas de la resolución de problemas de red</h2>
+      </div>
+      <div id="content">
+<p>La mayoría de los protocolos de la capa de aplicación proporcionan servicios para los usuarios. Los protocolos de la capa de aplicación normalmente se usan para la administración de red, la transferencia de archivos, los servicios de archivos distribuidos, la emulación de terminal y el correo electrónico. Con frecuencia, se agregan nuevos servicios para usuarios, como VPN y VoIP. </p>
+<p></p>
+<p>En la ilustración, se muestran los protocolos de capa de aplicación de TCP/IP más conocidos e implementados, que incluyen los siguientes: </p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>SSH/Telnet:</b> permite a los usuarios establecer conexiones de sesión de terminal a los hosts remotos.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>HTTP:</b> admite el intercambio de texto, gráficos, sonido, video y otros archivos multimedia en la Web.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>FTP:</b> realiza transferencias interactivas de archivos entre los hosts.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>TFTP:</b> realiza transferencias interactivas básicas de archivos, generalmente, entre hosts y dispositivos de red.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>SMTP:</b> admite servicios básicos de entrega de mensajes.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>POP:</b> conecta a los servidores de correo electrónico y descarga correo electrónico.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Protocolo simple de administración de red (SNMP):</b> recopila información de administración de los dispositivos de red.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>DNS:</b> asigna direcciones IP a los nombres asignados a los dispositivos de red. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Sistema de archivos de red (NFS):</b> habilita las computadoras para montar unidades en hosts remotos y operarlas como si fueran unidades locales. Desarrollado originalmente por Sun Microsystems, se combina con otros dos protocolos de capa de aplicación, la representación externa de datos (XDR) y la llamada a procedimiento remoto (RPC), para permitir un acceso transparente a los recursos de la red remota.</li>
+</ul>
+</p>
+<p></p>
+<p>Los tipos de síntomas y causas dependen de la aplicación real propiamente dicha. </p>
+<p></p>
+<p>Los problemas de la capa de aplicación impiden la provisión de servicios a los programas de aplicación. Cuando la capa física, la capa de enlace de datos, la capa de red y la capa de transporte funcionan, un problema en la capa de aplicación puede tener como consecuencia recursos inalcanzables o inutilizables. Es posible que, teniendo una conectividad de red plena, la aplicación simplemente no pueda proporcionar datos.</p>
+<p></p>
+<p>Otro tipo de problema en la capa de aplicación ocurre cuando las capas física, de enlace de datos, de red y de transporte funcionan, pero la transferencia de datos y las solicitudes de servicios de red de un único servicio o aplicación de red no cumplen con las expectativas normales de un usuario.</p>
+<p></p>
+<p>Un problema en la capa de aplicación puede hacer que los usuarios se quejen de que, al transferir datos o solicitar servicios de red, la red o la aplicación específica con la que trabajan está inactiva o más lenta de lo normal.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

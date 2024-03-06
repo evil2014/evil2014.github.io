@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.1.2.4 LSA de OSPF de tipo 3</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.1.2.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Funcionamiento de OSPF multiárea</h1>
+        <h2>Funcionamiento de LSA de OSPF multiárea</h2>
+      </div>
+      <div id="content">
+<p>Los ABR utilizan los LSA de tipo 3 para anunciar redes de otras áreas. Los ABR recopilan LSA de tipo 1 en la LSDB. Después de que converge un área de OSPF, el ABR crea un LSA de tipo 3 para cada red de OSPF reconocida. Por lo tanto, un ABR con varias rutas OSPF debe crear un LSA de tipo 3 para cada red. </p>
+<p></p>
+<p>Como se muestra en la figura, ABR1 y ABR2 propagan LSA de tipo 3 de un área a otras. Los ABR propagan LSA de tipo 3 hacia otras áreas. Durante una implementación importante de OSPF con muchas redes, la propagación de LSA de tipo 3 puede causar problemas de inundación significativos. Por esta razón, se recomienda con énfasis que se configure manualmente el resumen de ruta en el ABR.</p>
+<p></p>
+<p>La ID de estado de enlace se establece en el número de red, y también se anuncia la máscara.</p>
+<p></p>
+<p>La recepción de LSA de tipo 3 en su área no incita al router a ejecutar el algoritmo de SPF. Los routers que se anuncian en las LSA de tipo 3 se agregan a la tabla de routing del router o se eliminan de esta según corresponda, pero no se necesita el cálculo completo de SPF.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

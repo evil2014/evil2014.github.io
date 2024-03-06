@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.1.2.2 Requisitos de conectividad de trabajadores a distancia</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.1.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Trabajo a distancia</h1>
+        <h2>Requisitos comerciales para los servicios del trabajador a distancia</h2>
+      </div>
+      <div id="content">
+<p>Independientemente de la tecnología de conexión remota que se usa para conectarse a las redes de una organización, los trabajadores a distancia requieren tanto componentes de oficina doméstica como componentes corporativos: </p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Componentes de la oficina doméstica:</b> los componentes requeridos en la oficina doméstica son una computadora portátil o de escritorio, acceso por banda ancha (mediante cable, DSL o tecnología inalámbrica) y un software de router o cliente VPN instalado en la computadora. Los componentes adicionales pueden incluir un punto de acceso inalámbrico. Cuando viajan, los trabajadores a distancia necesitan una conexión a Internet y un cliente VPN para conectarse a la red corporativa mediante cualquier conexión de dial-up, de red o de banda ancha disponible.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Componentes corporativos:</b> los componentes corporativos son routers con capacidad para VPN, concentradores VPN, dispositivos de seguridad multifunción y dispositivos de autenticación y administración central para la agregación y la terminación resistentes de las conexiones VPN.</li>
+</ul>
+</p>
+<p></p>
+<p>Los componentes de VoIP y videoconferencia que admiten calidad de servicio (QoS) son componentes cada vez más esenciales del kit de herramientas de los trabajadores a distancia. QoS se refiere a la capacidad de una red para proporcionar un mejor servicio al tráfico de la red seleccionado, según los requisitos de las aplicaciones de voz y video. Para admitir VoIP y videoconferencia se deben actualizar los routers y dispositivos que admiten funcionalidad de QoS. </p>
+<p></p>
+<p>En la ilustración, se muestra un túnel VPN cifrado que conecta al trabajador a distancia a la red corporativa. Esta es la base principal de las conexiones seguras y confiables para los trabajadores a distancia. Una VPN es una red de datos privada que utiliza la infraestructura pública de telecomunicaciones. La seguridad de VPN mantiene la privacidad mediante un protocolo de tunneling y procedimientos de seguridad. En este curso, se presenta el protocolo de seguridad IP (IPsec) como el método preferido para construir túneles VPN seguros. A diferencia de los enfoques de seguridad anteriores que aplican seguridad en la capa de aplicación del modelo OSI, IPsec funciona en la capa de red, donde se produce el procesamiento de paquetes.</p>
+<p></p>
+<p>Como ya se mencionó, un túnel VPN seguro se utiliza a través de una infraestructura pública de telecomunicaciones. Esto significa que antes de iniciar un VPN, los usuarios domésticos primero deben poder conectarse a los servicios de Internet mediante alguna forma de acceso por banda ancha de alta velocidad. Las tres formas de acceso por banda ancha más comunes incluyen lo siguiente:</p>
+<p>
+<ul>
+<li>Cable</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>DSL</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Acceso inalámbrico de banda ancha</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

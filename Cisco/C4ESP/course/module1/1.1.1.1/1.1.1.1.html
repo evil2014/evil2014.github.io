@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.1.1.1 Requisitos de la red</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.1.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Descripción general del diseño de redes jerárquicas</h1>
+        <h2>Diseño de campus de red empresarial</h2>
+      </div>
+      <div id="content">
+<p>Cuando se analiza el diseño de red, es útil categorizar las redes según la cantidad de dispositivos que se atienden:</p>
+<p>
+<ul>
+<li>
+<b>Red pequeña:</b> proporciona servicios para hasta 200 dispositivos.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Red mediana:</b> proporciona servicios para 200 a 1000 dispositivos.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Red grande:</b> proporciona servicios para más de 1000 dispositivos. </li>
+</ul>
+</p>
+<p></p>
+<p>Los diseños de red varían según el tamaño y las necesidades de las organizaciones. Por ejemplo, las necesidades de infraestructura de red de una organización pequeña con menos dispositivos son menos complejas que la infraestructura de una organización grande con una cantidad importante de dispositivos y conexiones. </p>
+<p></p>
+<p>Existen muchas variables para tener en cuenta al diseñar una red. Tenga en cuenta el ejemplo de la ilustración. El diagrama de topología de alto nivel de ejemplo es para una red empresarial grande que consta de un campus principal que conecta sitios pequeños, medianos y grandes. </p>
+<p></p>
+<p>El diseño de red es un área en expansión y requiere mucho conocimiento y experiencia. El objetivo de esta sección es presentar conceptos de diseño de red ampliamente aceptados.</p>
+<p></p>
+<p>
+<b>Nota:</b> Cisco Certified Design Associate (CCDA®) es una certificación reconocida en el sector para los ingenieros y técnicos de diseño de red, así como para los ingenieros de soporte, que demuestran las habilidades requeridas para diseñar redes básicas de campus, de centro de datos, de seguridad, de voz e inalámbricas.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

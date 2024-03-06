@@ -1,0 +1,98 @@
+﻿<textcomponents>
+<component id="ID_s1_txt01">
+	<text><![CDATA[<b>Actividad: diagrama de topología, armar el árbol SPF  </b><br>Utilice la topología que se encuentra en esta página para armar el árbol SPF para las partes&nbsp;1 y 2. Haga clic en el botón 2 para continuar. Haga clic en el botón 1 cuando necesite consultar la topología.]]></text>
+
+</component>
+<component id="ID_s1_txt02">
+  <text><![CDATA[Estos botones indican<br><br>(Nota: los valores de costo que se indican <b>no </b> representan los <b>valores de costo reales  </b> de los enlaces en una topología de routing común).]]></text> 
+</component>
+  
+<component id="ID_s2_txt01">
+  <text><![CDATA[<b>Actividad: armar la base de datos de estado de enlace y el árbol SPF (parte&nbsp;1)  </b><br><br>Utilice la topología que aparece en la primera página de esta actividad. Todas las respuestas para esta situación deben basarse en el árbol SPF del R1 armado a partir de la topología. <br><br>Calcule el mejor costo para las rutas de destino que se indican. Arrastre la respuesta a la columna Costo. Haga clic en el botón&nbsp;3 para continuar.]]></text> 
+</component>
+
+<component id="ID_s2_txt02">
+  <text><![CDATA[<b>Escenario 1  </b>]]></text> 
+</component>
+
+<component id="ID_s2_txt03">
+  <text><![CDATA[<b>Red destino  </b>]]></text> 
+</component>
+
+<component id="ID_s2_txt04">
+  <text><![CDATA[<b>Costo  </b>]]></text>
+</component>
+
+<component id="ID_s2_CHECK">
+  <text><![CDATA[<b>Verificar  </b>]]></text>
+</component>
+
+<component id="ID_s2_RESET">
+  <text><![CDATA[<b>Restablecer  </b>]]></text>
+</component>
+
+<component id="ID_s2_CORRECT_TITLE">
+  <text><![CDATA[<b>Correcto  </b>]]></text>
+</component>
+
+<component id="ID_s2_CORRECT_BODY">
+  <text><![CDATA[Calculó correctamente el mejor costo para cada una de las rutas de destino. Haga clic en el botón&nbsp;3 para continuar.]]></text>
+</component>
+
+<component id="ID_s2_INCORRECT_TITLE">
+  <text><![CDATA[<b>Incorrecto  </b>]]></text>
+</component>
+
+<component id="ID_s2_INCORRECT_BODY">
+  <text><![CDATA[No calculó correctamente el mejor costo para cada una de las rutas de destino. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+
+
+
+
+
+
+
+
+<component id="ID_s3_txt01">
+  <text><![CDATA[<b>Actividad: armar la base de datos de estado de enlace y el árbol SPF (parte&nbsp;2)  </b><br><br>Utilice la topología que aparece en la primera página de esta actividad. Todas las respuestas para esta situación deben basarse en el árbol SPF del R2 armado a partir de la topología. <br><br>Calcule el mejor costo para las rutas de destino que se indican. Arrastre la respuesta a la columna Costo.]]></text> 
+</component>
+
+<component id="ID_s3_txt02">
+  <text><![CDATA[<b>Escenario 2  </b>]]></text> 
+</component>
+
+<component id="ID_s3_txt03">
+  <text><![CDATA[<b>Red destino  </b>]]></text> 
+</component>
+
+<component id="ID_s3_txt04">
+  <text><![CDATA[<b>Costo  </b>]]></text>
+</component>
+
+<component id="ID_s3_CHECK">
+  <text><![CDATA[<b>Verificar  </b>]]></text>
+</component>
+
+<component id="ID_s3_RESET">
+  <text><![CDATA[<b>Restablecer  </b>]]></text>
+</component>
+
+<component id="ID_s3_CORRECT_TITLE">
+  <text><![CDATA[<b>Correcto  </b>]]></text>
+</component>
+
+<component id="ID_s3_CORRECT_BODY">
+  <text><![CDATA[Calculó correctamente el mejor costo para cada una de las rutas de destino.]]></text>
+</component>
+
+<component id="ID_s3_INCORRECT_TITLE">
+  <text><![CDATA[<b>Incorrecto  </b>]]></text>
+</component>
+
+<component id="ID_s3_INCORRECT_BODY">
+  <text><![CDATA[No calculó correctamente el mejor costo para cada una de las rutas de destino. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+</textcomponents>

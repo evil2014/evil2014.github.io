@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.2.2.3 Parámetros de asociación </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.2.2.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Operaciones de LAN inalámbrica</h1>
+        <h2>Operación inalámbrica</h2>
+      </div>
+      <div id="content">
+<p>En la figura 1, se muestra la configuración inalámbrica en un router inalámbrico Linksys EA6500. Los parámetros inalámbricos configurables comunes incluyen lo siguiente:</p>
+<p>
+<ul>
+<li>
+<b>SSID:</b> un SSID es un identificador único que usan los clientes inalámbricos para distinguir entre varias redes inalámbricas en la misma área. El nombre del SSID aparece en la lista de redes inalámbricas disponibles en un cliente. Según la configuración de la red, varios AP en una red pueden compartir un SSID. En general, los nombres tienen una longitud de 2 a 32 caracteres.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Password (Contraseña):</b> el cliente inalámbrico la necesita para autenticarse con el AP. Las contraseñas a veces se denominan “clave de seguridad”. Evita que los intrusos y otros usuarios no deseados accedan a la red inalámbrica.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Network mode (Modo de red):</b> se refiere a los estándares de WLAN 802.11a/b/g/n/ac/ad. Los AP y los routers inalámbricos pueden funcionar en modo Mixed (Mixto), lo que implica que pueden usar varios estándares a la vez.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Security mode (Modo de seguridad):</b> se refiere a la configuración de los parámetros de seguridad, como WEP, WPA o WPA2. Habilite siempre el nivel más alto de seguridad que se admita.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Channel settings (Configuración de canales):</b> se refiere a las bandas de frecuencia que se usan para transmitir datos inalámbricos. Los routers y los AP inalámbricos pueden elegir la configuración de canales, o esta se puede establecer manualmente si existe interferencia con otro AP o dispositivo inalámbrico.</li>
+</ul>
+</p>
+<p></p>
+<p>Observe que Linksys EA6500 admite alcances de 2,4 GHz y 5 GHz.</p>
+<p></p>
+<p>En la figura 2, se muestran las opciones para el modo de red con un alcance de 2,4 GHz. Observe que puede admitir los modos Mixed (Mixto), Wireless-N Only (Solo Wireless-N) o Wireless-G Only (Solo Wireless-G). La configuración Mixed proporciona más flexibilidad, pero también puede lentificar la comunicación. Por ejemplo, si todos los clientes inalámbricos que se conectan al router usan 802.11n, todos disfrutan de las mejores velocidades de datos que se proporcionan. Si un cliente inalámbrico 802.11g se asocia al AP, todos los clientes inalámbricos más rápidos que compiten por el canal deben esperar a que los clientes 802.11g despejen el canal antes de transmitir. Sin embargo, si todos los clientes inalámbricos admiten 802.11n, seleccione Wireless-N Only para lograr el mejor rendimiento.</p>
+<p></p>
+<p>En la figura 3, se muestran las opciones de Network mode para el alcance de 5 GHz. Observe que también admite la configuración Mixed, junto con la configuración de Wireless-N Only y Wireless-AC Only (Solo Wireless-AC). </p>
+<p></p>
+<p>Observe que Linksys EA6500 no admite 802.11ad.</p>
+<p></p>
+<p>Las opciones de Security que se indican en la figura 4 son opciones de protocolos de seguridad disponibles en el router inalámbrico Linksys EA6500. Los usuarios domésticos deben elegir WPA2/WPA Mixed Personal (WPA2/WPA personal combinado), mientras que los usuarios empresariales normalmente eligen WPA2/WPA Mixed Enterprise (WPA2/WPA empresarial combinado). El alcance de 5 GHz ofrece las mismas opciones. La terminal inalámbrica también debe admitir la opción de seguridad seleccionada para asociarse.</p>
+<p></p>
+<p>
+<b>Nota:</b> todos los routers y los AP inalámbricos se deben proteger con la configuración más alta disponible. Se deben evitar las opciones None (Ninguno) o WEP, que solo se deben usar en situaciones en las que la seguridad no es un motivo de preocupación.</p>
+<p></p>
+<p>En la figura 5, se muestran las opciones de Channel settings para el alcance de 2,4 GHz. La opción preferida es Auto (Automático); sin embargo, si hubiera otros AP u otros dispositivos cercanos que interfirieran en el canal seleccionado por el router, se podría seleccionar un canal específico. Si bien el alcance de 5 GHz también tiene la opción Auto, en el ejemplo, se indica un canal (153) y un ancho de canal específicos. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

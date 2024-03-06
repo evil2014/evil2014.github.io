@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.4.4.2 CCNA</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.4.4.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>El cambiante entorno de red</h1>
+        <h2>Arquitecturas de red</h2>
+      </div>
+      <div id="content">
+<p>A medida que aumenta el uso de estas redes integradas y en expansión, también aumenta la necesidad de capacitación para las personas que implementan y administran soluciones de red. Esta capacitación debe comenzar con las bases de la conmutación y el enrutamiento. Obtener la certificación de Cisco Certified Network Associate (CCNA) es el primer paso para ayudar a una persona a prepararse para una carrera en redes. </p>
+<p></p>
+<p>La certificación CCNA valida la capacidad de una persona para instalar, configurar y operar redes medianas enrutadas y conmutadas, y solucionar problemas en estas redes, incluidas la implementación y la verificación de conexiones a sitios remotos en una WAN. El currículo de CCNA también incluye la mitigación básica de amenazas a la seguridad, una introducción a conceptos y terminología de redes inalámbricas y capacidades basadas en el desempeño. Este currículo de CCNA incluye el uso de diferentes protocolos, por ejemplo: IP, Open Shortest Path First (OSPF), protocolo de interfaz de línea serial, Frame Relay, VLAN, Ethernet y listas de control de acceso (ACL), entre otros.</p>
+<p></p>
+<p>Este curso ayuda a crear el marco para los conceptos de redes y las configuraciones básicas de enrutamiento y conmutación, además de ser un inicio en su camino para obtener la certificación CCNA.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

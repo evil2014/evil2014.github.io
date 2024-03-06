@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.3.1.3 División en subredes en la ID de interfaz</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.3.1.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Consideraciones de diseño para IPv6</h1>
+        <h2>División en subredes de una red IPv6</h2>
+      </div>
+      <div id="content">
+<p>De manera similar a cuando se toman bits prestados de la porción de host de una dirección IPv4, con IPv6 se pueden tomar prestados bits de la ID de interfaz para crear subredes IPv6 adicionales. Por lo general, esto se realiza por motivos de seguridad para crear menos hosts por subred, y no necesariamente para crear subredes adicionales.</p>
+<p></p>
+<p>Cuando se extiende la ID de subred al tomar prestados bits de la ID de interfaz, la práctica recomendada es realizar la división en subredes en el límite de un cuarteto. Un cuarteto equivale a 4 bits o un dígito hexadecimal. Como se muestra en la ilustración, el prefijo de subred /64 se extiende 4 bits o 1 cuarteto a /68. Esto reduce el tamaño de la ID de interfaz en 4 bits, es decir, de 64 a 60 bits.</p>
+<p></p>
+<p>La división en subredes en los límites de los cuartetos significa que solo se utilizan máscaras de subred alineadas en cuartetos. Comenzando en /64, las máscaras de subred alineadas en cuartetos son /68, /72, /76, /80, etcétera. </p>
+<p></p>
+<p>Mediante la división en subredes en los límites de los cuartetos, se crean subredes utilizando el valor hexadecimal adicional. En el ejemplo, la nueva ID de subred consta de los 5 valores hexadecimales que van desde 00000 hasta FFFFF. </p>
+<p></p>
+<p>Si bien es posible realizar la división en subredes dentro del límite de un cuarteto —dentro de un dígito hexadecimal—, no se recomienda hacerlo y ni siquiera es necesario. Realizar la división en subredes dentro de un cuarteto elimina la ventaja de determinar fácilmente el prefijo a partir de la ID de interfaz. Por ejemplo, si se utiliza la duración de prefijo /66, los dos primeros bits serían parte de la ID de subred, y el segundo conjunto de dos bits sería parte de la ID de interfaz.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

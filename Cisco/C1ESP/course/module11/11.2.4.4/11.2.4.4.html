@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>11.2.4.4 Activar SSH</title>
+    <!--  -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_11.2.4.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Cómo mantener la seguridad de la red</h1>
+        <h2>Protección de dispositivos</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Acceso remoto mediante SSH</b>
+</p>
+<p>El antiguo protocolo para administrar dispositivos de manera remota es Telnet. Telnet no es seguro. Los datos contenidos en un paquete Telnet se transmiten sin encriptar. Mediante una herramienta como Wireshark, es posible que alguien detecte una sesión de Telnet y obtenga información de contraseñas. Por este motivo, se recomienda especialmente habilitar SSH en los dispositivos para obtener un método de acceso remoto seguro. Es posible configurar un dispositivo Cisco para que admita SSH mediante cuatro pasos, como se muestra en la ilustración.</p>
+<p></p>
+<p>
+<b>Paso 1.</b> Asegúrese de que el router tenga un nombre de host exclusivo y configure el nombre de dominio IP de la red mediante el comando <span class="cmd"><b>ip domain-name </b></span><span class="cmd"><i>nombre-de-dominio</i></span> en el modo de configuración global.</p>
+<p></p>
+<p>
+<b>Paso 2.</b> Se deben generar claves secretas unidireccionales para que un router encripte el tráfico SSH. La clave es precisamente lo que se utiliza para encriptar y descifrar datos. Para crear una clave de encriptación, utilice el comando <span class="cmd"><b>crypto key generate rsa general-keys modulus </b></span><span class="cmd"><i>tamaño-del-módulo</i></span> en el modo de configuración global. El significado específico de las distintas partes de este comando es complejo y excede el ámbito de este curso, pero de momento, simplemente tenga en cuenta que el módulo determina el tamaño de la clave y se puede configurar con un valor de 360 a 2048 bits. Cuanto más grande es el módulo, más segura es la clave, pero más se tarda en encriptar y descifrar la información. La longitud mínima de módulo recomendada es de 1024 bits. </p>
+<p></p>
+<p>
+<span class="cmd">Router(config)#</span>
+<span class="cmd">
+<b>crypto key generate rsa general-keys modulus 1024</b>
+</span>
+</p>
+<p></p>
+<p>
+<b>Paso 3.</b> Cree una entrada de nombre de usuario en la base de datos local mediante el comando <span class="cmd"><b>username</b></span><span class="cmd"><i> nombre</i></span><span class="cmd"><b> secret </b></span><span class="cmd"><i>secreto</i></span> del modo de configuración global.</p>
+<p></p>
+<p>
+<b>Paso 4.</b> Habilite las sesiones SSH entrantes por vty mediante los comandos line vty <span class="cmd"><b>login local</b></span> y <span class="cmd"><b>transport input ssh</b></span>.</p>
+<p></p>
+<p>Ahora se puede acceder al servicio SSH del router mediante un software de cliente SSH.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

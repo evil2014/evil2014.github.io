@@ -1,0 +1,35 @@
+﻿<textcomponents>
+<component id="ID_s1_title">
+<text><![CDATA[<b>Operación de detección de DHCP</b>]]></text>
+</component>
+<component id="ID_s1_txt01">
+  <text><![CDATA[Atacante de DHCP malicioso]]></text> 
+</component>
+<component id="ID_s1_txt02">
+  <text><![CDATA[Cliente DHCP]]></text> 
+</component>
+<component id="ID_s1_txt03">
+  <text><![CDATA[Puerto no confiable]]></text> 
+</component>
+<component id="ID_s1_txt04">
+  <text><![CDATA[Puerto confiable]]></text> 
+</component>
+<component id="ID_s1_txt05">
+  <text><![CDATA[Servidor DHCP]]></text> 
+</component>
+<component id="ID_s2_title">
+<text><![CDATA[<b>Configuración de detección de DHCP</b>]]></text>
+</component>
+
+<component id="ID_Title_txt01">
+		<text><![CDATA[<b>  </b>]]></text>
+	</component>
+	
+<component id="ID_Body_txt01">
+<text><![CDATA[<textformat blockindent='-14'><ul><li>La detección de DHCP permite que los puertos se configuren como confiables o no confiables: </li></textformat><textformat blockindent='5'><li style="margin-left:35px">Los puertos confiables pueden enviar solicitudes y acuses de recibo de DHCP. </li><li style="margin-left:35px">Los puertos no confiables pueden reenviar solamente solicitudes de DHCP. </li></textformat><textformat blockindent='-14'><li>La detección de DHCP permite que el switch cree una tabla de asignación de DHCP que asigne una dirección MAC, una dirección IP, una VLAN y una ID de puerto de cliente. </li></ul></textformat>]]></text> 
+</component>
+
+
+
+
+</textcomponents>

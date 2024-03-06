@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.6.1.1 Denegación de FTP</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.6.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resumen</h1>
+        <h2>Resumen</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Denegación de FTP</b>
+</p>
+<p></p>
+<p>
+<b>Situación </b>
+</p>
+<p></p>
+<p>Hace poco se informó que hay cada vez más virus en la red de su pequeña o mediana empresa. El administrador de red realizó un seguimiento del rendimiento de la red y determinó que cierto host descarga archivos de un servidor FTP remoto constantemente. Este host puede ser el origen de los virus que se expanden por la red.</p>
+<p></p>
+<p>Utilice Packet Tracer para completar esta actividad. Componga una ACL con nombre para denegar el acceso del host al servidor FTP. Aplique la ACL a la interfaz más eficaz en el router. </p>
+<p></p>
+<p>Para completar la topología física, debe utilizar lo siguiente:</p>
+<p>
+<ul>
+<li>Una estación de equipo host</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Dos switches </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Un router de servicios integrados Cisco de la serie 1941</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Un servidor</li>
+</ul>
+</p>
+<p></p>
+<p>Mediante la herramienta de texto de Packet Tracer, registre la ACL que preparó. Para confirmar que la ACL deniega el acceso al servidor FTP, intente acceder a la dirección del servidor FTP. Observe qué sucede en el modo de simulación. </p>
+<p></p>
+<p>Guarde el archivo y esté preparado para compartirlo con otro estudiante o con toda la clase.</p>
+<p></p>
+<p>
+<a href="../../files/9.6.1.1%20FTP%20Denied%20Instructions.pdf" target="_blank">Actividad de clase: denegar FTP (instrucciones)</a>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

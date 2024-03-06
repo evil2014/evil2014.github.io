@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.3.3.6 Práctica de laboratorio: configuración de OSPFv3 básico de área única </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.3.3.6_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de OSPFv3 de área única</h1>
+        <h2>Verificación de OSPFv3</h2>
+      </div>
+      <div id="content">
+<p>
+<b>En esta práctica de laboratorio, cumplirá los siguientes objetivos:</b>
+</p>
+<p>
+<ul>
+<li>Parte 1: Armar la red y configurar los parámetros básicos de los dispositivos</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Parte 2: configurar el routing OSPFv3</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Parte 3: configurar interfaces pasivas OSPFv3</li>
+</ul>
+</p>
+<p></p>
+<p>
+<a href="../../files/8.3.3.6%20Lab%20-%20Configuring%20Basic%20Single-Area%20OSPFv3.pdf" target="_blank">Práctica de laboratorio: configuración de OSPFv3 básico de área única</a>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

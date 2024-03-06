@@ -1,0 +1,68 @@
+﻿  <textcomponents>	
+	  <component id="ID_title">
+		  <text><![CDATA[Actividad]]></text>
+	  </component>
+	  <component id="txt_instructions">
+		  <text><![CDATA[<b>Actividad: Determinación avanzada de direcciones válidas para hosts</b><br/><br/>En esta actividad, se le proporcionan la dirección de red y la máscara de subred.<br/><br/>Defina el rango de hosts, la dirección de broadcast y la siguiente dirección de red.<br/><br/>Introduzca las respuestas en formato decimal en los campos de octetos proporcionados.]]></text>
+	  </component>
+	  
+	  <component id="txt_incorrect">
+		  <text><![CDATA[<b>Incorrecto]]></text>
+	  </component>
+	  <component id="txt_correct">
+		  <text><![CDATA[<b>Correcto]]></text>
+	  </component>
+	  
+	  <component id="txt_correct_body">
+		  <text><![CDATA[Definió el rango de hosts y calculó la dirección de broadcast y la siguiente dirección de red correctamente. Haga clic en Nuevo número para continuar.]]></text>
+	  </component>
+
+	  <component id="txt_incorrect_all">
+		  <text><![CDATA[No definió el rango de hosts ni calculó la dirección de broadcast ni la siguiente dirección de red correctamente. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+	  </component>
+	  
+	  
+	  <component id="txt_hostaddress">
+  <text><![CDATA[Dirección de red en decimal]]></text>
+  </component>
+  
+  <component id="txt_subnetmask">
+  <text><![CDATA[Máscara de subred en decimal]]></text>
+  </component>
+  
+  <component id="txt_hostaddrbin">
+  <text><![CDATA[Dirección de red en forma binaria]]></text>
+  </component>
+  
+  <component id="txt_subnetbin">
+  <text><![CDATA[Máscara de subred en forma binaria]]></text>
+  </component>
+  
+  <component id="txt_netbin">
+  <text><![CDATA[Primera dirección IP host utilizable en decimal]]></text>
+  </component>
+  
+  <component id="txt_netdec">
+  <text><![CDATA[Última dirección IP host utilizable en decimal]]></text>
+  </component>
+  
+  <component id="txt_badec">
+  <text><![CDATA[Dirección de broadcast en decimal]]></text>
+  </component>
+  
+  <component id="txt_nnetdec">
+  <text><![CDATA[Siguiente dirección de red en decimal]]></text>
+  </component>
+	  
+  
+	  <component id="txt_check">
+		  <text><![CDATA[Verificar]]></text>
+	  </component>
+	  <component id="txt_reset">
+		  <text><![CDATA[Restablecer]]></text>
+	  </component>
+	  <component id="txt_newnumber">
+		  <text><![CDATA[Nuevo número]]></text>
+	  </component>
+  
+  </textcomponents>

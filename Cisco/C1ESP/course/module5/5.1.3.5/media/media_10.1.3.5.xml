@@ -1,0 +1,107 @@
+﻿<textcomponents>
+   <component id="ID_title">
+<text><![CDATA[Multicast]]></text>
+</component>
+   
+<component id="ID_bubble_01">
+<text><![CDATA[<p class="ID_bubble_01">Tengo que hacer un envío a un grupo de hosts de la red.</p>]]></text>
+</component>
+
+<component id="ID_txt01">
+<text><![CDATA[Host de origen]]></text>
+</component>
+
+
+
+<component id="ID_txt02">
+<text><![CDATA[]]></text>
+</component>
+
+<component id="ID_txt03">
+<text><![CDATA[IP: 192.168.1.5<br/>MAC: 00-07-E9-63-CE-53]]></text>
+</component>
+
+<component id="ID_txt04">
+<text><![CDATA[<b>Grupo de hosts de destino</b>]]></text>
+</component>
+
+<component id="ID_txt05">
+<text><![CDATA[Las direcciones MAC e IP de destino multicast entregan paquetes o tramas a un grupo específico de hosts miembros.]]></text>
+</component>
+
+<component id="ID_txt06">
+<text><![CDATA[Tráiler]]></text>
+</component>
+
+<component id="ID_txt07">
+<text><![CDATA[Datos del usuario]]></text>
+</component>
+
+<component id="ID_txt08">
+<text><![CDATA[224.0.0.200]]></text>
+</component>
+
+<component id="ID_txt09">
+<text><![CDATA[192.168.1.5]]></text>
+</component>
+
+<component id="ID_txt10">
+<text><![CDATA[00-07-E9-63-CE-53]]></text>
+</component>
+
+<component id="ID_txt11">
+<text><![CDATA[01-00-5E-00-00-C8]]></text>
+</component>
+
+<component id="ID_txt12">
+<text><![CDATA[IP origen]]></text>
+</component>
+
+<component id="ID_txt13">
+<text><![CDATA[IP de destino]]></text>
+</component>
+
+<component id="ID_txt14">
+<text><![CDATA[MAC de origen.]]></text>
+</component>
+
+<component id="ID_txt15">
+<text><![CDATA[MAC de destino]]></text>
+</component>
+
+<component id="ID_txt16">
+<text><![CDATA[Paquete IP]]></text>
+</component>
+
+<component id="ID_txt17">
+<text><![CDATA[Trama de Ethernet]]></text>
+</component>
+
+<component id="ID_txt18">
+<text><![CDATA[ Tengo que enviar este paquete a TODOS los hosts]]></text>
+</component> <!-- controller -->
+
+<component id="end">
+	<text><![CDATA[Finalizar]]></text>
+</component>
+
+<component id="fforward">
+	<text><![CDATA[Adelantar]]></text>
+</component>
+
+<component id="pause">
+	<text><![CDATA[Pausa]]></text>
+</component>
+
+<component id="play">
+	<text><![CDATA[Reproducir]]></text>
+</component>
+
+<component id="rewind">
+	<text><![CDATA[Regresar]]></text>
+</component>
+
+<component id="start">
+	<text><![CDATA[Inicio]]></text>
+</component>
+</textcomponents>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.1.1.1 Secuencia de arranque de un switch</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.1.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración básica del switch</h1>
+        <h2>Configuración de parámetros iniciales de un switch</h2>
+      </div>
+      <div id="content">
+<p>Una vez que se enciende el switch Cisco, lleva a cabo la siguiente secuencia de arranque:</p>
+<p></p>
+<p>1. Primero, el switch carga un programa de autodiagnóstico al encender (POST) almacenado en la memoria ROM. El POST verifica el subsistema de la CPU. Este comprueba la CPU, la memoria DRAM y la parte del dispositivo flash que integra el sistema de archivos flash.</p>
+<p>2. A continuación, el switch carga el software del cargador de arranque. El cargador de arranque es un pequeño programa almacenado en la memoria ROM que se ejecuta inmediatamente después de que el POST se completa correctamente.</p>
+<p>3. El cargador de arranque lleva a cabo la inicialización de la CPU de bajo nivel. Inicializa los registros de la CPU, que controlan dónde está asignada la memoria física, la cantidad de memoria y su velocidad. </p>
+<p>4. El cargador de arranque inicia el sistema de archivos flash en la placa del sistema. </p>
+<p>5. Por último, el cargador de arranque ubica y carga en la memoria una imagen del software del sistema operativo IOS predeterminado y le cede el control del switch al IOS. </p>
+<p></p>
+<p>El cargador de arranque busca la imagen de Cisco IOS en el switch de la siguiente manera: el switch intenta arrancar automáticamente mediante la información de la variable de entorno BOOT. Si no se establece esta variable, el switch intenta cargar y ejecutar el primer archivo ejecutable que puede mediante una búsqueda recursiva y en profundidad en todo el sistema de archivos flash. Cuando se realiza una búsqueda en profundidad de un directorio, se analiza por completo cada subdirectorio que se encuentra antes de continuar la búsqueda en el directorio original. En los switches de la serie Catalyst 2960, el archivo de imagen generalmente se encuentra en un directorio que tiene el mismo nombre que el archivo de imagen (excepto la extensión de archivo .bin). </p>
+<p></p>
+<p> Luego, el sistema operativo IOS inicia las interfaces mediante los comandos del IOS de Cisco que se encuentran en el archivo de configuración, startup-config, que está almacenado en NVRAM.</p>
+<p></p>
+<p>En la ilustración, la variable de entorno BOOT se establece con el comando <span class="cmd"><b>boot system</b></span> del modo de configuración global. Observe que el IOS se ubica en una carpeta distinta y que se especifica la ruta de la carpeta. Use el comando <span class="cmd"><b>show bootvar</b></span> (<span class="cmd"><b>show boot</b></span> en versiones anteriores de IOS) para ver la configuración actual del archivo de arranque de IOS.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

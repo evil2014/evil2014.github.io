@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.3.2.1 Anuncio de redes IPv6</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.3.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Routing RIP y RIPng</h1>
+        <h2>Configuración del protocolo RIPng</h2>
+      </div>
+      <div id="content">
+<p>Al igual que su equivalente para IPv4, RIPng no se suele utilizar en las redes modernas, pero también resulta útil como base para comprender el routing de red básico. Por este motivo, en esta sección se proporciona una breve descripción general de cómo configurar RIPng básico.</p>
+<p></p>
+<p>Consulte la topología de referencia en la ilustración. En esta situación, todos los routers se configuraron con funciones de administración básicas, y todas las interfaces identificadas en la topología de referencia están configuradas y habilitadas. No hay rutas estáticas configuradas ni protocolos de routing habilitados, por lo que el acceso remoto de red es imposible en ese momento. </p>
+<p></p>
+<p>Para habilitar un router IPv6 para que reenvíe paquetes IPv6, se debe configurar el comando <span class="cmd"><b>ipv6 unicast-routing</b></span>. </p>
+<p></p>
+<p>A diferencia de RIPv2, RIPng se habilita en una interfaz y no en el modo de configuración del router. De hecho, no hay un comando <span class="cmd"><b>network</b></span><span class="cmd"><i> dirección-red</i></span> disponible en RIPng. En cambio, utilice el comando de configuración de interfaz <span class="cmd"><b>ipv6 rip </b></span><span class="cmd"><i>nombre-dominio</i></span><span class="cmd"><b> enable</b></span>. </p>
+<p></p>
+<p>En la figura 1, se habilita el routing de unidifusión IPv6 y se habilitan las interfaces Gigabit Ethernet 0/0 y Serial 0/0/0 para RIPng mediante el nombre de dominio RIP-AS. </p>
+<p></p>
+<p>Utilice el verificador de sintaxis de la figura 2 para establecer una configuración similar en el R2 y en el R3.</p>
+<p></p>
+<p>El proceso para propagar una ruta predeterminada en RIPng es idéntico al de RIPv2, excepto que se debe especificar una ruta estática predeterminada IPv6. Por ejemplo, suponga que el R1 tenía una conexión a Internet de una interfaz Serial 0/0/1 a la dirección IP 2001:DB8:FEED:1::1/64. Para propagar una ruta predeterminada, el R3 debería configurarse con lo siguiente:</p>
+<p>
+<ul>
+<li>Una ruta estática predeterminada mediante el comando de configuración global <span class="cmd"><b>ipv6 route 0::/0 2001:DB8:FEED:1::1</b></span>.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>El comando del modo de configuración de interfaz <span class="cmd"><b>ipv6 rip</b></span><span class="cmd"><i> nombre-dominio</i></span><span class="cmd"><b> default-information originate</b></span>. Esto ordena al R3 que sea el origen de la información de la ruta predeterminada y que propague la ruta estática predeterminada en las actualizaciones RIPng enviadas por la interfaz configurada.</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

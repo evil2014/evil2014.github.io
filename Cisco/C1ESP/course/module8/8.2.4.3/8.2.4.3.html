@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.2.4.3 Configuración dinámica de una dirección unicast global mediante SLAAC</title>
+    <!--  -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.2.4.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Direcciones de red IPv6</h1>
+        <h2>Direcciones IPv6 unicast</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Configuración automática de dirección sin estado (SLAAC)</b>
+</p>
+<p></p>
+<p>La configuración automática de dirección sin estado (SLAAC) es un método que permite que un dispositivo obtenga su prefijo, duración de prefijo e información de la dirección de gateway predeterminado de un <i>router IPv6</i> sin utilizar un servidor de DHCPv6. Mediante SLAAC, los dispositivos dependen de los mensajes de anuncio de router (RA) de ICMPv6 del router local para obtener la información necesaria.</p>
+<p></p>
+<p>Los routers IPv6 envían mensajes de anuncio de router (RA) de ICMPv6 a todos los dispositivos en la red con IPv6 habilitado de forma periódica. De manera predeterminada, los routers Cisco envían mensajes de RA cada 200 segundos a la dirección IPv6 de grupo multicast de todos los nodos. Los dispositivos IPv6 en la red no tienen que esperar estos mensajes periódicos de RA. Un dispositivo puede enviar un mensaje de solicitud de router (RS) utilizando la dirección IPv6 de grupo multicast de todos los routers. Cuando un router IPv6 recibe un mensaje de RS, responde inmediatamente con un anuncio de router. </p>
+<p></p>
+<p>Si bien es posible configurar una interfaz en un router Cisco con una dirección IPv6, esto no lo convierte en un “router IPv6”. Un router IPv6 es un router que presenta las siguientes características:</p>
+<p>
+<ul>
+<li>Reenvía paquetes IPv6 entre redes.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Puede configurarse con rutas estáticas IPv6 o con un protocolo de enrutamiento dinámico IPv6.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Envía mensajes RA ICMPv6.</li>
+</ul>
+</p>
+<p></p>
+<p>El enrutamiento IPv6 no está habilitado de manera predeterminada. Para habilitar un router como router IPv6, se debe utilizar el comando de configuración global <span class="cmd"><b>ipv6 unicast-routing</b></span>. </p>
+<p></p>
+<p>
+<b>Nota:</b> los routers Cisco están habilitados como routers IPv4 de manera predeterminada.</p>
+<p></p>
+<p>El mensaje de RA de ICMPv6 contiene el prefijo, la duración de prefijo y otra información para el dispositivo IPv6. El mensaje de RA también informa al dispositivo IPv6 cómo obtener la información de direccionamiento. El mensaje de RA puede contener una de las siguientes tres opciones, como se muestra en la ilustración: </p>
+<p>
+<ul>
+<li>
+<b>Opción 1, SLAAC solamente:</b> el dispositivo debe utilizar el prefijo, la duración de prefijo y la información de la dirección de gateway predeterminado incluida en el mensaje de RA. No se encuentra disponible ninguna otra información de un servidor de DHCPv6.</li>
+</ul>
+</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Opción 2, SLAAC y DHCPv6:</b> el dispositivo debe utilizar el prefijo, la duración de prefijo y la información de la dirección de gateway predeterminado incluida en el mensaje de RA. Existe otra información disponible de un servidor de DHCPv6, como la dirección del servidor DNS. El dispositivo obtiene esta información adicional mediante el proceso normal de descubrimiento y consulta a un servidor de DHCPv6. Esto se conoce como DHCPv6 sin estado, debido a que el servidor de DHCPv6 no necesita asignar ni realizar un seguimiento de ninguna asignación de direcciones IPv6, sino que solo proporciona información adicional, tal como la dirección del servidor DNS.</li>
+</ul>
+</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Opción 3, DHCPv6 solamente:</b> el dispositivo no debe utilizar la información incluida en el mensaje de RA para obtener la información de direccionamiento. En cambio, el dispositivo utiliza el proceso normal de descubrimiento y consulta a un servidor de DHCPv6 para obtener toda la información de direccionamiento. Esto incluye una dirección IPv6 unicast global, la duración de prefijo, la dirección de gateway predeterminado y las direcciones de los servidores DNS. En este caso, el servidor de DHCPv6 actúa como un servidor de DHCP sin estado, de manera similar a DHCP para IPv4. El servidor de DHCPv6 asigna direcciones IPv6 y realiza un seguimiento de ellas, a fin de no asignar la misma dirección IPv6 a varios dispositivos.</li>
+</ul>
+</p>
+<p></p>
+<p>Los routers envían mensajes de RA de ICMPv6 utilizando la dirección link-local como la dirección IPv6 de origen. Los dispositivos que utilizan SLAAC usan la dirección link-local del router como su dirección de gateway predeterminado.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

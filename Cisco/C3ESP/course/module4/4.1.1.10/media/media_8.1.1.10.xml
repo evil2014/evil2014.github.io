@@ -1,0 +1,70 @@
+﻿<textcomponents>
+<component id="ID_txt01">
+<text><![CDATA[<b>Actividad: Comparar las tecnologías WLAN y LAN</b><br/>Arrastre la tecnología WLAN o LAN hasta los enunciados que describen esa tecnología.]]></text>
+</component> <!--Drag and Drop-->
+<component id='ID_drag01'>
+	<text><![CDATA[WLAN 802.11]]></text>
+</component>
+
+<component id='ID_drag02'>
+	<text><![CDATA[LAN 802.3]]></text>
+</component>
+
+
+<component id="ID_txt02">
+  <text><![CDATA[Se usa la radiofrecuencia (RF) para interconectar dispositivos.]]></text> 
+  </component>
+<component id="ID_txt03">
+  <text><![CDATA[Prevención de colisiones (CSMA/CA).]]></text> 
+  </component>
+  
+<component id="ID_txt04">
+  <text><![CDATA[Se usan cables para interconectar dispositivos.]]></text> 
+  </component>
+<component id="ID_txt05">
+  <text><![CDATA[Proporciona mayor seguridad.]]></text> 
+  </component>
+  
+<component id="ID_txt06">
+  <text><![CDATA[Se pueden aplicar leyes y normas adicionales en las áreas locales.]]></text> 
+  </component>
+<component id="ID_txt07">
+  <text><![CDATA[La interferencia de señales no suele ser un problema.]]></text> 
+  </component>
+  
+<component id="ID_txt08">
+  <text><![CDATA[Detección de colisiones (CSMA/CD).]]></text> 
+  </component>
+<component id="ID_txt09">
+  <text><![CDATA[Permite la movilidad de los dispositivos.]]></text> 
+  </component>
+  
+  
+  
+  
+<component id='ID_s1_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id='ID_s1_CORRECT_BODY'>
+	<text><![CDATA[Unió correctamente las tecnologías con las características.]]></text>
+</component>
+
+
+<component id='ID_s1_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_BODY'>
+	<text><![CDATA[No unió correctamente las tecnologías con las características. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_CHECK'>
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id='ID_RESET'>
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component>
+  
+</textcomponents>

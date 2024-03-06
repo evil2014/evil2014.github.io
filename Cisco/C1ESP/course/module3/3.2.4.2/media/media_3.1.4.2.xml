@@ -1,0 +1,99 @@
+﻿<textcomponents>
+
+<component id="ID_title">
+<text><![CDATA[<b>Modelo de referencia OSI</b>]]></text>
+</component>
+
+
+<component id="ID_txt01">
+<text><![CDATA[Modelo OSI]]></text>
+</component>
+
+<component id="ID_titleTxt07">
+<text><![CDATA[<b>Aplicación</b>]]></text>
+</component>
+
+<component id="ID_bodyTxt07">
+<text><![CDATA[La capa de aplicación proporciona los medios para la conectividad de extremo a extremo entre individuos de la red humana mediante redes de datos.]]></text>
+</component>
+
+<component id="ID_titleTxt06">
+<text><![CDATA[<b>Presentación</b>]]></text>
+</component>
+
+<component id="ID_bodyTxt06">
+<text><![CDATA[La capa de presentación proporciona una representación común de los datos transferidos entre los servicios de la capa de aplicación.]]></text>
+</component>
+
+<component id="ID_titleTxt05">
+<text><![CDATA[<b>Sesión</b>]]></text>
+</component>
+
+<component id="ID_bodyTxt05">
+<text><![CDATA[La capa de sesión proporciona servicios a la capa de presentación para organizar su diálogo y administrar el intercambio de datos.]]></text>
+</component>
+
+<component id="ID_titleTxt04">
+<text><![CDATA[<b>Transporte</b>]]></text>
+</component>
+
+<component id="ID_bodyTxt04">
+<text><![CDATA[La capa de transporte define los servicios para segmentar, transferir y rearmar los datos para las comunicaciones individuales entre dispositivos finales.]]></text>
+</component>
+
+<component id="ID_titleTxt03">
+<text><![CDATA[<b>Red</b>]]></text>
+</component>
+
+<component id="ID_bodyTxt03">
+<text><![CDATA[La capa de red proporciona servicios para intercambiar los datos individuales en la red entre dispositivos finales identificados.]]></text>
+</component>
+
+<component id="ID_titleTxt02">
+<text><![CDATA[<b>Enlace de datos</b>]]></text>
+</component>
+
+<component id="ID_bodyTxt02">
+<text><![CDATA[Los protocolos de capa de enlace de datos describen los métodos para intercambiar tramas de datos entre dispositivos en un medio común.]]></text>
+</component>
+
+<component id="ID_titleTxt01">
+<text><![CDATA[<b>Física</b>]]></text>
+</component>
+
+<component id="ID_bodyTxt01">
+<text><![CDATA[Los protocolos de capa física describen los medios mecánicos, eléctricos, funcionales y de procedimiento para activar, mantener y desactivar conexiones físicas para la transmisión de bits hacia un dispositivo de red y desde él.]]></text>
+</component> <!--OSI Model-->
+<component id='ID_osi_header'>
+	<text><![CDATA[<font><b>Modelo OSI</b></font>]]></text>
+</component>
+
+<component id='ID_osi_txt07'>
+	<text><![CDATA[7. Aplicación]]></text>
+</component>
+
+<component id='ID_osi_txt06'>
+	<text><![CDATA[6. Presentación]]></text>
+</component>
+
+<component id='ID_osi_txt05'>
+	<text><![CDATA[5. Sesión]]></text>
+</component>
+
+<component id='ID_osi_txt04'>
+	<text><![CDATA[4. Transporte]]></text>
+</component>
+
+<component id='ID_osi_txt03'>
+	<text><![CDATA[3. Red]]></text>
+</component>
+
+<component id='ID_osi_txt02'>
+	<text><![CDATA[2. Enlace de datos]]></text>
+</component>
+
+<component id='ID_osi_txt01'>
+	<text><![CDATA[1. Física]]></text>
+</component>
+
+</textcomponents>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.2.2.5 Área funcional remota </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.2.2.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Arquitectura empresarial de Cisco</h1>
+        <h2>Modelo de arquitectura empresarial de Cisco</h2>
+      </div>
+      <div id="content">
+<p>El área funcional remota es responsable de las opciones de conectividad remota e incluye varios módulos:</p>
+<p></p>
+<p>
+<b>Sucursal de la empresa </b>
+</p>
+<p>El módulo de sucursales de la empresa incluye las sucursales remotas que permiten que los empleados trabajen en ubicaciones fuera del campus. Por lo general, estas ubicaciones son las que proporcionan opciones de seguridad, telefonía y movilidad a los empleados, así como conectividad general a la red del campus y a los distintos componentes ubicados dentro del campus empresarial. El módulo de sucursales de la empresa permite que las empresas extiendan las aplicaciones y los servicios de la oficina central, como la seguridad, las Comunicaciones unificadas de Cisco y el rendimiento de las aplicaciones avanzadas, hasta las sucursales remotas. El dispositivo perimetral que conecta el sitio remoto al sitio central varía según las necesidades y el tamaño del sitio. Los sitios remotos grandes pueden utilizar switches Cisco Catalyst de tecnología avanzada, mientras que los sitios más pequeños pueden usar un router ISR G2. Estos sitios remotos dependen del perímetro del SP para proporcionar los servicios y las aplicaciones del sitio principal. En la ilustración, el módulo de sucursales de la empresa se conecta al campus empresarial principalmente mediante un enlace WAN; sin embargo, también cuenta con un enlace a Internet de respaldo. El enlace a Internet utiliza la tecnología VPN con IPsec de sitio a sitio para cifrar datos corporativos.</p>
+<p></p>
+<p>
+<b>Trabajador a distancia de la empresa</b>
+</p>
+<p>El módulo de trabajadores a distancia de la empresa se encarga de proporcionar conectividad a los empleados que trabajan desde diversas ubicaciones geográficamente dispersas, que incluyen las oficinas domésticas, los hoteles o los sitios de clientes. El módulo de trabajadores a distancia recomienda que los usuarios móviles se conecten a Internet mediante los servicios de un ISP local, como el cable módem o el módem DSL. Se pueden utilizar servicios de VPN para proteger las comunicaciones entre el trabajador móvil y el campus central. Los servicios de red de seguridad integrada y basados en identidad permiten que la empresa extienda las políticas de seguridad del campus al trabajador a distancia. El personal puede iniciar sesión en la red de manera segura a través de la VPN y acceder a las aplicaciones y los servicios autorizados desde una única plataforma rentable.</p>
+<p></p>
+<p>
+<b>Centro de datos de la empresa </b>
+</p>
+<p>El módulo de centro de datos de la empresa es un centro de datos con las mismas opciones funcionales del centro de datos del campus, pero en una ubicación remota. Esto proporciona una capa de seguridad adicional, dado que el centro de datos externo puede proporcionar a la empresa servicios de recuperación tras un desastre y de continuidad empresarial. Los switches de tecnología avanzada, como los switches de la serie Cisco Nexus, utilizan servicios WAN rápidos como Ethernet metropolitana (MetroE) para conectar el campus empresarial al centro de datos de la empresa remoto. Los centros de datos redundantes proporcionan respaldo mediante la replicación síncrona y asíncrona de datos y aplicaciones. Además, la red y los dispositivos ofrecen balanceo de carga de servidores y aplicaciones para maximizar el rendimiento. Esta solución permite que la empresa escale sin que se produzcan cambios importantes en la infraestructura. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

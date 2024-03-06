@@ -1,0 +1,93 @@
+﻿<textcomponents> <!--Slide 1-->
+<component id='ID_inst'>
+	<text><![CDATA[<b>Actividad: TCP, UDP o ambos</b><br><br>Arrastre el protocolo de capa de aplicación al método de entrega de la capa de transporte: TCP, UDP o ambos.]]></text>
+</component>
+
+<component id='ID_drop_header'>
+	<text><![CDATA[<b>Método de entrega de la capa de transporte</b>]]></text>
+</component>
+
+<component id='ID_header01'>
+	<text><![CDATA[<b>TCP</b>]]></text>
+</component>
+
+<component id='ID_header02'>
+	<text><![CDATA[<b>UDP</b>]]></text>
+</component>
+
+<component id='ID_header03'>
+	<text><![CDATA[<b>Ambos</b>]]></text>
+</component>
+
+<component id='ID_drag_header'>
+	<text><![CDATA[<b>Protocolos de la capa de aplicación.</b>]]></text>
+</component> <!--Drag and Drop -->
+
+<component id='ID_a01_DS'>
+	<text><![CDATA[<font color="#393536">HTTP</font>]]></text>
+</component>
+
+<component id='ID_a02_DS'>
+	<text><![CDATA[<font color="#393536">FTP</font>]]></text>
+</component>
+
+<component id='ID_a03_DS'>
+	<text><![CDATA[<font color="#393536">SMTP</font>]]></text>
+</component>
+
+<component id='ID_a04_DS'>
+	<text><![CDATA[<font color="#393536">Telnet</font>]]></text>
+</component>
+
+
+<component id='ID_b01_DS'>
+	<text><![CDATA[<font color="#393536">DHCP</font>]]></text>
+</component>
+
+<component id='ID_b02_DS'>
+	<text><![CDATA[<font color="#393536">SNMP</font>]]></text>
+</component>
+
+<component id='ID_b03_DS'>
+	<text><![CDATA[<font color="#393536">TFTP</font>]]></text>
+</component>
+
+<component id='ID_b04_DS'>
+	<text><![CDATA[<font color="#393536">VoIP</font>]]></text>
+</component>
+
+<component id='ID_b05_DS'>
+	<text><![CDATA[<font color="#393536">IPTV</font>]]></text>
+</component>
+
+
+
+
+<component id='ID_c01_DS'>
+	<text><![CDATA[<font color="#393536">DNS</font>]]></text>
+</component> <!--Drag and Drop-->
+<component id='ID_s1_CORRECT_TITLE'>
+	<text><![CDATA[Correcto]]></text>
+</component>
+
+<component id='ID_s1_CORRECT_BODY'>
+	<text><![CDATA[Unió correctamente los protocolos de la capa de aplicación con los métodos de entrega de la capa de transporte correspondientes.]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_TITLE'>
+	<text><![CDATA[Incorrecto]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_BODY'>
+	<text><![CDATA[No unió correctamente los protocolos de la capa de aplicación con los métodos de entrega de la capa de transporte correspondientes. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_CHECK'>
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id='ID_RESET'>
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component>
+
+</textcomponents>

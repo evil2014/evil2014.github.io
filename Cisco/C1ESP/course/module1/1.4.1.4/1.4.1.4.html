@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.4.1.4 Comunicación por video</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.4.1.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>El cambiante entorno de red</h1>
+        <h2>Tendencias de red</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Comunicación por video</b>
+</p>
+<p></p>
+<p>Otra tendencia de red que tiene una importancia crítica en lo que respecta a la comunicación y el trabajo en colaboración es el video. El video se utiliza actualmente para propósitos de comunicación, colaboración y entretenimiento. Las videollamadas son cada vez más populares, ya que facilitan las comunicaciones como parte de la red humana. Las videollamadas se pueden hacer desde cualquier lugar que cuente con una conexión a Internet, incluso desde el hogar o en el trabajo. </p>
+<p></p>
+<p>Las videollamadas y las videoconferencias han demostrado ser particularmente eficaces en los procesos de ventas y para hacer negocios. El video es una herramienta útil para realizar negocios a distancia, tanto en el ámbito local como global. Hoy en día, las empresas utilizan el video para transformar la forma en que hacen negocios. El video ayuda a las empresas a crear una ventaja competitiva, a bajar costos y a minimizar el impacto ambiental al reducir la necesidad de viajar. En la figura 1, se muestra la tendencia de video en la comunicación.</p>
+<p></p>
+<p>Tanto los consumidores como las empresas impulsan este cambio. A medida que las organizaciones se extienden más allá de los límites geográficos y culturales, el video se convierte en un requisito clave para una colaboración eficaz. Ahora, los usuarios de video requieren la capacidad de ver cualquier contenido, en cualquier dispositivo, en cualquier lugar.</p>
+<p></p>
+<p>Las empresas también reconocen la función que desempeña el video en el mejoramiento de la red humana. El crecimiento de los medios y las nuevas aplicaciones que se les dan impulsan la necesidad de integrar audio y video en muchas formas de comunicación. La audioconferencia coexistirá con la videoconferencia. Las herramientas de colaboración diseñadas para conectar a los empleados distribuidos integrarán el servicio de video de escritorio para salvar distancias entre los equipos.</p>
+<p></p>
+<p>Existen varios factores y beneficios que impulsan la inclusión de una estrategia para utilizar video. Cada organización es única. La combinación exacta y la naturaleza de los motivos para utilizar el video varían según la organización y la función empresarial. El marketing, por ejemplo, puede enfocarse en la globalización y en los gustos en constante cambio de los consumidores, mientras el enfoque del director ejecutivo de información (CIO) puede estar en la reducción de costos mediante el recorte de los gastos de viajes de los empleados que necesitan reunirse en persona. En la ilustración 2, se enumeran algunos de los motivos por los que las organizaciones deciden desarrollar e implementar una estrategia de soluciones de video. </p>
+<p></p>
+<p>En la figura 3, se muestra un video que explica detalladamente cómo se puede incorporar TelePresence a la vida y los negocios de todos los días mediante el uso de video.</p>
+<p></p>
+<p>Otra tendencia en video es el video a petición y el streaming video en vivo. La transmisión de video a través de la red nos permite ver películas y programas de televisión cuando y donde queremos. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

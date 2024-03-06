@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.3.1.2 Ataque de DoS</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.3.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Seguridad de una LAN inalámbrica</h1>
+        <h2>Amenazas de WLAN</h2>
+      </div>
+      <div id="content">
+<p>Los ataques DoS inalámbricos pueden ser el resultado de lo siguiente:</p>
+<p>
+<ul>
+<li>
+<b>Dispositivos mal configurados:</b> los errores de configuración pueden deshabilitar la WLAN. Por ejemplo, un administrador puede modificar accidentalmente una configuración y deshabilitar la red, o un intruso con privilegios de administrador puede deshabilitar una WLAN intencionalmente.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Un usuario malintencionado interfiere en la comunicación inalámbrica intencionalmente:</b> su objetivo es deshabilitar la red inalámbrica por completo o a tal punto que ningún dispositivo legítimo pueda acceder al medio. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Interferencia accidental:</b> las WLAN operan en las bandas de frecuencia sin licencia y, por lo tanto, todas las redes inalámbricas, independientemente de las características de seguridad, pueden sufrir la interferencia de otros dispositivos inalámbricos. La interferencia accidental puede provenir de dispositivos como los hornos de microondas, los teléfonos inalámbricos, los monitores para bebés, entre otros. La banda de 2,4 GHz es más proclive a la interferencia que la banda de 5 GHz.</li>
+</ul>
+</p>
+<p></p>
+<p>Para minimizar el riesgo de un ataque DoS debido a dispositivos mal configurados o ataques malintencionados, proteja todos los dispositivos y las contraseñas, cree copias de seguridad y asegúrese de que todos los cambios de configuración se incorporen fuera del horario de operación. </p>
+<p></p>
+<p>La interferencia accidental solo ocurre cuando se agrega otro dispositivo inalámbrico. La mejor solución consiste en controlar la WLAN para detectar cualquier problema de interferencia y abordarlo cuando aparezca. Debido a que la banda de 2,4 GHz es más proclive a la interferencia, la banda de 5 GHz se podría usar en áreas con tendencia a la interferencia. Algunas soluciones de WLAN permiten que los AP ajusten automáticamente los canales y usen la banda de 5 GHz para compensar la interferencia. Por ejemplo, algunas soluciones 802.11n/ac/ad se ajustan de manera automática para contrarrestar la interferencia. </p>
+<p></p>
+<p>En la ilustración, se muestra cómo un teléfono inalámbrico o incluso un horno de microondas pueden interferir con la comunicación WLAN.</p>
+<p></p>
+<p>La tecnología Cisco CleanAir permite que los dispositivos identifiquen y ubiquen las fuentes de interferencia que no son 802.11. Crea una red que tiene la capacidad de ajustarse de forma automática a los cambios en el entorno.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

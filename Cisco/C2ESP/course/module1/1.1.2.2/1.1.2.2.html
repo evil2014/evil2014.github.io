@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.1.2.2 Factores de forma</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.1.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Diseño de la LAN</h1>
+        <h2>Redes conmutadas</h2>
+      </div>
+      <div id="content">
+<p>En las redes comerciales, se usan diversos tipos de switches: Es importante implementar los tipos de switches adecuados según los requisitos de la red. En la figura 1, se destacan algunas consideraciones comerciales comunes que se deben tener en cuenta al seleccionar el equipo de switch.</p>
+<p></p>
+<p>Cuando se selecciona el tipo de switch, el diseñador de red debe elegir entre una configuración fija o una modular, y entre un dispositivo apilable o no apilable. Otra consideración es el grosor del switch, expresado en cantidad de unidades de rack. Esto es importante para los switches que se montan en un rack. Por ejemplo, los switches de configuración fija que se muestran en la figura 2 son todos de 1 unidad de rack (1U). Con frecuencia estas opciones se denominan factores de forma del switch.</p>
+<p></p>
+<p>
+<b>Switches de configuración fija</b>
+</p>
+<p></p>
+<p>Los switches de configuración fija no admiten características u opciones más allá de las que vienen originalmente con el switch (figura 2). El modelo específico determina las características y opciones disponibles. Por ejemplo, un switch gigabit fijo de 24 puertos no admite puertos adicionales. En general, existen diferentes opciones de configuración que varían según la cantidad y el tipo de puertos incluidos en un switch de configuración fija.</p>
+<p></p>
+<p>
+<b>Switches de configuración modular</b>
+</p>
+<p></p>
+<p>Los switches de configuración modular ofrecen más flexibilidad en su configuración. Generalmente, estos switches vienen con bastidores de diferentes tamaños que permiten la instalación de diferentes números de tarjetas de líneas modulares (figura 3). Las tarjetas de línea son las que contienen los puertos. La tarjeta de línea se ajusta al bastidor del switch de igual manera que las tarjetas de expansión se ajustan en la computadora. Cuanto más grande es el chasis, más módulos puede admitir. Es posible elegir entre muchos tamaños de bastidores diferentes. Un switch modular con una tarjeta de línea de 24 puertos admite una tarjeta de línea de 24 puertos adicional para hacer que la cantidad total de puertos ascienda a 48. </p>
+<p></p>
+<p>
+<b>Switches de configuración apilable</b>
+</p>
+<p></p>
+<p>Los switches de configuración apilable se pueden interconectar mediante un cable especial que proporciona un rendimiento de ancho de banda alto entre los switches (figura 4). La tecnología Cisco StackWise permite la interconexión de hasta nueve switches. Los switches se pueden apilar unos sobre otros con cables que conectan los switches en forma de cadena margarita. Los switches apilados operan con efectividad como un switch único más grande. Los switches apilables son convenientes cuando la tolerancia a fallas y la disponibilidad de ancho de banda son críticas y resulta costoso implementar un switch modular. El uso de conexiones cruzadas hace que la red pueda recuperarse rápidamente si falla un switch único. Los switches apilables usan un puerto especial para las interconexiones. Muchos switches apilables Cisco también admiten la tecnología StackPower, que permite compartir la alimentación entre los miembros de la pila.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

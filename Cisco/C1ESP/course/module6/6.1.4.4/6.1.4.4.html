@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.1.4.4 Encabezado de paquete IPv6</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.1.4.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolos de la capa de red</h1>
+        <h2>Paquete de IPv6</h2>
+      </div>
+      <div id="content">
+<p>Los campos de encabezado de paquetes IPv6 incluyen los siguientes:</p>
+<p>
+<ul>
+<li>
+<b>Versión:</b> este campo contiene un valor binario de 4 bits que identifica la versión del paquete IP. Para los paquetes IPv6, este campo siempre se establece en 0110.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Clase de tráfico:</b> este campo de 8 bits equivale al campo Servicios diferenciados (DS) de IPv4. También contiene un valor de Punto de código de servicios diferenciados (DSCP) de 6 bits utilizado para clasificar paquetes y un valor de Notificación explícita de congestión (ECN) de 2 bits utilizado para controlar la congestión del tráfico.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Identificador de flujo:</b> este campo de 20 bits proporciona un servicio especial para aplicaciones en tiempo real. Se puede utilizar para indicar a los routers y switches que deben mantener la misma ruta para el flujo de paquetes, a fin de evitar que estos se reordenen.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Longitud de contenido:</b> este campo de 16 bits equivale al campo Longitud total del encabezado de IPv4. Define el tamaño total del paquete (fragmento), incluidos el encabezado y las extensiones optativas. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Siguiente encabezado:</b> este campo de 8 bits equivale al campo Protocolo de IPv4. Indica el tipo de contenido de datos que transporta el paquete, lo que permite que la capa de red pase los datos al protocolo de capa superior correspondiente. Este campo también se usa si se agregan encabezados de extensión optativos al paquete IPv6.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Límite de saltos:</b> este campo de 8 bits reemplaza al campo TTL de IPv4. Cuando cada router reenvía un paquete, este valor disminuye en un punto. Cuando el contador llega a 0, el paquete se descarta y se reenvía un mensaje de ICMPv6 al host emisor en el que se indica que el paquete no llegó a destino. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Dirección de origen:</b> este campo de 128 bits identifica la dirección IPv6 del host emisor. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Dirección de destino:</b> este campo de 128 bits identifica la dirección IPv6 del host receptor.</li>
+</ul>
+</p>
+<p></p>
+<p>Los paquetes IPv6 también pueden contener encabezados de extensión (EH), que proporcionan información optativa de la capa de red. Los encabezados de extensión son optativos y se colocan entre el encabezado de IPv6 y el contenido. Los EH se utilizan para realizar la fragmentación, aportar seguridad, admitir la movilidad, y más.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

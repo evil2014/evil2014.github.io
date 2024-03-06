@@ -1,0 +1,29 @@
+﻿<textcomponents>
+<component id="ID_title">
+<text><![CDATA[<b>Abreviaturas de la máscara de bits wildcard</b>]]></text>
+</component>
+
+
+<component id="ID_txt01">
+<text><![CDATA[<b>Ejemplo 1</b><br><br><textformat blockindent='-14'><ul><li>192.168.10.10 0.0.0.0 coincide con todos los bits de la dirección.</li><li>Abrevie esta máscara wildcard con la dirección IP precedida por la palabra clave <font face="_typewriter"><b>host   </b></font>(<font face="_typewriter"><b>host 192.168.10.10</b></font>). </li></ul></textformat>]]></text>
+</component>
+
+<component id="ID_txt02">
+<text><![CDATA[<b>Máscara wildcard:  </b>]]></text> 
+</component>
+
+<component id="ID_txt03"><text><![CDATA[(Coincidir todos los bits)]]></text>
+</component>
+
+
+<component id="ID_txt04"><text><![CDATA[<b>Ejemplo 2</b><br><br><textformat blockindent='-14'><ul><li>0.0.0.0 255.255.255.255 omite todos los bits de la dirección.</li><li>Abrevie la expresión con la palabra clave <font face="_typewriter"><b>any</b></font>. </li></ul></textformat>]]></text>
+</component>
+
+<component id="ID_txt05">
+<text><![CDATA[<b>Máscara wildcard:  </b>]]></text> 
+</component>
+
+<component id="ID_txt06"><text><![CDATA[(Omite todos los bits)]]></text>
+</component>
+
+</textcomponents>

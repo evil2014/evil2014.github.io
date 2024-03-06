@@ -1,0 +1,12 @@
+﻿<textcomponents>
+	<component id="ID_title">
+		<text><![CDATA[<b>Protocolo TCP de enlace de tres vías (SYN, ACK)</b>]]></text>
+	</component>
+	
+	<component id="ID_title_txt">
+		<text><![CDATA[<font><b class="textboxheader">Un analizador de protocolos muestra la respuesta del servidor en la trama 11</b></font>]]></text>
+	</component>
+	<component id="ID_body_txt">
+		<text><![CDATA[<textformat blockindent='-14'><font><li>El indicador ACK está establecido para indicar un número válido de acuse de recibo.</li><li>Respuesta de número de acuse de recibo al número de secuencia inicial como valor relativo de 1.</li><li>El indicador SYN está establecido para indicar el número de secuencia inicial de la sesión de servidor a cliente.</li><li>El número de puerto de destino 1061 corresponde al puerto de origen del cliente.</li><li>El número de puerto de origen 80 (HTTP) indica el servicio del servidor Web (httpd).</li></font></textformat>]]></text>
+	</component> 
+</textcomponents>

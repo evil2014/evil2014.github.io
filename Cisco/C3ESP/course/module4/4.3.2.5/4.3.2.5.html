@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.3.2.5 Autenticación en la empresa </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.3.2.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Seguridad de una LAN inalámbrica</h1>
+        <h2>Protección de WLAN</h2>
+      </div>
+      <div id="content">
+<p>En las redes que tienen requisitos de seguridad más estrictos, se requiere una autenticación o un inicio de sesión adicionales para otorgar acceso a los clientes inalámbricos. Las opciones del modo de seguridad Enterprise requieren un servidor RADIUS con autenticación, autorización y contabilidad (AAA).</p>
+<p></p>
+<p>Consulte el ejemplo de la ilustración. Observe los nuevos campos que se muestran al elegir la versión Enterprise de WPA o WPA2. Estos campos son necesarios para proporcionar al AP la información requerida para contactar al servidor AAA: </p>
+<p>
+<ul>
+<li>
+<b>Dirección IP del servidor RADIUS:</b> esta es la dirección del servidor RADIUS a la que se puede llegar.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Números de puerto UDP:</b> los números de puerto UDP asignados oficialmente son 1812 para la autenticación RADIUS y 1813 para la contabilidad RADIUS, pero también pueden funcionar mediante los números de puerto UDP 1645 y 1646.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Clave compartida:</b> se usa para autenticar el AP con el servidor RADIUS.</li>
+</ul>
+</p>
+<p></p>
+<p>La clave compartida no es un parámetro que se debe configurar en una STA. Solo se requiere en el AP para autenticar con el servidor RADIUS. </p>
+<p></p>
+<p>
+<b>Nota:</b> no se indica ningún campo de contraseña, debido a que la autenticación y la autorización del usuario propiamente dichas se manejan mediante el estándar 802.1X, que proporciona a los usuarios finales una autenticación centralizada basada en servidores. </p>
+<p></p>
+<p>El proceso de inicio de sesión 802.1X usa EAP para comunicarse con el AP y el servidor RADIUS. El EAP es una estructura para autenticar el acceso a la red. Puede proporcionar un mecanismo de autenticación seguro y negociar una clave privada segura que después se puede usar para una sesión de cifrado inalámbrico mediante el cifrado TKIP o AES.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

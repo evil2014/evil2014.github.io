@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.1.1.1 Documentación de la red</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.1.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resolución de problemas mediante un enfoque sistemático</h1>
+        <h2>Documentación de red</h2>
+      </div>
+      <div id="content">
+<p>Para que los administradores de red puedan monitorear y resolver problemas de red, deben tener un conjunto completo de documentación de red precisa y actual. Esta documentación incluye:</p>
+<p>
+<ul>
+<li>Archivos de configuración, incluidos los de la red y los del sistema final</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Diagramas de topología física y lógica </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Un nivel de rendimiento de línea de base</li>
+</ul>
+</p>
+<p></p>
+<p>La documentación de red permite que los administradores de red diagnostiquen y corrijan de manera eficaz los problemas de la red, según el diseño y el rendimiento esperado de la red en condiciones de operación normales. Toda la información de la documentación de red se debe conservar en una única ubicación, ya sea en forma impresa o en la red, en un servidor protegido. Debe realizarse una copia de seguridad del registro, la que se debe conservar en una ubicación diferente. </p>
+<p></p>
+<p>
+<b>Archivos de configuración de red</b>
+</p>
+<p>Los archivos de configuración de red contienen registros precisos y actualizados del hardware y el software usados en una red. En los archivos de configuración de la red, debe existir una tabla para cada dispositivo de red utilizado con toda la información relevante sobre ese dispositivo. En la figura 1, se muestran ejemplos de tablas de configuración de red para dos routers. En la figura 2, se muestra una tabla similar para un switch LAN.</p>
+<p></p>
+<p>La información que se podría reunir en una tabla de dispositivo incluye lo siguiente:</p>
+<p>
+<ul>
+<li>Tipo de dispositivo, designación de modelo</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Nombre de la imagen del IOS </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Nombre de host de red del dispositivo </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Ubicación del dispositivo (edificio, piso, sala, rack, panel) </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>En caso de dispositivo modular, todos los tipos de módulos y en qué ranura de módulo se ubican</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Direcciones de la capa de enlace de datos </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Direcciones de la capa de red </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Cualquier información adicional importante sobre los aspectos físicos del dispositivo</li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Archivos de configuración del sistema final</b>
+</p>
+<p>Los archivos de configuración del sistema final se centran en el hardware y el software usados en los dispositivos del sistema final, como servidores, consolas de administración de red y estaciones de trabajo de los usuarios. Un sistema final configurado incorrectamente puede tener un impacto negativo en el rendimiento general de una red. Por este motivo, para resolver problemas, puede ser muy útil tener un registro de línea de base de muestra del hardware y del software usado en los dispositivos incluido en el registro del sistema final, como se muestra en la figura 3.</p>
+<p></p>
+<p>Para resolver problemas, se podría registrar la siguiente información en la tabla de configuración del sistema final:</p>
+<p>
+<ul>
+<li>Nombre del dispositivo (propósito) </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Sistema operativo y versión </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Direcciones IPv4 e IPv6 </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Máscara de subred y longitud de prefijo</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Gateway predeterminado, servidor DNS y direcciones del servidor WINS </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Cualquier aplicación de red de ancho de banda elevado que se ejecute en el sistema final</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

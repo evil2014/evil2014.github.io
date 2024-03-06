@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.3.3.1 Estándares de la capa de enlace de datos</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.3.3.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolos de la capa de enlace de datos</h1>
+        <h2>Estándares de la capa 2</h2>
+      </div>
+      <div id="content">
+<p>A diferencia de los protocolos de las capas superiores de la suite TCP/IP, los protocolos de capa de enlace de datos no se suelen definir por la solicitud de comentarios (RFC). Si bien el Internet Engineering Task Force (IETF) mantiene los protocolos y servicios funcionales para la suite de protocolos TCP/IP en las capas superiores, no define las funciones ni la operación de la capa de acceso a la red de ese modelo. </p>
+<p></p>
+<p>Específicamente, los servicios y las especificaciones de la capa de enlace de datos se definen mediante varios estándares basados en diversas tecnologías y medios a los cuales se aplican los protocolos. Algunos de estos estándares integran los servicios de la Capa 2 y la Capa 1.</p>
+<p></p>
+<p>Los responsables de la definición de los protocolos y servicios funcionales en la capa de enlace de datos son los siguientes:</p>
+<p>
+<ul>
+<li>Organismos de ingeniería que establecen estándares y protocolos públicos y abiertos.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Compañías de comunicaciones que establecen y utilizan protocolos exclusivos para aprovechar los nuevos avances tecnológicos o las oportunidades del mercado.</li>
+</ul>
+</p>
+<p></p>
+<p>Entre los organismos de ingeniería que definen estándares y protocolos abiertos que se aplican a la capa de enlace de datos, se incluyen: </p>
+<p>
+<ul>
+<li>Instituto de Ingenieros en Electricidad y Electrónica (IEEE)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Unión Internacional de Telecomunicaciones (UIT)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Organización Internacional para la Estandarización (ISO)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>American National Standards Institute (ANSI)</li>
+</ul>
+</p>
+<p></p>
+<p>En la tabla de la ilustración, se destacan diversos organismos de estandarización y algunos de sus protocolos de capa de enlace de datos más importantes.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

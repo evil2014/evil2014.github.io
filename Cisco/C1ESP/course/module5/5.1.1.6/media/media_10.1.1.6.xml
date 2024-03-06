@@ -1,0 +1,86 @@
+﻿<textcomponents> <!-- instructions -->
+<component id="ID_inst">
+	<text><![CDATA[<b>Actividad: Subcapas MAC y LLC</b><br><br>En la tabla, se proporcionan descripciones de las subcapas MAC y LLC. Haga clic en los campos MAC o LLC para unir las descripciones con la subcapa correspondiente.]]></text>
+</component> <!-- buttons -->
+<component id="ID_Button01">
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id="ID_Button02">
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component> <!--Number of rows in the table-->
+<component id="txt_numrows">
+	<text><![CDATA[6]]></text>
+</component> <!--Number of columns for the answers in the table. Do not count the question column-->
+<component id="txt_numcols">
+	<text><![CDATA[2]]></text>
+</component> <!--Answer column headers-->
+<component id="txt_col1">
+	<text><![CDATA[<b>MAC</b>]]></text>
+</component>
+
+<component id="txt_col2">
+	<text><![CDATA[<b>LLC</b>]]></text>
+</component> <!--Question text - blockindent code moves the text away from the left edge a bit--> <!--Question text - If questions are numbered, use blockindent for hanging indents-->
+<component id="txt_q1">
+	<text><![CDATA[1. <textformat blockindent='13'>Controla la tarjeta de interfaz de red mediante controladores.</textformat>]]></text>
+</component>
+
+<component id="txt_q2">
+	<text><![CDATA[2. Trabaja con las capas superiores a fin de agregar información de la aplicación para la entrega de datos a los protocolos de alto nivel.]]></text>
+</component>
+
+<component id="txt_q3">
+	<text><![CDATA[3. Trabaja con el hardware para admitir requisitos de ancho de banda; revisa para ver si hay errores en los bits enviados y recibidos.]]></text>
+</component>
+
+<component id="txt_q4">
+	<text><![CDATA[4. Controla el acceso al medio utilizando requisitos de estándares de señalización y medios físicos.]]></text>
+</component>
+
+<component id="txt_q5">
+	<text><![CDATA[5. Admite la tecnología Ethernet mediante el uso de CSMA/CD o CSMA/CA.]]></text>
+</component>
+
+<component id="txt_q6">
+	<text><![CDATA[6. Mantiene una independencia relativa del equipo físico.]]></text>
+</component> <!--Answers - Give the column number(s), column numbering start with 1 not 0--> <!--Answers - For MCMA separate the correct answers with commas [2, 4, 5] -->
+<component id="txt_a1">
+	<text><![CDATA[2]]></text>
+</component>
+
+<component id="txt_a2">
+	<text><![CDATA[2]]></text>
+</component>
+
+<component id="txt_a3">
+	<text><![CDATA[1]]></text>
+</component>
+
+<component id="txt_a4">
+	<text><![CDATA[1]]></text>
+</component>
+
+<component id="txt_a5">
+	<text><![CDATA[1]]></text>
+</component>
+
+<component id="txt_a6">
+	<text><![CDATA[2]]></text>
+</component> <!-- Correct Feedback -->
+<component id="ID_titleCorrect">
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id="ID_correctText">
+	<text><![CDATA[Unió correctamente las descripciones con las subcapas.]]></text>
+</component> <!-- Incorrect Feedback -->
+<component id="ID_titleIncorrect">
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id="ID_IncorrectText">
+	<text><![CDATA[No unió correctamente las descripciones con las subcapas. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+</textcomponents>

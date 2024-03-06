@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.2.2.3 Configuración de las subinterfaces punto a punto</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.2.2.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configurar Frame Relay</h1>
+        <h2>Configuración de subinterfaces</h2>
+      </div>
+      <div id="content">
+<p>Las subinterfaces se ocupan de las limitaciones de las redes Frame Relay al proporcionar una manera de subdividir una red Frame Relay de malla parcial en una cantidad de subredes más pequeñas de malla completa o punto a punto. A cada subred se le asigna su propio número de red y aparece ante los protocolos como si se pudiera llegar a ella mediante una interfaz diferente. </p>
+<p></p>
+<p></p>
+<p>Para crear una subinterfaz, utilice el comando <span class="cmd"><b>interface serial</b></span> en el modo de configuración global seguido del número de puerto físico, un punto (.) y el número de subinterfaz. Para simplificar la resolución de problemas, utilice el DLCI como número de subinterfaz. También debe especificar si la interfaz es punto a multipunto o punto a punto con la palabra clave <span class="cmd"><b>multipoint</b></span> o <span class="cmd"><b>point-to-point</b></span>, ya que no hay un valor predeterminado. Estas palabras clave se definen en la figura 1.</p>
+<p></p>
+<p>El siguiente comando crea una subinterfaz punto a punto para el PVC 103 al R3: </p>
+<p>
+<span class="cmd">R1(config-if)# </span>
+<span class="cmd">
+<b>interface serial 0/0/0.103 point-to-point</b>
+</span>
+</p>
+<p></p>
+<p>
+<b>Nota:</b> para simplificar, en esta sección solo se usan direcciones IPv4 para ilustrar las subinterfaces. Los mismos conceptos y comandos también se aplican al usar el direccionamiento IPv6. </p>
+<p></p>
+<p>Si la subinterfaz se configura como punto a punto, también se debe configurar el DLCI local de la subinterfaz para distinguirlo de la interfaz física. El DLCI también se requiere para las subinterfaces multipunto con ARP inverso habilitado para IPv4. No se requiere para las subinterfaces multipunto configuradas con mapas de rutas estáticas. </p>
+<p></p>
+<p>El proveedor de servicios de Frame Relay asigna los números de DLCI. Estos números van del 16 al 992 y, en general, solo tienen importancia local. El intervalo varía según la LMI que se utilice. </p>
+<p></p>
+<p>El comando <span class="cmd"><b>frame-relay interface-dlci</b></span> configura el DLCI local en la subinterfaz, como se muestra en la figura 2:<span class="cmd"><b></b></span></p>
+<p>
+<span class="cmd">R1(config-subif)# </span>
+<span class="cmd">
+<b>frame-relay interface-dlci 103</b>
+</span>
+</p>
+<p></p>
+<p>
+<b>Nota:</b> desafortunadamente, es posible que modificar la configuración de una subinterfaz de Frame Relay existente no proporcione el resultado esperado. En estas situaciones, desactive la interfaz física, realice los cambios adecuados a las subinterfaces y, a continuación, vuelva a habilitar la interfaz física. Si la configuración corregida produce resultados inesperados, es posible que deba guardar la configuración y volver a cargar el router.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

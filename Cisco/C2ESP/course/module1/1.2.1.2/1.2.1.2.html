@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.2.1.2 Completado dinámico de la tabla de direcciones MAC de un switch</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.2.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>El entorno conmutado</h1>
+        <h2>Reenvío de tramas</h2>
+      </div>
+      <div id="content">
+<p>Los switches usan direcciones MAC para dirigir las comunicaciones de red a través del switch al puerto correspondiente hacia el destino. Un switch se compone de circuitos integrados y del software complementario que controla las rutas de datos a través del switch. Para definir qué puerto usar para transmitir una trama, el switch primero debe saber qué dispositivos existen en cada puerto. A medida que el switch descubre la relación entre puertos y dispositivos, crea una tabla denominada “tabla de direcciones MAC” o “tabla de memoria de contenido direccionable” (CAM). CAM es un tipo de memoria especial que se usa en las aplicaciones de búsqueda de alta velocidad.</p>
+<p></p>
+<p>Los switches LAN determinan cómo manejar las tramas de datos entrantes mediante una tabla de direcciones MAC. El switch genera la tabla de direcciones MAC mediante el registro de la dirección MAC de cada dispositivo conectado a cada uno de los puertos. El switch usa la información de la tabla de direcciones MAC para enviar las tramas destinadas a un dispositivo específico por el puerto que se asignó a ese dispositivo.</p>
+<p></p>
+<p>El switch completa la tabla de direcciones MAC según las direcciones MAC de origen. Cuando el switch recibe una trama entrante con una dirección MAC de destino que no figura en la tabla de direcciones MAC, este reenvía la trama por todos los puertos (saturación), excepto el puerto de entrada de la trama. Cuando el dispositivo de destino responde, el switch agrega la dirección MAC de origen de la trama y el puerto por donde se recibió la trama a la tabla de direcciones MAC. En las redes que cuentan con varios switches interconectados, la tabla de direcciones MAC contiene varias direcciones MAC para un único puerto conectado a los otros switches.</p>
+<p></p>
+<p>Los siguientes pasos describen el proceso de creación de una tabla de direcciones MAC:</p>
+<p></p>
+<p>1. El switch recibe una trama de la PC 1 en el puerto 1 (figura 1).</p>
+<p>2. El switch examina la dirección MAC de origen y la compara con la tabla de direcciones MAC.</p>
+<p>
+<ul>
+<li>Si la dirección no está en la tabla de direcciones MAC, el switch asocia la dirección MAC de origen de la PC 1 al puerto de entrada (puerto 1) en la tabla de direcciones MAC (figura 2).</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Si la tabla de direcciones MAC ya contiene una entrada para esa dirección de origen, restablece el temporizador de vencimiento. Por lo general, las entradas para las direcciones MAC se guardan durante cinco minutos.</li>
+</ul>
+</p>
+<p></p>
+<p>3. Una vez que el switch registró la información de la dirección de origen, examina la dirección MAC de destino. </p>
+<p>
+<ul>
+<li>Si la dirección de destino no figura en la tabla MAC o si es una dirección MAC de difusión, indicada por todas letras F, el switch satura todos los puertos con la trama, excepto el puerto de entrada (figura 3).</li>
+</ul>
+</p>
+<p>4. El dispositivo de destino (PC 3) responde a la trama con una trama de unidifusión dirigida a la PC 1 (figura 4).</p>
+<p>5. El switch incorpora la dirección MAC de origen de la PC 3 y el número de puerto de entrada a la tabla de direcciones. En la tabla de direcciones MAC, se encuentran la dirección de destino de la trama y el puerto de salida asociado (figura 5).</p>
+<p>6. Ahora el switch puede reenviar tramas entre estos dispositivos de origen y destino sin saturación, ya que cuenta con entradas en la tabla de direcciones que identifican a los puertos asociados (figura 6).</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+﻿<textcomponents>
+<component id="ID_s1_title">
+<text><![CDATA[<b>El AP transmite tramas de señal periódicas por difusión</b>]]></text>
+</component>
+<component id="ID_s1_txt01">
+<text><![CDATA[Emisor]]></text>
+</component>
+<component id="ID_s1_txt02">
+  <text><![CDATA[Receptor]]></text> 
+  </component>
+  
+<component id="ID_s1_txt03">
+  <text><![CDATA[<B>Trama de solicitud de sondeo (0x04)</B>]]></text> 
+  </component>
+<component id="ID_s1_txt03_list">
+  <text><![CDATA[<textformat blockindent='-16'><ul><li>SSID</li><li>Estándares admitidos</li></ul></textformat>]]></text> 
+  </component>
+  
+<component id="ID_s1_txt04">
+  <text><![CDATA[<B>Trama de respuesta de sondeo (0x05)</B>]]></text> 
+  </component>
+<component id="ID_s1_txt04_list">
+  <text><![CDATA[<textformat blockindent='-16'><ul><li>SSID</li><li>Estándares admitidos</li><li>Configuración de seguridad</li></ul></textformat>]]></text> 
+  </component>  
+  
+
+<component id="ID_s2_title">
+<text><![CDATA[<b>Los dispositivos cliente escuchan un AP</b>]]></text>
+</component>
+<component id="ID_s2_txt01">
+<text><![CDATA[Emisor]]></text>
+</component>
+<component id="ID_s2_txt02">
+  <text><![CDATA[Receptor]]></text> 
+  </component>
+<component id="ID_s2_txt03">
+  <text><![CDATA[<B>Trama de señal (0x08)</B><BR/><textformat blockindent='-16'><ul><li>SSID</li><li>Estándares admitidos</li><li>Configuración de seguridad</li></ul></textformat>]]></text> 
+  </component>
+  <component id="ID_s2_txt04">
+  <text><![CDATA[<B>Trama de señal (0x08)</B><BR/><textformat blockindent='-16'><ul><li>SSID</li><li>Estándares admitidos</li><li>Configuración de seguridad</li></ul></textformat>]]></text> 
+  </component>
+   <component id="ID_s2_txt05">
+  <text><![CDATA[<B>Trama de señal (0x08)</B><BR/><textformat blockindent='-16'><ul><li>SSID</li><li>Estándares admitidos</li><li>Configuración de seguridad</li></ul></textformat>]]></text> 
+  </component>
+
+</textcomponents>

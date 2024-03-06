@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.1.2.6 Proceso de elección del DR/BDR predeterminado</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.1.2.6_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuraciones avanzadas de OSPF de área única </h1>
+        <h2>OSPF en redes de accesos múltiples</h2>
+      </div>
+      <div id="content">
+<p>¿Cómo se seleccionan el DR y el BDR? La decisión de elección del DR y el BDR OSPF se hace según los siguientes criterios, en orden secuencial:</p>
+<p></p>
+<p>1. Los routers en la red seleccionan como DR al router con la prioridad de interfaz más alta. El router con la segunda prioridad de interfaz más alta se elige como BDR. La prioridad puede configurarse para que sea cualquier número entre 0 y 255. Cuanto mayor sea la prioridad, más probabilidades hay de que se elija al router como DR. Si la prioridad se establece en 0, el router no puede convertirse en el DR. La prioridad predeterminada de las interfaces de difusión de accesos múltiples es 1. Por lo tanto, a menos que se configuren de otra manera, todos los routers tienen un mismo valor de prioridad y deben depender de otro método de diferenciación durante la elección del DR/BDR.</p>
+<p>2. Si las prioridades de interfaz son iguales, se elige al router con la ID más alta como DR. El router con la segunda ID de router más alta es el BDR.</p>
+<p></p>
+<p>Recuerde que la ID del router se determina de tres maneras:</p>
+<p>
+<ul>
+<li>La ID del router se puede configurar manualmente.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Si no hay una ID de router configurada, la ID del router la determina la dirección IP de loopback más alta.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Si no hay interfaces loopback configuradas, la ID del router la determina la dirección IPv4 activa más alta.</li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Nota:</b> si en una red IPv6 no hay direcciones IPv4 configuradas en el router, la ID del router debe configurarse manualmente con el comando <span class="cmd"><b>router-id </b></span><span class="cmd"><i>id-router</i></span>; de lo contrario, OSPFv3 no se inicia.</p>
+<p></p>
+<p>En la ilustración, todas las interfaces Ethernet del router tienen una prioridad determinada de 1. Como resultado, según los criterios de selección descritos anteriormente, para seleccionar el DR y el BDR se usa la ID del router OSPF. El R3, con la ID de router más alta, se convierte en el DR, y el R2, que tiene la segunda ID de router más alta, se convierte en el BDR. </p>
+<p></p>
+<p>
+<b>Nota:</b> las interfaces seriales tienen la prioridad predeterminada establecida en 0; por eso, no seleccionan DR ni BDR.</p>
+<p></p>
+<p>El proceso de elección del DR y el BDR ocurre en cuanto el primer router con una interfaz con OSPF habilitado se activa en la red de accesos múltiples. Esto puede ocurrir cuando se encienden los routers o cuando se configura el comando de OSPF <span class="cmd"><b>network</b></span> para esa interfaz. El proceso de elección sólo toma unos pocos segundos. Si no terminaron de arrancar todos los routers en la red de accesos múltiples, es posible que un router con una ID de router más baja se convierta en el DR. (Puede ser un router más económico que demore menos en arrancar). </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

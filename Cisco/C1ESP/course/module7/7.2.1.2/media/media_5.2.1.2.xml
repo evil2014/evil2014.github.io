@@ -1,0 +1,113 @@
+﻿<textcomponents>
+	<component id="ID_txt01">
+		<text><![CDATA[Servidor]]></text> 
+	</component>
+	
+	<component id="ID_txt02">
+		<text><![CDATA[Cliente 1]]></text> 
+	</component>
+	
+	<component id="ID_txt03">
+		<text><![CDATA[Cliente 2]]></text> 
+	</component> 
+	
+	<component id="ID_txt04">
+		<text><![CDATA[HTTP: puerto&nbsp;80<br/>SMTP: puerto&nbsp;25]]></text> 
+	</component>
+	
+	<component id="ID_txt05">
+		<text><![CDATA[Solicitudes del cliente al servidor TCP]]></text> 
+	</component> <!--	slide 1		-->
+	<component id="ID_s1_title">
+		<text><![CDATA[<b>Clientes envían solicitudes TCP</b]]></text>
+	</component>
+	
+	<component id="ID_s1_txt05">
+		<text><![CDATA[Solicitud de HTTP:<br/>Puerto de origen: 49152<br/>Puerto de destino: 80]]></text> 
+	</component>
+	
+	<component id="ID_s1_txt06">
+		<text><![CDATA[Solicitud de SMTP:<br/>Puerto de origen: 51152<br/>Puerto de destino: 25]]></text> 
+	</component> <!--	slide 2		-->
+	
+	<component id="ID_s2_title">
+		<text><![CDATA[<b>Solicitar puertos de destino</b]]></text>
+	</component>
+	
+	<component id="ID_s2_txt01">
+		<text><![CDATA[Solicitud de HTTP:<br/>Puerto de origen: 49152<br/><font color="#F68026"><b>Puerto de destino: 80</b></font>]]></text> 
+	</component>
+	
+	<component id="ID_s2_txt02">
+		<text><![CDATA[Solicitud de SMTP:<br/>Puerto de origen: 51152<br/><font color="#F68026"><b>Puerto de destino: 25</b></font>]]></text> 
+	</component>
+	
+	<component id="ID_s2_txt03">
+		<text><![CDATA[Utilice números de puerto bien conocidos como puerto de destino.]]></text> 
+	</component> <!--	slide 3		-->
+
+	<component id="ID_s3_title">
+		<text><![CDATA[<b>Solicitar puertos de origen</b]]></text>
+	</component>
+	
+	<component id="ID_s3_txt01">
+		<text><![CDATA[Solicitud de HTTP:<br/><font color="#F68026"><b>Puerto de origen: 49152</b></font><br/>Puerto de destino: 80]]></text> 
+	</component>
+	
+	<component id="ID_s3_txt02">
+		<text><![CDATA[Solicitud de SMTP:<br/><font color="#F68026"><b>Puerto de origen: 51152</b></font><br/>Puerto de destino: 25]]></text> 
+	</component>
+	
+	<component id="ID_s3_txt03">
+		<text><![CDATA[Utilice números de puerto aleatorios como puerto de origen.]]></text> 
+	</component> <!--	slide 4		-->	
+	
+	<component id="ID_s4_title">
+		<text><![CDATA[<b>Respuesta de puertos de destino</b]]></text>
+	</component>
+	
+	<component id="ID_s4_txt01">
+		<text><![CDATA[Solicitud de HTTP:<br/><font color="#F68026"><b>Puerto de origen: 49152</b></font><br/>Puerto de destino: 80]]></text> 
+	</component>
+	
+	<component id="ID_s4_txt02">
+		<text><![CDATA[Solicitud de SMTP:<br/><font color="#F68026"><b>Puerto de origen: 51152</b></font><br/>Puerto de destino: 25]]></text> 
+	</component>
+	
+	<component id="ID_s4_txt03">
+		<text><![CDATA[La respuesta del servidor al cliente TCP utiliza el puerto de origen del paquete de solicitud como puerto de destino.]]></text> 
+	</component>
+	
+	<component id="ID_s4_txt04">
+		<text><![CDATA[Respuesta HTTP:<br/>Puerto de origen 80<br/><font color="#F68026"><b>Puerto de destino 49152</b></font>]]></text> 
+	</component>
+	
+	<component id="ID_s4_txt05">
+		<text><![CDATA[Respuesta SMTP:<br/>Puerto de origen 25<br/><font color="#F68026"><b>Puerto de destino 51152</b></font>]]></text> 
+	</component> <!--	slide 5		-->
+	
+	<component id="ID_s5_title">
+		<text><![CDATA[<b>Respuesta de puertos de origen</b>]]></text>
+	</component>   
+	
+	<component id="ID_s5_txt01">
+		<text><![CDATA[Solicitud de HTTP:<br/>Puerto de origen: 49152<br/>Puerto de destino: 80]]></text> 
+	</component>
+	
+	<component id="ID_s5_txt02">
+		<text><![CDATA[Solicitud de SMTP:<br/>Puerto de origen: 51152<br/>Puerto de destino: 25]]></text> 
+	</component>
+	
+	<component id="ID_s5_txt03">
+		<text><![CDATA[La respuesta del servidor al cliente TCP utiliza el puerto de destino del paquete de solicitud como puerto de origen.]]></text> 
+	</component>
+	
+	<component id="ID_s5_txt04">
+		<text><![CDATA[Respuesta HTTP:<br/><font color="#F68026"><b>Puerto de origen 80</b></font><br/>Puerto de destino 49152]]></text> 
+	</component>
+	
+	<component id="ID_s5_txt05">
+		<text><![CDATA[Respuesta SMTP:<br/><font color="#F68026"><b>Puerto de origen 25</b></font><br/>Puerto de destino 51152]]></text> 
+	</component>
+		
+</textcomponents>

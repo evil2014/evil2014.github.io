@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.1.1.2 Beneficios de las VPN</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.1.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>VPN</h1>
+        <h2>Aspectos básicos de las VPN</h2>
+      </div>
+      <div id="content">
+<p>Como se muestra en la ilustración, una VPN utiliza conexiones virtuales que se enrutan a través de Internet desde la red privada de una organización hasta el sitio remoto o el host del empleado. La información de una red privada se transporta de manera segura a través de la red pública para formar una red virtual. </p>
+<p></p>
+<p>Los beneficios de una VPN incluyen lo siguiente:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Ahorro de costos:</b> las VPN permiten que las organizaciones utilicen un transporte externo de Internet rentable para conectar oficinas remotas y usuarios remotos al sitio principal; por lo tanto, se eliminan los costosos enlaces WAN dedicados y los bancos de módem. Además, con la llegada de las tecnologías rentables de ancho de banda alto, como DSL, las organizaciones pueden utilizar VPN para reducir los costos de conectividad y, al mismo tiempo, aumentar el ancho de banda de la conexión remota.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Escalabilidad:</b> las VPN permiten que las organizaciones utilicen la infraestructura de Internet dentro de los ISP y los dispositivos, lo que facilita la tarea de agregar nuevos usuarios. Por lo tanto, las organizaciones pueden agregar una gran cantidad de capacidad sin necesidad de aumentar considerablemente la infraestructura.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Compatibilidad con la tecnología de banda ancha:</b> las redes VPN permiten que los trabajadores móviles y los empleados a distancia aprovechen la conectividad por banda ancha de alta velocidad, como DSL y cable, para acceder a las redes de sus organizaciones. La conectividad por banda ancha proporciona flexibilidad y eficacia. Las conexiones por banda ancha de alta velocidad también proporcionan una solución rentable para conectar oficinas remotas.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Seguridad:</b> las VPN pueden incluir mecanismos de seguridad que proporcionan el máximo nivel de seguridad mediante protocolos de cifrado y autenticación avanzados que protegen los datos contra el acceso no autorizado.</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

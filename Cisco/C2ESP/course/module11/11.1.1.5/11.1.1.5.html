@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>11.1.1.5 ¿Cómo funciona NAT?</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_11.1.1.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Funcionamiento de NAT</h1>
+        <h2>Características de NAT</h2>
+      </div>
+      <div id="content">
+<p>En este ejemplo, la PC1 con la dirección privada 192.168.10.10 desea comunicarse con un servidor web externo con la dirección pública 209.165.201.1.</p>
+<p></p>
+<p>Haga clic en el botón Reproducir de la figura para iniciar la animación.</p>
+<p></p>
+<p>La PC1 envía un paquete dirigido al servidor web. El R1 reenvía el paquete al R2.</p>
+<p></p>
+<p>Cuando el paquete llega al R2, el router con NAT habilitada para la red, el R2 lee la dirección IPv4 de destino del paquete para determinar si este cumple con los criterios especificados para la traducción. </p>
+<p></p>
+<p>En este caso, la dirección IPv4 de origen cumple con los criterios y se traduce de 192.168.10.10 (dirección local interna) a 209.165.200.226 (dirección global interna). El R2 agrega esta asignación de dirección local a global a la tabla de NAT.</p>
+<p></p>
+<p>El R2 envía el paquete con la dirección de origen traducida hacia el destino. </p>
+<p></p>
+<p>El servidor web responde con un paquete dirigido a la dirección global interna de la PC1 (209.165.200.226).</p>
+<p></p>
+<p>El R2 recibe el paquete con la dirección de destino 209.165.200.226. El R2 revisa la tabla de NAT y encuentra una entrada para esta asignación. El R2 usa esta información y traduce la dirección global interna (209.165.200.226) a la dirección local interna (192.168.10.10), y el paquete se reenvía a la PC1. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

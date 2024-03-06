@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.2.2.1 Resolución de problemas de la capa física</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.2.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resolución de problemas de red</h1>
+        <h2>Síntomas y causas de la resolución de problemas de red</h2>
+      </div>
+      <div id="content">
+<p>La capa física transmite bits desde una computadora a otra y regula la transmisión de un flujo de bits a través del medio físico. La capa física es la única con propiedades físicamente tangibles, como cables, tarjetas y antenas.</p>
+<p></p>
+<p>Los problemas en una red con frecuencia se presentan como problemas de rendimiento. Los problemas de rendimiento indican que existe una diferencia entre el comportamiento esperado y el comportamiento observado y que el sistema no funciona como se podría esperar razonablemente. Las fallas y las condiciones por debajo del nivel óptimo en la capa física no solo presentan inconvenientes para los usuarios sino que pueden afectar la productividad de toda la empresa. Las redes en las que se dan estos tipos de condiciones por lo general se desactivan. Dado que las capas superiores del modelo OSI dependen de la capa física para funcionar, el administrador de red debe tener la capacidad de aislar y corregir los problemas en esta capa de manera eficaz.</p>
+<p></p>
+<p>Los síntomas frecuentes de los problemas de red en la capa física incluyen los siguientes:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Rendimiento inferior a la línea de base:</b> las razones más frecuentes de un rendimiento lento o deficiente incluyen servidores sobrecargados o con alimentación insuficiente, configuraciones de router o switch inadecuadas, congestión del tráfico en un enlace de baja capacidad y pérdida crónica de tramas.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Pérdida de la conectividad:</b> si un cable o un dispositivo fallan, el síntoma más evidente es una pérdida de la conectividad entre los dispositivos que se comunican a través de ese enlace o con el dispositivo o la interfaz que presenta la falla. Esto se indica por medio de una simple prueba de ping. La pérdida intermitente de la conectividad puede indicar una conexión floja u oxidada.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Cuellos de botella o congestión de la red:</b> si un router, una interfaz o un cable fallan, es probable que los protocolos de routing redirijan el tráfico hacia otras rutas que no estén diseñadas para transportar la capacidad adicional. Esto puede provocar congestión o cuellos de botella en esas partes de la red. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Tasas de uso de CPU elevadas:</b> las tasas de uso de CPU elevadas son un síntoma de que un dispositivo, como un router, un switch o un servidor, funciona en el límite admitido por su diseño o lo supera. Si no se aborda rápidamente, la sobrecarga de CPU puede ocasionar que un dispositivo falle o se desactive. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Mensajes de error de la consola:</b> los mensajes de error que se muestran en la consola de un dispositivo indican un problema de la capa física.</li>
+</ul>
+</p>
+<p></p>
+<p>Los incidentes que comúnmente causan problemas de red en la capa física incluyen los siguientes:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Problemas relacionados con la alimentación:</b> estos son el motivo principal de una falla de la red. Además, debe revisarse el funcionamiento de los ventiladores y asegurarse de que los orificios de entrada y salida de ventilación del bastidor no estén obstruidos. Si en otras unidades cercanas también se produce una pérdida de potencia, considere la posibilidad de que haya un corte de energía en la fuente de alimentación principal.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Fallas de hardware:</b> las tarjetas de interfaz de red (NIC) defectuosas pueden ser la causa de errores de transmisión de la red debido a colisiones tardías, tramas cortas y jabber. Con frecuencia, “jabber” se define como la condición en la que un dispositivo de red transmite continuamente datos aleatorios, sin sentido, a la red. Otras causas probables de jabber son archivos de controlador de la NIC defectuosos o dañados, cables defectuosos o problemas de conexión a tierra.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Fallas del cableado:</b> se pueden corregir numerosos problemas simplemente por medio de volver a asentar cables que se desconectaron de manera parcial. Al realizar una inspección física, busque cables dañados, tipos de cables inadecuados y RJ-45 con engarces deficientes. Los cables sospechosos se deben probar o cambiar por un cable que se sepa que funcione.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Atenuación:</b> la atenuación puede ocurrir cuando la longitud de un cable supera el límite de diseño para los medios o cuando hay una conexión deficiente que se debe a un cable flojo o a contactos sucios u oxidados. Si la atenuación es grave, el dispositivo receptor no siempre puede distinguir entre sí los bits que componen el flujo correctamente.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Ruido:</b> la interferencia electromagnética (EMI) local se conoce comúnmente como “ruido”. El ruido se puede generar a partir de muchas fuentes, como estaciones de radio FM, radio de la policía, seguridad de edificios, aviónica para aterrizaje automático, crosstalk (ruido inducido por otros cables en la misma ruta o por cables adyacentes), cables eléctricos cercanos, dispositivos con motores eléctricos grandes o cualquier elemento que cuente con un transmisor más potente que el de un teléfono celular.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Errores de configuración de la interfaz:</b> muchos elementos se pueden configurar incorrectamente en una interfaz y ocasionar que se desactive, por ejemplo, una frecuencia de reloj incorrecta, un origen de reloj incorrecto y que la interfaz no esté encendida. Esto provoca la pérdida de la conectividad a los segmentos de red conectados. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Límites de diseño excedidos:</b> un componente puede operar de manera deficiente en la capa física porque se usa a una tasa promedio superior a la que está configurado para funcionar. Al resolver este tipo de problema, es evidente que los recursos del dispositivo funcionan a la capacidad máxima, o cerca de ella, y hay un aumento en el número de errores de interfaz. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Sobrecarga de CPU:</b> los síntomas incluyen procesos con porcentajes elevados de uso de CPU, descartes de la cola de entrada, rendimiento lento, lentitud o falta de respuesta de los servicios de router como Telnet y ping o falta de actualizaciones de routing. Una de las causas de sobrecarga de CPU en un router es un volumen de tráfico elevado. Si algunas interfaces están regularmente sobrecargadas con tráfico, considere rediseñar el flujo de tráfico en la red o actualizar el hardware.</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

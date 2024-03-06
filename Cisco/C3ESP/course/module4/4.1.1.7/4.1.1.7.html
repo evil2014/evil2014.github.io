@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.1.1.7 Comparación entre las redes WLAN y una LAN</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.1.1.7_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Conceptos de tecnología inalámbrica</h1>
+        <h2>Introducción a la tecnología inalámbrica</h2>
+      </div>
+      <div id="content">
+<p>Las WLAN comparten un origen similar con las LAN Ethernet. El IEEE adoptó la cartera 802 LAN/MAN de estándares de arquitectura de red de computadoras. Los dos grupos de trabajo 802 dominantes son Ethernet 802.3 y WLAN 802.11. Sin embargo, hay diferencias importantes entre ellos.</p>
+<p></p>
+<p>Las WLAN usan RF en lugar de cables en la capa física y la subcapa MAC de la capa de enlace de datos. Comparada con el cable, la RF tiene las siguientes características:</p>
+<p>
+<ul>
+<li>La RF no tiene límites, como los límites de un cable envuelto. Esto permite que las tramas de datos que se transmiten a través de los medios de RF estén disponibles para cualquier persona que pueda recibir la señal de RF.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>La señal RF no está protegida de señales exteriores, como sí lo está el cable en su envoltura aislante. Las radios que funcionan de manera independiente en la misma área geográfica, pero con una RF igual o similar, pueden interferir entre sí.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>La transmisión RF está sujeta a los mismos desafíos inherentes a cualquier tecnología basada en ondas, como la radio comercial. Por ejemplo, a medida que la radio se aleja del origen, es posible que las emisoras de radio comiencen a reproducirse una por encima de la otra y que aumente el ruido estático. Finalmente, la señal se pierde por completo. Las LAN conectadas tienen cables que son del largo apropiado para mantener la fuerza de la señal.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Las bandas RF se regulan en forma diferente en cada país. La utilización de las WLAN está sujeta a regulaciones adicionales y a conjuntos de estándares que no se aplican a las LAN conectadas por cable.</li>
+</ul>
+</p>
+<p></p>
+<p>Las WLAN también difieren de las LAN conectadas por cable de la siguiente manera:</p>
+<p>
+<ul>
+<li>Las WLAN conectan clientes a la red mediante puntos de acceso (AP) inalámbrico o un router inalámbrico, en lugar de hacerlo mediante un switch Ethernet.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Las WLAN conectan los dispositivos móviles que, en general, están alimentados por batería, en lugar de los dispositivos conectados de la LAN. Las NIC inalámbricas tienden a reducir la duración de la batería de los dispositivos móviles.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Las WLAN admiten hosts que se disputan el acceso a los medios RF (bandas de frecuencia). Para evitar proactivamente las colisiones dentro de los medios, el estándar 802.11 recomienda la prevención de colisiones (CSMA/CA) en lugar de la detección de colisiones (CSMA/CD) para el acceso a los medios.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Las WLAN utilizan un formato de trama diferente al de las LAN Ethernet conectadas por cable. Las WLAN requieren información adicional en el encabezado de la Capa 2 de la trama.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Las WLAN tienen mayores inconvenientes de privacidad debido a que las frecuencias de radio pueden salir fuera de las instalaciones.</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

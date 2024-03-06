@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.1.2.6 Resolución de problemas de la capa de acceso a la red</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.1.2.6_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración básica del switch</h1>
+        <h2>Configuración de puertos de un switch</h2>
+      </div>
+      <div id="content">
+<p>La mayoría de los problemas que afectan a las redes conmutadas se produce durante la implementación inicial. En teoría, una vez instaladas, las redes continúan funcionando sin problemas. Sin embargo, los cables se dañan, la configuración cambia, y se conectan al switch nuevos dispositivos que requieren cambios de configuración en este. Se requiere el mantenimiento y la resolución de problemas de infraestructura de la red de forma permanente. </p>
+<p></p>
+<p>Para poder resolver estos problemas, si no cuenta con una conexión o tiene una conexión defectuosa entre un switch y otro dispositivo, siga este proceso general:</p>
+<p></p>
+<p>Para revisar el estado de la interfaz, use el comando <span class="cmd"><b>show interfaces</b></span>.</p>
+<p></p>
+<p>Si la interfaz está inactiva, realice lo siguiente: </p>
+<p></p>
+<p>
+<ul>
+<li>Verifique que se usen los cables adecuados. Además, revise los cables y los conectores para detectar daños. Si se sospecha que hay un cable defectuoso o incorrecto, reemplácelo. </li>
+</ul>
+</p>
+<p></p>
+<p>
+<ul>
+<li>Si la interfaz continúa inactiva, el problema puede deberse a una incompatibilidad en la configuración de velocidad. En general, la velocidad de una interfaz se negocia automáticamente; por lo tanto, incluso si se configura manualmente, la interfaz que se conecta debe negociar automáticamente conforme a ello. Si se produce una incompatibilidad de velocidad debido a una configuración incorrecta o a un problema de hardware o de software, esto podría provocar que la interfaz quede inactiva. Establezca manualmente la misma velocidad en ambos extremos de la conexión si se sospecha que hay un problema. </li>
+</ul>
+</p>
+<p></p>
+<p>Si la interfaz está activa pero aún hay problemas de conectividad, realice lo siguiente: </p>
+<p>
+<ul>
+<li>Mediante el comando <span class="cmd"><b>show interfaces</b></span>, busque indicios de ruido excesivo. Los indicios pueden incluir un aumento en los contadores de fragmentos de colisión, de fragmentos gigantes y de errores de CRC. Si hay un exceso de ruido, primero busque el origen del ruido y, si es posible, elimínelo. Además, verifique qué tipo de cable se utiliza y que el cable no supere la longitud máxima. Para los cables de cobre, se recomienda que utilice, por lo menos, la categoría 5.</li>
+</ul>
+</p>
+<p></p>
+<p>
+<ul>
+<li>Si no hay problemas de ruido, verifique si hay un exceso de colisiones. Si hay colisiones o colisiones tardías, verifique la configuración de dúplex en ambos extremos de la conexión. Al igual que la configuración de velocidad, la configuración de dúplex por lo general se negocia automáticamente. Si pareciera haber una incompatibilidad de dúplex, configúrelo manualmente en ambos extremos de la conexión. Se recomienda usar full-duplex si ambos extremos lo admiten.</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

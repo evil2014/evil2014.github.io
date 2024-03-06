@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.1.1.2 Recuperación tras un bloqueo del sistema</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.1.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración básica del switch</h1>
+        <h2>Configuración de parámetros iniciales de un switch</h2>
+      </div>
+      <div id="content">
+<p>El cargador de arranque proporciona acceso al switch si no se puede usar el sistema operativo debido a la falta de archivos de sistema o al daño de estos. El cargador de arranque tiene una línea de comandos que proporciona acceso a los archivos almacenados en la memoria flash. </p>
+<p></p>
+<p>Se puede acceder al cargador de arranque mediante una conexión de consola con los siguientes pasos:</p>
+<p></p>
+<p>
+<b>Paso 1.</b> Conecte una computadora al puerto de consola del switch con un cable de consola. Configure el software de emulación de terminal para conectarse al switch.</p>
+<p>
+<b>Paso 2.</b> Desconecte el cable de alimentación del switch. </p>
+<p>
+<b>Paso 3.</b> Vuelva a conectar el cable de alimentación al switch, espere 15 segundos y, a continuación, presione y mantenga presionado el botón <b>Mode</b> (Modo) mientras el LED del sistema sigue parpadeando con luz verde. </p>
+<p>
+<b>Paso 4.</b> Continúe oprimiendo el botón <b>Modo</b> hasta que el LED del sistema se torne ámbar por un breve instante y luego verde, después suelte el botón <b>Modo</b>.</p>
+<p>
+<b>Paso 5.</b> Aparece la petición de entrada <span class="cmd"><b>switch:</b></span> del cargador de arranque en el software de emulación de terminal en la computadora.</p>
+<p></p>
+<p>La línea de comandos de <span class="cmd"><b>boot loader</b></span> admite comandos para formatear el sistema de archivos flash, volver a instalar el software del sistema operativo y recuperarse de la pérdida o el olvido de una contraseña. Por ejemplo, el comando <span class="cmd"><b>dir</b></span> se puede usar para ver una lista de archivos dentro de un directorio específico, como se muestra en la ilustración.</p>
+<p></p>
+<p>
+<b>Nota</b>: observe que, en este ejemplo, el IOS se ubica en la raíz de la carpeta de la memoria flash.</p>
+<p></p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

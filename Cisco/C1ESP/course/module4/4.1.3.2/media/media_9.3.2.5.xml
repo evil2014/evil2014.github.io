@@ -1,0 +1,40 @@
+﻿<textcomponents>
+<component id="ID_table">
+<text><![CDATA[<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4'>
+
+	<tr class="liner">
+		<td colspan='3' bgcolor='#0E6360' class="mtable_top"><font size='1' color='#434321'><span style="color:#DAE17A">.</span></font></td>
+	</tr>
+	<tr>
+		<td width="130" bgcolor='#077A77' valign="top"><font color='#ffffff'><b>Unidad de ancho de banda</b></font></td>
+		<td width="90" bgcolor='#077A77' valign="top" class="width"><font color='#ffffff'><b>Abreviatura</b></font> </td>
+		<td bgcolor='#077A77' valign="top"><font color='#ffffff'><b>Equivalencia</b></font> </td>
+	 </tr>
+	<tr>
+		<td bgcolor='#EFF8F7'><font color='#393536'>Bits por segundo</font></td>
+		<td bgcolor='#EFF8F7'><font color='#393536'>bps</font></td>
+		<td bgcolor='#EFF8F7'><font color='#393536'>1&nbsp;bps&nbsp;=&nbsp;unidad fundamental de ancho de banda</font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#FFFFFF'><font color='#393536'>Kilobits por segundo</font></td>
+		<td bgcolor='#FFFFFF'><font color='#393536'>kbps</font></td>
+		<td bgcolor='#FFFFFF'><font color='#393536'>1&nbsp;kbps&nbsp;=&nbsp;1000&nbsp;bps = 10^3&nbsp;bps</font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#EFF8F7'><font color='#393536'>Megabits per second, megabits por segundo</font></td>
+		<td bgcolor='#EFF8F7'><font color='#393536'>Mbps</font></td>
+		<td bgcolor='#EFF8F7'><font color='#393536'>1&nbsp;Mbps =&nbsp;1&nbsp;000&nbsp;000&nbsp;bps&nbsp;=&nbsp;10^6&nbsp;bps</font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#FFFFFF'><font color='#393536'>Gigabits per second, gigabits por segundo</font></td>
+		<td bgcolor='#FFFFFF'><font color='#393536'>Gbps</font></td>
+		<td bgcolor='#FFFFFF'><font color='#393536'>1&nbsp;Gbps&nbsp;=&nbsp;1&nbsp;000&nbsp;000&nbsp;000&nbsp;bps&nbsp;=&nbsp;10^9&nbsp;bps</font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#EFF8F7'><font color='#393536'>Terabits per second, terabits por segundo</font></td>
+		<td bgcolor='#EFF8F7'><font color='#393536'>Tbps</font></td>
+		<td bgcolor='#EFF8F7'><font color='#393536'>1&nbsp;Tbps&nbsp;=&nbsp;1&nbsp;000&nbsp;000&nbsp;000&nbsp;000&nbsp;bps&nbsp;=&nbsp;10^12&nbsp;bps</font></td>
+	</tr>
+</table>]]></text>
+</component>
+</textcomponents>

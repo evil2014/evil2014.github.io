@@ -1,0 +1,75 @@
+﻿<textcomponents>
+
+
+
+<component id="ID_s1_title">
+<text><![CDATA[<b>Eliminación de una licencia permanente y activa</b>]]></text>
+</component>
+<component id="ID_s1_txt01">
+  <text><![CDATA[Desinstalación de la licencia]]></text> 
+  </component>
+<component id="ID_s1_txt02">
+  <text><![CDATA[<b>Paso 1. Deshabilitar el paquete de tecnología.</b>]]></text> 
+  </component>
+<component id="ID_s1_txt03">
+  <text><![CDATA[<b>Paso 2. Borrar la licencia.</b>]]></text> 
+  </component>
+  <component id="ID_s2_title">
+<text><![CDATA[<b></b>]]></text>
+</component>
+  
+  
+  
+
+
+<component id="ID_s2_title">
+<text><![CDATA[<b>Desinstalación de la licencia en el R2</b>]]></text>
+</component>
+
+<component id="ID_sc_reset">
+		<text><![CDATA[Restablecer]]></text>
+	</component>
+	<component id="ID_sc_showme">
+		<text><![CDATA[Mostrar]]></text>
+	</component>
+	<component id="ID_sc_showall">
+		<text><![CDATA[Mostrar todo]]></text>
+	</component>
+
+ <component id="ID_SC2" fontFace='Courier New' fontSize="9">
+		<feedback id="fb"><![CDATA[<b>***</b><font size='10' face="Arial" color="#0000FF">Debe introducir el comando exacto y completo.</font><b>***</b> 
+		]]></feedback>		
+		<existingcommands><![CDATA[<font size='10' face="Arial"><b>En el router R2, realice las siguientes tareas:<ul><li>Deshabilite el paquete de tecnología “seck9”.<li>Vuelva al modo EXEC privilegiado con el comando “exit”.<li>Vuelva a cargar el router para que se apliquen los cambios.</ul></b></font>]]></existingcommands>
+		<command  prompt="R2(config)#">
+		    <correctresponse><![CDATA[license boot module c1900 technology-package seck9 disable]]></correctresponse>
+		</command>
+		<command  prompt="R2(config)#">
+		    <correctresponse><![CDATA[exit]]></correctresponse>
+		</command>
+		<command  prompt="R2#">
+		    <correctresponse><![CDATA[reload]]></correctresponse>
+				<deviceresponse><![CDATA[&lt;Recarga simulada&gt;]]></deviceresponse> 
+			<instruction><![CDATA[<font size='10' face="Arial"><b>Ahora realice las siguientes tareas:<ul><li>Borre la licencia “seck9”.<li>Ingrese al modo de configuración y elimine la opción de arranque para la licencia.<li>Vuelva al modo EXEC privilegiado con el comando “exit”.<li>Vuelva a cargar el router para que se apliquen los cambios.</ul></b>]]></instruction>
+		</command>
+		<command  prompt="R2#">
+		    <correctresponse><![CDATA[license clear seck9]]></correctresponse>
+		</command>
+		<command  prompt="R2#">
+		    <correctresponse><![CDATA[configure terminal]]></correctresponse>
+		</command>
+		<command  prompt="R2(config)#">
+		    <correctresponse><![CDATA[no license boot module c1900 technology-package seck9 disable]]></correctresponse>
+		</command>
+		<command  prompt="R2(config)#">
+		    <correctresponse><![CDATA[exit]]></correctresponse>
+		</command>
+		<command  prompt="R2#">
+		    <correctresponse><![CDATA[reload]]></correctresponse>
+				<deviceresponse><![CDATA[&lt;Simulated reload&gt;]]></deviceresponse> 
+			<instruction><![CDATA[<font size='10' face="Arial"><b>Desinstaló correctamente la licencia de seguridad en el R2.</b>]]></instruction>
+		</command>
+		<command prompt=""/>
+	</component>
+
+
+</textcomponents>

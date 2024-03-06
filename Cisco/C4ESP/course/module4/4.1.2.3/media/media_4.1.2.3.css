@@ -1,0 +1,17 @@
+
+/*   load the main media CSS file    */
+
+@import url('../../../common/styles/media2.css');
+
+html, body {
+	margin:0;
+	height:100%;
+	
+}
+#flashContent {
+	width:98%;
+	height:98%;
+}
+
+#ID_s1_txt02{background-color:#fff;border:1px solid #A7A5A6;padding:3px;}
+#ID_s1_txt04, #ID_s1_txt08,#ID_s2_txt06,#ID_s2_txt10{letter-spacing:-0.5px !important;}

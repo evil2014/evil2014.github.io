@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.2.2.2 Verificación de problemas de config. de dir. IP y máscaras de subred</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.2.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resolución de problemas de routing entre VLAN</h1>
+        <h2>Problemas de direccionamiento IP</h2>
+      </div>
+      <div id="content">
+<p>A cada interfaz o subinterfaz se le debe asignar una dirección IP que corresponda a la subred a la cual está conectada. Un error común es configurar incorrectamente una dirección IP para una subinterfaz. En la figura 1, se muestra el resultado del comando <span class="cmd"><b>show running-config</b></span>. El área resaltada muestra que la subinterfaz G0/0.10 en el router R1 tiene la dirección IP 172.17.20.1. La VLAN para esta subinterfaz debería admitir tráfico de la VLAN 10. La dirección IP se configuró de manera incorrecta. El comando <span class="cmd"><b>show ip interface</b></span> resulta útil en esta configuración. La segunda área resaltada muestra la dirección IP incorrecta.</p>
+<p></p>
+<p>Algunas veces, el problema es que el dispositivo de usuario final, como una computadora personal, está mal configurado. En la figura 2, se muestra la configuración IP para la PC1 que aparece en pantalla. La dirección IP es 172.17.20.21, con la máscara de subred 255.255.255.0. Sin embargo, en esta situación la PC1 debería estar en la VLAN 10, con la dirección 172.17.10.21 y la máscara de subred 255.255.255.0.</p>
+<p></p>
+<p>
+<b>Nota</b>: si bien la configuración de las ID de subinterfaz de manera que coincidan con el número de VLAN facilita la administración de la configuración entre VLAN, no es un requisito. Al trabajar en la resolución de problemas de direccionamiento, asegúrese de que la subinterfaz esté configurada con la dirección correcta para esa VLAN.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

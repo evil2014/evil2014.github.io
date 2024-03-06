@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.2.1.1 Comandos para la resolución de problemas de EIGRP básico </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.2.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resolución de problemas de EIGRP</h1>
+        <h2>Componentes de la resolución de problemas de EIGRP</h2>
+      </div>
+      <div id="content">
+<p>EIGRP se usa generalmente en redes empresariales grandes. La resolución de problemas relacionados con el intercambio de información de routing es una habilidad fundamental para un administrador de red. Esto es particularmente cierto para los administradores que participan en la implementación y el mantenimiento de grandes redes empresariales enrutadas que usan EIGRP como el protocolo de gateway interior (IGP). Existen varios comandos útiles para la resolución de problemas en redes EIGRP. </p>
+<p></p>
+<p>Con el comando <span class="cmd"><b>show ip eigrp neighbors</b></span>, se verifica que el router reconozca a sus vecinos. El resultado de la figura 1 indica dos adyacencias de vecinos EIGRP correctas en el R1.</p>
+<p></p>
+<p>En la figura 2, se verifica que el router descubrió la ruta a una red remota mediante EIGRP con el comando <span class="cmd"><b>show ip route</b></span>. El resultado muestra que el R1 descubrió alrededor de cuatro redes remotas mediante EIGRP.</p>
+<p></p>
+<p>En la figura 3, se muestra el resultado del comando <span class="cmd"><b>show ip protocols</b></span>. Con este comando, se verifica que EIGRP muestre los valores configurados actualmente de varias propiedades de cualquier protocolo de routing habilitado.</p>
+<p></p>
+<p>
+<b>EIGRP para IPv6</b>
+</p>
+<p></p>
+<p>También se aplican comandos y criterios de resolución de problemas similares en EIGRP para IPv6.</p>
+<p></p>
+<p>Los siguientes son los comandos equivalentes que se utilizan con EIGRP para IPv6:</p>
+<p>
+<ul>
+<li>
+<span class="cmd">Router# </span>
+<span class="cmd">
+<b>show ipv6 eigrp neighbors</b>
+</span>
+</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<span class="cmd">Router# </span>
+<span class="cmd">
+<b>show ipv6 route</b>
+</span>
+</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<span class="cmd">Router# </span>
+<span class="cmd">
+<b>show ipv6 protocols</b>
+</span>
+</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

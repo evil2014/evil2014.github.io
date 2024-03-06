@@ -1,0 +1,33 @@
+﻿<textcomponents> <!-- Slide 01-->
+	<component id="ID_s1_title">
+		<text><![CDATA[<b>Instalación de la licencia permanente</b>]]></text> 
+	</component> <!-- Slide 02-->
+	<component id="ID_s2_title">
+		<text><![CDATA[<b>Instalación de la licencia de Seguridad en el R2</b>]]></text>
+	</component>
+	<component id="ID_sc_reset">
+		<text><![CDATA[Restablecer]]></text>
+	</component>
+	
+	<component id="ID_sc_showme">
+		<text><![CDATA[Mostrar]]></text>
+	</component>
+	
+	<component id="ID_sc_showall">
+		<text><![CDATA[Mostrar todo]]></text>
+	</component>
+	<component id="ID_S2_SC5" fontFace='Courier New' fontSize="10">
+		<feedback id="fb"><![CDATA[<b>***</b><font face="Arial" color="#0000FF">Debe introducir el comando exacto y completo.</font><b>***</b> 
+		]]></feedback>		
+		<existingcommands><![CDATA[<font face="Arial"><b>Instale la licencia de seguridad seck9-C1900-SPE150_K9-FAB12340099.xml de<br/>flash0 y vuelva a cargar el router.</b></font>]]></existingcommands>
+		<command  prompt="R2#">
+		    <correctresponse ignorecase='false'><![CDATA[license install flash0:seck9-C1900-SPE150_K9-FAB12340099.xml]]></correctresponse>
+				<deviceresponse><![CDATA[<font Face="Courier New">Installing licenses from “seck9-C1900-SPE150_K9-FAB12340099.xml" <br>Installing...Feature:seck9...Successful:Supported <br>1/1 licenses were successfully installed <br>0/1 licenses were existing licenses <br>0/1 licenses were failed to install <br>R2# <br>*May 27 17:24:57.391: %LICENSE-6-INSTALL: Feature seck9 1.0 was installed in this <br>device.  <br>UDI=1900-SPE150/K9:FAB12340099; StoreIndex=15:Primary License Storage <br>*May 27 17:24:57.615: %IOS_LICENSE_IMAGE_APPLICATION-6-LICENSE_LEVEL: Module <br>name = c1900 <br>Next reboot level = seck9 and License = seck9</font>]]></deviceresponse> 
+		</command>
+		<command  prompt="R2#">
+		    <correctresponse><![CDATA[reload]]></correctresponse>
+			<instruction><![CDATA[<font face="Arial" class="syntaxBottomLine"><b>Instaló correctamente la licencia de Seguridad en el R2.</b>]]></instruction>
+		</command>
+		<command prompt=""/>
+	</component>
+</textcomponents>

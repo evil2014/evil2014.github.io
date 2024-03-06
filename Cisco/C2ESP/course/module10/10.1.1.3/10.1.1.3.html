@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>10.1.1.3 Formato del mensaje DHCPv4</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_10.1.1.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolo de configuración dinámica de host v4</h1>
+        <h2>Funcionamiento de DHCPv4</h2>
+      </div>
+      <div id="content">
+<p>El formato del mensaje DHCPv4 se utiliza para todas las transacciones DHCPv4. Los mensajes DHCPv4 se encapsulan dentro del protocolo de transporte UDP. Los mensajes DHCPv4 que se envían desde el cliente utilizan el puerto de origen UDP 68 y el puerto de destino 67. Los mensajes DHCPv4 que se envían del servidor al cliente utilizan el puerto de origen UDP 67 y el puerto de destino 68. </p>
+<p></p>
+<p>En la ilustración, se muestra el formato de un mensaje DHCPv4. Los campos son los siguientes:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Código de operación (OP):</b> especifica el tipo de mensaje general. El valor 1 indica un mensaje de solicitud y el valor 2 es un mensaje de respuesta.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Tipo de hardware:</b> identifica el tipo de hardware que se utiliza en la red. Por ejemplo, 1 es Ethernet, 15 es Frame Relay y 20 es una línea serial. Estos son los mismos códigos que se utilizan en mensajes ARP.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Longitud de dirección de hardware:</b> especifica la longitud de la dirección.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Saltos:</b> controla el reenvío de mensajes. Un cliente lo establece en 0 antes de transmitir una solicitud.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Identificador de transacción:</b> lo utiliza el cliente para hacer coincidir la solicitud con respuestas recibidas de los servidores de DHCPv4.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Segundos:</b> identifica la cantidad de segundos transcurridos desde que un cliente comenzó a intentar adquirir o renovar un arrendamiento. Lo utilizan los servidores de DHCPv4 para priorizar respuestas cuando hay varias solicitudes del cliente pendientes. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Indicadores:</b> los utiliza un cliente que no conoce su dirección IPv4 cuando envía una solicitud. Se utiliza solo uno de los 16 bits, que es el indicador de difusión. El valor 1 en este campo le indica al servidor de DHCPv4 o al agente de retransmisión que recibe la solicitud que la respuesta se debe enviar como una difusión. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Dirección IP del cliente:</b> la utiliza un cliente durante la renovación del arrendamiento cuando la dirección del cliente es válida y utilizable, no durante el proceso de adquisición de una dirección. El cliente coloca su propia dirección IPv4 en este campo solamente si tiene una dirección IPv4 válida mientras se encuentra en el estado vinculado. De lo contrario, establece el campo en 0. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Su dirección IP:</b> la utiliza el servidor para asignar una dirección IPv4 al cliente.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Dirección IP del servidor:</b> la utiliza el servidor para identificar la dirección del servidor que debe utilizar el cliente para el próximo paso en el proceso bootstrap, que puede ser, o no, el servidor que envía esta respuesta. El servidor emisor siempre incluye su propia dirección IPv4 en un campo especial llamado opción DHCPv4 Server Identifier (Identificador de servidores DHCPv4). </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Dirección IP del gateway:</b> enruta los mensajes DHCPv4 cuando intervienen los agentes de retransmisión DHCPv4. La dirección del gateway facilita las comunicaciones de las solicitudes y respuestas de DHCPv4 entre el cliente y un servidor que se encuentran en distintas subredes o redes.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Dirección de hardware del cliente:</b> especifica la capa física del cliente.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Nombre del servidor:</b> lo utiliza el servidor que envía un mensaje DHCPOFFER o DHCPACK. El servidor puede, de manera optativa, colocar su nombre en este campo. Puede tratarse de un simple apodo de texto o un nombre de dominio DNS, como dhcpserver.netacad.net.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Nombre del archivo de arranque:</b> lo utiliza un cliente de manera optativa para solicitar un determinado tipo de archivo de arranque en un mensaje DHCPDISCOVER. Lo utiliza un servidor en un DHCPOFFER para especificar completamente un directorio de archivos y un nombre de archivo de arranque.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Opciones de DHCP:</b> contiene las opciones de DHCP, incluidos varios parámetros requeridos para el funcionamiento básico de DHCP. Este campo es de longitud variable. Tanto el cliente como el servidor pueden utilizarlo.</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

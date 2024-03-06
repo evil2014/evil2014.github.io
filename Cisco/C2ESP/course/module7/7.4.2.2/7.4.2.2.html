@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.4.2.2 Enlace y estado de enlace</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.4.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Routing dinámico de estado de enlace</h1>
+        <h2>Actualizaciones de estado de enlace</h2>
+      </div>
+      <div id="content">
+<p>El primer paso en el proceso de routing de estado de enlace es que cada router descubra sus propios enlaces y sus propias redes conectadas directamente. Cuando se configura una interfaz de router con una dirección IP y una máscara de subred, la interfaz se vuelve parte de esa red. </p>
+<p></p>
+<p>Consulte la topología en la figura 1. A los fines de este análisis, suponga que el R1 se configuró previamente y que tenía plena conectividad a todos los vecinos. Sin embargo, se cortó la alimentación del R1 brevemente y tuvo que reiniciarse. </p>
+<p></p>
+<p>Durante el arranque, el R1 carga el archivo de configuración de inicio guardado. A medida que se activan las interfaces configuradas anteriormente, el R1 obtiene información sobre sus propias redes conectadas directamente. Más allá de los protocolos de routing utilizados, dichas redes conectadas directamente ahora constituyen entradas en la tabla de routing. </p>
+<p></p>
+<p>Como ocurre con los protocolos vector distancia y las rutas estáticas, la interfaz debe configurarse de manera adecuada con una dirección IPv4 y una máscara de subred, y el enlace debe encontrarse en estado activo antes de que el protocolo de routing de estado de enlace pueda obtener información sobre un enlace. Asimismo, como ocurre con los protocolos vector distancia, la interfaz debe incluirse en una de las instrucciones <span class="cmd"><b>network</b></span> de configuración del router para que pueda participar en el proceso de routing de estado de enlace. </p>
+<p></p>
+<p>En la figura 1, se muestra el R1 enlazado a cuatro redes conectadas directamente: </p>
+<p>
+<ul>
+<li>FastEthernet 0/0, 10.1.0.0/16 </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Serial 0/0/0, 10.2.0.0/16 </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Serial 0/0/1, 10.3.0.0/16 </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Serial 0/1/0, 10.4.0.0/16 </li>
+</ul>
+</p>
+<p></p>
+<p>Como se muestra en las figuras 2 a 5, la información de estado de enlace incluye lo siguiente:</p>
+<p>
+<ul>
+<li>La dirección IPv4 y la máscara de subred de la interfaz</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>El tipo de red, como Ethernet (difusión) o enlace serial punto a punto</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>El costo de dicho enlace</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Cualquier router vecino en dicho enlace</li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Nota:</b> la implementación de OSPF de Cisco especifica la métrica de routing OSPF como el costo del enlace sobre la base del ancho de banda de la interfaz de salida. A los fines de este capítulo, utilizamos valores de costo arbitrarios para simplificar la demostración.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

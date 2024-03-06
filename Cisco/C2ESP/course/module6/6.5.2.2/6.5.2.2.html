@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.5.2.2 Resolución de un problema de conectividad</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.5.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resolución de problemas de rutas estáticas y predeterminadas</h1>
+        <h2>Resolución de problemas de configuración de rutas estáticas y predeterminadas IPv4</h2>
+      </div>
+      <div id="content">
+<p>Encontrar una ruta que falta (o que está mal configurada) es un proceso relativamente sencillo, si se utilizan las herramientas adecuadas de manera metódica. </p>
+<p></p>
+<p>En este ejemplo, el usuario en la PC1 informa que no puede acceder a los recursos en la LAN del R3. Esto puede confirmarse haciendo ping en la interfaz LAN del R3 que utiliza la interfaz LAN del R1 como origen (consulte la figura 1). Los resultados muestran que no hay conectividad entre estas LAN.</p>
+<p></p>
+<p>Un comando traceroute en la figura 2 muestra que el R2 no responde como se esperaba. Por alguna razón, el R2 reenvía el comando traceroute de nuevo al R1. El R1 lo devuelve al R2. Este bucle continuaría hasta que el valor del tiempo de vida (TTL) disminuya a cero, en cuyo caso, el router enviaría al R1 un mensaje de destino inalcanzable del protocolo de mensajes de control de Internet (ICMP).</p>
+<p></p>
+<p>El siguiente paso es investigar la tabla de routing del R2, porque es el router que muestra un patrón extraño de reenvío. La tabla de routing en la figura 3 muestra que la red 192.168.2.0/24 está configurada de manera incorrecta. Se configuró una ruta estática a la red 192.168.2.0/24 con la dirección del siguiente salto 172.16.2.1. Mediante la dirección del siguiente salto configurada, los paquetes destinados a la red 192.168.2.0/24 se devuelven al R1. La topología deja en claro que la red 192.168.2.0/24 está conectada al R3, no al R1. Por lo tanto, la ruta estática a la red 192.168.2.0/24 en el R2 debe utilizar el siguiente salto 192.168.1.1, no 172.16.2.1.</p>
+<p></p>
+<p>En la figura 4, se muestra el resultado de la configuración en ejecución que revela la instrucción incorrecta de <span class="cmd"><b>ip route</b></span>. Se elimina la ruta incorrecta y luego se introduce la correcta.</p>
+<p></p>
+<p>En la figura 5, se verifica si el R1 puede alcanzar la interfaz LAN del R3. Como último paso de confirmación, el usuario de la PC1 también debe probar la conectividad a la LAN 192.168.2.0/24.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

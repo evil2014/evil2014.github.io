@@ -1,0 +1,171 @@
+﻿<textcomponents>
+<component id="ID_s1_inst">
+<text><![CDATA[<b>Actividad: enlaces troncales de VLAN en acción, situación 1</b><br/><br/>Arrastre las tramas de Ethernet (sobres de color amarillo) a las computadoras de destino para esta situación. No utilizará todos los sobres en cada situación.<br/>Situación 1: la PC 1 envía una difusión. ¿Cuáles son las computadoras que reciben una copia de la trama de difusión?]]></text>
+</component>
+
+<component id="ID_s2_inst">
+<text><![CDATA[<b>Actividad: enlaces troncales de VLAN en acción, situación 2</b><br/><br/>Arrastre las tramas de Ethernet (sobres de color amarillo) a las computadoras de destino para esta situación. No utilizará todos los sobres en cada situación.<br/>Situación 2: PC 2 envía una difusión. ¿Cuáles son las computadoras que reciben una copia de la trama de difusión?]]></text>
+</component>
+
+<component id="ID_s3_inst">
+<text><![CDATA[<b>Actividad: enlaces troncales de VLAN en acción, situación 3</b><br/><br/>Arrastre las tramas de Ethernet (sobres de color amarillo) a las computadoras de destino para esta situación. No utilizará todos los sobres en cada situación.<br/>Situación 3: PC 3 envía una difusión. ¿Cuáles son las computadoras que reciben una copia de la trama de difusión?]]></text>
+</component>
+
+<component id='ID_s1_txt01'>
+	<text><![CDATA[VLAN 10]]></text>
+</component>
+<component id='ID_s1_txt02'>
+	<text><![CDATA[VLAN 20]]></text>
+</component>
+<component id='ID_s1_txt03'>
+	<text><![CDATA[VLAN 30]]></text>
+</component>
+<component id='ID_s1_txt04'>
+	<text><![CDATA[VLAN 10]]></text>
+</component>
+<component id='ID_s1_txt05'>
+	<text><![CDATA[VLAN 20]]></text>
+</component>
+<component id='ID_s1_txt06'>
+	<text><![CDATA[VLAN 30]]></text>
+</component>
+
+
+<component id='ID_s2_txt01'>
+	<text><![CDATA[VLAN 10]]></text>
+</component>
+<component id='ID_s2_txt02'>
+	<text><![CDATA[VLAN 30]]></text>
+</component>
+<component id='ID_s2_txt03'>
+	<text><![CDATA[VLAN 30]]></text>
+</component>
+<component id='ID_s2_txt04'>
+	<text><![CDATA[VLAN 30]]></text>
+</component>
+<component id='ID_s2_txt05'>
+	<text><![CDATA[VLAN 20]]></text>
+</component>
+<component id='ID_s2_txt06'>
+	<text><![CDATA[VLAN 30]]></text>
+</component>
+
+
+<component id='ID_s3_txt01'>
+	<text><![CDATA[VLAN 30]]></text>
+</component>
+<component id='ID_s3_txt02'>
+	<text><![CDATA[VLAN 20]]></text>
+</component>
+<component id='ID_s3_txt03'>
+	<text><![CDATA[VLAN 10]]></text>
+</component>
+<component id='ID_s3_txt04'>
+	<text><![CDATA[VLAN 30]]></text>
+</component>
+<component id='ID_s3_txt05'>
+	<text><![CDATA[VLAN 10]]></text>
+</component>
+<component id='ID_s3_txt06'>
+	<text><![CDATA[VLAN 30]]></text>
+</component>
+
+
+
+
+<component id='ID_s1_drag01'>
+	<text><![CDATA[Ethernet<br>Trama]]></text>
+</component>
+
+<component id='ID_s2_drag01'>
+	<text><![CDATA[Ethernet<br>Trama]]></text>
+</component>
+
+<component id='ID_s3_drag01'>
+	<text><![CDATA[Ethernet<br>Trama]]></text>
+</component>
+
+
+
+<component id='ID_s1_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id='ID_s1_CORRECT_BODY'>
+	<text><![CDATA[Identificó correctamente las computadoras de destino que reciben las tramas de difusión.]]></text>
+</component>
+
+
+<component id='ID_s1_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_BODY'>
+	<text><![CDATA[No identificó correctamente las computadoras de destino que reciben las tramas de difusión. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+
+
+<component id='ID_s2_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id='ID_s2_CORRECT_BODY'>
+	<text><![CDATA[Identificó correctamente las computadoras de destino que reciben las tramas de difusión.]]></text>
+</component>
+
+
+<component id='ID_s2_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_s2_INCORRECT_BODY'>
+	<text><![CDATA[No identificó correctamente las computadoras de destino que reciben las tramas de difusión. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+
+<component id='ID_s3_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id='ID_s3_CORRECT_BODY'>
+	<text><![CDATA[Identificó correctamente las computadoras de destino que reciben las tramas de difusión.]]></text>
+</component>
+
+
+<component id='ID_s3_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_s3_INCORRECT_BODY'>
+	<text><![CDATA[No identificó correctamente las computadoras de destino que reciben las tramas de difusión. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+
+
+
+<component id='ID_s1_CHECK'>
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id='ID_s1_RESET'>
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component>
+
+<component id='ID_s2_CHECK'>
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id='ID_s2_RESET'>
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component>
+
+<component id='ID_s3_CHECK'>
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id='ID_s3_RESET'>
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component>
+
+</textcomponents>

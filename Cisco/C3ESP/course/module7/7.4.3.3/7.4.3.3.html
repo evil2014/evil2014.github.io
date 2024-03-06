@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.4.3.3 Verificación de EIGRP para IPv6: análisis de la tabla de routing IPv6</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.4.3.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de EIGRP para IPv6</h1>
+        <h2>Verificación de EIGRP para IPv6</h2>
+      </div>
+      <div id="content">
+<p>Al igual que con cualquier protocolo de routing, el objetivo es completar la tabla de routing IP con rutas a redes remotas y las mejores rutas para llegar a aquellas redes. Como con IPv4, es importante analizar la tabla de routing IPv6 y determinar si está completada con las rutas correctas. </p>
+<p></p>
+<p>La tabla de routing IPv6 se examina mediante el comando <span class="cmd"><b>show ipv6 route</b></span>. Las rutas EIGRP para IPv6 se indican en la tabla de routing con una D, al igual que en su homólogo para IPv4. </p>
+<p></p>
+<p>En la figura 1, se muestra que el R1 tiene instaladas tres rutas EIGRP a redes IPv6 remotas en su tabla de routing IPv6:</p>
+<p>
+<ul>
+<li>2001:DB8:CAFE:2::/64 a través del R3 (FE80::3), mediante su interfaz Serial 0/0/1</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>2001:DB8:CAFE:3::/64 a través del R3 (FE80::3), mediante su interfaz Serial 0/0/1</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>2001:DB8:CAFE:A002::/64 a través del R3 (FE80::3), mediante su interfaz Serial 0/0/1</li>
+</ul>
+</p>
+<p></p>
+<p>Las tres rutas utilizan al R3 como router de siguiente salto (sucesor). Observe que en la tabla de routing se utiliza la dirección link-local como la dirección del siguiente salto. Debido a que en cada router se configuraron todas las interfaces con una dirección link-local única y distinguible, es fácil reconocer que el router de siguiente salto a través de FE80::3 es el router R3.</p>
+<p></p>
+<p>En la figura 2, se muestra la tabla de routing IPv6 del R2. </p>
+<p></p>
+<p>En la figura 3, se muestra la tabla de routing del R3. Observe que el R3 tiene dos rutas del mismo costo a 2001:DB8:CAFE:A001::/64. Una ruta es a través del R1 en FE80::1, y la otra es a través del R2 en FE80::2.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+﻿<textcomponents>
+
+
+<component id="ID_sc_reset">
+		<text><![CDATA[Restablecer]]></text>
+	</component>
+	<component id="ID_sc_showme">
+		<text><![CDATA[Mostrar]]></text>
+	</component>
+	<component id="ID_sc_showall">
+		<text><![CDATA[Mostrar todo]]></text>
+	</component>
+<component id="ID_title">
+		<text><![CDATA[<b>Resolución de problemas de una interfaz serial</b>]]></text>
+	</component>
+	
+<component id="ID_SC2" fontFace='Courier New' fontSize="10">
+<feedback id="fb"><![CDATA[<b><font size='10' face="Arial" color="#0000FF">***Debe introducir el comando exacto y completo. Los comandos que incluyen un nombre o una contraseña distinguen mayúsculas de minúsculas.***</font></b>
+]]></feedback>
+<existingcommands><![CDATA[<font size='10' face="Arial"><b>Realice los pasos de la resolución de problemas según lo indicado.<br>El router R1 debe configurarse con los siguientes parámetros:<ul><li>S0/0/0 es la interfaz DCE.</li><li>Frecuencia de reloj establecida en 64000.</li><li>Encapsulación HDLC</li></ul><br>Introduzca el comando show para verificar el tipo de cable conectado a S0/0/0.</b></font>]]></existingcommands>
+<command prompt="R1#">
+<correctresponse><![CDATA[show controllers s0/0/0]]></correctresponse>
+<deviceresponse><![CDATA[Interface Serial0/0/0 <br>Hardware is PowerQUICC MPC860 <br>DCE V.35, clock rate 64000 <br>idb at 0x81081AC4, driver data structure at 0x81084AC0 <br>SCC Registers: <br>General [GSMR]=0x2:0x00000000, Protocol-specific [PSMR]=0x8 <br>Events [SCCE]=0x0000, Mask [SCCM]=0x0000, Status [SCCS]=0x00 <br>Transmit on Demand [TODR]=0x0, Data Sync [DSR]=0x7E7E <br>&lt; Resultado omitido &gt;]]></deviceresponse>
+<instruction><![CDATA[<font size='10' face="Arial"><b>Introduzca el comando show para verificar la configuración de la encapsulación para S0/0/0.</font>]]></instruction>
+</command>
+<command prompt="R1#">
+<correctresponse><![CDATA[show interfaces s0/0/0]]></correctresponse>
+<deviceresponse><![CDATA[Serial0/0/0 is up, line protocol is down (disabled) <br> Hardware es HD64570 <br> Internet address is 172.16.0.1/30 <br> MTU 1500 bytes, BW 1544 Kbit, DLY 20000 usec, <br> reliability 255/255, txload 1/255, rxload 1/255 <br> Encapsulation PPP, loopback not set, keepalive set (10 sec) <br> LCP Closed <br> Closed: LEXCP, BRIDGECP, IPCP, CCP, CDPCP, LLC2, BACP <br> Last input never, output never, output hang never <br> Last clearing of "show interface" counters never <br>&lt; Resultado omitido &gt;]]></deviceresponse>
+<instruction><![CDATA[<font size='10' face="Arial"><b>Configure la interfaz S0/0/0 para que utilice la encapsulación predeterminada.</font>]]></instruction>
+</command>
+<command prompt="R1#">
+<correctresponse><![CDATA[configure terminal]]></correctresponse>
+<deviceresponse><![CDATA[Enter configuration commands, one per line. End with CNTL/Z.]]></deviceresponse>
+</command>
+<command prompt="R1(config)#">
+<correctresponse><![CDATA[interface s0/0/0]]></correctresponse>
+</command>
+<command prompt="R1(config-if)#">
+<correctresponse><![CDATA[encapsulation hdlc]]></correctresponse>
+<deviceresponse><![CDATA[%LINEPROTO-5-UPDOWN: Line protocol on Interface Serial0/0/0, changed state to down<br><br>%LINEPROTO-5-UPDOWN: Line protocol on Interface Serial0/0/0, changed state to up]]></deviceresponse>
+<instruction><![CDATA[<font size='10' face="Arial"><b>Introduzca el comando “do show” para verificar la configuración de la encapsulación para S0/0/0.</b></font>]]></instruction>
+</command>
+<command prompt="R1(config-if)#">
+<correctresponse><![CDATA[do show interfaces s0/0/0]]></correctresponse>
+<deviceresponse><![CDATA[Serial0/0/0 is up, line protocol is up (connected) <br> Hardware es HD64570 <br> Internet address is 172.16.0.1/30 <br> MTU 1500 bytes, BW 1544 Kbit, DLY 20000 usec, <br> reliability 255/255, txload 1/255, rxload 1/255 <br> Encapsulation HDLC, loopback not set, keepalive set (10 sec) <br> Last input never, output never, output hang never <br> Last clearing of "show interface" counters never <br>&lt; Resultado omitido &gt;]]></deviceresponse>
+<instruction><![CDATA[<font size='10' face="Arial"><b>Realizó correctamente los pasos de la resolución de problemas para la interfaz serial.</font>]]></instruction>
+</command>
+<command prompt=""/>
+</component>
+
+
+
+</textcomponents>

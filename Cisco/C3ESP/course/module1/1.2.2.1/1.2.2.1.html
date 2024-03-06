@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.2.2.1 Requisitos de los routers</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.2.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Selección de dispositivos de red</h1>
+        <h2>Hardware de routers</h2>
+      </div>
+      <div id="content">
+<p>El routing es necesario en la capa de distribución de una red empresarial. Sin el proceso de routing, los paquetes no pueden salir de la red local.</p>
+<p></p>
+<p>Los routers cumplen un papel muy importante en la red, ya que interconectan múltiples sitios dentro de la red empresarial, lo que proporciona rutas redundantes y conecta los ISP en Internet. Los routers también pueden actuar como traductores entre los diferentes tipos de medios y protocolos. Por ejemplo, un router puede aceptar paquetes de una red Ethernet y volver a encapsularlos para transportarlos por una red serial.</p>
+<p></p>
+<p>Los routers usan la parte de la red de la dirección IP de destino para enrutar paquetes hacia el destino correcto. Seleccionan una ruta alternativa si el enlace deja de funcionar o si hay mucho tráfico. Todos los hosts de una red local especifican la dirección IP de la interfaz del router local en la configuración IP. Esta interfaz del router es el gateway predeterminado. </p>
+<p></p>
+<p>Los routers también cumplen otras funciones útiles:</p>
+<p></p>
+<p>
+<ul>
+<li>Ofrecen contención de difusión </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Conectan ubicaciones remotas</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Agrupan a los usuarios lógicamente de acuerdo con la aplicación o el departamento</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Proporcionan seguridad mejorada </li>
+</ul>
+</p>
+<p></p>
+<p>Haga clic en cada área resaltada de la ilustración para obtener más información sobre las funciones de los routers.</p>
+<p></p>
+<p>Con la empresa y el ISP, la capacidad de enrutar de modo eficiente y recuperar una falla de enlace de red es esencial para la entrega de paquetes a su destino.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

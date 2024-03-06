@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.5.1.2 Resumen</title>
+    <!--  -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.5.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resumen</h1>
+        <h2>Resumen</h2>
+      </div>
+      <div id="content">
+<p>Las redes e Internet cambiaron el modo en que nos comunicamos, aprendemos, trabajamos e incluso la forma en que jugamos. </p>
+<p></p>
+<p>Hay redes de todo tamaño. Pueden ir desde redes simples, compuestas por dos computadoras, hasta redes que conectan millones de dispositivos. </p>
+<p>Internet es la red más extensa que existe. De hecho, el término Internet significa “red de redes”. Internet proporciona los servicios que nos permiten conectarnos y comunicarnos con nuestra familia, nuestros amigos, nuestro trabajo y nuestros intereses. </p>
+<p></p>
+<p>La infraestructura de red es la plataforma que da soporte a la red. Proporciona el canal estable y confiable por el cual pueden producirse las comunicaciones. Consta de componentes de red, incluidos dispositivos finales, dispositivos intermediarios y medios de red. </p>
+<p></p>
+<p>Las redes deben ser confiables. Esto significa que las redes deben ser tolerantes a fallas, escalables, proporcionar calidad de servicio y garantizar la seguridad de la información y de los recursos en ellas. La seguridad de redes es una parte integral de las redes de computadoras, independientemente de si la red está limitada a un entorno doméstico con una única conexión a Internet o si es tan extensa como una empresa con miles de usuarios. No hay una solución única que pueda proteger una red contra la variedad de amenazas que existen. Por este motivo, la seguridad debe implementarse en varias capas, y debe utilizarse más de una solución de seguridad. </p>
+<p></p>
+<p>La infraestructura de red puede variar ampliamente en términos de tamaño, cantidad de usuarios, y cantidad y tipo de servicios que admite. La infraestructura de red debe crecer y ajustarse para admitir la forma en que se utiliza la red. La plataforma de routing y switching es la base de toda infraestructura de red. </p>
+<p></p>
+<p>Este capítulo se centró en las redes como plataforma principal para permitir la comunicación. En el capítulo siguiente, se presentará el Sistema operativo Internetwork (IOS) de Cisco utilizado para permitir el enrutamiento y la conmutación en entornos de red de Cisco.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

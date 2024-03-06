@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.2.1.3 Establecimiento y finalización de la conexión TCP</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.2.1.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>TCP y UDP</h1>
+        <h2>Comunicación TCP</h2>
+      </div>
+      <div id="content">
+<p>En algunas culturas, cuando dos personas se conocen, generalmente se saludan dándose la mano. Ambas culturas entienden el acto de darse la mano como señal de un saludo amigable. Las conexiones en la red son similares. El primer enlace solicita la sincronización. El segundo enlace acusa recibo de la solicitud de sincronización inicial y sincroniza los parámetros de conexión en la dirección opuesta. El tercer segmento de enlace es un acuse de recibo que se utiliza para informarle al destino que ambos lados están de acuerdo en que se estableció una conexión.</p>
+<p>Cuando dos hosts se comunican utilizando TCP, se establece una conexión antes de que puedan intercambiarse los datos. Luego de que se completa la comunicación, se cierran las sesiones y la conexión finaliza. Los mecanismos de conexión y sesión habilitan la función de confiabilidad de TCP. Vea en la figura los pasos para establecer y terminar una conexión del TCP. </p>
+<p></p>
+<p>Los hosts hacen un seguimiento de cada segmento de datos dentro de una sesión e intercambian información sobre qué datos se reciben mediante la información del encabezado TCP. TCP es un protocolo full-duplex, en el que cada conexión representa dos streams de comunicación unidireccionales, o sesiones. Para establecer la conexión los hosts realizan un protocolo de enlace de tres vías. Los bits de control en el encabezado TCP indican el progreso y estado de la conexión. Enlace de tres vías:</p>
+<p>
+<ul>
+<li>Establece que el dispositivo de destino se presente en la red</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Verifica que el dispositivo de destino tenga un servicio activo y que acepte solicitudes en el número de puerto de destino que el cliente de origen intenta utilizar para la sesión</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Informa al dispositivo de destino que el cliente de origen intenta establecer una sesión de comunicación en dicho número de puerto</li>
+</ul>
+</p>
+<p></p>
+<p>En las conexiones TCP, el cliente del host establece la conexión con el servidor. Los tres pasos en el establecimiento de una conexión TCP son:</p>
+<p>
+<b>Paso 1.</b> El cliente de origen solicita una sesión de comunicación de cliente a servidor con el servidor.</p>
+<p>
+<b>Paso 2.</b> El servidor acusa recibo de la sesión de comunicación de cliente a servidor y solicita una sesión de comunicación de servidor a cliente. </p>
+<p>
+<b>Paso 3.</b> El cliente de origen acusa recibo de la sesión de comunicación de servidor a cliente.</p>
+<p></p>
+<p>En la ilustración, haga clic en los botones 1 a 3 para ver el establecimiento de la conexión TCP.</p>
+<p></p>
+<p>Para comprender el proceso de enlace de tres vías, observe los diversos valores que intercambian ambos hosts. Dentro del encabezado del segmento TCP, existen seis campos de 1 bit que contienen información de control utilizada para gestionar los procesos de TCP. Estos campos son los siguientes: </p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>URG:</b> campo indicador urgente importante</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>ACK:</b> campo de acuse de recibo importante</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>PSH:</b> función de empuje</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>RST:</b> restablecer la conexión</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>SYN:</b> sincronizar números de secuencia</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>FIN:</b> no hay más datos del emisor</li>
+</ul>
+</p>
+<p></p>
+<p>Los campos ACK y SYN son importantes para el análisis del protocolo de enlace de tres vías.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+﻿<textcomponents>
+
+<component id="ID_s2_title">
+	<text><![CDATA[<b>Comandos para recolectar síntomas</b>]]></text>
+</component>
+
+
+<component id="ID_table02">
+<text><![CDATA[<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4'>
+
+<tr class="mtable_top">
+<td colspan='2' bgcolor='#0E6360' class="mtable_top"><font size='1' color='#434321'><span style="color:#DAE17A">.</span></font></td>
+</tr>
+
+<tr>
+<td width="180" bgcolor='#077A77' class="mtitle"><font color='#ffffff'><b>Comando</b></font></td>
+<td bgcolor='#077A77' class="mtitle"><font color='#ffffff'><b>Descripción</b></font></td>
+</tr>
+
+<tr>
+<td bgcolor='#eff8f7'><font face="_typewriter"><b>ping  </b>{<i>host</i>|<i>ip-address</i>}</font></td>
+<td bgcolor='#eff8f7'>Envía un paquete de solicitud de eco a una dirección y espera una respuesta. La variable <font face="_typewriter"><i>host </i></font>| <font face="_typewriter"><i>ip-address </i></font> es el alias de IP o la dirección IP del sistema objetivo.</td>
+</tr>
+
+<tr>
+<td bgcolor='#ffffff'><font face="_typewriter"><b>traceroute  </b>{<i>destination</i>}</font></td>
+<td bgcolor='#ffffff'>Identifica la ruta que recorre un paquete a través de las redes. La variable de destino es el nombre de host o la dirección IP del sistema objetivo.</td>
+</tr>
+
+<tr>
+<td bgcolor='#eff8f7'><font face="_typewriter"><b>telnet  </b>{<i>host</i>|<i>ip-address</i>}</font></td>
+<td bgcolor='#eff8f7'>Se conecta con una dirección IP usando la aplicación Telnet.</td>
+</tr>
+
+<tr>
+<td bgcolor='#ffffff'><font face="_typewriter"><b>show ip interface brief show ipv6 interface brief</b></font></td>
+<td bgcolor='#ffffff'>Muestra un resumen del estado de todas las interfaces en un dispositivo.</td> 
+</tr>
+
+<tr>
+<td bgcolor='#eff8f7'><font face="_typewriter"><b>show ip route<br/>show ipv6 route</b></font></td>
+<td bgcolor='#eff8f7'>Muestra las tablas de routing IPv4 e IPv6 actuales, que contienen las rutas a todos los destinos de red conocidos.</td> 
+</tr>
+
+<tr>
+<td bgcolor='#eff8f7'><font face="_typewriter"><b>show running-config</b></font></td>
+<td bgcolor='#eff8f7'>Muestra el contenido del archivo de configuración en ejecución en el momento.</td> 
+</tr>
+
+<tr>
+<td bgcolor='#ffffff'><font face="_typewriter"><b>[no] debug ?</b></font></td>
+<td bgcolor='#ffffff'>Muestra una lista de opciones para habilitar o deshabilitar eventos de depuración en un dispositivo.</td> 
+</tr>
+
+<tr>
+<td bgcolor='#ffffff'><font face="_typewriter"><b>show protocols</b></font></td>
+<td bgcolor='#ffffff'>Muestra los protocolos configurados y muestra el estado global y específico por interfaz de cualquier protocolo de Capa 3 configurado.</td> 
+</tr>
+</table>]]></text> 
+</component>
+
+</textcomponents>

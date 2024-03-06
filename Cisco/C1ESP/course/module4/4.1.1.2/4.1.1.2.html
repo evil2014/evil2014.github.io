@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.1.1.2 Tarjetas de interfaz de red</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.1.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolos de capa física</h1>
+        <h2>Cómo realizar la conexión</h2>
+      </div>
+      <div id="content">
+<p>Las tarjetas de interfaz de red (NIC) conectan un dispositivo a la red. Las NIC Ethernet se utilizan para las conexiones por cable, mientras que las NIC de red de área local inalámbrica (WLAN) se utilizan para las conexiones inalámbricas. Los dispositivos para usuarios finales pueden incluir un tipo de NIC o ambos. Una impresora de red, por ejemplo, puede contar solo con una NIC Ethernet y, por lo tanto, se debe conectar a la red mediante un cable Ethernet. Otros dispositivos, como las tablet PC y los smartphones, pueden contener solo una NIC WLAN y deben utilizar una conexión inalámbrica. </p>
+<p></p>
+<p>En términos de rendimiento, no todas las conexiones físicas son iguales a la hora de conectarse a una red.</p>
+<p></p>
+<p>Por ejemplo, un dispositivo inalámbrico experimentará una merma en el rendimiento según la distancia a la que se encuentre del punto de acceso inalámbrico. Cuanto más alejado del punto de acceso esté el dispositivo, más débil será la señal inalámbrica que reciba. Esto puede significar menor ancho de banda o la ausencia absoluta de una conexión inalámbrica. En la ilustración, se muestra que se puede utilizar un extensor de alcance inalámbrico para regenerar la señal inalámbrica en partes de la casa que estén demasiado alejadas del punto de acceso inalámbrico. Por otra parte, las conexiones por cable no sufren una merma del rendimiento; sin embargo, limitan extremadamente el movimiento y, en general, requieren una posición estática. </p>
+<p></p>
+<p>Todos los dispositivos inalámbricos deben compartir el acceso a las ondas aéreas que se conectan al punto de acceso inalámbrico. Esto significa que el rendimiento de la red puede ser más lento a medida que más dispositivos inalámbricos acceden a la red simultáneamente. Los dispositivos conectados por cable no necesitan compartir el acceso a la red con otros dispositivos. Cada dispositivo conectado por cable tiene un canal de comunicación independiente a través de su propio cable Ethernet. Esto es importante cuando se tienen en cuenta algunas aplicaciones, como juegos en línea, streaming video y conferencias de video, que requieren más ancho de banda dedicado que otras aplicaciones. </p>
+<p></p>
+<p>Al analizar los siguientes temas, aprenderá más sobre las conexiones de capa física que se producen y la forma en que esas conexiones afectan el transporte de datos.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

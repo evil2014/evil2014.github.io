@@ -1,0 +1,241 @@
+﻿<textcomponents> <!--Slide 1-->
+
+<component id="ID_title">
+<text><![CDATA[<b>El proceso BPDU</b>]]></text>
+</component>
+
+<component id="ID_s1_title">
+<text><![CDATA[<b>El proceso BPDU</b>]]></text>
+</component>
+
+<component id="ID_s1_txt04"><text><![CDATA[Enlace troncal3]]></text></component>
+<component id="ID_s1_txt05"><text><![CDATA[Enlace troncal2]]></text></component>
+<component id="ID_s1_txt06"><text><![CDATA[Enlace troncal1]]></text></component>
+
+<component id="ID_s1_txt07">
+<text><![CDATA[ID de raíz = 32769.000A00111111<br/>ID de puente = 32769.000A00111111<br/>Costo de ruta = 19]]></text>
+</component>
+
+<component id="ID_s1_txt08">
+<text><![CDATA[ID de raíz = 24577.000A00333333<br/>ID de puente = 24577.000A00333333<br/>Costo de ruta = 19]]></text>
+</component>
+
+<component id="ID_s1_txt09">
+<text><![CDATA[ID de raíz = 32769.000A00222222<br/>ID de puente = 32769.000A00222222<br/>Costo de ruta = 19]]></text>
+</component>
+
+<component id="ID_s1_txt10">
+<text><![CDATA[En principio, todos los switches creen que son el puente raíz. El S2 reenvía tramas BPDU por todos los puertos de switch. La trama BPDU contiene la ID de puente y la ID de raíz del S2, lo que indica que es el puente raíz.]]></text>
+</component> <!--Slide 2-->
+
+<component id="ID_s2_title">
+<text><![CDATA[<b>slide Title goes here</b>]]></text>
+</component>
+
+<component id="ID_s2_txt04"><text><![CDATA[Enlace troncal3]]></text></component>
+<component id="ID_s2_txt05"><text><![CDATA[Enlace troncal2]]></text></component>
+<component id="ID_s2_txt06"><text><![CDATA[Enlace troncal1]]></text></component>
+
+<component id="ID_s2_txt07">
+<text><![CDATA[ID de raíz = <font color="#F26200"><b>32769.000A00111111</b></font><br/>ID de puente = 32769.000A00222222<br/>Costo de ruta = 19]]></text>
+</component>
+
+<component id="ID_s2_txt08">
+<text><![CDATA[ID de raíz = 24577.000A00333333<br/>ID de puente = 24577.000A00333333<br/>Costo de ruta = 19]]></text>
+</component>
+
+<component id="ID_s2_txt09">
+<text><![CDATA[ID de raíz = 32769.000A00111111<br/>ID de puente = 32769.000A00111111<br/>Costo de ruta = 19]]></text>
+</component>
+
+<component id="ID_s2_txt10">
+<text><![CDATA[El S3 compara la ID de raíz recibida con la propia e identifica al S2 como la menor ID de raíz. <br/>El S3 actualiza su ID de raíz con la del S2.<br/>Ahora, el S3 considera que el S2 es el puente raíz.<br/>El S3 actualiza el costo de la ruta a 19, ya que la BPDU se recibió en un puerto Fast Ethernet.]]></text>
+</component>
+
+<component id="ID_s2_txt11">
+<text><![CDATA[<b>BPDU</b><br/>ID de raíz = <font color="#F26200"><b>32769.000A00111111</b></font><br/>Costo de ruta = 19]]></text>
+</component> <!--Slide 3-->
+<component id="ID_s3_title">
+<text><![CDATA[<b>slide Title goes here</b>]]></text>
+</component>
+
+<component id="ID_s3_txt04"><text><![CDATA[Enlace troncal3]]></text></component>
+<component id="ID_s3_txt05"><text><![CDATA[Enlace troncal2]]></text></component>
+<component id="ID_s3_txt06"><text><![CDATA[Enlace troncal1]]></text></component>
+
+<component id="ID_s3_txt07">
+<text><![CDATA[ID de raíz = 32769.000A00111111<br/>ID de puente = 32769.000A00222222<br/>Costo de ruta = 19]]></text>
+</component>
+
+<component id="ID_s3_txt08">
+<text><![CDATA[ID de raíz = <font color="#F26200"><b>24577.000A00333333</b></font><br/>ID de puente = 24577.000A00333333<br/>Costo de ruta = 19]]></text>
+</component>
+
+<component id="ID_s3_txt09">
+<text><![CDATA[ID de raíz = 32769.000A00111111<br/>ID de puente = 32769.000A00111111<br/>Costo de ruta = 19]]></text>
+</component>
+
+<component id="ID_s3_txt10">
+<text><![CDATA[Cuando S1 compara su ID de raíz con la que recibió en la trama BPDU de S2, identifica al ID de raíz local como el valor inferior y descarta la BPDU de S2. El S1 todavía se considera el puente raíz.]]></text>
+</component>
+
+<component id="ID_s3_txt12">
+<text><![CDATA[<b>BPDU</b><br/>ID de raíz = <font color="#F26200"><b>32769.000A00111111</b></font><br/>Costo de ruta = 19]]></text>
+</component> <!--Slide 4-->
+<component id="ID_s4_title">
+<text><![CDATA[<b>slide Title goes here</b>]]></text>
+</component>
+
+<component id="ID_s4_txt04"><text><![CDATA[Enlace troncal3]]></text></component>
+<component id="ID_s4_txt05"><text><![CDATA[Enlace troncal2]]></text></component>
+<component id="ID_s4_txt06"><text><![CDATA[Enlace troncal1]]></text></component>
+<component id="ID_s4_txt07">
+<text><![CDATA[ID de raíz = 32769.000A00111111<br/>ID de puente = 32769.000A00222222<br/>Costo de ruta = 19]]></text>
+</component>
+
+<component id="ID_s4_txt08">
+<text><![CDATA[ID de raíz = 24577.000A00333333<br/>ID de puente = 24577.000A00333333<br/>Costo de ruta = 19]]></text>
+</component>
+
+<component id="ID_s4_txt09">
+<text><![CDATA[ID de raíz = 32769.000A00111111<br/>ID de puente = 32769.000A00111111<br/>Costo de ruta = 19]]></text>
+</component>
+
+<component id="ID_s4_txt10">
+<text><![CDATA[El S3 reenvía tramas BPDU por todos los puertos de switch. La trama BPDU contiene la ID de raíz del S2, lo que indica que es el puente raíz.]]></text>
+</component> <!--Slide 5-->
+<component id="ID_s5_title">
+<text><![CDATA[<b>slide Title goes here</b>]]></text>
+</component>
+
+<component id="ID_s5_txt04"><text><![CDATA[Enlace troncal3]]></text></component>
+<component id="ID_s5_txt05"><text><![CDATA[Enlace troncal2]]></text></component>
+<component id="ID_s5_txt06"><text><![CDATA[Enlace troncal1]]></text></component>
+
+<component id="ID_s5_txt07">
+<text><![CDATA[ID de raíz = 32769.000A00111111<br/>ID de puente = 32769.000A00222222<br/>Costo de ruta = 19]]></text>
+</component>
+
+<component id="ID_s5_txt08">
+<text><![CDATA[ID de raíz = 24577.000A00333333<br/>ID de puente = 24577.000A00333333<br/>Costo de ruta = 19]]></text>
+</component>
+
+<component id="ID_s5_txt09">
+<text><![CDATA[ID de raíz = <font color="#F26200"><b>32769.000A00111111</b></font><br/>ID de puente = 32769.000A00111111<br/>Costo de ruta = 19]]></text>
+</component>
+
+<component id="ID_s5_txt10">
+<text><![CDATA[El S2 compara la ID de raíz de la BPDU recibida con la propia e identifica que estas coinciden. El S2 continúa creyendo que es el puente raíz en la red. El S2 no actualiza el costo de la ruta.]]></text>
+</component>
+
+<component id="ID_s5_txt11">
+<text><![CDATA[<b>BPDU</b><br/>ID de raíz = <font color="#F26200"><b>32769.000A00111111</b></font><br/>Costo de ruta = 19]]></text>
+</component> <!--Slide 6-->
+<component id="ID_s6_title">
+<text><![CDATA[<b>slide Title goes here</b>]]></text>
+</component>
+
+<component id="ID_s6_txt04"><text><![CDATA[Enlace troncal3]]></text></component>
+<component id="ID_s6_txt05"><text><![CDATA[Enlace troncal2]]></text></component>
+<component id="ID_s6_txt06"><text><![CDATA[Enlace troncal1]]></text></component>
+
+<component id="ID_s6_txt10">
+<text><![CDATA[El S1 compara la ID de raíz de la BPDU recibida con la propia e identifica que la suya es menor. El S1 continúa creyendo que es el puente raíz en la red. El S1 no actualiza el costo de la ruta.]]></text>
+</component>
+
+<component id="ID_s6_txt07">
+<text><![CDATA[ID de raíz = 32769.000A00111111<br/>ID de puente = 32769.000A00222222<br/>Costo de ruta = 19]]></text>
+</component>
+
+<component id="ID_s6_txt08">
+<text><![CDATA[ID de raíz = <font color="#F26200"><b>24577.000A00333333</b></font><br/>ID de puente = 24577.000A00333333<br/>Costo de ruta = 19]]></text>
+</component>
+
+<component id="ID_s6_txt12">
+<text><![CDATA[<b>BPDU</b><br/>ID de raíz = <font color="#F26200"><b>32769.000A00111111</b></font><br/>Costo de ruta = 19]]></text>
+</component>
+
+<component id="ID_s6_txt09">
+<text><![CDATA[ID de raíz = 32769.000A00111111<br/>ID de puente = 32769.000A00111111<br/>Costo de ruta = 19]]></text>
+</component> <!--Slide 7-->
+<component id="ID_s7_title">
+<text><![CDATA[<b>slide Title goes here</b>]]></text>
+</component>
+
+<component id="ID_s7_txt04"><text><![CDATA[Enlace troncal3]]></text></component>
+<component id="ID_s7_txt05"><text><![CDATA[Enlace troncal2]]></text></component>
+<component id="ID_s7_txt06"><text><![CDATA[Enlace troncal1]]></text></component>
+
+<component id="ID_s7_txt07">
+<text><![CDATA[ID de raíz = 32769.000A00111111<br/>ID de puente = 32769.000A00222222<br/>Costo de ruta = 19]]></text>
+</component>
+
+<component id="ID_s7_txt08">
+<text><![CDATA[ID de raíz = 24577.000A00333333<br/>ID de puente= 24577.000A0033333<br/>Costo de ruta = 19]]></text>
+</component>
+
+<component id="ID_s7_txt09">
+<text><![CDATA[ID de raíz = 32769.000A00111111<br/>ID de puente = 32769.000A00111111<br/>Costo de ruta = 19]]></text>
+</component>
+
+<component id="ID_s7_txt10">
+<text><![CDATA[El S1 reenvía tramas BPDU por todos los puertos de switch. La trama BPDU contiene la ID de puente y la ID de raíz del S1, lo que indica que es el puente raíz.]]></text>
+</component> <!--Slide 8-->
+<component id="ID_s8_title">
+<text><![CDATA[<b>slide Title goes here</b>]]></text>
+</component>
+
+<component id="ID_s8_txt04"><text><![CDATA[Enlace troncal3]]></text></component>
+<component id="ID_s8_txt05"><text><![CDATA[Enlace troncal2]]></text></component>
+<component id="ID_s8_txt06"><text><![CDATA[Enlace troncal1]]></text></component>
+
+<component id="ID_s8_txt07">
+<text><![CDATA[ID de raíz = <font color="#F26200"><b>24577.000A00333333</b></font><br/>ID puente = 32769.000A00222222<br/>Costo de ruta = 19]]></text>
+</component>
+
+<component id="ID_s8_txt08">
+<text><![CDATA[ID de raíz = 24577.000A00333333<br/>ID de puente = 24577.000A00333333<br/>Costo de ruta = 19]]></text>
+</component>
+
+<component id="ID_s8_txt10">
+<text><![CDATA[El S3 compara la ID de raíz recibida con la propia e identifica al S1 como la menor ID de raíz. El S3 actualiza su ID de raíz con la del S1. Ahora, el S3 considera que el S1 es el puente raíz. El S3 actualiza el costo de la ruta a 19, ya que la BPDU se recibió en un puerto Fast Ethernet.]]></text>
+</component>
+
+<component id="ID_s8_txt11">
+<text><![CDATA[<b>BPDU</b><br/>ID de raíz = <font color="#F26200"><b>24577.000A00333333</b></font><br/>Costo de ruta = 19]]></text>
+</component>
+
+<component id="ID_s8_txt12">
+<text><![CDATA[ID de raíz = 32769.00A00111111<br/>ID de puente = 32769.000A00111111<br/>Costo de ruta = 19]]></text>
+</component> <!--Slide 9-->
+<component id="ID_s9_title">
+<text><![CDATA[<b>slide Title goes here</b>]]></text>
+</component>
+
+<component id="ID_s9_txt02"><text><![CDATA[Puente raíz]]></text></component>
+
+<component id="ID_s9_txt04"><text><![CDATA[Enlace troncal3]]></text></component>
+<component id="ID_s9_txt05"><text><![CDATA[Enlace troncal2]]></text></component>
+<component id="ID_s9_txt06"><text><![CDATA[Enlace troncal1]]></text></component>
+
+<component id="ID_s9_txt07">
+<text><![CDATA[ID de raíz = 24577.000A00333333<br/>ID puente = 32769.000A00222222<br/>Costo de ruta = 19]]></text>
+</component>
+
+<component id="ID_s9_txt08">
+<text><![CDATA[ID de raíz = 24577.000A00333333<br/>ID de puente = 24577.000A00333333<br/>Costo de ruta = 19]]></text>
+</component>
+
+<component id="ID_s9_txt09">
+<text><![CDATA[<b>BPDU</b><br/>ID de raíz = <font color="#F26200"><b>24577.000A00333333</b></font><br/>Costo de ruta = 19]]></text>
+</component>
+
+<component id="ID_s9_txt10">
+<text><![CDATA[El S2 compara la ID de raíz recibida con la propia e identifica al S1 como la menor ID de raíz. El S2 actualiza su ID de raíz con la del S1. Ahora, el S2 considera que el S1 es el puente raíz. El S2 actualiza el costo de la ruta a 19, ya que la BPDU se recibió en un puerto Fast Ethernet.]]></text>
+</component>
+
+<component id="ID_s9_txt12">
+<text><![CDATA[ID de raíz = <font color="#F26200"><b>24577.00A00333333</b></font><br/>ID de puente = 32769.000A00111111<br/>Costo de ruta = 19]]></text>
+</component>
+
+</textcomponents>

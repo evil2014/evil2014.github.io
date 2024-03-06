@@ -1,0 +1,143 @@
+﻿<textcomponents>
+<component id="ID_s1_title">
+<text><![CDATA[<b>Sin segmentación de VLAN</b>]]></text>
+</component>
+
+
+<component id="ID_s1_broadcast10">
+<text><![CDATA[Broadcast]]></text>
+</component>
+
+<component id="ID_s1_broadcast2">
+<text><![CDATA[Broadcast]]></text>
+</component>
+
+<component id="ID_s1_broadcast3">
+<text><![CDATA[Broadcast]]></text>
+</component>
+
+<component id="ID_s1_broadcast4">
+<text><![CDATA[Broadcast]]></text>
+</component>
+
+<component id="ID_s1_broadcast5">
+<text><![CDATA[Broadcast]]></text>
+</component>
+
+
+
+<component id="ID_s1_txt01">
+<text><![CDATA[Cuerpo docente<br/>172.17.40.21/24]]></text>
+</component>
+
+<component id="ID_s1_txt02">
+<text><![CDATA[Estudiante<br/>172.17.40.22/24]]></text>
+</component>
+
+<component id="ID_s1_txt03">
+<text><![CDATA[Invitado<br/>172.17.40.23/24]]></text>
+</component>
+
+<component id="ID_s1_txt04">
+<text><![CDATA[Cuerpo docente<br/>172.17.40.24/24]]></text>
+</component>
+
+<component id="ID_s1_txt05">
+<text><![CDATA[Estudiante<br/>172.17.40.25/24]]></text>
+</component>
+
+<component id="ID_s1_txt06">
+<text><![CDATA[Invitado<br/>172.17.40.26/24]]></text>
+</component>
+
+<component id="ID_s1_txt07">
+<text><![CDATA[La PC1 envía una difusión de capa 2 local. Los switches reenvían la trama del broadcast a todos los puertos disponibles.]]></text>
+</component>
+
+
+
+<component id="ID_s2_title">
+<text><![CDATA[<b>Con segmentación de VLAN</b>]]></text>
+</component>
+
+
+<component id="ID_s2_broadcast1">
+<text><![CDATA[Broadcast]]></text>
+</component>
+
+
+<component id="ID_s2_txt01">
+<text><![CDATA[Cuerpo docente<br/>VLAN&nbsp;10<br/>172.17.10.21/24]]></text>
+</component>
+
+<component id="ID_s2_txt02">
+<text><![CDATA[Estudiante<br/>VLAN 20<br/>172.17.20.22/24]]></text>
+</component>
+
+
+<component id="ID_s2_txt04">
+<text><![CDATA[Cuerpo docente<br/>VLAN&nbsp;10<br/>172.17.10.24/24]]></text>
+</component>
+
+<component id="ID_s2_txt05">
+<text><![CDATA[Estudiante<br/>VLAN 20<br/>172.17.20.25/24]]></text>
+</component>
+
+
+<component id="ID_s2_txt07">
+<text><![CDATA[La PC1 envía una difusión de capa 2 local. Los switches reenvían la trama de la difusión solamente a los puertos configurados para VLAN&nbsp;10.]]></text>
+</component>
+
+<component id="ID_s2_txt8">
+<text><![CDATA[Enlaces troncales de VLAN configurados para admitir las VLAN&nbsp;10 y 20.]]></text>
+</component> <!-- controller slide 2-->
+
+<component id="end1">
+<text><![CDATA[Finalizar]]></text>
+</component>
+
+<component id="fforward1">
+<text><![CDATA[Adelantar]]></text>
+</component>
+
+<component id="pause1">
+<text><![CDATA[Pausa]]></text>
+</component>
+
+<component id="play1">
+<text><![CDATA[Reproducir]]></text>
+</component>
+
+<component id="rewind1">
+<text><![CDATA[Regresar]]></text>
+</component>
+
+<component id="start1">
+<text><![CDATA[Inicio]]></text>
+</component> <!-- controller slide 2-->
+
+<component id="end">
+<text><![CDATA[Finalizar]]></text>
+</component>
+
+<component id="fforward">
+<text><![CDATA[Adelantar]]></text>
+</component>
+
+<component id="pause">
+<text><![CDATA[Pausa]]></text>
+</component>
+
+<component id="play">
+<text><![CDATA[Reproducir]]></text>
+</component>
+
+<component id="rewind">
+<text><![CDATA[Regresar]]></text>
+</component>
+
+<component id="start">
+<text><![CDATA[Inicio]]></text>
+</component>
+
+</textcomponents>

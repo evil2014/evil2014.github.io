@@ -1,0 +1,30 @@
+﻿<textcomponents> <!--slide 1-->
+<component id="ID_s1_title">
+<text><![CDATA[<b>Métrica compuesta de EIGRP</b>]]></text>
+</component>
+
+<component id="ID_txt01">
+<text><![CDATA[Fórmula compuesta predeterminada:<br/>métrica = <b>(K1*ancho de banda + K3*retraso)</b><br/><br/>Fórmula compuesta completa:<br/>métrica = <b>(K1*ancho de banda + <font color="#652C8A">[K2*ancho de banda]/[256 - carga]</font> + K3*retraso) * <font color="#652C8A">(K5/[confiabilidad + K4])</font></b><br/><br>(No se usa si los valores “K” son 0)]]></text>
+</component>
+
+<component id="ID_txt02">
+<text><![CDATA[<b>Nota:</b> Esta es una fórmula condicional. Si K5 = 0, el último término se reemplaza por 1 y la fórmula se convierte en: métrica = (K1*ancho de banda + [K2*ancho de banda]/[256-carga] + K3*retraso)]]></text>
+</component>
+
+<component id="ID_txt03">
+<text><![CDATA[<b>Valores predeterminados:</b><br/> K1 (ancho de banda) = 1 <br/> K2 (carga) = 0 <br/> K3 (retraso) = 1 <br/> K4 (confiabilidad) = 0 <br/> K5 (confiabilidad) = 0]]></text>
+</component>
+
+<component id="ID_txt04">
+<text><![CDATA[Los valores “K” se pueden cambiar con el comando<font face='courier new'><b> metric weights </b></font>.]]></text> 
+</component> <!--slide 2-->
+<component id="ID_s2_title">
+<text><![CDATA[<b>Verificación de los valores de métrica K</b>]]></text>
+</component>
+
+<component id="ID_s2_txt01">
+<text><![CDATA[&lt;resultado omitido&gt;]]></text>
+</component>
+
+
+</textcomponents>

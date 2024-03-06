@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.1.2.1 VPN de sitio a sitio</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.1.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>VPN</h1>
+        <h2>Tipos de VPNs</h2>
+      </div>
+      <div id="content">
+<p>Existen dos tipos de redes VPN:</p>
+<p></p>
+<p>
+<ul>
+<li>Sitio a sitio</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Acceso remoto</li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>VPN de sitio a sitio</b>
+</p>
+<p>Una VPN de sitio a sitio se crea cuando los dispositivos en ambos lados de la conexión VPN conocen la configuración de VPN con anticipación, como se muestra en la ilustración. La VPN permanece estática, y los hosts internos no saben que existe una VPN. En una VPN de sitio a sitio, los hosts terminales envían y reciben tráfico TCP/IP normal a través de un “gateway” VPN. El gateway VPN es el responsable de encapsular y cifrar el tráfico saliente para todo el tráfico de un sitio en particular. Después, el gateway VPN lo envía por un túnel VPN a través de Internet a un gateway VPN de peer en el sitio de destino. Al recibirlo, el gateway VPN de peer elimina los encabezados, descifra el contenido y transmite el paquete hacia el host de destino dentro de su red privada. </p>
+<p></p>
+<p>Una VPN de sitio a sitio es una extensión de una red WAN clásica. Las VPN de sitio a sitio conectan redes enteras entre sí, por ejemplo, pueden conectar la red de una sucursal a la red de la oficina central de una empresa. En el pasado, se requería una conexión de línea arrendada o de Frame Relay para conectar sitios, pero dado que en la actualidad la mayoría de las empresas tienen acceso a Internet, estas conexiones se pueden reemplazar por VPN de sitio a sitio.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

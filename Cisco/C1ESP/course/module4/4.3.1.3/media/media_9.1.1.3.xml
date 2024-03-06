@@ -1,0 +1,66 @@
+﻿<textcomponents>
+<component id="ID_title">
+<text><![CDATA[<b>Capa de enlace de datos</b></font>]]></text>
+</component>
+
+<component id="ID_txt01">
+<text><![CDATA[Los protocolos de capa de enlace de datos regulan cómo se da formato a una trama para utilizarla en diferentes medios.]]></text>
+</component>
+
+<component id="ID_txt02">
+<text><![CDATA[Diversos protocolos pueden estar en uso para medios diferentes.]]></text>
+</component>
+
+<component id="ID_txt03">
+<text><![CDATA[En cada salto a lo largo de la ruta, un dispositivo intermediario acepta tramas de un medio, desencapsula la trama y, luego, envía los paquetes en una nueva trama. Los encabezados de cada trama se formatean para el medio específico que cruzará.]]></text>
+</component>
+
+<component id="ID_txt04">
+<text><![CDATA[Trama]]></text>
+</component>
+
+<component id="ID_txt05">
+<text><![CDATA[París]]></text>
+</component>
+
+<component id="ID_txt06">
+<text><![CDATA[Japón]]></text>
+</component> <!-- more info -->
+
+<component id="ID_InfoTitle">		
+<text><![CDATA[<b>Más información</b>]]></text>	
+</component>
+
+<component id="ID_InfoBody">		
+<text><![CDATA[Es importante comprender el significado de las palabras “medio” y “medios” dentro del contexto de este capítulo. Aquí, estas palabras se refieren al material que realmente transporta las señales que representan los datos transmitidos. Los medios son el cable de cobre, la fibra óptica físicos o el entorno a través de los cuales la señal viaja. En este capítulo, “medios” no se refiere a programación de contenido como audio, animación, televisión y video de la forma en que se utiliza en el contexto de contenido digital y “multimedia”.<br/><br/>Las redes físicas tienen una connotación distinta a la de las redes lógicas. Las redes lógicas son estructuras definidas en la capa de red mediante la disposición del esquema de direccionamiento jerárquico. Las redes físicas representan la interconexión de dispositivos de medios comunes. Algunas veces, una red física también es llamada segmento de red.]]></text>
+</component>
+
+<component id="ID_TipText">
+<text><![CDATA[Más información]]></text>
+</component> <!-- controller -->
+
+<component id="end">
+	<text><![CDATA[Finalizar]]></text>
+</component>
+
+<component id="fforward">
+	<text><![CDATA[Adelantar]]></text>
+</component>
+
+<component id="pause">
+	<text><![CDATA[Pausa]]></text>
+</component>
+
+<component id="play">
+	<text><![CDATA[Reproducir]]></text>
+</component>
+
+<component id="rewind">
+	<text><![CDATA[Regresar]]></text>
+</component>
+
+<component id="start">
+	<text><![CDATA[Inicio]]></text>
+</component>
+
+</textcomponents>

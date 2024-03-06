@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.2.3.5 Ajuste de los anchos de banda de interfaz</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.2.3.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de OSPFv2 de área única</h1>
+        <h2>Costo OSPF</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Ajuste del ancho de banda de interfaz</b>
+</p>
+<p></p>
+<p>Para ajustar el ancho de banda de la interfaz, utilice el comando de configuración de interfaz <span class="cmd"><b>bandwidth </b></span><span class="cmd"><i>kilobits</i></span>. Utilice el comando <span class="cmd"><b>no bandwidth</b></span> para restaurar el valor predeterminado.</p>
+<p></p>
+<p>En el ejemplo de la figura 1, se ajusta el ancho de banda de la interfaz Serial 0/0/1 del R1 a 64 kb/s. Una verificación rápida confirma que la configuración del ancho de banda de la interfaz ahora es de 64 kb/s. </p>
+<p></p>
+<p>Se debe ajustar el ancho de banda en cada extremo de los enlaces seriales, de lo cual se deriva lo siguiente:</p>
+<p>
+<ul>
+<li>El R2 requiere que su interfaz S0/0/1 se ajuste a 1024 kb/s. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>El R3 requiere que su interfaz serial 0/0/0 se ajuste a 64 kb/s y que su interfaz serial 0/0/1 se ajuste a 1024 kb/s.</li>
+</ul>
+</p>
+<p></p>
+<p>Utilice el verificador de sintaxis de la figura 2 para ajustar la interfaz serial del R2 y del R3.</p>
+<p></p>
+<p></p>
+<p>
+<b>Nota:</b> un concepto erróneo habitual de los estudiantes nuevos en la tecnología de redes y en IOS de Cisco es suponer que el comando <span class="cmd"><b>bandwidth</b></span> cambia el ancho de banda físico del enlace. Este comando solo modifica la métrica de ancho de banda que usan EIGRP y OSPF. El comando no modifica el ancho de banda real en el enlace.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+﻿<textcomponents>
+	<component id="ID_title">
+		<text><![CDATA[<b>Funciones de IPsec</b>]]></text>
+	</component>
+	<component id="ID_txt01">
+		<text><![CDATA[Confidencialidad]]></text>
+	</component>
+
+	<component id="ID_txt02">
+		<text><![CDATA[Integridad de datos]]></text>
+	</component>
+	<component id="ID_txt03">
+		<text><![CDATA[Autenticación]]></text>
+	</component>
+	<component id="ID_txt04">
+		<text><![CDATA[Protección antirreproducción]]></text>
+	</component>
+
+	<component id="ID_table">
+<text><![CDATA[<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4'>
+<tr>
+<td colspan='2' bgcolor='#077A77' valign="top" class="msubtitle" id="value16"><font color='#ffffff'><p align='center'><b>16</b></p></font></td>
+<td  bgcolor='#077A77' valign="top" class="subTitle"><font color='#ffffff'><p align='center'><b>24</b></p></font></td>
+<td  bgcolor='#077A77' valign="top" class="subTitle"><font color='#ffffff'><p align='center'><b>32 bit</b></p></font></td>
+</tr>
+<tr>
+<td colspan='4' bgcolor='#eff8f7' valign="top" style="height:8px !important"><font color='#393536'><p align='center'>Identificador de asociación de seguridad (SPI)</p></font></td>
+</tr>
+
+<tr>
+<td colspan='4' bgcolor='#FACCA8' valign="top" style="height:8px !important"><font color='#393536'><p align='center'>Número de secuencia</p></font></td>
+</tr>
+
+<tr>
+<td colspan='4' bgcolor='#eff8f7' valign="top" style="height:8px !important"><font color='#393536'><p align='center'>Datos del contenido (longitud variable)</p></font></td>
+</tr>
+
+<tr>
+<td colspan='4' bgcolor='#eff8f7' valign="top" style="height:8px !important"><font color='#393536'><p align='center'>Relleno (de 0&nbsp;bytes a 255&nbsp;bytes)</p></font></td>
+</tr>
+
+<tr>
+<td colspan='2' bgcolor='#eff8f7' valign="top" style="height:22px !important"><font color='#393536'></font></td>
+<td  bgcolor='#eff8f7' valign="top" width="85" style="height:22px !important"><font color='#393536'><p align='center'>Longitud del relleno</p></font></td>
+<td  bgcolor='#eff8f7' valign="top" width="85" style="height:22px !important"><font color='#393536'><p align='center'>Siguiente encabezado</p></font></td>
+</tr>
+
+<tr>
+<td colspan='4' bgcolor='#eff8f7' valign="top" style="height:8px !important"><font color='#393536'><p align='center'>Datos de autenticación (variable)</p></font></td>
+</tr>
+
+</table>]]></text> 
+</component>
+</textcomponents>

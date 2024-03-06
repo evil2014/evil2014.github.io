@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.3.2.1 Routing entre dominios sin clase</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.3.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Revisión de CIDR y VLSM</h1>
+        <h2>CIDR</h2>
+      </div>
+      <div id="content">
+<p>Del mismo modo en que Internet crecía a un ritmo exponencial a principios de la década de los noventa, el tamaño de las tablas de routing que los routers de Internet mantenían también crecía bajo el direccionamiento IP con clase. Por este motivo, la IETF introdujo el CIDR en la RFC 1517 en 1993. </p>
+<p></p>
+<p>El CIDR reemplazó las asignaciones de red con clase y las clases de direcciones (A, B, C) se volvieron obsoletas. Con el CIDR, el valor del primer octeto ya no determina la dirección de red. En cambio, la porción de red de la dirección la determina la máscara de subred, también conocida como “prefijo de red” o “longitud de prefijo” (es decir, /8, /19, etc.). </p>
+<p></p>
+<p>Los ISP ya no están limitados a una máscara de subred de /8, /16 o /24. Ahora pueden asignar espacio de direcciones de manera más eficaz mediante el uso de cualquier longitud de prefijo que comience con /8 y valores superiores (es decir, /8, /9, /10, etc.). En la ilustración, se muestra de qué manera los bloques de direcciones IP se pueden asignar a una red en función de los requisitos del cliente, que pueden variar de unos pocos hosts a cientos o miles de hosts. </p>
+<p></p>
+<p>El CIDR también reduce el tamaño de las tablas de routing y administra el espacio de direcciones IPv4 con mayor eficacia mediante:</p>
+<p>
+<ul>
+<li>
+<b>Sumarización de ruta:</b> también conocida como “agregación de prefijos”. Las rutas se resumen en una única ruta para ayudar a reducir el tamaño de las tablas de routing. Por ejemplo, una ruta estática resumida puede reemplazar varias instrucciones de rutas estáticas específicas. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Creación de superredes:</b> ocurre cuando la máscara de sumarización de ruta es un valor menor que la máscara con clase predeterminada tradicional.</li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Nota:</b> una superred siempre es un resumen de rutas, pero un resumen de rutas no siempre es una superred. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

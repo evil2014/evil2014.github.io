@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>11.3.3.3 Visualización de la configuración del switch mediante el comando show version</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_11.3.3.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Rendimiento básico de la red</h1>
+        <h2>Comandos Show</h2>
+      </div>
+      <div id="content">
+<p>En un switch, el comando <span class="cmd"><b>show version</b></span> muestra información acerca de la versión de software cargada actualmente, junto con información del hardware y del dispositivo. Algunos de los datos que muestra este comando son los siguientes:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Versión del software:</b> versión del software IOS. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Versión de bootstrap:</b> versión de bootstrap. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Tiempo de actividad del sistema:</b> tiempo transcurrido desde la última vez que se reinició. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Información de reinicio del sistema:</b> método de reinicio (por ejemplo, apagado y encendido, colapso). </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Nombre de la imagen del software:</b> nombre del archivo de IOS. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Plataforma de switch y tipo de procesador</b>: número de modelo y tipo de procesador. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Tipo de memoria (compartida/principal)</b>: memoria RAM del procesador principal y almacenamiento en búfer de E/S de paquetes compartidos. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Interfaces de hardware:</b> interfaces disponibles en el switch. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Registro de configuración:</b> establece especificaciones de arranque, la configuración de velocidad de la consola y parámetros relacionados.</li>
+</ul>
+</p>
+<p></p>
+<p>En la ilustración, se muestra un ejemplo del resultado típico del comando <span class="cmd"><b>show version</b></span> que se muestra en un switch.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

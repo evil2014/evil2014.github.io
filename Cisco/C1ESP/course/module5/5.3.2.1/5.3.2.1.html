@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.3.2.1 Comparación de configuración fija y configuración modular</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.3.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Switches LAN</h1>
+        <h2>Fija o modular</h2>
+      </div>
+      <div id="content">
+<p>Al seleccionar un switch, es importante comprender las características clave de las opciones de switches disponibles. Esto significa que es necesario tomar decisiones sobre las características, por ejemplo, si es necesario que tenga alimentación por Ethernet (PoE) o cuál es la “velocidad de reenvío” preferida. </p>
+<p></p>
+<p>Como se muestra en la figura 1, PoE permite que un switch suministre alimentación a un dispositivo, como teléfonos IP y algunos puntos de acceso inalámbrico, a través de los cables de Ethernet existentes. Esto proporciona mayor flexibilidad de instalación. </p>
+<p></p>
+<p>Las tasas de reenvío definen las capacidades de procesamiento de un switch mediante la estimación de la cantidad de datos que este puede procesar por segundo. Las líneas de productos con switch se clasifican según las velocidades de reenvío. Los switches de la capa de entrada presentan velocidades inferiores que los switches de la capa empresarial. Otras consideraciones incluyen si el dispositivo es apilable o no apilable, así como el grosor del switch (expresado en cantidad de unidades en bastidor) y la densidad de puertos, o la cantidad de puertos disponibles en un único switch. La densidad de puertos de un dispositivo puede variar, lo que depende de si el dispositivo es de configuración fija o un dispositivo modular.</p>
+<p></p>
+<p>Con frecuencia estas opciones se denominan factores de forma del switch. </p>
+<p></p>
+<p>
+<b>Switches de configuración fija</b>
+</p>
+<p>Los switches de configuración fija son sólo lo que podría esperarse: fijos en su configuración. Esto significa que no se pueden agregar características u opciones al switch más allá de las que originalmente vienen con él. El modelo en particular que se compra determina las características y opciones disponibles. Por ejemplo, si se adquiere un switch fijo gigabit de 24 puertos, no se pueden agregar puertos cuando se les necesite. Habitualmente, existen diferentes opciones de configuración que varían en cuanto al número y al tipo de puertos incluidos.</p>
+<p></p>
+<p>
+<b>Switches modulares</b>
+</p>
+<p>Los switches modulares ofrecen más flexibilidad en su configuración. Habitualmente, los switches modulares vienen con chasis de diferentes tamaños que permiten la instalación de diferentes números de tarjetas de líneas  modulares. Las tarjetas de línea son las que contienen los puertos. La tarjeta de línea se ajusta al chasis del switch de igual manera que las tarjetas de expansión se ajustan en la PC. Cuanto más grande es el chasis, más módulos puede admitir. Como se observa en la figura, es posible elegir entre muchos tamaños de chasis diferentes. Si se compró un switch modular con una tarjeta de línea de 24 puertos, con facilidad se podría agregar una tarjeta de línea de 24 puertos para hacer que el número de puertos ascienda a 48.</p>
+<p></p>
+<p>En la figura 2, se muestran ejemplos de switches de configuración fija, modular y apilable.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

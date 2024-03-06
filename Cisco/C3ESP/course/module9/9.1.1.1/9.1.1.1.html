@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.1.1.1 Trenes y familias de versiones del software IOS de Cisco </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.1.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Administración de archivos del sistema IOS</h1>
+        <h2>Convenciones de nomenclatura</h2>
+      </div>
+      <div id="content">
+<p>El software IOS de Cisco evolucionó de un sistema operativo de plataforma única para routing a un sistema operativo sofisticado que admite una amplia matriz de características y tecnologías, como VoIP, NetFlow e IPsec. Para cumplir mejor con los requisitos de los distintos segmentos del mercado, el software está organizado en familias de versiones de software y trenes de software.</p>
+<p></p>
+<p>Una familia de versiones del software consta de varias versiones del software IOS que presentan las siguientes características: </p>
+<p>
+<ul>
+<li>Comparten una base de código.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Se aplican a plataformas de hardware relacionadas.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Se superponen en la cobertura de la compatibilidad (cuando concluye la vida útil de un OS, se introduce y admite otro OS). </li>
+</ul>
+</p>
+<p></p>
+<p>Entre los ejemplos de versiones del software IOS de Cisco, dentro de una familia de versiones del software, se encuentran 12.3, 12.4, 15.0 y 15.1. </p>
+<p></p>
+<p>Junto con cada versión del software, hay nuevas versiones del software creadas para implementar correcciones de errores y nuevas características. En IOS, estas versiones se denominan “trenes”.</p>
+<p></p>
+<p>Un tren del IOS de Cisco se utiliza para lanzar versiones con una base de código común a un conjunto específico de plataformas y características. Un tren puede contener varias versiones, y cada versión es una instantánea de la base de código del tren en el momento del lanzamiento. Debido a que distintas familias de versiones del software pueden aplicarse a diversas plataformas o segmentos del mercado, varios trenes pueden estar vigentes en cualquier momento. </p>
+<p></p>
+<p>En este capítulo, se analizan los trenes del IOS 12.4 y del IOS 15.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

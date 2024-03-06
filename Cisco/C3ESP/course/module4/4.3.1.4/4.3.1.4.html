@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.3.1.4 Puntos de acceso no autorizados </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.3.1.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Seguridad de una LAN inalámbrica</h1>
+        <h2>Amenazas de WLAN</h2>
+      </div>
+      <div id="content">
+<p>Un AP no autorizado es un AP o un router inalámbrico que:</p>
+<p>
+<ul>
+<li>Se conectó a una red empresarial sin autorización explícita o en contra de la política de la empresa. Cualquier persona con acceso a las instalaciones puede instalar (malintencionadamente o no) un router inalámbrico económico que puede permitir el acceso a los recursos de red protegidos.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Un atacante lo conectó o habilitó para capturar datos de clientes, como las direcciones MAC de los clientes (inalámbricos y cableados), o para capturar y camuflar paquetes de datos, obtener acceso a los recursos de la red o iniciar un ataque man-in-the-middle (intermediario).</li>
+</ul>
+</p>
+<p></p>
+<p>Otra consideración es determinar con qué facilidad se crea una zona de cobertura de red inalámbrica personal. Por ejemplo, un usuario con acceso seguro a la red habilita su host de Windows autorizado para que se convierta en un AP Wi-Fi. Al hacer esto, se evaden las medidas de seguridad, y otros dispositivos no autorizados ahora pueden acceder a los recursos de la red, como un dispositivo compartido. </p>
+<p></p>
+<p>Para evitar la instalación de AP no autorizados, las organizaciones deben usar software de supervisión para supervisar activamente el espectro de radio en busca de AP no autorizados. En el ejemplo de la captura de pantalla del software de administración de redes Cisco Prime Infrastructure de la ilustración, se muestra un mapa de RF en el que se identifica la ubicación de un intruso con una dirección MAC suplantada. </p>
+<p></p>
+<p>
+<b>Nota:</b> Cisco Prime es un software de administración de redes que funciona con otros softwares de administración para proporcionar una mirada común y la ubicación central de toda la información de la red. Normalmente, se implementa en organizaciones muy grandes. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

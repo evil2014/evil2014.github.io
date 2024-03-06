@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.3.2.1 Cisco Borderless Networks</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.3.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Arquitecturas de red en evolución</h1>
+        <h2>Arquitecturas de red emergentes</h2>
+      </div>
+      <div id="content">
+<p>La arquitectura Cisco Borderless Network es una solución de red que permite que las organizaciones y las personas se conecten de manera segura, con confianza y sin inconvenientes a la red empresarial en un entorno BYOD. Se basa en dispositivos conectados por cable, inalámbricos, de routing, de switching, de seguridad y de optimización de aplicaciones que funcionan en sintonía para ayudar a los profesionales de TI a equilibrar los exigentes desafíos comerciales y los modelos empresariales cambiantes. </p>
+<p></p>
+<p>No es una solución estática, sino una solución en evolución para ayudar a los profesionales de TI a desarrollar la infraestructura para proporcionar experiencias de usuario seguras, confiables y sin inconvenientes en un mundo lleno de fronteras nuevas y cambiantes.</p>
+<p></p>
+<p>Permite que el departamento de TI diseñe e implemente sus sistemas y políticas con eficacia en todos los dispositivos para usuarios finales que requieren conectarse a la red. Al hacerlo, proporciona un acceso seguro, confiable y sin inconvenientes a los recursos desde varios dispositivos y ubicaciones, así como a aplicaciones que pueden estar ubicadas en cualquier lugar.</p>
+<p></p>
+<p>Específicamente, la arquitectura Cisco Borderless Network ofrece dos conjuntos principales de servicios:</p>
+<p>
+<ul>
+<li>
+<b>Servicios para terminales y usuarios sin fronteras:</b> como se muestra en la figura 1, los servicios para terminales y usuarios sin fronteras conectan los diversos dispositivos para proporcionar acceso a los servicios de red. Los dispositivos que se pueden conectar a la red sin fronteras van desde computadoras hasta tablet PC y smartphones. Elimina las fronteras de ubicación y dispositivo, lo que proporciona un acceso unificado para los dispositivos conectados por cable e inalámbricos. Los servicios para terminales y usuarios definen la experiencia del usuario y permiten un rendimiento seguro, confiable y sin inconvenientes en una amplia variedad de dispositivos y entornos, como se muestra en la ilustración. Por ejemplo, la mayoría de los smartphones y las tablet PC pueden descargar y utilizar el software Cisco AnyConnect. Permite que el dispositivo establezca una conexión segura, continua y basada en políticas para lograr una experiencia de usuario sin inconvenientes.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Servicios de red sin fronteras:</b> como se muestra en la figura 2, los servicios de red sin fronteras unifican el enfoque para brindar aplicaciones de forma segura a los usuarios en un entorno de alta distribución. Conecta a los usuarios internos y remotos de manera segura y proporciona acceso a los recursos de red. El elemento fundamental para escalar el acceso seguro es una arquitectura basada en políticas que permita que los profesionales de TI implementen controles de acceso centralizados.</li>
+</ul>
+</p>
+<p></p>
+<p>La arquitectura Borderless Network admite una red sumamente segura y de alto rendimiento a la que puede acceder una amplia variedad de dispositivos. Debe ser lo suficientemente flexible para que se pueda escalar y para que admita el crecimiento futuro en términos de la expansión empresarial, incluida la informática BYOD, móvil y en la nube, y debe poder admitir los crecientes requisitos de los servicios de voz y video en línea.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

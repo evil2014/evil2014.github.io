@@ -1,0 +1,27 @@
+﻿<textcomponents> <!-- slide 1 -->
+
+<component id="ID_s1_title">
+<text><![CDATA[<b>Conflicto con las instrucciones</b>]]></text>
+</component>
+
+<component id="ID_s1_txt01">
+<text><![CDATA[<textformat blockindent='-14'>ACL&nbsp;3: la instrucción de host entra en conflicto con la instrucción de rango anterior.</textformat>]]></text>
+</component> <!-- slide 2 -->
+
+<component id="ID_s2_title">
+<text><![CDATA[<b>Instrucción de host introducida antes que la instrucción de rango</b>]]></text> 
+</component>
+
+<component id="ID_s2_txt01">
+<text><![CDATA[<textformat blockindent='-14'>ACL&nbsp;4: la instrucción de host siempre puede configurarse antes que las instrucciones de rango.</textformat>]]></text>
+</component> <!-- slide 3 -->
+
+<component id="ID_s3_title">
+<text><![CDATA[<b>Host configurado después del rango sin conflictos</b>]]></text> 
+</component>
+
+<component id="ID_s3_txt01">
+<text><![CDATA[<textformat blockindent='-14'>ACL&nbsp;5: si no existen conflictos, la instrucción de host se puede configurar después que la instrucción de rango.</textformat>]]></text>
+</component>
+
+</textcomponents>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.2.1.4 Conmutación por almacenamiento y envío</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.2.1.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>El entorno conmutado</h1>
+        <h2>Reenvío de tramas</h2>
+      </div>
+      <div id="content">
+<p>El switching por almacenamiento y envío tiene dos características principales que lo diferencian del método de corte: la verificación de errores y el almacenamiento en buffer automático.</p>
+<p></p>
+<p>
+<b>Verificación de errores</b>
+</p>
+<p></p>
+<p>Los switches que usan switching por almacenamiento y envío realizan la verificación de errores de las tramas entrantes. Después de recibir la trama completa en el puerto de entrada, como se muestra en la ilustración, el switch compara el valor de secuencia de verificación de trama (FCS) en el último campo del datagrama con sus propios cálculos de FCS. FCS es un proceso de verificación de errores que contribuye a asegurar que la trama no contenga errores físicos ni de enlace de datos. Si la trama no posee errores, el switch la reenvía. De lo contrario, se la descarta.</p>
+<p></p>
+<p>
+<b>Almacenamiento en buffer automático</b>
+</p>
+<p></p>
+<p>El proceso de almacenamiento en buffer del puerto de entrada que usan los switches de almacenamiento y envío proporciona la flexibilidad para admitir cualquier combinación de velocidades de Ethernet. Por ejemplo, el manejo de una trama entrante que se traslada a un puerto Ethernet de 100 Mb/s y que se debe enviar por una interfaz de 1 Gb/s requiere el uso del método de almacenamiento y envío. Ante cualquier incompatibilidad de las velocidades de los puertos de entrada y salida, el switch almacena la trama completa en un buffer, calcula la verificación de FCS, la reenvía al buffer del puerto de salida y después la envía.</p>
+<p></p>
+<p>El switching por almacenamiento y envío es el método principal de switching LAN de Cisco.</p>
+<p></p>
+<p>Los switches de almacenamiento y envío descartan las tramas que no pasan la verificación de FCS y, por lo tanto, no reenvían las tramas no válidas. Por el contrario, los switches que usan el método de corte pueden reenviar tramas no válidas, ya que no realizan la verificación de FCS.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

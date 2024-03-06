@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>10.1.1.1 Introducción a DHCPv4</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_10.1.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolo de configuración dinámica de host v4</h1>
+        <h2>Funcionamiento de DHCPv4</h2>
+      </div>
+      <div id="content">
+<p>DHCPv4 asigna direcciones IPv4 y otra información de configuración de red en forma dinámica. Dado que los clientes de escritorio suelen componer gran parte de los nodos de red, DHCPv4 es una herramienta extremadamente útil para los administradores de red y que ahorra mucho tiempo.</p>
+<p></p>
+<p>Un servidor de DHCPv4 dedicado es escalable y relativamente fácil de administrar. Sin embargo, en una sucursal pequeña o ubicación SOHO, se puede configurar un router Cisco para proporcionar servicios DHCPv4 sin necesidad de un servidor dedicado. Un conjunto de características del IOS de Cisco (denominado “Easy IP”) ofrece un servidor de DHCPv4 optativo con todas las características.</p>
+<p></p>
+<p>DHCPv4 incluye tres mecanismos diferentes de asignación de direcciones para proporcionar flexibilidad al asignar las direcciones IP: </p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Asignación manual:</b> el administrador asigna una dirección IPv4 preasignada al cliente, y DHCPv4 comunica solo la dirección IPv4 al dispositivo. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Asignación automática:</b> DHCPv4 asigna automáticamente una dirección IPv4 estática de forma permanente a un dispositivo y la selecciona de un conjunto de direcciones disponibles. No hay arrendamiento, y la dirección se asigna de forma permanente al dispositivo. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Asignación dinámica:</b> DHCPv4 asigna dinámicamente, o arrienda, una dirección IPv4 de un conjunto de direcciones durante un período limitado elegido por el servidor o hasta que el cliente ya no necesite la dirección. </li>
+</ul>
+</p>
+<p></p>
+<p>La asignación dinámica es el mecanismo DHCPv4 que se utiliza más comúnmente y es el eje de esta sección. Al utilizar la asignación dinámica, los clientes arriendan la información del servidor durante un período definido administrativamente, como se muestra en la ilustración. Los administradores configuran los servidores de DHCPv4 para establecer los arrendamientos, a fin de que caduquen a distintos intervalos. El arrendamiento típicamente dura de 24 horas a una semana o más. Cuando caduca el arrendamiento, el cliente debe solicitar otra dirección, aunque generalmente se le vuelve a asignar la misma.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

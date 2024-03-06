@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.2.3.4 Anchos de banda de interfaz predeterminados</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.2.3.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de OSPFv2 de área única</h1>
+        <h2>Costo OSPF</h2>
+      </div>
+      <div id="content">
+<p>Todas las interfaces tienen asignados valores de ancho de banda predeterminados. Al igual que el ancho de banda de referencia, los valores del ancho de banda de interfaz en realidad no afectan la velocidad o la capacidad del enlace. En cambio, OSPF los utiliza para calcular la métrica de routing. Por lo tanto, es importante que el valor del ancho de banda refleje la velocidad real del enlace para que la tabla de routing tenga información precisa acerca de la mejor ruta.</p>
+<p></p>
+<p>Si bien los valores de ancho de banda de las interfaces Ethernet suelen coincidir con la velocidad del enlace, es posible que en otras interfaces no lo hagan. Por ejemplo, la velocidad real de las interfaces seriales a menudo es distinta del ancho de banda predeterminado. En los routers Cisco, el ancho de banda predeterminado en la mayoría de las interfaces seriales se establece en 1,544 Mb/s. </p>
+<p></p>
+<p>
+<b>Nota:</b> es posible que las interfaces seriales antiguas tengan un valor predeterminado de 128 kb/s. </p>
+<p></p>
+<p>Consulte el ejemplo de la figura 1. Observe lo siguiente:</p>
+<p>
+<ul>
+<li>El enlace entre el R1 y el R2 se debe establecer en 1544 kb/s (valor predeterminado). </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>El enlace entre el R2 y el R3 se debe establecer en 1024 kb/s.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>El enlace entre el R1 y el R3 se debe establecer en 64 kb/s.</li>
+</ul>
+</p>
+<p></p>
+<p>Utilice el comando <span class="cmd"><b>show interfaces</b></span> para ver la configuración del ancho de banda de interfaz. En la figura 2, se muestra la configuración de la interfaz serial 0/0/0 para el R1. La configuración del ancho de banda es precisa y, por lo tanto, no es necesario ajustar la interfaz serial. </p>
+<p></p>
+<p>En la figura 3, se muestra la configuración de la interfaz serial 0/0/1 para el R1. También se confirma que la interfaz usa el ancho de banda de interfaz predeterminado de 1544 kb/s. Según la topología de referencia, este se debe establecer en 64 kb/s. Por lo tanto, se debe ajustar la interfaz serial 0/0/1 del R1.</p>
+<p></p>
+<p>En la figura 4, se muestra la métrica de costo resultante de 647, que se basa en el ancho de banda de referencia establecido en 1 000 000 000 bps y en el ancho de banda de interfaz predeterminado de 1544 kb/s (1 000 000 000 / 1 544 000).</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

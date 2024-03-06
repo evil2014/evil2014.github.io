@@ -1,0 +1,79 @@
+﻿<textcomponents> <!--slide 1-->
+<component id='ID_s1_inst'>
+	<text><![CDATA[<b>Actividad: Campos del encabezado de IPv6</b><br><br>Lea cada descripción del encabezado de IPv6 y, a continuación, haga clic en el campo del encabezado de IPv6 al que pertenece.]]></text>
+</component>
+
+<component id="ID_s1_txt01">
+<text><![CDATA[<b>Descripciones del encabezado de IPv6</b>]]></text>
+</component>
+
+<component id="ID_s1_txt02">
+<text><![CDATA[<b>Campos del encabezado de IPv6</b>]]></text>
+</component>
+
+<component id="ID_s1_field01">
+<text><![CDATA[<b>Versión</b>]]></text>
+</component>
+
+<component id="ID_s1_field02">
+<text><![CDATA[<b>Longitud de contenido</b>]]></text>
+</component>
+
+<component id="ID_s1_field03">
+<text><![CDATA[<b>Clase de tráfico</b>]]></text>
+</component>
+
+<component id="ID_s1_field04">
+<text><![CDATA[<b>Siguiente encabezado</b>]]></text>
+</component>
+
+<component id="ID_s1_field05">
+<text><![CDATA[<b>Identificador de flujo</b>]]></text>
+</component>
+
+<component id="ID_s1_field06">
+<text><![CDATA[<b>Límite de salto</b>]]></text>
+</component> <!--answers-->
+<component id="ID_s1_ans01">
+<text><![CDATA[Siempre está establecido en 0110.]]></text>
+</component>
+
+<component id="ID_s1_ans02">
+<text><![CDATA[Identifica el tamaño del fragmento del paquete.]]></text>
+</component>
+
+<component id="ID_s1_ans03">
+<text><![CDATA[Clasifica paquetes para controlar la congestión.]]></text>
+</component>
+
+<component id="ID_s1_ans04">
+<text><![CDATA[Identifica el tipo de aplicación en relación con el protocolo de capa superior.]]></text>
+</component>
+
+<component id="ID_s1_ans05">
+<text><![CDATA[Se puede configurar para que utilice el mismo flujo de ruta a fin de que los paquetes no se reordenar en el momento de la entrega.]]></text>
+</component>
+
+<component id="ID_s1_ans06">
+<text><![CDATA[Cuando este valor llega a 0, se notifica al emisor que el paquete no se entregó.]]></text>
+</component> <!--buttons-->
+<component id="ID_s1_btn01">
+<text><![CDATA[<b>Restablecer</b>]]></text>
+</component> <!--feedback-->
+<component id='ID_s1_titleCorrect'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id='ID_s1_correctText'>
+	<text><![CDATA[¡Felicidades! Unió correctamente las descripciones del encabezado de IPv6 con los campos correspondientes.]]></text>
+</component>
+
+<component id='ID_s1_titleIncorrect'>
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_s1_incorrectText'>
+	<text><![CDATA[Intente de nuevo.]]></text>
+</component>
+
+</textcomponents>

@@ -1,0 +1,57 @@
+﻿<textcomponents>
+  <component id='ID_table'>
+  
+     <text>
+      <![CDATA[ <table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4'>
+        
+		 		
+		<tr class="mtable_top">
+        
+		<td colspan='3' bgcolor='#0E6360' class="mtable_top"><font size='1' color='#0E6360'><span style="color:#98D3D1">.</span></font></td>
+	    </tr> 
+      
+        <tr>
+          <td width='90px' bgcolor='#077A77'><font  color='#ffffff'><b>Memoria  </b></font></td>
+          <td width='130px' bgcolor='#077A77'><font  color='#ffffff'><b>Volátil/no volátil</b></font></td>
+          <td width='220px' bgcolor='#077A77'><font  color='#ffffff'><b>Almacena</b></font>
+          </td>
+        </tr>
+        <tr>
+          <td  bgcolor='#EFF8F7' valign="top"><font color='#393536'>RAM</font></td>
+          <td  bgcolor='#EFF8F7' valign="top"><font  color='#393536'>Volátil</font></td>
+          <td bgcolor='#EFF8F7' valign="top"><font color='#393536'><li><textformat blockindent='-14'>IOS en ejecución</textformat></li>
+          <li><textformat blockindent='-14'>Archivo de configuración en ejecución</textformat></li>
+          <li><textformat blockindent='-14'>Enrutamiento de IP y tablas ARP</textformat></li>
+          <li><textformat blockindent='-14'>Buffer de paquetes</textformat></li>           
+          </font></td>
+        </tr>
+        <tr>
+          <td bgcolor='#FFFFFF' valign="top"><font color='#393536'>ROM</font></td>
+          <td bgcolor='#FFFFFF' valign="top"><font  color='#393536'>No volátil</font></td> 
+          <td bgcolor='#FFFFFF' valign="top"><font color='#393536'><li><textformat blockindent='-14'>Instrucciones de arranque</textformat></li>
+          <li><textformat blockindent='-14'>Software básico de diagnóstico</textformat></li>
+          <li><textformat blockindent='-14'>IOS limitado</textformat></li>           
+          </font></td>
+        </tr>
+        <tr>
+          <td bgcolor='#EFF8F7' valign="top"><font color='#393536'>NVRAM</font>
+          </td>
+          <td bgcolor='#EFF8F7' valign="top">             <font  color='#393536'>No volátil</font>
+          </td>
+          <td bgcolor='#EFF8F7' valign="top"><font  color='#393536'>
+            <li><textformat blockindent='-14'>Archivo de configuración de inicio</textformat></li>           
+          </font></td>
+        </tr>
+         <tr>
+          <td bgcolor='#FFFFFF' valign="top"><font  color='#393536'>Flash</font></td>
+          <td bgcolor='#FFFFFF' valign="top">             <font  color='#393536'>No volátil</font>
+          </td>
+          <td width='170' bgcolor='#FFFFFF' valign="top"><font  color='#393536'>
+             <li><textformat blockindent='-14'>IOS (Sistema operativo de internetworking)</textformat></li>
+             <li><textformat blockindent='-14'>Otros archivos de sistema</textformat></li>           
+          </font></td>
+        </tr>         
+      </table>]]>
+    </text>
+  </component>
+</textcomponents>

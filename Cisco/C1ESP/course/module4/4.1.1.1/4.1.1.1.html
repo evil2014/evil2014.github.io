@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.1.1.1 Conexión a la red</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.1.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolos de capa física</h1>
+        <h2>Cómo realizar la conexión</h2>
+      </div>
+      <div id="content">
+<p>Ya sea una conexión a una impresora local en el hogar o a un sitio Web en otro país, para que se pueda producir cualquier comunicación de red se debe establecer antes una conexión a una red local. Una conexión física puede ser una conexión por cable o una conexión inalámbrica mediante ondas de radio. </p>
+<p></p>
+<p>El tipo de conexión física utilizada depende por completo de la configuración de la red. Por ejemplo, en muchas oficinas corporativas, los empleados tienen computadoras de escritorio o portátiles que se conectan físicamente, mediante cables, a un switch compartido. Este tipo de configuración es una red conectada por cable en la que los datos se transmiten a través de un cable físico.</p>
+<p></p>
+<p>Además de las conexiones por cable, algunas empresas también pueden ofrecer conexiones inalámbricas para computadoras portátiles, tablet PC y smartphones. En el caso de los dispositivos inalámbricos, los datos se transmiten mediante ondas de radio. A medida que las personas y las empresas descubren las ventajas de ofrecer servicios inalámbricos, el uso de la conectividad inalámbrica se vuelve cada vez más frecuente. Para ofrecer capacidad de conexión inalámbrica, las redes deben incorporar un punto de acceso inalámbrico (WAP) al cual se puedan conectar los dispositivos. </p>
+<p></p>
+<p>Los dispositivos de switch y los puntos de acceso inalámbrico suelen ser dos dispositivos independientes y dedicados dentro de una implementación de red. Sin embargo, también hay dispositivos que ofrecen tanto conectividad por cable como inalámbrica. En muchos hogares, por ejemplo, las personas implementan routers de servicio integrado (ISR) domésticos, como se muestra en la figura 1. Los ISR proporcionan un componente de conmutación con varios puertos, lo que permite conectar varios dispositivos a la red de área local (LAN) con cables, como se muestra en la figura 2. Además, muchos ISR incluyen un WAP, que permite que también se conecten dispositivos inalámbricos. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

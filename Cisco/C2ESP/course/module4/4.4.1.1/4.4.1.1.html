@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.4.1.1 Actividad: ¡nos vendría muy bien un mapa!</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.4.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resumen</h1>
+        <h2>Resumen</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Actividad:</b>
+<b>¡nos vendría muy bien un mapa!</b>
+</p>
+<p></p>
+<p>
+<b>Situación</b>
+</p>
+<p></p>
+<p>Utilice las tablas de routing Ashland y Richmond que se muestran en el archivo proporcionado con esta actividad. </p>
+<p>Con la ayuda de un compañero de clase, diseñe una topología de red a partir de la información de las tablas. </p>
+<p>Como ayuda para esta actividad, siga estas pautas:</p>
+<p>
+<ul>
+<li>
+<b>Comience con el router Ashland:</b> utilice su tabla de routing para identificar los puertos y las direcciones o redes IP.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Agregue el router Richmond:</b> utilice su tabla de routing para identificar los puertos y las direcciones o redes IP.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Agregue cualquier otro dispositivo intermediario y cualquier otra terminal según lo especificado en las tablas.</li>
+</ul>
+</p>
+<p>Además, registre las respuestas de su grupo a las preguntas de reflexión proporcionadas con esta actividad.</p>
+<p>Esté preparado para compartir su trabajo con otro grupo o con la clase.</p>
+<p></p>
+<p>
+<a href="../../files/4.4.1.1%20We%20Really%20Could%20Use%20A%20Map%20Instructions.pdf" target="_blank">Actividad de clase: ¡nos vendría muy bien un mapa! Instrucciones</a>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

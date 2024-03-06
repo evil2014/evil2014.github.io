@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.1.3.4 Control del flujo de Frame Relay</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.1.3.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Introducción a Frame Relay</h1>
+        <h2>Conceptos avanzados de Frame Relay</h2>
+      </div>
+      <div id="content">
+<p>Frame Relay reduce la sobrecarga de la red mediante la implementación de mecanismos sencillos de notificación de congestión, en lugar del control del flujo explícito por VC. Estos mecanismos de notificación de congestión son la notificación explícita de congestión hacia delante (FECN) y la notificación explícita de la congestión hacia atrás (BECN). </p>
+<p></p>
+<p>Para comprender los mecanismos, en la figura 1 se muestra la estructura de la trama Frame Relay estándar para su revisión. La FECN y la BECN se controlan mediante un único bit incluido en el encabezado de la trama. Le informan al router que hay congestión y que debe detener la transmisión hasta que la condición se revierta. Cuando el DCE establece el bit BECN en 1, notifica a los dispositivos en el sentido del origen (ascendente) que hay congestión en la red. Cuando el DCE establece el bit FECN en 1, notifica a los dispositivos en el sentido del destino (descendente) que hay congestión en la red. </p>
+<p></p>
+<p>El encabezado de trama también contiene el bit DE, que identifica el tráfico menos importante que se puede descartar durante los períodos de congestión. Los dispositivos DTE pueden establecer el valor del bit DE en 1 para indicar que la trama tiene menos importancia que otras tramas. Cuando la red se congestiona, los dispositivos DCE descartan las tramas con el bit DE establecido en 1 antes de descartar las que no lo tienen. Esto reduce la probabilidad de que se descarten datos importantes durante los períodos de congestión.</p>
+<p></p>
+<p>En los períodos de congestión, el switch Frame Relay del proveedor de servicios aplica las siguientes reglas de lógica a cada trama entrante en función de si se excedió la CIR:</p>
+<p></p>
+<p>
+<ul>
+<li>Si la trama entrante no excede el Bc, la trama se pasa.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Si una trama entrante excede el Bc, se marca como DE. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Si una trama entrante excede el Bc y el Be, se descarta. </li>
+</ul>
+</p>
+<p></p>
+<p>Haga clic en el botón Reproducir de la animación de la figura 2 para ver cómo se usan la FECN y la BECN.</p>
+<p></p>
+<p>Las tramas que llegan a un switch se ponen en cola o se almacenan en búfer antes del reenvío. Como en cualquier sistema de puesta en cola, es posible que haya una acumulación excesiva de tramas en un switch. Esto genera retrasos que llevan a retransmisiones innecesarias que se producen cuando los protocolos de nivel superior no reciben un acuse de recibo en un plazo establecido. En casos graves, esto puede causar una importante caída del rendimiento de la red. Para evitar este problema, Frame Relay incorpora una característica de control del flujo. </p>
+<p></p>
+<p>En la animación, se muestra un switch con una cola que se llena. Para reducir el flujo de tramas en la cola, el switch notifica a los DTE sobre el problema mediante los bits de notificación explícita de congestión en el campo de dirección de la trama. </p>
+<p></p>
+<p>
+<ul>
+<li>El bit FECN, que se indica con una F, se establece en cada trama que recibe el switch en el enlace congestionado. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>El bit BECN, que se indica con una B, se establece en cada trama que el switch coloca en el enlace congestionado. </li>
+</ul>
+</p>
+<p></p>
+<p>Se espera que los DTE que reciben las tramas con los bits ECN establecidos busquen reducir el flujo de tramas hasta que se despeje la congestión. Si la congestión se produce en un enlace troncal interno, los DTE pueden recibir una notificación aunque no sean la causa de la congestión.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

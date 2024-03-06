@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.2.1.7 Configuración de ACL estándar con nombre</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.2.1.7_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>ACL de IPv4 estándar </h1>
+        <h2>Configuración de ACL de IPv4 estándar</h2>
+      </div>
+      <div id="content">
+<p>La asignación de nombres a las ACL hace más fácil comprender su función. Por ejemplo, una ACL configurada para denegar el tráfico FTP se podría llamar NO_FTP. Cuando se identifica la ACL con un nombre en lugar de un número, el modo de configuración y la sintaxis de los comandos son sutilmente diferentes.</p>
+<p></p>
+<p>En la figura 1, se muestran los pasos necesarios para crear una ACL estándar con nombre.</p>
+<p></p>
+<p>
+<b>Paso 1. </b>En el modo de configuración global, utilice el comando <span class="cmd"><b>ip access-list</b></span> para crear una ACL con nombre. Los nombres de las ACL son alfanuméricos, distinguen mayúsculas de minúsculas y deben ser únicos. El comando <span class="cmd"><b>ip access-list standard </b></span><span class="cmd"><i>nombre</i></span> se utiliza para crear una ACL estándar con nombre, mientras que el comando <span class="cmd"><b>ip access-list extended </b></span><span class="cmd"><i>nombre</i></span> se utiliza para una lista de acceso extendida. Después de introducir el comando, el router se encuentra en el modo de configuración de ACL estándar con nombre, según lo que indica la petición de entrada.</p>
+<p></p>
+<p>
+<b>Nota:</b> las ACL numeradas utilizan el comando de configuración global <span class="cmd"><b>access-list</b></span>, mientras que las ACL de IPv4 con nombre utilizan el comando <span class="cmd"><b>ip access-list</b></span>.</p>
+<p></p>
+<p>
+<b>Paso 2. </b>En el modo de configuración de ACL con nombre, utilice las instrucciones <span class="cmd"><b>permit</b></span> o <span class="cmd"><b>deny</b></span> a fin de especificar una o más condiciones para determinar si un paquete se reenvía o se descarta.</p>
+<p></p>
+<p>
+<b>Paso 3. </b>Aplique la ACL a una interfaz con el comando<span class="cmd"><b> ip access-group</b></span>. Especifique si la ACL se debe aplicar a los paquetes cuando ingresan por la interfaz (<span class="cmd"><b>in</b></span>) o cuando salen de la interfaz (<span class="cmd"><b>out</b></span>).</p>
+<p></p>
+<p>En la figura 2, se muestran los comandos que se utilizan para configurar una ACL estándar con nombre en el router R1, en la que la interfaz G0/0 deniega el acceso del host 192.168.11.10 a la red 192.168.10.0. La ACL se llama NO_ACCESS.</p>
+<p></p>
+<p>No es necesario que los nombres de las ACL comiencen con mayúscula, pero esto los hace destacarse cuando se observa el resultado de show running-config. También hace que sea menos probable que cree accidentalmente dos ACL diferentes con el mismo nombre pero con distinto uso de mayúsculas. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

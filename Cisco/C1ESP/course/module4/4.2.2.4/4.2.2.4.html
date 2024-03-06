@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.2.2.4 Tipos de cables UTP </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.2.2.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Medios de red</h1>
+        <h2>Cableado UTP</h2>
+      </div>
+      <div id="content">
+<p>Según las diferentes situaciones, es posible que los cables UTP necesiten armarse según las diferentes convenciones para los cableados. Esto significa que los hilos individuales del cable deben conectarse en diferente orden para distintos grupos de pines en los conectores RJ-45. </p>
+<p></p>
+<p>A continuación se mencionan los principales tipos de cables que se obtienen al utilizar convenciones específicas de cableado:</p>
+<p>
+<ul>
+<li>
+<b>Cable directo de Ethernet:</b> el tipo más común de cable de red. Por lo general, se utiliza para interconectar un host con un switch y un switch con un router.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Cable cruzado Ethernet:</b> cable poco común utilizado para interconectar dispositivos similares. Por ejemplo, para conectar un switch a un switch, un host a un host o un router a un router.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Cable de consola:</b> cable exclusivo de Cisco utilizado para conectarse al puerto de consola de un router o de un switch. </li>
+</ul>
+</p>
+<p></p>
+<p>Es posible que el uso de un cable de conexión cruzada o de conexión directa en forma incorrecta entre los dispositivos no dañe los dispositivos pero no se producirá la conectividad y la comunicación entre los dispositivos. Éste es un error común de laboratorio. Si no se logra la conectividad, la primera medida para resolver este problema es verificar que las conexiones de los dispositivos sean correctas.</p>
+<p></p>
+<p>En la ilustración, se muestra el tipo de cable UTP, los estándares relacionados y la aplicación típica de estos cables. También se identifican los pares de hilos individuales para los estándares TIA 568A y TIA 568B. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+﻿<textcomponents>
+<component id="ID_inst">
+<text><![CDATA[<b>Actividad: identificar la terminología de NAT</b><br/><br/>La PC1 se comunica con el servidor web a través de un router con NAT habilitada (R1). Arrastre cada tipo de dirección NAT hacia el campo correspondiente en la topología.]]></text>
+</component>
+<component id="ID_txt01">
+  <text><![CDATA[Servidor Web]]></text> 
+  </component> <!--Drag and drop-->
+
+<component id='ID_drag01'>
+	<text><![CDATA[<font color="#393536">Global interna</font>]]></text>
+</component>
+<component id='ID_drag02'>
+	<text><![CDATA[<font color="#393536">Global externa</font>]]></text>
+</component>
+<component id='ID_drag03'>
+	<text><![CDATA[<font color="#393536">Local externa</font>]]></text>
+</component>
+<component id='ID_drag04'>
+	<text><![CDATA[<font color="#393536">Local interna</font>]]></text>
+</component>
+
+
+
+<component id='ID_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id='ID_CORRECT_BODY'>
+	<text><![CDATA[Unió correctamente los tipos de direcciones NAT con la topología de la red.]]></text>
+</component>
+
+
+<component id='ID_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_INCORRECT_BODY'>
+	<text><![CDATA[No unió correctamente los tipos de direcciones NAT con la topología de la red. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_CHECK'>
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id='ID_RESET'>
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component>
+</textcomponents>

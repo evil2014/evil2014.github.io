@@ -1,0 +1,36 @@
+﻿<textcomponents>
+   <component id="ID_title">
+      <text><![CDATA[<b>Redundancia a una granja de servidores</b>]]></text>
+      </component>
+
+<component id="ID_btn01_header">
+   <text><![CDATA[<b>Granja de servidores</b>]]></text>
+   </component>
+<component id="ID_btn01_body">
+   <text><![CDATA[Si falla un servidor, se encuentra otro para manejar las solicitudes del cliente.]]></text>
+   </component>
+<component id="ID_btn02_header">
+   <text><![CDATA[<b>Enlaces</b>]]></text>
+   </component>
+<component id="ID_btn02_body">
+   <text><![CDATA[Si el enlace a un switch falla, aún se encuentra disponible el enlace al segundo switch.]]></text>
+   </component>
+<component id="ID_btn03_header">
+   <text><![CDATA[<b>Switches</b>]]></text>
+   </component>
+<component id="ID_btn03_body">
+   <text><![CDATA[Se encuentran presentes switches redundantes para evitar una falla en la conmutación.]]></text>
+   </component>
+<component id="ID_btn04_header">
+   <text><![CDATA[<b>Routers</b>]]></text>
+   </component>
+<component id="ID_btn04_body">
+   <text><![CDATA[La redundancia del router puede ayudar a asegurar que las transacciones de la aplicación que se reciben del tráfico externo se puedan manejar en caso de falla de un router o una ruta.]]></text>
+   </component>
+
+<component id="ID_inst">
+   <text><![CDATA[Haga clic en los dispositivos y las conexiones resaltados en azul para obtener más información.]]></text>
+   </component>  
+  
+   
+</textcomponents>

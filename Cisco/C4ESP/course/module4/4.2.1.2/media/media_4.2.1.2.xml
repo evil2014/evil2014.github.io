@@ -1,0 +1,83 @@
+﻿<textcomponents>
+<component id="ID_s1_title">
+<text><![CDATA[<b>Topología de Frame Relay</b>]]></text>
+</component>
+
+<component id="ID_s1_txt01">
+<text><![CDATA[Frame Relay]]></text> 
+</component>
+
+
+<component id="ID_s1_txt02">
+<text><![CDATA[DLCI 103]]></text> 
+</component>
+
+<component id="ID_s1_txt03">
+<text><![CDATA[DLCI 301]]></text> 
+</component>
+
+
+<component id="ID_s1_txt04">
+<text><![CDATA[DLCI 102]]></text> 
+</component>
+
+<component id="ID_s1_txt05">
+<text><![CDATA[DLCI 201]]></text> 
+</component>
+
+<component id="ID_s1_txt06">
+<text><![CDATA[DLCI 203]]></text> 
+</component>
+
+<component id="ID_s1_txt07">
+<text><![CDATA[DLCI 302]]></text> 
+</component>
+  
+
+
+<component id="ID_s2_title">
+<text><![CDATA[<b>Parámetros de comando</b>]]></text>
+</component>
+
+<component id="ID_s2_txt01">
+<text><![CDATA[<font face="courier new"><b>frame-relay map</b> <i>protocolo dirección-protocolo dlci</i> [<b>broadcast</b>]</font>]]></text>
+</component>
+
+<component id="ID_table01">
+<text><![CDATA[<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4'>
+	<tr>
+	<td colspan='2' bgcolor='#0E6360' class='mtable_top'><font size='1' color='#0E6360'><span style='color:#98D3D1'>.</span></font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#077A77' valign='top' width='125'><font color='#ffffff' size='11'><b>Parámetros de comando</b></font></td>
+		<td bgcolor='#077A77' valign='top'><font color='#ffffff' size='11'><b>Descripción</b></font></td>
+	</tr>
+
+	<tr>
+		<td bgcolor='#EFF8F7' valign='top'><font face="_typewriter"><i>protocolo</i></font></td>
+		<td bgcolor='#EFF8F7' valign='top'>Define el protocolo admitido, el puente o el control de enlace lógico: ip (IPv4), ipv6, AppleTalk, decnet, dlsw, ipx, llc2, rsrb, vines y xns.</td>
+	</tr>
+
+	<tr>
+		<td bgcolor='#FFFFFF' valign='top'><font face="_typewriter"><i>protocol-address</i></font></td>
+		<td bgcolor='#FFFFFF' valign='top'>Define la dirección de capa de red de la interfaz del router de destino.</td>
+	</tr>
+
+	<tr>
+		<td bgcolor='#EFF8F7' valign='top'><font face="_typewriter"><i>dlci</i></font></td>
+		<td bgcolor='#EFF8F7' valign='top'>Define el DLCI local que se usa para conectarse a la dirección de protocolo remoto.</td>
+	</tr>
+
+	<tr>
+		<td bgcolor='#FFFFFF' valign='top'><b><font face="_typewriter">Broadcast</font></b></td>
+		<td bgcolor='#FFFFFF' valign='top'>(Optativo) Permite las transmisiones de difusión y multidifusión a través del circuito virtual. Esto permite el uso de protocolos de enrutamiento dinámico en el VC.</td>
+	</tr>
+	</table>]]></text>
+</component>
+
+
+<component id="ID_s3_title">
+<text><![CDATA[<b>Configuración para el R1 y el R2</b>]]></text>
+</component>
+
+</textcomponents>

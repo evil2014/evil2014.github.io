@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.2.2.1 Pasos para configurar SNMP</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.2.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>SNMP</h1>
+        <h2>Configuración de SNMP</h2>
+      </div>
+      <div id="content">
+<p>Un administrador de red puede configurar SNMPv2 para obtener información de red de los dispositivos de red. Como se muestra en la ilustración, todos los pasos básicos para configurar SNMP se realizan en el modo de configuración global.</p>
+<p></p>
+<p>
+<b>Paso 1. </b>(Obligatorio) Configure la cadena de comunidad y el nivel de acceso (solo lectura o lectura y escritura) mediante el comando <span class="cmd"><b>snmp-server community </b></span><span class="cmd"><i>cadena</i></span><span class="cmd"><b> ro </b></span><span class="cmd">|</span><span class="cmd"><b> rw</b></span>.</p>
+<p></p>
+<p>
+<b>Paso 2. </b>(Optativo) Registre la ubicación del dispositivo mediante el comando <span class="cmd"><b>snmp-server location </b></span><span class="cmd"><i>texto</i></span>.</p>
+<p></p>
+<p>
+<b>Paso 3. </b>(Optativo) Registre el contacto del sistema mediante el comando <span class="cmd"><b>snmp-server contact</b></span><span class="cmd"><i> texto</i></span>.</p>
+<p></p>
+<p>
+<b>Paso 4. </b>(Optativo) Restrinja el acceso de SNMP a los hosts NMS (administradores de SNMP) que autoriza una ACL: defina la ACL y, a continuación, nombre la ACL con el comando <span class="cmd"><b>snmp-server community</b></span><span class="cmd"><i> cadena número-o-nombre-lista-acceso</i></span>. Este comando se puede utilizar para especificar la cadena de comunidad y para restringir el acceso de SNMP a través de las ACL. Los pasos 1 y 4 pueden combinarse en un paso, si lo desea; el dispositivo de red de Cisco combina los dos comandos en uno si se introducen por separado.</p>
+<p></p>
+<p>
+<b>Paso 5. </b>(Optativo) Especifique el destinatario de las operaciones de trap de SNMP con el comando <span class="cmd"><b>snmp-server host </b></span><span class="cmd"><i>id-host </i></span><span class="cmd">[</span><span class="cmd"><b>version </b></span><span class="cmd">{</span><span class="cmd"><b>1 </b></span><span class="cmd">|</span><span class="cmd"><b> 2c</b></span><span class="cmd"> | </span><span class="cmd"><b>3</b></span><span class="cmd"> [</span><span class="cmd"><b>auth</b></span><span class="cmd"> | </span><span class="cmd"><b>noauth</b></span><span class="cmd"> | </span><span class="cmd"><b>priv</b></span><span class="cmd">]}]</span><span class="cmd"><i> cadena-comunidad</i></span>. De manera predeterminada, no se define ningún administrador de traps.</p>
+<p></p>
+<p>
+<b>Paso 6. </b>(Optativo) Habilite las traps en un agente SNMP con el comando <span class="cmd"><b>snmp-server enable traps </b></span><span class="cmd"><i>tipos-notificación</i></span>. Si no se especifica ningún tipo de notificación de traps en este comando, entonces se envían todos los tipos de trap. Es necesario el uso reiterado de este comando si se desea un subconjunto determinado de tipos de trap.</p>
+<p></p>
+<p>
+<b>Nota:</b> de manera predeterminada, SNMP no tiene ninguna trap configurada. Sin este comando, los administradores de SNMP deben realizar sondeos para obtener toda la información importante. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

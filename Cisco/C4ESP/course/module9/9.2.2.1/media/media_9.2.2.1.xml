@@ -1,0 +1,55 @@
+﻿<textcomponents>
+	<component id="ID_title01">
+		<text><![CDATA[Síntomas y causas de la capa física]]></text>
+	</component>
+	<component id="ID_txt01">
+		<text><![CDATA[<b>Síntomas</b><br/><ul><li><textformat blockindent='-14'>Rendimiento menor a la línea de base<textformat></li><li><textformat blockindent='-14'>Pérdida de conectividad<textformat></li><li><textformat blockindent='-14'>Cuellos de botella o congestión en la red<textformat></li><li><textformat blockindent='-14'>Altos porcentajes de utilización de CPU<textformat></li><li><textformat blockindent='-14'>Mensajes de error de la consola<textformat></li>]]></text>
+	</component>
+		<component id="ID_txt02">
+		<text><![CDATA[<b>Causas</b><ul><li><textformat blockindent='-14'>Relacionadas con la alimentación<textformat></li><li><textformat blockindent='-14'>Fallas de hardware<textformat></li><li><textformat blockindent='-14'>Fallas de cableado<textformat></li><li><textformat blockindent='-14'>Atenuación<textformat></li><li><textformat blockindent='-14'>Ruido<textformat></li><li><textformat blockindent='-14'>Errores de configuración de interfaz<textformat></li><li><textformat blockindent='-14'>Límites de diseño excedidos<textformat></li><li><textformat blockindent='-14'>Sobrecarga de CPU<textformat></li></ul>]]></text>
+	</component> <!--OSI Model-->
+<component id="ID_OSInum01">
+  <text><![CDATA[<b>1</b>]]></text> 
+  </component>
+<component id="ID_OSInum02">
+  <text><![CDATA[<b>2</b>]]></text> 
+  </component>
+<component id="ID_OSInum03">
+  <text><![CDATA[<b>3</b>]]></text> 
+  </component>
+<component id="ID_OSInum04">
+  <text><![CDATA[<b>4</b>]]></text> 
+  </component>
+<component id="ID_OSInum05">
+  <text><![CDATA[<b>5</b>]]></text> 
+  </component>
+<component id="ID_OSInum06">
+  <text><![CDATA[<b>6</b>]]></text> 
+  </component>
+<component id="ID_OSInum07">
+  <text><![CDATA[<b>7</b>]]></text> 
+  </component>
+
+<component id='ID_osi_txt07'>
+	<text><![CDATA[Aplicación]]></text>
+</component>
+<component id='ID_osi_txt06'>
+	<text><![CDATA[Presentación]]></text>
+</component>
+<component id='ID_osi_txt05'>
+	<text><![CDATA[Sesión]]></text>
+</component>
+<component id='ID_osi_txt04'>
+	<text><![CDATA[Transporte]]></text>
+</component>
+<component id='ID_osi_txt03'>
+	<text><![CDATA[Red]]></text>
+</component>
+<component id='ID_osi_txt02'>
+	<text><![CDATA[Enlace de datos ]]></text>
+</component>
+<component id='ID_osi_txt01'>
+	<text><![CDATA[Física]]></text>
+</component>
+
+</textcomponents>

@@ -1,0 +1,40 @@
+﻿<textcomponents>
+
+	<component id="ID_title">
+	<text><![CDATA[<b>Propagación de mensaje de LSA de tipo 2</b>]]></text>
+	</component>
+   <component id="ID_txt01">
+  <text><![CDATA[<b>Área&nbsp;1</b>]]></text> 
+  </component>
+  <component id="ID_txt02">
+  <text><![CDATA[<b>Área 0</b>]]></text> 
+  </component>
+  <component id="ID_txt03">
+  <text><![CDATA[<b>Área 2</b>]]></text> 
+  </component>
+  <component id="ID_txt04">
+  <text><![CDATA[Internet]]></text> 
+  </component>
+  <component id="ID_txt05">
+  <text><![CDATA[DR]]></text> 
+  </component>
+  <component id="ID_txt06">
+  <text><![CDATA[DR]]></text> 
+  </component>
+    <component id="ID_txt07">
+  <text><![CDATA[Tipo 2]]></text> 
+  </component>
+    <component id="ID_txt08">
+  <text><![CDATA[Tipo 2]]></text> 
+  </component>
+  
+   
+<component id="ID_Title_txt01">
+<text><![CDATA[<b></b>]]></text>
+</component>
+
+<component id="ID_Body_txt01">
+<text><![CDATA[<textformat blockindent='-14'><li>Las LSA de tipo 2 identifican los routers y las direcciones de red de los enlaces de accesos múltiples.</li><li>Solo el DR genera LSA de tipo 2.</li><li>La red de accesos múltiples se satura con LSA de tipo 2, y estas no van más allá del ABR.</li><li>La ID del router DR identifica la ID de estado de enlace de una LSA de tipo 2.</li></textformat>]]></text>
+</component>
+
+</textcomponents>

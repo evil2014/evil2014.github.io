@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>10.1.1.4 Protocolos de capa de aplicación de TCP/IP</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_10.1.1.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolos de la capa de aplicación.</h1>
+        <h2>Aplicación, sesión y presentación</h2>
+      </div>
+      <div id="content">
+<p>Si bien el modelo OSI separa las funciones individuales de las capas de aplicación, presentación y sesión, las aplicaciones de TCP/IP más conocidas e implementadas incorporan la funcionalidad de las tres capas. </p>
+<p></p>
+<p>Los protocolos de aplicación de TCP/IP especifican el formato y la información de control necesarios para muchas funciones de comunicación comunes de Internet. Algunos de los protocolos TCP/IP son:</p>
+<p>
+<ul>
+<li>
+<b>Sistema de nombres de dominios (DNS):</b> este protocolo resuelve nombres de Internet en direcciones IP.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Telnet:</b> se utiliza para proporcionar acceso remoto a servidores y dispositivos de red.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Protocolo simple de transferencia de correo (SMTP):</b> este protocolo transfiere mensajes y archivos adjuntos de correo electrónico.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Protocolo de configuración dinámica de host (DHCP):</b> se utiliza para asignar una dirección IP y direcciones de máscara de subred, de gateway predeterminado y de servidor DNS a un host.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Protocolo de transferencia de hipertexto (HTTP):</b> este protocolo transfiere archivos que conforman las páginas Web de la World Wide Web.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Protocolo de transferencia de archivos (FTP):</b> se utiliza para la transferencia de archivos interactiva entre sistemas.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Protocolo trivial de transferencia de archivos (TFTP):</b> se utiliza para la transferencia de archivos activa sin conexión.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Protocolo bootstrap (BOOTP):</b> este protocolo es un precursor del protocolo DHCP. BOOTP es un protocolo de red que se utiliza para obtener información de la dirección IP durante el arranque.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Protocolo de oficina de correos (POP):</b> es un protocolo que utilizan los clientes de correo electrónico para recuperar el correo electrónico de un servidor remoto.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Protocolo de acceso a mensajes de Internet (IMAP):</b> este es otro protocolo que se utiliza para recuperar correo electrónico.</li>
+</ul>
+</p>
+<p></p>
+<p>Los protocolos de capa de aplicación son utilizados tanto por los dispositivos de origen como de destino durante una sesión de comunicación. Para que las comunicaciones se lleven a cabo correctamente, los protocolos de capa de aplicación que se implementaron en los hosts de origen y de destino deben ser compatibles.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

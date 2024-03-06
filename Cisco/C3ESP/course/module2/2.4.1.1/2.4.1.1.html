@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.4.1.1 Limitaciones del gateway predeterminado</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.4.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolos de redundancia de primer salto</h1>
+        <h2>Concepto de protocolos de redundancia de primer salto</h2>
+      </div>
+      <div id="content">
+<p>Los protocolos de árbol de expansión permiten la redundancia física en una red conmutada. Sin embargo, los hosts en la capa de acceso de una red jerárquica también se benefician de los gateways predeterminados alternativos. Si falla un router o una interfaz del router (que funciona como gateway predeterminado), los hosts configurados con ese gateway predeterminado quedan aislados de las redes externas. Se necesita un mecanismo para proporcionar gateways predeterminados alternativos en las redes conmutadas donde hay dos o más routers conectados a las mismas VLAN.</p>
+<p></p>
+<p>
+<b>Nota:</b> a los efectos del análisis de la redundancia de los routers, no existe ninguna diferencia funcional entre un switch multicapa y un router en la capa de distribución. En la práctica, es común que un switch multicapa funcione como gateway predeterminado para cada VLAN en una red conmutada. Este análisis se centra en la funcionalidad del <i>routing</i>, independientemente del dispositivo físico que se utilice. </p>
+<p></p>
+<p>En una red conmutada, cada cliente recibe solo un gateway predeterminado. No hay forma de configurar un gateway secundario, incluso si existe una segunda ruta que transporte paquetes fuera del segmento local.</p>
+<p></p>
+<p>En la ilustración, el R1 es el responsable de enrutar los paquetes de la PC1. Si el R1 deja de estar disponible, los protocolos de routing pueden converger de forma dinámica. Ahora, el R2 enruta paquetes de redes externas que habrían pasado por el R1. Sin embargo, el tráfico de la red interna asociado al R1, incluido el tráfico de las estaciones de trabajo, de los servidores y de las impresoras que se configuraron con el R1 como gateway predeterminado, aún se envía al R1 y se descarta.</p>
+<p></p>
+<p>Por lo general, las terminales se configuran con una única dirección IP para el gateway predeterminado. Esta dirección no se modifica cuando cambia la topología de la red. Si no se puede llegar a esa dirección IP de gateway predeterminado, el dispositivo local no puede enviar paquetes fuera del segmento de red local, lo que lo desconecta completamente del resto de la red. Aunque exista un router redundante que sirva como puerta de enlace predeterminada para ese segmento, no hay un método dinámico para que estos dispositivos puedan determinar la dirección de una nueva puerta de enlace predeterminada.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.2.3.3 Configuración de una ruta estática IPv6 de siguiente salto</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.2.3.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de rutas estáticas y predeterminadas</h1>
+        <h2>Configuración de rutas estáticas IPv6</h2>
+      </div>
+      <div id="content">
+<p>En una ruta estática de siguiente salto, solo se especifica la dirección IPv6 del siguiente salto. La interfaz de salida se deriva del siguiente salto. Por ejemplo, en la figura 1, se configuran tres rutas estáticas de siguiente salto en el R1.</p>
+<p></p>
+<p>Al igual que con IPv4, antes de que un router reenvíe un paquete, el proceso de la tabla de routing debe resolver la ruta para determinar qué interfaz de salida se utilizará para reenviar el paquete. El proceso de resolución de la ruta varía en función del tipo de mecanismo de reenvío que utiliza el router. CEF (Cisco Express Forwarding) es el comportamiento predeterminado en la mayoría de las plataformas que ejecutan el IOS 12.0 o posterior.</p>
+<p></p>
+<p>En la figura 2, se detalla el proceso básico de resolución de la ruta para el reenvío de paquetes en la tabla de routing para el R1 sin el uso de CEF. Cuando un paquete está destinado a la red 2001:DB8:ACAD:3::/64, el R1:</p>
+<p></p>
+<p>1. Busca una coincidencia en la tabla de routing y encuentra que debe reenviar paquetes a la dirección IPv6 2001:DB8:ACAD:4::2 del siguiente salto. Todas las rutas que hacen referencia solo a la dirección IPv6 del siguiente salto y que no hacen referencia a una interfaz de salida deben resolver la dirección IPv6 del siguiente salto con otra ruta de la tabla de routing que tenga una interfaz de salida.</p>
+<p></p>
+<p>2. En esta instancia, el R1 debe determinar cómo alcanzar la dirección 2001:DB8:ACAD:4::2. Por lo tanto, busca una coincidencia por segunda vez. En este caso, la dirección IPv6 coincide con la ruta para la red conectada directamente 2001:DB8:ACAD:4::/64 con la interfaz de salida Serial 0/0/0. Esta búsqueda le comunica al proceso de la tabla de routing que este paquete se reenvía fuera de esa interfaz. </p>
+<p></p>
+<p>Por lo tanto, en realidad, se requieren dos procesos de búsqueda en la tabla de routing para reenviar cualquier paquete a la red 2001:DB8:ACAD:3::/64. Cuando el router tiene que realizar múltiples búsquedas en la tabla de enrutamiento antes de reenviar un paquete, éste realiza un proceso que se conoce como búsqueda recurrente. </p>
+<p></p>
+<p>Una ruta estática IPv6 recursiva es válida (es decir, es candidata para agregarse a la tabla de routing) solo cuando el siguiente salto especificado resuelve a una interfaz de salida válida, ya sea de forma directa o indirecta.</p>
+<p></p>
+<p>Utilice el verificador de sintaxis en las figuras 3 y 4 para configurar las rutas estáticas IPv6 de siguiente salto.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

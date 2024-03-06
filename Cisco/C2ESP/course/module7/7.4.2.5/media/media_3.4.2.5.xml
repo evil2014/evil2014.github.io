@@ -1,0 +1,53 @@
+﻿<textcomponents>
+<component id="ID_title">
+<text><![CDATA[<b>Saturación con LSP</b>]]></text>
+</component>
+
+  
+<component id="ID_Title_txt01">
+<text><![CDATA[<b>Contenido del estado de enlace del R1</b>]]></text> 
+</component>
+
+<component id="ID_Body_txt01">
+<text><![CDATA[<textformat blockindent='-14'><li>R1; Red Ethernet; 10.1.0.0/16; Costo 2</li><li>R1 -&gt; R2; Red serial punto a punto; 10.2.0.0/16; Costo 20</li><li>R1 -&gt; R3; Red serial punto a punto; 10.3.0.0/16; Costo 5</li><li>R1 -&gt; R4; Red serial punto a punto; 10.4.0.0/16; Costo 20</li></textformat>]]></text> 
+</component>
+
+<component id="ID_txt01">
+<text><![CDATA[<b>LSP</b>]]></text> 
+</component> . 
+<component id="ID_txt02">
+<text><![CDATA[<b>LSP</b>]]></text> 
+</component>
+<component id="ID_txt03">
+<text><![CDATA[<b>LSP</b>]]></text> 
+</component>
+
+<component id="ID_txt04">
+<text><![CDATA[<b>LSP</b>]]></text> 
+</component>
+
+<component id="end">
+<text><![CDATA[Finalizar]]></text>
+</component>
+
+<component id="fforward">
+<text><![CDATA[Adelantar]]></text>
+</component>
+
+<component id="pause">
+<text><![CDATA[Pausa]]></text>
+</component>
+
+<component id="play">
+<text><![CDATA[Reproducir]]></text>
+</component>
+
+<component id="rewind">
+<text><![CDATA[Regresar]]></text>
+</component>
+
+<component id="start">
+<text><![CDATA[Inicio]]></text>
+</component>
+
+</textcomponents>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.1.2.8 Extensiones de LMI</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.1.2.8_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Introducción a Frame Relay</h1>
+        <h2>Operación de Frame Relay</h2>
+      </div>
+      <div id="content">
+<p>Además de las funciones de transferencia de datos del protocolo Frame Relay, la especificación de Frame Relay incluye extensiones optativas de LMI. Algunas de estas extensiones son las siguientes: </p>
+<p>
+<ul>
+<li>
+<b>Mensajes de estado de VC:</b> proporcionan información sobre la integridad del PVC mediante la comunicación y la sincronización entre dispositivos, informes periódicos sobre la existencia de nuevos PVC y la eliminación de PVC existentes. Los mensajes de estado de VC evitan que los datos se envíen a agujeros negros (PVC que ya no existen). </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Multidifusión:</b> permite que un emisor transmita una única trama que se entrega a varios receptores. La multidifusión da soporte a la entrega eficaz de los mensajes de protocolo de routing y los procedimientos de resolución de direcciones que se envían típicamente a varios destinos en forma simultánea. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Direccionamiento global:</b> proporciona ID de conexiones con importancia global en lugar de importancia local, lo que permite que se usen para identificar una interfaz específica de la red Frame Relay. El direccionamiento global hace que la red Frame Relay se asemeje a una LAN en términos de direccionamiento, y los ARP se utilizan como en una LAN. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Control del flujo simple:</b> proporciona un mecanismo de control del flujo XON/XOFF que se aplica a toda la interfaz de Frame Relay. Está diseñado para los dispositivos que no pueden usar los bits de notificación de congestión (es decir, FECN y BECN) que aprovecharían las capas superiores, pero que de todas formas requieren cierto nivel de control del flujo.</li>
+</ul>
+</p>
+<p></p>
+<p>La LMI se utiliza para administrar enlaces de Frame Relay. Cada mensaje de LMI se clasifica mediante un DLCI que aparece en la trama LMI. El campo DLCI de 10 bits admite 1024 ID de VC: de 0 a 1023, como se muestra en la figura 1. Las extensiones de LMI reservan algunas de estas ID de VC, lo que reduce la cantidad de VC permitidos. Los mensajes de LMI se intercambian entre el DTE y el DCE mediante estos DLCI reservados.</p>
+<p></p>
+<p>Existen varios tipos de LMI, y cada uno es incompatible con los demás. El tipo de LMI configurado en el router debe coincidir con el tipo que utiliza el proveedor de servicios. Los routers Cisco admiten tres tipos de LMI: </p>
+<p>
+<ul>
+<li>
+<b>CISCO:</b> extensión original de LMI </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>ANSI:</b> correspondiente al estándar ANSI T1.617, anexo D </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Q933A:</b>
+<span class="cmd">
+<b></b>
+</span> correspondiente al estándar ITU Q933, anexo A</li>
+</ul>
+</p>
+<p></p>
+<p>Para mostrar la información de los mensajes de LMI y los números de DLCI asociados, use el comando <span class="cmd"><b>show interfaces </b></span><span class="cmd">[</span><span class="cmd"><i>tipo número</i></span><span class="cmd">]</span>, como se muestra en la figura 2. Cisco utiliza el DLCI 1023 para identificar los mensajes de LMI que se usan para la administración de enlaces Frame Relay.</p>
+<p></p>
+<p>A partir del software IOS de Cisco versión 11.2, la característica predeterminada de detección automática de LMI detecta el tipo de LMI que admite el switch Frame Relay conectado directamente. Sobre la base de los mensajes de estado de LMI que recibe del switch Frame Relay, el router configura automáticamente su interfaz con el tipo de LMI admitido que reconoce el switch Frame Relay. Si es necesario establecer el tipo de LMI, utilice el comando de configuración de interfaz <span class="cmd"><b>frame-relay lmi-type </b></span><span class="cmd">[</span><span class="cmd"><b>cisco </b></span><span class="cmd">|</span><span class="cmd"><b> ansi </b></span><span class="cmd">|</span><span class="cmd"><b> q933a</b></span><span class="cmd">]</span>. La configuración del tipo de LMI deshabilita la característica de detección automática.</p>
+<p></p>
+<p>En los casos en los que un switch Frame Relay utiliza la configuración de tiempo de espera no predeterminada, también se debe configurar el intervalo de keepalive en la interfaz de Frame Relay para evitar que los mensajes de intercambio de estado expiren. Los mensajes de intercambio de estado de LMI determinan el estado de la conexión de PVC. Una incompatibilidad importante en el intervalo de keepalive en el router y el switch puede hacer que el switch declare inactivo al router. Es importante consultar al proveedor de servicios de Frame Relay para obtener información sobre cómo modificar la configuración de keepalive. De manera predeterminada, el intervalo de tiempo keepalive en las interfaces seriales de Cisco es de 10 segundos. Puede cambiar el intervalo de keepalive con el comando de configuración de interfaz <span class="cmd"><b>keepalive</b></span>. </p>
+<p></p>
+<p>Los mensajes de estado ayudan a verificar la integridad de los enlaces lógicos y físicos. Esta información es fundamental en un entorno de routing, porque los protocolos de routing toman decisiones sobre la base de la integridad del enlace.</p>
+<p></p>
+<p>Como se muestra en la figura 3, los mensajes de estado de LMI son similares a la trama Frame Relay. En lugar del campo Dirección de una trama Frame Relay que se utiliza para la transmisión de datos, hay un campo DLCI de LMI. A continuación del campo DLCI están los campos Control, Discriminador de protocolo y Referencia de llamada. Estos son los mismos que en la trama de datos de Frame Relay estándar. El cuarto campo indica el tipo de mensajes de LMI e incluye uno de los tres tipos de mensajes de LMI que admite Cisco. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

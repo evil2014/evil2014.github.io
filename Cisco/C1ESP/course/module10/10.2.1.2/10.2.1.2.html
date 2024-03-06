@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>10.2.1.2 Protocolo de transferencia de hipertexto y lenguaje de marcado de hipertexto</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_10.2.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolos y servicios de capa de aplicación reconocidos</h1>
+        <h2>Protocolos de capa de aplicación comunes </h2>
+      </div>
+      <div id="content">
+<p>Cuando se escribe una dirección Web o un localizador uniforme de recursos (URL) en un explorador Web, el explorador establece una conexión con el servicio Web que se ejecuta en el servidor mediante el protocolo HTTP. Los nombres que la mayoría de las personas asocia con las direcciones Web son URL e identificador uniforme de recursos (URI). </p>
+<p></p>
+<p>El URL <a href="http://www.cisco.com/index.html" target="_blank">http://www.cisco.com/index.html</a> es un ejemplo de un URL que se refiere a un recurso específico: una página Web llamada <b>index.html</b> en un servidor identificado como <b>cisco.com</b>. Haga clic en cada ilustración para ver los pasos que utiliza HTTP.</p>
+<p></p>
+<p>Los exploradores Web son el tipo de aplicación cliente que utiliza una PC para conectarse a la World Wide Web y acceder a recursos almacenados en un servidor Web. Al igual que con la mayoría de los procesos de servidores, el servidor Web funciona como un servicio básico y genera diferentes tipos de archivos disponibles. </p>
+<p></p>
+<p>Para acceder al contenido, los clientes Web establecen conexiones al servidor y solicitan los recursos deseados. El servidor responde con el recurso y, al recibirlo, el explorador interpreta los datos y los presenta al usuario.</p>
+<p></p>
+<p>Los exploradores pueden interpretar y presentar muchos tipos de datos (como texto no cifrado o lenguaje de marcado de hipertexto, que es el lenguaje que se utiliza para construir páginas Web). Otros tipos de datos, sin embargo, requieren de otro servicio o programa. Generalmente se les conoce como plug-ins o complementos. Para ayudar al explorador a determinar qué tipo de archivo está recibiendo, el servidor especifica qué clase de datos contiene el archivo. </p>
+<p></p>
+<p>Para comprender mejor cómo interactúan el explorador Web con el cliente Web, podemos analizar cómo se abre una página Web en un explorador. Para este ejemplo, utilice el URL <a href="http://www.cisco.com/index.html" target="_blank">http://www.cisco.com/index.html</a>.</p>
+<p></p>
+<p>Primero, el explorador interpreta las tres partes del URL, como se muestra en la figura 1: </p>
+<p></p>
+<p>1. <b>http</b> (el protocolo o esquema)</p>
+<p>2. <b>www.cisco.com</b> (el nombre del servidor)</p>
+<p>3. <b>index.html</b> (el nombre de archivo específico solicitado)</p>
+<p></p>
+<p>A continuación, el explorador verifica con un servidor de nombre para convertir a www.cisco.com en una dirección numérica que utiliza para conectarse al servidor, como se muestra en la figura 2. Mediante los requisitos de HTTP, el explorador envía una solicitud GET al servidor y solicita el archivo <b>index.html</b>. El servidor envía el código HTML para esta página Web al explorador, como se muestra en la figura 3. Finalmente, el explorador descifra el código HTML y da formato a la página para que se pueda visualizar en la ventana del explorador, como se muestra en la figura 4.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

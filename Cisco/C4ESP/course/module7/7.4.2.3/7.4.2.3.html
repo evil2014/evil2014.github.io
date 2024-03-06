@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.4.2.3 Cisco Easy VPN Client</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.4.2.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Acceso remoto</h1>
+        <h2>VPN de acceso remoto con IPsec</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Cliente Cisco VPN</b>
+</p>
+<p>La herramienta Cisco VPN Client es fácil de implementar y de utilizar. Permite que las organizaciones establezcan túneles VPN de extremo a extremo cifrados para proporcionar una conectividad segura a los empleados móviles o los trabajadores a distancia. </p>
+<p></p>
+<p>Para iniciar una conexión IPsec mediante Cisco VPN Client, todo lo que debe hacer el usuario es abrir la ventana de Cisco VPN Client, la cual se muestra en la figura 1. La aplicación Cisco VPN Client indica los sitios disponibles configurados previamente. El usuario hace doble clic en un sitio para seleccionarlo, y el cliente VPN inicia la conexión IPsec. En el cuadro de diálogo de autenticación del usuario, se autentica al usuario con un nombre de usuario y una contraseña, como se muestra en la figura 2. Después de la autenticación, Cisco VPN Client muestra el estado conectado. </p>
+<p></p>
+<p>La mayoría de los parámetros de VPN se definen en Easy VPN Server del IOS de Cisco para simplificar la implementación. Después de que un cliente remoto inicia una conexión de túnel VPN, Cisco Easy VPN Server inserta las políticas de IPSec en el cliente, lo que minimiza los requisitos de configuración en la ubicación remota. </p>
+<p></p>
+<p>Esta solución simple y altamente escalable es ideal para implementaciones de acceso remoto a gran escala donde es poco práctico configurar las políticas para varias computadoras remotas de forma individual. Además, esta arquitectura asegura que esas conexiones cuenten con las políticas de seguridad actualizadas y elimina los costos operativos asociados al mantenimiento de un método coherente de administración de políticas y claves.</p>
+<p></p>
+<p>
+<b>Nota:</b> la configuración de Cisco VPN Client excede el ámbito de este curso. Visite el sitio www.cisco.com para obtener más información.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

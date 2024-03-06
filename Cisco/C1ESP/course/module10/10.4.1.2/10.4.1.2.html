@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>10.4.1.2 Packet Tracer para varios usuarios: tutorial</title>
+    <!--  -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_10.4.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resumen</h1>
+        <h2>Resumen</h2>
+      </div>
+      <div id="content">
+<p>La característica Multiusuario de Packet Tracer permite varias conexiones punto a punto entre diversas instancias de Packet Tracer. Esta primera actividad de la función Multiusuario de Packet Tracer (PTMU, Packet Tracer Multiuser) es un tutorial rápido que muestra los pasos para establecer y verificar una conexión multiusuario a otra instancia de Packet Tracer dentro de la misma LAN. Idealmente, esta actividad está pensada para dos estudiantes. Sin embargo, también se puede realizar como actividad individual abriendo los dos archivos independientes para crear dos instancias distintas de Packet Tracer en su máquina local.</p>
+<p></p>
+<p>
+<a href="../../files/10.4.1.2%20Packet%20Tracer%20Multiuser%20-%20Tutorial%20Instructions.pdf" target="_blank">Función Multiusuario de Packet Tracer: Tutorial (instrucciones)</a>
+</p>
+<p></p>
+<p>
+<a href="../../files/10.4.1.2%20Packet%20Tracer%20Multiuser%20-%20Tutorial%20-%20Client%20Side.pka" target="_blank">Función Multiusuario de Packet Tracer: Tutorial, lado cliente (PKA)</a>
+</p>
+<p></p>
+<p>
+<a href="../../files/10.4.1.2%20Packet%20Tracer%20Multiuser%20-%20Tutorial%20-%20Server%20Side.pka" target="_blank">Función Multiusuario de Packet Tracer: Tutorial, lado servidor (PKA)</a>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

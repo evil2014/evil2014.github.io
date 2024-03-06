@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.3.2.1 Descripción general de la seguridad inalámbrica </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.3.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Seguridad de una LAN inalámbrica</h1>
+        <h2>Protección de WLAN</h2>
+      </div>
+      <div id="content">
+<p>La seguridad siempre fue un motivo de preocupación con la tecnología Wi-Fi, debido a que se movió el límite de la red. Las señales inalámbricas pueden trasladarse a través de la materia sólida, como los techos, los pisos, las paredes, fuera del hogar o de la oficina. Sin medidas de seguridad estrictas, instalar una WLAN equivale a colocar puertos Ethernet en todas partes, incluso en exteriores.</p>
+<p></p>
+<p>Para abordar las amenazas relacionadas con mantener alejados a los intrusos inalámbricos y proteger los datos, en un principio se usaron dos características de seguridad:</p>
+<p>
+<ul>
+<li>
+<b>Ocultamiento del SSID:</b> los AP y algunos routers inalámbricos permiten que se deshabilite la trama de señal del SSID. Los clientes inalámbricos deben identificar manualmente el SSID para conectarse a la red.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Filtrado de direcciones MAC:</b> un administrador puede permitir o denegar el acceso inalámbrico a los clientes de forma manual según la dirección MAC del hardware físico. </li>
+</ul>
+</p>
+<p></p>
+<p>Si bien estas dos características pueden disuadir a la mayoría de los usuarios, la realidad es que ni el ocultamiento del SSID ni el filtrado de direcciones MAC podrían disuadir a un intruso hábil. Los SSID se descubren con facilidad, incluso si los AP no los transmiten por difusión, y las direcciones MAC se pueden suplantar. La mejor manera de proteger una red inalámbrica es usar sistemas de autenticación y cifrado, como se muestra en la figura 1.</p>
+<p></p>
+<p>Se introdujeron dos tipos de autenticación con el estándar 802.11 original: </p>
+<p>
+<ul>
+<li>
+<b>Autenticación de sistema abierto:</b> cualquier cliente inalámbrico se debe poder conectar con facilidad, y este método solo se debe usar en situaciones en las que la seguridad no es motivo de preocupación, como en los lugares que proporcionan acceso gratuito a Internet, como cafés, hoteles y áreas remotas. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Autenticación mediante clave compartida:</b> proporciona mecanismos como WEP, WPA o WPA2 para autenticar y cifrar datos entre un cliente y un AP inalámbricos. Sin embargo, la contraseña se debe compartir previamente entre las dos partes para que estas se conecten.</li>
+</ul>
+</p>
+<p></p>
+<p>En el gráfico de la figura 2, se resumen los distintos tipos de autenticación.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.2.4.2 Ejemplo de SOHO </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.2.4.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de NAT</h1>
+        <h2>Reenvío de puertos</h2>
+      </div>
+      <div id="content">
+<p>En la ilustración, se muestra la ventana de configuración Single Port Forwarding (Reenvío de puerto único) de un router SOHO Linksys EA6500. De manera predeterminada, el reenvío de puertos no está habilitado en el router.</p>
+<p></p>
+<p>Si se especifica la dirección local interna a la cual se deben reenviar las solicitudes, es posible habilitar el reenvío de puertos para las aplicaciones. En la ilustración, las solicitudes de servicio HTTP que llegan a este router Linksys se reenvían al servidor web con la dirección local interna 192.168.1.254. Si la dirección IPv4 WAN externa del router SOHO es 209.165.200.225, el usuario externo puede introducir <b>http://www.ejemplo.com</b>, y el router Linksys redirige la solicitud HTTP al servidor web interno en la dirección IPv4 192.168.1.254, con el número de puerto predeterminado 80.</p>
+<p></p>
+<p>Se puede especificar un puerto distinto al puerto predeterminado 80. Sin embargo, el usuario externo tendría que saber el número de puerto específico que debe utilizar. Para especificar un puerto diferente, se modifica el valor del campo External Port (Puerto externo) en la ventana Single Port Forwarding (Reenvío de puerto único).</p>
+<p></p>
+<p>El enfoque adoptado para configurar el reenvío de puertos depende de la marca y el modelo del router de banda ancha en la red. No obstante, hay algunos pasos genéricos que se deben seguir. Si las instrucciones que suministra el ISP o las que vienen con el router no proporcionan una orientación adecuada, en el sitio web <a href="http://www.portforward.com/" target="_blank">http://www.portforward.com</a> se ofrecen guías para varios routers de banda ancha. Puede seguir las instrucciones para agregar o eliminar puertos según sea necesario para satisfacer las necesidades de todas las aplicaciones que desee permitir o denegar.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

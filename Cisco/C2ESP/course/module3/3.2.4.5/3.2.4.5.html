@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>3.2.4.5 Faltas de concordancia del modo de enlace troncal</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_3.2.4.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Implementaciones de VLAN</h1>
+        <h2>Resolución de problemas de VLAN y enlaces troncales</h2>
+      </div>
+      <div id="content">
+<p>Por lo general, los enlaces troncales se configuran estáticamente con el comando <span class="cmd"><b>switchport mode trunk</b></span>. Los puertos de enlace troncal de los switches Cisco Catalyst utilizan DTP para negociar el estado del enlace. Cuando un puerto en un enlace troncal se configura con un modo de enlace troncal que no es compatible con el puerto de enlace troncal vecino, no se puede formar un enlace troncal entre los dos switches. </p>
+<p></p>
+<p>En la situación que se describe en la figura 1, la PC4 no puede conectarse al servidor web interno. La topología indica una configuración válida. ¿Por qué hay un problema? </p>
+<p></p>
+<p>Verifique el estado de los puertos de enlace troncal del switch S1 con el comando <span class="cmd"><b>show interfaces trunk</b></span>. El resultado que se muestra en la figura 2 indica que la interfaz Fa0/3 del switch S1 actualmente no es un enlace troncal. Si se examina la interfaz F0/3, se descubre que el puerto del switch está en modo dinámico automático. Si se examinan los enlaces troncales del switch S3, se descubre que no hay puertos de enlace troncal activos. Si se sigue examinando, se descubre que la interfaz Fa0/3 también está en modo dinámico automático. Esto explica la inactividad del enlace troncal.</p>
+<p></p>
+<p>Para resolver el problema, vuelva a configurar el modo de enlace troncal de los puertos F0/3 de los switches S1 y S3, como se muestra en la figura 3. Después del cambio de configuración, el resultado del comando <span class="cmd"><b>show interfaces</b></span> indica que el puerto del switch S1 ahora está en modo de enlace troncal. El resultado de la PC4 indica que esta recuperó la conectividad al servidor Web/TFTP que se encuentra en la dirección IP 172.17.10.30.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

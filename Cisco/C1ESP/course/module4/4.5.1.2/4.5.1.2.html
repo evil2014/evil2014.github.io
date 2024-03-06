@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.5.1.2 Resumen</title>
+    <!--  -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.5.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resumen</h1>
+        <h2>Resumen</h2>
+      </div>
+      <div id="content">
+<p>La capa de acceso a la red de TCP/IP equivale a la capa de enlace de datos (capa 2) y a la capa física (capa 1) del modelo OSI. </p>
+<p></p>
+<p>La capa física de OSI proporciona los medios de transporte de los bits que conforman una trama de la capa de enlace de datos a través de los medios de red. Los componentes físicos son los dispositivos electrónicos de hardware, los medios y otros conectores que transmiten y transportan las señales para representar los bits. Todos los componentes de hardware, como los adaptadores de red (NIC), las interfaces y los conectores, así como los materiales y el diseño de los cables, se especifican en los estándares asociados con la capa física. Los estándares de la capa física abordan tres áreas funcionales: los componentes físicos, la técnica de codificación de la trama y el método de señalización.</p>
+<p></p>
+<p>El uso de los medios adecuados es una parte importante de las comunicaciones de red. Sin la conexión física adecuada, ya sea por cable o inalámbrica, no se produce comunicación entre dispositivos. </p>
+<p></p>
+<p>La comunicación por cable consta de medios de cobre y cable de fibra óptica. </p>
+<p>
+<ul>
+<li>Existen tres tipos principales de medios de cobre utilizados en redes: el cable de par trenzado no blindado (UTP), el cable de par trenzado blindado (STP) y el cable coaxial. El cableado UTP es el medio de cobre que más se utiliza en redes. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>El cable de fibra óptica se volvió muy popular para interconectar dispositivos de red de infraestructura. Permite la transmisión de datos a través de distancias más extensas y a anchos de banda (velocidades de datos) mayores que cualquier otro medio de red. A diferencia de los cables de cobre, el cable de fibra óptica puede transmitir señales con menos atenuación y es totalmente inmune a las EMI y RFI. </li>
+</ul>
+</p>
+<p></p>
+<p>Los medios inalámbricos transportan señales electromagnéticas que representan los dígitos binarios de las comunicaciones de datos mediante frecuencias de radio y de microondas. </p>
+<p>La cantidad de dispositivos con tecnología inalámbrica continúa en aumento. Por estos motivos, la tecnología inalámbrica se convirtió en el medio de preferencia para las redes domésticas y cada vez adquiere más popularidad en las redes empresariales. </p>
+<p></p>
+<p>La capa de enlace de datos es responsable del intercambio de tramas entre nodos a través de los medios de red físicos. Permite que las capas superiores accedan a los medios y controla el modo en que los datos se colocan y se reciben en los medios. </p>
+<p></p>
+<p>Entre las diferentes implementaciones de los protocolos de capa de enlace de datos, existen diferentes métodos para controlar el acceso al medio. Estas técnicas de control de acceso al medio definen si los nodos comparten los medios y de qué manera lo hacen. El método específico de control de acceso al medio utilizado depende de la topología y los medios compartidos. Las topologías de LAN y de WAN pueden ser físicas o lógicas. La topología lógica influye en el tipo de entramado de red y el control de acceso al medio que se utilizan. En general, las redes WAN se interconectan mediante topologías físicas punto a punto, hub-and-spoke o de malla. En las redes LAN de medios compartidos, los dispositivos finales se pueden interconectar mediante las topologías físicas en estrella, de bus, de anillo o de estrella extendida (híbrida).</p>
+<p></p>
+<p>Todos los protocolos de capa de enlace de datos encapsulan la PDU de la capa 3 dentro del campo de datos de la trama. Sin embargo, la estructura de la trama y los campos contenidos en el encabezado y tráiler varían de acuerdo con el protocolo. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

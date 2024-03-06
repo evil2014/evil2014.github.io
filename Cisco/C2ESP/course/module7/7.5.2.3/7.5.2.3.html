@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.5.2.3 Ruta de nivel 1</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.5.2.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>La tabla de routing</h1>
+        <h2>Rutas IPv4 descubiertas en forma dinámica</h2>
+      </div>
+      <div id="content">
+<p>Una ruta de nivel 1 con una máscara de subred igual o inferior a la máscara con clase de la dirección de red. Por lo tanto, una ruta de nivel 1 puede ser cualquiera de las siguientes:</p>
+<p>
+<ul>
+<li>
+<b>Ruta de red</b>: una ruta de red que tiene una máscara de subred igual a la de la máscara con clase. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Ruta de superred</b>: una dirección de red con una máscara menor que la máscara con clase, por ejemplo, una dirección de resumen. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Ruta predeterminada</b>: una ruta estática con la dirección 0.0.0.0/0.</li>
+</ul>
+</p>
+<p></p>
+<p>El origen de la ruta de nivel 1 puede ser una red conectada directamente, una ruta estática o un protocolo de enrutamiento dinámico.</p>
+<p></p>
+<p>En la figura 1, se destaca la forma en que las rutas de nivel 1 también son rutas finales. </p>
+<p></p>
+<p>En la figura 2, se destacan las rutas de nivel 1.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

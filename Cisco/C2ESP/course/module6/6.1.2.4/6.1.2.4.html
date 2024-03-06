@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.1.2.4 Ruta estática resumida</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.1.2.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Implementación del routing estático</h1>
+        <h2>Tipos de rutas estáticas</h2>
+      </div>
+      <div id="content">
+<p>Para reducir el número de entradas en la tabla de routing, se pueden resumir varias rutas estáticas en una única ruta estática si se presentan las siguientes condiciones:</p>
+<p>
+<ul>
+<li>Las redes de destino son contiguas y se pueden resumir en una única dirección de red. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Todas las rutas estáticas utilizan la misma interfaz de salida o la dirección IP del siguiente salto.</li>
+</ul>
+</p>
+<p></p>
+<p>En la ilustración, el R1 requiere cuatro rutas estáticas separadas para alcanzar las redes 172.20.0.0/16 a 172.23.0.0/16. En cambio, una ruta estática resumida puede configurarse y aún proporcionar conectividad a esas redes.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

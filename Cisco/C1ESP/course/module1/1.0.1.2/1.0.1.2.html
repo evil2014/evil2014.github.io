@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.0.1.2 Actividad de clase: Dibuje su concepto de Internet</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.0.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Exploración de la red</h1>
+        <h2>Introducción</h2>
+      </div>
+      <div id="content">
+<p>Bienvenido a un nuevo componente de nuestro currículo de Networking Academy: las actividades de creación de modelos. Encontrará estas actividades al principio y al final de cada capítulo.</p>
+<p></p>
+<p>Algunas actividades se pueden completar de forma individual (en el hogar o en clase), mientras que otras requieren la interacción en grupo o en una comunidad de aprendizaje. El instructor lo ayudará para que pueda aprovechar al máximo estas actividades de introducción.</p>
+<p></p>
+<p>Estas actividades lo ayudarán a obtener una mejor comprensión, ya que proporcionan una oportunidad de visualizar algunos de los conceptos abstractos que aprenderá en este curso. Despliegue su creatividad y disfrute de estas actividades.</p>
+<p></p>
+<p>
+<b>Esta es la primera actividad de creación de modelos:</b>
+</p>
+<p></p>
+<p>
+<b>Dibuje su concepto de Internet</b>
+</p>
+<p></p>
+<p>Dibuje y rotule un mapa de Internet tal como la interpreta en el presente. Incluya la ubicación de su hogar, lugar de estudios o universidad y del cableado, los equipos y los dispositivos correspondientes, entre otros elementos. Es posible que desee incluir algunos de los siguientes elementos: </p>
+<p>
+<ul>
+<li>Dispositivos/equipo </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Medios (cableado) </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Direcciones o nombres de enlace </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Orígenes y destinos </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Proveedores de servicios de Internet</li>
+</ul>
+</p>
+<p> </p>
+<p>Al finalizar, conserve el trabajo en formato impreso, ya que se utilizará para referencia futura al final de este capítulo. Si se trata de un documento electrónico, guárdelo en una ubicación del servidor proporcionada por el instructor. Esté preparado para compartir y explicar su trabajo en clase.</p>
+<p></p>
+<p>Aquí verá un ejemplo que lo ayudará a comenzar: <a href="http://www.kk.org/internet-mapping/" target="_blank">http://www.kk.org/internet-mapping/</a>.</p>
+<p></p>
+<p></p>
+<p>
+<a href="../../files/1.0.1.2%20Class%20Activity%20-%20Draw%20Your%20Concept%20of%20the%20Internet%20Instructions.pdf" target="_blank">Actividad de clase: Dibuje su concepto de Internet (instrucciones)</a>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

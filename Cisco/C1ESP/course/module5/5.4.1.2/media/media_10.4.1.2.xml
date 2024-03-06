@@ -1,0 +1,96 @@
+﻿<textcomponents>
+   <component id="ID_title">
+  <text><![CDATA[<b>Reenvío de tramas</b>]]></text> 
+  </component>
+
+
+   <component id="ID_pc1">
+  <text><![CDATA[H1]]></text> 
+  </component>
+  <component id="ID_pc-label1">
+  <text><![CDATA[<b>Origen</b><br>AA:AA:AA:AA:AA:AA]]></text> 
+  </component>
+  
+ <component id="ID_pc2">
+   <text><![CDATA[H2]]></text> 
+  </component>
+  <component id="ID_pc-label2">
+  <text><![CDATA[BB:BB:BB:BB:BB:BB]]></text> 
+  </component>
+  
+ <component id="ID_pc3">
+   <text><![CDATA[H3]]></text> 
+   </component>
+  <component id="ID_pc-label3">
+  <text><![CDATA[<b>Destino</b><br>CC:CC:CC:CC:CC:CC]]></text> 
+  </component>
+  
+  <component id="ID_pc4">
+    <text><![CDATA[H4]]></text> 
+  </component>
+  <component id="ID_pc-label4">
+  <text><![CDATA[DD:DD:DD:DD:DD:DD]]></text> 
+  </component>
+  
+  
+  <component id="ID_bubble01">
+    <text><![CDATA[<p id="ID_bubble01" class="ID_bubble01 top">Necesito enviar información a H3.</p>]]></text> 
+  </component>
+  <component id="ID_bubble02">
+    <text><![CDATA[<p id="ID_s2_bubble02" class="ID_s2_bubble02 left">Esto no está dirigido a mí. Lo ignoraré.</p>]]></text> 
+  </component>
+  <component id="ID_bubble03">
+    <text><![CDATA[<p id="ID_bubble03" class="ID_bubble03 left">Esto es mío.</p>]]></text> 
+  </component>
+  <component id="ID_bubble04">
+    <text><![CDATA[<p id="ID_bubble04" class="ID_bubble04 left">Esto no está dirigido a mí. Lo ignoraré.</p>]]></text> 
+  </component>
+  
+  
+  <component id="ID_table-label1">
+    <text><![CDATA[Dirección de destino]]></text> 
+  </component>
+  <component id="ID_table-label2">
+    <text><![CDATA[Dirección de origen]]></text> 
+  </component>
+  <component id="ID_table-label3">
+    <text><![CDATA[Datos]]></text> 
+  </component>
+  <component id="ID_table-label4">
+    <text><![CDATA[CC:CC:CC:CC:CC:CC]]></text> 
+  </component>
+  <component id="ID_table-label5">
+    <text><![CDATA[AA:AA:AA:AA:AA:AA]]></text> 
+  </component>
+  <component id="ID_table-label6">
+    <text><![CDATA[Datos encapsulados]]></text> 
+  </component>
+  <component id="ID_table-label7">
+    <text><![CDATA[Direccionamiento de la trama]]></text> 
+  </component> <!-- controller -->
+
+<component id="end">
+	<text><![CDATA[Finalizar]]></text>
+</component>
+
+<component id="fforward">
+	<text><![CDATA[Adelantar]]></text>
+</component>
+
+<component id="pause">
+	<text><![CDATA[Pausa]]></text>
+</component>
+
+<component id="play">
+	<text><![CDATA[Reproducir]]></text>
+</component>
+
+<component id="rewind">
+	<text><![CDATA[Regresar]]></text>
+</component>
+
+<component id="start">
+	<text><![CDATA[Inicio]]></text>
+</component>
+
+</textcomponents>

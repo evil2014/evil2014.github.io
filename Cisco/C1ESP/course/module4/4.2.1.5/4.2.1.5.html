@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.2.1.5 Cable coaxial</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.2.1.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Medios de red</h1>
+        <h2>Cableado de cobre</h2>
+      </div>
+      <div id="content">
+<p>El cable coaxial obtiene su nombre del hecho de que hay dos conductores que comparten el mismo eje. Como se muestra en la ilustración, el cable coaxial consta de lo siguiente:</p>
+<p>
+<ul>
+<li>Un conductor de cobre utilizado para transmitir las señales electrónicas.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>El conductor de cobre está rodeado por una capa de aislamiento plástico flexible. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Sobre este material aislante, hay una malla de cobre tejida o una hoja metálica que actúa como segundo hilo en el circuito y como blindaje para el conductor interno. La segunda capa o blindaje reduce la cantidad de interferencia electromagnética externa. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>La totalidad del cable está cubierta por un revestimiento para protegerlo contra daños físicos menores.</li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Nota:</b> se utilizan diferentes tipos de conectores con cable coaxial. </p>
+<p></p>
+<p>Tradicionalmente, el cable coaxial, capaz de transmitir en una dirección, se utilizó para la televisión por cable. También se utilizó mucho en las primeras instalaciones de Ethernet. </p>
+<p></p>
+<p>Si bien el cable UTP esencialmente reemplazó al cable coaxial en las instalaciones de Ethernet modernas, el diseño del cable coaxial se adaptó para los siguientes usos:</p>
+<p>
+<ul>
+<li>
+<b>Instalaciones inalámbricas:</b> los cables coaxiales conectan antenas a los dispositivos inalámbricos. También transportan energía de radiofrecuencia (RF) entre las antenas y el equipo de radio. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Instalaciones de Internet por cable:</b> actualmente, los proveedores de servicio de cable están convirtiendo los sistemas unidireccionales en sistemas bidireccionales para proporcionar a sus clientes conectividad a Internet. Para proporcionar estos servicios, las partes de cable coaxial y los elementos de amplificación compatibles se reemplazan con cables de fibra óptica. Sin embargo, la conexión final hacia la ubicación del cliente y el cableado dentro de sus instalaciones aún sigue siendo de cable coaxial. Este uso combinado de fibra y coaxial se denomina fibra coaxial híbrida (HFC).</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

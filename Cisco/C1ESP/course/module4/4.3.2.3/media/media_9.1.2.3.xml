@@ -1,0 +1,108 @@
+﻿<textcomponents> <!--Slide 1-->
+<component id="ID_s1_inst">
+<text><![CDATA[<b>Actividad: Campos de trama genéricos (parte&nbsp;1)</b><br/><br/>Arrastre el campo de trama genérico a la ubicación correcta en el diagrama.</b>]]></text>
+</component>
+<component id="ID_s1_drag01">
+  <text><![CDATA[Datos]]></text> 
+  </component>
+<component id="ID_s1_drag02">
+  <text><![CDATA[Tipo]]></text> 
+  </component>
+<component id="ID_s1_drag03">
+  <text><![CDATA[Encabezado]]></text> 
+  </component>
+
+<component id="ID_s1_drag04">
+  <text><![CDATA[Tráiler]]></text> 
+  </component>
+
+<component id="ID_s1_drag05">
+  <text><![CDATA[Control]]></text> 
+  </component>
+<component id="ID_s1_drag06"><text><![CDATA[Paquete<br>(Datos)]]></text></component>
+<component id="ID_s1_drag07"><text><![CDATA[Direccionamiento]]></text></component>
+<component id="ID_s1_drag08"><text><![CDATA[Detención de la trama]]></text></component>
+<component id="ID_s1_drag09"><text><![CDATA[Detección de errores]]></text></component>
+<component id="ID_s1_drag10"><text><![CDATA[Inicio de la trama]]></text></component>
+
+<component id='ID_s1_CHECK'>
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id='ID_s1_RESET'>
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component>
+
+<component id='ID_s1_CORRECT_TITLE'>
+	<text><![CDATA[<b style="color:#442557 !important">Correcto</b>]]></text>
+</component>
+
+<component id='ID_s1_CORRECT_BODY'>
+	<text><![CDATA[Ordenó correctamente los <b>nombres de los campos genéricos </b> en la trama.]]></text>
+</component>
+
+
+<component id='ID_s1_INCORRECT_TITLE'>
+	<text><![CDATA[<b style="color:#442557 !important">Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_BODY'>
+	<text><![CDATA[No ordenó correctamente los <b>nombres de los campos genéricos </b> en la trama. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component> <!--Slide 2-->
+<component id="ID_s2_inst">
+<text><![CDATA[<b>Actividad: Campos de trama genéricos (parte&nbsp;2)</b><br/><br/>Arrastre y coloque el campo de trama genérico con su descripción.</b>]]></text>
+</component>
+<component id="ID_s2_txt01">
+  <text><![CDATA[Contiene el encabezado IP, la PDU de la capa de transporte y los datos.]]></text> 
+  </component>
+<component id="ID_s2_txt02">
+  <text><![CDATA[Identifica el protocolo de capa&nbsp;3 que utiliza el LLC.]]></text> 
+  </component>
+<component id="ID_s2_txt03">
+  <text><![CDATA[Marca el final de la trama.]]></text> 
+  </component>
+
+<component id="ID_s2_txt04">
+  <text><![CDATA[Identifica los hosts de origen y destino por la dirección MAC.]]></text> 
+  </component>
+
+<component id="ID_s2_txt05">
+  <text><![CDATA[Especifica servicios especiales de control del flujo.]]></text> 
+  </component>
+<component id="ID_s2_drag01"><text><![CDATA[Datos]]></text></component>
+<component id="ID_s2_drag02"><text><![CDATA[Control]]></text></component>
+<component id="ID_s2_drag03"><text><![CDATA[Direccionamiento]]></text></component>
+<component id="ID_s2_drag04"><text><![CDATA[Tipo]]></text></component>
+<component id="ID_s2_drag05"><text><![CDATA[Indicador de detención<br> de la trama]]></text></component>
+
+
+
+<component id='ID_s2_CHECK'>
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id='ID_s2_RESET'>
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component>
+
+<component id='ID_s2_CORRECT_TITLE'>
+	<text><![CDATA[<b style="color:#442557 !important">Correcto</b>]]></text>
+</component>
+
+<component id='ID_s2_CORRECT_BODY'>
+	<text><![CDATA[Unió correctamente cada <b>campo de trama genérico</b> con su descripción.
+]]></text>
+</component>
+
+
+<component id='ID_s2_INCORRECT_TITLE'>
+	<text><![CDATA[<b style="color:#442557 !important">Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_s2_INCORRECT_BODY'>
+	<text><![CDATA[No unió correctamente cada <b>campo de trama genérico</b> con su descripción. Haga clic en Restablecer y vuelva a intentarlo.
+
+]]></text>
+</component>
+
+</textcomponents>

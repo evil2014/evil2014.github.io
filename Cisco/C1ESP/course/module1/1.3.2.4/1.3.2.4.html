@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.3.2.4 Redes escalables</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.3.2.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>La red como plataforma</h1>
+        <h2>Red confiable</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Escalabilidad</b>
+</p>
+<p></p>
+<p>Miles de nuevos usuarios y proveedores de servicio se conectan a Internet cada semana. Para que Internet admita esta cantidad de usuarios en rápido crecimiento, debe ser escalable. Una red escalable puede expandirse rápidamente para admitir nuevos usuarios y aplicaciones sin afectar el rendimiento del servicio enviado a los usuarios actuales. En las ilustraciones, se muestra la estructura de Internet.</p>
+<p></p>
+<p>El hecho de que Internet se expanda a esta velocidad, sin afectar seriamente el rendimiento de usuarios individuales, es una función del diseño de los protocolos y de las tecnologías subyacentes sobre la cual se construye. Internet tiene una estructura jerárquica en capas para brindar servicios de direccionamiento, nomenclatura y conectividad. Como resultado, el tráfico de redes destinado para servicios regionales y locales no necesita cruzar a un punto central para su distribución. Los servicios comunes se pueden duplicar en diferentes regiones, por ello mantienen fuera el tráfico de las redes backbone de alto nivel.</p>
+<p></p>
+<p>La escalabilidad también se refiere a la capacidad de admitir nuevos productos y aplicaciones. Aunque no hay una organización única que regule Internet, las numerosas redes individuales que proporcionan conectividad a Internet y cooperan para cumplir con los estándares y protocolos aceptados. La observancia de los estándares permite a los fabricantes de hardware y software concentrarse en el desarrollo de productos y la mejora en las áreas de rendimiento y capacidad, con la certeza de que los nuevos productos pueden integrarse a la infraestructura existente y mejorarla. </p>
+<p></p>
+<p>La arquitectura de Internet actual, altamente escalable, no siempre puede mantener el ritmo de la demanda del usuario. Los nuevos protocolos y estructuras de direccionamiento están en desarrollo para cumplir con el ritmo acelerado al cual se agregan los servicios y aplicaciones de Internet.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

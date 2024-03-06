@@ -1,0 +1,234 @@
+﻿<textcomponents> <!--Slide 1-->
+
+<component id='ID_s1_inst'>
+<text><![CDATA[<b>Topología: resolución de problemas de switching de capa&nbsp;3  </b><br><br>Utilice y consulte este diagrama de topología de la red para dar una respuesta adecuada para las tres situaciones que se le presentan.]]></text>
+</component>
+
+<component id="ID_s1_txt01">
+<text><![CDATA[VLAN 4]]></text>
+</component>
+
+<component id="ID_s1_txt02">
+   <text><![CDATA[Switch de capa&nbsp;2 (SW1)]]></text>
+</component>
+
+
+<component id="ID_s1_txt03">
+   <text><![CDATA[VLAN 3]]></text>
+</component>
+
+<component id="ID_s1_txt04">
+   <text><![CDATA[Servidor]]></text>
+</component>
+
+<component id="ID_s1_txt05">
+   <text><![CDATA[VLAN 3]]></text>
+</component>
+
+
+<component id="ID_s1_txt06">
+   <text><![CDATA[Switch de capa&nbsp;2 (SW2)]]></text>
+</component>
+
+<component id="ID_s1_txt07">
+   <text><![CDATA[VLAN&nbsp;2]]></text>
+</component>
+
+
+<component id="ID_s1_txt08">
+   <text><![CDATA[Switch de capa&nbsp;3 (SW3)]]></text>
+</component>
+
+<component id="ID_s1_txt09">
+   <text><![CDATA[Enlace troncal&nbsp;L2]]></text>
+</component>
+
+<component id="ID_s1_txt10">
+   <text><![CDATA[Enlace troncal&nbsp;L2]]></text>
+</component>
+
+
+<component id="ID_s1_table">
+  <text><![CDATA[<table  class="mtable" header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4'>
+<tr class="mtable_top"><td colspan='2'class="mtable_top" bgcolor='#0E6360' class="liner_top"><font size='1' color='#0E6360'><span style="color:#98D3D1">.</span></font></td>
+	</tr>
+	<tr colspan='2'>
+		<td bgcolor='#077A77' class="mtitle"  valign="top"><font color='#ffffff' size="11" style="font-size:11px">VLAN</font></td>
+		<td bgcolor='#077A77'  class="mtitle" valign="top"><font color='#ffffff' size="11" style="font-size:11px">Subred</font></td>
+		
+	</tr>
+
+	<tr>
+		<td bgcolor='#EFF8F7' valign="top"><font color='#393536' size="11" style="font-size:11px">2</font></td>
+		<td bgcolor='#EFF8F7' valign="top"><font color='#393536' size="11" style="font-size:11px">10.2.0.0 /24</font></td>
+		
+		
+	</tr>
+
+	   <tr>
+		<td bgcolor='#FFFFFF' valign="top"><font color='#393536' size="11" style="font-size:11px">3</font></td>
+		<td bgcolor='#FFFFFF' valign="top"><font color='#393536' size="11" style="font-size:11px">10.3.0.0 /24</font></td>
+		
+	</tr>
+
+	   <tr>
+		<td bgcolor='#EFF8F7' valign="top"><font color='#393536' size="11" style="font-size:11px">4</font></td>
+		<td bgcolor='#EFF8F7' valign="top"><font color='#393536' size="11" style="font-size:11px">10.4.0.0 /24</font></td>
+		
+		
+	</tr>
+	
+	
+	</table>]]></text>
+  </component> <!--Slide 2-->
+
+<component id='ID_s2_inst'>
+<text><![CDATA[<b>Situación&nbsp;1: resolver problemas de switching de capa&nbsp;3  </b><br><br>La PC2 no puede comunicarse con la PC3, pero puede comunicarse con todos los demás dispositivos. Haga clic a continuación para seleccionar las causas más probables de este problema. Se puede seleccionar más de una respuesta. Utilice el resultado del comando de switch de capa&nbsp;3 y vuelva a consultar el diagrama de topología de la red para dar una responder adecuada para esta situación.]]></text>
+</component> <!--answers-->
+<component id="ID_s2_ans01">
+<text><![CDATA[Las VLAN&nbsp;3 y&nbsp;4 están desactivadas.]]></text>
+</component>
+
+<component id="ID_s2_ans02">
+<text><![CDATA[La dirección IP de la VLAN&nbsp;3 no es correcta.]]></text>
+</component>
+
+<component id="ID_s2_ans03">
+<text><![CDATA[La VLAN&nbsp;4 no tiene una dirección IP.]]></text>
+</component>
+
+<component id="ID_s2_ans04">
+<text><![CDATA[La VLAN&nbsp;2 no está configurada.]]></text>
+</component>
+
+<component id="ID_s2_ans05">
+<text><![CDATA[La dirección IP de VLAN&nbsp;5 no es correcta.]]></text>
+</component> <!--feedback-->
+<component id='ID_s2_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto  </b>]]></text>
+</component>
+
+<component id='ID_s2_CORRECT_BODY'>
+	<text><![CDATA[Identificó correctamente los problemas de switching de capa&nbsp;3. Haga clic en el botón&nbsp;3 para continuar.]]></text>
+</component>
+
+<component id='ID_s2_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto  </b>]]></text>
+</component>
+
+<component id='ID_s2_INCORRECT_BODY'>
+	<text><![CDATA[No identificó correctamente los problemas de switching de capa&nbsp;3. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_s2_check'>
+	<text><![CDATA[<b>Verificar  </b>]]></text>
+</component>
+
+<component id='ID_s2_reset'>
+	<text><![CDATA[<b>Restablecer  </b>]]></text>
+</component> <!--Slide 3-->
+<component id='ID_s3_inst'>
+	<text><![CDATA[<b>Situación&nbsp;2: resolver problemas de switching de capa&nbsp;3  </b><br><br>La PC2 no puede comunicarse con ninguno de los demás dispositivos, incluido su propio gateway. Haga clic a continuación para seleccionar las causas más probables de este problema. Se puede seleccionar más de una respuesta. Utilice el resultado del comando de switch de capa&nbsp;3 y vuelva a consultar el diagrama de topología de la red para dar una responder adecuada para esta situación.]]></text>
+</component>
+
+<component id='ID_s3_ans01'>
+	<text><![CDATA[La máscara de subred de la VLAN&nbsp;2 no es correcta.]]></text>
+</component>
+
+<component id='ID_s3_ans02'>
+	<text><![CDATA[La dirección IP de la VLAN&nbsp;3 no es correcta.]]></text>
+</component>
+
+<component id='ID_s3_ans03'>
+	<text><![CDATA[La máscara de subred de la VLAN&nbsp;4 no es correcta.]]></text>
+</component>
+
+<component id='ID_s3_ans04'>
+	<text><![CDATA[La VLAN&nbsp;2 no está configurada.]]></text>
+</component>
+
+<component id='ID_s3_ans05'>
+	<text><![CDATA[La dirección IP de la VLAN&nbsp;4 no es correcta.]]></text>
+</component>
+
+<component id='ID_s3_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto  </b>]]></text>
+</component>
+
+<component id='ID_s3_CORRECT_BODY'>
+	<text><![CDATA[Identificó correctamente los problemas de switching de capa&nbsp;3. Haga clic en el botón&nbsp;4 para continuar.]]></text>
+</component>
+
+<component id='ID_s3_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto  </b>]]></text>
+</component>
+
+<component id='ID_s3_INCORRECT_BODY'>
+	<text><![CDATA[No identificó correctamente los problemas de switching de capa&nbsp;3. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_s3_check'>
+	<text><![CDATA[<b>Verificar  </b>]]></text>
+</component>
+
+<component id='ID_s3_reset'>
+	<text><![CDATA[<b>Restablecer  </b>]]></text>
+</component> <!--Slide 4-->
+
+<component id='ID_s4_inst'>
+	<text><![CDATA[<b>Situación&nbsp;3: resolver problemas de switching de capa&nbsp;3  </b><br><br>La PC1 no puede comunicarse con la PC2 ni con la PC3, pero puede comunicarse con el servidor. Haga clic a continuación para seleccionar las causas más probables de este problema. Se puede seleccionar más de una respuesta. Utilice el resultado del comando de switch de capa&nbsp;3 y vuelva a consultar el diagrama de topología de la red para dar una responder adecuada para esta situación.]]></text>
+</component>
+
+
+<component id='ID_s4_ans01'>
+	<text><![CDATA[La encapsulación de enlace troncal no es correcta.]]></text>
+</component>
+
+<component id='ID_s4_ans02'>
+	<text><![CDATA[Las VLAN&nbsp;2 y&nbsp;3 se están eliminando de los enlaces troncales.]]></text>
+</component>
+
+<component id='ID_s4_ans03'>
+	<text><![CDATA[El puerto gigabit 0/1 no está configurado como enlace troncal.]]></text>
+</component>
+<component id='ID_s4_ans04'>
+	<text><![CDATA[La VLAN&nbsp;2 no está configurada.]]></text>
+</component>
+
+<component id='ID_s4_ans05'>
+	<text><![CDATA[El puerto gigabit 0/2 no está configurado como enlace troncal.]]></text>
+</component>
+
+<component id='ID_s4_ans06'>
+	<text><![CDATA[El SW2 está desactivado.]]></text>
+</component>
+
+
+
+<component id='ID_s4_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto  </b>]]></text>
+</component>
+
+<component id='ID_s4_CORRECT_BODY'>
+	<text><![CDATA[Identificó correctamente los problemas de switching de capa&nbsp;3.]]></text>
+</component>
+
+<component id='ID_s4_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto  </b>]]></text>
+</component>
+
+<component id='ID_s4_INCORRECT_BODY'>
+	<text><![CDATA[No identificó correctamente los problemas de switching de capa&nbsp;3. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_s4_check'>
+	<text><![CDATA[<b>Verificar  </b>]]></text>
+</component>
+
+<component id='ID_s4_reset'>
+	<text><![CDATA[<b>Restablecer  </b>]]></text>
+</component>--&gt;
+
+
+
+</textcomponents>

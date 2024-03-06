@@ -1,0 +1,119 @@
+﻿<textcomponents> <!-- instructions -->
+<component id="ID_inst">
+	<text><![CDATA[<b>Actividad: comparar EIGRPv4 y EIGRPv6</b><br><br>Indique si una característica se asocia solo con EIGRPv4 o solo con EIGRPv6, o con ambos, mediante un clic en el campo correspondiente junto a cada característica detallada.]]></text>
+</component> <!-- buttons -->
+<component id="ID_Button01">
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id="ID_Button02">
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component> <!--Number of rows in the table-->
+<component id="txt_numrows">
+	<text><![CDATA[10]]></text>
+</component> <!--Number of columns for the answers in the table. Do not count the question column-->
+<component id="txt_numcols">
+	<text><![CDATA[3]]></text>
+</component> <!--Answer column headers-->
+<component id="txt_col1">
+	<text><![CDATA[<b>EIGRPv4</b>]]></text>
+</component>
+
+<component id="txt_col2">
+	<text><![CDATA[<b>EIGRPv6</b>]]></text>
+</component>
+
+<component id="txt_col3">
+	<text><![CDATA[<b>Ambos</b>]]></text>
+</component> <!--Question text - blockindent code moves the text away from the left edge a bit--> <!--Question text - If questions are numbered, use blockindent for hanging indents-->
+<component id="txt_q1">
+	<text><![CDATA[Redes IPv4 anunciadas]]></text>
+</component>
+
+<component id="txt_q2">
+	<text><![CDATA[Redes IPv6 anunciadas]]></text>
+</component>
+
+<component id="txt_q3">
+	<text><![CDATA[Vector distancia]]></text>
+</component>
+
+<component id="txt_q4">
+	<text><![CDATA[Algoritmo DUAL]]></text>
+</component>
+
+<component id="txt_q5">
+	<text><![CDATA[Métrica predeterminada: ancho de banda y retraso]]></text>
+</component>
+
+<component id="txt_q6">
+	<text><![CDATA[Protocolo de transporte: RTP]]></text>
+</component>
+
+<component id="txt_q7">
+   <text><![CDATA[Actualizaciones incrementales, parciales y limitadas]]></text>
+   </component>
+<component id="txt_q8">
+   <text><![CDATA[Descubrimiento de vecinos: paquetes de saludo]]></text>
+   </component>
+<component id="txt_q9">
+   <text><![CDATA[Multidifusión 224.0.0.10]]></text>
+   </component>
+<component id="txt_q10">
+   <text><![CDATA[Multidifusión FF02::A]]></text>
+   </component> <!--Answers - Give the column number(s), column numbering start with 1 not 0--> <!--Answers - For MCMA separate the correct answers with commas [2, 4, 5] -->
+<component id="txt_a1">
+	<text><![CDATA[1]]></text>
+</component>
+
+<component id="txt_a2">
+	<text><![CDATA[2]]></text>
+</component>
+
+<component id="txt_a3">
+	<text><![CDATA[3]]></text>
+</component>
+
+<component id="txt_a4">
+	<text><![CDATA[3]]></text>
+</component>
+
+<component id="txt_a5">
+	<text><![CDATA[3]]></text>
+</component>
+
+<component id="txt_a6">
+	<text><![CDATA[3]]></text>
+</component>
+
+<component id="txt_a7">
+	<text><![CDATA[3]]></text>
+</component>
+
+<component id="txt_a8">
+	<text><![CDATA[3]]></text>
+</component>
+
+<component id="txt_a9">
+	<text><![CDATA[1]]></text>
+</component>
+
+<component id="txt_a10">
+	<text><![CDATA[2]]></text>
+</component> <!-- Correct Feedback -->
+<component id="ID_titleCorrect">
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id="ID_correctText">
+	<text><![CDATA[Identificó correctamente las características asociadas con EIGRPv4, con EIGRPv6 o con ambos.]]></text>
+</component> <!-- Incorrect Feedback -->
+<component id="ID_titleIncorrect">
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id="ID_IncorrectText">
+	<text><![CDATA[No identificó correctamente las características asociadas con EIGRPv4, con EIGRPv6 o con ambos. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+</textcomponents>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.2.3.2 Problema de conectividad de extremo a extremo que inicia la resolución de problemas</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.2.3.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resolución de problemas de red</h1>
+        <h2>Resolución de problemas de conectividad IP</h2>
+      </div>
+      <div id="content">
+<p>Generalmente, lo que da inicio a un esfuerzo de resolución de problemas es la detección de un problema con la conectividad de extremo a extremo. Dos de las utilidades más comunes que se utilizan para verificar un problema con la conectividad de extremo a extremo son <span class="cmd"><b>ping</b></span> y <span class="cmd"><b>traceroute</b></span>, que se muestran en la figura 1.</p>
+<p></p>
+<p>Es probable que ping sea la utilidad de prueba de conectividad más popular en el ámbito de la tecnología de redes y siempre formó parte del software IOS de Cisco. Esta herramienta envía solicitudes de respuesta desde una dirección host especificada. El comando <span class="cmd"><b>ping</b></span> usa un protocolo de capa 3 que forma parte de la suite TCP/IP llamada ICMP. Ping usa la solicitud de eco ICMP y los paquetes de respuesta de eco ICMP. Si el host en la dirección especificada recibe la solicitud de eco ICMP, responde con un paquete de respuesta de eco ICMP. Se puede usar ping para verificar la conectividad de extremo a extremo tanto en IPv4 como en IPv6. En la figura 2, se muestra un ping satisfactorio de la PC1 al SRV1, en la dirección 172.16.1.100.</p>
+<p></p>
+<p>El comando <span class="cmd"><b>traceroute</b></span> en la figura 3 muestra la ruta que los paquetes IPv4 toman para llegar al destino. De manera similar a lo que sucede con el comando <span class="cmd"><b>ping</b></span>, se puede usar el comando <span class="cmd"><b>traceroute</b></span> del IOS de Cisco para IPv4 e IPv6. El comando <span class="cmd"><b>tracert</b></span> se usa con el sistema operativo Windows. El rastreo genera una lista de saltos, direcciones IP de router y la dirección IP de destino final a las que se llega correctamente a través de la ruta. Esta lista proporciona información importante sobre la verificación y la resolución de problemas. Si los datos llegan al destino, el rastreo indica la interfaz de cada router de la ruta. Si los datos fallan en algún salto de la ruta, se conoce la dirección del último router que respondió al rastreo. Esta dirección es un indicio de dónde se encuentran el problema o las restricciones de seguridad.</p>
+<p></p>
+<p>Según lo indicado, al proporcionar la dirección IPv6 como dirección de destino, las utilidades ping y traceroute se pueden usar para probar y diagnosticar la conectividad IPv6 de extremo a extremo. Al usarlas, las utilidades del IOS de Cisco reconocen si la dirección en cuestión es IPv4 o IPv6 y usan el protocolo apropiado para probar la conectividad. En la figura 4, se muestran los comandos <span class="cmd"><b>ping</b></span> y <span class="cmd"><b>traceroute</b></span> en el router R1 que se usa para probar la conectividad IPv6.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

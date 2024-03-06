@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.1.4.3 Filtrado de los resultados del comando show</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.1.4.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración inicial de un router</h1>
+        <h2>Verificación de la conectividad de redes conectadas directamente</h2>
+      </div>
+      <div id="content">
+<p>Los comandos que generan varias pantallas de resultados se pausan al cabo de 24 líneas de manera predeterminada. Al final del resultado detenido, se muestra el texto --More--. Si presiona <b>Entrar</b>, se muestra la siguiente línea, y si presiona la barra espaciadora, se muestra el siguiente grupo de líneas. Utilice el comando <span class="cmd"><b>terminal length </b></span><span class="cmd"><i>número</i></span> para especificar la cantidad de líneas que se muestran. Un valor 0 (cero) evita que el router haga una pausa entre las pantallas de resultados. </p>
+<p></p>
+<p>Otra característica muy útil que mejora la experiencia del usuario en la interfaz de línea de comandos (CLI) es el filtrado de los resultados del comando <span class="cmd"><b>show</b></span>. Los comandos de filtrado se pueden utilizar para mostrar secciones específicas de los resultados. Para habilitar el comando de filtrado, introduzca una barra vertical (<span class="cmd"><b>|</b></span>) después del comando <span class="cmd"><b>show</b></span> y, a continuación, introduzca un parámetro de filtrado y una expresión de filtrado.</p>
+<p></p>
+<p>Los parámetros de filtrado que se pueden configurar después de la barra vertical incluyen lo siguiente:</p>
+<p>
+<ul>
+<li>
+<b>section:</b> muestra la sección completa que comienza con la expresión de filtrado.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>include:</b> incluye todas las líneas de resultados que coinciden con la expresión de filtrado.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>exclude:</b> excluye todas las líneas de resultados que coinciden con la expresión de filtrado.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>begin:</b> muestra todas las líneas de resultados desde determinado punto, comenzando por la línea que coincide con la expresión de filtrado.</li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Nota:</b> los filtros de resultados se pueden utilizar junto con cualquier comando <span class="cmd"><b>show</b></span>. </p>
+<p></p>
+<p>En las figuras 1 a 4, se proporcionan ejemplos de los diversos filtros de resultados.</p>
+<p></p>
+<p>Utilice el verificador de sintaxis de la figura 5 para filtrar los resultados.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

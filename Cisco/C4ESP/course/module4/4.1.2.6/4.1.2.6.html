@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.1.2.6 Asignación de direcciones de Frame Relay</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.1.2.6_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Introducción a Frame Relay</h1>
+        <h2>Operación de Frame Relay</h2>
+      </div>
+      <div id="content">
+<p>Antes de que un router Cisco pueda transmitir datos a través de Frame Relay, necesita saber qué DLCI local se asigna a la dirección de capa 3 del destino remoto. Los routers Cisco admiten todos los protocolos de capa de red mediante Frame Relay, como IPv4, IPv6, IPX y AppleTalk. Esta asignación de dirección a DLCI se puede lograr mediante la asignación estática o dinámica. En la figura 1, se muestra un ejemplo de topología con asignación de DLCI.</p>
+<p></p>
+<p>
+<b>ARP inverso</b>
+</p>
+<p></p>
+<p>El protocolo de resolución de direcciones (ARP) inverso es una herramienta principal de Frame Relay. Mientras que ARP traduce direcciones IPv4 de capa 3 a direcciones MAC de capa 2, ARP inverso hace lo contrario. Las direcciones IPv4 de capa 3 correspondientes deben estar disponibles antes de que se puedan utilizar los VC. </p>
+<p></p>
+<p>
+<b>Nota:</b> Frame Relay para IPv6 utiliza el descubrimiento inverso de vecinos (IND) para obtener una dirección IPv6 de capa 3 a partir de un DLCI de capa 2. Un router Frame Relay envía un mensaje de solicitud IND para solicitar una dirección IPv6 de capa 3 correspondiente a una dirección DLCI de capa 2 del router Frame Relay remoto. Al mismo tiempo, el mensaje de solicitud IND proporciona la dirección DLCI de capa 2 del emisor al router Frame Relay remoto.</p>
+<p></p>
+<p>
+<b>Asignación dinámica</b>
+</p>
+<p></p>
+<p>La asignación dinámica de direcciones depende de ARP inverso para resolver una dirección IPv4 de capa de red de siguiente salto a un valor de DLCI local. El router Frame Relay envía solicitudes de ARP inverso en su PVC para descubrir la dirección de protocolo del dispositivo remoto conectado a la red Frame Relay. El router usa las respuestas para completar una tabla de asignación de direcciones a DLCI en el router Frame Relay o en el servidor de acceso. El router arma y mantiene esta tabla de asignación, que contiene todas las solicitudes de ARP inverso resueltas, incluidas las entradas de asignación dinámica y estática. </p>
+<p></p>
+<p>En los routers Cisco, ARP inverso está habilitado de manera predeterminada para todos los protocolos habilitados en la interfaz física. Los paquetes de ARP inverso no se envían para los protocolos que no están habilitados en la interfaz. </p>
+<p></p>
+<p>
+<b>Asignación estática de Frame Relay</b>
+</p>
+<p></p>
+<p>El usuario puede elegir anular la asignación dinámica de ARP inverso mediante el suministro de un mapa estático manual para la dirección de protocolo de siguiente salto a un DLCI local. Un mapa estático funciona de manera similar a ARP inverso dinámico mediante la asociación de una dirección de protocolo de siguiente salto específica a un DLCI de Frame Relay local. No se puede utilizar ARP inverso y una instrucción de asignación para el mismo DLCI y el mismo protocolo.</p>
+<p></p>
+<p>Un ejemplo del uso de la asignación estática de direcciones es una situación en la cual el router en el otro lado de la red Frame Relay no admite ARP inverso dinámico para un protocolo de red específico. A fin de proporcionar conectividad, se requiere una asignación estática para completar la dirección de capa de red remota a la resolución de DLCI local.</p>
+<p></p>
+<p>En una red Frame Relay hub-and-spoke, se da otro ejemplo. Utilice la asignación estática de direcciones en los routers spoke para proporcionar la posibilidad de conexión de spoke a spoke. Debido a que los routers spoke no tienen conectividad directa entre sí, ARP inverso dinámico no funciona entre ellos. ARP inverso dinámico depende de la presencia de una conexión punto a punto directa entre dos extremos. En este caso, ARP inverso dinámico solo funciona entre hub y spoke, y los spokes requieren asignación estática para proporcionar la posibilidad de conexión entre sí.</p>
+<p></p>
+<p>
+<b>Configuración de la asignación estática</b>
+</p>
+<p></p>
+<p>El establecimiento de la asignación estática depende de las necesidades de la red. Para asignar entre una dirección de protocolo de siguiente salto y una dirección de destino DLCI, utilice este comando: <span class="cmd"><b>frame-relay map </b></span><span class="cmd"><i>protocol protocol-address</i></span><span class="cmd"><i></i></span><span class="cmd"><i>dlci </i></span><span class="cmd">[</span><span class="cmd"><b>broadcast</b></span><span class="cmd">] [</span><span class="cmd"><b>ietf</b></span><span class="cmd">] [</span><span class="cmd"><b>cisco</b></span><span class="cmd">]</span>.</p>
+<p></p>
+<p>Utilice la palabra clave <span class="cmd"><b>ietf</b></span> cuando se conecte a un router que no es de Cisco.</p>
+<p></p>
+<p>La configuración del protocolo OSPF (Open Shortest Path First) se puede simplificar considerablemente agregando la palabra clave optativa <span class="cmd"><b>broadcast</b></span> cuando se realiza esta tarea. La palabra clave <span class="cmd"><b>broadcast</b></span> especifica que se permite el tráfico de difusión y multidifusión en el VC. Esta configuración permite el uso de protocolos de routing dinámico en el VC.</p>
+<p></p>
+<p>En la figura 2, se proporciona un ejemplo de la asignación estática en un router Cisco. En este ejemplo, la asignación estática de direcciones se realiza en la interfaz serial 0/0/1. La encapsulación de Frame Relay que se usa en el DLCI 102 es CISCO. Como se observa en los pasos de configuración, la asignación estática de direcciones mediante el comando <span class="cmd"><b>frame-relay map</b></span> permite que los usuarios seleccionen el tipo de encapsulación de Frame Relay que se utiliza por VC. </p>
+<p></p>
+<p>En la figura 3, se muestra el resultado del comando <span class="cmd"><b>show frame-relay map</b></span>. Observe que la interfaz está activa y la dirección IPv4 de destino es 10.1.1.2. El DLCI identifica la conexión que se usa para llegar a esta interfaz. Este valor se muestra en valor decimal (102), en valor hexadecimal (0x66) y en el valor que aparecería en el cable (0x1860). Esta es una entrada estática, no una entrada dinámica. El enlace utiliza la encapsulación Cisco en lugar de la encapsulación IETF.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

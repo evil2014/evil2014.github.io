@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.4.1.1 Actividad: paso a paso por OSPFv3</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.4.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resumen</h1>
+        <h2>Resumen</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Actividad:</b>
+<b>paso a paso por OSPFv3</b>
+</p>
+<p></p>
+<p>
+<b>Situación</b>
+</p>
+<p></p>
+<p>Esta actividad de clase se diseñó para grupos de tres estudiantes. El objetivo es revisar el proceso de routing SPF (Shortest Path First).</p>
+<p></p>
+<p>Diseñará una red y realizará el direccionamiento de esta, comunicará el esquema de direcciones de red y el funcionamiento de los enlaces de red a los miembros del grupo, y calculará el SPF.</p>
+<p></p>
+<p>Complete los pasos como se muestra en el PDF de esta actividad de clase. </p>
+<p></p>
+<p>Si tiene tiempo, comparta su diseño de red y el proceso OSPF (Open Shortest Path First) con otro grupo.</p>
+<p></p>
+<p>
+<a href="../../files/8.4.1.1%20Class%20Activity%20-%20Stepping%20Through%20OSPFv3%20Instructions.pdf" target="_blank">Actividad de clase: paso a paso por OSPFv3 (instrucciones)</a>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

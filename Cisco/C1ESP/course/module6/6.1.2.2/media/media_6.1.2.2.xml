@@ -1,0 +1,60 @@
+﻿<textcomponents> <!-- SLIDE 1 -->
+<component id="ID_s1_title">
+<text><![CDATA[<b>Comunicación sin conexión</b>]]></text>
+</component>
+<component id="ID_s1_txt01">
+  <text><![CDATA[Carta]]></text> 
+  </component>
+<component id="ID_s1_txt02">
+  <text><![CDATA[Buzón de correo]]></text> 
+  </component>
+<component id="ID_s1_txt03">
+  <text><![CDATA[Carta]]></text> 
+  </component>
+<component id="ID_s1_txt04">
+  <text><![CDATA[Se envía una carta.]]></text> 
+  </component>
+<component id="ID_s1_title_01">
+	<text><![CDATA[<b>El emisor no sabe:</b>]]></text>
+</component>
+<component id="ID_s1_body01">
+  <text><![CDATA[<textformat blockindent='-16'><LI id="s1body1li">Si el receptor está presente</LI><LI id="s1body1li1">Si la carta llegó</LI><LI id="s1body1li2">Si el receptor puede leer la carta</LI></textformat>]]></text> 
+</component>
+<component id="ID_s1_title_02">
+<text><![CDATA[<b>El receptor no sabe:</b>]]></text>
+</component>
+<component id="ID_s1_body02">
+  <text><![CDATA[<textformat blockindent='-16'><LI>Cuándo llegará</LI></textformat>]]></text> 
+  </component> <!-- SLIDE 2 -->  
+<component id="ID_s2_title">
+<text><![CDATA[<b>Comunicación sin conexión</b>]]></text>
+</component>
+<component id="ID_s2_txt01">
+  <text><![CDATA[Encabezado IP]]></text> 
+  </component>
+<component id="ID_s2_txt02">
+  <text><![CDATA[Segmento]]></text> 
+  </component>
+<component id="ID_s2_txt03">
+  <text><![CDATA[Encabezado IP]]></text> 
+  </component>
+<component id="ID_s2_txt04">
+  <text><![CDATA[Segmento]]></text> 
+  </component>
+<component id="ID_s2_txt05">
+  <text><![CDATA[Se envía un paquete.]]></text> 
+  </component>
+<component id="ID_s2_title_01">
+	<text><![CDATA[<b>El emisor no sabe:</b>]]></text>
+</component>
+<component id="ID_s2_body01">
+  <text><![CDATA[<textformat blockindent='-16'><LI>Si el receptor está presente</LI><LI>Si el paquete llegó</LI><LI>Si el receptor puede leer el paquete</LI></textformat>]]></text> 
+</component>
+<component id="ID_s2_title_02">
+<text><![CDATA[<b>El receptor no sabe:</b>]]></text>
+</component>
+<component id="ID_s2_body02">
+  <text><![CDATA[<textformat blockindent='-16'><LI>Cuándo llegará</LI></textformat>]]></text> 
+  </component>
+
+</textcomponents>

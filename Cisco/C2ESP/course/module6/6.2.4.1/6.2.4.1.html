@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.2.4.1 Ruta estática predeterminada IPv6</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.2.4.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de rutas estáticas y predeterminadas</h1>
+        <h2>Configuración de rutas IPv6 predeterminadas</h2>
+      </div>
+      <div id="content">
+<p>Una ruta predeterminada es una ruta estática que coincide con todos los paquetes. En lugar de almacenar rutas para todas las redes en Internet, los routers pueden almacenar una única ruta predeterminada que represente cualquier red que no esté en la tabla de routing.</p>
+<p></p>
+<p>Los routers suelen utilizar rutas predeterminadas configuradas de forma local, o bien, descubiertas por otro router, mediante un protocolo de routing dinámico. Se utilizan cuando ninguna otra ruta coincide con la dirección IP de destino del paquete en la tabla de routing. Es decir, si no existe una coincidencia más específica, entonces se utiliza la ruta predeterminada como el gateway de último recurso. </p>
+<p></p>
+<p>En general, las rutas estáticas predeterminadas se utilizan al conectar:</p>
+<p>
+<ul>
+<li>El router perimetral de una empresa a la red de un proveedor de servicios.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Un router con solo un router vecino ascendente. El router no tiene otros vecinos y, por lo tanto, se denomina “router de rutas internas”. </li>
+</ul>
+</p>
+<p></p>
+<p>Como se muestra en la ilustración, la sintaxis del comando para una ruta estática predeterminada es similar a la sintaxis del comando de cualquier otra ruta estática, excepto que prefijo-ipv6/longitud-prefijo es <span class="cmd"><b>::/0</b></span>, y coincide con todas las rutas. </p>
+<p></p>
+<p>La sintaxis del comando básico de una ruta estática predeterminada es la siguiente:</p>
+<p>
+<ul>
+<li>
+<span class="cmd">
+<b>ipv6 route ::/0 </b>
+</span>
+<span class="cmd">{</span>
+<span class="cmd">
+<i>dirección-ipv6 </i>
+</span>
+<span class="cmd">|</span>
+<span class="cmd">
+<i> interfaz-salida</i>
+</span>
+<span class="cmd">}</span>
+</li>
+</ul>
+</p>
+<p></p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

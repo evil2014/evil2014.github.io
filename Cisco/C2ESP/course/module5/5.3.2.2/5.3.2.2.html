@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.3.2.2 Ejemplo: resolución de problemas de switching de capa 3</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.3.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Conmutación de capa 3</h1>
+        <h2>Resolución de problemas de switching de capa 3</h2>
+      </div>
+      <div id="content">
+<p>La empresa XYZ agregará un nuevo piso, el quinto piso, a la red. Sobre la base de esta información, los requisitos actuales son asegurarse de que los usuarios en el quinto piso puedan comunicarse con usuarios en otros pisos. En este momento, los usuarios en el quinto piso no pueden comunicarse con los usuarios en otros pisos. El siguiente es un plan de implementación para instalar una nueva VLAN para los usuarios en el quinto piso y asegurar que la VLAN realice enrutamiento a otras VLAN.</p>
+<p></p>
+<p>Hay cuatro pasos para implementar una nueva VLAN:</p>
+<p></p>
+<p>
+<b>Paso 1.</b> Cree una nueva VLAN 500 en el switch del quinto piso y en los switches de distribución. Dé nombre a esta VLAN.</p>
+<p></p>
+<p>
+<b>Paso 2.</b> Identifique los puertos necesarios para los usuarios y los switches. Establezca el comando <span class="cmd"><b>switchport access vlan</b></span> en <span class="cmd"><b>500</b></span> y asegurarse de que el enlace troncal entre los switches de distribución esté configurado correctamente y que la VLAN 500 esté admitida en el enlace troncal.</p>
+<p></p>
+<p>
+<b>Paso 3.</b> Cree una interfaz SVI en los switches de distribución y asegúrese de que las direcciones IP estén asignadas.</p>
+<p></p>
+<p>
+<b>Paso 4.</b> Verifique la conectividad.</p>
+<p></p>
+<p>El plan de resolución de problemas consta de los siguientes pasos de control:</p>
+<p></p>
+<p>
+<b>Paso 1.</b> Verifique que se hayan creado todas las VLAN.</p>
+<p>
+<ul>
+<li>¿Se creó la VLAN en todos los switches?</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Realice una verificación con el comando <span class="cmd"><b>show vlan</b></span>.</li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Paso 2.</b> Asegúrese de que los puertos estén en la VLAN adecuada y de que el enlace troncal esté funcionando como se espera.</p>
+<p>
+<ul>
+<li>¿Se agregó el comando <span class="cmd"><b>switchport access VLAN 500</b></span> a todos los puertos de acceso?</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>¿Se deberían haber agregado otros puertos? De ser así, implemente esos cambios.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>¿Se utilizaron esos puertos con anterioridad? De ser así, asegúrese de que no haya comandos adicionales habilitados en esos puertos que pueden causar conflictos. En caso contrario, ¿está habilitado el puerto?</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>¿Hay algún puerto de usuario establecido como enlace troncal? De ser así, emita el comando <span class="cmd"><b>switchport mode access</b></span>.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>¿Los puertos troncales están establecidos en modo de enlace troncal? </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>¿Está configurada la eliminación manual de VLAN? De ser así, asegúrese de que los enlaces troncales necesarios para transportar el tráfico de la VLAN 500 tengan la VLAN en las instrucciones permitidas.</li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Paso 3.</b> Verifique las configuraciones de SVI (en caso de ser necesario).</p>
+<p>
+<ul>
+<li>¿Se creó la SVI con la dirección IP y la máscara de subred correctas?</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>¿Está habilitada?</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>¿Está habilitado el routing?</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>¿Se agregó esta SVI en el protocolo de routing?</li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Paso 4.</b> Verifique la conectividad.</p>
+<p>
+<ul>
+<li>¿Están todos los enlaces entre los switches en modo de enlace troncal?</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>¿Está permitida la VLAN 500 en todos los enlaces troncales?</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>¿El árbol de expansión bloquea alguno de los enlaces participantes?</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>¿Están habilitados los puertos?</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>¿Se asignaron los gateways predeterminados correctos a los hosts?</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Asegúrese de que la ruta predeterminada o algún protocolo de routing estén habilitados, en caso de ser necesario.</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.3.1.1 Direccionamiento IP de dispositivos</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.3.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Esquemas de direcciones</h1>
+        <h2>Puertos y direcciones</h2>
+      </div>
+      <div id="content">
+<p>El uso de direcciones IP, ya sean IPv4 o IPv6, es el principal medio para permitir que los dispositivos se ubiquen entre sí y para establecer la comunicación de extremo a extremo en Internet. De hecho, en cualquier internetwork, las direcciones IP son fundamentales para que los dispositivos se comuniquen de origen a destino y viceversa.</p>
+<p></p>
+<p>Cada dispositivo final en una red se debe configurar con direcciones IP. Algunos ejemplos de dispositivos finales son:</p>
+<p></p>
+<p>
+<ul>
+<li>Computadoras (estaciones de trabajo, computadoras portátiles, servidores de archivos, servidores web)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Impresoras de red</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Teléfonos VoIP</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Cámaras de seguridad</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Smartphones</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Dispositivos portátiles móviles (como los escáneres inalámbricos para códigos de barras)</li>
+</ul>
+</p>
+<p></p>
+<p>La estructura de una dirección IPv4 se denomina “notación decimal punteada” y se representa con cuatro números decimales entre 0 y 255. Las direcciones IPv4 son números asignados a los dispositivos individuales conectados a una red. Son de naturaleza lógica, ya que proporcionan información sobre la ubicación del dispositivo. </p>
+<p></p>
+<p>Con la dirección IP, también se necesita una máscara de subred. Las máscaras de subred son un tipo especial de direcciones IPv4 que, combinadas con las direcciones IP, determinan de qué subred específica de una red más grande forma parte el dispositivo. </p>
+<p></p>
+<p>Las direcciones IP se pueden asignar tanto a los puertos físicos como a las interfaces virtuales de los dispositivos. Una interfaz virtual significa que no hay hardware físico en el dispositivo asociado a ella. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

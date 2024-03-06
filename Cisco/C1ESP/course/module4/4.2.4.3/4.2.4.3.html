@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.2.4.3 LAN inalámbrica</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.2.4.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Medios de red</h1>
+        <h2>Medios inalámbricos</h2>
+      </div>
+      <div id="content">
+<p>Una implementación común de transmisión inalámbrica de datos permite a los dispositivos conectarse en forma inalámbrica a través de una LAN. En general, una LAN inalámbrica requiere los siguientes dispositivos de red:</p>
+<p>
+<ul>
+<li>
+<b>Punto de acceso inalámbrico:</b> el punto de acceso (AP) inalámbrico concentra las señales inalámbricas de los usuarios y se conecta (generalmente a través de un cable de cobre) a la infraestructura de red existente basada en medios de cobre, como Ethernet. Los routers inalámbricos domésticos y de pequeñas empresas integran las funciones de un router, un switch y un punto de acceso en un solo dispositivo, como el que se muestra en la ilustración.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Adaptadores de NIC inalámbricas:</b> proporcionan capacidad de comunicación inalámbrica a cada host de red.</li>
+</ul>
+</p>
+<p></p>
+<p>A medida que la tecnología fue evolucionando, surgió una gran cantidad de estándares WLAN basados en Ethernet. Se debe tener precaución al comprar dispositivos inalámbricos para garantizar compatibilidad e interoperabilidad.</p>
+<p></p>
+<p>Los beneficios de las tecnologías inalámbricas de comunicación de datos son evidentes, especialmente en cuanto al ahorro en el cableado costoso de las instalaciones y en la conveniencia de la movilidad del host. Sin embargo, los administradores de red necesitan desarrollar y aplicar procesos y políticas de seguridad rigurosas para proteger las LAN inalámbricas del daño y el acceso no autorizado.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,214 @@
+﻿<textcomponents> <!--Feedback for use by actionscript--> <!--Do not need to duplicate for each activity-->
+
+<component id="ID_correctTitle">
+<text><![CDATA[<b>Correcto  </b>]]></text>
+</component>
+
+<component id="ID_correctBody">
+<text><![CDATA[¡Correcto!]]></text>
+</component>
+
+<component id="ID_incorrectTitle">
+<text><![CDATA[<b>Incorrecto  </b>]]></text>
+</component>
+
+<component id="ID_incorrectBody">
+<text><![CDATA[Incorrecto. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id="ID_blankTitle">
+<text><![CDATA[<b>Sin respuesta  </b>]]></text>
+</component>
+
+<component id="ID_blankBody">
+<text><![CDATA[Seleccione una respuesta.]]></text>
+</component> <!--slide 1-->
+<component id="ID_s1_inst">
+<text><![CDATA[<b>Actividad: evaluar su comprensión sobre ACL   </b><br><br>Haga clic en los botones 2 a 6 para completar la actividad. Haga clic en el botón&nbsp;1 para ver esta topología en cualquier momento. Para continuar, seleccione el botón&nbsp;2 ahora. ]]></text>
+</component>
+
+<component id='ID_s1_txt01'>
+<text><![CDATA[Internet]]></text>
+</component>
+
+<component id='ID_s1_txt02'>
+<text><![CDATA[Servidor FTP]]></text>
+</component>
+
+<component id="ID_s1_correctBody">
+<text><![CDATA[¡Correcto! Haga clic en el botón&nbsp;2 para continuar.]]></text>
+</component> <!--slide 2-->
+<component id="ID_s2_inst">
+<text><![CDATA[<b>Actividad: evaluar su comprensión sobre ACL  </b><br><br><b>Pregunta&nbsp;1: </b> es necesario crear una lista de acceso única para evitar que las redes 10.10.1.0/24 y 10.10.20.0/24 lleguen a la red 10.10.30.0/24. El host 10.10.1.1 debe tener acceso sólo al servidor FTP. El resto de la red 10.0.0.0 debe tener acceso a la red 10.10.30.0/24. Todos los dispositivos deben poder acceder a Internet. Haga clic en el botón&nbsp;3 para continuar.]]></text>
+</component>
+
+<component id='ID_s2_txt01'>
+<text><![CDATA[¿Cuál debería ser la primera línea de la nueva lista de acceso descrita en la situación de práctica anterior?]]></text>
+</component>
+
+<component id='ID_s2_txt02'>
+<text><![CDATA[<font face="_typewriter">Router(config)# <b>access-list 10 deny 10.10.1.0 0.0.0.255  </b></font>]]></text>
+</component>
+
+<component id='ID_s2_txt03'>
+<text><![CDATA[<font face="_typewriter">Router(config)# <b>access-list 101 permit ip 10.10.1.1 0.0.0.0 10.10.30.2 0.0.0.0  </b></font>]]></text>
+</component>
+
+<component id='ID_s2_txt04'>
+<text><![CDATA[<font face="_typewriter">Router(config)# <b>access-list 101 permit ip 10.10.1.1 0.0.0.0 10.10.30.0 0.0.0.255  </b></font>]]></text>
+</component>
+
+<component id='ID_s2_txt05'>
+<text><![CDATA[<font face="_typewriter">Router(config)# <b>access-list 101 deny ip 10.10.1.0 0.0.0.255 10.10.30.0 0.0.0.255  </b></font>]]></text>
+</component>
+
+<component id='ID_s2_check'>
+	<text><![CDATA[Verificar]]></text>
+</component>
+
+<component id='ID_s2_reset'>
+	<text><![CDATA[Restablecer]]></text>
+</component>
+<component id="ID_s2_correctBody">
+<text><![CDATA[¡Correcto! Haga clic en el botón&nbsp;3 para continuar.]]></text>
+</component> <!--slide 3-->
+<component id="ID_s3_inst">
+<text><![CDATA[<b>Actividad: evaluar su comprensión sobre ACL  </b><br><br><b>Pregunta 2: </b> es necesario crear una lista de acceso única para evitar que las redes 10.10.1.0/24 y 10.10.20.0/24 lleguen hasta la red 10.10.30.0/24. El host 10.10.1.1 debe tener acceso sólo al servidor FTP. El resto de la red 10.0.0.0 debe tener acceso a la red 10.10.30.0/24. Todos los dispositivos deben poder acceder a Internet. Haga clic en el botón&nbsp;4 para continuar.]]></text>
+</component>
+
+<component id='ID_s3_txt01'>
+<text><![CDATA[¿Cuál debería ser la segunda línea de la nueva lista de acceso descrita en la situación de práctica anterior?]]></text>
+</component>
+
+<component id='ID_s3_txt02'>
+<text><![CDATA[<font face="_typewriter">Router(config)# <b>access-list 101 permit ip host 10.10.1.1 host 10.10.30.1  </b></font>]]></text>
+</component>
+
+<component id='ID_s3_txt03'>
+<text><![CDATA[<font face="_typewriter">Router(config)# <b>access-list 101 permit ip host 10.10.1.1 host 10.10.30.0 0.0.0.255  </b></font>]]></text>
+</component>
+
+<component id='ID_s3_txt04'>
+<text><![CDATA[<font face="_typewriter">Router(config)# <b>access-list 101 deny ip 10.10.1.0 0.0.0.255 10.10.30.0 0.0.0.255  </b></font>]]></text>
+</component>
+
+<component id='ID_s3_txt05'>
+<text><![CDATA[<font face="_typewriter">Router(config)# <b>access-list 101 deny ip 10.10.1.0 0.0.0.255 any  </b></font>]]></text>
+</component>
+
+<component id='ID_s3_check'>
+	<text><![CDATA[Verificar]]></text>
+</component>
+
+<component id='ID_s3_reset'>
+	<text><![CDATA[Restablecer]]></text>
+</component>
+
+<component id="ID_s3_correctBody">
+<text><![CDATA[¡Correcto! Haga clic en el botón&nbsp;4 para continuar.]]></text>
+</component> <!--slide 4-->
+<component id="ID_s4_inst">
+<text><![CDATA[<b>Actividad: evaluar su comprensión sobre ACL  </b><br><br><b>Pregunta 3: </b> es necesario crear una lista de acceso única para evitar que las redes 10.10.1.0/24 y 10.10.20.0/24 lleguen hasta la red 10.10.30.0/24. El host 10.10.1.1 debe tener acceso sólo al servidor FTP. El resto de la red 10.0.0.0 debe tener acceso a la red 10.10.30.0/24. Todos los dispositivos deben poder acceder a Internet. Haga clic en el botón&nbsp;5 para continuar.]]></text>
+</component>
+
+<component id='ID_s4_txt01'>
+<text><![CDATA[¿Cuál debería ser la tercera línea de la nueva lista de acceso descrita en la situación de práctica anterior?]]></text>
+</component>
+
+<component id='ID_s4_txt02'>
+<text><![CDATA[<font face="_typewriter">Router(config)# <b>access-list 101 permit ip host 10.10.1.1 host 10.10.30.1 eq ftp  </b></font>]]></text>
+</component>
+
+<component id='ID_s4_txt03'>
+<text><![CDATA[<font face="_typewriter">Router(config)# <b>access-list 101 permit ip host 10.10.1.1 10.10.30.0 0.0.0.255 eq any  </b></font>]]></text>
+</component>
+
+<component id='ID_s4_txt04'>
+<text><![CDATA[<font face="_typewriter">Router(config)# <b>access-list 101 deny ip 10.10.20.0 0.0.0.255 10.10.30.0 0.0.0.255 eq any  </b></font>]]></text>
+</component>
+
+<component id='ID_s4_txt05'>
+<text><![CDATA[<font face="_typewriter">Router(config)# <b>access-list 101 deny ip 10.20.1.0 0.0.0.255 any  </b></font>]]></text>
+</component>
+
+<component id='ID_s4_check'>
+	<text><![CDATA[Verificar]]></text>
+</component>
+
+<component id='ID_s4_reset'>
+	<text><![CDATA[Restablecer]]></text>
+</component>
+<component id="ID_s4_correctBody">
+<text><![CDATA[¡Correcto! Haga clic en el botón&nbsp;5 para continuar.]]></text>
+</component> <!--slide 5-->
+<component id="ID_s5_inst">
+<text><![CDATA[<b>Actividad: evaluar su comprensión sobre ACL  </b><br><br><b>Pregunta 4: </b> es necesario crear una lista de acceso única para evitar que las redes 10.10.1.0/24 y 10.10.20.0/24 lleguen hasta la red 10.10.30.0/24. El host 10.10.1.1 debe tener acceso sólo al servidor FTP. El resto de la red 10.0.0.0 debe tener acceso a la red 10.10.30.0/24. Todos los dispositivos deben poder acceder a Internet. Haga clic en el botón&nbsp;6 para continuar.]]></text>
+</component>
+
+<component id='ID_s5_txt01'>
+<text><![CDATA[¿Cuál debería ser la cuarta línea de la nueva lista de acceso descrita en la situación de práctica anterior?]]></text>
+</component>
+
+<component id='ID_s5_txt02'>
+<text><![CDATA[<font face="_typewriter">Router(config)# <b>access-list 10 permit ip host 10.0.0.0 0.0.0.255  </b></font>]]></text>
+</component>
+
+<component id='ID_s5_txt03'>
+<text><![CDATA[<font face="_typewriter">Router(config)# <b>access-list 101 permit ip 10.0.0.0 0.0.0.0 10.10.30.0 0.0.0.255  </b></font>]]></text>
+</component>
+
+<component id='ID_s5_txt04'>
+<text><![CDATA[<font face="_typewriter">Router(config)# <b>access-list 101 permit ip 10.0.0.0 0.255.255.255 any  </b></font>]]></text>
+</component>
+
+<component id='ID_s5_txt05'>
+<text><![CDATA[<font face="_typewriter">Router(config)# <b>access-list 101 deny ip 10.10.1.0 0.0.0.255 10.10.30.0 0.0.0.255 eq any  </b></font>]]></text>
+</component>
+
+<component id='ID_s5_check'>
+	<text><![CDATA[Verificar]]></text>
+</component>
+
+<component id='ID_s5_reset'>
+	<text><![CDATA[Restablecer]]></text>
+</component>
+
+<component id="ID_s5_correctBody">
+<text><![CDATA[¡Correcto! Haga clic en el botón&nbsp;6 para continuar.]]></text>
+</component> <!--slide 6-->
+<component id="ID_s6_inst">
+<text><![CDATA[<b>Actividad: evaluar su comprensión sobre ACL  </b><br><br><b>Pregunta 5: </b> es necesario crear una lista de acceso única para evitar que las redes 10.10.1.0/24 y 10.10.20.0/24 lleguen hasta la red 10.10.30.0/24. El host 10.10.1.1 debe tener acceso sólo al servidor FTP. El resto de la red 10.0.0.0 debe tener acceso a la red 10.10.30.0/24. Todos los dispositivos deben poder acceder a Internet.]]></text>
+</component>
+
+<component id='ID_s6_txt01'>
+<text><![CDATA[¿Dónde se debe colocar la nueva lista de acceso descrita en la situación de práctica anterior para asegurarse de que es eficaz?]]></text>
+</component>
+
+<component id='ID_s6_txt02'>
+<text><![CDATA[S 0/2/0 en RTB como lista de salida]]></text>
+</component>
+
+<component id='ID_s6_txt03'>
+<text><![CDATA[G 0/0 en RTB como lista de salida]]></text>
+</component>
+
+<component id='ID_s6_txt04'>
+<text><![CDATA[G 0/1 en RTA como lista de entrada]]></text>
+</component>
+
+<component id='ID_s6_txt05'>
+<text><![CDATA[G 0/1 en RTA como lista de entrada]]></text>
+</component>
+
+<component id='ID_s6_check'>
+	<text><![CDATA[Verificar]]></text>
+</component>
+
+<component id='ID_s6_reset'>
+	<text><![CDATA[Restablecer]]></text>
+</component>
+<component id="ID_s6_correctBody">
+<text><![CDATA[¡Correcto!]]></text>
+</component>
+
+</textcomponents>

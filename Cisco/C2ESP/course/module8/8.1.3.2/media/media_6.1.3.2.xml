@@ -1,0 +1,59 @@
+﻿<textcomponents> <!--Slide 1-->
+<component id="ID_s1_title">
+<text><![CDATA[<b>Estado Down a estado Init</b>]]></text>
+</component>
+
+<component id="ID_s1_txt01">
+   <text><![CDATA[Estado Down]]></text>
+   </component>
+<component id="ID_s1_txt02">
+   <text><![CDATA[Estado Init]]></text>
+   </component>
+<component id="ID_s1_txt03">
+   <text><![CDATA[Hola]]></text>
+   </component>
+<component id="ID_s1_txt04">
+   <text><![CDATA[Hola. Mi ID de router es 172.16.5.1. ¿Hay alguien más en este enlace?]]></text>
+   </component>
+<component id="ID_s1_txt05">
+   <text><![CDATA[Multidifusión a 224.0.0.5]]></text>
+   </component> <!--Slide 2-->
+<component id="ID_s2_title">
+<text><![CDATA[<b>El estado Init</b>]]></text>
+</component>
+<component id="ID_s2_txt01">
+   <text><![CDATA[Lista de vecinos del R2:<br/>172.16.5.1, int. G0/1]]></text>
+   </component>
+<component id="ID_s2_txt02">
+   <text><![CDATA[Hola]]></text>
+   </component>
+<component id="ID_s2_txt03">
+   <text><![CDATA[Hola. Mi ID de router es 172.16.5.2 y esta es mi lista de vecinos.]]></text>
+   </component>
+<component id="ID_s2_txt04">
+   <text><![CDATA[Unidifusión a 172.16.5.1]]></text>
+   </component> <!--Slide 3-->
+<component id="ID_s3_title">
+<text><![CDATA[<b>Estado Two-Way</b>]]></text>
+</component>
+
+<component id="ID_s3_txt01">
+   <text><![CDATA[Lista de vecinos del R1:<br/>172.16.5.2, int. G0/0]]></text>
+   </component>
+<component id="ID_s3_txt02">
+   <text><![CDATA[Estado Two-Way]]></text>
+   </component> <!--Slide 4-->
+<component id="ID_s4_title">
+<text><![CDATA[<b>Elección del DR y el BDR</b>]]></text>
+</component>
+
+<component id="ID_s4_txt01">
+   <text><![CDATA[El R1 tiene una prioridad predeterminada de 1 y la segunda ID de router más alta. Será el BDR en este enlace.]]></text>
+   </component>
+<component id="ID_s4_txt02">
+   <text><![CDATA[El R2 tiene una prioridad predeterminada de 1 y la ID de router más alta. Será el DR en este enlace.]]></text>
+   </component>
+
+
+
+</textcomponents>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.1.2.8 La prioridad OSPF</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.1.2.8_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuraciones avanzadas de OSPF de área única </h1>
+        <h2>OSPF en redes de accesos múltiples</h2>
+      </div>
+      <div id="content">
+<p>El DR se convierte en el centro de la recopilación y distribución de LSA, por lo tanto, dicho router debe contar con suficiente capacidad de memoria y de CPU para manejar la carga de trabajo. Es posible influenciar el proceso de elección de DR/BDR mediante configuraciones.</p>
+<p></p>
+<p>Si las prioridades de interfaz son iguales en todos los routers, se elige al router con la ID más alta como DR. Es posible configurar la ID del router para manipular la elección de DR/BDR. Sin embargo, el proceso solo funciona si hay un plan riguroso para establecer la ID de router de todos los routers. En las redes grandes, esto puede ser engorroso. </p>
+<p></p>
+<p>En vez de depender de la ID del router, es mejor controlar la elección mediante el establecimiento de prioridades de interfaz. Las prioridades son un valor específico de cada interfaz, lo que significa que proporcionan un mejor control en una red de accesos múltiples. Esto también permite que un router sea el DR en una red y un DROther en otra. </p>
+<p></p>
+<p>Para establecer la prioridad de una interfaz, use los siguientes comandos: </p>
+<p></p>
+<p>
+<ul>
+<li>
+<span class="cmd">
+<b>ip ospf priority </b>
+</span>
+<span class="cmd">
+<i>valor</i>
+</span>
+<span class="cmd">
+<b></b>
+</span>- comando de interfaz OSPFv2</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<span class="cmd">
+<b>ipv6 ospf priority </b>
+</span>
+<span class="cmd">
+<i>valor</i>
+</span>
+<span class="cmd">
+<b></b>
+</span>- comando de interfaz OSPFv3</li>
+</ul>
+</p>
+<p></p>
+<p>El <span class="cmd"><i>valor</i></span> puede ser uno de los siguientes:</p>
+<p>
+<ul>
+<li>
+<b>0:</b> no se convierte en DR ni en BDR.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>1</b> a <b>255:</b> cuanto más alto sea el valor de la prioridad, habrá más probabilidades de que el router se convierta en el DR o el BDR de la red.</li>
+</ul>
+</p>
+<p></p>
+<p>En la ilustración, todos los routers tienen la misma prioridad OSPF, porque el valor de la prioridad se establece de manera predeterminada en 1 para todas las interfaces de router. Por esta razón, para determinar el DR (R3) y el BDR (R2), se usa la ID del router. Si se cambia el valor de la prioridad en una interfaz de 1 a un valor más alto, se habilita el router para que se convierta en un router DR o BDR durante la siguiente elección. </p>
+<p></p>
+<p>Si la prioridad de la interfaz se configura después de habilitar OSPF, el administrador debe desactivar el proceso OSPF en todos los routers y, luego, volver a habilitarlo para forzar una nueva elección de DR/BDR.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

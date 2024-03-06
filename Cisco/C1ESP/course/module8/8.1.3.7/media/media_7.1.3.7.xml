@@ -1,0 +1,82 @@
+﻿<textcomponents>
+
+<component id="ID_title">
+<text><![CDATA[<b>Actividad: Cálculo de direcciones de red, de broadcast y de host</b><br/><br/>Calcule las direcciones de red, de broadcast, la primera dirección de host utilizable y la última dirección de host utilizable para la dirección y los números de prefijo en la forma en que se muestra. Practique tanto como sea necesario hasta que pueda realizar la conversión sin errores.]]></text>
+</component>
+
+<component id="ID_txt02">
+<text><![CDATA[<b>Dirección suministrada/prefijo  </b>]]></text>
+</component>
+
+<component id="ID_txt03">
+<text><![CDATA[Red]]></text>
+</component>
+
+<component id="ID_txt04">
+<text><![CDATA[Broadcast]]></text>
+</component>
+
+<component id="ID_txt05">
+<text><![CDATA[Primera dirección de host utilizable]]></text>
+</component>
+
+<component id="ID_txt06">
+<text><![CDATA[Última dirección de host utilizable]]></text>
+</component>
+
+<component id="ID_txt07">
+<text><![CDATA[Introduzca valores binarios en los ocho cuadros azules que están arriba.]]></text>
+</component>
+
+<component id="ID_txt08">
+<text><![CDATA[Para cada fila, ingrese los valores para ese tipo de dirección.]]></text>
+</component>
+
+<component id="ID_txt09">
+<text><![CDATA[<b>Tipo de dirección</b>]]></text>
+</component>
+
+<component id="ID_txt10">
+<text><![CDATA[<b>Introduzca el último octeto del prefijo de red en valores binarios</b>]]></text>
+</component>
+
+<component id="ID_txt11">
+<text><![CDATA[<b>Introduzca el ÚLTIMO octeto en valores decimales</b>]]></text>
+</component>
+
+<component id="ID_txt12">
+<text><![CDATA[<b>Introduzca la dirección completa en valores decimales</b>]]></text>
+</component>
+
+<component id="ID_btn01">
+<text><![CDATA[Verificar]]></text>
+</component>
+
+<component id="ID_btn02">
+<text><![CDATA[Restablecer]]></text>
+</component>
+
+<component id="ID_btn03">
+<text><![CDATA[Valores nuevos]]></text>
+</component>
+
+<component id="ID_btn04">
+<text><![CDATA[Mostrar]]></text>
+</component>
+
+<component id='ID_CORRECT_BODY'>
+	<text><![CDATA[Las direcciones de red, de broadcast, la primera dirección de host utilizable y la última dirección de host utilizable son correctas. Haga clic en Valores nuevos para continuar.]]></text>
+</component>
+
+<component id='ID_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id='ID_INCORRECT_BODY'>
+	<text><![CDATA[Las direcciones de red, de broadcast, la primera dirección de host utilizable o la última dirección de host utilizable son incorrectas Haga clic en Restablecer para volver a intentarlo, o haga clic en Mostrar para ver las respuestas correctas.]]></text>
+</component>
+
+<component id='ID_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+</textcomponents>

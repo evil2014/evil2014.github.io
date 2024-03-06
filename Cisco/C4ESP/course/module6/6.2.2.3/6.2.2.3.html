@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.2.2.3 Separación de voz y datos en ADSL</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.2.2.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Comparación de las soluciones de banda ancha</h1>
+        <h2>DSL</h2>
+      </div>
+      <div id="content">
+<p>El principal beneficio de ADSL es la capacidad de proporcionar servicios de datos junto con servicios de voz POTS. Las transmisiones de las señales de voz y de datos se propagan a lo largo del mismo par de hilos, como se muestra en la figura 1. Los circuitos de datos se descargan del switch de voz.</p>
+<p></p>
+<p>Cuando el proveedor de servicios coloca voz analógica y ADSL en el mismo par de hilos, las señales ADSL pueden distorsionar la transmisión de voz. Por este motivo, el proveedor divide el canal POTS del módem ADSL en las instalaciones del cliente con filtros o divisores. Esta configuración garantiza un servicio telefónico tradicional ininterrumpido incluso si falla ADSL. Si hay filtros o divisores, el usuario puede utilizar la línea telefónica y la conexión ADSL simultáneamente sin que se produzcan efectos adversos en ninguno de los servicios. </p>
+<p></p>
+<p>En la figura 1, se muestra el bucle local que termina en las instalaciones del cliente en el punto de demarcación. El punto de demarcación es aquel donde la línea telefónica ingresa a las instalaciones del cliente. El dispositivo que efectivamente marca el punto de demarcación es el dispositivo de interfaz de red (NID). En este punto, se puede conectar un divisor a la línea telefónica. El divisor bifurca la línea telefónica; una parte proporciona el cableado telefónico original de la casa para los teléfonos y la otra parte se conecta al módem ADSL. El divisor funciona como filtro de paso bajo, ya que solo permite que pasen las frecuencias de 0 kHz a 4 kHz desde o hacia el teléfono. </p>
+<p></p>
+<p>Existen dos formas de separar el servicio de ADSL del de voz en las instalaciones del cliente: mediante un microfiltro o un divisor.</p>
+<p></p>
+<p>Un microfiltro es un filtro de paso bajo pasivo con dos extremos, como se muestra en la figura 2. Un extremo se conecta al teléfono y el otro extremo se conecta al conector de pared del teléfono. Haga clic en el área resaltada en la figura 2 para ver la imagen de un microfiltro. Esta solución permite que el usuario utilice cualquier conector en la casa para los servicios de voz o ADSL.</p>
+<p></p>
+<p>Un divisor de señal POTS, que se muestra en la figura 3, separa el tráfico DSL del tráfico POTS. El divisor de señal POTS es un dispositivo pasivo. Haga clic en el área resaltada en la figura 3 para ver el diagrama de un divisor. En caso de un corte de energía, el tráfico de voz continúa viajando hacia el switch de voz en la CO de la prestadora de servicios. Los divisores están ubicados en la CO y, en algunas implementaciones, en las instalaciones del cliente. En la CO, el divisor de señal POTS separa el tráfico de voz, destinado a las conexiones POTS, y el tráfico de datos, destinado al DSLAM. La instalación del divisor de señal POTS en el NID generalmente requiere que un técnico vaya al sitio del cliente.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.3.2.4 Integridad con los algoritmos de hash</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.3.2.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Presentación de IPsec</h1>
+        <h2>Estructura IPsec</h2>
+      </div>
+      <div id="content">
+<p>Los algoritmos de hash manejan la integridad y la autenticación del tráfico VPN. Los hashes proporcionan integridad y autenticación de datos al asegurar que las personas no autorizadas no alteren los mensajes transmitidos. Un hash, también denominado “síntesis del mensaje”, es un número que se genera a partir de una cadena de texto. El hash es más corto que el texto en sí. Se genera mediante el uso de una fórmula, de tal manera que es muy poco probable que otro texto produzca el mismo valor de hash. </p>
+<p></p>
+<p>El emisor original genera un hash del mensaje y lo envía con el mensaje propiamente dicho. El destinatario analiza el mensaje y el hash, produce otro hash a partir del mensaje recibido y compara ambos hashes. Si son iguales, el destinatario puede estar lo suficientemente seguro de la integridad del mensaje original.</p>
+<p></p>
+<p>En la ilustración, Gail le envió a Alex un EFT de USD 100. Jeremías interceptó y alteró este EFT para mostrarse como el destinatario y que la cantidad sea USD 1000. En este caso, si se utilizara un algoritmo de integridad de datos, los hashes no coincidirían, y la transacción no sería válida.</p>
+<p></p>
+<p>Los datos VPN se transportan por Internet pública. Como se muestra, existe la posibilidad de que se intercepten y se modifiquen estos datos. Para protegerlos contra esta amenaza, los hosts pueden agregar un hash al mensaje. Si el hash transmitido coincide con el hash recibido, se preservó la integridad del mensaje. Sin embargo, si no hay una coincidencia, el mensaje se alteró.</p>
+<p></p>
+<p>Las VPN utilizan un código de autenticación de mensajes para verificar la integridad y la autenticidad de un mensaje, sin utilizar ningún mecanismo adicional. </p>
+<p></p>
+<p>El código de autenticación de mensajes basado en hash (HMAC) es un mecanismo para la autenticación de mensajes mediante funciones de hash. Un HMAC con clave es un algoritmo de integridad de datos que garantiza la integridad de un mensaje. Un HMAC tiene dos parámetros: una entrada de mensaje y una clave secreta que solo conocen el autor del mensaje y los destinatarios previstos. El emisor del mensaje utiliza una función HMAC para producir un valor (el código de autenticación de mensajes) que se forma mediante la compresión de la clave secreta y la entrada de mensaje. El código de autenticación de mensajes se envía junto con el mensaje. El receptor calcula el código de autenticación de mensajes en el mensaje recibido con la misma clave y la misma función HMAC que utilizó el emisor. A continuación, el receptor compara el resultado que se calculó con el código de autenticación de mensajes que se recibió. Si los dos valores coinciden, el mensaje se recibió correctamente y el receptor se asegura de que el emisor forma parte de la comunidad de usuarios que comparten la clave. La fortaleza criptográfica del HMAC depende de la fortaleza criptográfica de la función de hash subyacente, del tamaño y la calidad de la clave, y del tamaño de la longitud del resultado del hash en bits.</p>
+<p></p>
+<p>Hay dos algoritmos HMAC comunes:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>MD5:</b> utiliza una clave secreta compartida de 128 bits. El mensaje de longitud variable y la clave secreta compartida de 128 bits se combinan y se procesan con el algoritmo de hash HMAC-MD5. El resultado es un hash de 128 bit. El hash se adjunta al mensaje original y se envía al extremo remoto.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>SHA:</b> SHA-1 utiliza una clave secreta de 160 bits. El mensaje de longitud variable y la clave secreta compartida de 160 bits se combinan y se procesan con el algoritmo de hash HMAC-SHA1. El resultado es un hash de 160 bits. El hash se adjunta al mensaje original y se envía al extremo remoto. </li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Nota:</b> el IOS de Cisco también admite implementaciones de SHA de 256 bits, 384 bits y 512 bits.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

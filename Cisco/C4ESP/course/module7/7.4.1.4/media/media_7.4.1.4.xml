@@ -1,0 +1,73 @@
+﻿<textcomponents>  
+
+
+<component id="ID_s1_inst">
+	<text><![CDATA[<b>Actividad: Comparar las soluciones de VPN con SSL de Cisco</b><br/>Arrastre el tipo correcto de solución de VPN con SSL de Cisco hasta la afirmación que represente la mejor coincidencia.]]></text>
+</component>
+
+<component id='ID_s1_target_header'>
+	<text><![CDATA[<b>Solución</b>]]></text>
+</component>
+<component id='ID_s1_text_header'>
+	<text><![CDATA[<b>Afirmaciones sobre VPN con SSL de Cisco</b>]]></text>
+</component>
+
+<component id='ID_s1_drag01'>
+	<text><![CDATA[<font color="#393536">Cisco AnyConnect Secure<br> Mobility Client con SSL</font>]]></text>
+</component>
+
+<component id='ID_s1_drag02'>
+	<text><![CDATA[<font color="#393536">Cisco Secure Mobility sin clientes<br> SSL</font>]]></text>
+</component>
+
+
+<component id="ID_s1_txt01">
+	<text><![CDATA[Se utilizan dispositivos proxy de seguridad adaptables (ASA) y el reenvío de puertos para acceder a los recursos de red.]]></text>
+</component>
+
+<component id="ID_s1_txt02">
+	<text><![CDATA[Se debe instalar una aplicación cliente en el dispositivo para usuarios finales.]]></text>
+</component>
+
+<component id="ID_s1_txt03">
+	<text><![CDATA[Se proporciona acceso remoto a la VPN para los dispositivos que no son de administración empresarial.]]></text>
+</component>
+
+<component id="ID_s1_txt04">
+	<text><![CDATA[Se establece un túnel SSL de acceso total con un router Cisco, un dispositivo de seguridad adaptable (ASA) o un firewall.]]></text>
+</component>
+<component id="ID_s1_txt05">
+	<text><![CDATA[Los clientes deben pasar por las listas de acceso ASA para que se les permita utilizar las aplicaciones y los archivos.]]></text>
+</component>
+
+
+
+
+<component id='ID_s1_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id='ID_s1_CORRECT_BODY'>
+	<text><![CDATA[Unió correctamente los tipos de solución de VPN con SSL de Cisco con las afirmaciones correspondientes.]]></text>
+</component>
+
+
+<component id='ID_s1_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_BODY'>
+	<text><![CDATA[No unió correctamente los tipos de solución de VPN con SSL de Cisco con las afirmaciones correspondientes. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_s1_CHECK'>
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id='ID_s1_RESET'>
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component>
+
+
+
+</textcomponents>

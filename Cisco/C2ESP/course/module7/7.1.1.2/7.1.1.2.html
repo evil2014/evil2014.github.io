@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.1.1.2 Propósito de los protocolos de routing dinámico</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.1.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolos de enrutamiento dinámico</h1>
+        <h2>Funcionamiento del protocolo de enrutamiento dinámico</h2>
+      </div>
+      <div id="content">
+<p>Los protocolos de enrutamiento se usan para facilitar el intercambio de información de enrutamiento entre los routers. Un protocolo de enrutamiento es un conjunto de procesos, algoritmos y mensajes que se usan para intercambiar información de enrutamiento y completar la tabla de enrutamiento con la elección de los mejores caminos que realiza el protocolo. El propósito de los protocolos de routing dinámico incluye lo siguiente:</p>
+<p>
+<ul>
+<li>Descubrir redes remotas</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Mantener la información de enrutamiento actualizada</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Escoger el mejor camino hacia las redes de destino</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Poder encontrar un mejor camino nuevo si la ruta actual deja de estar disponible</li>
+</ul>
+</p>
+<p></p>
+<p>Los componentes principales de los protocolos de routing dinámico incluyen los siguientes:</p>
+<p>
+<ul>
+<li>
+<b>Estructuras de datos:</b> por lo general, los protocolos de routing utilizan tablas o bases de datos para sus operaciones. Esta información se guarda en la RAM. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Mensajes del protocolo de routing:</b> los protocolos de routing usan varios tipos de mensajes para descubrir routers vecinos, intercambiar información de routing y realizar otras tareas para descubrir la red y conservar información precisa acerca de ella. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Algoritmo:</b> un algoritmo es una lista finita de pasos que se usan para llevar a cabo una tarea. Los protocolos de enrutamiento usan algoritmos para facilitar información de enrutamiento y para determinar el mejor camino. </li>
+</ul>
+</p>
+<p></p>
+<p>En la ilustración, se destacan las estructuras de datos, los mensajes del protocolo de routing y el algoritmo de routing que utiliza EIGRP. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

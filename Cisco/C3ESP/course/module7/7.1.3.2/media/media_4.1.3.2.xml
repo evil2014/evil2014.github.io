@@ -1,0 +1,330 @@
+﻿<textcomponents> <!--Slide 1-->
+<component id="ID_s1_title">
+<text><![CDATA[<b>Encabezado de paquete EIGRP</b>]]></text>
+</component>
+
+<component id="ID_s1_txt01">
+<text><![CDATA[Encabezado de trama de enlace de datos]]></text>
+</component>
+
+<component id="ID_s1_txt02">
+<text><![CDATA[Encabezado de paquete IP]]></text>
+</component>
+
+<component id="ID_s1_txt03">
+<text><![CDATA[<b>Encabezado de paquete EIGRP</b>]]></text>
+</component>
+
+<component id="ID_s1_txt04">
+<text><![CDATA[Tipos de TLV]]></text>
+</component>
+
+<component id="ID_s1_txt05">
+<text><![CDATA[Bit]]></text>
+</component>
+
+<component id="ID_s1_txt06">
+<text><![CDATA[Encabezado de EIGRP]]></text>
+</component>
+
+<component id="ID_s1_txt07">
+<text><![CDATA[Mensaje de EIGRP]]></text>
+</component>
+
+
+<component id="ID_s1_txt08">
+<text><![CDATA[<font size="10"><textformat blockindent="-14"><ul class="bulletIndent20"><li><b>Código de operación:</b> tipo de paquete EIGRP: actualización (1), consulta (3) respuesta (4), saludo (5).</li><li><b>Número de sistema autónomo:</b> ID para este proceso de routing EIGRP.</li></ul></textformat></font>]]></text>
+</component>
+
+<component id="ID_s1_txt09">
+<text><![CDATA[Versión]]></text>
+</component>
+
+<component id="ID_s1_txt10">
+<text><![CDATA[Código de operación]]></text>
+</component>
+
+<component id="ID_s1_txt11">
+<text><![CDATA[Checksum]]></text>
+</component>
+
+<component id="ID_s1_txt12">
+<text><![CDATA[Indicadores]]></text>
+</component>
+<component id="ID_s1_txt13">
+<text><![CDATA[Secuencia]]></text>
+</component>
+<component id="ID_s1_txt14">
+<text><![CDATA[Acuse de recibo]]></text>
+</component>
+<component id="ID_s1_txt15">
+<text><![CDATA[Número de sistema autónomo]]></text>
+</component>
+<component id="ID_s1_txt16">
+<text><![CDATA[TLV]]></text>
+</component> <!--Slide 2-->
+<component id="ID_s2_title">
+<text><![CDATA[<b>Parámetros EIGRP</b>]]></text>
+</component>
+
+
+<component id="ID_s2_txt01">
+<text><![CDATA[Encabezado de trama de enlace de datos]]></text>
+</component>
+
+<component id="ID_s2_txt02">
+<text><![CDATA[Encabezado de paquete IP]]></text>
+</component>
+
+<component id="ID_s2_txt03">
+<text><![CDATA[Encabezado de paquete EIGRP]]></text>
+</component>
+
+
+<component id="ID_s2_txt04">
+<text><![CDATA[Tipos de TLV<br/><font color="#f26200"><b>TLV de parámetros de EIGRP</b></font>]]></text>
+</component>
+
+<component id="ID_s2_txt05">
+<text><![CDATA[Bit]]></text>
+</component>
+
+
+<component id="ID_s2_txt06">
+<text><![CDATA[Tipo = 0x0001]]></text>
+</component>
+
+<component id="ID_s2_txt07">
+<text><![CDATA[Longitud]]></text>
+</component>
+
+<component id="ID_s2_txt08">
+<text><![CDATA[Valores]]></text>
+</component>
+
+<component id="ID_s2_txt09">
+<text><![CDATA[K1]]></text>
+</component>
+<component id="ID_s2_txt10">
+<text><![CDATA[K2]]></text>
+</component>
+<component id="ID_s2_txt11">
+<text><![CDATA[K3]]></text>
+</component>
+<component id="ID_s2_txt12">
+<text><![CDATA[K4]]></text>
+</component>
+<component id="ID_s2_txt13">
+<text><![CDATA[K5]]></text>
+</component>
+<component id="ID_s2_txt14">
+<text><![CDATA[Reservado]]></text>
+</component>
+<component id="ID_s2_txt15">
+<text><![CDATA[Tiempo en espera]]></text>
+</component>
+
+
+<component id="ID_s2_txt16">
+<text><![CDATA[<font size="10"><textformat blockindent="-14"><ul class="bulletIndent20"><li><b>K1</b> y <b>K3:</b> evalúa el ancho de banda y el retraso; se establece en 1.</li><li><b>Tiempo de espera:</b> tiempo máximo que debe esperar el router al siguiente saludo.</li></ul></textformat></font>]]></text></component> <!--Slide 3-->
+<component id="ID_s3_title">
+<text><![CDATA[<b>TLV de EIGRP: interna</b>]]></text>
+</component>
+
+<component id="ID_s3_txt01">
+<text><![CDATA[Encabezado de trama de enlace de datos]]></text>
+</component>
+<component id="ID_s3_txt02">
+<text><![CDATA[Encabezado de paquete IP]]></text>
+</component>
+
+	<component id="ID_s3_txt03">
+<text><![CDATA[Encabezado de paquete EIGRP]]></text>
+</component>
+
+<component id="ID_s3_txt04">
+ <text><![CDATA[Tipos de TLV<br/><font color="#f26200"><b>TLV de rutas IP internas</b></font>]]></text>
+ </component>
+
+<component id="ID_s3_txt05">
+<text><![CDATA[Bit]]></text>
+</component>
+
+<component id="ID_s3_txt06">
+<text><![CDATA[Tipo = 0x0002]]></text>
+</component>
+
+<component id="ID_s3_txt07">
+	<text><![CDATA[Longitud]]></text>
+	</component>
+
+<component id="ID_s3_txt08">
+	<text><![CDATA[Siguiente salto]]></text>
+	</component>
+
+<component id="ID_s3_txt09">
+<text><![CDATA[Retardo]]></text>
+</component>
+
+<component id="ID_s3_txt10">
+<text><![CDATA[Ancho de banda]]></text>
+</component>
+<component id="ID_s3_txt11">
+<text><![CDATA[MTU]]></text>
+</component>
+
+<component id="ID_s3_txt12">
+<text><![CDATA[Conteo de saltos]]></text>
+</component>
+
+<component id="ID_s3_txt13">
+<text><![CDATA[Confiabilidad]]></text>
+</component>
+
+
+<component id="ID_s3_txt14">
+<text><![CDATA[Carga]]></text>
+</component>
+
+
+<component id="ID_s3_txt15">
+<text><![CDATA[Reservado]]></text>
+</component>
+
+<component id="ID_s3_txt16">
+<text><![CDATA[Duración de prefijo]]></text>
+</component>
+
+
+
+<component id="ID_s3_txt17">
+<text><![CDATA[Destino]]></text>
+</component>
+
+<component id="ID_s3_txt18">
+<text><![CDATA[Valores]]></text>
+</component>
+
+
+
+<component id="ID_s3_txt19">
+<text><![CDATA[<font size="10"><textformat blockindent="-14"><ul class="bulletIndent20"><li><b>Retraso:</b> suma de todos los retrasos de origen a destino en unidades de 10&nbsp;microsegundos; 0xFFFFFFFF indica una ruta inalcanzable.</li><li><b>Ancho de banda:</b> el ancho de banda más bajo configurado en cualquier interfaz en toda la ruta.</li><li><b>Longitud de prefijo: </b>especifica el número de bits de red en la máscara de subred.</li><li><b>Destino:</b> la dirección de la red de destino; este campo es variable.</li></ul></textformat></font>]]></text>
+</component> <!--Slide 4-->
+<component id="ID_s4_title">
+<text><![CDATA[<b>TLV de EIGRP: externa</b>]]></text>
+</component>
+
+
+<component id="ID_s4_txt01">
+<text><![CDATA[Encabezado de trama de enlace de datos]]></text>
+</component>
+
+<component id="ID_s4_txt02">
+<text><![CDATA[Encabezado de paquete IP]]></text>
+</component>
+
+<component id="ID_s4_txt03">
+<text><![CDATA[Encabezado de paquete EIGRP]]></text>
+</component>
+
+<component id="ID_s4_txt04">
+<text><![CDATA[Tipos de TLV<br/><font color="#f26200"><b>TLV de rutas IP externas</b>]]></text>
+</component>
+
+<component id="ID_s4_txt05">
+<text><![CDATA[Bit]]></text>
+</component>
+
+<component id="ID_s4_txt06">
+<text><![CDATA[Tipo = 0x0003]]></text>
+</component>
+
+<component id="ID_s4_txt07">
+<text><![CDATA[Longitud]]></text>
+</component>
+
+<component id="ID_s4_txt08">
+<text><![CDATA[Siguiente salto]]></text>
+</component>
+
+
+<component id="ID_s4_txt09">
+<text><![CDATA[Creación de los routers]]></text>
+</component>
+<component id="ID_s4_txt10">
+<text><![CDATA[Número de sistema autónomo de origen]]></text>
+</component>
+
+
+<component id="ID_s4_txt11">
+<text><![CDATA[Etiquetas arbitrarias]]></text>
+</component>
+
+
+<component id="ID_s4_txt12">
+<text><![CDATA[Métrica de protocolos externos]]></text>
+</component>
+
+
+<component id="ID_s4_txt13">
+<text><![CDATA[Reservado]]></text>
+</component>
+
+<component id="ID_s4_txt14">
+<text><![CDATA[GBAM ID de protocolo]]></text>
+</component>
+
+<component id="ID_s4_txt15">
+<text><![CDATA[Indicadores]]></text>
+</component>
+
+
+<component id="ID_s4_txt16">
+<text><![CDATA[Retardo]]></text>
+</component>
+
+<component id="ID_s4_txt17">
+<text><![CDATA[Ancho de banda]]></text>
+</component>
+
+<component id="ID_s4_txt18">
+<text><![CDATA[MTU]]></text>
+</component>
+
+<component id="ID_s4_txt19">
+<text><![CDATA[Conteo de saltos]]></text>
+</component>
+
+<component id="ID_s4_txt20">
+<text><![CDATA[Confiabilidad]]></text>
+</component>
+
+<component id="ID_s4_txt21">
+<text><![CDATA[Carga]]></text>
+</component>
+
+<component id="ID_s4_txt22">
+<text><![CDATA[Reservado]]></text>
+</component>
+
+<component id="ID_s4_txt23">
+<text><![CDATA[Duración de prefijo]]></text>
+</component>
+
+<component id="ID_s4_txt24">
+<text><![CDATA[Destino]]></text>
+</component>
+
+<component id="ID_s4_txt25">
+<text><![CDATA[Valores]]></text>
+</component>
+
+<component id="ID_s4_txt26">
+<text><![CDATA[Campos de valores usados para rastrear el origen externo de la ruta]]></text>
+</component>
+
+<component id="ID_s4_txt27">
+<text><![CDATA[Los mismos campos de valores usados en la TLV de IP interna]]></text>
+</component>
+
+</textcomponents>

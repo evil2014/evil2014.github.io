@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.2.4.1 Verificación de vecinos OSPF</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.2.4.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de OSPFv2 de área única</h1>
+        <h2>Verificación de OSPF</h2>
+      </div>
+      <div id="content">
+<p>En la figura 1, se muestra la topología de referencia.</p>
+<p></p>
+<p>Utilice el comando <span class="cmd"><b>show ip ospf neighbor</b></span> para verificar que el router haya formado una adyacencia con los routers vecinos. Si no se muestra la ID del router vecino o este no se muestra en el estado FULL, los dos routers no formaron una adyacencia OSPF. </p>
+<p></p>
+<p>Si dos routers no establecen una adyacencia, no se intercambia la información de estado de enlace. Las LSDB incompletas pueden producir imprecisiones en los árboles SPF y en las tablas de routing. Es posible que no existan rutas hacia las redes de destino o que estas no representen la ruta más óptima.</p>
+<p></p>
+<p>En la figura 2, se muestra la adyacencia de vecino del R1. Este comando muestra el siguiente resultado para cada vecino:</p>
+<p>
+<ul>
+<li>
+<b>Neighbor ID:</b> la ID del router vecino.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Pri:</b> la prioridad OSPF de la interfaz. Este valor se utiliza en la elección del DR y del BDR.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>State:</b> el estado de OSPF de la interfaz. El estado FULL significa que el router y su vecino poseen LSDB de OSPF idénticas. En las redes de accesos múltiples, como Ethernet, dos routers adyacentes pueden mostrar sus estados como 2WAY. El guion indica que no se requiere ningún DR o BDR debido al tipo de red.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Dead Time:</b> la cantidad de tiempo restante que el router espera para recibir un paquete de saludo OSPF del vecino antes de declararlo inactivo. Este valor se reestablece cuando la interfaz recibe un paquete de saludo.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Address:</b> la dirección IPv4 de la interfaz del vecino a la que el router está conectado directamente.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Interface:</b> la interfaz en la que este router formó adyacencia con el vecino.</li>
+</ul>
+</p>
+<p></p>
+<p>Utilice el verificador de sintaxis de la figura 3 para verificar los vecinos del R2 y del R3 con el comando <span class="cmd"><b>show ip ospf neighbor</b></span>.</p>
+<p>Dos routers pueden no formar una adyacencia OSPF si:</p>
+<p>
+<ul>
+<li>Las máscaras de subred no coinciden, esto hace que los routers se encuentren en redes separadas.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Los temporizadores muerto y de saludo de OSPF no coinciden.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Los tipos de redes OSPF no coinciden.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Falta un comando <span class="cmd"><b>network</b></span> de OSPF o este es incorrecto.</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

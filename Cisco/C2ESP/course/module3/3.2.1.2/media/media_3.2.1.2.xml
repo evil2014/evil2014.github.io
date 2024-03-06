@@ -1,0 +1,91 @@
+﻿<textcomponents>
+<component id="ID_s1_title">
+<text><![CDATA[<b>Creación de una VLAN</b>]]></text>
+</component>
+
+<component id="ID_s1_table01">
+<text><![CDATA[<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' class="mtable" cellpadding='4'>
+
+<tr>
+<td colspan='2' bgcolor='#98D3D1' class="mtitle"><font size='11' color='#1C3635'><b>Comandos de IOS de un switch Cisco</b></font></td>
+</tr>
+
+<tr class="mtable_top">
+<td colspan='2' bgcolor='#0E6360' class="mtable_top"><font size='1' color='#434321'><span style="color:#DAE17A">.</span></font></td>
+</tr>
+
+<tr>
+<td bgcolor='#eff8f7' valign="top">Ingrese al modo de configuración global.</td>
+<td bgcolor='#eff8f7' valign="top"><font face='_typewriter'>S1# <b>configure terminal</b></font></td>
+</tr>
+
+<tr>
+<td bgcolor='#ffffff' valign="top">Cree una VLAN con un número de ID válido.</td>
+<td bgcolor='#ffffff' valign="top"><font face='_typewriter'>S1(config)#<b>vlan   </b><i>id-vlan</i></font></td>
+</tr>
+
+<tr>
+<td  bgcolor='#eff8f7' valign="top">Especifique un nombre único para identificar la VLAN.</td>
+<td  bgcolor='#eff8f7' valign="top"><font face='_typewriter'>S1(config-vlan)#<b>name   </b><i>nombre-vlan</i></font></td>	
+</tr>
+
+<tr>
+<td  bgcolor='#ffffff' valign="top">Vuelva al modo EXEC privilegiado.</td>
+<td  bgcolor='#ffffff' valign="top"><font face='_typewriter'>S1(config-vlan)# <b>end</b></font></td>
+</tr>
+
+</table>]]></text>
+</component>
+
+<component id="ID_s2_title">
+<text><![CDATA[<b>Ejemplo de configuración</b>]]></text> 
+</component>
+
+<component id="ID_s2_txt01">
+<text><![CDATA[PC de estudiantes]]></text> 
+</component>
+
+<component id="ID_s2_txt02">
+<text><![CDATA[Switch S1:<br/>VLAN&nbsp;20 <br/>“estudiante”]]></text> 
+</component>  
+
+
+<component id="ID_s3_title">
+  <text><![CDATA[<b>Verificación</b>]]></text> 
+  </component>
+  <component id="ID_sc_reset">
+		<text><![CDATA[Restablecer]]></text>
+	</component>
+	<component id="ID_sc_showme">
+		<text><![CDATA[Mostrar]]></text>
+	</component>
+	<component id="ID_sc_showall">
+		<text><![CDATA[Mostrar todo]]></text>
+</component>
+  <component id="ID_SC5" fontFace='Courier New' fontSize="10">
+		<feedback id="fb"><![CDATA[<b><font size='10' face="Arial" color="#0000FF" class="font10px">***Debe introducir el comando exacto y completo. Los comandos que incluyen un nombre o una contraseña distinguen mayúsculas de minúsculas.***</font>  </b>
+		]]></feedback>
+		<existingcommands><![CDATA[<font size='10' face="Arial" class="font10px"><b>Cree la VLAN&nbsp;20 y asigne el nombre de VLAN “Estudiante”. Vuelva directamente al modo EXEC privilegiado cuando termine.  </b></font>]]></existingcommands>
+		<command prompt="S1#">
+			<correctresponse><![CDATA[configure terminal]]></correctresponse>
+				<deviceresponse><![CDATA[<font size='10' face="Courier New" class="font10px">Enter configuration commands, one per line. End with CNTL/Z.</font>]]></deviceresponse>
+		</command>
+		<command prompt="S1(config)#">
+			<correctresponse><![CDATA[vlan 20]]></correctresponse>
+		</command>	
+		<command prompt="S1(config-vlan)#">
+			<correctresponse><![CDATA[name Student]]></correctresponse>
+		</command>	
+		<command prompt="S1(config-vlan)#">
+			<correctresponse><![CDATA[Final]]></correctresponse>
+				<deviceresponse><![CDATA[[<font size='10' face="Courier New" class="font10px">S1#<br/>*31-mar-08:55:14.5555: %SYS-5-CONFIG_I: Configured from console by console<br>S1#</font>]]></deviceresponse>
+			<instruction><![CDATA[<font size='10' face="Arial" class="font10px"><b>Muestre la información resumida de la VLAN.  </b></font>]]></instruction>
+		</command>
+		<command prompt="S1#">
+			<correctresponse><![CDATA[show vlan brief]]></correctresponse>
+				<deviceresponse><![CDATA[<font size = '8' face="Courier New">VLAN Name                             Status    Ports <br>---- -------------------------------- --------- ------------------------<br>1    default                          active    Fa0/1, Fa0/2, Fa0/3, Fa0/4 <br>                                                Fa0/5, Fa0/6, Fa0/7, Fa0/8 <br>                                                Fa0/9, Fa0/10, Fa0/11, Fa0/12 <br>                                                Fa0/13, Fa0/14, Fa0/15, Fa0/16 <br>                                                Fa0/17, Fa0/18, Fa0/19, Fa0/20 <br>                                                Fa0/21, Fa0/22, Fa0/23, Fa0/24 <br>                                                Gig1/1, Gig1/2 <br>20   Student                          active    <br>1002 fddi-default                     act/unsup <br>1003 token-ring-default               act/unsup <br>1004 fddinet-default                  act/unsup <br>1005 trnet-default                    act/unsup <br></font>S1#]]></deviceresponse>
+			<instruction><![CDATA[<font size='10' face="Arial" class="font10px"><b>Configuró correctamente la interfaz VLAN&nbsp;20 Student (Estudiantes).</font>]]></instruction>
+		</command>		
+		<command prompt=""/>
+	</component>
+</textcomponents>

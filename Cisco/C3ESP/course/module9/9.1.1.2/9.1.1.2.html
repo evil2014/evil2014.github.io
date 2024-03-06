@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.1.1.2 Trenes T y de línea principal del IOS de Cisco 12.4 </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.1.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Administración de archivos del sistema IOS</h1>
+        <h2>Convenciones de nomenclatura</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Trenes 12.4 </b>
+</p>
+<p>En la ilustración, se muestra la migración de la versión del software 12.3 a la 12.4. Dentro de una familia de versiones del software, puede haber uno o dos trenes activos estrechamente relacionados. Por ejemplo, la familia de versiones del software IOS de Cisco 12.4 tiene dos trenes, los trenes 12.4T y los trenes de línea principal 12.4. </p>
+<p></p>
+<p>El tren del software IOS de Cisco 12.4 se considera el tren de línea principal. El tren de línea principal recibe mayormente correcciones de software (errores) con el objetivo de mejorar la calidad de este. Las versiones del tren de línea principal también se denominan “versiones de Implementación de mantenimiento (MD)”. </p>
+<p></p>
+<p>Un tren de línea principal siempre está asociado a un tren de tecnología (tren T). Un tren T, como 12.4T, recibe las mismas correcciones de errores de software que el tren de línea principal. El tren T también recibe nuevas características de compatibilidad de hardware y software. Las versiones en el tren 12.4T del software IOS de Cisco se consideran versiones de Implementación temprana (ED).</p>
+<p></p>
+<p>Puede haber otros trenes, según la familia de la versión del software. Por ejemplo, otro tren disponible es el tren de proveedor de servicios (tren S). Un tren S contiene características específicas diseñadas para cumplir con los requisitos de los proveedores de servicios.</p>
+<p></p>
+<p>Todos los trenes secundarios del tren de línea principal (T, S, etc.) suelen tener una letra mayúscula que designa el tipo de tren. </p>
+<p></p>
+<p>Tren de línea principal = 12.4</p>
+<p>Tren T: 12.4T (12.4 + nuevas características de compatibilidad de hardware y software)</p>
+<p></p>
+<p>Hasta la familia de la versión 12.4 del software IOS de Cisco inclusive, los trenes de línea principal y los trenes T estaban separados. En otras palabras, desde el tren de línea principal, un tren T se ramificaba y se convertía en una base de código independiente que recibía nuevas características y compatibilidad de hardware. Con el tiempo, un nuevo tren de línea principal evolucionaba de un tren T establecido, y el ciclo comenzaba nuevamente. El uso de varios trenes se modificó con la versión 15 del software IOS de Cisco.</p>
+<p></p>
+<p>En la ilustración, se muestran las relaciones entre la versión del tren de línea principal 12.4 y el tren 12.4T del software IOS de Cisco. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

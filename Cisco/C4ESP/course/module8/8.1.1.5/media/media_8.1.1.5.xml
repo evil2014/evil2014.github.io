@@ -1,0 +1,269 @@
+﻿<textcomponents> <!-- Slide 1-->
+
+	<component id='ID_s1_inst'>
+		<text><![CDATA[<b>Actividad: Interpretar el resultado de syslog (parte&nbsp;1)</b><br/>Lea el resultado de syslog que se muestra. Arrastre el resultado hasta el campo junto al identificador correspondiente. No se utilizarán todas las opciones. Haga clic en el botón&nbsp;2 para continuar.]]></text>
+	</component> <!--Drag and Drop-->
+	<component id='ID_s1_drag01'>
+		<text><![CDATA[17:46:01.619]]></text>
+	</component>
+
+	<component id='ID_s1_drag02'>
+		<text><![CDATA[IFMGR]]></text>
+	</component>
+
+	<component id='ID_s1_drag03'>
+		<text><![CDATA[No se indican entradas.]]></text>
+	</component>
+	
+	<component id='ID_s1_drag04'>
+		<text><![CDATA[7]]></text>
+	</component>
+	
+	<component id='ID_s1_drag05'>
+		<text><![CDATA[NO_IFINDEX_FILE]]></text>
+	</component>
+	
+	<component id='ID_s1_drag06'>
+		<text><![CDATA[June 12 17:46:01.619]]></text>
+	</component>
+	
+	<component id='ID_s1_drag07'>
+		<text><![CDATA[ifIndex-table]]></text>
+	</component>
+	
+
+	<component id='ID_s1_CHECK'>
+		<text><![CDATA[<b>Verificar</b>]]></text>
+	</component>
+
+	<component id='ID_s1_RESET'>
+		<text><![CDATA[<b>Restablecer</b>]]></text>
+	</component>
+
+	<component id='ID_s1_CORRECT_TITLE'>
+		<text><![CDATA[<b>Correcto</b>]]></text>
+	</component>
+
+	<component id='ID_s1_CORRECT_BODY'>
+		<text><![CDATA[Unió correctamente cada resultado de syslog con su identificador. Haga clic en el botón&nbsp;2 para continuar.]]></text>
+	</component>
+
+	<component id='ID_s1_INCORRECT_TITLE'>
+		<text><![CDATA[<b>Incorrecto</b>]]></text>
+	</component>
+
+	<component id='ID_s1_INCORRECT_BODY'>
+		<text><![CDATA[No unió correctamente cada resultado de syslog con su identificador. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+	</component>
+	
+	<component id='ID_s1_txt01'>
+		<text><![CDATA[*Jun 12 17:46:01.619: %IFMGR-7-NO_IFINDEX_FILE: Unable to open nvram:/ifIndex-table No such file or directory]]></text>
+	</component> 
+	
+	<component id='ID_s1_txt02'>
+		<text><![CDATA[<b>Identificador</b>]]></text>
+	</component> 
+	
+	<component id='ID_s1_txt03'>
+		<text><![CDATA[<b>Salida</b>]]></text>
+	</component> 
+	
+	<component id='ID_s1_txt04'>
+		<text><![CDATA[Número de secuencia para esta entrada de syslog]]></text>
+	</component> 
+	
+		
+	<component id='ID_s1_txt05'>
+		<text><![CDATA[Nivel de gravedad de esta entrada]]></text>
+	</component> 
+	
+	<component id='ID_s1_txt06'>
+		<text><![CDATA[Mnemotécnica para esta entrada de syslog]]></text>
+	</component> 
+	
+	<component id='ID_s1_txt07'>
+		<text><![CDATA[Marca de hora de la entrada para este resultado de syslog]]></text>
+	</component> 
+	
+	<component id='ID_s1_txt08'>
+		<text><![CDATA[Instalación de informes de syslog]]></text>
+	</component> <!-- Slide 2 -->
+
+	<component id='ID_s2_inst'>
+		<text><![CDATA[<b>Actividad: Interpretar el resultado de syslog (parte&nbsp;2)</b><br/>Lea el resultado de syslog que se muestra. Arrastre el resultado hasta el campo junto al identificador correspondiente. No se utilizarán todas las opciones. Haga clic en el botón&nbsp;3 para continuar.]]></text>
+	</component> <!--Drag and Drop-->
+	<component id='ID_s2_drag01'>
+		<text><![CDATA[22:06:49.642]]></text>
+	</component>
+
+	<component id='ID_s2_drag02'>
+		<text><![CDATA[CHANGED]]></text>
+	</component>
+
+	<component id='ID_s2_drag03'>
+		<text><![CDATA[Interface Loopback0, changed state to administratively down.]]></text>
+	</component>
+	
+	<component id='ID_s2_drag04'>
+		<text><![CDATA[5]]></text>
+	</component>
+	
+	<component id='ID_s2_drag05'>
+		<text><![CDATA[LINK]]></text>
+	</component>
+	
+	<component id='ID_s2_drag06'>
+		<text><![CDATA[Jun 12 22:06:49.642]]></text>
+	</component>
+	
+	<component id='ID_s2_drag07'>
+		<text><![CDATA[LINK-5]]></text>
+	</component>
+	
+
+
+	<component id='ID_s2_CHECK'>
+		<text><![CDATA[<b>Verificar</b>]]></text>
+	</component>
+
+	<component id='ID_s2_RESET'>
+		<text><![CDATA[<b>Restablecer</b>]]></text>
+	</component>
+	
+	<component id='ID_s2_CORRECT_TITLE'>
+		<text><![CDATA[<b>Correcto</b>]]></text>
+	</component>
+
+	<component id='ID_s2_CORRECT_BODY'>
+		<text><![CDATA[Unió correctamente cada resultado de syslog con su identificador. Haga clic en el botón&nbsp;3 para continuar.]]></text>
+	</component>
+
+	<component id='ID_s2_INCORRECT_TITLE'>
+		<text><![CDATA[<b>Incorrecto</b>]]></text>
+	</component>
+
+	<component id='ID_s2_INCORRECT_BODY'>
+		<text><![CDATA[No unió correctamente cada resultado de syslog con su identificador. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+	</component>
+	
+	<component id='ID_s2_txt01'>
+		<text><![CDATA[*Jun 12 22:06:49.642: %LINK-5-CHANGED: Interface Loopback0, changed state to administratively down]]></text>
+	</component> 
+	
+	<component id='ID_s2_txt02'>
+		<text><![CDATA[<b>Identificador</b>]]></text>
+	</component> 
+	
+	<component id='ID_s2_txt03'>
+		<text><![CDATA[<b>Salida</b>]]></text>
+	</component> 
+	
+	<component id='ID_s2_txt04'>
+		<text><![CDATA[Descripción del error de syslog]]></text>
+	</component> 
+	
+	<component id='ID_s2_txt05'>
+		<text><![CDATA[Nivel de gravedad de esta entrada]]></text>
+	</component> 
+	
+	<component id='ID_s2_txt06'>
+		<text><![CDATA[Mnemotécnica para esta entrada de syslog]]></text>
+	</component> 
+	
+	<component id='ID_s2_txt07'>
+		<text><![CDATA[Marca de hora de la entrada para este resultado de syslog]]></text>
+	</component> 
+	
+	<component id='ID_s2_txt08'>
+		<text><![CDATA[Instalación de informes de syslog]]></text>
+	</component> <!-- Slide 3 -->
+
+	<component id='ID_s3_inst'>
+		<text><![CDATA[<b>Actividad: Interpretar el resultado de syslog (parte&nbsp;3)</b><br/>Lea el resultado de syslog que se muestra. Arrastre el resultado hasta el campo junto al identificador correspondiente. No se utilizarán todas las opciones.]]></text>
+	</component> <!--Drag and Drop-->
+	<component id='ID_s3_drag01'>
+		<text><![CDATA[No se indican entradas.]]></text>
+	</component>
+
+	<component id='ID_s3_drag02'>
+		<text><![CDATA[SYS-5]]></text>
+	</component>
+
+	<component id='ID_s3_drag03'>
+		<text><![CDATA[000011]]></text>
+	</component>
+	
+	<component id='ID_s3_drag04'>
+		<text><![CDATA[5]]></text>
+	</component>
+	
+	<component id='ID_s3_drag05'>
+		<text><![CDATA[CONFIG_I]]></text>
+	</component>
+	
+	<component id='ID_s3_drag06'>
+		<text><![CDATA[IFMGR-7]]></text>
+	</component>
+	
+	<component id='ID_s3_drag07'>
+		<text><![CDATA[SYS]]></text>
+	</component>
+
+
+	<component id='ID_s3_CHECK'>
+		<text><![CDATA[<b>Verificar</b>]]></text>
+	</component>
+
+	<component id='ID_s3_RESET'>
+		<text><![CDATA[<b>Restablecer</b>]]></text>
+	</component>
+	
+	<component id='ID_s3_CORRECT_TITLE'>
+		<text><![CDATA[<b>Correcto</b>]]></text>
+	</component>
+
+	<component id='ID_s3_CORRECT_BODY'>
+		<text><![CDATA[Unió correctamente cada resultado de syslog con su identificador.]]></text>
+	</component>
+
+	<component id='ID_s3_INCORRECT_TITLE'>
+		<text><![CDATA[<b>Incorrecto</b>]]></text>
+	</component>
+
+	<component id='ID_s3_INCORRECT_BODY'>
+		<text><![CDATA[No unió correctamente cada resultado de syslog con su identificador. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+	</component>
+	
+	<component id='ID_s3_txt01'>
+		<text><![CDATA[*000011: $SYS-5-CONFIG_I: Configured from console by console.]]></text>
+	</component> 
+	
+	<component id='ID_s3_txt02'>
+		<text><![CDATA[<b>Identificador</b>]]></text>
+	</component> 
+	
+	<component id='ID_s3_txt03'>
+		<text><![CDATA[<b>Salida</b>]]></text>
+	</component> 
+	
+	<component id='ID_s3_txt04'>
+		<text><![CDATA[Nivel de gravedad de esta entrada]]></text>
+	</component> 
+	
+	<component id='ID_s3_txt05'>
+		<text><![CDATA[Número de secuencia para esta entrada de syslog]]></text>
+	</component> 
+	
+	<component id='ID_s3_txt06'>
+		<text><![CDATA[Mnemotécnica para esta entrada de syslog]]></text>
+	</component> 
+	
+	<component id='ID_s3_txt07'>
+		<text><![CDATA[Instalación de informes de syslog]]></text>
+	</component> 
+	
+	<component id='ID_s3_txt08'>
+		<text><![CDATA[Marca de hora de la entrada para este resultado de syslog]]></text>
+	</component> 
+	
+</textcomponents>

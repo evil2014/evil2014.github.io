@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.2.3.10 Paso 8: Verificar DNS</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.2.3.10_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resolución de problemas de red</h1>
+        <h2>Resolución de problemas de conectividad IP</h2>
+      </div>
+      <div id="content">
+<p>El protocolo DNS controla el DNS, una base de datos distribuida mediante la cual se pueden asignar nombres de host a las direcciones IP. Cuando configura el DNS en el dispositivo, puede reemplazar el nombre de host por la dirección IP con todos los comandos IP, como <span class="cmd"><b>ping</b></span> o <span class="cmd"><b>telnet</b></span>.</p>
+<p></p>
+<p>Para visualizar la información de configuración de DNS en el switch o el router, utilice el comando <span class="cmd"><b>show running-config</b></span>. Cuando no hay instalado un servidor DNS, es posible introducir asignaciones de nombres a direcciones IP directamente en la configuración del switch o del router. Use el comando <span class="cmd"><b>ip host</b></span> para introducir una asignación de nombre a dirección IPv4 en el switch o el router. El comando <span class="cmd"><b>ipv6 host</b></span> se usa para realizar las mismas asignaciones en IPv6. En la figura 1, se demuestran estos comandos. Dado que los números de red IPv6 son largos y difíciles de recordar, el DNS es incluso más importante para IPv6 que para IPv4. </p>
+<p></p>
+<p>Para visualizar la información de asignación de nombre a dirección IP en una computadora con Windows, use el comando <span class="cmd"><b>nslookup</b></span>.</p>
+<p></p>
+<p>
+<b>Ejemplo de resolución de problemas</b>
+</p>
+<p>El resultado de la figura 2 indica que el cliente no pudo llegar al servidor DNS o que el servicio DNS en 10.1.1.1 no funcionaba. En este momento, la resolución de problemas se debe centrar en las comunicaciones con el servidor DNS o en verificar que el servidor DNS funcione correctamente.</p>
+<p></p>
+<p>Para visualizar la información de configuración de DNS en una computadora con Microsoft Windows, use el comando <span class="cmd"><b>nslookup</b></span>. Debe haber un DNS configurado para IPv4, para IPv6 o para ambos. El DNS puede proporcionar direcciones IPv4 e IPv6 al mismo tiempo, independientemente del protocolo que se use para acceder al servidor DNS.</p>
+<p></p>
+<p>Debido a que los nombres de dominio y el DNS son un componente fundamental para acceder a los servidores en una red, muchas veces el usuario piensa que “la red está inactiva” cuando, en realidad, el problema se encuentra en el servidor DNS.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

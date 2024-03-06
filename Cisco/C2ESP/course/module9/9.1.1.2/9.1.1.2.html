@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.1.1.2 Una conversación TCP</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.1.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Funcionamiento de ACL de IP</h1>
+        <h2>Propósito de los ACLs</h2>
+      </div>
+      <div id="content">
+<p>Las ACL permiten a los administradores controlar el tráfico hacia y desde la red. Este control puede ser tan simple como permitir o denegar el tráfico según las direcciones de red o tan complejo como controlar el tráfico de la red según el puerto TCP solicitado. Es más fácil comprender cómo filtra el tráfico una ACL si se examina el diálogo que se produce durante una conversación TCP, por ejemplo, cuando se solicita una página web.</p>
+<p></p>
+<p>
+<b>Comunicación TCP</b>
+</p>
+<p>Cuando un cliente solicita datos a un servidor web, IP administra la comunicación entre la computadora (origen) y el servidor (destino). TCP administra la comunicación entre el navegador web (aplicación) y el software del servidor de red. </p>
+<p></p>
+<p>Cuando envía un correo electrónico, observa una página web o descarga un archivo, TCP se encarga de descomponer los datos en segmentos para IP antes de que se envíen. TCP también administra el montaje de los datos de los segmentos cuando estos llegan. El proceso de TCP es muy similar a una conversación en la que dos nodos en una red acuerdan transmitirse datos entre sí. </p>
+<p></p>
+<p>TCP proporciona un servicio de flujo de bytes confiable y orientado a la conexión. Que sea orientado a la conexión significa que las dos aplicaciones deben establecer una conexión TCP antes de intercambiar datos. TCP es un protocolo full-duplex, lo que significa que cada conexión TCP admite un par de flujos de bytes, y cada flujo fluye en una sentido. TCP incluye un mecanismo de control del flujo para cada flujo de bytes que permite que el receptor limite la cantidad de datos que puede transmitir el emisor. TCP también implementa un mecanismo de control de la congestión.</p>
+<p></p>
+<p>En la animación que se muestra en la figura 1, se ilustra cómo se lleva a cabo una conversación TCP/IP. Los segmentos TCP se marcan con indicadores que denotan su objetivo: la sesión comienza (se sincroniza) con un indicador SYN, el indicador ACK es un acuse de recibo de un segmento esperado, y un indicador FIN finaliza la sesión. Un indicador SYN/ACK confirma que la transferencia está sincronizada. Los segmentos de datos TCP incluyen el protocolo del nivel más alto necesario para dirigir los datos de aplicación a la aplicación correcta. </p>
+<p></p>
+<p>Los segmentos de datos TCP también identifican el puerto que coincide con el servicio solicitado. Por ejemplo, para HTTP es el puerto 80, para SMTP es el puerto 25 y para FTP son los puertos 20 y 21. En la figura 2, se muestran los rangos de puertos UDP y TCP.</p>
+<p></p>
+<p>En las figuras 3 a 5, se exploran los puertos TCP/UDP.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

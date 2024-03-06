@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.4.2.1 Tendencias tecnológicas en el hogar</title>
+    <!--  -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.4.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>El cambiante entorno de red</h1>
+        <h2>Tecnologías de red para el hogar</h2>
+      </div>
+      <div id="content">
+<p>Las tendencias de red no solo afectan la forma en que nos comunicamos en el trabajo y en el lugar de estudios, sino que también están cambiando prácticamente cada aspecto del hogar. </p>
+<p></p>
+<p>Las nuevas tendencias del hogar incluyen la “tecnología del hogar inteligente”. La tecnología del hogar inteligente se integra a los dispositivos que se utilizan a diario, lo que permite que se interconecten con otros dispositivos y que se vuelvan más “inteligentes” o automatizados. Por ejemplo, imagine poder preparar un plato y colocarlo en el horno para cocinarlo antes de irse de su casa para no regresar en todo el día. Imagine si el horno “reconociera” el plato que cocina y estuviese conectado a su “calendario de eventos” para determinar cuándo debería estar listo para comer y pudiera ajustar la hora de inicio y la duración de la cocción de acuerdo con esos datos. Incluso podría ajustar el tiempo y la temperatura de cocción sobre la base de los cambios en su agenda. Además, una conexión mediante smartphone o tablet PC permite al usuario conectarse al horno directamente para realizar los cambios que desee. Cuando el plato está “disponible”, el horno envía un mensaje de alerta al dispositivo para usuarios finales especificado en el que indica que el plato está listo y se está calentando. </p>
+<p></p>
+<p>Esta situación no está muy lejos de ser real. De hecho, actualmente se desarrolla tecnología del hogar inteligente para todas las habitaciones de un hogar. La tecnología del hogar inteligente se volverá más real a medida que las redes domésticas y la tecnología de Internet de alta velocidad lleguen a más hogares. Se desarrollan nuevas tecnologías de red a diario para cumplir con estos tipos de necesidades crecientes de tecnología.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

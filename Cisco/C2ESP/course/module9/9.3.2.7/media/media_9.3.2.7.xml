@@ -1,0 +1,316 @@
+﻿<textcomponents> <!--Slide 1-->
+
+<component id="ID_s1_inst">
+<text><![CDATA[<b>Actividad: crear una instrucción de ACL extendida</b><br/><br/><b>ACL extendida, situación&nbsp;1:</b> cree una ACL extendida sobre la base de los requisitos y la topología que se muestran. Arrastre los componentes de la instrucción de ACL hacia los campos de modo que, cuando se lea de izquierda a derecha, haya creado una ACL válida para la situación. Algunos componentes no se van a utilizar.<br><br>Cree una instrucción de ACL numerada que permita que solo los usuarios de la red 10.1.1.0/24 tengan acceso HTTP al servidor web en la red 10.1.3.0/24. La ACL se aplica a la interfaz Fa0/0 del R2 en sentido de entrada.]]></text>
+</component>
+
+<component id="ID_s1_txt01">
+<text><![CDATA[La ACL se aplica aquí]]></text>
+</component>
+
+
+
+
+<component id="ID_s1_drag01">
+<text><![CDATA[99]]></text>
+</component>
+
+<component id="ID_s1_drag02">
+<text><![CDATA[10.1.3.0]]></text>
+</component>
+
+<component id="ID_s1_drag03">
+<text><![CDATA[0.0.0.0]]></text>
+</component>
+
+<component id="ID_s1_drag04">
+<text><![CDATA[10.1.2.0]]></text>
+</component>
+
+<component id="ID_s1_drag05">
+<text><![CDATA[permit]]></text>
+</component>
+
+<component id="ID_s1_drag06">
+<text><![CDATA[udp]]></text>
+</component>
+
+<component id="ID_s1_drag07">
+<text><![CDATA[0.0.0.255]]></text>
+</component>
+
+<component id="ID_s1_drag08">
+<text><![CDATA[eq 21]]></text>
+</component>
+<component id="ID_s1_drag09">
+<text><![CDATA[any]]></text>
+</component>
+
+
+<component id="ID_s1_drag10">
+<text><![CDATA[ip]]></text>
+</component>
+
+<component id="ID_s1_drag11">
+<text><![CDATA[deny]]></text>
+</component>
+
+<component id="ID_s1_drag12">
+<text><![CDATA[access-list]]></text>
+</component>
+
+<component id="ID_s1_drag13">
+<text><![CDATA[10.1.3.8]]></text>
+</component>
+
+<component id="ID_s1_drag14">
+<text><![CDATA[10.1.1.0]]></text>
+</component>
+
+<component id="ID_s1_drag15">
+<text><![CDATA[eq 80]]></text>
+</component>
+
+<component id="ID_s1_drag16">
+<text><![CDATA[101]]></text>
+</component>
+
+<component id="ID_s1_drag17">
+<text><![CDATA[Host]]></text>
+</component>
+<component id="ID_s1_drag18">
+<text><![CDATA[tcp]]></text>
+</component>
+
+<component id='ID_s1_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id='ID_s1_CORRECT_BODY'>
+	<text><![CDATA[Creó correctamente un comando de ACL extendida.]]></text>
+</component>
+
+
+<component id='ID_s1_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_BODY'>
+	<text><![CDATA[No creó correctamente un comando de ACL extendida. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_s1_CHECK'>
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id='ID_s1_RESET'>
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component> <!--Slide 2-->
+<component id="ID_s2_inst">
+<text><![CDATA[<b>Actividad: crear una instrucción de ACL extendida</b><br/><br/><b>ACL extendida, situación&nbsp;2:</b> cree una ACL extendida sobre la base de los requisitos y la topología que se muestran. Arrastre los componentes de la instrucción de ACL hacia los campos de modo que, cuando se lea de izquierda a derecha, haya creado una ACL válida para la situación. Algunos componentes no se van a utilizar.<br><br>Cree una instrucción de ACL numerada que bloquee el host 10.1.2.9 para que no tenga acceso FTP a la red 10.1.1.0/24. La ACL se aplica a la interfaz Fa0/1 entrante de R2.]]></text>
+</component>
+
+<component id="ID_s2_txt01">
+<text><![CDATA[La ACL se aplica aquí]]></text>
+</component>
+
+<component id="ID_s2_drag01">
+<text><![CDATA[udp]]></text>
+</component>
+
+<component id="ID_s2_drag02">
+<text><![CDATA[88]]></text>
+</component>
+
+<component id="ID_s2_drag03">
+<text><![CDATA[any]]></text>
+</component>
+
+<component id="ID_s2_drag04">
+<text><![CDATA[eq 80]]></text>
+</component>
+
+<component id="ID_s2_drag05">
+<text><![CDATA[10.1.2.9]]></text>
+</component>
+
+<component id="ID_s2_drag06">
+<text><![CDATA[permit]]></text>
+</component>
+
+<component id="ID_s2_drag07">
+<text><![CDATA[Host]]></text>
+</component>
+
+<component id="ID_s2_drag08">
+<text><![CDATA[eq 21]]></text>
+</component>
+
+<component id="ID_s2_drag09">
+<text><![CDATA[ip]]></text>
+</component>
+
+<component id="ID_s2_drag10">
+<text><![CDATA[122]]></text>
+</component>
+
+<component id="ID_s2_drag11">
+<text><![CDATA[0.0.0.255]]></text>
+</component>
+
+<component id="ID_s2_drag12">
+<text><![CDATA[access-list]]></text>
+</component>
+
+<component id="ID_s2_drag13">
+<text><![CDATA[10.1.2.0]]></text>
+</component>
+
+<component id="ID_s2_drag14">
+<text><![CDATA[10.1.1.0]]></text>
+</component>
+
+<component id="ID_s2_drag15">
+<text><![CDATA[tcp]]></text>
+</component>
+
+<component id="ID_s2_drag16">
+<text><![CDATA[0.0.0.0]]></text>
+</component>
+
+<component id="ID_s2_drag17">
+<text><![CDATA[eq 53]]></text>
+</component>
+<component id="ID_s2_drag18">
+<text><![CDATA[deny]]></text>
+</component>
+
+<component id='ID_s2_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id='ID_s2_CORRECT_BODY'>
+	<text><![CDATA[Creó correctamente un comando de ACL extendida.]]></text>
+</component>
+
+<component id='ID_s2_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_s2_INCORRECT_BODY'>
+	<text><![CDATA[No creó correctamente un comando de ACL extendida. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_s2_CHECK'>
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id='ID_s2_RESET'>
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component> <!--Slide 3-->
+<component id="ID_s3_inst">
+<text><![CDATA[<b>Actividad: crear una instrucción de ACL extendida</b><br/><br/><b>ACL extendida, situación&nbsp;3:</b> cree una ACL extendida sobre la base de los requisitos y la topología que se muestran. Arrastre los componentes de la instrucción de ACL hacia los campos de modo que, cuando se lea de izquierda a derecha, haya creado una ACL válida para la situación. Algunos componentes no se van a utilizar.<br><br>Cree una instrucción de ACL numerada que permita que solamente el host 10.1.3.8 en la red 10.1.3.0/24 llegue a los destinos que estén más allá de esa red. La ACL se aplica a la interfaz Fa0/0 entrante de R1.]]></text>
+</component>
+
+<component id="ID_s3_txt01">
+<text><![CDATA[La ACL se aplica aquí]]></text>
+</component>
+
+<component id="ID_s3_drag01">
+<text><![CDATA[tcp]]></text>
+</component>
+
+<component id="ID_s3_drag02">
+<text><![CDATA[ip]]></text>
+</component>
+
+<component id="ID_s3_drag03">
+<text><![CDATA[150]]></text>
+</component>
+
+<component id="ID_s3_drag04">
+<text><![CDATA[Host]]></text>
+</component>
+
+<component id="ID_s3_drag05">
+<text><![CDATA[10.1.3.8]]></text>
+</component>
+
+<component id="ID_s3_drag06">
+<text><![CDATA[eq 80]]></text>
+</component>
+
+<component id="ID_s3_drag07">
+<text><![CDATA[10.1.3.0]]></text>
+</component>
+
+<component id="ID_s3_drag08">
+<text><![CDATA[access-list]]></text>
+</component>
+<component id="ID_s3_drag09">
+<text><![CDATA[10.1.2.0]]></text>
+</component>
+
+
+<component id="ID_s3_drag10">
+<text><![CDATA[50]]></text>
+</component>
+
+<component id="ID_s3_drag11">
+<text><![CDATA[deny]]></text>
+</component>
+
+<component id="ID_s3_drag12">
+<text><![CDATA[any]]></text>
+</component>
+
+<component id="ID_s3_drag13">
+<text><![CDATA[udp]]></text>
+</component>
+
+<component id="ID_s3_drag14">
+<text><![CDATA[10.1.1.0]]></text>
+</component>
+
+<component id="ID_s3_drag15">
+<text><![CDATA[permit]]></text>
+</component>
+
+<component id="ID_s3_drag16">
+<text><![CDATA[0.0.0.0]]></text>
+</component>
+
+<component id="ID_s3_drag17">
+<text><![CDATA[0.0.0.255]]></text>
+</component>
+<component id="ID_s3_drag18">
+<text><![CDATA[eq 21]]></text>
+</component>
+
+<component id='ID_s3_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id='ID_s3_CORRECT_BODY'>
+	<text><![CDATA[Creó correctamente un comando de ACL extendida.]]></text>
+</component>
+
+
+<component id='ID_s3_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_s3_INCORRECT_BODY'>
+	<text><![CDATA[No creó correctamente un comando de ACL extendida. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_s3_CHECK'>
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id='ID_s3_RESET'>
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component>
+
+
+</textcomponents>

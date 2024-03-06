@@ -1,0 +1,186 @@
+﻿<textcomponents> <!--slide01-->
+<component id='ID_s1_inst'>
+	<text><![CDATA[<b>Actividad</b><br><br>En la tabla, se proporcionan descripciones de métodos de reenvío de tramas del switch. Haga clic en los campos Almacenamiento y envío o Método de corte para unir los métodos con las descripciones.]]></text>
+</component> <!--Number of rows in the table-->
+
+<component id="ID_Button01">
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+
+<component id="ID_Button02">
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component>
+
+<component id="txt_numrows">
+	<text><![CDATA[6]]></text>
+</component> <!--Number of columns for the answers in the table. Do not count the question column-->
+<component id="txt_numcols">
+	<text><![CDATA[2]]></text>
+</component> <!--Answer column headers-->
+<component id="txt_col1">
+	<text><![CDATA[<b>Almacenamiento y envío</b>]]></text>
+</component>
+
+<component id="txt_col2">
+	<text><![CDATA[<b>Método de corte</b>]]></text>
+</component> <!--Question text - blockindent code moves the text away from the left edge a bit--> <!--Question text - If questions are numbered, use blockindent for hanging indents-->
+<component id="txt_q1">
+	<text><![CDATA[1. <textformat blockindent='13'>Almacena las tramas en búfer hasta que el switch recibe la trama completa.</textformat>]]></text>
+</component>
+
+<component id="txt_q2">
+	<text><![CDATA[2. <textformat blockindent='13'>Revisa la trama para detectar errores antes de liberarla a través de los puertos del switch. Si no se recibió la trama completa, el switch la descarta.</textformat>]]></text>
+</component>
+
+<component id="txt_q3">
+	<text><![CDATA[3. <textformat blockindent='13'>El switch no realiza ninguna verificación de errores de la trama antes de liberarla a través de los puertos.</textformat>]]></text>
+</component>
+
+<component id="txt_q4">
+	<text><![CDATA[4. <textformat blockindent='13'>Un excelente método para conservar el ancho de banda en la red.</textformat>]]></text>
+</component>
+
+<component id="txt_q5">
+	<text><![CDATA[5. <textformat blockindent='13'>Con este método de reenvío de tramas, la tarjeta de interfaz de red (NIC) de destino descarta cualquier trama incompleta.</textformat>]]></text>
+</component>
+
+<component id="txt_q6">
+	<text><![CDATA[6. <textformat blockindent='13'>Es el método de conmutación más rápido, pero puede producir más errores de integridad de los datos; por lo tanto, es posible que se consuma más ancho de banda.</textformat>]]></text>
+</component> <!--Answers - Give the column number(s), column numbering start with 1 not 0--> <!--Answers - For MCMA separate the correct answers with commas [2, 4, 5] -->
+<component id="txt_a1">
+	<text><![CDATA[1]]></text>
+</component>
+
+<component id="txt_a2">
+	<text><![CDATA[1]]></text>
+</component>
+
+<component id="txt_a3">
+	<text><![CDATA[2]]></text>
+</component>
+
+<component id="txt_a4">
+	<text><![CDATA[1]]></text>
+</component>
+
+<component id="txt_a5">
+	<text><![CDATA[2]]></text>
+</component>
+
+<component id="txt_a6">
+	<text><![CDATA[2]]></text>
+</component> <!-- Correct Feedback -->
+<component id="ID_titleCorrect">
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id="ID_correctText">
+	<text><![CDATA[Unió correctamente las descripciones de la capa física con los nombres.]]></text>
+</component> <!-- Incorrect Feedback -->
+<component id="ID_titleIncorrect">
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id="ID_IncorrectText">
+	<text><![CDATA[No unió correctamente las descripciones de la capa física con los nombres. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component> <!--slide02-->
+<component id='ID_s2_inst'>
+	<text><![CDATA[<b>Actividad</b><br>Lea la situación basada en topología que se detalla. Arrastre las respuestas a los campos correspondientes proporcionados en la tabla para identificar cómo se procesan las tramas. No se utilizan todas las respuestas.
+
+
+]]></text>
+</component>
+
+<component id='ID_s2_txt01'>
+	<text><![CDATA[En esta topología, el cableado que se utiliza es ____.]]></text>
+</component>
+
+<component id='ID_s2_txt02'>
+	<text><![CDATA[Para saber dónde se encuentra la PC2, la PC1 envía una trama de datos de ____.
+]]></text>
+</component>
+
+<component id="ID_s2_txt03">
+   <text><![CDATA[La PC2 le responde a la PC1 con un mensaje ____.
+]]></text>
+   </component>
+
+<component id="ID_s2_txt04">
+   <text><![CDATA[Si la PC2 recibe solo la mitad de los datos en la trama, ____. ]]></text>
+   </component>
+
+   <component id="ID_s2_txt05">
+   <text><![CDATA[Si la PC2 recibe muchas tramas dañadas en el puerto&nbsp;3, es probable que el S1 vuelva a utilizar el método de conmutación de ____.]]></text>
+     </component>
+
+    <component id="ID_s2_txt07">
+   <text><![CDATA[Puerto 1]]></text>
+   </component>
+ <component id="ID_s2_txt08">
+   <text><![CDATA[Puerto&nbsp;2]]></text>
+   </component>
+
+ <component id="ID_s2_txt09">
+   <text><![CDATA[Puerto&nbsp;3]]></text>
+   </component>
+
+    <component id="ID_s2_txt10">
+   <text><![CDATA[<textformat blockindent="-18"><li>El S1 es un switch completamente nuevo. La PC1 envía datos a la PC2.</li><li>El S1 utiliza el modo full-duplex, MDIX y el envío rápido como método de conmutación de tramas.</li></textformat>]]></text>
+   </component> <!--Drag and Drop-->
+<component id='ID_s2_drag01'>
+	<text><![CDATA[<font color="#393536">De conexión directa</font>]]></text>
+</component>
+
+<component id='ID_s2_drag02'>
+	<text><![CDATA[<font color="#393536">Método de corte</font>]]></text>
+</component>
+
+<component id='ID_s2_drag03'>
+	<text><![CDATA[<font color="#393536">Unicast</font>]]></text>
+</component>
+
+<component id='ID_s2_drag04'>
+	<text><![CDATA[<font color="#393536">Almacenamiento y envío</font>]]></text>
+</component>
+
+<component id='ID_s2_drag05'>
+	<text><![CDATA[<font color="#393536">Broadcast</font>]]></text>
+</component>
+
+<component id='ID_s2_drag06'>
+	<text><![CDATA[<font color="#393536">La descarta</font>]]></text>
+</component>
+
+<component id='ID_s2_drag007'>
+	<text><![CDATA[<font color="#393536">Responde a la PC1</font>]]></text>
+</component>
+
+
+
+<component id='ID_s2_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id='ID_s2_CORRECT_BODY'>
+	<text><![CDATA[Unió correctamente las descripciones con los procesos de acceso a la red relacionados con las situaciones de tramas.]]></text>
+</component>
+
+
+<component id='ID_s2_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_s2_INCORRECT_BODY'>
+	<text><![CDATA[No unió correctamente las descripciones con los procesos de acceso a la red relacionados con las situaciones de tramas. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_s2_CHECK'>
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id='ID_s2_RESET'>
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component>
+
+</textcomponents>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.3.2.2 Creación de una trama</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.3.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolos de la capa de enlace de datos</h1>
+        <h2>Estructura de trama de la capa 2</h2>
+      </div>
+      <div id="content">
+<p>Cuando los datos viajan por los medios, se convierten en un stream de bits o en números 1 y 0. Si un nodo está recibiendo streams de bits largos ¿cómo determina dónde comienza y termina la trama o qué bits representan una dirección? </p>
+<p></p>
+<p>El tramado rompe el stream en agrupaciones descifrables, con la información de control insertada en el encabezado y tráiler como valores en campos diferentes. Este formato brinda a las señales físicas una estructura que pueden recibir los nodos y que se puede decodificar en paquetes en el destino.</p>
+<p></p>
+<p>Como se muestra en la ilustración, los tipos de campos de trama genéricos incluyen lo siguiente: </p>
+<p>
+<ul>
+<li>
+<b>Indicadores de comienzo y de detención de la trama:</b> la subcapa MAC utiliza estos campos para identificar el inicio y el final de la trama.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Direccionamiento:</b> la subcapa MAC utiliza este campo para identificar los nodos de origen y destino.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Tipo:</b> el LLC utiliza este campo para identificar el protocolo de capa 3.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Control:</b> identifica servicios especiales de control del flujo. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Datos:</b> incluye el contenido de la trama (es decir, el encabezado del paquete, el encabezado del segmento y los datos).</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Detección de errores:</b> estos campos de trama, que se incluyen después de los datos para formar el tráiler, se utilizan para la detección de errores. </li>
+</ul>
+</p>
+<p></p>
+<p>No todos los protocolos incluyen todos estos campos. Los estándares para un protocolo de enlace de datos específico definen el formato real de la trama. </p>
+<p></p>
+<p>
+<b>Nota:</b> los ejemplos de formatos de trama se analizarán al final de este capítulo.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

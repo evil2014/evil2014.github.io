@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.1.2.7 Proceso de elección de DR/BDR</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.1.2.7_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuraciones avanzadas de OSPF de área única </h1>
+        <h2>OSPF en redes de accesos múltiples</h2>
+      </div>
+      <div id="content">
+<p>La elección del DR y el BDR OSPF no se basa en prelación. Si se agregan a la red un router nuevo con una prioridad más alta o una ID del router más alta después de la elección del DR y el BDR, el router agregado no se apropia de la función de DR o BDR. Esto se debe a que esas funciones ya se asignaron. La incorporación de un nuevo router no inicia un nuevo proceso de elección. </p>
+<p></p>
+<p>Una vez que se elige el DR, permanece como tal hasta que se produce una de las siguientes situaciones:</p>
+<p>
+<ul>
+<li>El DR falla.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>El proceso OSPF en el DR falla o se detiene.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>La interfaz de accesos múltiples en el DR falla o se apaga.</li>
+</ul>
+</p>
+<p></p>
+<p>Si el DR falla, el BDR se asciende automáticamente a DR. Esto ocurre así incluso si se agrega otro DROther con una prioridad o ID de router más alta a la red después de la elección inicial de DR/BDR. Sin embargo, después del ascenso de un BDR a DR, se lleva a cabo otra elección de BDR y se elige al DROther con la prioridad o la ID de router más alta como el BDR nuevo.</p>
+<p></p>
+<p>En las figuras 1 a 4, se muestran las diferentes situaciones relacionadas con el proceso de elección de DR y BDR. </p>
+<p></p>
+<p>En la figura 1, el DR actual (R3) falla, por lo tanto, el BDR preseleccionado (R2) asume la función de DR. A continuación, se hace la elección del BDR nuevo. Debido a que el R1 es el único DROther, se lo selecciona como BDR.</p>
+<p></p>
+<p>En la figura 2, el R3 vuelve a unirse a la red, después de varios minutos de no estar disponible. Debido a que el DR y el BDR ya existen, el R3 no ocupa ninguna de las dos funciones. En cambio, se convierte en un DROther.</p>
+<p></p>
+<p>En la figura 3, se agrega a la red un nuevo router (R4) con una ID de router más alta. El DR (R2) y el BDR (R1) retienen sus funciones de DR y BDR. El R4 se convierte automáticamente en DROther. </p>
+<p></p>
+<p>En la figura 4, el R2 falla. El BDR (R1) se convierte automáticamente en el DR, y un proceso de elección selecciona al R4 como el BDR, ya que tiene la ID de router más alta.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

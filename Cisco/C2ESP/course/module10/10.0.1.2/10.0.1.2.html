@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>10.0.1.2 Actividad: ¿ser propietario o arrendar?</title>
+    <!--  -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_10.0.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Introducción</h1>
+        <h2>Introducción</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Actividad: </b>
+<b>¿Ser propietario o arrendar?</b>
+</p>
+<p></p>
+<p>En este capítulo, se presenta el concepto del uso del proceso de DHCP en la red de una pequeña a mediana empresa. En esta actividad de creación de modelos, se describe la forma en que funcionan los dispositivos de ISR inalámbricos muy básicos mediante el proceso de DHCP. </p>
+<p></p>
+<p>Visite <a href="http://ui.linksys.com/WRT54GL/4.30.0/Setup.htm" target="_blank">http://</a><a href="http://ui.linksys.com/WRT54GL/4.30.0/Setup.htm" target="_blank">ui.linksys.com</a><a href="http://ui.linksys.com/WRT54GL/4.30.0/Setup.htm" target="_blank">/WRT54GL/4.30.0/</a><a href="http://ui.linksys.com/WRT54GL/4.30.0/Setup.htm" target="_blank">Setup.htm</a>, un simulador basado en la Web que lo ayuda a aprender a configurar DHCP utilizando un router 54GL inalámbrico Linksys. A la derecha del simulador (en la columna de descripción azul), puede hacer clic en <b>More</b> (Más) para leer información sobre la configuración de DHCP en este simulador del router de servicios integrados (ISR).</p>
+<p></p>
+<p>Práctica de configuración de ISR:</p>
+<p>
+<ul>
+<li>Nombre de host</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Dirección IP local con máscara de subred</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>DHCP (habilitar e deshabilitar)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Dirección IP inicial</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Cantidad máxima de usuarios que deben recibir una dirección IP de DHCP</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Tiempo de arrendamiento</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Zona horaria (use la suya o una favorita como alternativa)</li>
+</ul>
+</p>
+<p></p>
+<p>Cuando haya terminado de configurar los parámetros según se indica para esta asignación, realice una captura de pantalla de su configuración mediante el uso del comando de la tecla <b>ImprPant</b>. Copie y coloque la captura de pantalla en un documento de procesamiento de texto. Guárdelo y prepárese para analizar sus opciones de configuración con la clase.</p>
+<p></p>
+<p>
+<a href="../../files/10.0.1.2%20Own%20or%20Lease%20Instructions.pdf" target="_blank">Actividad de clase: ¿ser propietario o arrendar? Instrucciones</a>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

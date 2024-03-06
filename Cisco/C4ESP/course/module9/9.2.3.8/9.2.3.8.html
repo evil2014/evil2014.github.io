@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.2.3.8 Paso 6: Verificar la capa de transporte</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.2.3.8_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resolución de problemas de red</h1>
+        <h2>Resolución de problemas de conectividad IP</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Resolución de problemas de la capa de transporte</b>
+</p>
+<p>Si la capa de red parece funcionar como se esperaba, pero los usuarios aún no pueden acceder a los recursos, el administrador de red debe comenzar a resolver problemas en las capas superiores. Dos de los problemas más frecuentes que afectan la conectividad de la capa de transporte incluyen las configuraciones de ACL y de NAT. Una herramienta frecuente para probar la funcionalidad de la capa de transporte es la utilidad Telnet. </p>
+<p></p>
+<p>
+<b>Precaución:</b> si bien se puede usar Telnet para probar la capa de transporte, por motivos de seguridad se debe usar SSH para administrar y configurar los dispositivos en forma remota.</p>
+<p></p>
+<p>Un administrador de red trabaja en la resolución de un problema en el que una persona no puede enviar correo electrónico a través de un servidor SMTP determinado. El administrador hace ping al servidor, y este responde. Esto significa que la capa de red y todas las capas inferiores a esta entre el usuario y el servidor están en condiciones de funcionamiento. El administrador sabe que el problema está en la capa 4 o en las capas superiores y que debe comenzar a resolver problemas en esas capas.</p>
+<p></p>
+<p>Si bien la aplicación del servidor telnet se ejecuta en su propio número de puerto bien conocido 23, y los clientes Telnet se conectan a este puerto de manera predeterminada, se puede especificar un número de puerto diferente en el cliente para conectarse a cualquier puerto TCP que se deba probar. Esto indica si la conexión se acepta (como se indica mediante la palabra “Open” [Abierta] en el resultado), se rechaza o si excede el tiempo de espera. A partir de cualquiera de estas respuestas, se pueden obtener otras conclusiones relacionadas con la conectividad. En ciertas aplicaciones, si usan un protocolo de sesión basado en ASCII (incluso pueden mostrar un aviso de la aplicación), es posible desencadenar algunas respuestas desde el servidor al escribir ciertas palabras clave, como con SMTP, FTP y HTTP.</p>
+<p></p>
+<p>Dada la situación anterior, el administrador accede mediante Telnet al servidor HQ desde la PC1, a través de IPv6, y la sesión Telnet es correcta, como se muestra en la figura 1. En la figura 2, el administrador intenta acceder mediante Telnet al mismo servidor, a través del puerto 80. En el resultado, se verifica que la capa de transporte se conecta correctamente de la PC1 a HQ. Sin embargo, el servidor no acepta conexiones en el puerto 80.</p>
+<p></p>
+<p>En el ejemplo de la figura 3, se muestra una conexión Telnet correcta del R1 al R3, a través de IPv6. En la figura 4, se observa un intento similar de acceder mediante Telnet a través del puerto 80. Una vez más, en el resultado se verifica una conexión correcta de la capa de transporte, pero el R3 rechaza la conexión mediante el puerto 80.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

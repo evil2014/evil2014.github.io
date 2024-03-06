@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>11.3.1.1 Interpretación de los resultados de ping</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_11.3.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Rendimiento básico de la red</h1>
+        <h2>Los comandos </h2>
+      </div>
+      <div id="content">
+<p>Una vez que se implementa la red, el administrador debe poder probar la conectividad de red para asegurarse de que funcione correctamente. Además, se recomienda que el administrador de red realice un registro de la red. </p>
+<p></p>
+<p>
+<b>El </b>
+<span class="cmd">
+<b>comando </b>
+</span>
+<b> ping</b>
+</p>
+<p></p>
+<p>El comando <span class="cmd"><b>ping</b></span> es una manera eficaz de probar la conectividad. Por lo general, a esta prueba se la conoce como “prueba del stack de protocolos”, porque el comando <span class="cmd"><b>ping</b></span> va desde la capa 3 del modelo OSI hasta la capa 2 y, luego, hasta la capa 1. Este comando utiliza el protocolo ICMP para verificar la conectividad. </p>
+<p></p>
+<p>El comando <span class="cmd"><b>ping</b></span> no siempre identifica la naturaleza de un problema, pero puede contribuir a identificar su origen, un primer paso importante en la resolución de problemas de una falla de red.</p>
+<p></p>
+<p>El comando <span class="cmd"><b>ping</b></span> proporciona un método para probar el stack de protocolos y la configuración de direcciones IPv4 en un host, así como para probar la conectividad a los hosts de destino local o remoto, como se muestra en la ilustración. Existen herramientas adicionales que pueden proporcionar más información que el <span class="cmd"><b>ping</b></span>, como Telnet o Trace, las cuales serán analizadas luego en mayor profundidad. </p>
+<p></p>
+<p>
+<b>Indicadores de ping IOS</b>
+</p>
+<p></p>
+<p>Un ping emitido desde el IOS tiene como resultado una de varias indicaciones para cada eco ICMP enviado. Los indicadores más comunes son:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>!</b> : indica la recepción de un mensaje de respuesta de eco ICMP.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>.</b> : indica que se agotó el tiempo mientras se esperaba un mensaje de respuesta de eco ICMP.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>U</b>: se recibió un mensaje ICMP inalcanzable. </li>
+</ul>
+</p>
+<p></p>
+<p>El signo “<b>!</b>” (signo de exclamación) indica que el ping se completó correctamente y verifica la conectividad de capa 3.</p>
+<p></p>
+<p>El "<b>.</b>" (punto) puede indicar problemas en la comunicación. Puede señalar que se produjo un problema de conectividad en alguna parte de la ruta. También puede indicar que un router de la ruta no contaba con una ruta hacia el destino y no envió un mensaje de ICMP de destino inalcanzable. También puede señalar que el ping fue bloqueado por la seguridad del dispositivo. </p>
+<p></p>
+<p>La “<b>U</b>” indica que un router de la ruta no contaba con una ruta hacia la dirección de destino o que se bloqueó la solicitud de ping y se respondió con un mensaje de ICMP de destino inalcanzable.</p>
+<p></p>
+<p>
+<b>Prueba de loopback</b>
+</p>
+<p></p>
+<p>El comando <span class="cmd"><b>ping</b></span> se utiliza para verificar la configuración IP interna en el host local. Recuerde que esta prueba se realiza utilizando el comando <span class="cmd"><b>ping</b></span> en una dirección reservada denominada “dirección de loopback” (127.0.0.1). Esto verifica que el stack de protocolos funcione correctamente desde la capa de red hasta la capa física y viceversa, sin colocar realmente una señal en los medios. </p>
+<p></p>
+<p>
+<span class="cmd">
+<b>Los comandos </b>
+</span> ping se introducen en una línea de comandos.</p>
+<p></p>
+<p>Utilice la siguiente sintaxis para hacer ping a la dirección de loopback:</p>
+<p></p>
+<p>
+<span class="cmd">C:\> </span>
+<span class="cmd">
+<b>ping 127.0.0.1</b>
+</span>
+</p>
+<p></p>
+<p>La respuesta de este comando se parecería a ésta: </p>
+<p></p>
+<p>
+<span class="cmd">Respuesta desde 127.0.0.1: bytes=32 tiempo<1ms TTL=128 </span>
+</p>
+<p>
+<span class="cmd">Respuesta desde 127.0.0.1: bytes=32 tiempo<1ms TTL=128 </span>
+</p>
+<p>
+<span class="cmd">Respuesta desde 127.0.0.1: bytes=32 tiempo<1ms TTL=128 </span>
+</p>
+<p>
+<span class="cmd">Respuesta desde 127.0.0.1: bytes=32 tiempo<1ms TTL=128 </span>
+</p>
+<p>
+<span class="cmd">Estadísticas de ping para 127.0.0.1: </span>
+</p>
+<p>
+<span class="cmd">Paquetes: enviados = 4, recibidos = 4, perdidos = 0 (0% perdidos), </span>
+</p>
+<p>
+<span class="cmd">Tiempo aproximado de ida y vuelta en milisegundos: </span>
+</p>
+<p>
+<span class="cmd">Mínimo = 0ms, Máximo = 0ms, Media = 0ms</span>
+</p>
+<p></p>
+<p>El resultado indica que se enviaron cuatro paquetes de prueba de 32 bytes desde el host 127.0.0.1 y se devolvieron a este en un tiempo de menos de 1 ms. TTL son las siglas de tiempo de vida, que define la cantidad de saltos que le restan al paquete ping antes de que se descarte.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+﻿<textcomponents>
+<component id='ID_inst'>
+	<text><![CDATA[<b>Actividad: Características de IP</b><br><br>Lea cada una de las características de IP. A continuación, haga clic en Sin conexión, Máximo esfuerzo o Independiente de los medios para indicar el método de entrega.]]></text>
+</component>
+
+<component id="ID_txt01">
+<text><![CDATA[<b>Características de IP</b>]]></text>
+</component>
+
+<component id="ID_txt02">
+<text><![CDATA[<b>Método de entrega</b>]]></text>
+</component> <!--buttons-->
+<component id="ID_btn01">
+<text><![CDATA[<b>Restablecer</b>]]></text>
+</component> <!-- Terms -->
+<component id="ID_term01">
+<text><![CDATA[<b>Sin conexión</b>]]></text>
+</component>
+
+<component id="ID_term02">
+<text><![CDATA[<b>Máximo esfuerzo</b>]]></text>
+</component>
+
+<component id="ID_term03">
+<text><![CDATA[<b>Independiente de los medios</b>]]></text>
+</component> <!--Characteristics-->
+<component id="ID_ans01">
+<text><![CDATA[Envía paquetes incluso si el host de destino no puede recibirlos.]]></text>
+</component>
+
+<component id="ID_ans02">
+<text><![CDATA[No se produce ningún contacto con el host de destino antes de enviar un paquete.]]></text>
+</component>
+
+<component id="ID_ans03">
+<text><![CDATA[La entrega de paquetes no está garantizada.]]></text>
+</component>
+
+<component id="ID_ans04">
+<text><![CDATA[No garantiza que el paquete se entregue completo y sin errores.]]></text>
+</component>
+
+<component id="ID_ans05">
+<text><![CDATA[Se pueden utilizar cables de fibra óptica, satélites y tecnología inalámbrica para enrutar el mismo paquete.]]></text>
+</component>
+
+<component id="ID_ans06">
+<text><![CDATA[Ajusta el tamaño del paquete enviado según el tipo de acceso a la red que se utilice.]]></text>
+</component>
+
+<component id='ID_break'>
+	<text><![CDATA[<br><br>]]></text>
+</component> <!--feedback-->
+<component id='ID_titleCorrect'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id='ID_correctText'>
+	<text><![CDATA[<span>¡Felicidades! Unió correctamente las características de IP con los métodos de entrega.</span>]]></text>
+</component>
+
+<component id='ID_titleIncorrect'>
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_incorrectText'>
+	<text><![CDATA[Intente de nuevo.]]></text>
+</component>
+
+</textcomponents>

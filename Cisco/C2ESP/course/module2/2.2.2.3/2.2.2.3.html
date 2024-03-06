@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.2.2.3 Ataques de seguridad frecuentes: aprovechamiento de CDP</title>
+    <!--  -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.2.2.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Seguridad de switches: administración e implementación</h1>
+        <h2>Cuestiones de seguridad en redes LAN</h2>
+      </div>
+      <div id="content">
+<p>El protocolo de descubrimiento de Cisco (CDP, Cisco Discovery Protocol) es un protocolo propiedad de Cisco que puede configurarse en todos los dispositivos de Cisco. CDP detecta otros dispositivos de Cisco conectados directamente, lo que permite que los dispositivos configuren su conexión de forma automática. En algunos casos, esto simplifica la configuración y la conectividad. </p>
+<p></p>
+<p>De manera predeterminada, la mayoría de los routers y switches Cisco poseen CDP habilitado en todos los puertos. La información de CDP se envía en difusiones periódicas sin cifrar. Esta información se actualiza localmente en la base de datos de CDP de cada dispositivo. Debido a que CDP es un protocolo de capa 2, los routers no propagan los mensajes CDP.</p>
+<p></p>
+<p>CDP contiene información sobre el dispositivo, como la dirección IP, la versión de software del IOS, la plataforma, las capacidades y la VLAN nativa. Los atacantes pueden usar esta información para encontrar la forma de atacar la red, generalmente mediante ataques por denegación de servicio (DoS). </p>
+<p></p>
+<p>En la ilustración, se muestra una parte de una captura de Wireshark en la que se muestra el contenido de un paquete CDP. En particular, la versión de software IOS de Cisco descubierta por CDP permite que el atacante determine si existen vulnerabilidades de seguridad específicas para esa versión de IOS. Además, debido a que CDP no se autentica, los atacantes pueden crear paquetes CDP falsos y enviarlos a un dispositivo de Cisco conectado directamente. </p>
+<p></p>
+<p>Se recomienda inhabilitar el uso de CDP en los dispositivos o los puertos que no necesitan usarlo mediante el comando <span class="cmd"><b>no cdp run</b></span> del modo de configuración global. CDP se puede inhabilitar por puerto.</p>
+<p></p>
+<p>
+<b>Ataques de Telnet</b>
+</p>
+<p></p>
+<p>El protocolo Telnet es inseguro, y los atacantes lo pueden usar para acceder de manera remota a un dispositivo de red de Cisco. Existen herramientas que permiten que los atacantes inicien un ataque de decodificación de contraseñas por fuerza bruta contra las líneas vty del switch. </p>
+<p></p>
+<p>
+<b>Ataque de contraseña de fuerza bruta </b>
+</p>
+<p></p>
+<p>La primer fase de un ataque de contraseña de fuerza bruta comienza con el uso de contraseñas comunes por parte del atacante y de un programa diseñado para intentar establecer una sesión de Telnet mediante todas las palabras del diccionario. Si la contraseña no se descifra en la primera fase, comienza una segunda fase. En la segunda fase del ataque de fuerza bruta, el atacante usa un programa que genera combinaciones de caracteres secuenciales para poder adivinar la contraseña. Si dispone del tiempo suficiente, un ataque de contraseña de fuerza bruta puede decodificar casi todas las contraseñas utilizadas.</p>
+<p></p>
+<p>Para mitigar los ataques de contraseña de fuerza bruta, use contraseñas seguras y cámbielas con frecuencia. Una contraseña segura debe tener una combinación de mayúsculas y minúsculas, y debe incluir números y símbolos (caracteres especiales). El acceso a las líneas vty también se puede limitar mediante una lista de control de acceso (ACL).</p>
+<p></p>
+<p>
+<b>Ataque DoS por Telnet</b>
+</p>
+<p></p>
+<p>Telnet también se puede usar para iniciar un ataque DoS. En un ataque DoS por Telnet, el atacante explota un defecto del software del servidor Telnet que se ejecuta en el switch, el cual hace que el servicio de Telnet no esté disponible. Este tipo de ataque impide que un administrador acceda de manera remota a las funciones de administración del switch. Esto se puede combinar con otros ataques directos a la red como parte de un esfuerzo coordinado para impedir que el administrador de red acceda a dispositivos clave durante la infracción.</p>
+<p></p>
+<p>En general, las vulnerabilidades en el servicio de Telnet que permiten que ocurran los ataques de DoS se enfrentan mediante parches de seguridad incluidos en las revisiones más recientes de IOS de Cisco.</p>
+<p></p>
+<p>
+<b>Nota:</b> se recomienda usar SSH en lugar de Telnet para las conexiones de administración remota.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

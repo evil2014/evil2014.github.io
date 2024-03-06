@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>3.1.2.2 Encapsulación HDLC</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_3.1.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Descripción general de conexión serial punto a punto</h1>
+        <h2>Encapsulación HDLC</h2>
+      </div>
+      <div id="content">
+<p>HDLC es un protocolo sincrónico de capa de enlace de datos orientado a bits desarrollado por la Organización Internacional para la Estandarización (ISO). El estándar actual para HDLC es ISO 13239. HDLC se desarrolló a partir del estándar de control de enlace de datos síncronos (SDLC) propuesto en la década de los setenta. HDLC proporciona servicio orientado a la conexión y sin conexión.</p>
+<p></p>
+<p>HDLC utiliza la transmisión serial síncrona, que proporciona una comunicación sin errores entre dos puntos. HDLC define una estructura de trama de capa 2 que permite el control del flujo y de errores mediante el uso de acuses de recibo. Cada trama presenta el mismo formato ya sea una trama de datos o una trama de control.</p>
+<p></p>
+<p>Cuando las tramas se transmiten por enlaces síncronos o asíncronos, esos enlaces no tienen ningún mecanismo para marcar ni el principio ni el fin de las tramas. Por este motivo, HDLC utiliza un delimitador de trama, o indicador, para marcar el principio y el fin de cada trama.</p>
+<p></p>
+<p>Cisco desarrolló una extensión del protocolo HDLC para resolver la incapacidad de proporcionar compatibilidad multiprotocolo. Si bien HDLC de Cisco (también conocido como cHDLC) es un protocolo exclusivo, Cisco permitió que muchos otros proveedores de equipos de red lo implementen. Las tramas HDLC de Cisco contienen un campo para identificar el protocolo de red que se encapsula. En la ilustración, se compara el estándar HDLC con HDLC de Cisco.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

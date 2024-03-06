@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.2.2.2 Dial-up</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.2.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Elección de una tecnología WAN</h1>
+        <h2>Infraestructuras WAN privadas</h2>
+      </div>
+      <div id="content">
+<p>Cuando no hay ninguna otra tecnología WAN disponible, es posible que se requiera acceso WAN por dial-up. Por ejemplo, una ubicación remota podría usar un módem y líneas telefónicas de marcado analógico para proporcionar baja capacidad y conexiones de conmutación dedicadas. Cuando se necesita realizar transferencias de datos de bajo volumen de manera intermitente, el acceso por dial-up es conveniente.</p>
+<p></p>
+<p>En la telefonía tradicional, se usa un cable de cobre, al que se denomina “bucle local”, para conectar el auricular del teléfono en las instalaciones del suscriptor a la CO. La señal en el bucle local durante una llamada es una señal electrónica continuamente cambiante, que es una traducción de la voz del suscriptor a una señal analógica.</p>
+<p></p>
+<p>Los bucles locales tradicionales pueden transportar datos informáticos binarios a través de la red telefónica de voz mediante un módem. El módem modula los datos binarios en una señal analógica en el origen y demodula la señal analógica en datos binarios en el destino. Las características físicas del bucle local y su conexión a la PSTN limitan la velocidad de señal a menos de 56 kb/s. </p>
+<p></p>
+<p>Para pequeñas empresas, estas conexiones dial-up de velocidad relativamente baja son adecuadas para el intercambio de cifras de ventas, precios, informes regulares y correos electrónicos. Usar dial-up automático a la noche o durante los fines de semana para transferir archivos grandes y realizar copias de seguridad de datos permite aprovechar las tarifas más bajas de horas no pico (cargos interurbanos). Las tarifas dependen de la distancia entre las terminales, la hora del día y la duración de la llamada.</p>
+<p></p>
+<p>Las ventajas de los módems y las líneas analógicas son la simplicidad, la disponibilidad y el bajo costo de implementación. Las desventajas son las bajas velocidades de datos y un tiempo de conexión relativamente prolongado. El circuito dedicado tiene poco retraso o poca vibración para el tráfico punto a punto, pero el tráfico de voz o video no funciona correctamente en estas velocidades de bit bajas.</p>
+<p></p>
+<p>
+<b>Nota:</b> si bien muy pocas empresas admiten el acceso por dial-up, este sigue siendo una solución viable para áreas remotas con opciones de acceso WAN limitadas.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

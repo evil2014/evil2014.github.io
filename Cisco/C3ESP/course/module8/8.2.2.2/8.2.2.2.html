@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.2.2.2 Parámetros EIGRP</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.2.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resolución de problemas de EIGRP</h1>
+        <h2>Resolver problemas de vecinos de EIGRP</h2>
+      </div>
+      <div id="content">
+<p>En la resolución de problemas en una red EIGRP, una de las primeras cosas que hay que verificar es que todos los routers que participan en la red EIGRP estén configurados con el mismo número de sistema autónomo. El comando <span class="cmd"><b>router eigrp </b></span><span class="cmd"><i>número-as</i></span> inicia el proceso EIGRP, y lo sigue el número de sistema autónomo. El valor del argumento <span class="cmd"><i>número-as</i></span> debe ser el mismo en todos los routers que están en el mismo dominio de routing EIGRP.</p>
+<p></p>
+<p>En la figura 1, se muestra que todos los routers deberían participar en el número de sistema autónomo 1. En la figura 2, con el comando <span class="cmd"><b>show ip protocols</b></span> se verifica que el R1, el R2 y el R3 usan el mismo número de sistema autónomo.</p>
+<p></p>
+<p>
+<b>EIGRP para IPv6</b>
+</p>
+<p></p>
+<p>También se aplican comandos y criterios de resolución de problemas similares en EIGRP para IPv6.</p>
+<p></p>
+<p>Los siguientes son los comandos equivalentes que se utilizan con EIGRP para IPv6:</p>
+<p>
+<ul>
+<li>
+<span class="cmd">Router(config)# </span>
+<span class="cmd">
+<b>ipv6 router eigrp </b>
+</span>
+<span class="cmd">
+<i>número-as</i>
+</span>
+<span class="cmd">
+<b></b>
+</span>
+</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<span class="cmd">Router# </span>
+<span class="cmd">
+<b>show ipv6 protocols</b>
+</span>
+</li>
+</ul>
+</p>
+<p></p>
+<p></p>
+<p>
+<b>Nota:</b> en la parte superior del resultado, el mensaje “IP Routing is NSF aware” (el routing IP reconoce NSF) se refiere a reenvío continuo (NSF). Esta capacidad permite que los peers EIGRP de un router defectuoso retengan la información de routing que este anunció y sigan usando esa información hasta que el router defectuoso vuelva a funcionar con normalidad y pueda intercambiar información de routing. Para obtener más información, consulte: <a href="http://www.cisco.com/en/US/docs/ios-xml/ios/iproute_eigrp/configuration/15-mt/eigrp-nsf-awa.html" target="_blank">http://www.cisco.com/en/US/docs/ios-xml/ios/iproute_eigrp/configuration/15-mt/eigrp-nsf-awa.html</a></p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

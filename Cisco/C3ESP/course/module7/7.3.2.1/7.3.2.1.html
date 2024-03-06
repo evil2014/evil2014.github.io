@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.3.2.1 Métrica compuesta de EIGRP</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.3.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1> Funcionamiento de EIGRP</h1>
+        <h2>Métricas</h2>
+      </div>
+      <div id="content">
+<p>De manera predeterminada, EIGRP utiliza los siguientes valores en su métrica compuesta para calcular la ruta preferida a una red:</p>
+<p>
+<ul>
+<li>
+<b>Ancho de banda:</b> el ancho de banda más lento entre todas las interfaces de salida, a lo largo de la ruta de origen a destino. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Retraso:</b> la acumulación (suma) de todos los retrasos de las interfaces a lo largo de la ruta (en decenas de microsegundos).</li>
+</ul>
+</p>
+<p></p>
+<p>Se pueden utilizar los valores siguientes, pero no se recomienda, porque generalmente dan como resultado recálculos frecuentes de la tabla de topología:</p>
+<p>
+<ul>
+<li>
+<b>Confiabilidad:</b> representa la peor confiabilidad entre origen y destino, que se basa en keepalives.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Carga:</b> representa la peor carga en un enlace entre origen y destino, que se calcula sobre la base de la velocidad de paquetes y el ancho de banda configurado de la interfaz.</li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Nota:</b> si bien la MTU se incluye en las actualizaciones de la tabla de routing, no es una métrica de routing utilizada por EIGRP. </p>
+<p></p>
+<p>
+<b>La métrica compuesta</b>
+</p>
+<p></p>
+<p>En la figura 1, se muestra la fórmula de métrica compuesta que utiliza EIGRP. La fórmula consiste en los valores K1 a K5, conocidos como “ponderaciones de la métrica de EIGRP”. K1 y K3 representan el ancho de banda y el retraso, respectivamente. K2 representa carga, y K4 y K5 representan la confiabilidad. De manera predeterminada, K1 y K3 están establecidos en 1, y K2, K4 y K5 están establecidos en 0. Como resultado, solamente se usan los valores de ancho de banda y de retraso en el cómputo de la métrica compuesta predeterminada. En EIGRP para IPv4 y EIGRP para IPv6 se utiliza la misma fórmula para la métrica compuesta.</p>
+<p></p>
+<p>El método para calcular la métrica (valores <span class="cmd"><i>k</i></span>) y el número de sistema autónomo de EIGRP deben coincidir entre vecinos EIGRP. Si no coinciden, los routers no forman una adyacencia.</p>
+<p></p>
+<p>Los valores <span class="cmd"><i>k</i></span> predeterminados se pueden cambiar con el comando <span class="cmd"><b>metric weights</b></span> del modo de configuración del router:</p>
+<p></p>
+<p>
+<span class="cmd">Router(config-router)# </span>
+<span class="cmd">
+<b>metric weights</b>
+</span>
+<span class="cmd">
+<b></b>
+</span>
+<span class="cmd">
+<i>tos</i>
+</span>
+<span class="cmd"></span>
+<span class="cmd">
+<i>k1 k2 k3 k4 k5</i>
+</span>
+</p>
+<p></p>
+<p>
+<b>Nota:</b> la modificación del valor de <span class="cmd"><b>metric weights</b></span> generalmente no es recomendable y excede el ámbito de este curso. No obstante, su importancia es pertinente al establecimiento de adyacencias de vecinos. Si un router modificó las ponderaciones de la métrica y otro router no lo hizo, no se forma una adyacencia.</p>
+<p></p>
+<p>
+<b>Verificación de los valores </b>
+<span class="cmd">
+<b>
+<i>k</i>
+</b>
+</span>
+<b>   </b>
+</p>
+<p></p>
+<p>El comando <span class="cmd"><b>show ip protocols</b></span> se utiliza para verificar los valores <span class="cmd"><i>k</i></span>. En la figura 2, se muestra el resultado del comando para el R1. Observe que los valores <span class="cmd"><i>k</i></span> en el R1 están establecidos en la configuración predeterminada. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

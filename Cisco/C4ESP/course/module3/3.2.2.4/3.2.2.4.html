@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>3.2.2.4 Estructura de la trama PPP</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_3.2.2.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Funcionamiento de PPP</h1>
+        <h2>LCP y NCP</h2>
+      </div>
+      <div id="content">
+<p>Las tramas PPP constan de seis campos. Las siguientes descripciones resumen los campos de las tramas PPP, que se muestran en la ilustración: </p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Indicador:</b> un único byte que indica el inicio y el final de una trama. El campo Señalización está formado por la secuencia binaria 01111110. En tramas PPP sucesivas sólo se usa un caracter de señalador único.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Dirección:</b> un único byte que contiene la secuencia binaria 11111111, la dirección de difusión estándar. PPP no asigna direcciones a estaciones individuales. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Control:</b> un único byte formado por la secuencia binaria 00000011, que requiere la transmisión de datos de usuario en una trama no secuencial. Esto brinda un servicio de enlace sin conexión que requiere el establecimiento de enlaces de datos o estaciones de enlaces. En un enlace punto a punto, no es necesario asignar el nodo de destino. Por lo tanto, para el PPP el campo Dirección se establece en 0xFF, la dirección de broadcast. Si ambos peers PPP acuerdan realizar la compresión de los campos de control y de dirección durante la negociación LCP, el campo Dirección no se incluye.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Protocolo:</b> dos bytes que identifican el protocolo encapsulado en el campo de información de la trama. El campo Protocolo de 2 bytes identifica al protocolo del contenido PPP. Si ambos peers PPP acuerdan realizar la compresión del campo de protocolo durante la negociación LCP, el campo Protocolo es de 1 byte para la identificación del protocolo en el rango de 0x00-00 a 0x00-FF. Los valores más actualizados del campo Protocolo se especifican en la Solicitud de comentarios con números asignados (RFC) más reciente. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Datos:</b> cero o más bytes que contienen el datagrama para el protocolo especificado en el campo Protocolo. Para encontrar el fin del campo de información, se debe buscar la secuencia del indicador de finalización y dejar 2 bytes para el campo FCS. La longitud máxima predeterminada del campo de información es de 1500 bytes. Mediante un acuerdo previo, con la aceptación de las implementaciones PPP se pueden usar otros valores para la longitud máxima del campo de información. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Secuencia de verificación de trama (FCS):</b> normalmente de 16 bits (2 bytes). Mediante un acuerdo previo, con la aceptación de las implementaciones PPP se puede utilizar una FCS de 32 bits (4 bytes) para una mayor detección de errores. Si el cálculo de la FCS que realiza el receptor no coincide con la FCS de la trama PPP, esta se descarta sin aviso.</li>
+</ul>
+</p>
+<p></p>
+<p>Los protocolos LCP pueden negociar modificaciones a la estructura de la trama PPP estándar. No obstante, las tramas modificadas siempre se distinguen de las tramas estándar.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

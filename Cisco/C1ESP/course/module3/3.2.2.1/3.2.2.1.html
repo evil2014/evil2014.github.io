@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>3.2.2.1 Suites de protocolos y estándares de la industria</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_3.2.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolos y estándares de red</h1>
+        <h2>Suites de protocolos</h2>
+      </div>
+      <div id="content">
+<p>Como se indicó anteriormente, una suite de protocolos es un grupo de protocolos que trabajan en forma conjunta para proporcionar servicios integrales de comunicación de red. Las suites de protocolos pueden estar especificadas por un organismo de estandarización o pueden ser desarrolladas por un proveedor.</p>
+<p></p>
+<p>Los protocolos IP, HTTP y DHCP son todos parte de la suite de protocolos de Internet conocida como protocolo de control de transmisión/IP (TCP/IP). La suite de protocolos TCP/IP es un estándar abierto, lo que significa que estos protocolos están disponibles para el público sin cargo, y cualquier proveedor puede implementar estos protocolos en su hardware o software. </p>
+<p></p>
+<p>Un protocolo basado en estándares es un proceso o un protocolo que recibió el aval del sector de redes y fue ratificado, o aprobado, por un organismo de estandarización. El uso de estándares en el desarrollo y la implementación de protocolos aseguran que productos de distintos fabricantes puedan interoperar correctamente. Si un fabricante en particular no observa un protocolo estrictamente, es posible que sus equipos o software no puedan comunicarse satisfactoriamente con productos hechos por otros fabricantes. </p>
+<p></p>
+<p>En las comunicaciones de datos, por ejemplo, si un extremo de una conversación utiliza un protocolo para regir una comunicación unidireccional y el otro extremo adopta un protocolo que describe una comunicación bidireccional, es muy probable que no pueda intercambiarse ningún dato.</p>
+<p></p>
+<p>Algunos protocolos son exclusivos. Exclusivo, en este contexto, significa que una compañía o un proveedor controlan la definición del protocolo y cómo funciona. Algunos protocolos exclusivos los pueden utilizar distintas organizaciones con permiso del propietario. Otros, solo se pueden implementar en equipos fabricados por el proveedor exclusivo. AppleTalk y Novell Netware constituyen ejemplos de protocolos exclusivos.</p>
+<p></p>
+<p>Incluso es posible que varias compañías trabajen conjuntamente para crear un protocolo exclusivo. Es común que un proveedor (o grupo de proveedores) desarrolle un protocolo exclusivo para satisfacer las necesidades de sus clientes y posteriormente ayude a hacer de ese protocolo exclusivo un estándar abierto. Por ejemplo, Ethernet fue un protocolo desarrollado inicialmente por Bob Metcalfe en el XEROX Palo Alto Research Center (PARC) en la década de los setenta. En 1979, Bob Metcalfe creó su propia compañía, 3COM, y trabajó junto con Digital Equipment Corporation (DEC), Intel y Xerox para promover el estándar “DIX” para Ethernet. En 1985, el Instituto de Ingenieros en Electricidad y Electrónica (IEEE) publicó el estándar IEEE 802.3, que era casi idéntico a Ethernet. Actualmente, 802.3 es el estándar común que se utiliza en redes de área local (LAN). Otro ejemplo: más recientemente, Cisco abrió el protocolo de enrutamiento EIGRP como RFC informativa para satisfacer las necesidades de los clientes que desean utilizar el protocolo en una red de varios proveedores.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

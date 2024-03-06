@@ -1,0 +1,229 @@
+﻿<textcomponents> <!--slide01-->
+<component id='ID_s1_inst'>
+	<text><![CDATA[<b>Actividad (parte&nbsp;1): Identificar los tipos de red</b><br/><br/>En la tabla figuran características de diferentes tipos de redes OSPF. Una el tipo de red OSPF con la característica adecuada. No se utilizan todos los tipos de red. Haga clic en el botón&nbsp;2 para continuar la actividad.]]></text>
+</component>
+<component id='ID_s1_header01'>
+	<text><![CDATA[<b>Tipo de red OSPF</b>]]></text>
+</component>
+<component id='ID_s1_header02'>
+	<text><![CDATA[<b>Características de la red OSPF</b>]]></text>
+</component>
+
+<component id='ID_s1_txt01'>
+	<text><![CDATA[Conecta varios routers mediante tecnología Ethernet.]]></text>
+</component>
+
+<component id='ID_s1_txt02'>
+	<text><![CDATA[Conecta sitios de sucursal (spokes, “rayos”) a un sitio central (hub)]]></text>
+</component>
+
+<component id="ID_s1_txt03">
+   <text><![CDATA[Conecta sitios de sucursal a un sitio central.]]></text>
+   </component>
+
+<component id="ID_s1_txt04">
+   <text><![CDATA[Conecta dos routers directamente mediante una sola red WAN.]]></text>
+   </component> <!--Drag and Drop-->
+<component id='ID_s1_drag01'>
+	<text><![CDATA[<font color="#393536">Broadcast de accesos múltiples</font>]]></text>
+</component>
+
+<component id='ID_s1_drag02'>
+	<text><![CDATA[<font color="#393536">Punto a multipunto</font>]]></text>
+</component>
+
+<component id='ID_s1_drag03'>
+	<text><![CDATA[<font color="#393536">Multiacceso sin difusión</font>]]></text>
+</component>
+
+<component id='ID_s1_drag04'>
+	<text><![CDATA[<font color="#393536">Punto a Punto</font>]]></text>
+</component>
+
+
+<component id='ID_s1_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id='ID_s1_CORRECT_BODY'>
+	<text><![CDATA[Unió correctamente cada tipo de red OSPF con su característica. Haga clic en el botón&nbsp;2 para continuar.]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_BODY'>
+	<text><![CDATA[No unió correctamente el tipo de red OSPF con su característica. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_s1_CHECK'>
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id='ID_s1_RESET'>
+<text><![CDATA[<b>Restablecer</b>]]></text>
+</component> <!--slide02-->
+<component id='ID_s2_inst'>
+	<text><![CDATA[<b>Actividad (parte&nbsp;2): Identificar las características del DR, el BDR y los DRothers</b><br/><br/>A continuación, figuran las características de los routers configurados con el protocolo de routing OSPF en una red de accesos múltiples. Una la característica del router OSPF con el tipo adecuado de router OSPF. Haga clic en el botón&nbsp;3 para continuar.]]></text>
+</component> <!--Number of rows in the table-->
+
+<component id="ID_Button01">
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+
+<component id="ID_Button02">
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component>
+
+<component id="txt_numrows">
+	<text><![CDATA[6]]></text>
+</component> <!--Number of columns for the answers in the table. Do not count the question column-->
+<component id="txt_numcols">
+	<text><![CDATA[3]]></text>
+</component> <!--Answer column headers-->
+<component id="txt_col1">
+	<text><![CDATA[<b>DR</b>]]></text>
+</component>
+
+<component id="txt_col2">
+	<text><![CDATA[<b>BDR</b>]]></text>
+</component>
+
+<component id="txt_col3">
+	<text><![CDATA[<b>DRother</b>]]></text>
+</component> <!--Question text - blockindent code moves the text away from the left edge a bit--> <!--Question text - If questions are numbered, use blockindent for hanging indents-->
+<component id="txt_q1">
+	<text><![CDATA[1. <textformat blockindent='13'>Usa multidifusión 224.0.0.5 para escuchar las LSA.</textformat>]]></text>
+</component>
+
+<component id="txt_q2">
+	<text><![CDATA[2. <textformat blockindent='13'>Satura con LSA a todos los routers participantes.</textformat>]]></text>
+</component>
+
+<component id="txt_q3">
+	<text><![CDATA[3. <textformat blockindent='13'>Escucha pasivamente las LSA.</textformat>]]></text>
+</component>
+
+<component id="txt_q4">
+	<text><![CDATA[4. <textformat blockindent='13'>Si el DR deja de producir paquetes de saludo, se asciende a sí mismo.</textformat>]]></text>
+</component>
+
+<component id="txt_q5">
+	<text><![CDATA[5. <textformat blockindent='13'>No satura con LSA a todos los routers dentro de la red.</textformat>]]></text>
+</component>
+
+<component id="txt_q6">
+	<text><![CDATA[6. <textformat blockindent='13'>Usa multidifusión 224.0.0.6 para enviar LSA.</textformat>]]></text>
+</component> <!--Answers - Give the column number(s), column numbering start with 1 not 0--> <!--Answers - For MCMA separate the correct answers with commas [2, 4, 5] -->
+<component id="txt_a1">
+	<text><![CDATA[3]]></text>
+</component>
+
+<component id="txt_a2">
+	<text><![CDATA[1]]></text>
+</component>
+
+<component id="txt_a3">
+	<text><![CDATA[2]]></text>
+</component>
+
+<component id="txt_a4">
+	<text><![CDATA[2]]></text>
+</component>
+
+<component id="txt_a5">
+	<text><![CDATA[3]]></text>
+</component>
+
+<component id="txt_a6">
+	<text><![CDATA[3]]></text>
+</component> <!-- Correct Feedback -->
+<component id="ID_titleCorrect">
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id="ID_correctText">
+	<text><![CDATA[Unió correctamente cada característica de router OSPF con el tipo de router OSPF. Haga clic en el botón&nbsp;3 para continuar.]]></text>
+</component> <!-- Incorrect Feedback -->
+<component id="ID_titleIncorrect">
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id="ID_IncorrectText">
+	<text><![CDATA[No unió correctamente cada característica de router OSPF con el tipo de router OSPF. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component> <!--slide03-->
+<component id='ID_s3_inst'>
+	<text><![CDATA[<b>Actividad (parte&nbsp;3): Ordenar los pasos en el proceso de elección del DR</b><br/><br/>Ordene los pasos para elegir un DR cuando se usa el protocolo de routing OSPF. Arrastre cada paso del proceso de elección hasta el campo de paso correcto (es decir, paso&nbsp;1, paso&nbsp;2, paso&nbsp;2a, etcétera).]]></text>
+</component> <!--Drag and Drop-->
+<component id='ID_s3_txt01'>
+	<text><![CDATA[Paso 1]]></text>
+</component>
+
+<component id='ID_s3_txt02'>
+	<text><![CDATA[Paso 2]]></text>
+</component>
+
+<component id="ID_s3_txt03">
+   <text><![CDATA[Paso 2a]]></text>
+   </component>
+
+<component id="ID_s3_txt04">
+   <text><![CDATA[Paso 2b]]></text>
+   </component>
+
+   <component id="ID_s3_txt05">
+   <text><![CDATA[Paso&nbsp;2c]]></text>
+     </component>
+	 <component id="ID_s3_txt06">
+   <text><![CDATA[Si los valores del router del paso&nbsp;1 son exactamente los mismos, entonces...]]></text>
+     </component>
+	 
+<component id='ID_s3_drag01'>
+	<text><![CDATA[<font color="#393536">El valor de prioridad <br/>de interfaz más alto</font>]]></text>
+</component>
+
+<component id='ID_s3_drag02'>
+	<text><![CDATA[<font color="#393536">La ID del router más alta</font>]]></text>
+</component>
+
+<component id='ID_s3_drag03'>
+	<text><![CDATA[<font color="#393536">La ID del router configurada manualmente más alta</font>]]></text>
+</component>
+
+<component id='ID_s3_drag04'>
+	<text><![CDATA[<font color="#393536">Dirección de loopback más alta</font>]]></text>
+</component>
+
+<component id='ID_s3_drag05'>
+	<text><![CDATA[<font color="#393536">Dirección IP de interfaz activa más alta</font>]]></text>
+</component>
+
+
+<component id='ID_s3_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id='ID_s3_CORRECT_BODY'>
+	<text><![CDATA[Ordenó correctamente los pasos de elección del DR.]]></text>
+</component>
+
+
+<component id='ID_s3_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_s3_INCORRECT_BODY'>
+	<text><![CDATA[No ordenó correctamente los pasos de elección del DR. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_s3_CHECK'>
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id='ID_s3_RESET'>
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component>
+
+</textcomponents>

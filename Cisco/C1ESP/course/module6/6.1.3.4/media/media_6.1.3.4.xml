@@ -1,0 +1,132 @@
+﻿<textcomponents> <!--slide 1-->
+<component id='ID_s1_inst'>
+	<text><![CDATA[<b>Actividad: Campos del encabezado de IPv4 (parte&nbsp;1)</b><br><br>Lea cada función del encabezado de IPv4 y, a continuación, haga clic en el campo del encabezado de IPv4 al que corresponde.]]></text>
+</component>
+
+<component id="ID_s1_txt01">
+<text><![CDATA[<b>Funciones del encabezado de IPv4</b>]]></text>
+</component>
+
+<component id="ID_s1_txt02">
+<text><![CDATA[<b>Campos del encabezado de IPv4</b>]]></text>
+</component>
+
+<component id="ID_s1_field01">
+<text><![CDATA[<b>Versión</b>]]></text>
+</component>
+
+<component id="ID_s1_field02">
+<text><![CDATA[<b>Servicios diferenciados</b>]]></text>
+</component>
+
+<component id="ID_s1_field03">
+<text><![CDATA[<b>Tiempo de vida</b>]]></text>
+</component>
+
+<component id="ID_s1_field04">
+<text><![CDATA[<b>Protocolo</b>]]></text>
+</component>
+
+<component id="ID_s1_field05">
+<text><![CDATA[<b>Dirección IP de origen</b>]]></text>
+</component>
+
+<component id="ID_s1_field06">
+<text><![CDATA[<b>Dirección IP de destino</b>]]></text>
+</component> <!--answers-->
+<component id="ID_s1_ans01">
+<text><![CDATA[Para IPv4, siempre está establecido en 0100.]]></text>
+</component>
+
+<component id="ID_s1_ans02">
+<text><![CDATA[Identifica la prioridad de cada paquete.]]></text>
+</component>
+
+<component id="ID_s1_ans03">
+<text><![CDATA[Comúnmente se conoce como “conteo de saltos”.]]></text>
+</component>
+
+<component id="ID_s1_ans04">
+<text><![CDATA[Identifica el protocolo de capa superior que se utilizará a continuación.]]></text>
+</component>
+
+<component id="ID_s1_ans05">
+<text><![CDATA[Identifica la dirección IP del host emisor.]]></text>
+</component>
+
+<component id="ID_s1_ans06">
+<text><![CDATA[Identifica la dirección IP del host destinatario.]]></text>
+</component> <!--buttons-->
+<component id="ID_s1_btn01">
+<text><![CDATA[<b>Restablecer</b>]]></text>
+</component> <!--feedback-->
+<component id='ID_s1_titleCorrect'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id='ID_s1_correctText'>
+	<text><![CDATA[¡Felicidades! Unió correctamente las funciones del encabezado de IPv4 con los campos.]]></text>
+</component>
+
+<component id='ID_s1_titleIncorrect'>
+	<text><![CDATA[Incorrecto]]></text>
+</component>
+
+<component id='ID_s1_incorrectText'>
+	<text><![CDATA[Intente de nuevo.]]></text>
+</component> <!--slide 2-->
+<component id='ID_s2_inst'>
+	<text><![CDATA[<b>Actividad: Campos del encabezado de IPv4 (parte&nbsp;2)</b><br><br>Lea la descripción de cada encabezado de identificación y validación de IPv4 y, a continuación, haga clic en el campo del encabezado de IPv4 al que corresponde.]]></text>
+</component>
+
+<component id="ID_s2_txt01">
+<text><![CDATA[<b>Descripciones de encabezados de identificación y validación de IPv4</b>]]></text>
+</component>
+
+<component id="ID_s2_txt02">
+<text><![CDATA[<b>Campos del encabezado de IPv4</b>]]></text>
+</component>
+
+
+<component id="ID_s2_field01">
+<text><![CDATA[<b>Longitud del encabezado de Internet</b>]]></text>
+</component>
+
+<component id="ID_s2_field02">
+<text><![CDATA[<b>Longitud total</b>]]></text>
+</component>
+
+<component id="ID_s2_field03">
+<text><![CDATA[<b>Checksum del encabezado</b>]]></text>
+</component> <!--answers-->
+<component id="ID_s2_ans01">
+<text><![CDATA[Identifica la cantidad de palabras de 32&nbsp;bits en el encabezado.]]></text>
+</component>
+
+<component id="ID_s2_ans02">
+<text><![CDATA[El valor máximo es 65&nbsp;535 bytes.]]></text>
+</component>
+
+<component id="ID_s2_ans03">
+<text><![CDATA[Revisa si hay errores en el encabezado IP: si es incorrecto, se descarta el paquete.]]></text>
+</component> <!--buttons-->
+<component id="ID_s2_btn01">
+<text><![CDATA[<b>Restablecer</b>]]></text>
+</component> <!--feedback-->
+<component id='ID_s2_titleCorrect'>
+	<text><![CDATA[Correcto]]></text>
+</component>
+
+<component id='ID_s2_correctText'>
+	<text><![CDATA[¡Felicidades! Unió correctamente las descripciones de los encabezados de identificación y validación de IPv4 con los campos.]]></text>
+</component>
+
+<component id='ID_s2_titleIncorrect'>
+	<text><![CDATA[Incorrecto]]></text>
+</component>
+
+<component id='ID_s2_incorrectText'>
+	<text><![CDATA[Intente de nuevo.]]></text>
+</component>
+
+</textcomponents>

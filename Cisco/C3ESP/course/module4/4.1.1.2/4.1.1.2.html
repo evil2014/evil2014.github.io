@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.1.1.2 Beneficios de la tecnología inalámbrica </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.1.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Conceptos de tecnología inalámbrica</h1>
+        <h2>Introducción a la tecnología inalámbrica</h2>
+      </div>
+      <div id="content">
+<p>Existen muchos beneficios de admitir redes inalámbricas en el entorno empresarial y doméstico. Algunos de los beneficios incluyen el aumento de la flexibilidad y la productividad, la reducción de costos y la capacidad de crecer y adaptarse a requisitos cambiantes. </p>
+<p></p>
+<p>En la figura 1, se proporcionan ejemplos de flexibilidad inalámbrica para el empleado móvil.</p>
+<p></p>
+<p>Para las operaciones diarias dentro de la oficina, la mayoría de las empresas dependen de LAN basadas en switches. Sin embargo, los empleados se mueven cada vez más y desean mantener el acceso a los recursos de la LAN de la empresa desde otras ubicaciones además de su escritorio. Los trabajadores quieren llevar sus dispositivos inalámbricos a las reuniones, las oficinas de sus compañeros de trabajo, las salas de conferencias e incluso a los sitios de los clientes y, al mismo tiempo, mantener el acceso a los recursos de la oficina. Las redes inalámbricas proporcionan este tipo de flexibilidad. En lugar de pasar una cantidad de tiempo considerable transportando el material necesario de la empresa o buscando conexiones por cable para acceder a los recursos de la red, los recursos LAN pueden estar disponibles fácilmente para una variedad de dispositivos inalámbricos mediante el uso de la red inalámbrica. </p>
+<p></p>
+<p>Si bien es difícil de medir, el acceso inalámbrico puede generar un aumento de la productividad y hacer que los empleados estén más relajados. Con las redes inalámbricas, los empleados tienen flexibilidad para trabajar cuando quieran, donde quieran. Pueden responder a las preguntas de un cliente en la oficina o en un restaurante durante la cena. Pueden acceder al correo electrónico y a otros recursos relacionados con el trabajo de forma rápida y fácil, lo que proporciona una mejor administración, mejores resultados y más rápidos para los clientes, y mayores ganancias. </p>
+<p></p>
+<p>Las redes inalámbricas también permiten reducir los costos. En las empresas que ya cuentan con una infraestructura inalámbrica, los ahorros se materializan cada vez que se cambian los equipos o se realizan mudanzas, como cuando se reubica a un empleado dentro de un edificio, se reorganizan equipos o un laboratorio, o se trasladan a ubicaciones o a sitios de proyecto temporarios. </p>
+<p></p>
+<p>Otro beneficio importante de las redes inalámbricas es la capacidad para adaptarse a las necesidades y las tecnologías cambiantes. Agregar nuevos equipos a la red es muy sencillo con las redes inalámbricas. Considere la conectividad inalámbrica en el hogar. Los usuarios pueden navegar la Web desde la mesa de la cocina, la sala o incluso en exteriores. Los usuarios domésticos conectan nuevos dispositivos, como smartphones, smartpads, computadoras portátiles y televisores inteligentes. </p>
+<p></p>
+<p>Como se muestra en la figura 2, un router doméstico inalámbrico permite que el usuario se conecte a estos dispositivos sin el costo adicional ni los inconvenientes relacionados con instalar cables en diferentes sitios del hogar. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

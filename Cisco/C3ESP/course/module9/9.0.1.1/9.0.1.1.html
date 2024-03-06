@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.0.1.1 Introducción</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.0.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Imágenes y licencias del IOS</h1>
+        <h2>Introducción</h2>
+      </div>
+      <div id="content">
+<p>IOS de Cisco (inicialmente sistema operativo Internetwork) es un software que se utiliza en la mayoría de los routers y switches Cisco. IOS es un paquete de routing, switching, seguridad y otras tecnologías de internetworking integradas en un único sistema operativo multitarea. </p>
+<p></p>
+<p>La cartera del IOS de Cisco admite una amplia gama de tecnologías y características. Los clientes elijen un IOS basado en un grupo de protocolos y características admitidas por una imagen determinada. Comprender la cartera de conjuntos de características del IOS de Cisco es útil al seleccionar el IOS adecuado para que satisfaga las necesidades de una organización. </p>
+<p></p>
+<p>Cisco realizó cambios significativos en los paquetes y las licencias del software IOS al llevar a cabo la transición de IOS 12.4 a 15.0. En este capítulo, se explican las convenciones de nomenclatura y los paquetes del IOS 12.4 y 15. Comenzando por IOS 15, Cisco también implementó un nuevo formato de paquetes y proceso activación de licencias para IOS. En este capítulo, se analiza el proceso de obtención, instalación y administración de licencias del software IOS de Cisco 15. </p>
+<p></p>
+<p>
+<b>Nota:</b> la versión del IOS que sigue a la 12.4 es la 15.0. No existen las versiones 13 o 14 del software IOS.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

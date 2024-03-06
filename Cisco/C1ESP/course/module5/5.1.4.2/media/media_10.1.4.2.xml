@@ -1,0 +1,113 @@
+﻿<textcomponents> <!-- Slide 1 -->
+
+<component id="ID_s1_title">
+		<text><![CDATA[<b>Paquete IP encapsulado en una trama de Ethernet</b>]]></text>
+	</component>
+<component id="ID_s1_destMAC">
+		<text><![CDATA[Dirección MAC de destino<BR>BB:BB:BB:BB:BB:BB]]></text>
+	</component>   
+<component id="ID_s1_sourceMAC">
+		<text><![CDATA[Dirección MAC de origen<BR>AA:AA:AA:AA:AA:AA]]></text>
+	</component>   
+<component id="ID_s1_destIP">
+		<text><![CDATA[Dirección IP de destino<BR>192.168.1.5]]></text>
+	</component>
+<component id="ID_s1_sourceIP">
+		<text><![CDATA[Dirección IP de origen<BR>10.0.0.1]]></text>
+	</component> 
+<component id="ID_s1_data">
+		<text><![CDATA[Datos]]></text>
+	</component>
+<component id="ID_s1_FCS">
+		<text><![CDATA[Tráiler]]></text>
+	</component>
+<component id="ID_s1_txt01">
+		<text><![CDATA[Un switch examina las direcciones MAC.]]></text>
+	</component>
+<component id="ID_s1_txt02">
+		<text><![CDATA[Un router examina las direcciones IP.]]></text>
+	</component>
+<component id="ID_s1_network">
+		<text><![CDATA[Porción de red]]></text>
+	</component>
+<component id="ID_s1_host">
+		<text><![CDATA[Porción de host]]></text>
+	</component> <!-- controller slide 1 -->
+
+<component id="end">
+	<text><![CDATA[Finalizar]]></text>
+</component>
+
+<component id="fforward">
+	<text><![CDATA[Adelantar]]></text>
+</component>
+
+<component id="pause">
+	<text><![CDATA[Pausa]]></text>
+</component>
+
+<component id="play">
+	<text><![CDATA[Reproducir]]></text>
+</component>
+
+<component id="rewind">
+	<text><![CDATA[Regresar]]></text>
+</component>
+
+<component id="start">
+	<text><![CDATA[Inicio]]></text>
+</component> <!-- SLIDE 2 -->
+
+<component id="ID_s2_title">
+<text><![CDATA[<b>Capa de enlace de datos</b></font>]]></text>
+</component>
+
+<component id="ID_s2_txt01">
+<text><![CDATA[Los protocolos de capa de enlace de datos regulan cómo se da formato a una trama para utilizarla en diferentes medios.]]></text>
+</component>
+
+<component id="ID_s2_txt02">
+<text><![CDATA[Diversos protocolos pueden estar en uso para medios diferentes.]]></text>
+</component>
+
+<component id="ID_s2_txt03">
+<text><![CDATA[En cada salto a lo largo de la ruta, un dispositivo intermediario acepta tramas de un medio, desencapsula la trama y, luego, envía los paquetes en una nueva trama. Los encabezados de cada trama se formatean para el medio específico que cruzará.]]></text>
+</component>
+
+<component id="ID_s2_txt04">
+<text><![CDATA[<font color="#FFFFFF"><b>Trama</b></font>]]></text>
+</component>
+
+<component id="ID_s2_txt05">
+<text><![CDATA[París]]></text>
+</component>
+
+<component id="ID_s2_txt06">
+<text><![CDATA[Japón]]></text>
+</component> <!-- controller slide 2 -->
+
+<component id="ID_s2_end">
+	<text><![CDATA[Finalizar]]></text>
+</component>
+
+<component id="ID_s2_fforward">
+	<text><![CDATA[Adelantar]]></text>
+</component>
+
+<component id="ID_s2_pause">
+	<text><![CDATA[Pausa]]></text>
+</component>
+
+<component id="ID_s2_play">
+	<text><![CDATA[Reproducir]]></text>
+</component>
+
+<component id="ID_s2_rewind">
+	<text><![CDATA[Regresar]]></text>
+</component>
+
+<component id="ID_s2_start">
+	<text><![CDATA[Inicio]]></text>
+</component>
+
+</textcomponents>

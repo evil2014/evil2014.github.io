@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.1.2.5 Diseño de núcleo contraído de dos niveles</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.1.2.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Descripción general del diseño de redes jerárquicas</h1>
+        <h2>Diseño jerárquico de la red</h2>
+      </div>
+      <div id="content">
+<p>El diseño jerárquico de tres niveles maximiza el rendimiento, la disponibilidad de la red y la capacidad de escalar el diseño de red. </p>
+<p></p>
+<p>Sin embargo, hay muchas redes de pequeñas empresas que no crecen mucho con el tiempo. Por lo tanto, un diseño jerárquico de dos niveles en el que las capas de núcleo y de distribución se combinan en una sola capa suele ser más práctico. Existe un “núcleo contraído” cuando las funciones de la capa de distribución y de la capa de núcleo se implementan mediante un único dispositivo. La principal motivación para elegir el diseño de núcleo contraído es la reducción de costos de la red, a la vez que se mantiene la mayoría de los beneficios del modelo jerárquico de tres niveles.</p>
+<p></p>
+<p>En el ejemplo de la ilustración, se contrajo la funcionalidad de la capa de distribución y la capa de núcleo en dispositivos de switch multicapa.</p>
+<p></p>
+<p>El modelo de red jerárquico proporciona un marco modular que brinda flexibilidad al diseño de red y facilita su implementación y la resolución de problemas.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

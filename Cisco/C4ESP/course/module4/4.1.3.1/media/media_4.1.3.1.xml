@@ -1,0 +1,32 @@
+﻿<textcomponents>
+<component id="ID_title">
+<text><![CDATA[<b>Terminología de los servicios de Frame Relay</b>]]></text>
+</component>
+<component id="ID_table">
+  <text><![CDATA[<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4'>
+<tr class="mtable_top">
+<td colspan='2' bgcolor='#0E6360' class="mtable_top"><font size='1' color='#0E6360'><span style="color:#98D3D1">.</span></font></td>
+	</tr>
+	<tr colspan='2'>
+		<td bgcolor='#077A77' valign="top"><font color='#ffffff' size="11"><b>Término</b></font></td>
+		<td bgcolor='#077A77' valign="top"><font color='#ffffff' size="11"><b>Acceso</b></font></td>
+		
+	</tr>
+
+	<tr>
+		<td bgcolor='#EFF8F7' valign="top"><font color='#393536' size="11">Velocidad de acceso</font></td>
+		<td bgcolor='#EFF8F7' valign="top"><font color='#393536' size="11">La capacidad del bucle local.</font></td>
+		
+		
+	</tr>
+
+	   <tr>
+		<td bgcolor='#FFFFFF' valign="top"><font color='#393536' size="11">Velocidad de información suscrita (CIR, Committed Information Rate)</font></td>
+		<td bgcolor='#FFFFFF' valign="top"><font color='#393536' size="11">La capacidad a través del bucle local que garantiza el proveedor.</font></td>
+		
+	</tr>
+	
+	
+	</table>]]></text>
+  </component>
+</textcomponents>

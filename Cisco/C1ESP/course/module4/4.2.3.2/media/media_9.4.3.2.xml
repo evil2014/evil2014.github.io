@@ -1,0 +1,108 @@
+﻿<textcomponents> <!-- text on page -->
+<component id="ID_txt01">
+<text><![CDATA[<b>Tx</b>]]></text>
+</component>
+
+<component id="ID_txt01a">
+<text><![CDATA[<b>Tx</b>]]></text>
+</component>
+
+<component id="ID_txt02">
+<text><![CDATA[<b>Rx</b>]]></text>
+</component>
+
+<component id="ID_txt02a">
+<text><![CDATA[<b>Rx</b>]]></text>
+</component>
+
+<component id="ID_txt03">
+<text><![CDATA[Revestimiento]]></text>
+</component>
+
+<component id="ID_txt04">
+<text><![CDATA[Material de refuerzo]]></text>
+</component>
+
+<component id="ID_txt05">
+<text><![CDATA[Recubrimiento de protección]]></text>
+</component>
+
+<component id="ID_txt06">
+<text><![CDATA[Cubierta]]></text>
+</component>
+
+<component id="ID_txt07">
+<text><![CDATA[Núcleo]]></text>
+</component>
+
+<component id="ID_txt08">
+<text><![CDATA[Haga clic en cada componente para obtener más información.]]></text>
+</component>
+
+<component id="ID_txt09">
+<text><![CDATA[<b>Haga clic en Reproducir para ver el cable de fibra óptica en mayor detalle.</b>]]></text>
+</component> <!-- textbox  -->
+<component id="ID_PopTitle01">
+<text><![CDATA[<b>Revestimiento</b>]]></text>
+</component>
+
+<component id="ID_PopBody01">
+<text><![CDATA[Se agrega para proteger la fibra de la abrasión, los solventes y otros contaminantes. La composición de esta envoltura externa puede variar en función del uso del cable.]]></text>
+</component>
+
+<component id="ID_PopTitle02">
+<text><![CDATA[<b>Material de refuerzo</b>]]></text>
+</component>
+
+<component id="ID_PopBody02">
+<text><![CDATA[Rodea el recubrimiento de protección, evita que el cable de fibra se estire cuando tiran de él. El material utilizado es, en general, el mismo material que se utiliza para fabricar los chalecos a prueba de balas.]]></text>
+</component>
+
+<component id="ID_PopTitle03">
+<text><![CDATA[<b>Recubrimiento de protección</b>]]></text>
+</component>
+
+<component id="ID_PopBody03">
+<text><![CDATA[Se utiliza para ayudar a proteger el núcleo y el revestimiento contra cualquier daño.]]></text>
+</component>
+
+<component id="ID_PopTitle04">
+<text><![CDATA[<b>Cubierta</b>]]></text>
+</component>
+
+<component id="ID_PopBody04">
+<text><![CDATA[Hecho de productos químicos levemente diferentes de los que se utilizan para crear el núcleo. Tiende a actuar como un espejo que refleja la luz hacia el núcleo de la fibra. Así, la luz permanece dentro del núcleo mientras viaja por la fibra.]]></text>
+</component>
+
+<component id="ID_PopTitle05">
+<text><![CDATA[<b>Núcleo</b>]]></text>
+</component>
+
+<component id="ID_PopBody05">
+<text><![CDATA[El núcleo es el elemento que transmite la luz y se encuentra en el centro de la fibra óptica. Normalmente el núcleo está hecho de silicio o vidrio. A través del núcleo de la fibra, se transmiten pulsos de luz.]]></text>
+</component> <!-- controller -->
+<component id="end">
+	<text><![CDATA[Finalizar]]></text>
+</component>
+
+<component id="fforward">
+	<text><![CDATA[Adelantar]]></text>
+</component>
+
+<component id="pause">
+	<text><![CDATA[Pausa]]></text>
+</component>
+
+<component id="play">
+	<text><![CDATA[Reproducir]]></text>
+</component>
+
+<component id="rewind">
+	<text><![CDATA[Regresar]]></text>
+</component>
+
+<component id="start">
+	<text><![CDATA[Inicio]]></text>
+</component>
+
+</textcomponents>

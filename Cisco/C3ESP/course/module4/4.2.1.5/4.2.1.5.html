@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.2.1.5 Tramas de control </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.2.1.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Operaciones de LAN inalámbrica</h1>
+        <h2>Estructura de tramas 802.11</h2>
+      </div>
+      <div id="content">
+<p>Las tramas de control se usan para administrar el intercambio de información entre un cliente inalámbrico y un AP. Ayudan a evitar las colisiones en un medio inalámbrico. </p>
+<p></p>
+<p>En la ilustración, se muestra el valor de campo de las tramas de control comunes, incluidas las siguientes:</p>
+<p>
+<ul>
+<li>
+<b>Trama de Solicitud de envío (RTS):</b> las tramas RTS y CTS proporcionan un esquema optativo de reducción de colisiones para los AP con clientes inalámbricos ocultos. Un cliente inalámbrico envía una trama RTS como primer paso en el enlace de dos vías, lo cual se requiere antes de enviar tramas de datos.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Trama de Listo para enviar (CTS):</b> un AP inalámbrico responde a una trama RTS con una trama CTS. Proporciona autorización para que el cliente inalámbrico que realizó la solicitud envíe tramas de datos. La trama CTS contribuye a la administración del control de colisiones al incluir un valor de tiempo. Este retraso minimiza la probabilidad de que otros clientes transmitan mientras lo hace el cliente que realizó la solicitud.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Trama de Acuse de recibo (ACK):</b> después de recibir una trama de datos, el cliente inalámbrico receptor envía una trama ACK al cliente emisor si no se encuentran errores. Si el cliente emisor no recibe una trama ACK en un plazo predeterminado, reenvía la trama.</li>
+</ul>
+</p>
+<p></p>
+<p>Las tramas de control son fundamentales para la transmisión inalámbrica y desempeñan una función importante en el método de contienda de los medios que usan las tecnologías inalámbricas, conocido como “acceso múltiple por detección de portadora y prevención de colisiones” (CSMA/CA). </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

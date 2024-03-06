@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.1.5.3 Ubicación de la ACL extendida</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.1.5.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Funcionamiento de ACL de IP</h1>
+        <h2>Pautas para la colocación de ACL</h2>
+      </div>
+      <div id="content">
+<p>Al igual que las ACL estándar, las ACL extendidas pueden filtrar el tráfico según la dirección de origen. Sin embargo, las ACL extendidas también pueden filtrar el tráfico según la dirección de destino, el protocolo y el número de puerto. Esto permite que los administradores de red tengan más flexibilidad en cuanto al tipo de tráfico que se puede filtrar y dónde colocar la ACL. La regla básica para la colocación de una ACL extendida es colocarla lo más cerca posible del origen. Esto evita que el tráfico no deseado se envíe a través de varias redes y luego sea denegado cuando llegue a destino.</p>
+<p></p>
+<p>Los administradores de red solo pueden colocar ACL en los dispositivos que controlan. Por lo tanto, la colocación se debe determinar en el contexto de hasta dónde se extiende el control del administrador de red. En la ilustración, se muestra que el administrador de la empresa A, que incluye las redes 192.168.10.0/24 y 192.168.11.0/24 (denominadas .10 y .11 en este ejemplo), desea controlar el tráfico a la empresa B. Lo que el administrador desea específicamente es denegar el tráfico de Telnet y FTP de la red .11 a la red 192.168.30.0/24 de la empresa B (.30 en este ejemplo). Al mismo tiempo, se debe permitir que el resto del tráfico de la red .11 salga de la empresa A sin restricciones.</p>
+<p></p>
+<p>Existen varias formas de lograr estos objetivos. Una ACL extendida en el R3 que bloquee Telnet y FTP de la red .11 cumpliría el objetivo, pero el administrador no controla el R3. Además, esta solución también permite que el tráfico no deseado cruce toda la red y luego sea bloqueado en el destino. Esto afecta la eficacia general de la red. </p>
+<p></p>
+<p>Una mejor solución es colocar una ACL extendida en el R1 que especifique tanto las direcciones de origen como las de destino (redes .11 y .30, respectivamente) y que aplique la regla “no se permite que el tráfico de Telnet y FTP de la red .11 vaya a la red .30”. En la ilustración, se muestran dos interfaces posibles en el R1 para aplicar la ACL extendida: </p>
+<p>
+<ul>
+<li>
+<b>Interfaz S0/0/0 del R1 (de salida):</b> una de las posibilidades es aplicar una ACL extendida de salida en la interfaz S0/0/0. Debido a que la ACL extendida puede examinar tanto la dirección de origen como la de destino, solo se deniegan los paquetes FTP y Telnet de 192.168.11.0/24, y el R1 reenvía el resto del tráfico de 192.168.11.0/24 y de otras redes. La desventaja de colocar la ACL extendida en esta interfaz es que la ACL debe procesar todo el tráfico que sale de S0/0/0, incluidos los paquetes de 192.168.10.0/24.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Interfaz G0/1 del R1 (de entrada):</b> la aplicación de una ACL extendida al tráfico que ingresa a la interfaz G0/1 implica que solamente los paquetes de la red 192.168.11.0/24 están sujetos al procesamiento de la ACL en el R1. Debido a que el filtro se debe limitar solo a aquellos paquetes que salen de la red 192.168.11.0/24, la aplicación de una ACL extendida a G0/1 es la mejor solución.</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

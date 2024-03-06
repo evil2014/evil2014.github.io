@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.2.3.2 Selección de canales</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.2.3.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Operaciones de LAN inalámbrica</h1>
+        <h2>Administración de canales</h2>
+      </div>
+      <div id="content">
+<p>Los estándares IEEE 802.11b/g/n operan en las frecuencias de microondas del espectro de radio. Los estándares IEEE 802.11b/g/n operan en el espectro de 2,4 GHZ a 2,5 GHz, mientras que los estándares 802.11a/n/ac operan en la banda de 5 GHz, que está regulada en mayor medida. En la figura 1, se destaca qué estándar 802.11 opera en las bandas de 2,4 GHz, 5 GHz y 60 GHz. Cada espectro se subdivide en canales con una frecuencia y un ancho de banda centrales, similar a la manera en la que se subdividen las bandas de radio. </p>
+<p></p>
+<p>La banda de 2,4 GHz se subdivide en varios canales. El ancho de banda general combinado es de 22 MHz, y cada canal está separado por 5 MHz. El estándar 802.11b identifica 11 canales para América del Norte. El ancho de banda de 22 MHz, en combinación con la separación de 5 MHz entre las frecuencias, produce una superposición entre los canales sucesivos, como se muestra en la figura 2. </p>
+<p></p>
+<p>
+<b>Nota:</b> en Europa, hay 13 canales 802.11b.</p>
+<p></p>
+<p>La interferencia ocurre cuando una señal no deseada se superpone a un canal reservado para una señal deseada, lo que causa una posible distorsión. La solución a la interferencia es usar canales que no se superpongan. Específicamente, los canales 1, 6 y 11 son canales 802.11b no superpuestos, como se muestra en la figura 3.</p>
+<p></p>
+<p>Para las WLAN que requieren varios AP, se recomienda usar canales no superpuestos. Si existen tres AP adyacentes, use los canales 1, 6 y 11. Si existen solo dos, seleccione aquellos dos que estén separados por cinco canales, como los canales 5 y 10. La mayoría de los AP pueden seleccionar un canal automáticamente según los canales adyacentes usados. Algunos productos monitorean continuamente el espacio de radio para ajustar la configuración de canal de modo dinámico en respuesta a los cambios del ambiente.</p>
+<p></p>
+<p>A medida que las WLAN empresariales migran a 802.11n, pueden usar canales en una banda de 5 GHz más grande y menos poblada, lo que reduce la “denegación de servicio (DoS) accidental”. Por ejemplo, el estándar 802.11n usa OFDM y puede admitir cuatro canales no superpuestos, como se muestra en la figura 4. </p>
+<p></p>
+<p>El estándar 802.11n también puede usar la vinculación de canales, que combina dos canales de 20 MHz en canales de 40 MHz, como se muestra en la figura 5. La vinculación de canales aumenta el rendimiento, ya que usa dos canales a la vez para entregar datos.</p>
+<p></p>
+<p>Los AP más modernos pueden ajustar automáticamente los canales para evadir la interferencia. </p>
+<p></p>
+<p>
+<b>Nota:</b> IEEE 802.11ac usa OFDM con anchos de canal de 80, 160 y 80+80.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

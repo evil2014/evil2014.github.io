@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.3.1.2 Resumen</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.3.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resumen</h1>
+        <h2>Resumen</h2>
+      </div>
+      <div id="content">
+<p>Para que los administradores de red puedan monitorear y resolver problemas en una red, deben tener un conjunto completo de documentación de red precisa y actual que incluya los archivos de configuración, diagramas de topología física y lógica y un nivel de rendimiento de línea de base.</p>
+<p>Las tres etapas principales en la resolución de problemas son la recolección de síntomas, el aislamiento del problema y la corrección del problema. A veces, es necesario implementar temporalmente una solución alternativa al problema. Si la medida correctiva deseada no soluciona el problema, se debe eliminar el cambio. El administrador de red debe registrar todos los pasos del proceso. Para cada etapa, se debe establecer una política de resolución de problemas que incluya procedimientos de control de cambios. Una vez que se resuelve el problema, es importante comunicárselo a los usuarios, a cualquier persona que participe en el proceso de resolución de problemas y a los otros miembros del equipo de TI.</p>
+<p>El modelo OSI o el modelo TCP/IP se puede aplicar a un problema de red. Los administradores de red pueden usar el método ascendente, el método descendente o el método divide y vencerás. Otros métodos menos estructurados incluyen prueba y error, detección de las diferencias y sustitución.</p>
+<p>Las herramientas de software comunes que pueden ayudar con la resolución de problemas incluyen herramientas de administración de red del sistema, bases de conocimientos, herramientas de línea de base, analizadores de protocolo basados en host y EPC del IOS de Cisco. Las herramientas para la solución de problemas de hardware incluyen NAM, multímetros digitales, comprobadores de cables, analizadores de cables y analizadores de red portátiles. La información de registro del IOS de Cisco también se puede usar para identificar problemas potenciales.<b></b></p>
+<p>Existen síntomas y problemas característicos de la capa física, la capa de enlace de datos, la capa de red, la capa de transporte y la capa de aplicación que el administrador de red debe reconocer. Es posible que el administrador necesite prestar especial atención a la conectividad física, los gateways predeterminados, las tablas de direcciones MAC, la NAT y la información de routing.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

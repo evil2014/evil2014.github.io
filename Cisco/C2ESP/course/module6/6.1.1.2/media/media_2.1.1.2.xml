@@ -1,0 +1,48 @@
+﻿<textcomponents>
+<component id="ID_title">
+<text><![CDATA[<b>Comparación entre routing dinámico y estático</b>]]></text> 
+</component>
+
+<component id="ID_table">
+<text><![CDATA[<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4'  cellspacing="2">
+	<tr class="liner">
+		<td colspan='3' bgcolor='#0E6360' class="liner_top"><font size='1' color='#434321'><span style="color:#DAE17A">.</span></font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#077A77' valign="top" width='105'><font bgcolor='#097A76' color='#EFF8F7'>  </font></td>
+		<td bgcolor='#077A77' valign="top" width='175'><font bgcolor='#097A76' color='#EFF8F7'><b>Enrutamiento dinámico</b></font></td>
+		<td bgcolor='#077A77' valign="top" width='175'><font bgcolor='#097A76' color='#EFF8F7'><b>Enrutamiento estático</b></font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#077A77'><b><font color='#FFFFFF'>Complejidad de la configuración</font>  </b></td>
+		<td bgcolor='#EFF8F7'>Generalmente independiente del tamaño de la red</td>
+		<td bgcolor='#EFF8F7'>Aumentos en el tamaño de la red</td>
+	</tr>
+	<tr>
+		<td bgcolor='#077A77'><b><font color='#FFFFFF'>Cambios de topología</font>  </b></td>
+		<td bgcolor='#FFFFFF'>Se adapta automáticamente a los cambios de topología</td>
+		<td bgcolor='#FFFFFF'>Se requiere intervención del administrador</td>
+	</tr>
+	<tr>
+		<td bgcolor='#077A77'><b><font color='#FFFFFF'>Escalamiento</font>  </b></td>
+		<td bgcolor='#EFF8F7'>Adecuado para topologías simples y complejas</td>
+		<td bgcolor='#EFF8F7'>Adecuado para topologías simples</td>
+	</tr>
+	<tr>
+		<td bgcolor='#077A77'><b><font color='#FFFFFF'>Seguridad</font>  </b></td>
+		<td bgcolor='#FFFFFF'>Menos segura</td>
+		<td bgcolor='#FFFFFF'>Más segura</td>
+	</tr>
+	<tr>
+		<td bgcolor='#077A77'><b><font color='#FFFFFF'>Uso de recursos</font>  </b></td>
+		<td bgcolor='#EFF8F7'>Utiliza CPU, memoria y ancho de banda de enlace</td>
+		<td bgcolor='#EFF8F7'>Sin necesidad de recursos adicionales</td>
+	</tr>
+	<tr>
+		<td bgcolor='#077A77'><b><font color='#FFFFFF'>Facilidad de pronóstico</font>  </b></td>
+		<td bgcolor='#FFFFFF'>La ruta depende de la topología actual</td>
+		<td bgcolor='#FFFFFF'>La ruta a destino siempre es la misma</td>
+	</tr>
+</table>]]></text>
+</component>
+</textcomponents>

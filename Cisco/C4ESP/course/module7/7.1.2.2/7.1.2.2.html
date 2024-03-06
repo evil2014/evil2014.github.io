@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.1.2.2 VPN de acceso remoto</title>
+    <!--  -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.1.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>VPN</h1>
+        <h2>Tipos de VPNs</h2>
+      </div>
+      <div id="content">
+<p>
+<b>VPN de acceso remoto</b>
+</p>
+<p>Si se utiliza una VPN de sitio a sitio para conectar redes enteras, la VPN de acceso remoto admite las necesidades de los empleados a distancia, de los usuarios móviles y del tráfico de extranet de cliente a empresa. Una VPN de acceso remoto se crea cuando la información de VPN no se configura de forma estática, pero permite el intercambio dinámico de información y se puede habilitar y deshabilitar. Las VPN de acceso remoto admiten una arquitectura cliente/servidor, en la que el cliente VPN (host remoto) obtiene acceso seguro a la red empresarial mediante un dispositivo del servidor VPN en el perímetro de la red.</p>
+<p></p>
+<p>Las VPN de acceso remoto se utilizan para conectar hosts individuales que deben acceder a la red de su empresa de forma segura a través de Internet. La conectividad a Internet que utilizan los trabajadores a distancia suele ser una conexión por banda ancha, DSL, cable o inalámbrica, como se indica en la ilustración. </p>
+<p></p>
+<p>Es posible que se deba instalar un software de cliente VPN en la terminal del usuario móvil; por ejemplo, cada host puede tener el software Cisco AnyConnect Secure Mobility Client instalado. Cuando el host intenta enviar cualquier tipo de tráfico, el software Cisco AnyConnect VPN Client encapsula y cifra este tráfico. Después, los datos cifrados se envían por Internet al gateway VPN en el perímetro de la red de destino. Al recibirlos, el gateway VPN se comporta como lo hace para las VPN de sitio a sitio.</p>
+<p></p>
+<p>
+<b>Nota:</b> el software Cisco AnyConnect Secure Mobility Client se basa en las características que ofrecían anteriormente Cisco AnyConnect VPN Client y Cisco VPN Client para mejorar la experiencia de VPN permanente en más dispositivos portátiles basados en computadoras portátiles y smartphones. Este cliente admite IPv6.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

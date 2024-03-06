@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.1.2.2 Configuración del routing entre VLAN antiguo: configuración del switch</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.1.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración del routing entre VLAN</h1>
+        <h2>Configuración de routing entre VLAN antiguo</h2>
+      </div>
+      <div id="content">
+<p>Para configurar el routing entre VLAN antiguo, comience con la configuración del switch. </p>
+<p></p>
+<p>Como se muestra en la ilustración, el router R1 está conectado a los puertos del switch F0/4 y F0/5, que se configuraron para las VLAN 10 y 30 respectivamente.</p>
+<p></p>
+<p>Utilice el comando<span class="cmd"><b> vlan </b></span><span class="cmd"><i>id_vlan</i></span> del modo de configuración global para crear las VLAN. En este ejemplo las VLAN 10 y 30 se crearon en el switch S1. </p>
+<p></p>
+<p>Una vez que se crean las VLAN, los puertos de switch se asignan a las VLAN adecuadas. El comando <span class="cmd"><b>switchport access vlan </b></span><span class="cmd"><i>id_vlan</i></span> se ejecuta desde el modo de configuración de interfaz en el switch para cada interfaz a la cual se conecta el router.</p>
+<p></p>
+<p>En este ejemplo, las interfaces F0/4 y F0/11 se asignaron a la VLAN 10 con el comando <span class="cmd"><b>switchport access vlan 10</b></span>. Se utilizó el mismo proceso para asignar la interfaz F0/5 y F0/6 en el switch S1 a la VLAN 30. </p>
+<p></p>
+<p>Finalmente, para proteger la configuración y no perderla después de una recarga del switch, se ejecuta el comando <span class="cmd"><b>copy running-config startup-config</b></span> para guardar una copia de seguridad de la configuración en ejecución en la configuración de inicio.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,288 @@
+﻿<textcomponents> <!--Feedback for use by actionscript--> <!--Do not need to duplicate for each activity-->
+
+<component id="ID_blankTitle">
+<text><![CDATA[<b>Sin respuesta</b>]]></text>
+</component>
+
+<component id="ID_blankBody">
+<text><![CDATA[Seleccione una respuesta.]]></text>
+</component> <!--slide 1-->
+<component id="ID_s1_inst">
+<text><![CDATA[<b>Actividad (situación&nbsp;1): Identificar el comando para la resolución de problemas</b><br><br>En esta actividad, se incluyen cinco situaciones que muestran resultados de comandos habituales para la resolución de problemas de OSPF. En cada situación, identifique el comando de resolución de problemas indicado por el resultado. Haga clic en el círculo junto al comando correspondiente para indicar su respuesta. Haga clic en el botón&nbsp;2 para continuar la actividad. ]]></text>
+</component>
+
+
+<component id="ID_s1_correctTitle">
+<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id="ID_s1_correctBody">
+<text><![CDATA[Identificó correctamente el comando de resolución de problemas de la situación&nbsp;1. Haga clic en el botón&nbsp;2 para continuar. ]]></text>
+</component>
+
+<component id="ID_s1_incorrectTitle">
+<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id="ID_s1_incorrectBody">
+<text><![CDATA[Incorrecto. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_s1_output01'>
+	<text><![CDATA[&lt;resultado omitido&gt;]]></text>
+</component>
+
+<component id='ID_s1_output02'>
+	<text><![CDATA[&lt;resultado omitido&gt;]]></text>
+</component>
+
+<component id='ID_s1_output03'>
+	<text><![CDATA[&lt;resultado omitido&gt;]]></text>
+</component>
+
+<component id='ID_s1_txt01'>
+<text><![CDATA[<font face="_typewriter">show ip ospf interface</font>]]></text>
+</component>
+
+<component id='ID_s1_txt02'>
+<text><![CDATA[<font face="_typewriter">show ip route ospf</font>]]></text>
+</component>
+
+<component id='ID_s1_txt03'>
+<text><![CDATA[<font face="_typewriter">show ip protocols</font>]]></text>
+</component>
+
+<component id='ID_s1_txt04'>
+<text><![CDATA[<font face="_typewriter">show ip ospf</font>]]></text>
+</component>
+
+<component id='ID_s1_txt05'>
+<text><![CDATA[<font face="_typewriter">show ip ospf neighbor</font>]]></text>
+</component>
+
+<component id='ID_s1_txt06'>
+<text><![CDATA[<font face="_typewriter">show ip interface brief</font>]]></text>
+</component>
+
+<component id='ID_s1_check'>
+	<text><![CDATA[Verificar]]></text>
+</component>
+
+<component id='ID_s1_reset'>
+	<text><![CDATA[Restablecer]]></text>
+</component> <!--slide 2-->
+<component id="ID_s2_inst">
+<text><![CDATA[<b>Actividad (situación&nbsp;2): Identificar el comando para la resolución de problemas de OSPF  </b><br><br>Identifique cuál es el comando para la resolución de problemas de OSPF que produjo el resultado que se muestra. Haga clic en el círculo junto al comando correspondiente para indicar su respuesta. Haga clic en el botón&nbsp;3 para continuar. ]]></text>
+</component>
+
+<component id="ID_s2_correctTitle">
+<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id="ID_s2_correctBody">
+<text><![CDATA[Identificó correctamente el comando de resolución de problemas de la situación&nbsp;2. Haga clic en el botón&nbsp;3 para continuar. ]]></text>
+</component>
+
+<component id="ID_s2_incorrectTitle">
+<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id="ID_s2_incorrectBody">
+<text><![CDATA[Incorrecto. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_s2_txt01'>
+<text><![CDATA[<font face="_typewriter">show ip ospf interface</font>]]></text>
+</component>
+
+<component id='ID_s2_txt02'>
+<text><![CDATA[<font face="_typewriter">show ip route ospf</font>]]></text>
+</component>
+
+<component id='ID_s2_txt03'>
+<text><![CDATA[<font face="_typewriter">show ip protocols</font>]]></text>
+</component>
+
+<component id='ID_s2_txt04'>
+<text><![CDATA[<font face="_typewriter">show ip ospf</font>]]></text>
+</component>
+
+<component id='ID_s2_txt05'>
+<text><![CDATA[<font face="_typewriter">show ip ospf neighbor</font>]]></text>
+</component>
+
+<component id='ID_s2_txt06'>
+<text><![CDATA[<font face="_typewriter">show ip interface brief</font>]]></text>
+</component>
+
+<component id='ID_s2_check'>
+	<text><![CDATA[Verificar]]></text>
+</component>
+
+<component id='ID_s2_reset'>
+	<text><![CDATA[Restablecer]]></text>
+</component> <!--slide 3-->
+<component id="ID_s3_inst">
+<text><![CDATA[<b>Actividad (situación&nbsp;3): Identificar el comando para la resolución de problemas de OSPF  </b><br><br>Identifique cuál es el comando para la resolución de problemas de OSPF que produjo el resultado que se muestra. Haga clic en el círculo junto al comando correspondiente para indicar su respuesta. Haga clic en el botón 4 para continuar. ]]></text>
+</component>
+
+
+<component id="ID_s3_correctTitle">
+<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id="ID_s3_correctBody">
+<text><![CDATA[Identificó correctamente el comando de resolución de problemas de la situación&nbsp;3. Haga clic en el botón 4 para continuar. ]]></text>
+</component>
+
+<component id="ID_s3_incorrectTitle">
+<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id="ID_s3_incorrectBody">
+<text><![CDATA[Incorrecto. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+
+
+
+
+
+<component id='ID_s3_txt01'>
+<text><![CDATA[<font face="_typewriter">show ip ospf interface</font>]]></text>
+</component>
+
+<component id='ID_s3_txt02'>
+<text><![CDATA[<font face="_typewriter">show ip route ospf</font>]]></text>
+</component>
+
+<component id='ID_s3_txt03'>
+<text><![CDATA[<font face="_typewriter">show ip protocols</font>]]></text>
+</component>
+
+<component id='ID_s3_txt04'>
+<text><![CDATA[<font face="_typewriter">show ip ospf</font>]]></text>
+</component>
+
+<component id='ID_s3_txt05'>
+<text><![CDATA[<font face="_typewriter">show ip ospf neighbor</font>]]></text>
+</component>
+
+<component id='ID_s3_txt06'>
+<text><![CDATA[<font face="_typewriter">show ip interface brief</font>]]></text>
+</component>
+
+<component id='ID_s3_check'>
+	<text><![CDATA[Verificar]]></text>
+</component>
+
+<component id='ID_s3_reset'>
+	<text><![CDATA[Restablecer]]></text>
+</component> <!--slide 4-->
+<component id="ID_s4_inst">
+<text><![CDATA[<b>Actividad (situación&nbsp;4): Identificar el comando para la resolución de problemas de OSPF  </b><br><br>Identifique cuál es el comando para la resolución de problemas de OSPF que produjo el resultado que se muestra. Haga clic en el círculo junto al comando correspondiente para indicar su respuesta. Haga clic en el botón 5 para continuar.]]></text>
+</component>
+
+<component id="ID_s4_correctTitle">
+<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id="ID_s4_correctBody">
+<text><![CDATA[Identificó correctamente el comando de resolución de problemas de la situación&nbsp;4. Haga clic en el botón 5 para continuar. ]]></text>
+</component>
+
+<component id="ID_s4_incorrectTitle">
+<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id="ID_s4_incorrectBody">
+<text><![CDATA[Incorrecto. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_s4_txt01'>
+<text><![CDATA[<font face="_typewriter">show ip ospf interface</font>]]></text>
+</component>
+
+<component id='ID_s4_txt02'>
+<text><![CDATA[<font face="_typewriter">show ip route ospf</font>]]></text>
+</component>
+
+<component id='ID_s4_txt03'>
+<text><![CDATA[<font face="_typewriter">show ip protocols</font>]]></text>
+</component>
+
+<component id='ID_s4_txt04'>
+<text><![CDATA[<font face="_typewriter">show ip ospf</font>]]></text>
+</component>
+
+<component id='ID_s4_txt05'>
+<text><![CDATA[<font face="_typewriter">show ip ospf neighbor</font>]]></text>
+</component>
+
+<component id='ID_s4_txt06'>
+<text><![CDATA[<font face="_typewriter">show ip interface brief</font>]]></text>
+</component>
+
+<component id='ID_s4_check'>
+	<text><![CDATA[Verificar]]></text>
+</component>
+
+<component id='ID_s4_reset'>
+	<text><![CDATA[Restablecer]]></text>
+</component> <!--slide 5-->
+<component id="ID_s5_inst">
+<text><![CDATA[<b>Actividad (situación&nbsp;5): Identificar el comando para la resolución de problemas de OSPF  </b><br><br>Identifique cuál es el comando para la resolución de problemas de OSPF que produjo el resultado que se muestra. Haga clic en el círculo junto al comando correspondiente para indicar su respuesta. ]]></text>
+</component>
+
+
+<component id="ID_s5_correctTitle">
+<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id="ID_s5_correctBody">
+<text><![CDATA[Identificó correctamente el comando de resolución de problemas de la situación&nbsp;5. ]]></text>
+</component>
+
+<component id="ID_s5_incorrectTitle">
+<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id="ID_s5_incorrectBody">
+<text><![CDATA[Incorrecto. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+
+<component id='ID_s5_txt01'>
+<text><![CDATA[<font face="_typewriter">show ip ospf interface</font>]]></text>
+</component>
+
+<component id='ID_s5_txt02'>
+<text><![CDATA[<font face="_typewriter">show ip route ospf</font>]]></text>
+</component>
+
+<component id='ID_s5_txt03'>
+<text><![CDATA[<font face="_typewriter">show ip protocols</font>]]></text>
+</component>
+
+<component id='ID_s5_txt04'>
+<text><![CDATA[<font face="_typewriter">show ip ospf</font>]]></text>
+</component>
+
+<component id='ID_s5_txt05'>
+<text><![CDATA[<font face="_typewriter">show ip ospf neighbor</font>]]></text>
+</component>
+
+<component id='ID_s5_txt06'>
+<text><![CDATA[<font face="_typewriter">show ip interface brief</font>]]></text>
+</component>
+
+<component id='ID_s5_check'>
+	<text><![CDATA[Verificar]]></text>
+</component>
+
+<component id='ID_s5_reset'>
+	<text><![CDATA[Restablecer]]></text>
+</component>
+
+
+</textcomponents>

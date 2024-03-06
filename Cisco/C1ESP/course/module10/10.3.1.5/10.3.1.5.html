@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>10.3.1.5 Envío de datos a la aplicación correcta </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_10.3.1.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>El mensaje se escucha en todo el mundo</h1>
+        <h2>Póngase en movimiento</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Entrega de datos a la aplicación de destino correcta</b>
+</p>
+<p>Por último, se recibe la trama en el dispositivo final de destino. Cuando los datos pasan por el stack en el dispositivo de destino, estos se desencapsulan y se vuelven a armar. Los datos pasan continuamente por las capas, de la capa de acceso a la red a la capa de red y a la capa de transporte, hasta que llegan a la capa de aplicación para ser procesados. Pero ¿cómo puede estar seguro el dispositivo de que se identifique el proceso de aplicación correcto?</p>
+<p></p>
+<p>Como se muestra en la ilustración, recuerde que en la capa de transporte, la información que contiene el encabezado PDU identifica el proceso o el servicio específico que se ejecuta en el dispositivo del host de destino que funcionará con los datos. Los hosts, sean clientes o servidores en Internet, pueden ejecutar múltiples aplicaciones de red simultáneamente. Las personas que utilizan PC suelen tener un cliente de correo electrónico que se ejecuta al mismo tiempo que el explorador Web, un programa de mensajería instantánea, algún streaming media y, tal vez, incluso algún juego. Todos estos programas ejecutándose en forma separada son ejemplos de procesos individuales. </p>
+<p></p>
+<p>Ver una página Web invoca al menos un proceso de red. Hacer clic en un hipervínculo hace que un explorador Web se comunique con un servidor Web. Al mismo tiempo, en segundo plano, es posible que un cliente de correo electrónico envíe o reciba un correo y un colega o amigo envíe un mensaje instantáneo. </p>
+<p></p>
+<p>Piense en una computadora que tiene sólo una interfaz de red. Todos los streams de datos que crean las aplicaciones que se ejecutan en la PC entran y salen a través de esa interfaz; no obstante, los mensajes instantáneos no aparecen de repente en medio de documentos del procesador de textos y los correos electrónicos no aparecen en la interfaz de un juego.</p>
+<p></p>
+<p>Esto es porque los procesos induviduales que se ejecutan en los hosts de origen y destino se comunican unos con otros. Cada aplicación o servicio se representa por un número de puerto en la Capa 4. Un diálogo único entre dispositivos se identifica con un par de números de puerto de origen y de destino de Capa 4 que son representativos de las dos aplicaciones de comunicación. Cuando los datos se reciben en el host, se examina el número de puerto para determinar qué aplicación o proceso es el destino correcto de los datos.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

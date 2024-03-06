@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.3.1.1 Motivación para el uso de PPPoE</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.3.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de conectividad xDSL</h1>
+        <h2>Descripción general de PPPoE</h2>
+      </div>
+      <div id="content">
+<p>Además de comprender las diversas tecnologías disponibles para el acceso a Internet de banda ancha, también es importante comprender el protocolo de capa de enlace de datos subyacente que utiliza el ISP para formar una conexión. </p>
+<p></p>
+<p>Un protocolo de capa de enlace de datos que usan generalmente los ISP es el protocolo punto a punto (PPP). PPP se puede utilizar en todos los enlaces seriales, incluidos aquellos enlaces creados con módems de dial-up analógicos e ISDN. Actualmente, es probable que el enlace que va de un usuario de dial-up a un ISP mediante módems analógicos utilice PPP. En la figura 1, se muestra una representación básica de esa conexión de dial-up analógico con PPP. </p>
+<p></p>
+<p>Además, los ISP suelen usar PPP como protocolo de enlace de datos a través de las conexiones de banda ancha. Esto se debe a varios motivos. En primer lugar, PPP admite la capacidad de asignar direcciones IP a los extremos remotos de un enlace PPP. Cuando PPP está habilitado, los ISP pueden utilizarlo para asignar una dirección IPv4 pública a cada cliente. Lo más importante es que PPP admite la autenticación CHAP. A menudo, los ISP prefieren utilizar CHAP para autenticar a los clientes, ya que, durante la autenticación, los ISP pueden revisar los registros contables para determinar si el cliente pagó la factura antes de permitirle conectarse a Internet.</p>
+<p></p>
+<p>Estas tecnologías salieron al mercado en el siguiente orden, con una compatibilidad variable para PPP:</p>
+<p></p>
+<p>1. Módems análogos para dial-up que podían utilizar PPP y CHAP</p>
+<p>2. ISDN para dial-up que podían utilizar PPP y CHAP</p>
+<p>3. DSL, que no establecía un enlace punto a punto y no admitía PPP ni CHAP</p>
+<p></p>
+<p>Los ISP consideran que PPP es valioso debido a las características de autenticación, contabilidad y administración de enlaces. Los clientes valoran la facilidad y la disponibilidad de la conexión Ethernet. Sin embargo, los enlaces Ethernet no admiten PPP de forma nativa. Como solución a este problema, se creó PPP por Ethernet (PPPoE). Como se muestra en la figura 2, PPPoE permite el envío de tramas PPP encapsuladas dentro de tramas de Ethernet. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

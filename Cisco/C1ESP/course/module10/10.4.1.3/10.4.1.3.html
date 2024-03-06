@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>10.4.1.3 Packet Tracer para varios usuarios: implementación de servicios</title>
+    <!--  -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_10.4.1.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resumen</h1>
+        <h2>Resumen</h2>
+      </div>
+      <div id="content">
+<p>En esta actividad para varios usuarios, dos estudiantes (jugadores) cooperan para implementar y verificar servicios, incluso DHCP, HTTP, correo electrónico, DNS y FTP. El reproductor del lado servidor implementará y verificará servicios en un servidor. El reproductor del lado cliente configurará dos clientes y verificará el acceso a los servicios.</p>
+<p></p>
+<p>
+<a href="../../files/10.4.1.3%20Packet%20Tracer%20Multiuser%20-%20Implement%20Services%20Instructions.pdf" target="_blank">Función Multiusuario de Packet Tracer: Implementación de servicios (instrucciones)</a>
+</p>
+<p></p>
+<p>
+<a href="../../files/10.4.1.3%20Packet%20Tracer%20Multiuser%20-%20Implement%20Services%20-%20Client%20Side.pka" target="_blank">Función Multiusuario de Packet Tracer: Implementación de servicios, lado cliente (PKA)</a>
+</p>
+<p>
+<a href="../../files/10.4.1.3%20Packet%20Tracer%20Multiuser%20-%20Implement%20Services%20-%20Server%20Side.pka" target="_blank">Función Multiusuario de Packet Tracer: Implementación de servicios, lado servidor (PKA)</a>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

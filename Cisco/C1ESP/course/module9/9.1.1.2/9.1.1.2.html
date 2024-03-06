@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.1.1.2 Comunicación entre subredes</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.1.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>División de una red IPv4 en subredes</h1>
+        <h2>Segmentación de red</h2>
+      </div>
+      <div id="content">
+<p>Se necesita un router para que dispositivos en redes distintas puedan comunicarse. Los dispositivos en una red utilizan la interfaz del router conectada a su LAN como gateway predeterminado. El router procesa el tráfico destinado a un dispositivo en una red remota y lo reenvía hacia el destino. Para determinar si el tráfico es local o remoto, el router utiliza la máscara de subred. </p>
+<p></p>
+<p>En un espacio de red dividido en subredes, esto funciona exactamente de la misma manera. Como se muestra en la ilustración, mediante la división en subredes se crean varias redes lógicas a partir de un único bloque de direcciones o una única dirección de red. Cada subred se considera un espacio de red independiente. Los dispositivos en la misma subred deben utilizar una dirección, una máscara de subred y un gateway predeterminado que se correspondan con la subred de la cual forman parte. </p>
+<p></p>
+<p>El tráfico no puede reenviarse entre subredes sin un router. Cada interfaz en el router debe tener una dirección de host IPv4 que pertenezca a la red o a la subred a la cual se conecta la interfaz del router. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

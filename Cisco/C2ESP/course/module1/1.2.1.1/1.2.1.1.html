@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.2.1.1 Switching como concepto general en tecnología de redes y telecomunicaciones</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.2.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>El entorno conmutado</h1>
+        <h2>Reenvío de tramas</h2>
+      </div>
+      <div id="content">
+<p>El concepto de switching y reenvío de tramas es universal en la tecnología de redes y en las telecomunicaciones. En las redes LAN, WAN y en la red pública de telefonía conmutada (PSTN), se usan diversos tipos de switches. El concepto fundamental de switching hace referencia a un dispositivo que toma una decisión según dos criterios:</p>
+<p>
+<ul>
+<li>Puerto de entrada </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Dirección de destino</li>
+</ul>
+</p>
+<p>La decisión sobre cómo un switch reenvía el tráfico se toma en relación con el flujo de ese tráfico. El término “entrada” se usa para describir el lugar de un puerto por donde ingresa una trama al dispositivo. El término “salida” se usa para describir las tramas que salen del dispositivo desde un puerto determinado. </p>
+<p></p>
+<p>Cuando un switch toma una decisión, lo hace sobre la base del puerto de entrada y la dirección de destino del mensaje. </p>
+<p></p>
+<p>Los switches LAN mantienen una tabla que usan para determinar cómo reenviar el tráfico a través del switch. Haga clic en el botón Reproducir de la ilustración para ver una animación del proceso de switching. En este ejemplo: </p>
+<p>
+<ul>
+<li>Si un mensaje ingresa al puerto 1 del switch y la dirección de destino es EA, el switch reenvía el tráfico por el puerto 4. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Si un mensaje ingresa al puerto 5 del switch y la dirección de destino es EE, el switch reenvía el tráfico por el puerto 1. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Si un mensaje ingresa al puerto 3 del switch y la dirección de destino es AB, el switch reenvía el tráfico por el puerto 6. </li>
+</ul>
+</p>
+<p></p>
+<p>La única inteligencia que poseen los switches LAN es la capacidad de usar la tabla para reenviar el tráfico según el puerto de entrada y la dirección de destino de un mensaje. Con los switches LAN, hay solamente una tabla de switching principal que describe una asociación estricta entre las direcciones y los puertos; por lo tanto, un mensaje con una dirección de destino determinada siempre sale por el mismo puerto de salida, independientemente del puerto de entrada por el que ingresa. </p>
+<p></p>
+<p>Los switches LAN Cisco reenvían tramas de Ethernet según la dirección MAC de destino de las tramas.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

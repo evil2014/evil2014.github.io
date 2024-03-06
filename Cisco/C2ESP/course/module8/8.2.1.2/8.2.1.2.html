@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.2.1.2 Modo de configuración de OSPF del router</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.2.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de OSPFv2 de área única</h1>
+        <h2>ID del router OSPF</h2>
+      </div>
+      <div id="content">
+<p>En la figura 1, se muestra la topología de referencia para este tema. OSPFv2 se habilita con el comando <span class="cmd"><b>router ospf </b></span><span class="cmd"><i>id-proceso</i></span> del modo de configuración global. El valor <span class="cmd"><i>id-proceso</i></span> representa un número entre 1 y 65 535, y lo elige el administrador de red. El valor <span class="cmd"><i>id-proceso</i></span> tiene importancia en el ámbito local, lo que significa que no necesita ser el mismo valor en los demás routers OSPF para establecer adyacencias con esos vecinos. </p>
+<p></p>
+<p>En la figura 2, se proporciona un ejemplo del ingreso al modo de configuración de OSPF del router en el R1. </p>
+<p></p>
+<p>
+<b>Nota:</b> la lista de comandos se modificó para que se muestren solo los comandos que se utilizan en este capítulo. Para obtener una lista completa de comandos, utilice los verificadores de sintaxis de la figura 3.</p>
+<p></p>
+<p>Utilice el verificador de sintaxis de la figura 3 para ingresar al modo de configuración de router OSPF en el R2 y enumerar los comandos disponibles en la petición de entrada. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

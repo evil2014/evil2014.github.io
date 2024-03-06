@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.5.1.1 Actividad de clase: Dibuje su concepto actual de Internet</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.5.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resumen</h1>
+        <h2>Resumen</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Dibuje su concepto actual de Internet</b>
+</p>
+<p></p>
+<p>En esta actividad, utilizará el conocimiento que adquirió en el capítulo 1 y el documento de la actividad de creación de modelos que preparó al comienzo de este capítulo. También puede consultar las otras actividades realizadas en este capítulo, incluidas las actividades de Packet Tracer.</p>
+<p></p>
+<p>Dibuje un esquema de Internet como la ve ahora. Utilice los íconos presentados en el capítulo de medios, dispositivos finales y dispositivos intermediarios.</p>
+<p></p>
+<p>En el dibujo revisado, tal vez desee incluir alguno de los siguientes elementos:</p>
+<p>
+<ul>
+<li>WAN </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>LAN</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Computación en la nube</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Proveedores de servicios de Internet (niveles)</li>
+</ul>
+</p>
+<p></p>
+<p>Conserve el dibujo en formato impreso. Si se trata de un documento electrónico, guárdelo en una ubicación del servidor proporcionada por el instructor. Esté preparado para compartir y explicar su trabajo revisado en clase.</p>
+<p></p>
+<p>
+<a href="../../files/1.5.1.1%20Class%20Activity%20-%20Draw%20Your%20Concept%20of%20the%20Internet%20Now%20Instructions.pdf" target="_blank">Actividad de clase: Dibuje su concepto actual de Internet (instrucciones)</a>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

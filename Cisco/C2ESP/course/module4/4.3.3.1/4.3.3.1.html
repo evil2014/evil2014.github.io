@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.3.3.1 Rutas estáticas</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.3.3.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Funcionamiento del router</h1>
+        <h2>Rutas descubiertas estáticamente</h2>
+      </div>
+      <div id="content">
+<p>Después de configurar las interfaces conectadas directamente y de agregarlas a la tabla de routing, se puede implementar el routing estático o dinámico. </p>
+<p></p>
+<p>Las rutas estáticas se configuran de forma manual. Estas definen una ruta explícita entre dos dispositivos de red. A diferencia de los protocolos de routing dinámico, las rutas estáticas no se actualizan automáticamente y se deben reconfigurar de forma manual si se modifica la topología de la red. Los beneficios de utilizar rutas estáticas incluyen la mejora de la seguridad y la eficacia de los recursos. Las rutas estáticas consumen menos ancho de banda que los protocolos de routing dinámico, y no se usa ningún ciclo de CPU para calcular y comunicar las rutas. La principal desventaja de usar rutas estáticas es que no se vuelven a configurar de manera automática si se modifica la topología de la red.</p>
+<p></p>
+<p>Existen dos tipos de rutas estáticas comunes en la tabla de routing:</p>
+<p>
+<ul>
+<li>Ruta estática a una red específica</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Ruta estática predeterminada</li>
+</ul>
+</p>
+<p></p>
+<p>Las rutas estáticas se pueden configurar para llegar a una red remota específica. Las rutas estáticas IPv4 se configuran con el comando de configuración global <span class="cmd"><b>ip route </b></span><span class="cmd"><i>máscara de red</i></span><span class="cmd"> {</span><span class="cmd"><i>ip-siguiente-salto</i></span><span class="cmd"> | </span><span class="cmd"><i>interfaz-salida</i></span><span class="cmd">}</span><span class="cmd"><b></b></span>. Las rutas estáticas se identifican en la tabla de routing con el código “<span class="cmd">S</span>”.</p>
+<p></p>
+<p>Las rutas estáticas predeterminadas son similares a un gateway predeterminado en un host. Las rutas estáticas predeterminadas especifican el punto de salida que se debe utilizar cuando la tabla de routing no contiene una ruta para la red de destino. </p>
+<p></p>
+<p>Las rutas estáticas predeterminadas son útiles cuando un router tiene solo un punto de salida a otro router, por ejemplo, cuando el router se conecta a un router central o a un proveedor de servicios. </p>
+<p></p>
+<p>Para configurar una ruta estática predeterminada IPv4, utilice el comando de configuración global <span class="cmd"><b>ip route 0.0.0.0 0.0.0.0</b></span><span class="cmd"> {</span><span class="cmd"><i>interfaz-salida</i></span><span class="cmd"> | </span><span class="cmd"><i>ip-siguiente-salto</i></span><span class="cmd">}</span>.</p>
+<p></p>
+<p>En la ilustración, se proporciona una situación simple sobre cómo se pueden aplicar las rutas predeterminadas y estáticas. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

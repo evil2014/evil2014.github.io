@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>10.1.1.4 Mensajes Discover (Detección) y Offer (Oferta) de DHCPv4</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_10.1.1.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolo de configuración dinámica de host v4</h1>
+        <h2>Funcionamiento de DHCPv4</h2>
+      </div>
+      <div id="content">
+<p>Si un cliente está configurado para recibir su configuración IPv4 dinámicamente y desea unirse a la red, solicita valores de direccionamiento del servidor de DHCPv4. El cliente transmite un mensaje DHCPDISCOVER en su red local cuando arranca o detecta una conexión de red activa. Dado que el cliente no tiene forma de obtener información acerca de la subred a la que pertenece, el mensaje DHCPDISCOVER es una difusión IPv4 (dirección IPv4 de destino 255.255.255.255). El cliente aún no tiene una dirección IPv4 configurada, de modo que se utiliza la dirección IPv4 de origen 0.0.0.0. </p>
+<p></p>
+<p>Como se muestra en la figura 1, la dirección IPv4 del cliente (CIADDR), la dirección de gateway predeterminado (GIADDR) y la máscara de subred están marcados para indicar que se utiliza la dirección 0.0.0.0. </p>
+<p></p>
+<p>
+<b>Nota:</b> la información desconocida se envía como 0.0.0.0.</p>
+<p></p>
+<p>Cuando el servidor de DHCPv4 recibe el mensaje DHCPDISCOVER, responde con un mensaje DHCPOFFER. Este mensaje incluye información de configuración inicial para el cliente, como la dirección IPv4 que el servidor ofrece, la máscara de subred, la duración del arrendamiento y la dirección IPv4 del servidor de DHCPv4 que hace la oferta. </p>
+<p></p>
+<p>Es posible configurar el mensaje DHCPOFFER para que incluya otra información, como el tiempo de renovación del arrendamiento y la dirección DNS. </p>
+<p></p>
+<p>Como se muestra en la figura 2, el servidor de DHCP responde al mensaje DHCPDISCOVER asignando valores a la CIADDR y a la máscara de subred. La trama se crea mediante la dirección de hardware del cliente (CHADDR) y se envía al cliente que realiza la solicitud.</p>
+<p></p>
+<p>El cliente y el servidor envían mensajes de acuse de recibo, y finaliza el proceso. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

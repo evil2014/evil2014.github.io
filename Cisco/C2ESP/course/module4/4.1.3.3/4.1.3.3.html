@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.1.3.3 Configuración de una interfaz de router IPv6</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.1.3.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración inicial de un router</h1>
+        <h2>Configuración básica de un router</h2>
+      </div>
+      <div id="content">
+<p>La configuración de una interfaz IPv6 es similar a la configuración de una interfaz para IPv4. La mayoría de los comandos de configuración y verificación de IPv6 del IOS de Cisco son muy similares a sus equivalentes de IPv4. En muchos casos, la única diferencia es el uso de <span class="cmd"><b>ipv6</b></span> en lugar de <span class="cmd"><b>ip</b></span> en los comandos.</p>
+<p></p>
+<p>Se debe realizar lo siguiente con la interfaz IPv6: </p>
+<p>
+<ul>
+<li>
+<b>Configurar la interfaz con una máscara de subred y una dirección IPv6:</b> use el comando de configuración de interfaz <span class="cmd"><b>ipv6 address </b></span><span class="cmd"><i>dirección-ipv6</i></span><span class="cmd">/</span><span class="cmd"><i>longitud-prefijo </i></span><span class="cmd"><b>[link-local | eui-64]</b></span>.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Activar la interfaz:</b> la interfaz se debe activar mediante el comando <span class="cmd"><b>no shutdown</b></span>.</li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Nota:</b> una interfaz puede generar su propia dirección link-local de IPv6 sin tener una dirección de unidifusión global mediante el comando de configuración de interfaz <span class="cmd"><b>ipv6 enable</b></span>. </p>
+<p></p>
+<p>A diferencia de IPv4, las interfaces IPv6 generalmente tienen más de una dirección IPv6. Como mínimo, los dispositivos IPv6 deben tener una dirección link-local de IPv6, pero también es muy probable que tengan una dirección de unidifusión global de IPv6. IPv6 también admite la capacidad de que una interfaz tenga varias direcciones de unidifusión global de IPv6 de la misma subred. Los siguientes comandos se pueden usar para crear, de forma estática, una dirección de unidifusión global o link-local de IPv6:</p>
+<p>
+<ul>
+<li>
+<span class="cmd">
+<b>ipv6 address </b>
+</span>
+<span class="cmd">
+<i>dirección-ipv6</i>
+</span>
+<span class="cmd">/</span>
+<span class="cmd">
+<i>longitud-prefijo </i>
+</span>: crea una dirección de unidifusión global de IPv6 según lo especificado.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<span class="cmd">
+<b>ipv6 address </b>
+</span>
+<span class="cmd">
+<i>dirección-ipv6</i>
+</span>
+<span class="cmd">/</span>
+<span class="cmd">
+<i>longitud-prefijo </i>
+</span>
+<span class="cmd">
+<b>eui-64</b>
+</span>
+<b></b>: configura una dirección de unidifusión global de IPv6 con un identificador de interfaz (ID) en los 64 bits de bajo orden de la dirección IPv6 mediante el proceso EUI-64. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<span class="cmd">
+<b>ipv6 address </b>
+</span>
+<span class="cmd">
+<i>dirección-ipv6</i>
+</span>
+<span class="cmd">/</span>
+<span class="cmd">
+<i>longitud-prefijo </i>
+</span>
+<span class="cmd">
+<b>Link-local</b>
+</span>
+<b></b>: configura una dirección link-local estática en la interfaz que se usa en lugar de la dirección link-local que se configura automáticamente cuando se asigna la dirección de unidifusión global de IPv6 a la interfaz, o cuando se habilita con el comando de interfaz <span class="cmd"><b>ipv6 enable</b></span>. Recuerde que el comando de interfaz <span class="cmd"><b>ipv6 enable</b></span> se usa para crear de forma automática una dirección link-local de IPv6, así se haya asignado una dirección de unidifusión global de IPv6 o no.</li>
+</ul>
+</p>
+<p></p>
+<p>En la topología de ejemplo que se muestra en la figura 1, el R1 se debe configurar para que admita las siguientes direcciones de red IPv6: </p>
+<p>
+<ul>
+<li>2001:0DB8:ACAD:0001:/64 o 2001:DB8:ACAD:1::/64</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>2001:0DB8:ACAD:0002:/64 o 2001:DB8:ACAD:2::/64</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>2001:0DB8:ACAD:0003:/64 o 2001:DB8:ACAD:3::/64</li>
+</ul>
+</p>
+<p></p>
+<p>Cuando el router se configura con el comando de configuración global <span class="cmd"><b>ipv6 unicast-routing</b></span>, el router comienza a enviar mensajes de anuncio de router ICMPv6 por la interfaz. Esto permite que una computadora que está conectada a la interfaz configure una dirección IPv6 y establezca un gateway predeterminado de forma automática, sin necesidad de utilizar los servicios de un servidor de DHCPv6. Por otra parte, una computadora conectada a la red IPv6 puede obtener la dirección IPv6 asignada estáticamente, como se muestra en la figura 2. Observe que la dirección de gateway predeterminado configurada para la PC1 es la dirección de unidifusión global de IPv6 de la interfaz GigabitEthernet 0/0 del R1.</p>
+<p></p>
+<p>Las interfaces del router en la topología de ejemplo se deben configurar y habilitar como se muestra en las figuras 3 a 5. </p>
+<p></p>
+<p>Utilice el verificador de sintaxis de la figura 6 para configurar las direcciones de unidifusión global de IPv6 en el router R2.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

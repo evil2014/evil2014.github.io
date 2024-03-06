@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.1.2.1 Redes de varios tamaños</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.1.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Conectados globalmente</h1>
+        <h2>Provisión de recursos en una red</h2>
+      </div>
+      <div id="content">
+<p>Hay redes de todo tamaño. Pueden ir desde redes simples, compuestas por dos PC, hasta redes que conectan millones de dispositivos. </p>
+<p></p>
+<p>Las redes simples que se instalan en hogares permiten compartir recursos, como impresoras, documentos, imágenes y música, entre algunas PC locales. </p>
+<p></p>
+<p>Con frecuencia, las personas que trabajan desde una oficina doméstica o remota y necesitan conectarse a una red corporativa u otros recursos centralizados configuran redes de oficinas domésticas y de oficinas pequeñas. Además, muchos emprendedores independientes utilizan redes de oficinas domésticas y de oficinas pequeñas para publicitar y vender productos, hacer pedidos y comunicarse con clientes. La comunicación a través de una red normalmente es más eficaz y económica que las formas de comunicación tradicionales, como puede ser el correo estándar o las llamadas telefónicas de larga distancia.</p>
+<p></p>
+<p>En las empresas y grandes organizaciones, las redes se pueden utilizar incluso de manera más amplia para permitir que los empleados proporcionen consolidación y almacenamiento de la información en los servidores de red, así como acceso a dicha información. Las redes también proporcionan formas de comunicación rápida, como el correo electrónico y la mensajería instantánea, y permiten la colaboración entre empleados. Además de las ventajas que perciben en el nivel interno, muchas organizaciones utilizan sus redes para ofrecer productos y servicios a los clientes a través de su conexión a Internet.</p>
+<p></p>
+<p>Internet es la red más extensa que existe. De hecho, el término Internet significa “red de redes”. Internet es, literalmente, una colección de redes privadas y públicas interconectadas, como las que se describen más arriba. Por lo general, las redes de empresas, de oficinas pequeñas e incluso las redes domésticas proporcionan una conexión a Internet compartida.</p>
+<p></p>
+<p>Es increíble la rapidez con la que Internet se convirtió en una parte integral de nuestras rutinas diarias.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

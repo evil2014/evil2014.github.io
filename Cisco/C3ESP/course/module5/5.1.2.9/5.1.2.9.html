@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.1.2.9 Cambio de la prioridad OSPF</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.1.2.9_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuraciones avanzadas de OSPF de área única </h1>
+        <h2>OSPF en redes de accesos múltiples</h2>
+      </div>
+      <div id="content">
+<p>En la topología de la figura 1, el R3 es el DR y el R2 es el BDR. Se decidió lo siguiente:</p>
+<p>
+<ul>
+<li>El R1 debe ser el DR y se configura con una prioridad de 255.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>El R2 debe ser el BDR y se le deja la prioridad predeterminada de 1.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>El R3 nunca debe ser un DR ni BDR y se configura con una prioridad de 0.</li>
+</ul>
+</p>
+<p></p>
+<p>En la figura 2, se cambia la prioridad de la interfaz Gigabit 0/0 del R1 de 1 a 255. </p>
+<p></p>
+<p>En la figura 3, se cambia la prioridad de la interfaz Gigabit 0/0 del R3 de 1 a 0. </p>
+<p></p>
+<p>Los cambios no tienen efecto automáticamente, debido a que el DR y el BDR ya fueron seleccionados. Por lo tanto, la elección de OSPF se debe negociar mediante uno de los siguientes métodos:</p>
+<p></p>
+<p>
+<ul>
+<li>Desactivar las interfaces del router y volver a habilitarlas de a una: primero el DR, luego el BDR y después todos los demás routers.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Restablecer el proceso OSPF mediante el comando <span class="cmd"><b>clear ip ospf process</b></span> del modo EXEC privilegiado en todos los routers.</li>
+</ul>
+</p>
+<p></p>
+<p>En la figura 4, se muestra cómo borrar el proceso OSPF en el R1. Suponga que el comando <span class="cmd"><b>clear ip ospf process</b></span> del modo EXEC privilegiado también se configuró en el R2 y el R3. Observe la información del estado de OSPF que se genera.</p>
+<p></p>
+<p>El resultado que se muestra en la figura 5 confirma que el R1 ahora es el DR, con una prioridad de 255, e identifica las nuevas adyacencias de vecinos del R1. </p>
+<p></p>
+<p>Utilice el verificador de sintaxis de la figura 6 para verificar la función y las adyacencias del R2 y el R3.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

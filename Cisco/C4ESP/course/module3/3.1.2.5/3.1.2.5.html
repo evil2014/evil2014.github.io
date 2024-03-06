@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>3.1.2.5 Resolución de problemas de una interfaz serial</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_3.1.2.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Descripción general de conexión serial punto a punto</h1>
+        <h2>Encapsulación HDLC</h2>
+      </div>
+      <div id="content">
+<p>El resultado del comando <span class="cmd"><b>show interfaces serial</b></span> muestra información específica de las interfaces seriales. Cuando se configura HDLC, debe figurar <span class="cmd">encapsulation HDLC</span> en el resultado, como se destaca en la figura 1. <span class="cmd">Serial 0/0/0 is up, Line Protocol is up</span> indica que la línea está activa y en funcionamiento; <span class="cmd">encapsulation HDLC</span> indica que la encapsulación serial predeterminada (HDLC) está habilitada.</p>
+<p></p>
+<p>El comando <span class="cmd"><b>show interfaces serial</b></span> devuelve uno de seis estados posibles: </p>
+<p>
+<ul>
+<li>Serial x is up, line protocol is up </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Serial x is down, line protocol is down </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Serial x is up, line protocol is down </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Serial x is up, line protocol is up (looped) </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Serial x is up, line protocol is down (disabled) </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Serial x está desactivado administrativamente, el protocolo de línea está desactivado</li>
+</ul>
+</p>
+<p></p>
+<p>De los seis estados posibles, cinco son estados problemáticos. En la figura 2, se muestran los cinco estados problemáticos, los problemas asociados a cada estado y la forma de resolver el problema.</p>
+<p></p>
+<p>El comando <span class="cmd"><b>show controllers</b></span> es otra herramienta de diagnóstico importante para la resolución de problemas de líneas seriales, como se muestra en la figura 3. El resultado indica el estado de los canales de la interfaz y si hay un cable conectado a la interfaz o no. En la ilustración, la interfaz serial 0/0/0 tiene un cable DCE V.35 conectado. La sintaxis de los comandos varía, según la plataforma. Los routers Cisco serie 7000 utilizan una tarjeta controladora cBus para conectar enlaces seriales. Con estos routers, utilice el comando <span class="cmd"><b>show controllers cbus</b></span>. </p>
+<p></p>
+<p>Si el resultado de la interfaz eléctrica aparece como <span class="cmd">UNKNOWN</span> en lugar de <span class="cmd">V.35, EIA/TIA-449</span> o algún otro tipo de interfaz eléctrica, es probable que el problema sea un cable mal conectado. También es posible que exista un problema con el cableado interno de la tarjeta. Si la interfaz eléctrica es desconocida, el resultado correspondiente para el comando <span class="cmd"><b>show interfaces serial <x></b></span> muestra que la interfaz y el protocolo de línea están inactivos.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

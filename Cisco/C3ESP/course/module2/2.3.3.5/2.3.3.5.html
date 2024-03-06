@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.3.3.5 Reparación de un problema del árbol de expansión</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.3.3.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de árbol de expansión</h1>
+        <h2>Problemas de configuración de STP</h2>
+      </div>
+      <div id="content">
+<p>Una forma de corregir la falla del árbol de expansión es eliminar de manera manual los enlaces redundantes en la red conmutada, ya sea físicamente o mediante la configuración, hasta eliminar todos los bucles de la topología. Cuando se rompen los bucles, las cargas de tráfico y de CPU deberían disminuir a niveles normales, y la conectividad a los dispositivos debería restaurarse.</p>
+<p></p>
+<p>Si bien esta intervención restaura la conectividad a la red, el proceso de resolución de problemas no finaliza aquí. Se eliminó toda la redundancia de la red conmutada, y ahora se deben restaurar los enlaces redundantes.</p>
+<p></p>
+<p>Si no se resolvió la causa subyacente de la falla del árbol de expansión, es probable que al restaurar los enlaces redundantes se desate una nueva tormenta de difusión. Antes de restaurar los enlaces redundantes, determine y corrija la causa de la falla del árbol de expansión. Controle atentamente la red para asegurarse de que se haya resuelto el problema.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>3.2.3.4 Opciones de configuración del PPP</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_3.2.3.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Funcionamiento de PPP</h1>
+        <h2>Sesiones para PPP</h2>
+      </div>
+      <div id="content">
+<p>PPP se puede configurar para admitir diversas funciones optativas, como se muestra en la figura 1. Estas funciones optativas incluyen lo siguiente:</p>
+<p></p>
+<p>
+<ul>
+<li>Autenticación mediante PAP o CHAP</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Compresión mediante Stacker o Predictor</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Multienlace que combina dos o más canales para aumentar el ancho de banda WAN</li>
+</ul>
+</p>
+<p></p>
+<p>Para negociar el uso de estas opciones de PPP, las tramas de establecimiento de enlace LCP incluyen información de la opción en el campo de datos de la trama LCP, como se muestra en la figura 2. Si no se incluye una opción de configuración en una trama LCP, se supone el valor predeterminado para esa opción de configuración. </p>
+<p></p>
+<p>Esta fase se completa cuando se envía y se recibe una trama de acuse de recibo de la configuración.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

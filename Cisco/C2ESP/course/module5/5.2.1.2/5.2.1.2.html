@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.2.1.2 Verificación de la configuración del switch</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.2.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resolución de problemas de routing entre VLAN</h1>
+        <h2>Problemas de configuración entre VLAN</h2>
+      </div>
+      <div id="content">
+<p>Cuando sospeche que hay un problema con una configuración del switch, utilice los distintos comandos de verificación para examinar la configuración e identificar el problema.</p>
+<p></p>
+<p>En el resultado de pantalla de la figura 1, se muestran los resultados de los comandos <span class="cmd"><b>show interfaces </b></span><span class="cmd"><i>id-interfaz</i></span><span class="cmd"><b> switchport</b></span>. Supongamos que ejecutó estos comandos porque sospecha que la VLAN 10 no se asignó al puerto F0/4 en el switch S1. En el área superior resaltada se muestra que el puerto F0/4 en el switch S1 está en modo de acceso, pero no se muestra que se haya asignado directamente a la VLAN 10. En el área inferior resaltada se confirma que el puerto F0/4 todavía está establecido en la VLAN predeterminada. Los comandos <span class="cmd"><b>show running-config</b></span> y <span class="cmd"><b>show interface </b></span><span class="cmd"><i>id-interfaz</i></span><span class="cmd"><b> switchport</b></span> son útiles para identificar problemas de asignación de VLAN y de configuración de puertos.</p>
+<p></p>
+<p>En la figura 2 se muestra que la comunicación entre el router R1 y el switch S1 se interrumpió después de modificar la configuración de un dispositivo. Se supone que el enlace entre el router y el switch es un enlace troncal. En el resultado de pantalla, se muestran los resultados de los comandos <span class="cmd"><b>show interface </b></span><span class="cmd"><i>id_interfaz</i></span><span class="cmd"><b> switchport</b></span> y <span class="cmd"><b>show running-config</b></span>. El área superior resaltada confirma que el puerto F0/4 en el switch S1 está en el modo de acceso, no en el modo de enlace troncal. El área inferior resaltada también confirma que el puerto F0/4 se configuró para el modo de acceso.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

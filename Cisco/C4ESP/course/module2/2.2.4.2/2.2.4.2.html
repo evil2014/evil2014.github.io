@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.2.4.2 Elección de una conexión de enlace WAN (cont.)</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.2.4.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Elección de una tecnología WAN</h1>
+        <h2>Elección de servicios WAN</h2>
+      </div>
+      <div id="content">
+<p>Además de reunir información sobre el ámbito de la WAN, el administrador también debe determinar lo siguiente: </p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>¿La WAN debe utilizar una infraestructura privada o pública? </b>Una infraestructura privada ofrece la mejor seguridad y la mejor confidencialidad, mientras que la infraestructura de Internet pública ofrece la mayor flexibilidad y el menor gasto continuo. La elección depende del propósito de la WAN, los tipos de tráfico que transporta y el presupuesto operativo disponible. Por ejemplo, si el propósito es proporcionarle servicios seguros de alta velocidad a una sucursal cercana, una conexión privada dedicada o de conmutación puede ser la mejor opción. Si el propósito es conectar varias oficinas remotas, una WAN pública que utilice Internet puede ser la mejor opción. Para operaciones distribuidas, la solución puede ser una combinación de las opciones. </li>
+</ul>
+</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Para una WAN privada, ¿la conexión debe ser dedicada o de conmutación? </b>Las transacciones de gran volumen en tiempo real tienen requisitos especiales que podrían inclinar la elección por una línea dedicada, como el flujo de tráfico entre el centro de datos y la oficina central de la empresa. Si la empresa se conecta a una única sucursal local, se podría usar una línea arrendada dedicada. Sin embargo, esa opción se volvería muy costosa para una WAN que conecte varias oficinas. En ese caso, podría ser mejor una conexión de conmutación.</li>
+</ul>
+</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Para una WAN pública, ¿qué tipo de acceso a VPN se requiere? </b>Si el propósito de la WAN es conectar una oficina remota, una VPN de sitio a sitio puede ser la mejor opción. Para conectar a los trabajadores a distancia o a los clientes, las VPN de acceso remoto son una mejor opción. Si la WAN brinda servicio a una combinación de oficinas remotas, trabajadores a distancia y clientes autorizados, como en el caso de una empresa global con operaciones distribuidas, es posible que sea necesaria una combinación de opciones de VPN.</li>
+</ul>
+</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>¿Qué opciones de conexión están disponibles en el ámbito? </b>En ciertas áreas, no todas las opciones de conexión WAN están disponibles. En este caso, se simplifica el proceso de selección, si bien la WAN resultante puede proporcionar un rendimiento inferior al óptimo. Por ejemplo, en un área rural o remota, es posible que la única opción sea VSAT o acceso celular.</li>
+</ul>
+</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>¿Cuál es el costo de las opciones de conexión disponibles? </b>Según la opción elegida, la WAN puede implicar un gasto continuo significativo. Se debe analizar el costo de una opción particular según cuán bien cumpla esta con los otros requisitos. Por ejemplo, una línea arrendada dedicada es la opción más costosa, pero el gasto puede estar justificado si es fundamental proteger la transmisión de grandes volúmenes de datos en tiempo real. Para aplicaciones menos exigentes, puede ser más conveniente una opción de conmutación o de conexión a Internet menos costosa. </li>
+</ul>
+</p>
+<p></p>
+<p>Según las pautas descritas anteriormente, así como las que se describen en la arquitectura empresarial de Cisco, un administrador de red debe poder elegir una conexión WAN adecuada para satisfacer los requisitos de diversas situaciones empresariales.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

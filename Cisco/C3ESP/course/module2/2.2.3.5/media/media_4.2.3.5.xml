@@ -1,0 +1,66 @@
+﻿<textcomponents>
+<component id='ID_inst'>
+	<text><![CDATA[<b>Actividad: PVST+ rápido</b><br/><br/>Arrastre los nombres de las funciones de puerto PVST+ rápido hasta las ubicaciones de los puertos de switch correspondientes proporcionadas en la topología. Los nombres de función de los puertos se pueden utilizar más de una vez. 
+]]></text>
+</component>
+
+<component id='ID_txt01'>
+	<text><![CDATA[Puerto raíz]]></text>
+</component>
+<component id='ID_txt02'>
+	<text><![CDATA[Puerto designado]]></text>
+</component>
+
+<component id='ID_txt03'>
+	<text><![CDATA[Puerto alternativo]]></text>
+</component>
+
+<component id='ID_txt04'>
+	<text><![CDATA[Puerto de extremo]]></text>
+</component>
+<component id='ID_txt05'>
+	<text><![CDATA[Nombres de las funciones de puertos PVST+ rápido]]></text>
+</component> <!--Drag and Drop-->
+<component id='ID_drag01'>
+	<text><![CDATA[<font color="#393536">RP</font>]]></text>
+</component>
+
+<component id='ID_drag02'>
+	<text><![CDATA[<font color="#393536">DP</font>]]></text>
+</component>
+
+<component id='ID_drag03'>
+	<text><![CDATA[<font color="#393536">AP</font>]]></text>
+</component>
+
+<component id='ID_drag04'>
+	<text><![CDATA[<font color="#393536">EP</font>]]></text>
+</component>
+
+
+
+<component id='ID_s1_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id='ID_s1_CORRECT_BODY'>
+	<text><![CDATA[Identificó correctamente las funciones de puerto PVST+ rápido para cada puerto de switch.]]></text>
+</component>
+
+
+<component id='ID_s1_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_BODY'>
+	<text><![CDATA[No identificó correctamente las funciones de puerto PVST+ rápido para cada puerto de switch. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_CHECK'>
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id='ID_RESET'>
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component>
+</textcomponents>

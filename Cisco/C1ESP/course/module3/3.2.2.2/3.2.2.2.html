@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>3.2.2.2 Creación de Internet y desarrollo de TCP/IP </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_3.2.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolos y estándares de red</h1>
+        <h2>Suites de protocolos</h2>
+      </div>
+      <div id="content">
+<p>La suite IP es una suite de protocolos necesaria para transmitir y recibir información mediante Internet. Se conoce comúnmente como TCP/IP, ya que TCP e IP fueron los primeros dos protocolos de red definidos para este estándar. La suite TCP/IP basada en estándares abiertos reemplazó otras suites de protocolos exclusivas de proveedores, como AppleTalk de Apple e Internetwork Packet Exchange/Sequenced Packet Exchange (IPX/SPX) de Novell.</p>
+<p></p>
+<p>La primera red de conmutación de paquetes, antecesora de Internet actual, fue la red Advanced Research Projects Agency Network (ARPANET), que tuvo su origen en 1969 al conectar PC centrales en cuatro ubicaciones. La ARPANET fue fundada por el Departamento de Defensa de los Estados Unidos para que se utilice en universidades y en laboratorios de investigación. Bolt, Beranek and Newman (BBN) fue el contratista que llevó a cabo gran parte del desarrollo inicial de la ARPANET, incluida la creación del primer router conocido como un procesador de mensajes de interfaz (IMP).</p>
+<p></p>
+<p>En 1973, Robert Kahn y Vinton Cerf comenzaron a trabajar en la suite TCP para desarrollar la siguiente generación de la ARPANET. TCP se diseñó para reemplazar el programa de control de red (NCP) actual de la ARPANET. En 1978, TCP se dividió en dos protocolos: TCP e IP. Posteriormente, se agregaron otros protocolos a la suite de protocolos TCP/IP, entre los que se incluyen Telnet, FTP, DNS y muchos otros.</p>
+<p></p>
+<p>Haga clic en la línea de tiempo de la ilustración para ver los detalles sobre el desarrollo de otros protocolos y aplicaciones de red.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

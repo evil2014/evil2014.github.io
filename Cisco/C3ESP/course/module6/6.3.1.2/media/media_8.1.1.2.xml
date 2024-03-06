@@ -1,0 +1,40 @@
+﻿<textcomponents>
+
+<component id="ID_s1_title">
+<text><![CDATA[<b>Ventajas de OSPF multiárea</b>]]></text>
+</component>
+<component id="ID_s1_txt01">
+  <text><![CDATA[<b>Área&nbsp;1</b>]]></text> 
+  </component>
+  <component id="ID_s1_txt02">
+  <text><![CDATA[<b>Área 0</b>]]></text> 
+  </component>
+  <component id="ID_s1_txt03">
+  <text><![CDATA[<b>Área&nbsp;51</b>]]></text> 
+  </component>
+  <component id="ID_s1_txt04">
+  <text><![CDATA[Mi tabla de routing es más pequeña, ya que solo contiene rutas de área 1 y una ruta predeterminada.]]></text> 
+  </component>
+  <component id="ID_s1_txt05">
+  <text><![CDATA[Ahora solo recibo LSA del área 0 y el área 1.]]></text> 
+  </component>
+  <component id="ID_s1_txt06">
+  <text><![CDATA[Ahora solo tengo que ejecutar el algoritmo SPF si se produce un cambio en el área 0 o el área 51.]]></text> 
+  </component>
+<component id="ID_s2_title">
+  <text><![CDATA[<b>Ventajas de OSPF multiárea</b>]]></text> 
+  </component>
+<component id="ID_s2_txt01">
+  <text><![CDATA[<b>Área&nbsp;1</b>]]></text> 
+  </component>
+<component id="ID_s2_txt02">
+  <text><![CDATA[<b>Área 0</b>]]></text> 
+  </component>
+  <component id="ID_s2_txt03">
+  <text><![CDATA[<b>Área&nbsp;51</b>]]></text> 
+  </component>
+<component id="ID_s2_txt04">
+  <text><![CDATA[Solo el R2 y los routers del área 51 intercambian LSA y ejecutan el algoritmo SPF.]]></text> 
+  </component>
+
+</textcomponents>

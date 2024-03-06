@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.2.2.2 Resolución de problemas de la tabla de routing OSPF</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.2.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resolución de problemas de implementaciones de OSPF de área única</h1>
+        <h2>Resolución de problemas de routing de OSPFv2 de área única</h2>
+      </div>
+      <div id="content">
+<p>En la topología de la figura 1, todos los routers se configuraron para admitir el routing OSPF. </p>
+<p></p>
+<p>Un vistazo a la tabla de routing del R1 (figura 2) nos permite saber que recibe información de la ruta predeterminada, la LAN del R2 (172.16.2.0/24) y el enlace entre el R2 y el R3 (192.18.10.8/30). Sin embargo, no recibe la ruta OSPF LAN del R3. </p>
+<p></p>
+<p>El resultado de la figura 3 verifica la configuración de OSPF en el R3. Observe que el R3 solo anuncia el enlace entre el R3 y el R2, pero no anuncia la LAN del R3 (192.168.1.0/24).</p>
+<p></p>
+<p>Para habilitar una interfaz para OSPF, se debe configurar un comando <span class="cmd"><b>network</b></span> que coincida durante el proceso de routing OSPF. El resultado de la figura 4 confirma que la LAN del R3 no se anuncia en OSPF. </p>
+<p></p>
+<p>En el ejemplo de la figura 5, se agrega un comando <span class="cmd"><b>network</b></span> para la LAN del R3. Ahora el R3 debería anunciar la LAN del R3 a sus vecinos OSPF.</p>
+<p></p>
+<p>El resultado de la figura 6 verifica que la LAN del R3 ahora esté en la tabla de routing del R1. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

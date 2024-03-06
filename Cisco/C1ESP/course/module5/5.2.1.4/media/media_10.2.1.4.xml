@@ -1,0 +1,184 @@
+﻿<textcomponents> <!-- topology -->
+	<component id="ID_txt01">
+		<text><![CDATA[<b>Host A</b><br>10.10.0.1<br><b><font color="#5FBC21">00-0d-88-c7-9a-24</font></b>]]></text>
+	</component>
+
+	<component id="ID_txt02">
+		<text><![CDATA[<b>Host B</b><br>10.10.0.2<br><b><font color="#5FBC21">00-08-a3-b6-ce-04</b></font></b>]]></text>
+	</component>
+
+	<component id="ID_txt03">
+		<text><![CDATA[<b>Host C</b><br>10.10.0.3<br><b><font color="#5FBC21">00-0d-56-09-fb-d1</b></font></b>]]></text>
+	</component>
+
+	<component id="ID_txt04">
+		<text><![CDATA[<b>Host D</b><br>10.10.0.4<br><b><font color="#5FBC21">00-12-3f-d4-6d-1b</b></font></b>]]></text>
+	</component>
+
+	<component id="ID_txt05">
+		<text><![CDATA[<b>Interfaz G0/0 de R1</b><br>10.10.0.254<br><b><font color="#5FBC21">00-10-7b-e7-fa-ef</font></b>]]></text>
+	</component>
+
+	<component id="ID_txt10">
+		<text><![CDATA[Red]]></text>
+	</component> <!-- slide 1 -->
+	<component id="ID_s1_title">
+		<text><![CDATA[<b>El proceso de ARP: comunicación de forma remota</b>]]></text>
+	</component>
+	
+	<component id="ID_s1_txt02">
+		<text><![CDATA[El host A desea enviar datos a la dirección IP 176.10.10.50, pero no tiene ninguna entrada de ARP para el gateway predeterminado, que tiene la dirección IP 10.10.0.254.]]></text>
+	</component>
+	
+	<component id="ID_s1_txt03">
+		<text><![CDATA[<b>CACHÉ ARP de A</b>]]></text>
+	</component>
+	
+	<component id='ID_s1_table'>
+	<text><![CDATA[
+					<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4'>
+						<tr class="title">
+							<td bgcolor='#98D3D1' colspan='2' class="title"><font size='12' color='#1C3635'><b>Host A: caché ARP</b></font></td>
+						</tr>
+						<tr class="liner">
+		<td colspan='2' bgcolor='#0E6360' class="mtable_top" class="mtable_top"><font size='1' color='#434321'><span style="color:#DAE17A">.</span></font></td>
+	</tr>
+					<tr>
+						<td bgcolor='#EFF8F7' valign="top"><font size="11" color="#393536">10.10.0.3</font></td>
+						<td bgcolor='#EFF8F7' valign="top"><font size="11" color="#393536">00-0d-56-09-fb-d1</font></td>
+					</tr>
+					<tr>
+						<td bgcolor='#EFF8F7' valign="top"><font size="11" color="#393536">&nbsp;</font></td>
+						<td bgcolor='#EFF8F7' valign="top"><font size="11" color="#393536">&nbsp;</font></td>
+					</tr>
+				</table>]]>
+			</text>
+	</component> <!-- slide 2 -->
+	<component id="ID_s2_title">
+		<text><![CDATA[<b>Transmisión de una solicitud de ARP</b>]]></text>
+	</component>
+
+	<component id="ID_s2_txt01">
+		<text><![CDATA[<b>CACHÉ ARP de A</b>]]></text>
+	</component>
+	
+	<component id="ID_s2_txt02">
+		<text><![CDATA[El host A envía una solicitud de ARP para obtener la dirección MAC asociada a la dirección IP 10.10.0.254.]]></text>
+	</component>
+
+	<component id='ID_s2_table'>
+	<text><![CDATA[
+					<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4'>
+						<tr class="title">
+							<td bgcolor='#98D3D1' colspan='2' class="title"><font size='12' color='#1C3635'><b>Host A: caché ARP</b></font></td>
+						</tr>
+						<tr class="liner">
+		<td colspan='2' bgcolor='#0E6360' class="mtable_top" class="mtable_top"><font size='1' color='#434321'><span style="color:#DAE17A">.</span></font></td>
+	</tr>
+					<tr>
+						<td bgcolor='#EFF8F7' valign="top"><font size="11" color="#393536">10.10.0.3</font></td>
+						<td bgcolor='#EFF8F7' valign="top"><font size="11" color="#393536">00-0d-56-09-fb-d1</font></td>
+					</tr>
+					<tr>
+						<td bgcolor='#EFF8F7' valign="top"><font size="11" color="#393536">&nbsp;</font></td>
+						<td bgcolor='#EFF8F7' valign="top"><font size="11" color="#393536">&nbsp;</font></td>
+					</tr>
+				</table>]]>
+			</text>
+	</component> <!-- slide 3 -->
+<component id="ID_s3_title">
+<text><![CDATA[<b>Respuesta de ARP con información de MAC</b>]]></text>
+</component>
+
+<component id="ID_s3_txt01">
+<text><![CDATA[<b>CACHÉ ARP de A</b>]]></text>
+</component>
+
+<component id="ID_s3_txt02">
+<text><![CDATA[El R1, con la dirección IP 10.10.0.254, envía una respuesta de ARP que incluye la dirección MAC para la interfaz G0/0.]]></text>
+</component>
+<component id='ID_s3_table'>
+<text><![CDATA[
+				<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4'>
+					<tr class="title">
+						<td bgcolor='#98D3D1' colspan='2' class="title"><font size='12' color='#1C3635'><b>Host A: caché ARP</b></font></td>
+					</tr>
+					<tr class="liner">
+		<td colspan='2' bgcolor='#0E6360' class="mtable_top" class="mtable_top"><font size='1' color='#434321'><span style="color:#DAE17A">.</span></font></td>
+	</tr>
+				<tr>
+					<td bgcolor='#EFF8F7' valign="top"><font size="11" color="#393536">10.10.0.3</font></td>
+					<td bgcolor='#EFF8F7' valign="top"><font size="11" color="#393536">00-0d-56-09-fb-d1</font></td>
+				</tr>
+				<tr>
+					<td bgcolor='#EFF8F7' valign="top"><font size="11" color="#393536">&nbsp;</font></td>
+					<td bgcolor='#EFF8F7' valign="top"><font size="11" color="#393536">&nbsp;</font></td>
+				</tr>
+			</table>]]>
+		</text>
+</component> <!-- slide 4 -->
+<component id="ID_s4_title">
+<text><![CDATA[<b>Agregado de asignación de MAC a IP en el caché ARP</b>]]></text>
+</component>
+
+<component id="ID_s4_txt01">
+<text><![CDATA[<b>CACHÉ ARP de A</b>]]></text>
+</component>
+<component id="ID_s4_txt02">
+<text><![CDATA[El host A agrega la asignación de dirección MAC a IP a su caché ARP.]]></text>
+</component>
+<component id='ID_s4_table'>
+<text><![CDATA[
+				<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4'>
+					<tr class="title">
+						<td bgcolor='#98D3D1' colspan='2' class="title"><font size='12' color='#1C3635'><b>Host A: caché ARP</b></font></td>
+					</tr>
+					<tr class="liner">
+		<td colspan='2' bgcolor='#0E6360' class="mtable_top" class="mtable_top"><font size='1' color='#434321'><span style="color:#DAE17A">.</span></font></td>
+	</tr>
+				<tr>
+					<td bgcolor='#EFF8F7' valign="top"><font size="11" color="#393536">10.10.0.3</font></td>
+					<td bgcolor='#EFF8F7' valign="top"><font size="11" color="#393536">00-0d-56-09-fb-d1</font></td>
+				</tr>
+				<tr>
+					<td bgcolor='#FAB37D' valign="top"><font size="11" color="#393536">10.10.0.254</font></td>
+					<td bgcolor='#FAB37D' valign="top"><font size="11" color="#393536">00-10-7b-e7-fa-ef</font></td>
+
+				</tr>
+			</table>]]>
+		</text>
+</component> <!-- slide 5 -->
+<component id="ID_s5_title">
+<text><![CDATA[<b>Reenvío de datos con información de dirección MAC</b>]]></text>
+</component>
+
+<component id="ID_s5_txt01">
+<text><![CDATA[<b>CACHÉ ARP de A<br/>10.10.0.3&nbsp;=&nbsp;00-0d-56-09-fb-d1</b>]]></text>
+</component>
+<component id="ID_s5_txt02">
+<text><![CDATA[El host A reenvía los datos destinados a 176.10.10.50 al gateway predeterminado para su procesamiento posterior.]]></text>
+</component>
+<component id='ID_s5_table'>
+<text><![CDATA[
+				<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4'>
+					<tr class="title">
+						<td bgcolor='#98D3D1' colspan='2' class="title"><font size='12' color='#1C3635'><b>Host A: caché ARP</b></font></td>
+					</tr>
+					<tr class="liner">
+		<td colspan='2' bgcolor='#0E6360' class="mtable_top" class="mtable_top"><font size='1' color='#434321'><span style="color:#DAE17A">.</span></font></td>
+	</tr>
+				<tr>
+					<td bgcolor='#EFF8F7' valign="top"><font size="11" color="#393536">10.10.0.3</font></td>
+					<td bgcolor='#EFF8F7' valign="top"><font size="11" color="#393536">00-0d-56-09-fb-d1</font></td>
+				</tr>
+				<tr>
+					<td bgcolor='#EFF8F7' valign="top"><font size="11" color="#393536">10.10.0.254</font></td>
+					<td bgcolor='#EFF8F7' valign="top"><font size="11" color="#393536">00-10-7b-e7-fa-ef</font></td>
+				</tr>
+			</table>]]>
+		</text>
+</component>
+<component id="ID_s5_bubble01">
+<text><![CDATA[<p class="ID_s2_bubble01">Reenviaré el paquete según la información en mi tabla de enrutamiento.</p>]]></text>
+</component>
+</textcomponents>

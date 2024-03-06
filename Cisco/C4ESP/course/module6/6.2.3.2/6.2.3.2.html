@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.2.3.2 Tipos de tecnologías inalámbricas de banda ancha (cont.)</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.2.3.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Comparación de las soluciones de banda ancha</h1>
+        <h2>Acceso inalámbrico de banda ancha</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Implementaciones de datos móviles</b>
+</p>
+<p></p>
+<p>La banda ancha móvil se refiere al acceso a Internet inalámbrico que se entrega a través de las torres de telefonía móvil a las computadoras, los teléfonos móviles y otros dispositivos digitales mediante módems portátiles. En la figura 1, se muestra una torre de telefonía móvil utilizada en una red de banda ancha móvil. </p>
+<p></p>
+<p>Los teléfonos celulares usan ondas de radio para comunicarse mediante una torre de telefonía móvil cercana. El teléfono móvil tiene una pequeña antena de radio. El proveedor tiene una antena mucho más grande en la parte superior de una torre, como la que se muestra en la ilustración. </p>
+<p></p>
+<p>El acceso de banda ancha móvil consta de diversos estándares que admiten velocidades de hasta 5 Mb/s. Las variantes incluyen 2G (con GSM, CDMA o TDMA), 3G (con UMTS, CDMA2000, EDGE o HSPA+) y 4G (con WiMAX o LTE). La suscripción al servicio de telefonía móvil no incluye la suscripción a la banda ancha móvil necesariamente.</p>
+<p></p>
+<p>Tres términos comunes que se utilizan al analizar las redes de datos móviles incluyen lo siguiente:</p>
+<p>
+<ul>
+<li>
+<b>Internet inalámbrica:</b> es un término general para los servicios de Internet de un teléfono móvil o cualquier dispositivo que utilice la misma tecnología.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Redes inalámbricas 2G/3G/4G:</b> cambios importantes en las redes inalámbricas de las compañías de telefonía móvil a través de la evolución de la segunda, la tercera y la cuarta generación de tecnologías móviles inalámbricas.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Evolución a largo plazo (LTE):</b> una tecnología más nueva y más rápida que se considera parte de la tecnología 4G.</li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Implementaciones satelitales</b>
+</p>
+<p>Los servicios de Internet satelital se utilizan en lugares que no cuentan con acceso a Internet basado en tierra o para instalaciones temporales que son móviles. El acceso a Internet mediante satélites está disponible en todo el mundo, incluso para proporcionar acceso a Internet a las embarcaciones en el mar, a los aviones durante el vuelo y a los vehículos en tránsito. </p>
+<p></p>
+<p>Existen tres maneras de conectarse a Internet mediante satélites: </p>
+<p>
+<ul>
+<li>
+<b>Multidifusión unidireccional:</b> los sistemas de Internet satelital se utilizan para la distribución de datos, audio y video basada en multidifusión IP. Si bien la mayoría de los protocolos IP requieren una comunicación bidireccional para el contenido de Internet, incluidas las páginas web, los servicios de Internet unidireccionales basados en satélites pueden utilizarse para insertar páginas en el almacenamiento local en los sitios de usuarios finales. La interactividad bidireccional no es posible.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Retorno terrestre unidireccional:</b> los sistemas de Internet satelital utilizan el acceso por dial-up tradicional para enviar datos salientes a través de un módem y recibir descargas del satélite.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Internet satelital bidireccional:</b> envía datos de sitios remotos por el satélite a un hub, que después envía los datos a Internet. La antena parabólica en cada ubicación se debe posicionar de forma precisa para evitar la interferencia con otros satélites.</li>
+</ul>
+</p>
+<p></p>
+<p>En la figura 2, se muestra un sistema de Internet satelital bidireccional. Las velocidades de subida son aproximadamente un décimo de la velocidad de descarga, que está alrededor de los 500 kb/s.</p>
+<p></p>
+<p>El principal requisito para la instalación es que la antena tenga una vista despejada hacia el ecuador, donde se ubica la mayoría de los satélites que están en órbita. Los árboles y las lluvias torrenciales pueden afectar la recepción de las señales. </p>
+<p></p>
+<p>La tecnología de Internet satelital bidireccional utiliza la tecnología de multidifusión IP, que permite que un satélite cubra hasta 5000 canales de comunicación simultáneamente. La multidifusión IP envía datos desde un punto hacia muchos puntos a la vez mediante el envío de datos en formato comprimido. La compresión reduce el tamaño de los datos y los requisitos de ancho de banda.</p>
+<p></p>
+<p>Una empresa puede crear una WAN privada mediante las comunicaciones satelitales y terminales de apertura muy pequeña (VSAT). Una VSAT es un tipo de antena parabólica similar a las que se utilizan para la televisión satelital en el hogar y, por lo general, mide alrededor de 1 m de ancho. La antena VSAT se ubica afuera, apuntando hacia un satélite específico, y se conecta a una interfaz de router especial. El router se coloca dentro del edificio. Mediante las VSAT se crea una WAN privada. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

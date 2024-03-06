@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>0.0.1.5 La práctica hace al maestro</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_0.0.1.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Escalamiento de redes</h1>
+        <h2>Mensaje para el estudiante</h2>
+      </div>
+      <div id="content">
+<p>En una clase típica, después de estudiar un tema por primera vez, evaluará su comprensión con algunos elementos de medios interactivos. Si se deben aprender comandos nuevos, los practicará con el verificador de sintaxis antes de utilizarlos para configurar una red o llevar a cabo la resolución de problemas de una red en Packet Tracer, la herramienta de simulación de redes de Networking Academy. Luego, realizará actividades de práctica en equipos reales en el aula o mediante el acceso remoto por Internet. </p>
+<p></p>
+<p>Además, Packet Tracer le permite crear sus propias actividades para realizar prácticas adicionales en cualquier momento. También puede evaluar sus aptitudes en forma competitiva con sus compañeros de curso mediante juegos multiusuario. Las evaluaciones de habilidades y las prácticas de laboratorio de habilidades de integración de Packet Tracer le proporcionan sugerencias muy útiles sobre las capacidades que demuestra y son una excelente práctica para los exámenes de capítulos, de control y finales.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

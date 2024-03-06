@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.3.2.2 Archivos Bootset</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.3.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Routers</h1>
+        <h2>Arranque del router</h2>
+      </div>
+      <div id="content">
+<p>Como se muestra en la ilustración, un router carga los siguientes dos archivos en la RAM durante el inicio: </p>
+<p>
+<ul>
+<li>
+<b>Archivo de imagen de IOS:</b> el IOS facilita el funcionamiento básico de los componentes de hardware del dispositivo. El archivo de imagen de IOS se almacena en la memoria flash.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Archivo de configuración de inicio:</b> el archivo de configuración de inicio incluye los comandos que se utilizan para realizar la configuración inicial de un router y crear el archivo de configuración en ejecución almacenado en la RAM. El archivo de configuración de inicio se almacena en NVRAM. Todos los cambios de configuración se almacenan en el archivo de configuración en ejecución, y el IOS los implementa de inmediato. </li>
+</ul>
+</p>
+<p></p>
+<p>La configuración en ejecución se modifica cuando el administrador de red realiza la configuración del dispositivo. Cuando se realizan cambios al archivo running-config, este se debe guardar en la NVRAM como archivo de configuración de inicio, en caso de que el router se reinicie o se apague.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

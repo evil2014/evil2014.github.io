@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>3.2.3.2 ISOC, IAB e IETF</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_3.2.3.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolos y estándares de red</h1>
+        <h2>Organismos de estandarización</h2>
+      </div>
+      <div id="content">
+<p>La Internet Society (ISOC) es responsable de promover el desarrollo, la evolución y el uso abiertos de Internet en todo el mundo. ISOC facilita el desarrollo abierto de estándares y protocolos para la infraestructura técnica de Internet, incluida la supervisión del Internet Architecture Board (IAB).</p>
+<p></p>
+<p>El Internet Architecture Board (IAB) es responsable de la administración y el desarrollo general de los estándares de Internet. El IAB supervisa la arquitectura para los protocolos y los procedimientos que utiliza Internet. El IAB consta de 13 miembros, entre los que se incluye el presidente del Internet Engineering Task Force (IETF). Los miembros del IAB actúan como personas, y no como representantes de compañías, agencias u otros organismos.</p>
+<p></p>
+<p>La misión del IETF es desarrollar, actualizar y mantener Internet y las tecnologías TCP/IP. Una de las responsabilidades clave del IETF es producir documentos de solicitud de comentarios (RFC), que son un memorándum que describe protocolos, procesos y tecnologías para Internet. El IETF consta de grupos de trabajo (WG), el mecanismo principal para desarrollar las pautas y especificaciones del IETF. Los WG son a corto plazo, y después de que se cumplen los objetivos del grupo, se pone fin al WG. El Internet Engineering Steering Group (IESG) es responsable de la administración técnica del IETF y el proceso de los estándares de Internet.</p>
+<p></p>
+<p>The Internet Research Task Force (IRTF) se centra en la investigación a largo plazo relacionada con los protocolos, las aplicaciones, la arquitectura y las tecnologías de TCP/IP y de Internet. Mientras que el IETF se centra en problemas más a corto plazo de la creación de estándares, el IRTF consta de grupos de investigación para esfuerzos de desarrollo a largo plazo. Algunos de los grupos de investigación actuales incluyen Anti-Spam Research Group (ASRG), Crypto Forum Research Group (CFRG), Peer-to-Peer Research Group (P2PRG) y Router Research Group (RRG).</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

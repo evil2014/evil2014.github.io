@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.1.3.5 Configuración de router-on-a-stick: verificación de routing</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.1.3.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración del routing entre VLAN</h1>
+        <h2>Configurar un enrutamiento router-on-a-stick entre VLAN</h2>
+      </div>
+      <div id="content">
+<p>Después de configurar el router y el switch para llevar a cabo routing entre VLAN, el siguiente paso es verificar la conectividad de host a host. El acceso a los dispositivos en las VLAN remotas puede probarse con el comando <span class="cmd"><b>ping</b></span>. </p>
+<p></p>
+<p>En el ejemplo que se muestra en la ilustración, se inician los comandos <span class="cmd"><b>ping</b></span> y <span class="cmd"><b>tracert</b></span> desde la PC1 hasta la dirección de destino de la PC3.</p>
+<p></p>
+<p>
+<b>Prueba de ping</b>
+</p>
+<p></p>
+<p>El comando <span class="cmd"><b>ping</b></span> envía una solicitud de eco ICMP a la dirección de destino. Cuando un host recibe una solicitud de eco del ICMP, éste responde con una respuesta de eco del ICMP para confirmar que recibió dicha solicitud. El comando <span class="cmd"><b>ping</b></span> calcula el tiempo transcurrido, para lo cual utiliza la diferencia de tiempo entre el momento en que se envió la solicitud de eco y el momento en que se recibió la respuesta de eco. El tiempo transcurrido se utiliza para determinar la latencia de la conexión. Al recibir una respuesta con éxito, confirma que existe una ruta entre el dispositivo emisor y el dispositivo receptor.</p>
+<p></p>
+<p>
+<b>Prueba de tracert</b>
+</p>
+<p></p>
+<p>Tracert es una utilidad práctica usada para confirmar la ruta enrutada tomada entre dos dispositivos. En los sistemas UNIX, la utilidad se especifica como <span class="cmd"><b>traceroute</b></span>. Tracert también utiliza el ICMP para determinar la ruta tomada, pero utiliza las solicitudes de eco del ICMP con valores de tiempo de vida específicos definidos en la trama. </p>
+<p></p>
+<p>El valor de tiempo de vida determina con exactitud la cantidad de saltos del router que el eco del ICMP puede alcanzar. La primera solicitud de eco del ICMP se envía con un valor de tiempo de vida configurado para expirar en el primer router en la ruta hacia el dispositivo de destino. </p>
+<p></p>
+<p>Cuando se excede el tiempo de espera de la solicitud de eco ICMP en la primera ruta, se reenvía un mensaje ICMP desde el router hasta el dispositivo de origen. El dispositivo registra la respuesta desde el router y procede a enviar otra solicitud de eco del ICMP, pero esta vez con un valor de tiempo de vida mayor. Esto permite a la solicitud de eco del ICMP atravesar el primer router y llegar al segundo dispositivo en la ruta hacia el destino final. El proceso se repite de manera recursiva hasta que, finalmente, se envía la solicitud de eco ICMP hacia el dispositivo de destino final. Una vez que la utilidad <span class="cmd"><b>tracert</b></span> termina de ejecutarse, se muestra una lista de las interfaces de entrada del router alcanzadas por la solicitud de eco ICMP en camino al destino.</p>
+<p></p>
+<p>En el ejemplo, la utilidad <span class="cmd"><b>ping</b></span> pudo enviar una solicitud de eco ICMP a la dirección IP de la PC3. Además, la utilidad <span class="cmd"><b>tracert</b></span> confirma que el camino a la PC3 es a través de la dirección IP de la subinterfaz 172.17.10.1 del router R1.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

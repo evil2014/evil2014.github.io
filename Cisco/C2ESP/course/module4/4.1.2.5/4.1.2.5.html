@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.1.2.5 LED de dispositivos</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.1.2.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración inicial de un router</h1>
+        <h2>Conexión de los Dispositivos</h2>
+      </div>
+      <div id="content">
+<p>Los equipos host se conectan a una red conectada por cable mediante una interfaz de red y un cable Ethernet RJ-45. La mayoría de las interfaces de red tienen uno o dos indicadores LED de enlace junto a la interfaz. Generalmente, un LED verde indica una conexión correcta, mientras que un LED verde que parpadea indica actividad de red. </p>
+<p></p>
+<p>Si la luz de enlace no está encendida, puede existir un problema con el cable de red o con la red propiamente dicha. En el puerto del switch donde termina la conexión también hay un indicador LED encendido. Si un extremo no se enciende o ninguno lo hace, intente con otro cable de red.</p>
+<p></p>
+<p>
+<b>Nota:</b> la función de los LED varía entre los fabricantes de computadoras.</p>
+<p></p>
+<p>De manera similar, los dispositivos de infraestructura de red suelen utilizar varios indicadores LED para proporcionar una vista rápida del estado. Por ejemplo, un switch Cisco Catalyst 2960 tiene varios LED de estado para ayudar a controlar la actividad y el rendimiento del sistema. En general, estos LED están encendidos de color verde cuando el switch funciona normalmente y de color ámbar cuando funciona mal.</p>
+<p></p>
+<p>Los ISR Cisco utilizan distintos indicadores LED para proporcionar la información de estado. En la ilustración, se muestra un router Cisco 1941. Los LED del router ayudan al administrador de red a realizar un proceso básico de resolución de problemas. Cada dispositivo tiene un conjunto único de LED. Consulte la documentación específica de los dispositivos para obtener una descripción precisa de los LED.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

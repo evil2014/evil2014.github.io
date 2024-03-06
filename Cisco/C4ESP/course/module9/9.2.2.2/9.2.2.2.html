@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.2.2.2 Resolución de problemas de la capa de enlace de datos</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.2.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resolución de problemas de red</h1>
+        <h2>Síntomas y causas de la resolución de problemas de red</h2>
+      </div>
+      <div id="content">
+<p>La resolución de problemas de capa 2 puede ser un proceso desafiante. La configuración y el funcionamiento de estos protocolos son fundamentales para crear redes con ajustes precisos y en condiciones de funcionamiento. Los problemas de capa 2 causan síntomas específicos que, al reconocerse, ayudan a identificar el problema rápidamente. </p>
+<p></p>
+<p>Los síntomas frecuentes de los problemas de red en la capa de enlace de datos incluyen los siguientes:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Falta de funcionalidad o conectividad en la capa de red o en las capas superiores:</b> algunos problemas de capa 2 pueden detener el intercambio de tramas a través de un enlace, mientras que otros solo provocan un deterioro del rendimiento de la red.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Funcionamiento de la red por debajo de los niveles de rendimiento de línea de base:</b> en una red, pueden ocurrir dos tipos de funcionamiento deficiente en la capa 2. En primer lugar, que las tramas elijan una ruta deficiente al destino, pero lleguen. En este caso, la red podría experimentar un uso de ancho de banda elevado en enlaces que no deberían tener ese nivel de tráfico. En segundo lugar, que se descarten algunas tramas. Estos problemas se pueden identificar mediante las estadísticas del contador de errores y los mensajes de error de la consola en el switch o el router. En un entorno Ethernet, un ping extendido o continuo también revela si se descartan tramas.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Difusiones excesivas:</b> los sistemas operativos usan difusiones y multidifusiones ampliamente para detectar los servicios de red y otros hosts. Por lo general, las difusiones excesivas son el resultado de una de las siguientes situaciones: aplicaciones programadas o configuradas incorrectamente, grandes dominios de difusión de capa 2 o problemas de red subyacentes, como bucles de STP o rutas inestables.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Mensajes de la consola:</b> a veces, un router reconoce que se produjo un problema de capa 2 y envía mensajes de alerta a la consola. Generalmente, un router hace esto cuando detecta un problema con la interpretación de las tramas entrantes (problemas de encapsulación o entramado) o cuando se esperan keepalives pero no llegan. El mensaje de la consola más común que indica que existe un problema de Capa 2 es un mensaje que indica que el protocolo de línea está desactivado.</li>
+</ul>
+</p>
+<p></p>
+<p>Los problemas en la capa de enlace de datos que con frecuencia provocan problemas de conectividad o rendimiento de la red incluyen los siguientes:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Errores de encapsulación:</b> un error de encapsulación ocurre porque los bits que el emisor coloca en un campo determinado no son los que el receptor espera ver. Esta condición se produce cuando la encapsulación en un extremo de un enlace WAN está configurada de manera diferente de la encapsulación que se usa en el otro extremo.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Errores de asignación de direcciones:</b> en las topologías, como punto a multipunto, Frame Relay o Ethernet de difusión, es fundamental darle a la trama una dirección de destino de capa 2 correcta. Esto asegura su llegada al destino correcto. Para lograr esto, el dispositivo de red debe encontrar la coincidencia entre una dirección de destino de capa 3 y la dirección de capa 2 correcta mediante mapas estáticos o dinámicos. En un entorno dinámico, la asignación de información de capa 2 y capa 3 puede fallar debido a que los dispositivos pueden estar configurados de manera específica para no responder a las solicitudes de ARP o de ARP inverso, a que la información de capa 2 y capa 3 almacenada en caché puede haber cambiado físicamente o a que se reciben respuestas de ARP no válidas debido a una configuración incorrecta o un ataque de seguridad.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Errores de entramado:</b> las tramas generalmente operan en grupos de bytes de 8 bits. Cuando una trama no termina en un límite de bytes de 8 bits, se produce un error de entramado. Cuando sucede esto, el receptor puede tener problemas para determinar dónde termina una trama y dónde comienza la otra. Un número excesivo de tramas no válidas puede impedir el intercambio de keepalives válidos. Los errores de entramado pueden ser el resultado de una línea serial ruidosa, un cable diseñado de manera incorrecta (demasiado largo o blindado en forma inadecuada) o un reloj de línea de unidad de servicio de canal (CSU) configurado de manera incorrecta.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Fallas o bucles de STP:</b> el objetivo del protocolo de árbol de expansión (STP) es convertir una topología física redundante en una topología de árbol mediante el bloqueo de los puertos redundantes. La mayoría de los problemas de STP se relacionan con el reenvío de bucles, que se produce cuando no se bloquean puertos en una topología redundante y el tráfico se reenvía en círculos indefinidamente, lo que implica una saturación excesiva provocada por una tasa elevada de cambios en la topología STP. En una red configurada correctamente, un cambio de topología debería ser un evento inusual. Cuando un enlace entre dos switches se activa o se desactiva, llegado el momento se produce un cambio de topología cuando el estado de STP del puerto cambia por hacia reenvío o desde reenvío. Sin embargo, cuando un puerto es inestable (oscila entre los estados activo y inactivo), provoca cambios de topología repetitivos y saturación, u ocasiona la convergencia lenta o reiterada de STP. Esto puede ser el resultado de una incompatibilidad entre la topología real y la topología registrada, un error de configuración, como una configuración incoherente de los temporizadores de STP, una sobrecarga de CPU de switch durante la convergencia o un defecto de software.</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

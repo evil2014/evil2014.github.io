@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.2.1.1 Configuración de NAT estática</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.2.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de NAT</h1>
+        <h2>Configuración de NAT estática</h2>
+      </div>
+      <div id="content">
+<p>La NAT estática es una asignación uno a uno entre una dirección interna y una dirección externa. La NAT estática permite que los dispositivos externos inicien conexiones a los dispositivos internos mediante la dirección pública asignada de forma estática. Por ejemplo, se puede asignar una dirección global interna específica a un servidor web interno de modo que se pueda acceder a este desde redes externas. </p>
+<p></p>
+<p>En la figura 1, se muestra una red interna que contiene un servidor web con una dirección IPv4 privada. El router R2 se configuró con NAT estática para permitir que los dispositivos en la red externa (Internet) accedan al servidor web. El cliente en la red externa accede al servidor web mediante una dirección IPv4 pública. La NAT estática traduce la dirección IPv4 pública a la dirección IPv4 privada.</p>
+<p></p>
+<p>Existen dos pasos básicos para configurar las traducciones NAT estáticas. </p>
+<p></p>
+<p>
+<b>Paso 1. </b>El primer paso consiste en crear una asignación entre la dirección local interna y las direcciones globales internas. Por ejemplo, en la figura 1, la dirección local interna 192.168.10.254 y la dirección global interna 209.165.201.5 se configuraron como traducción NAT estática. </p>
+<p></p>
+<p>
+<b>Paso 2. </b>Una vez configurada la asignación, las interfaces que participan en la traducción se configuran como interna o externa con respecto a NAT. En el ejemplo, la interfaz Serial 0/0/0 del R2 es una interfaz interna, y la interfaz Serial 0/1/0 es una interfaz externa.</p>
+<p></p>
+<p>Los paquetes que llegan hasta la interfaz interna del R2 (Serial 0/0/0) desde la dirección IPv4 local interna configurada (192.168.10.254) se traducen y, luego, se reenvían hacia la red externa. Los paquetes que llegan a la interfaz externa del R2 (Serial 0/1/0), que están dirigidos a la dirección IPv4 global interna configurada (209.165.201.5), se traducen a la dirección local interna (192.168.10.254) y, luego, se reenvían a la red interna.</p>
+<p></p>
+<p>En la figura 2, se describen los comandos necesarios para configurar la NAT estática. </p>
+<p></p>
+<p>En la figura 3, se muestran los comandos necesarios en el R2 para crear una asignación de NAT estática al servidor web en la topología de ejemplo. Con la configuración que se muestra, el R2 traduce los paquetes del servidor web con la dirección 192.168.10.254 a la dirección IPv4 pública 209.165.201.5. El cliente de Internet dirige solicitudes web a la dirección IPv4 pública 209.165.201.5. El R2 reenvía ese tráfico al servidor web en 192.168.10.254.</p>
+<p></p>
+<p>Utilice el verificador de sintaxis de la figura 4 para configurar una entrada de NAT estática adicional en el R2.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

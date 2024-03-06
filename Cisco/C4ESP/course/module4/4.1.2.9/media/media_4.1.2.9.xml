@@ -1,0 +1,161 @@
+﻿<textcomponents>
+
+<component id="ID_s1_title">
+<text><![CDATA[<b>Formato de trama LMI</b>]]></text>
+</component>
+
+<component id="ID_s1_txt01">
+<text><![CDATA[S0/1/1 172.18.0.9/30]]></text> 
+</component>
+
+<component id="ID_s1_txt02">
+<text><![CDATA[DLCI a 110]]></text> 
+</component>
+
+<component id="ID_s1_txt03">
+<text><![CDATA[Frame Relay]]></text> 
+</component>
+
+<component id="ID_s1_txt04">
+   <text><![CDATA[DLCI a 100]]></text>
+</component>
+
+<component id="ID_s1_txt05">
+   <text><![CDATA[S0/1/0 172.18.0.10/30]]></text>
+</component>
+
+<component id="ID_s1_txt06">
+<text><![CDATA[El DTE envía un mensaje de consulta de estado al DCE.]]></text> 
+</component>
+
+<component id="ID_s1_txt07">
+<text><![CDATA[El DCE responde con un mensaje de estado que incluye los DLCI.]]></text> 
+</component>
+
+<component id="ID_s1_txt08">
+<text><![CDATA[El DTE descubre sus VC.]]></text> 
+</component>
+
+
+<component id="ID_s1_table01">
+<text><![CDATA[<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='2'>
+<tr>
+<td colspan='2' bgcolor='#0E6360' class="mtable_top"><font size='1' color='#434321'><span style="color:#DAE17A">.</span></font></td>
+</tr>
+	<tr>
+		<td bgcolor='#077A77' valign="top"><font color='#ffffff'><b>DLCI</b></font></td>
+		<td bgcolor='#077A77' valign="top"><font color='#ffffff'><b>Estado</b></font></td>
+	</tr>
+	
+	<tr>
+		<td bgcolor='#eff8f7' valign="top"><font color='#393536'>101</font></td>
+		<td bgcolor='#eff8f7' valign="top"><font color='#393536'>Activo</font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#ffffff' valign="top"><font color='#393536'>102</font></td>
+		<td bgcolor='#ffffff' valign="top"><font color='#393536'>Activo</font></td>
+	</tr>	
+	<tr>
+		<td bgcolor='#eff8f7' valign="top"><font color='#393536'>103</font></td>
+		<td bgcolor='#eff8f7' valign="top"><font color='#393536'>Activo</font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#ffffff' valign="top"><font color='#393536'>104</font></td>
+		<td bgcolor='#ffffff' valign="top"><font color='#393536'>Activo</font></td>
+	</tr>
+</table>]]></text> 
+</component>
+
+
+<component id="ID_s2_txt01">
+<text><![CDATA[S0/1/1 172.18.0.9/30]]></text> 
+</component>
+
+<component id="ID_s2_txt02">
+<text><![CDATA[DLCI a 110]]></text> 
+</component>
+
+<component id="ID_s2_txt03">
+<text><![CDATA[Frame Relay]]></text> 
+</component>
+
+<component id="ID_s2_txt04">
+   <text><![CDATA[DLCI a 100]]></text>
+</component>
+
+<component id="ID_s2_txt05">
+   <text><![CDATA[S0/1/0 172.18.0.10/30]]></text>
+</component>
+
+<component id="ID_s2_txt06">
+   <text><![CDATA[Respuesta de ARP inverso de 172.18.0.10]]></text>
+</component>
+
+<component id="ID_s2_bubble01">
+   <text><![CDATA[DLCI 110 está activo.]]></text>
+</component>
+
+<component id="ID_s2_bubble02">
+   <text><![CDATA[DLCI 110 está activo. Enviaré una solicitud de ARP inverso para conocer la dirección IP del router remoto.]]></text>
+</component>
+
+<component id="ID_s2_bubble03">
+   <text><![CDATA[Recibí una solicitud de ARP inverso de 172.18.0.9 en el DLCI 100.]]></text>
+</component>
+
+<component id="ID_s2_bubble04">
+   <text><![CDATA[Asignación Frame Relay DLCI 100 = 172.18.0.9]]></text>
+</component>
+
+<component id="ID_s2_bubble05">
+   <text><![CDATA[Asignación Frame Relay DLCI 110 = 172.18.0.10]]></text>
+</component>
+
+
+<component id="end">
+<text><![CDATA[Finalizar]]></text>
+</component>
+
+<component id="fforward">
+<text><![CDATA[Adelantar]]></text>
+</component>
+
+<component id="pause">
+<text><![CDATA[Pausa]]></text>
+</component>
+
+<component id="play">
+<text><![CDATA[Reproducir]]></text>
+</component>
+
+<component id="rewind">
+<text><![CDATA[Regresar]]></text>
+</component>
+
+<component id="start">
+<text><![CDATA[Inicio]]></text>
+</component> <!-- for slide 2-->
+<component id="s2_end">
+<text><![CDATA[Finalizar]]></text>
+</component>
+
+<component id="s2_fforward">
+<text><![CDATA[Adelantar]]></text>
+</component>
+
+<component id="s2_pause">
+<text><![CDATA[Pausa]]></text>
+</component>
+
+<component id="s2_play">
+<text><![CDATA[Reproducir]]></text>
+</component>
+
+<component id="s2_rewind">
+<text><![CDATA[Regresar]]></text>
+</component>
+
+<component id="s2_start">
+<text><![CDATA[Inicio]]></text>
+</component>
+</textcomponents>

@@ -1,0 +1,140 @@
+﻿<textcomponents> <!-- Slide 1 -->
+<component id='ID_s1_inst'>
+	<text><![CDATA[<b>Actividad: Resolver los problemas de configuración de STP, situación 1</b><br/>Arrastre el nombre del switch hasta el espacio proporcionado para indicar qué switch es el puente raíz según el resultado del comando <font face='Courier New'><b>show</b></font>.]]></text>
+</component>
+<component id='ID_s1_txt01'>
+	<text><![CDATA[&lt;resultado omitido&gt;]]></text>
+</component> <!-- Drag and Drop -->
+<component id='ID_s1_DS01'>
+	<text><![CDATA[SW1]]></text>
+</component>
+
+<component id='ID_s1_DS02'>
+	<text><![CDATA[SW2]]></text>
+</component>
+
+<component id='ID_s3_DS03'>
+	<text><![CDATA[SW3]]></text>
+</component>
+
+
+
+<component id='ID_s1_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id='ID_s1_CORRECT_BODY'>
+	<text><![CDATA[Identificó correctamente el puente raíz. Haga clic en el botón 2 para continuar.]]></text>
+</component>
+
+
+<component id='ID_s1_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_BODY'>
+	<text><![CDATA[No identificó correctamente el puente raíz. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_s1_check'>
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id='ID_s1_reset'>
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component> <!-- Slide 2 -->
+<component id='ID_s2_inst'>
+	<text><![CDATA[<b>Actividad: Resolver los problemas de configuración de STP, situación 2</b><br/>Arrastre hasta los espacios proporcionados el nombre de switch y el número de puerto para el switch con un puerto en modo de bloqueo de STP según la topología proporcionada y el resultado del comando <font face='Courier New'><b>show</b></font>.]]></text>
+</component>
+
+<!--<component id='ID_s2_txt01'>
+	<text><![CDATA[Puente raíz]]></text>
+</component> !-->
+<component id='ID_s2_txt01'>
+	<text><![CDATA[&lt;resultado omitido&gt;]]></text>
+</component>
+<!-- Drag and Drop -->
+<component id='ID_s2_DS01'>
+	<text><![CDATA[SW1]]></text>
+</component>
+
+<component id='ID_s2_DS02'>
+	<text><![CDATA[SW2]]></text>
+</component>
+
+<component id='ID_s2_DS03'>
+	<text><![CDATA[SW3]]></text>
+</component>
+
+<component id='ID_s2_DS04'>
+	<text><![CDATA[Gi 1/1]]></text>
+</component>
+
+<component id='ID_s2_DS05'>
+	<text><![CDATA[Gi 1/2]]></text>
+</component>
+
+
+
+<component id='ID_s2_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id='ID_s2_CORRECT_BODY'>
+	<text><![CDATA[Identificó correctamente el switch y el puerto en modo de bloqueo de STP. Haga clic en el botón&nbsp;3 para continuar.]]></text>
+</component>
+
+
+<component id='ID_s2_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_s2_INCORRECT_BODY'>
+	<text><![CDATA[No identificó correctamente el switch y el puerto en modo de bloqueo de STP. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_s2_check'>
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id='ID_s2_reset'>
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component> <!-- Slide 3 -->
+<component id='ID_s3_inst'>
+	<text><![CDATA[<b>Actividad: Resolver los problemas de configuración de STP, situación 3</b><br/>Hay un enlace que no participa en STP entre dos de los switches. Arrastre la “x” de color rojo hasta el enlace que está inactivo según el resultado del comando <font face='Courier New'><b>show</b></font>.]]></text>
+</component>
+
+<component id='ID_s3_txt01'>
+	<text><![CDATA[Puente raíz]]></text>
+</component>
+
+
+
+<component id='ID_s3_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id='ID_s3_CORRECT_BODY'>
+	<text><![CDATA[Identificó correctamente el enlace inactivo.]]></text>
+</component>
+
+
+<component id='ID_s3_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_s3_INCORRECT_BODY'>
+	<text><![CDATA[No identificó correctamente el enlace inactivo. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_s3_check'>
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id='ID_s3_reset'>
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component>
+
+
+
+</textcomponents>

@@ -1,0 +1,79 @@
+﻿<textcomponents> <!--SLIDE 1-->
+<component id="ID_s1_title">
+<text><![CDATA[<b>Tipos de acceso inalámbrico de banda ancha</b>]]></text>
+</component>
+
+<component id="ID_s1_table">
+  <text><![CDATA[<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4'>
+	<tr>
+		<td colspan='2' bgcolor='#0E6360' class="mtable_top"><font size='1' color='#0E6360'><span style="color:#98D3D1">.</span></font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#077A77'  valign="top"><font color='#ffffff'></font></td>
+		<td bgcolor='#077A77'  valign="top"><font color='#ffffff'></font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#EFF8F7' width="150" valign="top"><img src="6_2_3_1_s1_A.jpg" width="106" height="150" class="pics1"/></td>
+		<td bgcolor='#EFF8F7' valign="top"><font color='#393536'><font color='#393536'><textformat blockIndent="-14"><ul class="bulletIndent20"><li>Estándares IEEE 802.11 comúnmente denominados “Wi-Fi”.</li><li>Las implementaciones de Wi-Fi municipal utilizan una topología de malla, con un punto de acceso en cada nodo.</li><li>Las variantes incluyen 802.11a/b/g/n/ac/ad.</li><li>Admite velocidades de hasta 7&nbsp;Gb/s.</li></ul></textformat></font></font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#ffffff' valign="top"><img src="6_2_3_1_s1_B.jpg" width="150" height="113" class="pics" /></td>
+		<td bgcolor='#ffffff' valign="top"><font color='#393536'><font color='#393536'><textformat blockIndent="-14"><ul class="bulletIndent20"><li>Estándar IEEE 802.16 comúnmente denominado “WiMAX”.</li><li>Utiliza una topología de punto a multipunto para proporcionar acceso celular de banda ancha inalámbrica.</li><li>Admite velocidades de hasta 1&nbsp;Gb/s.</li></ul></textformat></font></font>
+		</td>
+	</tr>
+	<tr>
+	    <td bgcolor='#EFF8F7' valign="top"><img src="6_2_3_1_s1_C.jpg" width="150" height="111" class="pics3" /></td>
+		<td bgcolor='#EFF8F7' valign="top"><font color='#393536'><textformat blockIndent="-14"><ul class="bulletIndent20"><li>El acceso de banda ancha móvil consta de diversos estándares que admiten velocidades de hasta 5&nbsp;Mb/s.</li><li>Las variantes incluyen 2G (con GSM, CDMA o TDMA), 3G (con UMTS, CDMA2000, EDGE o HSPA+) y 4G (con WiMAX o LTE).</li></ul></textformat></font></td>
+	</tr>
+	
+		<tr>
+	    <td bgcolor='#ffffff' valign="top"><img src="6_2_3_1_s1_D.jpg" width="160" height="100" class="pics4" /></td>
+		<td bgcolor='#ffffff' valign="top"><font color='#393536'><textformat blockIndent="-14"><ul class="bulletIndent20"><li>La comunicación satelital se produce mediante una antena parabólica direccional alineada con un satélite GEO.</li><li>Ideal en situaciones tales como las de áreas remotas donde no hay otro acceso inalámbrico disponible.</li><li>Admite velocidades de descarga de hasta 10&nbsp;Mb/s.</li></ul></textformat></font></td>
+	</tr>
+		
+	</table>]]></text>
+  </component> <!--SLIDE 2-->
+<component id="ID_s2_title">
+	<text><![CDATA[<b>Implementación de Wi-Fi municipal (malla)</b>]]></text>
+</component>
+
+<component id="ID_s2_txt01">
+	<text><![CDATA[<b>Punto de acceso</b>]]></text>
+</component>
+
+<component id="ID_s2_txt02">
+	<text><![CDATA[<b>Nodo de retroceso</b>]]></text>
+</component>
+
+<component id="ID_s2_txt03">
+	<text><![CDATA[<b>A Internet</b>]]></text>
+</component> <!--SLIDE 3-->
+<component id="ID_s3_title">
+	<text><![CDATA[<b>Implementación de WiMax</b>]]></text>
+</component>
+	
+<component id="ID_s3_txt01">
+	<text><![CDATA[Red ISP]]></text>
+</component>
+	
+<component id="ID_s3_txt02">
+	<text><![CDATA[Backbone de Internet]]></text>
+</component>
+	
+<component id="ID_s3_txt03">
+	<text><![CDATA[Transmisor WiMAX 802.16]]></text>
+</component>
+	
+<component id="ID_s3_txt04">
+	<text><![CDATA[Red de área local hogareña]]></text>
+</component>
+	
+<component id="ID_s3_txt05">
+	<text><![CDATA[Transmisión sin línea de vista]]></text>
+</component>
+
+<component id="ID_s3_txt06">
+	<text><![CDATA[Red de retroceso con línea de vista]]></text>
+</component>
+	  
+</textcomponents>

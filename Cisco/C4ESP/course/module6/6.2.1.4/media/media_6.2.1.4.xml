@@ -1,0 +1,89 @@
+﻿<textcomponents>
+<component id="ID_title">
+<text><![CDATA[<b>Propagación de datos de extremo a extremo por cable</b>]]></text>
+</component>
+<component id="ID_txt01">
+  <text><![CDATA[Servidores (provisión, caché, web, correo electrónico)]]></text> 
+  </component>
+
+<component id="ID_txt02">
+  <text><![CDATA[Extremo final]]></text> 
+  </component>
+<component id="ID_txt03">
+  <text><![CDATA[CMTS]]></text> 
+  </component>
+
+  <component id="ID_txt04">
+  <text><![CDATA[Fibra]]></text> 
+  </component>
+<component id="ID_txt05">
+  <text><![CDATA[Nodo]]></text> 
+  </component>
+
+  <component id="ID_txt06">
+  <text><![CDATA[Módem por cable]]></text> 
+  </component>
+
+  <component id="ID_txt07">
+  <text><![CDATA[Área de distribución]]></text> 
+  </component>
+
+  <component id="ID_txt08">
+  <text><![CDATA[Cable coaxial]]></text> 
+  </component>
+  
+  
+<component id="ID_btn01_header">
+   <text><![CDATA[<b>CMTS</b>]]></text>
+</component>
+
+<component id="ID_btn01_body">
+   <text><![CDATA[un sistema de terminación de módems de cable (CMTS, Cable Modem Termination System) es un componente que intercambia señales digitales con módems por cable en una red de cable. Un CMTS de extremo final se comunica con los CM ubicados en los hogares de los suscriptores.]]></text>
+</component>
+
+<component id="ID_btn02_header">
+   <text><![CDATA[<b>Fibra</b>]]></text>
+</component>
+
+<component id="ID_btn02_body">
+   <text><![CDATA[generalmente, la parte troncal de la red de cable es cable de fibra óptica.]]></text>
+</component>
+
+<component id="ID_btn03_header">
+   <text><![CDATA[<b>Nodo</b>]]></text>
+</component>
+
+<component id="ID_btn03_body">
+   <text><![CDATA[los nodos convierten las señales ópticas en señales RF.]]></text>
+</component>
+
+<component id="ID_btn04_header">
+   <text><![CDATA[<b>Área de distribución</b>]]></text>
+</component>
+
+<component id="ID_btn04_body">
+   <text><![CDATA[un segmento de red de distribución (segmento de alimentación) va desde 500 a 2000 suscriptores.]]></text>
+</component>
+
+
+<component id="ID_btn05_header">
+   <text><![CDATA[<b>Módem por cable</b>]]></text>
+</component>
+
+
+<component id="ID_btn05_body">
+   <text><![CDATA[un módem por cable le permite recibir datos a alta velocidad. Generalmente, el módem por cable se conecta a una tarjeta Ethernet 10BASE-T estándar de la computadora.]]></text>
+</component>
+
+
+
+<component id="ID_btn06_header">
+   <text><![CDATA[<b>Cable coaxial</b>]]></text>
+</component>
+
+
+<component id="ID_btn06_body">
+   <text><![CDATA[los cables de alimentación coaxial se originan en el nodo y transportan las señales de RF a los suscriptores.]]></text>
+</component>
+
+</textcomponents>

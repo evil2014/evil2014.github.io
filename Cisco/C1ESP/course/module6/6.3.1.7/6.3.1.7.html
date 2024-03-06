@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.3.1.7 Interfaces LAN y WAN</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.3.1.7_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Routers</h1>
+        <h2>Anatomía de un router</h2>
+      </div>
+      <div id="content">
+<p>En forma similar a lo que sucede con los switches Cisco, existen varias maneras de acceder al entorno de la CLI de un router Cisco. Los métodos más comunes son los siguientes: </p>
+<p>
+<ul>
+<li>
+<b>Consola:</b> utiliza conexiones seriales de baja velocidad o USB para proporcionar acceso de administración fuera de banda con conexión directa a un dispositivo Cisco.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Telnet o SSH:</b> dos métodos para acceder de forma remota a una sesión de CLI a través de una interfaz de red activa.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Puerto auxiliar:</b> se utiliza para la administración remota del router mediante una línea telefónica de dial-up y un módem.</li>
+</ul>
+</p>
+<p></p>
+<p>El puerto de consola y el auxiliar están ubicados en el router.</p>
+<p></p>
+<p>Además de estos puertos, los routers también tienen interfaces de red para recibir y reenviar paquetes IP. Los routers tienen muchas interfaces que se usan para conectarse a múltiples redes. En general, las interfaces se conectan a distintos tipos de redes, lo que significa que se requieren distintos tipos de medios y de conectores. </p>
+<p></p>
+<p>Cada interfaz en el router es miembro o host de otra red IP. Cada interfaz se debe configurar con una dirección IP y una máscara de subred de una red diferente. Cisco IOS no permite que dos interfaces activas en el mismo router pertenezcan a la misma red.</p>
+<p></p>
+<p>Las interfaces del router se pueden agrupar en dos categorías:</p>
+<p>
+<ul>
+<li>
+<b>Interfaces LAN Ethernet:</b> se utilizan para conectar cables que terminan en dispositivos LAN, como PC y switches. La interfaz también puede utilizarse para conectar routers entre sí. Existen varias convenciones de nomenclatura de uso frecuente para las interfaces Ethernet: Ethernet antigua, FastEthernet y Gigabit Ethernet. El nombre utilizado depende del tipo y el modelo de dispositivo.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Interfaces WAN seriales:</b> se utilizan para conectar routers a redes externas, generalmente a una distancia geográfica más extensa. Al igual que las interfaces LAN, cada interfaz WAN serial tiene su propia dirección IP y su máscara de subred, que la identifican como miembro de una red específica.</li>
+</ul>
+</p>
+<p></p>
+<p>En la ilustración, se muestran las interfaces LAN y seriales del router.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

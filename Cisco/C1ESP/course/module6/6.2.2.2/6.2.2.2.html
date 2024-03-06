@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.2.2.2 Tabla de enrutamiento de router IPv4</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.2.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Enrutamiento</h1>
+        <h2>Tablas de enrutamiento de router</h2>
+      </div>
+      <div id="content">
+<p>En una tabla de enrutamiento de host, solo se incluye información sobre las redes conectadas directamente. Un host requiere un gateway predeterminado para enviar paquetes a un destino remoto. La tabla de enrutamiento de un router contiene información similar, pero también puede identificar redes remotas específicas. </p>
+<p></p>
+<p>La tabla de enrutamiento de un router es similar a la tabla de enrutamiento de un host. Ambas identifican lo siguiente:</p>
+<p>
+<ul>
+<li>Red de destino</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Métrica asociada a la red de destino</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Gateway para llegar a la red de destino</li>
+</ul>
+</p>
+<p></p>
+<p>En un router Cisco IOS, se puede utilizar el comando <span class="cmd"><b>show ip route</b></span> para ver la tabla de enrutamiento. Un router también proporciona información adicional de la ruta, incluida la forma en que se descubrió la ruta, cuándo se actualizó por última vez y qué interfaz específica se debe utilizar para llegar a un destino predefinido.</p>
+<p></p>
+<p>Cuando un paquete llega a la interfaz del router, este examina el encabezado del paquete para determinar la red de destino. Si la red de destino coincide con una ruta de la tabla de enrutamiento, el router reenvía el paquete utilizando la información especificada en la tabla. Si hay dos o más rutas posibles hacia el mismo destino, se utiliza la métrica para decidir qué ruta aparece en la tabla de enrutamiento.</p>
+<p></p>
+<p>En la ilustración, se muestra la tabla de enrutamiento del R1 en una red simple. A diferencia de la tabla de enrutamiento de host, no hay encabezados de columna que identifiquen la información incluida en una entrada de la tabla de enrutamiento. Por lo tanto, es importante conocer el significado de los distintos tipos de información incluidos en cada entrada.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

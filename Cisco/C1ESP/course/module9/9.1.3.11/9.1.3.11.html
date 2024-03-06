@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.1.3.11 Cálculo de hosts </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.1.3.11_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>División de una red IPv4 en subredes</h1>
+        <h2>División de una red IPv4 en subredes</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Cálculo de hosts</b>
+</p>
+<p>Para calcular el número de hosts, observe el tercer y cuarto octeto. Después de tomar prestados 7 bits para la subred, resta un bit de host en el tercer octeto y 8 bits de host en el cuarto octeto.</p>
+<p></p>
+<p>Aplique la fórmula de cálculo de hosts como se muestra en la figura 1.</p>
+<p></p>
+<p>2^9 = 512 </p>
+<p></p>
+<p>Sin embargo, recuerde que todos los bits 0 que se encuentran en la porción de host de la dirección forman la dirección de red, y que todos los bits 1 en la porción de host componen una dirección de broadcast. Por lo tanto, hay solo 510 direcciones de host realmente disponibles para cada subred. </p>
+<p></p>
+<p>Como se muestra en la figura 2, la primera dirección de host para la primera subred es 172.16.0.1, y la última dirección de host es 172.16.1.254. Recuerde que cada host debe contener una dirección IP válida dentro del rango definido para ese segmento de red. La subred asignada a la interfaz del router determinará a qué segmento pertenece un host.</p>
+<p></p>
+<p>
+<b>Recordatorio:</b>
+</p>
+<p>Los bits solo se pueden tomar prestados de la porción de host de la dirección. El proveedor de servicios determina la porción de red de la dirección, la que no puede modificarse. Por lo tanto, las organizaciones que requieren una cantidad significativa de subredes deben comunicar esta necesidad a su ISP de modo que este les asigne un bloque de direcciones IP con una máscara predeterminada con suficientes bits para crear las subredes necesarias.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

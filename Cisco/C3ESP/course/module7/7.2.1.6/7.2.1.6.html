@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.2.1.6 El comando network</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.2.1.6_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de EIGRP para IPv4</h1>
+        <h2>Configuración de EIGRP con IPv4</h2>
+      </div>
+      <div id="content">
+<p>El modo de configuración del router EIGRP permite la configuración del protocolo de routing EIGRP. En la figura 1, se muestra que el R1, el R2, y el R3 tienen redes que deberían estar incluidas dentro de un único dominio de routing EIGRP. Para habilitar un routing EIGRP en una interfaz, utilice el comando <span class="cmd"><b>network</b></span> del modo de configuración del router e introduzca la dirección de red con clase para cada red conectada directamente.</p>
+<p></p>
+<p>El comando <span class="cmd"><b>network</b></span> tiene la misma función que en todos los protocolos de routing IGP. Con el comando <span class="cmd"><b>network</b></span> en EIGRP: </p>
+<p>
+<ul>
+<li>Se habilita cualquier interfaz en el router que coincida con la dirección de red en el comando <span class="cmd"><b>network</b></span> del modo de configuración del router para enviar y recibir actualizaciones de EIGRP.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Se incluye la red de las interfaces en las actualizaciones de routing EIGRP.</li>
+</ul>
+</p>
+<p></p>
+<p></p>
+<p>
+<span class="cmd">Router(config-router)# </span>
+<span class="cmd">
+<b>network</b>
+</span>
+<span class="cmd"></span>
+<span class="cmd">
+<i>dirección de red ipv4</i>
+</span>
+</p>
+<p></p>
+<p>El argumento <span class="cmd"><i>dirección de red ipv4</i></span> es la dirección de red IPv4 con clase para esta interfaz. En la figura 2, se muestran los comandos network configurados para el R1. En la ilustración, se utiliza una única instrucción <span class="cmd"><b>network</b></span> con clase (<span class="cmd"><b>network 172.16.0.0</b></span>) en el R1 para incluir ambas interfaces en las subredes 172.16.1.0/24 y 172.16.3.0/30. Observe que solo se utiliza la dirección de red con clase.</p>
+<p></p>
+<p>En la figura 3, se muestra el uso del comando <span class="cmd"><b>network</b></span> para habilitar EIGRP en las interfaces del R2 para las subredes 172.16.1.0/24 y 172.16.2.0/24. Cuando se configura EIGRP en la interfaz S0/0/0 del R2, DUAL envía un mensaje de notificación a la consola que indica que se estableció una adyacencia de vecino con otro router EIGRP en esa interfaz. Esta nueva adyacencia se produce automáticamente, porque el R1 y el R2 usan el mismo número de sistema autónomo <span class="cmd"><b>eigrp 1</b></span> y ambos routers envían ahora actualizaciones en sus interfaces en la red 172.16.0.0.</p>
+<p></p>
+<p>El comando <span class="cmd"><b>eigrp log-neighbor-changes</b></span> del modo de configuración del router está habilitado de manera predeterminada. Este comando se utiliza para lo siguiente:</p>
+<p>
+<ul>
+<li>Mostrar cualquier cambio en las adyacencias de vecinos EIGRP. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Ayudar a verificar adyacencias de vecinos durante la configuración de EIGRP. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Avisar al administrador de red cuando se elimine cualquier adyacencia EIGRP.</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

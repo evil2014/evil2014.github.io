@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.2.1.6 Aplicación de ACL estándar a las interfaces (cont.)</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.2.1.6_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>ACL de IPv4 estándar </h1>
+        <h2>Configuración de ACL de IPv4 estándar</h2>
+      </div>
+      <div id="content">
+<p>En la figura 1, se muestra un ejemplo de una ACL que permite una subred específica, a excepción de un host específico en esa subred.</p>
+<p></p>
+<p>Esta ACL reemplaza el ejemplo anterior, pero también bloquea el tráfico de una dirección específica. El primer comando elimina la versión anterior de la ACL 1. La siguiente instrucción de ACL deniega el host de la PC1 ubicado en 192.168.10.10. Todos los demás hosts en la red 192.168.10.0/24 se permiten. En este caso, la instrucción deny implícita también coincide con todas las demás redes.</p>
+<p></p>
+<p>La ACL se vuelva a aplicar a la interfaz S0/0/0 en sentido de salida.</p>
+<p></p>
+<p>En la figura 2, se muestra un ejemplo de una ACL que deniega un host específico. Esta ACL reemplaza el ejemplo anterior. En este ejemplo, se sigue bloqueando el tráfico del host PC1, pero se permite el resto del tráfico. </p>
+<p></p>
+<p>Los primeros dos comandos son los mismos que en el ejemplo anterior. El primer comando elimina la versión anterior de la ACL 1, y la siguiente instrucción de ACL deniega el host PC1 que está ubicado en 192.168.10.10. </p>
+<p></p>
+<p>La tercera línea es nueva y permite el resto de los hosts. Esto significa que se permiten todos los hosts de la red 192.168.10.0/24, excepto PC1, que se denegó en la instrucción anterior. </p>
+<p></p>
+<p>Esta ACL se aplica a la interfaz G0/0 en sentido de entrada. Debido a que el filtro afecta únicamente a la LAN 192.168.10.0/24 en G0/0, es más eficaz aplicar la ACL a la interfaz de entrada. Se puede aplicar la ACL a s0/0/0 en sentido de salida, pero entonces el R1 tendría que examinar los paquetes de todas las redes, incluida 192.168.11.0/24.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.1.1.1 Comparación entre routing y switching</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.1.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuraciones avanzadas de OSPF de área única </h1>
+        <h2>Routing en las capas de distribución y de núcleo</h2>
+      </div>
+      <div id="content">
+<p>Las redes escalables requieren un diseño de red jerárquico. El eje central de los capítulos anteriores fueron las capas de acceso y de distribución. Como se muestra en la figura 1, los switches de capa 2, la agregación de enlaces, la redundancia LAN y las LAN inalámbricas son tecnologías que le proporcionan al usuario acceso a los recursos de la red o mejoran dicho acceso.</p>
+<p></p>
+<p>Las redes escalables también requieren que la posibilidad de conexión entre sitios sea óptima. La posibilidad de conexión de una red remota es proporcionada por los routers y los switches de capa 3 que operan en las capas de distribución y de núcleo, como se muestra en la figura 2. Los routers y los switches de capa 3 descubren las redes remotas de una de las dos maneras siguientes:</p>
+<p>
+<ul>
+<li>
+<b>Manualmente:</b> las redes remotas se introducen manualmente en la tabla de rutas por medio de rutas estáticas.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Dinámicamente:</b> las rutas remotas se descubren automáticamente por medio de un protocolo de routing dinámico, como el protocolo de routing de gateway interior mejorado (EIGRP) o el protocolo OSPF (Open Shortest Path First).</li>
+</ul>
+</p>
+<p></p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

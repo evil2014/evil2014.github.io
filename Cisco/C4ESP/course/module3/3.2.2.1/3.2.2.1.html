@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>3.2.2.1 Arquitectura de capas PPP</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_3.2.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Funcionamiento de PPP</h1>
+        <h2>LCP y NCP</h2>
+      </div>
+      <div id="content">
+<p>Una arquitectura en capas es un modelo, un diseño, o un plano lógico que ayuda en la comunicación de las capas que se interconectan. En la ilustración, se compara la arquitectura en capas de PPP con el modelo de interconexión de sistema abierto (OSI). PPP y OSI comparten la misma capa física, pero PPP distribuye las funciones de LCP y NCP de manera diferente. </p>
+<p></p>
+<p>En la capa física, puede configurar PPP en un rango de interfaces, incluidas las siguientes:</p>
+<p></p>
+<p>
+<ul>
+<li>Serial asíncrona </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Serial síncrona </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>HSSI</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>ISDN </li>
+</ul>
+</p>
+<p></p>
+<p>PPP opera a través de cualquier interfaz DTE/DCE (RS-232-C, RS-422, RS-423 o V.35). El único requisito absoluto impuesto por PPP es un circuito full-duplex, ya sea dedicado o conmutado, que pueda funcionar en modo de bits seriales síncrono o asíncrono, transparente para las tramas de capa de enlace PPP. PPP no impone ninguna restricción con respecto a la velocidad de transmisión además de los impuestos por la interfaz DTE/DCE específica que se utiliza. </p>
+<p></p>
+<p>La mayor parte del trabajo que realiza PPP lo llevan a cabo LCP y los NCP en las capas de enlace de datos y de red. LCP configura la conexión PPP y sus parámetros, los NCP manejan las configuraciones de protocolo de capa superior, y LCP finaliza la conexión PPP.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

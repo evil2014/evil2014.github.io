@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.2.4.1 Propiedades de los medios inalámbricos</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.2.4.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Medios de red</h1>
+        <h2>Medios inalámbricos</h2>
+      </div>
+      <div id="content">
+<p>Los medios inalámbricos transportan señales electromagnéticas que representan los dígitos binarios de las comunicaciones de datos mediante frecuencias de radio y de microondas. </p>
+<p></p>
+<p>Como medio de redes, el sistema inalámbrico no se limita a conductores o canaletas, como en el caso de los medios de fibra o de cobre. De todos los medios, los inalámbricos proporcionan las mayores opciones de movilidad. Además, la cantidad de dispositivos con tecnología inalámbrica aumenta continuamente. Por estos motivos, la tecnología inalámbrica se convirtió en el medio de preferencia para las redes domésticas. A medida que aumentan las opciones de ancho de banda de red, la tecnología inalámbrica adquiere popularidad rápidamente en las redes empresariales. </p>
+<p></p>
+<p>En la ilustración, se destacan varios símbolos relacionados con la tecnología inalámbrica.</p>
+<p></p>
+<p>Sin embargo, existen algunas áreas de importancia para la tecnología inalámbrica, que incluyen las siguientes:</p>
+<p>
+<ul>
+<li>
+<b>Área de cobertura:</b> las tecnologías inalámbricas de comunicación de datos funcionan bien en entornos abiertos. Sin embargo, existen determinados materiales de construcción utilizados en edificios y estructuras, además del terreno local, que limitan la cobertura efectiva. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Interferencia:</b> la tecnología inalámbrica también es vulnerable a la interferencia y puede verse afectada por dispositivos comunes como teléfonos inalámbricos domésticos, algunos tipos de luces fluorescentes, hornos de microondas y otras comunicaciones inalámbricas.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Seguridad:</b> la cobertura de la comunicación inalámbrica no requiere acceso a un hilo físico de un medio. Por lo tanto, dispositivos y usuarios sin autorización para acceder a la red pueden obtener acceso a la transmisión. En consecuencia, la seguridad de la red es un componente importante de la administración de una red inalámbrica.</li>
+</ul>
+</p>
+<p></p>
+<p>Si bien la tecnología inalámbrica es cada vez más popular para la conectividad de escritorio, el cobre y la fibra óptica son los medios de capa física más populares para las implementaciones de redes.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

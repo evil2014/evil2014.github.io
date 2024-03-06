@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html class="module-index" dir="ltr">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta charset="UTF-8"/>
+    <title>Principios básicos de routing y switching</title>
+    <link rel="stylesheet" type="text/css" href="../common-ext/styles/index.css"/>
+    <script type="text/javascript" src="../common-ext/scripts/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="../common-ext/scripts/index.js"></script>
+  </head>
+  <body>
+    <div id="header">
+      <div id="header-logo" title="Cisco Systems, Inc. - Cisco Networking Academy"></div>
+      <a id="home-btn" href="../../index.html" title="Inicio">Inicio</a>
+      <h1>Capítulo 10: DHCP <span id="title"></span></h1>
+    </div>
+    <div id="nav">
+      <ul class="sections"><li><span class="icon"></span><span class="section-title">10.0 Introducción</span><ul class="topics"><li><span class="icon"></span><span class="topic-title">10.0.1 Introducción</span><ul class="pages"><li><a data-ident="10.0.1.1" class="page-title" href="10.0.1.1/10.0.1.1.html" target="frame">10.0.1.1 Introducción</a></li>
+<li><a data-ident="10.0.1.2" class="page-title" href="10.0.1.2/10.0.1.2.html" target="frame">10.0.1.2 Actividad: ¿ser propietario o arrendar?</a></li>
+</ul></li>
+</ul></li>
+<li><span class="icon"></span><span class="section-title">10.1 Protocolo de configuración dinámica de host v4</span><ul class="topics"><li><span class="icon"></span><span class="topic-title">10.1.1 Funcionamiento de DHCPv4</span><ul class="pages"><li><a data-ident="10.1.1.1" class="page-title" href="10.1.1.1/10.1.1.1.html" target="frame">10.1.1.1 Introducción a DHCPv4</a></li>
+<li><a data-ident="10.1.1.2" class="page-title" href="10.1.1.2/10.1.1.2.html" target="frame">10.1.1.2 Funcionamiento de DHCPv4</a></li>
+<li><a data-ident="10.1.1.3" class="page-title" href="10.1.1.3/10.1.1.3.html" target="frame">10.1.1.3 Formato del mensaje DHCPv4</a></li>
+<li><a data-ident="10.1.1.4" class="page-title" href="10.1.1.4/10.1.1.4.html" target="frame">10.1.1.4 Mensajes Discover (Detección) y Offer (Oferta) de DHCPv4</a></li>
+<li><a data-ident="10.1.1.5" class="page-title" href="10.1.1.5/10.1.1.5.html" target="frame">10.1.1.5 Actividad: identificar los pasos del funcionamiento de DHCPv4</a></li>
+</ul></li>
+<li><span class="icon"></span><span class="topic-title">10.1.2 Configuración de un servidor de DHCPv4 básico</span><ul class="pages"><li><a data-ident="10.1.2.1" class="page-title" href="10.1.2.1/10.1.2.1.html" target="frame">10.1.2.1 Configuración de un servidor de DHCPv4 básico</a></li>
+<li><a data-ident="10.1.2.2" class="page-title" href="10.1.2.2/10.1.2.2.html" target="frame">10.1.2.2 Verificación de DHCPv4</a></li>
+<li><a data-ident="10.1.2.3" class="page-title" href="10.1.2.3/10.1.2.3.html" target="frame">10.1.2.3 Retransmisión de DHCPv4</a></li>
+<li><a data-ident="10.1.2.4" class="page-title" href="10.1.2.4/10.1.2.4.html" target="frame">10.1.2.4 Práctica de laboratorio: configuración de DHCPv4 básico en un router</a></li>
+<li><a data-ident="10.1.2.5" class="page-title" href="10.1.2.5/10.1.2.5.html" target="frame">10.1.2.5 Práctica de laboratorio: configuración de DHCPv4 básico en un switch</a></li>
+</ul></li>
+<li><span class="icon"></span><span class="topic-title">10.1.3 Configuración de cliente DHCPv4</span><ul class="pages"><li><a data-ident="10.1.3.1" class="page-title" href="10.1.3.1/10.1.3.1.html" target="frame">10.1.3.1 Configuración de un router como cliente DHCPv4</a></li>
+<li><a data-ident="10.1.3.2" class="page-title" href="10.1.3.2/10.1.3.2.html" target="frame">10.1.3.2 Configuración de un router SOHO como cliente DHCPv4 </a></li>
+<li><a data-ident="10.1.3.3" class="page-title" href="10.1.3.3/10.1.3.3.html" target="frame">10.1.3.3 Packet Tracer: configuración de DHCPv4 mediante el IOS de Cisco</a></li>
+</ul></li>
+<li><span class="icon"></span><span class="topic-title">10.1.4 Resolución de problemas de DHCPv4</span><ul class="pages"><li><a data-ident="10.1.4.1" class="page-title" href="10.1.4.1/10.1.4.1.html" target="frame">10.1.4.1 Tareas de solución de problemas</a></li>
+<li><a data-ident="10.1.4.2" class="page-title" href="10.1.4.2/10.1.4.2.html" target="frame">10.1.4.2 Verificación de la configuración de DHCPv4 del router</a></li>
+<li><a data-ident="10.1.4.3" class="page-title" href="10.1.4.3/10.1.4.3.html" target="frame">10.1.4.3 Depuración de DHCPv4</a></li>
+<li><a data-ident="10.1.4.4" class="page-title" href="10.1.4.4/10.1.4.4.html" target="frame">10.1.4.4 Práctica de laboratorio: resolución de problemas de DHCPv4</a></li>
+</ul></li>
+</ul></li>
+<li><span class="icon"></span><span class="section-title">10.2 Protocolo de configuración dinámica de host v6</span><ul class="topics"><li><span class="icon"></span><span class="topic-title">10.2.1 SLAAC y DHCPv6</span><ul class="pages"><li><a data-ident="10.2.1.1" class="page-title" href="10.2.1.1/10.2.1.1.html" target="frame">10.2.1.1 Configuración automática de dirección sin estado (SLAAC)</a></li>
+<li><a data-ident="10.2.1.2" class="page-title" href="10.2.1.2/10.2.1.2.html" target="frame">10.2.1.2 Funcionamiento de SLAAC</a></li>
+<li><a data-ident="10.2.1.3" class="page-title" href="10.2.1.3/10.2.1.3.html" target="frame">10.2.1.3 SLAAC y DHCPv6</a></li>
+<li><a data-ident="10.2.1.4" class="page-title" href="10.2.1.4/10.2.1.4.html" target="frame">10.2.1.4 Opción de SLAAC</a></li>
+<li><a data-ident="10.2.1.5" class="page-title" href="10.2.1.5/10.2.1.5.html" target="frame">10.2.1.5 Opción de DHCPv6 sin estado</a></li>
+<li><a data-ident="10.2.1.6" class="page-title" href="10.2.1.6/10.2.1.6.html" target="frame">10.2.1.6 Opción de DHCPv6 con estado</a></li>
+<li><a data-ident="10.2.1.7" class="page-title" href="10.2.1.7/10.2.1.7.html" target="frame">10.2.1.7 Operaciones de DHCPv6</a></li>
+<li><a data-ident="10.2.1.8" class="page-title" href="10.2.1.8/10.2.1.8.html" target="frame">10.2.1.8 Actividad: identificar los pasos del funcionamiento de DHCPv6</a></li>
+</ul></li>
+<li><span class="icon"></span><span class="topic-title">10.2.2 DHCPv6 sin estado</span><ul class="pages"><li><a data-ident="10.2.2.1" class="page-title" href="10.2.2.1/10.2.2.1.html" target="frame">10.2.2.1 Configuración de un router como servidor de DHCPv6 sin estado</a></li>
+<li><a data-ident="10.2.2.2" class="page-title" href="10.2.2.2/10.2.2.2.html" target="frame">10.2.2.2 Configuración de un router como cliente DHCPv6 sin estado</a></li>
+<li><a data-ident="10.2.2.3" class="page-title" href="10.2.2.3/10.2.2.3.html" target="frame">10.2.2.3 Verificación de DHCPv6 sin estado </a></li>
+</ul></li>
+<li><span class="icon"></span><span class="topic-title">10.2.3 Servidor de DHCPv6 con estado</span><ul class="pages"><li><a data-ident="10.2.3.1" class="page-title" href="10.2.3.1/10.2.3.1.html" target="frame">10.2.3.1 Configuración de un router como servidor de DHCPv6 con estado</a></li>
+<li><a data-ident="10.2.3.2" class="page-title" href="10.2.3.2/10.2.3.2.html" target="frame">10.2.3.2 Configuración de un router como cliente DHCPv6 con estado</a></li>
+<li><a data-ident="10.2.3.3" class="page-title" href="10.2.3.3/10.2.3.3.html" target="frame">10.2.3.3 Verificación de DHCPv6 con estado </a></li>
+<li><a data-ident="10.2.3.4" class="page-title" href="10.2.3.4/10.2.3.4.html" target="frame">10.2.3.4 Configuración de un router como agente de retransmisión DHCPv6</a></li>
+<li><a data-ident="10.2.3.5" class="page-title" href="10.2.3.5/10.2.3.5.html" target="frame">10.2.3.5 Práctica de laboratorio: configuración de DHCPv6 sin estado y con estado</a></li>
+</ul></li>
+<li><span class="icon"></span><span class="topic-title">10.2.4 Resolución de problemas de DHCPv6</span><ul class="pages"><li><a data-ident="10.2.4.1" class="page-title" href="10.2.4.1/10.2.4.1.html" target="frame">10.2.4.1 Tareas de solución de problemas</a></li>
+<li><a data-ident="10.2.4.2" class="page-title" href="10.2.4.2/10.2.4.2.html" target="frame">10.2.4.2 Verificación de la configuración de DHCPv6 del router</a></li>
+<li><a data-ident="10.2.4.3" class="page-title" href="10.2.4.3/10.2.4.3.html" target="frame">10.2.4.3 Depuración de DHCPv6</a></li>
+<li><a data-ident="10.2.4.4" class="page-title" href="10.2.4.4/10.2.4.4.html" target="frame">10.2.4.4 Práctica de laboratorio: resolución de problemas de DHCPv6</a></li>
+</ul></li>
+</ul></li>
+<li><span class="icon"></span><span class="section-title">10.3 Resumen</span><ul class="topics"><li><span class="icon"></span><span class="topic-title">10.3.1 Resumen</span><ul class="pages"><li><a data-ident="10.3.1.1" class="page-title" href="10.3.1.1/10.3.1.1.html" target="frame">10.3.1.1 Actividad: IoE y DHCP</a></li>
+<li><a data-ident="10.3.1.2" class="page-title" href="10.3.1.2/10.3.1.2.html" target="frame">10.3.1.2 Reto de habilidades de integración de Packet Tracer</a></li>
+<li><a data-ident="10.3.1.3" class="page-title" href="10.3.1.3/10.3.1.3.html" target="frame">10.3.1.3 Resumen</a></li>
+</ul></li>
+</ul></li>
+</ul>
+    </div>
+    <ul id="nav-menu" class="contextmenu">
+      <li id="nav-menu-expand">Expandir todo</li>
+      <li id="nav-menu-collapse">Contraer todo</li>
+    </ul>
+    <div id="content">
+      <div id="container"></div>
+      <button id="prev-btn" type="button" title="Anterior" disabled><span class="icon">Anterior</span></button>
+      <input id="jump-box" type="text" value=""/>
+      <button id="next-btn" type="button" title="Siguiente" disabled><span class="icon">Siguiente</span></button>
+      <button id="mini-btn" type="button" title="Alternar"><span class="icon">Alternar</span></button>
+    </div>
+  </body>
+</html>
+

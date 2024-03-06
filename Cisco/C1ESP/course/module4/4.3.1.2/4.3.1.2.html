@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.3.1.2 Subcapas de enlace de datos</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.3.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolos de la capa de enlace de datos</h1>
+        <h2>Propósito de la capa de enlace de datos</h2>
+      </div>
+      <div id="content">
+<p>La capa de enlace de datos se divide en dos subcapas: </p>
+<p>
+<ul>
+<li>
+<b>Control de enlace lógico (LLC):</b> se trata de la subcapa superior, que define los procesos de software que proporcionan servicios a los protocolos de capa de red. El LLC coloca en la trama información que identifica qué protocolo de capa de red se utiliza para la trama. Esta información permite que varios protocolos de la capa 3, tales como IPv4 e IPv6, utilicen la misma interfaz y los mismos medios de red. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Control de acceso al medio (MAC):</b> se trata de la subcapa inferior, que define los procesos de acceso al medio que realiza el hardware. Proporciona el direccionamiento de la capa de enlace de datos y la delimitación de los datos de acuerdo con los requisitos de señalización física del medio y con el tipo de protocolo de capa de enlace de datos en uso.</li>
+</ul>
+</p>
+<p></p>
+<p>La separación de la capa de enlace de datos en subcapas permite que un tipo de trama definido por la capa superior acceda a distintos tipos de medios definidos por la capa inferior. Tal es el caso en muchas tecnologías LAN, incluida Ethernet.</p>
+<p></p>
+<p>En la ilustración, se muestra la forma en que la capa de enlace de datos se divide en las subcapas LLC y MAC. El LLC se comunica con la capa de red, mientras que la subcapa MAC admite diversas tecnologías de acceso de red. Por ejemplo, la subcapa MAC se comunica con la tecnología LAN Ethernet para enviar y recibir las tramas a través de cables de cobre o de fibra óptica. La subcapa MAC también se comunica con tecnologías inalámbricas como Wi-Fi y Bluetooth para enviar y recibir tramas en forma inalámbrica.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

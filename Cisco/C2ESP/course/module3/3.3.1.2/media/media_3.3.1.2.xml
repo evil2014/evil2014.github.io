@@ -1,0 +1,49 @@
+﻿<textcomponents>
+<component id="ID_Title">
+<text><![CDATA[<b>Ataque de etiquetado doble</b>]]></text>
+</component>
+<component id="ID_txt01">
+<text><![CDATA[Un atacante se encuentra en la VLAN&nbsp;10. Este etiqueta una trama para la VLAN&nbsp;10 e inserta una etiqueta adicional para la VLAN&nbsp;20.]]></text> 
+</component>
+<component id="ID_txt02">
+<text><![CDATA[El primer switch elimina la primera etiqueta y no vuelve a colocar otra, porque el tráfico nativo no se vuelve a etiquetar. A continuación, reenvía la trama al switch siguiente.]]></text> 
+</component>
+<component id="ID_txt03">
+<text><![CDATA[El segundo switch examina la trama, observa la etiqueta de la VLAN&nbsp;20 y la reenvía en consecuencia.]]></text>
+</component>
+<component id="ID_txt04">
+<text><![CDATA[Enlace troncal<br/>VLAN nativa = 10]]></text> 
+</component>
+<component id="ID_txt05">
+<text><![CDATA[Objetivo (VLAN&nbsp;20)]]></text> 
+</component>
+<component id="ID_txt06">
+<text><![CDATA[Ethernet]]></text> 
+</component>
+<component id="ID_txt07">
+<text><![CDATA[VLAN 10]]></text> 
+</component>
+<component id="ID_txt08">
+<text><![CDATA[VLAN 20]]></text> 
+</component>
+<component id="ID_txt09">
+<text><![CDATA[Datos]]></text> 
+</component>
+<component id="ID_txt10">
+<text><![CDATA[Ethernet]]></text> 
+</component>
+<component id="ID_txt11">
+<text><![CDATA[VLAN 20]]></text> 
+</component>
+<component id="ID_txt12">
+<text><![CDATA[Datos]]></text> 
+</component>
+<component id="ID_txt13">
+<text><![CDATA[Ethernet]]></text> 
+</component>
+<component id="ID_txt14">
+<text><![CDATA[Datos]]></text> 
+</component>
+
+
+</textcomponents>

@@ -1,0 +1,87 @@
+﻿<textcomponents>
+<component id="ID_s1_title">
+<text><![CDATA[<b>Topología EIGRP para IPv4</b>]]></text>
+</component>
+<component id="ID_s1_txt01">
+  <text><![CDATA[<b>Dominio de routing EIGRP</b>]]></text> 
+  </component>
+<component id="ID_s1_txt02">
+	<text><![CDATA[Internet]]></text> 
+</component>
+<component id="ID_s1_txt03">
+	<text><![CDATA[<b>¿Sucesor factible?</b>]]></text> 
+</component>
+<component id="ID_s1_txt04">
+	<text><![CDATA[<b>Sucesor</b>]]></text> 
+</component>
+
+
+
+<component id="ID_s2_title">
+<text><![CDATA[<b>Envío de la distancia notificada</b>]]></text>
+</component>
+<component id="ID_s2_txt01">
+  <text><![CDATA[RD<br>2,170,112]]></text> 
+  </component>
+<component id="ID_s2_txt02">
+	<text><![CDATA[<b>¿Sucesor factible?</b>]]></text> 
+</component>
+<component id="ID_s2_txt03">
+	<text><![CDATA[FD<br>2,170,112]]></text> 
+</component>
+<component id="ID_s2_txt04">
+	<text><![CDATA[Enviaré al R2 mi distancia factible para llegar a 192.168.1.0/24 como una distancia notificada.]]></text> 
+</component>
+<component id="ID_s2_txt05">
+	<text><![CDATA[&lt;resultado omitido&gt;]]></text> 
+</component>
+
+
+
+
+<component id="ID_s3_title">
+<text><![CDATA[<b>¿Cumple con la condición de factibilidad?</b>]]></text>
+</component>
+<component id="ID_s3_txt01">
+  <text><![CDATA[<textformat blockindent="-14"><ul><li>La distancia factible del R2 a 192.168.1.0 es 3&nbsp;012&nbsp;096.</li><li>La distancia notificada del R1 a 192.168.1.0 es 2&nbsp;170&nbsp;112.</li><li>El R1 cumple con la condición de factibilidad.</li></ul></textformat>]]></text> 
+  </component>
+<component id="ID_s3_txt02">
+	<text><![CDATA[&lt;resultado omitido&gt;]]></text>  
+</component>
+<component id="ID_s3_txt03">
+	<text><![CDATA[&lt;resultado omitido&gt;]]></text> 
+</component>
+<component id="ID_s3_txt04">
+	<text><![CDATA[Distancia factible]]></text> 
+</component>
+<component id="ID_s3_txt05">
+	<text><![CDATA[Sucesor (R3)]]></text> 
+</component>
+<component id="ID_s3_txt06">
+	<text><![CDATA[Distancia factible<br>Enviado al R2 como la distancia notificada del R1.]]></text> 
+</component>
+
+
+
+<component id="ID_s4_title">
+<text><![CDATA[<b>Uso del sucesor factible</b>]]></text>
+</component>
+<component id="ID_s4_txt01">
+  <text><![CDATA[<font color="#F68026"><b>FD<br>41,024,256</b></font>]]></text> 
+  </component>
+<component id="ID_s4_txt02">
+	<text><![CDATA[<font color="#F68026"><b>Nuevo sucesor</b></font>]]></text>  
+</component>
+<component id="ID_s4_txt03">
+	<text><![CDATA[&lt;resultado omitido&gt;]]></text> 
+</component>
+<component id="ID_s4_txt04">
+	<text><![CDATA[Distancia factible]]></text> 
+</component>
+<component id="ID_s4_txt05">
+	<text><![CDATA[Sucesor (R1)]]></text> 
+</component>
+
+
+
+</textcomponents>

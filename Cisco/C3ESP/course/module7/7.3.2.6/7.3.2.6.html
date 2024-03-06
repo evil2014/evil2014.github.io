@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.3.2.6 Cálculo de la métrica de EIGRP</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.3.2.6_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1> Funcionamiento de EIGRP</h1>
+        <h2>Métricas</h2>
+      </div>
+      <div id="content">
+<p>En la figura 1, se muestra la topología de los tres routers. Este ejemplo ilustra la manera en que EIGRP determina la métrica que se muestra en la tabla de routing del R2 para la red 192.168.1.0/24. </p>
+<p></p>
+<p>
+<b>Ancho de banda</b>
+</p>
+<p></p>
+<p>EIGRP usa el ancho de banda más lento en el cálculo de su métrica. El ancho de banda más lento se puede determinar por medio de analizar cada interfaz entre el R2 y la red de destino 192.168.1.0. La interfaz Serial 0/0/1en el R2 tiene un ancho de banda de 1024 kb/s. La interfaz GigabitEthernet 0/0 en el R3 tiene un ancho de banda de 1 000 000 kb/s. Por lo tanto, el ancho de banda más lento es de 1024 kb/s y se usa en el cálculo de la métrica.</p>
+<p></p>
+<p>EIGRP divide un valor de ancho de banda de referencia de 10 000 000 por el valor en kb/s del ancho de banda de la interfaz. Como resultado, los valores más altos de ancho de banda reciben una métrica más baja, y los valores más bajos de ancho de banda reciben una métrica más alta. 10 000 000 se divide por 1024. Si el resultado no es un número entero, el valor se redondea hacia abajo. En este caso, 10 000 000 dividido por 1024 es igual a 9765,625. Los decimales (625) se descartan, y el resultado es 9765 para la porción de ancho de banda de la métrica compuesta, como se muestra en la figura 2.</p>
+<p></p>
+<p>
+<b>Retardo</b>
+</p>
+<p></p>
+<p>Como se muestra en la figura 3, se utilizan las mismas interfaces de salida para determinar el valor de retraso.</p>
+<p></p>
+<p>EIGRP usa la suma de todos los retrasos hasta el destino. La interfaz Serial 0/0/1en el R2 tiene un retraso de 20 000 microsegundos. La interfaz Gigabit 0/0 en el R3 tiene un retraso de 10 microsegundos. La suma de estos retrasos se divide por 10. En el ejemplo, (20 000+10)/10, da como resultado un valor de 2001 para la porción de retraso de la métrica compuesta.</p>
+<p></p>
+<p>
+<b>Cálculo de la métrica</b>
+</p>
+<p></p>
+<p>Utilice los valores calculados para el ancho de banda y el retraso en la fórmula de la métrica. El resultado es una métrica de 3 012 096, como se muestra en la figura 4. Este valor coincide con el valor que se muestra en la tabla de routing para el R2. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

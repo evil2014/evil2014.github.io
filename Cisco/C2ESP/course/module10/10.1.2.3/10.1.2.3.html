@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>10.1.2.3 Retransmisión de DHCPv4</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_10.1.2.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolo de configuración dinámica de host v4</h1>
+        <h2>Configuración de un servidor de DHCPv4 básico</h2>
+      </div>
+      <div id="content">
+<p>
+<b>¿Qué es la retransmisión de DHCP?</b>
+</p>
+<p></p>
+<p>En una red jerárquica compleja, los servidores empresariales suelen estar ubicados en una granja de servidores. Estos servidores pueden proporcionar servicios DHCP, DNS, TFTP y FTP para la red. Generalmente, los clientes de red no se encuentran en la misma subred que esos servidores. Para ubicar los servidores y recibir servicios, los clientes con frecuencia utilizan mensajes de difusión. </p>
+<p></p>
+<p>En la figura 1, la PC1 intenta adquirir una dirección IPv4 de un servidor de DHCP mediante un mensaje de difusión. En esta situación, el router R1 no está configurado como servidor de DHCPv4 y no reenvía el mensaje de difusión. Dado que el servidor de DHCPv4 está ubicado en una red diferente, la PC1 no puede recibir una dirección IP mediante DHCP.</p>
+<p></p>
+<p>En la figura 2, la PC1 intenta renovar su dirección IPv4. Para hacerlo, se emite el comando <span class="cmd"><b>ipconfig /release</b></span>. Observe que se libera la dirección IPv4, y se muestra que la dirección es 0.0.0.0. A continuación, se emite el comando <span class="cmd"><b>ipconfig /renew</b></span>. Este comando hace que la PC1 transmita por difusión un mensaje DHCPDISCOVER. En el resultado se muestra que la PC1 no puede ubicar el servidor de DHCPv4. Dado que los routers no reenvían mensajes de difusión, la solicitud no es correcta.</p>
+<p></p>
+<p>Como solución a este problema, un administrador puede agregar servidores de DHCPv4 en todas las subredes. Sin embargo, ejecutar estos servicios en varias computadoras genera un costo adicional y sobrecarga administrativa. </p>
+<p></p>
+<p>Una mejor solución consiste en configurar una dirección de ayuda de IOS de Cisco. Esta solución permite que el router reenvíe difusiones de DHCPv4 al servidor de DHCPv4. Cuando un router reenvía solicitudes de asignación/parámetros de direcciones, actúa como agente de retransmisión DHCPv4. En la topología de ejemplo, la PC1 transmitiría por difusión una solicitud para ubicar un servidor de DHCPv4. Si el R1 estuviera configurado como agente de retransmisión DHCPv4, reenviaría la solicitud al servidor de DHCPv4 ubicado en la subred 192.168.11.0.</p>
+<p></p>
+<p>Como se muestra en la figura 3, la interfaz en el R1 que recibe la difusión se configura con el comando del modo de configuración de interfaz <span class="cmd"><b>ip helper-address</b></span>. La dirección del servidor de DHCPv4 se configura como el único parámetro. </p>
+<p></p>
+<p>Cuando se configura el R1 como agente de retransmisión DHCPv4, acepta solicitudes de difusión para el servicio DHCPv4 y, a continuación, reenvía dichas solicitudes en forma de unidifusión a la dirección IPv4 192.168.11.6. El comando <span class="cmd"><b>show ip interface</b></span> se utiliza para verificar la configuración.</p>
+<p></p>
+<p>Como se muestra en la figura 4, la PC1 ahora puede adquirir una dirección IPv4 del servidor de DHCPv4.</p>
+<p></p>
+<p>DHCPv4 no es el único servicio que puede configurarse para que retransmita el router. De manera predeterminada, el comando <span class="cmd"><b>ip helper-address</b></span> reenvía los siguientes ocho siguientes servicios UDP:</p>
+<p></p>
+<p>
+<ul>
+<li>Puerto 37: Tiempo </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Puerto 49: TACACS</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Puerto 53: DNS</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Puerto 67: cliente DHCP/BOOTP</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Puerto 68: servidor de DHCP/BOOTP</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Puerto 69: TFTP</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Puerto 137: servicio de nombres NetBIOS</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Puerto 138: servicio de datagrama NetBIOS</li>
+</ul>
+</p>
+<p></p>
+<p>Mediante el verificador de sintaxis de la figura 5, configure los comandos de retransmisión de DHCPv4 en el router correcto de modo que la PC3 pueda recibir información de direccionamiento IPv4 del servidor de DHCPv4. Consulte nuevamente la figura 1 para ver la topología de la red.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

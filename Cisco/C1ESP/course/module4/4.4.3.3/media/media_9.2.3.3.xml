@@ -1,0 +1,57 @@
+﻿<textcomponents>
+	<component id="ID_title">
+		<text><![CDATA[<b>Acceso por contienda<b>]]></text>
+	</component>
+	
+	<component id="ID_txt01">
+		<text><![CDATA[Medios compartidos]]></text>
+	</component>
+	
+	<component id="ID_txt02">
+		<text><![CDATA[<b>Trama</b>]]></text>
+	</component>
+	
+	<component id="ID_txt03">
+		<text><![CDATA[<b>Trama</b>]]></text>
+	</component>
+	
+	<component id="ID_bubble01">
+		<text><![CDATA[<p id="ID_bubble01" class="ID_bubble01">Intento enviar cuando estoy preparado.</p>]]></text>
+	</component>
+	
+	<component id="ID_bubble02">
+		<text><![CDATA[<p id="ID_bubble02" class="ID_bubble02">Intento enviar cuando estoy preparado.</p>]]></text>
+	</component>
+	
+	<component id="ID_bubble03">
+		<text><![CDATA[<p id="ID_bubble03" class="ID_bubble03">Intento enviar cuando estoy preparado.</p>]]></text>
+	</component>
+
+	<component id='ID_table'>
+		<text>
+		<![CDATA[<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4'>
+			<tr class="liner">
+				<td colspan='2' bgcolor='#0E6360' class="mtable_top"><font size='1' color='#434321'><span style="color:#DAE17A">.</span></font></td>
+			</tr>
+			<tr>
+				<td bgcolor='#077A77' valign="top"><font color='#ffffff'><b>Características</b></font></td>
+				<td bgcolor='#077A77' valign="top"><font color='#ffffff'><b>Tecnologías de contienda</b></font></td>
+			</tr>
+			<tr>
+			<td bgcolor='#EFF8F7' valign="top"> 				<font color='#393536'>
+					<textformat blockindent='-18'>
+						<li>Las estaciones pueden transmitir en cualquier momento.</li>
+						<li>Existen colisiones.</li>
+						<li>Existen mecanismos para resolver la contienda por los medios.</li>
+					</textformat> 				</font>
+			</td>
+			<td bgcolor='#EFF8F7' valign="top"> 				<font color='#393536'>
+					<textformat blockindent='-18'>
+						<li>CSMA/CD para redes Ethernet 802.3</li>
+						<li>CSMA/CA para redes inalámbricas 802.11</li>
+					</textformat> 				</font>
+			</td>
+			</tr>
+		</table>]]></text>
+	</component>
+</textcomponents>

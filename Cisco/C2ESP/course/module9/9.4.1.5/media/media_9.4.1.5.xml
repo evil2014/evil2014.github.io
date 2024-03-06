@@ -1,0 +1,171 @@
+﻿<textcomponents> <!-- Slide 01-->
+	<component id='ID_s1_inst'>
+		<text><![CDATA[<b>Actividad: cómo los routers procesan las ACL de entrada</b><br/><br/>Evalúe su comprensión de la forma en que los routers procesan las ACL. Arrastre cada proceso de ACL hacia el lugar correspondiente en el diagrama de flujo. Cuando haya completado el diagrama de flujo de la ACL de entrada, haga clic en el botón&nbsp;2 para continuar la actividad.]]></text>
+	</component> <!--Drag and Drop-->
+	<component id='ID_s1_drag01'>
+		<text><![CDATA[<font color="#393536">Permitir o denegar</font>]]></text>
+	</component>
+
+	<component id='ID_s1_drag02'>
+		<text><![CDATA[<font color="#393536">Coincide con la tercera instrucción de ACL</font>]]></text>
+	</component>
+
+	<component id='ID_s1_drag03'>
+		<text><![CDATA[<font color="#393536">Coincide con la primera instrucción de ACL</font>]]></text>
+	</component>
+	<component id='ID_s1_drag04'>
+		<text><![CDATA[<font color="#393536">Interfaz <br/>de entrada</font>]]></text>
+	</component>
+	<component id='ID_s1_drag05'>
+		<text><![CDATA[<font color="#393536">Coincide con la segunda instrucción de ACL</font>]]></text>
+	</component>
+	<component id='ID_s1_drag06'>
+		<text><![CDATA[<font color="#393536">Deny any<br/> implícita</font>]]></text>
+	</component>
+	
+	<component id='ID_s1_CORRECT_TITLE'>
+		<text><![CDATA[<b>Correcto</b>]]></text>
+	</component>
+
+	<component id='ID_s1_CORRECT_BODY'>
+		<text><![CDATA[Ordenó correctamente los procesos del router para las ACL de entrada.]]></text>
+	</component>
+
+	<component id='ID_s1_INCORRECT_TITLE'>
+		<text><![CDATA[<b>Incorrecto</b>]]></text>
+	</component>
+
+	<component id='ID_s1_INCORRECT_BODY'>
+		<text><![CDATA[No ordenó correctamente los procesos del router para las ACL de entrada. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+	</component>
+
+	<component id='ID_s1_CHECK'>
+		<text><![CDATA[<b>Verificar</b>]]></text>
+	</component>
+
+	<component id='ID_s1_RESET'>
+		<text><![CDATA[<b>Restablecer</b>]]></text>
+	</component>
+
+	<component id='ID_s1_txt01'>
+		<text><![CDATA[(Hacia tabla de routing e interfaz de destino)]]></text>
+	</component> 
+	
+	<component id='ID_s1_txt02'>
+		<text><![CDATA[Permitir]]></text>
+	</component> 
+	<component id='ID_s1_txt03'>
+		<text><![CDATA[Denegar]]></text>
+	</component> 
+	
+	<component id='ID_s1_txt05'>
+		<text><![CDATA[Paquete descartado]]></text>
+	</component> 
+	
+	<component id='ID_s1_txt06'>
+		<text><![CDATA[No]]></text>
+	</component> 
+	
+	<component id='ID_s1_txt07'>
+		<text><![CDATA[No]]></text>
+	</component> 
+	
+	<component id='ID_s1_txt08'>
+		<text><![CDATA[No]]></text>
+	</component> 
+	<component id='ID_s1_txt09'>
+		<text><![CDATA[Sí]]></text>
+	</component> 
+	<component id='ID_s1_txt10'>
+		<text><![CDATA[Sí]]></text>
+	</component> 
+	<component id='ID_s1_txt11'>
+		<text><![CDATA[Sí]]></text>
+	</component> <!-- Slide 02-->
+	<component id='ID_s2_inst'>
+		<text><![CDATA[<b>Actividad: cómo los routers procesan las ACL de salida</b><br/><br/>Evalúe su comprensión de la forma en que los routers procesan las ACL. Arrastre cada proceso de ACL hacia el lugar correspondiente en el diagrama de flujo.]]></text>
+	</component> <!--Drag and Drop-->
+	<component id='ID_s2_drag01'>
+		<text><![CDATA[<font color="#393536">Interfaz saliente</font>]]></text>
+	</component>
+
+	<component id='ID_s2_drag02'>
+		<text><![CDATA[<font color="#393536">Deny any <br/> implícita</font>]]></text>
+	</component>
+	
+	<component id='ID_s2_drag03'>
+		<text><![CDATA[<font color="#393536">Coincide con la tercera instrucción de ACL</font>]]></text>
+	</component>
+	
+	<component id='ID_s2_drag04'>
+		<text><![CDATA[<font color="#393536">Permitir o denegar</font>]]></text>
+	</component>
+	<component id='ID_s2_drag05'>
+		<text><![CDATA[<font color="#393536">Coincide con la segunda instrucción de ACL</font>]]></text>
+	</component>
+	<component id='ID_s2_drag06'>
+		<text><![CDATA[<font color="#393536">Coincide con la primera instrucción de ACL</font>]]></text>
+	</component>
+	
+	
+	<component id='ID_s2_CORRECT_TITLE'>
+		<text><![CDATA[<b>Correcto</b>]]></text>
+	</component>
+
+	<component id='ID_s2_CORRECT_BODY'>
+		<text><![CDATA[Ordenó correctamente los procesos del router para las ACL de salida.]]></text>
+	</component>
+
+	<component id='ID_s2_INCORRECT_TITLE'>
+		<text><![CDATA[<b>Incorrecto</b>]]></text>
+	</component>
+
+	<component id='ID_s2_INCORRECT_BODY'>
+		<text><![CDATA[No ordenó correctamente los procesos del router para las ACL de salida. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+	</component>
+
+	<component id='ID_s2_CHECK'>
+		<text><![CDATA[<b>Verificar</b>]]></text>
+	</component>
+
+	<component id='ID_s2_RESET'>
+		<text><![CDATA[<b>Restablecer</b>]]></text>
+	</component>
+
+	<component id='ID_s2_txt01'>
+		<text><![CDATA[(De tabla de routing y selección de interfaz de salida)]]></text>
+	</component> 
+	
+	<component id='ID_s2_txt02'>
+		<text><![CDATA[Permitir]]></text>
+	</component> 
+	<component id='ID_s2_txt03'>
+		<text><![CDATA[Denegar]]></text>
+	</component> 
+	
+	<component id='ID_s2_txt05'>
+		<text><![CDATA[Paquete descartado]]></text>
+	</component> 
+	
+	<component id='ID_s2_txt06'>
+		<text><![CDATA[No]]></text>
+	</component> 
+	
+	<component id='ID_s2_txt07'>
+		<text><![CDATA[No]]></text>
+	</component> 
+	
+	<component id='ID_s2_txt08'>
+		<text><![CDATA[No]]></text>
+	</component> 
+	<component id='ID_s2_txt09'>
+		<text><![CDATA[Sí]]></text>
+	</component> 
+	<component id='ID_s2_txt10'>
+		<text><![CDATA[Sí]]></text>
+	</component> 
+	<component id='ID_s2_txt11'>
+		<text><![CDATA[Sí]]></text>
+	</component> 
+	
+</textcomponents>

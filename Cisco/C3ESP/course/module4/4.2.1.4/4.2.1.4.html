@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.2.1.4 Tramas de administración </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.2.1.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Operaciones de LAN inalámbrica</h1>
+        <h2>Estructura de tramas 802.11</h2>
+      </div>
+      <div id="content">
+<p>Las tramas de administración se usan exclusivamente para buscar un AP, autenticarlo y asociarse a este. </p>
+<p></p>
+<p>En la figura 1, se muestra el valor de campo de las tramas de administración comunes, incluidas las siguientes:</p>
+<p>
+<ul>
+<li>
+<b>Trama de solicitud de asociación:</b> (0x00) se envía desde un cliente inalámbrico, permite que el AP asigne los recursos y sincronice. La trama transporta información sobre la conexión inalámbrica, incluso las velocidades de datos admitidas y el SSID de la red a la que se quiere asociar el cliente inalámbrico. Si se acepta la solicitud, el AP reserva memoria y establece una ID de asociación para el dispositivo.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Trama de respuesta de asociación:</b> (0x01) se envía desde un AP hasta un cliente inalámbrico, contiene la aceptación o el rechazo de la solicitud de asociación. Si es una aceptación, la trama contiene información como una ID de asociación y las velocidades de datos admitidas.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Trama de solicitud de reasociación:</b> (0x02) un dispositivo envía una solicitud de reasociación cuando sale del alcance del AP al que está asociado actualmente y encuentra otro AP con una señal más intensa. El nuevo AP coordina el reenvío de toda la información que todavía pueda contener el búfer del AP anterior.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Trama de respuesta de reasociación:</b> (0x03) se envía desde un AP, contiene la aceptación o el rechazo de una trama de solicitud de reasociación de un dispositivo. La trama incluye la información requerida para la asociación, como la ID de asociación y las velocidades de datos admitidas.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Trama de solicitud de sondeo:</b> (0x04) se envía desde un cliente inalámbrico cuando este requiere información de otro cliente inalámbrico.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Trama de respuesta de sondeo:</b> (0x05) se envía desde un AP después de recibir una trama de solicitud de sondeo y contiene la información de capacidad, como las velocidades de datos admitidas.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Trama de señal:</b> (0x08) se envía periódicamente desde un AP para anunciar su presencia y proporcionar el SSID y otros parámetros configurados con anterioridad.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Trama de desasociación:</b> (0x0A) se envía desde un dispositivo que desea finalizar una conexión. Permite que el AP detenga la asignación de memoria y quite el dispositivo de la tabla de asociación.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Trama de autenticación:</b> (0x0B) el dispositivo emisor envía al AP una trama de autenticación que contiene su identidad. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Trama de desautenticación:</b> (0x0C) se envía desde un cliente inalámbrico que desea finalizar la conexión de otro cliente inalámbrico.</li>
+</ul>
+</p>
+<p></p>
+<p>Las señales son las únicas tramas de administración que un AP puede transmitir en forma regular. Todas las demás tramas de sondeo, autenticación y asociación se usan solo durante el proceso de asociación (o reasociación).</p>
+<p></p>
+<p>En la figura 2, se muestra un ejemplo de una captura de pantalla de Wireshark de una trama de administración. Los valores de campo cambian para reflejar el propósito de la trama. </p>
+<p></p>
+<p>
+<b>Nota:</b> el ejemplo proporcionado se capturó mediante Wireshark. Sin embargo, Wireshark se debe configurar específicamente para capturar el tráfico de WLAN. La capacidad para capturar el tráfico varía entre los sistemas operativos y puede requerir una NIC inalámbrica especial.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

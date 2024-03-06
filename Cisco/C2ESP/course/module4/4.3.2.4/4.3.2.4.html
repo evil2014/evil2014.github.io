@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.3.2.4 Ejemplo de interfaz IPv6 conectada directamente</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.3.2.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Funcionamiento del router</h1>
+        <h2>Rutas conectadas directamente</h2>
+      </div>
+      <div id="content">
+<p>En el ejemplo de la figura 1, se muestran los pasos de configuración de las interfaces del R1 conectadas directamente con las direcciones IPv6 indicadas. Observe los mensajes informativos de capa 1 y capa 2 que se generan a medida que se configura y se activa cada interfaz.</p>
+<p></p>
+<p>Como se muestra en la figura 2, el comando <span class="cmd"><b>show ipv6 route</b></span> se utiliza para verificar si se instalaron las redes IPv6 y las direcciones específicas de interfaz IPv6 en la tabla de routing IPv6. Como en IPv4, una “<span class="cmd">C</span>” junto a una ruta indica que se trata de una red conectada directamente. Una “<span class="cmd">L</span>” indica la ruta local. En una red IPv6, la ruta local tiene un prefijo /128. La tabla de routing utiliza las rutas locales para procesar eficazmente los paquetes cuya dirección de destino es la interfaz del router. </p>
+<p></p>
+<p>Observe que también se instaló una ruta a la red FF00::/8. Esta ruta se requiere para el routing de multidifusión.</p>
+<p></p>
+<p>En la figura 3, se muestra cómo el comando <span class="cmd"><b>show ipv6 route</b></span> se puede combinar con un destino de red específico para mostrar los detalles de cómo el router descubrió dicha ruta. </p>
+<p></p>
+<p>En la figura 4, se muestra cómo se puede verificar la conectividad al R2 mediante el comando <span class="cmd"><b>ping</b></span>. </p>
+<p></p>
+<p>En la figura 5, observe qué sucede cuando la interfaz LAN G0/0 del R2 es el objetivo del comando <span class="cmd"><b>ping</b></span>. Los pings no tienen éxito. Esto se debe a que el R1 no tiene ninguna entrada en la tabla de routing para llegar a la red 2001:DB8:ACAD:4::/64. </p>
+<p></p>
+<p>El R1 requiere información adicional para llegar a una red remota. Se pueden agregar entradas de ruta de red remota a la tabla de routing mediante los siguientes métodos:</p>
+<p>
+<ul>
+<li>Enrutamiento estático </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Protocolos de enrutamiento dinámico</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

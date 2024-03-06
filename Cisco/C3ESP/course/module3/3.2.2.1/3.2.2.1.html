@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>3.2.2.1 Verificación de EtherChannel</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_3.2.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración del agregado de enlaces</h1>
+        <h2>Verificación y resolución de problemas del EtherChannel</h2>
+      </div>
+      <div id="content">
+<p>Existe una variedad de comandos para verificar una configuración EtherChannel. Primero, el comando <span class="cmd"><b>show interface port-channel</b></span> muestra el estado general de la interfaz de canal de puertos. En la figura 1, la interfaz de canal de puertos 1 está activa.</p>
+<p></p>
+<p>Cuando se configuren varias interfaces de canal de puertos en el mismo dispositivo, use el comando <span class="cmd"><b>show etherchannel summary</b></span> para mostrar una única línea de información por canal de puertos. En la figura 2, el switch tiene configurado un EtherChannel; el grupo 1 usa LACP. </p>
+<p></p>
+<p>El grupo de interfaces consta de las interfaces FastEthernet0/1 y FastEthernet0/2. El grupo es un EtherChannel de capa 2 y está en uso, según lo indican las letras SU junto al número de canal de puertos.</p>
+<p></p>
+<p>Use el comando <span class="cmd"><b>show etherchannel port-channel</b></span> para mostrar la información sobre una interfaz de canal de puertos específica, como se muestra en la figura 3. En el ejemplo, la interfaz de canal de puertos 1 consta de dos interfaces físicas, FastEthernet0/1 y FastEthernet0/2. Esta usa LACP en modo activo. Está correctamente conectada a otro switch con una configuración compatible, razón por la cual se dice que el canal de puertos está en uso.</p>
+<p></p>
+<p>En cualquier miembro de una interfaz física de un grupo EtherChannel, el comando <span class="cmd"><b>show interfaces etherchannel</b></span> puede proporcionar información sobre la función de la interfaz en el EtherChannel, como se muestra en la figura 4. La interfaz FastEthernet0/1 forma parte del grupo EtherChannel 1. El protocolo para este EtherChannel es LACP.</p>
+<p></p>
+<p>Utilice el verificador de sintaxis de la figura 5 para verificar EtherChannel en el switch S1. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

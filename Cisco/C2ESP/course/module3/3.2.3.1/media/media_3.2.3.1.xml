@@ -1,0 +1,27 @@
+﻿<textcomponents>
+<component id="ID_s1_title">
+<text><![CDATA[<b>Configuración inicial de DTP</b>]]></text>
+</component>
+<component id="ID_s1_txt01">
+  <text><![CDATA[El puerto F0/1 se configura con <br/><font face="Courier New"><b>switchport mode trunk</b></font>]]></text> 
+  </component>
+  <component id="ID_s1_txt02">
+  <text><![CDATA[El puerto F0/3 se configura con <br/><font face="Courier New"><b>switchport mode dynamic auto</b></font>]]></text> 
+  </component>
+  <component id="ID_s1_txt03">
+  <text><![CDATA[El puerto F0/1 se configura con <br/><font face="Courier New"><b>switchport mode trunk</b></font>]]></text> 
+  </component>
+   <component id="ID_s1_txt04">
+  <text><![CDATA[El puerto F0/3 se configura con <br/><font face="Courier New"><b>switchport mode dynamic auto</b></font>]]></text> 
+  </component>
+
+<component id="ID_s2_title">
+<text><![CDATA[<b>Resultados de la interacción de DTP</b>]]></text>
+</component>
+<component id="ID_s2_txt01">
+  <text><![CDATA[Este es un enlace troncal. <br/><br/>Ambos puertos se configuran con <font face="Courier New"><b>switchport mode trunk</b></font> y esto hace que permanezcan en modo troncal de manera eficaz. ]]></text> 
+  </component>
+  <component id="ID_s2_txt02">
+  <text><![CDATA[Este no es un enlace troncal. <br/><br/>Ambos puertos se configuran con <font face="Courier New"><b>switchport mode dynamic auto</b></font>, lo que produce un enlace troncal inactivo. ]]></text> 
+  </component>
+</textcomponents>

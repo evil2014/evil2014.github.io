@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.3.2.5 Autenticación IPsec</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.3.2.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Presentación de IPsec</h1>
+        <h2>Estructura IPsec</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Autenticación</b>
+</p>
+<p></p>
+<p>Las VPN con IPsec admiten la autenticación. Al realizar negocios a larga distancia, es necesario saber quién está del otro lado del teléfono, del correo electrónico o del fax. Lo mismo sucede con las redes VPN. El dispositivo en el otro extremo del túnel VPN se debe autenticar para que la ruta de comunicación se considere segura, como se indica en la ilustración. Existen dos métodos de autenticación de peers:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>PSK:</b> es una clave secreta que se comparte entre las dos partes que utilizan un canal seguro antes de que se necesite utilizarla. Las claves previamente compartidas (PSK) utilizan algoritmos criptográficos de clave simétrica. Se introduce una PSK en cada peer de forma manual y se la utiliza para autenticar el peer. En cada extremo, la PSK se combina con otra información para formar la clave de autenticación.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Firmas RSA:</b> se intercambian certificados digitales para autenticar los peers. El dispositivo local deriva un hash y lo cifra con su clave privada. El hash cifrado, o la firma digital, se vincula al mensaje y se reenvía hacia el extremo remoto. En el extremo remoto, se descifra el hash cifrado con la clave pública del extremo local. Si el hash descifrado coincide con el hash recalculado, la firma es genuina.</li>
+</ul>
+</p>
+<p></p>
+<p>IPsec utiliza RSA (sistema criptográfico de claves públicas) para la autenticación en el contexto de IKE. El método de firmas RSA utiliza una configuración de firma digital en la que cada dispositivo firma un conjunto de datos de forma digital y lo envía a la otra parte. Las firmas RSA usan una entidad de certificación (CA) para generar un certificado digital de identidad exclusiva que se asigna a cada peer para la autenticación. El certificado digital de identidad tiene una función similar a la de una PSK, pero proporciona una seguridad mucho más sólida. Las personas que originan una sesión IKE y que responden a ella con firmas RSA envían su propio valor de ID, su certificado digital de identidad y un valor de firma RSA que consta de una serie de valores IKE, cifrados con el método de cifrado IKE negociado (como AES).</p>
+<p></p>
+<p>El algoritmo de firma digital (DSA) es otra opción para la autenticación.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

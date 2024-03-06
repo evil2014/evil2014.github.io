@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.3.3.2 Cisco Express Forwarding</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.3.3.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Switches LAN</h1>
+        <h2>Conmutación de capa 3</h2>
+      </div>
+      <div id="content">
+<p>Los dispositivos Cisco que admiten conmutación de capa 3 utilizan Cisco Express Forwarding (CEF). Este método de reenvío es muy complejo, pero afortunadamente, como sucede con todas las buenas tecnologías, gran parte de lo que sucede se produce “detrás de escena”. Por lo general, CEF requiere muy poca configuración en los dispositivos Cisco.</p>
+<p></p>
+<p>Básicamente, CEF desacopla la interdependencia estricta habitual entre la toma de decisiones de capa 2 y de capa 3. Lo que lentifica el reenvío de paquetes IP es la referencia constante en ambos sentidos entre las construcciones de capa 2 y capa 3 dentro de un dispositivo de red. Entonces, en la medida en que se puedan desacoplar las estructuras de datos de capa 2 y la capa 3, se acelera el reenvío. </p>
+<p></p>
+<p>Los dos componentes principales de la operación de CEF son los siguientes:</p>
+<p>
+<ul>
+<li>Base de información de reenvío (FIB) </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Tablas de adyacencia</li>
+</ul>
+</p>
+<p></p>
+<p>La FIB es conceptualmente similar a una tabla de enrutamiento. Un router utiliza la tabla de enrutamiento para determinar el mejor camino hacia una red de destino sobre la base de la porción de red de la dirección IP de destino. Con CEF, la información que antes se almacenaba en la caché de la ruta se almacena ahora en varias estructuras de datos para la conmutación CEF. Las estructuras de datos proporcionan búsquedas optimizadas para un reenvío de paquetes eficaz. Los dispositivos de red utilizan la tabla de búsqueda de FIB para tomar decisiones de conmutación basadas en el destino sin tener que acceder a la caché de la ruta. </p>
+<p></p>
+<p>La FIB se actualiza cuando se producen cambios en la red y contiene todas las rutas conocidas hasta ese momento. </p>
+<p></p>
+<p>La tabla de adyacencia mantiene las direcciones de siguiente salto de la capa 2 para todas las entradas de FIB. </p>
+<p></p>
+<p>La separación de la información de posibilidad de conexión (en la tabla FIB) y de la información de reenvío (en la tabla de adyacencia), ofrece varias ventajas: </p>
+<p>
+<ul>
+<li>La tabla de adyacencia se puede crear independientemente de la tabla FIB, lo que permite que ambas se creen sin que haya paquetes en proceso de conmutación. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>La reescritura del encabezado MAC utilizada para reenviar paquetes no se almacena en las entradas de caché, por lo tanto, los cambios en una cadena de reescritura de encabezado MAC no requiere la invalidación de las entradas de caché.</li>
+</ul>
+</p>
+<p></p>
+<p>CEF está habilitado de manera predeterminada en la mayoría de los dispositivos Cisco que realizan conmutación de capa 3.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

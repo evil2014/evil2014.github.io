@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.1.2.5 Topologías de Frame Relay (cont.)</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.1.2.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Introducción a Frame Relay</h1>
+        <h2>Operación de Frame Relay</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Topología de malla completa</b>
+</p>
+<p></p>
+<p>En la figura 1, se muestra una topología de malla completa que usa líneas dedicadas. Una topología de malla completa se adapta a una situación en la que los servicios a los que se debe acceder están en distintas zonas geográficas y en la que se requiere un acceso altamente confiable a ellos. Una topología de malla completa conecta cada sitio a todos los demás. Si se utilizan interconexiones de línea arrendada, las líneas y las interfaces seriales adicionales agregan costos. En este ejemplo, se requieren 10 líneas dedicadas para interconectar cada sitio en una topología de malla completa.</p>
+<p></p>
+<p>Con una malla de Frame Relay, un diseñador de red puede armar varias conexiones simplemente configurando VC adicionales en cada enlace existente, como se muestra en la figura 2. Esta actualización de software eleva la topología en estrella a una topología de malla completa sin los gastos de hardware o de líneas dedicadas adicionales. Debido a que los VC utilizan la multiplexación estadística, varios VC en un enlace de acceso usan Frame Relay mejor que los VC individuales. En la figura 2, se muestra cómo SPAN utilizó cuatro VC en cada enlace para escalar su red sin agregar nuevo hardware. Los proveedores de servicios cobran el ancho de banda adicional, pero esta solución generalmente es más rentable que usar líneas dedicadas.</p>
+<p></p>
+<p>
+<b>Topología de malla parcial</b>
+</p>
+<p></p>
+<p>Para las redes grandes, una topología de malla completa rara vez es accesible, porque la cantidad de enlaces necesarios aumenta exponencialmente. El problema no se debe al costo del hardware, sino a que hay un límite teórico de menos de 1000 VC por enlace. En la práctica, el límite es inferior a eso.</p>
+<p></p>
+<p>Por este motivo, las redes más grandes se suelen configurar en una topología de malla parcial. Con la malla parcial, existen más interconexiones que las requeridas para una configuración en estrella, pero no tantas como para una malla completa. El patrón real depende de los requisitos de flujo de datos.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

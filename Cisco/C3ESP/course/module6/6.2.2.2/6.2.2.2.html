@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.2.2.2 Sumarización de rutas externas e interárea</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.2.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de OSPF de diversas áreas</h1>
+        <h2>Resumen de rutas OSPF</h2>
+      </div>
+      <div id="content">
+<p>En OSPF, la sumarización se puede configurar solo en los ABR o los ASBR. En lugar de anunciar muchas redes específicas, los routers ABR y ASBR anuncian una ruta resumida. Los routers ABR resumen LSA de tipo 3 y los routers ASBR resumen LSA de tipo 5. </p>
+<p></p>
+<p>De manera predeterminada, las LSA de resumen (LSA de tipo 3) y las LSA externas (tipo 5) no contienen rutas resumidas (agregadas); es decir que, de manera predeterminada, las LSA de resumen no se resumen.</p>
+<p></p>
+<p>Como se muestra en las figuras 1 y 2, la sumarización de ruta se puede configurar de la siguiente manera:</p>
+<p>
+<ul>
+<li>
+<b>Sumarización de rutas interárea:</b> la sumarización de rutas interárea se produce en los ABR y se aplica a las rutas dentro de cada área. No se aplica a las rutas externas introducidas en OSPF mediante la redistribución. Para realizar una sumarización de rutas interárea eficaz, las direcciones de red se deben asignar de manera contigua, para que dichas direcciones se puedan resumir en una cantidad mínima de direcciones de resumen.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Sumarización de rutas externas:</b> la sumarización de rutas externas es específica de las rutas externas que se introducen en OSPF mediante la redistribución de rutas. Una vez más, es importante asegurar la contigüidad de los rangos de direcciones externas que se resumen. Por lo general, solo los ASBR resumen rutas externas. Como se muestra en la figura 2, el ASBR R2 resume las rutas externas EIGRP en una única LSA y las envía al R1 y al R3. </li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Nota:</b> en los ASBR, la sumarización de rutas externas se configura mediante el comando <span class="cmd"><b>summary-address </b></span><span class="cmd"><i>address mask</i></span> del modo de configuración del router. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

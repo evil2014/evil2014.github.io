@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>3.3.2.5 Configuración de la autenticación PPP</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_3.3.2.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de PPP</h1>
+        <h2>Autenticación del PPP</h2>
+      </div>
+      <div id="content">
+<p>Para especificar el orden en que se solicitan los protocolos CHAP o PAP en la interfaz, utilice el comando de configuración de interfaz <span class="cmd"><b>ppp authentication</b></span>, como se muestra en la ilustración. Utilice la versión <span class="cmd"><b>no</b></span> de este comando para deshabilitar esta autenticación. </p>
+<p></p>
+<p>Después de habilitar la autenticación CHAP o PAP, o ambas, el router local requiere que el dispositivo remoto compruebe su identidad antes de permitir que fluya el tráfico de datos. Esto se hace de la siguiente manera:</p>
+<p></p>
+<p>
+<ul>
+<li>La autenticación PAP requiere que el dispositivo remoto envíe un nombre y una contraseña para compararlos con una entrada coincidente en la base de datos de nombres de usuario local o en la base de datos remota TACACS/TACACS+. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>La autenticación CHAP envía un desafío al dispositivo remoto. El dispositivo remoto debe cifrar el valor del desafío con un secreto compartido y devolver el valor cifrado y su nombre al router local en un mensaje de respuesta. El router local utiliza el nombre del dispositivo remoto para buscar el secreto correspondiente en el nombre de usuario local o la base de datos remota TACACS/TACACS+. Utiliza el secreto que buscó para cifrar el desafío original y verificar que los valores cifrados coincidan.</li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Nota:</b> la autenticación, la autorización y la contabilidad (AAA)/TACACS es un servidor dedicado que se usa para autenticar usuarios. Los clientes TACACS envían una consulta a un servidor de autenticación TACACS. El servidor puede autenticar al usuario, autorizar lo que este puede hacer y hacer un seguimiento de lo que hizo.</p>
+<p></p>
+<p>Se puede habilitar tanto PAP como CHAP. Si ambos métodos están habilitados, se solicita el primer método especificado durante la negociación del enlace. Si el peer sugiere usar el segundo método o simplemente rechaza el primero, se debe probar con el segundo método. Algunos dispositivos remotos soportan sólo CHAP y algunos sólo PAP. El orden en que se especifican los métodos se basa en las preocupaciones sobre la capacidad del dispositivo remoto para negociar correctamente el método adecuado, así como la preocupación sobre la seguridad de la línea de datos. Los nombres de usuario y las contraseñas de PAP se envían como cadenas de texto no cifrado y se pueden interceptar y volver a utilizar. CHAP eliminó la mayoría de los agujeros de seguridad conocidos.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

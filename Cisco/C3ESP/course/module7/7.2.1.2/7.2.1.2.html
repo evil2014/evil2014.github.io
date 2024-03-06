@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.2.1.2 Números de sistema autónomo</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.2.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de EIGRP para IPv4</h1>
+        <h2>Configuración de EIGRP con IPv4</h2>
+      </div>
+      <div id="content">
+<p>EIGRP utiliza el comando <span class="cmd"><b>router eigrp</b></span> <span class="cmd"><i>sistema-autónomo</i></span><span class="cmd"><b></b></span> para habilitar el proceso EIGRP. El número de sistema autónomo que se menciona en la configuración EIGRP no se relaciona con los números de sistema autónomo asignados globalmente por la Autoridad de números asignados de Internet (IANA), que usan los protocolos de routing externos. </p>
+<p></p>
+<p>Entonces ¿cuál es la diferencia entre el número de sistema autónomo asignado globalmente por IANA y el número de sistema autónomo de EIGRP?</p>
+<p></p>
+<p>El sistema autónomo asignado globalmente por IANA es un conjunto de redes bajo el control administrativo de una única entidad que presenta una política de routing común a Internet. En la figura, las empresas A, B, C y D se encuentran todas bajo el control administrativo de ISP1. Cuando anuncia rutas a ISP2, ISP1 presenta una política de routing común para todas estas empresas. </p>
+<p></p>
+<p>Las pautas para la creación, la selección y el registro de un sistema autónomo se describen en RFC 1930. IANA asigna los números de sistema autónomo globales y es la misma autoridad que asigna el espacio de direcciones IP. El registro regional de Internet (RIR) local tiene la responsabilidad de asignarles a las entidades un número de sistema autónomo de su bloque de números de sistema autónomo asignado. Antes de 2007, los números de sistema autónomo eran números de 16 bits que iban de 0 a 65 535. En la actualidad, se asignan números de sistema autónomo de 32 bits, lo que aumenta la cantidad de números de sistema autónomo disponibles a más de 4000 millones. </p>
+<p></p>
+<p>Por lo general, los proveedores de servicios de Internet (ISP), los proveedores de servicios de Internet troncales y las grandes instituciones conectadas a otras entidades requieren un número de sistema autónomo. Estos ISP y grandes instituciones utilizan el protocolo de routing de gateway exterior, el protocolo de gateway fronterizo (BGP), para propagar la información de routing. BGP es el único protocolo de routing que utiliza un número de sistema autónomo real en su configuración. </p>
+<p></p>
+<p>La gran mayoría de las empresas e instituciones con redes IP no necesitan un número de sistema autónomo, porque se encuentran bajo el control de una entidad más grande, como un ISP. Estas empresas usan protocolos de gateway interior, como RIP, EIGRP, OSPF e IS-IS para enrutar paquetes dentro de sus propias redes. Son una de muchas redes independientes dentro del sistema autónomo de ISP. ISP es responsable del enrutamiento de paquetes dentro del sistema autónomo y entre otros sistemas autónomos.</p>
+<p></p>
+<p>El número de sistema autónomo que se usa para la configuración EIGRP solo es importante para el dominio de routing EIGRP. Funciona como una ID de proceso para ayudar a los routers a realizar un seguimiento de varias instancias de EIGRP en ejecución. Esto es necesario porque es posible tener más de una instancia de EIGRP en ejecución en una red. Cada instancia de EIGRP se puede configurar para admitir e intercambiar actualizaciones de routing de diferentes redes.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

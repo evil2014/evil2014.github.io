@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.1.3.2 Modos principales </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.1.3.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Entrenamiento intensivo sobre IOS</h1>
+        <h2>Navegación de IOS</h2>
+      </div>
+      <div id="content">
+<p>Los dos modos de funcionamiento principales son el modo EXEC del usuario y el modo EXEC privilegiado. Como característica de seguridad, el software Cisco IOS divide las sesiones de EXEC en dos niveles de acceso. Como se muestra en la ilustración, el modo EXEC privilegiado tiene un mayor nivel de autoridad con respecto a lo que permite que realicen los usuarios en el dispositivo.</p>
+<p></p>
+<p>
+<b>Modo EXEC del usuario</b>
+</p>
+<p></p>
+<p>El modo EXEC del usuario tiene capacidades limitadas, pero es útil para algunas operaciones básicas. El modo EXEC del usuario se encuentra en el nivel más básico de la estructura jerárquica modal. Este es el primer modo que se encuentra al entrar a la CLI de un dispositivo IOS. </p>
+<p></p>
+<p>El modo EXEC del usuario permite sólo una cantidad limitada de comandos de monitoreo básicos. A menudo se le describe como un modo de visualización solamente. El nivel EXEC del usuario no permite la ejecución de ningún comando que podría cambiar la configuración del dispositivo.</p>
+<p></p>
+<p>En forma predeterminada, no se requiere autenticación para acceder al modo EXEC del usuario desde la consola. Sin embargo, siempre conviene asegurarse de que se configure la autenticación durante la configuración inicial.</p>
+<p></p>
+<p>El modo EXEC del usuario se puede reconocer por la petición de entrada de la CLI que termina con el símbolo >. Este es un ejemplo que muestra el símbolo > en la petición de entrada:</p>
+<p></p>
+<p>
+<span class="cmd">Switch></span>
+</p>
+<p></p>
+<p>
+<b>Modo EXEC privilegiado</b>
+</p>
+<p></p>
+<p>La ejecución de los comandos de configuración y administración requiere que el administrador de red utilice el modo EXEC privilegiado o un modo más específico en la jerarquía. Esto significa que los usuarios deben ingresar primero al modo EXEC del usuario y, desde allí, acceder al modo EXEC privilegiado.</p>
+<p></p>
+<p>El modo EXEC privilegiado se puede reconocer por la petición de entrada que termina con el símbolo #. </p>
+<p></p>
+<p>
+<span class="cmd">Switch</span>#</p>
+<p></p>
+<p>De manera predeterminada, el modo EXEC privilegiado no requiere autenticación. Siempre conviene asegurarse de que la autenticación esté configurada. </p>
+<p></p>
+<p>Para ingresar al modo de configuración global y a todos los demás modos de configuración más específicos, es necesario entrar al modo EXEC privilegiado. En una sección posterior de este capítulo, analizaremos la configuración de dispositivos y algunos de los modos de configuración.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

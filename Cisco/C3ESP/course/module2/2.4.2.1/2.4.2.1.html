@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.4.2.1 Protocolos de redundancia de primer salto</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.4.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolos de redundancia de primer salto</h1>
+        <h2>Variedades de protocolos de redundancia de primer salto</h2>
+      </div>
+      <div id="content">
+<p>En la siguiente lista, se definen las opciones disponibles para los protocolos de redundancia de primer salto (FHRP), como se muestra en la ilustración.</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Protocolo de routing de reserva activa (HSRP):</b> es un protocolo exclusivo de Cisco diseñado para permitir la conmutación por falla transparente de un dispositivo IPv4 de primer salto. HSRP proporciona una alta disponibilidad de red, ya que proporciona redundancia de routing de primer salto para los hosts IPv4 en las redes configuradas con una dirección IPv4 de gateway predeterminado. HSRP se utiliza en un grupo de routers para seleccionar un dispositivo activo y un dispositivo de reserva. En un grupo de interfaces de dispositivo, el dispositivo activo es aquel que se utiliza para enrutar paquetes, y el dispositivo de reserva es el que toma el control cuando falla el dispositivo activo o cuando se cumplen condiciones previamente establecidas. La función del router de reserva HSRP es controlar el estado operativo del grupo HSRP y asumir rápidamente la responsabilidad de reenvío de paquetes si falla el router activo.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>HSRP para IPv6:</b> FHRP exclusivo de Cisco que proporciona la misma funcionalidad de HSRP pero en un entorno IPv6. Un grupo IPv6 HSRP tiene una dirección MAC virtual derivada del número del grupo HSRP y una dirección IPv6 link-local virtual derivada de la dirección MAC virtual HSRP. Cuando el grupo HSRP está activo, se envían anuncios de router (RA) periódicos para la dirección IPv6 link-local virtual HSRP. Cuando el grupo deja de estar activo, estos RA finalizan después de que se envía un último RA. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Protocolo de redundancia de router virtual versión 2 (VRRPv2):</b> es un protocolo de elección no exclusivo que asigna de forma dinámica la responsabilidad de uno o más routers virtuales a los routers VRRP en una LAN IPv4. Esto permite que varios routers en un enlace de accesos múltiples utilicen la misma dirección IPv4 virtual. Los routers VRRP se configuran para ejecutar el protocolo VRRP en conjunto con uno o más routers conectados a una LAN. En una configuración VRRP, se elige un router como router virtual maestro, mientras que el resto funciona como respaldo en caso de que falle el router virtual maestro.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>VRRPv3:</b> proporciona la capacidad de admitir direcciones IPv4 e IPv6. VRRPv3 funciona en entornos de varios proveedores y es más escalable que VRRPv2.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Protocolo de balanceo de carga de gateway (GLBP):</b> FHRP exclusivo de Cisco que protege el tráfico de datos contra una falla de router o de circuito, como HSRP y VRRP, a la vez que permite el balanceo de carga (también denominado “uso compartido de carga”) entre un grupo de routers redundantes.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>GLBP para IPv6:</b> FHRP exclusivo de Cisco que proporciona la misma funcionalidad de GLBP pero en un entorno IPv6. GLBP para IPv6 proporciona un respaldo de router automático para los hosts IPv6 configurados con un único gateway predeterminado en una LAN. Se combinan varios routers de primer salto en la LAN para ofrecer un único router IPv6 virtual de primer salto y, al mismo tiempo, compartir la carga de reenvío de paquetes IPv6.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Protocolo de descubrimiento de router ICMP (IRDP):</b> se especifica en RFC 1256; es una solución FHRP antigua. IRDP permite que los hosts IPv4 ubiquen routers que proporcionan conectividad IPv4 a otras redes IP (no locales).</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

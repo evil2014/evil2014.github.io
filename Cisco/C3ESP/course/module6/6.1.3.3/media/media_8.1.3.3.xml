@@ -1,0 +1,56 @@
+﻿<textcomponents>
+
+<component id='ID_inst'>
+	<text><![CDATA[<b>Actividad: Calcular las mejores rutas en OSPF</b><br><br>Los routers OSPF utilizan los criterios que se indican a continuación para seleccionar la mejor ruta para instalar en la tabla de routing. Ordene dichos criterios y arrastre cada instrucción al campo numerado correspondiente.]]></text>
+</component>
+
+<component id='ID_txt01'>
+	<text><![CDATA[<b>Paso 1</b>]]></text>
+</component>
+
+<component id='ID_txt02'>
+	<text><![CDATA[<b>Paso 2</b>]]></text>
+</component>
+
+<component id='ID_txt03'>
+	<text><![CDATA[<b>Paso 3</b>]]></text>
+</component> <!--Drag and Drop-->
+<component id='ID_ip1_DS'>
+	<text><![CDATA[<font color="#393536">Calcular las mejores rutas <br/>a redes externas que <br/>no son OSPF.</font>]]></text>
+</component>
+
+<component id='ID_ip2_DS'>
+	<text><![CDATA[<font color="#393536">Calcular las rutas OSPF intraárea.</font>]]></text>
+</component>
+
+<component id='ID_ip3_DS'>
+	<text><![CDATA[<font color="#393536">Calcular la mejor ruta a las rutas OSPF interárea.</font>]]></text>
+</component>
+
+
+<component id='ID_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id='ID_CORRECT_BODY'>
+	<text><![CDATA[Ordenó correctamente los criterios para calcular las mejores rutas en OSPF.]]></text>
+</component>
+
+
+<component id='ID_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_INCORRECT_BODY'>
+	<text><![CDATA[No ordenó correctamente los criterios para calcular las mejores rutas en OSPF. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_CHECK'>
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id='ID_RESET'>
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component>
+
+</textcomponents>

@@ -1,0 +1,93 @@
+﻿<textcomponents>
+
+
+
+<component id="ID_txt01">
+<text><![CDATA[Internet]]></text>
+</component>
+
+<component id="ID_txt03">
+<text><![CDATA[Servidor Web con agente SNMP]]></text>
+</component>
+
+<component id="ID_txt04">
+<text><![CDATA[<b>Red de administración del ISP</b>]]></text>
+</component>
+
+<component id="ID_txt06">
+<text><![CDATA[Estación de administración SNMP]]></text>
+</component>
+
+<component id="ID_txt07">
+<text><![CDATA[MIB central]]></text>
+</component>
+
+<component id="ID_txt08a">
+<text><![CDATA[obtener 192.168.1.10 2#B7!9]]></text>
+</component>
+
+<component id="ID_txt08b">
+<text><![CDATA[Variable = 10000]]></text>
+</component>
+
+<component id="ID_bubble_01">
+<text><![CDATA[¡Mi cliente llamó y su servidor Web es realmente lento!]]></text>
+</component>
+
+<component id="ID_bubble_02">
+<text><![CDATA[¿Cuántos usuarios hay en su servidor Web?]]></text>
+</component>
+
+<component id="ID_bubble_03">
+<text><![CDATA[¿Coincide mi cadena comunitaria con 2#B7!9? Sí<br><br>¿Es 192.168.1.5 una dirección IP que conozco? Sí.]]></text>
+</component>
+
+<component id="ID_bubble_04">
+<text><![CDATA[¿10.000 usuarios? Con razón este servidor Web es lento.]]></text>
+</component>
+
+<component id="ID_info_01">
+<text><![CDATA[Un usuario llama para informar un problema.]]></text>
+</component>
+
+<component id="ID_info_02">
+<text><![CDATA[La estación de administración envía una solicitud al Agente para obtener las estadísticas de conexión e incluye la Cadena comunitaria.]]></text>
+</component>
+
+<component id="ID_info_03">
+<text><![CDATA[El Agente verifica la Cadena comunitaria y la dirección IP.]]></text>
+</component>
+
+<component id="ID_info_04">
+<text><![CDATA[El Agente envía todas las estadísticas para una cantidad de conexiones.]]></text>
+</component>
+
+<component id="ID_info_05">
+<text><![CDATA[La estación de administración recibe la información.]]></text>
+</component> <!-- controller -->
+<component id="end">
+<text><![CDATA[Finalizar]]></text>
+</component>
+
+<component id="fforward">
+<text><![CDATA[Adelantar]]></text>
+</component>
+
+<component id="pause">
+<text><![CDATA[Pausa]]></text>
+</component>
+
+<component id="play">
+<text><![CDATA[Reproducir]]></text>
+</component>
+
+<component id="rewind">
+<text><![CDATA[Regresar]]></text>
+</component>
+
+<component id="start">
+<text><![CDATA[Inicio]]></text>
+</component>
+
+
+</textcomponents>

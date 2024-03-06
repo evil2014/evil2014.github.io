@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.2.1.8 Comentarios sobre las ACL</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.2.1.8_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>ACL de IPv4 estándar </h1>
+        <h2>Configuración de ACL de IPv4 estándar</h2>
+      </div>
+      <div id="content">
+<p>Puede utilizar la palabra clave <span class="cmd"><b>remark</b></span> para incluir comentarios (remarks) sobre entradas en cualquier ACL de IP estándar o extendida. Estos comentarios facilitan la comprensión y la revisión de las ACL. Cada línea de comentarios tiene un límite de 100 caracteres.</p>
+<p></p>
+<p>El comentario puede ir antes o después de una instrucción <span class="cmd"><b>permit</b></span> o <span class="cmd"><b>deny</b></span>. Debe ser coherente en cuanto a la ubicación del comentario, de manera que quede claro qué comentario describe cuál de las instrucciones <span class="cmd"><b>permit</b></span> o <span class="cmd"><b>deny</b></span>. Por ejemplo, sería confuso colocar algunos comentarios antes de las instrucciones <span class="cmd"><b>permit</b></span> o <span class="cmd"><b>deny</b></span> correspondientes y otros después de estas.</p>
+<p></p>
+<p>Para incluir un comentario para las ACL de IPv4 estándar o extendidas numeradas, utilice el comando de configuración global <span class="cmd"><b>access-list </b></span><span class="cmd"><i>lista-acceso_número</i></span><span class="cmd"><b> remark </b></span><span class="cmd"><i>comentario</i></span>. Para eliminar el comentario, utilice la versión <span class="cmd"><b>no</b></span> de este comando.</p>
+<p></p>
+<p>En el primer ejemplo, se muestra que la ACL numerada deniega la salida de la estación de trabajo de invitado 192.168.10.10 por S0/0/0, pero permite el resto de los dispositivos de 192.168.0.0/16. </p>
+<p></p>
+<p>Para crear una entrada en una ACL estándar o extendida con nombre, utilice el comando de configuración de lista de acceso <span class="cmd"><b>remark</b></span>. Para eliminar el comentario, utilice la versión <span class="cmd"><b>no</b></span> de este comando. En el ejemplo 2, se muestra una ACL estándar con nombre. En este ejemplo, las instrucciones remark indican que se deniega la estación de trabajo de laboratorio con la dirección host 192.168.11.10, pero que los dispositivos de las demás redes están permitidos.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

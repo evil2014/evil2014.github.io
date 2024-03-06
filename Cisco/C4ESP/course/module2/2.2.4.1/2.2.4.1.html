@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.2.4.1 Elección de una conexión de enlace WAN</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.2.4.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Elección de una tecnología WAN</h1>
+        <h2>Elección de servicios WAN</h2>
+      </div>
+      <div id="content">
+<p>Al elegir la conexión WAN apropiada, se deben tener en cuenta varios factores importantes. Para que un administrador de red decida cuál es la tecnología WAN que mejor cumple con los requisitos de una empresa específica, debe responder las siguientes preguntas:</p>
+<p></p>
+<p>
+<b>¿Cuál es el propósito de la WAN? </b>
+</p>
+<p>Se debe tener en cuenta lo siguiente:</p>
+<p>
+<ul>
+<li>¿La empresa conectará sucursales locales en la misma área urbana, conectará sucursales remotas o realizará una conexión a una única sucursal?</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>¿Se usará la WAN para conectar a los empleados internos, los socios comerciales externos, los clientes o los tres grupos?</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>¿La empresa se conectará a los clientes, a los socios comerciales, a los empleados o a alguna combinación de los tres? </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>¿La WAN proporcionará a los usuarios autorizados un acceso limitado o total a la intranet de la empresa? </li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>¿Cuál es el alcance geográfico? </b>
+</p>
+<p>Se debe tener en cuenta lo siguiente:</p>
+<p>
+<ul>
+<li>¿Es la WAN local, regional o global?</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>¿La WAN es de una sucursal a una sucursal, de una sucursal a varias sucursales o de varias sucursales a varias sucursales (distribuida)? </li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>¿Cuáles son los requisitos de tráfico? </b>
+</p>
+<p>Se debe tener en cuenta lo siguiente:</p>
+<p>
+<ul>
+<li>¿Cuál es el tipo de tráfico que se debe admitir (solo datos, VoIP, video, archivos grandes, archivos de transmisión)? Esto determina los requisitos de calidad y rendimiento. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>¿Cuál es el volumen por tipo de tráfico (voz, video o datos) que se debe admitir para cada destino? Esto determina la capacidad de ancho de banda que se necesita para la conexión WAN al ISP.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>¿Cuál es la calidad de servicio que se requiere? Esto puede limitar las opciones. Si el tráfico es muy sensible a la latencia y a la vibración, elimine todas las opciones de conexión WAN que no pueden proporcionar la calidad requerida.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>¿Cuáles son los requisitos de seguridad (integridad de datos, confidencialidad y seguridad)? Estos son factores importantes si el tráfico es de una naturaleza muy confidencial o si proporciona servicios esenciales, como respuesta de emergencia.</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

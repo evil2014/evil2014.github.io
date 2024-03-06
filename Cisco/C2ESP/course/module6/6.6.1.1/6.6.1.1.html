@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.6.1.1 Actividad: crear una ruta estática</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.6.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resumen</h1>
+        <h2>Resumen</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Actividad:</b>
+<b>crear una ruta estática</b>
+</p>
+<p></p>
+<p>A medida que el uso de direcciones IPv6 se torna preponderante, es importante que los administradores de red puedan dirigir el tráfico de la red entre los routers.</p>
+<p></p>
+<p>Para demostrar que es capaz de dirigir el tráfico IPv6 de manera correcta y revisar los conceptos del currículo de la ruta estática predeterminada IPv6, utilice la topología tal como se muestra en el archivo .pdf que se entregó específicamente para esta actividad. </p>
+<p></p>
+<p>Trabaje con un compañero en la redacción de una instrucción IPv6 para cada una de las tres situaciones. Intente redactar las instrucciones de ruta sin la ayuda de las prácticas de laboratorio realizadas ni los archivos Packet Tracer, etc.</p>
+<p></p>
+<p>
+<b>Escenario 1</b>
+</p>
+<p>La ruta estática predeterminada IPv6 del R2 dirige todos los datos a través de la interfaz S0/0/0 hasta la dirección del siguiente salto en el R1.</p>
+<p></p>
+<p>
+<b>Escenario 2</b>
+</p>
+<p>La ruta estática predeterminada IPv6 del R3 dirige todos los datos a través de la interfaz S0/0/1 hasta la dirección del siguiente salto en el R2.</p>
+<p></p>
+<p>
+<b>Escenario 3</b>
+</p>
+<p>La ruta estática predeterminada IPv6 del R2 dirige todos los datos a través de la interfaz S0/0/1 hasta la dirección del siguiente salto en el R3.</p>
+<p></p>
+<p>Al finalizar, reúnanse con otro grupo y comparen las respuestas. Analicen las diferencias que encuentran en las comparaciones.</p>
+<p></p>
+<p>
+<a href="../../files/6.6.1.1%20Class%20Activity%20-%20Make%20It%20Static%20Instructions.pdf" target="_blank">Actividad de clase: crear una ruta estática Instrucciones</a>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

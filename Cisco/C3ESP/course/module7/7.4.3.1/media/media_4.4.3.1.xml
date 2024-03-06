@@ -1,0 +1,47 @@
+﻿<textcomponents>
+<component id="ID_s1_title">
+<text><![CDATA[<b>Topología EIGRP para IPv6</b>]]></text>
+</component>
+
+<component id="ID_s1_txt01">
+  <text><![CDATA[Internet]]></text> 
+  </component>
+<component id="ID_s2_title">
+<text><![CDATA[<b>Comando <font face="_typewriter">show ipv6 eigrp neighbors</font> </b>]]></text>
+</component>  
+
+
+
+<component id="ID_s1_txt03">
+<text><![CDATA[<font color="#F68026"><b>FE80::1</b></font/>]]></text>
+</component>
+<component id="ID_s1_txt04">
+<text><![CDATA[<font color="#F68026"><b>FE80::2</b></font>]]></text>
+</component>
+<component id="ID_s1_txt05">
+<text><![CDATA[<font color="#F68026"><b>FE80::3</b></font>]]></text>
+</component>
+
+
+<component id="ID_s2_txt01">
+<text><![CDATA[Dirección IPv6 link-local del vecino.]]></text>
+</component>
+
+
+<component id="ID_s2_txt02">
+<text><![CDATA[Interfaz local que recibe paquetes de saludo EIGRP para IPv6.]]></text>
+</component>
+
+
+<component id="ID_s2_txt03">
+<text><![CDATA[Segundos restantes antes de declarar que el vecino está inactivo.<br/><br/>El tiempo de espera actual, que se restablece al tiempo de espera máximo cada vez que se recibe un paquete de saludo.]]></text>
+</component>
+
+
+<component id="ID_s2_txt04">
+<text><![CDATA[Cantidad de tiempo desde que el vecino se agregó a la tabla de vecinos.]]></text>
+</component>
+
+
+
+</textcomponents>

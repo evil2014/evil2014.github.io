@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.4.1.6 Centros de datos</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.4.1.6_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>El cambiante entorno de red</h1>
+        <h2>Tendencias de red</h2>
+      </div>
+      <div id="content">
+<p>La computación en la nube es posible gracias a los centros de datos. Un centro de datos es una instalación utilizada para alojar sistemas de computación y componentes relacionados, entre los que se incluyen los siguientes:</p>
+<p>
+<ul>
+<li>Conexiones de comunicaciones de datos redundantes</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Servidores virtuales de alta velocidad (en ocasiones, denominados “granjas de servidores” o “clústeres de servidores”)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Sistemas de almacenamiento redundante (generalmente utilizan tecnología SAN)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Fuentes de alimentación redundantes o de respaldo</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Controles ambientales (p. ej., aire acondicionado, extinción de incendios)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Dispositivos de seguridad</li>
+</ul>
+</p>
+<p></p>
+<p>Un centro de datos puede ocupar una habitación en un edificio, un piso o más, o un edificio entero. Los centros de datos modernos utilizan la computación en la nube y la virtualización para administrar de forma eficaz las transacciones de grandes cantidades de datos. La virtualización es la creación de una versión virtual de un elemento, como una plataforma de hardware, un sistema operativo (OS, operating system), un dispositivo de almacenamiento o recursos de red. Mientras que una PC física es un dispositivo independiente y real, una máquina virtual consiste en un conjunto de archivos y programas que se ejecutan en un sistema físico real. A diferencia de la multitarea, que incluye la ejecución de varios programas en el mismo SO, en la virtualización se ejecutan varios SO en forma paralela en una misma CPU. Esto reduce drásticamente los costos administrativos e indirectos.</p>
+<p></p>
+<p>Por lo general, la creación y el mantenimiento de centros de datos son muy costosos. Por esta razón, solo las grandes organizaciones utilizan centros de datos privados creados para alojar sus datos y proporcionar servicios a los usuarios. Por ejemplo, es posible que un hospital grande posea un centro de datos separado donde se guardan las historias clínicas de los pacientes en formato electrónico. Las organizaciones más pequeñas, que no pueden costear el mantenimiento de un centro propio de datos privado, pueden reducir el costo total de propiedad mediante el alquiler de servicios de servidor y almacenamiento a una organización en la nube con un centro de datos más grande. </p>
+<p></p>
+<p>En la ilustración, se muestra un video sobre el creciente uso de la computación en la nube y de servicios de centros de datos.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

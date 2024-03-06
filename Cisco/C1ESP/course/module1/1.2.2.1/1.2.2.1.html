@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.2.2.1 Tipos de red</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.2.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>LAN, WAN e Internet</h1>
+        <h2>LAN y WAN</h2>
+      </div>
+      <div id="content">
+<p>Las infraestructuras de red pueden variar en gran medida en los siguientes aspectos:</p>
+<p>
+<ul>
+<li>El tamaño del área que abarcan.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>La cantidad de usuarios conectados.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>La cantidad y los tipos de servicios disponibles.</li>
+</ul>
+</p>
+<p></p>
+<p>En la ilustración, se muestran dos de los tipos de infraestructuras de red más comunes:</p>
+<p>
+<ul>
+<li>
+<b>Red de área local:</b> las redes de área local (LAN, Local Area Network) son infraestructuras de red que proporcionan acceso a los usuarios y a los dispositivos finales en un área geográfica pequeña. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Red de área extensa:</b> las redes de área extensa (WAN, Wide Area Network) son infraestructuras de red que proporcionan acceso a otras redes en un área geográfica extensa.</li>
+</ul>
+</p>
+<p></p>
+<p>Otros tipos de redes incluyen los siguientes:</p>
+<p>
+<ul>
+<li>
+<b>Red de área metropolitana:</b> las redes de área metropolitana (MAN, Metropolitan Area Network) son infraestructuras de red que abarcan un área física mayor que la de una LAN pero menor que la de una WAN (por ejemplo, una ciudad). Por lo general, la operación de MAN está a cargo de una única entidad, como una organización de gran tamaño.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>LAN inalámbrica</b>
+<b>:</b> las LAN inalámbricas (WLAN, Wireless LAN) son similares a las LAN, solo que interconectan de forma inalámbrica a los usuarios y los extremos en un área geográfica pequeña.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Red de área de almacenamiento:</b> las redes de área de almacenamiento (SAN, Storage area network) son infraestructuras de red diseñadas para admitir servidores de archivos y proporcionar almacenamiento, recuperación y replicación de datos. Estas incluyen los servidores de tecnología avanzada, matrices de varios discos (denominadas “bloques”) y la tecnología de interconexión de canal de fibra.</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>3.3.1.2 Unidades de datos del protocolo (PDU)</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_3.3.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Movimiento de datos en la red</h1>
+        <h2>Encapsulación de datos</h2>
+      </div>
+      <div id="content">
+<p>Mientras los datos de la aplicación bajan al stack del protocolo y se transmiten por los medios de la red, varios protocolos le agregan información en cada nivel. Esto comúnmente se conoce como proceso de encapsulación. </p>
+<p></p>
+<p>La forma que adopta una porción de datos en cualquier capa se denomina “unidad de datos del protocolo (PDU)”. Durante la encapsulación, cada capa encapsula las PDU que recibe de la capa inferior de acuerdo con el protocolo que se utiliza. En cada etapa del proceso, una PDU tiene un nombre distinto para reflejar sus nuevas funciones. Aunque no existe una convención universal de nomenclatura para las PDU, en este curso se denominan de acuerdo con los protocolos de la suite TCP/IP, como se muestra en la ilustración:</p>
+<p>
+<ul>
+<li>
+<b>Datos:</b> término general para la PDU que se utiliza en la capa de aplicación.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Segmento:</b> PDU de la capa de transporte.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Paquete:</b> PDU de la capa de red </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Trama:</b> PDU de la capa de enlace de datos</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Bits:</b> PDU de la capa física que se utiliza cuando se transmiten datos físicamente por el medio</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

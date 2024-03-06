@@ -1,0 +1,77 @@
+﻿<textcomponents>
+<component id="ID_title">
+<text><![CDATA[<b>Comparación entre EIGRP para IPv4 e IPv6</b>]]></text>
+</component>
+
+  <component id="ID_table">
+  <text><![CDATA[<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4' class="mtable">
+	<tr class="mtable_top">
+		<td colspan='3' bgcolor='#0E6360' class="mtable_top"><font size='1' color='#0E6360'><span style="color:#98D3D1">.</span></font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#077A77'  valign="top" class="mtitle" width="105"><font color='#ffffff'></font></td>
+		<td bgcolor='#077A77'  valign="top" class="mtitle" width="160"><font color='#ffffff'><b>EIGRP para IPv4</b></font></td>
+		<td bgcolor='#077A77'  valign="top" class="mtitle"><font color='#ffffff'><b>EIGRP para IPv6</b></font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#077A77' valign="top"><font color='#ffffff'>Rutas anunciadas</font></td>
+		<td bgcolor='#EFF8F7' valign="top"><font color='#393536'>Redes IPv4</font></td>
+		<td bgcolor='#EFF8F7' valign="top"><font color='#393536'>Prefijos IPv6</font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#077A77' valign="top"><font color='#ffffff'>Vector distancia</font></td>
+		<td bgcolor='#ffffff' valign="top"><font color='#393536'>Sí</font></td>
+		<td bgcolor='#ffffff' valign="top"><font color='#393536'>Sí</font></td>
+	</tr>
+
+
+	   <tr>
+		<td bgcolor='#077A77' valign="top"><font color='#ffffff'>Tecnología de convergencia</font></td>
+		<td bgcolor='#EFF8F7' valign="top"><font color='#393536'>DUAL</font></td>
+		<td bgcolor='#EFF8F7' valign="top"><font color='#393536'>DUAL</font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#077A77' valign="top"><font color='#ffffff'>Métrica</font></td>
+		<td bgcolor='#ffffff' valign="top"><font color='#393536'>El ancho de banda y el retraso de manera predeterminada, la confiabilidad y la carga son optativas.</font></td>
+		<td bgcolor='#ffffff' valign="top"><font color='#393536'>El ancho de banda y el retraso de manera predeterminada, la confiabilidad y la carga son optativas.</font></td>
+	</tr>
+
+
+	   <tr>
+		<td bgcolor='#077A77' valign="top"><font color='#ffffff'>Protocolo de transporte</font></td>
+		<td bgcolor='#EFF8F7' valign="top"><font color='#393536'>RTP</font></td>
+		<td bgcolor='#EFF8F7' valign="top"><font color='#393536'>RTP</font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#077A77' valign="top"><font color='#ffffff'>Mensajes de actualización</font></td>
+		<td bgcolor='#ffffff' valign="top"><font color='#393536'>Actualizaciones incrementales, parciales y limitadas</font></td>
+		<td bgcolor='#ffffff' valign="top"><font color='#393536'>Actualizaciones incrementales, parciales y limitadas</font></td>
+	</tr>
+
+
+	   <tr>
+		<td bgcolor='#077A77' valign="top"><font color='#ffffff'>Descubrimiento de vecinos</font></td>
+		<td bgcolor='#EFF8F7' valign="top"><font color='#393536'>Paquetes de saludo</font></td>
+		<td bgcolor='#EFF8F7' valign="top"><font color='#393536'>Paquetes de saludo</font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#077A77' valign="top"><font color='#ffffff'>Direcciones de origen y destino</font></td>
+		<td bgcolor='#ffffff' valign="top"><font color='#393536'>Dirección de origen IPv4 y dirección de destino IPv4 de multidifusión 224.0.0.10</font></td>
+		<td bgcolor='#ffffff' valign="top"><font color='#393536'>Dirección de origen IPv6 link-local y dirección de destino IPv6 de multidifusión FF02::A</font></td>
+	</tr>
+
+
+	   <tr>
+		<td bgcolor='#077A77' valign="top"><font color='#ffffff'>Autenticación</font></td>
+		<td bgcolor='#EFF8F7' valign="top"><font color='#393536'>Texto no cifrado y MD5</font></td>
+		<td bgcolor='#EFF8F7' valign="top"><font color='#393536'>MD5</font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#077A77' valign="top"><font color='#ffffff'>Id. de router</font></td>
+		<td bgcolor='#ffffff' valign="top"><font color='#393536'>ID del router de 32&nbsp;bits</font></td>
+		<td bgcolor='#ffffff' valign="top"><font color='#393536'>ID del router de 32&nbsp;bits</font></td>
+	</tr>
+	
+	</table>]]></text>
+  </component>
+</textcomponents>

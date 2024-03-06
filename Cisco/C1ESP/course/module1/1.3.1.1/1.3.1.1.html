@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.3.1.1 La red convergente</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.3.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>La red como plataforma</h1>
+        <h2>Redes convergentes</h2>
+      </div>
+      <div id="content">
+<p>Las redes modernas están en constante evolución para satisfacer las demandas de los usuarios. Las primeras redes de datos estaban limitadas a intercambiar información con base en caracteres entre sistemas informáticos conectados. Las redes tradicionales de teléfono, radio y televisión se mantenían separadas de las redes de datos. En el pasado, cada uno de estos servicios necesitaba una red dedicada, con distintos canales de comunicación y diferentes tecnologías para transportar una señal de comunicación específica. Cada servicio tenía su propio conjunto de reglas y estándares para asegurar la comunicación satisfactoria. </p>
+<p></p>
+<p>Piense en una escuela construida hace cuarenta años. En ese entonces, las aulas contaban con conexiones por cable para la red de datos, la red telefónica y la red de video para los televisores. Estas redes separadas eran dispares; es decir, no podían comunicarse entre sí, como se muestra en la figura 1. </p>
+<p></p>
+<p>Los avances en la tecnología nos permiten consolidar estos tipos de redes diferentes en una plataforma conocida como “red convergente”. A diferencia de las redes dedicadas, las redes convergentes pueden transmitir voz, streams de video, texto y gráficos entre diferentes tipos de dispositivos utilizando el mismo canal de comunicación y la misma estructura de red, como se muestra en la figura 2. Las formas de comunicación anteriormente individuales y diferentes se unieron en una plataforma común. Esta plataforma proporciona acceso a una amplia variedad de métodos de comunicación alternativos y nuevos que permiten a las personas interactuar directamente con otras en forma casi instantánea.</p>
+<p></p>
+<p>En las redes convergentes, sigue habiendo muchos puntos de contacto y muchos dispositivos especializados, como computadoras personales, teléfonos, televisores y tablet PC, pero hay una infraestructura de red común. Esta infraestructura de red utiliza el mismo conjunto de reglas, acuerdos y estándares de implementación.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

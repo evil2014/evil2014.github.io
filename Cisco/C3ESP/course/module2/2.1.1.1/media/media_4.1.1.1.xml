@@ -1,0 +1,60 @@
+﻿<textcomponents>
+
+<component id="ID_s1_title">
+<text><![CDATA[<b>Redundancia en una red jerárquica</b>]]></text>
+</component>
+
+<component id="ID_s1_txt01">
+<text><![CDATA[Enlace troncal1]]></text> 
+</component>
+<component id="ID_s1_txt02">
+<text><![CDATA[Enlace troncal2]]></text> 
+</component>
+<component id="ID_s1_txt03">
+<text><![CDATA[Enlace troncal3]]></text> 
+</component>
+<component id="ID_s1_txt04">
+<text><![CDATA[La PC1 se comunica con la PC4 a través del Enlace troncal1.]]></text> 
+</component>
+<component id="ID_s1_txt05">
+<text><![CDATA[Enlace_troncal1 está dañado entre el S2 y el S1.]]></text> 
+</component>
+<component id="ID_s1_txt06">
+<text><![CDATA[El S2 detecta la conexión dañada y reenvía la trama al S3.]]></text> 
+</component>
+<component id="ID_s1_txt07">
+<text><![CDATA[El S2 detecta el enlace restaurado y ajusta la ruta hacia la PC4 según corresponda.]]></text> 
+</component> <!-- controller -->
+
+<component id="end">
+<text><![CDATA[End]]></text>
+</component>
+
+<component id="fforward">
+<text><![CDATA[Adelantar]]></text>
+</component>
+
+<component id="pause">
+<text><![CDATA[Pausa]]></text>
+</component>
+
+<component id="play">
+<text><![CDATA[Reproducir]]></text>
+</component>
+
+<component id="rewind">
+<text><![CDATA[Regresar]]></text>
+</component>
+
+<component id="start">
+<text><![CDATA[Inicio]]></text>
+</component> <!--slide 2-->
+<component id='ID_s2_boxTitle'>
+	<text><![CDATA[<b>Consideraciones que se deben tener en cuenta al implementar la redundancia:</b>]]></text>
+</component>
+
+<component id="ID_s2_boxBody">
+<text><![CDATA[<textformat blockIndent="-14"><ul><li><b>Inestabilidad de la base de datos MAC: </b>la inestabilidad del contenido de la tabla de direcciones MAC se produce por recibir copias de la misma trama en diferentes puertos del switch. El reenvío de datos se puede ver afectado cuando el switch consume los recursos que lidian con la inestabilidad en la tabla de direcciones MAC.</li><br/><li><b>Tormentas de difusión:</b> los switches pueden saturar la red con difusiones incesantemente si no se implementa un proceso para evitar bucles. Esta situación se conoce comúnmente como “tormenta de difusión”.</li><br/><li><b>Transmisión de varias tramas:</b> es posible que se entreguen varias copias de las tramas de unidifusión en las estaciones de destino. Muchos protocolos esperan recibir una única copia de cada transmisión. Varias copias de la misma trama pueden provocar errores de los que no se puede recuperar.</li></ul></textformat>]]></text>
+</component>
+
+</textcomponents>

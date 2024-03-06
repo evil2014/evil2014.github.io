@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.2.3.15 Packet Tracer: Desafío de resolución de problemas sobre el uso del registro para resolver problemas</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.2.3.15_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resolución de problemas de red</h1>
+        <h2>Resolución de problemas de conectividad IP</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Información básica/situación</b>
+</p>
+<p></p>
+<p>Esta es la parte 2 de una actividad que consta de dos partes. La parte 1 es Packet Tracer: Desafío de resolución de problemas sobre la documentación de la red, que debe haber completado anteriormente en el capítulo. En la parte 2, usará sus habilidades de resolución de problemas y el registro de la parte 1 para resolver los problemas de conectividad entre las computadoras.</p>
+<p></p>
+<p>
+<a href="../../files/9.2.3.15%20Packet%20Tracer%20-%20Troubleshooting%20Challenge%20-%20Using%20Documentation%20to%20Solve%20Issues.pdf" target="_blank">Packet Tracer: Desafío de resolución de problemas sobre el uso del registro para resolver problemas (instrucciones)</a>
+</p>
+<p></p>
+<p>
+<a href="../../files/9.2.3.15%20Packet%20Tracer%20-%20Troubleshooting%20Challenge%20-%20Using%20Documentation%20to%20Solve%20Issues.pka" target="_blank">Packet Tracer: Desafío de resolución de problemas sobre el uso del registro para resolver problemas (PKA)</a>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

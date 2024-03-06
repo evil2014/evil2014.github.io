@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>11.1.3.3 Evolución de los requisitos de los protocolos</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_11.1.3.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Crear y crecer</h1>
+        <h2>Crecimiento hacia redes más grandes</h2>
+      </div>
+      <div id="content">
+<p>Además de comprender las tendencias cambiantes del tráfico, los administradores de red también deben ser conscientes de cómo cambia el uso de la red. Como se muestra en la ilustración, los administradores de redes pequeñas tienen la capacidad de obtener “instantáneas” de TI en persona del uso de aplicaciones por parte de los empleados para una porción considerable de la fuerza laboral a través del tiempo. Generalmente, estas instantáneas incluyen la siguiente información:</p>
+<p></p>
+<p>
+<ul>
+<li>OS y versión del OS</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Aplicaciones Non-Network</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Aplicaciones de red</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Uso de CPU</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Utilización de unidades</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Utilización de RAM</li>
+</ul>
+</p>
+<p></p>
+<p>El registro de instantáneas de los empleados en una red pequeña durante un período determinado resulta muy útil para informar al administrador de red sobre la evolución de los requisitos de los protocolos y los flujos de tráfico relacionados. Por ejemplo, es posible que algunos empleados utilicen recursos externos, como los medios sociales, para posicionar mejor una compañía en términos de marketing. Cuando estos empleados comenzaron a trabajar para la compañía, es posible que no le hayan dado tanta importancia a la publicidad basada en Internet. Este cambio en la utilización de recursos puede requerir que el administrador de red cambie la asignación de los recursos de red en consecuencia. </p>
+<p></p>
+<p>Es responsabilidad del administrador de red realizar un seguimiento de los requisitos de utilización y de flujo de tráfico de la red, e implementar modificaciones en la red para optimizar la productividad de los empleados a medida que la red y la empresa crecen.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

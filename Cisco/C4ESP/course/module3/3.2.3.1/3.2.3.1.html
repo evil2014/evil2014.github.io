@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>3.2.3.1 Establecimiento de una sesión PPP</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_3.2.3.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Funcionamiento de PPP</h1>
+        <h2>Sesiones para PPP</h2>
+      </div>
+      <div id="content">
+<p>Hay tres fases de establecimiento de una sesión PPP, como se muestra en la ilustración:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Fase 1, establecimiento del enlace y negociación de la configuración:</b> antes de que PPP intercambie cualquier datagrama de capa de red (como IP) LCP primero debe abrir la conexión y negociar las opciones de configuración. Esta fase se completa cuando el router receptor envía una trama de acuse de recibo de configuración de vuelta al router que inicia la conexión. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Fase 2, determinación de la calidad del enlace (optativa):</b> LCP prueba el enlace para determinar si la calidad de este es suficiente para activar protocolos de capa de red. LCP puede retrasar la transmisión de la información del protocolo de capa de red hasta que se complete esta fase. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Fase 3, negociación de la configuración del protocolo de capa de red:</b> una vez que LCP terminó la fase de determinación de la calidad del enlace, el protocolo NCP correspondiente puede configurar por separado los protocolos de capa de red, activarlos y desactivarlos en cualquier momento. Si LCP cierra el enlace, informa a los protocolos de capa de red para que puedan tomar las medidas adecuadas.</li>
+</ul>
+</p>
+<p></p>
+<p>El enlace permanece configurado para las comunicaciones hasta que las tramas LCP o NCP explícitas cierren el enlace, o hasta que ocurra algún evento externo, por ejemplo, que caduque un temporizador de inactividad o que intervenga un administrador. </p>
+<p></p>
+<p>LCP puede finalizar el enlace en cualquier momento. Por lo general, esto se realiza cuando uno de los routers solicita la finalización, pero puede suceder debido a un evento físico, como la pérdida de una portadora o el vencimiento de un temporizador de período inactivo.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.1.2.5 Problemas de la capa de acceso a la red</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.1.2.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración básica del switch</h1>
+        <h2>Configuración de puertos de un switch</h2>
+      </div>
+      <div id="content">
+<p>El resultado del comando <span class="cmd"><b>show interfaces</b></span> se puede usar para detectar problemas frecuentes de los medios. Una de las partes más importantes de este resultado es la visualización del estado del protocolo de línea y de enlace de datos. En la figura 1, se indica la línea de resumen para revisar el estado de una interfaz.</p>
+<p></p>
+<p>El primer parámetro (FastEthernet0/1 is up) se refiere a la capa de hardware y, básicamente, refleja si la interfaz recibe la señal de detección de portadora del otro extremo. El segundo parámetro (line protocol is up) se refiere a la capa de enlace de datos y refleja si se reciben los keepalives del protocolo de capa de enlace de datos.</p>
+<p></p>
+<p>Sobre la base del resultado del comando <span class="cmd"><b>show interfaces</b></span>, los posibles problemas se pueden reparar de la siguiente manera:</p>
+<p></p>
+<p>
+<ul>
+<li>Si la interfaz está activa y el protocolo de línea está inactivo, hay un problema. Puede haber una incompatibilidad en el tipo de encapsulación, la interfaz en el otro extremo puede estar inhabilitada por errores o puede haber un problema de hardware.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Si el protocolo de línea y la interfaz están inactivos, hay un cable que no está conectado o existe algún otro problema de interfaz. Por ejemplo, en una conexión directa, el otro extremo de la conexión puede estar administrativamente inactivo.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Si la interfaz se encuentra administrativamente inactiva, se inhabilitó manualmente en la configuración activa (se emitió el comando <span class="cmd"><b>shutdown</b></span>).</li>
+</ul>
+</p>
+<p></p>
+<p>En la figura 2, se muestra un ejemplo del resultado del comando <span class="cmd"><b>show interfaces</b></span>. En el ejemplo, se muestran los contadores y las estadísticas de la interfaz FastEthernet0/1.</p>
+<p></p>
+<p>Algunos errores de medios no son lo suficientemente graves para provocar una falla en el circuito, pero sí provocan problemas en el rendimiento de la red. En la figura 3, se explican algunos de estos errores frecuentes, los cuales se pueden detectar mediante el comando <span class="cmd"><b>show interfaces</b></span>. </p>
+<p></p>
+<p>“Input errors” indica la suma de todos los errores en los datagramas que se recibieron en la interfaz que se analiza. Estos incluyen los recuentos de fragmentos de colisión, de fragmentos gigantes, de los que no están almacenados en buffer, de CRC, de tramas, de saturación y de ignorados. Los errores de entrada que se informan con el comando <span class="cmd"><b>show interfaces</b></span> incluyen lo siguiente:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Runt frames:</b> las tramas de Ethernet más cortas que la longitud mínima permitida de 64 bytes se denominan “runt frames” (fragmentos de colisión). La causa del exceso de fragmentos de colisión suele ser una NIC en mal funcionamiento, pero este puede deberse a los mismos problemas que causan el exceso de colisiones.</li>
+</ul>
+</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Giants:</b> las tramas Ethernet más largas que la longitud máxima permitida se denominan “giants” (fragmentos gigantes). Los fragmentos gigantes se deben a los mismos problemas que causan los fragmentos de colisión.</li>
+</ul>
+</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Errores de CRC:</b> en las interfaces Ethernet y seriales, los errores de CRC generalmente indican que hay errores en los medios o en los cables. Las causas comunes incluyen interferencia eléctrica, conexiones flojas o dañadas o el uso del tipo de cable incorrecto. Si aparecen muchos errores de CRC, hay demasiado ruido en el enlace, y se debe examinar el cable para conocer la longitud y detectar daños. También se deben buscar y eliminar las fuentes del ruido, si es posible.</li>
+</ul>
+</p>
+<p></p>
+<p></p>
+<p>“Output errors” indica la suma de todos los errores que impiden la transmisión final de los datagramas por la interfaz que se analiza. Los errores de salida que se informan con el comando <span class="cmd"><b>show interfaces</b></span> incluyen lo siguiente:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Collisions:</b> las colisiones en las operaciones half-duplex son completamente normales y no debe preocuparse por estas, siempre que esté satisfecho con el funcionamiento half-duplex. Sin embargo, nunca debe haber colisiones en una red correctamente diseñada y configurada que use la comunicación full-duplex. Se recomienda especialmente usar full-duplex, a menos que tenga un equipo más antiguo o heredado que requiera half-duplex.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Late collisions</b>: las colisiones tardías se refieren a las colisiones que ocurren después de que se transmitieron 512 bits (el preámbulo) de la trama. La longitud excesiva de los cables es la causa más frecuente de las colisiones tardías. Otra causa frecuente es la configuración incorrecta de dúplex. Por ejemplo, el extremo de una conexión puede estar configurado para full-duplex y el otro para half-duplex. Las colisiones tardías se verían en la interfaz que está configurada para half-duplex. En ese caso, debe configurar los mismos parámetros de dúplex en ambos extremos. Una red diseñada y configurada correctamente nunca debería tener colisiones tardías.</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

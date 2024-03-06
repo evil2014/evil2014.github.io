@@ -1,0 +1,81 @@
+﻿<textcomponents>
+
+<component id="ID_title">
+<text><![CDATA[<b>Topología lógica de anillo</b>]]></text>
+</component>
+
+
+<component id="ID_txt01">
+<text><![CDATA[Necesito transmitir a D.]]></text>
+</component>
+
+<component id="ID_txt02">
+<text><![CDATA[¿Esta trama es para mí?]]></text>
+</component>
+
+<component id="ID_txt03">
+<text><![CDATA[<b>No</b>]]></text>
+</component>
+
+<component id="ID_txt04">
+<text><![CDATA[¿Esta trama es para mí?]]></text>
+</component>
+
+<component id="ID_txt05">
+<text><![CDATA[<b>No</b>]]></text>
+</component>
+
+<component id="ID_txt06">
+<text><![CDATA[¿Esta trama es para mí?]]></text>
+</component>
+
+<component id="ID_txt07">
+<text><![CDATA[<b>Sí</b>]]></text>
+</component>
+
+<component id="ID_txt08">
+<text><![CDATA[<b>Trama</b>]]></text>
+</component>
+
+
+<component id="ID_txt10">
+<text><![CDATA[<b>A</b>]]></text>
+</component>
+
+<component id="ID_txt11">
+<text><![CDATA[<b>B</b>]]></text>
+</component>
+
+<component id="ID_txt12">
+<text><![CDATA[<b>C</b>]]></text>
+</component>
+
+<component id="ID_txt13">
+<text><![CDATA[<b>D</b>]]></text>
+</component> <!-- controller -->
+
+<component id="end">
+<text><![CDATA[Finalizar]]></text>
+</component>
+
+<component id="fforward">
+<text><![CDATA[Adelantar]]></text>
+</component>
+
+<component id="pause">
+<text><![CDATA[Pausa]]></text>
+</component>
+
+<component id="play">
+<text><![CDATA[Reproducir]]></text>
+</component>
+
+<component id="rewind">
+<text><![CDATA[Regresar]]></text>
+</component>
+
+<component id="start">
+<text><![CDATA[Inicio]]></text>
+</component>
+
+</textcomponents>

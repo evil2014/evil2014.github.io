@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.1.2.1 Jerarquía de red </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.1.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Descripción general del diseño de redes jerárquicas</h1>
+        <h2>Diseño jerárquico de la red</h2>
+      </div>
+      <div id="content">
+<p>En la tecnología de redes, un diseño jerárquico implica dividir la red en capas independientes. Cada capa (o nivel) en la jerarquía proporciona funciones específicas que definen su función dentro de la red general. Esto ayuda al diseñador y al arquitecto de red a optimizar y seleccionar las características, el hardware y el software de red adecuados para llevar a cabo las funciones específicas de esa capa de red. Los modelos jerárquicos se aplican al diseño de LAN y WAN.</p>
+<p></p>
+<p>Un diseño típico de red LAN jerárquica de campus empresarial incluye las siguientes tres capas: </p>
+<p>
+<ul>
+<li>
+<b>Capa de acceso:</b> proporciona acceso a la red para los grupos de trabajo y los usuarios.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Capa de distribución:</b> proporciona una conectividad basada en políticas y controla el límite entre las capas de acceso y de núcleo.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Capa de núcleo:</b> proporciona un transporte rápido entre los switches de distribución dentro del campus empresarial.</li>
+</ul>
+</p>
+<p></p>
+<p>El beneficio de dividir una red plana en bloques más pequeños y fáciles de administrar es que el tráfico local sigue siendo local. Sólo el tráfico destinado a otras redes se traslada a una capa superior.</p>
+<p></p>
+<p>Los dispositivos de Capa 2 en una red plana brindan pocas oportunidades de controlar broadcasts o filtrar tráfico no deseado. A medida que se agregan más dispositivos y aplicaciones a una red plana, los tiempos de respuesta se degradan hasta que la red queda inutilizable.</p>
+<p></p>
+<p>Haga clic en Reproducir en la figura 1 para ver la transición de un diseño de red plana a un diseño de red jerárquico.</p>
+<p></p>
+<p>En la figura 2, se muestra otro ejemplo de diseño de red jerárquico de tres capas. Observe que cada edificio utiliza el mismo modelo de red jerárquico que incluye las capas de acceso, de distribución y de núcleo. </p>
+<p></p>
+<p>
+<b>Nota:</b> no existen reglas absolutas sobre la forma en que se debe armar físicamente una red de campus. Si bien es cierto que muchas redes de campus se construyen con tres niveles físicos de switches, no es un requisito estricto. En un campus más pequeño, la red puede tener dos niveles de switches en los que los elementos de núcleo y de distribución se combinan en un switch físico. Esto se denomina “diseño de núcleo contraído”.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

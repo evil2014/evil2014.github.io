@@ -1,0 +1,88 @@
+﻿<textcomponents>
+
+<component id="ID_title">
+<text><![CDATA[<b>Envío de partes a la red correcta</b>]]></text> 
+</component>
+
+
+<component id="ID_caption">
+<text><![CDATA[El encabezado Unidad de datos del protocolo también contiene la dirección de red.]]></text> 
+</component> <!--Topology text-->
+<component id='ID_t_txt01'>
+	<text><![CDATA[<b>PC1</b><br>192.168.1.110<br>AA-AA-AA-AA-AA-AA]]></text>
+</component>
+
+<component id='ID_t_txt02'>
+	<text><![CDATA[<b>R1</b><br>192.168.1.1<br>11-11-11-11-11-11]]></text>
+</component>
+
+<component id='ID_t_txt03'>
+	<text><![CDATA[172.16.1.99<br>22-22-22-22-22-22]]></text>
+</component>
+
+<component id='ID_t_txt04'>
+	<text><![CDATA[<br>172.16.1.99<br>AB-CD-EF-12-34-56]]></text>
+</component>
+
+<component id='ID_t_txt05'>
+	<text><![CDATA[<b>PC2</b><br>192.168.1.111<br>BB-BB-BB-BB-BB-BB]]></text>
+</component>
+
+<component id='ID_t_txt06'>
+	<text><![CDATA[<b>Servidor FTP</b><br>192.168.1.9<br>CC-CC-CC-CC-CC-CC]]></text>
+</component>
+
+<component id='ID_t_txt07'>
+	<text><![CDATA[Mi gateway predeterminado es 192.168.1.1.]]></text>
+</component>
+
+<component id='ID_t_txt08'>
+	<text><![CDATA[Soy el gateway predeterminado para esta LAN.]]></text>
+</component>
+
+<component id='ID_t_txt09'>
+	<text><![CDATA[Mi gateway predeterminado es 192.168.1.1.]]></text>
+</component>
+
+<component id='ID_t_txt10'>
+	<text><![CDATA[Mi gateway predeterminado es 192.168.1.1.]]></text>
+</component>
+
+
+<component id='ID_t_txt11'>
+	<text><![CDATA[<b>Servidor Web</b><br>172.16.1.99]]></text>
+</component> <!--Table text-->
+<component id="ID_txt01">
+<text><![CDATA[<b>Unidad de datos del protocolo (PDU)</b>]]></text> 
+</component>
+
+<component id="ID_txt02">
+<text><![CDATA[<b>Origen</b>]]></text> 
+</component>
+
+<component id="ID_txt03">
+<text><![CDATA[<b>Destino</b>]]></text> 
+</component>
+
+<component id="ID_txt04">
+<text><![CDATA[<b>Datos</b>]]></text> 
+</component>
+
+
+	<component id="ID_s1_txt01">
+	<text><![CDATA[Red<br>192.168.1]]></text> 
+	</component>
+	
+	<component id="ID_s1_txt02">
+	<text><![CDATA[Dispositivo<br>110]]></text> 
+	</component>
+	
+	<component id="ID_s1_txt03">
+	<text><![CDATA[Red<br>172.16.1]]></text> 
+	</component>
+	
+	<component id="ID_s1_txt04">
+	<text><![CDATA[Dispositivo<br>99]]></text> 
+	</component>
+
+</textcomponents>

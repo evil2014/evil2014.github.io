@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.2.1.1 Plataformas de switch</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.2.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Selección de dispositivos de red</h1>
+        <h2>Hardware del switch</h2>
+      </div>
+      <div id="content">
+<p>Cuando se diseña una red, es importante seleccionar el hardware adecuado para cumplir con los requisitos actuales de la red, así como para permitir su crecimiento. Dentro de una red empresarial, tanto los switches como los routers desempeñan un papel muy importante en la comunicación de red. </p>
+<p></p>
+<p>Existen cinco categorías de switches para redes empresariales, que se muestran en la figura 1:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Switches LAN de campus:</b> para escalar el rendimiento de la red en una LAN empresarial, pueden utilizarse switches de núcleo, de distribución, de acceso y compactos. Estas plataformas de switch varían de switches sin ventilador con ocho puertos fijos a switches de 13 blades que admiten cientos de puertos. Las plataformas de switches LAN de campus incluyen los switches de Cisco de las series 2960, 3560, 3750, 3850, 4500, 6500 y 6800.</li>
+</ul>
+</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Switches administrados en la nube:</b> los switches de acceso administrados a través de la nube Cisco Meraki permiten el apilamiento virtual de switches. Estos controlan y configuran miles de puertos de switch en la Web, sin intervención del personal presencial de TI.</li>
+</ul>
+</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Switches de centros de datos:</b> los centros de datos se deben armar sobre la base de switches que promuevan la escalabilidad de la infraestructura, la continuidad de funcionamiento y la flexibilidad de transporte. Las plataformas de switches de centro de datos incluyen los switches de las series Cisco Nexus y Cisco Catalyst 6500.</li>
+</ul>
+</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Switches de proveedores de servicios:</b> estos switches se dividen en dos categorías, switches de agregación y switches de acceso Ethernet. Los switches de agregación son switches Ethernet de nivel de prestadora de servicios que agregan tráfico en el perímetro de la red. Los switches de acceso Ethernet de proveedores de servicios cuentan con inteligencia de aplicación, servicios unificados, virtualización, seguridad integrada y administración simplificada.</li>
+</ul>
+</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Redes virtuales:</b> las redes se vuelven cada vez más virtuales. Las plataformas de switches de redes virtuales Cisco Nexus proporcionan servicios multiinquilino seguros al incorporar tecnología de inteligencia de virtualización a la red del centro de datos.</li>
+</ul>
+</p>
+<p></p>
+<p>Al seleccionar los switches, los administradores de red deben determinar los factores de forma de estos. Esto incluye las características de configuración fija (figura 2), configuración modular (figura 3), apilable (figura 4) y no apilable. El grosor del switch, que se expresa en el número de unidades de rack, también es importante en el caso de los switches que se montan en un rack. Por ejemplo, los switches de configuración fija que se muestran en la figura 2 son todas unidades de un rack (1U). </p>
+<p></p>
+<p>Además de estas consideraciones, en la figura 5 se destacan otras consideraciones empresariales comunes para tener en cuenta al seleccionar el equipo de switch. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

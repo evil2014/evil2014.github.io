@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.2.2.3 Protección del acceso a EXEC del usuario</title>
+    <!--  -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.2.2.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Información básica</h1>
+        <h2>Limitación del acceso a las configuraciones de los dispositivos</h2>
+      </div>
+      <div id="content">
+<p>El puerto de consola de dispositivos de red debe estar asegurado, como mínimo, mediante el pedido de una contraseña segura al usuario. Así se reducen las posibilidades de que personal no autorizado conecte físicamente un cable al dispositivo y obtenga acceso a éste.</p>
+<p></p>
+<p>Los siguientes comandos se usan en el modo de configuración global para establecer una contraseña para la línea de consola:</p>
+<p></p>
+<p>
+<span class="cmd">Switch(config)#</span>
+<span class="cmd">
+<b>line console 0</b>
+</span>
+</p>
+<p>
+<span class="cmd">Switch(config-line)#</span>
+<span class="cmd">
+<b>password cisco</b>
+</span>
+</p>
+<p>
+<span class="cmd">Switch(config-line)#</span>
+<span class="cmd">
+<b>login</b>
+</span>
+</p>
+<p></p>
+<p>En el modo de configuración global, se usa el comando <span class="cmd"><b>line console 0</b></span> para ingresar al modo de configuración de línea de la consola. El cero se utiliza para representar la primera (y en la mayoría de los casos la única) interfaz de consola.</p>
+<p></p>
+<p>El segundo comando, <span class="cmd"><b>password cisco</b></span>, especifica una contraseña para la línea de consola. </p>
+<p></p>
+<p>El comando <span class="cmd"><b>login</b></span> configura el switch para que requiera autenticación al iniciar sesión. Cuando se habilita el inicio de sesión y se establece una contraseña, se solicita al usuario de la consola que introduzca una contraseña antes de darle acceso a la CLI. </p>
+<p></p>
+<p>
+<b>Contraseña de VTY</b>
+</p>
+<p></p>
+<p>Las líneas vty permiten el acceso a un dispositivo Cisco a través de Telnet. De manera predeterminada, muchos switches Cisco admiten hasta 16 líneas vty que se numeran del 0 al 15. El número de líneas vty que admite un router Cisco varía según el tipo de router y la versión de IOS. No obstante, la cantidad más frecuente de líneas vty configuradas es cinco. Estas líneas se numeran del 0 al 4 de manera predeterminada, aunque se pueden configurar líneas adicionales. Es necesario establecer una contraseña para todas las líneas vty disponibles. Puede configurarse la misma contraseña para todas las conexiones. Sin embargo, con frecuencia conviene configurar una única contraseña para una línea a fin de proporcionar un recurso secundario para el ingreso administrativo al dispositivo si las demás conexiones están en uso.</p>
+<p></p>
+<p>Comandos de ejemplo utilizados para establecer una contraseña en las líneas vty: </p>
+<p></p>
+<p>
+<span class="cmd">Switch(config)#</span>
+<span class="cmd">
+<b>line vty 0 15</b>
+</span>
+</p>
+<p>
+<span class="cmd">Switch(config-line)#</span>
+<span class="cmd">
+<b>password cisco</b>
+</span>
+</p>
+<p>
+<span class="cmd">Switch(config-line)#</span>
+<span class="cmd">
+<b>login</b>
+</span>
+</p>
+<p></p>
+<p>De manera predeterminada, el IOS incluye el comando <span class="cmd"><b>login</b></span> en las líneas VTY. Esto impide el acceso al dispositivo mediante Telnet sin autenticación. Si por error se establece el comando <span class="cmd"><b>no login</b></span>, que elimina el requisito de autenticación, personas no autorizadas podrían conectarse a la línea a través de la red utilizando Telnet. Esto representaría un riesgo importante para la seguridad.</p>
+<p></p>
+<p>En la ilustración, se muestra la protección del acceso a EXEC del usuario en las líneas de consola y las líneas Telnet.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>11.4.2.4 Creación de copias de seguridad y restauración mediante USB</title>
+    <!--  -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_11.4.2.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Administración de los archivos de configuración de IOS</h1>
+        <h2>Creación de copias de seguridad y restauración de archivos de configuración</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Copia de seguridad de las configuraciones mediante una unidad flash USB</b>
+</p>
+<p>Al realizar copias de seguridad en un puerto USB, se recomienda emitir el comando <span class="cmd"><b>show file systems</b></span> para verificar que la unidad USB esté presente y confirmar el nombre, como se muestra en la figura 1. </p>
+<p></p>
+<p>A continuación, utilice el comando <span class="cmd"><b>copy run usbflash0:/</b></span> para copiar el archivo de configuración a la unidad flash USB. Asegúrese de utilizar el nombre de la unidad flash tal como se indica en el sistema de archivos. La barra es optativa, pero indica el directorio raíz de la unidad flash USB. </p>
+<p></p>
+<p>El IOS le solicitará el nombre de archivo. Si el archivo ya existe en la unidad flash USB, el router solicitará la confirmación de sobrescritura, como se ve en la figura 2.</p>
+<p></p>
+<p>Utilice el comando <span class="cmd"><b>dir</b></span> para ver el archivo en la unidad USB, y el comando <span class="cmd"><b>more</b></span> para ver el contenido, como se muestra en la figura 3.</p>
+<p></p>
+<p>
+<b>Restauración de las configuraciones mediante una unidad flash USB</b>
+</p>
+<p>Para volver a copiar el archivo, se deberá editar el archivo USB R1-Config con un editor de texto para transformarlo en un archivo de configuración válido; de lo contrario, hay muchas entradas que son comandos no válidos y no aparecerá ninguna interfaz.</p>
+<p></p>
+<p>
+<span class="cmd">R1#</span>
+<span class="cmd">
+<b>copy usbflash0:/R1-Config running-config</b>
+</span>
+</p>
+<p>
+<span class="cmd">Destination filename [running-config]?</span>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

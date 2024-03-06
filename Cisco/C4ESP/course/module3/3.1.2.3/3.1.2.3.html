@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>3.1.2.3 Tipos de tramas HDLC</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_3.1.2.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Descripción general de conexión serial punto a punto</h1>
+        <h2>Encapsulación HDLC</h2>
+      </div>
+      <div id="content">
+<p>HDLC define tres tipos de tramas, cada uno con un formato diferente de campo de control. </p>
+<p></p>
+<p>
+<b>Señalizador</b>
+</p>
+<p>El campo Indicador inicia y termina la verificación de errores. La trama siempre comienza y termina con un campo Indicador de 8 bits. El patrón de bits es 01111110. Debido a que existe una probabilidad de que este patrón ocurra en los datos propiamente dichos, el sistema HDLC emisor siempre inserta un bit 0 después de cada cinco 1 consecutivos en el campo de datos, de modo que en la práctica, la secuencia de indicadores solo se puede producir en los extremos de la trama. El sistema receptor elimina los bits introducidos. Cuando las tramas se transmiten en forma consecutiva, el indicador de fin de la primera trama se utiliza como indicador de inicio de la trama siguiente. </p>
+<p></p>
+<p>
+<b>Dirección</b>
+</p>
+<p>El campo Dirección contiene la dirección HDLC de la estación secundaria. Esta dirección puede contener una dirección específica, una dirección de grupo o una dirección de difusión. Una dirección principal es un origen o un destino de comunicación, lo que elimina la necesidad de incluir la dirección de la estación principal. </p>
+<p></p>
+<p>
+<b>Control</b>
+</p>
+<p>El campo Control utiliza tres formatos diferentes, según el tipo de trama HDLC que se use:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Trama de información (I):</b> las tramas I transportan información de capa superior y determinada información de control. Esta trama envía y recibe números de secuencia, y el bit de sondeo final (P/F) realiza el control del flujo y de errores. El número de secuencia de envío se refiere al número de la trama que se debe enviar a continuación. El número de secuencia de recepción proporciona el número de la trama que se recibe a continuación. Tanto el emisor como el receptor mantienen números de secuencia de envío y recepción. Las estaciones principales usan el bit P/F para informarles a las secundarias si requieren una respuesta inmediata. Las estaciones secundarias usan el bit P/F para informarles a las principales si la trama actual es la última en su respuesta actual. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Trama de supervisión (S):</b> las tramas S proporcionan información de control. Las tramas S pueden solicitar y suspender la transmisión, informar sobre el estado y confirmar la recepción de las tramas I. Las tramas S no tienen un campo de información. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Trama sin numerar (U):</b> las tramas U admiten funciones de control y no son secuenciales. Según la función de la trama U, el campo de control es de 1 byte o 2 bytes. Algunas tramas U tienen un campo de información.</li>
+</ul>
+</p>
+<p></p>
+<p></p>
+<p>
+<b>Protocolo</b>
+</p>
+<p>Solo se usa en HDLC de Cisco. Este campo especifica el tipo de protocolo encapsulado dentro de la trama (p. ej., 0x0800 para IP). </p>
+<p></p>
+<p>
+<b>Datos</b>
+</p>
+<p>El campo de datos contiene una unidad de información de ruta (PIU) o información de identificación de intercambio (XID). </p>
+<p></p>
+<p>
+<b>Secuencia de verificación de trama (FCS, Frame Check Sequence)</b>
+</p>
+<p>La FCS precede al delimitador del indicador de fin y generalmente es un resto del cálculo de la comprobación de redundancia cíclica (CRC). El cálculo de CRC se vuelve a realizar en el receptor. Si el resultado difiere del valor en la trama original, se supone que existe un error.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

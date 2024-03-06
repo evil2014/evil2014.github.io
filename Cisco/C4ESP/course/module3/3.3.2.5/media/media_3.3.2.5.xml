@@ -1,0 +1,49 @@
+﻿<textcomponents>
+
+<component id="ID_title">
+  <text><![CDATA[<b>El comando<font face='_typewriter'> ppp authentication </font></b>]]></text> 
+</component>
+
+<component id="ID_table">
+  <text><![CDATA[<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4'>
+  <tr>
+    <td colspan="2" bgcolor='#98D3D1'><font color="#1C3635"><b>El comando<font face="_typewriter"> ppp authentication</font></b></font></td>
+  </tr>
+	<tr>
+		<td colspan='2' bgcolor='#0E6360' class="mtable_top"><font size='1' color='#0E6360'><span style="color:#98D3D1">.</span></font></td>
+	</tr>	
+  <tr>
+    <td width='120' bgcolor='#EFF8F7' glow='false' glowcolor='#FCA92E' valign='top' type='dynamic'><font face="_typewriter"><b>chap</b></font></td>
+    <td bgcolor='#EFF8F7' glow='false' glowcolor='#FCA92E' valign='top' type='dynamic'>Habilita CHAP en una interfaz serial.</td>
+  </tr>
+  <tr>
+    <td bgcolor='#ffffff' glow='false' glowcolor='#FCA92E' valign='top' type='dynamic'><font face="_typewriter"><b>pap</b></font></td>
+    <td bgcolor='#ffffff' glow='false' glowcolor='#FCA92E' valign='top' type='dynamic'>Habilita PAP en una interfaz serial.</td>
+  </tr>
+  <tr>
+    <td bgcolor='#EFF8F7' glow='false' glowcolor='#FCA92E' valign='top' type='dynamic'><font face="_typewriter"><b>chap pap</b></font></td>
+    <td bgcolor='#EFF8F7' glow='false' glowcolor='#FCA92E' valign='top' type='dynamic'>Habilita CHAP y PAP y realiza la autenticación de CHAP antes que la de PAP.</td>
+  </tr>
+  <tr>
+    <td bgcolor='#ffffff' glow='false' glowcolor='#FCA92E' valign='top' type='dynamic'><font face="_typewriter"><b>pap chap</b></font></td>
+    <td bgcolor='#ffffff' glow='false' glowcolor='#FCA92E' valign='top' type='dynamic'>Habilita CHAP y PAP y realiza la autenticación de PAP antes que la de CHAP.</td>
+  </tr>
+  <tr>
+    <td bgcolor='#EFF8F7' glow='false' glowcolor='#FCA92E' valign='top' type='dynamic'><font face="_typewriter">if-needed</font><br/>(optativo)</td>
+    <td bgcolor='#EFF8F7' glow='false' glowcolor='#FCA92E' valign='top' type='dynamic'>Usado con TACACS y XTACACS. No realice la autenticación CHAP o PAP si el usuario ya ha proporcionado la autenticación. Esta opción está disponible sólo en interfaces asíncronas.</td>
+  </tr>
+  <tr>
+    <td bgcolor='#ffffff' glow='false' glowcolor='#FCA92E' valign='top' type='dynamic'><font face="_typewriter"><i>list-name</i></font><br/>(optativo)</td>
+    <td bgcolor='#ffffff' glow='false' glowcolor='#FCA92E' valign='top' type='dynamic'>Usado con AAA/TACACS+. Especifica el nombre de una lista de métodos de autenticación TACACS+ para usar. Si no se especifica ningún nombre de lista, el sistema utiliza el valor predeterminado. Las listas se crean con el comando    <font face="_typewriter"><b> aaa authentication ppp </b></font>.</td>
+  </tr>
+  <tr>
+    <td bgcolor='#EFF8F7' glow='false' glowcolor='#FCA92E' valign='top' type='dynamic'><font face="_typewriter">default</font><br/>(optativo)</td>
+    <td bgcolor='#EFF8F7' glow='false' glowcolor='#FCA92E' valign='top' type='dynamic'>Usado con AAA/TACACS+. Se crea con el comando  <font face="_typewriter"><b> aaa authentication ppp </b></font>.</td>
+  </tr>
+  <tr>
+    <td bgcolor='#ffffff' glow='false' glowcolor='#FCA92E' valign='top' type='dynamic'><font face="_typewriter">callin</font></td>
+    <td bgcolor='#ffffff' glow='false' glowcolor='#FCA92E' valign='top' type='dynamic'>Especifica la autenticación sólo en las llamadas entrantes (recibidas).</td>
+  </tr>
+</table>]]></text> 
+  </component>
+</textcomponents>

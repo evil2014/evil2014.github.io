@@ -1,0 +1,62 @@
+﻿<textcomponents> <!--slide 1-->
+<component id='ID_s1_title'>
+	<text><![CDATA[<b>Estructura básica de comandos de IOS</b>]]></text>
+</component>
+
+<component id='ID_s1_txt01'>
+	<text><![CDATA[Petición de entrada]]></text>
+</component>
+
+<component id='ID_s1_txt02'>
+	<text><![CDATA[Comando]]></text>
+</component>
+
+<component id='ID_s1_txt03'>
+	<text><![CDATA[Espacio]]></text>
+</component>
+
+<component id='ID_s1_txt04'>
+	<text><![CDATA[Palabra clave o argumento]]></text>
+</component> <!--slide 2-->
+<component id='ID_s2_title'>
+	<text><![CDATA[<b>Convenciones de los comandos de IOS</b>]]></text>
+</component>
+
+<component id='ID_s2_table'>
+<text><![CDATA[<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4'>
+	<tr>
+		<td bgcolor='#98D3D1' colspan='2' class="mtitle"><font size='12' color="#1C3635"><b >Cuando se describe el uso de comandos, se suelen utilizar estas convenciones.</b></font></td>
+	</tr>
+	<tr>
+		<td colspan='2' bgcolor='#0E6360' class="mtable_top"><font size='1' color='#434321'><span style="color:#98D3D1">.</span></font></td>
+	</tr> 
+	 
+	<tr>
+		<td bgcolor='#077A77' width="150"><font color='#FFFFFF'><b>Convención</b></font></td>
+		<td bgcolor='#077A77'><font color='#FFFFFF'><b>Descripción</b></font></td>
+	</tr>
+	<tr>
+		<td bgcolor='#EFF8F7'><b>Negrita</b></td>
+		<td bgcolor='#EFF8F7'>El texto en negrita indica los comandos y las palabras clave que se introducen literalmente como se muestran.</td>
+	</tr>
+	<tr>
+		<td bgcolor='#FFFFFF'><i>Cursiva</i></td>
+		<td bgcolor='#FFFFFF'>El texto en cursiva indica los argumentos para los cuales el usuario proporciona el valor. </td>
+	</tr>
+	<tr>
+		<td bgcolor='#EFF8F7'>[x]</td>
+		<td bgcolor='#EFF8F7'>Los corchetes indican un elemento optativo (palabra clave o argumento).</td>
+	</tr>
+	<tr>
+		<td bgcolor='#FFFFFF'>{x}</td>
+		<td bgcolor='#FFFFFF'>Las llaves indican un elemento obligatorio (palabra clave o argumento).</td>
+	</tr>
+	<tr>
+		<td bgcolor='#EFF8F7'>[x {y | z}]</td>
+		<td bgcolor='#EFF8F7'>Las llaves y las líneas verticales dentro de corchetes indican una opción obligatoria dentro de un elemento optativo.</td>
+	</tr>
+</table>]]></text>
+</component>
+
+
+</textcomponents>

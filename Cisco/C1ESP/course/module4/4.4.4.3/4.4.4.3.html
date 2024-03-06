@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.4.4.3 Dirección de capa 2</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.4.4.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Control de acceso al medio</h1>
+        <h2>Trama de enlace de datos</h2>
+      </div>
+      <div id="content">
+<p>La capa de enlace de datos proporciona el direccionamiento que se utiliza para transportar una trama a través de los medios locales compartidos. Las direcciones de dispositivo en esta capa se llaman direcciones físicas. El direccionamiento de la capa de enlace de datos se incluye en el encabezado de la trama y especifica el nodo de destino de la trama en la red local. El encabezado de la trama también puede contener la dirección de origen de la trama. </p>
+<p></p>
+<p>A diferencia de las direcciones lógicas de capa 3, que son jerárquicas, las direcciones físicas no indican en qué red se encuentra el dispositivo. En cambio, la dirección física es la dirección específica de un dispositivo en particular. Si el dispositivo se traslada a otra red o subred, sigue funcionando con la misma dirección física de la Capa 2.</p>
+<p></p>
+<p>No se puede utilizar una dirección específica de un dispositivo y no jerárquica para localizar un dispositivo a través de grandes redes o de Internet. Eso sería como intentar localizar una casa específica en todo el mundo, sin más datos que el nombre de la calle y el número de la casa. Sin embargo, la dirección física se puede usar para localizar un dispositivo dentro de un área limitada. Por este motivo, la dirección de la capa de enlace de datos solo se utiliza para entregas locales. Las direcciones en esta capa no tienen significado más allá de la red local. Compare esto con la Capa 3, en donde las direcciones en el encabezado del paquete pasan del host de origen al host de destino sin tener en cuenta la cantidad de saltos de redes a lo largo de la ruta.</p>
+<p></p>
+<p>Si los datos deben pasar a otro segmento de red, se necesita un dispositivo intermediario, como un router. El router debe aceptar la trama según la dirección física y desencapsularla para examinar la dirección jerárquica, o dirección IP. Con la dirección IP, el router puede determinar la ubicación de red del dispositivo de destino y el mejor camino para llegar a él. Una vez que sabe adónde reenviar el paquete, el router crea una nueva trama para el paquete, y la nueva trama se envía al segmento siguiente hacia el destino final. </p>
+<p></p>
+<p>En la ilustración, se destacan los requisitos de dirección de capa 2 en las topologías multiacceso y punto a punto.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

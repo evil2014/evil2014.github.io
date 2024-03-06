@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>11.5.2.1 Configuración del router integrado</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_11.5.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Servicios de enrutamiento integrados</h1>
+        <h2>Configuración del router integrado</h2>
+      </div>
+      <div id="content">
+<p>Un router inalámbrico Linksys es un dispositivo común utilizado en redes domésticas y de pequeñas empresas. En este curso, se utilizará para demostrar las configuraciones básicas de un router integrado. Un dispositivo Linksys típico ofrece cuatro puertos Ethernet para conectividad por cable y, además, actúa como punto de acceso inalámbrico. El dispositivo Linksys también funciona como servidor de DHCP y miniservidor Web que admite una interfaz gráfica de usuario (GUI) basada en Web. </p>
+<p></p>
+<p>
+<b>Acceso a un router Linksys y configuración</b>
+</p>
+<p>Para acceder inicialmente al router, conecte un cable de una PC a uno de los puertos Ethernet para LAN del router, como se muestra en la ilustración. Una vez establecida la conexión por cable, el dispositivo que se conecta obtendrá automáticamente la información de direccionamiento IP del router integrado, incluida una dirección de gateway predeterminado. La dirección de gateway predeterminado es la dirección IP del dispositivo Linksys. Revise la configuración de la red de computadoras con el comando <span class="cmd"><b>ipconfig /all</b></span> para obtener esta dirección. Ahora puede escribir esa dirección IP en un explorador Web de la PC para acceder a la GUI de configuración basada en Web.</p>
+<p></p>
+<p>El dispositivo Linksys tiene una configuración predeterminada que habilita servicios de conmutación y de enrutamiento básico. También está configurado de manera predeterminada como servidor de DHCP. Las tareas de configuración básica, como el cambio del nombre de usuario y contraseña predeterminados, de la dirección IP predeterminada de Linksys e, incluso, de los rangos predeterminados de direcciones IP de DHCP, se deben realizar antes de que se conecte el AP a una red activa.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

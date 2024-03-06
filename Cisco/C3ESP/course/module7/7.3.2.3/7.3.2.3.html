@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.3.2.3 Métrica de ancho de banda </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.3.2.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1> Funcionamiento de EIGRP</h1>
+        <h2>Métricas</h2>
+      </div>
+      <div id="content">
+<p>La métrica de ancho de banda es un valor estático que usan algunos protocolos de routing, como EIGRP y OSPF, para calcular la métrica de routing. El ancho de banda se muestra en kilobits por segundo (kb/s). La mayoría de las interfaces seriales usan el valor de ancho de banda predeterminado de 1544 kb/s o 1 544 000 b/s (1,544 Mb/s). Éste es el ancho de banda de una conexión T1. Sin embargo, algunas interfaces seriales utilizan otro valor de ancho de banda predeterminado. En la figura 1, se muestra la topología que se utiliza en esta sección. Es posible que los tipos de interfaces seriales y sus anchos de banda asociados no reflejen necesariamente los tipos de conexiones más frecuentes que se encuentran en las redes en la actualidad. </p>
+<p></p>
+<p>Verifique siempre el ancho de banda con el comando <span class="cmd"><b>show interfaces</b></span>.</p>
+<p></p>
+<p>El valor predeterminado del ancho de banda puede reflejar o no el ancho de banda físico real de la interfaz. Si el ancho de banda real del enlace difiere del valor de ancho de banda predeterminado, se debe modificar el valor de ancho de banda.</p>
+<p></p>
+<p>
+<b>Configuración del parámetro de ancho de banda</b>
+</p>
+<p></p>
+<p>En la mayoría de los enlaces seriales, la métrica de ancho de banda predeterminada es 1544 kb/s. Debido a que EIGRP y OSPF utilizan el ancho de banda en los cálculos métricos predeterminados, un valor correcto para el ancho de banda es muy importante para la precisión de la información de enrutamiento. </p>
+<p></p>
+<p>Utilice el siguiente comando del modo de configuración de interfaz para modificar la métrica de ancho de banda: </p>
+<p></p>
+<p></p>
+<p>
+<span class="cmd">Router(config-if)# </span>
+<span class="cmd">
+<b>bandwidth </b>
+</span>
+<span class="cmd">
+<i>valor-kilobits-ancho-de-banda</i>
+</span>
+</p>
+<p></p>
+<p>Utilice el comando <span class="cmd"><b>no bandwidth</b></span> para restaurar el valor predeterminado.</p>
+<p></p>
+<p>En la figura 2, el enlace entre el R1 y el R2 tiene un ancho de banda de 64 kb/s, y el enlace entre el R2 y el R3 tiene un ancho de banda de 1024 kb/s. La figura muestra la configuración utilizada en los tres routers para modificar el ancho de banda en las interfaces seriales adecuadas.</p>
+<p></p>
+<p>
+<b>Verificación del parámetro de ancho de banda</b>
+</p>
+<p></p>
+<p>Utilice el comando <span class="cmd"><b>show interfaces</b></span> para verificar los nuevos parámetros de ancho de banda, como se muestra en la figura 3. Es importante modificar la métrica del ancho de banda en ambos lados del enlace para garantizar el enrutamiento adecuado en ambas direcciones.</p>
+<p></p>
+<p>La modificación del valor del ancho de banda no cambia el ancho de banda real del enlace. El comando <span class="cmd"><b>bandwidth</b></span> solo modifica la métrica de ancho de banda que utilizan los protocolos de routing, como EIGRP y OSPF. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

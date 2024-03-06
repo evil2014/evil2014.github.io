@@ -1,0 +1,65 @@
+﻿<textcomponents> <!--Slide 1-->
+<component id='ID_inst'>
+	<text><![CDATA[<b>Actividad: Proceso de arranque del router</b><br><br>Arrastre cada uno de los pasos de la izquierda al campo correspondiente en la tabla de la derecha para mostrar el orden del proceso de arranque del router.
+]]></text>
+</component>
+
+<component id='ID_header01'>
+	<text><![CDATA[<b>Proceso de arranque del router</b>]]></text>
+</component>
+
+<component id='ID_txt01'>
+	<text><![CDATA[Paso 1]]></text>
+</component>
+
+<component id='ID_txt02'>
+	<text><![CDATA[Paso 2]]></text>
+</component>
+
+<component id='ID_txt03'>
+	<text><![CDATA[Paso 3]]></text>
+</component>
+
+<component id='ID_txt04'>
+	<text><![CDATA[Paso 4]]></text>
+</component> <!--Drag and Drop -->
+<component id='ID_a01_DS'>
+	<text><![CDATA[<font color="#393536">Cargar el IOS (archivo de sistema operativo para el router; se carga en la RAM después de que el programa bootstrap encuentra el archivo de IOS <br/>que se utilizará).</font>]]></text>
+</component>
+
+<component id='ID_a02_DS'>
+	<text><![CDATA[<font color="#393536">Realizar el POST (verificación del hardware; lo realiza el chip de<br> ROM incorporado).</font>]]></text>
+</component>
+
+<component id='ID_a03_DS'>
+	<text><![CDATA[<font color="#393536">Cargar el archivo de configuración de la memoria flash (NVRAM) o un servidor TFTP, o ingresar al modo Setup (para crear un archivo de configuración).</font>]]></text>
+</component>
+
+<component id='ID_a04_DS'>
+	<text><![CDATA[<font color="#393536">Cargar bootstrap (se copia de la ROM a la RAM; localiza el IOS).</font>]]></text>
+</component> <!--Drag and Drop-->
+<component id='ID_s1_CORRECT_TITLE'>
+	<text><![CDATA[Correcto]]></text>
+</component>
+
+<component id='ID_s1_CORRECT_BODY'>
+	<text><![CDATA[Ordenó correctamente el proceso de arranque del router.]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_TITLE'>
+	<text><![CDATA[Incorrecto]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_BODY'>
+	<text><![CDATA[No ordenó correctamente el proceso de arranque del router. Intente de nuevo.]]></text>
+</component>
+
+<component id='ID_CHECK'>
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id='ID_RESET'>
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component>
+
+</textcomponents>

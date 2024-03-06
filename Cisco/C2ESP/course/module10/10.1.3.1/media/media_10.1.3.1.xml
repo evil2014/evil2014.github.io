@@ -1,0 +1,59 @@
+﻿<textcomponents>
+<component id="ID_s1_title">
+<text><![CDATA[<b>Configuración de un router como cliente de DHCP</b>]]></text>
+</component>
+
+<component id="ID_s2_title">
+<text><![CDATA[<b>Configuración de un router como cliente de DHCP</b>]]></text>
+</component>
+
+<component id="ID_txt01">
+<text><![CDATA[<b>SOHO</b>]]></text>
+</component>
+
+<component id="ID_txt02">
+<text><![CDATA[<b>ISP</b>]]></text>
+</component>
+
+<component id="ID_s1_txt02">
+<text><![CDATA[&lt;resultado omitido&gt;]]></text>
+</component>
+
+
+<component id="ID_sc_reset">
+		<text><![CDATA[Restablecer]]></text>
+	</component>
+	<component id="ID_sc_showme">
+		<text><![CDATA[Mostrar]]></text>
+	</component>
+	<component id="ID_sc_showall">
+		<text><![CDATA[Mostrar todo]]></text>
+	</component>
+	
+
+<component id="ID_SC2" fontFace='Courier New' fontSize="10">
+		<feedback id="fb"><![CDATA[<b>***  </b><font face="Arial" color="#0000FF">***Debe introducir el comando exacto y completo. Los comandos que incluyen un nombre o una contraseña distinguen mayúsculas de minúsculas.</font><b>***  </b>
+		]]></feedback>
+		<existingcommands><![CDATA[<font  face="_sans"><b>Configure la interfaz conectada al ISP para adquirir una dirección del servidor de DHCP.  </b></font>]]></existingcommands>
+		<command prompt="SOHO(config)#">
+			<correctresponse><![CDATA[interface g0/1]]></correctresponse>
+		</command>		
+		<command prompt="SOHO(config-if)#">
+			<correctresponse><![CDATA[ip address dhcp]]></correctresponse>
+		</command>		
+		<command prompt="SOHO(config-if)#">
+			<correctresponse><![CDATA[no shutdown:]]></correctresponse>
+				<deviceresponse><![CDATA[<pre>SOHO(config-if)#<br/>*Jan 31 17:31:11.507: %DHCP-6-ADDRESS_ASSIGN: Interface <br/>GigabitEthernet0/1 assigned DHCP address 209.165.201.12, mask <br/>255.255.255.224, hostname SOHO <br></pre>]]></deviceresponse> 					
+			<instruction><![CDATA[<font  face="_sans"><b>Salga por completo del modo de configuración y verifique la información de IP en la interfaz g0/1.  </b></font>]]></instruction>
+		</command>
+		<command prompt="SOHO(config-if)#">
+			<correctresponse><![CDATA[end]]></correctresponse>
+		</command>		
+		<command prompt="SOHO#">
+			<correctresponse><![CDATA[show ip interface g0/1]]></correctresponse>
+				<deviceresponse><![CDATA[<pre>GigabitEthernet0/1 is up, line protocol is up <br>  Internet address is 209.165.201.12/27 <br>  Broadcast address is 255.255.255.255 <br>  Address determined by DHCP <br>  &lt;resultado omitido&gt;</pre>]]></deviceresponse> 					
+			<instruction><![CDATA[<font  face="Arial"><b>Configuró correctamente el router como cliente de DHCP.  </b></font>]]></instruction>
+		</command>
+		<command prompt=""/>
+	</component>
+</textcomponents>

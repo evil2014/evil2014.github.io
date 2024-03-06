@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.3.1.2 Servicios de seguridad IPsec</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.3.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Presentación de IPsec</h1>
+        <h2>Seguridad de protocolo de Internet</h2>
+      </div>
+      <div id="content">
+<p>Los servicios de seguridad IPsec proporcionan cuatro funciones fundamentales, las cuales se muestran en la ilustración:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Confidencialidad (cifrado):</b> en una implementación de VPN, los datos privados se transfieren a través de una red pública. Por este motivo, la confidencialidad de los datos es fundamental. Esto se puede lograr mediante el cifrado de los datos antes de transmitirlos a través de la red. Este es el proceso de tomar todos los datos que una computadora envía a otra y codificarlos de una manera que solo la otra computadora pueda decodificar. Si se intercepta la comunicación, el pirata informático no puede leer los datos. IPsec proporciona características de seguridad mejoradas, como algoritmos de cifrado seguros.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Integridad de datos:</b> el receptor puede verificar que los datos se hayan transmitido a través de Internet sin sufrir ningún tipo de modificaciones ni alteraciones. Si bien es importante que los datos a través de una red pública estén cifrados, también es importante verificar que no se hayan modificado cuando estaban en tránsito. IPsec cuenta con un mecanismo para asegurarse de que la porción cifrada del paquete, o todo el encabezado y la porción de datos del paquete, no se haya modificado. IPsec asegura la integridad de los datos mediante checksums, que es una comprobación de redundancia simple. Si se detecta una alteración, el paquete se descarta. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Autenticación:</b> verifica la identidad del origen de los datos que se envían. Esto es necesario para la protección contra distintos ataques que dependen de la suplantación de identidad del emisor. La autenticación asegura que se cree una conexión con el compañero de comunicación deseado. El receptor puede autenticar el origen del paquete mediante la certificación del origen de la información. IPsec utiliza el intercambio de claves de Internet (IKE) para autenticar a los usuarios y dispositivos que pueden llevar a cabo la comunicación de manera independiente. IKE utiliza varios tipos de autenticación, por ejemplo, nombre de usuario y contraseña, contraseña por única vez, biometría, clave previamente compartida (PSK) y certificados digitales.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Protección antirreproducción:</b> es la capacidad de detectar y rechazar los paquetes reproducidos, y ayuda a prevenir la suplantación de identidad. La protección antirreproducción verifica que cada paquete sea único y no esté duplicado. Los paquetes IPsec se protegen mediante la comparación del número de secuencia de los paquetes recibidos con una ventana deslizante en el host de destino o el gateway de seguridad. Se considera que un paquete que tiene un número de secuencia anterior a la ventana deslizante tiene un retraso o está duplicado. Los paquetes duplicados y con retraso se descartan.</li>
+</ul>
+</p>
+<p></p>
+<p>El acrónimo CIA se suele utilizar para ayudar a recordar las iniciales de estas tres funciones: confidencialidad, integridad y autenticación. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

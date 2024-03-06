@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>3.2.3.3 IEEE</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_3.2.3.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolos y estándares de red</h1>
+        <h2>Organismos de estandarización</h2>
+      </div>
+      <div id="content">
+<p>El Instituto de Ingenieros en Electricidad y Electrónica (IEEE, que se pronuncia “I, triple E”) es un organismo profesional para aquellos que trabajan en los campos de la electrónica y de la ingeniería eléctrica y se dedican a promover la innovación tecnológica y crear estándares. A partir de 2012, el IEEE consta de 38 sociedades, publica 130 diarios y patrocina más de 1300 conferencias cada año en todo el mundo. El IEEE tiene más de 1300 estándares y proyectos actualmente en desarrollo. </p>
+<p></p>
+<p>El IEEE tiene más de 400 000 miembros en más de 160 países. Más de 107 000 de esos miembros son miembros estudiantes. El IEEE proporciona oportunidades de mejora en el ámbito educativo y laboral para promover las habilidades y el conocimiento con el sector de la electrónica. </p>
+<p></p>
+<p>El IEEE es una de los organismos de estandarización líderes en el mundo. Crea y mantiene estándares que influyen en una amplia variedad de sectores, como energía, salud, telecomunicaciones y redes. La familia de estándares IEEE 802 se ocupa de redes de área local y redes de área metropolitana, incluidas tanto las redes conectadas por cable como las inalámbricas. Como se muestra en la ilustración, cada estándar del IEEE consta de un WG que se encarga de crear y mejorar los estándares.</p>
+<p></p>
+<p>Los estándares IEEE 802.3 e IEEE 802.11 son estándares IEEE importantes en redes de computadoras. El estándar IEEE 802.3 define el control de acceso al medio (MAC) para Ethernet por cable. Esta tecnología generalmente es para las LAN, pero también tiene aplicaciones para redes de área extensa (WAN). El estándar 802.11 define un conjunto de estándares para implementar redes de área local inalámbricas (WLAN). Este estándar define el MAC físico y de enlace de datos del modelo de interconexión de sistema abierto (OSI) para las comunicaciones inalámbricas.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

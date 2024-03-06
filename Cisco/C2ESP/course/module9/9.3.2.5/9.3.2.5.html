@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.3.2.5 Verificación de ACL extendidas</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.3.2.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>ACL de IPv4 extendidas</h1>
+        <h2>Configuración de ACL de IPv4 extendidas</h2>
+      </div>
+      <div id="content">
+<p>Después de configurar una ACL y aplicarla a una interfaz, utilice los comandos <span class="cmd"><b>show</b></span> del IOS de Cisco para verificar la configuración. En la ilustración, en el ejemplo de arriba se muestra el comando del IOS de Cisco que se utiliza para mostrar el contenido de todas las ACL. En el ejemplo de abajo, se muestra el resultado de emitir el comando <span class="cmd"><b>show ip interface g0/0</b></span> en el router R1. </p>
+<p></p>
+<p>A diferencia de las ACL estándar, las ACL extendidas no implementan la misma lógica interna ni la misma función de hash. El resultado y los números de secuencia que se muestran en el resultado del comando <span class="cmd"><b>show access-lists</b></span> están en el orden en que se introdujeron las instrucciones. Las entradas de host no se enumeran automáticamente antes de las entradas de rango.</p>
+<p></p>
+<p>El comando <span class="cmd"><b>show ip interface</b></span> se utiliza para verificar la ACL en la interfaz y el sentido en el que se aplicó. El resultado de este comando incluye el número o el nombre de la lista de acceso y el sentido en el que se aplicó la ACL. Los nombres de las ACL BROWSING y SURFING en mayúscula se destacan en el resultado que se ve en la pantalla.</p>
+<p></p>
+<p>Después de verificar la configuración de una ACL, el siguiente paso es confirmar que la ACL funcione según lo esperado, es decir, que bloquee y permita el tráfico según se espera. </p>
+<p></p>
+<p>Las pautas analizadas anteriormente en esta sección sugieren que las ACL se configuren en una red de prueba y después se implementen en la red de producción.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

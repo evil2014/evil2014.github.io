@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.3.1.5 Resumen</title>
+    <!--  -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.3.1.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resumen</h1>
+        <h2>Resumen</h2>
+      </div>
+      <div id="content">
+<p>Entre los ejemplos de versiones del software IOS de Cisco se incluyen 12.3, 12.4, 15.0 y15.1. Junto con cada versión del software, hay nuevas versiones que se utilizan para implementar correcciones de errores y nuevas características. </p>
+<p></p>
+<p>El software IOS de Cisco 12.4 incorpora nuevas características de software y compatibilidad de hardware introducidas en el tren 12.3T del software IOS de Cisco y correcciones de software adicionales. Las versiones de línea principal (también llamadas “versiones de mantenimiento”) no contienen una letra mayúscula en la designación de la versión y heredan la funcionalidad del nuevo software IOS de Cisco y hardware de versiones T con números más bajos. Hasta la versión 12.4 inclusive, el tren “M” de línea principal recibía solamente correcciones de errores. El tren “T” de tecnología incluye correcciones y nuevas características y plataformas. El tren 12.4T proporciona la funcionalidad del software IOS de Cisco y la adopción de hardware que introduce nueva tecnología, funcionalidad y avances de hardware que no se encuentran disponibles en el tren de línea principal del software IOS de Cisco 12.4.</p>
+<p></p>
+<p>En la familia de la versión 15.0 del software IOS de Cisco se aplica una nueva estrategia. La familia de la versión 15.0 del IOS de Cisco no se divide en trenes T y M independientes, sino que lo hace en versiones T y M en el mismo tren. Por ejemplo, la primera versión de la familia de versiones 15.0 del software IOS de Cisco es 15.0(1)M, donde M indica que se trata de una versión de mantenimiento extendido. Una versión de mantenimiento extendido es ideal para el mantenimiento a largo plazo. No todas las versiones de la familia de versiones 15.0 del software IOS de Cisco son de mantenimiento extendido; también hay versiones de mantenimiento estándar que reciben las características y la compatibilidad de hardware más recientes. Las versiones de mantenimiento estándar tienen una T mayúscula en su designación.</p>
+<p></p>
+<p>Al seleccionar o actualizar un router con IOS de Cisco, es importante elegir la imagen del IOS adecuada con el conjunto de características y la versión correctos. El archivo de imagen del IOS de Cisco está basado en una convención de nomenclatura especial. El nombre del archivo de imagen del IOS de Cisco contiene varias partes, cada una con un significado específico. Ejemplo: c1900-universalk9-mz.SPA.152-4.M3.bin</p>
+<p></p>
+<p>Se encuentran disponibles comandos para la actualización y verificación de la memoria flash. El comando <span class="cmd"><b>show flash</b></span> muestra los archivos almacenados en la memoria flash, incluso los archivos de imagen de sistema. Este comando también puede utilizarse para verificar el espacio disponible en la memoria flash. El comando <span class="cmd"><b>boot system</b></span> es un comando del modo de configuración global que permite que el usuario especifique el origen para el IOS de Cisco.</p>
+<p></p>
+<p>El uso de un servidor TFTP de red permite las cargas y descargas de la imagen y la configuración a través de la red. El servidor TFTP de red puede ser otro router, una estación de trabajo o un sistema host.</p>
+<p></p>
+<p>A partir de la versión 15.0 del software IOS de Cisco, Cisco modificó el proceso para habilitar las nuevas tecnologías dentro de los conjuntos de características del IOS. Cada dispositivo se envía con la misma imagen universal. Los paquetes de tecnología como IP Base, Datos, UC y SEC se habilitan en la imagen universal mediante claves de licencia de Cisco Software Activation. Cada clave de licencia es exclusiva de un dispositivo en particular y se obtiene de Cisco al proporcionar la ID del producto, el número de serie del router y una clave de activación del producto (PAK). </p>
+<p></p>
+<p>No es necesario activar la licencia en el caso de aquellas que están preconfiguradas de fábrica antes de utilizarlas. IP Base se envía como una licencia permanente en todos los dispositivos ISR-G2. Los otros tres paquetes de tecnología (Datos, Seguridad y Comunicaciones unificadas) vienen con una licencia de evaluación predeterminada, pero es posible adquirir una licencia permanente.</p>
+<p></p>
+<p>Una licencia permanente es una licencia que nunca caduca. Por ejemplo, cuando se instala una licencia de UC (Comunicaciones unificadas), SEC o Datos en un router, las características posteriores para esa licencia se activan incluso si se actualiza el router a una nueva versión del IOS.</p>
+<p></p>
+<p>
+<b>Instalación de una licencia</b>
+</p>
+<p>Requisitos previos:</p>
+<p>
+<ul>
+<li>Obtener la PAK necesaria, que es una ID de 11 dígitos que puede enviarse por correo postal o de forma electrónica.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Tener un nombre de usuario y una contraseña de Cisco válidos.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Recuperar el número de serie y la PID mediante el comando <span class="cmd"><b>show license udi</b></span> o de la bandeja de etiquetas de router.</li>
+</ul>
+</p>
+<p></p>
+<p>El comando <span class="cmd"><b>show version</b></span> se utiliza una vez que se vuelve a cargar el router para verificar que se instaló la licencia.</p>
+<p></p>
+<p>El comando <span class="cmd"><b>show license</b></span> se utiliza para mostrar información adicional sobre las licencias del software IOS de Cisco.</p>
+<p></p>
+<p>El comando del modo de configuración global <span class="cmd"><b>license accept end user agreement</b></span> se utiliza para configurar una aceptación única del EULA para todas las características y paquetes del software IOS de Cisco.</p>
+<p>Utilice el sitio web cisco.com para buscar información sobre otros beneficios y sobre el IOS 15.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

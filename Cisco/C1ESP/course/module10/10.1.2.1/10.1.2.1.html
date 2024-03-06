@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>10.1.2.1 Redes punto a punto</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_10.1.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolos de la capa de aplicación.</h1>
+        <h2>Cómo interactúan los protocolos de aplicación con las aplicaciones de usuario final</h2>
+      </div>
+      <div id="content">
+<p>Cuando se accede a la información en un dispositivo de red, ya sea una PC, una computadora portátil, una tablet PC, un smartphone o algún otro dispositivo conectado a una red, los datos no se pueden almacenar físicamente en el dispositivo. En este caso, se debe solicitar permiso al dispositivo que contiene los datos para acceder a esa información. En el modelo de red punto a punto (P2P), se accede a los datos de un dispositivo punto sin utilizar un servidor dedicado.</p>
+<p></p>
+<p>El modelo de red P2P consta de dos partes: las redes P2P y las aplicaciones P2P. Ambas partes tienen características similares, pero en la práctica son muy diferentes.</p>
+<p></p>
+<p>
+<b>P2P Networks</b>
+</p>
+<p></p>
+<p>En una red P2P, hay dos o más PC que están conectadas por medio de una red y pueden compartir recursos (como impresoras y archivos) sin tener un servidor dedicado. Todo dispositivo final conectado (conocido como “punto”) puede funcionar como servidor y como cliente. Una computadora puede asumir la función de servidor para una transacción mientras funciona en forma simultánea como cliente para otra transacción. Las funciones de cliente y servidor se establecen por solicitud.</p>
+<p></p>
+<p>Un ejemplo de esto es una red doméstica simple con dos PC, como se muestra en la ilustración. En este ejemplo, el Punto2 tiene una impresora conectada a él directamente por USB y está configurado para compartir la impresora en la red de modo que el Punto1 pueda imprimir con esta. El Punto1 está configurado para compartir una unidad o una carpeta en la red. Esto permite que el Punto2 acceda a los archivos de la carpeta compartida y los guarde. Además de compartir archivos, una red como esta permitiría que los usuarios habiliten juegos en red o compartan una conexión a Internet.</p>
+<p></p>
+<p>Las redes P2P descentralizan los recursos en una red. En lugar de ubicar datos para compartir en los servidores dedicados, los datos se pueden colocar en cualquier parte y en cualquier dispositivo conectado. La mayoría de los sistemas operativos actuales admiten compartir archivos e impresoras sin requerir software del servidor adicional. Sin embargo, las redes P2P no utilizan cuentas de usuario centralizadas ni acceden a servidores para mantener permisos. Por lo tanto, es difícil aplicar políticas de seguridad y de acceso en redes que contienen varias PC. Se deben establecer cuentas de usuario y derechos de acceso en forma individual para cada dispositivo.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.1.1.5 Configuración de acceso a la adm. básica de un switch con IPv4</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.1.1.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración básica del switch</h1>
+        <h2>Configuración de parámetros iniciales de un switch</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Paso 1. Configurar la interfaz de administración</b>
+</p>
+<p></p>
+<p>Se configura una dirección IP y una máscara de subred en la SVI de administración del switch desde el modo de configuración de interfaz VLAN. Como se muestra en la figura 1, el comando <span class="cmd"><b>interface vlan 99 </b></span>se usa para ingresar al modo de configuración de interfaz. Para configurar la dirección IP, se usa el comando <span class="cmd"><b>ip address</b></span>. El comando <span class="cmd"><b>no shutdown</b></span> habilita la interfaz. En este ejemplo, la VLAN 99 se configuró con la dirección IP 172.17.99.11. </p>
+<p></p>
+<p>La SVI para la VLAN 99 no se muestra como “up/up” hasta que se cree la VLAN 99 y haya un dispositivo conectado a un puerto del switch asociado a la VLAN 99. Para crear una VLAN con la id_de_vlan 99 y asociarla a una interfaz, use los siguientes comandos: </p>
+<p>
+<span class="cmd">S1(config)#</span>
+<span class="cmd">
+<b> vlan </b>
+</span>
+<span class="cmd">
+<i>id_de_vlan</i>
+</span>
+</p>
+<p>
+<span class="cmd">S1(config-vlan)#</span>
+<span class="cmd">
+<b> name </b>
+</span>
+<span class="cmd">
+<i>nombre_de_vlan</i>
+</span>
+</p>
+<p>
+<span class="cmd">S1(config-vlan)#</span>
+<span class="cmd">
+<b> exit</b>
+</span>
+</p>
+<p>
+<span class="cmd">S1(config)#</span>
+<span class="cmd">
+<b> interface </b>
+</span>
+<span class="cmd">
+<i>interface_id </i>
+</span>
+<span class="cmd">
+<b></b>
+</span>
+</p>
+<p>
+<span class="cmd">S1(config-if)#</span>
+<span class="cmd">
+<b></b>
+</span>
+<span class="cmd">
+<b>switchport access vlan </b>
+</span>
+<span class="cmd">
+<i>id_de_vlan</i>
+</span>
+</p>
+<p></p>
+<p>
+<b>Paso 2. Configuración del gateway predeterminado </b>
+</p>
+<p></p>
+<p>Si el switch se va a administrar de forma remota desde redes que no están conectadas directamente, se debe configurar con un gateway predeterminado. El gateway predeterminado es el router al que está conectado el switch. El switch reenvía los paquetes IP con direcciones IP de destino fuera de la red local al gateway predeterminado. Como se muestra en la figura 2, R1 es el gateway predeterminado para S1. La interfaz en R1 conectada al switch tiene la dirección IP 172.17.99.1. Esta es la dirección de gateway predeterminado para S1.</p>
+<p></p>
+<p>Para configurar el gateway predeterminado del switch, use el comando <span class="cmd"><b>ip default-gateway</b></span>. Introduzca la dirección IP del gateway predeterminado. El gateway predeterminado es la dirección IP de la interfaz del router a la que está conectado el switch. Use el comando <span class="cmd"><b>copy running-config startup-config</b></span> para realizar una copia de seguridad de la configuración.</p>
+<p></p>
+<p>
+<b>Paso 3. Verificar la configuración</b>
+</p>
+<p></p>
+<p>Como se muestra en la figura 3, el comando <span class="cmd"><b>show ip interface brief</b></span> es útil para determinar el estado de las interfaces virtuales y físicas. El resultado que se muestra confirma que la interfaz VLAN 99 se configuró con una dirección IP y una máscara de subred y que está en condiciones de funcionamiento.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

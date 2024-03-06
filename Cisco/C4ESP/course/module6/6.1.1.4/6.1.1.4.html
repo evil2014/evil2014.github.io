@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.1.1.4 Beneficios individuales del trabajo a distancia</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.1.1.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Trabajo a distancia</h1>
+        <h2>Beneficios del trabajo a distancia</h2>
+      </div>
+      <div id="content">
+<p>Al trabajar en forma remota, las personas también obtienen importantes beneficios, incluido lo siguiente:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Productividad:</b> más del 70% de los trabajadores a distancia informan que son mucho más productivos, lo que significa que hacen más en menos tiempo; de esta forma, se ahorra tiempo o se gana más en el mismo tiempo.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Flexibilidad:</b> los trabajadores a distancia pueden administrar mejor el momento y el lugar donde se realiza el trabajo. Cuentan con mayor flexibilidad para administrar muchos otros detalles de la vida moderna, como reparar el automóvil, evitar el tráfico durante los fines de semana largos y llevar a sus hijos al médico. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Ahorro de costos:</b> los empleados que deben trasladarse a una oficina gastan una suma importante de dinero debido a la carga de combustible y el mantenimiento del vehículo, los almuerzos, la ropa para ir a trabajar, las salidas a comer y todos los demás costos relacionados con el trabajo tradicional que se pueden reducir si se trabaja a distancia.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Hogar y familia:</b> para muchas personas, dedicar más tiempo a la familia o cuidar a parientes a cargo es uno de los principales motivos para trabajar a distancia. </li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

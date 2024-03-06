@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.2.3.2 Verificación de una ACL estándar utilizada para proteger un puerto VTY</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.2.3.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>ACL de IPv4 estándar </h1>
+        <h2>Protección de puertos VTY con una ACL de IPv4 estándar </h2>
+      </div>
+      <div id="content">
+<p>Después de configurar la ACL para restringir el acceso a las líneas VTY, es importante verificar que funcione correctamente. En la ilustración, se muestran dos dispositivos que intentan conectarse al R1 mediante SSH. Se configuró la lista de acceso 21 en las líneas VTY en el R1. La PC1 logra conectarse, mientras que la PC2 no puede establecer una conexión SSH. Este es el comportamiento que se espera, ya que la lista de acceso configurada permite el acceso a VTY desde la red 192.168.10.0/24 y deniega al resto de los dispositivos.</p>
+<p></p>
+<p>El resultado del R1 muestra lo que se produce al emitir el comando <span class="cmd"><b>show access-lists</b></span> después de que la PC1 y la PC2 intentan conectarse mediante SSH. La coincidencia en la línea permit del resultado es producto de una conexión SSH correcta de la PC1. La coincidencia en la instrucción deny se debe al intento fallido de la PC2, un dispositivo en la red 192.168.11.0/24, de establecer una conexión SSH.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

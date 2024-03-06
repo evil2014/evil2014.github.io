@@ -1,0 +1,99 @@
+﻿<textcomponents>
+<component id='ID_table'>
+ <text>
+      <![CDATA[<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4'>
+        
+		 		
+		<tr class="mtable_top">
+        
+		<td colspan='3' bgcolor='#0E6360' class="mtable_top"><font size='1' color='#0E6360'><span style="color:#98D3D1">.</span></font></td>
+	    </tr> 
+      
+        <tr>
+          <td width="95px" bgcolor='#077A77'><font  color='#ffffff'><b>Nombre del número</b></font></td>
+          <td width="85px" bgcolor='#077A77'><font  color='#ffffff'><b>Notación científica</b></font></td>
+          <td bgcolor='#077A77'><font  color='#ffffff'><b>Cantidad de ceros</b></font>
+          </td>
+        </tr>
+        <tr>
+          <td  bgcolor='#EFF8F7' valign="top"  class="textWidth"><font color='#393536'>1&nbsp;millar</font></td>
+          <td  bgcolor='#EFF8F7' valign="top"><font  color='#393536'>10^3</font></td>
+          <td align="left" bgcolor='#EFF8F7' valign="top"><font color='#393536'>1,000</font></td>
+        </tr>
+        <tr>
+          <td bgcolor='#FFFFFF'  class="textWidth"><font color='#393536'>1&nbsp;millón</font></td>
+          <td bgcolor='#FFFFFF' valign="top"><font  color='#393536'>10^6</font></td>
+          <td align="left" bgcolor='#FFFFFF' valign="top"><font color='#393536'>1,000,000</font></td>
+        </tr>
+        
+        <tr>
+          <td   bgcolor='#FEED95'  class="textWidth"><font  color='#393536'>1000 millones</font></td>
+          <td  bgcolor='#FEED95' valign="top"><font  color='#393536'>10^9</font></td>
+          <td align="left" align="right" bgcolor='#FEED95' valign="top"><font color='#393536'>1,000,000,000</font></td>
+        </tr>
+        <tr>
+          <td bgcolor='#FFFFFF'  class="textWidth"><font color='#393536'>1&nbsp;billón</font></td>
+          <td bgcolor='#FFFFFF' valign="top"><font  color='#393536'>10^12</font></td>
+          <td align="left" bgcolor='#FFFFFF' valign="top"><font color='#393536'>1&nbsp;000,000,000,000</font></td>
+        </tr>
+        
+        <tr>
+          <td  bgcolor='#EFF8F7'  class="textWidth"><font color='#393536'>1000 billones</font></td>
+          <td  bgcolor='#EFF8F7' valign="top"><font  color='#393536'>10^15</font></td>
+          <td align="left" bgcolor='#EFF8F7' valign="top"><font color='#393536'>1,000,000,000,000,000</font></td>
+        </tr>
+        <tr>
+          <td bgcolor='#FFFFFF'  class="textWidth"><font color='#393536'>1&nbsp;trillón</font></td>
+          <td bgcolor='#FFFFFF' valign="top"><font  color='#393536'>10^18</font></td>
+          <td align="left" bgcolor='#FFFFFF' valign="top"><font color='#393536'>1,000,000,000,000,000,000</font></td>
+        </tr>
+        
+         <tr>
+          <td  bgcolor='#EFF8F7'  class="textWidth"><font color='#393536'>1000 trillones</font></td>
+          <td  bgcolor='#EFF8F7' valign="top"><font  color='#393536'>10^21</font></td>
+          <td align="left" bgcolor='#EFF8F7' valign="top"><font color='#393536'>1,000,000,000,000,000,000,000</font></td>
+        </tr>
+        <tr>
+          <td bgcolor='#FFFFFF'  class="textWidth"><font color='#393536'>1&nbsp;cuatrillón</font></td>
+          <td bgcolor='#FFFFFF' valign="top"><font  color='#393536'>10^24</font></td>
+          <td align="left" bgcolor='#FFFFFF' valign="top"><font color='#393536'>1,000,000,000,000,000,000,000,000</font></td>
+        </tr>
+        
+        <tr>
+          <td  bgcolor='#EFF8F7'  class="textWidth"><font color='#393536'>1000 cuatrillones</font></td>
+          <td  bgcolor='#EFF8F7' valign="top"><font  color='#393536'>10^27</font></td>
+          <td align="left" bgcolor='#EFF8F7' valign="top"><font color='#393536'>1,000,000,000&nbsp;000,000,000,000,000,000</font></td>
+        </tr>
+        <tr>
+          <td bgcolor='#FFFFFF'  class="textWidth"><font color='#393536'>1&nbsp;quintillón</font></td>
+          <td bgcolor='#FFFFFF' valign="top"><font  color='#393536'>10^30</font></td>
+          <td align="left" bgcolor='#FFFFFF' valign="top"><font color='#393536'>1,000,000,000,000,000,000,000,000,000,000</font></td>
+        </tr>
+        
+        <tr>
+          <td  bgcolor='#EFF8F7'  class="textWidth"><font color='#393536'>1000 quintillones</font></td>
+          <td  bgcolor='#EFF8F7' valign="top"><font  color='#393536'>10^33</font></td>
+          <td align="left" bgcolor='#EFF8F7' valign="top"><font color='#393536'>1,000,000,000,000,000,000,000,000,000,000,000</font></td>
+        </tr>
+        <tr>
+          <td bgcolor='#90C68C'  valign="bottom" class="textbottom"><font color='#393536'>1&nbsp;sextillón</font></td>
+          <td bgcolor='#90C68C' valign="top"><font  color='#393536'>10^36</font></td>
+          <td align="left" bgcolor='#90C68C' valign="top"><font color='#393536'>1,000,000,000,000,000,000,000,000,000,000,000,000</font></td></tr>
+       
+      </table>]]>
+    </text>
+  </component>
+ 
+<component id="ID_txt01">
+<text><![CDATA[Hay 4000 millones de direcciones IPv4.]]></text>
+</component> 
+
+<component id="ID_txt02">
+<text><![CDATA[Hay 340&nbsp;sextillones de direcciones IPv6.]]></text>
+</component>
+
+<component id="ID_txt03">
+<text><![CDATA[<b>Leyenda</b>]]></text>
+</component>
+
+</textcomponents>

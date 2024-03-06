@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.3.3.7 Tabla de topología: ausencia de sucesor factible</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.3.3.7_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1> Funcionamiento de EIGRP</h1>
+        <h2>DUAL y la tabla de topología</h2>
+      </div>
+      <div id="content">
+<p>Para ver la manera en que DUAL usa los sucesores y los FS, examine la tabla de routing del R1 partiendo de la suposición de que la red es convergente, como se muestra en la figura 1. </p>
+<p></p>
+<p>En la figura 2, se muestra un resultado parcial del comando <span class="cmd"><b>show ip route</b></span> en el R1. La ruta a 192.168.1.0/24 muestra que el sucesor es el R3 a través de 192.168.10.6, con una FD de 2 170 112.</p>
+<p></p>
+<p>En la tabla de routing IP solo incluye la mejor ruta, es decir, el sucesor. Para ver si hay algún FS, debemos analizar la tabla de topología de EIGRP. En la tabla de topología en la figura 3 solo se muestra el sucesor 192.168.10.6, que es el R3. No hay ningún FS. Al observar la topología física real o el diagrama de red, es obvio que hay una ruta de respaldo para 192.168.1.0/24 a través de R2. El R2 no es un FS, debido a que no cumple la FC. No obstante, al observar la topología, es obvio que el R2 es una ruta de respaldo, dado que EIGRP no tiene un mapa de la topología de la red. EIGRP es un protocolo de enrutamiento vector distancia y sólo conoce la información de la red remota a través de sus vecinos.</p>
+<p></p>
+<p>DUAL no almacena la ruta a través del R2 en la tabla de topología. Todos los enlaces se pueden mostrar mediante el comando <span class="cmd"><b>show ip eigrp topology all-links</b></span>. Este comando muestra los enlaces, independientemente de que cumplan la FC o no.</p>
+<p></p>
+<p>Como se muestra en la figura 4, el comando <span class="cmd"><b>show ip eigrp topology all-links</b></span> muestra todas las rutas posibles a una red, incluidos los sucesores, los FS y hasta las rutas que no son FS. La FD del R1 a 192.168.1.0/24 es 2 170 112, a través del sucesor R3. Para que el R2 se considere un FS, debe cumplir la FC. La RD del R2 al R1 para llegar a 192.168.1.0/24 debe ser inferior a la FD actual del R1. Según la ilustración, la RD del R2 es 3 012 096, lo cual es más alto que la FD actual del R1, de 2 170 112. </p>
+<p></p>
+<p>Aunque el R2 parece una ruta de respaldo posible para 192.168.1.0/24, el R1 no sabe que la ruta no es un loop back potencial a través de sí mismo. EIGRP es un protocolo de enrutamiento vector distancia, sin la capacidad de ver un mapa de topología sin bucles completo de la red. El método de DUAL para garantizar que un vecino tiene una ruta sin bucles es que la métrica del vecino cumpla con la FC. Al asegurarse de que la RD del vecino es inferior a su propia FD, el router puede suponer que ese router vecino no es parte de su propia ruta anunciada y, por lo tanto, evitar siempre un bucle potencial.</p>
+<p></p>
+<p>El R2 se puede usar como sucesor si el R3 falla, sin embargo, hay un retraso mayor antes de agregarlo a la tabla de routing. Antes de que el R2 se pueda usar como sucesor, DUAL debe llevar a cabo más procesos.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

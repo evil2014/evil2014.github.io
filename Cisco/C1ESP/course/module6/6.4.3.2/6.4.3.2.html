@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.4.3.2 Gateway predeterminado en un switch</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.4.3.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de un router Cisco</h1>
+        <h2>Configuración del gateway predeterminado</h2>
+      </div>
+      <div id="content">
+<p>Todos los dispositivos que requieren el uso de un router utilizan un gateway predeterminado para precisar el mejor camino hacia un destino remoto. Los dispositivos finales requieren direcciones de gateway predeterminado, pero también las requieren los dispositivos intermediarios, como los switches Cisco IOS. </p>
+<p></p>
+<p>La información de dirección IP en un switch solo se necesita para administrar el switch de forma remota. Es decir, para acceder al switch mediante Telnet, este debe tener una dirección IP a la cual se pueda acceder mediante dicho sistema. Si se accede al switch solamente desde dispositivos dentro de la red local, solo se requiere una dirección IP.</p>
+<p></p>
+<p>La configuración de la dirección IP en un switch se realiza en la interfaz virtual de switch (SVI): </p>
+<p></p>
+<p>
+<span class="cmd">S1(config)#</span>
+<span class="cmd">
+<b>interface vlan1</b>
+</span>
+</p>
+<p>
+<span class="cmd">S1(config-vlan)#</span>
+<span class="cmd">
+<b>ip address 192.168.10.50 255.255.255.0</b>
+</span>
+</p>
+<p>
+<span class="cmd">S1(config-vlan)#</span>
+<span class="cmd">
+<b>no shut</b>
+</span>
+</p>
+<p></p>
+<p>Sin embargo, si dispositivos de otra red deben acceder al switch, este se debe configurar con una dirección de gateway predeterminado, ya que los paquetes que se originan en el switch se manejan como los paquetes que se originan en un dispositivo host. Por lo tanto, los paquetes que se originan en el switch y están destinados a un dispositivo en la misma red se reenvían directamente al dispositivo apropiado. Los paquetes que se originan en el switch y están destinados a un dispositivo en una red remota se deben reenviar al gateway predeterminado para precisar la ruta. </p>
+<p></p>
+<p>Para configurar un gateway predeterminado en un switch, utilice el siguiente comando de configuración global:</p>
+<p></p>
+<p>
+<span class="cmd">S1(config)#</span>
+<span class="cmd">
+<b>ip default-gateway 192.168.10.1</b>
+</span>
+</p>
+<p></p>
+<p>En la figura 1, se muestra un administrador que se conecta a un switch en una red remota. Para que el switch reenvíe los paquetes de respuesta al administrador, se debe configurar el gateway predeterminado. </p>
+<p></p>
+<p>Un concepto erróneo frecuente es que el switch utiliza la dirección de gateway predeterminado configurada para determinar adónde reenviar los paquetes que se originan en los hosts conectados al switch y que están destinados a los hosts en una red remota. En realidad, la información de dirección IP y de gateway predeterminado solo se utiliza para los paquetes que se originan en el switch. Los paquetes que se originan en los hosts conectados al switch ya deben tener configurada la información de gateway predeterminado para comunicarse en redes remotas. En la figura 2, practique la configuración de un gateway predeterminado en un switch.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.1.2.5 Soluciones de implementación de tecnología inalámbrica a pequeña escala</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.1.2.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Conceptos de tecnología inalámbrica</h1>
+        <h2>Componentes de WLANs</h2>
+      </div>
+      <div id="content">
+<p>Para los requisitos de implementación de tecnología inalámbrica a pequeña escala, Cisco ofrece las siguientes soluciones de AP autónomos inalámbricos:</p>
+<p>
+<ul>
+<li>
+<b>AP Cisco WAP4410N:</b> este AP es ideal para una organización pequeña que requiere dos AP y admite un grupo pequeño de usuarios.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>AP Cisco WAP121 y WAP321:</b> estos AP son ideales para las organizaciones pequeñas que desean simplificar su implementación de tecnología inalámbrica mediante varios AP.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>AP Cisco AP541N:</b> este AP es ideal para las organizaciones pequeñas y medianas que desean un grupo de AP sólido y fácil de administrar.</li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Nota:</b> la mayoría de los AP de nivel empresarial admiten alimentación por Ethernet. </p>
+<p></p>
+<p>En la figura 1, se muestran y se resumen los AP Cisco para pequeñas empresas.</p>
+<p></p>
+<p>En la figura 2, se muestra una topología de ejemplo para la red de una pequeña empresa con AP WAP4410N. Cada AP se configura y se administra individualmente. Esto puede ser un problema cuando se requieren varios AP.</p>
+<p></p>
+<p>Por este motivo, los AP WAP121, WAP321 y AP541N admiten la agrupación de AP en clústeres sin el uso de un controlador. El clúster proporciona un único punto de administración y permite que el administrador vea la implementación de los AP como una única red inalámbrica, en lugar de una serie de dispositivos inalámbricos separados. La capacidad de agrupación facilita la configuración y la administración de una red inalámbrica en expansión. Se pueden implementar varios AP a fin de insertar una única configuración para todos los dispositivos dentro del clúster y administrar la red inalámbrica como un único sistema, sin preocuparse por la interferencia entre los AP y sin configurar cada AP como un dispositivo separado.</p>
+<p></p>
+<p>Específicamente, el WAP121 y el WAP321 admiten la configuración de punto único (SPS), que hace que la implementación del AP sea más fácil y rápida, como se muestra en la figura 3. SPS permite que la LAN inalámbrica escale hasta cuatro dispositivos WAP121 y ocho dispositivos WAP321 para proporcionar una cobertura más amplia y admitir usuarios adicionales a medida que cambian y crecen las necesidades comerciales. El AP Cisco AP541N puede agrupar hasta 10 AP y puede admitir varios clústeres. </p>
+<p></p>
+<p>Se puede formar un clúster entre dos AP si se cumplen las siguientes condiciones:</p>
+<p>
+<ul>
+<li>El modo de agrupación en clústeres está habilitado en los AP.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Los AP que se unen al clúster tienen el mismo nombre de clúster.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Los AP se conectan al mismo segmento de red.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Los AP usan el mismo modo de radio (es decir, ambas radios usan 802.11n).</li>
+</ul>
+</p>
+<p></p>
+<p>Acceda a un <a href="https://www.cisco.com/assets/sol/sb/AP541N_GUI/AP541N_1_9_2/Getting_Started.htm" target="_blank">emulador</a> de AP541N en línea. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.2.2.1 Habilitación de OSPF en las interfaces</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.2.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de OSPFv2 de área única</h1>
+        <h2>Configuración de OSPFv2 de área única</h2>
+      </div>
+      <div id="content">
+<p>El comando <span class="cmd"><b>network</b></span> determina qué interfaces participan en el proceso de routing para un área OSPF. Cualquier interfaz de un router que coincida con la dirección de red en el comando <span class="cmd"><b>network</b></span> está habilitada para enviar y recibir paquetes OSPF. Como consecuencia, se incluye la dirección de red (o de subred) para la interfaz en las actualizaciones de routing OSPF.</p>
+<p>La sintaxis básica del comando es <span class="cmd"><b>network </b></span><span class="cmd"><i>dirección-red máscara-wildcard</i></span><span class="cmd"><b> area </b></span><span class="cmd"><i>id-área</i></span>.</p>
+<p>La sintaxis <span class="cmd"><b>area </b></span><span class="cmd"><i>id-área</i></span> se refiere al área OSPF. Al configurar OSPF de área única, se debe configurar el comando <span class="cmd"><b>network</b></span> con el mismo valor <span class="cmd"><i>id-área</i></span> en todos los routers. Si bien se puede usar cualquier ID de área, es aconsejable utilizar una ID de área 0 con OSPF de área única. Esta convención facilita la tarea si posteriormente se modifica la red para admitir OSPF multiárea.</p>
+<p>En la ilustración, se muestra la topología de referencia. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

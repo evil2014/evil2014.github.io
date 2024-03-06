@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>3.2.2.3 Suite de protocolos TCP/IP y proceso de comunicación </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_3.2.2.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolos y estándares de red</h1>
+        <h2>Suites de protocolos</h2>
+      </div>
+      <div id="content">
+<p>Actualmente, la suite incluye decenas de protocolos, como se muestra en la figura 1. Haga clic en cada protocolo para ver su descripción. Están organizados en capas y utilizan el modelo de protocolo TCP/IP. Los protocolos TCP/IP están incluidos en la capa de Internet hasta la capa de aplicación cuando se hace referencia al modelo TCP/IP. Los protocolos de capa inferior de la capa de enlace de datos o de la capa de acceso a la red son responsables de enviar el paquete IP a través del medio físico. Estos protocolos de capa inferior son desarrollados por organismos de estandarización, como el IEEE. </p>
+<p></p>
+<p>La suite de protocolos TCP/IP se implementa como un stack de TCP/IP tanto en los hosts emisores como en los hosts receptores para proporcionar una entrega de extremo a extremo de las aplicaciones a través de la red. Los protocolos 802.3 o Ethernet se utilizan para transmitir el paquete IP a través de un medio físico que utiliza la LAN.</p>
+<p></p>
+<p>En las figuras 2 y 3, se muestra el proceso de comunicación completo mediante un ejemplo de servidor Web que transmite datos a un cliente. </p>
+<p>Haga clic en el botón Reproducir para ver la demostración animada:</p>
+<p></p>
+<p>
+<b>1.</b> La página de lenguaje de marcado de hipertexto (HTML) del servidor Web es el dato que se va a enviar. </p>
+<p></p>
+<p>
+<b>2.</b> El encabezado HTTP del protocolo de aplicación se agrega al frente de los datos HTML. El encabezado contiene diversos tipos de información, incluida la versión de HTTP que utiliza el servidor y un código de estado que indica que tiene información para el cliente Web.</p>
+<p></p>
+<p>
+<b>3.</b> El protocolo de capa de aplicación HTTP entrega los datos de la página Web con formato HTML a la capa de transporte. El protocolo de la capa de transporte TCP se utiliza para administrar la conversación individual entre el servidor Web y el cliente Web.</p>
+<p></p>
+<p>
+<b>4.</b> Luego, la información IP se agrega al frente de la información TCP. IP asigna las direcciones IP de origen y de destino que corresponden. Esta información se conoce como paquete IP.</p>
+<p></p>
+<p>
+<b>5.</b> El protocolo Ethernet agrega información en ambos extremos del paquete IP, conocidos como la “trama de enlace de datos”. Esta trama se envía al router más cercano a lo largo de la ruta hacia el cliente Web. Este router elimina la información de Ethernet, analiza el paquete IP, determina el mejor camino para el paquete, coloca el paquete en una trama nueva y lo envía al siguiente router vecino hacia el destino. Cada router elimina y agrega información de enlace de datos nueva antes de reenviar el paquete.</p>
+<p></p>
+<p>
+<b>6.</b> Estos datos ahora se transportan a través de la internetwork, que consta de medios y dispositivos intermediarios. </p>
+<p></p>
+<p>
+<b>7.</b> El cliente recibe las tramas de enlace de datos que contienen los datos, y cada encabezado de protocolo se procesa y, a continuación, se elimina en el orden opuesto al que se agregó. La información de Ethernet se procesa y se elimina, seguida por la información del protocolo IP, luego la información de TCP y, finalmente, la información de HTTP. </p>
+<p></p>
+<p>
+<b>8.</b> A continuación, la información de la página Web se transfiere al software de explorador Web del cliente. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.4.1.1 Actividad de clase: Internet de todo, por supuesto</title>
+    <!-- Activity -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.4.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resumen</h1>
+        <h2>Resumen</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Internet de todo, por supuesto</b>
+</p>
+<p></p>
+<p>En este capítulo, obtuvo información sobre cómo las pequeñas y medianas empresas se conectan a redes en grupos. También se presentó Internet de todo en el inicio de la actividad de creación de modelos.</p>
+<p></p>
+<p>Para esta actividad, elija una de las siguientes opciones:</p>
+<p>
+<ul>
+<li>Servicios bancarios en línea</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Noticias del mundo</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Pronóstico meteorológico/clima</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Condiciones del tráfico</li>
+</ul>
+</p>
+<p></p>
+<p>Elabore un esquema de direccionamiento IPv6 para el área que eligió. En el esquema de direccionamiento, incluya la manera en que elaboraría planes para lo siguiente:</p>
+<p>
+<ul>
+<li>División en subredes</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Transmisiones unicast</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Transmisiones multicast</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Broadcasts </li>
+</ul>
+</p>
+<p></p>
+<p>Conserve una copia del esquema para compartir con la clase o la comunidad de aprendizaje. Esté preparado para explicar lo siguiente:</p>
+<p>
+<ul>
+<li>Cómo se incorporarían la división en subredes y los procesos unicast, multicast y broadcast.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Dónde podría utilizarse el esquema de direccionamiento.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Cómo se verían afectadas las pequeñas y medianas empresas al utilizar el plan.</li>
+</ul>
+</p>
+<p></p>
+<p>
+<a href="../../files/8.4.1.1%20The%20Internet%20of%20Everything...Naturally%20Instructions.pdf" target="_blank">Actividad de clase: Internet de todo, por supuesto (instrucciones)</a>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

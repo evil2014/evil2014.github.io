@@ -1,0 +1,44 @@
+﻿<textcomponents>
+ <component id="ID_txt01">
+	<text><![CDATA[Aplicaciones de seguridad de Cisco]]></text>
+</component>
+<component id="ID_txt02">
+	<text><![CDATA[Firewall basado en servidor]]></text>
+</component>
+<component id="ID_txt03">
+	<text><![CDATA[Router inalámbrico Linksys con firewall integrado]]></text>
+</component>
+<component id="ID_txt04">
+	<text><![CDATA[Firewall personal]]></text>
+</component>
+<component id="ID_inst">
+	<text><![CDATA[Coloque el cursor sobre cada dispositivo para obtener más información.]]></text>
+</component> 
+
+<component id="ID_titleTxt01">
+	<text><![CDATA[<b>Aplicaciones de seguridad de Cisco</b>]]></text>
+</component>
+<component id="ID_bodyTxt01">
+	<text><![CDATA[Los dispositivos de firewall dedicados son computadoras especializadas que no tienen periféricos ni discos duros. Los firewalls basados en aplicaciones pueden inspeccionar el tráfico con mayor rapidez y son menos propensos a sufrir fallos.]]></text>
+</component>
+<component id="ID_titleTxt02">
+	<text><![CDATA[<b>Router inalámbrico Linksys con firewall integrado</b>]]></text>
+</component>
+<component id="ID_bodyTxt02">
+	<text><![CDATA[La mayoría de los routers integrados domésticos tienen incorporadas capacidades de firewall básicas que admiten el filtrado de paquetes, de aplicaciones y de sitios Web. Los routers más especializados que ejecutan sistemas operativos especiales como el Sistema Operativo de Internetwork de Cisco (IOS) también tienen capacidades de firewall que se pueden configurar.]]></text>
+</component>
+
+<component id="ID_titleTxt03">
+	<text><![CDATA[<b>Firewall basado en servidor</b>]]></text>
+</component>
+<component id="ID_bodyTxt03">
+	<text><![CDATA[Aplicaciones de firewall que generalmente proporcionan una solución que combina un firewall SPI y control de acceso basado en direcciones IP o aplicaciones. Los firewalls basados en servidor pueden ser menos seguros que los firewalls dedicados basados en dispositivos, debido a los puntos débiles de seguridad de los OS de uso general.]]></text>
+</component>
+<component id="ID_titleTxt04">
+	<text><![CDATA[<b>Firewall personal</b>]]></text>
+</component>
+<component id="ID_bodyTxt04">
+	<text><![CDATA[Firewalls del lado del cliente que normalmente filtran con SPI. El usuario puede tener que decidir si desea permitir la conexión de ciertas aplicaciones o puede definir una lista de excepciones automáticas. Con frecuencia los firewalls personales se utilizan cuando un dispositivo de host se conecta directamente a un módem ISP. Si no están bien configurados pueden interferir en el acceso a Internet. No se recomienda utilizar más de un firewall personal a la vez porque puede haber conflictos entre ellos.]]></text>
+</component> 
+
+</textcomponents>

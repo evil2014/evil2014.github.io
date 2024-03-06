@@ -1,0 +1,43 @@
+﻿<textcomponents>
+<component id="ID_title">
+<text><![CDATA[<b>Balanceo de carga de mismo costo</b>]]></text>
+</component>
+
+<component id="ID_txt01">
+<text><![CDATA[<b>Proceso de consideraciones y requisitos</b>]]></text>
+</component>
+<component id="ID_txt02">
+  <text><![CDATA[<b>Determinar los requisitos del usuario final</b>]]></text> 
+  </component>
+<component id="ID_txt03">
+  <text><![CDATA[<b>Determinar las opciones y seleccionar el OS</b>]]></text> 
+  </component>
+<component id="transcript">
+  <text><![CDATA[<b>transcript goes here</b>]]></text> 
+  </component> <!-- controller -->
+
+<component id="end">
+<text><![CDATA[Finalizar]]></text>
+</component>
+
+<component id="fforward">
+<text><![CDATA[Adelantar]]></text>
+</component>
+
+<component id="pause">
+<text><![CDATA[Pausa]]></text>
+</component>
+
+<component id="play">
+<text><![CDATA[Reproducir]]></text>
+</component>
+
+<component id="rewind">
+<text><![CDATA[Regresar]]></text>
+</component>
+
+<component id="start">
+<text><![CDATA[Inicio]]></text>
+</component>
+
+</textcomponents>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.1.2.5 Conmutación de paquetes</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.1.2.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Descripción general de las tecnologías WAN</h1>
+        <h2>Operaciones WAN</h2>
+      </div>
+      <div id="content">
+<p>A diferencia de la conmutación de circuitos, la conmutación de paquetes divide los datos en tráfico en paquetes que se enrutan a través de una red compartida. Las redes con conmutación de paquetes no requieren que se establezca un circuito y permiten que muchos pares de nodos se comuniquen a través del mismo canal. </p>
+<p></p>
+<p>En una red de conmutación de paquetes (PSN), los switches determinan los enlaces a través de los que se deben enviar los paquetes según la información de direccionamiento en cada paquete. Los siguientes son dos enfoques de esta determinación de enlaces:</p>
+<p>
+<ul>
+<li>
+<b>Sistemas sin conexión:</b> se debe transportar toda la información de direccionamiento en cada paquete. Cada switch debe evaluar la dirección para determinar adónde enviar el paquete. Un ejemplo de sistema sin conexión es Internet.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Sistemas orientados a la conexión:</b> la red predetermina la ruta para un paquete, y cada paquete solo tiene que transportar un identificador. El switch determina la ruta siguiente al buscar el identificador en las tablas almacenadas en la memoria. El conjunto de entradas en las tablas identifica una ruta o un circuito particular a través del sistema. Si el circuito se establece en forma temporal mientras un paquete viaja a través de él y luego se divide nuevamente, se lo denomina “circuito virtual” (VC). Un ejemplo de un sistema orientado a la conexión es Frame Relay. En el caso de Frame Relay, los identificadores utilizados se denominan “identificadores de conexión de enlace de datos” (DLCI).</li>
+</ul>
+</p>
+<p></p>
+<p>Debido a que varios usuarios comparten los enlaces internos entre los switches, el costo de la conmutación de paquetes es inferior al de la conmutación de circuitos. Sin embargo, los retrasos (latencia) y la variabilidad de retraso (vibración) son mayores en las redes de conmutación de paquetes que en las redes de conmutación de circuitos. Esto se debe a que se comparten los enlaces, y los paquetes se deben recibir por completo en un switch antes de pasar al siguiente. A pesar de la latencia y la vibración inherentes en las redes compartidas, la tecnología moderna permite el transporte satisfactorio de las comunicaciones de voz y video en estas redes.</p>
+<p></p>
+<p>Haga clic en el botón Reproducir de la ilustración para ver cómo funciona la conmutación de paquetes. En la animación, SRV1 envía datos a SRV2. Una vez que el paquete atraviesa la red del proveedor de servicios, llega al segundo switch del proveedor. El paquete se agrega a la cola y se reenvía después de que se reenvíen todos los otros paquetes en la cola. Finalmente, el paquete llega a SRV2.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

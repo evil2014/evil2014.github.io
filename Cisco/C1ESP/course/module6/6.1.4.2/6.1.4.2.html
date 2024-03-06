@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.1.4.2 Presentación de IPv6</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.1.4.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Protocolos de la capa de red</h1>
+        <h2>Paquete de IPv6</h2>
+      </div>
+      <div id="content">
+<p>A principios de los años noventa, el Internet Engineering Task Force (IETF) comenzó a preocuparse por los problemas de IPv4 y empezó a buscar un reemplazo. Esta actividad condujo al desarrollo de IP versión 6 (IPv6). IPv6 supera las limitaciones de IPv4 y constituye una mejora eficaz con características que se adaptan mejor a las demandas actuales y previsibles de las redes. </p>
+<p></p>
+<p>Las mejoras que proporciona IPv6 incluyen lo siguiente:</p>
+<p>
+<ul>
+<li>
+<b>Mayor espacio de direcciones:</b> las direcciones IPv6 se basan en un direccionamiento jerárquico de 128 bits, mientras que en IPv4 es de 32 bits. El número de direcciones IP disponibles aumenta drásticamente.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Mejora del manejo de los paquetes:</b> el encabezado de IPv6 se simplificó con menos campos. Esto mejora el manejo de paquetes por parte de los routers intermediarios y también proporciona compatibilidad para extensiones y opciones para aumentar la escalabilidad y la duración.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Eliminación de la necesidad de NAT:</b> con tal cantidad de direcciones IPv6 públicas, no se necesita traducción de direcciones de red (NAT). Los sitios de los clientes, ya sean las empresas más grandes o unidades domésticas, pueden obtener una dirección de red IPv6 pública. Esto evita algunos de los problemas de aplicaciones debidos a NAT que afectan a las aplicaciones que requieren conectividad de extremo a extremo.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Seguridad integrada:</b> IPv6 admite capacidades de autenticación y privacidad de forma nativa. Con IPv4, se debían implementar características adicionales para este fin.</li>
+</ul>
+</p>
+<p></p>
+<p>El espacio de direcciones IPv4 de 32 bits proporciona aproximadamente 4 294 967 296 direcciones únicas. De estas, solo 3700 millones de direcciones se pueden asignar, porque el sistema de direccionamiento IPv4 separa las direcciones en clases y reserva direcciones para multicast, pruebas y otros usos específicos.</p>
+<p></p>
+<p>Como se muestra en la ilustración, el espacio de direcciones IP versión 6 proporciona 340 282 366 920 938 463 463 374 607 431 768 211 456, o 340 sextillones de direcciones, lo que equivale a aproximadamente todos los granos de arena de la Tierra. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

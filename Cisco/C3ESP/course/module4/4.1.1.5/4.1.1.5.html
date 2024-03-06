@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.1.1.5 Estándares 802.11</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.1.1.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Conceptos de tecnología inalámbrica</h1>
+        <h2>Introducción a la tecnología inalámbrica</h2>
+      </div>
+      <div id="content">
+<p>El estándar de WLAN IEEE 802.11 define cómo se usa la RF en las bandas de frecuencia ISM sin licencia para la capa física y la subcapa MAC de los enlaces inalámbricos.</p>
+<p></p>
+<p>Con el correr de los años, se desarrollaron varias implementaciones del estándar IEEE 802.11. A continuación, se presentan estos estándares:</p>
+<p>
+<ul>
+<li>
+<b>802.11:</b> lanzado en 1997 y ahora obsoleto, es la especificación de WLAN original que funcionaba en la banda de 2,4 GHz y ofrecía velocidades de hasta 2 Mb/s. Cuando se lanzó, las LAN conectadas por cable funcionaban a 10 Mb/s, por lo que la nueva tecnología inalámbrica no se adoptó con entusiasmo. Los dispositivos inalámbricos tienen una antena para transmitir y recibir señales inalámbricas.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>IEEE 802.11a:</b> lanzado en 1999, funciona en la banda de frecuencia de 5 GHz, menos poblada, y ofrece velocidades de hasta 54 Mb/s. Posee un área de cobertura menor y es menos efectivo al penetrar estructuras edilicias ya que opera en frecuencias superiores. Los dispositivos inalámbricos tienen una antena para transmitir y recibir señales inalámbricas. Los dispositivos que funcionan conforme a este estándar no son interoperables con los estándares 802.11b y 802.11g.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>IEEE 802.11b:</b> lanzado en 1999, funciona en la banda de frecuencia de 2,4 GHz y ofrece velocidades de hasta 11 Mb/s. Los dispositivos que implementan este estándar tienen un mayor alcance y pueden penetrar mejor las estructuras edilicias que los dispositivos basados en 802.11a. Los dispositivos inalámbricos tienen una antena para transmitir y recibir señales inalámbricas.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>IEEE 802.11g:</b> lanzado en 2003, funciona en la banda de frecuencia de 2,4 GHz y ofrece velocidades de hasta 54 Mb/s. Por lo tanto, los dispositivos que implementan este estándar funcionan en la misma radiofrecuencia y en el mismo rango que 802.11b, pero con el ancho de banda de 802.11a. Los dispositivos inalámbricos tienen una antena para transmitir y recibir señales inalámbricas. Es compatible con el estándar anterior 802.11b. Sin embargo, cuando admite un cliente 802.11b, se reduce el ancho de banda general.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>IEEE 802.11n:</b> lanzado en 2009, funciona en las bandas de frecuencia de 2,4 GHz y 5 GHz, y se conoce como “dispositivo de doble banda”. Las velocidades de datos típicas van desde150 Mb/s hasta 600 Mb/s, con un alcance de hasta 70 m (0,5 mi). Sin embargo, para lograr mayores velocidades, los AP y los clientes inalámbricos requieren varias antenas con tecnología de múltiple entrada múltiple salida (MIMO). MIMO usa varias antenas como transmisor y receptor para mejorar el rendimiento de la comunicación. Se pueden admitir hasta cuatro antenas. El estándar 802.11n es compatible con dispositivos 802.11a/b/g anteriores. Sin embargo, si se admite un entorno mixto, se limitan las velocidades de datos previstas.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>IEEE 802.11ac:</b> lanzado en 2013, funciona en la banda de frecuencia de 5 GHz y proporciona velocidades de datos que van desde 450 Mb/s hasta 1,3 Gb/s (1300 Mb/s). Usa la tecnología MIMO para mejorar el rendimiento de la comunicación. Se pueden admitir hasta ocho antenas. El estándar 802.11ac es compatible con dispositivos 802.11a/n anteriores; sin embargo, admitir un entorno mixto limita las velocidades de datos esperadas.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>IEEE 802.11ad:</b> programado para su lanzamiento en 2014 y también conocido como “WiGig”, utiliza una solución de Wi-Fi de triple banda con 2,4 GHz, 5 GHz y 60 GHz, y ofrece velocidades teóricas de hasta 7 Gb/s. Sin embargo, la banda de 60 GHz es una tecnología de línea de vista y, por lo tanto, no puede penetrar las paredes. Cuando un usuario se mueve, el dispositivo cambia a las bandas más bajas de 2,4 GHz y 5 GHz. Es compatible con dispositivos Wi-Fi anteriores existentes. Sin embargo, si se admite un entorno mixto, se limitan las velocidades de datos previstas.</li>
+</ul>
+</p>
+<p></p>
+<p>En la ilustración, se resume cada estándar 802.11.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

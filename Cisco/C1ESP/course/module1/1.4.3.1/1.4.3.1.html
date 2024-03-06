@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.4.3.1 Amenazas de seguridad</title>
+    <!--  -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.4.3.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>El cambiante entorno de red</h1>
+        <h2>Seguridad de red</h2>
+      </div>
+      <div id="content">
+<p>La seguridad de redes es una parte integral de las redes de computadoras, independientemente de si la red está limitada a un entorno doméstico con una única conexión a Internet o si es tan extensa como una empresa con miles de usuarios. La seguridad de red implementada debe tomar en cuenta el entorno, así como las herramientas y los requisitos de la red. Debe poder proteger los datos y, al mismo tiempo, mantener la calidad de servicio que se espera de la red.</p>
+<p></p>
+<p>La protección de la red incluye protocolos, tecnologías, dispositivos, herramientas y técnicas para proteger los datos y mitigar amenazas. En la actualidad, muchas amenazas de seguridad de red externas se expanden por Internet. Las amenazas externas más comunes a las redes incluyen las siguientes:</p>
+<p>
+<ul>
+<li>
+<b>Virus, gusanos y caballos de Troya:</b> se trata de softwares malintencionados y códigos arbitrarios que se ejecutan en un dispositivo de usuario.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Spyware y adware:</b> software instalado en un dispositivo de usuario que recopila información sobre el usuario de forma secreta.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Ataques de día cero, también llamados “ataques de hora cero”:</b> ataque que ocurre el mismo día en que se hace pública una vulnerabilidad.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Ataques de piratas informáticos:</b> ataque de una persona experta a los dispositivos de usuario o recursos de red.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Ataques por denegación de servicio:</b> ataques diseñados para reducir o para bloquear aplicaciones y procesos en un dispositivo de red.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Interceptación y robo de datos:</b> ataque para capturar información privada en la red de una organización.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Robo de identidad:</b> ataque para robar las credenciales de inicio de sesión de un usuario a fin de acceder a datos privados.</li>
+</ul>
+</p>
+<p></p>
+<p>También es importante tener en cuenta las amenazas internas. Se llevaron a cabo numerosos estudios que muestran que las infracciones de seguridad de datos más comunes suceden a causa de los usuarios internos de la red. Esto se puede atribuir a dispositivos perdidos o robados o al mal uso accidental por parte de los empleados, y dentro del entorno empresarial, incluso a empleados malintencionados. Con las estrategias de BYOD en desarrollo, los datos corporativos son mucho más vulnerables. Por lo tanto, cuando se desarrolla una política de seguridad, es importante abordar tanto las amenazas de seguridad externas como las internas.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

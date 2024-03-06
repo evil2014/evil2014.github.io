@@ -1,0 +1,55 @@
+﻿<textcomponents>
+	<component id="ID_title01">
+		<text><![CDATA[<b>Síntomas y causas de la capa de enlace de datos</b>]]></text>
+	</component>
+	<component id="ID_txt01">
+		<text><![CDATA[<b>Síntomas</b><textformat blockindent='-14'><ul><li>No hay funcionalidad o conectividad en la capa de red o en capas superiores</li><li>La red funciona por debajo de los niveles de rendimiento de línea de base</li><li>Difusiones excesivas</li><li>Mensajes de la consola</li></ul><textformat>]]></text>
+	</component>
+	<component id="ID_txt02">
+		<text><![CDATA[<b>Causas</b><textformat blockindent='-14'><ul><li>Errores de encapsulación</li><li>Errores de asignación de direcciones</li><li>Errores de entramado</li><li>Fallas o bucles de STP</li></ul><textformat>]]></text>
+	</component> <!--OSI Model-->
+<component id="ID_OSInum01">
+  <text><![CDATA[<b>1</b>]]></text> 
+  </component>
+<component id="ID_OSInum02">
+  <text><![CDATA[<b>2</b>]]></text> 
+  </component>
+<component id="ID_OSInum03">
+  <text><![CDATA[<b>3</b>]]></text> 
+  </component>
+<component id="ID_OSInum04">
+  <text><![CDATA[<b>4</b>]]></text> 
+  </component>
+<component id="ID_OSInum05">
+  <text><![CDATA[<b>5</b>]]></text> 
+  </component>
+<component id="ID_OSInum06">
+  <text><![CDATA[<b>6</b>]]></text> 
+  </component>
+<component id="ID_OSInum07">
+  <text><![CDATA[<b>7</b>]]></text> 
+  </component>
+
+<component id='ID_osi_txt07'>
+	<text><![CDATA[Aplicación]]></text>
+</component>
+<component id='ID_osi_txt06'>
+	<text><![CDATA[Presentación]]></text>
+</component>
+<component id='ID_osi_txt05'>
+	<text><![CDATA[Sesión]]></text>
+</component>
+<component id='ID_osi_txt04'>
+	<text><![CDATA[Transporte]]></text>
+</component>
+<component id='ID_osi_txt03'>
+	<text><![CDATA[Red]]></text>
+</component>
+<component id='ID_osi_txt02'>
+	<text><![CDATA[Enlace de datos ]]></text>
+</component>
+<component id='ID_osi_txt01'>
+	<text><![CDATA[Física]]></text>
+</component>
+
+</textcomponents>

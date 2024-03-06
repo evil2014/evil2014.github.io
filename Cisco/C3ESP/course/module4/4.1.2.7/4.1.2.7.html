@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.1.2.7 Soluciones de implementación de tecnología inalámbrica a gran escala (cont.)</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.1.2.7_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Conceptos de tecnología inalámbrica</h1>
+        <h2>Componentes de WLANs</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Arquitectura de Cisco Unified Wireless Network</b>
+</p>
+<p>La solución de la arquitectura de red inalámbrica Cisco Unified, que utiliza un diseño MAC dividido, controla los AP mediante un controlador de WLAN (WLC) y se puede administrar de manera optativa mediante los sistemas de control inalámbrico (WCS) de Cisco. Los AP ligeros se comunican con el controlador de WLAN mediante el protocolo de punto de acceso ligero (LWAPP). El controlador tiene toda la inteligencia para la comunicación, y el AP es una “terminal no inteligente” que simplemente procesa paquetes. </p>
+<p></p>
+<p>La arquitectura de red inalámbrica Cisco Unified requiere los siguientes dispositivos:</p>
+<p>
+<ul>
+<li>
+<b>AP ligeros:</b> los modelos de AP inalámbricos Cisco Aironet 1600, 2600 o 3600 proporcionan acceso de red inalámbrica confiable y sólido para los hosts.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Controladores para las pequeñas y medianas empresas</b>: los controladores inalámbricos de la serie 2500, el controlador inalámbrico virtual o el módulo de controladores inalámbricos Cisco para ISR G2 de Cisco proporcionan implementaciones de WLAN con conexión inalámbrica básica para datos a una sucursal pequeña de una empresa o a una empresa con un único sitio.</li>
+</ul>
+</p>
+<p></p>
+<p>También existen controladores WLAN de mayor capacidad. Por ejemplo, el controlador inalámbrico Cisco 5760 y el controlador Cisco de la serie 8500 se diseñaron para administrar, proteger y optimizar de forma rentable el rendimiento de las redes inalámbricas grandes, como las implementaciones de un proveedor de servicios o un campus grande.</p>
+<p></p>
+<p>En la figura 1, se resumen los AP ligeros.</p>
+<p></p>
+<p>Haga clic en cada componente de la figura 2 para mostrar más información sobre los controladores para pequeñas y medianas empresas.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

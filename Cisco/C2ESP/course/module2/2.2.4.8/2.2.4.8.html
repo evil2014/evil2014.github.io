@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.2.4.8 Protocolo de hora de red (NTP) </title>
+    <!-- Activity -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.2.4.8_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Seguridad de switches: administración e implementación</h1>
+        <h2>Seguridad de puertos de switch</h2>
+      </div>
+      <div id="content">
+<p>Es importante tener la hora correcta dentro de las redes. Se requieren marcas de tiempo correctas para hacer un seguimiento preciso de los eventos de red, como las violaciones de seguridad. Además, la sincronización de relojes es fundamental para la interpretación correcta de los eventos dentro de los archivos de datos syslog, así como para los certificados digitales.</p>
+<p></p>
+<p>El protocolo NTP se usa para sincronizar los relojes de los sistemas de computación de las redes de datos conmutadas por paquetes de latencia variable. NTP permite que los dispositivos de red sincronicen la configuración de la hora con un servidor NTP. Un grupo de clientes NTP que obtienen información de fecha y hora de un único origen tiene una configuración de tiempo más coherente.</p>
+<p></p>
+<p>Un método seguro para proporcionar sincronización a la red es que los administradores implementen sus propios relojes maestros de red privada, sincronizados en UTC, mediante satélite o radio. Sin embargo, si los administradores de red no desean implementar sus propios relojes maestros debido al costo o a otros motivos, existen otros orígenes de reloj disponibles en Internet. NTP puede obtener la hora correcta de un origen de hora interno o externo, incluidos los siguientes:</p>
+<p>
+<ul>
+<li>Reloj maestro local</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Reloj maestro en Internet</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>GPS o reloj atómico</li>
+</ul>
+</p>
+<p></p>
+<p>Los dispositivos de red se pueden configurar como servidor NTP o cliente NTP. Para permitir que un servidor horario NTP sincronice el reloj del software, use el comando <span class="cmd"><b>ntp server </b></span><span class="cmd"><i>dirección-IP</i></span> del modo de configuración global. En la figura 1, se muestra un ejemplo de configuración. El router R2 está configurado como cliente NTP, mientras que el router R1 funciona como servidor NTP autoritativo. </p>
+<p></p>
+<p>Para configurar un dispositivo con un reloj maestro NTP con el que los peers se puedan sincronizar, use el comando <span class="cmd"><b>ntp master [</b></span><span class="cmd"><i>capa</i></span><span class="cmd"><b>]</b></span> del modo de configuración global. El valor de capa es un número que va de 1 a 15 e indica el número de capa NTP que informa el sistema. Si el sistema está configurado como reloj maestro NTP y no se especifica ningún número de capa, se establece la capa 8 de manera predeterminada. Si el reloj maestro NTP no llega a ningún reloj con un número de capa más bajo, el sistema informa que está sincronizado en el número de capa configurado, y otros sistemas estarán dispuestos a sincronizarse con él mediante NTP. </p>
+<p></p>
+<p>En la figura 2, se muestra la verificación de NTP. Para mostrar el estado de las asociaciones NTP, use el comando <span class="cmd"><b>show ntp associations</b></span> del modo EXEC privilegiado. Este comando indica la dirección IP de cualquier dispositivo peer sincronizado a este peer, los peers configurados de forma estática y el número de capa. El comando <span class="cmd"><b>show ntp status</b></span> del modo EXEC de usuario se puede utilizar para mostrar información como el estado de la sincronización de NTP, el peer con el que el dispositivo está sincronizado y las capas NTP en las que funciona el dispositivo.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

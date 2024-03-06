@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.2.3.1 Métrica de OSPF = costo</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.2.3.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de OSPFv2 de área única</h1>
+        <h2>Costo OSPF</h2>
+      </div>
+      <div id="content">
+<p>Recuerde que un protocolo de routing utiliza una métrica para determinar la mejor ruta de un paquete a través de una red. Una métrica indica la sobrecarga que se requiere para enviar paquetes a través de una interfaz determinada. OSPF utiliza el costo como métrica. Cuando el costo es menor, la ruta es mejor que una con un costo mayor.</p>
+<p></p>
+<p>El costo de una interfaz es inversamente proporcional al ancho de banda de la interfaz. Por lo tanto, cuanto mayor es el ancho de banda, menor es el costo. Cuanto más sobrecarga y retraso, mayor es el costo. Por lo tanto, una línea Ethernet de 10 Mb/s tiene un costo mayor que una línea Ethernet de 100 Mb/s.</p>
+<p></p>
+<p>La fórmula que se usa para calcular el costo de OSPF es la siguiente:</p>
+<p>
+<ul>
+<li>
+<span class="cmd">
+<b>Costo</b>
+</span>
+<span class="cmd"> = </span>
+<span class="cmd">
+<i>
+<u>ancho de banda de referencia</u>
+</i>
+</span>
+<span class="cmd"> / </span>
+<span class="cmd">
+<i>
+<u>ancho de banda de la interfaz</u>
+</i>
+</span>
+</li>
+</ul>
+</p>
+<p></p>
+<p>El ancho de banda de referencia predeterminado es 10^8 (100 000 000); por lo tanto, la fórmula es la siguiente:</p>
+<p>
+<ul>
+<li>
+<span class="cmd">
+<b>Costo</b>
+</span>
+<span class="cmd"> = </span>
+<span class="cmd">
+<u>100 000 000 bps</u>
+</span>
+<span class="cmd"> /</span>
+<span class="cmd">
+ancho de banda de la interfaz en bps
+</span><span class="cmd">
+</span>
+<b></b>
+
+</li>
+</ul>
+</p>
+<p></p>
+<p>Consulte la tabla de la ilustración para obtener un desglose del cálculo del costo. Observe que las interfaces FastEthernet, Gigabit Ethernet y 10 GigE comparten el mismo costo, debido a que el valor del costo de OSPF debe ser un número entero. En consecuencia, dado que el ancho de banda de referencia predeterminado se establece en 100 Mb/s, todos los enlaces que son más rápidos que Fast Ethernet también tienen un costo de 1. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

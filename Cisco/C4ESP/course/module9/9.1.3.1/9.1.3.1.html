@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.1.3.1 Uso de modelos en capas para la resolución de problemas</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.1.3.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resolución de problemas mediante un enfoque sistemático</h1>
+        <h2>Aislamiento del problema mediante modelos en capas</h2>
+      </div>
+      <div id="content">
+<p>Una vez que se recopilan todos los síntomas, y si no se identifica una solución, el administrador de red compara las características del problema con las capas lógicas de la red para aislar y resolver el problema. </p>
+<p></p>
+<p>Los modelos lógicos de tecnología de redes, como los modelos OSI y TCP/IP, dividen la funcionalidad de la red en capas modulares. Cuando se realiza la resolución de problemas, se pueden aplicar estos modelos en capas a la red física para aislar los problemas de la red. Por ejemplo, si los síntomas sugieren un problema de conexión física, el técnico de red puede concentrarse en la resolución de problemas del circuito que funciona en la capa física. Si ese circuito funciona según lo esperado, el técnico observa las áreas en otra capa que podrían estar causando el problema.</p>
+<p>
+<b>Modelo de referencia OSI</b>
+</p>
+<p>El modelo de referencia OSI proporciona un lenguaje común para los administradores de red y se usa frecuentemente para resolver problemas de red. Por lo general, los problemas se describen en términos de una determinada capa del modelo OSI.</p>
+<p></p>
+<p>El modelo de referencia OSI describe la forma en que la información de una aplicación de software en una computadora se desplaza a través de un medio de red hasta una aplicación de software en otra computadora.</p>
+<p></p>
+<p>Las capas superiores (de 5 a 7) del modelo OSI se ocupan de los problemas de aplicación y, generalmente, se implementan solo en el software. La capa de aplicación es la más cercana al usuario final. Los usuarios y los procesos de la capa de aplicación interactúan con las aplicaciones de software que contienen un componente de comunicaciones.</p>
+<p></p>
+<p>Las capas inferiores (de 1 a 4) del modelo OSI se ocupan de los problemas de transporte de datos. Las capas 3 y 4 por lo general se implementan solo en el software. La capa física (capa 1) y la capa de enlace de datos (capa 2) se implementan en el hardware y el software. La capa física es la más cercana al medio físico de red, como el cableado de la red, y es responsable de colocar efectivamente la información en el medio. </p>
+<p></p>
+<p>En la figura 1, se muestran algunos dispositivos comunes y las capas del modelo OSI que se deben examinar durante el proceso de resolución de problemas de cada dispositivo. Observe que los routers y los switches multicapa se muestran en la capa 4, la capa de transporte. Si bien los routers y los switches multicapa generalmente toman decisiones de reenvío en la capa 3, se pueden usar las ACL en esos dispositivos para tomar decisiones de filtrado con la información de la capa 4.</p>
+<p></p>
+<p>
+<b>Modelo TCP/IP</b>
+</p>
+<p>Similar al modelo de red OSI, el modelo de red TCP/IP también divide la arquitectura de red en capas modulares. En la figura 2, se muestra la relación entre el modelo de red TCP/IP y las capas del modelo de red OSI. Esta es una asignación estrecha que permite que la suite de protocolos TCP/IP se comunique correctamente con muchas tecnologías de red.</p>
+<p></p>
+<p>La capa de aplicación en la suite TCP/IP combina las funciones de las tres capas del modelo OSI: sesión, presentación y aplicación. La capa de aplicación proporciona comunicación entre aplicaciones tales como FTP, HTTP y SMTP en hosts separados.</p>
+<p></p>
+<p>Las capas de transporte de TCP/IP y de OSI se corresponden directamente en cuanto a su función. La capa de transporte es responsable del intercambio de segmentos entre dispositivos en una red TCP/IP.</p>
+<p></p>
+<p>La capa de Internet de TCP/IP se relaciona con la capa de red del modelo OSI. La capa de Internet es responsable de colocar los mensajes en un formato fijo para que los dispositivos los administren.</p>
+<p></p>
+<p>La capa de acceso a Internet de TCP/IP corresponde a las capas física y de enlace de datos de OSI. La capa de acceso a la red se comunica directamente con los medios de red y proporciona una interfaz entre la arquitectura de la red y la capa de Internet.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

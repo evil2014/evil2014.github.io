@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.2.3.3 Inalámbrico</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.2.3.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Elección de una tecnología WAN</h1>
+        <h2>Infraestructuras WAN públicas</h2>
+      </div>
+      <div id="content">
+<p>Para enviar y recibir datos, la tecnología inalámbrica usa el espectro de radio sin licencia. Cualquier persona que tenga un router inalámbrico y tecnología inalámbrica en el dispositivo que utilice puede acceder al espectro sin licencia. </p>
+<p></p>
+<p>Hasta hace poco tiempo, una limitación del acceso inalámbrico era la necesidad de estar dentro del alcance de transmisión local (normalmente, inferior a los 100 ft [30 m]) de un router inalámbrico o de un módem inalámbrico con una conexión por cable a Internet. Los siguientes avances en la tecnología inalámbrica de banda ancha están cambiando esta situación:</p>
+<p>
+<ul>
+<li>
+<b>Wi-Fi municipal:</b> muchas ciudades comenzaron a instalar redes inalámbricas municipales. Algunas de estas redes proporcionan acceso a Internet de alta velocidad de manera gratuita o por un precio sustancialmente inferior al de otros servicios de banda ancha. Otras son solo para uso de la administración de la ciudad y permiten que la policía, los bomberos y otros empleados municipales realicen ciertos aspectos de su trabajo de manera remota. Para conectarse a Wi-Fi municipal, por lo general un suscriptor necesita un módem inalámbrico, que proporciona una antena de radio y direccional más potentes que los adaptadores inalámbricos convencionales. La mayoría de los proveedores de servicios proporcionan los equipos necesarios de manera gratuita o por una tarifa, de manera similar a lo que sucede con los módems DSL o los cable módems.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>WiMAX:</b> la interoperabilidad mundial para el acceso por microondas (WiMAX) es una tecnología nueva que acaba de comenzar a usarse. Se describe en el estándar IEEE 802.16. WiMAX proporciona un servicio de banda ancha de alta velocidad con acceso inalámbrico y proporciona una amplia cobertura como una red de telefonía celular, en vez de pequeñas zonas de cobertura inalámbrica Wi-Fi. WiMAX funciona de manera similar a Wi-Fi, pero con velocidades más altas, a través de distancias mayores y para una mayor cantidad de usuarios. Usa una red de torres WiMAX que son similares a las torres de telefonía celular. Para acceder a una red WiMAX, los suscriptores se deben suscribir a un ISP con una torre WiMAX a menos de 30 mi (48 km) de su ubicación. Para tener acceso a la estación base, también necesitan algún tipo de receptor WiMAX y un código de cifrado especial. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Internet satelital:</b> generalmente utilizado por usuarios en áreas rurales, donde no hay cable ni DSL. Una VSAT proporciona comunicaciones de datos bidireccionales (subida y descarga). La velocidad de subida es aproximadamente un décimo de la velocidad de descarga de 500 kb/s. Cable y DSL tienen velocidades de descarga mayores, pero los sistemas satelitales son unas diez veces más rápidos que un módem analógico. Para acceder a los servicios de Internet satelital, los suscriptores necesitan una antena parabólica, dos módems (uplink y downlink) y cables coaxiales entre la antena y el módem.</li>
+</ul>
+</p>
+<p></p>
+<p>En la ilustración, se muestra un ejemplo de una red WiMAX.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

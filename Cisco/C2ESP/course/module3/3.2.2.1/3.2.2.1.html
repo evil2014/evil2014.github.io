@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>3.2.2.1 Configuración de enlaces troncales IEEE 802.1Q</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_3.2.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Implementaciones de VLAN</h1>
+        <h2>Enlaces troncales de la VLAN</h2>
+      </div>
+      <div id="content">
+<p>Un enlace troncal de VLAN es un enlace de capa 2 del modelo OSI entre dos switches que transporta el tráfico para todas las VLAN (a menos que se restrinja la lista de VLAN permitidas de manera manual o dinámica). Para habilitar los enlaces troncales, configure los puertos en cualquier extremo del enlace físico con conjuntos de comandos paralelos. </p>
+<p></p>
+<p>Para configurar un puerto de switch en un extremo de un enlace troncal, utilice el comando <span class="cmd"><b>switchport mode trunk</b></span>. Con este comando, la interfaz cambia al modo de enlace troncal permanente. El puerto establece una negociación de protocolo de enlace troncal dinámico (DTP) para convertir el enlace en un enlace troncal, incluso si la interfaz conectada a este no acepta el cambio. El protocolo DTP se describe en el tema siguiente. En este curso, el comando <span class="cmd"><b>switchport mode trunk</b></span> es el único método que se implementa para la configuración de enlaces troncales. </p>
+<p></p>
+<p>En la figura 1, se muestra la sintaxis del comando de IOS de Cisco para especificar una VLAN nativa (distinta de la VLAN 1). </p>
+<p></p>
+<p>Utilice el comando <span class="cmd"><b>switchport trunk allowed vlan </b></span><span class="cmd"><i>lista-vlan</i></span> de IOS de Cisco para especificar la lista de VLAN que se permiten en el enlace troncal. </p>
+<p></p>
+<p>En la figura 2, las VLAN 10, 20 y 30 admiten las computadoras de Cuerpo docente, Estudiante e Invitado (PC1, PC2 y PC3). La VLAN nativa también se debe cambiar de la VLAN 1 a otra VLAN, como la VLAN 99. De manera predeterminada, se permiten todas las VLAN a lo largo de un enlace troncal. Para limitar las VLAN permitidas, se puede usar el comando <span class="cmd"><b>switchport trunk allowed vlan</b></span>. </p>
+<p></p>
+<p>En la figura 3, el puerto F0/1 en el switch S1está configurado como puerto de enlace troncal, asigna la VLAN nativa a la VLAN 99 y especifica el enlace troncal para que solo reenvíe tráfico para las VLAN 10, 20, 30 y 99.</p>
+<p></p>
+<p>
+<b>Nota:</b> esta configuración supone el uso de los switches Cisco Catalyst 2960 que utilizan de manera automática la encapsulación 802.1Q en los enlaces troncales. Es posible que otros switches requieran la configuración manual de la encapsulación. Siempre configure ambos extremos de un enlace troncal con la misma VLAN nativa. Si la configuración de enlace troncal 802.1Q no es la misma en ambos extremos, el software IOS de Cisco registra errores. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

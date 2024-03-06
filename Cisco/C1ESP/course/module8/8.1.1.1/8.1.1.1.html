@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.1.1.1 Notación binaria</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.1.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Direcciones de red IPv4</h1>
+        <h2>Estructura de la dirección IPv4</h2>
+      </div>
+      <div id="content">
+<p>Para comprender el funcionamiento de los dispositivos en una red, debemos observar las direcciones y otros datos de la misma manera en que lo hacen los dispositivos: en notación binaria. La notación binaria es una representación de la información mediante unos y ceros solamente. Las PC se comunican mediante datos binarios. Los datos binarios se pueden utilizar para representar muchas formas distintas de datos. Por ejemplo, al pulsar letras en un teclado, esas letras aparecen en la pantalla de una manera que el usuario puede leer y comprender. Sin embargo, la PC traduce cada letra a una serie de dígitos binarios para su almacenamiento y transporte. Para traducir esas letras, la PC utiliza el Código Estadounidense Estándar para el Intercambio de Información (ASCII). </p>
+<p></p>
+<p>Mediante ASCII, la letra “A” se representa en forma de bit como “01000001”, mientras que la “a” minúscula se representa en forma de bit como “01100001”. Utilice el traductor de ASCII en la figura 1 para convertir los caracteres ASCII al sistema binario.</p>
+<p></p>
+<p>Si bien, por lo general, las personas no deben preocuparse por la conversión binaria de letras, es necesario comprender el uso del sistema binario para el direccionamiento IP. Cada dispositivo en una red se debe identificar de forma exclusiva mediante una dirección binaria. En redes IPv4, esta dirección se representa mediante una cadena de 32 bits (unos y ceros). A continuación, en la capa de red, los paquetes incluyen esta información de identificación única para los sistemas de origen y de destino. Por lo tanto, en una red IPv4, cada paquete incluye una dirección de origen de 32 bits y una dirección de destino de 32 bits en el encabezado de capa 3. </p>
+<p></p>
+<p>Para la mayoría de las personas, una cadena de 32 bits es difícil de interpretar e incluso más difícil de recordar. Por este motivo, representamos las direcciones IPv4 mediante el formato decimal punteado en lugar del binario. Esto significa que vemos a cada byte (octeto) como número decimal en el rango de 0 a 255. Para entender cómo funciona esto, es necesario tener aptitudes para la conversión de sistema binario a decimal.</p>
+<p></p>
+<p>
+<b>Notación de posición</b>
+</p>
+<p>Aprender a convertir el sistema binario a decimal requiere el conocimiento de los fundamentos matemáticos de un sistema de numeración denominado notación de posición. “Notación de posición” significa que un dígito representa diferentes valores según la posición que ocupa. En un sistema de notación de posición, la base numérica se denomina “raíz”. En el sistema de base 10, la raíz es 10. En el sistema binario, se utiliza una raíz de 2. Los términos “raíz” y “base” se pueden utilizar de manera indistinta. Más específicamente, el valor que un dígito representa es el valor multiplicado por la potencia de la base o raíz representado por la posición que el dígito ocupa. Algunos ejemplo ayudarán a aclarar cómo funciona este sistema.</p>
+<p></p>
+<p>Para el número decimal 192, el valor que el 1 representa es 1*10^2 (1 multiplicado por 10 elevado a la segunda potencia). El 1 se encuentra en lo que comúnmente llamamos la posición "100". La notación de posición se refiere a esta posición como posición base^2 porque la base o raíz es 10 y la potencia es 2. El 9 representa 9*10^1 (9 multiplicado por 10 elevado a la primera potencia). En la figura 2, se muestra la notación de posición para el número decimal 192.</p>
+<p></p>
+<p>Usando la notación de posición en el sistema de numeración con base 10, 192 representa: </p>
+<p></p>
+<p>192 = (1 * 10^2) + (9 * 10^1) + (2 * 10^0) </p>
+<p></p>
+<p>o </p>
+<p></p>
+<p>192 = (1 * 100) + (9 * 10) + (2 * 1)</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

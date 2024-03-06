@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.2.3.1 Configuración de una ACL estándar para proteger un puerto VTY </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.2.3.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>ACL de IPv4 estándar </h1>
+        <h2>Protección de puertos VTY con una ACL de IPv4 estándar </h2>
+      </div>
+      <div id="content">
+<p>
+<b>Uso de una ACL para controlar el acceso a VTY</b>
+</p>
+<p></p>
+<p>Cisco recomienda utilizar SSH para las conexiones administrativas a los routers y switches. Si la imagen del software IOS de Cisco en su router no admite SSH, puede mejorar la seguridad de las líneas administrativas mediante la restricción del acceso a VTY. La restricción del acceso a VTY es una técnica que permite definir las direcciones IP a las que se les permite acceder por Telnet al proceso de EXEC del router. Puede controlar qué estación de trabajo administrativa o qué red administra el router mediante la configuración de una ACL y una instrucción <span class="cmd"><b>access-class</b></span> en las líneas VTY. También puede utilizar esta técnica con SSH para mejorar aún más la seguridad de acceso administrativo.</p>
+<p></p>
+<p>El comando <span class="cmd"><b>access-class</b></span> configurado en el modo de configuración de línea restringe las conexiones de entrada y salida entre una VTY determinada (en un dispositivo de Cisco) y las direcciones en una lista de acceso. </p>
+<p></p>
+<p>Las listas de control de acceso estándar y extendidas se aplican a los paquetes que se transportan a través de un router, no están diseñadas para bloquear los paquetes que se originan en el router. Una ACL extendida para Telnet de salida no evita las sesiones de Telnet iniciadas por el router de manera predeterminada. </p>
+<p></p>
+<p>Por lo general, se considera que el filtrado del tráfico de Telnet o SSH es una función de una ACL de IP extendida, porque filtra un protocolo de nivel superior. Sin embargo, debido a que se utiliza el comando <span class="cmd"><b>access-class</b></span> para filtrar sesiones de Telnet/SSH entrantes o salientes por dirección de origen, se puede utilizar una ACL estándar.</p>
+<p></p>
+<p>La sintaxis del comando <span class="cmd"><b>access-class</b></span> es la siguiente:</p>
+<p></p>
+<p>
+<span class="cmd">Router (config)# </span>
+<span class="cmd">
+<b>access-class</b>
+</span>
+<span class="cmd"></span>
+<span class="cmd">
+<i>número-lista-acceso</i>
+</span>
+<span class="cmd"> {</span>
+<span class="cmd">
+<b>pre </b>
+</span>
+<span class="cmd">[</span>
+<span class="cmd">
+<b>vrf-also</b>
+</span>
+<span class="cmd">]</span>
+<span class="cmd">
+<b></b>
+</span>
+<span class="cmd">|</span>
+<span class="cmd">
+<b> out</b>
+</span>
+<span class="cmd">}</span>
+</p>
+<p></p>
+<p>El parámetro <span class="cmd"><b>in</b></span> limita las conexiones de entrada entre las direcciones en la lista de acceso y el dispositivo de Cisco, mientras que el parámetro <span class="cmd"><b>out</b></span> limita las conexiones de salida entre un dispositivo de Cisco en particular y las direcciones en la lista de acceso. </p>
+<p></p>
+<p>En la figura 1, se muestra un ejemplo en el que se permite que un rango de direcciones acceda a las líneas VTY de 0 a 4. La ACL de la ilustración se configuró para permitir que la red 192.168.10.0 acceda a las líneas VTY de 0 a 4, pero para denegar las demás redes. </p>
+<p></p>
+<p>Para configurar listas de acceso en los VTY, se debe tener en cuenta lo siguiente:</p>
+<p></p>
+<p>
+<ul>
+<li>Solamente se pueden aplicar listas de acceso numeradas a los VTY. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Se deben establecer restricciones idénticas en todos los VTY, porque un usuario puede intentar conectarse a cualquiera de ellos.</li>
+</ul>
+</p>
+<p></p>
+<p>Utilice el verificador de sintaxis de la figura 2 para poner en práctica la protección del acceso a VTY.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

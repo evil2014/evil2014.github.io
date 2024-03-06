@@ -1,0 +1,57 @@
+﻿<textcomponents>
+<component id="ID_s1_title">
+	<text><![CDATA[]]></text>
+</component>
+<component id='ID_table'>
+	<text><![CDATA[
+					<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4'>
+						<tr>
+							<td colspan='3' bgcolor='#0E6360' class="liner"><font size='1' color='##077A77'><span style="color:#DAE17A">.</span></font></td>
+						</tr>					  
+					  <tr class="liner_top">
+						<td width="190" bgcolor='#077A77' valign="top"><font color='#ffffff'><b>Cuestiones de implementación</b></font></td>
+						<td width="130" bgcolor='#077A77' valign="top"><font color='#ffffff'><b>Cableado UTP</b></font></td>
+						<td width="130" bgcolor='#077A77' valign="top"><font color='#ffffff'><b>Cableado de fibra óptica</b></font></td>
+					  </tr>
+					  <tr>
+						<td bgcolor='#EFF8F7' valign="top"><font color='#393536'>Ancho de banda admitido</font></td>
+						<td bgcolor='#EFF8F7' valign="top"><font color='#393536'>10 Mb/s – 10 Gb/s</font></td>
+						<td bgcolor='#EFF8F7' valign="top"><font color='#393536'>10 Mb/s – 100 Gb/s</font></td>
+					  </tr>
+					  <tr>
+						<td bgcolor='#FFFFFF' valign="top"><font color='#393536'>Distancia</font></td>
+						<td bgcolor='#FFFFFF' valign="top"><font color='#393536'>Relativamente corta<br />(de 1 a 100&nbsp;m)</font></td>
+						<td bgcolor='#FFFFFF' valign="top"><font color='#393536'>Relativamente extensa<br />(de 1&nbsp; a 100&nbsp;000&nbsp;m)</font></td>
+					  </tr>
+					  <tr>
+						<td bgcolor='#EFF8F7' valign="top"><font color='#393536'>Inmunidad a EMI y RFI</font></td>
+						<td bgcolor='#EFF8F7' valign="top"><font color='#393536'>Baja</font></td>
+						<td bgcolor='#EFF8F7' valign="top"><font color='#393536'>Alta<br />&nbsp;&nbsp;(totalmente inmune)</font></td>
+					  </tr>
+					  <tr>
+						<td bgcolor='#FFFFFF' valign="top"><font color='#393536'>Inmunidad a los peligros eléctricos</font></td>
+						<td bgcolor='#FFFFFF' valign="top"><font color='#393536'>Baja</font></td>
+						<td bgcolor='#FFFFFF' valign="top"><font color='#393536'>Alta<br />&nbsp;&nbsp;(totalmente inmune)</font></td>
+					  </tr>
+					  <tr>
+						<td bgcolor='#EFF8F7' valign="top"><font color='#393536'>Costos de medios y conectores</font></td>
+						<td bgcolor='#EFF8F7' valign="top"><font color='#393536'>Menores</font></td>
+						<td bgcolor='#EFF8F7' valign="top"><font color='#393536'>Mayores</font></td>
+					  </tr>
+					  <tr>
+						<td bgcolor='#FFFFFF' valign="top"><font color='#393536'>Habilidades de instalación requeridas</font></td>
+						<td bgcolor='#FFFFFF' valign="top"><font color='#393536'>Menores</font></td>
+						<td bgcolor='#FFFFFF' valign="top"><font color='#393536'>Mayores</font></td>
+					  </tr>
+					  <tr>
+						<td bgcolor='#EFF8F7' valign="top"><font color='#393536'>Precauciones de seguridad</font></td>
+						<td bgcolor='#EFF8F7' valign="top"><font color='#393536'>Menores</font></td>
+						<td bgcolor='#EFF8F7' valign="top"><font color='#393536'>Mayores</font></td>
+					  </tr>
+					</table>
+				]]>
+	</text>
+</component>
+
+
+</textcomponents>

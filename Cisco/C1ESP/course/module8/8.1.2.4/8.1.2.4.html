@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.1.2.4 Primera y última dirección de host</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.1.2.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Direcciones de red IPv4</h1>
+        <h2>Máscara de subred IPv4</h2>
+      </div>
+      <div id="content">
+<p>Para asegurarse de que a todos los hosts en una red se les asigne una dirección IP única dentro de ese rango de red, es importante identificar la primera y la última dirección de host. Se pueden asignar direcciones IP dentro de este rango a los hosts dentro de una red. </p>
+<p></p>
+<p>
+<b>Primera dirección de host</b>
+</p>
+<p></p>
+<p>Como se observa en la figura 1, la porción de host de la primera dirección de host contiene todos bits 0 con un bit 1 que representa el bit de orden más bajo o el bit que está más a la derecha. Esta dirección es siempre un número mayor que la dirección de red. En este ejemplo, la primera dirección de host en la red 10.1.1.0/24 es 10.1.1.1. En muchos esquemas de direccionamiento, es común utilizar la primera dirección de host del router o la dirección de gateway predeterminado.</p>
+<p></p>
+<p>
+<b>Última dirección de host</b>
+</p>
+<p></p>
+<p>La porción de host de la última dirección de host contiene todos bits 1, con un bit 0 que representa el bit de orden más bajo o el bit que está más a la derecha. Esta dirección es siempre una menos que la dirección de broadcast. Como se observa en la figura 2, la última dirección de host en la red 10.1.1.0/24 es 10.1.1.254.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

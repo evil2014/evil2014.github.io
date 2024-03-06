@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.2.2.2 Dominios de broadcast</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.2.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>El entorno conmutado</h1>
+        <h2>Dominios de switching</h2>
+      </div>
+      <div id="content">
+<p>Si bien los switches hacen pasar por un filtro a la mayoría de las tramas según las direcciones MAC, no hacen lo mismo con las tramas de broadcast. Para que otros switches en la LAN reciban las tramas de difusión, los switches deben saturar todos los puertos con estas tramas. Una serie de switches interconectados forma un dominio de broadcast simple. Solo los dispositivos de capa de red, como los routers, pueden dividir un dominio de difusión de capa 2. Los routers se usan para segmentar los dominios de colisiones y de difusión.</p>
+<p></p>
+<p>Cuando un dispositivo desea enviar una difusión de capa 2, la dirección MAC de destino de la trama se establece solo en números uno binarios. Todos los dispositivos en el dominio de difusión reciben una trama con una dirección MAC de destino, compuesta solo por números uno binarios.</p>
+<p></p>
+<p>El dominio de difusión de capa 2 se denomina “dominio de difusión MAC”. El dominio de difusión MAC consta de todos los dispositivos en la LAN que reciben tramas de difusión de un host. </p>
+<p></p>
+<p>Haga clic en Reproducir en la ilustración para verlo en la primera mitad de la animación.</p>
+<p></p>
+<p>Cuando un switch recibe una trama de difusión, la reenvía por cada uno de sus puertos, excepto el puerto de entrada en el que se recibió la trama de difusión. Cada dispositivo conectado al switch recibe una copia de la trama de difusión y la procesa. En ocasiones, las difusiones son necesarias para localizar inicialmente otros dispositivos y servicios de red, pero también reducen la eficacia de la red. El ancho de banda de red se usa para propagar el tráfico de difusión. Si hay demasiadas difusiones y una carga de tráfico intensa en una red, se puede producir una congestión: un rendimiento de la red más lento.</p>
+<p></p>
+<p>Cuando hay dos switches conectados entre sí, se aumenta el dominio de difusión, como se ve en la segunda mitad de la animación. En este caso, se reenvía una trama de difusión a todos los puertos conectados en el switch S1. El switch S1 está conectado al switch S2. Luego, la trama se propaga a todos los dispositivos conectados al switch S2.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

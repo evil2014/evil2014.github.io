@@ -1,0 +1,116 @@
+﻿<textcomponents> 
+
+<component id="ID_s1_inst">
+	<text><![CDATA[<b>Topología</b><br/>Use este diagrama de topología como referencia para las situaciones. Haga clic en el botón&nbsp;2 para continuar.]]></text>
+</component>
+
+<component id="ID_s1_txt01">
+	<text><![CDATA[<b>EIGRP AS 100</b>]]></text>
+</component>
+
+
+
+<component id="ID_s2_inst">
+	<text><![CDATA[<b>Actividad: resolver problemas de vecinos EIGRP (situación&nbsp;1)</b><br/>EIGRP tiene un problema de adyacencia de vecino y no puede obtener actualizaciones de la ruta del router&nbsp;3 (R3). Utilice el diagrama de topología y el resultado del comando para determinar la causa más probable de este problema. Arrastre el motivo más probable de este problema de EIGRP hasta el campo junto al router&nbsp;1 (R1). Haga clic en el botón&nbsp;3 para continuar. ]]></text>
+</component>
+
+<component id='ID_s2_drag01'>
+	<text><![CDATA[Dirección IP faltante]]></text>
+</component>
+
+<component id='ID_s2_drag02'>
+	<text><![CDATA[Dirección IP incorrecta]]></text>
+</component>
+
+<component id='ID_s2_drag03'>
+	<text><![CDATA[Cable desconectado]]></text>
+</component>
+
+<component id='ID_s2_drag04'>
+	<text><![CDATA[EIGRP no configurado]]></text>
+</component>
+
+
+<component id='ID_s2_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id='ID_s2_CORRECT_BODY'>
+	<text><![CDATA[Identificó correctamente la causa más probable del problema de EIGRP para esta situación. Haga clic en el botón&nbsp;3 para continuar. ]]></text>
+</component>
+
+
+<component id='ID_s2_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_s2_INCORRECT_BODY'>
+	<text><![CDATA[No identificó correctamente la causa más probable del problema de EIGRP para esta situación. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_s2_CHECK'>
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id='ID_s2_RESET'>
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component>
+
+
+
+
+
+<component id="ID_s3_inst">
+	<text><![CDATA[<b>Actividad: resolver problemas de vecinos EIGRP (situación&nbsp;2)</b><br/>EIGRP tiene un problema de adyacencia de vecino y no puede obtener actualizaciones de la ruta del router &nbsp;1 (R1) y el router&nbsp;3 (R3). Utilice el diagrama de topología y el resultado del comando para determinar la causa más probable de este problema. Arrastre el motivo más probable de este problema de EIGRP hasta el campo junto al router&nbsp;2 (R2).]]></text>
+</component>
+
+
+<component id='ID_s3_drag01'>
+	<text><![CDATA[Sumarización automática]]></text>
+</component>
+
+<component id='ID_s3_drag02'>
+	<text><![CDATA[Red IP faltante]]></text>
+</component>
+
+<component id='ID_s3_drag03'>
+	<text><![CDATA[Número de AS incorrecto]]></text>
+</component>
+
+<component id='ID_s3_drag04'>
+	<text><![CDATA[Conteo de saltos muy alto]]></text>
+</component>
+
+
+<component id='ID_s3_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id='ID_s3_CORRECT_BODY'>
+	<text><![CDATA[Identificó correctamente la causa más probable del problema de EIGRP para esta situación.]]></text>
+</component>
+
+
+<component id='ID_s3_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_s3_INCORRECT_BODY'>
+	<text><![CDATA[No identificó correctamente la causa más probable del problema de EIGRP para esta situación. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_s3_CHECK'>
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id='ID_s3_RESET'>
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component>
+
+
+
+
+
+
+
+</textcomponents>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>11.5.1.4 Seguridad básica de la red inalámbrica</title>
+    <!--  -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_11.5.1.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Servicios de enrutamiento integrados</h1>
+        <h2>Router integrado</h2>
+      </div>
+      <div id="content">
+<p>Antes de conectar el AP a la red o al ISP, se deben planificar y configurar las medidas de seguridad. </p>
+<p></p>
+<p>Como se muestra en la figura 1, algunas de las medidas de seguridad más básicas incluyen lo siguiente:</p>
+<p>
+<ul>
+<li>Modificación de los valores predeterminados para el SSID, los nombres de usuario y las contraseñas</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Desactivación de la transmisión del SSID</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Configuración de la encriptación mediante WEP o WPA</li>
+</ul>
+</p>
+<p></p>
+<p>La encriptación es el proceso de transformar datos de manera que, aunque sean interceptados, queden inutilizables.</p>
+<p></p>
+<p>
+<b>Protocolo de equivalencia por cable (WEP, Wired Equivalency Protocol) </b>
+</p>
+<p>El protocolo WEP es una característica de seguridad avanzada que encripta el tráfico de la red a medida que este se desplaza por el aire. WEP utiliza claves preconfiguradas para encriptar y descifrar datos, como se muestra en la figura 2. </p>
+<p></p>
+<p>Una clave WEP se introduce como una cadena de números y letras, y generalmente consta de 64 ó 128 bits. En algunos casos, el WEP admite también claves de 256 bits. Para simplificar la creación y la introducción de estas claves, muchos dispositivos incluyen la opción por contraseña. La opción por contraseña es una manera fácil de recordar la palabra o frase usada para generar automáticamente una clave.</p>
+<p></p>
+<p>A fin de que el WEP funcione, el AP (y cualquier otro dispositivo inalámbrico que tenga habilitado el acceso a la red) deberá tener la misma clave WEP introducida. Sin esta clave, los dispositivos no podrán comprender las transmisiones inalámbricas.</p>
+<p></p>
+<p>WEP tiene puntos débiles, por ejemplo, el uso de una clave estática en todos los dispositivos con WEP habilitado. Existen aplicaciones disponibles que los atacantes pueden utilizar para descubrir la clave WEP. Estas aplicaciones se encuentran disponibles fácilmente en Internet. Una vez que el atacante ha extraído la clave, tiene acceso completo a toda la información transmitida.</p>
+<p></p>
+<p>Una manera de superar este punto débil es cambiar la clave frecuentemente. Otra manera es usar una forma de encriptación más avanzada y segura, conocida como acceso protegido Wi-Fi (WPA, Wi-Fi Protected Access). </p>
+<p></p>
+<p>
+<b>Acceso protegido Wi-Fi (WPA) </b>
+</p>
+<p></p>
+<p>El WPA también utiliza claves de encriptación de 64 a 256 bits. Sin embargo, el WPA, a diferencia del WEP, genera nuevas claves dinámicas cada vez que un cliente establece una conexión con el AP. Por esta razón el WPA se considera más seguro que el WEP, ya que es mucho más difícil de decodificar.</p>
+<p></p>
+<p>Existen varias implementaciones de seguridad más que se pueden configurar en un AP inalámbrico, incluidos el filtrado de direcciones MAC, la autenticación y el filtrado de tráfico. Sin embargo, estas implementaciones de seguridad exceden el ámbito de este curso. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

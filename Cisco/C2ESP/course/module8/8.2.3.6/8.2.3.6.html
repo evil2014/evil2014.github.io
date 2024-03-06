@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.2.3.6 Configuración manual del costo de OSPF</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.2.3.6_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de OSPFv2 de área única</h1>
+        <h2>Costo OSPF</h2>
+      </div>
+      <div id="content">
+<p>Como alternativa a la configuración del ancho de banda de interfaz predeterminado, es posible configurar el costo de forma manual en una interfaz con el comando de configuración de interfaz <span class="cmd"><b>ip ospf cost</b></span><span class="cmd"><i> valor</i></span>. </p>
+<p></p>
+<p>Una ventaja de configurar un costo en lugar del ancho de banda de la interfaz es que, cuando se configura el costo manualmente, el router no necesita calcular la métrica. En cambio, cuando se configura el ancho de banda de la interfaz, el router debe calcular el costo de OSPF sobre la base del ancho de banda. El comando <span class="cmd"><b>ip ospf cost</b></span> es útil en entornos de varios proveedores, donde los routers que no son de Cisco pueden usar una métrica distinta del ancho de banda para calcular los costos de OSPF.</p>
+<p></p>
+<p>Con los comandos de interfaz <span class="cmd"><b>bandwidth</b></span> e <span class="cmd"><b>ip ospf cost</b></span> se logra el mismo resultado, que es proporcionar a OSPF un valor preciso para determinar la mejor ruta.</p>
+<p></p>
+<p>Por ejemplo, en la figura 1, el ancho de banda de interfaz de serial 0/0/1 se restablece al valor predeterminado, y el costo de OSPF se establece de forma manual en 15 625. Si bien el ancho de banda de interfaz se restablece al valor predeterminado, el costo de OSPF se establece como si aún se calculara el ancho de banda.</p>
+<p></p>
+<p>En la figura 2, se muestran las dos alternativas que se pueden utilizar para modificar los costos de los enlaces seriales en la topología. En el lado derecho de la ilustración, se muestran los comandos <span class="cmd"><b>ip ospf cost</b></span> equivalentes a los comandos <span class="cmd"><b>bandwidth </b></span>de la izquierda.</p>
+<p></p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.1.3.2 Subredes en uso</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.1.3.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>División de una red IPv4 en subredes</h1>
+        <h2>División de una red IPv4 en subredes</h2>
+      </div>
+      <div id="content">
+<p>En el ejemplo anterior, se dividió la red 192.168.1.0/24 para crear dos subredes:</p>
+<p></p>
+<p>192.168.1.0/25</p>
+<p>192.168.1.128/25</p>
+<p></p>
+<p>En la figura 1, observe que el router R1 tiene dos segmentos LAN conectados a sus interfaces GigabitEthernet. Para los segmentos conectados a estas interfaces, se utilizarán subredes. Para cumplir la función de gateway para los dispositivos en la LAN, a cada una de las interfaces del router se le debe asignar una dirección IP dentro del rango de direcciones válidas para la subred asignada. Es habitual utilizar la primera o la última dirección disponible en un rango de red para la dirección de la interfaz del router.</p>
+<p></p>
+<p>La primera subred, 192.168.1.0/25, se utiliza para la red conectada a GigabitEthernet 0/0, y la segunda subred, 192.168.1.128/25, se utiliza para la red conectada a GigabitEthernet 0/1. Para asignar una dirección IP para cada una de estas interfaces, se debe determinar el rango de direcciones IP válidas para cada subred.</p>
+<p></p>
+<p>Las siguientes son pautas para cada una de las subredes:</p>
+<p>
+<ul>
+<li>
+<b>Dirección de red:</b> todos bits 0 en la porción de host de la dirección.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Primera dirección de host:</b> todos bits 0 más un bit 1 (en la máxima posición a la derecha) en la porción de host de la dirección. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Última dirección de host:</b> todos bits 1 más un bit 0 (en la máxima posición a la derecha) en la porción de host de la dirección.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Dirección de broadcast:</b> todos bits 1 en la porción de host de la dirección.</li>
+</ul>
+</p>
+<p></p>
+<p>Como se muestra en la figura 2, la primera dirección de host para la red 192.168.1.0/25 es 192.168.1.1, y la última dirección de host es 192.168.1.126. En la figura 3, se muestra que la primera dirección de host para la red 192.168.1.128/25 es 192.168.1.129, y la última dirección de host es 192.168.1.254.</p>
+<p></p>
+<p>Para asignar la primera dirección de host en cada subred a la interfaz del router para esa subred, utilice el comando <span class="cmd"><b>ip address</b></span> en el modo de configuración de interfaz, como se muestra en la figura 4. Observe que cada subred utiliza la máscara de subred 255.255.255.128 para indicar que la porción de red de la dirección es 25 bits.</p>
+<p></p>
+<p>En la figura 5, se muestra una configuración de host para la red 192.168.1.128/25. Observe que la dirección IP del gateway es la dirección configurada en la interfaz G0/1 del R1, 192.168.1.129, y la máscara de subred es 255.255.255.128. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

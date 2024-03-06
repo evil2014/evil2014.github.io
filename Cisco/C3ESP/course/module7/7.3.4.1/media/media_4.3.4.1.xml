@@ -1,0 +1,63 @@
+﻿<textcomponents>
+
+<component id="ID_title">
+	<text><![CDATA[<b>Máquina de estados finitos DUAL</b>]]></text>
+</component>
+
+<component id="ID_txt01">
+	<text><![CDATA[Se perdió la conectividad al sucesor.]]></text>
+</component>
+
+<component id="ID_txt02">
+	<text><![CDATA[Ascender a sucesor.]]></text> 
+</component>
+
+<component id="ID_txt03">
+	<text><![CDATA[Sí]]></text> 
+</component>
+
+<component id="ID_txt04">
+	<text><![CDATA[¿Hay un sucesor factible?]]></text> 
+</component>
+  
+<component id="ID_txt05">
+	<text><![CDATA[No]]></text> 
+</component>
+
+<component id="ID_txt06">
+	<text><![CDATA[Colocar la red de destino en estado activo.]]></text> 
+</component>
+
+<component id="ID_txt07">
+	<text><![CDATA[Instalar a los sucesores en la tabla de routing.]]></text> 
+</component>
+
+<component id="ID_txt08">
+	<text><![CDATA[Seleccionar el nuevo sucesor.]]></text> 
+</component>
+
+<component id="ID_txt09">
+	<text><![CDATA[Sí]]></text> 
+</component>
+
+<component id="ID_txt10">
+	<text><![CDATA[¿El vecino tiene una o más rutas?]]></text> 
+</component>
+
+<component id="ID_txt11">
+	<text><![CDATA[Consultar a los vecinos para obtener una nueva ruta.]]></text> 
+</component>
+
+<component id="ID_txt12">
+	<text><![CDATA[No]]></text> 
+</component>
+
+<component id="ID_txt13">
+	<text><![CDATA[Instalar a los sucesores factibles, si los hubiera, en la tabla de topología.]]></text> 
+</component>
+
+<component id="ID_txt14">
+	<text><![CDATA[Eliminar la red de destino de las tablas de topología y de routing.]]></text> 
+</component>
+
+</textcomponents>

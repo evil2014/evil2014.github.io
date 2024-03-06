@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.3.1.1 Desafíos de TI</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.3.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Arquitecturas de red en evolución</h1>
+        <h2>Arquitecturas empresariales de Cisco</h2>
+      </div>
+      <div id="content">
+<p>Dado que las empresas se volvieron más dependientes de las redes para lograr el éxito, las arquitecturas de red evolucionaron con el correr de los años. Originalmente, los usuarios, los datos y las aplicaciones se alojaban en las instalaciones. Los usuarios solo podían acceder a los recursos de red con computadoras que pertenecían a la empresa. La red tenía fronteras y requisitos de acceso claros. Mantener la seguridad, la productividad y los servicios era más sencillo. Hoy en día, la frontera de la red cambió, lo que presenta nuevos desafíos para los departamentos de TI. Las redes están pasando de ser un sistema de transporte únicamente de datos compuesto por dispositivos LAN conectados, a un sistema que permite conectar personas, dispositivos e información en un entorno de red convergente y con gran variedad de medios.</p>
+<p></p>
+<p>A medida que se lanzan al mercado nuevas tecnologías y dispositivos para usuarios finales, las empresas y los consumidores deben continuar adaptándose a este entorno en constante evolución. Existen muchas nuevas tendencias de red que continúan afectando a organizaciones y consumidores. Algunas de las tendencias principales incluyen las siguientes:</p>
+<p>
+<ul>
+<li>Traiga su propio dispositivo (BYOD)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Colaboración en línea</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Comunicación por video</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Computación en la nube</li>
+</ul>
+</p>
+<p></p>
+<p>Si bien estas tendencias admiten más servicios avanzados que nunca, también presentan nuevos riesgos de seguridad que los profesionales de TI deben resolver. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

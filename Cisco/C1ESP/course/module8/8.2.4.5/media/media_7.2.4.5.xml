@@ -1,0 +1,59 @@
+﻿<textcomponents>
+	<component id="ID_s1_title">
+		<text><![CDATA[<b>Proceso EUI-64</b>]]></text>
+	</component>
+	
+	<component id="ID_s1_txt01">
+		<text><![CDATA[OUI (identificador único de organización) de 24&nbsp;bits]]></text>
+	</component>
+	
+	<component id="ID_s1_txt02">
+		<text><![CDATA[Identificador de dispositivo de 24&nbsp;bits]]></text>
+	</component>
+	
+	<component id="ID_s1_txt03">
+		<text><![CDATA[Proceso EUI-64]]></text>
+	</component>
+	
+	<component id="ID_s1_txt04">
+		<text><![CDATA[Binario]]></text>
+	</component>
+	
+	<component id="ID_s1_txt05">
+		<text><![CDATA[Binario]]></text>
+	</component>
+	
+	<component id="ID_s1_txt06">
+		<text><![CDATA[Binario]]></text>
+	</component>
+	
+	<component id="ID_s1_txt07">
+		<text><![CDATA[Binario]]></text>
+	</component>
+	
+	
+	
+	<component id="ID_s1_txt08">
+		<text><![CDATA[<b>Paso&nbsp;1: divida la dirección MAC.</b>]]></text>
+	</component>
+	
+	<component id="ID_s1_txt09">
+		<text><![CDATA[<b>Paso&nbsp;2: inserte FFFE.</b>]]></text>
+	</component>
+	
+	<component id="ID_s1_txt10">
+		<text><![CDATA[<b>Paso&nbsp;3: de vuelta el bit U/L.</b>]]></text>
+	</component>
+	
+	<component id="ID_s1_txt11">
+		<text><![CDATA[ID de interfaz EUI-64 modificada en notación hexadecimal]]></text>
+	</component>
+	
+	<component id="ID_s2_txt01">
+		<text><![CDATA[Direcciones link-local que utilizan EUI-64]]></text>
+	</component>
+	
+	<component id="ID_s2_txt02">
+		<text><![CDATA[&lt;Resultado omitido&gt;]]></text>
+	</component>
+</textcomponents>

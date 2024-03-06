@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.4.2.3 Saludo</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.4.2.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Routing dinámico de estado de enlace</h1>
+        <h2>Actualizaciones de estado de enlace</h2>
+      </div>
+      <div id="content">
+<p>El segundo paso en el proceso de routing de estado de enlace es que cada router asume la responsabilidad de encontrarse con sus vecinos en redes conectadas directamente. </p>
+<p></p>
+<p>Los routers con protocolos de enrutamiento de link-state utilizan un protocolo de saludo para descubrir cualquier vecino en sus enlaces. Un vecino es cualquier otro router habilitado con el mismo protocolo de enrutamiento de link-state. </p>
+<p></p>
+<p>Haga clic en Reproducir en la ilustración para ver una animación sobre el proceso de descubrimiento de vecinos de estado de enlace con paquetes de saludo.</p>
+<p></p>
+<p>En la animación, el R1 envía paquetes de saludo por sus enlaces (interfaces) para detectar la presencia de vecinos. R2, R3 y R4 responden al paquete de saludo con sus propios paquetes de saludo debido a que dichos routers están configurados con el mismo protocolo de enrutamiento de link-state. No hay vecinos fuera de la interfaz FastEthernet 0/0. Debido a que el R1 no recibe un saludo en esta interfaz, no continúa con los pasos del proceso de routing de estado de enlace para el enlace FastEthernet 0/0. </p>
+<p></p>
+<p>Cuando dos routers de estado de enlace descubren que son vecinos, forman una adyacencia. Dichos pequeños paquetes de saludo continúan intercambiándose entre dos vecinos adyacentes y cumplen la función de keepalive para monitorear el estado del vecino. Si un router deja de recibir paquetes de saludo por parte de un vecino, dicho vecino se considera inalcanzable y se rompe la adyacencia. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

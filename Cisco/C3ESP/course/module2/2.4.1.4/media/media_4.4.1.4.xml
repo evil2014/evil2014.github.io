@@ -1,0 +1,133 @@
+﻿<textcomponents>
+
+<component id='ID_s1_inst'>
+	<text><![CDATA[<b>Actividad: Identificar la terminología de FHRP</b><br><br>Arrastre la terminología de FHRP hasta la definición correspondiente. Haga clic en el botón&nbsp;2 para continuar la actividad.
+]]></text>
+</component>
+
+<component id='ID_s1_txt01'>
+	<text><![CDATA[Es un dispositivo que dirige el tráfico destinado a los segmentos de red más allá del segmento de red de origen y para el cual el nodo emisor puede no tener información de routing.]]></text>
+</component>
+
+<component id='ID_s1_txt02'>
+	<text><![CDATA[Es un conjunto de routers que trabajan juntos para dar la sensación de un único router a los hosts en un segmento de LAN.]]></text>
+</component>
+
+<component id='ID_s1_txt03'>
+	<text><![CDATA[Es una dirección de capa&nbsp;3 asignada a un protocolo que comparte la única dirección entre varios dispositivos.]]></text>
+</component>
+
+<component id='ID_s1_txt04'>
+	<text><![CDATA[Es un dispositivo que forma parte de un grupo de routers virtuales al que se asigna la función de gateway predeterminado alternativo.]]></text>
+</component>
+
+<component id='ID_s1_txt05'>
+	<text><![CDATA[Es la dirección de capa&nbsp;2 que devuelve ARP para un gateway FHRP.]]></text>
+</component>
+<component id='ID_s1_txt06'>
+	<text><![CDATA[Es un dispositivo que forma parte de un grupo de routers virtuales al que se asigna la función de gateway predeterminado.]]></text>
+</component> <!--Drag and Drop-->
+<component id='ID_s1_traget01'>
+	<text><![CDATA[<font color="#393536">Router de reserva</font>]]></text>
+</component>
+
+<component id='ID_s1_traget02'>
+	<text><![CDATA[<font color="#393536">Router de reenvío</font>]]></text>
+</component>
+
+<component id='ID_s1_traget03'>
+	<text><![CDATA[<font color="#393536">Router virtual</font>]]></text>
+</component>
+
+<component id='ID_s1_traget04'>
+	<text><![CDATA[<font color="#393536">Dirección IP virtual</font>]]></text>
+</component>
+
+<component id='ID_s1_traget05'>
+	<text><![CDATA[<font color="#393536">Dirección MAC virtual</font>]]></text>
+</component>
+
+<component id='ID_s1_traget06'>
+	<text><![CDATA[<font color="#393536">Gateway <br>predeterminado</font>]]></text>
+</component>
+
+
+
+ 
+
+<component id='ID_s1_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto]]></text>
+</component>
+
+<component id='ID_s1_CORRECT_BODY'>
+	<text><![CDATA[Unió correctamente la terminología de FHRP con las definiciones.]]></text>
+</component>
+
+
+<component id='ID_s1_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_BODY'>
+	<text><![CDATA[No unió correctamente la terminología de FHRP con las definiciones. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_s1_CHECK'>
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id='ID_s1_RESET'>
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component> <!--slide02-->
+<component id='ID_s2_inst'>
+	<text><![CDATA[<b>Actividad: Identificar la terminología de FHRP</b><br><br>Arrastre la terminología de FHRP hasta los dispositivos FHRP en la topología.]]></text>
+</component>
+
+<component id='ID_s2_txt01'>
+	<text><![CDATA[Núcleo]]></text>
+</component> <!--Drag and Drop-->
+<component id='ID_s2_traget01'>
+	<text><![CDATA[<font color="#393536">Router virtual</font>]]></text>
+</component>
+
+<component id='ID_s2_traget02'>
+	<text><![CDATA[<font color="#393536">Router de reenvío</font>]]></text>
+</component>
+
+<component id='ID_s2_traget03'>
+	<text><![CDATA[<font color="#393536">Router de reserva</font>]]></text>
+</component>
+
+<component id='ID_s2_traget04'>
+	<text><![CDATA[<font color="#393536">Gateway <br>predeterminado</font>]]></text>
+</component>
+
+
+
+
+<component id='ID_s2_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto]]></text>
+</component>
+
+<component id='ID_s2_CORRECT_BODY'>
+	<text><![CDATA[Identificó correctamente los dispositivos FHRP en la topología.]]></text>
+</component>
+
+
+<component id='ID_s2_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto]]></text>
+</component>
+
+<component id='ID_s2_INCORRECT_BODY'>
+	<text><![CDATA[No identificó correctamente los dispositivos FHRP en la topología. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_s2_CHECK'>
+	<text><![CDATA[<b>Verificar</b>]]></text>
+</component>
+
+<component id='ID_s2_RESET'>
+	<text><![CDATA[<b>Restablecer</b>]]></text>
+</component>
+
+</textcomponents>

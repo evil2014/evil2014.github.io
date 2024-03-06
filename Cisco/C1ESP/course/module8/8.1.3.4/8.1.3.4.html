@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.1.3.4 Transmisión de broadcast</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.1.3.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Direcciones de red IPv4</h1>
+        <h2>Direcciones IPv4 unicast, broadcast y multicast</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Transmisión de broadcast</b>
+</p>
+<p>El tráfico de broadcast se utiliza para enviar paquetes a todos los hosts en la red usando la dirección de broadcast para la red. Para broadcast, el paquete contiene una dirección IP de destino con todos unos (1) en la porción de host. Esto significa que todos los hosts de esa red local (dominio de broadcast) recibirán y verán el paquete. Muchos protocolos de red, como DHCP, utilizan broadcasts. Cuando un host recibe un paquete enviado a la dirección de broadcast de red, el host procesa el paquete de la misma manera en la que procesaría un paquete dirigido a su dirección unicast. </p>
+<p></p>
+<p>Algunos ejemplos para utilizar una transmisión de broadcast son:</p>
+<p>
+<ul>
+<li>Asignar direcciones de capa superior a direcciones de capa inferior</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Solicitar una dirección</li>
+</ul>
+</p>
+<p></p>
+<p>
+<ul>
+<li>A diferencia de unicast, donde los paquetes pueden ser enrutados por toda la internetwork, los paquetes de broadcast normalmente se restringen a la red local. Esta restricción depende de la configuración del router del gateway y del tipo de broadcast. Existen dos tipos de broadcasts: broadcast dirigido y broadcast limitado.</li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Broadcast dirigido</b>
+</p>
+<p>Un broadcast dirigido se envía a todos los hosts de una red específica. Este tipo de broadcast es útil para enviar un broadcast a todos los hosts de una red local. Por ejemplo, para que un host fuera de la red 172.16.4.0/24 se comunique con todos los hosts dentro de esa red, la dirección de destino del paquete sería 172.16.4.255. Aunque los routers no reenvían broadcasts dirigidos de manera predeterminada, se les puede configurar para que lo hagan.</p>
+<p></p>
+<p>
+<b>Broadcast limitado</b>
+</p>
+<p></p>
+<p>El broadcast limitado se usa para la comunicación que está limitada a los hosts en la red local. Estos paquetes siempre utilizan la dirección IPv4 de destino 255.255.255.255. Los routers no reenvían broadcasts limitados. Por esta razón, también se hace referencia a una red IPv4 como un dominio de broadcast. Los routers son dispositivos fronterizos para un dominio de broadcast. </p>
+<p></p>
+<p>A modo de ejemplo, un host dentro de la red 172.16.4.0/24 transmitiría a todos los hosts en su red utilizando un paquete con una dirección de destino 255.255.255.255.</p>
+<p></p>
+<p>Reproduzca la animación para ver un ejemplo de transmisión de broadcast limitado.</p>
+<p></p>
+<p>Cuando se transmite un paquete, utiliza recursos en la red y hace que cada host receptor en la red procese el paquete. Por lo tanto, el tráfico de broadcast debe limitarse para que no afecte negativamente el rendimiento de la red o de los dispositivos. Debido a que los routers separan dominios de broadcast, subdividir las redes con tráfico de broadcast excesivo puede mejorar el rendimiento de la red.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

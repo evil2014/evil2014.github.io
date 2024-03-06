@@ -1,0 +1,58 @@
+﻿<textcomponents>
+<component id="ID_inst">
+<text><![CDATA[<b>Actividad</b><br/><br/>La implementación de una red pequeña se centra en la planificación y el diseño. Arrastre cada factor de planificación y diseño al área de interés principal correspondiente.]]></text>
+</component>
+<component id="ID_txt01">
+  <text><![CDATA[<b>Costo</b>]]></text> 
+  </component>
+<component id="ID_txt02">
+  <text><![CDATA[<b>Puertos</b>]]></text> 
+  </component>
+<component id="ID_txt03">
+  <text><![CDATA[<b>Velocidad</b>]]></text> 
+  </component>
+
+<component id="ID_txt04">
+  <text><![CDATA[<b>Expansibilidad</b>]]></text> 
+  </component>
+
+<component id="ID_txt05">
+  <text><![CDATA[<b>Facilidad de administración</b>]]></text> 
+  </component>
+
+<component id='ID_s1_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id='ID_s1_CORRECT_BODY'>
+	<text><![CDATA[Ubicó correctamente los factores de planificación y diseño de red en las áreas de interés principal adecuadas. ]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_BODY'>
+	<text><![CDATA[No ubicó correctamente los factores de planificación y diseño de red en las áreas de interés principal adecuadas. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+<component id="ID_drag01"><text><![CDATA[Establecimiento de<br> prioridades de tráfico de<br> datos]]></text></component>
+<component id="ID_drag02"><text><![CDATA[Tipos de interfaces<br> requeridos]]></text></component>
+<component id="ID_drag03"><text><![CDATA[Ancho de banda requerido]]></text></component>
+<component id="ID_drag04"><text><![CDATA[Actualizaciones de<br> dispositivos de red]]></text></component>
+<component id="ID_drag05"><text><![CDATA[Cantidad de interfaces requeridas]]></text></component>
+<component id="ID_drag06"><text><![CDATA[Tipos de tendidos de cable]]></text></component>
+<component id="ID_drag07"><text><![CDATA[Capacidad NIC de los dispositivos]]></text></component>
+<component id="ID_drag08"><text><![CDATA[Tipos de conexión<br/> para diversos cables]]></text></component>
+<component id="ID_drag09"><text><![CDATA[Costo inicial básico de los dispositivos de red]]></text></component>
+<component id="ID_drag10"><text><![CDATA[Esquema de<br> direccionamiento IP]]></text></component>
+
+
+<component id='ID_CHECK'>
+	<text><![CDATA[Verificar]]></text>
+</component>
+
+<component id='ID_RESET'>
+	<text><![CDATA[Restablecer]]></text>
+</component>
+
+</textcomponents>

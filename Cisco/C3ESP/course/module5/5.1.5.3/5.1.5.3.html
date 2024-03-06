@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>5.1.5.3 Autenticación MD5</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_5.1.5.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuraciones avanzadas de OSPF de área única </h1>
+        <h2>OSPF segura</h2>
+      </div>
+      <div id="content">
+<p>En el siguiente ejemplo, se muestra cómo se usa la autenticación MD5 para autenticar dos routers OSPF vecinos. </p>
+<p></p>
+<p>En la figura 1, el R1 combina el mensaje de routing con la clave secreta previamente compartida y calcula la firma con el algoritmo MD5. La firma también se conoce como “valor de hash”. </p>
+<p></p>
+<p>En la figura 2, el R1 agrega la firma al mensaje de routing y lo envía al R2. </p>
+<p></p>
+<p>MD5 no cifra el mensaje; por eso, el contenido se puede leer fácilmente. </p>
+<p></p>
+<p>En la figura 3, el R2 abre el paquete, combina el mensaje de routing con la clave secreta previamente compartida y calcula la firma con el algoritmo MD5. </p>
+<p>
+<ul>
+<li>Si las firmas coinciden, el R2 acepta la actualización de routing. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Si las firmas no coinciden, el R2 descarta la actualización.</li>
+</ul>
+</p>
+<p></p>
+<p>OSPFv3 (OSPF para IPv6) no incluye ninguna capacidad de autenticación propia. En cambio, depende por completo de IPSec para proteger las comunicaciones entre vecinos con el comando <span class="cmd"><b>ipv6 ospf authentication ipsec spi</b></span> del modo de configuración de interfaz. Esto resulta beneficioso, ya que simplifica el protocolo OSPFv3 y estandariza su mecanismo de autenticación. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

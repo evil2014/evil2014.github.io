@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.1.2.1 Tipos de ACL de IPv4 de Cisco</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.1.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Funcionamiento de ACL de IP</h1>
+        <h2>Comparación entre ACL de IPv4 estándar y extendidas</h2>
+      </div>
+      <div id="content">
+<p>Los dos tipos de ACL de IPv4 de Cisco son estándar y extendida.</p>
+<p></p>
+<p>
+<b>Nota:</b> las ACL de IPv6 de Cisco son similares a las ACL de IPv4 extendidas y se abordarán en una sección posterior. </p>
+<p></p>
+<p>
+<b>ACL estándar</b>
+</p>
+<p></p>
+<p>Las ACL estándar se pueden utilizar para permitir o denegar el tráfico de direcciones IPv4 de origen únicamente. El destino del paquete y los puertos involucrados no se evalúan. En el ejemplo de la figura 1, se permite todo el tráfico de la red 192.168.30.0/24. Debido al “deny any” (denegar todo) implícito al final, todo el resto del tráfico se bloquea con esta ACL. Las ACL estándar se crean en el modo de configuración global.</p>
+<p></p>
+<p>
+<b>ACL extendidas</b>
+</p>
+<p></p>
+<p>Las ACL extendidas filtran paquetes IPv4 según varios atributos:</p>
+<p>
+<ul>
+<li>Tipo de protocolo</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Dirección IPv4 de origen</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Dirección IPv4 de destino</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Puertos TCP o UDP de origen</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Puertos TCP o UDP de destino</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Información optativa de tipo de protocolo para un control más preciso</li>
+</ul>
+</p>
+<p></p>
+<p>En la figura 2, la ACL 103 permite el tráfico que se origina desde cualquier dirección en la red 192.168.30.0/24 hasta cualquier red IPv4 si el puerto de host de destino es 80 (HTTP). Las ACL extendidas se crean en el modo de configuración global. </p>
+<p></p>
+<p>Los comandos para las ACL se abordan en los siguientes temas.</p>
+<p></p>
+<p>
+<b>Nota:</b> las ACL estándar y extendidas se analizarán en mayor detalle más adelante en este capítulo.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

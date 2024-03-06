@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.2.1.7 Análisis de terminación de sesión TCP</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.2.1.7_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>TCP y UDP</h1>
+        <h2>Comunicación TCP</h2>
+      </div>
+      <div id="content">
+<p>Para cerrar una conexión, se debe establecer el indicador de control finalizar (FIN) en el encabezado del segmento. Para finalizar todas las sesiones TCP de una vía, se utiliza un enlace de dos vías, que consta de un segmento FIN y un segmento ACK. Por lo tanto, para terminar una única conversación que admite TCP, se requieren cuatro intercambios para finalizar ambas sesiones, como se muestra en la figura 1.</p>
+<p></p>
+<p>
+<b>Nota:</b> en esta explicación, los términos “cliente” y “servidor” se utilizan como referencia con fines de simplificación, pero el proceso de finalización lo pueden iniciar dos hosts cualesquiera que tengan una sesión abierta:</p>
+<p></p>
+<p>
+<b>Paso 1:</b> cuando el cliente no tiene más datos para enviar en el stream, envía un segmento con el indicador FIN establecido.</p>
+<p></p>
+<p>
+<b>Paso 2:</b> el servidor envía un ACK para acusar recibo del FIN y terminar la sesión de cliente a servidor.</p>
+<p></p>
+<p>
+<b>Paso 3:</b> el servidor envía un FIN al cliente para terminar la sesión de servidor a cliente.</p>
+<p></p>
+<p>
+<b>Paso 4:</b> el cliente responde con un ACK para dar acuse de recibo del FIN desde el servidor.</p>
+<p></p>
+<p>Cuando el cliente no tiene más datos que transferir, establece el indicador FIN en el encabezado de un segmento. A continuación, el extremo servidor de la conexión envía un segmento normal que contiene datos con el indicador ACK establecido utilizando el número de acuse de recibo, lo que confirma que se recibieron todos los bytes de datos. Cuando se dio acuse de recibo de todos los segmentos, la sesión se cierra.</p>
+<p></p>
+<p>La sesión en la otra dirección se cierra con el mismo proceso. El receptor indica que no existen más datos para enviar estableciendo el señalizador FIN en el encabezado del segmento enviado al origen. Un acuse de recibo devuelto confirma que todos los bytes de datos se recibieron y que la sesión, a su vez, finalizó.</p>
+<p></p>
+<p>Consulte las figuras 2 y 3 para ver los indicadores de control FIN y ACK establecidos en el encabezado del segmento, lo que finaliza la sesión HTTP.</p>
+<p></p>
+<p>También es posible terminar la conexión por medio de un enlace de tres vías. Cuando el cliente no posee más datos para enviar, envía un señalizador FIN al servidor. Si el servidor tampoco tiene más datos para enviar, puede responder con los señalizadores FIN y ACK, combinando dos pasos en uno. A continuación, el cliente responde con un ACK.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.5.2.2 Configuración de ACL de IPv6</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.5.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>ACL de IPv6</h1>
+        <h2>Configuración de ACL de IPv6</h2>
+      </div>
+      <div id="content">
+<p>En IPv6 solo hay ACL con nombre. La configuración es similar a la de una ACL de IPv4 extendida con nombre. </p>
+<p></p>
+<p>En la figura 1, se muestra la sintaxis de los comandos para las ACL de IPv6. La sintaxis es similar a la que se utiliza en ACL de IPv4 extendidas. Una diferencia importante es el uso de la longitud de prefijo IPv6 en lugar de una máscara wildcard IPv4.</p>
+<p></p>
+<p>Hay tres pasos básicos para configurar una ACL de IPv6:</p>
+<p></p>
+<p>
+<b>Paso 1. </b>En el modo de configuración global, utilice el comando <span class="cmd"><b>ipv6 access-list </b></span><span class="cmd"><i>nombre</i></span> para crear una ACL de IPv6. Al igual que las ACL de IPv4 con nombre, los nombres en IPv6 son alfanuméricos, distinguen mayúsculas de minúsculas y deben ser únicos. A diferencia de IPv4, no hay necesidad de una opción estándar o extendida. </p>
+<p></p>
+<p>
+<b>Paso 2. </b>En el modo de configuración de ACL con nombre, utilice las instrucciones <span class="cmd"><b>permit</b></span> o <span class="cmd"><b>deny</b></span> para especificar una o más condiciones para determinar si un paquete se debe reenviar o descartar. </p>
+<p></p>
+<p>
+<b>Paso 3. </b>Regrese al modo EXEC privilegiado con el comando <span class="cmd"><b>end</b></span>.</p>
+<p></p>
+<p>En la figura 2, se muestran los pasos para crear una ACL de IPv6 con un ejemplo simple basado en la topología anterior. La primera instrucción da el nombre NO-R3-LAN-ACCESS a la lista de acceso de IPv6. Al igual sucede que con las ACL de IPv4 con nombre, no es necesario el uso de mayúsculas en los nombres de las ACL de IPv6, pero esto hace que se destaquen cuando se observa el resultado de la configuración en ejecución.</p>
+<p></p>
+<p>La segunda instrucción deniega todos los paquetes 2001:DB8:CAFE:30::/64 destinados a cualquier red IPv6. La tercera instrucción permite el resto de los paquetes IPv6.</p>
+<p></p>
+<p>En la figura 3, se muestra la ACL en contexto con la topología.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

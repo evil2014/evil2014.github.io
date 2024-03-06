@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.1.2.4 Puntos de acceso inalámbrico </title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.1.2.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Conceptos de tecnología inalámbrica</h1>
+        <h2>Componentes de WLANs</h2>
+      </div>
+      <div id="content">
+<p>Los AP se pueden categorizar como AP autónomos o AP basados en controladores.</p>
+<p></p>
+<p>
+<b>AP autónomos</b>
+</p>
+<p>Los AP autónomos, a veces denominados “AP pesados”, son dispositivos autónomos que se configuran mediante la CLI de Cisco o una GUI. Los AP autónomos son útiles en situaciones en las que solo se requiere un par de AP en la red. De manera optativa, se pueden controlar varios AP mediante los servicios de dominio inalámbrico (WDS) y se pueden administrar mediante el motor de soluciones de LAN inalámbricas (WLSE) CiscoWorks.</p>
+<p></p>
+<p>
+<b>Nota:</b> un router doméstico es un ejemplo de un AP autónomo, ya que toda la configuración del AP reside en el dispositivo.</p>
+<p></p>
+<p>En la figura 1, se muestra un AP autónomo en una red pequeña. Si aumentaran las demandas inalámbricas, se requerirían más AP. Cada AP funcionaría de manera independiente de los otros AP y requeriría una configuración y una administración manuales. </p>
+<p></p>
+<p>
+<b>AP basados en controladores</b>
+</p>
+<p>Los AP basados en controladores son dispositivos que dependen del servidor y no requieren una configuración inicial. Cisco ofrece dos soluciones basadas en controladores. Los AP basados en controladores son útiles en situaciones en las que se requieren muchos AP en la red. A medida que se agregan más AP, un controlador de WLAN configura y administra cada AP automáticamente.</p>
+<p></p>
+<p>En la figura 2, se muestra un AP basado en controladores en una red pequeña. Observe cómo ahora se requiere un controlador de WLAN para administrar los AP. El beneficio del controlador es que se puede usar para administrar muchos AP.</p>
+<p></p>
+<p>
+<b>Nota:</b> algunos modelos de AP pueden funcionar en modo autónomo o en modo basado en controladores.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

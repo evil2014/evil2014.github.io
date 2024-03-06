@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.2.1.1 Introducción a SNMP</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.2.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>SNMP</h1>
+        <h2>Funcionamiento de SNMP</h2>
+      </div>
+      <div id="content">
+<p>
+<b>Protocolo simple de administración de red (SNMP)</b>
+</p>
+<p>SNMP se desarrolló para permitir que los administradores puedan administrar los nodos, como los servidores, las estaciones de trabajo, los routers, los switches y los dispositivos de seguridad, en una red IP. Permite que los administradores de red administren el rendimiento de la red, detecten y resuelvan problemas de red, y planifiquen el crecimiento de la red. </p>
+<p></p>
+<p>SNMP es un protocolo de capa de aplicación que proporciona un formato de mensaje para la comunicación entre administradores y agentes El sistema SNMP consta de tres elementos:</p>
+<p>
+<ul>
+<li>Administrador de SNMP </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Agentes SNMP (nodo administrado)</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>base de información de administración (MIB) </li>
+</ul>
+</p>
+<p></p>
+<p>Para configurar SNMP en un dispositivo de red, primero es necesario definir la relación entre el administrador y el agente.</p>
+<p></p>
+<p>El administrador de SNMP forma parte de un sistema de administración de red (NMS). El administrador de SNMP ejecuta software de administración SNMP. Como se muestra en la ilustración, el administrador de SNMP puede recopilar información de un agente SNMP mediante una acción “get” y puede cambiar la configuración en un agente mediante la acción “set”. Además, los agentes SNMP pueden reenviar información directamente a un NMS mediante “traps”. </p>
+<p></p>
+<p>El agente SNMP y la MIB residen en los clientes de dispositivo de red. Los dispositivos de red que se deben administrar, como los switches, los routers, los servidores, los firewalls y las estaciones de trabajo, cuentan con un módulo de software de agente SMNP. Las MIB almacenan datos sobre el funcionamiento del dispositivo y están diseñadas para estar disponibles para los usuarios remotos autenticados. El agente SNMP es responsable de proporcionar acceso a la MIB local que refleja los recursos y la actividad de los objetos. </p>
+<p></p>
+<p>SNMP define cómo se intercambia la información de administración entre las aplicaciones de administración de red y los agentes de administración. SNMP utiliza el número de puerto UDP 162 para recuperar y enviar la información de administración.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

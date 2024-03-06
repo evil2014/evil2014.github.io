@@ -1,0 +1,141 @@
+﻿<textcomponents> <!--slide 1-->
+<component id='ID_s1_title'>
+	<text><![CDATA[<b>Habilitación de un router con OSPF</b>]]></text>
+</component> <!--slide 2-->
+<component id='ID_s2_title'>
+	<text><![CDATA[<b>Configuración en ejecución</b>]]></text>
+</component>
+
+<component id="ID_s2_txt01">
+	<text><![CDATA[&lt;resultado omitido&gt;]]></text>
+</component> <!--slide 3-->
+<component id="ID_s3_title">
+	<text><![CDATA[<b>Comandos de configuración básica de router</b>]]></text>
+</component>
+
+<component id="ID_sc_reset">
+	<text><![CDATA[Restablecer]]></text>
+</component>
+<component id="ID_sc_showme">
+	<text><![CDATA[Mostrar]]></text>
+</component>
+<component id="ID_sc_showall">
+	<text><![CDATA[Mostrar todo]]></text>
+</component>
+	
+<component id="ID_SC3" fontFace='Courier New' fontSize="10">
+	<feedback id="fb"><![CDATA[<b><font size='10' face="Arial" color="#0000FF">***Debe introducir el comando exacto y completo. Los comandos que incluyen un nombre o una contraseña distinguen mayúsculas de minúsculas.***</font></b>
+	]]></feedback>
+	<existingcommands><![CDATA[<font size='10' face="Arial"><b>Configure los siguientes parámetros en el router:<ul><li>Establezca el nombre de host R1.<li>Establezca la contraseña cifrada “class” para el modo EXEC privilegiado.<li>Establezca la contraseña de consola “cisco” de modo que se requiera iniciar sesión.<li>Establezca el tiempo de espera de modo que no caduque nunca.<li>Establezca la contraseña “cisco” en las 16&nbsp;líneas vty de modo que se requiera iniciar sesión.<li>Vuelva al modo de configuración global.</li></ul></b></font>]]></existingcommands>
+	<command prompt="Router#">
+	<correctresponse><![CDATA[configure terminal]]></correctresponse>
+	</command>
+	<command prompt="Router(config)#">
+	<correctresponse><![CDATA[hostname R1]]></correctresponse>
+	</command>
+	<command prompt="R1(config)#">
+	<correctresponse><![CDATA[enable secret class]]></correctresponse>
+	</command>
+	<command prompt="R1(config)#">
+	<correctresponse><![CDATA[line console 0]]></correctresponse>
+	</command>
+	<command prompt="R1(config-line)#">
+	<correctresponse><![CDATA[password cisco]]></correctresponse>
+	</command>
+	<command prompt="R1(config-line)#">
+	<correctresponse><![CDATA[login]]></correctresponse>
+	</command>
+	<command prompt="R1(config-line)#">
+	<correctresponse><![CDATA[exec-timeout 0 0]]></correctresponse>
+	</command>
+	<command prompt="R1(config-line)#">
+	<correctresponse><![CDATA[line vty 0 15]]></correctresponse>
+	</command>
+	<command prompt="R1(config-line)#">
+	<correctresponse><![CDATA[password cisco]]></correctresponse>
+	</command>
+	<command prompt="R1(config-line)#">
+	<correctresponse><![CDATA[login]]></correctresponse>
+	</command>
+	
+	<command prompt="R1(config-line)#">
+	<correctresponse><![CDATA[exit]]></correctresponse>
+	<instruction><![CDATA[<font size='10' face="Arial"><b>Configure el router para que cifre todas las contraseñas de texto no cifrado.</b></font>]]></instruction>
+	</command>
+	<command prompt="R1(config)#">
+	<correctresponse><![CDATA[service password-encryption]]></correctresponse>
+	<instruction><![CDATA[<font size='10' face="Arial"><b>Establezca el MOTD <font color="#0000FF">Authorized Access Only!</font> (Acceso autorizado únicamente) y utilice el signo <font color="#0000FF">$</font> como carácter delimitador.</b></font>]]></instruction>
+	</command>
+	<command prompt="R1(config)#">
+	<correctresponse><![CDATA[banner motd $Authorized Access Only!$]]></correctresponse>
+	<instruction><![CDATA[<font size='10' face="Arial"><b>Configure las interfaces en orden con los siguientes parámetros:<br>- GigabitEthernet0/0<ul><li><font color="#010000">D</font>escripción de <font color="#0000FF">Link to LAN 1</font> (enlace a LAN&nbsp;1)</li><li>Dirección IP 172.16.1.1/24</li><li>Active la interfaz.</li></ul>- Serial0/0/0<ul><li><font color="#010000">D</font>escripción de <font color="#0000FF">Link to R2</font> (enlace a R2)</li><li>Dirección IP 172.16.3.1/30</li><li>Frecuencia de reloj 128000</li><li>Active la interfaz.</li></ul>- Serial0/0/1<ul><li><font color="#010000">D</font>escripción de <font color="#0000FF">Link to R3</font> (enlace a R3)</li><li>Dirección IP 192.168.10.5/30</li><li>Active la interfaz.</li></ul></b></font>]]></instruction>
+	</command>
+	<command prompt="R1(config)#">
+	<correctresponse><![CDATA[interface GigabitEthernet0/0]]></correctresponse>
+	</command>
+	<command prompt="R1(config-if)#">
+	<correctresponse><![CDATA[description Link to LAN 1]]></correctresponse>
+	</command>
+	<command prompt="R1(config-if)#">
+	<correctresponse><![CDATA[ip address 172.16.1.1 255.255.255.0]]></correctresponse>
+	</command>
+	<command prompt="R1(config-if)#">
+	<correctresponse><![CDATA[no shutdown]]></correctresponse>
+	</command>
+	<command prompt="R1(config-if)#">
+	<correctresponse><![CDATA[interface Serial0/0/0]]></correctresponse>
+	</command>
+	<command prompt="R1(config-if)#">
+	<correctresponse><![CDATA[description Link to R2]]></correctresponse>
+	</command>
+	<command prompt="R1(config-if)#">
+	<correctresponse><![CDATA[ip address 172.16.3.1 255.255.255.252]]></correctresponse>
+	</command>
+	<command prompt="R1(config-if)#">
+	<correctresponse><![CDATA[clock rate 128000]]></correctresponse>
+	</command>
+	<command prompt="R1(config-if)#">
+	<correctresponse><![CDATA[no shutdown]]></correctresponse>
+	</command>
+	<command prompt="R1(config-if)#">
+	<correctresponse><![CDATA[interface Serial0/0/1]]></correctresponse>
+	</command>
+	<command prompt="R1(config-if)#">
+	<correctresponse><![CDATA[description Link to R3]]></correctresponse>
+	</command>
+	<command prompt="R1(config-if)#">
+	<correctresponse><![CDATA[ip address 192.168.10.5 255.255.255.252]]></correctresponse>
+	</command>
+	<command prompt="R1(config-if)#">
+	<correctresponse><![CDATA[no shutdown]]></correctresponse>
+	<instruction><![CDATA[<font size='10' face="Arial"><b>Configure el protocolo de routing OSPF con los siguientes parámetros:<ul><li>ID de proceso 10<li>Router ID 1.1.1.1<li>Anuncie la red 172.16.1.0/24 para el área 0.<li>Anuncie la red 172.16.3.0/30 para el área 0.<li>Anuncie la red 192.168.10.4/30 para el área 0.</li></ul></b></font>]]></instruction>
+	</command>
+	<command prompt="R1(config-if)#">
+	<correctresponse><![CDATA[router ospf 10]]></correctresponse>
+	</command>
+	<command prompt="R1(config-router)#">
+	<correctresponse><![CDATA[router-id 1.1.1.1]]></correctresponse>
+	</command>
+	<command prompt="R1(config-router)#">
+	<correctresponse><![CDATA[network 172.16.1.0 0.0.0.255 area 0]]></correctresponse>
+	</command>
+	<command prompt="R1(config-router)#">
+	<correctresponse><![CDATA[network 172.16.3.0 0.0.0.3 area 0]]></correctresponse>
+	</command>
+	<command prompt="R1(config-router)#">
+	<correctresponse><![CDATA[network 192.168.10.4 0.0.0.3 area 0]]></correctresponse>
+	<instruction><![CDATA[<font size='10' face="Arial"><b>Vuelva directamente al modo EXEC privilegiado y muestre la configuración actual.</b></font>]]></instruction>
+	</command>
+	<command prompt="R1(config-router)#">
+	<correctresponse><![CDATA[end]]></correctresponse>
+	</command>
+	<command prompt="R1#">
+	<correctresponse><![CDATA[show running-config]]></correctresponse>
+	<deviceresponse><![CDATA[Building configuration… <br> <br>Current configuration: 1242 bytes <br>! <br>Version 15.1 <br>Service timestamps debug datetime msec <br>Service timestamps log datetime msec <br>Service password-encryption <br>! <br>hostname R1 <br>! <br>enable secret class <br>! <br>&lt;resultado omitido&gt; <br>! <br>interface GigabitEthernet0/0 <br> description Link to LAN 1 <br> ip address 172.16.1.1 255.255.255.0 <br> no shutdown<br>! <br>interface Serial0/0/0 <br> description Link to R2 <br> ip address 172.16.3.1 255.255.255.252 <br> clock rate 128000 <br> no shutdown<br>! <br>interface Serial0/0/1 <br> description Link to R3 <br> ip address 192.168.10.5 255.255.255.252 <br> no shutdown<br>! <br>router ospf 10 <br> router-id 1.1.1.1 <br> network 172.16.1.0 0.0.0.255 area 0 <br> network 172.16.3.0 0.0.0.3 area 0 <br> network 192.168.10.4 0.0.0.3 area 0 <br>! <br>banner motd ^C Authorized Access Only! ^C <br>! <br>line console 0 <br> password cisco <br> login <br> exec-timeout 0 0 <br>Line aux 0 <br>line vty 0 4 <br> password cisco <br> login<br>R1#]]></deviceresponse>
+	<instruction><![CDATA[<font size='10' face="Arial"><b>Completó correctamente la configuración básica del router R1.</b></font>]]></instruction>
+	</command>
+	
+	<command prompt=""/>
+</component>
+
+</textcomponents>

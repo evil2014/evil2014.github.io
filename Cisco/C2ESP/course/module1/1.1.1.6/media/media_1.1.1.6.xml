@@ -1,0 +1,160 @@
+﻿<textcomponents> <!--Slide 1--> <!-- instructions -->
+<component id="ID_inst">
+	<text><![CDATA[<b>Actividad (parte A): identificar la terminología de las redes conmutadas  </b><br>Una las características de los switches jerárquicos con los términos correspondientes. Haga clic en el botón 2 para continuar. ]]></text>
+</component> <!-- buttons -->
+<component id="ID_Button01">
+	<text><![CDATA[<b>Verificar  </b>]]></text>
+</component>
+
+<component id="ID_Button02">
+	<text><![CDATA[<b>Restablecer  </b>]]></text>
+</component> <!--Number of rows in the table-->
+<component id="txt_numrows">
+	<text><![CDATA[4]]></text>
+</component> <!--Number of columns for the answers in the table. Do not count the question column-->
+<component id="txt_numcols">
+	<text><![CDATA[4]]></text>
+</component> <!--Answer column headers-->
+<component id="txt_col1">
+	<text><![CDATA[<b>Jerárquico  </b>]]></text>
+</component>
+
+<component id="txt_col2">
+	<text><![CDATA[<b>Modularidad  </b>]]></text>
+</component>
+
+<component id="txt_col3">
+	<text><![CDATA[<b>Capacidad de recuperación  </b>]]></text>
+</component>
+
+<component id="txt_col4">
+	<text><![CDATA[<b>Flexibilidad  </b>]]></text>
+</component> <!--Question text - blockindent code moves the text away from the left edge a bit--> <!--Question text - If questions are numbered, use blockindent for hanging indents-->
+<component id="txt_q1">
+	<text><![CDATA[Permite que la red siempre sea accesible.]]></text>
+</component>
+
+<component id="txt_q2">
+	<text><![CDATA[Permite que las redes se expandan y proporcionen servicios a pedido.]]></text>
+</component>
+
+<component id="txt_q3">
+	<text><![CDATA[Contribuye a que cada dispositivo de cada nivel cumpla una función específica.]]></text>
+</component>
+
+<component id="txt_q4">
+	<text><![CDATA[Usa todos los recursos de red disponibles para compartir la carga de tráfico de datos.]]></text>
+</component> <!--Answers - Give the column number(s), column numbering start with 1 not 0--> <!--Answers - For MCMA separate the correct answers with commas [2, 4, 5] -->
+<component id="txt_a1">
+	<text><![CDATA[3]]></text>
+</component>
+
+<component id="txt_a2">
+	<text><![CDATA[2]]></text>
+</component>
+
+<component id="txt_a3">
+	<text><![CDATA[1]]></text>
+</component>
+
+<component id="txt_a4">
+	<text><![CDATA[4]]></text>
+</component> <!-- Correct Feedback -->
+<component id="ID_titleCorrect">
+	<text><![CDATA[<b>Correcto  </b>]]></text>
+</component>
+
+<component id="ID_correctText">
+	<text><![CDATA[Identificó correctamente los términos de diseño de redes conmutadas.]]></text>
+</component> <!-- Incorrect Feedback -->
+<component id="ID_titleIncorrect">
+	<text><![CDATA[<b>Incorrecto  </b>]]></text>
+</component>
+
+<component id="ID_IncorrectText">
+	<text><![CDATA[No identificó correctamente los términos de diseño de redes conmutadas. Haga clic en <b>Restablecer </b> y vuelva a intentarlo.]]></text>
+</component> <!--Slide 2-->
+
+
+<component id="ID_s2_inst">
+	<text><![CDATA[<b>Actividad (parte B): identificar las funciones de la capa de red conmutada  </b><br>Haga clic en los campos Capa de núcleo, Capa de distribución o Capa de acceso para identificar las funciones de switch que se describen.]]></text>
+</component>
+ 
+
+<component id="ID_s2_txt01">
+<text><![CDATA[<b>Identificador de la plataforma de red conmutada jerárquica  </b>]]></text>
+</component> <!--Characteristics-->
+<component id="ID_s2_ans01">
+<text><![CDATA[Área backbone de red para el switching.]]></text>
+</component>
+
+<component id="ID_s2_ans02">
+<text><![CDATA[Proporciona aislamiento de fallas y conectividad backbone de switch de alta velocidad.]]></text>
+</component>
+
+<component id="ID_s2_ans03">
+<text><![CDATA[Interactúa con el backbone y los usuarios para proporcionar switching, routing y seguridad inteligentes.]]></text>
+</component>
+
+<component id="ID_s2_ans04">
+<text><![CDATA[Permite que los datos fluyan en rutas de switching de igual costo al backbone.]]></text>
+</component>
+
+<component id="ID_s2_ans05">
+<text><![CDATA[Incluye la redundancia como característica importante para el acceso a las redes conmutadas.]]></text>
+</component>
+
+<component id="ID_s2_ans06">
+<text><![CDATA[Proporciona una conectividad directa y de red conmutada al usuario]]></text>
+</component>
+
+<component id="ID_s2_ans07">
+<text><![CDATA[Contribuye a que las aplicaciones funcionen en la red conmutada de forma más segura.]]></text>
+</component>
+
+<component id="ID_s2_ans08">
+<text><![CDATA[Admite dominios de difusión de capa&nbsp;2 y límites de routing de capa&nbsp;3.]]></text>
+</component>
+
+<component id="ID_s2_ans09">
+<text><![CDATA[Puede combinarse con la capa de distribución para proporcionar un diseño contraído.]]></text>
+</component>
+
+<component id='ID_s2_break'>
+	<text><![CDATA[<br><br>]]></text>
+</component> <!--buttons-->
+<component id="ID_s2_btn01">
+<text><![CDATA[<b>Restablecer  </b>]]></text>
+</component> <!-- Terms -->
+<component id="ID_s2_term01">
+<text><![CDATA[<b>Capa núcleo  </b>]]></text>
+</component>
+
+<component id="ID_s2_term02">
+<text><![CDATA[<b>Capa de distribución  </b>]]></text>
+</component>
+
+<component id="ID_s2_term03">
+<text><![CDATA[<b>Capa de acceso  </b>]]></text>
+</component> <!--feedback-->
+<component id='ID_s2_titleCorrect'>
+	<text><![CDATA[<b>Correcto  </b>]]></text>
+</component>
+
+<component id='ID_s2_correctText'>
+	<text><![CDATA[Unió correctamente las descripciones con las capas de diseño de redes conmutadas.]]></text>
+</component>
+
+<component id='ID_s2_titleIncorrect'>
+	<text><![CDATA[<b>Incorrecto  </b>]]></text>
+</component>
+
+<component id='ID_s2_incorrectText'>
+	<text><![CDATA[No identificó correctamente las capas de diseño de redes conmutadas según la descripción. Haga clic en <b>Restablecer </b> y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_break'>
+	<text><![CDATA[<br><br>]]></text>
+</component>
+
+</textcomponents>

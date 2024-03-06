@@ -1,0 +1,71 @@
+﻿<textcomponents>
+
+<component id="ID_s1_title">
+<text><![CDATA[<b>Restablecimiento de valores configurados en enlaces troncales</b>]]></text>
+</component>
+
+<component id="ID_s2_title">
+<text><![CDATA[<b>Ejemplo de restablecimiento de enlace troncal</b>]]></text>
+</component>
+
+<component id="ID_s3_title">
+<text><![CDATA[<b>Restablecimiento del puerto al modo de acceso</b>]]></text>
+</component>
+
+
+
+
+<component id="ID_table01">
+<text><![CDATA[<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4'>
+<tr>
+<td colspan='2' bgcolor='#98D3D1' class="mtitle"><font size='11' color='#1C3635'><b>Comandos de IOS de un switch Cisco</b></font></td>
+</tr>
+
+<tr class="mtable_top">
+<td colspan='2' bgcolor='#0E6360' class="mtable_top"><font size='1' color='#434321'><span style="color:#DAE17A">.</span></font></td>
+</tr>
+
+<tr>
+<td width="160" bgcolor='#077A77' valign="top"><font color='#ffffff'><b>  </b></font></td>
+<td  width="260" bgcolor='#077A77' valign="top"><font color='#ffffff'><b>  </b></font></td>
+</tr>
+
+<tr>
+<td bgcolor='#eff8f7' valign="top"><font color='#393536'>Ingrese al modo de configuración global.</font></td>
+<td bgcolor='#eff8f7' valign="top"><font face="_typewriter" color='#393536'>S1# <b>configure terminal</b></font></td>
+</tr>
+
+<tr>
+<td bgcolor='#ffffff' valign="top"><font color='#393536'>Ingrese al modo de configuración de interfaz para la SVI.</font></td>
+<td bgcolor='#ffffff' valign="top"><font face="_typewriter" color='#393536'>S1(config)# <b>interface </b><i>id_intrfaz</i></font></td>
+</tr>
+
+<tr>
+<td bgcolor='#eff8f7' valign="top"><font color='#393536'>Establezca el enlace troncal para permitir todas las VLAN.</font></td>
+<td  bgcolor='#eff8f7' valign="top"><font face="_typewriter" color='#393536'>S1(config-if)# <b>no switchport trunk allowed vlan</b></font></td>
+</tr>
+
+<tr>
+<td bgcolor='#ffffff' valign="top"><font color='#393536'>Restablezca la VLAN nativa al valor predeterminado.</font></td>
+<td  bgcolor='#ffffff' valign="top"><font face="_typewriter" color='#393536'>S1(config-if)# <b>no switchport trunk native vlan</b></font></td>
+</tr>
+
+<tr>
+<td bgcolor='#ffffff' valign="top"><font color='#393536'>Vuelva al modo EXEC privilegiado.</font></td>
+<td  bgcolor='#ffffff' valign="top"><font face="_typewriter" color='#393536'>S1(config-if)# <b>end</b></font></td>
+</tr>
+
+</table>]]></text> 
+</component>
+
+<component id="ID_s2_txt01">
+<text><![CDATA[&lt;resultado omitido&gt;]]></text>
+</component>
+
+<component id="ID_s3_txt01">
+<text><![CDATA[&lt;resultado omitido&gt;]]></text>
+</component>
+
+
+
+</textcomponents>

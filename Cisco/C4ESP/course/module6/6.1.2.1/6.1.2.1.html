@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.1.2.1 Solución para el trabajador a distancia</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.1.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Trabajo a distancia</h1>
+        <h2>Requisitos comerciales para los servicios del trabajador a distancia</h2>
+      </div>
+      <div id="content">
+<p>Las organizaciones necesitan redes seguras, confiables y rentables para conectar las sedes centrales, las sucursales y los proveedores. Con el aumento en la cantidad de trabajadores a distancia, hay una creciente necesidad de las empresas de contar con formas seguras, confiables y rentables para conectar a los trabajadores a distancia a los recursos de la organización en los sitios de la LAN corporativa.</p>
+<p></p>
+<p>En la ilustración, se muestran topologías de conexión remota que las redes modernas utilizan para conectar ubicaciones remotas. En algunos casos, las ubicaciones remotas se conectan solo a la oficina central, mientras que en otros casos, las ubicaciones remotas se conectan a varios sitios. La sucursal que se muestra en la ilustración se conecta a la oficina central y los sitios asociados, mientras que el trabajador a distancia tiene una única conexión a la oficina central. </p>
+<p></p>
+<p>Existen tres tecnologías principales de conexión remota para las organizaciones que admiten servicios para trabajadores a distancia:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Conexiones de banda ancha:</b> el término “banda ancha” se refiere a los sistemas de comunicaciones avanzados capaces de proporcionar una transmisión de alta velocidad de los servicios, como datos, voz y video por Internet y otras redes. La transmisión se proporciona mediante una amplia variedad de tecnologías, como DSL, fibra hasta el hogar, sistemas de cable coaxial, tecnología inalámbrica y satelital. Las velocidades de transmisión de datos del servicio de banda ancha generalmente exceden los 200 kb/s en al menos un sentido entre el ISP y el usuario.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>VPN con IPsec:</b> esta es la opción más común para los trabajadores a distancia, combinada con el acceso remoto a través de banda ancha, para establecer una VPN segura mediante Internet pública. Este tipo de conexión WAN ofrece conectividad flexible y escalable. Las conexiones de sitio a sitio pueden proporcionar una conexión remota segura, rápida y confiable a los trabajadores a distancia. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Tecnologías tradicionales de capa 2 de WAN privada:</b> estos tipos de conexión proporcionan muchas soluciones de conexión remota e incluyen tecnologías como Frame Relay, ATM y las líneas arrendadas. La seguridad de estas conexiones depende del proveedor de servicios que las proporciona. </li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

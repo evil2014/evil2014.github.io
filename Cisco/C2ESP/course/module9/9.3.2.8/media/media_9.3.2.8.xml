@@ -1,0 +1,159 @@
+﻿<textcomponents> <!-- slide 1-->
+<component id='ID_inst'>
+<text><![CDATA[<b>Actividad: evaluar instrucciones de ACL extendidas  </b><br/><br/>Haga clic en los botones 2, 3 y 4 para completar la actividad. Haga clic en el botón&nbsp;1 para revisar la topología en cualquier momento.]]></text>
+</component>
+
+<component id='ID_txt01'>
+<text><![CDATA[ACL 103 aplicada a la interfaz Fa0/0 en sentido de entrada]]></text>
+</component> <!-- slide 2-->
+<component id='ID_s1_inst'>
+<text><![CDATA[<b>Actividad: evaluar instrucciones de ACL extendidas  </b><br><br><b>Situación&nbsp;1: </b> consulte la topología en la primera ilustración. En esta situación, se proporciona la ACL&nbsp;103 extendida y las combinaciones de origen y destino en la tabla. Sobre la base de esta información, determine si se permitirán o denegarán los paquetes. Arrastre los botones Permitir o Denegar hacia el campo junto a cada combinación de origen y destino. Haga clic en el botón&nbsp;3 para continuar.]]></text>
+</component>
+
+<component id="ID_s1_txt01">
+<text><![CDATA[<b>Origen  </b>]]></text>
+</component>
+
+<component id="ID_s1_txt02">
+<text><![CDATA[<b>Destino  </b>]]></text>
+</component>
+
+<component id="ID_s1_txt03">
+<text><![CDATA[<b>Permitir o denegar  </b>]]></text>
+</component>
+
+<component id='ID_s1_drag01'>
+<text><![CDATA[<font color="#393536">Permitir</font>]]></text>
+</component>
+
+<component id='ID_s1_drag02'>
+<text><![CDATA[<font color="#393536">Denegar</font>]]></text>
+</component>
+
+<component id='ID_s1_CORRECT_TITLE'>
+<text><![CDATA[<b>Correcto  </b>]]></text>
+</component>
+
+<component id='ID_s1_CORRECT_BODY'>
+<text><![CDATA[Ordenó correctamente los comandos de configuración de ACL. Haga clic en el botón&nbsp;3 para continuar.]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_TITLE'>
+<text><![CDATA[<b>Incorrecto  </b>]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_BODY'>
+<text><![CDATA[No ordenó correctamente los comandos de configuración de ACL. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_s1_CHECK'>
+<text><![CDATA[<b>Verificar  </b>]]></text>
+</component>
+
+<component id='ID_s1_RESET'>
+<text><![CDATA[<b>Restablecer  </b>]]></text>
+</component> <!-- slide 3-->
+<component id='ID_s2_inst'>
+<text><![CDATA[<b>Actividad: evaluar instrucciones de ACL extendidas  </b><br><br><b>Situación&nbsp;2: </b> consulte la topología en la primera ilustración. En esta situación, se proporciona la ACL&nbsp;104 extendida y las combinaciones de origen y destino en la tabla. Sobre la base de esta información, determine si se permitirán o denegarán los paquetes. Arrastre los botones Permitir o Denegar hacia el campo junto a cada combinación de origen y destino. Haga clic en el botón&nbsp;4 para continuar.]]></text>
+</component>
+
+<component id="ID_s2_txt01">
+<text><![CDATA[<b>Origen  </b>]]></text>
+</component>
+
+<component id="ID_s2_txt02">
+<text><![CDATA[<b>Destino  </b>]]></text>
+</component>
+
+<component id="ID_s2_txt03">
+<text><![CDATA[<b>Protocolo  </b>]]></text>
+</component>
+
+<component id="ID_s2_txt04">
+<text><![CDATA[<b>Permitir o denegar  </b>]]></text>
+</component>
+
+<component id='ID_s2_drag01'>
+<text><![CDATA[<font color="#393536">Permitir</font>]]></text>
+</component>
+
+<component id='ID_s2_drag02'>
+<text><![CDATA[<font color="#393536">Denegar</font>]]></text>
+</component>
+
+<component id='ID_s2_CORRECT_TITLE'>
+<text><![CDATA[<b>Correcto  </b>]]></text>
+</component>
+
+<component id='ID_s2_CORRECT_BODY'>
+<text><![CDATA[Ordenó correctamente los comandos de configuración de ACL. Haga clic en el botón&nbsp;4 para continuar. ]]></text>
+</component>
+
+<component id='ID_s2_INCORRECT_TITLE'>
+<text><![CDATA[<b>Incorrecto  </b>]]></text>
+</component>
+
+<component id='ID_s2_INCORRECT_BODY'>
+<text><![CDATA[No ordenó correctamente los comandos de configuración de ACL. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_s2_CHECK'>
+<text><![CDATA[<b>Verificar  </b>]]></text>
+</component>
+
+<component id='ID_s2_RESET'>
+<text><![CDATA[<b>Restablecer  </b>]]></text>
+</component> <!-- slide 4-->
+<component id='ID_s3_inst'>
+<text><![CDATA[<b>Actividad: evaluar instrucciones de ACL extendidas  </b><br><br><b>Situación&nbsp;3: </b> consulte la topología en la primera ilustración. En esta situación, se proporciona la ACL&nbsp;105 extendida y las combinaciones de origen y destino en la tabla. Sobre la base de esta información, determine si se permitirán o denegarán los paquetes. Coloque una marca de verificación en la columna Permitir o denegar apropiada de la tabla.]]></text>
+</component>
+
+<component id="ID_s3_txt01">
+<text><![CDATA[<b>Origen  </b>]]></text>
+</component>
+
+<component id="ID_s3_txt02">
+<text><![CDATA[<b>Destino  </b>]]></text>
+</component>
+
+<component id="ID_s3_txt03">
+<text><![CDATA[<b>Protocolo  </b>]]></text>
+</component>
+
+<component id="ID_s3_txt04">
+<text><![CDATA[<b>Permitir o denegar  </b>]]></text>
+</component>
+
+<component id='ID_s3_drag01'>
+<text><![CDATA[<font color="#393536">Permitir</font>]]></text>
+</component>
+
+<component id='ID_s3_drag02'>
+<text><![CDATA[<font color="#393536">Denegar</font>]]></text>
+</component>
+
+<component id='ID_s3_CORRECT_TITLE'>
+<text><![CDATA[<b>Correcto  </b>]]></text>
+</component>
+
+<component id='ID_s3_CORRECT_BODY'>
+<text><![CDATA[Ordenó correctamente los comandos de configuración de ACL. ]]></text>
+</component>
+
+<component id='ID_s3_INCORRECT_TITLE'>
+<text><![CDATA[<b>Incorrecto  </b>]]></text>
+</component>
+
+<component id='ID_s3_INCORRECT_BODY'>
+<text><![CDATA[No ordenó correctamente los comandos de configuración de ACL. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_s3_CHECK'>
+<text><![CDATA[<b>Verificar  </b>]]></text>
+</component>
+
+<component id='ID_s3_RESET'>
+<text><![CDATA[<b>Restablecer  </b>]]></text>
+</component>
+
+</textcomponents>

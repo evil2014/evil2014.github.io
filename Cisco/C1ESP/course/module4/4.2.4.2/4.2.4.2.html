@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.2.4.2 Tipos de medios inalámbricos</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.2.4.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Medios de red</h1>
+        <h2>Medios inalámbricos</h2>
+      </div>
+      <div id="content">
+<p>Los estándares IEEE y los de la industria de las telecomunicaciones para las comunicaciones inalámbricas de datos abarcan las capas física y de enlace de datos. </p>
+<p></p>
+<p>Los tres estándares comunes de comunicación de datos que se aplican a los medios inalámbricos son los siguientes:</p>
+<p>
+<ul>
+<li>
+<b>Estándar IEEE 802.11:</b> la tecnología de LAN inalámbrica (WLAN), comúnmente denominada “Wi-Fi”, utiliza un sistema por contienda o no determinista con un proceso de acceso múltiple por detección de portadora y prevención de colisiones (CSMA/CA) para acceder a los medios.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Estándar IEEE 802.15:</b> el estándar de red de área personal inalámbrica (WPAN), comúnmente denominado “Bluetooth”, utiliza un proceso de emparejamiento de dispositivos para comunicarse a través de distancias de 1 a 100 m.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Estándar IEEE 802.16:</b> conocido comúnmente como “interoperabilidad mundial para el acceso por microondas” (WiMAX), utiliza una topología de punto a multipunto para proporcionar acceso a servicios de banda ancha inalámbrica.</li>
+</ul>
+</p>
+<p></p>
+<p>En la ilustración, se destacan algunas de las diferencias entre los medios inalámbricos.</p>
+<p></p>
+<p>
+<b>Nota:</b> otras tecnologías inalámbricas, como las comunicaciones satelitales y de datos móviles, también pueden proporcionar conectividad a redes de datos. No obstante, estas tecnologías inalámbricas exceden el ámbito de este capítulo.</p>
+<p></p>
+<p>En cada uno de los ejemplos anteriores, las especificaciones de la capa física se aplican a áreas que incluyen lo siguiente: </p>
+<p>
+<ul>
+<li>Codificación de señales de datos a señales de radio</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Frecuencia e intensidad de la transmisión</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Requisitos de recepción y decodificación de señales</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Diseño y construcción de antenas</li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Nota:</b> Wi-Fi es una marca comercial de Wi-Fi Alliance. La tecnología Wi-Fi se utiliza con productos certificados que pertenecen a los dispositivos WLAN basados en los estándares IEEE 802.11. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

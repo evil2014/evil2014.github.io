@@ -1,0 +1,105 @@
+﻿<textcomponents>
+
+  <component id="ID_s1_title">
+    <text><![CDATA[<b>Vulnerabilidades: tecnología</b>]]></text>
+  </component>
+  <component id="ID_s2_title">
+    <text><![CDATA[<b>Vulnerabilidades: configuración</b>]]></text>
+  </component>
+    <component id="ID_s3_title">
+    <text><![CDATA[<b>Vulnerabilidades: política</b>]]></text>
+  </component> <!--Slide 1-->
+ 
+  <component id='ID_s1_table'>
+	<text><![CDATA[
+				<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4'>
+				<tr class="liner_top">
+					<td colspan='1' bgcolor='#0E6360' class="mtable_top"><font size='1' color='#434321'><span style="color:#DAE17A">.</span></font></td>
+				</tr>				
+				<tr>
+					<td bgcolor='#077A77' valign="top"><font size='11' color='#ffffff'><b>Debilidades de la seguridad de red:</b></font></td>					
+				</tr>
+				<tr>
+					<td bgcolor='#EFF8F7' valign="top"><br/> 					<font size="11" color="#393536"><b>Debilidad del protocolo TCP/IP</b><textformat blockindent="-18"><li>El protocolo de transferencia de hipertexto (HTTP), el protocolo de transferencia de archivos (FTP) y el protocolo de mensajes de control de Internet (ICMP) son inseguros por naturaleza.</li><li>El protocolo simple de administración de red (SNMP) y el protocolo simple de transferencia de correo (SMTP) se relacionan con la estructura intrínsecamente insegura sobre la que se diseñó TCP.</li></textformat><b><br/>Debilidades de los sistemas operativos</b><textformat blockindent="-18"><li>Cada sistema operativo tiene problemas de seguridad que se deben resolver.</li><li>UNIX, Linux, Mac OS, Mac OS X, Windows Server 2012, Windows 7, Windows 8.</li><li>Estos están registrados en los archivos del Computer Emergency Response Team (CERT) disponibles en  <a href="http://www.cert.org" target="_blank"><font color='#00A1E3'><b><u>http://www.cert.org</u></b></font></a>.</li></textformat><br/><b>Debilidades de los equipos de red</b><br/>Existen diversos tipos de equipos de red, como routers, firewalls y switches, que tienen debilidades de seguridad que se deben reconocer y de las cuales se deben proteger a los dispositivos. Sus debilidades incluyen la protección de contraseñas, la falta de autenticación, los protocolos de enrutamiento y los agujeros de firewall.<br/></font></td>
+				</tr>
+			</table>]]>
+		</text>
+</component> <!--Slide 2-->
+  
+<component id='ID_s2_table'>
+<text><![CDATA[
+				<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' 
+
+cellpadding='4'>
+				<tr class="liner_top">
+					<td colspan='2' bgcolor='#0E6360' class="mtable_top"><font size='1' color='#434321'><span style="color:#DAE17A">.</span></font></td>
+				</tr>				
+				<tr>
+					<td bgcolor='#077A77' width='180' valign="top"><font size='11' color='#ffffff'><b>Debilidad en la configuración</b></font></td>
+					<td bgcolor='#077A77'  valign="top"><font size='11' color='#ffffff'><b>Cómo se aprovecha la debilidad</b></font></td>
+				</tr>
+				<tr>
+					<td bgcolor='#EFF8F7' valign="top"><font size='11'color='#393536'>Cuentas de usuario no seguras</font></td>
+					<td bgcolor='#EFF8F7' valign="top"><font size='11' color='#393536'>La información de cuenta de usuario se puede transmitir de manera insegura a través de la red. Esto expone nombres de usuario y contraseñas a los curiosos.</font></td>
+				</tr>
+				<tr>
+					<td bgcolor='#FFFFFF' valign="top"><font size='11' color='#393536'>Cuentas del sistema con contraseñas fáciles de adivinar</font></td>
+					<td bgcolor='#FFFFFF' valign="top"><font size='11' color='#393536'>Este problema común se debe a la elección de contraseñas de usuario deficientes y fáciles de adivinar.</font></td>
+				</tr>	
+				<tr>
+					<td bgcolor='#EFF8F7' valign="top"><font size='11'color='#393536'>Servicios de Internet mal configurados</font></td>
+					<td bgcolor='#EFF8F7' valign="top"><font size='11' color='#393536'>Un problema común es activar JavaScript en los exploradores Web, lo que permite ataques mediante scripts hostiles cuando se accede a sitios no confiables. IIS, FTP, y los servicios terminales también constituyen problemas.</font></td>
+				</tr>
+				<tr>
+					<td bgcolor='#FFFFFF' valign="top"><font size='11' color='#393536'>Configuraciones predeterminadas no seguras dentro de productos</font></td>
+					<td bgcolor='#FFFFFF' valign="top"><font size='11' color='#393536'>Muchos productos tienen configuraciones predeterminadas que habilitan los agujeros de seguridad.</font></td>
+				</tr>
+				<tr>
+					<td bgcolor='#EFF8F7' valign="top"><font size='11'color='#393536'>Equipos de red mal configurados</font></td>
+					<td bgcolor='#EFF8F7' valign="top"><font size='11' color='#393536'>Las malas configuraciones del propio equipo pueden causar problemas de seguridad importantes. Por ejemplo, las listas de acceso mal configuradas, los protocolos de enrutamiento o las cadenas comunitarias SNMP pueden abrir enormes agujeros de seguridad.</font></td>
+				</tr>
+			</table>]]>
+		</text>
+</component> <!--Slide 3-->
+
+<component id='ID_s3_table'>
+<text><![CDATA[
+				<table header='none' bordercolor='#98D3D1' borderwidth='3' shadow='false' shadowcolor='#000000' glow='true' glowcolor='#808080' cellpadding='4'>
+				<tr class="liner_top">
+					<td colspan='2' bgcolor='#0E6360' class="mtable_top"><font size='1' color='#434321'><span style="color:#DAE17A">.</span></font></td>
+				</tr>				
+				<tr>
+					<td bgcolor='#077A77' width='180' valign="top"><font size='11' color='#ffffff'><b>Debilidad en las políticas</b></font></td>
+					<td bgcolor='#077A77'  valign="top"><font size='11' color='#ffffff'><b>Cómo se aprovecha la debilidad</b></font></td>
+					
+				</tr>
+				<tr>
+					<td bgcolor='#EFF8F7' valign="top"><font size='11'color='#393536'>Falta de políticas de seguridad por escrito</font></td>
+					<td bgcolor='#EFF8F7' valign="top"><font size='11' color='#393536'>Una política no escrita no se puede aplicar sistemáticamente ni se puede hacer cumplir.</font></td>
+				</tr>
+				<tr>
+					<td bgcolor='#FFFFFF' valign="top"><font size='11' color='#393536'>Política</font></td>
+					<td bgcolor='#FFFFFF' valign="top"><font size='11' color='#393536'>Las batallas políticas y las luchas territoriales pueden dificultar la implementación de una política de seguridad sistemática.</font></td>
+				</tr>	
+				<tr>
+					<td bgcolor='#EFF8F7' valign="top"><font size='11'color='#393536'>Falta de continuidad de autenticación</font></td>
+					<td bgcolor='#EFF8F7' valign="top"><font size='11' color='#393536'>Las contraseñas mal elegidas, fáciles de decodificar o las contraseñas predeterminadas pueden permitir accesos no autorizados a la red.</font></td>
+				</tr>
+				<tr>
+					<td bgcolor='#FFFFFF' valign="top"><font size='11' color='#393536'>Controles de acceso lógico no aplicados</font></td>
+					<td bgcolor='#FFFFFF' valign="top"><font size='11' color='#393536'>El monitoreo y la auditoría inadecuados permiten que los ataques y el uso no autorizado continúen. Esto hace que la empresa desperdicie recursos. Esto puede dar origen a acciones legales o despidos de los técnicos de TI, de la administración de TI o, incluso, de los directores de la compañía, que permiten que se continúe trabajando en condiciones poco seguras.</font></td>
+				</tr>
+				<tr>
+					<td bgcolor='#EFF8F7' valign="top"><font size='11'color='#393536'>La instalación de software y hardware y los cambios no respetan la política</font></td>
+					<td bgcolor='#EFF8F7' valign="top"><font size='11' color='#393536'>Los cambios no autorizados que se realizan en la topología de la red o en la instalación de aplicaciones no aprobadas crean agujeros de seguridad.</font></td>	
+				</tr>
+			    <tr>
+					<td bgcolor='#FFFFFF' valign="top"><font size='11' color='#393536'>No existe plan de recuperación de desastres</font></td>
+					<td bgcolor='#FFFFFF' valign="top"><font size='11' color='#393536'>La falta del plan de recuperación de desastres produce caos, pánico y confusión cuando alguien ataca la empresa.</font></td>
+				</tr>
+			</table>]]>
+		</text>
+</component>
+
+
+</textcomponents>

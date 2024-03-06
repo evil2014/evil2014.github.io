@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.2.1.2 Características de los protocolos de árbol de expansión</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.2.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Variedades de protocolos de árbol de expansión</h1>
+        <h2>Descripción general</h2>
+      </div>
+      <div id="content">
+<p>A continuación, se detallan características de los diversos protocolos de árbol de expansión. Las palabras en cursiva indican si ese protocolo de árbol de expansión en particular es exclusivo de Cisco o una implementación del estándar IEEE.</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>STP:</b> asume una instancia de árbol de expansión <i>IEEE 802.1D</i> para toda la red enlazada, independientemente de la cantidad de VLAN. Debido a que solo hay una instancia, los requisitos de CPU y de memoria para esta versión son menos que para el resto de los protocolos. Sin embargo, dado que solo hay una instancia, también hay solo un puente raíz y un árbol. El tráfico para todas las VLAN fluye por la misma ruta, lo que puede provocar flujos de tráfico poco óptimos. Debido a las limitaciones de 802.1D, la convergencia de esta versión es lenta.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>PVST+:</b> es una mejora de Cisco de STP que proporciona una instancia diferente de la implementación de Cisco de 802.1D para cada VLAN que se configura en la red. La instancia aparte admite PortFast, UplinkFast, BackboneFast, la protección BPDU, el filtro BPDU, la protección de raíz y la protección de bucle. La creación de una instancia para cada VLAN aumenta los requisitos de CPU y de memoria, pero admite los puentes raíz por VLAN. Este diseño permite la optimización del árbol de expansión para el tráfico de cada VLAN. La convergencia de esta versión es similar a la convergencia de 802.1D. Sin embargo, la convergencia es por VLAN.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>RSTP</b> (o <i>IEEE 802.1w</i>): es una evolución del árbol de expansión que proporciona una convergencia más rápida que la implementación original de 802.1D. Esta versión resuelve varios problemas de convergencia, pero dado que aún proporciona una única instancia de STP, no resuelve los problemas de flujo de tráfico poco óptimo. Para admitir una convergencia más rápida, los requisitos de uso de CPU y de memoria de esta versión son apenas más exigentes que los de CTS, pero menos que los de RSTP+.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>PVST+ rápido:</b> es una mejora de Cisco de RSTP que utiliza PVST+. Proporciona una instancia de 802.1w distinta por VLAN. La instancia aparte admite PortFast, la protección BPDU, el filtro BPDU, la protección de raíz y la protección de bucle. Esta versión resuelve tanto los problemas de convergencia como los de flujo de tráfico poco óptimo. Sin embargo, esta versión tiene los requisitos de CPU y de memoria más exigentes. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>MSTP:</b> es el estándar <i>IEEE 802.1s</i>, inspirado en la anterior implementación de MISTP, exclusivo de Cisco. Para reducir el número de instancias de STP requeridas, MSTP asigna varias VLAN con los mismos requisitos de flujo de tráfico en la misma instancia de árbol de expansión. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>MST:</b> es la implementación de Cisco de MSTP, que proporciona hasta 16 instancias de RSTP (802.1w) y combina muchas VLAN con la misma topología física y lógica en una instancia de RSTP común. Cada instancia admite PortFast, protección BPDU, filtro BPDU, protección de raíz y protección de bucle. Los requisitos de CPU y de memoria de esta versión son menos que los de PVST+ rápido pero más que los de RSTP.</li>
+</ul>
+</p>
+<p></p>
+<p>El modo de árbol de expansión predeterminado para los switches Cisco Catalyst es PVST+, que está habilitado en todos los puertos. PVST+ tiene una convergencia mucho más lenta que PVST+ rápido después de un cambio en la topología.</p>
+<p></p>
+<p>
+<b>Nota:</b> es importante distinguir entre el estándar IEEE 802.1D-1998 antiguo (y anteriores) y el estándar IEEE 802.1D-2004. IEEE 802.1D-2004 incorpora la funcionalidad de RSTP, mientras que IEEE 802.1D-1998 se refiere a la implementación original del algoritmo de árbol de expansión. Los switches Cisco más modernos que ejecutan versiones más actuales del IOS, como los switches Catalyst 2960 que poseen el IOS 15.0, ejecutan PVST+ de manera predeterminada pero incorporan muchas especificaciones de IEEE 802.1D-1998 en este modo (como los puertos alternativos en lugar de los puertos no designados de antes). Sin embargo, para ejecutar el árbol de expansión rápido en ese tipo de switch, todavía se lo debe configurar explícitamente para el modo de árbol de expansión rápido.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

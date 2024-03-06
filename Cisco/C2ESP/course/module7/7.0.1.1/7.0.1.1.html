@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.0.1.1 Introducción</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.0.1.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Routing dinámico</h1>
+        <h2>Introducción</h2>
+      </div>
+      <div id="content">
+<p>Las redes de datos que usamos en nuestras vidas cotidianas para aprender, jugar y trabajar varían desde pequeñas redes locales hasta grandes internetworks globales. En el hogar, un usuario puede tener un router y dos o más computadoras. En el trabajo, una organización probablemente tenga varios routers y switches para atender las necesidades de comunicación de datos de cientos o hasta miles de computadoras. </p>
+<p></p>
+<p>Los routers reenvían paquetes mediante el uso de la información de la tabla de routing. Los routers pueden descubrir las rutas hacia las redes remotas de dos maneras: de forma estática y de forma dinámica. </p>
+<p></p>
+<p>En una red grande con muchas redes y subredes, la configuración y el mantenimiento de rutas estáticas entre dichas redes conllevan una sobrecarga administrativa y operativa. Esta sobrecarga administrativa es especialmente tediosa cuando se producen cambios en la red, como un enlace fuera de servicio o la implementación de una nueva subred. Implementar protocolos de routing dinámico puede aliviar la carga de las tareas de configuración y de mantenimiento, además de proporcionar escalabilidad a la red. </p>
+<p></p>
+<p>En este capítulo, se presentan los protocolos de routing dinámico, se exploran los beneficios de utilizar esta clase de protocolos, la forma en que se clasifican los distintos protocolos de routing y las métricas que utilizan los protocolos de routing para determinar la mejor ruta para el tráfico de la red. Entre otros temas que se analizan en este capítulo, se encuentran las características de los protocolos de routing dinámico y la forma en que se diferencian los distintos protocolos de routing. Los profesionales de red deben comprender cuáles son los diferentes protocolos de routing disponibles a fin de decidir fundadamente cuándo utilizar routing dinámico o estático. También necesitan saber cuál es el protocolo de routing dinámico más adecuado en un entorno de red determinado. </p>
+<p>
+<br/>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

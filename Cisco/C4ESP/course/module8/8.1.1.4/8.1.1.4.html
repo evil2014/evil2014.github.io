@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.1.1.4 Marca de hora del servicio</title>
+    <!--  -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.1.1.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Syslog</h1>
+        <h2>Funcionamiento de syslog</h2>
+      </div>
+      <div id="content">
+<p>Los mensajes de registro se pueden marcar con la hora, y se puede establecer la dirección de origen de los mensajes de syslog. Esto mejora la depuración y la administración en tiempo real.</p>
+<p></p>
+<p>Cuando se introduce el comando del modo de configuración global <span class="cmd"><b>service timestamps log uptime</b></span>, se muestra la cantidad de tiempo que transcurrió desde la última vez que se arrancó el switch en los eventos registrados. Una versión más útil de este comando aplica la palabra clave <span class="cmd"><b>datetime</b></span> en lugar de la palabra clave <span class="cmd"><b>uptime</b></span>; esto hace que cada evento registrado muestre la fecha y la hora asociadas al evento. </p>
+<p></p>
+<p>Cuando se utiliza la palabra clave <span class="cmd"><b>datetime</b></span>, se debe establecer el reloj en el dispositivo de red. Esto se puede lograr de dos maneras: </p>
+<p>
+<ul>
+<li>Configuración manual mediante el comando <span class="cmd"><b>clock set</b></span></li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Configuración automática mediante el protocolo NTP</li>
+</ul>
+</p>
+<p></p>
+<p>Recuerde que NTP es un protocolo que se utiliza para permitir que los dispositivos de red sincronicen la configuración de la hora con un servidor NTP. </p>
+<p></p>
+<p>Para permitir que un servidor horario NTP sincronice el reloj del software, use el comando <span class="cmd"><b>ntp server </b></span><span class="cmd"><i>dirección-IP</i></span> del modo de configuración global. En la ilustración, se muestra un ejemplo de configuración. El R1 está configurado como cliente NTP, mientras que el router R2 funciona como servidor NTP autoritativo. Un dispositivo de red se puede configurar como servidor NTP, para que los otros dispositivos sincronicen fuera de su hora, o como cliente NTP.</p>
+<p></p>
+<p>Para el resto del capítulo, se supone que se estableció el reloj y se configuró el comando <span class="cmd"><b>service timestamps log datetime</b></span> en todos los dispositivos.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

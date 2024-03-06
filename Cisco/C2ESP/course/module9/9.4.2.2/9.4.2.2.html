@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.4.2.2 Resolución de problemas de errores comunes de ACL, ejemplo 2</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.4.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Resolución de problemas de ACL</h1>
+        <h2>Errores comunes de ACL </h2>
+      </div>
+      <div id="content">
+<p>
+<b>Ejemplo de error 2</b>
+</p>
+<p></p>
+<p>En la ilustración, la red 192.168.10.0/24 no puede utilizar TFTP para conectarse a la red 192.168.30.0/24. </p>
+<p></p>
+<p>
+<b>Solución:</b> la red 192.168.10.0/24 no puede utilizar TFTP para conectarse a la red 192.168.30.0/24, porque TFTP utiliza el protocolo de transporte UDP. La instrucción 30 en la lista de acceso 120 permite todo el resto del tráfico TCP. Sin embargo, debido a que TFTP utiliza UDP en lugar de TCP, se deniega implícitamente. Recuerde que la instrucción deny any implícita no aparece en el resultado del comando <span class="cmd"><b>show access-lists</b></span> y, por lo tanto, las coincidencias no se muestran.</p>
+<p></p>
+<p>La instrucción 30 debería ser <span class="cmd"><b>ip any any</b></span>.</p>
+<p></p>
+<p>Esta ACL funciona si se aplica a G0/0 del R1, a S0/0/1 del R3 o a S0/0/0 del R2 en sentido de entrada. Sin embargo, según la regla que indica colocar las ACL extendidas más cerca del origen, la mejor opción es colocarla en sentido de entrada en G0/0 del R1, porque permite que el tráfico no deseado se filtre sin cruzar la infraestructura de la red.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

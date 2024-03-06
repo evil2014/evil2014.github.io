@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.1.1.4 Jerarquía en las redes conmutadas sin fronteras</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.1.1.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Diseño de la LAN</h1>
+        <h2>Redes convergentes</h2>
+      </div>
+      <div id="content">
+<p>La creación de una red conmutada sin fronteras requiere el uso de principios de diseño de red sólidos para asegurar la máxima disponibilidad, flexibilidad, seguridad y facilidad de administración. Las redes conmutadas sin fronteras deben funcionar según los requisitos actuales y los servicios y las tecnologías que se requerirán en el futuro. Las pautas de diseño de las redes conmutadas sin fronteras se basan en los siguientes principios:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Jerárquico:</b> facilita la comprensión de la función de cada dispositivo en cada nivel, simplifica la implementación, el funcionamiento y la administración, y reduce los dominios de error en cada nivel.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Modularidad:</b> permite la expansión de la red y la habilitación de servicios integrados sin inconvenientes y a petición.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Resistencia:</b> satisface las expectativas del usuario al mantener la red siempre activa.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Flexibilidad:</b> permite compartir la carga de tráfico de forma inteligente mediante el uso de todos los recursos de red.</li>
+</ul>
+</p>
+<p></p>
+<p>Estos no son principios independientes. Es fundamental comprender cómo encaja cada principio en el contexto de los demás. El diseño jerárquico de una red conmutada sin fronteras sienta una base que permite que los diseñadores de red superpongan las características de seguridad, movilidad y comunicación unificada. Los modelos de capas de tres y dos niveles, como los que se muestran en la ilustración, son marcos de diseño jerárquico doblemente comprobados para las redes de campus.</p>
+<p></p>
+<p>Las tres capas fundamentales dentro de estos diseños con niveles son las capas de acceso, de distribución y de núcleo. Cada capa se puede considerar como un módulo estructurado bien definido, con funciones y roles específicos en la red de campus. La introducción de la modularidad en el diseño jerárquico de campus asegura aún más que la red de campus mantenga la resistencia y la flexibilidad suficientes para proporcionar servicios de red fundamentales. La modularidad también permite el crecimiento y los cambios que ocurren con el tiempo.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

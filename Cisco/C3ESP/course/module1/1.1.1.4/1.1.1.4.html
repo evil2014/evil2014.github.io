@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.1.1.4 Arquitectura empresarial de Cisco</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.1.1.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Implementación de un diseño de red</h1>
+        <h2>Diseño jerárquico de la red</h2>
+      </div>
+      <div id="content">
+<p>La arquitectura empresarial de Cisco divide la red en componentes funcionales, al tiempo que mantiene las capas de núcleo, de distribución y de acceso. Como se muestra en la ilustración, los principales módulos de la arquitectura empresarial de Cisco incluyen lo siguiente:</p>
+<p>
+<ul>
+<li>Campus empresarial </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Perímetro empresarial </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Perímetro del proveedor de servicios </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Remoto</li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Campus empresarial</b>
+</p>
+<p>El módulo de campus empresarial está compuesto por toda la infraestructura del campus e incluye las capas de acceso, de distribución y de núcleo. El módulo de capa de acceso incluye switches de capa 2 o de capa 3 para proporcionar la densidad de puertos requerida. En este módulo, se produce la implementación de las VLAN y los enlaces troncales a la capa de distribución del edificio. La redundancia a los switches de distribución del edificio es importante. El módulo de capa de distribución agrega acceso al edificio mediante dispositivos de capa 3. En el módulo de capa de distribución, se llevan acabo el routing, el control de acceso y la QoS. El módulo de capa de núcleo proporciona una interconectividad de alta velocidad entre los módulos de la capa de distribución, las granjas de servidores de los centros de datos y el perímetro empresarial. En este módulo, el eje central del diseño es la redundancia, la convergencia rápida y la tolerancia a fallas.</p>
+<p></p>
+<p>Además de estos módulos, el campus empresarial puede incluir otros submódulos, como los siguientes: </p>
+<p>
+<ul>
+<li>
+<b>Módulo de centro de datos y granja de servidores:</b> esta área proporciona conectividad de alta velocidad y protección para los servidores. Es de suma importancia proporcionar seguridad, redundancia y tolerancia a fallas. Los sistemas de administración de red controlan el rendimiento mediante el monitoreo de la disponibilidad de los dispositivos y la red. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Módulo de servicios:</b> esta área proporciona acceso a todos los servicios, como los servicios de telefonía IP, los servicios de controlador inalámbrico y los servicios unificados. </li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Perímetro empresarial </b>
+</p>
+<p>El módulo de perímetro empresarial está compuesto por los módulos de Internet, VPN y WAN que conectan la empresa a la red del proveedor de servicios. Este módulo extiende los servicios de la empresa a sitios remotos y permite que la empresa utilice recursos de Internet y de socios. Proporciona QoS, refuerzo de políticas, niveles de servicio y seguridad.</p>
+<p></p>
+<p>
+<b>Perímetro del proveedor de servicios </b>
+</p>
+<p>El módulo de perímetro del proveedor de servicios proporciona servicios de Internet, de red pública de telefonía conmutada (PSTN) y WAN.</p>
+<p></p>
+<p>El modelo de red empresarial compuesta (ECNM) pasa a través de un dispositivo de extremo. Este es el momento en el que los paquetes se pueden analizar y se puede tomar la decisión de si se debe permitir el ingreso de estos a la red empresarial. Los sistemas de detección de intrusiones (IDS) y los sistemas de prevención de intrusiones (IPS) también se pueden configurar en el perímetro empresarial para brindar protección contra actividades malintencionadas.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

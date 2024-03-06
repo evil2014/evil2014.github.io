@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.1.2.2 El plan: asignación de direcciones</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.1.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>División de una red IPv4 en subredes</h1>
+        <h2>La división de IP en subredes es fundamental</h2>
+      </div>
+      <div id="content">
+<p>Cree estándares para la asignación de direcciones IP dentro de cada rango de subred. Por ejemplo: </p>
+<p>
+<ul>
+<li>Se asignarán direcciones IP estáticas a las impresoras y los servidores. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>El usuario recibirá direcciones IP de los servidores de DHCP con subredes /24.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>A los routers se les asignan las primeras direcciones de host disponibles en el rango.</li>
+</ul>
+</p>
+<p></p>
+<p>Dos factores muy importantes que conducen a la determinación de cuál es el bloque de direcciones privadas que se necesita son la cantidad de subredes requeridas y la cantidad máxima de hosts necesarios por subred. Cada uno de estos bloques de direcciones le permitirá asignar adecuadamente los hosts sobre la base del tamaño dado de una red y los hosts que requiere en la actualidad y los que requerirá en el futuro cercano. Los requisitos de espacio IP determinan el rango o los rangos de hosts que se deben implementar. </p>
+<p></p>
+<p>En los próximos ejemplos, verá una división en subredes basada en los bloques de direcciones que tienen máscaras de subred 255.0.0.0, 255.255.0.0 y 255.255.255.0.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

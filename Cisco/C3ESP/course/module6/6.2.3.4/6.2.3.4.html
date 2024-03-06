@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.2.3.4 Verificación de LSDB de OSPF de diversas áreas</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.2.3.4_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de OSPF de diversas áreas</h1>
+        <h2>Verificación de OSPF de diversas áreas</h2>
+      </div>
+      <div id="content">
+<p>Utilice el comando <span class="cmd"><b>show ip ospf database</b></span> para verificar el contenido de la LSDB.</p>
+<p></p>
+<p>Existen muchas opciones disponibles con el comando <span class="cmd"><b>show ip ospf database</b></span>.</p>
+<p></p>
+<p>Por ejemplo, en la figura 1, se muestra el contenido de la LSDB del R1. Observe que el R1 tiene entradas para las áreas 1 y 0, dado que los ABR deben mantener una LSDB distinta para cada área a la que pertenecen. En el resultado, <span class="cmd">Router Link States</span> en el área 0 identifica tres routers. La sección <span class="cmd">Summary Net Link States</span> identifica las redes descubiertas a partir de otras áreas y el vecino que anunció la red.</p>
+<p></p>
+<p>Utilice el verificador de sintaxis de la figura 2 para verificar la LSDB del R2 y el R3 con el comando <span class="cmd"><b>show ip ospf database</b></span>. El R2 solo tiene interfaces en el área 0; por lo tanto, solo se requiere una LSDB. Al igual que el R1, el R3 contiene dos LSDB.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>9.2.2.3 Edición de ACL estándar con nombre</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_9.2.2.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>ACL de IPv4 estándar </h1>
+        <h2>Modificación de ACL de IPv4</h2>
+      </div>
+      <div id="content">
+<p>En un ejemplo anterior, se utilizaron los números de secuencia para editar una ACL estándar numerada. Mediante una referencia a los números de secuencia de la instrucción, se pueden insertar o eliminar fácilmente instrucciones individuales. Este método también se puede utilizar para editar las ACL estándar con nombre.</p>
+<p></p>
+<p>En la ilustración, se muestra un ejemplo de inserción de una línea en una ACL con nombre. </p>
+<p></p>
+<p>
+<ul>
+<li>En el primer resultado del comando <span class="cmd"><b>show</b></span>, se puede ver que la ACL con el nombre NO_ACCESS tiene dos líneas numeradas que indican las reglas de acceso para una estación de trabajo con la dirección IPv4 192.168.11.10. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>El comando <span class="cmd"><b>ip access-list standard</b></span> se utiliza para configurar las ACL con nombre. Se pueden insertar o eliminar instrucciones desde el modo de configuración de listas de acceso con nombre. El comando <span class="cmd"><b>no </b></span><span class="cmd"><i>número-secuencia</i></span> se utiliza para eliminar instrucciones individuales.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Para agregar una instrucción para denegar otra estación de trabajo, se debe insertar una línea numerada. En el ejemplo, se agrega la estación de trabajo con la dirección IPv4 192.168.11.11 mediante el nuevo número de secuencia 15. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Mediante el último resultado del comando <span class="cmd"><b>show</b></span>, se verifica que la nueva estación de trabajo ahora tiene el acceso denegado.</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

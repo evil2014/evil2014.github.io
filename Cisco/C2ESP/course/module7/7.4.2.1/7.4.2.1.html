@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.4.2.1 Proceso del enrutamiento de link-state</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.4.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Routing dinámico de estado de enlace</h1>
+        <h2>Actualizaciones de estado de enlace</h2>
+      </div>
+      <div id="content">
+<p>Por lo tanto, ¿de qué manera exactamente funciona un protocolo de enrutamiento de link-state? Con los protocolos de enrutamiento de link-state, un enlace es una interfaz en un router. La información acerca del estado de dichos enlaces se conoce como estados de enlace.</p>
+<p></p>
+<p>Analice la topología en la ilustración. Todos los routers de la topología realizarán el siguiente proceso genérico de routing de estado de enlace para alcanzar un estado de convergencia:</p>
+<p></p>
+<p>1. Cada router obtiene información acerca de sus propios enlaces y sus propias redes conectadas directamente. Esto se realiza al detectar que una interfaz se encuentra en el estado activado.</p>
+<p>2. Cada router es responsable de reunirse con sus vecinos en redes conectadas directamente. Los routers de estado de enlace lo hacen mediante el intercambio paquetes de saludo con otros routers de estado de enlace en redes conectadas directamente.</p>
+<p>3. Cada router crea un Paquete de link-state (LSP) que incluye el estado de cada enlace directamente conectado. Esto se realiza registrando toda la información pertinente acerca de cada vecino, que incluye el ID de vecino, el tipo de enlace y el ancho de banda.</p>
+<p>4. Cada router satura a todos los vecinos con el LSP. Estos vecinos almacenan todos los LSP recibidos en una base de datos. A continuación, saturan a sus vecinos con los LSP hasta que todos los routers del área hayan recibido los LSP. Cada router almacena una copia de cada LSP recibido por parte de sus vecinos en una base de datos local.</p>
+<p>5. Cada router utiliza la base de datos para construir un mapa completo de la topología y calcula el mejor camino hacia cada red de destino. En forma similar a tener un mapa de carretera, el router tiene ahora un mapa completo de todos los destinos de la topología y las rutas para alcanzarlos. El algoritmo SPF se utiliza para construir el mapa de la topología y determinar el mejor camino hacia cada red.</p>
+<p></p>
+<p>
+<b>Nota:</b> este proceso es el mismo para OSPF para IPv4 e IPv6. En los ejemplos de esta sección, se hará referencia a OSPF para IPv4.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

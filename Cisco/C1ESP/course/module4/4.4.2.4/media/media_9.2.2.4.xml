@@ -1,0 +1,124 @@
+﻿<textcomponents> <!-- slide 1 -->
+<component id="ID_s1_title">
+<text><![CDATA[<b>Conexión punto a punto</b>]]></text> 
+</component>
+
+<component id="ID_s1_bubble01">
+<text><![CDATA[Solo usted y yo nos comunicamos por esta línea. Podemos hablar en cualquier momento.]]></text> 
+</component>
+
+<component id="ID_s1_bubble02">
+<text><![CDATA[Solo usted y yo nos comunicamos por esta línea. Podemos hablar en cualquier momento.]]></text> 
+</component> <!-- slide 2 -->
+<component id="ID_s2_title">
+<text><![CDATA[<b>Comunicación Half Duplex</b>]]></text>
+</component>
+
+<component id="ID_s2_txt01">
+<text><![CDATA[Servidor]]></text>
+</component>
+
+<component id="ID_s2_txt02">
+<text><![CDATA[Switch]]></text>
+</component>
+
+<component id="ID_s2_txt03">
+<text><![CDATA[Recibir]]></text>
+</component>
+
+<component id="ID_s2_txt04">
+<text><![CDATA[Enviar]]></text>
+</component> <!-- slide 3 -->
+<component id="ID_s3_title">
+<text><![CDATA[<b>Comunicación Full Duplex</b>]]></text>
+</component>
+
+<component id="ID_s3_txt01">
+<text><![CDATA[Servidor]]></text>
+</component>
+
+<component id="ID_s3_txt02">
+<text><![CDATA[Switch]]></text>
+</component>
+
+<component id="ID_s3_txt03">
+<text><![CDATA[Enviar]]></text>
+</component>
+
+<component id="ID_s3_txt04">
+<text><![CDATA[Recibir]]></text>
+</component> <!-- controller animation slide 2 -->
+
+<component id="end1">
+	<text><![CDATA[Finalizar]]></text>
+</component>
+
+<component id="fforward1">
+	<text><![CDATA[Adelantar]]></text>
+</component>
+
+<component id="pause1">
+	<text><![CDATA[Pausa]]></text>
+</component>
+
+<component id="play1">
+	<text><![CDATA[Reproducir]]></text>
+</component>
+
+<component id="rewind1">
+	<text><![CDATA[Regresar]]></text>
+</component>
+
+<component id="start1">
+	<text><![CDATA[Inicio]]></text>
+</component> <!-- controller animation slide 3 -->
+
+<component id="end2">
+	<text><![CDATA[Finalizar]]></text>
+</component>
+
+<component id="fforward2">
+	<text><![CDATA[Adelantar]]></text>
+</component>
+
+<component id="pause2">
+	<text><![CDATA[Pausa]]></text>
+</component>
+
+<component id="play2">
+	<text><![CDATA[Reproducir]]></text>
+</component>
+
+<component id="rewind2">
+	<text><![CDATA[Regresar]]></text>
+</component>
+
+<component id="start2">
+	<text><![CDATA[Inicio]]></text>
+</component>
+
+<component id="end">
+	<text><![CDATA[Finalizar]]></text>
+</component>
+
+<component id="fforward">
+	<text><![CDATA[Adelantar]]></text>
+</component>
+
+<component id="pause">
+	<text><![CDATA[Pausa]]></text>
+</component>
+
+<component id="play">
+	<text><![CDATA[Reproducir]]></text>
+</component>
+
+<component id="rewind">
+	<text><![CDATA[Regresar]]></text>
+</component>
+
+<component id="start">
+	<text><![CDATA[Inicio]]></text>
+</component>
+
+</textcomponents>

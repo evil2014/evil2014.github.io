@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.2.3.5 Tecnología VPN</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.2.3.5_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Elección de una tecnología WAN</h1>
+        <h2>Infraestructuras WAN públicas</h2>
+      </div>
+      <div id="content">
+<p>Cuando un trabajador a distancia o un trabajador en una oficina remota utilizan servicios de banda ancha para acceder a la WAN corporativa a través de Internet, se generan riesgos de seguridad. Para abordar las cuestiones de seguridad, los servicios de banda ancha proporcionan capacidades para usar conexiones VPN a un servidor VPN, que por lo general se encuentra en el sitio corporativo. </p>
+<p></p>
+<p>Una VPN es una conexión cifrada entre redes privadas a través de una red pública, como Internet. En vez de usar una conexión dedicada de capa 2, como una línea arrendada, una VPN usa conexiones virtuales llamadas “túneles VPN”, que se enrutan a través de Internet desde la red privada de la empresa hasta el host del sitio o del empleado remoto. </p>
+<p></p>
+<p>Los beneficios de VPN incluyen lo siguiente:</p>
+<p>
+<ul>
+<li>
+<b>Ahorro de costos:</b> las VPN permiten que las organizaciones usen Internet global para conectar oficinas y usuarios remotos al sitio corporativo principal, lo que elimina la necesidad de enlaces WAN dedicados y bancos de módems costosos.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Seguridad:</b> las VPN proporcionan el nivel máximo de seguridad mediante dos protocolos avanzados de cifrado y autenticación que protegen los datos del acceso no autorizado. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Escalabilidad:</b> debido a que las VPN usan la infraestructura de Internet en los ISP y los dispositivos, es fácil agregar nuevos usuarios. Las empresas pueden incrementar ampliamente la capacidad, sin agregar una infraestructura significativa.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Compatibilidad con la tecnología de banda ancha:</b> los proveedores de servicios de banda ancha, como DSL y cable, admiten la tecnología VPN, de modo que los trabajadores móviles y los empleados a distancia pueden aprovechar el servicio de Internet de alta velocidad de sus hogares para acceder a las redes corporativas. Las conexiones de banda ancha de alta velocidad para uso empresarial también pueden proporcionar una solución rentable para la conexión de oficinas remotas.</li>
+</ul>
+</p>
+<p></p>
+<p>Existen dos tipos de acceso a VPN:</p>
+<p>
+<ul>
+<li>
+<b>VPN de sitio a sitio:</b> las VPN de sitio a sitio conectan redes enteras entre sí; por ejemplo, pueden conectar la red de una sucursal a la red de la oficina central de la empresa, como se muestra en la figura 1. Cada sitio cuenta con un gateway VPN, como un router, un firewall, un concentrador VPN o un dispositivo de seguridad. En la ilustración, una sucursal remota utiliza una VPN de sitio a sitio para conectarse a la oficina central de la empresa. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>VPN de acceso remoto:</b> las VPN de acceso remoto permiten que los hosts individuales, como los empleados a distancia, los usuarios móviles y los consumidores de extranets, accedan a la red de una empresa de manera segura a través de Internet. Por lo general, cada host (trabajador a distancia 1 y trabajador a distancia 2) tiene cargado un software de cliente VPN o usa un cliente basado en Web, como se muestra en la figura 2. </li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

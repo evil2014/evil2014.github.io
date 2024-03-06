@@ -1,0 +1,33 @@
+﻿<textcomponents> <!-- Slide 1-->
+	<component id="ID_s1_title">
+	<text><![CDATA[<b>Asignación estática de una dirección IP</b>]]></text>
+	</component>
+
+	<component id="ID_txt01">
+		<text><![CDATA[Para realizar asignaciones estáticas, introduzca las siguientes direcciones:]]></text> 
+	</component>
+	<component id="ID_txt02">
+		<text><![CDATA[Dirección IP]]></text> 
+	</component>
+	<component id="ID_txt03">
+		<text><![CDATA[Máscara de subred]]></text> 
+	</component>
+	<component id="ID_txt04">
+		<text><![CDATA[Gateway predeterminado]]></text> 
+	</component>
+	<component id="transcript">
+		<text><![CDATA[<b>transcript goes here</b>]]></text> 
+	</component> <!-- Slide 2-->
+
+	<component id="ID_s2_title">
+		<text><![CDATA[<b>Asignación dinámica de una dirección IP</b>]]></text>
+	</component>
+
+	<component id="ID_s2_txt01">
+		<text><![CDATA[Asignación de direcciones dinámicas]]></text>
+	</component> 
+
+	<component id="ID_s2_txt02">
+		<text><![CDATA[Esta propiedad configura el dispositivo para obtener una dirección IP automáticamente.]]></text>
+	</component> 
+</textcomponents>

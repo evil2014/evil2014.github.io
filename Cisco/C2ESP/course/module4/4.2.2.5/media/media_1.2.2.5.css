@@ -1,0 +1,18 @@
+
+/*   load the main media CSS file    */
+
+@import url('../../../common/styles/media2.css');
+
+html, body {
+	margin:0;
+	height:100%;
+}
+#flashContent {
+	width:98%;
+	height:98%;
+}
+.new{display:block !important;margin-top:10px;}
+#dnd_1_drag_2_0 div, #dnd_2_drag_2_0 div, #dnd_3_drag_2_0 div, #dnd_4_drag_2_0 div{
+	left: 5px !important;
+	width: 145.95px !important;
+}

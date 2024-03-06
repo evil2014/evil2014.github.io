@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html class="module-index" dir="ltr">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta charset="UTF-8"/>
+    <title>Introducción a redes</title>
+    <link rel="stylesheet" type="text/css" href="../common-ext/styles/index.css"/>
+    <script type="text/javascript" src="../common-ext/scripts/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="../common-ext/scripts/index.js"></script>
+  </head>
+  <body>
+    <div id="header">
+      <div id="header-logo" title="Cisco Systems, Inc. - Cisco Networking Academy"></div>
+      <a id="home-btn" href="../../index.html" title="Inicio">Inicio</a>
+      <h1>Capítulo 8: Asignación de direcciones IP <span id="title"></span></h1>
+    </div>
+    <div id="nav">
+      <ul class="sections">
+        <li>
+          <span class="icon"></span>
+          <span class="section-title">8.0 Asignación de direcciones IP</span>
+          <ul class="topics">
+            <li>
+              <span class="icon"></span>
+              <span class="topic-title">8.0.1 Introducción</span>
+              <ul class="pages">
+                <li>
+                  <a data-ident="8.0.1.1" class="page-title" href="8.0.1.1/8.0.1.1.html" target="frame">8.0.1.1 Introducción</a>
+                </li>
+                <li>
+                  <a data-ident="8.0.1.2" class="page-title" href="8.0.1.2/8.0.1.2.html" target="frame">8.0.1.2 Actividad: Internet de todo (IdT)</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <span class="icon"></span>
+          <span class="section-title">8.1 Direcciones de red IPv4</span>
+          <ul class="topics">
+            <li>
+              <span class="icon"></span>
+              <span class="topic-title">8.1.1 Estructura de la dirección IPv4</span>
+              <ul class="pages">
+                <li>
+                  <a data-ident="8.1.1.1" class="page-title" href="8.1.1.1/8.1.1.1.html" target="frame">8.1.1.1 Notación binaria</a>
+                </li>
+                <li>
+                  <a data-ident="8.1.1.2" class="page-title" href="8.1.1.2/8.1.1.2.html" target="frame">8.1.1.2 Sistema de numeración binario</a>
+                </li>
+                <li>
+                  <a data-ident="8.1.1.3" class="page-title" href="8.1.1.3/8.1.1.3.html" target="frame">8.1.1.3 Conversión de una dirección binaria a decimal</a>
+                </li>
+                <li>
+                  <a data-ident="8.1.1.4" class="page-title" href="8.1.1.4/8.1.1.4.html" target="frame">8.1.1.4 Actividad: Conversiones de binario en decimal</a>
+                </li>
+                <li>
+                  <a data-ident="8.1.1.5" class="page-title" href="8.1.1.5/8.1.1.5.html" target="frame">8.1.1.5 Conversión de decimal en binario</a>
+                </li>
+                <li>
+                  <a data-ident="8.1.1.6" class="page-title" href="8.1.1.6/8.1.1.6.html" target="frame">8.1.1.6 Conversión de decimal en binario (cont.)</a>
+                </li>
+                <li>
+                  <a data-ident="8.1.1.7" class="page-title" href="8.1.1.7/8.1.1.7.html" target="frame">8.1.1.7 Actividad: Conversiones de decimal en binario</a>
+                </li>
+                <li>
+                  <a data-ident="8.1.1.8" class="page-title" href="8.1.1.8/8.1.1.8.html" target="frame">8.1.1.8 Actividad: Juego con números binarios</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <span class="icon"></span>
+              <span class="topic-title">8.1.2 Máscara de subred IPv4</span>
+              <ul class="pages">
+                <li>
+                  <a data-ident="8.1.2.1" class="page-title" href="8.1.2.1/8.1.2.1.html" target="frame">8.1.2.1 Porción de red y porción de host de una dirección IPv4</a>
+                </li>
+                <li>
+                  <a data-ident="8.1.2.2" class="page-title" href="8.1.2.2/8.1.2.2.html" target="frame">8.1.2.2 Análisis de la duración de prefijo</a>
+                </li>
+                <li>
+                  <a data-ident="8.1.2.3" class="page-title" href="8.1.2.3/8.1.2.3.html" target="frame">8.1.2.3 Direcciones de red, de host y de broadcast IPv4</a>
+                </li>
+                <li>
+                  <a data-ident="8.1.2.4" class="page-title" href="8.1.2.4/8.1.2.4.html" target="frame">8.1.2.4 Primera y última dirección de host</a>
+                </li>
+                <li>
+                  <a data-ident="8.1.2.5" class="page-title" href="8.1.2.5/8.1.2.5.html" target="frame">8.1.2.5 Operación AND bit a bit </a>
+                </li>
+                <li>
+                  <a data-ident="8.1.2.6" class="page-title" href="8.1.2.6/8.1.2.6.html" target="frame">8.1.2.6 Importancia de la operación AND</a>
+                </li>
+                <li>
+                  <a data-ident="8.1.2.7" class="page-title" href="8.1.2.7/8.1.2.7.html" target="frame">8.1.2.7 Laboratorio: uso de la Calculadora de Windows con direcciones de red</a>
+                </li>
+                <li>
+                  <a data-ident="8.1.2.8" class="page-title" href="8.1.2.8/8.1.2.8.html" target="frame">8.1.2.8 Laboratorio: conversión de direcciones IPv4 al sistema binario</a>
+                </li>
+                <li>
+                  <a data-ident="8.1.2.9" class="page-title" href="8.1.2.9/8.1.2.9.html" target="frame">8.1.2.9 Actividad: Uso de la operación AND para determinar la dirección de red</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <span class="icon"></span>
+              <span class="topic-title">8.1.3 Direcciones IPv4 unicast, broadcast y multicast</span>
+              <ul class="pages">
+                <li>
+                  <a data-ident="8.1.3.1" class="page-title" href="8.1.3.1/8.1.3.1.html" target="frame">8.1.3.1 Asignación de una dirección IPv4 estática a un host</a>
+                </li>
+                <li>
+                  <a data-ident="8.1.3.2" class="page-title" href="8.1.3.2/8.1.3.2.html" target="frame">8.1.3.2 Asignación de una dirección IPv4 dinámica a un host</a>
+                </li>
+                <li>
+                  <a data-ident="8.1.3.3" class="page-title" href="8.1.3.3/8.1.3.3.html" target="frame">8.1.3.3 Transmisión de unidifusión</a>
+                </li>
+                <li>
+                  <a data-ident="8.1.3.4" class="page-title" href="8.1.3.4/8.1.3.4.html" target="frame">8.1.3.4 Transmisión de broadcast</a>
+                </li>
+                <li>
+                  <a data-ident="8.1.3.5" class="page-title" href="8.1.3.5/8.1.3.5.html" target="frame">8.1.3.5 Transmisión de multicast</a>
+                </li>
+                <li>
+                  <a data-ident="8.1.3.6" class="page-title" href="8.1.3.6/8.1.3.6.html" target="frame">8.1.3.6 Actividad: Unicast, broadcast o multicast</a>
+                </li>
+                <li>
+                  <a data-ident="8.1.3.7" class="page-title" href="8.1.3.7/8.1.3.7.html" target="frame">8.1.3.7 Actividad: Cálculo de las direcciones de red, de broadcast y de host</a>
+                </li>
+                <li>
+                  <a data-ident="8.1.3.8" class="page-title" href="8.1.3.8/8.1.3.8.html" target="frame">8.1.3.8 Packet Tracer: investigación del tráfico unidifusión, difusión y multidifusión</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <span class="icon"></span>
+              <span class="topic-title">8.1.4 Tipos de direcciones IPv4</span>
+              <ul class="pages">
+                <li>
+                  <a data-ident="8.1.4.1" class="page-title" href="8.1.4.1/8.1.4.1.html" target="frame">8.1.4.1 Direcciones IPv4 públicas y privadas</a>
+                </li>
+                <li>
+                  <a data-ident="8.1.4.2" class="page-title" href="8.1.4.2/8.1.4.2.html" target="frame">8.1.4.2 Actividad: Admisión o bloqueo de direcciones IPv4</a>
+                </li>
+                <li>
+                  <a data-ident="8.1.4.3" class="page-title" href="8.1.4.3/8.1.4.3.html" target="frame">8.1.4.3 Direcciones IPv4 de uso especial</a>
+                </li>
+                <li>
+                  <a data-ident="8.1.4.4" class="page-title" href="8.1.4.4/8.1.4.4.html" target="frame">8.1.4.4 Direccionamiento con clase antigua</a>
+                </li>
+                <li>
+                  <a data-ident="8.1.4.5" class="page-title" href="8.1.4.5/8.1.4.5.html" target="frame">8.1.4.5 Asignación de direcciones IP</a>
+                </li>
+                <li>
+                  <a data-ident="8.1.4.6" class="page-title" href="8.1.4.6/8.1.4.6.html" target="frame">8.1.4.6 Asignación de direcciones IP (cont.)</a>
+                </li>
+                <li>
+                  <a data-ident="8.1.4.7" class="page-title" href="8.1.4.7/8.1.4.7.html" target="frame">8.1.4.7 Actividad: Direcciones IPv4 públicas o privadas</a>
+                </li>
+                <li>
+                  <a data-ident="8.1.4.8" class="page-title" href="8.1.4.8/8.1.4.8.html" target="frame">8.1.4.8 Laboratorio: identificación de direcciones IPv4</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <span class="icon"></span>
+          <span class="section-title">8.2 Direcciones de red IPv6</span>
+          <ul class="topics">
+            <li>
+              <span class="icon"></span>
+              <span class="topic-title">8.2.1 Problemas de IPv4</span>
+              <ul class="pages">
+                <li>
+                  <a data-ident="8.2.1.1" class="page-title" href="8.2.1.1/8.2.1.1.html" target="frame">8.2.1.1 Necesidad de utilizar IPv6</a>
+                </li>
+                <li>
+                  <a data-ident="8.2.1.2" class="page-title" href="8.2.1.2/8.2.1.2.html" target="frame">8.2.1.2 Coexistencia de IPv4 e IPv6</a>
+                </li>
+                <li>
+                  <a data-ident="8.2.1.3" class="page-title" href="8.2.1.3/8.2.1.3.html" target="frame">8.2.1.3 Actividad: Problemas de IPv4 y soluciones</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <span class="icon"></span>
+              <span class="topic-title">8.2.2 Asignación de direcciones IPv6</span>
+              <ul class="pages">
+                <li>
+                  <a data-ident="8.2.2.1" class="page-title" href="8.2.2.1/8.2.2.1.html" target="frame">8.2.2.1 Sistema numérico hexadecimal</a>
+                </li>
+                <li>
+                  <a data-ident="8.2.2.2" class="page-title" href="8.2.2.2/8.2.2.2.html" target="frame">8.2.2.2 Representación de dirección IPv6</a>
+                </li>
+                <li>
+                  <a data-ident="8.2.2.3" class="page-title" href="8.2.2.3/8.2.2.3.html" target="frame">8.2.2.3 Regla 1: Omisión de ceros iniciales</a>
+                </li>
+                <li>
+                  <a data-ident="8.2.2.4" class="page-title" href="8.2.2.4/8.2.2.4.html" target="frame">8.2.2.4 Regla 2: Omisión de los segmentos compuestos por todos ceros</a>
+                </li>
+                <li>
+                  <a data-ident="8.2.2.5" class="page-title" href="8.2.2.5/8.2.2.5.html" target="frame">8.2.2.5 Actividad: Práctica de representaciones de direcciones IPv6</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <span class="icon"></span>
+              <span class="topic-title">8.2.3 Tipos de direcciones IPv6</span>
+              <ul class="pages">
+                <li>
+                  <a data-ident="8.2.3.1" class="page-title" href="8.2.3.1/8.2.3.1.html" target="frame">8.2.3.1 Tipos de direcciones IPv6</a>
+                </li>
+                <li>
+                  <a data-ident="8.2.3.2" class="page-title" href="8.2.3.2/8.2.3.2.html" target="frame">8.2.3.2 Duración de prefijo IPv6</a>
+                </li>
+                <li>
+                  <a data-ident="8.2.3.3" class="page-title" href="8.2.3.3/8.2.3.3.html" target="frame">8.2.3.3 Direcciones IPv6 unicast</a>
+                </li>
+                <li>
+                  <a data-ident="8.2.3.4" class="page-title" href="8.2.3.4/8.2.3.4.html" target="frame">8.2.3.4 Direcciones IPv6 unicast link-local</a>
+                </li>
+                <li>
+                  <a data-ident="8.2.3.5" class="page-title" href="8.2.3.5/8.2.3.5.html" target="frame">8.2.3.5 Actividad: Identificación de tipos de direcciones IPv6</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <span class="icon"></span>
+              <span class="topic-title">8.2.4 Direcciones IPv6 unicast</span>
+              <ul class="pages">
+                <li>
+                  <a data-ident="8.2.4.1" class="page-title" href="8.2.4.1/8.2.4.1.html" target="frame">8.2.4.1 Estructura de una dirección IPv6 unicast global</a>
+                </li>
+                <li>
+                  <a data-ident="8.2.4.2" class="page-title" href="8.2.4.2/8.2.4.2.html" target="frame">8.2.4.2 Configuración estática de una dirección unicast global</a>
+                </li>
+                <li>
+                  <a data-ident="8.2.4.3" class="page-title" href="8.2.4.3/8.2.4.3.html" target="frame">8.2.4.3 Configuración dinámica de una dirección unicast global mediante SLAAC</a>
+                </li>
+                <li>
+                  <a data-ident="8.2.4.4" class="page-title" href="8.2.4.4/8.2.4.4.html" target="frame">8.2.4.4 Configuración dinámica de una dirección unicast global mediante DHCPv6</a>
+                </li>
+                <li>
+                  <a data-ident="8.2.4.5" class="page-title" href="8.2.4.5/8.2.4.5.html" target="frame">8.2.4.5 Proceso EUI-64 o de generación aleatoria</a>
+                </li>
+                <li>
+                  <a data-ident="8.2.4.6" class="page-title" href="8.2.4.6/8.2.4.6.html" target="frame">8.2.4.6 Direcciones link-local dinámicas</a>
+                </li>
+                <li>
+                  <a data-ident="8.2.4.7" class="page-title" href="8.2.4.7/8.2.4.7.html" target="frame">8.2.4.7 Direcciones link-local estáticas</a>
+                </li>
+                <li>
+                  <a data-ident="8.2.4.8" class="page-title" href="8.2.4.8/8.2.4.8.html" target="frame">8.2.4.8 Verificación de la configuración de la dirección IPv6</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <span class="icon"></span>
+              <span class="topic-title">8.2.5 Direcciones IPv6 multicast</span>
+              <ul class="pages">
+                <li>
+                  <a data-ident="8.2.5.1" class="page-title" href="8.2.5.1/8.2.5.1.html" target="frame">8.2.5.1 Direcciones IPv6 multicast asignadas</a>
+                </li>
+                <li>
+                  <a data-ident="8.2.5.2" class="page-title" href="8.2.5.2/8.2.5.2.html" target="frame">8.2.5.2 Direcciones IPv6 multicast de nodo solicitado</a>
+                </li>
+                <li>
+                  <a data-ident="8.2.5.3" class="page-title" href="8.2.5.3/8.2.5.3.html" target="frame">8.2.5.3 Packet Tracer: configuración de direcciones IPv6</a>
+                </li>
+                <li>
+                  <a data-ident="8.2.5.4" class="page-title" href="8.2.5.4/8.2.5.4.html" target="frame">8.2.5.4 Laboratorio: identificación de direcciones IPv6</a>
+                </li>
+                <li>
+                  <a data-ident="8.2.5.5" class="page-title" href="8.2.5.5/8.2.5.5.html" target="frame">8.2.5.5 Práctica de laboratorio: Configuración de direcciones IPv6 en dispositivos de red</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <span class="icon"></span>
+          <span class="section-title">8.3 Verificación de conectividad</span>
+          <ul class="topics">
+            <li>
+              <span class="icon"></span>
+              <span class="topic-title">8.3.1 ICMP</span>
+              <ul class="pages">
+                <li>
+                  <a data-ident="8.3.1.1" class="page-title" href="8.3.1.1/8.3.1.1.html" target="frame">8.3.1.1 Mensajes de ICMPv4 y ICMPv6</a>
+                </li>
+                <li>
+                  <a data-ident="8.3.1.2" class="page-title" href="8.3.1.2/8.3.1.2.html" target="frame">8.3.1.2 Mensajes de solicitud y de anuncio de router de ICMPv6</a>
+                </li>
+                <li>
+                  <a data-ident="8.3.1.3" class="page-title" href="8.3.1.3/8.3.1.3.html" target="frame">8.3.1.3 Mensajes de solicitud y de anuncio de vecino de ICMPv6</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <span class="icon"></span>
+              <span class="topic-title">8.3.2 Prueba y verificación</span>
+              <ul class="pages">
+                <li>
+                  <a data-ident="8.3.2.1" class="page-title" href="8.3.2.1/8.3.2.1.html" target="frame">8.3.2.1 Ping para prueba del stack local</a>
+                </li>
+                <li>
+                  <a data-ident="8.3.2.2" class="page-title" href="8.3.2.2/8.3.2.2.html" target="frame">8.3.2.2 Ping para prueba de conectividad a la LAN local</a>
+                </li>
+                <li>
+                  <a data-ident="8.3.2.3" class="page-title" href="8.3.2.3/8.3.2.3.html" target="frame">8.3.2.3 Ping para prueba de conectividad a dispositivo remoto </a>
+                </li>
+                <li>
+                  <a data-ident="8.3.2.4" class="page-title" href="8.3.2.4/8.3.2.4.html" target="frame">8.3.2.4 Traceroute, prueba de la ruta</a>
+                </li>
+                <li>
+                  <a data-ident="8.3.2.5" class="page-title" href="8.3.2.5/8.3.2.5.html" target="frame">8.3.2.5 Packet Tracer: verificación de direcciones IPv4 y IPv6</a>
+                </li>
+                <li>
+                  <a data-ident="8.3.2.6" class="page-title" href="8.3.2.6/8.3.2.6.html" target="frame">8.3.2.6 Packet Tracer: uso de herramientas de ping y rastreo para probar la ruta</a>
+                </li>
+                <li>
+                  <a data-ident="8.3.2.7" class="page-title" href="8.3.2.7/8.3.2.7.html" target="frame">8.3.2.7 Laboratorio: prueba de conectividad de red con los comandos ping y traceroute</a>
+                </li>
+                <li>
+                  <a data-ident="8.3.2.8" class="page-title" href="8.3.2.8/8.3.2.8.html" target="frame">8.3.2.8 Packet Tracer: solución de problemas de las direcciones IPv4 y IPv6</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <span class="icon"></span>
+          <span class="section-title">8.4 Resumen</span>
+          <ul class="topics">
+            <li>
+              <span class="icon"></span>
+              <span class="topic-title">8.4.1 Resumen</span>
+              <ul class="pages">
+                <li>
+                  <a data-ident="8.4.1.1" class="page-title" href="8.4.1.1/8.4.1.1.html" target="frame">8.4.1.1 Actividad de clase: Internet de todo, por supuesto</a>
+                </li>
+                <li>
+                  <a data-ident="8.4.1.2" class="page-title" href="8.4.1.2/8.4.1.2.html" target="frame">8.4.1.2 Packet Tracer: Reto de habilidades de integración</a>
+                </li>
+                <li>
+                  <a data-ident="8.4.1.3" class="page-title" href="8.4.1.3/8.4.1.3.html" target="frame">8.4.1.3 Resumen</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <ul id="nav-menu" class="contextmenu">
+      <li id="nav-menu-expand">Expandir todo</li>
+      <li id="nav-menu-collapse">Contraer todo</li>
+    </ul>
+    <div id="content">
+      <div id="container"></div>
+      <button id="prev-btn" type="button" title="Anterior" disabled><span class="icon">Anterior</span></button>
+      <input id="jump-box" type="text" value=""/>
+      <button id="next-btn" type="button" title="Siguiente" disabled><span class="icon">Siguiente</span></button>
+      <button id="mini-btn" type="button" title="Alternar"><span class="icon">Alternar</span></button>
+    </div>
+  </body>
+</html>
+

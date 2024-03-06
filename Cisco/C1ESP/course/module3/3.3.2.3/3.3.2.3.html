@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>3.3.2.3 Direcciones MAC e IP</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_3.3.2.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Movimiento de datos en la red</h1>
+        <h2>Acceso a los recursos locales</h2>
+      </div>
+      <div id="content">
+<p>Ahora debe estar claro que para enviar datos a otro host en la misma LAN, el host de origen debe conocer tanto la dirección física como la dirección lógica del host de destino. Una vez que se conocen estas direcciones, puede crear una trama y enviarla a través de los medios de red. El host de origen puede obtener la dirección IP de destino de diversas maneras. Por ejemplo, puede descubrir la dirección IP mediante el uso del sistema de nombres de dominios (DNS), o puede conocer la dirección IP de destino porque la dirección se introduce en la aplicación en forma manual, como cuando un usuario especifica la dirección IP de un servidor FTP de destino. Sin embargo, ¿cómo determina un host la dirección MAC de Ethernet de otro dispositivo?</p>
+<p></p>
+<p>La mayoría de las aplicaciones de red dependen de la dirección IP lógica del destino para identificar la ubicación de los hosts entre los que se produce la comunicación. Se requiere la dirección MAC de enlace de datos para enviar el paquete IP encapsulado dentro de la trama de Ethernet a través de la red hasta el destino.</p>
+<p></p>
+<p>El host emisor utiliza un protocolo denominado “protocolo de resolución de direcciones” (ARP) para descubrir la dirección MAC de cualquiera de los hosts de la misma red local. El host emisor envía un mensaje de solicitud de ARP a toda la LAN. La solicitud de ARP es un mensaje de broadcast. La solicitud de ARP contiene la dirección IP del dispositivo de destino. Cada dispositivo en la LAN examina la solicitud de ARP para ver si contiene su propia dirección IP. Solamente el dispositivo con la dirección IP contenida en la solicitud de ARP responde con una respuesta de ARP. La respuesta de ARP incluye la dirección MAC asociada con la dirección IP en la solicitud de ARP.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

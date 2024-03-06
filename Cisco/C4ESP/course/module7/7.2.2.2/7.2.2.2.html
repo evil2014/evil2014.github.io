@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>7.2.2.2 Verificación del túnel GRE</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_7.2.2.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Túneles GRE de Site-to-Site</h1>
+        <h2>Configuración de túneles GRE</h2>
+      </div>
+      <div id="content">
+<p>Existen varios comandos que se pueden utilizar para controlar los túneles GRE y resolver los problemas relacionados. Para determinar si la interfaz de túnel está activa o inactiva, utilice el comando <span class="cmd"><b>show ip interface brief</b></span>, el cual se muestra en la figura 1.</p>
+<p></p>
+<p>Para verificar el estado de un túnel GRE, utilice el comando <span class="cmd"><b>show interface tunnel</b></span>. El protocolo de línea en una interfaz de túnel GRE permanece activo mientras haya una ruta al destino del túnel. Antes de implementar un túnel GRE, la conectividad IP ya debe estar operativa entre las direcciones IP de las interfaces físicas en extremos opuestos del túnel GRE potencial. El protocolo de transporte de túnel se muestra en el resultado, que también aparece en la figura 1.</p>
+<p></p>
+<p>Si también se configuró OSPF para intercambiar rutas a través del túnel GRE, verifique que se haya establecido una adyacencia OSPF a través de la interfaz de túnel con el comando <span class="cmd"><b>show ip ospf neighbor</b></span>. En la figura 2, observe que la dirección de interconexión para el vecino OSPF está en la red IP creada para el túnel GRE. </p>
+<p></p>
+<p>En la figura 3, utilice el verificador de sintaxis para configurar y verificar un túnel GRE en el R2 seguido del R1.</p>
+<p></p>
+<p>GRE se considera una VPN porque es una red privada que se crea con tunneling a través de una red pública. Mediante la encapsulación, un túnel GRE crea un enlace virtual punto a punto a los routers Cisco en puntos remotos a través de una internetwork IP. Las ventajas de GRE son que se puede utilizar para canalizar el tráfico que no es IP a través de una red IP, lo que permite la expansión de la red mediante la conexión de subredes multiprotocolo en un entorno de backbone de protocolo único. Además, GRE admite el tunneling de multidifusión IP. Esto significa que se pueden utilizar los protocolos de routing a través del túnel, lo que habilita el intercambio dinámico de información de routing en la red virtual. Por último, es habitual crear túneles GRE IPv6 a través de IPv4, donde IPv6 es el protocolo encapsulado e IPv4 es el protocolo de transporte. En el futuro, es probable que estas funciones se inviertan cuando IPv6 pase a cumplir la función de protocolo IP estándar.</p>
+<p></p>
+<p>Sin embargo, GRE no proporciona cifrado ni ningún otro mecanismo de seguridad. Por lo tanto, los datos que se envían a través de un túnel GRE no son seguros. Si se necesita una comunicación de datos segura, se deben configurar redes VPN con IPsec o SSL.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

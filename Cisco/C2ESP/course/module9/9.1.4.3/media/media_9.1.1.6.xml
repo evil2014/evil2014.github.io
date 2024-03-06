@@ -1,0 +1,128 @@
+﻿<textcomponents>
+
+<component id='ID_inst'>
+	<text><![CDATA[<b>Actividad: funcionamiento de ACL </b><br/><br/>Arrastre la palabra o la frase apropiada para completar las instrucciones de funcionamiento de ACL. No se utilizarán todas las opciones. La primera instrucción requiere dos palabras o frases para completarla.]]></text>
+</component> <!--Drag and Drop-->
+<component id='ID_drag01'>
+	<text><![CDATA[<font color="#393536">Descartado</font>]]></text>
+</component>
+
+<component id='ID_drag02'>
+	<text><![CDATA[<font color="#393536">Antes</font>]]></text>
+</component>
+
+<component id='ID_drag03'>
+	<text><![CDATA[<font color="#393536">Cuatro</font>]]></text>
+</component>
+
+<component id='ID_drag04'>
+	<text><![CDATA[<font color="#393536">Interfaz</font>]]></text>
+</component>
+
+<component id='ID_drag05'>
+	<text><![CDATA[<font color="#393536">Ruta</font>]]></text>
+</component>
+
+<component id='ID_drag06'>
+	<text><![CDATA[<font color="#393536">Denegar</font>]]></text>
+</component>
+
+<component id='ID_drag07'>
+	<text><![CDATA[<font color="#393536">Después</font>]]></text>
+</component>
+
+<component id='ID_drag08'>
+	<text><![CDATA[<font color="#393536">Procesamiento</font>]]></text>
+</component>
+
+<component id='ID_drag09'>
+	<text><![CDATA[<font color="#393536">Seis</font>]]></text>
+</component>
+
+<component id='ID_drag10'>
+	<text><![CDATA[<font color="#393536">Protocolo</font>]]></text>
+</component>
+<component id='ID_drag11'>
+	<text><![CDATA[<font color="#393536">Firewall</font>]]></text>
+</component>
+<component id='ID_drag12'>
+	<text><![CDATA[<font color="#393536">Doce</font>]]></text>
+</component>
+<component id='ID_drag13'>
+	<text><![CDATA[<font color="#393536">Reenviada</font>]]></text>
+</component>
+<component id='ID_drag14'>
+	<text><![CDATA[<font color="#393536">Permitir</font>]]></text>
+</component>
+
+
+
+
+<component id='ID_s1_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto  </b>]]></text>
+</component>
+
+<component id='ID_s1_CORRECT_BODY'>
+	<text><![CDATA[Completó correctamente las instrucciones de funcionamiento de ACL.]]></text>
+</component>
+
+
+<component id='ID_s1_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto  </b>]]></text>
+</component>
+
+<component id='ID_s1_INCORRECT_BODY'>
+	<text><![CDATA[No completó correctamente las instrucciones de funcionamiento de ACL. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+<component id='ID_CHECK'>
+	<text><![CDATA[<b>Verificar  </b>]]></text>
+</component>
+
+<component id='ID_RESET'>
+	<text><![CDATA[<b>Restablecer  </b>]]></text>
+</component>
+
+
+
+<component id="ID_txt01">
+	<text><![CDATA[Una lista de control de acceso (ACL) controla si el router _____ o _____ el tráfico de paquetes según los criterios del encabezado del paquete.]]></text>
+</component>
+
+<component id="ID_txt02">
+  <text><![CDATA[Las ACL suelen utilizarse en routers entre las redes internas y externas para proporcionar _____.]]></text> 
+</component>
+
+<component id="ID_txt03">
+  <text><![CDATA[Un router con tres interfaces y dos protocolos de red (IPv4 e IPv6) puede tener un máximo de _____ ACL activas.]]></text> 
+</component>
+
+<component id="ID_txt04">
+  <text><![CDATA[Para las ACL de entrada, los paquetes entrantes se procesan _____ se envían a la interfaz de salida.]]></text> 
+</component>
+
+<component id="ID_txt05">
+  <text><![CDATA[Para las ACL de salida, los paquetes entrantes se procesan _____ se envían a la interfaz de salida.]]></text> 
+</component>
+
+<component id="ID_txt06">
+  <text><![CDATA[Para cada ACL, hay una instrucción deny implícita. Si un paquete no coincide con los criterios de ACL, será _____.]]></text> 
+</component>
+
+<component id="ID_txt07">
+  <text><![CDATA[Las ACL pueden filtrar el tráfico de datos por protocolo, por sentido y por _____.]]></text> 
+</component>
+
+<component id="ID_txt08">
+  <text><![CDATA[Las ACL pueden filtrar el tráfico según la dirección de origen/destino, _____ y los números de puerto.]]></text> 
+</component>
+
+<component id="ID_txt09">
+  <text><![CDATA[<b>Funcionamiento de las ACL  </b>]]></text> 
+</component>
+
+<component id="ID_txt10">
+  <text><![CDATA[<b>Finalización  </b>]]></text> 
+</component>
+   
+</textcomponents>

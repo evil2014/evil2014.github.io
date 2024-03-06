@@ -1,0 +1,33 @@
+﻿<textcomponents> 
+<component id="ID_title">
+	<text><![CDATA[<b>Direcciones de red y direcciones de enlace de datos</b>]]></text>
+</component>
+   
+<component id="ID_table">
+<text><![CDATA[<table header='none' headerstyle='black' bordercolor='#393536' borderwidth='2' shadow='false' shadowcolor='#000000' glow='false' glowcolor='#808080' cellpadding='4'>
+	<tr>
+		<td bgcolor='#CCCCCC' width="95" align="center" valign="middle"><font size='11' color='#393536'>Bits de temporización y sincronización</font></td>
+		<td bgcolor='#CCCCCC' width="85" align="center" valign="middle"><font size='11' color='#393536'>Direcciones físicas de destino y de origen</font></td>
+		<td bgcolor='#CCCCCC' width="95" align="center" valign="middle"><font size='11' color='#393536'>Direcciones de red lógicas de destino y de origen</font></td>
+		<td bgcolor='#CCCCCC' width="95" align="center" valign="middle"><font size='11' color='#393536'>Número de proceso de destino y de origen (puertos)</font></td>
+		<td bgcolor='#CCCCCC' width="85" align="center" valign="middle"><font size='11' color='#393536'>Datos de aplicación codificados</font></td>
+	</tr>
+</table>]]></text>
+</component>
+ 
+<component id="ID_txt01">
+	<text><![CDATA[Física]]></text>
+</component>
+<component id="ID_txt02">
+	<text><![CDATA[Enlace de datos]]></text>
+</component>
+<component id="ID_txt03">
+	<text><![CDATA[Red]]></text>
+</component>
+<component id="ID_txt04">
+	<text><![CDATA[Transporte]]></text>
+</component>
+<component id="ID_txt05">
+	<text><![CDATA[Capas superiores]]></text>
+</component>  
+</textcomponents>

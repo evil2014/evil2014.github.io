@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.2.2.3 Comando network</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.2.2.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de OSPFv2 de área única</h1>
+        <h2>Configuración de OSPFv2 de área única</h2>
+      </div>
+      <div id="content">
+<p>Existen varias maneras de identificar las interfaces que participan en el proceso de routing OSPFv2.</p>
+<p>En la figura 1, se muestran los comandos requeridos para determinar qué interfaces del R1 participan en el proceso de routing OSPFv2 para un área. Observe el uso de las máscaras wildcard para identificar las respectivas interfaces sobre la base de sus direcciones de red. Dado que se trata de una red OSPF de área única, todas las ID de área se establecen en 0. </p>
+<p>Como alternativa, se puede habilitar OSPFv2 con el comando <span class="cmd"><b>network </b></span><span class="cmd"><i>dirección-ip-interfaz </i></span><span class="cmd"><b>0.0.0.0</b></span><span class="cmd"><i> area id-área</i></span> del modo de configuración del router.</p>
+<p>En la figura 2, se proporciona un ejemplo de cómo especificar la dirección IPv4 de interfaz con una máscara wildcard de cuádruple cero. La introducción de <span class="cmd"><b>network 172.16.3.1 0.0.0.0 area 0</b></span> en el R1 le indica al router que habilite la interfaz Serial0/0/0 para el proceso de routing. Como resultado, el proceso OSPFv2 anuncia la red que se encuentra en esta interfaz (172.16.3.0/30).</p>
+<p>La ventaja de especificar la interfaz es que no se necesita calcular la máscara wildcard. OSPFv2 usa la dirección y máscara de subred de la interfaz para determinar qué red debe anunciar.</p>
+<p>Algunas versiones de IOS permiten introducir la máscara de subred en lugar de la máscara wildcard. Luego, IOS convierte la máscara de subred al formato de la máscara wildcard. </p>
+<p>Utilice el verificador de sintaxis de la figura 3 para anunciar las redes conectadas al R2.</p>
+<p>
+<b>Nota:</b> mientras completa el verificador de sintaxis, observe los mensajes informativos que describen la adyacencia entre el R1 (1.1.1.1) y el R2 (2.2.2.2). El esquema de direccionamiento IPv4 utilizado para la ID del router facilita la identificación del vecino.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

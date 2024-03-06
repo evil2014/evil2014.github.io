@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>2.1.4.3 Ayuda contextual</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_2.1.4.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Entrenamiento intensivo sobre IOS</h1>
+        <h2>Estructura de los comandos</h2>
+      </div>
+      <div id="content">
+<p>El IOS ofrece varias formas de ayuda:</p>
+<p></p>
+<p>
+<ul>
+<li>Ayuda contextual</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Verificación de la sintaxis del comando</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Teclas de acceso rápido y métodos abreviados</li>
+</ul>
+</p>
+<p></p>
+<p>
+<b>Ayuda contextual</b>
+</p>
+<p></p>
+<p>La ayuda contextual proporciona una lista de comandos y los argumentos asociados con esos comandos dentro del contexto del modo actual. Para acceder a la ayuda contextual, introduzca un signo de interrogación, <span class="cmd"><b>?</b></span>, en cualquier petición de entrada. Aparece una respuesta inmediata sin necesidad de utilizar la tecla Entrar. </p>
+<p></p>
+<p>Uno de los usos de la ayuda contextual es para la obtención de una lista de los comandos disponibles. Dicha lista puede utilizarse cuando existen dudas sobre el nombre de un comando o se desea verificar si el IOS admite un comando específico en un modo determinado. </p>
+<p></p>
+<p>Por ejemplo, para obtener una lista de los comandos disponibles en el nivel EXEC del usuario, introduzca un signo de interrogación, <span class="cmd"><b>?</b></span>, en la petición de entrada <span class="cmd">Switch></span>. </p>
+<p></p>
+<p>Otro de los usos de la ayuda contextual es visualizar una lista de los comandos o palabras clave que empiezan con uno o varios caracteres específicos. Si se introduce un signo de interrogación, sin espacio, inmediatamente después de introducir una secuencia de caracteres, el IOS muestra una lista de comandos o palabras clave para el contexto que comienzan con los caracteres introducidos. </p>
+<p></p>
+<p>Por ejemplo, introduzca <span class="cmd"><b>sh?</b></span> para obtener una lista de los comandos que comienzan con la secuencia de caracteres <span class="cmd"><b>sh</b></span>. </p>
+<p></p>
+<p>Un último tipo de ayuda contextual se utiliza para determinar qué opciones, palabras clave o argumentos coinciden con un comando específico. Al introducir un comando, introduzca un espacio seguido de un <span class="cmd"><b>?</b></span> para determinar qué puede o debe introducirse a continuación. </p>
+<p></p>
+<p>Como se muestra en la ilustración, después de introducir el comando <span class="cmd"><b>clock set 19:50:00</b></span>, se puede introducir el signo <span class="cmd"><b>?</b></span> para determinar las demás opciones o palabras clave disponibles para este comando.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

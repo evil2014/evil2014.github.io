@@ -1,0 +1,61 @@
+﻿<textcomponents>
+
+<component id="ID_title">
+<text><![CDATA[<b>Actividad: Determinación de la cantidad de bits que se deben tomar prestados</b><br/><br/>En esta actividad, se le proporciona la cantidad de hosts que se necesitan.<br/><br/>Determine la máscara de subred que admitiría la cantidad de <b> hosts </b> que se especifica.<br/><br/>Introduzca las respuestas en formato binario, decimal y de notación de prefijo en los campos proporcionados.]]></text>
+</component>
+
+<component id="ID_btn01">
+<text><![CDATA[Verificar]]></text>
+</component>
+
+<component id="ID_btn02">
+<text><![CDATA[Restablecer]]></text>
+</component>
+
+<component id="ID_btn03">
+<text><![CDATA[ACEPTAR]]></text>
+</component>
+
+
+
+
+
+<component id="ID_txt02">
+<text><![CDATA[<b>Hosts<br/>necesarios</b>]]></text>
+</component>
+
+
+<component id="ID_txt03">
+<text><![CDATA[<b>Máscara de subred (binario)</b>]]></text>
+</component>
+
+<component id="ID_txt04">
+<text><![CDATA[<b>Máscara de subred (decimal)</b>]]></text>
+</component>
+
+<component id="ID_txt05">
+<text><![CDATA[<b>Notación de prefijo (/x)</b>]]></text>
+</component>
+
+<component id="ID_txt06">
+<text><![CDATA[]]></text>
+</component>
+
+<component id='ID_CORRECT_TITLE'>
+	<text><![CDATA[<b>Correcto</b>]]></text>
+</component>
+
+<component id='ID_CORRECT_BODY'>
+	<text><![CDATA[Determinó la máscara de subred y la introdujo en formato binario, decimal y de notación de prefijo correctamente.]]></text>
+</component>
+
+<component id='ID_INCORRECT_TITLE'>
+	<text><![CDATA[<b>Incorrecto</b>]]></text>
+</component>
+
+<component id='ID_INCORRECT_BODY'>
+	<text><![CDATA[No determinó la máscara de subred o no la introdujo en formato binario, decimal y de notación de prefijo correctamente. Haga clic en Restablecer y vuelva a intentarlo.]]></text>
+</component>
+
+
+</textcomponents>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>8.1.5.2 Configuración de EIGRP con autenticación MD5</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_8.1.5.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuraciones avanzadas de EIGRP</h1>
+        <h2>EIGRP segura</h2>
+      </div>
+      <div id="content">
+<p>La autenticación de mensajes EIGRP asegura que los routers solo acepten mensajes de routing de otros routers que conozcan la misma clave previamente compartida. Sin la autenticación configurada, si una persona no autorizada introduce en la red otro router con información de ruta diferente o en conflicto, puede dañar las tablas de routing de los routers legítimos, lo que puede acompañarse de un ataque DoS. Entonces, cuando se agrega autenticación a los mensajes EIGRP que se envían entre routers, se evita que alguien agregue otro router a la red —a propósito o por accidente— y cause un problema.</p>
+<p></p>
+<p>EIGRP admite la autenticación de protocolos de routing mediante MD5. La configuración de la autenticación de mensajes EIGRP consta de dos pasos: la creación de un llavero y una clave, y la configuración de la autenticación de EIGRP para usar el llavero y la llave. </p>
+<p></p>
+<p>
+<b>Paso 1. Crear un llavero y una clave</b>
+</p>
+<p></p>
+<p>Para funcionar, la autenticación del routing requiere una clave en un llavero. Para que se pueda habilitar la autenticación, cree un llavero y, al menos, una clave.</p>
+<p></p>
+<p>a. En el modo de configuración global, cree el llavero. Aunque pueden configurarse varias claves, esta sección se centra en el uso de una sola clave.</p>
+<p>
+<span class="cmd">Router(config)# </span>
+<span class="cmd">
+<b>key chain</b>
+</span>
+<span class="cmd"></span>
+<span class="cmd">
+<i>nombre-de-llavero</i>
+</span>
+</p>
+<p></p>
+<p>b. Especifique la ID de la clave. La ID de la clave es el número que se usa para identificar una clave de autenticación dentro de un llavero. El intervalo de claves es de 0 a 2 147 483 647. Se recomienda que el número de clave sea el mismo en todos los routers en la configuración.</p>
+<p></p>
+<p>
+<span class="cmd">Router(config-keychain)# </span>
+<span class="cmd">
+<b>Clave</b>
+</span>
+<span class="cmd"></span>
+<span class="cmd">
+<i>id-clave</i>
+</span>
+</p>
+<p></p>
+<p>c. Especifique la cadena de clave para la clave. La cadena de clave es parecida a una contraseña. Los routers que intercambian claves de autenticación deben configurarse con la misma cadena de clave.</p>
+<p></p>
+<p>
+<span class="cmd">Router(config-keychain-key</span>
+<span class="cmd"></span>
+<span class="cmd">)# </span>
+<span class="cmd">
+<b>key-string</b>
+</span>
+<span class="cmd"></span>
+<span class="cmd">
+<i>texto-cadena-clave</i>
+</span>
+</p>
+<p></p>
+<p></p>
+<p>
+<b>Paso 2. Configurar la autenticación de EIGRP con el llavero y la clave</b>
+</p>
+<p></p>
+<p>Configure EIGRP para realizar la autenticación de mensajes con la clave definida anteriormente. Complete esta configuración en todas las interfaces habilitadas para EIGRP.</p>
+<p></p>
+<p>a. En el modo de configuración global, especifique la interfaz en la que configurará la autenticación de mensajes EIGRP.</p>
+<p></p>
+<p>
+<span class="cmd">Router(config)# </span>
+<span class="cmd">
+<b>interface</b>
+</span>
+<span class="cmd"></span>
+<span class="cmd">
+<i>tipo número</i>
+</span>
+</p>
+<p></p>
+<p>b. Habilite la autenticación de mensajes EIGRP. La palabra clave <span class="cmd"><b>md5</b></span> indica que se usará el hash MD5 para la autenticación.</p>
+<p></p>
+<p>
+<span class="cmd">Router(config-if)# </span>
+<span class="cmd">
+<b>ip authentication mode eigrp</b>
+</span>
+<span class="cmd"></span>
+<span class="cmd">
+<i>número-as</i>
+</span>
+<span class="cmd"></span>
+<span class="cmd">
+<b>md5</b>
+</span>
+</p>
+<p></p>
+<p>c. Especifique el llavero que debe usarse para la autenticación. El argumento <span class="cmd"><i>nombre-de-llavero</i></span> especifica el llavero que se creó en el paso 1.</p>
+<p></p>
+<p>
+<span class="cmd">Router(config-if)# </span>
+<span class="cmd">
+<b>ip authentication key-chain eigrp</b>
+</span>
+<span class="cmd"></span>
+<span class="cmd">
+<i>número-as nombre-de-llavero</i>
+</span>
+</p>
+<p></p>
+<p>Cada clave tiene su propia ID de clave, que se almacena localmente. La combinación de la ID de la clave y la interfaz asociada al mensaje identifica de manera exclusiva el algoritmo de autenticación y la clave de autenticación MD5 en uso. El llavero y la actualización de routing se procesan con el algoritmo MD5 para producir una firma única. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

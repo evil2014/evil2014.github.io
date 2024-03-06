@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.2.2.3 Alivio de la congestión en la red</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.2.2.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>El entorno conmutado</h1>
+        <h2>Dominios de switching</h2>
+      </div>
+      <div id="content">
+<p>Los switches LAN tienen características especiales que los hacen eficaces para aliviar la congestión de una red. En primer lugar, permiten la segmentación de una LAN en dominios de colisiones independientes. Cada puerto del switch representa un dominio de colisiones independiente y proporciona todo el ancho de banda a los dispositivos conectados a dicho puerto. En segundo lugar, proporcionan la comunicación full-duplex entre los dispositivos. Una conexión full-duplex puede transportar las señales transmitidas y recibidas al mismo tiempo. Las conexiones full-duplex aumentaron notablemente el rendimiento de las redes LAN y se requieren para velocidades de Ethernet de 1 Gb/s y superiores.</p>
+<p></p>
+<p>Los switches interconectan segmentos LAN (dominios de colisiones), usan una tabla de direcciones MAC para determinar el segmento al que deben enviar la trama y pueden reducir o eliminar las colisiones por completo. A continuación, se detallan algunas características importantes de los switches que contribuyen a aliviar la congestión de la red:</p>
+<p></p>
+<p>
+<ul>
+<li>
+<b>Alta densidad de puertos:</b> los switches tienen altas densidades de puertos; los switches de 24 y 48 puertos con frecuencia son de solo 1 unidad de rack (1,75 in) de altura y funcionan a velocidades de 100 Mb/s, 1 Gb/s y 10 Gb/s. Los switches empresariales grandes pueden admitir cientos de puertos.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Buffers grandes para tramas:</b> la capacidad de almacenar más tramas recibidas antes de comenzar a descartarlas es útil, especialmente cuando puede haber puertos congestionados conectados a servidores o a otras partes de la red.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Velocidad del puerto:</b> según el costo de un switch, es posible que admita una combinación de velocidades. Los puertos de 100 Mb/s y de 1 Gb/s o 10 Gb/s son comunes (también puede haber de 100 Gb/s).</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Switching interno rápido:</b> la capacidad de reenvío interno rápido promueve un alto rendimiento. El método que se usa puede ser un bus interno o una memoria compartida de gran velocidad, lo que afecta el rendimiento general del switch.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Bajo costo por puerto:</b> los switches proporcionan una alta densidad de puertos a menor costo. Por este motivo, los switches LAN pueden admitir diseños de red que admiten menos usuarios por segmento y, por lo tanto, se aumenta el ancho de banda disponible para cada usuario.</li>
+</ul>
+</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

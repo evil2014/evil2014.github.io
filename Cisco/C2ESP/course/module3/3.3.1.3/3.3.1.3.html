@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>3.3.1.3 Perímetro de PVLAN</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_3.3.1.3_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Seguridad y diseño de redes VLAN</h1>
+        <h2>Ataques a redes VLAN</h2>
+      </div>
+      <div id="content">
+<p>Algunas aplicaciones requieren que no se reenvíe tráfico en la capa 2 entre los puertos del mismo switch, de modo que un vecino no vea el tráfico generado por otro vecino. En ese entorno, el uso de la característica de perímetro de VLAN privada (PVLAN), también conocida como “puertos protegidos”, asegura que no se intercambie tráfico de unidifusión, difusión o multidifusión entre estos puertos del switch (figura 1). </p>
+<p></p>
+<p>Las características de la función de perímetro de PVLAN son las siguientes: </p>
+<p></p>
+<p>
+<ul>
+<li>Los puertos protegidos no reenvían tráfico (de unidifusión, difusión o multidifusión) a ningún otro puerto que también sea un puerto protegido, excepto el tráfico de control. El tráfico de datos no se puede reenviar entre los puertos protegidos en la capa 2. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>El comportamiento de reenvío entre un puerto protegido y un puerto no protegido continúa normalmente.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Los puertos protegidos se deben configurar manualmente.</li>
+</ul>
+</p>
+<p></p>
+<p>Para configurar la característica de perímetro de PVLAN, introduzca el comando <span class="cmd"><b>switchport protected</b></span> en el modo de configuración de interfaz (figura 2). Para inhabilitar los puertos protegidos, utilice el comando <span class="cmd"><b>no switchport protected</b></span> del modo de configuración de interfaz. Para verificar la configuración de la característica de perímetro de PVLAN, utilice el comando <span class="cmd"><b>show interfaces </b></span><span class="cmd"><i>id-interfaz</i></span><span class="cmd"><b> switchport</b></span> del modo de configuración global.</p>
+<p></p>
+<p>Utilice el verificador de sintaxis de la figura 3 para configurar la característica de perímetro de PVLAN en la interfaz G0/1 y verificar la configuración.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>4.1.2.1 Conexión a una red</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_4.1.2.1_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración inicial de un router</h1>
+        <h2>Conexión de los Dispositivos</h2>
+      </div>
+      <div id="content">
+<p>Por lo general, los dispositivos de red y los usuarios finales se conectan a una red mediante una conexión Ethernet por cable o una conexión inalámbrica. Consulte la ilustración para ver un ejemplo de topología de referencia. Las LAN que se muestran en la ilustración sirven como ejemplo de cómo los usuarios y los dispositivos de red pueden conectarse a las redes.</p>
+<p></p>
+<p>Los dispositivos de la oficina doméstica pueden conectarse de la siguiente manera:</p>
+<p>
+<ul>
+<li>Las computadoras portátiles y las tablet PC se conectan de forma inalámbrica a un router doméstico.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Una impresora de red se conecta mediante un cable Ethernet al puerto de switch en el router doméstico.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>El router doméstico se conecta al cable módem del proveedor de servicios mediante un cable Ethernet.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>El cable módem se conecta a la red del proveedor de servicios de Internet (ISP).</li>
+</ul>
+</p>
+<p></p>
+<p>Los dispositivos de Sucursal se conectan de la siguiente manera:</p>
+<p>
+<ul>
+<li>Los recursos corporativos (es decir, los servidores de archivos y las impresoras) se conectan a los switches de capa 2 mediante cables Ethernet.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Las computadoras de escritorio y los teléfonos de voz sobre IP (VoIP) se conectan a los switches de capa 2 mediante cables Ethernet.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Las computadoras portátiles y los smartphones se conectan de forma inalámbrica a los puntos de acceso inalámbrico (WAP).</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Los WAP se conectan a los switches mediante cables Ethernet.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Los switches de capa 2 se conectan a una interfaz Ethernet en el router perimetral mediante cables Ethernet. Un router perimetral es un dispositivo que se encuentra en el perímetro o el límite de una red y crea rutas entre esa red y otra red, por ejemplo, entre una LAN y una WAN.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>El router perimetral se conecta al proveedor de servicios (SP) de una WAN.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>El router perimetral también se conecta a un ISP para propósitos de respaldo.</li>
+</ul>
+</p>
+<p></p>
+<p>Los dispositivos del sito Central se conectan de la siguiente manera:</p>
+<p>
+<ul>
+<li>Las computadoras de escritorio y los teléfonos VoIP se conectan a los switches de capa 2 mediante cables Ethernet.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Los switches de capa 2 se conectan de forma redundante a los switches multicapa de capa 3 con cables Ethernet de fibra óptica (conexiones anaranjadas).</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>Los switches multicapa de capa 3 se conectan a una interfaz Ethernet en el router perimetral mediante cables Ethernet.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>El servidor del sitio web corporativo se conecta a la interfaz del router perimetral mediante un cable Ethernet.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>El router perimetral se conecta al SP de una WAN.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>El router perimetral también se conecta a un ISP para propósitos de respaldo.</li>
+</ul>
+</p>
+<p></p>
+<p>En las LAN de los sitios Sucursal y Central, los hosts se conectan a la infraestructura de red de forma directa o indirecta (a través de WAP) mediante un switch de capa 2. </p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

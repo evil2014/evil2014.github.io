@@ -1,0 +1,34 @@
+﻿<textcomponents>
+<component id="ID_title">
+<text><![CDATA[<b>Servidor UDP a la escucha de solicitudes</b>]]></text>
+</component>
+
+<component id="ID_txt01">
+<text><![CDATA[Servidor]]></text> 
+</component>
+
+<component id="ID_txt02">
+<text><![CDATA[Cliente 1]]></text> 
+</component>
+
+<component id="ID_txt03">
+<text><![CDATA[Cliente 2]]></text> 
+</component>
+
+<component id="ID_txt04">
+<text><![CDATA[<p align='center'><b>Aplicaciones de servidor</b></p><br/>Las solicitudes de DNS del cliente se reciben en el puerto 53.<br/><br/>Las solicitudes de RADIUS del cliente se reciben en el puerto 1812.]]></text> 
+</component>
+
+<component id="ID_txt05">
+<text><![CDATA[Las solicitudes de clientes a servidores tienen números de puerto bien conocidos como puerto de destino.]]></text> 
+</component>
+
+<component id="ID_txt06">
+<text><![CDATA[solicitud de DNS]]></text> 
+</component>
+
+<component id="ID_txt07">
+<text><![CDATA[solicitud de RADIUS]]></text> 
+</component>
+
+</textcomponents>

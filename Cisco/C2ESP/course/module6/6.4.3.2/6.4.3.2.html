@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>6.4.3.2 Configuración de una ruta estática flotante</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+	<script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+	<script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout; 
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_6.4.3.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+    	myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Configuración de rutas resumidas y estáticas flotantes</h1>
+        <h2>Configuración de rutas estáticas flotantes</h2>
+      </div>
+      <div id="content">
+<p>Para configurar rutas estáticas IPv4, se utiliza el comando <span class="cmd"><b>ip route</b></span> de configuración global y se especifica una distancia administrativa. Si no se configura ninguna distancia administrativa, se utiliza el valor predeterminado (1).</p>
+<p></p>
+<p>Consulte la topología en la figura 1. En esta situación, la ruta preferida del R1 es al R2. La conexión al R3 se debe utilizar solo para respaldo.</p>
+<p></p>
+<p>El R1 se configura con una ruta estática predeterminada que apunte al R2. Debido a que no está configurada ninguna distancia administrativa, se utiliza el valor predeterminado (1) para esta ruta estática. El R1 también está configurado con una ruta estática flotante predeterminada que apunta al R3 con una distancia administrativa de 5. Este valor es mayor que el valor predeterminado 1, y, por lo tanto, esta ruta flota y no está presente en la tabla de routing, a menos que la ruta preferida falle.</p>
+<p></p>
+<p>En la figura 2, se verifica que la ruta predeterminada al R2 esté instalada en la tabla de routing. Observe que la ruta de respaldo al R3 no está presente en la tabla de routing.</p>
+<p></p>
+<p>Utilice el verificador de sintaxis en la figura 3 para configurar el R3 de modo similar al R1.</p>
+<p></p>
+<p></p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>

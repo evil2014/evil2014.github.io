@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>1.1.1.2 Principios de ingeniería estructurada</title>
+    <!-- Content -->
+    <link type="text/css" rel="stylesheet" href="../../common/styles/course.css"/>
+    <script type="text/javascript" src="../../common/scripts/jquery_bundle.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../../common-ext/scripts/page.js"></script>
+    <script>
+      var myLayout;
+      $(document).ready(function () {
+        var frame = document.getElementById('mainFrame');
+        if (isTextOnly(window)) {
+          frame.setAttribute('src', 'media_1.1.1.2_longdesc.txt');
+        } else {
+          frame.setAttribute('src', 'media/index.html');
+        }
+        myLayout = $('body').layout({
+          west__size: 300,
+          west__minSize: 300,
+          center__minWidth: 100,
+          resizerTip: 'Cambiar el tamaño',
+          sliderTip: 'Deslizar para abrir',
+          togglerTip_open: 'Cerrar',
+          togglerTip_closed: 'Abrir',
+          stateManagement__enabled: true,
+          maskIframesOnResize: true,
+          livePaneResizing: true,
+          onresize_end: resizeTextDiv,
+          stateManagement__cookie__name: "ui_pane",
+          stateManagement__cookie__expires: 1,
+          stateManagement__cookie__path: "/"
+        });
+        var isiPad = navigator.userAgent.match(/iPad/i) != null;
+        if(isiPad){
+          var paneOptions = myLayout.options["west"]; 
+          paneOptions.spacing_open = 12;
+          myLayout.resizeAll(); 
+        }
+      });
+      function resizeTextDiv() {
+        var DivHeight = document.getElementById("header").offsetHeight;
+        document.getElementById("content").style.top = String(DivHeight) + 'px';
+      }
+    </script>
+  </head>
+  <body class="onecolumn" onLoad="resizeTextDiv()">
+    <div class="ui-layout-west">
+      <div id="header">
+        <h1>Descripción general del diseño de redes jerárquicas</h1>
+        <h2>Diseño de campus de red empresarial</h2>
+      </div>
+      <div id="content">
+<p>Independientemente del tamaño o los requisitos de la red, un factor fundamental para la correcta implementación de cualquier diseño de red es seguir buenos principios de ingeniería estructurada. Estos principios incluyen lo siguiente:</p>
+<p>
+<ul>
+<li>
+<b>Jerarquía:</b> un modelo de red jerárquico es una herramienta útil de alto nivel para diseñar una infraestructura de red confiable. Divide el problema complejo del diseño de red en áreas más pequeñas y más fáciles de administrar. </li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Modularidad:</b> al separar en módulos las diversas funciones que existen en una red, esta es más fácil diseñar. Cisco identificó varios módulos, incluido el campus empresarial, el bloque de servicios, el centro de datos e Internet perimetral.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Resistencia:</b> la red debe estar disponible para que se pueda utilizar tanto en condiciones normales como anormales. Entre las condiciones normales se incluyen los flujos y los patrones de tráfico normales o esperados, así como los eventos programados, como los períodos de mantenimiento. Entre las condiciones anormales se incluyen las fallas de hardware o de software, las cargas de tráfico extremas, los patrones de tráfico poco comunes, los eventos de denegación de servicio (DoS), ya sean intencionales o involuntarios, y otros eventos imprevistos.</li>
+</ul>
+</p>
+<p>
+<ul>
+<li>
+<b>Flexibilidad:</b> la capacidad de modificar partes de la red, agregar nuevos servicios o aumentar la capacidad sin necesidad de realizar actualizaciones de gran importancia (es decir, reemplazar los principales dispositivos de hardware).</li>
+</ul>
+</p>
+<p></p>
+<p>Para cumplir con estos objetivos fundamentales del diseño, la red se debe armar sobre la base de una arquitectura de red jerárquica que permita la flexibilidad y el crecimiento.</p>
+</div>
+    </div>
+    <iframe id="mainFrame" name="mainFrame" frameborder="0" class="ui-layout-center" alt="interactive graphic"></iframe>
+  </body>
+</html>
