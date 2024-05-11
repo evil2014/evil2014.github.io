@@ -1,27 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Index of /</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Archivos y Carpetas</title>
+    <style>
+        /* Estilos CSS para la lista */
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        li.folder {
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-    <h1>Index of /</h1>
-    <ul id="file-list"></ul>
+    <h1>Archivos y Carpetas en el Repositorio</h1>
+    <ul id="fileList">
+        <!-- Esta lista se llenará dinámicamente con JavaScript -->
+    </ul>
 
     <script>
-        fetch('https://api.github.com/repos/evil2014/evil2014.github.io/icpchttps://api.github.com/repos/evil2014/evil2014.github.io/contents/icpc')
+        // JavaScript para obtener y mostrar la lista de archivos y carpetas
+        fetch('https://api.github.com/repos/evil2014/evil2014.github.io/contents/icpc')
             .then(response => response.json())
             .then(data => {
-                const fileList = document.getElementById('file-list');
+                const fileList = document.getElementById('fileList');
                 data.forEach(item => {
-                    const listItem = document.createElement('li');
-                    const link = document.createElement('a');
-                    link.textContent = item.name;
-                    link.href = item.type === 'file' ? item.html_url : '';
-                    listItem.appendChild(link);
-                    fileList.appendChild(listItem);
+                    const li = document.createElement('li');
+                    li.textContent = item.type === 'dir' ? `${item.name}/` : item.name;
+                    li.className = item.type === 'dir' ? 'folder' : 'file';
+                    fileList.appendChild(li);
                 });
             })
-            .catch(error => console.error('Error fetching data:', error));
+            .catch(error => {
+                console.error('Error al obtener la lista de archivos:', error);
+            });
     </script>
 </body>
 </html>
