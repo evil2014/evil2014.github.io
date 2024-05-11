@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Archivos y Carpetas</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <style>
     <style>
         /* Estilos CSS para la lista */
         body {
@@ -58,11 +60,20 @@
                     const li = document.createElement('li');
                     const link = document.createElement('a');
                     link.textContent = item.type === 'dir' ? `${item.name}/` : item.name;
-                    link.href = item.download_url;
-                    link.download = item.name;
-                    li.className = item.type === 'dir' ? 'folder' : 'file';
-                    li.appendChild(link);
-                    fileList.appendChild(li);
+                        if (item.type === 'dir') {
+                            link.className = 'folder';
+                            link.onclick = () => {
+                                getFileList(item.url, li);
+                            };
+                        } else {
+                            link.href = item.download_url;
+                            link.download = item.name;
+                        }
+                    //link.href = item.download_url;
+                    //link.download = item.name;
+                    //li.className = item.type === 'dir' ? 'folder' : 'file';
+                    //li.appendChild(link);
+                    //fileList.appendChild(li);
                 });
             })
             .catch(error => {
