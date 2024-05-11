@@ -6,15 +6,39 @@
     <title>Lista de Archivos y Carpetas</title>
     <style>
         /* Estilos CSS para la lista */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #fafafa;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
         ul {
             list-style-type: none;
             padding: 0;
         }
         li {
-            margin-bottom: 5px;
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+        li:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         li.folder {
             font-weight: bold;
+            color: #03a9f4;
+        }
+        a {
+            color: #333;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -35,6 +59,7 @@
                     const link = document.createElement('a');
                     link.textContent = item.type === 'dir' ? `${item.name}/` : item.name;
                     link.href = item.html_url;
+                    link.download = item.name;
                     li.className = item.type === 'dir' ? 'folder' : 'file';
                     li.appendChild(link);
                     fileList.appendChild(li);
