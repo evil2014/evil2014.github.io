@@ -32,8 +32,11 @@
                 const fileList = document.getElementById('fileList');
                 data.forEach(item => {
                     const li = document.createElement('li');
-                    li.textContent = item.type === 'dir' ? `${item.name}/` : item.name;
+                    const link = document.createElement('a');
+                    link.textContent = item.type === 'dir' ? `${item.name}/` : item.name;
+                    link.href = item.html_url;
                     li.className = item.type === 'dir' ? 'folder' : 'file';
+                    li.appendChild(link);
                     fileList.appendChild(li);
                 });
             })
