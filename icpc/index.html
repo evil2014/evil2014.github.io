@@ -33,6 +33,7 @@
         li.folder {
             font-weight: bold;
             color: #03a9f4;
+            cursor: pointer;
         }
         a {
             color: #333;
@@ -51,14 +52,14 @@
 
     <script>
         // JavaScript para obtener y mostrar la lista de archivos y carpetas
-        fetch('https://api.github.com/repos/evil2014/evil2014.github.io/contents/icpc')
-            .then(response => response.json())
-            .then(data => {
-                const fileList = document.getElementById('fileList');
-                data.forEach(item => {
-                    const li = document.createElement('li');
-                    const link = document.createElement('a');
-                    link.textContent = item.type === 'dir' ? `${item.name}/` : item.name;
+        function getFileList(url, element) {
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    data.forEach(item => {
+                        const li = document.createElement('li');
+                        const link = document.createElement('a');
+                        link.textContent = item.type === 'dir' ? `${item.name}/` : item.name;
                         if (item.type === 'dir') {
                             link.className = 'folder';
                             link.onclick = () => {
@@ -68,16 +69,16 @@
                             link.href = item.download_url;
                             link.download = item.name;
                         }
-                    //link.href = item.download_url;
-                    //link.download = item.name;
-                    //li.className = item.type === 'dir' ? 'folder' : 'file';
-                    //li.appendChild(link);
-                    //fileList.appendChild(li);
+                        li.appendChild(link);
+                        element.appendChild(li);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error al obtener la lista de archivos:', error);
                 });
-            })
-            .catch(error => {
-                console.error('Error al obtener la lista de archivos:', error);
-            });
+        }
+
+        getFileList('https://api.github.com/repos/evil2014/evil2014.github.io/contents', document.getElementById('fileList'));
     </script>
 </body>
 </html>
