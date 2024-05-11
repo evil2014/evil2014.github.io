@@ -58,7 +58,7 @@
                     const li = document.createElement('li');
                     const link = document.createElement('a');
                     link.textContent = item.type === 'dir' ? `${item.name}/` : item.name;
-                    link.href = item.html_url;
+                    link.href = item.download_url;
                     link.download = item.name;
                     li.className = item.type === 'dir' ? 'folder' : 'file';
                     li.appendChild(link);
