@@ -10,6 +10,19 @@
         body {
             font-family: 'Roboto', sans-serif;
             background-color: #fafafa;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            height: 100vh;
+        }
+        #sidebar {
+            width: 250px;
+            background-color: #f5f5f5;
+            border-right: 1px solid #ddd;
+            overflow-y: auto;
+        }
+        #main {
+            flex: 1;
             padding: 20px;
         }
         h1 {
@@ -26,6 +39,7 @@
             border-radius: 4px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             transition: box-shadow 0.3s ease;
+            cursor: pointer;
         }
         li:hover {
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -33,7 +47,6 @@
         li.folder {
             font-weight: bold;
             color: #03a9f4;
-            cursor: pointer;
         }
         a {
             color: #333;
@@ -45,70 +58,44 @@
         /* Estilos CSS para el visor PDF */
         .pdf-viewer {
             width: 100%;
-            height: 600px;
+            height: calc(100vh - 40px);
             border: 1px solid #ccc;
-            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <h1>Archivos y Carpetas en el Repositorio</h1>
-    <select id="folderSelect">
-        <!-- Esta lista se llenará dinámicamente con JavaScript -->
-    </select>
+    <div id="sidebar">
+        <h1>Carpetas en el Repositorio</h1>
+        <ul id="folderList">
+            <!-- Esta lista se llenará dinámicamente con JavaScript -->
+        </ul>
+    </div>
 
-    <ul id="fileList">
-        <!-- Esta lista se llenará dinámicamente con JavaScript -->
-    </ul>
-
-    <div class="pdf-viewer">
-        <!-- Visor PDF incrustado -->
-        <!-- <embed id="pdfEmbed" src="ruta_del_pdf.pdf" type="application/pdf" width="100%" height="100%"> -->
-        <!-- O utiliza un iframe -->
-        <!-- <iframe id="pdfIframe" src="ruta_del_pdf.pdf" width="100%" height="100%" frameborder="0"></iframe> -->
+    <div id="main">
+        <h1>Visor de PDF</h1>
+        <div class="pdf-viewer">
+            <!-- Visor PDF incrustado -->
+            <!-- <embed id="pdfEmbed" src="ruta_del_pdf.pdf" type="application/pdf" width="100%" height="100%"> -->
+            <!-- O utiliza un iframe -->
+            <!-- <iframe id="pdfIframe" src="ruta_del_pdf.pdf" width="100%" height="100%" frameborder="0"></iframe> -->
+        </div>
     </div>
 
     <script>
-        // JavaScript para obtener y mostrar la lista de archivos y carpetas
-        function getFileList(url, element) {
+        // JavaScript para obtener y mostrar la lista de carpetas
+        function fillFolderList(url, listElement) {
             fetch(url)
                 .then(response => response.json())
                 .then(data => {
                     data.forEach(item => {
-                        const li = document.createElement('li');
-                        const link = document.createElement('a');
-                        link.textContent = item.type === 'dir' ? `${item.name}/` : item.name;
                         if (item.type === 'dir') {
-                            link.className = 'folder';
-                            link.onclick = () => {
-                                getFileList(item.url, li);
+                            const li = document.createElement('li');
+                            li.textContent = item.name;
+                            li.className = 'folder';
+                            li.onclick = () => {
+                                getFileList(item.url, document.getElementById('pdfViewer'));
                             };
-                        } else {
-                            link.href = item.download_url;
-                            link.download = item.name;
-                        }
-                        li.appendChild(link);
-                        element.appendChild(li);
-                    });
-                })
-                .catch(error => {
-                    console.error('Error al obtener la lista de archivos:', error);
-                });
-        }
-
-        getFileList('https://api.github.com/repos/evil2014/evil2014.github.io/contents', document.getElementById('fileList'));
-
-        // Llenar el menú desplegable con las carpetas
-        function fillFolderSelect(url, selectElement) {
-            fetch(url)
-                .then(response => response.json())
-                .then(data => {
-                    data.forEach(item => {
-                        if (item.type === 'dir') {
-                            const option = document.createElement('option');
-                            option.value = item.url;
-                            option.textContent = item.name;
-                            selectElement.appendChild(option);
+                            listElement.appendChild(li);
                         }
                     });
                 })
@@ -117,23 +104,35 @@
                 });
         }
 
-        fillFolderSelect('https://api.github.com/repos/evil2014/evil2014.github.io/contents', document.getElementById('folderSelect'));
+        fillFolderList('https://api.github.com/repos/evil2014/evil2014.github.io/contents', document.getElementById('folderList'));
 
-        // Mostrar el PDF seleccionado en el visor PDF
-        document.getElementById('folderSelect').addEventListener('change', function() {
-            const selectedFolderUrl = this.value;
-            getFileList(selectedFolderUrl, document.getElementById('fileList'));
-        });
+        // JavaScript para obtener y mostrar los archivos de una carpeta y mostrar el PDF en el visor
+        function getFileList(url, pdfViewer) {
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    const pdfFiles = data.filter(item => item.name.endsWith('.pdf'));
+                    if (pdfFiles.length > 0) {
+                        const pdfUrl = pdfFiles[0].download_url; // Mostrar el primer archivo PDF encontrado
+                        showPDF(pdfUrl, pdfViewer);
+                    } else {
+                        pdfViewer.innerHTML = '<p>No se encontraron archivos PDF en esta carpeta.</p>';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error al obtener la lista de archivos:', error);
+                });
+        }
 
         // Función para mostrar el PDF en el visor PDF incrustado
-        function showPDF(pdfUrl) {
+        function showPDF(pdfUrl, pdfViewer) {
             const embedElement = document.createElement('embed');
             embedElement.src = pdfUrl;
             embedElement.type = 'application/pdf';
             embedElement.width = '100%';
             embedElement.height = '100%';
-            document.querySelector('.pdf-viewer').innerHTML = ''; // Limpiar el visor PDF antes de agregar el nuevo PDF
-            document.querySelector('.pdf-viewer').appendChild(embedElement);
+            pdfViewer.innerHTML = ''; // Limpiar el visor PDF antes de agregar el nuevo PDF
+            pdfViewer.appendChild(embedElement);
         }
     </script>
 </body>
