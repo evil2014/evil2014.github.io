@@ -42,13 +42,31 @@
         a:hover {
             text-decoration: underline;
         }
+        /* Estilos CSS para el visor PDF */
+        .pdf-viewer {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #ccc;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
     <h1>Archivos y Carpetas en el Repositorio</h1>
+    <select id="folderSelect">
+        <!-- Esta lista se llenará dinámicamente con JavaScript -->
+    </select>
+
     <ul id="fileList">
         <!-- Esta lista se llenará dinámicamente con JavaScript -->
     </ul>
+
+    <div class="pdf-viewer">
+        <!-- Visor PDF incrustado -->
+        <!-- <embed id="pdfEmbed" src="ruta_del_pdf.pdf" type="application/pdf" width="100%" height="100%"> -->
+        <!-- O utiliza un iframe -->
+        <!-- <iframe id="pdfIframe" src="ruta_del_pdf.pdf" width="100%" height="100%" frameborder="0"></iframe> -->
+    </div>
 
     <script>
         // JavaScript para obtener y mostrar la lista de archivos y carpetas
@@ -78,7 +96,45 @@
                 });
         }
 
-        getFileList('https://api.github.com/repos/evil2014/evil2014.github.io/contents/icpc', document.getElementById('fileList'));
+        getFileList('https://api.github.com/repos/evil2014/evil2014.github.io/contents', document.getElementById('fileList'));
+
+        // Llenar el menú desplegable con las carpetas
+        function fillFolderSelect(url, selectElement) {
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    data.forEach(item => {
+                        if (item.type === 'dir') {
+                            const option = document.createElement('option');
+                            option.value = item.url;
+                            option.textContent = item.name;
+                            selectElement.appendChild(option);
+                        }
+                    });
+                })
+                .catch(error => {
+                    console.error('Error al obtener la lista de carpetas:', error);
+                });
+        }
+
+        fillFolderSelect('https://api.github.com/repos/evil2014/evil2014.github.io/contents', document.getElementById('folderSelect'));
+
+        // Mostrar el PDF seleccionado en el visor PDF
+        document.getElementById('folderSelect').addEventListener('change', function() {
+            const selectedFolderUrl = this.value;
+            getFileList(selectedFolderUrl, document.getElementById('fileList'));
+        });
+
+        // Función para mostrar el PDF en el visor PDF incrustado
+        function showPDF(pdfUrl) {
+            const embedElement = document.createElement('embed');
+            embedElement.src = pdfUrl;
+            embedElement.type = 'application/pdf';
+            embedElement.width = '100%';
+            embedElement.height = '100%';
+            document.querySelector('.pdf-viewer').innerHTML = ''; // Limpiar el visor PDF antes de agregar el nuevo PDF
+            document.querySelector('.pdf-viewer').appendChild(embedElement);
+        }
     </script>
 </body>
 </html>
