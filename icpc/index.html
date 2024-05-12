@@ -94,9 +94,11 @@
                                 getFileList(item.url, document.getElementById('fileList'));
                             };
                         } else {
-                            li.onclick = () => {
-                                showPDF(item.download_url, document.getElementById('pdfViewer'));
-                            };
+                            const a = document.createElement('a');
+                            a.textContent = item.name;
+                            a.href = item.download_url;
+                            a.download = item.name; // Intentar forzar la visualización en el navegador antes de descargar
+                            li.appendChild(a);
                         }
                         listElement.appendChild(li);
                     });
@@ -107,12 +109,6 @@
         }
 
         getFileList('https://api.github.com/repos/evil2014/evil2014.github.io/contents', document.getElementById('fileList'));
-
-        // Función para mostrar el PDF utilizando el visor del navegador
-        function showPDF(pdfUrl, pdfViewer) {
-            pdfViewer.innerHTML = `<embed src="${pdfUrl}" type="application/pdf" width="100%" height="100%" />`;
-        }
     </script>
 </body>
 </html>
-
