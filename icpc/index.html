@@ -73,12 +73,12 @@
 
     <div id="main">
         <h1>Visor de PDF</h1>
-        <div class="pdf-viewer">
+        <div class="pdf-viewer" id="pdfViewer">
             <!-- El visor PDF se cargará aquí -->
-            <iframe id="pdfIframe" src="" width="100%" height="100%" frameborder="0"></iframe>
         </div>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
     <script>
         // JavaScript para obtener y mostrar la lista de archivos y carpetas
         function getFileList(url, listElement) {
@@ -96,7 +96,7 @@
                             };
                         } else {
                             li.onclick = () => {
-                                document.getElementById('pdfIframe').src = item.download_url;
+                                showPDF(item.download_url, document.getElementById('pdfViewer'));
                             };
                         }
                         listElement.appendChild(li);
@@ -108,6 +108,26 @@
         }
 
         getFileList('https://api.github.com/repos/evil2014/evil2014.github.io/contents', document.getElementById('fileList'));
+
+        // Función para mostrar el PDF en el visor PDF utilizando PDF.js
+        function showPDF(pdfUrl, pdfViewer) {
+            pdfjsLib.getDocument(pdfUrl).promise.then(function(pdfDoc) {
+                pdfDoc.getPage(1).then(function(page) {
+                    var viewport = page.getViewport({ scale: 1.5 });
+                    var canvas = document.createElement('canvas');
+                    var context = canvas.getContext('2d');
+                    canvas.height = viewport.height;
+                    canvas.width = viewport.width;
+                    var renderContext = {
+                        canvasContext: context,
+                        viewport: viewport
+                    };
+                    page.render(renderContext);
+                    pdfViewer.innerHTML = ''; // Limpiar el visor PDF antes de agregar el nuevo PDF
+                    pdfViewer.appendChild(canvas);
+                });
+            });
+        }
     </script>
 </body>
 </html>
