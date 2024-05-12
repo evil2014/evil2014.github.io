@@ -24,6 +24,7 @@
         #main {
             flex: 1;
             padding: 20px;
+            position: relative;
         }
         h1 {
             color: #333;
@@ -58,8 +59,26 @@
         /* Estilos CSS para el visor PDF */
         .pdf-viewer {
             width: 100%;
-            height: calc(100vh - 40px);
-            border: 1px solid #ccc;
+            height: 100%;
+        }
+        .controls {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+        }
+        .controls button {
+            margin: 0 5px;
+            padding: 5px 10px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .controls button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
@@ -75,6 +94,10 @@
         <h1>Visor de PDF</h1>
         <div class="pdf-viewer" id="pdfViewer">
             <!-- El visor PDF se cargará aquí -->
+        </div>
+        <div class="controls">
+            <button id="prevPage">Página Anterior</button>
+            <button id="nextPage">Página Siguiente</button>
         </div>
     </div>
 
@@ -112,19 +135,35 @@
         // Función para mostrar el PDF en el visor PDF utilizando PDF.js
         function showPDF(pdfUrl, pdfViewer) {
             pdfjsLib.getDocument(pdfUrl).promise.then(function(pdfDoc) {
-                pdfDoc.getPage(1).then(function(page) {
-                    var viewport = page.getViewport({ scale: 1.0 });
-                    var canvas = document.createElement('canvas');
-                    var context = canvas.getContext('2d');
-                    canvas.height = viewport.height;
-                    canvas.width = viewport.width;
-                    var renderContext = {
-                        canvasContext: context,
-                        viewport: viewport
-                    };
-                    page.render(renderContext);
-                    pdfViewer.innerHTML = ''; // Limpiar el visor PDF antes de agregar el nuevo PDF
-                    pdfViewer.appendChild(canvas);
+                var pageNum = 1;
+                renderPage(pageNum);
+
+                function renderPage(num) {
+                    pdfDoc.getPage(num).then(function(page) {
+                        var viewport = page.getViewport({ scale: 1 });
+                        var canvas = document.createElement('canvas');
+                        var context = canvas.getContext('2d');
+                        canvas.height = viewport.height;
+                        canvas.width = viewport.width;
+                        pdfViewer.innerHTML = ''; // Limpiar el visor PDF antes de agregar el nuevo PDF
+                        pdfViewer.appendChild(canvas);
+                        page.render({
+                            canvasContext: context,
+                            viewport: viewport
+                        });
+                    });
+                }
+
+                document.getElementById('prevPage').addEventListener('click', function() {
+                    if (pageNum <= 1) return;
+                    pageNum--;
+                    renderPage(pageNum);
+                });
+
+                document.getElementById('nextPage').addEventListener('click', function() {
+                    if (pageNum >= pdfDoc.numPages) return;
+                    pageNum++;
+                    renderPage(pageNum);
                 });
             });
         }
