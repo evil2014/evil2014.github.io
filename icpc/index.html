@@ -73,14 +73,12 @@
 
     <div id="main">
         <h1>Visor de PDF</h1>
-        <div class="pdf-viewer">
-            <!-- Visor PDF incrustado -->
-            <!-- <embed id="pdfEmbed" src="ruta_del_pdf.pdf" type="application/pdf" width="100%" height="100%"> -->
-            <!-- O utiliza un iframe -->
-            <!-- <iframe id="pdfIframe" src="ruta_del_pdf.pdf" width="100%" height="100%" frameborder="0"></iframe> -->
+        <div class="pdf-viewer" id="pdfViewer">
+            <!-- El visor PDF se cargará aquí -->
         </div>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
     <script>
         // JavaScript para obtener y mostrar la lista de archivos y carpetas
         function getFileList(url, listElement) {
@@ -98,7 +96,7 @@
                             };
                         } else {
                             li.onclick = () => {
-                                showPDF(item.download_url, document.querySelector('.pdf-viewer'));
+                                showPDF(item.download_url, document.getElementById('pdfViewer'));
                             };
                         }
                         listElement.appendChild(li);
@@ -111,15 +109,24 @@
 
         getFileList('https://api.github.com/repos/evil2014/evil2014.github.io/contents', document.getElementById('fileList'));
 
-        // Función para mostrar el PDF en el visor PDF incrustado
+        // Función para mostrar el PDF en el visor PDF utilizando PDF.js
         function showPDF(pdfUrl, pdfViewer) {
-            const embedElement = document.createElement('embed');
-            embedElement.src = pdfUrl;
-            embedElement.type = 'application/pdf';
-            embedElement.width = '100%';
-            embedElement.height = '100%';
-            pdfViewer.innerHTML = ''; // Limpiar el visor PDF antes de agregar el nuevo PDF
-            pdfViewer.appendChild(embedElement);
+            pdfjsLib.getDocument(pdfUrl).promise.then(function(pdfDoc) {
+                pdfDoc.getPage(1).then(function(page) {
+                    var viewport = page.getViewport({ scale: 1.0 });
+                    var canvas = document.createElement('canvas');
+                    var context = canvas.getContext('2d');
+                    canvas.height = viewport.height;
+                    canvas.width = viewport.width;
+                    var renderContext = {
+                        canvasContext: context,
+                        viewport: viewport
+                    };
+                    page.render(renderContext);
+                    pdfViewer.innerHTML = ''; // Limpiar el visor PDF antes de agregar el nuevo PDF
+                    pdfViewer.appendChild(canvas);
+                });
+            });
         }
     </script>
 </body>
