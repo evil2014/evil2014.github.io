@@ -87,6 +87,7 @@
             fetch(url)
                 .then(response => response.json())
                 .then(data => {
+                    listElement.innerHTML = ''; // Limpiar la lista antes de agregar nuevos elementos
                     data.forEach(item => {
                         const li = document.createElement('li');
                         li.textContent = item.name;
