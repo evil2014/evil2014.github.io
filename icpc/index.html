@@ -65,8 +65,8 @@
 </head>
 <body>
     <div id="sidebar">
-        <h1>Carpetas en el Repositorio</h1>
-        <ul id="folderList">
+        <h1>Archivos y Carpetas en el Repositorio</h1>
+        <ul id="fileList">
             <!-- Esta lista se llenará dinámicamente con JavaScript -->
         </ul>
     </div>
@@ -82,47 +82,33 @@
     </div>
 
     <script>
-        // JavaScript para obtener y mostrar la lista de carpetas
-        function fillFolderList(url, listElement) {
+        // JavaScript para obtener y mostrar la lista de archivos y carpetas
+        function getFileList(url, listElement) {
             fetch(url)
                 .then(response => response.json())
                 .then(data => {
                     data.forEach(item => {
+                        const li = document.createElement('li');
+                        li.textContent = item.name;
                         if (item.type === 'dir') {
-                            const li = document.createElement('li');
-                            li.textContent = item.name;
                             li.className = 'folder';
                             li.onclick = () => {
-                                getFileList(item.url, document.getElementById('pdfViewer'));
+                                getFileList(item.url, document.getElementById('fileList'));
                             };
-                            listElement.appendChild(li);
+                        } else {
+                            li.onclick = () => {
+                                showPDF(item.download_url, document.querySelector('.pdf-viewer'));
+                            };
                         }
+                        listElement.appendChild(li);
                     });
                 })
                 .catch(error => {
-                    console.error('Error al obtener la lista de carpetas:', error);
+                    console.error('Error al obtener la lista de archivos y carpetas:', error);
                 });
         }
 
-        fillFolderList('https://api.github.com/repos/evil2014/evil2014.github.io/contents/icpc', document.getElementById('folderList'));
-
-        // JavaScript para obtener y mostrar los archivos de una carpeta y mostrar el PDF en el visor
-        function getFileList(url, pdfViewer) {
-            fetch(url)
-                .then(response => response.json())
-                .then(data => {
-                    const pdfFiles = data.filter(item => item.name.endsWith('.pdf'));
-                    if (pdfFiles.length > 0) {
-                        const pdfUrl = pdfFiles[0].download_url; // Mostrar el primer archivo PDF encontrado
-                        showPDF(pdfUrl, pdfViewer);
-                    } else {
-                        pdfViewer.innerHTML = '<p>No se encontraron archivos PDF en esta carpeta.</p>';
-                    }
-                })
-                .catch(error => {
-                    console.error('Error al obtener la lista de archivos:', error);
-                });
-        }
+        getFileList('https://api.github.com/repos/evil2014/evil2014.github.io/contents', document.getElementById('fileList'));
 
         // Función para mostrar el PDF en el visor PDF incrustado
         function showPDF(pdfUrl, pdfViewer) {
